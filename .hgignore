@@ -1,0 +1,6 @@
+syntax: glob
+*.user
+*.suo
+_ReSharper.GoogleApisSamples/*
+bin/*
+obj/*
