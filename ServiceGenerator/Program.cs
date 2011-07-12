@@ -53,14 +53,16 @@ namespace Google.Apis.Samples.CmdServiceGenerator
                                   ? new ServiceDescription { ServiceName = args[0], ServiceVersion = args[1] }
                                   : CommandLine.CreateClassFromUserinput<ServiceDescription>();
 
-
-            string fileName = string.Format("{0}.{1}.cs", description.ServiceName,
-                                            description.ServiceVersion);
+            string formalServiceName = GeneratorUtils.UpperFirstLetter(description.ServiceName);
+            string fileName = string.Format(
+                "{0}.{1}.cs", formalServiceName, description.ServiceVersion.Replace(".", '_'));
 
             // Generate Service
+            string serviceNamespace = string.Format(
+                "Google.Apis.{0}.{1}", formalServiceName, description.ServiceVersion);
             CommandLine.WriteLine("^9 Generating service ...");
             GoogleServiceGenerator.GenerateService(description.ServiceName,
-                                                   description.ServiceVersion, "Google.Apis",
+                                                   description.ServiceVersion, serviceNamespace,
                                                    "CSharp",
                                                    fileName);
             CommandLine.WriteLine("^9 Service generated in ^4" + fileName + "^9!");
