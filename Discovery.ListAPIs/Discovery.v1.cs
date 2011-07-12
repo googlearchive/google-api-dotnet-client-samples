@@ -8,822 +8,1381 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Runtime.InteropServices;
-using Google.Apis.Authentication;
-using Google.Apis.Data;
-using Google.Apis.Discovery;
-using Google.Apis.Requests;
-using Google.Apis.Util;
-using log4net;
-using Newtonsoft.Json;
-
-namespace Google.Apis.Data
-{
-    public class DirectoryList : IResponse
-    {
+namespace Google.Apis.Discovery.v1.Data {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    
+    
+    public class DirectoryList : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<DirectoryList.ItemsData> items;
+        
+        private string kind;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
         /// <summary>The individual directory entries.  One entry per api/version pair.</summary>
-        [JsonProperty("items")]
-        public virtual IList<ItemsData> Items { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<DirectoryList.ItemsData> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
         /// <summary>The kind for this response.</summary>
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: ItemsData
-
-        public class ItemsData
-        {
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class ItemsData {
+            
+            private string description;
+            
+            private string discoveryLink;
+            
+            private string documentationLink;
+            
+            private ItemsData.IconsData icons;
+            
+            private string id;
+            
+            private string kind;
+            
+            private IList<System.String> labels;
+            
+            private string name;
+            
+            private bool preferred;
+            
+            private string title;
+            
+            private string version;
+            
             /// <summary>The description of this API.</summary>
-            [JsonProperty("description")]
-            public virtual string Description { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("description")]
+            public virtual string Description {
+                get {
+                    return this.description;
+                }
+                set {
+                    this.description = value;
+                }
+            }
+            
             /// <summary>A link to the discovery document.</summary>
-            [JsonProperty("discoveryLink")]
-            public virtual string DiscoveryLink { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("discoveryLink")]
+            public virtual string DiscoveryLink {
+                get {
+                    return this.discoveryLink;
+                }
+                set {
+                    this.discoveryLink = value;
+                }
+            }
+            
             /// <summary>A link to human readable documentation for the API.</summary>
-            [JsonProperty("documentationLink")]
-            public virtual string DocumentationLink { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("documentationLink")]
+            public virtual string DocumentationLink {
+                get {
+                    return this.documentationLink;
+                }
+                set {
+                    this.documentationLink = value;
+                }
+            }
+            
             /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
-            [JsonProperty("icons")]
-            public virtual IconsData Icons { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("icons")]
+            public virtual ItemsData.IconsData Icons {
+                get {
+                    return this.icons;
+                }
+                set {
+                    this.icons = value;
+                }
+            }
+            
             /// <summary>The id of this API.</summary>
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
             /// <summary>The kind for this response.</summary>
-            [JsonProperty("kind")]
-            public virtual string Kind { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+            public virtual string Kind {
+                get {
+                    return this.kind;
+                }
+                set {
+                    this.kind = value;
+                }
+            }
+            
             /// <summary>Labels for the status of this API, such as labs or deprecated.</summary>
-            [JsonProperty("labels")]
-            public virtual IList<String> Labels { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("labels")]
+            public virtual IList<System.String> Labels {
+                get {
+                    return this.labels;
+                }
+                set {
+                    this.labels = value;
+                }
+            }
+            
             /// <summary>The name of the API.</summary>
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
             /// <summary>True if this version is the preferred version to use.</summary>
-            [JsonProperty("preferred")]
-            public virtual bool Preferred { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("preferred")]
+            public virtual bool Preferred {
+                get {
+                    return this.preferred;
+                }
+                set {
+                    this.preferred = value;
+                }
+            }
+            
             /// <summary>The title of this API.</summary>
-            [JsonProperty("title")]
-            public virtual string Title { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("title")]
+            public virtual string Title {
+                get {
+                    return this.title;
+                }
+                set {
+                    this.title = value;
+                }
+            }
+            
             /// <summary>The version of the API.</summary>
-            [JsonProperty("version")]
-            public virtual string Version { get; set; }
-
-            #region Nested type: IconsData
-
+            [Newtonsoft.Json.JsonPropertyAttribute("version")]
+            public virtual string Version {
+                get {
+                    return this.version;
+                }
+                set {
+                    this.version = value;
+                }
+            }
+            
             /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
-            public class IconsData
-            {
+            public class IconsData {
+                
+                private string x16;
+                
+                private string x32;
+                
                 /// <summary>The url of the 16x16 icon.</summary>
-                [JsonProperty("x16")]
-                public virtual string X16 { get; set; }
-
-                /// <summary>The url of the 32x32 icon.</summary>
-                [JsonProperty("x32")]
-                public virtual string X32 { get; set; }
-            }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class Jsonschema
-    {
-        /// <summary>A reference to another schema.  The value of this property is the &quot;id&quot; of another schema.</summary>
-        [JsonProperty("$ref")]
-        public virtual string Ref { get; set; }
-
-        [JsonProperty("additionalProperties")]
-        public virtual Jsonschema AdditionalProperties { get; set; }
-
-        /// <summary>The default value of this property (if one exists).</summary>
-        [JsonProperty("default")]
-        public virtual string Default { get; set; }
-
-        /// <summary>A description of this object.</summary>
-        [JsonProperty("description")]
-        public virtual string Description { get; set; }
-
-        /// <summary>Values this parameter may take (if it is an enum).</summary>
-        [JsonProperty("enum")]
-        public virtual IList<String> Enum { get; set; }
-
-        /// <summary>The descriptions for the enums.  Each position maps to the corresponding value in the &quot;enum&quot; array.</summary>
-        [JsonProperty("enumDescriptions")]
-        public virtual IList<String> EnumDescriptions { get; set; }
-
-        /// <summary>An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23</summary>
-        [JsonProperty("format")]
-        public virtual string Format { get; set; }
-
-        /// <summary>Unique identifier for this schema.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("items")]
-        public virtual Jsonschema Items { get; set; }
-
-        /// <summary>Whether this parameter goes in the query or the path for REST requests.</summary>
-        [JsonProperty("location")]
-        public virtual string Location { get; set; }
-
-        /// <summary>The maximum value of this parameter.</summary>
-        [JsonProperty("maximum")]
-        public virtual string Maximum { get; set; }
-
-        /// <summary>The minimum value of this parameter.</summary>
-        [JsonProperty("minimum")]
-        public virtual string Minimum { get; set; }
-
-        /// <summary>The regular expression this parameter must conform to.</summary>
-        [JsonProperty("pattern")]
-        public virtual string Pattern { get; set; }
-
-        /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
-        [JsonProperty("properties")]
-        public virtual PropertiesData Properties { get; set; }
-
-        /// <summary>Whether this parameter may appear multiple times.</summary>
-        [JsonProperty("repeated")]
-        public virtual bool Repeated { get; set; }
-
-        /// <summary>Whether the parameter is required.</summary>
-        [JsonProperty("required")]
-        public virtual bool Required { get; set; }
-
-        /// <summary>The value type for this schema.  A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1</summary>
-        [JsonProperty("type")]
-        public virtual string Type { get; set; }
-
-        #region Nested type: PropertiesData
-
-        /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
-        public class PropertiesData : Dictionary<string, Jsonschema> {}
-
-        #endregion
-    }
-
-    public class RestDescription : IResponse
-    {
-        /// <summary>Authentication information.</summary>
-        [JsonProperty("auth")]
-        public virtual AuthData Auth { get; set; }
-
-        /// <summary>The base URI path for REST requests.</summary>
-        [JsonProperty("basePath")]
-        public virtual string BasePath { get; set; }
-
-        /// <summary>The description of this API.</summary>
-        [JsonProperty("description")]
-        public virtual string Description { get; set; }
-
-        /// <summary>A link to human readable documentation for the API.</summary>
-        [JsonProperty("documentationLink")]
-        public virtual string DocumentationLink { get; set; }
-
-        /// <summary>A list of supported features for this API.</summary>
-        [JsonProperty("features")]
-        public virtual IList<String> Features { get; set; }
-
-        /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
-        [JsonProperty("icons")]
-        public virtual IconsData Icons { get; set; }
-
-        /// <summary>The id of this API.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        /// <summary>The kind for this response.</summary>
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        /// <summary>Labels for the status of this API, such as labs or deprecated.</summary>
-        [JsonProperty("labels")]
-        public virtual IList<String> Labels { get; set; }
-
-        /// <summary>API-level methods for this API.</summary>
-        [JsonProperty("methods")]
-        public virtual MethodsData Methods { get; set; }
-
-        /// <summary>The name of this API.</summary>
-        [JsonProperty("name")]
-        public virtual string Name { get; set; }
-
-        /// <summary>Common parameters that apply across all apis.</summary>
-        [JsonProperty("parameters")]
-        public virtual ParametersData Parameters { get; set; }
-
-        /// <summary>The protocol described by this document.</summary>
-        [JsonProperty("protocol")]
-        public virtual string Protocol { get; set; }
-
-        /// <summary>The resources in this API.</summary>
-        [JsonProperty("resources")]
-        public virtual ResourcesData Resources { get; set; }
-
-        /// <summary>The schemas for this API.</summary>
-        [JsonProperty("schemas")]
-        public virtual SchemasData Schemas { get; set; }
-
-        /// <summary>The title of this API.</summary>
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        /// <summary>The version of this API.</summary>
-        [JsonProperty("version")]
-        public virtual string Version { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: AuthData
-
-        /// <summary>Authentication information.</summary>
-        public class AuthData
-        {
-            /// <summary>OAuth 2.0 authentication information.</summary>
-            [JsonProperty("oauth2")]
-            public virtual Oauth2Data Oauth2 { get; set; }
-
-            #region Nested type: Oauth2Data
-
-            /// <summary>OAuth 2.0 authentication information.</summary>
-            public class Oauth2Data
-            {
-                /// <summary>Available OAuth 2.0 scopes.</summary>
-                [JsonProperty("scopes")]
-                public virtual ScopesData Scopes { get; set; }
-
-                #region Nested type: ScopesData
-
-                /// <summary>Available OAuth 2.0 scopes.</summary>
-                public class ScopesData : Dictionary<string, ScopesData.ScopesDataSchema>
-                {
-                    #region Nested type: ScopesDataSchema
-
-                    public class ScopesDataSchema
-                    {
-                        /// <summary>Description of scope.</summary>
-                        [JsonProperty("description")]
-                        public virtual string Description { get; set; }
+                [Newtonsoft.Json.JsonPropertyAttribute("x16")]
+                public virtual string X16 {
+                    get {
+                        return this.x16;
                     }
-
-                    #endregion
+                    set {
+                        this.x16 = value;
+                    }
                 }
-
-                #endregion
+                
+                /// <summary>The url of the 32x32 icon.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("x32")]
+                public virtual string X32 {
+                    get {
+                        return this.x32;
+                    }
+                    set {
+                        this.x32 = value;
+                    }
+                }
             }
-
-            #endregion
         }
-
-        #endregion
-
-        #region Nested type: IconsData
-
+    }
+    
+    public class Jsonschema {
+        
+        private string refValue;
+        
+        private Jsonschema additionalProperties;
+        
+        private string defaultValue;
+        
+        private string description;
+        
+        private IList<System.String> enumValue;
+        
+        private IList<System.String> enumDescriptions;
+        
+        private string format;
+        
+        private string id;
+        
+        private Jsonschema items;
+        
+        private string location;
+        
+        private string maximum;
+        
+        private string minimum;
+        
+        private string pattern;
+        
+        private Jsonschema.PropertiesData properties;
+        
+        private bool repeated;
+        
+        private bool required;
+        
+        private string type;
+        
+        /// <summary>A reference to another schema.  The value of this property is the &quot;id&quot; of another schema.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("$ref")]
+        public virtual string Ref {
+            get {
+                return this.refValue;
+            }
+            set {
+                this.refValue = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("additionalProperties")]
+        public virtual Jsonschema AdditionalProperties {
+            get {
+                return this.additionalProperties;
+            }
+            set {
+                this.additionalProperties = value;
+            }
+        }
+        
+        /// <summary>The default value of this property (if one exists).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("default")]
+        public virtual string Default {
+            get {
+                return this.defaultValue;
+            }
+            set {
+                this.defaultValue = value;
+            }
+        }
+        
+        /// <summary>A description of this object.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this.description;
+            }
+            set {
+                this.description = value;
+            }
+        }
+        
+        /// <summary>Values this parameter may take (if it is an enum).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enum")]
+        public virtual IList<System.String> Enum {
+            get {
+                return this.enumValue;
+            }
+            set {
+                this.enumValue = value;
+            }
+        }
+        
+        /// <summary>The descriptions for the enums.  Each position maps to the corresponding value in the &quot;enum&quot; array.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("enumDescriptions")]
+        public virtual IList<System.String> EnumDescriptions {
+            get {
+                return this.enumDescriptions;
+            }
+            set {
+                this.enumDescriptions = value;
+            }
+        }
+        
+        /// <summary>An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("format")]
+        public virtual string Format {
+            get {
+                return this.format;
+            }
+            set {
+                this.format = value;
+            }
+        }
+        
+        /// <summary>Unique identifier for this schema.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual Jsonschema Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        /// <summary>Whether this parameter goes in the query or the path for REST requests.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("location")]
+        public virtual string Location {
+            get {
+                return this.location;
+            }
+            set {
+                this.location = value;
+            }
+        }
+        
+        /// <summary>The maximum value of this parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("maximum")]
+        public virtual string Maximum {
+            get {
+                return this.maximum;
+            }
+            set {
+                this.maximum = value;
+            }
+        }
+        
+        /// <summary>The minimum value of this parameter.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("minimum")]
+        public virtual string Minimum {
+            get {
+                return this.minimum;
+            }
+            set {
+                this.minimum = value;
+            }
+        }
+        
+        /// <summary>The regular expression this parameter must conform to.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pattern")]
+        public virtual string Pattern {
+            get {
+                return this.pattern;
+            }
+            set {
+                this.pattern = value;
+            }
+        }
+        
+        /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("properties")]
+        public virtual Jsonschema.PropertiesData Properties {
+            get {
+                return this.properties;
+            }
+            set {
+                this.properties = value;
+            }
+        }
+        
+        /// <summary>Whether this parameter may appear multiple times.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("repeated")]
+        public virtual bool Repeated {
+            get {
+                return this.repeated;
+            }
+            set {
+                this.repeated = value;
+            }
+        }
+        
+        /// <summary>Whether the parameter is required.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("required")]
+        public virtual bool Required {
+            get {
+                return this.required;
+            }
+            set {
+                this.required = value;
+            }
+        }
+        
+        /// <summary>The value type for this schema.  A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+        public virtual string Type {
+            get {
+                return this.type;
+            }
+            set {
+                this.type = value;
+            }
+        }
+        
+        /// <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
+        public class PropertiesData : System.Collections.Generic.Dictionary<string, Jsonschema> {
+        }
+    }
+    
+    public class RestDescription : Google.Apis.Requests.ISchemaResponse {
+        
+        private RestDescription.AuthData auth;
+        
+        private string basePath;
+        
+        private string description;
+        
+        private string documentationLink;
+        
+        private IList<System.String> features;
+        
+        private RestDescription.IconsData icons;
+        
+        private string id;
+        
+        private string kind;
+        
+        private IList<System.String> labels;
+        
+        private RestDescription.MethodsData methods;
+        
+        private string name;
+        
+        private RestDescription.ParametersData parameters;
+        
+        private string protocol;
+        
+        private RestDescription.ResourcesData resources;
+        
+        private RestDescription.SchemasData schemas;
+        
+        private string title;
+        
+        private string version;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        /// <summary>Authentication information.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("auth")]
+        public virtual RestDescription.AuthData Auth {
+            get {
+                return this.auth;
+            }
+            set {
+                this.auth = value;
+            }
+        }
+        
+        /// <summary>The base URI path for REST requests.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("basePath")]
+        public virtual string BasePath {
+            get {
+                return this.basePath;
+            }
+            set {
+                this.basePath = value;
+            }
+        }
+        
+        /// <summary>The description of this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this.description;
+            }
+            set {
+                this.description = value;
+            }
+        }
+        
+        /// <summary>A link to human readable documentation for the API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("documentationLink")]
+        public virtual string DocumentationLink {
+            get {
+                return this.documentationLink;
+            }
+            set {
+                this.documentationLink = value;
+            }
+        }
+        
+        /// <summary>A list of supported features for this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("features")]
+        public virtual IList<System.String> Features {
+            get {
+                return this.features;
+            }
+            set {
+                this.features = value;
+            }
+        }
+        
         /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
-        public class IconsData
-        {
-            /// <summary>The url of the 16x16 icon.</summary>
-            [JsonProperty("x16")]
-            public virtual string X16 { get; set; }
-
-            /// <summary>The url of the 32x32 icon.</summary>
-            [JsonProperty("x32")]
-            public virtual string X32 { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: MethodsData
-
-        /// <summary>API-level methods for this API.</summary>
-        public class MethodsData : Dictionary<string, Restmethod> {}
-
-        #endregion
-
-        #region Nested type: ParametersData
-
-        /// <summary>Common parameters that apply across all apis.</summary>
-        public class ParametersData : Dictionary<string, Jsonschema> {}
-
-        #endregion
-
-        #region Nested type: ResourcesData
-
-        /// <summary>The resources in this API.</summary>
-        public class ResourcesData : Dictionary<string, Restresource> {}
-
-        #endregion
-
-        #region Nested type: SchemasData
-
-        /// <summary>The schemas for this API.</summary>
-        public class SchemasData : Dictionary<string, Jsonschema> {}
-
-        #endregion
-    }
-
-    public class Restmethod
-    {
-        /// <summary>Description of this method.</summary>
-        [JsonProperty("description")]
-        public virtual string Description { get; set; }
-
-        /// <summary>HTTP method used by this method.</summary>
-        [JsonProperty("httpMethod")]
-        public virtual string HttpMethod { get; set; }
-
-        /// <summary>A unique ID for this method.  This property can be used to match methods between different versions of Discovery.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        /// <summary>Media upload parameters.</summary>
-        [JsonProperty("mediaUpload")]
-        public virtual MediaUploadData MediaUpload { get; set; }
-
-        /// <summary>Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures.  The array is ordered such that the &quot;most-significant&quot; parameter appears first.</summary>
-        [JsonProperty("parameterOrder")]
-        public virtual IList<String> ParameterOrder { get; set; }
-
-        /// <summary>Details for all parameters in this method.</summary>
-        [JsonProperty("parameters")]
-        public virtual ParametersData Parameters { get; set; }
-
-        /// <summary>The URI path of this REST method.  Should be used in conjunction with the basePath property at the api-level.</summary>
-        [JsonProperty("path")]
-        public virtual string Path { get; set; }
-
-        /// <summary>The schema for the request.</summary>
-        [JsonProperty("request")]
-        public virtual RequestData Request { get; set; }
-
-        /// <summary>The schema for the response.</summary>
-        [JsonProperty("response")]
-        public virtual ResponseData Response { get; set; }
-
-        /// <summary>OAuth 2.0 scopes applicable to this method.</summary>
-        [JsonProperty("scopes")]
-        public virtual IList<String> Scopes { get; set; }
-
-        #region Nested type: MediaUploadData
-
-        /// <summary>Media upload parameters.</summary>
-        public class MediaUploadData
-        {
-            /// <summary>MIME Media Ranges for acceptable media uploads to this method.</summary>
-            [JsonProperty("accept")]
-            public virtual IList<String> Accept { get; set; }
-
-            /// <summary>Maximum size of a media upload, such as &quot;1MB&quot;, &quot;2GB&quot; or &quot;3TB&quot;.</summary>
-            [JsonProperty("maxSize")]
-            public virtual string MaxSize { get; set; }
-
-            /// <summary>Supported upload protocols.</summary>
-            [JsonProperty("protocols")]
-            public virtual ProtocolsData Protocols { get; set; }
-
-            #region Nested type: ProtocolsData
-
-            /// <summary>Supported upload protocols.</summary>
-            public class ProtocolsData
-            {
-                /// <summary>Supports the Resumable Media Upload protocol.</summary>
-                [JsonProperty("resumable")]
-                public virtual ResumableData Resumable { get; set; }
-
-                /// <summary>Supports uploading as a single HTTP request.</summary>
-                [JsonProperty("simple")]
-                public virtual SimpleData Simple { get; set; }
-
-                #region Nested type: ResumableData
-
-                /// <summary>Supports the Resumable Media Upload protocol.</summary>
-                public class ResumableData
-                {
-                    /// <summary>True if this endpoint supports uploading multipart media.</summary>
-                    [JsonProperty("multipart")]
-                    public virtual bool Multipart { get; set; }
-
-                    /// <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
-                    [JsonProperty("path")]
-                    public virtual string Path { get; set; }
-                }
-
-                #endregion
-
-                #region Nested type: SimpleData
-
-                /// <summary>Supports uploading as a single HTTP request.</summary>
-                public class SimpleData
-                {
-                    /// <summary>True if this endpoint supports upload multipart media.</summary>
-                    [JsonProperty("multipart")]
-                    public virtual bool Multipart { get; set; }
-
-                    /// <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
-                    [JsonProperty("path")]
-                    public virtual string Path { get; set; }
-                }
-
-                #endregion
+        [Newtonsoft.Json.JsonPropertyAttribute("icons")]
+        public virtual RestDescription.IconsData Icons {
+            get {
+                return this.icons;
             }
-
-            #endregion
+            set {
+                this.icons = value;
+            }
         }
-
-        #endregion
-
-        #region Nested type: ParametersData
-
-        /// <summary>Details for all parameters in this method.</summary>
-        public class ParametersData : Dictionary<string, Jsonschema> {}
-
-        #endregion
-
-        #region Nested type: RequestData
-
-        /// <summary>The schema for the request.</summary>
-        public class RequestData
-        {
-            /// <summary>Schema ID for the request schema.</summary>
-            [JsonProperty("$ref")]
-            public virtual string Ref { get; set; }
+        
+        /// <summary>The id of this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
         }
-
-        #endregion
-
-        #region Nested type: ResponseData
-
-        /// <summary>The schema for the response.</summary>
-        public class ResponseData
-        {
-            /// <summary>Schema ID for the response schema.</summary>
-            [JsonProperty("$ref")]
-            public virtual string Ref { get; set; }
+        
+        /// <summary>The kind for this response.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
         }
-
-        #endregion
+        
+        /// <summary>Labels for the status of this API, such as labs or deprecated.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("labels")]
+        public virtual IList<System.String> Labels {
+            get {
+                return this.labels;
+            }
+            set {
+                this.labels = value;
+            }
+        }
+        
+        /// <summary>API-level methods for this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("methods")]
+        public virtual RestDescription.MethodsData Methods {
+            get {
+                return this.methods;
+            }
+            set {
+                this.methods = value;
+            }
+        }
+        
+        /// <summary>The name of this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("name")]
+        public virtual string Name {
+            get {
+                return this.name;
+            }
+            set {
+                this.name = value;
+            }
+        }
+        
+        /// <summary>Common parameters that apply across all apis.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("parameters")]
+        public virtual RestDescription.ParametersData Parameters {
+            get {
+                return this.parameters;
+            }
+            set {
+                this.parameters = value;
+            }
+        }
+        
+        /// <summary>The protocol described by this document.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("protocol")]
+        public virtual string Protocol {
+            get {
+                return this.protocol;
+            }
+            set {
+                this.protocol = value;
+            }
+        }
+        
+        /// <summary>The resources in this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("resources")]
+        public virtual RestDescription.ResourcesData Resources {
+            get {
+                return this.resources;
+            }
+            set {
+                this.resources = value;
+            }
+        }
+        
+        /// <summary>The schemas for this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("schemas")]
+        public virtual RestDescription.SchemasData Schemas {
+            get {
+                return this.schemas;
+            }
+            set {
+                this.schemas = value;
+            }
+        }
+        
+        /// <summary>The title of this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        /// <summary>The version of this API.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("version")]
+        public virtual string Version {
+            get {
+                return this.version;
+            }
+            set {
+                this.version = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        /// <summary>Authentication information.</summary>
+        public class AuthData {
+            
+            private AuthData.Oauth2Data oauth2;
+            
+            /// <summary>OAuth 2.0 authentication information.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("oauth2")]
+            public virtual AuthData.Oauth2Data Oauth2 {
+                get {
+                    return this.oauth2;
+                }
+                set {
+                    this.oauth2 = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 authentication information.</summary>
+            public class Oauth2Data {
+                
+                private Oauth2Data.ScopesData scopes;
+                
+                /// <summary>Available OAuth 2.0 scopes.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("scopes")]
+                public virtual Oauth2Data.ScopesData Scopes {
+                    get {
+                        return this.scopes;
+                    }
+                    set {
+                        this.scopes = value;
+                    }
+                }
+                
+                /// <summary>Available OAuth 2.0 scopes.</summary>
+                public class ScopesData : System.Collections.Generic.Dictionary<string, ScopesData.ScopesDataSchema> {
+                    
+                    public class ScopesDataSchema {
+                        
+                        private string description;
+                        
+                        /// <summary>Description of scope.</summary>
+                        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+                        public virtual string Description {
+                            get {
+                                return this.description;
+                            }
+                            set {
+                                this.description = value;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        /// <summary>Links to 16x16 and 32x32 icons representing the API.</summary>
+        public class IconsData {
+            
+            private string x16;
+            
+            private string x32;
+            
+            /// <summary>The url of the 16x16 icon.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("x16")]
+            public virtual string X16 {
+                get {
+                    return this.x16;
+                }
+                set {
+                    this.x16 = value;
+                }
+            }
+            
+            /// <summary>The url of the 32x32 icon.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("x32")]
+            public virtual string X32 {
+                get {
+                    return this.x32;
+                }
+                set {
+                    this.x32 = value;
+                }
+            }
+        }
+        
+        /// <summary>API-level methods for this API.</summary>
+        public class MethodsData : System.Collections.Generic.Dictionary<string, Restmethod> {
+        }
+        
+        /// <summary>Common parameters that apply across all apis.</summary>
+        public class ParametersData : System.Collections.Generic.Dictionary<string, Jsonschema> {
+        }
+        
+        /// <summary>The resources in this API.</summary>
+        public class ResourcesData : System.Collections.Generic.Dictionary<string, Restresource> {
+        }
+        
+        /// <summary>The schemas for this API.</summary>
+        public class SchemasData : System.Collections.Generic.Dictionary<string, Jsonschema> {
+        }
     }
-
-    public class Restresource
-    {
+    
+    public class Restmethod {
+        
+        private string description;
+        
+        private string httpMethod;
+        
+        private string id;
+        
+        private Restmethod.MediaUploadData mediaUpload;
+        
+        private IList<System.String> parameterOrder;
+        
+        private Restmethod.ParametersData parameters;
+        
+        private string path;
+        
+        private Restmethod.RequestData request;
+        
+        private Restmethod.ResponseData response;
+        
+        private IList<System.String> scopes;
+        
+        /// <summary>Description of this method.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this.description;
+            }
+            set {
+                this.description = value;
+            }
+        }
+        
+        /// <summary>HTTP method used by this method.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("httpMethod")]
+        public virtual string HttpMethod {
+            get {
+                return this.httpMethod;
+            }
+            set {
+                this.httpMethod = value;
+            }
+        }
+        
+        /// <summary>A unique ID for this method.  This property can be used to match methods between different versions of Discovery.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        /// <summary>Media upload parameters.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("mediaUpload")]
+        public virtual Restmethod.MediaUploadData MediaUpload {
+            get {
+                return this.mediaUpload;
+            }
+            set {
+                this.mediaUpload = value;
+            }
+        }
+        
+        /// <summary>Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures.  The array is ordered such that the &quot;most-significant&quot; parameter appears first.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("parameterOrder")]
+        public virtual IList<System.String> ParameterOrder {
+            get {
+                return this.parameterOrder;
+            }
+            set {
+                this.parameterOrder = value;
+            }
+        }
+        
+        /// <summary>Details for all parameters in this method.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("parameters")]
+        public virtual Restmethod.ParametersData Parameters {
+            get {
+                return this.parameters;
+            }
+            set {
+                this.parameters = value;
+            }
+        }
+        
+        /// <summary>The URI path of this REST method.  Should be used in conjunction with the basePath property at the api-level.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("path")]
+        public virtual string Path {
+            get {
+                return this.path;
+            }
+            set {
+                this.path = value;
+            }
+        }
+        
+        /// <summary>The schema for the request.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("request")]
+        public virtual Restmethod.RequestData Request {
+            get {
+                return this.request;
+            }
+            set {
+                this.request = value;
+            }
+        }
+        
+        /// <summary>The schema for the response.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("response")]
+        public virtual Restmethod.ResponseData Response {
+            get {
+                return this.response;
+            }
+            set {
+                this.response = value;
+            }
+        }
+        
+        /// <summary>OAuth 2.0 scopes applicable to this method.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("scopes")]
+        public virtual IList<System.String> Scopes {
+            get {
+                return this.scopes;
+            }
+            set {
+                this.scopes = value;
+            }
+        }
+        
+        /// <summary>Media upload parameters.</summary>
+        public class MediaUploadData {
+            
+            private IList<System.String> accept;
+            
+            private string maxSize;
+            
+            private MediaUploadData.ProtocolsData protocols;
+            
+            /// <summary>MIME Media Ranges for acceptable media uploads to this method.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("accept")]
+            public virtual IList<System.String> Accept {
+                get {
+                    return this.accept;
+                }
+                set {
+                    this.accept = value;
+                }
+            }
+            
+            /// <summary>Maximum size of a media upload, such as &quot;1MB&quot;, &quot;2GB&quot; or &quot;3TB&quot;.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("maxSize")]
+            public virtual string MaxSize {
+                get {
+                    return this.maxSize;
+                }
+                set {
+                    this.maxSize = value;
+                }
+            }
+            
+            /// <summary>Supported upload protocols.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("protocols")]
+            public virtual MediaUploadData.ProtocolsData Protocols {
+                get {
+                    return this.protocols;
+                }
+                set {
+                    this.protocols = value;
+                }
+            }
+            
+            /// <summary>Supported upload protocols.</summary>
+            public class ProtocolsData {
+                
+                private ProtocolsData.ResumableData resumable;
+                
+                private ProtocolsData.SimpleData simple;
+                
+                /// <summary>Supports the Resumable Media Upload protocol.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("resumable")]
+                public virtual ProtocolsData.ResumableData Resumable {
+                    get {
+                        return this.resumable;
+                    }
+                    set {
+                        this.resumable = value;
+                    }
+                }
+                
+                /// <summary>Supports uploading as a single HTTP request.</summary>
+                [Newtonsoft.Json.JsonPropertyAttribute("simple")]
+                public virtual ProtocolsData.SimpleData Simple {
+                    get {
+                        return this.simple;
+                    }
+                    set {
+                        this.simple = value;
+                    }
+                }
+                
+                /// <summary>Supports the Resumable Media Upload protocol.</summary>
+                public class ResumableData {
+                    
+                    private bool multipart;
+                    
+                    private string path;
+                    
+                    /// <summary>True if this endpoint supports uploading multipart media.</summary>
+                    [Newtonsoft.Json.JsonPropertyAttribute("multipart")]
+                    public virtual bool Multipart {
+                        get {
+                            return this.multipart;
+                        }
+                        set {
+                            this.multipart = value;
+                        }
+                    }
+                    
+                    /// <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
+                    [Newtonsoft.Json.JsonPropertyAttribute("path")]
+                    public virtual string Path {
+                        get {
+                            return this.path;
+                        }
+                        set {
+                            this.path = value;
+                        }
+                    }
+                }
+                
+                /// <summary>Supports uploading as a single HTTP request.</summary>
+                public class SimpleData {
+                    
+                    private bool multipart;
+                    
+                    private string path;
+                    
+                    /// <summary>True if this endpoint supports upload multipart media.</summary>
+                    [Newtonsoft.Json.JsonPropertyAttribute("multipart")]
+                    public virtual bool Multipart {
+                        get {
+                            return this.multipart;
+                        }
+                        set {
+                            this.multipart = value;
+                        }
+                    }
+                    
+                    /// <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
+                    [Newtonsoft.Json.JsonPropertyAttribute("path")]
+                    public virtual string Path {
+                        get {
+                            return this.path;
+                        }
+                        set {
+                            this.path = value;
+                        }
+                    }
+                }
+            }
+        }
+        
+        /// <summary>Details for all parameters in this method.</summary>
+        public class ParametersData : System.Collections.Generic.Dictionary<string, Jsonschema> {
+        }
+        
+        /// <summary>The schema for the request.</summary>
+        public class RequestData {
+            
+            private string refValue;
+            
+            /// <summary>Schema ID for the request schema.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("$ref")]
+            public virtual string Ref {
+                get {
+                    return this.refValue;
+                }
+                set {
+                    this.refValue = value;
+                }
+            }
+        }
+        
+        /// <summary>The schema for the response.</summary>
+        public class ResponseData {
+            
+            private string refValue;
+            
+            /// <summary>Schema ID for the response schema.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("$ref")]
+            public virtual string Ref {
+                get {
+                    return this.refValue;
+                }
+                set {
+                    this.refValue = value;
+                }
+            }
+        }
+    }
+    
+    public class Restresource {
+        
+        private Restresource.MethodsData methods;
+        
+        private Restresource.ResourcesData resources;
+        
         /// <summary>Methods on this resource.</summary>
-        [JsonProperty("methods")]
-        public virtual MethodsData Methods { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("methods")]
+        public virtual Restresource.MethodsData Methods {
+            get {
+                return this.methods;
+            }
+            set {
+                this.methods = value;
+            }
+        }
+        
         /// <summary>Sub-resources on this resource.</summary>
-        [JsonProperty("resources")]
-        public virtual ResourcesData Resources { get; set; }
-
-        #region Nested type: MethodsData
-
+        [Newtonsoft.Json.JsonPropertyAttribute("resources")]
+        public virtual Restresource.ResourcesData Resources {
+            get {
+                return this.resources;
+            }
+            set {
+                this.resources = value;
+            }
+        }
+        
         /// <summary>Methods on this resource.</summary>
-        public class MethodsData : Dictionary<string, Restmethod> {}
-
-        #endregion
-
-        #region Nested type: ResourcesData
-
+        public class MethodsData : System.Collections.Generic.Dictionary<string, Restmethod> {
+        }
+        
         /// <summary>Sub-resources on this resource.</summary>
-        public class ResourcesData : Dictionary<string, Restresource> {}
-
-        #endregion
+        public class ResourcesData : System.Collections.Generic.Dictionary<string, Restresource> {
+        }
     }
 }
-
-namespace Google.Apis
-{
-    public class DiscoveryService : IRequestExecutor, ISchemaAwareRequestExecutor
-    {
+namespace Google.Apis.Discovery.v1 {
+    using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using Google.Apis;
+    using Google.Apis.Discovery;
+    
+    
+    public class DiscoveryService : Google.Apis.Discovery.IRequestProvider {
+        
+        private Google.Apis.Discovery.IService genericService;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
         private const string Version = "v1";
-
+        
         private const string Name = "discovery";
-
+        
         private const string BaseUri = "https://www.googleapis.com/discovery/v1/";
-
-        private const DiscoveryVersion DiscoveryVersionUsed = DiscoveryVersion.Version_1_0;
-
-        private readonly ApisResource apis;
-        private readonly IAuthenticator authenticator;
-        private readonly IService genericService;
-
-        public DiscoveryService(IService genericService, IAuthenticator authenticator)
-        {
+        
+        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        
+        private string developerKey;
+        
+        private ApisResource apis;
+        
+        public DiscoveryService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            apis = new ApisResource(this);
+            this.apis = new ApisResource(this);
         }
-
-        public DiscoveryService()
-            : this(
-                new Discovery.DiscoveryService(
-                    new CachedWebDiscoveryDevice(
-                        new Uri(
-                            string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", Name, Version))))
-                    .GetService(Version, DiscoveryVersionUsed, new FactoryParameterV1_0(new Uri(BaseUri))),
-                AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {}
-
+        
+        public DiscoveryService() : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", DiscoveryService.Name, DiscoveryService.Version)))).GetService(DiscoveryService.Version, DiscoveryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(DiscoveryService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+        }
+        
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
-        public virtual string DeveloperKey { get; set; }
-
-        public virtual ApisResource Apis
-        {
-            get { return apis; }
-        }
-
-        #region IRequestExecutor Members
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             string body,
-                                             IDictionary<string, object> parameters)
-        {
-            IRequest request = genericService.CreateRequest(resource, method);
-            if (string.IsNullOrEmpty(DeveloperKey) == false)
-            {
-                request = request.WithDeveloperKey(DeveloperKey);
+        public virtual string DeveloperKey {
+            get {
+                return this.developerKey;
             }
-            return
-                request.WithParameters(parameters).WithAuthentication(authenticator).WithBody(body).ExecuteRequest();
+            set {
+                this.developerKey = value;
+            }
         }
-
-        #endregion
-
-        #region ISchemaAwareRequestExecutor Members
-
-        public virtual string ObjectToJson(object obj)
-        {
-            return genericService.SerializeRequest(obj);
+        
+        public virtual ApisResource Apis {
+            get {
+                return this.apis;
+            }
         }
-
-        public virtual T JsonToObject<T>(Stream stream)
-        {
-            return genericService.DeserializeResponse<T>(stream);
+        
+        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
+            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            if (string.IsNullOrEmpty(DeveloperKey) == false) {
+                request = request.WithDeveloperKey(this.DeveloperKey);
+            }
+            return request.WithAuthentication(authenticator);
         }
-
-        #endregion
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             object body,
-                                             IDictionary<string, object> parameters)
-        {
-            return ExecuteRequest(resource, method, ObjectToJson(body), parameters);
-        }
-
-        public virtual void RegisterSerializer(ISerializer serializer)
-        {
+        
+        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
             genericService.Serializer = serializer;
         }
-    }
-
-    public class ApisResource
-    {
-        #region Label enum
-
-        /// <summary>Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Label
-        {
-            /// <summary>APIs that have been deprecated.</summary>
-            [StringValue("deprecated")] Deprecated,
-
-            /// <summary>Supported APIs that have graduated from labs.</summary>
-            [StringValue("graduated")] Graduated,
-
-            /// <summary>APIs that are experimental</summary>
-            [StringValue("labs")] Labs,
+        
+        public virtual string SerializeObject(object obj) {
+            return genericService.SerializeRequest(obj);
         }
-
-        #endregion
-
+        
+        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
+         {
+            return genericService.DeserializeResponse<T>(response);
+        }
+    }
+    
+    public class ApisResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "apis";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(ApisResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public ApisResource(DiscoveryService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(ApisResource));
+        
+        public ApisResource(DiscoveryService service) {
             this.service = service;
         }
-
+        
         /// <summary>Retrieve the description of a particular version of an api.</summary>
         /// <param name="api">Required - The name of the API.</param>
         /// <param name="version">Required - The version of the API.</param>
-        public virtual Stream GetRestAsStream(string api, string version)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["api"] = api;
-            parameters["version"] = version;
-            logger.Debug("Executing apis.getRest");
-            Stream ret = service.ExecuteRequest(Resource, "getRest", body, parameters);
-            logger.Debug("Done Executing apis.getRest");
-            return ret;
-        }
-
-        /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-        /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
-        /// <param name="name">Optional - Only include APIs with the given name.</param>
-        /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual Stream ListAsStream([Optional] Label? label,
-                                           [Optional] string name,
-                                           [Optional] Boolean? preferred)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["label"] = label;
-            parameters["name"] = name;
-            parameters["preferred"] = preferred;
-            logger.Debug("Executing apis.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing apis.list");
-            return ret;
-        }
-
-        /// <summary>Retrieve the description of a particular version of an api.</summary>
-        /// <param name="api">Required - The name of the API.</param>
-        /// <param name="version">Required - The version of the API.</param>
-        public virtual RestDescription GetRestAndExecute(string api, string version)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["api"] = api;
-            parameters["version"] = version;
-            logger.Debug("Executing apis.getRest");
-            RestDescription ret =
-                service.JsonToObject<RestDescription>(service.ExecuteRequest(Resource, "getRest", body, parameters));
-            logger.Debug("Done Executing apis.getRest");
-            return ret;
-        }
-
-        /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-        /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
-        /// <param name="name">Optional - Only include APIs with the given name.</param>
-        /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual DirectoryList ListAndExecute([Optional] Label? label,
-                                                    [Optional] string name,
-                                                    [Optional] Boolean? preferred)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["label"] = label;
-            parameters["name"] = name;
-            parameters["preferred"] = preferred;
-            logger.Debug("Executing apis.list");
-            DirectoryList ret =
-                service.JsonToObject<DirectoryList>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing apis.list");
-            return ret;
-        }
-
-        /// <summary>Retrieve the description of a particular version of an api.</summary>
-        /// <param name="api">Required - The name of the API.</param>
-        /// <param name="version">Required - The version of the API.</param>
-        public virtual GetRestRequest GetRest(string api, string version)
-        {
+        public virtual GetRestRequest GetRest(string api, string version) {
             return new GetRestRequest(service, api, version);
         }
-
+        
         /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-        public virtual ListRequest List()
-        {
+        public virtual ListRequest List() {
             return new ListRequest(service);
         }
-
+        
         /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
         /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
         /// <param name="name">Optional - Only include APIs with the given name.</param>
         /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual ListRequest List([Optional] Label? label, [Optional] string name, [Optional] Boolean? preferred)
-        {
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) {
             return new ListRequest(service, label, name, preferred);
         }
-
-        #region Nested type: GetRestRequest
-
-        public class GetRestRequest : ServiceRequest<RestDescription>
-        {
-            private readonly string api;
-
-            private readonly string version;
-
-            public GetRestRequest(ISchemaAwareRequestExecutor service, string api, string version) : base(service)
-            {
+        
+        /// <summary>Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Label {
+            
+            /// <summary>APIs that have been deprecated.</summary>
+            [Google.Apis.Util.StringValueAttribute("deprecated")]
+            Deprecated,
+            
+            /// <summary>Supported APIs that have graduated from labs.</summary>
+            [Google.Apis.Util.StringValueAttribute("graduated")]
+            Graduated,
+            
+            /// <summary>APIs that are experimental</summary>
+            [Google.Apis.Util.StringValueAttribute("labs")]
+            Labs,
+        }
+        
+        public class GetRestRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.RestDescription> {
+            
+            private string api;
+            
+            private string version;
+            
+            public GetRestRequest(Google.Apis.Discovery.IRequestProvider service, string api, string version) : 
+                    base(service) {
                 this.api = api;
                 this.version = version;
             }
-
+            
             /// <summary>The name of the API.</summary>
-            [RequestParameter("api")]
-            public virtual string Api
-            {
-                get { return api; }
+            [Google.Apis.Util.RequestParameterAttribute("api")]
+            public virtual string Api {
+                get {
+                    return this.api;
+                }
             }
-
+            
             /// <summary>The version of the API.</summary>
-            [RequestParameter("version")]
-            public virtual string Version
-            {
-                get { return version; }
+            [Google.Apis.Util.RequestParameterAttribute("version")]
+            public virtual string Version {
+                get {
+                    return this.version;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "apis"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "apis";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "getRest"; }
+            
+            protected override string MethodName {
+                get {
+                    return "getRest";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<DirectoryList>
-        {
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.DirectoryList> {
+            
             private Label? label;
-
+            
             private string name;
-
-            private Boolean? preferred;
-
-            public ListRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               [Optional] Label? label,
-                               [Optional] string name,
-                               [Optional] Boolean? preferred) : base(service)
-            {
+            
+            private System.Boolean? preferred;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) : 
+                    base(service) {
                 this.label = label;
                 this.name = name;
                 this.preferred = preferred;
             }
-
+            
             /// <summary>Only include APIs with a matching label, such as 'graduated' or 'labs'.</summary>
-            [RequestParameter("label")]
-            public virtual Label? Label
-            {
-                get { return label; }
-                set { label = value; }
+            [Google.Apis.Util.RequestParameterAttribute("label")]
+            public virtual Label? Label {
+                get {
+                    return this.label;
+                }
+                set {
+                    this.label = value;
+                }
             }
-
+            
             /// <summary>Only include APIs with the given name.</summary>
-            [RequestParameter("name")]
-            public virtual string Name
-            {
-                get { return name; }
-                set { name = value; }
+            [Google.Apis.Util.RequestParameterAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
             }
-
+            
             /// <summary>Return only the preferred version of an API.</summary>
-            [RequestParameter("preferred")]
-            public virtual Boolean? Preferred
-            {
-                get { return preferred; }
-                set { preferred = value; }
+            [Google.Apis.Util.RequestParameterAttribute("preferred")]
+            public virtual System.Boolean? Preferred {
+                get {
+                    return this.preferred;
+                }
+                set {
+                    this.preferred = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "apis"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "apis";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
     }
 }

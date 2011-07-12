@@ -59,7 +59,9 @@ namespace Google.Apis.Samples.Helper
         /// <summary>
         /// Returns a cached refresh token for this application, or null if unavailable.
         /// </summary>
-        public static AuthorizationState GetCachedRefreshToken(string storageName, string key, params string[] requiredScopes)
+        public static AuthorizationState GetCachedRefreshToken(string storageName,
+                                                               string key,
+                                                               params string[] requiredScopes)
         {
             string file = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), storageName + ".auth");
@@ -78,7 +80,7 @@ namespace Google.Apis.Samples.Helper
                 using (CryptoStream cryptoStream = new CryptoStream(fs, des.CreateDecryptor(), CryptoStreamMode.Read))
                 {
                     var reader = new StreamReader(cryptoStream);
-                    string[] scopes = reader.ReadLine().Split(' ');
+                    string[] scopes = reader.ReadLine().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                     string refreshToken = reader.ReadLine();
 
                     if (scopes.Intersect(requiredScopes).Count() != requiredScopes.Length)

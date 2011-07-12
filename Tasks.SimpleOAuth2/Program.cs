@@ -20,10 +20,11 @@ using DotNetOpenAuth.OAuth2;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Data;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Tasks.v1;
+using Google.Apis.Tasks.v1.Data;
 
-namespace Google.Apis.Samples.CmdTasksAPI2
+namespace Google.Apis.Samples.TasksOAuth2
 {
     /// <summary>
     /// This sample demonstrates the simplest use case for an OAuth2 service. 
@@ -71,7 +72,7 @@ namespace Google.Apis.Samples.CmdTasksAPI2
             string authCode = Console.ReadLine();
             Console.WriteLine();
 
-            // Retrieve the access token by using the authorization code:);
+            // Retrieve the access token by using the authorization code:
             return arg.ProcessUserAuthorization(authCode, state);
         }
     }

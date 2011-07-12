@@ -17,12 +17,12 @@ limitations under the License.
 using System;
 using System.Linq;
 using DotNetOpenAuth.OAuth2;
-using Google.Apis;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Data;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Tasks.v1;
+using Google.Apis.Tasks.v1.Data;
 using Google.Apis.Util;
 
 namespace TasksSample.CreateTasks
@@ -108,8 +108,8 @@ namespace TasksSample.CreateTasks
             list.Title = SampleListName;
             list = service.Tasklists.Insert(list).Fetch();
 
-            service.Tasks.Insert(new Task { Title = "Test the Tasklist API" }, list.Id);
-            service.Tasks.Insert(new Task { Title = "Do the laundry" }, list.Id);
+            service.Tasks.Insert(new Task { Title = "Test the Tasklist API" }, list.Id).Fetch();
+            service.Tasks.Insert(new Task { Title = "Do the laundry" }, list.Id).Fetch();
         }
 
         private static void ListTaskLists(TasksService service)

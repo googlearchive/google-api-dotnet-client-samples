@@ -18,7 +18,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Google.Apis.Data;
+using Google.Apis.Tasks.v1.Data;
 
 namespace TasksExample.WinForms.NoteMgr
 {

@@ -16,6 +16,8 @@ limitations under the License.
 
 using Google.Apis.Authentication;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Urlshortener.v1;
+using Google.Apis.Urlshortener.v1.Data;
 
 namespace Google.Apis.Samples.CmdUrlShortener
 {
@@ -56,7 +58,7 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.WriteLine();
 
             // Resolve URL
-            Data.Url response = service.Url.Get(urlToResolve, (string) null);
+            Url response = service.Url.Get(urlToResolve, null).Fetch();
 
             // Display response
             CommandLine.WriteLine(" ^1Status:   ^9{0}", response.Status);
@@ -71,7 +73,7 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.WriteLine();
 
             // Shorten URL
-            Data.Url response = service.Url.Insert(new Data.Url { LongUrl = urlToShorten });
+            Url response = service.Url.Insert(new Url { LongUrl = urlToShorten }).Fetch();
 
             // Display response
             CommandLine.WriteLine(" ^1Short URL: ^9{0}", response.Id);

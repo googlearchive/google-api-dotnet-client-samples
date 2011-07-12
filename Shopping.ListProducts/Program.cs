@@ -15,9 +15,9 @@ limitations under the License.
 */
 
 using System;
-using Google.Apis;
-using Google.Apis.Data;
 using Google.Apis.Samples.Helper;
+using Google.Apis.Shopping.v1;
+using Google.Apis.Shopping.v1.Data;
 
 namespace Shopping.ListProducts
 {

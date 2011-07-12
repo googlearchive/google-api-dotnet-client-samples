@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 using System;
-using Google.Apis;
+using Google.Apis.Pagespeedonline.v1;
 using Google.Apis.Samples.Helper;
 
 namespace PageSpeedOnline.SimpleTest

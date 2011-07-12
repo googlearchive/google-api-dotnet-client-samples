@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Google.Apis.Data;
+using Google.Apis.Tasks.v1.Data;
 
 namespace TasksExample.WinForms.NoteMgr
 {

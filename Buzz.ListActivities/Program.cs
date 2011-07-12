@@ -20,7 +20,8 @@ using Google.Apis;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
-using Google.Apis.Data;
+using Google.Apis.Buzz.v1;
+using Google.Apis.Buzz.v1.Data;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 
@@ -86,7 +87,7 @@ namespace Buzz.ListActivities
         {
             // Execute the request.
             CommandLine.WriteAction("Fetching activities ...");
-            var response = service.Activities.List(ActivitiesResource.ScopeEnum.Consumption, "@me").Fetch();
+            var response = service.Activities.List("@me", ActivitiesResource.ScopeEnum.Consumption).Fetch();
             CommandLine.WriteLine();
 
             if (response.Items == null)

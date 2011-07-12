@@ -8,523 +8,667 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Runtime.InteropServices;
-using Google.Apis.Authentication;
-using Google.Apis.Data;
-using Google.Apis.Discovery;
-using Google.Apis.Requests;
-using Google.Apis.Util;
-using log4net;
-using Newtonsoft.Json;
-
-namespace Google.Apis.Data
-{
-    public class AnalyticsSnapshot
-    {
+namespace Google.Apis.Urlshortener.v1.Data {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    
+    
+    public class AnalyticsSnapshot {
+        
+        private IList<StringCount> browsers;
+        
+        private IList<StringCount> countries;
+        
+        private string longUrlClicks;
+        
+        private IList<StringCount> platforms;
+        
+        private IList<StringCount> referrers;
+        
+        private string shortUrlClicks;
+        
         /// <summary>Top browsers, e.g. &quot;Chrome&quot;; sorted by (descending) click counts. Only present if this data is available.</summary>
-        [JsonProperty("browsers")]
-        public virtual IList<StringCount> Browsers { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("browsers")]
+        public virtual IList<StringCount> Browsers {
+            get {
+                return this.browsers;
+            }
+            set {
+                this.browsers = value;
+            }
+        }
+        
         /// <summary>Top countries (expressed as country codes), e.g. &quot;US&quot; or &quot;DE&quot;; sorted by (descending) click counts. Only present if this data is available.</summary>
-        [JsonProperty("countries")]
-        public virtual IList<StringCount> Countries { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("countries")]
+        public virtual IList<StringCount> Countries {
+            get {
+                return this.countries;
+            }
+            set {
+                this.countries = value;
+            }
+        }
+        
         /// <summary>Number of clicks on all goo.gl short URLs pointing to this long URL.</summary>
-        [JsonProperty("longUrlClicks")]
-        public virtual string LongUrlClicks { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("longUrlClicks")]
+        public virtual string LongUrlClicks {
+            get {
+                return this.longUrlClicks;
+            }
+            set {
+                this.longUrlClicks = value;
+            }
+        }
+        
         /// <summary>Top platforms or OSes, e.g. &quot;Windows&quot;; sorted by (descending) click counts. Only present if this data is available.</summary>
-        [JsonProperty("platforms")]
-        public virtual IList<StringCount> Platforms { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("platforms")]
+        public virtual IList<StringCount> Platforms {
+            get {
+                return this.platforms;
+            }
+            set {
+                this.platforms = value;
+            }
+        }
+        
         /// <summary>Top referring hosts, e.g. &quot;www.google.com&quot;; sorted by (descending) click counts. Only present if this data is available.</summary>
-        [JsonProperty("referrers")]
-        public virtual IList<StringCount> Referrers { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("referrers")]
+        public virtual IList<StringCount> Referrers {
+            get {
+                return this.referrers;
+            }
+            set {
+                this.referrers = value;
+            }
+        }
+        
         /// <summary>Number of clicks on this short URL.</summary>
-        [JsonProperty("shortUrlClicks")]
-        public virtual string ShortUrlClicks { get; set; }
+        [Newtonsoft.Json.JsonPropertyAttribute("shortUrlClicks")]
+        public virtual string ShortUrlClicks {
+            get {
+                return this.shortUrlClicks;
+            }
+            set {
+                this.shortUrlClicks = value;
+            }
+        }
     }
-
-    public class AnalyticsSummary
-    {
-        [JsonProperty("allTime")]
-        public virtual AnalyticsSnapshot AllTime { get; set; }
-
-        [JsonProperty("day")]
-        public virtual AnalyticsSnapshot Day { get; set; }
-
-        [JsonProperty("month")]
-        public virtual AnalyticsSnapshot Month { get; set; }
-
-        [JsonProperty("twoHours")]
-        public virtual AnalyticsSnapshot TwoHours { get; set; }
-
-        [JsonProperty("week")]
-        public virtual AnalyticsSnapshot Week { get; set; }
+    
+    public class AnalyticsSummary {
+        
+        private AnalyticsSnapshot allTime;
+        
+        private AnalyticsSnapshot day;
+        
+        private AnalyticsSnapshot month;
+        
+        private AnalyticsSnapshot twoHours;
+        
+        private AnalyticsSnapshot week;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("allTime")]
+        public virtual AnalyticsSnapshot AllTime {
+            get {
+                return this.allTime;
+            }
+            set {
+                this.allTime = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("day")]
+        public virtual AnalyticsSnapshot Day {
+            get {
+                return this.day;
+            }
+            set {
+                this.day = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("month")]
+        public virtual AnalyticsSnapshot Month {
+            get {
+                return this.month;
+            }
+            set {
+                this.month = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("twoHours")]
+        public virtual AnalyticsSnapshot TwoHours {
+            get {
+                return this.twoHours;
+            }
+            set {
+                this.twoHours = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("week")]
+        public virtual AnalyticsSnapshot Week {
+            get {
+                return this.week;
+            }
+            set {
+                this.week = value;
+            }
+        }
     }
-
-    public class StringCount
-    {
+    
+    public class StringCount {
+        
+        private string count;
+        
+        private string id;
+        
         /// <summary>Number of clicks for this top entry, e.g. for this particular country or browser.</summary>
-        [JsonProperty("count")]
-        public virtual string Count { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("count")]
+        public virtual string Count {
+            get {
+                return this.count;
+            }
+            set {
+                this.count = value;
+            }
+        }
+        
         /// <summary>Label assigned to this top entry, e.g. &quot;US&quot; or &quot;Chrome&quot;.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
     }
-
-    public class Url : IResponse
-    {
-        [JsonProperty("analytics")]
-        public virtual AnalyticsSummary Analytics { get; set; }
-
+    
+    public class Url : Google.Apis.Requests.ISchemaResponse {
+        
+        private AnalyticsSummary analytics;
+        
+        private string created;
+        
+        private string id;
+        
+        private string kind;
+        
+        private string longUrl;
+        
+        private string status;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("analytics")]
+        public virtual AnalyticsSummary Analytics {
+            get {
+                return this.analytics;
+            }
+            set {
+                this.analytics = value;
+            }
+        }
+        
         /// <summary>Time the short URL was created; ISO 8601 representation using the yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSSZZ format, e.g. &quot;2010-10-14T19:01:24.944+00:00&quot;.</summary>
-        [JsonProperty("created")]
-        public virtual string Created { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("created")]
+        public virtual string Created {
+            get {
+                return this.created;
+            }
+            set {
+                this.created = value;
+            }
+        }
+        
         /// <summary>Short URL, e.g. &quot;http://goo.gl/l6MS&quot;.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
         /// <summary>The fixed string &quot;urlshortener#url&quot;.</summary>
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
         /// <summary>Long URL, e.g. &quot;http://www.google.com/&quot;. Might not be present if the status is &quot;REMOVED&quot;.</summary>
-        [JsonProperty("longUrl")]
-        public virtual string LongUrl { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("longUrl")]
+        public virtual string LongUrl {
+            get {
+                return this.longUrl;
+            }
+            set {
+                this.longUrl = value;
+            }
+        }
+        
         /// <summary>Status of the target URL. Possible values: &quot;OK&quot;, &quot;MALWARE&quot;, &quot;PHISHING&quot;, or &quot;REMOVED&quot;. A URL might be marked &quot;REMOVED&quot; if it was flagged as spam, for example.</summary>
-        [JsonProperty("status")]
-        public virtual string Status { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual string Status {
+            get {
+                return this.status;
+            }
+            set {
+                this.status = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
     }
-
-    public class UrlHistory : IResponse
-    {
+    
+    public class UrlHistory : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<Url> items;
+        
+        private long itemsPerPage;
+        
+        private string kind;
+        
+        private string nextPageToken;
+        
+        private long totalItems;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
         /// <summary>A list of URL resources.</summary>
-        [JsonProperty("items")]
-        public virtual IList<Url> Items { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Url> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
         /// <summary>Number of items returned with each full &quot;page&quot; of results. Note that the last page could have fewer items than the &quot;itemsPerPage&quot; value.</summary>
-        [JsonProperty("itemsPerPage")]
-        public virtual long ItemsPerPage { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
+        public virtual long ItemsPerPage {
+            get {
+                return this.itemsPerPage;
+            }
+            set {
+                this.itemsPerPage = value;
+            }
+        }
+        
         /// <summary>The fixed string &quot;urlshortener#urlHistory&quot;.</summary>
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
         /// <summary>A token to provide to get the next page of results.</summary>
-        [JsonProperty("nextPageToken")]
-        public virtual string NextPageToken { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this.nextPageToken;
+            }
+            set {
+                this.nextPageToken = value;
+            }
+        }
+        
         /// <summary>Total number of short URLs associated with this user (may be approximate).</summary>
-        [JsonProperty("totalItems")]
-        public virtual long TotalItems { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
+        [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
+        public virtual long TotalItems {
+            get {
+                return this.totalItems;
+            }
+            set {
+                this.totalItems = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
     }
 }
-
-namespace Google.Apis
-{
-    public class UrlshortenerService : IRequestExecutor, ISchemaAwareRequestExecutor
-    {
-        #region Scopes enum
-
-        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
-        public enum Scopes
-        {
-            /// <summary>Manage your goo.gl short URLs</summary>
-            [StringValue("https://www.googleapis.com/auth/urlshortener")] Urlshortener,
-        }
-
-        #endregion
-
+namespace Google.Apis.Urlshortener.v1 {
+    using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using Google.Apis;
+    using Google.Apis.Discovery;
+    
+    
+    public class UrlshortenerService : Google.Apis.Discovery.IRequestProvider {
+        
+        private Google.Apis.Discovery.IService genericService;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
         private const string Version = "v1";
-
+        
         private const string Name = "urlshortener";
-
+        
         private const string BaseUri = "https://www.googleapis.com/urlshortener/v1/";
-
-        private const DiscoveryVersion DiscoveryVersionUsed = DiscoveryVersion.Version_1_0;
-        private readonly IAuthenticator authenticator;
-        private readonly IService genericService;
-
-        private readonly UrlResource url;
-
-        public UrlshortenerService(IService genericService, IAuthenticator authenticator)
-        {
+        
+        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        
+        private string developerKey;
+        
+        private UrlResource url;
+        
+        public UrlshortenerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            url = new UrlResource(this);
+            this.url = new UrlResource(this);
         }
-
-        public UrlshortenerService()
-            : this(
-                new DiscoveryService(
-                    new CachedWebDiscoveryDevice(
-                        new Uri(
-                            string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", Name, Version))))
-                    .GetService(Version, DiscoveryVersionUsed, new FactoryParameterV1_0(new Uri(BaseUri))),
-                AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {}
-
+        
+        public UrlshortenerService() : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", UrlshortenerService.Name, UrlshortenerService.Version)))).GetService(UrlshortenerService.Version, UrlshortenerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(UrlshortenerService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+        }
+        
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
-        public virtual string DeveloperKey { get; set; }
-
-        public virtual UrlResource Url
-        {
-            get { return url; }
-        }
-
-        #region IRequestExecutor Members
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             string body,
-                                             IDictionary<string, object> parameters)
-        {
-            IRequest request = genericService.CreateRequest(resource, method);
-            if (string.IsNullOrEmpty(DeveloperKey) == false)
-            {
-                request = request.WithDeveloperKey(DeveloperKey);
+        public virtual string DeveloperKey {
+            get {
+                return this.developerKey;
             }
-            return
-                request.WithParameters(parameters).WithAuthentication(authenticator).WithBody(body).ExecuteRequest();
+            set {
+                this.developerKey = value;
+            }
         }
-
-        #endregion
-
-        #region ISchemaAwareRequestExecutor Members
-
-        public virtual string ObjectToJson(object obj)
-        {
-            return genericService.SerializeRequest(obj);
+        
+        public virtual UrlResource Url {
+            get {
+                return this.url;
+            }
         }
-
-        public virtual T JsonToObject<T>(Stream stream)
-        {
-            return genericService.DeserializeResponse<T>(stream);
+        
+        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
+            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            if (string.IsNullOrEmpty(DeveloperKey) == false) {
+                request = request.WithDeveloperKey(this.DeveloperKey);
+            }
+            return request.WithAuthentication(authenticator);
         }
-
-        #endregion
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             object body,
-                                             IDictionary<string, object> parameters)
-        {
-            return ExecuteRequest(resource, method, ObjectToJson(body), parameters);
-        }
-
-        public virtual void RegisterSerializer(ISerializer serializer)
-        {
+        
+        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
             genericService.Serializer = serializer;
         }
+        
+        public virtual string SerializeObject(object obj) {
+            return genericService.SerializeRequest(obj);
+        }
+        
+        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
+         {
+            return genericService.DeserializeResponse<T>(response);
+        }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your goo.gl short URLs</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/urlshortener")]
+            Urlshortener,
+        }
     }
-
-    public class UrlResource
-    {
-        #region Projection enum
-
-        /// <summary>Additional information to return.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Projection
-        {
-            /// <summary>Returns only click counts.</summary>
-            [StringValue("ANALYTICS_CLICKS")] ANALYTICS_CLICKS,
-
-            /// <summary>Returns only top string counts.</summary>
-            [StringValue("ANALYTICS_TOP_STRINGS")] ANALYTICS_TOP_STRINGS,
-
-            /// <summary>Returns the creation timestamp and all available analytics.</summary>
-            [StringValue("FULL")] FULL,
-        }
-
-        #endregion
-
-        #region ProjectionEnum enum
-
-        /// <summary>Additional information to return.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum ProjectionEnum
-        {
-            /// <summary>Returns short URL click counts.</summary>
-            [StringValue("ANALYTICS_CLICKS")] ANALYTICS_CLICKS,
-
-            /// <summary>Returns short URL click counts.</summary>
-            [StringValue("FULL")] FULL,
-        }
-
-        #endregion
-
+    
+    public class UrlResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "url";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(UrlResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public UrlResource(UrlshortenerService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(UrlResource));
+        
+        public UrlResource(UrlshortenerService service) {
             this.service = service;
         }
-
+        
         /// <summary>Expands a short URL or gets creation time and analytics.</summary>
         /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual Stream GetAsStream(string shortUrl, [Optional] Projection? projection)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["shortUrl"] = shortUrl;
-            parameters["projection"] = projection;
-            logger.Debug("Executing url.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing url.get");
-            return ret;
-        }
-
-        /// <summary>Creates a new short URL.</summary>
-        public virtual Stream InsertAsStream(string body)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            logger.Debug("Executing url.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing url.insert");
-            return ret;
-        }
-
-        /// <summary>Retrieves a list of URLs shortened by a user.</summary>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
-        /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual Stream ListAsStream([Optional] ProjectionEnum? projection, [Optional] string startToken)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["projection"] = projection;
-            parameters["start-token"] = startToken;
-            logger.Debug("Executing url.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing url.list");
-            return ret;
-        }
-
-        /// <summary>Expands a short URL or gets creation time and analytics.</summary>
-        /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual Url GetAndExecute(string shortUrl, [Optional] Projection? projection)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["shortUrl"] = shortUrl;
-            parameters["projection"] = projection;
-            logger.Debug("Executing url.get");
-            Url ret = service.JsonToObject<Url>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing url.get");
-            return ret;
-        }
-
-        /// <summary>Creates a new short URL.</summary>
-        public virtual Url InsertAndExecute(Url body)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            logger.Debug("Executing url.insert");
-            Url ret =
-                service.JsonToObject<Url>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing url.insert");
-            return ret;
-        }
-
-        /// <summary>Retrieves a list of URLs shortened by a user.</summary>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
-        /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual UrlHistory ListAndExecute([Optional] ProjectionEnum? projection, [Optional] string startToken)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["projection"] = projection;
-            parameters["start-token"] = startToken;
-            logger.Debug("Executing url.list");
-            UrlHistory ret =
-                service.JsonToObject<UrlHistory>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing url.list");
-            return ret;
-        }
-
-        /// <summary>Expands a short URL or gets creation time and analytics.</summary>
-        /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
-        public virtual GetRequest Get(string shortUrl)
-        {
+        public virtual GetRequest Get(string shortUrl) {
             return new GetRequest(service, shortUrl);
         }
-
+        
         /// <summary>Expands a short URL or gets creation time and analytics.</summary>
         /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
         /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual GetRequest Get(string shortUrl, [Optional] Projection? projection)
-        {
+        public virtual GetRequest Get(string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) {
             return new GetRequest(service, shortUrl, projection);
         }
-
+        
         /// <summary>Creates a new short URL.</summary>
-        public virtual InsertRequest Insert(Url body)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Urlshortener.v1.Data.Url body) {
             return new InsertRequest(service, body);
         }
-
+        
         /// <summary>Retrieves a list of URLs shortened by a user.</summary>
-        public virtual ListRequest List()
-        {
+        public virtual ListRequest List() {
             return new ListRequest(service);
         }
-
+        
         /// <summary>Retrieves a list of URLs shortened by a user.</summary>
         /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
         /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual ListRequest List([Optional] ProjectionEnum? projection, [Optional] string startToken)
-        {
+        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) {
             return new ListRequest(service, projection, startToken);
         }
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Url>
-        {
-            private readonly string shortUrl;
+        
+        /// <summary>Additional information to return.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Projection {
+            
+            /// <summary>Returns only click counts.</summary>
+            [Google.Apis.Util.StringValueAttribute("ANALYTICS_CLICKS")]
+            ANALYTICS_CLICKS,
+            
+            /// <summary>Returns only top string counts.</summary>
+            [Google.Apis.Util.StringValueAttribute("ANALYTICS_TOP_STRINGS")]
+            ANALYTICS_TOP_STRINGS,
+            
+            /// <summary>Returns the creation timestamp and all available analytics.</summary>
+            [Google.Apis.Util.StringValueAttribute("FULL")]
+            FULL,
+        }
+        
+        /// <summary>Additional information to return.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ProjectionEnum {
+            
+            /// <summary>Returns short URL click counts.</summary>
+            [Google.Apis.Util.StringValueAttribute("ANALYTICS_CLICKS")]
+            ANALYTICS_CLICKS,
+            
+            /// <summary>Returns short URL click counts.</summary>
+            [Google.Apis.Util.StringValueAttribute("FULL")]
+            FULL,
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
+            
             private Projection? projection;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string shortUrl) : base(service)
-            {
+            
+            private string shortUrl;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shortUrl) : 
+                    base(service) {
                 this.shortUrl = shortUrl;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string shortUrl, [Optional] Projection? projection)
-                : base(service)
-            {
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) : 
+                    base(service) {
                 this.shortUrl = shortUrl;
                 this.projection = projection;
             }
-
+            
             /// <summary>Additional information to return.</summary>
-            [RequestParameter("projection")]
-            public virtual Projection? Projection
-            {
-                get { return projection; }
-                set { projection = value; }
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual Projection? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
             }
-
+            
             /// <summary>The short URL, including the protocol.</summary>
-            [RequestParameter("shortUrl")]
-            public virtual string ShortUrl
-            {
-                get { return shortUrl; }
+            [Google.Apis.Util.RequestParameterAttribute("shortUrl")]
+            public virtual string ShortUrl {
+                get {
+                    return this.shortUrl;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "url"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<Url>
-        {
-            public InsertRequest(ISchemaAwareRequestExecutor service, Url body) : base(service)
-            {
-                Body = body;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
+            
+            private Google.Apis.Urlshortener.v1.Data.Url bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Urlshortener.v1.Data.Url body) : 
+                    base(service) {
+                this.Body = body;
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Url Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "url"; }
+            public virtual Google.Apis.Urlshortener.v1.Data.Url Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<UrlHistory>
-        {
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.UrlHistory> {
+            
             private ProjectionEnum? projection;
-
+            
             private string startToken;
-
-            public ListRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               [Optional] ProjectionEnum? projection,
-                               [Optional] string startToken) : base(service)
-            {
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) : 
+                    base(service) {
                 this.projection = projection;
                 this.startToken = startToken;
             }
-
+            
             /// <summary>Additional information to return.</summary>
-            [RequestParameter("projection")]
-            public virtual ProjectionEnum? Projection
-            {
-                get { return projection; }
-                set { projection = value; }
+            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            public virtual ProjectionEnum? Projection {
+                get {
+                    return this.projection;
+                }
+                set {
+                    this.projection = value;
+                }
             }
-
+            
             /// <summary>Token for requesting successive pages of results.</summary>
-            [RequestParameter("start-token")]
-            public virtual string StartToken
-            {
-                get { return startToken; }
-                set { startToken = value; }
+            [Google.Apis.Util.RequestParameterAttribute("start-token")]
+            public virtual string StartToken {
+                get {
+                    return this.startToken;
+                }
+                set {
+                    this.startToken = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "url"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "url";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
     }
 }

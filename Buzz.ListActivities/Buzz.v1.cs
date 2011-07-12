@@ -8,2398 +8,4655 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Runtime.InteropServices;
-using Google.Apis.Authentication;
-using Google.Apis.Data;
-using Google.Apis.Discovery;
-using Google.Apis.Requests;
-using Google.Apis.Util;
-using log4net;
-using Newtonsoft.Json;
-
-namespace Google.Apis.Data
-{
-    public class Activity : IResponse
-    {
-        [JsonProperty("actor")]
-        public virtual ActorData Actor { get; set; }
-
-        [JsonProperty("address")]
-        public virtual string Address { get; set; }
-
-        [JsonProperty("annotation")]
-        public virtual string Annotation { get; set; }
-
-        [JsonProperty("categories")]
-        public virtual IList<CategoriesData> Categories { get; set; }
-
-        [JsonProperty("crosspostSource")]
-        public virtual string CrosspostSource { get; set; }
-
-        [JsonProperty("detectedlLang")]
-        public virtual string DetectedlLang { get; set; }
-
-        [JsonProperty("geocode")]
-        public virtual string Geocode { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("object")]
-        public virtual ObjectData Object { get; set; }
-
-        [JsonProperty("placeId")]
-        public virtual string PlaceId { get; set; }
-
-        [JsonProperty("placeName")]
-        public virtual string PlaceName { get; set; }
-
-        [JsonProperty("placeholder")]
-        public virtual string Placeholder { get; set; }
-
-        [JsonProperty("published")]
-        public virtual string Published { get; set; }
-
-        [JsonProperty("radius")]
-        public virtual string Radius { get; set; }
-
-        [JsonProperty("source")]
-        public virtual SourceData Source { get; set; }
-
-        [JsonProperty("targetLang")]
-        public virtual string TargetLang { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("untranslatedTitle")]
-        public virtual string UntranslatedTitle { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        [JsonProperty("verbs")]
-        public virtual IList<String> Verbs { get; set; }
-
-        [JsonProperty("visibility")]
-        public virtual VisibilityData Visibility { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: ActorData
-
-        public class ActorData
-        {
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
-            [JsonProperty("profileUrl")]
-            public virtual string ProfileUrl { get; set; }
-
-            [JsonProperty("thumbnailUrl")]
-            public virtual string ThumbnailUrl { get; set; }
+namespace Google.Apis.Buzz.v1.Data {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    
+    
+    public class Activity : Google.Apis.Requests.ISchemaResponse {
+        
+        private Activity.ActorData actor;
+        
+        private string address;
+        
+        private string annotation;
+        
+        private IList<Activity.CategoriesData> categories;
+        
+        private string crosspostSource;
+        
+        private string detectedlLang;
+        
+        private string geocode;
+        
+        private string id;
+        
+        private string kind;
+        
+        private Activity.LinksData links;
+        
+        private Activity.ObjectData objectValue;
+        
+        private string placeId;
+        
+        private string placeName;
+        
+        private string placeholder;
+        
+        private string published;
+        
+        private string radius;
+        
+        private Activity.SourceData source;
+        
+        private string targetLang;
+        
+        private string title;
+        
+        private string untranslatedTitle;
+        
+        private string updated;
+        
+        private IList<System.String> verbs;
+        
+        private Activity.VisibilityData visibility;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("actor")]
+        public virtual Activity.ActorData Actor {
+            get {
+                return this.actor;
+            }
+            set {
+                this.actor = value;
+            }
         }
-
-        #endregion
-
-        #region Nested type: CategoriesData
-
-        public class CategoriesData
-        {
-            [JsonProperty("label")]
-            public virtual string Label { get; set; }
-
-            [JsonProperty("schema")]
-            public virtual string Schema { get; set; }
-
-            [JsonProperty("term")]
-            public virtual string Term { get; set; }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("address")]
+        public virtual string Address {
+            get {
+                return this.address;
+            }
+            set {
+                this.address = value;
+            }
         }
-
-        #endregion
-
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("annotation")]
+        public virtual string Annotation {
+            get {
+                return this.annotation;
+            }
+            set {
+                this.annotation = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("categories")]
+        public virtual IList<Activity.CategoriesData> Categories {
+            get {
+                return this.categories;
+            }
+            set {
+                this.categories = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("crosspostSource")]
+        public virtual string CrosspostSource {
+            get {
+                return this.crosspostSource;
+            }
+            set {
+                this.crosspostSource = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("detectedlLang")]
+        public virtual string DetectedlLang {
+            get {
+                return this.detectedlLang;
+            }
+            set {
+                this.detectedlLang = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("geocode")]
+        public virtual string Geocode {
+            get {
+                return this.geocode;
+            }
+            set {
+                this.geocode = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual Activity.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("object")]
+        public virtual Activity.ObjectData Object {
+            get {
+                return this.objectValue;
+            }
+            set {
+                this.objectValue = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("placeId")]
+        public virtual string PlaceId {
+            get {
+                return this.placeId;
+            }
+            set {
+                this.placeId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("placeName")]
+        public virtual string PlaceName {
+            get {
+                return this.placeName;
+            }
+            set {
+                this.placeName = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("placeholder")]
+        public virtual string Placeholder {
+            get {
+                return this.placeholder;
+            }
+            set {
+                this.placeholder = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("published")]
+        public virtual string Published {
+            get {
+                return this.published;
+            }
+            set {
+                this.published = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("radius")]
+        public virtual string Radius {
+            get {
+                return this.radius;
+            }
+            set {
+                this.radius = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("source")]
+        public virtual Activity.SourceData Source {
+            get {
+                return this.source;
+            }
+            set {
+                this.source = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("targetLang")]
+        public virtual string TargetLang {
+            get {
+                return this.targetLang;
+            }
+            set {
+                this.targetLang = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("untranslatedTitle")]
+        public virtual string UntranslatedTitle {
+            get {
+                return this.untranslatedTitle;
+            }
+            set {
+                this.untranslatedTitle = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("verbs")]
+        public virtual IList<System.String> Verbs {
+            get {
+                return this.verbs;
+            }
+            set {
+                this.verbs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("visibility")]
+        public virtual Activity.VisibilityData Visibility {
+            get {
+                return this.visibility;
+            }
+            set {
+                this.visibility = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class ActorData {
+            
+            private string id;
+            
+            private string name;
+            
+            private string profileUrl;
+            
+            private string thumbnailUrl;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+            public virtual string ProfileUrl {
+                get {
+                    return this.profileUrl;
+                }
+                set {
+                    this.profileUrl = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+            public virtual string ThumbnailUrl {
+                get {
+                    return this.thumbnailUrl;
+                }
+                set {
+                    this.thumbnailUrl = value;
+                }
+            }
+        }
+        
+        public class CategoriesData {
+            
+            private string label;
+            
+            private string schema;
+            
+            private string term;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("label")]
+            public virtual string Label {
+                get {
+                    return this.label;
+                }
+                set {
+                    this.label = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("schema")]
+            public virtual string Schema {
+                get {
+                    return this.schema;
+                }
+                set {
+                    this.schema = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("term")]
+            public virtual string Term {
+                get {
+                    return this.term;
+                }
+                set {
+                    this.term = value;
+                }
+            }
+        }
+        
         // TODO: Add support for additionalProperties on schemas
         //       which have normal properties defined.
-
-        #region Nested type: LinksData
-
-        public class LinksData
-        {
-            [JsonProperty("liked")]
-            public virtual IList<LikedData> Liked { get; set; }
-
-            #region Nested type: LikedData
-
-            public class LikedData
-            {
-                [JsonProperty("count")]
-                public virtual long Count { get; set; }
-
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
+        public class LinksData {
+            
+            private IList<LinksData.LikedData> liked;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("liked")]
+            public virtual IList<LinksData.LikedData> Liked {
+                get {
+                    return this.liked;
+                }
+                set {
+                    this.liked = value;
+                }
             }
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Nested type: ObjectData
-
-        public class ObjectData
-        {
-            [JsonProperty("actor")]
-            public virtual ActorData Actor { get; set; }
-
-            [JsonProperty("attachments")]
-            public virtual IList<AttachmentsData> Attachments { get; set; }
-
-            [JsonProperty("comments")]
-            public virtual IList<Comment> Comments { get; set; }
-
-            [JsonProperty("content")]
-            public virtual string Content { get; set; }
-
-            [JsonProperty("detectedlLang")]
-            public virtual string DetectedlLang { get; set; }
-
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("liked")]
-            public virtual IList<Person> Liked { get; set; }
-
-            [JsonProperty("links")]
-            public virtual LinksData Links { get; set; }
-
-            [JsonProperty("originalContent")]
-            public virtual string OriginalContent { get; set; }
-
-            [JsonProperty("shareOriginal")]
-            public virtual Activity ShareOriginal { get; set; }
-
-            [JsonProperty("targetLang")]
-            public virtual string TargetLang { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("untranslatedContent")]
-            public virtual string UntranslatedContent { get; set; }
-
-            #region Nested type: ActorData
-
-            public class ActorData
-            {
-                [JsonProperty("id")]
-                public virtual string Id { get; set; }
-
-                [JsonProperty("name")]
-                public virtual string Name { get; set; }
-
-                [JsonProperty("profileUrl")]
-                public virtual string ProfileUrl { get; set; }
-
-                [JsonProperty("thumbnailUrl")]
-                public virtual string ThumbnailUrl { get; set; }
-            }
-
-            #endregion
-
-            #region Nested type: AttachmentsData
-
-            public class AttachmentsData
-            {
-                [JsonProperty("content")]
-                public virtual string Content { get; set; }
-
-                [JsonProperty("id")]
-                public virtual string Id { get; set; }
-
-                [JsonProperty("links")]
-                public virtual LinksData Links { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
-
-                #region Nested type: LinksData
-
-                public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-                {
-                    #region Nested type: LinksDataSchema
-
-                    public class LinksDataSchema
-                    {
-                        [JsonProperty("count")]
-                        public virtual string Count { get; set; }
-
-                        [JsonProperty("height")]
-                        public virtual string Height { get; set; }
-
-                        [JsonProperty("href")]
-                        public virtual string Href { get; set; }
-
-                        [JsonProperty("title")]
-                        public virtual string Title { get; set; }
-
-                        [JsonProperty("type")]
-                        public virtual string Type { get; set; }
-
-                        [JsonProperty("updated")]
-                        public virtual string Updated { get; set; }
-
-                        [JsonProperty("width")]
-                        public virtual string Width { get; set; }
+            
+            public class LikedData {
+                
+                private long count;
+                
+                private string href;
+                
+                private string type;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual long Count {
+                    get {
+                        return this.count;
                     }
-
-                    #endregion
+                    set {
+                        this.count = value;
+                    }
                 }
-
-                #endregion
-            }
-
-            #endregion
-
-            #region Nested type: LinksData
-
-            public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-            {
-                #region Nested type: LinksDataSchema
-
-                public class LinksDataSchema
-                {
-                    [JsonProperty("href")]
-                    public virtual string Href { get; set; }
-
-                    [JsonProperty("type")]
-                    public virtual string Type { get; set; }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
                 }
-
-                #endregion
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
             }
-
-            #endregion
         }
-
-        #endregion
-
-        #region Nested type: SourceData
-
-        public class SourceData
-        {
-            [JsonProperty("title")]
-            public virtual string Title { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: VisibilityData
-
-        public class VisibilityData
-        {
-            [JsonProperty("entries")]
-            public virtual IList<EntriesData> Entries { get; set; }
-
-            #region Nested type: EntriesData
-
-            public class EntriesData
-            {
-                [JsonProperty("id")]
-                public virtual string Id { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
+        
+        public class ObjectData {
+            
+            private ObjectData.ActorData actor;
+            
+            private IList<ObjectData.AttachmentsData> attachments;
+            
+            private IList<Comment> comments;
+            
+            private string content;
+            
+            private string detectedlLang;
+            
+            private string id;
+            
+            private IList<Person> liked;
+            
+            private ObjectData.LinksData links;
+            
+            private string originalContent;
+            
+            private Activity shareOriginal;
+            
+            private string targetLang;
+            
+            private string type;
+            
+            private string untranslatedContent;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("actor")]
+            public virtual ObjectData.ActorData Actor {
+                get {
+                    return this.actor;
+                }
+                set {
+                    this.actor = value;
+                }
             }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class ActivityFeed : IResponse
-    {
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("items")]
-        public virtual IList<Activity> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-        {
-            #region Nested type: LinksDataSchema
-
-            public class LinksDataSchema
-            {
-                [JsonProperty("count")]
-                public virtual string Count { get; set; }
-
-                [JsonProperty("height")]
-                public virtual string Height { get; set; }
-
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
-
-                [JsonProperty("updated")]
-                public virtual string Updated { get; set; }
-
-                [JsonProperty("width")]
-                public virtual string Width { get; set; }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("attachments")]
+            public virtual IList<ObjectData.AttachmentsData> Attachments {
+                get {
+                    return this.attachments;
+                }
+                set {
+                    this.attachments = value;
+                }
             }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class Album : IResponse
-    {
-        [JsonProperty("created")]
-        public virtual string Created { get; set; }
-
-        [JsonProperty("description")]
-        public virtual string Description { get; set; }
-
-        [JsonProperty("firstPhotoId")]
-        public virtual string FirstPhotoId { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("lastModified")]
-        public virtual string LastModified { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("owner")]
-        public virtual OwnerData Owner { get; set; }
-
-        [JsonProperty("tags")]
-        public virtual IList<String> Tags { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("version")]
-        public virtual string Version { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData
-        {
-            [JsonProperty("alternate")]
-            public virtual Link Alternate { get; set; }
-
-            [JsonProperty("enclosure")]
-            public virtual Link Enclosure { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: OwnerData
-
-        public class OwnerData
-        {
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
-            [JsonProperty("profileUrl")]
-            public virtual string ProfileUrl { get; set; }
-
-            [JsonProperty("thumbnailUrl")]
-            public virtual string ThumbnailUrl { get; set; }
-        }
-
-        #endregion
-    }
-
-    public class AlbumLite : IResponse
-    {
-        [JsonProperty("collection")]
-        public virtual CollectionData Collection { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: CollectionData
-
-        public class CollectionData
-        {
-            [JsonProperty("album")]
-            public virtual string Album { get; set; }
-
-            [JsonProperty("albumId")]
-            public virtual string AlbumId { get; set; }
-
-            [JsonProperty("photo")]
-            public virtual PhotoData Photo { get; set; }
-
-            #region Nested type: PhotoData
-
-            public class PhotoData
-            {
-                [JsonProperty("photoUrl")]
-                public virtual string PhotoUrl { get; set; }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("comments")]
+            public virtual IList<Comment> Comments {
+                get {
+                    return this.comments;
+                }
+                set {
+                    this.comments = value;
+                }
             }
-
-            #endregion
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("content")]
+            public virtual string Content {
+                get {
+                    return this.content;
+                }
+                set {
+                    this.content = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("detectedlLang")]
+            public virtual string DetectedlLang {
+                get {
+                    return this.detectedlLang;
+                }
+                set {
+                    this.detectedlLang = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("liked")]
+            public virtual IList<Person> Liked {
+                get {
+                    return this.liked;
+                }
+                set {
+                    this.liked = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("links")]
+            public virtual ObjectData.LinksData Links {
+                get {
+                    return this.links;
+                }
+                set {
+                    this.links = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("originalContent")]
+            public virtual string OriginalContent {
+                get {
+                    return this.originalContent;
+                }
+                set {
+                    this.originalContent = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("shareOriginal")]
+            public virtual Activity ShareOriginal {
+                get {
+                    return this.shareOriginal;
+                }
+                set {
+                    this.shareOriginal = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("targetLang")]
+            public virtual string TargetLang {
+                get {
+                    return this.targetLang;
+                }
+                set {
+                    this.targetLang = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("untranslatedContent")]
+            public virtual string UntranslatedContent {
+                get {
+                    return this.untranslatedContent;
+                }
+                set {
+                    this.untranslatedContent = value;
+                }
+            }
+            
+            public class ActorData {
+                
+                private string id;
+                
+                private string name;
+                
+                private string profileUrl;
+                
+                private string thumbnailUrl;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("id")]
+                public virtual string Id {
+                    get {
+                        return this.id;
+                    }
+                    set {
+                        this.id = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("name")]
+                public virtual string Name {
+                    get {
+                        return this.name;
+                    }
+                    set {
+                        this.name = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+                public virtual string ProfileUrl {
+                    get {
+                        return this.profileUrl;
+                    }
+                    set {
+                        this.profileUrl = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+                public virtual string ThumbnailUrl {
+                    get {
+                        return this.thumbnailUrl;
+                    }
+                    set {
+                        this.thumbnailUrl = value;
+                    }
+                }
+            }
+            
+            public class AttachmentsData {
+                
+                private string content;
+                
+                private string id;
+                
+                private AttachmentsData.LinksData links;
+                
+                private string title;
+                
+                private string type;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("content")]
+                public virtual string Content {
+                    get {
+                        return this.content;
+                    }
+                    set {
+                        this.content = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("id")]
+                public virtual string Id {
+                    get {
+                        return this.id;
+                    }
+                    set {
+                        this.id = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("links")]
+                public virtual AttachmentsData.LinksData Links {
+                    get {
+                        return this.links;
+                    }
+                    set {
+                        this.links = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+                
+                public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+                    
+                    public class LinksDataSchema {
+                        
+                        private string count;
+                        
+                        private string height;
+                        
+                        private string href;
+                        
+                        private string title;
+                        
+                        private string type;
+                        
+                        private string updated;
+                        
+                        private string width;
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                        public virtual string Count {
+                            get {
+                                return this.count;
+                            }
+                            set {
+                                this.count = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("height")]
+                        public virtual string Height {
+                            get {
+                                return this.height;
+                            }
+                            set {
+                                this.height = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                        public virtual string Href {
+                            get {
+                                return this.href;
+                            }
+                            set {
+                                this.href = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                        public virtual string Title {
+                            get {
+                                return this.title;
+                            }
+                            set {
+                                this.title = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                        public virtual string Type {
+                            get {
+                                return this.type;
+                            }
+                            set {
+                                this.type = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+                        public virtual string Updated {
+                            get {
+                                return this.updated;
+                            }
+                            set {
+                                this.updated = value;
+                            }
+                        }
+                        
+                        [Newtonsoft.Json.JsonPropertyAttribute("width")]
+                        public virtual string Width {
+                            get {
+                                return this.width;
+                            }
+                            set {
+                                this.width = value;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+                
+                public class LinksDataSchema {
+                    
+                    private string href;
+                    
+                    private string type;
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                    public virtual string Href {
+                        get {
+                            return this.href;
+                        }
+                        set {
+                            this.href = value;
+                        }
+                    }
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                    public virtual string Type {
+                        get {
+                            return this.type;
+                        }
+                        set {
+                            this.type = value;
+                        }
+                    }
+                }
+            }
         }
-
-        #endregion
-    }
-
-    public class AlbumsFeed : IResponse
-    {
-        [JsonProperty("items")]
-        public virtual IList<Album> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-    }
-
-    public class ChiliPhotosResourceJson : IResponse
-    {
-        [JsonProperty("album")]
-        public virtual AlbumData Album { get; set; }
-
-        [JsonProperty("created")]
-        public virtual string Created { get; set; }
-
-        [JsonProperty("description")]
-        public virtual string Description { get; set; }
-
-        [JsonProperty("fileSize")]
-        public virtual string FileSize { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("lastModified")]
-        public virtual string LastModified { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("owner")]
-        public virtual OwnerData Owner { get; set; }
-
-        [JsonProperty("timestamp")]
-        public virtual double Timestamp { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("version")]
-        public virtual string Version { get; set; }
-
-        [JsonProperty("video")]
-        public virtual Video Video { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: AlbumData
-
-        public class AlbumData
-        {
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("page_link")]
-            public virtual Link Page_link { get; set; }
+        
+        public class SourceData {
+            
+            private string title;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("title")]
+            public virtual string Title {
+                get {
+                    return this.title;
+                }
+                set {
+                    this.title = value;
+                }
+            }
         }
-
-        #endregion
-
+        
+        public class VisibilityData {
+            
+            private IList<VisibilityData.EntriesData> entries;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("entries")]
+            public virtual IList<VisibilityData.EntriesData> Entries {
+                get {
+                    return this.entries;
+                }
+                set {
+                    this.entries = value;
+                }
+            }
+            
+            public class EntriesData {
+                
+                private string id;
+                
+                private string title;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("id")]
+                public virtual string Id {
+                    get {
+                        return this.id;
+                    }
+                    set {
+                        this.id = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class ActivityFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private string id;
+        
+        private IList<Activity> items;
+        
+        private string kind;
+        
+        private ActivityFeed.LinksData links;
+        
+        private string title;
+        
+        private string updated;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Activity> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual ActivityFeed.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+            
+            public class LinksDataSchema {
+                
+                private string count;
+                
+                private string height;
+                
+                private string href;
+                
+                private string title;
+                
+                private string type;
+                
+                private string updated;
+                
+                private string width;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual string Count {
+                    get {
+                        return this.count;
+                    }
+                    set {
+                        this.count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("height")]
+                public virtual string Height {
+                    get {
+                        return this.height;
+                    }
+                    set {
+                        this.height = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+                public virtual string Updated {
+                    get {
+                        return this.updated;
+                    }
+                    set {
+                        this.updated = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("width")]
+                public virtual string Width {
+                    get {
+                        return this.width;
+                    }
+                    set {
+                        this.width = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class Album : Google.Apis.Requests.ISchemaResponse {
+        
+        private string created;
+        
+        private string description;
+        
+        private string firstPhotoId;
+        
+        private string id;
+        
+        private string kind;
+        
+        private string lastModified;
+        
+        private Album.LinksData links;
+        
+        private Album.OwnerData owner;
+        
+        private IList<System.String> tags;
+        
+        private string title;
+        
+        private string version;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("created")]
+        public virtual string Created {
+            get {
+                return this.created;
+            }
+            set {
+                this.created = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this.description;
+            }
+            set {
+                this.description = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("firstPhotoId")]
+        public virtual string FirstPhotoId {
+            get {
+                return this.firstPhotoId;
+            }
+            set {
+                this.firstPhotoId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lastModified")]
+        public virtual string LastModified {
+            get {
+                return this.lastModified;
+            }
+            set {
+                this.lastModified = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual Album.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("owner")]
+        public virtual Album.OwnerData Owner {
+            get {
+                return this.owner;
+            }
+            set {
+                this.owner = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("tags")]
+        public virtual IList<System.String> Tags {
+            get {
+                return this.tags;
+            }
+            set {
+                this.tags = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("version")]
+        public virtual string Version {
+            get {
+                return this.version;
+            }
+            set {
+                this.version = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData {
+            
+            private Link alternate;
+            
+            private Link enclosure;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("alternate")]
+            public virtual Link Alternate {
+                get {
+                    return this.alternate;
+                }
+                set {
+                    this.alternate = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("enclosure")]
+            public virtual Link Enclosure {
+                get {
+                    return this.enclosure;
+                }
+                set {
+                    this.enclosure = value;
+                }
+            }
+        }
+        
+        public class OwnerData {
+            
+            private string id;
+            
+            private string name;
+            
+            private string profileUrl;
+            
+            private string thumbnailUrl;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+            public virtual string ProfileUrl {
+                get {
+                    return this.profileUrl;
+                }
+                set {
+                    this.profileUrl = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+            public virtual string ThumbnailUrl {
+                get {
+                    return this.thumbnailUrl;
+                }
+                set {
+                    this.thumbnailUrl = value;
+                }
+            }
+        }
+    }
+    
+    public class AlbumLite : Google.Apis.Requests.ISchemaResponse {
+        
+        private AlbumLite.CollectionData collection;
+        
+        private string kind;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("collection")]
+        public virtual AlbumLite.CollectionData Collection {
+            get {
+                return this.collection;
+            }
+            set {
+                this.collection = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class CollectionData {
+            
+            private string album;
+            
+            private string albumId;
+            
+            private CollectionData.PhotoData photo;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("album")]
+            public virtual string Album {
+                get {
+                    return this.album;
+                }
+                set {
+                    this.album = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+                set {
+                    this.albumId = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("photo")]
+            public virtual CollectionData.PhotoData Photo {
+                get {
+                    return this.photo;
+                }
+                set {
+                    this.photo = value;
+                }
+            }
+            
+            public class PhotoData {
+                
+                private string photoUrl;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("photoUrl")]
+                public virtual string PhotoUrl {
+                    get {
+                        return this.photoUrl;
+                    }
+                    set {
+                        this.photoUrl = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class AlbumsFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<Album> items;
+        
+        private string kind;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Album> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+    }
+    
+    public class ChiliPhotosResourceJson : Google.Apis.Requests.ISchemaResponse {
+        
+        private ChiliPhotosResourceJson.AlbumData album;
+        
+        private string created;
+        
+        private string description;
+        
+        private string fileSize;
+        
+        private string id;
+        
+        private string kind;
+        
+        private string lastModified;
+        
+        private ChiliPhotosResourceJson.LinksData links;
+        
+        private ChiliPhotosResourceJson.OwnerData owner;
+        
+        private double timestamp;
+        
+        private string title;
+        
+        private string version;
+        
+        private Video video;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("album")]
+        public virtual ChiliPhotosResourceJson.AlbumData Album {
+            get {
+                return this.album;
+            }
+            set {
+                this.album = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("created")]
+        public virtual string Created {
+            get {
+                return this.created;
+            }
+            set {
+                this.created = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("description")]
+        public virtual string Description {
+            get {
+                return this.description;
+            }
+            set {
+                this.description = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("fileSize")]
+        public virtual string FileSize {
+            get {
+                return this.fileSize;
+            }
+            set {
+                this.fileSize = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lastModified")]
+        public virtual string LastModified {
+            get {
+                return this.lastModified;
+            }
+            set {
+                this.lastModified = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual ChiliPhotosResourceJson.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("owner")]
+        public virtual ChiliPhotosResourceJson.OwnerData Owner {
+            get {
+                return this.owner;
+            }
+            set {
+                this.owner = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("timestamp")]
+        public virtual double Timestamp {
+            get {
+                return this.timestamp;
+            }
+            set {
+                this.timestamp = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("version")]
+        public virtual string Version {
+            get {
+                return this.version;
+            }
+            set {
+                this.version = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("video")]
+        public virtual Video Video {
+            get {
+                return this.video;
+            }
+            set {
+                this.video = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class AlbumData {
+            
+            private string id;
+            
+            private Link page_link;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("page_link")]
+            public virtual Link Page_link {
+                get {
+                    return this.page_link;
+                }
+                set {
+                    this.page_link = value;
+                }
+            }
+        }
+        
         // TODO: Add support for additionalProperties on schemas
         //       which have normal properties defined.
-
-        #region Nested type: LinksData
-
-        public class LinksData
-        {
-            [JsonProperty("alternate")]
-            public virtual IList<Link> Alternate { get; set; }
+        public class LinksData {
+            
+            private IList<Link> alternate;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("alternate")]
+            public virtual IList<Link> Alternate {
+                get {
+                    return this.alternate;
+                }
+                set {
+                    this.alternate = value;
+                }
+            }
         }
-
-        #endregion
-
-        #region Nested type: OwnerData
-
-        public class OwnerData
-        {
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
-            [JsonProperty("profileUrl")]
-            public virtual string ProfileUrl { get; set; }
-
-            [JsonProperty("thumbnailUrl")]
-            public virtual string ThumbnailUrl { get; set; }
+        
+        public class OwnerData {
+            
+            private string id;
+            
+            private string name;
+            
+            private string profileUrl;
+            
+            private string thumbnailUrl;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+            public virtual string ProfileUrl {
+                get {
+                    return this.profileUrl;
+                }
+                set {
+                    this.profileUrl = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+            public virtual string ThumbnailUrl {
+                get {
+                    return this.thumbnailUrl;
+                }
+                set {
+                    this.thumbnailUrl = value;
+                }
+            }
         }
-
-        #endregion
     }
-
-    public class Comment : IResponse
-    {
-        [JsonProperty("actor")]
-        public virtual ActorData Actor { get; set; }
-
-        [JsonProperty("content")]
-        public virtual string Content { get; set; }
-
-        [JsonProperty("detectedLang")]
-        public virtual string DetectedLang { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("originalContent")]
-        public virtual string OriginalContent { get; set; }
-
-        [JsonProperty("placeholder")]
-        public virtual string Placeholder { get; set; }
-
-        [JsonProperty("published")]
-        public virtual string Published { get; set; }
-
-        [JsonProperty("targetLang")]
-        public virtual string TargetLang { get; set; }
-
-        [JsonProperty("untranslatedContent")]
-        public virtual string UntranslatedContent { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: ActorData
-
-        public class ActorData
-        {
-            [JsonProperty("id")]
-            public virtual string Id { get; set; }
-
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
-            [JsonProperty("profileUrl")]
-            public virtual string ProfileUrl { get; set; }
-
-            [JsonProperty("thumbnailUrl")]
-            public virtual string ThumbnailUrl { get; set; }
+    
+    public class Comment : Google.Apis.Requests.ISchemaResponse {
+        
+        private Comment.ActorData actor;
+        
+        private string content;
+        
+        private string detectedLang;
+        
+        private string id;
+        
+        private string kind;
+        
+        private Comment.LinksData links;
+        
+        private string originalContent;
+        
+        private string placeholder;
+        
+        private string published;
+        
+        private string targetLang;
+        
+        private string untranslatedContent;
+        
+        private string updated;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("actor")]
+        public virtual Comment.ActorData Actor {
+            get {
+                return this.actor;
+            }
+            set {
+                this.actor = value;
+            }
         }
-
-        #endregion
-
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("content")]
+        public virtual string Content {
+            get {
+                return this.content;
+            }
+            set {
+                this.content = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("detectedLang")]
+        public virtual string DetectedLang {
+            get {
+                return this.detectedLang;
+            }
+            set {
+                this.detectedLang = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual Comment.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("originalContent")]
+        public virtual string OriginalContent {
+            get {
+                return this.originalContent;
+            }
+            set {
+                this.originalContent = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("placeholder")]
+        public virtual string Placeholder {
+            get {
+                return this.placeholder;
+            }
+            set {
+                this.placeholder = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("published")]
+        public virtual string Published {
+            get {
+                return this.published;
+            }
+            set {
+                this.published = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("targetLang")]
+        public virtual string TargetLang {
+            get {
+                return this.targetLang;
+            }
+            set {
+                this.targetLang = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("untranslatedContent")]
+        public virtual string UntranslatedContent {
+            get {
+                return this.untranslatedContent;
+            }
+            set {
+                this.untranslatedContent = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class ActorData {
+            
+            private string id;
+            
+            private string name;
+            
+            private string profileUrl;
+            
+            private string thumbnailUrl;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+            public virtual string ProfileUrl {
+                get {
+                    return this.profileUrl;
+                }
+                set {
+                    this.profileUrl = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+            public virtual string ThumbnailUrl {
+                get {
+                    return this.thumbnailUrl;
+                }
+                set {
+                    this.thumbnailUrl = value;
+                }
+            }
+        }
+        
         // TODO: Add support for additionalProperties on schemas
         //       which have normal properties defined.
-
-        #region Nested type: LinksData
-
-        public class LinksData
-        {
-            [JsonProperty("inReplyTo")]
-            public virtual IList<InReplyToData> InReplyTo { get; set; }
-
-            #region Nested type: InReplyToData
-
-            public class InReplyToData
-            {
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("ref")]
-                public virtual string Ref { get; set; }
-
-                [JsonProperty("source")]
-                public virtual string Source { get; set; }
+        public class LinksData {
+            
+            private IList<LinksData.InReplyToData> inReplyTo;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("inReplyTo")]
+            public virtual IList<LinksData.InReplyToData> InReplyTo {
+                get {
+                    return this.inReplyTo;
+                }
+                set {
+                    this.inReplyTo = value;
+                }
             }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class CommentFeed : IResponse
-    {
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("items")]
-        public virtual IList<Comment> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-        {
-            #region Nested type: LinksDataSchema
-
-            public class LinksDataSchema
-            {
-                [JsonProperty("count")]
-                public virtual string Count { get; set; }
-
-                [JsonProperty("height")]
-                public virtual string Height { get; set; }
-
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
-
-                [JsonProperty("updated")]
-                public virtual string Updated { get; set; }
-
-                [JsonProperty("width")]
-                public virtual string Width { get; set; }
+            
+            public class InReplyToData {
+                
+                private string href;
+                
+                private string refValue;
+                
+                private string source;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("ref")]
+                public virtual string Ref {
+                    get {
+                        return this.refValue;
+                    }
+                    set {
+                        this.refValue = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this.source;
+                    }
+                    set {
+                        this.source = value;
+                    }
+                }
             }
-
-            #endregion
         }
-
-        #endregion
     }
-
-    public class CountFeed : IResponse
-    {
-        [JsonProperty("counts")]
-        public virtual CountsData Counts { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: CountsData
-
-        public class CountsData : Dictionary<string, IList<CountsData.CountsDataSchema>>
-        {
-            #region Nested type: CountsDataSchema
-
-            public class CountsDataSchema
-            {
-                [JsonProperty("count")]
-                public virtual string Count { get; set; }
-
-                [JsonProperty("timestamp")]
-                public virtual string Timestamp { get; set; }
+    
+    public class CommentFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private string id;
+        
+        private IList<Comment> items;
+        
+        private string kind;
+        
+        private CommentFeed.LinksData links;
+        
+        private string title;
+        
+        private string updated;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
             }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class Group : IResponse
-    {
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("memberCount")]
-        public virtual string MemberCount { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData
-        {
-            [JsonProperty("self")]
-            public virtual IList<SelfData> Self { get; set; }
-
-            #region Nested type: SelfData
-
-            public class SelfData
-            {
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
+            set {
+                this.id = value;
             }
-
-            #endregion
         }
-
-        #endregion
-    }
-
-    public class GroupFeed : IResponse
-    {
-        [JsonProperty("items")]
-        public virtual IList<Group> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-        {
-            #region Nested type: LinksDataSchema
-
-            public class LinksDataSchema
-            {
-                [JsonProperty("count")]
-                public virtual string Count { get; set; }
-
-                [JsonProperty("height")]
-                public virtual string Height { get; set; }
-
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
-
-                [JsonProperty("updated")]
-                public virtual string Updated { get; set; }
-
-                [JsonProperty("width")]
-                public virtual string Width { get; set; }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Comment> Items {
+            get {
+                return this.items;
             }
-
-            #endregion
-        }
-
-        #endregion
-    }
-
-    public class Link
-    {
-        [JsonProperty("count")]
-        public virtual long Count { get; set; }
-
-        [JsonProperty("height")]
-        public virtual long Height { get; set; }
-
-        [JsonProperty("href")]
-        public virtual string Href { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("type")]
-        public virtual string Type { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        [JsonProperty("width")]
-        public virtual long Width { get; set; }
-    }
-
-    public class PeopleFeed : IResponse
-    {
-        [JsonProperty("entry")]
-        public virtual IList<Person> Entry { get; set; }
-
-        [JsonProperty("itemsPerPage")]
-        public virtual string ItemsPerPage { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("startIndex")]
-        public virtual string StartIndex { get; set; }
-
-        [JsonProperty("totalResults")]
-        public virtual string TotalResults { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-    }
-
-    public class Person : IResponse
-    {
-        [JsonProperty("aboutMe")]
-        public virtual string AboutMe { get; set; }
-
-        [JsonProperty("accounts")]
-        public virtual IList<AccountsData> Accounts { get; set; }
-
-        [JsonProperty("activities")]
-        public virtual IList<String> Activities { get; set; }
-
-        [JsonProperty("addresses")]
-        public virtual IList<AddressesData> Addresses { get; set; }
-
-        [JsonProperty("anniversary")]
-        public virtual string Anniversary { get; set; }
-
-        [JsonProperty("birthday")]
-        public virtual string Birthday { get; set; }
-
-        [JsonProperty("bodyType")]
-        public virtual string BodyType { get; set; }
-
-        [JsonProperty("books")]
-        public virtual IList<String> Books { get; set; }
-
-        [JsonProperty("cars")]
-        public virtual IList<String> Cars { get; set; }
-
-        [JsonProperty("children")]
-        public virtual IList<String> Children { get; set; }
-
-        [JsonProperty("connected")]
-        public virtual string Connected { get; set; }
-
-        [JsonProperty("currentLocation")]
-        public virtual string CurrentLocation { get; set; }
-
-        [JsonProperty("displayName")]
-        public virtual string DisplayName { get; set; }
-
-        [JsonProperty("drinker")]
-        public virtual string Drinker { get; set; }
-
-        [JsonProperty("emails")]
-        public virtual IList<EmailsData> Emails { get; set; }
-
-        [JsonProperty("ethnicity")]
-        public virtual string Ethnicity { get; set; }
-
-        [JsonProperty("fashion")]
-        public virtual string Fashion { get; set; }
-
-        [JsonProperty("food")]
-        public virtual IList<String> Food { get; set; }
-
-        [JsonProperty("gender")]
-        public virtual string Gender { get; set; }
-
-        [JsonProperty("happiestWhen")]
-        public virtual string HappiestWhen { get; set; }
-
-        [JsonProperty("hasApp")]
-        public virtual string HasApp { get; set; }
-
-        [JsonProperty("heroes")]
-        public virtual IList<String> Heroes { get; set; }
-
-        [JsonProperty("humor")]
-        public virtual string Humor { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("ims")]
-        public virtual IList<ImsData> Ims { get; set; }
-
-        [JsonProperty("interests")]
-        public virtual IList<String> Interests { get; set; }
-
-        [JsonProperty("jobInterests")]
-        public virtual IList<String> JobInterests { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("languages")]
-        public virtual IList<String> Languages { get; set; }
-
-        [JsonProperty("languagesSpoken")]
-        public virtual IList<String> LanguagesSpoken { get; set; }
-
-        [JsonProperty("livingArrangement")]
-        public virtual string LivingArrangement { get; set; }
-
-        [JsonProperty("lookingFor")]
-        public virtual string LookingFor { get; set; }
-
-        [JsonProperty("movies")]
-        public virtual IList<String> Movies { get; set; }
-
-        [JsonProperty("music")]
-        public virtual IList<String> Music { get; set; }
-
-        [JsonProperty("name")]
-        public virtual NameData Name { get; set; }
-
-        [JsonProperty("nickname")]
-        public virtual string Nickname { get; set; }
-
-        [JsonProperty("note")]
-        public virtual string Note { get; set; }
-
-        [JsonProperty("organizations")]
-        public virtual IList<OrganizationsData> Organizations { get; set; }
-
-        [JsonProperty("pets")]
-        public virtual IList<String> Pets { get; set; }
-
-        [JsonProperty("phoneNumbers")]
-        public virtual IList<PhoneNumbersData> PhoneNumbers { get; set; }
-
-        [JsonProperty("photos")]
-        public virtual IList<PhotosData> Photos { get; set; }
-
-        [JsonProperty("politicalViews")]
-        public virtual IList<String> PoliticalViews { get; set; }
-
-        [JsonProperty("preferredUsername")]
-        public virtual string PreferredUsername { get; set; }
-
-        [JsonProperty("profileSong")]
-        public virtual string ProfileSong { get; set; }
-
-        [JsonProperty("profileUrl")]
-        public virtual string ProfileUrl { get; set; }
-
-        [JsonProperty("profileVideo")]
-        public virtual string ProfileVideo { get; set; }
-
-        [JsonProperty("published")]
-        public virtual string Published { get; set; }
-
-        [JsonProperty("quotes")]
-        public virtual IList<String> Quotes { get; set; }
-
-        [JsonProperty("relationshipStatus")]
-        public virtual string RelationshipStatus { get; set; }
-
-        [JsonProperty("relationships")]
-        public virtual IList<String> Relationships { get; set; }
-
-        [JsonProperty("religion")]
-        public virtual string Religion { get; set; }
-
-        [JsonProperty("romance")]
-        public virtual string Romance { get; set; }
-
-        [JsonProperty("scaredOf")]
-        public virtual string ScaredOf { get; set; }
-
-        [JsonProperty("sexualOrientation")]
-        public virtual string SexualOrientation { get; set; }
-
-        [JsonProperty("smoker")]
-        public virtual string Smoker { get; set; }
-
-        [JsonProperty("sports")]
-        public virtual IList<String> Sports { get; set; }
-
-        [JsonProperty("status")]
-        public virtual string Status { get; set; }
-
-        [JsonProperty("tags")]
-        public virtual IList<String> Tags { get; set; }
-
-        [JsonProperty("thumbnailUrl")]
-        public virtual string ThumbnailUrl { get; set; }
-
-        [JsonProperty("turnOffs")]
-        public virtual IList<String> TurnOffs { get; set; }
-
-        [JsonProperty("turnOns")]
-        public virtual IList<String> TurnOns { get; set; }
-
-        [JsonProperty("tvShows")]
-        public virtual IList<String> TvShows { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        [JsonProperty("urls")]
-        public virtual IList<UrlsData> Urls { get; set; }
-
-        [JsonProperty("utcOffset")]
-        public virtual string UtcOffset { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: AccountsData
-
-        public class AccountsData
-        {
-            [JsonProperty("domain")]
-            public virtual string Domain { get; set; }
-
-            [JsonProperty("userid")]
-            public virtual string Userid { get; set; }
-
-            [JsonProperty("username")]
-            public virtual string Username { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: AddressesData
-
-        public class AddressesData
-        {
-            [JsonProperty("country")]
-            public virtual string Country { get; set; }
-
-            [JsonProperty("formatted")]
-            public virtual string Formatted { get; set; }
-
-            [JsonProperty("locality")]
-            public virtual string Locality { get; set; }
-
-            [JsonProperty("postalCode")]
-            public virtual string PostalCode { get; set; }
-
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("region")]
-            public virtual string Region { get; set; }
-
-            [JsonProperty("streetAddress")]
-            public virtual string StreetAddress { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: EmailsData
-
-        public class EmailsData
-        {
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("value")]
-            public virtual string Value { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: ImsData
-
-        public class ImsData
-        {
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("value")]
-            public virtual string Value { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: NameData
-
-        public class NameData
-        {
-            [JsonProperty("familyName")]
-            public virtual string FamilyName { get; set; }
-
-            [JsonProperty("formatted")]
-            public virtual string Formatted { get; set; }
-
-            [JsonProperty("givenName")]
-            public virtual string GivenName { get; set; }
-
-            [JsonProperty("honorificPrefix")]
-            public virtual string HonorificPrefix { get; set; }
-
-            [JsonProperty("honorificSuffix")]
-            public virtual string HonorificSuffix { get; set; }
-
-            [JsonProperty("middleName")]
-            public virtual string MiddleName { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: OrganizationsData
-
-        public class OrganizationsData
-        {
-            [JsonProperty("department")]
-            public virtual string Department { get; set; }
-
-            [JsonProperty("description")]
-            public virtual string Description { get; set; }
-
-            [JsonProperty("endDate")]
-            public virtual string EndDate { get; set; }
-
-            [JsonProperty("location")]
-            public virtual string Location { get; set; }
-
-            [JsonProperty("name")]
-            public virtual string Name { get; set; }
-
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("startDate")]
-            public virtual string StartDate { get; set; }
-
-            [JsonProperty("title")]
-            public virtual string Title { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: PhoneNumbersData
-
-        public class PhoneNumbersData
-        {
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("value")]
-            public virtual string Value { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: PhotosData
-
-        public class PhotosData
-        {
-            [JsonProperty("height")]
-            public virtual string Height { get; set; }
-
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("value")]
-            public virtual string Value { get; set; }
-
-            [JsonProperty("width")]
-            public virtual string Width { get; set; }
-        }
-
-        #endregion
-
-        #region Nested type: UrlsData
-
-        public class UrlsData
-        {
-            [JsonProperty("primary")]
-            public virtual string Primary { get; set; }
-
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
-
-            [JsonProperty("value")]
-            public virtual string Value { get; set; }
-        }
-
-        #endregion
-    }
-
-    public class PhotosFeed : IResponse
-    {
-        [JsonProperty("items")]
-        public virtual IList<ChiliPhotosResourceJson> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-    }
-
-    public class Related
-    {
-        [JsonProperty("href")]
-        public virtual string Href { get; set; }
-
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("summary")]
-        public virtual string Summary { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-    }
-
-    public class RelatedFeed : IResponse
-    {
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        [JsonProperty("items")]
-        public virtual IList<Related> Items { get; set; }
-
-        [JsonProperty("kind")]
-        public virtual string Kind { get; set; }
-
-        [JsonProperty("links")]
-        public virtual LinksData Links { get; set; }
-
-        [JsonProperty("title")]
-        public virtual string Title { get; set; }
-
-        [JsonProperty("updated")]
-        public virtual string Updated { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: LinksData
-
-        public class LinksData : Dictionary<string, IList<LinksData.LinksDataSchema>>
-        {
-            #region Nested type: LinksDataSchema
-
-            public class LinksDataSchema
-            {
-                [JsonProperty("count")]
-                public virtual string Count { get; set; }
-
-                [JsonProperty("height")]
-                public virtual string Height { get; set; }
-
-                [JsonProperty("href")]
-                public virtual string Href { get; set; }
-
-                [JsonProperty("title")]
-                public virtual string Title { get; set; }
-
-                [JsonProperty("type")]
-                public virtual string Type { get; set; }
-
-                [JsonProperty("updated")]
-                public virtual string Updated { get; set; }
-
-                [JsonProperty("width")]
-                public virtual string Width { get; set; }
+            set {
+                this.items = value;
             }
-
-            #endregion
         }
-
-        #endregion
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual CommentFeed.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+            
+            public class LinksDataSchema {
+                
+                private string count;
+                
+                private string height;
+                
+                private string href;
+                
+                private string title;
+                
+                private string type;
+                
+                private string updated;
+                
+                private string width;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual string Count {
+                    get {
+                        return this.count;
+                    }
+                    set {
+                        this.count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("height")]
+                public virtual string Height {
+                    get {
+                        return this.height;
+                    }
+                    set {
+                        this.height = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+                public virtual string Updated {
+                    get {
+                        return this.updated;
+                    }
+                    set {
+                        this.updated = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("width")]
+                public virtual string Width {
+                    get {
+                        return this.width;
+                    }
+                    set {
+                        this.width = value;
+                    }
+                }
+            }
+        }
     }
-
-    public class Video
-    {
-        [JsonProperty("duration")]
-        public virtual string Duration { get; set; }
-
-        [JsonProperty("size")]
-        public virtual string Size { get; set; }
-
-        [JsonProperty("status")]
-        public virtual string Status { get; set; }
-
-        [JsonProperty("streams")]
-        public virtual IList<Link> Streams { get; set; }
+    
+    public class CountFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private CountFeed.CountsData counts;
+        
+        private string kind;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("counts")]
+        public virtual CountFeed.CountsData Counts {
+            get {
+                return this.counts;
+            }
+            set {
+                this.counts = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class CountsData : System.Collections.Generic.Dictionary<string, IList<CountsData.CountsDataSchema>> {
+            
+            public class CountsDataSchema {
+                
+                private string count;
+                
+                private string timestamp;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual string Count {
+                    get {
+                        return this.count;
+                    }
+                    set {
+                        this.count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("timestamp")]
+                public virtual string Timestamp {
+                    get {
+                        return this.timestamp;
+                    }
+                    set {
+                        this.timestamp = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class Group : Google.Apis.Requests.ISchemaResponse {
+        
+        private string id;
+        
+        private string kind;
+        
+        private Group.LinksData links;
+        
+        private string memberCount;
+        
+        private string title;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual Group.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("memberCount")]
+        public virtual string MemberCount {
+            get {
+                return this.memberCount;
+            }
+            set {
+                this.memberCount = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData {
+            
+            private IList<LinksData.SelfData> self;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("self")]
+            public virtual IList<LinksData.SelfData> Self {
+                get {
+                    return this.self;
+                }
+                set {
+                    this.self = value;
+                }
+            }
+            
+            public class SelfData {
+                
+                private string href;
+                
+                private string type;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class GroupFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<Group> items;
+        
+        private string kind;
+        
+        private GroupFeed.LinksData links;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Group> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual GroupFeed.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+            
+            public class LinksDataSchema {
+                
+                private string count;
+                
+                private string height;
+                
+                private string href;
+                
+                private string title;
+                
+                private string type;
+                
+                private string updated;
+                
+                private string width;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual string Count {
+                    get {
+                        return this.count;
+                    }
+                    set {
+                        this.count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("height")]
+                public virtual string Height {
+                    get {
+                        return this.height;
+                    }
+                    set {
+                        this.height = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+                public virtual string Updated {
+                    get {
+                        return this.updated;
+                    }
+                    set {
+                        this.updated = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("width")]
+                public virtual string Width {
+                    get {
+                        return this.width;
+                    }
+                    set {
+                        this.width = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class Link {
+        
+        private long count;
+        
+        private long height;
+        
+        private string href;
+        
+        private string title;
+        
+        private string type;
+        
+        private string updated;
+        
+        private long width;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("count")]
+        public virtual long Count {
+            get {
+                return this.count;
+            }
+            set {
+                this.count = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("height")]
+        public virtual long Height {
+            get {
+                return this.height;
+            }
+            set {
+                this.height = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("href")]
+        public virtual string Href {
+            get {
+                return this.href;
+            }
+            set {
+                this.href = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+        public virtual string Type {
+            get {
+                return this.type;
+            }
+            set {
+                this.type = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("width")]
+        public virtual long Width {
+            get {
+                return this.width;
+            }
+            set {
+                this.width = value;
+            }
+        }
+    }
+    
+    public class PeopleFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<Person> entry;
+        
+        private string itemsPerPage;
+        
+        private string kind;
+        
+        private string startIndex;
+        
+        private string totalResults;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("entry")]
+        public virtual IList<Person> Entry {
+            get {
+                return this.entry;
+            }
+            set {
+                this.entry = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
+        public virtual string ItemsPerPage {
+            get {
+                return this.itemsPerPage;
+            }
+            set {
+                this.itemsPerPage = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
+        public virtual string StartIndex {
+            get {
+                return this.startIndex;
+            }
+            set {
+                this.startIndex = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
+        public virtual string TotalResults {
+            get {
+                return this.totalResults;
+            }
+            set {
+                this.totalResults = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+    }
+    
+    public class Person : Google.Apis.Requests.ISchemaResponse {
+        
+        private string aboutMe;
+        
+        private IList<Person.AccountsData> accounts;
+        
+        private IList<System.String> activities;
+        
+        private IList<Person.AddressesData> addresses;
+        
+        private string anniversary;
+        
+        private string birthday;
+        
+        private string bodyType;
+        
+        private IList<System.String> books;
+        
+        private IList<System.String> cars;
+        
+        private IList<System.String> children;
+        
+        private string connected;
+        
+        private string currentLocation;
+        
+        private string displayName;
+        
+        private string drinker;
+        
+        private IList<Person.EmailsData> emails;
+        
+        private string ethnicity;
+        
+        private string fashion;
+        
+        private IList<System.String> food;
+        
+        private string gender;
+        
+        private string happiestWhen;
+        
+        private string hasApp;
+        
+        private IList<System.String> heroes;
+        
+        private string humor;
+        
+        private string id;
+        
+        private IList<Person.ImsData> ims;
+        
+        private IList<System.String> interests;
+        
+        private IList<System.String> jobInterests;
+        
+        private string kind;
+        
+        private IList<System.String> languages;
+        
+        private IList<System.String> languagesSpoken;
+        
+        private string livingArrangement;
+        
+        private string lookingFor;
+        
+        private IList<System.String> movies;
+        
+        private IList<System.String> music;
+        
+        private Person.NameData name;
+        
+        private string nickname;
+        
+        private string note;
+        
+        private IList<Person.OrganizationsData> organizations;
+        
+        private IList<System.String> pets;
+        
+        private IList<Person.PhoneNumbersData> phoneNumbers;
+        
+        private IList<Person.PhotosData> photos;
+        
+        private IList<System.String> politicalViews;
+        
+        private string preferredUsername;
+        
+        private string profileSong;
+        
+        private string profileUrl;
+        
+        private string profileVideo;
+        
+        private string published;
+        
+        private IList<System.String> quotes;
+        
+        private string relationshipStatus;
+        
+        private IList<System.String> relationships;
+        
+        private string religion;
+        
+        private string romance;
+        
+        private string scaredOf;
+        
+        private string sexualOrientation;
+        
+        private string smoker;
+        
+        private IList<System.String> sports;
+        
+        private string status;
+        
+        private IList<System.String> tags;
+        
+        private string thumbnailUrl;
+        
+        private IList<System.String> turnOffs;
+        
+        private IList<System.String> turnOns;
+        
+        private IList<System.String> tvShows;
+        
+        private string updated;
+        
+        private IList<Person.UrlsData> urls;
+        
+        private string utcOffset;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("aboutMe")]
+        public virtual string AboutMe {
+            get {
+                return this.aboutMe;
+            }
+            set {
+                this.aboutMe = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("accounts")]
+        public virtual IList<Person.AccountsData> Accounts {
+            get {
+                return this.accounts;
+            }
+            set {
+                this.accounts = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("activities")]
+        public virtual IList<System.String> Activities {
+            get {
+                return this.activities;
+            }
+            set {
+                this.activities = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("addresses")]
+        public virtual IList<Person.AddressesData> Addresses {
+            get {
+                return this.addresses;
+            }
+            set {
+                this.addresses = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("anniversary")]
+        public virtual string Anniversary {
+            get {
+                return this.anniversary;
+            }
+            set {
+                this.anniversary = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("birthday")]
+        public virtual string Birthday {
+            get {
+                return this.birthday;
+            }
+            set {
+                this.birthday = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("bodyType")]
+        public virtual string BodyType {
+            get {
+                return this.bodyType;
+            }
+            set {
+                this.bodyType = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("books")]
+        public virtual IList<System.String> Books {
+            get {
+                return this.books;
+            }
+            set {
+                this.books = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("cars")]
+        public virtual IList<System.String> Cars {
+            get {
+                return this.cars;
+            }
+            set {
+                this.cars = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("children")]
+        public virtual IList<System.String> Children {
+            get {
+                return this.children;
+            }
+            set {
+                this.children = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("connected")]
+        public virtual string Connected {
+            get {
+                return this.connected;
+            }
+            set {
+                this.connected = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("currentLocation")]
+        public virtual string CurrentLocation {
+            get {
+                return this.currentLocation;
+            }
+            set {
+                this.currentLocation = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
+        public virtual string DisplayName {
+            get {
+                return this.displayName;
+            }
+            set {
+                this.displayName = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("drinker")]
+        public virtual string Drinker {
+            get {
+                return this.drinker;
+            }
+            set {
+                this.drinker = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("emails")]
+        public virtual IList<Person.EmailsData> Emails {
+            get {
+                return this.emails;
+            }
+            set {
+                this.emails = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("ethnicity")]
+        public virtual string Ethnicity {
+            get {
+                return this.ethnicity;
+            }
+            set {
+                this.ethnicity = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("fashion")]
+        public virtual string Fashion {
+            get {
+                return this.fashion;
+            }
+            set {
+                this.fashion = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("food")]
+        public virtual IList<System.String> Food {
+            get {
+                return this.food;
+            }
+            set {
+                this.food = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("gender")]
+        public virtual string Gender {
+            get {
+                return this.gender;
+            }
+            set {
+                this.gender = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("happiestWhen")]
+        public virtual string HappiestWhen {
+            get {
+                return this.happiestWhen;
+            }
+            set {
+                this.happiestWhen = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("hasApp")]
+        public virtual string HasApp {
+            get {
+                return this.hasApp;
+            }
+            set {
+                this.hasApp = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("heroes")]
+        public virtual IList<System.String> Heroes {
+            get {
+                return this.heroes;
+            }
+            set {
+                this.heroes = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("humor")]
+        public virtual string Humor {
+            get {
+                return this.humor;
+            }
+            set {
+                this.humor = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("ims")]
+        public virtual IList<Person.ImsData> Ims {
+            get {
+                return this.ims;
+            }
+            set {
+                this.ims = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("interests")]
+        public virtual IList<System.String> Interests {
+            get {
+                return this.interests;
+            }
+            set {
+                this.interests = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("jobInterests")]
+        public virtual IList<System.String> JobInterests {
+            get {
+                return this.jobInterests;
+            }
+            set {
+                this.jobInterests = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("languages")]
+        public virtual IList<System.String> Languages {
+            get {
+                return this.languages;
+            }
+            set {
+                this.languages = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("languagesSpoken")]
+        public virtual IList<System.String> LanguagesSpoken {
+            get {
+                return this.languagesSpoken;
+            }
+            set {
+                this.languagesSpoken = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("livingArrangement")]
+        public virtual string LivingArrangement {
+            get {
+                return this.livingArrangement;
+            }
+            set {
+                this.livingArrangement = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lookingFor")]
+        public virtual string LookingFor {
+            get {
+                return this.lookingFor;
+            }
+            set {
+                this.lookingFor = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("movies")]
+        public virtual IList<System.String> Movies {
+            get {
+                return this.movies;
+            }
+            set {
+                this.movies = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("music")]
+        public virtual IList<System.String> Music {
+            get {
+                return this.music;
+            }
+            set {
+                this.music = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("name")]
+        public virtual Person.NameData Name {
+            get {
+                return this.name;
+            }
+            set {
+                this.name = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("nickname")]
+        public virtual string Nickname {
+            get {
+                return this.nickname;
+            }
+            set {
+                this.nickname = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("note")]
+        public virtual string Note {
+            get {
+                return this.note;
+            }
+            set {
+                this.note = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("organizations")]
+        public virtual IList<Person.OrganizationsData> Organizations {
+            get {
+                return this.organizations;
+            }
+            set {
+                this.organizations = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("pets")]
+        public virtual IList<System.String> Pets {
+            get {
+                return this.pets;
+            }
+            set {
+                this.pets = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("phoneNumbers")]
+        public virtual IList<Person.PhoneNumbersData> PhoneNumbers {
+            get {
+                return this.phoneNumbers;
+            }
+            set {
+                this.phoneNumbers = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("photos")]
+        public virtual IList<Person.PhotosData> Photos {
+            get {
+                return this.photos;
+            }
+            set {
+                this.photos = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("politicalViews")]
+        public virtual IList<System.String> PoliticalViews {
+            get {
+                return this.politicalViews;
+            }
+            set {
+                this.politicalViews = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("preferredUsername")]
+        public virtual string PreferredUsername {
+            get {
+                return this.preferredUsername;
+            }
+            set {
+                this.preferredUsername = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("profileSong")]
+        public virtual string ProfileSong {
+            get {
+                return this.profileSong;
+            }
+            set {
+                this.profileSong = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("profileUrl")]
+        public virtual string ProfileUrl {
+            get {
+                return this.profileUrl;
+            }
+            set {
+                this.profileUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("profileVideo")]
+        public virtual string ProfileVideo {
+            get {
+                return this.profileVideo;
+            }
+            set {
+                this.profileVideo = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("published")]
+        public virtual string Published {
+            get {
+                return this.published;
+            }
+            set {
+                this.published = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("quotes")]
+        public virtual IList<System.String> Quotes {
+            get {
+                return this.quotes;
+            }
+            set {
+                this.quotes = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("relationshipStatus")]
+        public virtual string RelationshipStatus {
+            get {
+                return this.relationshipStatus;
+            }
+            set {
+                this.relationshipStatus = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("relationships")]
+        public virtual IList<System.String> Relationships {
+            get {
+                return this.relationships;
+            }
+            set {
+                this.relationships = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("religion")]
+        public virtual string Religion {
+            get {
+                return this.religion;
+            }
+            set {
+                this.religion = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("romance")]
+        public virtual string Romance {
+            get {
+                return this.romance;
+            }
+            set {
+                this.romance = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("scaredOf")]
+        public virtual string ScaredOf {
+            get {
+                return this.scaredOf;
+            }
+            set {
+                this.scaredOf = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("sexualOrientation")]
+        public virtual string SexualOrientation {
+            get {
+                return this.sexualOrientation;
+            }
+            set {
+                this.sexualOrientation = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("smoker")]
+        public virtual string Smoker {
+            get {
+                return this.smoker;
+            }
+            set {
+                this.smoker = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("sports")]
+        public virtual IList<System.String> Sports {
+            get {
+                return this.sports;
+            }
+            set {
+                this.sports = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual string Status {
+            get {
+                return this.status;
+            }
+            set {
+                this.status = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("tags")]
+        public virtual IList<System.String> Tags {
+            get {
+                return this.tags;
+            }
+            set {
+                this.tags = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnailUrl")]
+        public virtual string ThumbnailUrl {
+            get {
+                return this.thumbnailUrl;
+            }
+            set {
+                this.thumbnailUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("turnOffs")]
+        public virtual IList<System.String> TurnOffs {
+            get {
+                return this.turnOffs;
+            }
+            set {
+                this.turnOffs = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("turnOns")]
+        public virtual IList<System.String> TurnOns {
+            get {
+                return this.turnOns;
+            }
+            set {
+                this.turnOns = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("tvShows")]
+        public virtual IList<System.String> TvShows {
+            get {
+                return this.tvShows;
+            }
+            set {
+                this.tvShows = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("urls")]
+        public virtual IList<Person.UrlsData> Urls {
+            get {
+                return this.urls;
+            }
+            set {
+                this.urls = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("utcOffset")]
+        public virtual string UtcOffset {
+            get {
+                return this.utcOffset;
+            }
+            set {
+                this.utcOffset = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class AccountsData {
+            
+            private string domain;
+            
+            private string userid;
+            
+            private string username;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("domain")]
+            public virtual string Domain {
+                get {
+                    return this.domain;
+                }
+                set {
+                    this.domain = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("userid")]
+            public virtual string Userid {
+                get {
+                    return this.userid;
+                }
+                set {
+                    this.userid = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("username")]
+            public virtual string Username {
+                get {
+                    return this.username;
+                }
+                set {
+                    this.username = value;
+                }
+            }
+        }
+        
+        public class AddressesData {
+            
+            private string country;
+            
+            private string formatted;
+            
+            private string locality;
+            
+            private string postalCode;
+            
+            private string primary;
+            
+            private string region;
+            
+            private string streetAddress;
+            
+            private string type;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("formatted")]
+            public virtual string Formatted {
+                get {
+                    return this.formatted;
+                }
+                set {
+                    this.formatted = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("locality")]
+            public virtual string Locality {
+                get {
+                    return this.locality;
+                }
+                set {
+                    this.locality = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("postalCode")]
+            public virtual string PostalCode {
+                get {
+                    return this.postalCode;
+                }
+                set {
+                    this.postalCode = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("region")]
+            public virtual string Region {
+                get {
+                    return this.region;
+                }
+                set {
+                    this.region = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("streetAddress")]
+            public virtual string StreetAddress {
+                get {
+                    return this.streetAddress;
+                }
+                set {
+                    this.streetAddress = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+        }
+        
+        public class EmailsData {
+            
+            private string primary;
+            
+            private string type;
+            
+            private string value;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this.value;
+                }
+                set {
+                    this.value = value;
+                }
+            }
+        }
+        
+        public class ImsData {
+            
+            private string primary;
+            
+            private string type;
+            
+            private string value;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this.value;
+                }
+                set {
+                    this.value = value;
+                }
+            }
+        }
+        
+        public class NameData {
+            
+            private string familyName;
+            
+            private string formatted;
+            
+            private string givenName;
+            
+            private string honorificPrefix;
+            
+            private string honorificSuffix;
+            
+            private string middleName;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
+            public virtual string FamilyName {
+                get {
+                    return this.familyName;
+                }
+                set {
+                    this.familyName = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("formatted")]
+            public virtual string Formatted {
+                get {
+                    return this.formatted;
+                }
+                set {
+                    this.formatted = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
+            public virtual string GivenName {
+                get {
+                    return this.givenName;
+                }
+                set {
+                    this.givenName = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("honorificPrefix")]
+            public virtual string HonorificPrefix {
+                get {
+                    return this.honorificPrefix;
+                }
+                set {
+                    this.honorificPrefix = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("honorificSuffix")]
+            public virtual string HonorificSuffix {
+                get {
+                    return this.honorificSuffix;
+                }
+                set {
+                    this.honorificSuffix = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("middleName")]
+            public virtual string MiddleName {
+                get {
+                    return this.middleName;
+                }
+                set {
+                    this.middleName = value;
+                }
+            }
+        }
+        
+        public class OrganizationsData {
+            
+            private string department;
+            
+            private string description;
+            
+            private string endDate;
+            
+            private string location;
+            
+            private string name;
+            
+            private string primary;
+            
+            private string startDate;
+            
+            private string title;
+            
+            private string type;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("department")]
+            public virtual string Department {
+                get {
+                    return this.department;
+                }
+                set {
+                    this.department = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("description")]
+            public virtual string Description {
+                get {
+                    return this.description;
+                }
+                set {
+                    this.description = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("endDate")]
+            public virtual string EndDate {
+                get {
+                    return this.endDate;
+                }
+                set {
+                    this.endDate = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("location")]
+            public virtual string Location {
+                get {
+                    return this.location;
+                }
+                set {
+                    this.location = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("startDate")]
+            public virtual string StartDate {
+                get {
+                    return this.startDate;
+                }
+                set {
+                    this.startDate = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("title")]
+            public virtual string Title {
+                get {
+                    return this.title;
+                }
+                set {
+                    this.title = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+        }
+        
+        public class PhoneNumbersData {
+            
+            private string primary;
+            
+            private string type;
+            
+            private string value;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this.value;
+                }
+                set {
+                    this.value = value;
+                }
+            }
+        }
+        
+        public class PhotosData {
+            
+            private string height;
+            
+            private string primary;
+            
+            private string type;
+            
+            private string value;
+            
+            private string width;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("height")]
+            public virtual string Height {
+                get {
+                    return this.height;
+                }
+                set {
+                    this.height = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this.value;
+                }
+                set {
+                    this.value = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("width")]
+            public virtual string Width {
+                get {
+                    return this.width;
+                }
+                set {
+                    this.width = value;
+                }
+            }
+        }
+        
+        public class UrlsData {
+            
+            private string primary;
+            
+            private string type;
+            
+            private string value;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("primary")]
+            public virtual string Primary {
+                get {
+                    return this.primary;
+                }
+                set {
+                    this.primary = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this.value;
+                }
+                set {
+                    this.value = value;
+                }
+            }
+        }
+    }
+    
+    public class PhotosFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<ChiliPhotosResourceJson> items;
+        
+        private string kind;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<ChiliPhotosResourceJson> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+    }
+    
+    public class Related {
+        
+        private string href;
+        
+        private string id;
+        
+        private string kind;
+        
+        private string summary;
+        
+        private string title;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("href")]
+        public virtual string Href {
+            get {
+                return this.href;
+            }
+            set {
+                this.href = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("summary")]
+        public virtual string Summary {
+            get {
+                return this.summary;
+            }
+            set {
+                this.summary = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+    }
+    
+    public class RelatedFeed : Google.Apis.Requests.ISchemaResponse {
+        
+        private string id;
+        
+        private IList<Related> items;
+        
+        private string kind;
+        
+        private RelatedFeed.LinksData links;
+        
+        private string title;
+        
+        private string updated;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<Related> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this.kind;
+            }
+            set {
+                this.kind = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("links")]
+        public virtual RelatedFeed.LinksData Links {
+            get {
+                return this.links;
+            }
+            set {
+                this.links = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this.title;
+            }
+            set {
+                this.title = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this.updated;
+            }
+            set {
+                this.updated = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        public class LinksData : System.Collections.Generic.Dictionary<string, IList<LinksData.LinksDataSchema>> {
+            
+            public class LinksDataSchema {
+                
+                private string count;
+                
+                private string height;
+                
+                private string href;
+                
+                private string title;
+                
+                private string type;
+                
+                private string updated;
+                
+                private string width;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual string Count {
+                    get {
+                        return this.count;
+                    }
+                    set {
+                        this.count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("height")]
+                public virtual string Height {
+                    get {
+                        return this.height;
+                    }
+                    set {
+                        this.height = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("href")]
+                public virtual string Href {
+                    get {
+                        return this.href;
+                    }
+                    set {
+                        this.href = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("title")]
+                public virtual string Title {
+                    get {
+                        return this.title;
+                    }
+                    set {
+                        this.title = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("type")]
+                public virtual string Type {
+                    get {
+                        return this.type;
+                    }
+                    set {
+                        this.type = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+                public virtual string Updated {
+                    get {
+                        return this.updated;
+                    }
+                    set {
+                        this.updated = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("width")]
+                public virtual string Width {
+                    get {
+                        return this.width;
+                    }
+                    set {
+                        this.width = value;
+                    }
+                }
+            }
+        }
+    }
+    
+    public class Video {
+        
+        private string duration;
+        
+        private string size;
+        
+        private string status;
+        
+        private IList<Link> streams;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("duration")]
+        public virtual string Duration {
+            get {
+                return this.duration;
+            }
+            set {
+                this.duration = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("size")]
+        public virtual string Size {
+            get {
+                return this.size;
+            }
+            set {
+                this.size = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual string Status {
+            get {
+                return this.status;
+            }
+            set {
+                this.status = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("streams")]
+        public virtual IList<Link> Streams {
+            get {
+                return this.streams;
+            }
+            set {
+                this.streams = value;
+            }
+        }
     }
 }
-
-namespace Google.Apis
-{
-    public class BuzzService : IRequestExecutor, ISchemaAwareRequestExecutor
-    {
-        #region Scopes enum
-
-        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
-        public enum Scopes
-        {
-            /// <summary>Manage your Buzz activity and address book</summary>
-            [StringValue("https://www.googleapis.com/auth/buzz")] Buzz,
-
-            /// <summary>View your Buzz activity and address book</summary>
-            [StringValue("https://www.googleapis.com/auth/buzz.readonly")] BuzzReadonly,
-
-            /// <summary>Manage your photos and videos</summary>
-            [StringValue("https://www.googleapis.com/auth/picasa")] Picasa,
-        }
-
-        #endregion
-
+namespace Google.Apis.Buzz.v1 {
+    using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using Google.Apis;
+    using Google.Apis.Discovery;
+    
+    
+    public class BuzzService : Google.Apis.Discovery.IRequestProvider {
+        
+        private Google.Apis.Discovery.IService genericService;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
         private const string Version = "v1";
-
+        
         private const string Name = "buzz";
-
+        
         private const string BaseUri = "https://www.googleapis.com/buzz/v1/";
-
-        private const DiscoveryVersion DiscoveryVersionUsed = DiscoveryVersion.Version_1_0;
-
-        private readonly ActivitiesResource activities;
-        private readonly IAuthenticator authenticator;
-
-        private readonly CommentsResource comments;
-        private readonly IService genericService;
-
-        private readonly GroupsResource groups;
-
-        private readonly PeopleResource people;
-
-        private readonly PhotoAlbumsResource photoAlbums;
-
-        private readonly PhotosResource photos;
-
-        private readonly RelatedResource related;
-
-        public BuzzService(IService genericService, IAuthenticator authenticator)
-        {
+        
+        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        
+        private string developerKey;
+        
+        private ActivitiesResource activities;
+        
+        private CommentsResource comments;
+        
+        private GroupsResource groups;
+        
+        private PeopleResource people;
+        
+        private PhotoAlbumsResource photoAlbums;
+        
+        private PhotosResource photos;
+        
+        private RelatedResource related;
+        
+        public BuzzService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            activities = new ActivitiesResource(this);
-            comments = new CommentsResource(this);
-            groups = new GroupsResource(this);
-            people = new PeopleResource(this);
-            photoAlbums = new PhotoAlbumsResource(this);
-            photos = new PhotosResource(this);
-            related = new RelatedResource(this);
+            this.activities = new ActivitiesResource(this);
+            this.comments = new CommentsResource(this);
+            this.groups = new GroupsResource(this);
+            this.people = new PeopleResource(this);
+            this.photoAlbums = new PhotoAlbumsResource(this);
+            this.photos = new PhotosResource(this);
+            this.related = new RelatedResource(this);
         }
-
-        public BuzzService()
-            : this(
-                new DiscoveryService(
-                    new CachedWebDiscoveryDevice(
-                        new Uri(
-                            string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", Name, Version))))
-                    .GetService(Version, DiscoveryVersionUsed, new FactoryParameterV1_0(new Uri(BaseUri))),
-                AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {}
-
+        
+        public BuzzService() : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", BuzzService.Name, BuzzService.Version)))).GetService(BuzzService.Version, BuzzService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BuzzService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+        }
+        
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
-        public virtual string DeveloperKey { get; set; }
-
-        public virtual ActivitiesResource Activities
-        {
-            get { return activities; }
-        }
-
-        public virtual CommentsResource Comments
-        {
-            get { return comments; }
-        }
-
-        public virtual GroupsResource Groups
-        {
-            get { return groups; }
-        }
-
-        public virtual PeopleResource People
-        {
-            get { return people; }
-        }
-
-        public virtual PhotoAlbumsResource PhotoAlbums
-        {
-            get { return photoAlbums; }
-        }
-
-        public virtual PhotosResource Photos
-        {
-            get { return photos; }
-        }
-
-        public virtual RelatedResource Related
-        {
-            get { return related; }
-        }
-
-        #region IRequestExecutor Members
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             string body,
-                                             IDictionary<string, object> parameters)
-        {
-            IRequest request = genericService.CreateRequest(resource, method);
-            if (string.IsNullOrEmpty(DeveloperKey) == false)
-            {
-                request = request.WithDeveloperKey(DeveloperKey);
+        public virtual string DeveloperKey {
+            get {
+                return this.developerKey;
             }
-            return
-                request.WithParameters(parameters).WithAuthentication(authenticator).WithBody(body).ExecuteRequest();
+            set {
+                this.developerKey = value;
+            }
         }
-
-        #endregion
-
-        #region ISchemaAwareRequestExecutor Members
-
-        public virtual string ObjectToJson(object obj)
-        {
-            return genericService.SerializeRequest(obj);
+        
+        public virtual ActivitiesResource Activities {
+            get {
+                return this.activities;
+            }
         }
-
-        public virtual T JsonToObject<T>(Stream stream)
-        {
-            return genericService.DeserializeResponse<T>(stream);
+        
+        public virtual CommentsResource Comments {
+            get {
+                return this.comments;
+            }
         }
-
-        #endregion
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             object body,
-                                             IDictionary<string, object> parameters)
-        {
-            return ExecuteRequest(resource, method, ObjectToJson(body), parameters);
+        
+        public virtual GroupsResource Groups {
+            get {
+                return this.groups;
+            }
         }
-
-        public virtual void RegisterSerializer(ISerializer serializer)
-        {
+        
+        public virtual PeopleResource People {
+            get {
+                return this.people;
+            }
+        }
+        
+        public virtual PhotoAlbumsResource PhotoAlbums {
+            get {
+                return this.photoAlbums;
+            }
+        }
+        
+        public virtual PhotosResource Photos {
+            get {
+                return this.photos;
+            }
+        }
+        
+        public virtual RelatedResource Related {
+            get {
+                return this.related;
+            }
+        }
+        
+        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
+            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            if (string.IsNullOrEmpty(DeveloperKey) == false) {
+                request = request.WithDeveloperKey(this.DeveloperKey);
+            }
+            return request.WithAuthentication(authenticator);
+        }
+        
+        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
             genericService.Serializer = serializer;
         }
+        
+        public virtual string SerializeObject(object obj) {
+            return genericService.SerializeRequest(obj);
+        }
+        
+        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
+         {
+            return genericService.DeserializeResponse<T>(response);
+        }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your Buzz activity and address book</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/buzz")]
+            Buzz,
+            
+            /// <summary>View your Buzz activity and address book</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/buzz.readonly")]
+            BuzzReadonly,
+            
+            /// <summary>Manage your photos and videos</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/picasa")]
+            Picasa,
+        }
     }
-
-    public class ActivitiesResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
-        #region Scope enum
-
-        /// <summary>The collection to which the activity belongs.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Scope
-        {
-            /// <summary>Activities liked by the user.</summary>
-            [StringValue("@liked")] Liked,
-
-            /// <summary>Activities muted by the user.</summary>
-            [StringValue("@muted")] Muted,
-
-            /// <summary>Activities posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
-        #region ScopeEnum enum
-
-        /// <summary>The collection of activities to list.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum ScopeEnum
-        {
-            /// <summary>Limit to activities commented on by the user.</summary>
-            [StringValue("@comments")] Comments,
-
-            /// <summary>Limit to activities to be consumed by the user.</summary>
-            [StringValue("@consumption")] Consumption,
-
-            /// <summary>Limit to activities liked by the user.</summary>
-            [StringValue("@liked")] Liked,
-
-            /// <summary>Limit to public activities posted by the user.</summary>
-            [StringValue("@public")] Public,
-
-            /// <summary>Limit to activities posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
-        #region ScopeMember enum
-
-        /// <summary>The collection to which the activity belongs.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum ScopeMember
-        {
-            /// <summary>Activities reported by the user.</summary>
-            [StringValue("@abuse")] Abuse,
-
-            /// <summary>Activities liked by the user.</summary>
-            [StringValue("@liked")] Liked,
-
-            /// <summary>Activities muted by the user.</summary>
-            [StringValue("@muted")] Muted,
-
-            /// <summary>Activities posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
+    
+    public class ActivitiesResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "activities";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(ActivitiesResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public ActivitiesResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(ActivitiesResource));
+        
+        public ActivitiesResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Get a count of link shares</summary>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="url">Optional - URLs for which to get share counts.</param>
-        public virtual Stream CountAsStream([Optional] string hl, [Optional] Repeatable<string> url)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["hl"] = hl;
-            parameters["url"] = url;
-            logger.Debug("Executing activities.count");
-            Stream ret = service.ExecuteRequest(Resource, "count", body, parameters);
-            logger.Debug("Done Executing activities.count");
-            return ret;
-        }
-
-        /// <summary>Delete an activity</summary>
-        /// <param name="postId">Required - ID of the activity to delete.</param>
-        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string postId,
-                                             Scope scope,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing activities.delete");
-            return ret;
-        }
-
-        /// <summary>Search for people by topic</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual Stream ExtractPeopleFromSearchAsStream([Optional] Alt? alt,
-                                                              [Optional] string bbox,
-                                                              [Optional] string c,
-                                                              [Optional] string hl,
-                                                              [Optional] string lat,
-                                                              [Optional] string lon,
-                                                              [Optional] Int64? maxResults,
-                                                              [Optional] string pid,
-                                                              [Optional] string q,
-                                                              [Optional] string radius)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            logger.Debug("Executing activities.extractPeopleFromSearch");
-            Stream ret = service.ExecuteRequest(Resource, "extractPeopleFromSearch", body, parameters);
-            logger.Debug("Done Executing activities.extractPeopleFromSearch");
-            return ret;
-        }
-
-        /// <summary>Get an activity</summary>
-        /// <param name="postId">Required - ID of the post to get.</param>
-        /// <param name="userId">Required - ID of the user whose post to get.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual Stream GetAsStream(string postId,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl,
-                                          [Optional] Int64? maxComments,
-                                          [Optional] Int64? maxLiked,
-                                          [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            parameters["max-comments"] = maxComments;
-            parameters["max-liked"] = maxLiked;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing activities.get");
-            return ret;
-        }
-
-        /// <summary>Create a new activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="preview">Optional - If true, only preview the action.</param>
-        public virtual Stream InsertAsStream(string body,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl,
-                                             [Optional] Boolean? preview)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            parameters["preview"] = preview;
-            logger.Debug("Executing activities.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing activities.insert");
-            return ret;
-        }
-
-        /// <summary>List activities</summary>
-        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual Stream ListAsStream(ScopeEnum scope,
-                                           string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string c,
-                                           [Optional] string hl,
-                                           [Optional] Int64? maxComments,
-                                           [Optional] Int64? maxLiked,
-                                           [Optional] Int64? maxResults,
-                                           [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-comments"] = maxComments;
-            parameters["max-liked"] = maxLiked;
-            parameters["max-results"] = maxResults;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing activities.list");
-            return ret;
-        }
-
-        /// <summary>Update an activity. This method supports patch semantics.</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream PatchAsStream(string body,
-                                            string postId,
-                                            ScopeMember scope,
-                                            string userId,
-                                            [Optional] string abuseType,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.patch");
-            Stream ret = service.ExecuteRequest(Resource, "patch", body, parameters);
-            logger.Debug("Done Executing activities.patch");
-            return ret;
-        }
-
-        /// <summary>Search for activities</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual Stream SearchAsStream([Optional] Alt? alt,
-                                             [Optional] string bbox,
-                                             [Optional] string c,
-                                             [Optional] string hl,
-                                             [Optional] string lat,
-                                             [Optional] string lon,
-                                             [Optional] Int64? maxResults,
-                                             [Optional] string pid,
-                                             [Optional] string q,
-                                             [Optional] string radius,
-                                             [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.search");
-            Stream ret = service.ExecuteRequest(Resource, "search", body, parameters);
-            logger.Debug("Done Executing activities.search");
-            return ret;
-        }
-
-        /// <summary>Get real-time activity tracking information</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual Stream TrackAsStream([Optional] Alt? alt,
-                                            [Optional] string bbox,
-                                            [Optional] string c,
-                                            [Optional] string hl,
-                                            [Optional] string lat,
-                                            [Optional] string lon,
-                                            [Optional] Int64? maxResults,
-                                            [Optional] string pid,
-                                            [Optional] string q,
-                                            [Optional] string radius)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            logger.Debug("Executing activities.track");
-            Stream ret = service.ExecuteRequest(Resource, "track", body, parameters);
-            logger.Debug("Done Executing activities.track");
-            return ret;
-        }
-
-        /// <summary>Update an activity</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream UpdateAsStream(string body,
-                                             string postId,
-                                             ScopeMember scope,
-                                             string userId,
-                                             [Optional] string abuseType,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.update");
-            Stream ret = service.ExecuteRequest(Resource, "update", body, parameters);
-            logger.Debug("Done Executing activities.update");
-            return ret;
-        }
-
-        /// <summary>Get a count of link shares</summary>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="url">Optional - URLs for which to get share counts.</param>
-        public virtual CountFeed CountAndExecute([Optional] string hl, [Optional] Repeatable<string> url)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["hl"] = hl;
-            parameters["url"] = url;
-            logger.Debug("Executing activities.count");
-            CountFeed ret =
-                service.JsonToObject<CountFeed>(service.ExecuteRequest(Resource, "count", body, parameters));
-            logger.Debug("Done Executing activities.count");
-            return ret;
-        }
-
-        /// <summary>Delete an activity</summary>
-        /// <param name="postId">Required - ID of the activity to delete.</param>
-        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string postId,
-                                               Scope scope,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing activities.delete");
-            return ret;
-        }
-
-        /// <summary>Search for people by topic</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual PeopleFeed ExtractPeopleFromSearchAndExecute([Optional] Alt? alt,
-                                                                    [Optional] string bbox,
-                                                                    [Optional] string c,
-                                                                    [Optional] string hl,
-                                                                    [Optional] string lat,
-                                                                    [Optional] string lon,
-                                                                    [Optional] Int64? maxResults,
-                                                                    [Optional] string pid,
-                                                                    [Optional] string q,
-                                                                    [Optional] string radius)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            logger.Debug("Executing activities.extractPeopleFromSearch");
-            PeopleFeed ret =
-                service.JsonToObject<PeopleFeed>(
-                    service.ExecuteRequest(Resource, "extractPeopleFromSearch", body, parameters));
-            logger.Debug("Done Executing activities.extractPeopleFromSearch");
-            return ret;
-        }
-
-        /// <summary>Get an activity</summary>
-        /// <param name="postId">Required - ID of the post to get.</param>
-        /// <param name="userId">Required - ID of the user whose post to get.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual Activity GetAndExecute(string postId,
-                                              string userId,
-                                              [Optional] Alt? alt,
-                                              [Optional] string hl,
-                                              [Optional] Int64? maxComments,
-                                              [Optional] Int64? maxLiked,
-                                              [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            parameters["max-comments"] = maxComments;
-            parameters["max-liked"] = maxLiked;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.get");
-            Activity ret = service.JsonToObject<Activity>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing activities.get");
-            return ret;
-        }
-
-        /// <summary>Create a new activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="preview">Optional - If true, only preview the action.</param>
-        public virtual Activity InsertAndExecute(Activity body,
-                                                 string userId,
-                                                 [Optional] Alt? alt,
-                                                 [Optional] string hl,
-                                                 [Optional] Boolean? preview)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            parameters["preview"] = preview;
-            logger.Debug("Executing activities.insert");
-            Activity ret =
-                service.JsonToObject<Activity>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing activities.insert");
-            return ret;
-        }
-
-        /// <summary>List activities</summary>
-        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual ActivityFeed ListAndExecute(ScopeEnum scope,
-                                                   string userId,
-                                                   [Optional] Alt? alt,
-                                                   [Optional] string c,
-                                                   [Optional] string hl,
-                                                   [Optional] Int64? maxComments,
-                                                   [Optional] Int64? maxLiked,
-                                                   [Optional] Int64? maxResults,
-                                                   [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-comments"] = maxComments;
-            parameters["max-liked"] = maxLiked;
-            parameters["max-results"] = maxResults;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.list");
-            ActivityFeed ret =
-                service.JsonToObject<ActivityFeed>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing activities.list");
-            return ret;
-        }
-
-        /// <summary>Update an activity. This method supports patch semantics.</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Activity PatchAndExecute(Activity body,
-                                                string postId,
-                                                ScopeMember scope,
-                                                string userId,
-                                                [Optional] string abuseType,
-                                                [Optional] Alt? alt,
-                                                [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.patch");
-            Activity ret =
-                service.JsonToObject<Activity>(
-                    service.ExecuteRequest(Resource, "patch", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing activities.patch");
-            return ret;
-        }
-
-        /// <summary>Search for activities</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual ActivityFeed SearchAndExecute([Optional] Alt? alt,
-                                                     [Optional] string bbox,
-                                                     [Optional] string c,
-                                                     [Optional] string hl,
-                                                     [Optional] string lat,
-                                                     [Optional] string lon,
-                                                     [Optional] Int64? maxResults,
-                                                     [Optional] string pid,
-                                                     [Optional] string q,
-                                                     [Optional] string radius,
-                                                     [Optional] Boolean? truncateAtom)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            parameters["truncateAtom"] = truncateAtom;
-            logger.Debug("Executing activities.search");
-            ActivityFeed ret =
-                service.JsonToObject<ActivityFeed>(service.ExecuteRequest(Resource, "search", body, parameters));
-            logger.Debug("Done Executing activities.search");
-            return ret;
-        }
-
-        /// <summary>Get real-time activity tracking information</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual ActivityFeed TrackAndExecute([Optional] Alt? alt,
-                                                    [Optional] string bbox,
-                                                    [Optional] string c,
-                                                    [Optional] string hl,
-                                                    [Optional] string lat,
-                                                    [Optional] string lon,
-                                                    [Optional] Int64? maxResults,
-                                                    [Optional] string pid,
-                                                    [Optional] string q,
-                                                    [Optional] string radius)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["bbox"] = bbox;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["lat"] = lat;
-            parameters["lon"] = lon;
-            parameters["max-results"] = maxResults;
-            parameters["pid"] = pid;
-            parameters["q"] = q;
-            parameters["radius"] = radius;
-            logger.Debug("Executing activities.track");
-            ActivityFeed ret =
-                service.JsonToObject<ActivityFeed>(service.ExecuteRequest(Resource, "track", body, parameters));
-            logger.Debug("Done Executing activities.track");
-            return ret;
-        }
-
-        /// <summary>Update an activity</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Activity UpdateAndExecute(Activity body,
-                                                 string postId,
-                                                 ScopeMember scope,
-                                                 string userId,
-                                                 [Optional] string abuseType,
-                                                 [Optional] Alt? alt,
-                                                 [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing activities.update");
-            Activity ret =
-                service.JsonToObject<Activity>(
-                    service.ExecuteRequest(Resource, "update", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing activities.update");
-            return ret;
-        }
-
-        /// <summary>Get a count of link shares</summary>
-        public virtual CountRequest Count()
-        {
+        public virtual CountRequest Count() {
             return new CountRequest(service);
         }
-
+        
         /// <summary>Get a count of link shares</summary>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="url">Optional - URLs for which to get share counts.</param>
-        public virtual CountRequest Count([Optional] string hl, [Optional] Repeatable<string> url)
-        {
+        public virtual CountRequest Count([System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> url) {
             return new CountRequest(service, hl, url);
         }
-
+        
         /// <summary>Delete an activity</summary>
-        /// <param name="postId">Required - ID of the activity to delete.</param>
-        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to delete.</param>
-        public virtual DeleteRequest Delete(string postId, Scope scope, string userId)
-        {
-            return new DeleteRequest(service, postId, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to delete.</param>
+        public virtual DeleteRequest Delete(string userId, Scope scope, string postId) {
+            return new DeleteRequest(service, userId, scope, postId);
         }
-
+        
         /// <summary>Delete an activity</summary>
-        /// <param name="postId">Required - ID of the activity to delete.</param>
-        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to delete.</param>
+        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to delete.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string postId,
-                                            Scope scope,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new DeleteRequest(service, postId, scope, userId, alt, hl);
+        public virtual DeleteRequest Delete(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, scope, postId, alt, hl);
         }
-
+        
         /// <summary>Search for people by topic</summary>
-        public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch()
-        {
+        public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch() {
             return new ExtractPeopleFromSearchRequest(service);
         }
-
+        
         /// <summary>Search for people by topic</summary>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
@@ -2411,79 +4668,54 @@ namespace Google.Apis
         /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
         /// <param name="q">Optional - Full-text search query string.</param>
         /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch([Optional] Alt? alt,
-                                                                              [Optional] string bbox,
-                                                                              [Optional] string c,
-                                                                              [Optional] string hl,
-                                                                              [Optional] string lat,
-                                                                              [Optional] string lon,
-                                                                              [Optional] Int64? maxResults,
-                                                                              [Optional] string pid,
-                                                                              [Optional] string q,
-                                                                              [Optional] string radius)
-        {
+        public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) {
             return new ExtractPeopleFromSearchRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius);
         }
-
+        
         /// <summary>Get an activity</summary>
-        /// <param name="postId">Required - ID of the post to get.</param>
         /// <param name="userId">Required - ID of the user whose post to get.</param>
-        public virtual GetRequest Get(string postId, string userId)
-        {
-            return new GetRequest(service, postId, userId);
+        /// <param name="postId">Required - ID of the post to get.</param>
+        public virtual GetRequest Get(string userId, string postId) {
+            return new GetRequest(service, userId, postId);
         }
-
+        
         /// <summary>Get an activity</summary>
-        /// <param name="postId">Required - ID of the post to get.</param>
         /// <param name="userId">Required - ID of the user whose post to get.</param>
+        /// <param name="postId">Required - ID of the post to get.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
         /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
         /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual GetRequest Get(string postId,
-                                      string userId,
-                                      [Optional] Alt? alt,
-                                      [Optional] string hl,
-                                      [Optional] Int64? maxComments,
-                                      [Optional] Int64? maxLiked,
-                                      [Optional] Boolean? truncateAtom)
-        {
-            return new GetRequest(service, postId, userId, alt, hl, maxComments, maxLiked, truncateAtom);
+        public virtual GetRequest Get(string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
+            return new GetRequest(service, userId, postId, alt, hl, maxComments, maxLiked, truncateAtom);
         }
-
+        
         /// <summary>Create a new activity</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual InsertRequest Insert(Activity body, string userId)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Activity body, string userId) {
             return new InsertRequest(service, body, userId);
         }
-
+        
         /// <summary>Create a new activity</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="preview">Optional - If true, only preview the action.</param>
-        public virtual InsertRequest Insert(Activity body,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl,
-                                            [Optional] Boolean? preview)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Activity body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preview) {
             return new InsertRequest(service, body, userId, alt, hl, preview);
         }
-
+        
         /// <summary>List activities</summary>
-        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListRequest List(ScopeEnum scope, string userId)
-        {
-            return new ListRequest(service, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
+        public virtual ListRequest List(string userId, ScopeEnum scope) {
+            return new ListRequest(service, userId, scope);
         }
-
+        
         /// <summary>List activities</summary>
-        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
@@ -2491,53 +4723,34 @@ namespace Google.Apis
         /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
         /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual ListRequest List(ScopeEnum scope,
-                                        string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string c,
-                                        [Optional] string hl,
-                                        [Optional] Int64? maxComments,
-                                        [Optional] Int64? maxLiked,
-                                        [Optional] Int64? maxResults,
-                                        [Optional] Boolean? truncateAtom)
-        {
-            return new ListRequest(
-                service, scope, userId, alt, c, hl, maxComments, maxLiked, maxResults, truncateAtom);
+        public virtual ListRequest List(string userId, ScopeEnum scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
+            return new ListRequest(service, userId, scope, alt, c, hl, maxComments, maxLiked, maxResults, truncateAtom);
         }
-
+        
         /// <summary>Update an activity. This method supports patch semantics.</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to update.</param>
-        public virtual PatchRequest Patch(Activity body, string postId, ScopeMember scope, string userId)
-        {
-            return new PatchRequest(service, body, postId, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to update.</param>
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId) {
+            return new PatchRequest(service, body, userId, scope, postId);
         }
-
+        
         /// <summary>Update an activity. This method supports patch semantics.</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to update.</param>
+        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to update.</param>
         /// <param name="abuseType">Optional</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Activity body,
-                                          string postId,
-                                          ScopeMember scope,
-                                          string userId,
-                                          [Optional] string abuseType,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            return new PatchRequest(service, body, postId, scope, userId, abuseType, alt, hl);
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new PatchRequest(service, body, userId, scope, postId, abuseType, alt, hl);
         }
-
+        
         /// <summary>Search for activities</summary>
-        public virtual SearchRequest Search()
-        {
+        public virtual SearchRequest Search() {
             return new SearchRequest(service);
         }
-
+        
         /// <summary>Search for activities</summary>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
@@ -2550,27 +4763,15 @@ namespace Google.Apis
         /// <param name="q">Optional - Full-text search query string.</param>
         /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
         /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual SearchRequest Search([Optional] Alt? alt,
-                                            [Optional] string bbox,
-                                            [Optional] string c,
-                                            [Optional] string hl,
-                                            [Optional] string lat,
-                                            [Optional] string lon,
-                                            [Optional] Int64? maxResults,
-                                            [Optional] string pid,
-                                            [Optional] string q,
-                                            [Optional] string radius,
-                                            [Optional] Boolean? truncateAtom)
-        {
+        public virtual SearchRequest Search([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
             return new SearchRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius, truncateAtom);
         }
-
+        
         /// <summary>Get real-time activity tracking information</summary>
-        public virtual TrackRequest Track()
-        {
+        public virtual TrackRequest Track() {
             return new TrackRequest(service);
         }
-
+        
         /// <summary>Get real-time activity tracking information</summary>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
@@ -2582,217 +4783,271 @@ namespace Google.Apis
         /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
         /// <param name="q">Optional - Full-text search query string.</param>
         /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual TrackRequest Track([Optional] Alt? alt,
-                                          [Optional] string bbox,
-                                          [Optional] string c,
-                                          [Optional] string hl,
-                                          [Optional] string lat,
-                                          [Optional] string lon,
-                                          [Optional] Int64? maxResults,
-                                          [Optional] string pid,
-                                          [Optional] string q,
-                                          [Optional] string radius)
-        {
+        public virtual TrackRequest Track([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) {
             return new TrackRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius);
         }
-
+        
         /// <summary>Update an activity</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to update.</param>
-        public virtual UpdateRequest Update(Activity body, string postId, ScopeMember scope, string userId)
-        {
-            return new UpdateRequest(service, body, postId, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to update.</param>
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId) {
+            return new UpdateRequest(service, body, userId, scope, postId);
         }
-
+        
         /// <summary>Update an activity</summary>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user whose post to update.</param>
+        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to update.</param>
         /// <param name="abuseType">Optional</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Activity body,
-                                            string postId,
-                                            ScopeMember scope,
-                                            string userId,
-                                            [Optional] string abuseType,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new UpdateRequest(service, body, postId, scope, userId, abuseType, alt, hl);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new UpdateRequest(service, body, userId, scope, postId, abuseType, alt, hl);
         }
-
-        #region Nested type: CountRequest
-
-        public class CountRequest : ServiceRequest<CountFeed>
-        {
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        /// <summary>The collection to which the activity belongs.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Scope {
+            
+            /// <summary>Activities liked by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@liked")]
+            Liked,
+            
+            /// <summary>Activities muted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@muted")]
+            Muted,
+            
+            /// <summary>Activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        /// <summary>The collection of activities to list.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ScopeEnum {
+            
+            /// <summary>Limit to activities commented on by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@comments")]
+            Comments,
+            
+            /// <summary>Limit to activities to be consumed by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@consumption")]
+            Consumption,
+            
+            /// <summary>Limit to activities liked by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@liked")]
+            Liked,
+            
+            /// <summary>Limit to public activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@public")]
+            Public,
+            
+            /// <summary>Limit to activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        /// <summary>The collection to which the activity belongs.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ScopeMember {
+            
+            /// <summary>Activities reported by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@abuse")]
+            Abuse,
+            
+            /// <summary>Activities liked by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@liked")]
+            Liked,
+            
+            /// <summary>Activities muted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@muted")]
+            Muted,
+            
+            /// <summary>Activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        public class CountRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.CountFeed> {
+            
             private string hl;
-
-            private Repeatable<string> url;
-
-            public CountRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public CountRequest(ISchemaAwareRequestExecutor service,
-                                [Optional] string hl,
-                                [Optional] Repeatable<string> url) : base(service)
-            {
+            
+            private Google.Apis.Util.Repeatable<string> url;
+            
+            public CountRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public CountRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> url) : 
+                    base(service) {
                 this.hl = hl;
                 this.url = url;
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>URLs for which to get share counts.</summary>
-            [RequestParameter("url")]
-            public virtual Repeatable<string> Url
-            {
-                get { return url; }
-                set { url = value; }
+            [Google.Apis.Util.RequestParameterAttribute("url")]
+            public virtual Google.Apis.Util.Repeatable<string> Url {
+                get {
+                    return this.url;
+                }
+                set {
+                    this.url = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "count"; }
+            
+            protected override string MethodName {
+                get {
+                    return "count";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string postId;
-
-            private readonly Scope scope;
-
-            private readonly string userId;
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string postId, Scope scope, string userId)
-                : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string postId;
+            
+            private Scope scope;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
             }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string postId,
-                                 Scope scope,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity to delete.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual Scope Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual Scope Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user whose post to delete.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: ExtractPeopleFromSearchRequest
-
-        public class ExtractPeopleFromSearchRequest : ServiceRequest<PeopleFeed>
-        {
+        
+        public class ExtractPeopleFromSearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PeopleFeed> {
+            
             private Alt? alt;
-
+            
             private string bbox;
-
+            
             private string c;
-
+            
             private string hl;
-
+            
             private string lat;
-
+            
             private string lon;
-
-            private Int64? maxResults;
-
+            
+            private System.Int64? maxResults;
+            
             private string pid;
-
+            
             private string q;
-
+            
             private string radius;
-
-            public ExtractPeopleFromSearchRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public ExtractPeopleFromSearchRequest(ISchemaAwareRequestExecutor service,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string bbox,
-                                                  [Optional] string c,
-                                                  [Optional] string hl,
-                                                  [Optional] string lat,
-                                                  [Optional] string lon,
-                                                  [Optional] Int64? maxResults,
-                                                  [Optional] string pid,
-                                                  [Optional] string q,
-                                                  [Optional] string radius) : base(service)
-            {
+            
+            public ExtractPeopleFromSearchRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public ExtractPeopleFromSearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) : 
+                    base(service) {
                 this.alt = alt;
                 this.bbox = bbox;
                 this.c = c;
@@ -2804,329 +5059,372 @@ namespace Google.Apis
                 this.q = q;
                 this.radius = radius;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Bounding box to use in a geographic location query.</summary>
-            [RequestParameter("bbox")]
-            public virtual string Bbox
-            {
-                get { return bbox; }
-                set { bbox = value; }
+            [Google.Apis.Util.RequestParameterAttribute("bbox")]
+            public virtual string Bbox {
+                get {
+                    return this.bbox;
+                }
+                set {
+                    this.bbox = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Latitude to use in a geographic location query.</summary>
-            [RequestParameter("lat")]
-            public virtual string Lat
-            {
-                get { return lat; }
-                set { lat = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lat")]
+            public virtual string Lat {
+                get {
+                    return this.lat;
+                }
+                set {
+                    this.lat = value;
+                }
             }
-
+            
             /// <summary>Longitude to use in a geographic location query.</summary>
-            [RequestParameter("lon")]
-            public virtual string Lon
-            {
-                get { return lon; }
-                set { lon = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lon")]
+            public virtual string Lon {
+                get {
+                    return this.lon;
+                }
+                set {
+                    this.lon = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of a place to use in a geographic location query.</summary>
-            [RequestParameter("pid")]
-            public virtual string Pid
-            {
-                get { return pid; }
-                set { pid = value; }
+            [Google.Apis.Util.RequestParameterAttribute("pid")]
+            public virtual string Pid {
+                get {
+                    return this.pid;
+                }
+                set {
+                    this.pid = value;
+                }
             }
-
+            
             /// <summary>Full-text search query string.</summary>
-            [RequestParameter("q")]
-            public virtual string Q
-            {
-                get { return q; }
-                set { q = value; }
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+                set {
+                    this.q = value;
+                }
             }
-
+            
             /// <summary>Radius to use in a geographic location query.</summary>
-            [RequestParameter("radius")]
-            public virtual string Radius
-            {
-                get { return radius; }
-                set { radius = value; }
+            [Google.Apis.Util.RequestParameterAttribute("radius")]
+            public virtual string Radius {
+                get {
+                    return this.radius;
+                }
+                set {
+                    this.radius = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "extractPeopleFromSearch"; }
+            
+            protected override string MethodName {
+                get {
+                    return "extractPeopleFromSearch";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Activity>
-        {
-            private readonly string postId;
-            private readonly string userId;
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Activity> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            private Int64? maxComments;
-
-            private Int64? maxLiked;
-
-            private Boolean? truncateAtom;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string postId, string userId) : base(service)
-            {
-                this.postId = postId;
+            
+            private System.Int64? maxComments;
+            
+            private System.Int64? maxLiked;
+            
+            private string postId;
+            
+            private System.Boolean? truncateAtom;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string postId,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl,
-                              [Optional] Int64? maxComments,
-                              [Optional] Int64? maxLiked,
-                              [Optional] Boolean? truncateAtom) : base(service)
-            {
-                this.postId = postId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
                 this.alt = alt;
                 this.hl = hl;
                 this.maxComments = maxComments;
                 this.maxLiked = maxLiked;
                 this.truncateAtom = truncateAtom;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of comments to include.</summary>
-            [RequestParameter("max-comments")]
-            public virtual Int64? MaxComments
-            {
-                get { return maxComments; }
-                set { maxComments = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-comments")]
+            public virtual System.Int64? MaxComments {
+                get {
+                    return this.maxComments;
+                }
+                set {
+                    this.maxComments = value;
+                }
             }
-
+            
             /// <summary>Maximum number of likes to include.</summary>
-            [RequestParameter("max-liked")]
-            public virtual Int64? MaxLiked
-            {
-                get { return maxLiked; }
-                set { maxLiked = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-liked")]
+            public virtual System.Int64? MaxLiked {
+                get {
+                    return this.maxLiked;
+                }
+                set {
+                    this.maxLiked = value;
+                }
             }
-
+            
             /// <summary>ID of the post to get.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>Truncate the value of the atom:content element.</summary>
-            [RequestParameter("truncateAtom")]
-            public virtual Boolean? TruncateAtom
-            {
-                get { return truncateAtom; }
-                set { truncateAtom = value; }
+            [Google.Apis.Util.RequestParameterAttribute("truncateAtom")]
+            public virtual System.Boolean? TruncateAtom {
+                get {
+                    return this.truncateAtom;
+                }
+                set {
+                    this.truncateAtom = value;
+                }
             }
-
+            
             /// <summary>ID of the user whose post to get.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<Activity>
-        {
-            private readonly string userId;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Activity> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            private Boolean? preview;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service, Activity body, string userId) : base(service)
-            {
-                Body = body;
+            
+            private System.Boolean? preview;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Activity bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
             }
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 Activity body,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl,
-                                 [Optional] Boolean? preview) : base(service)
-            {
-                Body = body;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preview) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
                 this.preview = preview;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>If true, only preview the action.</summary>
-            [RequestParameter("preview")]
-            public virtual Boolean? Preview
-            {
-                get { return preview; }
-                set { preview = value; }
+            [Google.Apis.Util.RequestParameterAttribute("preview")]
+            public virtual System.Boolean? Preview {
+                get {
+                    return this.preview;
+                }
+                set {
+                    this.preview = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Activity Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            public virtual Google.Apis.Buzz.v1.Data.Activity Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<ActivityFeed>
-        {
-            private readonly ScopeEnum scope;
-            private readonly string userId;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.ActivityFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
             private string hl;
-
-            private Int64? maxComments;
-
-            private Int64? maxLiked;
-
-            private Int64? maxResults;
-
-            private Boolean? truncateAtom;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, ScopeEnum scope, string userId) : base(service)
-            {
-                this.scope = scope;
+            
+            private System.Int64? maxComments;
+            
+            private System.Int64? maxLiked;
+            
+            private System.Int64? maxResults;
+            
+            private ScopeEnum scope;
+            
+            private System.Boolean? truncateAtom;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, ScopeEnum scope) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               ScopeEnum scope,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string c,
-                               [Optional] string hl,
-                               [Optional] Int64? maxComments,
-                               [Optional] Int64? maxLiked,
-                               [Optional] Int64? maxResults,
-                               [Optional] Boolean? truncateAtom) : base(service)
-            {
-                this.scope = scope;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, ScopeEnum scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
@@ -3135,241 +5433,261 @@ namespace Google.Apis
                 this.maxResults = maxResults;
                 this.truncateAtom = truncateAtom;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of comments to include.</summary>
-            [RequestParameter("max-comments")]
-            public virtual Int64? MaxComments
-            {
-                get { return maxComments; }
-                set { maxComments = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-comments")]
+            public virtual System.Int64? MaxComments {
+                get {
+                    return this.maxComments;
+                }
+                set {
+                    this.maxComments = value;
+                }
             }
-
+            
             /// <summary>Maximum number of likes to include.</summary>
-            [RequestParameter("max-liked")]
-            public virtual Int64? MaxLiked
-            {
-                get { return maxLiked; }
-                set { maxLiked = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-liked")]
+            public virtual System.Int64? MaxLiked {
+                get {
+                    return this.maxLiked;
+                }
+                set {
+                    this.maxLiked = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>The collection of activities to list.</summary>
-            [RequestParameter("scope")]
-            public virtual ScopeEnum Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual ScopeEnum Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>Truncate the value of the atom:content element.</summary>
-            [RequestParameter("truncateAtom")]
-            public virtual Boolean? TruncateAtom
-            {
-                get { return truncateAtom; }
-                set { truncateAtom = value; }
+            [Google.Apis.Util.RequestParameterAttribute("truncateAtom")]
+            public virtual System.Boolean? TruncateAtom {
+                get {
+                    return this.truncateAtom;
+                }
+                set {
+                    this.truncateAtom = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: PatchRequest
-
-        public class PatchRequest : ServiceRequest<Activity>
-        {
-            private readonly string postId;
-
-            private readonly ScopeMember scope;
-
-            private readonly string userId;
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Activity> {
+            
             private string abuseType;
-
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Activity body,
-                                string postId,
-                                ScopeMember scope,
-                                string userId) : base(service)
-            {
-                Body = body;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string postId;
+            
+            private ScopeMember scope;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Activity bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
             }
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Activity body,
-                                string postId,
-                                ScopeMember scope,
-                                string userId,
-                                [Optional] string abuseType,
-                                [Optional] Alt? alt,
-                                [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
                 this.abuseType = abuseType;
                 this.alt = alt;
                 this.hl = hl;
             }
-
-            [RequestParameter("abuseType")]
-            public virtual string AbuseType
-            {
-                get { return abuseType; }
-                set { abuseType = value; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("abuseType")]
+            public virtual string AbuseType {
+                get {
+                    return this.abuseType;
+                }
+                set {
+                    this.abuseType = value;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity to update.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual ScopeMember Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual ScopeMember Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user whose post to update.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Activity Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            public virtual Google.Apis.Buzz.v1.Data.Activity Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "patch"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: SearchRequest
-
-        public class SearchRequest : ServiceRequest<ActivityFeed>
-        {
+        
+        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.ActivityFeed> {
+            
             private Alt? alt;
-
+            
             private string bbox;
-
+            
             private string c;
-
+            
             private string hl;
-
+            
             private string lat;
-
+            
             private string lon;
-
-            private Int64? maxResults;
-
+            
+            private System.Int64? maxResults;
+            
             private string pid;
-
+            
             private string q;
-
+            
             private string radius;
-
-            private Boolean? truncateAtom;
-
-            public SearchRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public SearchRequest(ISchemaAwareRequestExecutor service,
-                                 [Optional] Alt? alt,
-                                 [Optional] string bbox,
-                                 [Optional] string c,
-                                 [Optional] string hl,
-                                 [Optional] string lat,
-                                 [Optional] string lon,
-                                 [Optional] Int64? maxResults,
-                                 [Optional] string pid,
-                                 [Optional] string q,
-                                 [Optional] string radius,
-                                 [Optional] Boolean? truncateAtom) : base(service)
-            {
+            
+            private System.Boolean? truncateAtom;
+            
+            public SearchRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
+                    base(service) {
                 this.alt = alt;
                 this.bbox = bbox;
                 this.c = c;
@@ -3382,146 +5700,169 @@ namespace Google.Apis
                 this.radius = radius;
                 this.truncateAtom = truncateAtom;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Bounding box to use in a geographic location query.</summary>
-            [RequestParameter("bbox")]
-            public virtual string Bbox
-            {
-                get { return bbox; }
-                set { bbox = value; }
+            [Google.Apis.Util.RequestParameterAttribute("bbox")]
+            public virtual string Bbox {
+                get {
+                    return this.bbox;
+                }
+                set {
+                    this.bbox = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Latitude to use in a geographic location query.</summary>
-            [RequestParameter("lat")]
-            public virtual string Lat
-            {
-                get { return lat; }
-                set { lat = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lat")]
+            public virtual string Lat {
+                get {
+                    return this.lat;
+                }
+                set {
+                    this.lat = value;
+                }
             }
-
+            
             /// <summary>Longitude to use in a geographic location query.</summary>
-            [RequestParameter("lon")]
-            public virtual string Lon
-            {
-                get { return lon; }
-                set { lon = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lon")]
+            public virtual string Lon {
+                get {
+                    return this.lon;
+                }
+                set {
+                    this.lon = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of a place to use in a geographic location query.</summary>
-            [RequestParameter("pid")]
-            public virtual string Pid
-            {
-                get { return pid; }
-                set { pid = value; }
+            [Google.Apis.Util.RequestParameterAttribute("pid")]
+            public virtual string Pid {
+                get {
+                    return this.pid;
+                }
+                set {
+                    this.pid = value;
+                }
             }
-
+            
             /// <summary>Full-text search query string.</summary>
-            [RequestParameter("q")]
-            public virtual string Q
-            {
-                get { return q; }
-                set { q = value; }
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+                set {
+                    this.q = value;
+                }
             }
-
+            
             /// <summary>Radius to use in a geographic location query.</summary>
-            [RequestParameter("radius")]
-            public virtual string Radius
-            {
-                get { return radius; }
-                set { radius = value; }
+            [Google.Apis.Util.RequestParameterAttribute("radius")]
+            public virtual string Radius {
+                get {
+                    return this.radius;
+                }
+                set {
+                    this.radius = value;
+                }
             }
-
+            
             /// <summary>Truncate the value of the atom:content element.</summary>
-            [RequestParameter("truncateAtom")]
-            public virtual Boolean? TruncateAtom
-            {
-                get { return truncateAtom; }
-                set { truncateAtom = value; }
+            [Google.Apis.Util.RequestParameterAttribute("truncateAtom")]
+            public virtual System.Boolean? TruncateAtom {
+                get {
+                    return this.truncateAtom;
+                }
+                set {
+                    this.truncateAtom = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "search"; }
+            
+            protected override string MethodName {
+                get {
+                    return "search";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: TrackRequest
-
-        public class TrackRequest : ServiceRequest<ActivityFeed>
-        {
+        
+        public class TrackRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.ActivityFeed> {
+            
             private Alt? alt;
-
+            
             private string bbox;
-
+            
             private string c;
-
+            
             private string hl;
-
+            
             private string lat;
-
+            
             private string lon;
-
-            private Int64? maxResults;
-
+            
+            private System.Int64? maxResults;
+            
             private string pid;
-
+            
             private string q;
-
+            
             private string radius;
-
-            public TrackRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public TrackRequest(ISchemaAwareRequestExecutor service,
-                                [Optional] Alt? alt,
-                                [Optional] string bbox,
-                                [Optional] string c,
-                                [Optional] string hl,
-                                [Optional] string lat,
-                                [Optional] string lon,
-                                [Optional] Int64? maxResults,
-                                [Optional] string pid,
-                                [Optional] string q,
-                                [Optional] string radius) : base(service)
-            {
+            
+            public TrackRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public TrackRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) : 
+                    base(service) {
                 this.alt = alt;
                 this.bbox = bbox;
                 this.c = c;
@@ -3533,5499 +5874,3949 @@ namespace Google.Apis
                 this.q = q;
                 this.radius = radius;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Bounding box to use in a geographic location query.</summary>
-            [RequestParameter("bbox")]
-            public virtual string Bbox
-            {
-                get { return bbox; }
-                set { bbox = value; }
+            [Google.Apis.Util.RequestParameterAttribute("bbox")]
+            public virtual string Bbox {
+                get {
+                    return this.bbox;
+                }
+                set {
+                    this.bbox = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Latitude to use in a geographic location query.</summary>
-            [RequestParameter("lat")]
-            public virtual string Lat
-            {
-                get { return lat; }
-                set { lat = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lat")]
+            public virtual string Lat {
+                get {
+                    return this.lat;
+                }
+                set {
+                    this.lat = value;
+                }
             }
-
+            
             /// <summary>Longitude to use in a geographic location query.</summary>
-            [RequestParameter("lon")]
-            public virtual string Lon
-            {
-                get { return lon; }
-                set { lon = value; }
+            [Google.Apis.Util.RequestParameterAttribute("lon")]
+            public virtual string Lon {
+                get {
+                    return this.lon;
+                }
+                set {
+                    this.lon = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of a place to use in a geographic location query.</summary>
-            [RequestParameter("pid")]
-            public virtual string Pid
-            {
-                get { return pid; }
-                set { pid = value; }
+            [Google.Apis.Util.RequestParameterAttribute("pid")]
+            public virtual string Pid {
+                get {
+                    return this.pid;
+                }
+                set {
+                    this.pid = value;
+                }
             }
-
+            
             /// <summary>Full-text search query string.</summary>
-            [RequestParameter("q")]
-            public virtual string Q
-            {
-                get { return q; }
-                set { q = value; }
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+                set {
+                    this.q = value;
+                }
             }
-
+            
             /// <summary>Radius to use in a geographic location query.</summary>
-            [RequestParameter("radius")]
-            public virtual string Radius
-            {
-                get { return radius; }
-                set { radius = value; }
+            [Google.Apis.Util.RequestParameterAttribute("radius")]
+            public virtual string Radius {
+                get {
+                    return this.radius;
+                }
+                set {
+                    this.radius = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "track"; }
+            
+            protected override string MethodName {
+                get {
+                    return "track";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: UpdateRequest
-
-        public class UpdateRequest : ServiceRequest<Activity>
-        {
-            private readonly string postId;
-
-            private readonly ScopeMember scope;
-
-            private readonly string userId;
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Activity> {
+            
             private string abuseType;
-
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Activity body,
-                                 string postId,
-                                 ScopeMember scope,
-                                 string userId) : base(service)
-            {
-                Body = body;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string postId;
+            
+            private ScopeMember scope;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Activity bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
             }
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Activity body,
-                                 string postId,
-                                 ScopeMember scope,
-                                 string userId,
-                                 [Optional] string abuseType,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
                 this.abuseType = abuseType;
                 this.alt = alt;
                 this.hl = hl;
             }
-
-            [RequestParameter("abuseType")]
-            public virtual string AbuseType
-            {
-                get { return abuseType; }
-                set { abuseType = value; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("abuseType")]
+            public virtual string AbuseType {
+                get {
+                    return this.abuseType;
+                }
+                set {
+                    this.abuseType = value;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity to update.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual ScopeMember Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual ScopeMember Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user whose post to update.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Activity Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "activities"; }
+            public virtual Google.Apis.Buzz.v1.Data.Activity Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "update"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "activities";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
     }
-
-    public class CommentsResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
-        #region Scope enum
-
-        /// <summary>The collection to which the activity belongs.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Scope
-        {
-            /// <summary>Activities posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
-        #region ScopeEnum enum
-
-        /// <summary>The collection to which the activity belongs.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum ScopeEnum
-        {
-            /// <summary>Comments reported by the user.</summary>
-            [StringValue("@abuse")] Abuse,
-
-            /// <summary>Comments posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
+    
+    public class CommentsResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "comments";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(CommentsResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public CommentsResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(CommentsResource));
+        
+        public CommentsResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Delete a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string commentId,
-                                             string postId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing comments.delete");
-            return ret;
-        }
-
-        /// <summary>Get a comment</summary>
         /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
+        public virtual DeleteRequest Delete(string userId, string postId, string commentId) {
+            return new DeleteRequest(service, userId, postId, commentId);
+        }
+        
+        /// <summary>Delete a comment</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
+        /// <param name="commentId">Required - ID of the comment being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream GetAsStream(string commentId,
-                                          string postId,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing comments.get");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, postId, commentId, alt, hl);
         }
-
-        /// <summary>Create a comment</summary>
-        /// <param name="postId">Required - ID of the activity on which to comment.</param>
-        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream InsertAsStream(string body,
-                                             string postId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing comments.insert");
-            return ret;
-        }
-
-        /// <summary>List comments</summary>
+        
+        /// <summary>Get a comment</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+        /// <param name="commentId">Required - ID of the comment being referenced.</param>
+        public virtual GetRequest Get(string userId, string postId, string commentId) {
+            return new GetRequest(service, userId, postId, commentId);
+        }
+        
+        /// <summary>Get a comment</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
+        /// <param name="commentId">Required - ID of the comment being referenced.</param>
+        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+        /// <param name="hl">Optional - Language code to limit language results.</param>
+        public virtual GetRequest Get(string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new GetRequest(service, userId, postId, commentId, alt, hl);
+        }
+        
+        /// <summary>Create a comment</summary>
+        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
+        /// <param name="postId">Required - ID of the activity on which to comment.</param>
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId) {
+            return new InsertRequest(service, body, userId, postId);
+        }
+        
+        /// <summary>Create a comment</summary>
+        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
+        /// <param name="postId">Required - ID of the activity on which to comment.</param>
+        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+        /// <param name="hl">Optional - Language code to limit language results.</param>
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new InsertRequest(service, body, userId, postId, alt, hl);
+        }
+        
+        /// <summary>List comments</summary>
         /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
+        public virtual ListRequest List(string userId, Scope scope, string postId) {
+            return new ListRequest(service, userId, scope, postId);
+        }
+        
+        /// <summary>List comments</summary>
+        /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListAsStream(string postId,
-                                           Scope scope,
-                                           string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string c,
-                                           [Optional] string hl,
-                                           [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing comments.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing comments.list");
-            return ret;
+        public virtual ListRequest List(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ListRequest(service, userId, scope, postId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Update a comment. This method supports patch semantics.</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream PatchAsStream(string body,
-                                            string commentId,
-                                            string postId,
-                                            ScopeEnum scope,
-                                            string userId,
-                                            [Optional] string abuseType,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.patch");
-            Stream ret = service.ExecuteRequest(Resource, "patch", body, parameters);
-            logger.Debug("Done Executing comments.patch");
-            return ret;
-        }
-
-        /// <summary>Update a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
         /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream UpdateAsStream(string body,
-                                             string commentId,
-                                             string postId,
-                                             ScopeEnum scope,
-                                             string userId,
-                                             [Optional] string abuseType,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.update");
-            Stream ret = service.ExecuteRequest(Resource, "update", body, parameters);
-            logger.Debug("Done Executing comments.update");
-            return ret;
-        }
-
-        /// <summary>Delete a comment</summary>
         /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string commentId,
-                                               string postId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing comments.delete");
-            return ret;
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId) {
+            return new PatchRequest(service, body, userId, scope, postId, commentId);
         }
-
-        /// <summary>Get a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Comment GetAndExecute(string commentId,
-                                             string postId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.get");
-            Comment ret = service.JsonToObject<Comment>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing comments.get");
-            return ret;
-        }
-
-        /// <summary>Create a comment</summary>
-        /// <param name="postId">Required - ID of the activity on which to comment.</param>
-        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Comment InsertAndExecute(Comment body,
-                                                string postId,
-                                                string userId,
-                                                [Optional] Alt? alt,
-                                                [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.insert");
-            Comment ret =
-                service.JsonToObject<Comment>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing comments.insert");
-            return ret;
-        }
-
-        /// <summary>List comments</summary>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual CommentFeed ListAndExecute(string postId,
-                                                  Scope scope,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string c,
-                                                  [Optional] string hl,
-                                                  [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing comments.list");
-            CommentFeed ret =
-                service.JsonToObject<CommentFeed>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing comments.list");
-            return ret;
-        }
-
+        
         /// <summary>Update a comment. This method supports patch semantics.</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
+        /// <param name="commentId">Required - ID of the comment being referenced.</param>
         /// <param name="abuseType">Optional</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Comment PatchAndExecute(Comment body,
-                                               string commentId,
-                                               string postId,
-                                               ScopeEnum scope,
-                                               string userId,
-                                               [Optional] string abuseType,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.patch");
-            Comment ret =
-                service.JsonToObject<Comment>(
-                    service.ExecuteRequest(Resource, "patch", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing comments.patch");
-            return ret;
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new PatchRequest(service, body, userId, scope, postId, commentId, abuseType, alt, hl);
         }
-
+        
         /// <summary>Update a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Comment UpdateAndExecute(Comment body,
-                                                string commentId,
-                                                string postId,
-                                                ScopeEnum scope,
-                                                string userId,
-                                                [Optional] string abuseType,
-                                                [Optional] Alt? alt,
-                                                [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["commentId"] = commentId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["abuseType"] = abuseType;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing comments.update");
-            Comment ret =
-                service.JsonToObject<Comment>(
-                    service.ExecuteRequest(Resource, "update", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing comments.update");
-            return ret;
-        }
-
-        /// <summary>Delete a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual DeleteRequest Delete(string commentId, string postId, string userId)
-        {
-            return new DeleteRequest(service, commentId, postId, userId);
-        }
-
-        /// <summary>Delete a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string commentId,
-                                            string postId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new DeleteRequest(service, commentId, postId, userId, alt, hl);
-        }
-
-        /// <summary>Get a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual GetRequest Get(string commentId, string postId, string userId)
-        {
-            return new GetRequest(service, commentId, postId, userId);
-        }
-
-        /// <summary>Get a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string commentId,
-                                      string postId,
-                                      string userId,
-                                      [Optional] Alt? alt,
-                                      [Optional] string hl)
-        {
-            return new GetRequest(service, commentId, postId, userId, alt, hl);
-        }
-
-        /// <summary>Create a comment</summary>
-        /// <param name="postId">Required - ID of the activity on which to comment.</param>
-        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
-        public virtual InsertRequest Insert(Comment body, string postId, string userId)
-        {
-            return new InsertRequest(service, body, postId, userId);
-        }
-
-        /// <summary>Create a comment</summary>
-        /// <param name="postId">Required - ID of the activity on which to comment.</param>
-        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Comment body,
-                                            string postId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new InsertRequest(service, body, postId, userId, alt, hl);
-        }
-
-        /// <summary>List comments</summary>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
-        public virtual ListRequest List(string postId, Scope scope, string userId)
-        {
-            return new ListRequest(service, postId, scope, userId);
-        }
-
-        /// <summary>List comments</summary>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string postId,
-                                        Scope scope,
-                                        string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string c,
-                                        [Optional] string hl,
-                                        [Optional] Int64? maxResults)
-        {
-            return new ListRequest(service, postId, scope, userId, alt, c, hl, maxResults);
-        }
-
-        /// <summary>Update a comment. This method supports patch semantics.</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
         /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual PatchRequest Patch(Comment body,
-                                          string commentId,
-                                          string postId,
-                                          ScopeEnum scope,
-                                          string userId)
-        {
-            return new PatchRequest(service, body, commentId, postId, scope, userId);
-        }
-
-        /// <summary>Update a comment. This method supports patch semantics.</summary>
         /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Comment body,
-                                          string commentId,
-                                          string postId,
-                                          ScopeEnum scope,
-                                          string userId,
-                                          [Optional] string abuseType,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            return new PatchRequest(service, body, commentId, postId, scope, userId, abuseType, alt, hl);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId) {
+            return new UpdateRequest(service, body, userId, scope, postId, commentId);
         }
-
+        
         /// <summary>Update a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual UpdateRequest Update(Comment body,
-                                            string commentId,
-                                            string postId,
-                                            ScopeEnum scope,
-                                            string userId)
-        {
-            return new UpdateRequest(service, body, commentId, postId, scope, userId);
-        }
-
-        /// <summary>Update a comment</summary>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
         /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
+        /// <param name="commentId">Required - ID of the comment being referenced.</param>
         /// <param name="abuseType">Optional</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Comment body,
-                                            string commentId,
-                                            string postId,
-                                            ScopeEnum scope,
-                                            string userId,
-                                            [Optional] string abuseType,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new UpdateRequest(service, body, commentId, postId, scope, userId, abuseType, alt, hl);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new UpdateRequest(service, body, userId, scope, postId, commentId, abuseType, alt, hl);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string commentId;
-
-            private readonly string postId;
-
-            private readonly string userId;
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        /// <summary>The collection to which the activity belongs.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Scope {
+            
+            /// <summary>Activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        /// <summary>The collection to which the activity belongs.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ScopeEnum {
+            
+            /// <summary>Comments reported by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@abuse")]
+            Abuse,
+            
+            /// <summary>Comments posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
             private Alt? alt;
+            
+            private string commentId;
+            
             private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string commentId, string postId, string userId)
-                : base(service)
-            {
-                this.commentId = commentId;
-                this.postId = postId;
+            
+            private string postId;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
+                this.commentId = commentId;
             }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string commentId,
-                                 string postId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                this.commentId = commentId;
-                this.postId = postId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
+                this.commentId = commentId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the comment being referenced.</summary>
-            [RequestParameter("commentId")]
-            public virtual string CommentId
-            {
-                get { return commentId; }
+            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            public virtual string CommentId {
+                get {
+                    return this.commentId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity for which to delete the comment.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Comment>
-        {
-            private readonly string commentId;
-
-            private readonly string postId;
-
-            private readonly string userId;
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Comment> {
+            
             private Alt? alt;
+            
+            private string commentId;
+            
             private string hl;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string commentId, string postId, string userId)
-                : base(service)
-            {
-                this.commentId = commentId;
-                this.postId = postId;
+            
+            private string postId;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
+                this.commentId = commentId;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string commentId,
-                              string postId,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl) : base(service)
-            {
-                this.commentId = commentId;
-                this.postId = postId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.postId = postId;
+                this.commentId = commentId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the comment being referenced.</summary>
-            [RequestParameter("commentId")]
-            public virtual string CommentId
-            {
-                get { return commentId; }
+            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            public virtual string CommentId {
+                get {
+                    return this.commentId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity for which to get comments.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<Comment>
-        {
-            private readonly string postId;
-
-            private readonly string userId;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Comment> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service, Comment body, string postId, string userId)
-                : base(service)
-            {
-                Body = body;
-                this.postId = postId;
+            
+            private string postId;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Comment bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.postId = postId;
             }
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 Comment body,
-                                 string postId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.postId = postId;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.postId = postId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity on which to comment.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>ID of the user on whose behalf to comment.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Comment Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            public virtual Google.Apis.Buzz.v1.Data.Comment Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<CommentFeed>
-        {
-            private readonly string postId;
-
-            private readonly Scope scope;
-
-            private readonly string userId;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.CommentFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, string postId, Scope scope, string userId)
-                : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            private System.Int64? maxResults;
+            
+            private string postId;
+            
+            private Scope scope;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               string postId,
-                               Scope scope,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string c,
-                               [Optional] string hl,
-                               [Optional] Int64? maxResults) : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of the activity for which to get comments.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual Scope Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual Scope Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user for whose post to get comments.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: PatchRequest
-
-        public class PatchRequest : ServiceRequest<Comment>
-        {
-            private readonly string commentId;
-
-            private readonly string postId;
-
-            private readonly ScopeEnum scope;
-
-            private readonly string userId;
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Comment> {
+            
             private string abuseType;
-
+            
             private Alt? alt;
+            
+            private string commentId;
+            
             private string hl;
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Comment body,
-                                string commentId,
-                                string postId,
-                                ScopeEnum scope,
-                                string userId) : base(service)
-            {
-                Body = body;
-                this.commentId = commentId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string postId;
+            
+            private ScopeEnum scope;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Comment bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.commentId = commentId;
             }
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Comment body,
-                                string commentId,
-                                string postId,
-                                ScopeEnum scope,
-                                string userId,
-                                [Optional] string abuseType,
-                                [Optional] Alt? alt,
-                                [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.commentId = commentId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.commentId = commentId;
                 this.abuseType = abuseType;
                 this.alt = alt;
                 this.hl = hl;
             }
-
-            [RequestParameter("abuseType")]
-            public virtual string AbuseType
-            {
-                get { return abuseType; }
-                set { abuseType = value; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("abuseType")]
+            public virtual string AbuseType {
+                get {
+                    return this.abuseType;
+                }
+                set {
+                    this.abuseType = value;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the comment being referenced.</summary>
-            [RequestParameter("commentId")]
-            public virtual string CommentId
-            {
-                get { return commentId; }
+            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            public virtual string CommentId {
+                get {
+                    return this.commentId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity for which to update the comment.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual ScopeEnum Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual ScopeEnum Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Comment Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            public virtual Google.Apis.Buzz.v1.Data.Comment Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "patch"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: UpdateRequest
-
-        public class UpdateRequest : ServiceRequest<Comment>
-        {
-            private readonly string commentId;
-
-            private readonly string postId;
-
-            private readonly ScopeEnum scope;
-
-            private readonly string userId;
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Comment> {
+            
             private string abuseType;
-
+            
             private Alt? alt;
+            
+            private string commentId;
+            
             private string hl;
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Comment body,
-                                 string commentId,
-                                 string postId,
-                                 ScopeEnum scope,
-                                 string userId) : base(service)
-            {
-                Body = body;
-                this.commentId = commentId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string postId;
+            
+            private ScopeEnum scope;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Comment bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.commentId = commentId;
             }
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Comment body,
-                                 string commentId,
-                                 string postId,
-                                 ScopeEnum scope,
-                                 string userId,
-                                 [Optional] string abuseType,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.commentId = commentId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.commentId = commentId;
                 this.abuseType = abuseType;
                 this.alt = alt;
                 this.hl = hl;
             }
-
-            [RequestParameter("abuseType")]
-            public virtual string AbuseType
-            {
-                get { return abuseType; }
-                set { abuseType = value; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("abuseType")]
+            public virtual string AbuseType {
+                get {
+                    return this.abuseType;
+                }
+                set {
+                    this.abuseType = value;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the comment being referenced.</summary>
-            [RequestParameter("commentId")]
-            public virtual string CommentId
-            {
-                get { return commentId; }
+            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            public virtual string CommentId {
+                get {
+                    return this.commentId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the activity for which to update the comment.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
+            
             /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual ScopeEnum Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual ScopeEnum Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Comment Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "comments"; }
+            public virtual Google.Apis.Buzz.v1.Data.Comment Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "update"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "comments";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
     }
-
-    public class GroupsResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
+    
+    public class GroupsResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "groups";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(GroupsResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public GroupsResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(GroupsResource));
+        
+        public GroupsResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Delete a group</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="groupId">Required - ID of the group to delete.</param>
+        public virtual DeleteRequest Delete(string userId, string groupId) {
+            return new DeleteRequest(service, userId, groupId);
+        }
+        
+        /// <summary>Delete a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group to delete.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string groupId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing groups.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, groupId, alt, hl);
         }
-
+        
         /// <summary>Get a group</summary>
-        /// <param name="groupId">Required - ID of the group to get.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group to get.</param>
+        public virtual GetRequest Get(string userId, string groupId) {
+            return new GetRequest(service, userId, groupId);
+        }
+        
+        /// <summary>Get a group</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group to get.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream GetAsStream(string groupId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing groups.get");
-            return ret;
+        public virtual GetRequest Get(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new GetRequest(service, userId, groupId, alt, hl);
         }
-
+        
         /// <summary>Create a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream InsertAsStream(string body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing groups.insert");
-            return ret;
-        }
-
-        /// <summary>Get a user&apos;s groups</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListAsStream(string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string c,
-                                           [Optional] string hl,
-                                           [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing groups.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing groups.list");
-            return ret;
-        }
-
-        /// <summary>Update a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream PatchAsStream(string body,
-                                            string groupId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.patch");
-            Stream ret = service.ExecuteRequest(Resource, "patch", body, parameters);
-            logger.Debug("Done Executing groups.patch");
-            return ret;
-        }
-
-        /// <summary>Update a group</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream UpdateAsStream(string body,
-                                             string groupId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.update");
-            Stream ret = service.ExecuteRequest(Resource, "update", body, parameters);
-            logger.Debug("Done Executing groups.update");
-            return ret;
-        }
-
-        /// <summary>Delete a group</summary>
-        /// <param name="groupId">Required - ID of the group to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string groupId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing groups.delete");
-            return ret;
-        }
-
-        /// <summary>Get a group</summary>
-        /// <param name="groupId">Required - ID of the group to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Group GetAndExecute(string groupId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.get");
-            Group ret = service.JsonToObject<Group>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing groups.get");
-            return ret;
-        }
-
-        /// <summary>Create a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Group InsertAndExecute(Group body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.insert");
-            Group ret =
-                service.JsonToObject<Group>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing groups.insert");
-            return ret;
-        }
-
-        /// <summary>Get a user&apos;s groups</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual GroupFeed ListAndExecute(string userId,
-                                                [Optional] Alt? alt,
-                                                [Optional] string c,
-                                                [Optional] string hl,
-                                                [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing groups.list");
-            GroupFeed ret = service.JsonToObject<GroupFeed>(
-                service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing groups.list");
-            return ret;
-        }
-
-        /// <summary>Update a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Group PatchAndExecute(Group body,
-                                             string groupId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.patch");
-            Group ret =
-                service.JsonToObject<Group>(
-                    service.ExecuteRequest(Resource, "patch", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing groups.patch");
-            return ret;
-        }
-
-        /// <summary>Update a group</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Group UpdateAndExecute(Group body,
-                                              string groupId,
-                                              string userId,
-                                              [Optional] Alt? alt,
-                                              [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing groups.update");
-            Group ret =
-                service.JsonToObject<Group>(
-                    service.ExecuteRequest(Resource, "update", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing groups.update");
-            return ret;
-        }
-
-        /// <summary>Delete a group</summary>
-        /// <param name="groupId">Required - ID of the group to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual DeleteRequest Delete(string groupId, string userId)
-        {
-            return new DeleteRequest(service, groupId, userId);
-        }
-
-        /// <summary>Delete a group</summary>
-        /// <param name="groupId">Required - ID of the group to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string groupId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            return new DeleteRequest(service, groupId, userId, alt, hl);
-        }
-
-        /// <summary>Get a group</summary>
-        /// <param name="groupId">Required - ID of the group to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual GetRequest Get(string groupId, string userId)
-        {
-            return new GetRequest(service, groupId, userId);
-        }
-
-        /// <summary>Get a group</summary>
-        /// <param name="groupId">Required - ID of the group to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string groupId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            return new GetRequest(service, groupId, userId, alt, hl);
-        }
-
-        /// <summary>Create a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual InsertRequest Insert(Group body, string userId)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Group body, string userId) {
             return new InsertRequest(service, body, userId);
         }
-
+        
         /// <summary>Create a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Group body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Group body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
             return new InsertRequest(service, body, userId, alt, hl);
         }
-
+        
         /// <summary>Get a user&apos;s groups</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListRequest List(string userId)
-        {
+        public virtual ListRequest List(string userId) {
             return new ListRequest(service, userId);
         }
-
+        
         /// <summary>Get a user&apos;s groups</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string c,
-                                        [Optional] string hl,
-                                        [Optional] Int64? maxResults)
-        {
+        public virtual ListRequest List(string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
             return new ListRequest(service, userId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Update a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual PatchRequest Patch(Group body, string groupId, string userId)
-        {
-            return new PatchRequest(service, body, groupId, userId);
+        /// <param name="groupId">Required - ID of the group to update.</param>
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId) {
+            return new PatchRequest(service, body, userId, groupId);
         }
-
+        
         /// <summary>Update a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Group body,
-                                          string groupId,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            return new PatchRequest(service, body, groupId, userId, alt, hl);
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new PatchRequest(service, body, userId, groupId, alt, hl);
         }
-
+        
         /// <summary>Update a group</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual UpdateRequest Update(Group body, string groupId, string userId)
-        {
-            return new UpdateRequest(service, body, groupId, userId);
+        /// <param name="groupId">Required - ID of the group to update.</param>
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId) {
+            return new UpdateRequest(service, body, userId, groupId);
         }
-
+        
         /// <summary>Update a group</summary>
-        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group to update.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Group body,
-                                            string groupId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new UpdateRequest(service, body, groupId, userId, alt, hl);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new UpdateRequest(service, body, userId, groupId, alt, hl);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string groupId;
-
-            private readonly string userId;
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string groupId, string userId) : base(service)
-            {
-                this.groupId = groupId;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
             }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string groupId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                this.groupId = groupId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to delete.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Group>
-        {
-            private readonly string groupId;
-
-            private readonly string userId;
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Group> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string groupId, string userId) : base(service)
-            {
-                this.groupId = groupId;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string groupId,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl) : base(service)
-            {
-                this.groupId = groupId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to get.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<Group>
-        {
-            private readonly string userId;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Group> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service, Group body, string userId) : base(service)
-            {
-                Body = body;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Group bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
             }
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 Group body,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Group Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            public virtual Google.Apis.Buzz.v1.Data.Group Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<GroupFeed>
-        {
-            private readonly string userId;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.GroupFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, string userId) : base(service)
-            {
+            
+            private System.Int64? maxResults;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+                    base(service) {
                 this.userId = userId;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string c,
-                               [Optional] string hl,
-                               [Optional] Int64? maxResults) : base(service)
-            {
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: PatchRequest
-
-        public class PatchRequest : ServiceRequest<Group>
-        {
-            private readonly string groupId;
-
-            private readonly string userId;
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Group> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public PatchRequest(ISchemaAwareRequestExecutor service, Group body, string groupId, string userId)
-                : base(service)
-            {
-                Body = body;
-                this.groupId = groupId;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Group bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.groupId = groupId;
             }
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Group body,
-                                string groupId,
-                                string userId,
-                                [Optional] Alt? alt,
-                                [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.groupId = groupId;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to update.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Group Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            public virtual Google.Apis.Buzz.v1.Data.Group Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "patch"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: UpdateRequest
-
-        public class UpdateRequest : ServiceRequest<Group>
-        {
-            private readonly string groupId;
-
-            private readonly string userId;
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Group> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service, Group body, string groupId, string userId)
-                : base(service)
-            {
-                Body = body;
-                this.groupId = groupId;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Group bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.groupId = groupId;
             }
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Group body,
-                                 string groupId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.groupId = groupId;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to update.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Group Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "groups"; }
+            public virtual Google.Apis.Buzz.v1.Data.Group Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "update"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "groups";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
     }
-
-    public class PeopleResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
-        #region GroupId enum
-
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum GroupId
-        {
-            /// <summary>People who liked this activity.</summary>
-            [StringValue("@liked")] Liked,
-        }
-
-        #endregion
-
-        #region GroupIdEnum enum
-
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum GroupIdEnum
-        {
-            /// <summary>People who reshared this activity.</summary>
-            [StringValue("@reshared")] Reshared,
-        }
-
-        #endregion
-
+    
+    public class PeopleResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "people";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(PeopleResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public PeopleResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(PeopleResource));
+        
+        public PeopleResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Remove a person from a group</summary>
+        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
         /// <param name="personId">Required - ID of the person to remove from the group.</param>
+        public virtual DeleteRequest Delete(string userId, string groupId, string personId) {
+            return new DeleteRequest(service, userId, groupId, personId);
+        }
+        
+        /// <summary>Remove a person from a group</summary>
         /// <param name="userId">Required - ID of the owner of the group.</param>
+        /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
+        /// <param name="personId">Required - ID of the person to remove from the group.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string groupId,
-                                             string personId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing people.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, groupId, personId, alt, hl);
         }
-
+        
         /// <summary>Get a user profile</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream GetAsStream(string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing people.get");
-            return ret;
-        }
-
-        /// <summary>Get people who liked an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
-        /// <param name="postId">Required - ID of the activity that was liked.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream LikedAsStream(GroupId groupId,
-                                            string postId,
-                                            string scope,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string c,
-                                            [Optional] string hl,
-                                            [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.liked");
-            Stream ret = service.ExecuteRequest(Resource, "liked", body, parameters);
-            logger.Debug("Done Executing people.liked");
-            return ret;
-        }
-
-        /// <summary>Get people in a group</summary>
-        /// <param name="groupId">Required - ID of the group for which to list users.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListAsStream(string groupId,
-                                           string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string c,
-                                           [Optional] string hl,
-                                           [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing people.list");
-            return ret;
-        }
-
-        /// <summary>Add a person to a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream PatchAsStream(string body,
-                                            string groupId,
-                                            string personId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.patch");
-            Stream ret = service.ExecuteRequest(Resource, "patch", body, parameters);
-            logger.Debug("Done Executing people.patch");
-            return ret;
-        }
-
-        /// <summary>Get people who reshared an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
-        /// <param name="postId">Required - ID of the activity that was reshared.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ResharedAsStream(GroupIdEnum groupId,
-                                               string postId,
-                                               string scope,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string c,
-                                               [Optional] string hl,
-                                               [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.reshared");
-            Stream ret = service.ExecuteRequest(Resource, "reshared", body, parameters);
-            logger.Debug("Done Executing people.reshared");
-            return ret;
-        }
-
-        /// <summary>Search for people</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        public virtual Stream SearchAsStream([Optional] Alt? alt,
-                                             [Optional] string c,
-                                             [Optional] string hl,
-                                             [Optional] Int64? maxResults,
-                                             [Optional] string q)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            parameters["q"] = q;
-            logger.Debug("Executing people.search");
-            Stream ret = service.ExecuteRequest(Resource, "search", body, parameters);
-            logger.Debug("Done Executing people.search");
-            return ret;
-        }
-
-        /// <summary>Add a person to a group</summary>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream UpdateAsStream(string body,
-                                             string groupId,
-                                             string personId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.update");
-            Stream ret = service.ExecuteRequest(Resource, "update", body, parameters);
-            logger.Debug("Done Executing people.update");
-            return ret;
-        }
-
-        /// <summary>Remove a person from a group</summary>
-        /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
-        /// <param name="personId">Required - ID of the person to remove from the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string groupId,
-                                               string personId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing people.delete");
-            return ret;
-        }
-
-        /// <summary>Get a user profile</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Person GetAndExecute(string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.get");
-            Person ret = service.JsonToObject<Person>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing people.get");
-            return ret;
-        }
-
-        /// <summary>Get people who liked an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
-        /// <param name="postId">Required - ID of the activity that was liked.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual PeopleFeed LikedAndExecute(GroupId groupId,
-                                                  string postId,
-                                                  string scope,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string c,
-                                                  [Optional] string hl,
-                                                  [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.liked");
-            PeopleFeed ret =
-                service.JsonToObject<PeopleFeed>(service.ExecuteRequest(Resource, "liked", body, parameters));
-            logger.Debug("Done Executing people.liked");
-            return ret;
-        }
-
-        /// <summary>Get people in a group</summary>
-        /// <param name="groupId">Required - ID of the group for which to list users.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual PeopleFeed ListAndExecute(string groupId,
-                                                 string userId,
-                                                 [Optional] Alt? alt,
-                                                 [Optional] string c,
-                                                 [Optional] string hl,
-                                                 [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.list");
-            PeopleFeed ret =
-                service.JsonToObject<PeopleFeed>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing people.list");
-            return ret;
-        }
-
-        /// <summary>Add a person to a group. This method supports patch semantics.</summary>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Person PatchAndExecute(Person body,
-                                              string groupId,
-                                              string personId,
-                                              string userId,
-                                              [Optional] Alt? alt,
-                                              [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.patch");
-            Person ret =
-                service.JsonToObject<Person>(
-                    service.ExecuteRequest(Resource, "patch", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing people.patch");
-            return ret;
-        }
-
-        /// <summary>Get people who reshared an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
-        /// <param name="postId">Required - ID of the activity that was reshared.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual PeopleFeed ResharedAndExecute(GroupIdEnum groupId,
-                                                     string postId,
-                                                     string scope,
-                                                     string userId,
-                                                     [Optional] Alt? alt,
-                                                     [Optional] string c,
-                                                     [Optional] string hl,
-                                                     [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing people.reshared");
-            PeopleFeed ret =
-                service.JsonToObject<PeopleFeed>(service.ExecuteRequest(Resource, "reshared", body, parameters));
-            logger.Debug("Done Executing people.reshared");
-            return ret;
-        }
-
-        /// <summary>Search for people</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        public virtual PeopleFeed SearchAndExecute([Optional] Alt? alt,
-                                                   [Optional] string c,
-                                                   [Optional] string hl,
-                                                   [Optional] Int64? maxResults,
-                                                   [Optional] string q)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            parameters["q"] = q;
-            logger.Debug("Executing people.search");
-            PeopleFeed ret =
-                service.JsonToObject<PeopleFeed>(service.ExecuteRequest(Resource, "search", body, parameters));
-            logger.Debug("Done Executing people.search");
-            return ret;
-        }
-
-        /// <summary>Add a person to a group</summary>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Person UpdateAndExecute(Person body,
-                                               string groupId,
-                                               string personId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["groupId"] = groupId;
-            parameters["personId"] = personId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing people.update");
-            Person ret =
-                service.JsonToObject<Person>(
-                    service.ExecuteRequest(Resource, "update", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing people.update");
-            return ret;
-        }
-
-        /// <summary>Remove a person from a group</summary>
-        /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
-        /// <param name="personId">Required - ID of the person to remove from the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        public virtual DeleteRequest Delete(string groupId, string personId, string userId)
-        {
-            return new DeleteRequest(service, groupId, personId, userId);
-        }
-
-        /// <summary>Remove a person from a group</summary>
-        /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
-        /// <param name="personId">Required - ID of the person to remove from the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string groupId,
-                                            string personId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new DeleteRequest(service, groupId, personId, userId, alt, hl);
-        }
-
-        /// <summary>Get a user profile</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual GetRequest Get(string userId)
-        {
+        public virtual GetRequest Get(string userId) {
             return new GetRequest(service, userId);
         }
-
+        
         /// <summary>Get a user profile</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
+        public virtual GetRequest Get(string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
             return new GetRequest(service, userId, alt, hl);
         }
-
+        
         /// <summary>Get people who liked an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
-        /// <param name="postId">Required - ID of the activity that was liked.</param>
-        /// <param name="scope">Required</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual LikedRequest Liked(GroupId groupId, string postId, string scope, string userId)
-        {
-            return new LikedRequest(service, groupId, postId, scope, userId);
+        /// <param name="scope">Required</param>
+        /// <param name="postId">Required - ID of the activity that was liked.</param>
+        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
+        public virtual LikedRequest Liked(string userId, string scope, string postId, GroupId groupId) {
+            return new LikedRequest(service, userId, scope, postId, groupId);
         }
-
+        
         /// <summary>Get people who liked an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
-        /// <param name="postId">Required - ID of the activity that was liked.</param>
-        /// <param name="scope">Required</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required</param>
+        /// <param name="postId">Required - ID of the activity that was liked.</param>
+        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual LikedRequest Liked(GroupId groupId,
-                                          string postId,
-                                          string scope,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string c,
-                                          [Optional] string hl,
-                                          [Optional] Int64? maxResults)
-        {
-            return new LikedRequest(service, groupId, postId, scope, userId, alt, c, hl, maxResults);
+        public virtual LikedRequest Liked(string userId, string scope, string postId, GroupId groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new LikedRequest(service, userId, scope, postId, groupId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Get people in a group</summary>
-        /// <param name="groupId">Required - ID of the group for which to list users.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListRequest List(string groupId, string userId)
-        {
-            return new ListRequest(service, groupId, userId);
+        /// <param name="groupId">Required - ID of the group for which to list users.</param>
+        public virtual ListRequest List(string userId, string groupId) {
+            return new ListRequest(service, userId, groupId);
         }
-
+        
         /// <summary>Get people in a group</summary>
-        /// <param name="groupId">Required - ID of the group for which to list users.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="groupId">Required - ID of the group for which to list users.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string groupId,
-                                        string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string c,
-                                        [Optional] string hl,
-                                        [Optional] Int64? maxResults)
-        {
-            return new ListRequest(service, groupId, userId, alt, c, hl, maxResults);
+        public virtual ListRequest List(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ListRequest(service, userId, groupId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Add a person to a group. This method supports patch semantics.</summary>
+        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="groupId">Required - ID of the group to which to add the person.</param>
         /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        public virtual PatchRequest Patch(Person body, string groupId, string personId, string userId)
-        {
-            return new PatchRequest(service, body, groupId, personId, userId);
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) {
+            return new PatchRequest(service, body, userId, groupId, personId);
         }
-
+        
         /// <summary>Add a person to a group. This method supports patch semantics.</summary>
+        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="groupId">Required - ID of the group to which to add the person.</param>
         /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Person body,
-                                          string groupId,
-                                          string personId,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            return new PatchRequest(service, body, groupId, personId, userId, alt, hl);
+        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new PatchRequest(service, body, userId, groupId, personId, alt, hl);
         }
-
+        
         /// <summary>Get people who reshared an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
-        /// <param name="postId">Required - ID of the activity that was reshared.</param>
-        /// <param name="scope">Required</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ResharedRequest Reshared(GroupIdEnum groupId, string postId, string scope, string userId)
-        {
-            return new ResharedRequest(service, groupId, postId, scope, userId);
+        /// <param name="scope">Required</param>
+        /// <param name="postId">Required - ID of the activity that was reshared.</param>
+        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
+        public virtual ResharedRequest Reshared(string userId, string scope, string postId, GroupIdEnum groupId) {
+            return new ResharedRequest(service, userId, scope, postId, groupId);
         }
-
+        
         /// <summary>Get people who reshared an activity</summary>
-        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
-        /// <param name="postId">Required - ID of the activity that was reshared.</param>
-        /// <param name="scope">Required</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required</param>
+        /// <param name="postId">Required - ID of the activity that was reshared.</param>
+        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ResharedRequest Reshared(GroupIdEnum groupId,
-                                                string postId,
-                                                string scope,
-                                                string userId,
-                                                [Optional] Alt? alt,
-                                                [Optional] string c,
-                                                [Optional] string hl,
-                                                [Optional] Int64? maxResults)
-        {
-            return new ResharedRequest(service, groupId, postId, scope, userId, alt, c, hl, maxResults);
+        public virtual ResharedRequest Reshared(string userId, string scope, string postId, GroupIdEnum groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ResharedRequest(service, userId, scope, postId, groupId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Search for people</summary>
-        public virtual SearchRequest Search()
-        {
+        public virtual SearchRequest Search() {
             return new SearchRequest(service);
         }
-
+        
         /// <summary>Search for people</summary>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
         /// <param name="q">Optional - Full-text search query string.</param>
-        public virtual SearchRequest Search([Optional] Alt? alt,
-                                            [Optional] string c,
-                                            [Optional] string hl,
-                                            [Optional] Int64? maxResults,
-                                            [Optional] string q)
-        {
+        public virtual SearchRequest Search([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q) {
             return new SearchRequest(service, alt, c, hl, maxResults, q);
         }
-
+        
         /// <summary>Add a person to a group</summary>
+        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="groupId">Required - ID of the group to which to add the person.</param>
         /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        public virtual UpdateRequest Update(Person body, string groupId, string personId, string userId)
-        {
-            return new UpdateRequest(service, body, groupId, personId, userId);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) {
+            return new UpdateRequest(service, body, userId, groupId, personId);
         }
-
+        
         /// <summary>Add a person to a group</summary>
+        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="groupId">Required - ID of the group to which to add the person.</param>
         /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Person body,
-                                            string groupId,
-                                            string personId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new UpdateRequest(service, body, groupId, personId, userId, alt, hl);
+        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new UpdateRequest(service, body, userId, groupId, personId, alt, hl);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string groupId;
-
-            private readonly string personId;
-
-            private readonly string userId;
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum GroupId {
+            
+            /// <summary>People who liked this activity.</summary>
+            [Google.Apis.Util.StringValueAttribute("@liked")]
+            Liked,
+        }
+        
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum GroupIdEnum {
+            
+            /// <summary>People who reshared this activity.</summary>
+            [Google.Apis.Util.StringValueAttribute("@reshared")]
+            Reshared,
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string groupId, string personId, string userId)
-                : base(service)
-            {
+            
+            private string personId;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, string personId) : 
+                    base(service) {
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
             }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string groupId,
-                                 string personId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group from which to remove the person.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the person to remove from the group.</summary>
-            [RequestParameter("personId")]
-            public virtual string PersonId
-            {
-                get { return personId; }
+            [Google.Apis.Util.RequestParameterAttribute("personId")]
+            public virtual string PersonId {
+                get {
+                    return this.personId;
+                }
             }
-
+            
             /// <summary>ID of the owner of the group.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Person>
-        {
-            private readonly string userId;
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Person> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string userId) : base(service)
-            {
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
+                    base(service) {
                 this.userId = userId;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl) : base(service)
-            {
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: LikedRequest
-
-        public class LikedRequest : ServiceRequest<PeopleFeed>
-        {
-            private readonly GroupId groupId;
-
-            private readonly string postId;
-
-            private readonly string scope;
-
-            private readonly string userId;
+        
+        public class LikedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PeopleFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
+            
+            private GroupId groupId;
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public LikedRequest(ISchemaAwareRequestExecutor service,
-                                GroupId groupId,
-                                string postId,
-                                string scope,
-                                string userId) : base(service)
-            {
-                this.groupId = groupId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private System.Int64? maxResults;
+            
+            private string postId;
+            
+            private string scope;
+            
+            private string userId;
+            
+            public LikedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupId groupId) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.groupId = groupId;
             }
-
-            public LikedRequest(ISchemaAwareRequestExecutor service,
-                                GroupId groupId,
-                                string postId,
-                                string scope,
-                                string userId,
-                                [Optional] Alt? alt,
-                                [Optional] string c,
-                                [Optional] string hl,
-                                [Optional] Int64? maxResults) : base(service)
-            {
-                this.groupId = groupId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public LikedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupId groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
-            [RequestParameter("groupId")]
-            public virtual GroupId GroupId
-            {
-                get { return groupId; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual GroupId GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of the activity that was liked.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
-            [RequestParameter("scope")]
-            public virtual string Scope
-            {
-                get { return scope; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual string Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "liked"; }
+            
+            protected override string MethodName {
+                get {
+                    return "liked";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<PeopleFeed>
-        {
-            private readonly string groupId;
-            private readonly string userId;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PeopleFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
+            private string groupId;
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, string groupId, string userId) : base(service)
-            {
-                this.groupId = groupId;
+            
+            private System.Int64? maxResults;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               string groupId,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string c,
-                               [Optional] string hl,
-                               [Optional] Int64? maxResults) : base(service)
-            {
-                this.groupId = groupId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>ID of the group for which to list users.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: PatchRequest
-
-        public class PatchRequest : ServiceRequest<Person>
-        {
-            private readonly string groupId;
-
-            private readonly string personId;
-
-            private readonly string userId;
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Person> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Person body,
-                                string groupId,
-                                string personId,
-                                string userId) : base(service)
-            {
-                Body = body;
+            
+            private string personId;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Person bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
             }
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                Person body,
-                                string groupId,
-                                string personId,
-                                string userId,
-                                [Optional] Alt? alt,
-                                [Optional] string hl) : base(service)
-            {
-                Body = body;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to which to add the person.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the person to add to the group.</summary>
-            [RequestParameter("personId")]
-            public virtual string PersonId
-            {
-                get { return personId; }
+            [Google.Apis.Util.RequestParameterAttribute("personId")]
+            public virtual string PersonId {
+                get {
+                    return this.personId;
+                }
             }
-
+            
             /// <summary>ID of the owner of the group.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Person Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            public virtual Google.Apis.Buzz.v1.Data.Person Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "patch"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ResharedRequest
-
-        public class ResharedRequest : ServiceRequest<PeopleFeed>
-        {
-            private readonly GroupIdEnum groupId;
-
-            private readonly string postId;
-
-            private readonly string scope;
-
-            private readonly string userId;
+        
+        public class ResharedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PeopleFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
+            
+            private GroupIdEnum groupId;
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public ResharedRequest(ISchemaAwareRequestExecutor service,
-                                   GroupIdEnum groupId,
-                                   string postId,
-                                   string scope,
-                                   string userId) : base(service)
-            {
-                this.groupId = groupId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            private System.Int64? maxResults;
+            
+            private string postId;
+            
+            private string scope;
+            
+            private string userId;
+            
+            public ResharedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupIdEnum groupId) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.groupId = groupId;
             }
-
-            public ResharedRequest(ISchemaAwareRequestExecutor service,
-                                   GroupIdEnum groupId,
-                                   string postId,
-                                   string scope,
-                                   string userId,
-                                   [Optional] Alt? alt,
-                                   [Optional] string c,
-                                   [Optional] string hl,
-                                   [Optional] Int64? maxResults) : base(service)
-            {
-                this.groupId = groupId;
-                this.postId = postId;
-                this.scope = scope;
+            
+            public ResharedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupIdEnum groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.groupId = groupId;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
-            [RequestParameter("groupId")]
-            public virtual GroupIdEnum GroupId
-            {
-                get { return groupId; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual GroupIdEnum GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>ID of the activity that was reshared.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
             }
-
-            [RequestParameter("scope")]
-            public virtual string Scope
-            {
-                get { return scope; }
+            
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual string Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "reshared"; }
+            
+            protected override string MethodName {
+                get {
+                    return "reshared";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: SearchRequest
-
-        public class SearchRequest : ServiceRequest<PeopleFeed>
-        {
+        
+        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PeopleFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
             private string hl;
-
-            private Int64? maxResults;
-
+            
+            private System.Int64? maxResults;
+            
             private string q;
-
-            public SearchRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public SearchRequest(ISchemaAwareRequestExecutor service,
-                                 [Optional] Alt? alt,
-                                 [Optional] string c,
-                                 [Optional] string hl,
-                                 [Optional] Int64? maxResults,
-                                 [Optional] string q) : base(service)
-            {
+            
+            public SearchRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q) : 
+                    base(service) {
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
                 this.q = q;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>Full-text search query string.</summary>
-            [RequestParameter("q")]
-            public virtual string Q
-            {
-                get { return q; }
-                set { q = value; }
+            [Google.Apis.Util.RequestParameterAttribute("q")]
+            public virtual string Q {
+                get {
+                    return this.q;
+                }
+                set {
+                    this.q = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "search"; }
+            
+            protected override string MethodName {
+                get {
+                    return "search";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: UpdateRequest
-
-        public class UpdateRequest : ServiceRequest<Person>
-        {
-            private readonly string groupId;
-
-            private readonly string personId;
-
-            private readonly string userId;
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Person> {
+            
             private Alt? alt;
+            
+            private string groupId;
+            
             private string hl;
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Person body,
-                                 string groupId,
-                                 string personId,
-                                 string userId) : base(service)
-            {
-                Body = body;
+            
+            private string personId;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Person bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
             }
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 Person body,
-                                 string groupId,
-                                 string personId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-                this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>ID of the group to which to add the person.</summary>
-            [RequestParameter("groupId")]
-            public virtual string GroupId
-            {
-                get { return groupId; }
+            [Google.Apis.Util.RequestParameterAttribute("groupId")]
+            public virtual string GroupId {
+                get {
+                    return this.groupId;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the person to add to the group.</summary>
-            [RequestParameter("personId")]
-            public virtual string PersonId
-            {
-                get { return personId; }
+            [Google.Apis.Util.RequestParameterAttribute("personId")]
+            public virtual string PersonId {
+                get {
+                    return this.personId;
+                }
             }
-
+            
             /// <summary>ID of the owner of the group.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Person Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "people"; }
+            public virtual Google.Apis.Buzz.v1.Data.Person Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "update"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "people";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
     }
-
-    public class PhotoAlbumsResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
-        #region Scope enum
-
-        /// <summary>The collection of albums to list.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Scope
-        {
-            /// <summary>Albums posted by the user.</summary>
-            [StringValue("@self")] Self,
-        }
-
-        #endregion
-
+    
+    public class PhotoAlbumsResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "photoAlbums";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(PhotoAlbumsResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public PhotoAlbumsResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(PhotoAlbumsResource));
+        
+        public PhotoAlbumsResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Delete a photo album</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album to delete.</param>
+        public virtual DeleteRequest Delete(string userId, string albumId) {
+            return new DeleteRequest(service, userId, albumId);
+        }
+        
+        /// <summary>Delete a photo album</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album to delete.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string albumId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing photoAlbums.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, albumId, alt, hl);
         }
-
+        
         /// <summary>Get a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to get.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album to get.</param>
+        public virtual GetRequest Get(string userId, string albumId) {
+            return new GetRequest(service, userId, albumId);
+        }
+        
+        /// <summary>Get a photo album</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album to get.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream GetAsStream(string albumId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing photoAlbums.get");
-            return ret;
+        public virtual GetRequest Get(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new GetRequest(service, userId, albumId, alt, hl);
         }
-
+        
         /// <summary>Create a photo album</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream InsertAsStream(string body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing photoAlbums.insert");
-            return ret;
-        }
-
-        /// <summary>List a user&apos;s photo albums</summary>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListAsStream(Scope scope,
-                                           string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string c,
-                                           [Optional] string hl,
-                                           [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photoAlbums.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing photoAlbums.list");
-            return ret;
-        }
-
-        /// <summary>Delete a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string albumId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing photoAlbums.delete");
-            return ret;
-        }
-
-        /// <summary>Get a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Album GetAndExecute(string albumId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.get");
-            Album ret = service.JsonToObject<Album>(service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing photoAlbums.get");
-            return ret;
-        }
-
-        /// <summary>Create a photo album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Album InsertAndExecute(Album body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photoAlbums.insert");
-            Album ret =
-                service.JsonToObject<Album>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing photoAlbums.insert");
-            return ret;
-        }
-
-        /// <summary>List a user&apos;s photo albums</summary>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual AlbumsFeed ListAndExecute(Scope scope,
-                                                 string userId,
-                                                 [Optional] Alt? alt,
-                                                 [Optional] string c,
-                                                 [Optional] string hl,
-                                                 [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photoAlbums.list");
-            AlbumsFeed ret =
-                service.JsonToObject<AlbumsFeed>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing photoAlbums.list");
-            return ret;
-        }
-
-        /// <summary>Delete a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual DeleteRequest Delete(string albumId, string userId)
-        {
-            return new DeleteRequest(service, albumId, userId);
-        }
-
-        /// <summary>Delete a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string albumId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            return new DeleteRequest(service, albumId, userId, alt, hl);
-        }
-
-        /// <summary>Get a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual GetRequest Get(string albumId, string userId)
-        {
-            return new GetRequest(service, albumId, userId);
-        }
-
-        /// <summary>Get a photo album</summary>
-        /// <param name="albumId">Required - ID of the album to get.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string albumId, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
-            return new GetRequest(service, albumId, userId, alt, hl);
-        }
-
-        /// <summary>Create a photo album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual InsertRequest Insert(Album body, string userId)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Album body, string userId) {
             return new InsertRequest(service, body, userId);
         }
-
+        
         /// <summary>Create a photo album</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Album body, string userId, [Optional] Alt? alt, [Optional] string hl)
-        {
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Album body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
             return new InsertRequest(service, body, userId, alt, hl);
         }
-
+        
         /// <summary>List a user&apos;s photo albums</summary>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListRequest List(Scope scope, string userId)
-        {
-            return new ListRequest(service, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
+        public virtual ListRequest List(string userId, Scope scope) {
+            return new ListRequest(service, userId, scope);
         }
-
+        
         /// <summary>List a user&apos;s photo albums</summary>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(Scope scope,
-                                        string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string c,
-                                        [Optional] string hl,
-                                        [Optional] Int64? maxResults)
-        {
-            return new ListRequest(service, scope, userId, alt, c, hl, maxResults);
+        public virtual ListRequest List(string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ListRequest(service, userId, scope, alt, c, hl, maxResults);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string albumId;
-            private readonly string userId;
-
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        /// <summary>The collection of albums to list.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Scope {
+            
+            /// <summary>Albums posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string albumId;
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string albumId, string userId) : base(service)
-            {
-                this.albumId = albumId;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
             }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string albumId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                this.albumId = albumId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>ID of the album to delete.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "photoAlbums"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "photoAlbums";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<Album>
-        {
-            private readonly string albumId;
-            private readonly string userId;
-
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Album> {
+            
+            private string albumId;
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string albumId, string userId) : base(service)
-            {
-                this.albumId = albumId;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
             }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string albumId,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl) : base(service)
-            {
-                this.albumId = albumId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>ID of the album to get.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "photoAlbums"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "photoAlbums";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<Album>
-        {
-            private readonly string userId;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.Album> {
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service, Album body, string userId) : base(service)
-            {
-                Body = body;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.Album bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Album body, string userId) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
             }
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 Album body,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Album body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
                 this.userId = userId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Album Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "photoAlbums"; }
+            public virtual Google.Apis.Buzz.v1.Data.Album Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "photoAlbums";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<AlbumsFeed>
-        {
-            private readonly Scope scope;
-
-            private readonly string userId;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.AlbumsFeed> {
+            
             private Alt? alt;
-
+            
             private string c;
-
+            
             private string hl;
-
-            private Int64? maxResults;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, Scope scope, string userId) : base(service)
-            {
-                this.scope = scope;
+            
+            private System.Int64? maxResults;
+            
+            private Scope scope;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               Scope scope,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string c,
-                               [Optional] string hl,
-                               [Optional] Int64? maxResults) : base(service)
-            {
-                this.scope = scope;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
                 this.userId = userId;
+                this.scope = scope;
                 this.alt = alt;
                 this.c = c;
                 this.hl = hl;
                 this.maxResults = maxResults;
             }
-
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
+            
             /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
             }
-
+            
             /// <summary>The collection of albums to list.</summary>
-            [RequestParameter("scope")]
-            public virtual Scope Scope
-            {
-                get { return scope; }
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual Scope Scope {
+                get {
+                    return this.scope;
+                }
             }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "photoAlbums"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "photoAlbums";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
             }
         }
-
-        #endregion
     }
-
-    public class PhotosResource
-    {
-        #region Alt enum
-
-        /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
-            /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
-            /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
-        }
-
-        #endregion
-
-        #region Scope enum
-
-        /// <summary>The collection of photos to list.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Scope
-        {
-            /// <summary>Recent photos uploaded by the user.</summary>
-            [StringValue("@recent")] Recent,
-        }
-
-        #endregion
-
+    
+    public class PhotosResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "photos";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(PhotosResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public PhotosResource(BuzzService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(PhotosResource));
+        
+        public PhotosResource(BuzzService service) {
             this.service = service;
         }
-
+        
         /// <summary>Delete a photo</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album to which to photo belongs.</param>
         /// <param name="photoId">Required - ID of the photo to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAsStream(string albumId,
-                                             string photoId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["photoId"] = photoId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing photos.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string albumId, string photoId) {
+            return new DeleteRequest(service, userId, albumId, photoId);
         }
-
-        /// <summary>Get photo metadata</summary>
-        /// <param name="albumId">Required - ID of the album containing the photo.</param>
-        /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream GetAsStream(string albumId,
-                                          string photoId,
-                                          string userId,
-                                          [Optional] Alt? alt,
-                                          [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["photoId"] = photoId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing photos.get");
-            return ret;
-        }
-
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream InsertAsStream(string body,
-                                             string albumId,
-                                             string userId,
-                                             [Optional] Alt? alt,
-                                             [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing photos.insert");
-            return ret;
-        }
-
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream Insert2AsStream(string body,
-                                              string albumId,
-                                              string userId,
-                                              [Optional] Alt? alt,
-                                              [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.insert2");
-            Stream ret = service.ExecuteRequest(Resource, "insert2", body, parameters);
-            logger.Debug("Done Executing photos.insert2");
-            return ret;
-        }
-
-        /// <summary>List photos in an album</summary>
-        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListByAlbumAsStream(string albumId,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string c,
-                                                  [Optional] string hl,
-                                                  [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photos.listByAlbum");
-            Stream ret = service.ExecuteRequest(Resource, "listByAlbum", body, parameters);
-            logger.Debug("Done Executing photos.listByAlbum");
-            return ret;
-        }
-
-        /// <summary>Get a user&apos;s photos</summary>
-        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual Stream ListByScopeAsStream(Scope scope,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string c,
-                                                  [Optional] string hl,
-                                                  [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photos.listByScope");
-            Stream ret = service.ExecuteRequest(Resource, "listByScope", body, parameters);
-            logger.Debug("Done Executing photos.listByScope");
-            return ret;
-        }
-
+        
         /// <summary>Delete a photo</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album to which to photo belongs.</param>
         /// <param name="photoId">Required - ID of the photo to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream DeleteAndExecute(string albumId,
-                                               string photoId,
-                                               string userId,
-                                               [Optional] Alt? alt,
-                                               [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["photoId"] = photoId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing photos.delete");
-            return ret;
+        public virtual DeleteRequest Delete(string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new DeleteRequest(service, userId, albumId, photoId, alt, hl);
         }
-
+        
         /// <summary>Get photo metadata</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album containing the photo.</param>
         /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual ChiliPhotosResourceJson GetAndExecute(string albumId,
-                                                             string photoId,
-                                                             string userId,
-                                                             [Optional] Alt? alt,
-                                                             [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["photoId"] = photoId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.get");
-            ChiliPhotosResourceJson ret =
-                service.JsonToObject<ChiliPhotosResourceJson>(
-                    service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing photos.get");
-            return ret;
+        public virtual GetRequest Get(string userId, string albumId, string photoId) {
+            return new GetRequest(service, userId, albumId, photoId);
         }
-
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual AlbumLite InsertAndExecute(AlbumLite body,
-                                                  string albumId,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.insert");
-            AlbumLite ret =
-                service.JsonToObject<AlbumLite>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing photos.insert");
-            return ret;
-        }
-
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual ChiliPhotosResourceJson Insert2AndExecute(ChiliPhotosResourceJson body,
-                                                                 string albumId,
-                                                                 string userId,
-                                                                 [Optional] Alt? alt,
-                                                                 [Optional] string hl)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing photos.insert2");
-            ChiliPhotosResourceJson ret =
-                service.JsonToObject<ChiliPhotosResourceJson>(
-                    service.ExecuteRequest(Resource, "insert2", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing photos.insert2");
-            return ret;
-        }
-
-        /// <summary>List photos in an album</summary>
-        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual PhotosFeed ListByAlbumAndExecute(string albumId,
-                                                        string userId,
-                                                        [Optional] Alt? alt,
-                                                        [Optional] string c,
-                                                        [Optional] string hl,
-                                                        [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["albumId"] = albumId;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photos.listByAlbum");
-            PhotosFeed ret =
-                service.JsonToObject<PhotosFeed>(service.ExecuteRequest(Resource, "listByAlbum", body, parameters));
-            logger.Debug("Done Executing photos.listByAlbum");
-            return ret;
-        }
-
-        /// <summary>Get a user&apos;s photos</summary>
-        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual PhotosFeed ListByScopeAndExecute(Scope scope,
-                                                        string userId,
-                                                        [Optional] Alt? alt,
-                                                        [Optional] string c,
-                                                        [Optional] string hl,
-                                                        [Optional] Int64? maxResults)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["c"] = c;
-            parameters["hl"] = hl;
-            parameters["max-results"] = maxResults;
-            logger.Debug("Executing photos.listByScope");
-            PhotosFeed ret =
-                service.JsonToObject<PhotosFeed>(service.ExecuteRequest(Resource, "listByScope", body, parameters));
-            logger.Debug("Done Executing photos.listByScope");
-            return ret;
-        }
-
-        /// <summary>Delete a photo</summary>
-        /// <param name="albumId">Required - ID of the album to which to photo belongs.</param>
-        /// <param name="photoId">Required - ID of the photo to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual DeleteRequest Delete(string albumId, string photoId, string userId)
-        {
-            return new DeleteRequest(service, albumId, photoId, userId);
-        }
-
-        /// <summary>Delete a photo</summary>
-        /// <param name="albumId">Required - ID of the album to which to photo belongs.</param>
-        /// <param name="photoId">Required - ID of the photo to delete.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string albumId,
-                                            string photoId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new DeleteRequest(service, albumId, photoId, userId, alt, hl);
-        }
-
+        
         /// <summary>Get photo metadata</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album containing the photo.</param>
         /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual GetRequest Get(string albumId, string photoId, string userId)
-        {
-            return new GetRequest(service, albumId, photoId, userId);
-        }
-
-        /// <summary>Get photo metadata</summary>
-        /// <param name="albumId">Required - ID of the album containing the photo.</param>
-        /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string albumId,
-                                      string photoId,
-                                      string userId,
-                                      [Optional] Alt? alt,
-                                      [Optional] string hl)
-        {
-            return new GetRequest(service, albumId, photoId, userId, alt, hl);
+        public virtual GetRequest Get(string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new GetRequest(service, userId, albumId, photoId, alt, hl);
         }
-
+        
         /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual InsertRequest Insert(AlbumLite body, string albumId, string userId)
-        {
-            return new InsertRequest(service, body, albumId, userId);
+        /// <param name="albumId">Required - ID of the album to which to upload.</param>
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId) {
+            return new InsertRequest(service, body, userId, albumId);
         }
-
+        
         /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(AlbumLite body,
-                                            string albumId,
-                                            string userId,
-                                            [Optional] Alt? alt,
-                                            [Optional] string hl)
-        {
-            return new InsertRequest(service, body, albumId, userId, alt, hl);
+        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new InsertRequest(service, body, userId, albumId, alt, hl);
         }
-
+        
         /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual Insert2Request Insert2(ChiliPhotosResourceJson body, string albumId, string userId)
-        {
-            return new Insert2Request(service, body, albumId, userId);
+        /// <param name="albumId">Required - ID of the album to which to upload.</param>
+        public virtual Insert2Request Insert2(Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId) {
+            return new Insert2Request(service, body, userId, albumId);
         }
-
+        
         /// <summary>Upload a photo to an album</summary>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Insert2Request Insert2(ChiliPhotosResourceJson body,
-                                              string albumId,
-                                              string userId,
-                                              [Optional] Alt? alt,
-                                              [Optional] string hl)
-        {
-            return new Insert2Request(service, body, albumId, userId, alt, hl);
+        public virtual Insert2Request Insert2(Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new Insert2Request(service, body, userId, albumId, alt, hl);
         }
-
+        
         /// <summary>List photos in an album</summary>
-        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListByAlbumRequest ListByAlbum(string albumId, string userId)
-        {
-            return new ListByAlbumRequest(service, albumId, userId);
+        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
+        public virtual ListByAlbumRequest ListByAlbum(string userId, string albumId) {
+            return new ListByAlbumRequest(service, userId, albumId);
         }
-
+        
         /// <summary>List photos in an album</summary>
-        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListByAlbumRequest ListByAlbum(string albumId,
-                                                      string userId,
-                                                      [Optional] Alt? alt,
-                                                      [Optional] string c,
-                                                      [Optional] string hl,
-                                                      [Optional] Int64? maxResults)
-        {
-            return new ListByAlbumRequest(service, albumId, userId, alt, c, hl, maxResults);
+        public virtual ListByAlbumRequest ListByAlbum(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ListByAlbumRequest(service, userId, albumId, alt, c, hl, maxResults);
         }
-
+        
         /// <summary>Get a user&apos;s photos</summary>
-        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListByScopeRequest ListByScope(Scope scope, string userId)
-        {
-            return new ListByScopeRequest(service, scope, userId);
+        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
+        public virtual ListByScopeRequest ListByScope(string userId, Scope scope) {
+            return new ListByScopeRequest(service, userId, scope);
         }
-
+        
         /// <summary>Get a user&apos;s photos</summary>
-        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
         /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
         /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
         /// <param name="c">Optional - A continuation token that allows pagination.</param>
         /// <param name="hl">Optional - Language code to limit language results.</param>
         /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListByScopeRequest ListByScope(Scope scope,
-                                                      string userId,
-                                                      [Optional] Alt? alt,
-                                                      [Optional] string c,
-                                                      [Optional] string hl,
-                                                      [Optional] Int64? maxResults)
-        {
-            return new ListByScopeRequest(service, scope, userId, alt, c, hl, maxResults);
+        public virtual ListByScopeRequest ListByScope(string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
+            return new ListByScopeRequest(service, userId, scope, alt, c, hl, maxResults);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string albumId;
-
-            private readonly string photoId;
-
-            private readonly string userId;
-            private Alt? alt;
-
-            private string hl;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string albumId, string photoId, string userId)
-                : base(service)
-            {
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.userId = userId;
-            }
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service,
-                                 string albumId,
-                                 string photoId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-
-            /// <summary>ID of the album to which to photo belongs.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>ID of the photo to delete.</summary>
-            [RequestParameter("photoId")]
-            public virtual string PhotoId
-            {
-                get { return photoId; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
-            }
-        }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<ChiliPhotosResourceJson>
-        {
-            private readonly string albumId;
-
-            private readonly string photoId;
-
-            private readonly string userId;
-            private Alt? alt;
-
-            private string hl;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string albumId, string photoId, string userId)
-                : base(service)
-            {
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.userId = userId;
-            }
-
-            public GetRequest(ISchemaAwareRequestExecutor service,
-                              string albumId,
-                              string photoId,
-                              string userId,
-                              [Optional] Alt? alt,
-                              [Optional] string hl) : base(service)
-            {
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-
-            /// <summary>ID of the album containing the photo.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>ID of the photo for which to get metadata.</summary>
-            [RequestParameter("photoId")]
-            public virtual string PhotoId
-            {
-                get { return photoId; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
-            }
-        }
-
-        #endregion
-
-        #region Nested type: Insert2Request
-
-        public class Insert2Request : ServiceRequest<ChiliPhotosResourceJson>
-        {
-            private readonly string albumId;
-            private readonly string userId;
-
-            private Alt? alt;
-
-            private string hl;
-
-            public Insert2Request(ISchemaAwareRequestExecutor service,
-                                  ChiliPhotosResourceJson body,
-                                  string albumId,
-                                  string userId) : base(service)
-            {
-                Body = body;
-                this.albumId = albumId;
-                this.userId = userId;
-            }
-
-            public Insert2Request(ISchemaAwareRequestExecutor service,
-                                  ChiliPhotosResourceJson body,
-                                  string albumId,
-                                  string userId,
-                                  [Optional] Alt? alt,
-                                  [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.albumId = albumId;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-
-            /// <summary>ID of the album to which to upload.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual ChiliPhotosResourceJson Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "insert2"; }
-            }
-
-            protected override object GetBody()
-            {
-                return Body;
-            }
-        }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<AlbumLite>
-        {
-            private readonly string albumId;
-            private readonly string userId;
-
-            private Alt? alt;
-
-            private string hl;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service, AlbumLite body, string albumId, string userId)
-                : base(service)
-            {
-                Body = body;
-                this.albumId = albumId;
-                this.userId = userId;
-            }
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 AlbumLite body,
-                                 string albumId,
-                                 string userId,
-                                 [Optional] Alt? alt,
-                                 [Optional] string hl) : base(service)
-            {
-                Body = body;
-                this.albumId = albumId;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-
-            /// <summary>ID of the album to which to upload.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual AlbumLite Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
-            }
-
-            protected override object GetBody()
-            {
-                return Body;
-            }
-        }
-
-        #endregion
-
-        #region Nested type: ListByAlbumRequest
-
-        public class ListByAlbumRequest : ServiceRequest<PhotosFeed>
-        {
-            private readonly string albumId;
-            private readonly string userId;
-
-            private Alt? alt;
-
-            private string c;
-
-            private string hl;
-
-            private Int64? maxResults;
-
-            public ListByAlbumRequest(ISchemaAwareRequestExecutor service, string albumId, string userId)
-                : base(service)
-            {
-                this.albumId = albumId;
-                this.userId = userId;
-            }
-
-            public ListByAlbumRequest(ISchemaAwareRequestExecutor service,
-                                      string albumId,
-                                      string userId,
-                                      [Optional] Alt? alt,
-                                      [Optional] string c,
-                                      [Optional] string hl,
-                                      [Optional] Int64? maxResults) : base(service)
-            {
-                this.albumId = albumId;
-                this.userId = userId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
-            }
-
-            /// <summary>ID of the album for which to list photos.</summary>
-            [RequestParameter("albumId")]
-            public virtual string AlbumId
-            {
-                get { return albumId; }
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "listByAlbum"; }
-            }
-        }
-
-        #endregion
-
-        #region Nested type: ListByScopeRequest
-
-        public class ListByScopeRequest : ServiceRequest<PhotosFeed>
-        {
-            private readonly Scope scope;
-
-            private readonly string userId;
-            private Alt? alt;
-
-            private string c;
-
-            private string hl;
-
-            private Int64? maxResults;
-
-            public ListByScopeRequest(ISchemaAwareRequestExecutor service, Scope scope, string userId) : base(service)
-            {
-                this.scope = scope;
-                this.userId = userId;
-            }
-
-            public ListByScopeRequest(ISchemaAwareRequestExecutor service,
-                                      Scope scope,
-                                      string userId,
-                                      [Optional] Alt? alt,
-                                      [Optional] string c,
-                                      [Optional] string hl,
-                                      [Optional] Int64? maxResults) : base(service)
-            {
-                this.scope = scope;
-                this.userId = userId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
-            }
-
-            /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
-            }
-
-            /// <summary>A continuation token that allows pagination.</summary>
-            [RequestParameter("c")]
-            public virtual string C
-            {
-                get { return c; }
-                set { c = value; }
-            }
-
-            /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
-            }
-
-            /// <summary>Maximum number of results to include.</summary>
-            [RequestParameter("max-results")]
-            public virtual Int64? MaxResults
-            {
-                get { return maxResults; }
-                set { maxResults = value; }
-            }
-
-            /// <summary>The collection of photos to list.</summary>
-            [RequestParameter("scope")]
-            public virtual Scope Scope
-            {
-                get { return scope; }
-            }
-
-            /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
-            }
-
-            protected override string ResourceName
-            {
-                get { return "photos"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "listByScope"; }
-            }
-        }
-
-        #endregion
-    }
-
-    public class RelatedResource
-    {
-        #region Alt enum
-
+        
         /// <summary>Specifies an alternative representation type.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Alt
-        {
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
             /// <summary>Use Atom XML format</summary>
-            [StringValue("atom")] Atom,
-
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
             /// <summary>Use JSON format</summary>
-            [StringValue("json")] Json,
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
         }
-
-        #endregion
-
-        #region Scope enum
-
-        /// <summary>The collection to which the activity belongs.</summary>
-        [TypeConverter(typeof(EnumStringValueTypeConverter))]
-        public enum Scope
-        {
-            /// <summary>Activities posted by the user.</summary>
-            [StringValue("@self")] Self,
+        
+        /// <summary>The collection of photos to list.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Scope {
+            
+            /// <summary>Recent photos uploaded by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@recent")]
+            Recent,
         }
-
-        #endregion
-
-        private const string Resource = "related";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(RelatedResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public RelatedResource(BuzzService service)
-        {
-            this.service = service;
-        }
-
-        /// <summary>Get related links for an activity</summary>
-        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Stream ListAsStream(string postId,
-                                           Scope scope,
-                                           string userId,
-                                           [Optional] Alt? alt,
-                                           [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing related.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing related.list");
-            return ret;
-        }
-
-        /// <summary>Get related links for an activity</summary>
-        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual RelatedFeed ListAndExecute(string postId,
-                                                  Scope scope,
-                                                  string userId,
-                                                  [Optional] Alt? alt,
-                                                  [Optional] string hl)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["postId"] = postId;
-            parameters["scope"] = scope;
-            parameters["userId"] = userId;
-            parameters["alt"] = alt;
-            parameters["hl"] = hl;
-            logger.Debug("Executing related.list");
-            RelatedFeed ret =
-                service.JsonToObject<RelatedFeed>(service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing related.list");
-            return ret;
-        }
-
-        /// <summary>Get related links for an activity</summary>
-        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        public virtual ListRequest List(string postId, Scope scope, string userId)
-        {
-            return new ListRequest(service, postId, scope, userId);
-        }
-
-        /// <summary>Get related links for an activity</summary>
-        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual ListRequest List(string postId,
-                                        Scope scope,
-                                        string userId,
-                                        [Optional] Alt? alt,
-                                        [Optional] string hl)
-        {
-            return new ListRequest(service, postId, scope, userId, alt, hl);
-        }
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<RelatedFeed>
-        {
-            private readonly string postId;
-
-            private readonly Scope scope;
-
-            private readonly string userId;
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string albumId;
+            
             private Alt? alt;
-
+            
             private string hl;
-
-            public ListRequest(ISchemaAwareRequestExecutor service, string postId, Scope scope, string userId)
-                : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            private string photoId;
+            
+            private string userId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
+                this.photoId = photoId;
             }
-
-            public ListRequest(ISchemaAwareRequestExecutor service,
-                               string postId,
-                               Scope scope,
-                               string userId,
-                               [Optional] Alt? alt,
-                               [Optional] string hl) : base(service)
-            {
-                this.postId = postId;
-                this.scope = scope;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
                 this.userId = userId;
+                this.albumId = albumId;
+                this.photoId = photoId;
                 this.alt = alt;
                 this.hl = hl;
             }
-
+            
+            /// <summary>ID of the album to which to photo belongs.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+            }
+            
             /// <summary>Specifies an alternative representation type.</summary>
-            [RequestParameter("alt")]
-            public virtual Alt? Alt
-            {
-                get { return alt; }
-                set { alt = value; }
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
             }
-
+            
             /// <summary>Language code to limit language results.</summary>
-            [RequestParameter("hl")]
-            public virtual string Hl
-            {
-                get { return hl; }
-                set { hl = value; }
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
             }
-
-            /// <summary>ID of the activity to which to get related links.</summary>
-            [RequestParameter("postId")]
-            public virtual string PostId
-            {
-                get { return postId; }
+            
+            /// <summary>ID of the photo to delete.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("photoId")]
+            public virtual string PhotoId {
+                get {
+                    return this.photoId;
+                }
             }
-
-            /// <summary>The collection to which the activity belongs.</summary>
-            [RequestParameter("scope")]
-            public virtual Scope Scope
-            {
-                get { return scope; }
-            }
-
+            
             /// <summary>ID of the user being referenced.</summary>
-            [RequestParameter("userId")]
-            public virtual string UserId
-            {
-                get { return userId; }
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "related"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson> {
+            
+            private string albumId;
+            
+            private Alt? alt;
+            
+            private string hl;
+            
+            private string photoId;
+            
+            private string userId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId) : 
+                    base(service) {
+                this.userId = userId;
+                this.albumId = albumId;
+                this.photoId = photoId;
+            }
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.userId = userId;
+                this.albumId = albumId;
+                this.photoId = photoId;
+                this.alt = alt;
+                this.hl = hl;
+            }
+            
+            /// <summary>ID of the album containing the photo.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>ID of the photo for which to get metadata.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("photoId")]
+            public virtual string PhotoId {
+                get {
+                    return this.photoId;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.AlbumLite> {
+            
+            private string albumId;
+            
+            private Alt? alt;
+            
+            private string hl;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.AlbumLite bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
+                this.albumId = albumId;
+            }
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
+                this.albumId = albumId;
+                this.alt = alt;
+                this.hl = hl;
+            }
+            
+            /// <summary>ID of the album to which to upload.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Buzz.v1.Data.AlbumLite Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class Insert2Request : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson> {
+            
+            private string albumId;
+            
+            private Alt? alt;
+            
+            private string hl;
+            
+            private string userId;
+            
+            private Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson bodyValue;
+            
+            public Insert2Request(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
+                this.albumId = albumId;
+            }
+            
+            public Insert2Request(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.Body = body;
+                this.userId = userId;
+                this.albumId = albumId;
+                this.alt = alt;
+                this.hl = hl;
+            }
+            
+            /// <summary>ID of the album to which to upload.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert2";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class ListByAlbumRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PhotosFeed> {
+            
+            private string albumId;
+            
+            private Alt? alt;
+            
+            private string c;
+            
+            private string hl;
+            
+            private System.Int64? maxResults;
+            
+            private string userId;
+            
+            public ListByAlbumRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId) : 
+                    base(service) {
+                this.userId = userId;
+                this.albumId = albumId;
+            }
+            
+            public ListByAlbumRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
+                this.userId = userId;
+                this.albumId = albumId;
+                this.alt = alt;
+                this.c = c;
+                this.hl = hl;
+                this.maxResults = maxResults;
+            }
+            
+            /// <summary>ID of the album for which to list photos.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("albumId")]
+            public virtual string AlbumId {
+                get {
+                    return this.albumId;
+                }
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>A continuation token that allows pagination.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to include.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "listByAlbum";
+                }
+            }
+        }
+        
+        public class ListByScopeRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.PhotosFeed> {
+            
+            private Alt? alt;
+            
+            private string c;
+            
+            private string hl;
+            
+            private System.Int64? maxResults;
+            
+            private Scope scope;
+            
+            private string userId;
+            
+            public ListByScopeRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope) : 
+                    base(service) {
+                this.userId = userId;
+                this.scope = scope;
+            }
+            
+            public ListByScopeRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
+                    base(service) {
+                this.userId = userId;
+                this.scope = scope;
+                this.alt = alt;
+                this.c = c;
+                this.hl = hl;
+                this.maxResults = maxResults;
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>A continuation token that allows pagination.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("c")]
+            public virtual string C {
+                get {
+                    return this.c;
+                }
+                set {
+                    this.c = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to include.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            public virtual System.Int64? MaxResults {
+                get {
+                    return this.maxResults;
+                }
+                set {
+                    this.maxResults = value;
+                }
+            }
+            
+            /// <summary>The collection of photos to list.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual Scope Scope {
+                get {
+                    return this.scope;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "photos";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "listByScope";
+                }
+            }
+        }
+    }
+    
+    public class RelatedResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
+        private const string Resource = "related";
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(RelatedResource));
+        
+        public RelatedResource(BuzzService service) {
+            this.service = service;
+        }
+        
+        /// <summary>Get related links for an activity</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
+        public virtual ListRequest List(string userId, Scope scope, string postId) {
+            return new ListRequest(service, userId, scope, postId);
+        }
+        
+        /// <summary>Get related links for an activity</summary>
+        /// <param name="userId">Required - ID of the user being referenced.</param>
+        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
+        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
+        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
+        /// <param name="hl">Optional - Language code to limit language results.</param>
+        public virtual ListRequest List(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
+            return new ListRequest(service, userId, scope, postId, alt, hl);
+        }
+        
+        /// <summary>Specifies an alternative representation type.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Alt {
+            
+            /// <summary>Use Atom XML format</summary>
+            [Google.Apis.Util.StringValueAttribute("atom")]
+            Atom,
+            
+            /// <summary>Use JSON format</summary>
+            [Google.Apis.Util.StringValueAttribute("json")]
+            Json,
+        }
+        
+        /// <summary>The collection to which the activity belongs.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum Scope {
+            
+            /// <summary>Activities posted by the user.</summary>
+            [Google.Apis.Util.StringValueAttribute("@self")]
+            Self,
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Buzz.v1.Data.RelatedFeed> {
+            
+            private Alt? alt;
+            
+            private string hl;
+            
+            private string postId;
+            
+            private Scope scope;
+            
+            private string userId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId) : 
+                    base(service) {
+                this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+            }
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
+                    base(service) {
+                this.userId = userId;
+                this.scope = scope;
+                this.postId = postId;
+                this.alt = alt;
+                this.hl = hl;
+            }
+            
+            /// <summary>Specifies an alternative representation type.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            public virtual Alt? Alt {
+                get {
+                    return this.alt;
+                }
+                set {
+                    this.alt = value;
+                }
+            }
+            
+            /// <summary>Language code to limit language results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>ID of the activity to which to get related links.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            public virtual string PostId {
+                get {
+                    return this.postId;
+                }
+            }
+            
+            /// <summary>The collection to which the activity belongs.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual Scope Scope {
+                get {
+                    return this.scope;
+                }
+            }
+            
+            /// <summary>ID of the user being referenced.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            public virtual string UserId {
+                get {
+                    return this.userId;
+                }
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "related";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
     }
 }

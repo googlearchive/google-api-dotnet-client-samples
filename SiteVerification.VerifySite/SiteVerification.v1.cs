@@ -8,749 +8,682 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.InteropServices;
-using Google.Apis.Authentication;
-using Google.Apis.Data;
-using Google.Apis.Discovery;
-using Google.Apis.Requests;
-using Google.Apis.Util;
-using log4net;
-using Newtonsoft.Json;
-
-namespace Google.Apis.Data
-{
-    public class SiteverificationWebResourceGettokenRequest
-    {
+namespace Google.Apis.SiteVerification.v1.Data {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    
+    
+    public class SiteverificationWebResourceGettokenRequest {
+        
+        private SiteverificationWebResourceGettokenRequest.SiteData site;
+        
+        private string verificationMethod;
+        
         /// <summary>The site for which a verification token will be generated.</summary>
-        [JsonProperty("site")]
-        public virtual SiteData Site { get; set; }
-
+        [Newtonsoft.Json.JsonPropertyAttribute("site")]
+        public virtual SiteverificationWebResourceGettokenRequest.SiteData Site {
+            get {
+                return this.site;
+            }
+            set {
+                this.site = value;
+            }
+        }
+        
         /// <summary>The verification method that will be used to verify this site. For sites, &apos;FILE&apos; or &apos;META&apos; methods may be used. For domains, only &apos;DNS&apos; may be used.</summary>
-        [JsonProperty("verificationMethod")]
-        public virtual string VerificationMethod { get; set; }
-
-        #region Nested type: SiteData
-
+        [Newtonsoft.Json.JsonPropertyAttribute("verificationMethod")]
+        public virtual string VerificationMethod {
+            get {
+                return this.verificationMethod;
+            }
+            set {
+                this.verificationMethod = value;
+            }
+        }
+        
         /// <summary>The site for which a verification token will be generated.</summary>
-        public class SiteData
-        {
+        public class SiteData {
+            
+            private string identifier;
+            
+            private string type;
+            
             /// <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name.</summary>
-            [JsonProperty("identifier")]
-            public virtual string Identifier { get; set; }
-
+            [Newtonsoft.Json.JsonPropertyAttribute("identifier")]
+            public virtual string Identifier {
+                get {
+                    return this.identifier;
+                }
+                set {
+                    this.identifier = value;
+                }
+            }
+            
             /// <summary>The type of resource to be verified. Can be SITE or INET_DOMAIN (domain name).</summary>
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
         }
-
-        #endregion
     }
-
-    public class SiteverificationWebResourceGettokenResponse : IResponse
-    {
+    
+    public class SiteverificationWebResourceGettokenResponse : Google.Apis.Requests.ISchemaResponse {
+        
+        private string method;
+        
+        private string token;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
         /// <summary>The verification method to use in conjunction with this token. For FILE, the token should be placed in the top-level directory of the site, stored inside a file of the same name. For META, the token should be placed in the HEAD tag of the default page that is loaded for the site. For DNS, the token should be placed in a TXT record of the domain.</summary>
-        [JsonProperty("method")]
-        public virtual string Method { get; set; }
-
-        /// <summary>The verification token. The token must be placed appropriately in order for verification to succeed.</summary>
-        [JsonProperty("token")]
-        public virtual string Token { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-    }
-
-    public class SiteverificationWebResourceListResponse : IResponse
-    {
-        /// <summary>The list of sites that are owned by the authenticated user.</summary>
-        [JsonProperty("items")]
-        public virtual IList<SiteverificationWebResourceResource> Items { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-    }
-
-    public class SiteverificationWebResourceResource : IResponse
-    {
-        /// <summary>The string used to identify this site. This value should be used in the &quot;id&quot; portion of the REST URL for the Get, Update, and Delete operations.</summary>
-        [JsonProperty("id")]
-        public virtual string Id { get; set; }
-
-        /// <summary>The email addresses of all verified owners.</summary>
-        [JsonProperty("owners")]
-        public virtual IList<String> Owners { get; set; }
-
-        /// <summary>The address and type of a site that is verified or will be verified.</summary>
-        [JsonProperty("site")]
-        public virtual SiteData Site { get; set; }
-
-        #region IResponse Members
-
-        [JsonProperty("error")]
-        public virtual RequestError Error { get; set; }
-
-        #endregion
-
-        #region Nested type: SiteData
-
-        /// <summary>The address and type of a site that is verified or will be verified.</summary>
-        public class SiteData
-        {
-            /// <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name.</summary>
-            [JsonProperty("identifier")]
-            public virtual string Identifier { get; set; }
-
-            /// <summary>The site type. Can be SITE or INET_DOMAIN (domain name).</summary>
-            [JsonProperty("type")]
-            public virtual string Type { get; set; }
+        [Newtonsoft.Json.JsonPropertyAttribute("method")]
+        public virtual string Method {
+            get {
+                return this.method;
+            }
+            set {
+                this.method = value;
+            }
         }
-
-        #endregion
+        
+        /// <summary>The verification token. The token must be placed appropriately in order for verification to succeed.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("token")]
+        public virtual string Token {
+            get {
+                return this.token;
+            }
+            set {
+                this.token = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+    }
+    
+    public class SiteverificationWebResourceListResponse : Google.Apis.Requests.ISchemaResponse {
+        
+        private IList<SiteverificationWebResourceResource> items;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        /// <summary>The list of sites that are owned by the authenticated user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual IList<SiteverificationWebResourceResource> Items {
+            get {
+                return this.items;
+            }
+            set {
+                this.items = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+    }
+    
+    public class SiteverificationWebResourceResource : Google.Apis.Requests.ISchemaResponse {
+        
+        private string id;
+        
+        private IList<System.String> owners;
+        
+        private SiteverificationWebResourceResource.SiteData site;
+        
+        private Google.Apis.Requests.RequestError error;
+        
+        private string eTag;
+        
+        /// <summary>The string used to identify this site. This value should be used in the &quot;id&quot; portion of the REST URL for the Get, Update, and Delete operations.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this.id;
+            }
+            set {
+                this.id = value;
+            }
+        }
+        
+        /// <summary>The email addresses of all verified owners.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("owners")]
+        public virtual IList<System.String> Owners {
+            get {
+                return this.owners;
+            }
+            set {
+                this.owners = value;
+            }
+        }
+        
+        /// <summary>The address and type of a site that is verified or will be verified.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("site")]
+        public virtual SiteverificationWebResourceResource.SiteData Site {
+            get {
+                return this.site;
+            }
+            set {
+                this.site = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this.error;
+            }
+            set {
+                this.error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this.eTag;
+            }
+            set {
+                this.eTag = value;
+            }
+        }
+        
+        /// <summary>The address and type of a site that is verified or will be verified.</summary>
+        public class SiteData {
+            
+            private string identifier;
+            
+            private string type;
+            
+            /// <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("identifier")]
+            public virtual string Identifier {
+                get {
+                    return this.identifier;
+                }
+                set {
+                    this.identifier = value;
+                }
+            }
+            
+            /// <summary>The site type. Can be SITE or INET_DOMAIN (domain name).</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
+            }
+        }
     }
 }
-
-namespace Google.Apis
-{
-    public class SiteVerificationService : IRequestExecutor, ISchemaAwareRequestExecutor
-    {
-        #region Scopes enum
-
-        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
-        public enum Scopes
-        {
-            /// <summary>Manage the list of sites and domains you control</summary>
-            [StringValue("https://www.googleapis.com/auth/siteverification")] Siteverification,
-        }
-
-        #endregion
-
+namespace Google.Apis.SiteVerification.v1 {
+    using System;
+    using System.IO;
+    using System.Collections.Generic;
+    using Google.Apis;
+    using Google.Apis.Discovery;
+    
+    
+    public class SiteVerificationService : Google.Apis.Discovery.IRequestProvider {
+        
+        private Google.Apis.Discovery.IService genericService;
+        
+        private Google.Apis.Authentication.IAuthenticator authenticator;
+        
         private const string Version = "v1";
-
+        
         private const string Name = "siteVerification";
-
+        
         private const string BaseUri = "https://www.googleapis.com/siteVerification/v1/";
-
-        private const DiscoveryVersion DiscoveryVersionUsed = DiscoveryVersion.Version_1_0;
-        private readonly IAuthenticator authenticator;
-        private readonly IService genericService;
-
-        private readonly WebResourceResource webResource;
-
-        public SiteVerificationService(IService genericService, IAuthenticator authenticator)
-        {
+        
+        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        
+        private string developerKey;
+        
+        private WebResourceResource webResource;
+        
+        public SiteVerificationService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            webResource = new WebResourceResource(this);
+            this.webResource = new WebResourceResource(this);
         }
-
-        public SiteVerificationService()
-            : this(
-                new DiscoveryService(
-                    new CachedWebDiscoveryDevice(
-                        new Uri(
-                            string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", Name, Version))))
-                    .GetService(Version, DiscoveryVersionUsed, new FactoryParameterV1_0(new Uri(BaseUri))),
-                AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {}
-
+        
+        public SiteVerificationService() : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.CachedWebDiscoveryDevice(new System.Uri(string.Format("https://www.googleapis.com/discovery/v1/apis/{0}/{1}/rest", SiteVerificationService.Name, SiteVerificationService.Version)))).GetService(SiteVerificationService.Version, SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(SiteVerificationService.BaseUri))), Google.Apis.Authentication.AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator()) {
+        }
+        
         /// <summary>Sets the DeveloperKey which this service uses for all requests</summary>
-        public virtual string DeveloperKey { get; set; }
-
-        public virtual WebResourceResource WebResource
-        {
-            get { return webResource; }
-        }
-
-        #region IRequestExecutor Members
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             string body,
-                                             IDictionary<string, object> parameters)
-        {
-            IRequest request = genericService.CreateRequest(resource, method);
-            if (string.IsNullOrEmpty(DeveloperKey) == false)
-            {
-                request = request.WithDeveloperKey(DeveloperKey);
+        public virtual string DeveloperKey {
+            get {
+                return this.developerKey;
             }
-            return
-                request.WithParameters(parameters).WithAuthentication(authenticator).WithBody(body).ExecuteRequest();
+            set {
+                this.developerKey = value;
+            }
         }
-
-        #endregion
-
-        #region ISchemaAwareRequestExecutor Members
-
-        public virtual string ObjectToJson(object obj)
-        {
-            return genericService.SerializeRequest(obj);
+        
+        public virtual WebResourceResource WebResource {
+            get {
+                return this.webResource;
+            }
         }
-
-        public virtual T JsonToObject<T>(Stream stream)
-        {
-            return genericService.DeserializeResponse<T>(stream);
+        
+        public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
+            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            if (string.IsNullOrEmpty(DeveloperKey) == false) {
+                request = request.WithDeveloperKey(this.DeveloperKey);
+            }
+            return request.WithAuthentication(authenticator);
         }
-
-        #endregion
-
-        public virtual Stream ExecuteRequest(string resource,
-                                             string method,
-                                             object body,
-                                             IDictionary<string, object> parameters)
-        {
-            return ExecuteRequest(resource, method, ObjectToJson(body), parameters);
-        }
-
-        public virtual void RegisterSerializer(ISerializer serializer)
-        {
+        
+        public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
             genericService.Serializer = serializer;
         }
+        
+        public virtual string SerializeObject(object obj) {
+            return genericService.SerializeRequest(obj);
+        }
+        
+        public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
+         {
+            return genericService.DeserializeResponse<T>(response);
+        }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage the list of sites and domains you control</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/siteverification")]
+            Siteverification,
+        }
     }
-
-    public class WebResourceResource
-    {
+    
+    public class WebResourceResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
         private const string Resource = "webResource";
-
-        private readonly ILog logger = LogManager.GetLogger(typeof(WebResourceResource));
-        private readonly ISchemaAwareRequestExecutor service;
-
-        public WebResourceResource(SiteVerificationService service)
-        {
+        
+        private log4net.ILog logger = log4net.LogManager.GetLogger(typeof(WebResourceResource));
+        
+        public WebResourceResource(SiteVerificationService service) {
             this.service = service;
         }
-
+        
         /// <summary>Relinquish ownership of a website or domain.</summary>
         /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual Stream DeleteAsStream(string id)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing webResource.delete");
-            return ret;
-        }
-
-        /// <summary>Get the most current data for a website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual Stream GetAsStream(string id)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.get");
-            Stream ret = service.ExecuteRequest(Resource, "get", body, parameters);
-            logger.Debug("Done Executing webResource.get");
-            return ret;
-        }
-
-        /// <summary>Get a verification token for placing on a website or domain.</summary>
-        /// <param name="identifier">Optional - The URL or domain to verify.</param>
-        /// <param name="type">Optional - Type of resource to verify. Can be &apos;site&apos; (URL) or &apos;inet_domain&apos; (domain name).</param>
-        /// <param name="verificationMethod">Optional - The method to use for verifying a site or domain.</param>
-        public virtual Stream GetTokenAsStream([Optional] string identifier,
-                                               [Optional] string type,
-                                               [Optional] string verificationMethod)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["identifier"] = identifier;
-            parameters["type"] = type;
-            parameters["verificationMethod"] = verificationMethod;
-            logger.Debug("Executing webResource.getToken");
-            Stream ret = service.ExecuteRequest(Resource, "getToken", body, parameters);
-            logger.Debug("Done Executing webResource.getToken");
-            return ret;
-        }
-
-        /// <summary>Attempt verification of a website or domain.</summary>
-        /// <param name="verificationMethod">Required - The method to use for verifying a site or domain.</param>
-        public virtual Stream InsertAsStream(string body, string verificationMethod)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["verificationMethod"] = verificationMethod;
-            logger.Debug("Executing webResource.insert");
-            Stream ret = service.ExecuteRequest(Resource, "insert", body, parameters);
-            logger.Debug("Done Executing webResource.insert");
-            return ret;
-        }
-
-        /// <summary>Get the list of your verified websites and domains.</summary>
-        public virtual Stream ListAsStream()
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            logger.Debug("Executing webResource.list");
-            Stream ret = service.ExecuteRequest(Resource, "list", body, parameters);
-            logger.Debug("Done Executing webResource.list");
-            return ret;
-        }
-
-        /// <summary>Modify the list of owners for your website or domain. This method supports patch semantics.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual Stream PatchAsStream(string body, string id)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.patch");
-            Stream ret = service.ExecuteRequest(Resource, "patch", body, parameters);
-            logger.Debug("Done Executing webResource.patch");
-            return ret;
-        }
-
-        /// <summary>Modify the list of owners for your website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual Stream UpdateAsStream(string body, string id)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.update");
-            Stream ret = service.ExecuteRequest(Resource, "update", body, parameters);
-            logger.Debug("Done Executing webResource.update");
-            return ret;
-        }
-
-        /// <summary>Relinquish ownership of a website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual Stream DeleteAndExecute(string id)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.delete");
-            Stream ret = service.ExecuteRequest(Resource, "delete", body, parameters);
-            logger.Debug("Done Executing webResource.delete");
-            return ret;
-        }
-
-        /// <summary>Get the most current data for a website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual SiteverificationWebResourceResource GetAndExecute(string id)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.get");
-            SiteverificationWebResourceResource ret =
-                service.JsonToObject<SiteverificationWebResourceResource>(
-                    service.ExecuteRequest(Resource, "get", body, parameters));
-            logger.Debug("Done Executing webResource.get");
-            return ret;
-        }
-
-        /// <summary>Get a verification token for placing on a website or domain.</summary>
-        /// <param name="identifier">Optional - The URL or domain to verify.</param>
-        /// <param name="type">Optional - Type of resource to verify. Can be &apos;site&apos; (URL) or &apos;inet_domain&apos; (domain name).</param>
-        /// <param name="verificationMethod">Optional - The method to use for verifying a site or domain.</param>
-        public virtual SiteverificationWebResourceGettokenResponse GetTokenAndExecute([Optional] string identifier,
-                                                                                      [Optional] string type,
-                                                                                      [Optional] string
-                                                                                          verificationMethod)
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["identifier"] = identifier;
-            parameters["type"] = type;
-            parameters["verificationMethod"] = verificationMethod;
-            logger.Debug("Executing webResource.getToken");
-            SiteverificationWebResourceGettokenResponse ret =
-                service.JsonToObject<SiteverificationWebResourceGettokenResponse>(
-                    service.ExecuteRequest(Resource, "getToken", body, parameters));
-            logger.Debug("Done Executing webResource.getToken");
-            return ret;
-        }
-
-        /// <summary>Attempt verification of a website or domain.</summary>
-        /// <param name="verificationMethod">Required - The method to use for verifying a site or domain.</param>
-        public virtual SiteverificationWebResourceResource InsertAndExecute(SiteverificationWebResourceResource body,
-                                                                            string verificationMethod)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["verificationMethod"] = verificationMethod;
-            logger.Debug("Executing webResource.insert");
-            SiteverificationWebResourceResource ret =
-                service.JsonToObject<SiteverificationWebResourceResource>(
-                    service.ExecuteRequest(Resource, "insert", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing webResource.insert");
-            return ret;
-        }
-
-        /// <summary>Get the list of your verified websites and domains.</summary>
-        public virtual SiteverificationWebResourceListResponse ListAndExecute()
-        {
-            string body = null;
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            logger.Debug("Executing webResource.list");
-            SiteverificationWebResourceListResponse ret =
-                service.JsonToObject<SiteverificationWebResourceListResponse>(
-                    service.ExecuteRequest(Resource, "list", body, parameters));
-            logger.Debug("Done Executing webResource.list");
-            return ret;
-        }
-
-        /// <summary>Modify the list of owners for your website or domain. This method supports patch semantics.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual SiteverificationWebResourceResource PatchAndExecute(SiteverificationWebResourceResource body,
-                                                                           string id)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.patch");
-            SiteverificationWebResourceResource ret =
-                service.JsonToObject<SiteverificationWebResourceResource>(
-                    service.ExecuteRequest(Resource, "patch", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing webResource.patch");
-            return ret;
-        }
-
-        /// <summary>Modify the list of owners for your website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual SiteverificationWebResourceResource UpdateAndExecute(SiteverificationWebResourceResource body,
-                                                                            string id)
-        {
-            Dictionary<string, object> parameters = new Dictionary<string, object>();
-            parameters["id"] = id;
-            logger.Debug("Executing webResource.update");
-            SiteverificationWebResourceResource ret =
-                service.JsonToObject<SiteverificationWebResourceResource>(
-                    service.ExecuteRequest(Resource, "update", service.ObjectToJson(body), parameters));
-            logger.Debug("Done Executing webResource.update");
-            return ret;
-        }
-
-        /// <summary>Relinquish ownership of a website or domain.</summary>
-        /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual DeleteRequest Delete(string id)
-        {
+        public virtual DeleteRequest Delete(string id) {
             return new DeleteRequest(service, id);
         }
-
+        
         /// <summary>Get the most current data for a website or domain.</summary>
         /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual GetRequest Get(string id)
-        {
+        public virtual GetRequest Get(string id) {
             return new GetRequest(service, id);
         }
-
+        
         /// <summary>Get a verification token for placing on a website or domain.</summary>
-        public virtual GetTokenRequest GetToken()
-        {
+        public virtual GetTokenRequest GetToken() {
             return new GetTokenRequest(service);
         }
-
+        
         /// <summary>Get a verification token for placing on a website or domain.</summary>
         /// <param name="identifier">Optional - The URL or domain to verify.</param>
         /// <param name="type">Optional - Type of resource to verify. Can be &apos;site&apos; (URL) or &apos;inet_domain&apos; (domain name).</param>
         /// <param name="verificationMethod">Optional - The method to use for verifying a site or domain.</param>
-        public virtual GetTokenRequest GetToken([Optional] string identifier,
-                                                [Optional] string type,
-                                                [Optional] string verificationMethod)
-        {
+        public virtual GetTokenRequest GetToken([System.Runtime.InteropServices.OptionalAttribute()] string identifier, [System.Runtime.InteropServices.OptionalAttribute()] string type, [System.Runtime.InteropServices.OptionalAttribute()] string verificationMethod) {
             return new GetTokenRequest(service, identifier, type, verificationMethod);
         }
-
+        
         /// <summary>Attempt verification of a website or domain.</summary>
         /// <param name="verificationMethod">Required - The method to use for verifying a site or domain.</param>
-        public virtual InsertRequest Insert(SiteverificationWebResourceResource body, string verificationMethod)
-        {
+        public virtual InsertRequest Insert(Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string verificationMethod) {
             return new InsertRequest(service, body, verificationMethod);
         }
-
+        
         /// <summary>Get the list of your verified websites and domains.</summary>
-        public virtual ListRequest List()
-        {
+        public virtual ListRequest List() {
             return new ListRequest(service);
         }
-
+        
         /// <summary>Modify the list of owners for your website or domain. This method supports patch semantics.</summary>
         /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual PatchRequest Patch(SiteverificationWebResourceResource body, string id)
-        {
+        public virtual PatchRequest Patch(Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string id) {
             return new PatchRequest(service, body, id);
         }
-
+        
         /// <summary>Modify the list of owners for your website or domain.</summary>
         /// <param name="id">Required - The id of a verified site or domain.</param>
-        public virtual UpdateRequest Update(SiteverificationWebResourceResource body, string id)
-        {
+        public virtual UpdateRequest Update(Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string id) {
             return new UpdateRequest(service, body, id);
         }
-
-        #region Nested type: DeleteRequest
-
-        public class DeleteRequest : ServiceRequest<string>
-        {
-            private readonly string id;
-
-            public DeleteRequest(ISchemaAwareRequestExecutor service, string id) : base(service)
-            {
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string id;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+                    base(service) {
                 this.id = id;
             }
-
+            
             /// <summary>The id of a verified site or domain.</summary>
-            [RequestParameter("id")]
-            public virtual string Id
-            {
-                get { return id; }
+            [Google.Apis.Util.RequestParameterAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "delete"; }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetRequest
-
-        public class GetRequest : ServiceRequest<SiteverificationWebResourceResource>
-        {
-            private readonly string id;
-
-            public GetRequest(ISchemaAwareRequestExecutor service, string id) : base(service)
-            {
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource> {
+            
+            private string id;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+                    base(service) {
                 this.id = id;
             }
-
+            
             /// <summary>The id of a verified site or domain.</summary>
-            [RequestParameter("id")]
-            public virtual string Id
-            {
-                get { return id; }
+            [Google.Apis.Util.RequestParameterAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "get"; }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: GetTokenRequest
-
-        public class GetTokenRequest : ServiceRequest<SiteverificationWebResourceGettokenResponse>
-        {
+        
+        public class GetTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceGettokenResponse> {
+            
             private string identifier;
-
+            
             private string type;
-
+            
             private string verificationMethod;
-
-            public GetTokenRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            public GetTokenRequest(ISchemaAwareRequestExecutor service,
-                                   [Optional] string identifier,
-                                   [Optional] string type,
-                                   [Optional] string verificationMethod) : base(service)
-            {
+            
+            public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string identifier, [System.Runtime.InteropServices.OptionalAttribute()] string type, [System.Runtime.InteropServices.OptionalAttribute()] string verificationMethod) : 
+                    base(service) {
                 this.identifier = identifier;
                 this.type = type;
                 this.verificationMethod = verificationMethod;
             }
-
+            
             /// <summary>The URL or domain to verify.</summary>
-            [RequestParameter("identifier")]
-            public virtual string Identifier
-            {
-                get { return identifier; }
-                set { identifier = value; }
+            [Google.Apis.Util.RequestParameterAttribute("identifier")]
+            public virtual string Identifier {
+                get {
+                    return this.identifier;
+                }
+                set {
+                    this.identifier = value;
+                }
             }
-
+            
             /// <summary>Type of resource to verify. Can be 'site' (URL) or 'inet_domain' (domain name).</summary>
-            [RequestParameter("type")]
-            public virtual string Type
-            {
-                get { return type; }
-                set { type = value; }
+            [Google.Apis.Util.RequestParameterAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this.type;
+                }
+                set {
+                    this.type = value;
+                }
             }
-
+            
             /// <summary>The method to use for verifying a site or domain.</summary>
-            [RequestParameter("verificationMethod")]
-            public virtual string VerificationMethod
-            {
-                get { return verificationMethod; }
-                set { verificationMethod = value; }
+            [Google.Apis.Util.RequestParameterAttribute("verificationMethod")]
+            public virtual string VerificationMethod {
+                get {
+                    return this.verificationMethod;
+                }
+                set {
+                    this.verificationMethod = value;
+                }
             }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "getToken"; }
+            
+            protected override string MethodName {
+                get {
+                    return "getToken";
+                }
             }
         }
-
-        #endregion
-
-        #region Nested type: InsertRequest
-
-        public class InsertRequest : ServiceRequest<SiteverificationWebResourceResource>
-        {
-            private readonly string verificationMethod;
-
-            public InsertRequest(ISchemaAwareRequestExecutor service,
-                                 SiteverificationWebResourceResource body,
-                                 string verificationMethod) : base(service)
-            {
-                Body = body;
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource> {
+            
+            private string verificationMethod;
+            
+            private Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource bodyValue;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string verificationMethod) : 
+                    base(service) {
+                this.Body = body;
                 this.verificationMethod = verificationMethod;
             }
-
+            
             /// <summary>The method to use for verifying a site or domain.</summary>
-            [RequestParameter("verificationMethod")]
-            public virtual string VerificationMethod
-            {
-                get { return verificationMethod; }
+            [Google.Apis.Util.RequestParameterAttribute("verificationMethod")]
+            public virtual string VerificationMethod {
+                get {
+                    return this.verificationMethod;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual SiteverificationWebResourceResource Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            public virtual Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "insert"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
             }
-        }
-
-        #endregion
-
-        #region Nested type: ListRequest
-
-        public class ListRequest : ServiceRequest<SiteverificationWebResourceListResponse>
-        {
-            public ListRequest(ISchemaAwareRequestExecutor service) : base(service) {}
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
-            }
-
-            protected override string MethodName
-            {
-                get { return "list"; }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: PatchRequest
-
-        public class PatchRequest : ServiceRequest<SiteverificationWebResourceResource>
-        {
-            private readonly string id;
-
-            public PatchRequest(ISchemaAwareRequestExecutor service,
-                                SiteverificationWebResourceResource body,
-                                string id) : base(service)
-            {
-                Body = body;
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceListResponse> {
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource> {
+            
+            private string id;
+            
+            private Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource bodyValue;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string id) : 
+                    base(service) {
+                this.Body = body;
                 this.id = id;
             }
-
+            
             /// <summary>The id of a verified site or domain.</summary>
-            [RequestParameter("id")]
-            public virtual string Id
-            {
-                get { return id; }
+            [Google.Apis.Util.RequestParameterAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual SiteverificationWebResourceResource Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            public virtual Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "patch"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
-
-        #region Nested type: UpdateRequest
-
-        public class UpdateRequest : ServiceRequest<SiteverificationWebResourceResource>
-        {
-            private readonly string id;
-
-            public UpdateRequest(ISchemaAwareRequestExecutor service,
-                                 SiteverificationWebResourceResource body,
-                                 string id) : base(service)
-            {
-                Body = body;
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource> {
+            
+            private string id;
+            
+            private Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource bodyValue;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string id) : 
+                    base(service) {
+                this.Body = body;
                 this.id = id;
             }
-
+            
             /// <summary>The id of a verified site or domain.</summary>
-            [RequestParameter("id")]
-            public virtual string Id
-            {
-                get { return id; }
+            [Google.Apis.Util.RequestParameterAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
             }
-
+            
             /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual SiteverificationWebResourceResource Body { get; set; }
-
-            protected override string ResourceName
-            {
-                get { return "webResource"; }
+            public virtual Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
             }
-
-            protected override string MethodName
-            {
-                get { return "update"; }
+            
+            protected override string ResourceName {
+                get {
+                    return "webResource";
+                }
             }
-
-            protected override object GetBody()
-            {
-                return Body;
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
-
-        #endregion
     }
 }

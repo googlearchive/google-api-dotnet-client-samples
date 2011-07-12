@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 using System;
-using Google.Apis;
-using Google.Apis.Data;
+using Google.Apis.Discovery.v1;
+using Google.Apis.Discovery.v1.Data;
 using Google.Apis.Samples.Helper;
 
 namespace Discovery.ListAPIs

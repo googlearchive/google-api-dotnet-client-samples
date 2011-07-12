@@ -30,15 +30,15 @@ public static class ClientCredentials
     /// <summary>
     /// The OAuth2.0 Client ID of your project.
     /// </summary>
-    public const string ClientID = "<Enter your ClientID here>";
+    public const string ClientID = "673273515117.apps.googleusercontent.com";
 
     /// <summary>
     /// The OAuth2.0 Client secret of your project.
     /// </summary>
-    public const string ClientSecret = "<Enter your ClientSecret here>";
+    public const string ClientSecret = "ycdIsHIMheCRTyqxaLRTLTxi";
 
     /// <summary>
     /// Your Developer key.
     /// </summary>
-    public const string DeveloperKey = "<Enter your DeveloperKey here>";
+    public const string DeveloperKey = "AIzaSyC6da2-zRmkWfC9dZp7efG8a2J8MkGQ9Pg";
 }

@@ -17,10 +17,10 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Google.Apis;
-using Google.Apis.Data;
 using Google.Apis.Samples.Helper;
-using TranslationsResource = Google.Apis.Data.TranslationsResource;
+using Google.Apis.Translate.v2;
+using Google.Apis.Translate.v2.Data;
+using TranslationsResource = Google.Apis.Translate.v2.Data.TranslationsResource;
 
 namespace Translate.TranslateText
 {
