@@ -46,8 +46,6 @@ namespace Google.Apis.Tasks.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("completed")]
         public virtual string Completed {
@@ -83,7 +81,7 @@ namespace Google.Apis.Tasks.v1.Data {
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -211,15 +209,6 @@ namespace Google.Apis.Tasks.v1.Data {
                 this.error = value;
             }
         }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
-            }
-        }
     }
     
     public class TaskList : Google.Apis.Requests.ISchemaResponse {
@@ -236,11 +225,9 @@ namespace Google.Apis.Tasks.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -302,15 +289,6 @@ namespace Google.Apis.Tasks.v1.Data {
                 this.error = value;
             }
         }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
-            }
-        }
     }
     
     public class TaskLists : Google.Apis.Requests.ISchemaResponse {
@@ -325,11 +303,9 @@ namespace Google.Apis.Tasks.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -380,15 +356,6 @@ namespace Google.Apis.Tasks.v1.Data {
                 this.error = value;
             }
         }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
-            }
-        }
     }
     
     public class Tasks : Google.Apis.Requests.ISchemaResponse {
@@ -403,11 +370,9 @@ namespace Google.Apis.Tasks.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -456,15 +421,6 @@ namespace Google.Apis.Tasks.v1.Data {
             }
             set {
                 this.error = value;
-            }
-        }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
             }
         }
     }

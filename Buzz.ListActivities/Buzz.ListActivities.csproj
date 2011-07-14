@@ -59,7 +59,9 @@
     <Compile Include="..\ClientCredentials.cs">
       <Link>ClientCredentials.cs</Link>
     </Compile>
-    <Compile Include="Buzz.v1.cs" />
+    <Compile Include="..\Services\Buzz.v1.cs">
+      <Link>Buzz.v1.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

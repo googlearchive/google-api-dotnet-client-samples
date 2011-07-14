@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D1F0FC91-C1E7-481B-83F3-CD8621745432}</ProjectGuid>
+    <ProjectGuid>{E8B4C3A1-83F9-4228-A116-01A818AF84A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UrlShortener.v1.Cmd.OAuth2</RootNamespace>
-    <AssemblyName>UrlShortener.v1.Cmd.OAuth2</AssemblyName>
+    <RootNamespace>Tasks.ETagCollision</RootNamespace>
+    <AssemblyName>Tasks.ETagCollision</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -59,8 +59,8 @@
     <Compile Include="..\ClientCredentials.cs">
       <Link>ClientCredentials.cs</Link>
     </Compile>
-    <Compile Include="..\Services\Urlshortener.v1.cs">
-      <Link>Urlshortener.v1.cs</Link>
+    <Compile Include="..\Services\Tasks.v1.cs">
+      <Link>Tasks.v1.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

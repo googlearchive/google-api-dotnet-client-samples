@@ -16,10 +16,12 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Google.Apis.Tasks.v1.Data;
+using Timer = System.Threading.Timer;
 
 namespace TasksExample.WinForms.NoteMgr
 {
@@ -30,6 +32,7 @@ namespace TasksExample.WinForms.NoteMgr
     {
         private readonly List<NoteItem> deletedNotes = new List<NoteItem>();
         private readonly TaskList taskList;
+        private readonly object sync = new object();
 
         public NoteForm()
         {
@@ -53,6 +56,10 @@ namespace TasksExample.WinForms.NoteMgr
                 {
                     AddNote(task);
                 }
+            }
+            else
+            {
+                AddNote();
             }
         }
 
@@ -79,8 +86,9 @@ namespace TasksExample.WinForms.NoteMgr
             Controls.Clear();
             Controls.Add(newNote);
             Controls.AddRange(all);
+            UpdateHeight();
             ResumeLayout();
-
+            
             return newNote;
         }
         
@@ -97,6 +105,7 @@ namespace TasksExample.WinForms.NoteMgr
             Controls.Remove(note);
             deletedNotes.Add(note);
             ((NoteItem)Controls[0]).FocusNote();
+            UpdateHeight();
         }
 
         /// <summary>
@@ -105,57 +114,79 @@ namespace TasksExample.WinForms.NoteMgr
         public void ClientSync()
         {
             // TODO(mlinder): Implement batching here.
-            var requests = new List<Action>();
-
-            // Add changes/inserts.
-            NoteItem previous = null;
-            foreach (NoteItem currentNote in (from Control c in Controls where c is NoteItem select c).Reverse())
+            lock (sync)
             {
-                NoteItem note = currentNote;
+                var requests = new List<Action>();
 
-                bool isNew = note.RelatedTask == null;
-                if (note.ClientSync())
+                // Add changes/inserts.
+                NoteItem previous = null;
+                foreach (NoteItem currentNote in (from Control c in Controls where c is NoteItem select c).Reverse())
                 {
-                    if (isNew)
+                    NoteItem note = currentNote;
+                    if (note.ClientSync())
                     {
-                        NoteItem previousSaved = previous;
-                        requests.Add(
-                            () =>
-                            note.RelatedTask = Program.Service.Tasks.Insert(note.RelatedTask, taskList.Id).Fetch());
-                        requests.Add(
-                            () =>
-                                {
-                                    var req = Program.Service.Tasks.Move(note.RelatedTask.Id, taskList.Id);
-                                    req.Previous = previousSaved.RelatedTask.Id;
-                                    note.RelatedTask = req.Fetch();
-                                });
+                        bool isNew = note.RelatedTask == null;
+                        requests.AddRange(GetSyncNoteRequest(note, previous, isNew));
                     }
-                    else 
-                    {
-                        requests.Add(
-                            () =>
-                            note.RelatedTask =
-                            Program.Service.Tasks.Patch(note.RelatedTask, note.RelatedTask.Id, taskList.Id).Fetch());
-                    }
+                    previous = note; 
                 }
 
-                previous = note;
+                // Add deletes.
+                foreach (NoteItem note in deletedNotes)
+                {
+                    requests.Add(() => Program.Service.Tasks.Delete(note.RelatedTask.Id, taskList.Id).Fetch());
+                }
+                deletedNotes.Clear();
 
+                // Execute all requests.
+                requests.ForEach(action => action());
             }
+        }
 
-            // Add deletes.
-            foreach (NoteItem note in deletedNotes)
+        private IEnumerable<Action> GetSyncNoteRequest(NoteItem note, NoteItem previous, bool isNew)
+        {
+            var tasks = Program.Service.Tasks;
+
+            if (isNew)
             {
-                requests.Add(() => Program.Service.Tasks.Delete(note.RelatedTask.Id, taskList.Id).Fetch());
+                NoteItem previousSaved = previous;
+                yield return () => note.RelatedTask = tasks.Insert(note.RelatedTask, taskList.Id).Fetch();
+                yield return () =>
+                                 {
+                                     var req = tasks.Move(note.RelatedTask.Id, taskList.Id);
+                                     if (previousSaved != null)
+                                     {
+                                         req.Previous = previousSaved.RelatedTask.Id;
+                                     }
+                                     note.RelatedTask = req.Fetch();
+                                 };
             }
-            deletedNotes.Clear();
+            else
+            {
+                yield return
+                    () => note.RelatedTask = tasks.Update(note.RelatedTask, note.RelatedTask.Id, taskList.Id).Fetch();
+            }
+        }
 
-            // Execute all requests.
-            requests.ForEach(action => action());
+        private void UpdateHeight()
+        {
+            // Change the height of the list to contain all items.
+            int totalY = 0;
+            foreach (Control c in Controls)
+            {
+                totalY += c.Height;
+            }
+            ClientSize = new Size(ClientSize.Width, totalY);
         }
 
         private void NoteForm_Shown(object sender, System.EventArgs e)
         {
+            // Add a sync timer.
+            var timer = new System.Windows.Forms.Timer();
+            timer.Interval = 1000 * 60 * 5; // 5 min
+            timer.Tick += (timerSender, timerArgs) => ClientSync();
+            timer.Start();
+
             // Focus the first note.
             if (Controls.Count > 0)
             {
@@ -166,10 +197,17 @@ namespace TasksExample.WinForms.NoteMgr
         private void NoteForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClientSync();
+            Application.DoEvents();
+            lock (sync) {}
         }
 
         private void NoteForm_Deactivate(object sender, EventArgs e)
         {
+            if (Disposing)
+            {
+                return;
+            }
+
             // Sync asynchronously.
             ThreadPool.QueueUserWorkItem((obj) => ClientSync());
         }

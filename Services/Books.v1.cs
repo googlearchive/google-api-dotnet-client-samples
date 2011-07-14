@@ -675,8 +675,6 @@ namespace Google.Apis.Books.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accessInfo")]
         public virtual Volume.AccessInfoData AccessInfo {
@@ -690,7 +688,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>Opaque identifier for a specific version of a volume resource. (in LITE projection)</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -772,15 +770,6 @@ namespace Google.Apis.Books.v1.Data {
             }
             set {
                 this.error = value;
-            }
-        }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
             }
         }
         
@@ -1693,7 +1682,7 @@ namespace Google.Apis.Books.v1 {
             if (string.IsNullOrEmpty(DeveloperKey) == false) {
                 request = request.WithDeveloperKey(this.DeveloperKey);
             }
-            return request;
+            return request.WithAuthentication(authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {

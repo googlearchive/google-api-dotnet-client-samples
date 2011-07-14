@@ -217,8 +217,6 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private Google.Apis.Requests.RequestError error;
         
-        private string eTag;
-        
         /// <summary>List of categories.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
         public virtual IList<ShoppingModelCategoryJsonV1> Categories {
@@ -253,7 +251,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Etag of feed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
-        public virtual string Etag {
+        public virtual string ETag {
             get {
                 return this.etag;
             }
@@ -444,15 +442,6 @@ namespace Google.Apis.Shopping.v1.Data {
             }
             set {
                 this.error = value;
-            }
-        }
-        
-        public virtual string ETag {
-            get {
-                return this.eTag;
-            }
-            set {
-                this.eTag = value;
             }
         }
         

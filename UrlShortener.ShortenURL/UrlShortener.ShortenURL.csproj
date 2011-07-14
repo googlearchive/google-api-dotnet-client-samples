@@ -53,9 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Services\Urlshortener.v1.cs">
+      <Link>Urlshortener.v1.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="URLShortener.v1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="google.ico" />

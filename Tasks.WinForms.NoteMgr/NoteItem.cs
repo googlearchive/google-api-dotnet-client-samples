@@ -156,5 +156,11 @@ namespace TasksExample.WinForms.NoteMgr
                 OnNoteChanged(this);
             }
         }
+
+        private void checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            text.Font = new Font(text.Font, checkbox.Checked ? FontStyle.Strikeout : FontStyle.Regular);
+            text.ForeColor = checkbox.Checked ? Color.DarkGray : Color.Black;
+        }
     }
 }
