@@ -4,3 +4,4 @@ syntax: glob
 _ReSharper.GoogleApisSamples/*
 bin/*
 obj/*
+*.dotCover

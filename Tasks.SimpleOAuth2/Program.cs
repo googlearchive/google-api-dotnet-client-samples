@@ -23,6 +23,7 @@ using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
 using Google.Apis.Tasks.v1;
 using Google.Apis.Tasks.v1.Data;
+using Google.Apis.Util;
 
 namespace Google.Apis.Samples.TasksOAuth2
 {
@@ -32,8 +33,6 @@ namespace Google.Apis.Samples.TasksOAuth2
     /// </summary>
     public class Program
     {
-        private const string Scope = "https://www.googleapis.com/auth/tasks";
-
         public static void Main(string[] args)
         {
             // Display the header and initialize the sample.
@@ -55,14 +54,13 @@ namespace Google.Apis.Samples.TasksOAuth2
             {
                 CommandLine.WriteLine("     ^2" + list.Title);
             }
-
             CommandLine.PressAnyKeyToExit();
         }
 
         private static IAuthorizationState GetAuthentication(NativeApplicationClient arg)
         {
             // Get the auth URL:
-            IAuthorizationState state = new AuthorizationState(new[] { Scope });
+            IAuthorizationState state = new AuthorizationState(new[] { TasksService.Scopes.Tasks.GetStringValue() });
             state.Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl);
             Uri authUri = arg.RequestUserAuthorization(state);
 
