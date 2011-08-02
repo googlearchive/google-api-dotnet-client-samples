@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Customsearch.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Customsearch.v1.CustomsearchService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Customsearch.v1.CseResource.List(System.String)">
+            <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
+            <param name="q">Required - Query</param>
+        </member>
+        <member name="M:Google.Apis.Customsearch.v1.CseResource.List(System.String,System.String,System.String,System.Nullable{Google.Apis.Customsearch.v1.CseResource.Lr},System.String,System.Nullable{Google.Apis.Customsearch.v1.CseResource.Safe},System.String,System.String)">
+            <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
+            <param name="q">Required - Query</param>
+            <param name="cref">Optional - The URL of a linked custom search engine</param>
+            <param name="cx">Optional - The custom search engine ID to scope this search query</param>
+            <param name="lr">Optional - Must be one of the following values [lang_ar, lang_bg, lang_ca, lang_cs, lang_da, lang_de, lang_el, lang_en, lang_es, lang_et, lang_fi, lang_fr, lang_hr, lang_hu, lang_id, lang_is, lang_it, lang_iw, lang_ja, lang_ko, lang_lt, lang_lv, lang_nl, lang_no, lang_pl, lang_pt, lang_ro, lang_ru, lang_sk, lang_sl, lang_sr, lang_sv, lang_tr, lang_zh-CN, lang_zh-TW] - The language restriction for the search results</param>
+            <param name="num">Optional - Number of search results to return</param>
+            <param name="safe">Optional - Must be one of the following values [high, medium, off] - Search safety level</param>
+            <param name="sort">Optional - The sort expression to apply to the results</param>
+            <param name="start">Optional - The index of the first result to return</param>
+        </member>
+        <member name="T:Google.Apis.Customsearch.v1.CseResource.Lr">
+            <summary>The language restriction for the search results</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ar">
+            <summary>Arabic</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_bg">
+            <summary>Bulgarian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ca">
+            <summary>Catalan</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_cs">
+            <summary>Czech</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_da">
+            <summary>Danish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_de">
+            <summary>German</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_el">
+            <summary>Greek</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_en">
+            <summary>English</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_es">
+            <summary>Spanish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_et">
+            <summary>Estonian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_fi">
+            <summary>Finnish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_fr">
+            <summary>French</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_hr">
+            <summary>Croatian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_hu">
+            <summary>Hungarian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_id">
+            <summary>Indonesian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_is">
+            <summary>Icelandic</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_it">
+            <summary>Italian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_iw">
+            <summary>Hebrew</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ja">
+            <summary>Japanese</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ko">
+            <summary>Korean</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_lt">
+            <summary>Lithuanian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_lv">
+            <summary>Latvian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_nl">
+            <summary>Dutch</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_no">
+            <summary>Norwegian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_pl">
+            <summary>Polish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_pt">
+            <summary>Portuguese</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ro">
+            <summary>Romanian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_ru">
+            <summary>Russian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_sk">
+            <summary>Slovak</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_sl">
+            <summary>Slovenian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_sr">
+            <summary>Serbian</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_sv">
+            <summary>Swedish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_tr">
+            <summary>Turkish</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_zhCN">
+            <summary>Chinese (Simplified)</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Lr.Lang_zhTW">
+            <summary>Chinese (Traditional)</summary>
+        </member>
+        <member name="T:Google.Apis.Customsearch.v1.CseResource.Safe">
+            <summary>Search safety level</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Safe.High">
+            <summary>Enables highest level of safe search filtering.</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Safe.Medium">
+            <summary>Enables moderate safe search filtering.</summary>
+        </member>
+        <member name="F:Google.Apis.Customsearch.v1.CseResource.Safe.Off">
+            <summary>Disables safe search filtering.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Cref">
+            <summary>The URL of a linked custom search engine</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Cx">
+            <summary>The custom search engine ID to scope this search query</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Lr">
+            <summary>The language restriction for the search results</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Num">
+            <summary>Number of search results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Q">
+            <summary>Query</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Safe">
+            <summary>Search safety level</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Sort">
+            <summary>The sort expression to apply to the results</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Start">
+            <summary>The index of the first result to return</summary>
+        </member>
+    </members>
+</doc>

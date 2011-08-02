@@ -62,7 +62,7 @@ namespace Tasks.ETagCollision
             CommandLine.PressAnyKeyToExit();
         }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient arg)
+        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
         {
             // You should use a more secure way of storing the key here as
             // .NET applications can be disassembled using a reflection tool.
@@ -73,17 +73,24 @@ namespace Tasks.ETagCollision
             IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
             if (state != null)
             {
-                arg.RefreshToken(state);
-                return state; // Yes - we are done.
+                try
+                {
+                    client.RefreshToken(state);
+                    return state; // Yes - we are done.
+                }
+                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
+                {
+                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
+                }
             }
 
             // Retrieve the authorization url:
             state = new AuthorizationState(new[] { Scope }) { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = arg.RequestUserAuthorization(state);
+            Uri authUri = client.RequestUserAuthorization(state);
 
             // Do a new authorization request.
             string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = arg.ProcessUserAuthorization(authCode, state);
+            state = client.ProcessUserAuthorization(authCode, state);
             AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state, Scope);
             return state;
         }

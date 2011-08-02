@@ -23,6 +23,7 @@ using Google.Apis.Samples.Helper;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
 using Google.Apis.Util;
+using UrlShortener.v1.Cmd.OAuth2;
 
 namespace UrlShortener.ListURLs
 {
@@ -96,8 +97,15 @@ namespace UrlShortener.ListURLs
             IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
             if (state != null)
             {
-                client.RefreshToken(state);
-                return state; // Yes - we are done.
+                try
+                {
+                    client.RefreshToken(state);
+                    return state; // Yes - we are done.
+                }
+                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
+                {
+                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
+                }
             }
 
             // Retrieve the authorization url:

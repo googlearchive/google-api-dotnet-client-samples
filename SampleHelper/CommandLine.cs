@@ -73,6 +73,17 @@ namespace Google.Apis.Samples.Helper
         }
 
         /// <summary>
+        /// Requests an user input for the specified value, and returns the entered value.
+        /// </summary>
+        /// <param name="name">Name to display</param>
+        public static T RequestUserInput<T>(string name)
+        {
+            object val = default(T);
+            RequestUserInput(name, ref val, typeof(T));
+            return (T) val;
+        }
+
+        /// <summary>
         /// Requests an user input for the specified value
         /// </summary>
         /// <param name="name">Name to display</param>
@@ -84,7 +95,7 @@ namespace Google.Apis.Samples.Helper
             {
                 if (value != null)
                 {
-                    Write("   ^1{0} [^0{1}^1]: ^9", name, value);
+                    Write("   ^1{0} [^8{1}^1]: ^9", name, value);
                 }
                 else
                 {
@@ -232,7 +243,7 @@ namespace Google.Apis.Samples.Helper
             question.ThrowIfNull("question");
 
             // Show the question.
-            Write("   ^1{0} [^0{1}^1]: ^9", question, "y/n");
+            Write("   ^1{0} [^8{1}^1]: ^9", question, "y/n");
 
             // Wait for the user input.
             char c;

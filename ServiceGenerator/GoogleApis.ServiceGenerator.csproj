@@ -36,6 +36,9 @@
     <ApplicationIcon>google.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Discovery.v1">
+      <HintPath>..\Services\Discovery.v1.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis">
       <HintPath>..\Lib\Google.Apis.dll</HintPath>
     </Reference>
@@ -56,9 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Services\Discovery.v1.cs">
-      <Link>Discovery.v1.cs</Link>
-    </Compile>
+    <Compile Include="DelegateAuthenticator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="google.ico" />
+    <Content Include="README.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

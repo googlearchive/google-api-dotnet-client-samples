@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Buzz.v1">
+      <HintPath>..\Services\Buzz.v1.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\Lib\ThirdParty\DotNetOpenAuth.dll</HintPath>
     </Reference>
@@ -56,12 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ClientCredentials.cs">
-      <Link>ClientCredentials.cs</Link>
-    </Compile>
-    <Compile Include="..\Services\Buzz.v1.cs">
-      <Link>Buzz.v1.cs</Link>
-    </Compile>
+    <Compile Include="ClientCredentials.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,6 +68,9 @@
       <Project>{08079AFF-9A91-4387-8792-C731D18D4373}</Project>
       <Name>GoogleApis.SampleHelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

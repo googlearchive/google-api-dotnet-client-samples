@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Prediction.v1.2</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.DeveloperKey">
+            <summary>Sets the DeveloperKey which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_2.PredictionService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_2.PredictionService.Scopes.Prediction">
+            <summary>Manage your data in the Google Prediction API</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.HostedmodelsResource.Predict(Google.Apis.Prediction.v1_2.Data.Input,System.String)">
+            <summary>Submit input and request an output against a hosted model</summary>
+            <param name="hostedModelName">Required - The name of a hosted model</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.HostedModelName">
+            <summary>The name of a hosted model</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Delete(System.String)">
+            <summary>Delete a trained model</summary>
+            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Get(System.String)">
+            <summary>Check training status of your model</summary>
+            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Insert(Google.Apis.Prediction.v1_2.Data.Training)">
+            <summary>Begin training your model</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Insert(Google.Apis.Prediction.v1_2.Data.Training,System.String)">
+            <summary>Begin training your model</summary>
+            <param name="data">Optional - mybucket%2Fmydata resource in Google Storage</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Update(Google.Apis.Prediction.v1_2.Data.Update,System.String)">
+            <summary>Add new data to a trained model</summary>
+            <param name="data">Required</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Data">
+            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Data">
+            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Data">
+            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

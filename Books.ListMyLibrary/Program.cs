@@ -66,8 +66,15 @@ namespace Books.ListMyLibrary
             IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
             if (state != null)
             {
-                client.RefreshToken(state);
-                return state; // Yes - we are done.
+                try
+                {
+                    client.RefreshToken(state);
+                    return state; // Yes - we are done.
+                }
+                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
+                {
+                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
+                }
             }
 
             // Retrieve the authorization url:

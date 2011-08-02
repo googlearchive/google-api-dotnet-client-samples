@@ -58,14 +58,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tasks.v1">
+      <HintPath>..\Services\Tasks.v1.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ClientCredentials.cs">
-      <Link>ClientCredentials.cs</Link>
-    </Compile>
-    <Compile Include="..\Services\Tasks.v1.cs">
-      <Link>Tasks.v1.cs</Link>
-    </Compile>
+    <Compile Include="ClientCredentials.cs" />
     <Compile Include="NoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="126_Edit.ico" />
+    <Content Include="README.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

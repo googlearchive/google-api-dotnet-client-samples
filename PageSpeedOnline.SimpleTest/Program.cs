@@ -34,7 +34,7 @@ namespace PageSpeedOnline.SimpleTest
             CommandLine.DisplayGoogleSampleHeader("Page Speed Online API");
 
             // Create the service.
-            var service = new PagespeedonlineService() { DeveloperKey = ClientCredentials.DeveloperKey };
+            var service = new PagespeedonlineService() { DeveloperKey = ClientCredentials.ApiKey };
             RunSample(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -50,7 +50,7 @@ namespace PageSpeedOnline.SimpleTest
             var result = service.Pagespeedapi.Runpagespeed(url).Fetch(); 
             
             // Display the results.
-            CommandLine.WriteResult("Page score:", result.Score);
+            CommandLine.WriteResult("Page score", result.Score);
         }
     }
 }

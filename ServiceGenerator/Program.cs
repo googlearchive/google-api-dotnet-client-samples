@@ -19,6 +19,9 @@ using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.IO;
+using System.Net;
+using System.Reflection;
+using Google.Apis.Authentication;
 using Google.Apis.Discovery;
 using Google.Apis.Discovery.v1.Data;
 using Google.Apis.Samples.Helper;
@@ -34,6 +37,22 @@ namespace Google.Apis.Samples.CmdServiceGenerator
     /// </summary>
     internal class Program
     {
+        private static DiscoveryService _service;
+
+        private static DiscoveryService Service
+        {
+            get
+            {
+                if (_service == null)
+                {
+                    var auth = new DelegateAuthenticator(wr => wr.Headers["X-User-IP"] = "0.0.0.0");
+                    AuthenticatorFactory.GetInstance().RegisterAuthenticator(() => auth);
+                    _service = new DiscoveryService();
+                }
+                return _service;
+            }
+        }
+
         private class CommandLineArguments
         {
             [CommandLine.Argument("all", ShortName = "a",
@@ -111,10 +130,10 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             {
                 var desc = CommandLine.CreateClassFromUserinput<ServiceDescription>();
                 GenerateService(desc, cmdArgs);
+                CommandLine.PressAnyKeyToExit();
             }
 
             // ..and we are done!
-            CommandLine.PressAnyKeyToExit();
         }
 
         static void GenerateService(ServiceDescription description, CommandLineArguments cmdArgs)
@@ -127,9 +146,10 @@ namespace Google.Apis.Samples.CmdServiceGenerator
         static void GenerateService(Uri url, CommandLineArguments cmdArgs)
         {
             // Create the output directory if it does not exist yet.
-            if (!Directory.Exists("Generated"))
+            const string DIR = "Services";
+            if (!Directory.Exists(DIR))
             {
-                Directory.CreateDirectory("Generated");
+                Directory.CreateDirectory(DIR);
             }
 
             // Discover the service.
@@ -140,18 +160,20 @@ namespace Google.Apis.Samples.CmdServiceGenerator
                                                  DiscoveryStream =
                                                      File.Open(url.ToString().Replace("file:///", ""), FileMode.Open)
                                              }
-                                       : new CachedWebDiscoveryDevice(url);
+                                       : new StringDiscoveryDevice { Document = FetchDocument(url) };
             var discovery = new Discovery.DiscoveryService(src);
-            var service = discovery.GetService("v1", cmdArgs.GetDiscoveryVersion());
+            var service = discovery.GetService(cmdArgs.GetDiscoveryVersion());
             
             // Generate the formal names based upon the discovery data.
             string name = service.Name;
             string version = service.Version;
 
             string formalServiceName = GeneratorUtils.UpperFirstLetter(name);
-            string fileName = string.Format("Generated/{0}.cs", formalServiceName);
-            string libfileName = string.Format("Generated/{0}.dll", formalServiceName);
-            string serviceNamespace = string.Format("Google.Apis.{0}.{1}", formalServiceName, version);
+            string baseFileName = string.Format("{2}/{0}.{1}", formalServiceName, version, DIR);
+            string fileName = baseFileName + ".cs";
+            string libfileName = baseFileName + ".dll";
+            string serviceNamespace = string.Format(
+                "Google.Apis.{0}.{1}", formalServiceName, version.Replace('.', '_'));
 
             // Produce the code.
             var generator = new GoogleServiceGenerator(service, serviceNamespace);
@@ -173,17 +195,30 @@ namespace Google.Apis.Samples.CmdServiceGenerator
 
             if (cmdArgs.CompileIntoLibrary)
             {
-                CompileIntoLibrary(generatedCode, libfileName);
+                CompileIntoLibrary(service, generatedCode, libfileName);
             }
         }
 
-        static void CompileIntoLibrary(CodeCompileUnit code, string targetFile)
+        static void CompileIntoLibrary(IService service, CodeCompileUnit code, string targetFile)
         {
+            string xmlDocFile = targetFile.Replace(".dll", ".xml");
+
+            // Set the AssemblyInfo
+            AddAssemblyInfo<AssemblyTitleAttribute>(code, service.Title);
+            AddAssemblyInfo<AssemblyCompanyAttribute>(code, "Google Inc");
+            AddAssemblyInfo<AssemblyProductAttribute>(code, service.Id);
+            AddAssemblyInfo<AssemblyVersionAttribute>(code, typeof(IService).Assembly.GetName().Version.ToString());
+            AddAssemblyInfo<AssemblyCopyrightAttribute>(code, "© "+DateTime.UtcNow.Year+" Google Inc");
+
+            // Set up the compiler.
             var cp = new CompilerParameters();
             cp.OutputAssembly = targetFile;
             cp.GenerateExecutable = false;
+            cp.GenerateInMemory = false;
             cp.ReferencedAssemblies.Add("System.dll");
             cp.ReferencedAssemblies.Add("log4net.dll");
+            cp.IncludeDebugInformation = true;
+            cp.CompilerOptions = "/doc:" + xmlDocFile;
 
             foreach (Type type in new[] { typeof(Newtonsoft.Json.JsonConvert), typeof(GoogleApiException) })
             {
@@ -204,12 +239,13 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             else
             {
                 CommandLine.WriteLine("^9 Library generated in ^4" + targetFile + "^9!");
+                CommandLine.WriteLine("^9 XML Doc generated in ^4" + xmlDocFile + "^9!");
             }
         }
 
         static void GenerateAllServices(CommandLineArguments cmdArgs)
         {
-            var response = new DiscoveryService().Apis.List().Fetch();
+            var response = Service.Apis.List().Fetch();
 
             if (response.Items == null)
             {
@@ -220,8 +256,23 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             foreach (DirectoryList.ItemsData service in response.Items)
             {
                 GenerateService(
-                    new ServiceDescription() { ServiceName = service.Name, ServiceVersion = service.Version }, cmdArgs);
+                    new ServiceDescription { ServiceName = service.Name, ServiceVersion = service.Version }, cmdArgs);
+                CommandLine.WriteLine();
             }
+        }
+
+        static string FetchDocument(Uri uri)
+        {
+            var webClient = new WebClient();
+            webClient.Headers["X-User-IP"] = "0.0.0.0";
+            return webClient.DownloadString(uri);
+        }
+
+        static void AddAssemblyInfo<T>(CodeCompileUnit code, string value)
+        {
+            var attrib = new CodeAttributeDeclaration(new CodeTypeReference(typeof(T)));
+            attrib.Arguments.Add(new CodeAttributeArgument(new CodePrimitiveExpression(value)));
+            code.AssemblyCustomAttributes.Add(attrib);
         }
     }
 }

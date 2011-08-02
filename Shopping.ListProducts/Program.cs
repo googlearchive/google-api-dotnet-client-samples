@@ -35,7 +35,7 @@ namespace Shopping.ListProducts
             CommandLine.DisplayGoogleSampleHeader("Shopping API: List products");
 
             // Create the service.
-            var service = new ShoppingService() { DeveloperKey = ClientCredentials.DeveloperKey };
+            var service = new ShoppingService { DeveloperKey = ClientCredentials.ApiKey };
             RunSample(service);
             CommandLine.PressAnyKeyToExit();
         }

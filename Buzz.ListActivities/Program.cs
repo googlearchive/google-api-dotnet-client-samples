@@ -16,7 +16,6 @@ limitations under the License.
 
 using System;
 using DotNetOpenAuth.OAuth2;
-using Google.Apis;
 using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
@@ -67,8 +66,15 @@ namespace Buzz.ListActivities
             IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
             if (state != null)
             {
-                client.RefreshToken(state);
-                return state; // Yes - we are done.
+                try
+                {
+                    client.RefreshToken(state);
+                    return state; // Yes - we are done.
+                }
+                catch (DotNetOpenAuth.Messaging.ProtocolException ex)
+                {
+                    CommandLine.WriteError("Using existing refresh token failed: " + ex.Message);
+                }
             }
 
             // Retrieve the authorization url:
