@@ -43,11 +43,10 @@ namespace Google.Apis.Samples.TasksOAuth2
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(
-                () => new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication));
+            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new TasksService();
+            var service = new TasksService(auth);
             TaskLists results = service.Tasklists.List().Fetch();
             CommandLine.WriteLine("   ^1Lists:");
             foreach (TaskList list in results.Items)

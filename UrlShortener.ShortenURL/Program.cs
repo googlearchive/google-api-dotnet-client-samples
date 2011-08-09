@@ -36,9 +36,6 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.EnableExceptionHandling();
             CommandLine.DisplayGoogleSampleHeader("URL Shortener");
 
-            // We don't require any sort of authenfication
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(() => new NullAuthenticator());
-
             // Create the service
             var service = new UrlshortenerService();
 

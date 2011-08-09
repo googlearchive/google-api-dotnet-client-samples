@@ -140,8 +140,7 @@ namespace Tasks.WPF.ListTasks
         private void Window_Initialized(object sender, EventArgs e)
         {
             // Create the service.
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(CreateAuthenticator);
-            Service = new TasksService();
+            Service = new TasksService(CreateAuthenticator());
 
             // Fetch all TaskLists.
             UpdateTaskLists();

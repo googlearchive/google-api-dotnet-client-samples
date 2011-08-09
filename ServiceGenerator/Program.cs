@@ -46,8 +46,7 @@ namespace Google.Apis.Samples.CmdServiceGenerator
                 if (_service == null)
                 {
                     var auth = new DelegateAuthenticator(wr => wr.Headers["X-User-IP"] = "0.0.0.0");
-                    AuthenticatorFactory.GetInstance().RegisterAuthenticator(() => auth);
-                    _service = new DiscoveryService();
+                    _service = new DiscoveryService(auth);
                 }
                 return _service;
             }
@@ -153,6 +152,7 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             }
 
             // Discover the service.
+            CommandLine.WriteAction("Fetching " + url);
             IDiscoveryDevice src = url.IsFile
                                        ? (IDiscoveryDevice)
                                          new StreamDiscoveryDevice

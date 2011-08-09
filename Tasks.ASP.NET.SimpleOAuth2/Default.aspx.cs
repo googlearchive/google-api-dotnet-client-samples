@@ -38,6 +38,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
     {
         private static TasksService _service; // We don't need individual service instances for each client.
         private IAuthorizationState _state;
+        private OAuth2Authenticator<WebServerClient> _authenticator;
 
         /// <summary>
         /// Returns the authorization state which was either cached or set for this session.
@@ -55,22 +56,20 @@ namespace Tasks.ASP.NET.SimpleOAuth2
             // Create the Tasks-Service if it is null.
             if (_service == null)
             {
-                AuthenticatorFactory.GetInstance().RegisterAuthenticator(CreateAuthenticator());
-                _service = new TasksService();
+                _service = new TasksService(_authenticator = CreateAuthenticator());
             }
 
             // Check if we received OAuth2 credentials with this request; if yes: parse it.
             if (HttpContext.Current.Request["code"] != null)
             {
-                IAuthenticator auth = AuthenticatorFactory.GetInstance().GetRegisteredAuthenticator();
-                ((OAuth2Authenticator<WebServerClient>)auth).LoadAccessToken();
+                _authenticator.LoadAccessToken();
             }
 
             // Change the button depending on our auth-state.
             listButton.Text = AuthState == null ? "Authenticate" : "Fetch Tasklists";
         }
 
-        private AuthenticatorFactory.CreateAuthenticator CreateAuthenticator()
+        private OAuth2Authenticator<WebServerClient> CreateAuthenticator()
         {
             // Register the authenticator.
             var provider = new WebServerClient(GoogleAuthenticationServer.Description);
@@ -78,7 +77,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
             provider.ClientSecret = ClientCredentials.ClientSecret;
             var authenticator = new OAuth2Authenticator<WebServerClient>(provider, GetAuthentication);
                                     //{ NoCaching = true }; // TODO(mlinder): Uncomment when CL is merged.
-            return () => authenticator;
+            return authenticator;
         }
 
         private IAuthorizationState GetAuthentication(WebServerClient client)

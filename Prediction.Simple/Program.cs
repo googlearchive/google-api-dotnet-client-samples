@@ -50,11 +50,10 @@ namespace Prediction.Simple
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(
-                () => new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication));
+            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new PredictionService();
+            var service = new PredictionService(auth);
             RunPrediction(service);
             CommandLine.PressAnyKeyToExit();
         }

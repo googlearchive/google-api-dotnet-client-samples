@@ -46,11 +46,10 @@ namespace Tasks.ETagCollision
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(
-                () => new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication));
+            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.
-            var service = new TasksService();
+            var service = new TasksService(auth);
 
             // Run the sample code.
             RunSample(service, true, ETagAction.Ignore);

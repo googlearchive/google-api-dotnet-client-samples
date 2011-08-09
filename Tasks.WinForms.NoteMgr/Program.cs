@@ -91,8 +91,7 @@ namespace TasksExample.WinForms.NoteMgr
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialize the service.
-            AuthenticatorFactory.GetInstance().RegisterAuthenticator(CreateAuthenticator);
-            Service = new TasksService();
+            Service = new TasksService(CreateAuthenticator());
             
             // Open a NoteForm for every task list.
             foreach (TaskList list in Service.Tasklists.List().Fetch().Items)
