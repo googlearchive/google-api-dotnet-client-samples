@@ -16,6 +16,7 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -30,6 +31,7 @@ namespace Google.Apis.Samples.Helper
     {
         private static readonly Regex ArgumentRegex = new Regex(
             "^-[-]?([^-][^=]*)(=(.*))?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        private static readonly Regex ColorRegex = new Regex("{([a-z]+)}", RegexOptions.Compiled);
 
         /// <summary>
         /// Creates a new instance of T and fills all public fields by requesting input from the user
@@ -129,7 +131,10 @@ namespace Google.Apis.Samples.Helper
             applicationName.ThrowIfNull("applicationName");
 
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.Clear();
+            try
+            {
+                Console.Clear();
+            } catch (IOException) { } // An exception might occur if the console stream has been redirected.
 
             WriteLine(@"^3   ___  ^6      ^8      ^3       ^4 _  ^6    ");
             WriteLine(@"^3  / __| ^6 ___  ^8 ___  ^3 __ _  ^4| | ^6 __  ");
@@ -297,6 +302,7 @@ namespace Google.Apis.Samples.Helper
             string text = String.Format(format, values);
             Console.ForegroundColor = ConsoleColor.Gray;
 
+            // Replace ^1, ... color tags.
             while (text.Contains("^"))
             {
                 int index = text.IndexOf("^");
@@ -305,20 +311,43 @@ namespace Google.Apis.Samples.Helper
                 if (index+1 < text.Length && Char.IsDigit(text[index+1]))
                 {
                     // Yes - it is a color notation
-                    Console.Write(text.Substring(0, index)); // Pre-Colornotation text
+                    InternalWrite(text.Substring(0, index)); // Pre-Colornotation text
                     Console.ForegroundColor = (ConsoleColor) (text[index + 1] - '0' + 6);
                     text = text.Substring(index + 2); // Skip the two-char notation
                 }
                 else
                 {
                     // Skip ahead
-                    Console.Write(text.Substring(0, index));
+                    InternalWrite(text.Substring(0, index));
                     text = text.Substring(index + 1);
                 }
             }
 
             // Write the remaining text
+            InternalWrite(text);
+        }
+
+        private static void InternalWrite(string text)
+        {
+            // Check for color tags.
+            Match match;
+            while ((match = ColorRegex.Match(text)).Success)
+            {
+                // Write the text before the tag.
+                Console.Write(text.Substring(0, match.Index));
+
+                // Change the color
+                Console.ForegroundColor = GetColor(match.Groups[1].ToString());
+                text = text.Substring(match.Index + match.Length);
+            }
+
+            // Write the remaining text.
             Console.Write(text);
+        }
+
+        private static ConsoleColor GetColor(string id)
+        {
+            return (ConsoleColor)Enum.Parse(typeof(ConsoleColor), id, true);
         }
 
         /// <summary>
