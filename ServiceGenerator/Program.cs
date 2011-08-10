@@ -62,6 +62,10 @@ namespace Google.Apis.Samples.CmdServiceGenerator
                 Description = "Compiles the source code into a .dll library")]
             public bool CompileIntoLibrary { get; set; }
 
+            [CommandLine.Argument("output", ShortName = "o",
+                Description = "Specificies the output directory")]
+            public string OutputDirectory { get; set; }
+
             [CommandLine.Argument("discovery", Category = "Discovery settings", ShortName = "s",
                 Description = "Specifices a discovery document to use")]
             public string DiscoveryDocument { get; set; }
@@ -145,10 +149,10 @@ namespace Google.Apis.Samples.CmdServiceGenerator
         static void GenerateService(Uri url, CommandLineArguments cmdArgs)
         {
             // Create the output directory if it does not exist yet.
-            const string DIR = "Services";
-            if (!Directory.Exists(DIR))
+            string outputDir = cmdArgs.OutputDirectory ?? "Services";
+            if (!Directory.Exists(outputDir))
             {
-                Directory.CreateDirectory(DIR);
+                Directory.CreateDirectory(outputDir);
             }
 
             // Discover the service.
@@ -169,7 +173,7 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             string version = service.Version;
 
             string formalServiceName = GeneratorUtils.UpperFirstLetter(name);
-            string baseFileName = string.Format("{2}/{0}.{1}", formalServiceName, version, DIR);
+            string baseFileName = string.Format("{2}/{0}.{1}", formalServiceName, version, outputDir);
             string fileName = baseFileName + ".cs";
             string libfileName = baseFileName + ".dll";
             string serviceNamespace = string.Format(
