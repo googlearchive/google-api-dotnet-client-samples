@@ -53,7 +53,7 @@ namespace Translate.TranslateText
             ServiceDescription input = CommandLine.CreateClassFromUserinput<ServiceDescription>();
 
             // Create the service.
-            var service = new TranslateService { DeveloperKey = ClientCredentials.ApiKey };
+            var service = new TranslateService { Key = ClientCredentials.ApiKey };
 
             // Execute the first translation request.
             CommandLine.WriteAction("Translating to '"+input.TargetLanguage+"' ...");

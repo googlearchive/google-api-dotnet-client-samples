@@ -74,6 +74,8 @@ namespace Google.Apis.Samples.CmdServiceGenerator
                 Description = "Defines the discovery version to use (1/0.3)")]
             public string DiscoveryVersion { get; set; }
 
+            public bool IsGoogleAPI { get; set; }
+
             /// <summary>
             /// Returns the discovery version to use
             /// </summary>
@@ -127,11 +129,13 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             else if (unparsed.Length >= 2)
             {
                 var desc = new ServiceDescription { ServiceName = unparsed[0], ServiceVersion = unparsed[1] };
+                cmdArgs.IsGoogleAPI = true;
                 GenerateService(desc, cmdArgs);
             }
             else
             {
                 var desc = CommandLine.CreateClassFromUserinput<ServiceDescription>();
+                cmdArgs.IsGoogleAPI = true;
                 GenerateService(desc, cmdArgs);
                 CommandLine.PressAnyKeyToExit();
             }
@@ -173,11 +177,15 @@ namespace Google.Apis.Samples.CmdServiceGenerator
             string version = service.Version;
 
             string formalServiceName = GeneratorUtils.UpperFirstLetter(name);
-            string baseFileName = string.Format("{2}/{0}.{1}", formalServiceName, version, outputDir);
+            if (cmdArgs.IsGoogleAPI) // If this is a google service, add the google prefix.
+            {
+                formalServiceName = "Google.Apis." + formalServiceName;
+            }
+
+            string baseFileName = Path.Combine(outputDir, formalServiceName + "." + version);
             string fileName = baseFileName + ".cs";
             string libfileName = baseFileName + ".dll";
-            string serviceNamespace = string.Format(
-                "Google.Apis.{0}.{1}", formalServiceName, version.Replace('.', '_'));
+            string serviceNamespace = string.Format("{0}.{1}", formalServiceName, version.Replace('.', '_'));
 
             // Produce the code.
             var generator = new GoogleServiceGenerator(service, serviceNamespace);
@@ -249,6 +257,8 @@ namespace Google.Apis.Samples.CmdServiceGenerator
 
         static void GenerateAllServices(CommandLineArguments cmdArgs)
         {
+            cmdArgs.IsGoogleAPI = true;
+
             var response = Service.Apis.List().Fetch();
 
             if (response.Items == null)

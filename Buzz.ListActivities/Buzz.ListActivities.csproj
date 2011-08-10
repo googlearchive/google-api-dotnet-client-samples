@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Buzz.v1">
-      <HintPath>..\Services\Buzz.v1.dll</HintPath>
-    </Reference>
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\Lib\ThirdParty\DotNetOpenAuth.dll</HintPath>
     </Reference>
@@ -44,6 +41,9 @@
     </Reference>
     <Reference Include="Google.Apis.Authentication.OAuth2">
       <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Buzz.v1">
+      <HintPath>..\Services\Google.Apis.Buzz.v1.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\ThirdParty\log4net.dll</HintPath>

@@ -42,6 +42,9 @@
     <Reference Include="Google.Apis.Authentication.OAuth2">
       <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Urlshortener.v1">
+      <HintPath>..\Services\Google.Apis.Urlshortener.v1.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\ThirdParty\log4net.dll</HintPath>
     </Reference>
@@ -54,9 +57,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Urlshortener.v1">
-      <HintPath>..\Services\Urlshortener.v1.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientCredentials.cs" />

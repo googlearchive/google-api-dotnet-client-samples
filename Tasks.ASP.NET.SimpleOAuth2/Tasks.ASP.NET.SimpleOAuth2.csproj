@@ -41,6 +41,9 @@
     <Reference Include="Google.Apis.Authentication.OAuth2">
       <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Tasks.v1">
+      <HintPath>..\Services\Google.Apis.Tasks.v1.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\ThirdParty\log4net.dll</HintPath>
     </Reference>
@@ -60,9 +63,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
-    <Reference Include="Tasks.v1">
-      <HintPath>..\Services\Tasks.v1.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />

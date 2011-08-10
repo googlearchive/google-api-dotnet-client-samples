@@ -16,6 +16,7 @@ limitations under the License.
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -27,11 +28,22 @@ namespace Google.Apis.Samples.Helper
     /// <summary>
     /// Contains helper methods for command line operation
     /// </summary>
-    public class CommandLine
+    public static class CommandLine
     {
         private static readonly Regex ArgumentRegex = new Regex(
             "^-[-]?([^-][^=]*)(=(.*))?$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private static readonly Regex ColorRegex = new Regex("{([a-z]+)}", RegexOptions.Compiled);
+
+        /// <summary>
+        /// Defines whether this CommandLine can be accessed by an user and is thereby interactive.
+        /// True by default.
+        /// </summary>
+        public static bool IsInteractive { get; set; }
+
+        static CommandLine()
+        {
+            IsInteractive = true;
+        }
 
         /// <summary>
         /// Creates a new instance of T and fills all public fields by requesting input from the user
@@ -152,9 +164,12 @@ namespace Google.Apis.Samples.Helper
         /// </summary>
         public static void PressAnyKeyToExit()
         {
-            WriteLine();
-            WriteLine("^8 Press any key to exit^1");
-            Console.ReadKey();
+            if (IsInteractive)
+            {
+                WriteLine();
+                WriteLine("^8 Press any key to exit^1");
+                Console.ReadKey();
+            }
         }
 
         /// <summary>
@@ -171,9 +186,12 @@ namespace Google.Apis.Samples.Helper
         /// </summary>
         public static void PressEnterToContinue()
         {
-            WriteLine();
-            WriteLine("^8 Press ENTER to continue^1");
-            while (Console.ReadKey().Key != ConsoleKey.Enter) {}
+            if (IsInteractive)
+            {
+                WriteLine();
+                WriteLine("^8 Press ENTER to continue^1");
+                while (Console.ReadKey().Key != ConsoleKey.Enter) {}
+            }
         }
 
         /// <summary>
@@ -282,9 +300,12 @@ namespace Google.Apis.Samples.Helper
             WriteLine("    ^6{0}", exception == null ? "<unknown error>" : exception.Message);
 
             // Display stacktrace
-            WriteLine();
-            WriteLine("^8 Press any key to display the stacktrace");
-            Console.ReadKey();
+            if (IsInteractive)
+            {
+                WriteLine();
+                WriteLine("^8 Press any key to display the stacktrace");
+                Console.ReadKey();
+            }
             WriteLine();
             WriteLine(" ^1{0}", exception);
 
@@ -487,6 +508,11 @@ namespace Google.Apis.Samples.Helper
                         Exit();
                         return null;
                     }
+                }
+                else if (name == "non-interactive")
+                {
+                    IsInteractive = false;
+                    continue;
                 }
                 else if (property == null)
                 {

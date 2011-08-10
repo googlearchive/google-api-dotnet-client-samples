@@ -58,6 +58,9 @@
     <Reference Include="Google.Apis">
       <HintPath>..\Lib\Google.Apis.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Discovery.v1">
+      <HintPath>..\Services\Google.Apis.Discovery.v1.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\ThirdParty\log4net.dll</HintPath>
     </Reference>

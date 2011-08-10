@@ -36,9 +36,6 @@
     <ApplicationIcon>google.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Discovery.v1">
-      <HintPath>..\Services\Discovery.v1.dll</HintPath>
-    </Reference>
     <Reference Include="Google.Apis">
       <HintPath>..\Lib\Google.Apis.dll</HintPath>
     </Reference>
@@ -59,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Services\Google.Apis.Discovery.v1.cs">
+      <Link>Google.Apis.Discovery.v1.cs</Link>
+    </Compile>
     <Compile Include="DelegateAuthenticator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
