@@ -433,7 +433,7 @@ namespace Google.Apis.Tasks.v1 {
     using Google.Apis.Discovery;
     
     
-    public class TasksService : Google.Apis.Discovery.IRequestProvider {
+    public partial class TasksService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -628,10 +628,6 @@ namespace Google.Apis.Tasks.v1 {
         
         private string key;
         
-        private TasklistsResource tasklists;
-        
-        private TasksResource tasks;
-        
         protected TasksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -654,18 +650,6 @@ namespace Google.Apis.Tasks.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual TasklistsResource Tasklists {
-            get {
-                return this.tasklists;
-            }
-        }
-        
-        public virtual TasksResource Tasks {
-            get {
-                return this.tasks;
             }
         }
         
@@ -771,7 +755,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -801,7 +785,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -833,7 +817,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -888,7 +872,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -931,7 +915,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -978,7 +962,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasklists";
                 }
@@ -1109,7 +1093,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1150,7 +1134,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1191,7 +1175,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1268,7 +1252,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1447,7 +1431,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1522,7 +1506,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1576,7 +1560,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1634,7 +1618,7 @@ namespace Google.Apis.Tasks.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -1648,6 +1632,33 @@ namespace Google.Apis.Tasks.v1 {
             
             protected override object GetBody() {
                 return this.Body;
+            }
+        }
+    }
+    
+    public partial class TasksService {
+        
+        private const string Resource = "";
+        
+        private TasklistsResource tasklists;
+        
+        private TasksResource tasks;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual TasklistsResource Tasklists {
+            get {
+                return this.tasklists;
+            }
+        }
+        
+        public virtual TasksResource Tasks {
+            get {
+                return this.tasks;
             }
         }
     }

@@ -386,7 +386,7 @@ namespace Google.Apis.Latitude.v1 {
     using Google.Apis.Discovery;
     
     
-    public class LatitudeService : Google.Apis.Discovery.IRequestProvider {
+    public partial class LatitudeService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -476,10 +476,6 @@ namespace Google.Apis.Latitude.v1 {
         
         private string key;
         
-        private CurrentLocationResource currentLocation;
-        
-        private LocationResource location;
-        
         protected LatitudeService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -502,18 +498,6 @@ namespace Google.Apis.Latitude.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual CurrentLocationResource CurrentLocation {
-            get {
-                return this.currentLocation;
-            }
-        }
-        
-        public virtual LocationResource Location {
-            get {
-                return this.location;
             }
         }
         
@@ -576,7 +560,7 @@ namespace Google.Apis.Latitude.v1 {
                     base(service) {
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "currentLocation";
                 }
@@ -613,7 +597,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "currentLocation";
                 }
@@ -645,7 +629,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "currentLocation";
                 }
@@ -728,7 +712,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "location";
                 }
@@ -777,7 +761,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "location";
                 }
@@ -809,7 +793,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "location";
                 }
@@ -892,7 +876,7 @@ namespace Google.Apis.Latitude.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "location";
                 }
@@ -902,6 +886,33 @@ namespace Google.Apis.Latitude.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class LatitudeService {
+        
+        private const string Resource = "";
+        
+        private CurrentLocationResource currentLocation;
+        
+        private LocationResource location;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual CurrentLocationResource CurrentLocation {
+            get {
+                return this.currentLocation;
+            }
+        }
+        
+        public virtual LocationResource Location {
+            get {
+                return this.location;
             }
         }
     }

@@ -1642,7 +1642,7 @@ namespace Google.Apis.Books.v1 {
     using Google.Apis.Discovery;
     
     
-    public class BooksService : Google.Apis.Discovery.IRequestProvider {
+    public partial class BooksService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -1967,12 +1967,6 @@ namespace Google.Apis.Books.v1 {
         
         private string key;
         
-        private BookshelvesResource bookshelves;
-        
-        private MylibraryResource mylibrary;
-        
-        private VolumesResource volumes;
-        
         protected BooksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -1996,24 +1990,6 @@ namespace Google.Apis.Books.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual BookshelvesResource Bookshelves {
-            get {
-                return this.bookshelves;
-            }
-        }
-        
-        public virtual MylibraryResource Mylibrary {
-            get {
-                return this.mylibrary;
-            }
-        }
-        
-        public virtual VolumesResource Volumes {
-            get {
-                return this.volumes;
             }
         }
         
@@ -2167,7 +2143,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "bookshelves.volumes";
                     }
@@ -2229,7 +2205,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "bookshelves";
                 }
@@ -2278,7 +2254,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "bookshelves";
                 }
@@ -2515,7 +2491,7 @@ namespace Google.Apis.Books.v1 {
                         }
                     }
                     
-                    protected override string ResourceName {
+                    protected override string ResourcePath {
                         get {
                             return "mylibrary.bookshelves.volumes";
                         }
@@ -2577,7 +2553,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "mylibrary.bookshelves";
                     }
@@ -2626,7 +2602,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "mylibrary.bookshelves";
                     }
@@ -2675,7 +2651,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "mylibrary.bookshelves";
                     }
@@ -2712,7 +2688,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "mylibrary.bookshelves";
                     }
@@ -2773,7 +2749,7 @@ namespace Google.Apis.Books.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "mylibrary.bookshelves";
                     }
@@ -2960,7 +2936,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "volumes";
                 }
@@ -3121,7 +3097,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "volumes";
                 }
@@ -3131,6 +3107,41 @@ namespace Google.Apis.Books.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class BooksService {
+        
+        private const string Resource = "";
+        
+        private BookshelvesResource bookshelves;
+        
+        private MylibraryResource mylibrary;
+        
+        private VolumesResource volumes;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual BookshelvesResource Bookshelves {
+            get {
+                return this.bookshelves;
+            }
+        }
+        
+        public virtual MylibraryResource Mylibrary {
+            get {
+                return this.mylibrary;
+            }
+        }
+        
+        public virtual VolumesResource Volumes {
+            get {
+                return this.volumes;
             }
         }
     }

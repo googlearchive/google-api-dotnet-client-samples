@@ -1700,7 +1700,7 @@ namespace Google.Apis.Moderator.v1 {
     using Google.Apis.Discovery;
     
     
-    public class ModeratorService : Google.Apis.Discovery.IRequestProvider {
+    public partial class ModeratorService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -2078,28 +2078,6 @@ namespace Google.Apis.Moderator.v1 {
         
         private string key;
         
-        private FeaturedResource featured;
-        
-        private GlobalResource global;
-        
-        private MyResource my;
-        
-        private MyrecentResource myrecent;
-        
-        private ProfilesResource profiles;
-        
-        private ResponsesResource responses;
-        
-        private SeriesResource series;
-        
-        private SubmissionsResource submissions;
-        
-        private TagsResource tags;
-        
-        private TopicsResource topics;
-        
-        private VotesResource votes;
-        
         protected ModeratorService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -2131,72 +2109,6 @@ namespace Google.Apis.Moderator.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual FeaturedResource Featured {
-            get {
-                return this.featured;
-            }
-        }
-        
-        public virtual GlobalResource Global {
-            get {
-                return this.global;
-            }
-        }
-        
-        public virtual MyResource My {
-            get {
-                return this.my;
-            }
-        }
-        
-        public virtual MyrecentResource Myrecent {
-            get {
-                return this.myrecent;
-            }
-        }
-        
-        public virtual ProfilesResource Profiles {
-            get {
-                return this.profiles;
-            }
-        }
-        
-        public virtual ResponsesResource Responses {
-            get {
-                return this.responses;
-            }
-        }
-        
-        public virtual SeriesResource Series {
-            get {
-                return this.series;
-            }
-        }
-        
-        public virtual SubmissionsResource Submissions {
-            get {
-                return this.submissions;
-            }
-        }
-        
-        public virtual TagsResource Tags {
-            get {
-                return this.tags;
-            }
-        }
-        
-        public virtual TopicsResource Topics {
-            get {
-                return this.topics;
-            }
-        }
-        
-        public virtual VotesResource Votes {
-            get {
-                return this.votes;
             }
         }
         
@@ -2270,7 +2182,7 @@ namespace Google.Apis.Moderator.v1 {
                         base(service) {
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "featured.series";
                     }
@@ -2379,7 +2291,7 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "global.series";
                     }
@@ -2434,7 +2346,7 @@ namespace Google.Apis.Moderator.v1 {
                         base(service) {
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "my.series";
                     }
@@ -2489,7 +2401,7 @@ namespace Google.Apis.Moderator.v1 {
                         base(service) {
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "myrecent.series";
                     }
@@ -2535,7 +2447,7 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "profiles";
                 }
@@ -2567,7 +2479,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "profiles";
                 }
@@ -2603,7 +2515,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "profiles";
                 }
@@ -2742,7 +2654,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "responses";
                 }
@@ -2877,7 +2789,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "responses";
                 }
@@ -3089,7 +3001,7 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "series.responses";
                     }
@@ -3267,7 +3179,7 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "series.submissions";
                     }
@@ -3298,7 +3210,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "series";
                 }
@@ -3330,7 +3242,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "series";
                 }
@@ -3399,7 +3311,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "series";
                 }
@@ -3442,7 +3354,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "series";
                 }
@@ -3489,7 +3401,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "series";
                 }
@@ -3610,7 +3522,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "submissions";
                 }
@@ -3685,7 +3597,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "submissions";
                 }
@@ -3773,7 +3685,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tags";
                 }
@@ -3827,7 +3739,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tags";
                 }
@@ -3872,7 +3784,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tags";
                 }
@@ -4104,7 +4016,7 @@ namespace Google.Apis.Moderator.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "topics.submissions";
                     }
@@ -4146,7 +4058,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "topics";
                 }
@@ -4189,7 +4101,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "topics";
                 }
@@ -4283,7 +4195,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "topics";
                 }
@@ -4337,7 +4249,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "topics";
                 }
@@ -4478,7 +4390,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "votes";
                 }
@@ -4532,7 +4444,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "votes";
                 }
@@ -4599,7 +4511,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "votes";
                 }
@@ -4673,7 +4585,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "votes";
                 }
@@ -4751,7 +4663,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "votes";
                 }
@@ -4765,6 +4677,105 @@ namespace Google.Apis.Moderator.v1 {
             
             protected override object GetBody() {
                 return this.Body;
+            }
+        }
+    }
+    
+    public partial class ModeratorService {
+        
+        private const string Resource = "";
+        
+        private FeaturedResource featured;
+        
+        private GlobalResource global;
+        
+        private MyResource my;
+        
+        private MyrecentResource myrecent;
+        
+        private ProfilesResource profiles;
+        
+        private ResponsesResource responses;
+        
+        private SeriesResource series;
+        
+        private SubmissionsResource submissions;
+        
+        private TagsResource tags;
+        
+        private TopicsResource topics;
+        
+        private VotesResource votes;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual FeaturedResource Featured {
+            get {
+                return this.featured;
+            }
+        }
+        
+        public virtual GlobalResource Global {
+            get {
+                return this.global;
+            }
+        }
+        
+        public virtual MyResource My {
+            get {
+                return this.my;
+            }
+        }
+        
+        public virtual MyrecentResource Myrecent {
+            get {
+                return this.myrecent;
+            }
+        }
+        
+        public virtual ProfilesResource Profiles {
+            get {
+                return this.profiles;
+            }
+        }
+        
+        public virtual ResponsesResource Responses {
+            get {
+                return this.responses;
+            }
+        }
+        
+        public virtual SeriesResource Series {
+            get {
+                return this.series;
+            }
+        }
+        
+        public virtual SubmissionsResource Submissions {
+            get {
+                return this.submissions;
+            }
+        }
+        
+        public virtual TagsResource Tags {
+            get {
+                return this.tags;
+            }
+        }
+        
+        public virtual TopicsResource Topics {
+            get {
+                return this.topics;
+            }
+        }
+        
+        public virtual VotesResource Votes {
+            get {
+                return this.votes;
             }
         }
     }

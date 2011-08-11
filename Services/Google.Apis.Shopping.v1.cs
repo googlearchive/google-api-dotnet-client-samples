@@ -1539,7 +1539,7 @@ namespace Google.Apis.Shopping.v1 {
     using Google.Apis.Discovery;
     
     
-    public class ShoppingService : Google.Apis.Discovery.IRequestProvider {
+    public partial class ShoppingService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -1804,8 +1804,6 @@ namespace Google.Apis.Shopping.v1 {
         
         private string key;
         
-        private ProductsResource products;
-        
         protected ShoppingService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -1827,12 +1825,6 @@ namespace Google.Apis.Shopping.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual ProductsResource Products {
-            get {
-                return this.products;
             }
         }
         
@@ -2316,7 +2308,7 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "products";
                 }
@@ -3042,7 +3034,7 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "products";
                 }
@@ -3052,6 +3044,25 @@ namespace Google.Apis.Shopping.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class ShoppingService {
+        
+        private const string Resource = "";
+        
+        private ProductsResource products;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual ProductsResource Products {
+            get {
+                return this.products;
             }
         }
     }

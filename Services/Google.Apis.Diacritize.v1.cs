@@ -60,7 +60,7 @@ namespace Google.Apis.Diacritize.v1 {
     using Google.Apis.Discovery;
     
     
-    public class DiacritizeService : Google.Apis.Discovery.IRequestProvider {
+    public partial class DiacritizeService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -106,8 +106,6 @@ namespace Google.Apis.Diacritize.v1 {
         
         private string key;
         
-        private DiacritizeResource diacritize;
-        
         protected DiacritizeService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -129,12 +127,6 @@ namespace Google.Apis.Diacritize.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual DiacritizeResource Diacritize {
-            get {
-                return this.diacritize;
             }
         }
         
@@ -236,7 +228,7 @@ namespace Google.Apis.Diacritize.v1 {
                     }
                 }
                 
-                protected override string ResourceName {
+                protected override string ResourcePath {
                     get {
                         return "diacritize.corpus";
                     }
@@ -247,6 +239,25 @@ namespace Google.Apis.Diacritize.v1 {
                         return "get";
                     }
                 }
+            }
+        }
+    }
+    
+    public partial class DiacritizeService {
+        
+        private const string Resource = "";
+        
+        private DiacritizeResource diacritize;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual DiacritizeResource Diacritize {
+            get {
+                return this.diacritize;
             }
         }
     }

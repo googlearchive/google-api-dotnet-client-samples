@@ -331,7 +331,7 @@ namespace Google.Apis.Prediction.v1_2 {
     using Google.Apis.Discovery;
     
     
-    public class PredictionService : Google.Apis.Discovery.IRequestProvider {
+    public partial class PredictionService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -414,10 +414,6 @@ namespace Google.Apis.Prediction.v1_2 {
         
         private string key;
         
-        private HostedmodelsResource hostedmodels;
-        
-        private TrainingResource training;
-        
         protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -440,18 +436,6 @@ namespace Google.Apis.Prediction.v1_2 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual HostedmodelsResource Hostedmodels {
-            get {
-                return this.hostedmodels;
-            }
-        }
-        
-        public virtual TrainingResource Training {
-            get {
-                return this.training;
             }
         }
         
@@ -531,7 +515,7 @@ namespace Google.Apis.Prediction.v1_2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "hostedmodels";
                 }
@@ -605,7 +589,7 @@ namespace Google.Apis.Prediction.v1_2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -635,7 +619,7 @@ namespace Google.Apis.Prediction.v1_2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -686,7 +670,7 @@ namespace Google.Apis.Prediction.v1_2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -732,7 +716,7 @@ namespace Google.Apis.Prediction.v1_2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -741,6 +725,86 @@ namespace Google.Apis.Prediction.v1_2 {
             protected override string MethodName {
                 get {
                     return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+    }
+    
+    public partial class PredictionService {
+        
+        private const string Resource = "";
+        
+        private HostedmodelsResource hostedmodels;
+        
+        private TrainingResource training;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual HostedmodelsResource Hostedmodels {
+            get {
+                return this.hostedmodels;
+            }
+        }
+        
+        public virtual TrainingResource Training {
+            get {
+                return this.training;
+            }
+        }
+        
+        /// <summary>Submit data and request a prediction</summary>
+        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        public virtual PredictRequest Predict(Google.Apis.Prediction.v1_2.Data.Input body, string data) {
+            return new PredictRequest(service, body, data);
+        }
+        
+        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Output> {
+            
+            private string data;
+            
+            private Google.Apis.Prediction.v1_2.Data.Input bodyValue;
+            
+            public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Input body, string data) : 
+                    base(service) {
+                this.Body = body;
+                this.data = data;
+            }
+            
+            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            [Google.Apis.Util.RequestParameterAttribute("data")]
+            public virtual string Data {
+                get {
+                    return this.data;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Prediction.v1_2.Data.Input Body {
+                get {
+                    return this.bodyValue;
+                }
+                set {
+                    this.bodyValue = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "predict";
                 }
             }
             

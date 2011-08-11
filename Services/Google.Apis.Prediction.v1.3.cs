@@ -445,7 +445,7 @@ namespace Google.Apis.Prediction.v1_3 {
     using Google.Apis.Discovery;
     
     
-    public class PredictionService : Google.Apis.Discovery.IRequestProvider {
+    public partial class PredictionService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -563,10 +563,6 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private string key;
         
-        private HostedmodelsResource hostedmodels;
-        
-        private TrainingResource training;
-        
         protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -589,18 +585,6 @@ namespace Google.Apis.Prediction.v1_3 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual HostedmodelsResource Hostedmodels {
-            get {
-                return this.hostedmodels;
-            }
-        }
-        
-        public virtual TrainingResource Training {
-            get {
-                return this.training;
             }
         }
         
@@ -680,7 +664,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "hostedmodels";
                 }
@@ -754,7 +738,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -784,7 +768,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -816,7 +800,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -863,7 +847,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -909,7 +893,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "training";
                 }
@@ -923,6 +907,33 @@ namespace Google.Apis.Prediction.v1_3 {
             
             protected override object GetBody() {
                 return this.Body;
+            }
+        }
+    }
+    
+    public partial class PredictionService {
+        
+        private const string Resource = "";
+        
+        private HostedmodelsResource hostedmodels;
+        
+        private TrainingResource training;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual HostedmodelsResource Hostedmodels {
+            get {
+                return this.hostedmodels;
+            }
+        }
+        
+        public virtual TrainingResource Training {
+            get {
+                return this.training;
             }
         }
     }

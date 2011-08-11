@@ -657,7 +657,7 @@ namespace Google.Apis.Customsearch.v1 {
     using Google.Apis.Discovery;
     
     
-    public class CustomsearchService : Google.Apis.Discovery.IRequestProvider {
+    public partial class CustomsearchService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -754,8 +754,6 @@ namespace Google.Apis.Customsearch.v1 {
         
         private string key;
         
-        private CseResource cse;
-        
         protected CustomsearchService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -777,12 +775,6 @@ namespace Google.Apis.Customsearch.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual CseResource Cse {
-            get {
-                return this.cse;
             }
         }
         
@@ -1177,7 +1169,7 @@ namespace Google.Apis.Customsearch.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "cse";
                 }
@@ -1187,6 +1179,25 @@ namespace Google.Apis.Customsearch.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class CustomsearchService {
+        
+        private const string Resource = "";
+        
+        private CseResource cse;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual CseResource Cse {
+            get {
+                return this.cse;
             }
         }
     }

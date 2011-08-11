@@ -243,7 +243,7 @@ namespace Google.Apis.Translate.v2 {
     using Google.Apis.Discovery;
     
     
-    public class TranslateService : Google.Apis.Discovery.IRequestProvider {
+    public partial class TranslateService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -324,12 +324,6 @@ namespace Google.Apis.Translate.v2 {
         
         private string key;
         
-        private DetectionsResource detections;
-        
-        private LanguagesResource languages;
-        
-        private TranslationsResource translations;
-        
         protected TranslateService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -353,24 +347,6 @@ namespace Google.Apis.Translate.v2 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual DetectionsResource Detections {
-            get {
-                return this.detections;
-            }
-        }
-        
-        public virtual LanguagesResource Languages {
-            get {
-                return this.languages;
-            }
-        }
-        
-        public virtual TranslationsResource Translations {
-            get {
-                return this.translations;
             }
         }
         
@@ -429,7 +405,7 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "detections";
                 }
@@ -488,7 +464,7 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "languages";
                 }
@@ -618,7 +594,7 @@ namespace Google.Apis.Translate.v2 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "translations";
                 }
@@ -628,6 +604,41 @@ namespace Google.Apis.Translate.v2 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class TranslateService {
+        
+        private const string Resource = "";
+        
+        private DetectionsResource detections;
+        
+        private LanguagesResource languages;
+        
+        private TranslationsResource translations;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual DetectionsResource Detections {
+            get {
+                return this.detections;
+            }
+        }
+        
+        public virtual LanguagesResource Languages {
+            get {
+                return this.languages;
+            }
+        }
+        
+        public virtual TranslationsResource Translations {
+            get {
+                return this.translations;
             }
         }
     }

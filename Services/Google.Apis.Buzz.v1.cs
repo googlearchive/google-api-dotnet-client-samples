@@ -4474,7 +4474,7 @@ namespace Google.Apis.Buzz.v1 {
     using Google.Apis.Discovery;
     
     
-    public class BuzzService : Google.Apis.Discovery.IRequestProvider {
+    public partial class BuzzService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -5228,20 +5228,6 @@ namespace Google.Apis.Buzz.v1 {
         
         private string key;
         
-        private ActivitiesResource activities;
-        
-        private CommentsResource comments;
-        
-        private GroupsResource groups;
-        
-        private PeopleResource people;
-        
-        private PhotoAlbumsResource photoAlbums;
-        
-        private PhotosResource photos;
-        
-        private RelatedResource related;
-        
         protected BuzzService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -5269,48 +5255,6 @@ namespace Google.Apis.Buzz.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual ActivitiesResource Activities {
-            get {
-                return this.activities;
-            }
-        }
-        
-        public virtual CommentsResource Comments {
-            get {
-                return this.comments;
-            }
-        }
-        
-        public virtual GroupsResource Groups {
-            get {
-                return this.groups;
-            }
-        }
-        
-        public virtual PeopleResource People {
-            get {
-                return this.people;
-            }
-        }
-        
-        public virtual PhotoAlbumsResource PhotoAlbums {
-            get {
-                return this.photoAlbums;
-            }
-        }
-        
-        public virtual PhotosResource Photos {
-            get {
-                return this.photos;
-            }
-        }
-        
-        public virtual RelatedResource Related {
-            get {
-                return this.related;
             }
         }
         
@@ -5660,7 +5604,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -5747,7 +5691,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -5910,7 +5854,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6027,7 +5971,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6118,7 +6062,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6267,7 +6211,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6381,7 +6325,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6562,7 +6506,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6725,7 +6669,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -6839,7 +6783,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -7090,7 +7034,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7177,7 +7121,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7266,7 +7210,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7385,7 +7329,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7511,7 +7455,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7641,7 +7585,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "comments";
                 }
@@ -7838,7 +7782,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -7913,7 +7857,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -7990,7 +7934,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -8085,7 +8029,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -8174,7 +8118,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -8267,7 +8211,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "groups";
                 }
@@ -8543,7 +8487,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -8606,7 +8550,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -8731,7 +8675,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -8834,7 +8778,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -8935,7 +8879,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -9064,7 +9008,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -9157,7 +9101,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -9258,7 +9202,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "people";
                 }
@@ -9434,7 +9378,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photoAlbums";
                 }
@@ -9509,7 +9453,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photoAlbums";
                 }
@@ -9586,7 +9530,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photoAlbums";
                 }
@@ -9693,7 +9637,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photoAlbums";
                 }
@@ -9917,7 +9861,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10004,7 +9948,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10093,7 +10037,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10186,7 +10130,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10293,7 +10237,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10396,7 +10340,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "photos";
                 }
@@ -10534,7 +10478,7 @@ namespace Google.Apis.Buzz.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "related";
                 }
@@ -10544,6 +10488,73 @@ namespace Google.Apis.Buzz.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class BuzzService {
+        
+        private const string Resource = "";
+        
+        private ActivitiesResource activities;
+        
+        private CommentsResource comments;
+        
+        private GroupsResource groups;
+        
+        private PeopleResource people;
+        
+        private PhotoAlbumsResource photoAlbums;
+        
+        private PhotosResource photos;
+        
+        private RelatedResource related;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual ActivitiesResource Activities {
+            get {
+                return this.activities;
+            }
+        }
+        
+        public virtual CommentsResource Comments {
+            get {
+                return this.comments;
+            }
+        }
+        
+        public virtual GroupsResource Groups {
+            get {
+                return this.groups;
+            }
+        }
+        
+        public virtual PeopleResource People {
+            get {
+                return this.people;
+            }
+        }
+        
+        public virtual PhotoAlbumsResource PhotoAlbums {
+            get {
+                return this.photoAlbums;
+            }
+        }
+        
+        public virtual PhotosResource Photos {
+            get {
+                return this.photos;
+            }
+        }
+        
+        public virtual RelatedResource Related {
+            get {
+                return this.related;
             }
         }
     }

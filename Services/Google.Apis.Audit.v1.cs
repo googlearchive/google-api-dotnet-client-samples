@@ -351,7 +351,7 @@ namespace Google.Apis.Audit.v1 {
     using Google.Apis.Discovery;
     
     
-    public class AuditService : Google.Apis.Discovery.IRequestProvider {
+    public partial class AuditService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -437,8 +437,6 @@ namespace Google.Apis.Audit.v1 {
         
         private string key;
         
-        private ActivitiesResource activities;
-        
         protected AuditService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -460,12 +458,6 @@ namespace Google.Apis.Audit.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual ActivitiesResource Activities {
-            get {
-                return this.activities;
             }
         }
         
@@ -701,7 +693,7 @@ namespace Google.Apis.Audit.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "activities";
                 }
@@ -711,6 +703,25 @@ namespace Google.Apis.Audit.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class AuditService {
+        
+        private const string Resource = "";
+        
+        private ActivitiesResource activities;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual ActivitiesResource Activities {
+            get {
+                return this.activities;
             }
         }
     }

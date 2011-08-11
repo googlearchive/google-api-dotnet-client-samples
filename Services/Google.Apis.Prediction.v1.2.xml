@@ -10,6 +10,10 @@
         <member name="P:Google.Apis.Prediction.v1_2.Data.Update.CsvInstance">
             <summary>The input features for this instance</summary>
         </member>
+        <member name="M:Google.Apis.Prediction.v1_2.PredictionService.Predict(Google.Apis.Prediction.v1_2.Data.Input,System.String)">
+            <summary>Submit data and request a prediction</summary>
+            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
@@ -18,6 +22,12 @@
         </member>
         <member name="F:Google.Apis.Prediction.v1_2.PredictionService.Scopes.Prediction">
             <summary>Manage your data in the Google Prediction API</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Data">
+            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Prediction.v1_2.HostedmodelsResource.Predict(Google.Apis.Prediction.v1_2.Data.Input,System.String)">
             <summary>Submit input and request an output against a hosted model</summary>

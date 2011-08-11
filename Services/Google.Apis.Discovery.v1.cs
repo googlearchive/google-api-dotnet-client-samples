@@ -1165,7 +1165,7 @@ namespace Google.Apis.Discovery.v1 {
     using Google.Apis.Discovery;
     
     
-    public class DiscoveryService : Google.Apis.Discovery.IRequestProvider {
+    public partial class DiscoveryService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -1325,8 +1325,6 @@ namespace Google.Apis.Discovery.v1 {
         
         private string key;
         
-        private ApisResource apis;
-        
         protected DiscoveryService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -1348,12 +1346,6 @@ namespace Google.Apis.Discovery.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual ApisResource Apis {
-            get {
-                return this.apis;
             }
         }
         
@@ -1454,7 +1446,7 @@ namespace Google.Apis.Discovery.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "apis";
                 }
@@ -1519,7 +1511,7 @@ namespace Google.Apis.Discovery.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "apis";
                 }
@@ -1529,6 +1521,25 @@ namespace Google.Apis.Discovery.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class DiscoveryService {
+        
+        private const string Resource = "";
+        
+        private ApisResource apis;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual ApisResource Apis {
+            get {
+                return this.apis;
             }
         }
     }

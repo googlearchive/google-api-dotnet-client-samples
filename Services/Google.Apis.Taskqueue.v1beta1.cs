@@ -420,7 +420,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
     using Google.Apis.Discovery;
     
     
-    public class TaskqueueService : Google.Apis.Discovery.IRequestProvider {
+    public partial class TaskqueueService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -543,10 +543,6 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         private string key;
         
-        private TaskqueuesResource taskqueues;
-        
-        private TasksResource tasks;
-        
         protected TaskqueueService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -569,18 +565,6 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual TaskqueuesResource Taskqueues {
-            get {
-                return this.taskqueues;
-            }
-        }
-        
-        public virtual TasksResource Tasks {
-            get {
-                return this.tasks;
             }
         }
         
@@ -691,7 +675,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "taskqueues";
                 }
@@ -786,7 +770,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -838,7 +822,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -901,7 +885,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -942,7 +926,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "tasks";
                 }
@@ -952,6 +936,33 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class TaskqueueService {
+        
+        private const string Resource = "";
+        
+        private TaskqueuesResource taskqueues;
+        
+        private TasksResource tasks;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual TaskqueuesResource Taskqueues {
+            get {
+                return this.taskqueues;
+            }
+        }
+        
+        public virtual TasksResource Tasks {
+            get {
+                return this.tasks;
             }
         }
     }

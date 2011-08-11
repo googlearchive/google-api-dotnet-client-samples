@@ -389,7 +389,7 @@ namespace Google.Apis.Urlshortener.v1 {
     using Google.Apis.Discovery;
     
     
-    public class UrlshortenerService : Google.Apis.Discovery.IRequestProvider {
+    public partial class UrlshortenerService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -490,8 +490,6 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private string key;
         
-        private UrlResource url;
-        
         protected UrlshortenerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -513,12 +511,6 @@ namespace Google.Apis.Urlshortener.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual UrlResource Url {
-            get {
-                return this.url;
             }
         }
         
@@ -658,7 +650,7 @@ namespace Google.Apis.Urlshortener.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "url";
                 }
@@ -690,7 +682,7 @@ namespace Google.Apis.Urlshortener.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "url";
                 }
@@ -745,7 +737,7 @@ namespace Google.Apis.Urlshortener.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "url";
                 }
@@ -755,6 +747,25 @@ namespace Google.Apis.Urlshortener.v1 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public partial class UrlshortenerService {
+        
+        private const string Resource = "";
+        
+        private UrlResource url;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual UrlResource Url {
+            get {
+                return this.url;
             }
         }
     }

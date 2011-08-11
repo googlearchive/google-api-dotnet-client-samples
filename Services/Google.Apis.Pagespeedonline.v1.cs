@@ -692,7 +692,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
     using Google.Apis.Discovery;
     
     
-    public class PagespeedonlineService : Google.Apis.Discovery.IRequestProvider {
+    public partial class PagespeedonlineService : Google.Apis.Discovery.IRequestProvider {
         
         private Google.Apis.Discovery.IService genericService;
         
@@ -834,8 +834,6 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private string key;
         
-        private PagespeedapiResource pagespeedapi;
-        
         protected PagespeedonlineService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
@@ -857,12 +855,6 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             set {
                 this.key = value;
-            }
-        }
-        
-        public virtual PagespeedapiResource Pagespeedapi {
-            get {
-                return this.pagespeedapi;
             }
         }
         
@@ -990,7 +982,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
                 }
             }
             
-            protected override string ResourceName {
+            protected override string ResourcePath {
                 get {
                     return "pagespeedapi";
                 }
@@ -1000,6 +992,25 @@ namespace Google.Apis.Pagespeedonline.v1 {
                 get {
                     return "runpagespeed";
                 }
+            }
+        }
+    }
+    
+    public partial class PagespeedonlineService {
+        
+        private const string Resource = "";
+        
+        private PagespeedapiResource pagespeedapi;
+        
+        private Google.Apis.Discovery.IRequestProvider service {
+            get {
+                return this;
+            }
+        }
+        
+        public virtual PagespeedapiResource Pagespeedapi {
+            get {
+                return this.pagespeedapi;
             }
         }
     }
