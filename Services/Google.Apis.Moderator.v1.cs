@@ -2231,14 +2231,6 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            /// <summary>Searches the public series and returns the search results.</summary>
-            /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-            /// <param name="q">Optional - Search query.</param>
-            /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-            public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-                return new ListRequest(service, maxResults, q, startIndex);
-            }
-            
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private System.Int64? maxResults;
@@ -2249,13 +2241,6 @@ namespace Google.Apis.Moderator.v1 {
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
-                }
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                        base(service) {
-                    this.maxResults = maxResults;
-                    this.q = q;
-                    this.startIndex = startIndex;
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
@@ -2551,33 +2536,11 @@ namespace Google.Apis.Moderator.v1 {
             return new InsertRequest(service, body, seriesId, topicId, parentSubmissionId);
         }
         
-        /// <summary>Inserts a response for the specified submission in the specified topic within the specified series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
-        /// <param name="parentSubmissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the parent Submission within the Series.</param>
-        /// <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
-        public virtual InsertRequest Insert(Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId, long parentSubmissionId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? anonymous) {
-            return new InsertRequest(service, body, seriesId, topicId, parentSubmissionId, anonymous);
-        }
-        
         /// <summary>Lists or searches the responses for the specified submission within the specified series and returns the search results.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
         public virtual ListRequest List(long seriesId, long submissionId) {
             return new ListRequest(service, seriesId, submissionId);
-        }
-        
-        /// <summary>Lists or searches the responses for the specified submission within the specified series and returns the search results.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
-        /// <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
-        /// <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-        /// <param name="q">Optional - Search query.</param>
-        /// <param name="sort">Optional - Sort order.</param>
-        /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-        public virtual ListRequest List(long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-            return new ListRequest(service, seriesId, submissionId, author, hasAttachedVideo, maxResults, q, sort, startIndex);
         }
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
@@ -2598,15 +2561,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.seriesId = seriesId;
                 this.topicId = topicId;
                 this.parentSubmissionId = parentSubmissionId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId, long parentSubmissionId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? anonymous) : 
-                    base(service) {
-                this.Body = body;
-                this.seriesId = seriesId;
-                this.topicId = topicId;
-                this.parentSubmissionId = parentSubmissionId;
-                this.anonymous = anonymous;
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
@@ -2693,18 +2647,6 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.seriesId = seriesId;
                 this.submissionId = submissionId;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                    base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.author = author;
-                this.hasAttachedVideo = hasAttachedVideo;
-                this.maxResults = maxResults;
-                this.q = q;
-                this.sort = sort;
-                this.startIndex = startIndex;
             }
             
             /// <summary>Restricts the results to submissions by a specific author.</summary>
@@ -2847,14 +2789,6 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service);
         }
         
-        /// <summary>Searches the series and returns the search results.</summary>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-        /// <param name="q">Optional - Search query.</param>
-        /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-            return new ListRequest(service, maxResults, q, startIndex);
-        }
-        
         /// <summary>Updates the specified series. This method supports patch semantics.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         public virtual PatchRequest Patch(Google.Apis.Moderator.v1.Data.Series body, long seriesId) {
@@ -2883,18 +2817,6 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            /// <summary>Searches the responses for the specified series and returns the search results.</summary>
-            /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-            /// <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
-            /// <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
-            /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-            /// <param name="q">Optional - Search query.</param>
-            /// <param name="sort">Optional - Sort order.</param>
-            /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-            public virtual ListRequest List(long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-                return new ListRequest(service, seriesId, author, hasAttachedVideo, maxResults, q, sort, startIndex);
-            }
-            
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string author;
@@ -2914,17 +2836,6 @@ namespace Google.Apis.Moderator.v1 {
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
                     this.seriesId = seriesId;
-                }
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                        base(service) {
-                    this.seriesId = seriesId;
-                    this.author = author;
-                    this.hasAttachedVideo = hasAttachedVideo;
-                    this.maxResults = maxResults;
-                    this.q = q;
-                    this.sort = sort;
-                    this.startIndex = startIndex;
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
@@ -3031,20 +2942,6 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            /// <summary>Searches the submissions for the specified series and returns the search results.</summary>
-            /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-            /// <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
-            /// <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
-            /// <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
-            /// <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
-            /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-            /// <param name="q">Optional - Search query.</param>
-            /// <param name="sort">Optional - Sort order.</param>
-            /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-            public virtual ListRequest List(long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] string lang, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-                return new ListRequest(service, seriesId, author, hasAttachedVideo, includeVotes, lang, maxResults, q, sort, startIndex);
-            }
-            
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
                 private string author;
@@ -3068,19 +2965,6 @@ namespace Google.Apis.Moderator.v1 {
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
                     this.seriesId = seriesId;
-                }
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] string lang, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                        base(service) {
-                    this.seriesId = seriesId;
-                    this.author = author;
-                    this.hasAttachedVideo = hasAttachedVideo;
-                    this.includeVotes = includeVotes;
-                    this.lang = lang;
-                    this.maxResults = maxResults;
-                    this.q = q;
-                    this.sort = sort;
-                    this.startIndex = startIndex;
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
@@ -3271,13 +3155,6 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                    base(service) {
-                this.maxResults = maxResults;
-                this.q = q;
-                this.startIndex = startIndex;
-            }
-            
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
             public virtual System.Int64? MaxResults {
@@ -3436,28 +3313,11 @@ namespace Google.Apis.Moderator.v1 {
             return new GetRequest(service, seriesId, submissionId);
         }
         
-        /// <summary>Returns the specified submission within the specified series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
-        /// <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
-        /// <param name="lang">Optional - The language code for the language the client prefers resuls in.</param>
-        public virtual GetRequest Get(long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] string lang) {
-            return new GetRequest(service, seriesId, submissionId, includeVotes, lang);
-        }
-        
         /// <summary>Inserts a new submission in the specified topic within the specified series.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
         public virtual InsertRequest Insert(Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId) {
             return new InsertRequest(service, body, seriesId, topicId);
-        }
-        
-        /// <summary>Inserts a new submission in the specified topic within the specified series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
-        /// <param name="anonymous">Optional - Set to true to mark the new submission as anonymous.</param>
-        public virtual InsertRequest Insert(Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? anonymous) {
-            return new InsertRequest(service, body, seriesId, topicId, anonymous);
         }
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
@@ -3474,14 +3334,6 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.seriesId = seriesId;
                 this.submissionId = submissionId;
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] string lang) : 
-                    base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.includeVotes = includeVotes;
-                this.lang = lang;
             }
             
             /// <summary>Specifies whether to include the current user's vote</summary>
@@ -3550,14 +3402,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this.seriesId = seriesId;
                 this.topicId = topicId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? anonymous) : 
-                    base(service) {
-                this.Body = body;
-                this.seriesId = seriesId;
-                this.topicId = topicId;
-                this.anonymous = anonymous;
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
@@ -3836,16 +3680,6 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId);
         }
         
-        /// <summary>Searches the topics within the specified series and returns the search results.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-        /// <param name="mode">Optional</param>
-        /// <param name="q">Optional - Search query.</param>
-        /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-        public virtual ListRequest List(long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string mode, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-            return new ListRequest(service, seriesId, maxResults, mode, q, startIndex);
-        }
-        
         /// <summary>Updates the specified topic within the specified series.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
@@ -3868,20 +3702,6 @@ namespace Google.Apis.Moderator.v1 {
             /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
             public virtual ListRequest List(long seriesId, long topicId) {
                 return new ListRequest(service, seriesId, topicId);
-            }
-            
-            /// <summary>Searches the submissions for the specified topic within the specified series and returns the search results.</summary>
-            /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-            /// <param name="topicId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Topic within the Series.</param>
-            /// <param name="author">Optional - Restricts the results to submissions by a specific author.</param>
-            /// <param name="hasAttachedVideo">Optional - Specifies whether to restrict to submissions that have videos attached.</param>
-            /// <param name="includeVotes">Optional - Specifies whether to include the current user&apos;s vote</param>
-            /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-            /// <param name="q">Optional - Search query.</param>
-            /// <param name="sort">Optional - Sort order.</param>
-            /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-            public virtual ListRequest List(long seriesId, long topicId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-                return new ListRequest(service, seriesId, topicId, author, hasAttachedVideo, includeVotes, maxResults, q, sort, startIndex);
             }
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
@@ -3908,19 +3728,6 @@ namespace Google.Apis.Moderator.v1 {
                         base(service) {
                     this.seriesId = seriesId;
                     this.topicId = topicId;
-                }
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long topicId, [System.Runtime.InteropServices.OptionalAttribute()] string author, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? hasAttachedVideo, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? includeVotes, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                        base(service) {
-                    this.seriesId = seriesId;
-                    this.topicId = topicId;
-                    this.author = author;
-                    this.hasAttachedVideo = hasAttachedVideo;
-                    this.includeVotes = includeVotes;
-                    this.maxResults = maxResults;
-                    this.q = q;
-                    this.sort = sort;
-                    this.startIndex = startIndex;
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
@@ -4135,15 +3942,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.seriesId = seriesId;
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string mode, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                    base(service) {
-                this.seriesId = seriesId;
-                this.maxResults = maxResults;
-                this.mode = mode;
-                this.q = q;
-                this.startIndex = startIndex;
-            }
-            
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
             public virtual System.Int64? MaxResults {
@@ -4284,14 +4082,6 @@ namespace Google.Apis.Moderator.v1 {
             return new GetRequest(service, seriesId, submissionId);
         }
         
-        /// <summary>Returns the votes by the authenticated user for the specified submission within the specified series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
-        /// <param name="userId">Optional</param>
-        public virtual GetRequest Get(long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) {
-            return new GetRequest(service, seriesId, submissionId, userId);
-        }
-        
         /// <summary>Inserts a new vote by the authenticated user for the specified submission within the specified series.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
@@ -4305,14 +4095,6 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId);
         }
         
-        /// <summary>Lists the votes by the authenticated user for the given series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return.</param>
-        /// <param name="startIndex">start-index - Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to be retrieved.</param>
-        public virtual ListRequest List(long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-            return new ListRequest(service, seriesId, maxResults, startIndex);
-        }
-        
         /// <summary>Updates the votes by the authenticated user for the specified submission within the specified series. This method supports patch semantics.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
@@ -4320,27 +4102,11 @@ namespace Google.Apis.Moderator.v1 {
             return new PatchRequest(service, body, seriesId, submissionId);
         }
         
-        /// <summary>Updates the votes by the authenticated user for the specified submission within the specified series. This method supports patch semantics.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
-        /// <param name="userId">Optional</param>
-        public virtual PatchRequest Patch(Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) {
-            return new PatchRequest(service, body, seriesId, submissionId, userId);
-        }
-        
         /// <summary>Updates the votes by the authenticated user for the specified submission within the specified series.</summary>
         /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
         /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
         public virtual UpdateRequest Update(Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId) {
             return new UpdateRequest(service, body, seriesId, submissionId);
-        }
-        
-        /// <summary>Updates the votes by the authenticated user for the specified submission within the specified series.</summary>
-        /// <param name="seriesId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Series.</param>
-        /// <param name="submissionId">Required - Minimum value of 0 - Maximum value of 4294967295 - The decimal ID of the Submission within the Series.</param>
-        /// <param name="userId">Optional</param>
-        public virtual UpdateRequest Update(Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) {
-            return new UpdateRequest(service, body, seriesId, submissionId, userId);
         }
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
@@ -4355,13 +4121,6 @@ namespace Google.Apis.Moderator.v1 {
                     base(service) {
                 this.seriesId = seriesId;
                 this.submissionId = submissionId;
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) : 
-                    base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.userId = userId;
             }
             
             /// <summary>The decimal ID of the Series.</summary>
@@ -4474,13 +4233,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.seriesId = seriesId;
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                    base(service) {
-                this.seriesId = seriesId;
-                this.maxResults = maxResults;
-                this.startIndex = startIndex;
-            }
-            
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
             public virtual System.Int64? MaxResults {
@@ -4539,14 +4291,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this.seriesId = seriesId;
                 this.submissionId = submissionId;
-            }
-            
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) : 
-                    base(service) {
-                this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.userId = userId;
             }
             
             /// <summary>The decimal ID of the Series.</summary>
@@ -4617,14 +4361,6 @@ namespace Google.Apis.Moderator.v1 {
                 this.Body = body;
                 this.seriesId = seriesId;
                 this.submissionId = submissionId;
-            }
-            
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId, [System.Runtime.InteropServices.OptionalAttribute()] string userId) : 
-                    base(service) {
-                this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.userId = userId;
             }
             
             /// <summary>The decimal ID of the Series.</summary>

@@ -79,10 +79,6 @@
         <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Get">
             <summary>Returns the authenticated user&apos;s current location.</summary>
         </member>
-        <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Get(System.String)">
-            <summary>Returns the authenticated user&apos;s current location.</summary>
-            <param name="granularity">Optional - Granularity of the requested location.</param>
-        </member>
         <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Insert(Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson)">
             <summary>Updates or creates the user&apos;s current location.</summary>
         </member>
@@ -100,23 +96,11 @@
             <summary>Reads a location from the user&apos;s location history.</summary>
             <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
         </member>
-        <member name="M:Google.Apis.Latitude.v1.LocationResource.Get(System.String,System.String)">
-            <summary>Reads a location from the user&apos;s location history.</summary>
-            <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
-            <param name="granularity">Optional - Granularity of the location to return.</param>
-        </member>
         <member name="M:Google.Apis.Latitude.v1.LocationResource.Insert(Google.Apis.Latitude.v1.Data.Location)">
             <summary>Inserts or updates a location in the user&apos;s location history.</summary>
         </member>
         <member name="M:Google.Apis.Latitude.v1.LocationResource.List">
             <summary>Lists the user&apos;s location history.</summary>
-        </member>
-        <member name="M:Google.Apis.Latitude.v1.LocationResource.List(System.String,System.String,System.String,System.String)">
-            <summary>Lists the user&apos;s location history.</summary>
-            <param name="granularity">Optional - Granularity of the requested locations.</param>
-            <param name="maxResults">max-results - Optional - Maximum number of locations to return.</param>
-            <param name="maxTime">max-time - Optional - Maximum timestamp of locations to return (ms since epoch).</param>
-            <param name="minTime">min-time - Optional - Minimum timestamp of locations to return (ms since epoch).</param>
         </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.LocationId">
             <summary>Timestamp of the location to delete (ms since epoch).</summary>

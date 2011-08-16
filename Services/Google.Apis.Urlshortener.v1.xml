@@ -71,21 +71,11 @@
             <summary>Expands a short URL or gets creation time and analytics.</summary>
             <param name="shortUrl">Required - The short URL, including the protocol.</param>
         </member>
-        <member name="M:Google.Apis.Urlshortener.v1.UrlResource.Get(System.String,System.Nullable{Google.Apis.Urlshortener.v1.UrlResource.Projection})">
-            <summary>Expands a short URL or gets creation time and analytics.</summary>
-            <param name="shortUrl">Required - The short URL, including the protocol.</param>
-            <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        </member>
         <member name="M:Google.Apis.Urlshortener.v1.UrlResource.Insert(Google.Apis.Urlshortener.v1.Data.Url)">
             <summary>Creates a new short URL.</summary>
         </member>
         <member name="M:Google.Apis.Urlshortener.v1.UrlResource.List">
             <summary>Retrieves a list of URLs shortened by a user.</summary>
-        </member>
-        <member name="M:Google.Apis.Urlshortener.v1.UrlResource.List(System.Nullable{Google.Apis.Urlshortener.v1.UrlResource.ProjectionEnum},System.String)">
-            <summary>Retrieves a list of URLs shortened by a user.</summary>
-            <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
-            <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
         </member>
         <member name="T:Google.Apis.Urlshortener.v1.UrlResource.Projection">
             <summary>Additional information to return.</summary>

@@ -69,4 +69,43 @@ public static class Extensions
         str = str.Replace("  ", " &nbsp;");
         return string.Format("<font color=\"red\">{0}</font>", str);
     }
+
+    /// <summary>
+    /// Throws an ArgumentNullException if the specified object is null.
+    /// </summary>
+    /// <param name="toCheck">The object to check.</param>
+    /// <param name="paramName">The name of the parameter.</param>
+    public static void ThrowIfNull(this object toCheck, string paramName)
+    {
+        if (toCheck == null)
+        {
+            throw new ArgumentNullException(paramName);
+        }
+    }
+
+    /// <summary>
+    /// Throws an ArgumentNullException if the specified string is null or empty.
+    /// </summary>
+    /// <param name="toCheck">The object to check.</param>
+    /// <param name="paramName">The name of the parameter.</param>
+    public static void ThrowIfNullOrEmpty(this string toCheck, string paramName)
+    {
+        if (string.IsNullOrEmpty(toCheck))
+        {
+            throw new ArgumentNullException(paramName);
+        }
+    }
+
+    /// <summary>
+    /// Throws an ArgumentNullException if the specified array is null or empty.
+    /// </summary>
+    /// <param name="toCheck">The object to check.</param>
+    /// <param name="paramName">The name of the parameter.</param>
+    public static void ThrowIfNullOrEmpty(this object[] toCheck, string paramName)
+    {
+        if (toCheck == null || toCheck.Length == 0)
+        {
+            throw new ArgumentNullException(paramName);
+        }
+    }
 }

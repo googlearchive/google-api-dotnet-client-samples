@@ -619,14 +619,6 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             return new GetRequest(service, project, taskqueue);
         }
         
-        /// <summary>Get detailed information about a TaskQueue.</summary>
-        /// <param name="project">Required - The project under which the queue lies.</param>
-        /// <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
-        /// <param name="getStats">Optional - Whether to get stats. Optional.</param>
-        public virtual GetRequest Get(string project, string taskqueue, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? getStats) {
-            return new GetRequest(service, project, taskqueue, getStats);
-        }
-        
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Taskqueue> {
             
             private System.Boolean? getStats;
@@ -639,13 +631,6 @@ namespace Google.Apis.Taskqueue.v1beta1 {
                     base(service) {
                 this.project = project;
                 this.taskqueue = taskqueue;
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? getStats) : 
-                    base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
-                this.getStats = getStats;
             }
             
             /// <summary>Whether to get stats. Optional.</summary>

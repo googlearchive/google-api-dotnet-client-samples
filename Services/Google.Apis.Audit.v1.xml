@@ -84,22 +84,6 @@
             <param name="customerId">Required - Must match pattern C.+ - Represents the customer who is the owner of target object on which action was performed.</param>
             <param name="applicationId">Required - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application on which the event was performed.</param>
         </member>
-        <member name="M:Google.Apis.Audit.v1.ActivitiesResource.List(System.String,System.Int64,System.Nullable{System.Int64},System.String,System.Nullable{Google.Apis.Audit.v1.ActivitiesResource.Caller},System.String,System.String,System.String,System.Nullable{System.Int64},System.String,System.String)">
-             <summary>Retrieves a list of activities for a specific customer and application.</summary>
-             <param name="customerId">Required - Must match pattern C.+ - Represents the customer who is the owner of target object on which action was performed.</param>
-             <param name="applicationId">Required - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application on which the event was performed.</param>
-             <param name="actorApplicationId">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application which interacted on behalf of the user while performing the event.</param>
-             <param name="actorEmail">Optional - Email address of the user who performed the action.</param>
-             <param name="caller">Optional - Must be one of the following values [application_owner, customer] - Type of the caller.</param>
-             <param name="continuationToken">Optional - Next page URL.</param>
-             <param name="endTime">Optional - Return events which occured at or before this time.</param>
-             <param name="eventName">Optional - Name of the event being queried.</param>
-             <param name="maxResults">Optional - Minimum value of 1 - Maximum value of 1000 - Number of activity records to be shown in each page.</param>
-             <param name="parameters">Optional - Event parameters in the form
-            :
-            .</param>
-             <param name="startTime">Optional - Return events which occured at or after this time.</param>
-        </member>
         <member name="T:Google.Apis.Audit.v1.ActivitiesResource.Caller">
             <summary>Type of the caller.</summary>
         </member>

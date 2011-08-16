@@ -170,13 +170,6 @@
             <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
             <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
         </member>
-        <member name="M:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.Runpagespeed(System.String,System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Pagespeedonline.v1.PagespeedapiResource.Strategy})">
-            <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
-            <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
-            <param name="locale">Optional - Must match pattern [a-zA-Z]+(_[a-zA-Z]+)? - The locale used to localize formatted results</param>
-            <param name="rule">Optional - Must match pattern [a-zA-Z]+ - A Page Speed rule to run; if none are given, all rules are run</param>
-            <param name="strategy">Optional - Must be one of the following values [desktop, mobile] - The analysis strategy to use</param>
-        </member>
         <member name="T:Google.Apis.Pagespeedonline.v1.PagespeedapiResource.Strategy">
             <summary>The analysis strategy to use</summary>
         </member>

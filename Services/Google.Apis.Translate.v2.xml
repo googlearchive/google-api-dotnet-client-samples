@@ -50,10 +50,6 @@
         <member name="M:Google.Apis.Translate.v2.LanguagesResource.List">
             <summary>List the source/target languages supported by the API</summary>
         </member>
-        <member name="M:Google.Apis.Translate.v2.LanguagesResource.List(System.String)">
-            <summary>List the source/target languages supported by the API</summary>
-            <param name="target">Optional - the language and collation in which the localized results should be returned</param>
-        </member>
         <member name="P:Google.Apis.Translate.v2.LanguagesResource.ListRequest.Target">
             <summary>the language and collation in which the localized results should be returned</summary>
         </member>
@@ -61,14 +57,6 @@
             <summary>Returns text translations from one language to another.</summary>
             <param name="q">Required - The text to translate</param>
             <param name="target">Required - The target language into which the text should be translated</param>
-        </member>
-        <member name="M:Google.Apis.Translate.v2.TranslationsResource.List(Google.Apis.Util.Repeatable{System.String},System.String,Google.Apis.Util.Repeatable{System.String},System.Nullable{Google.Apis.Translate.v2.TranslationsResource.Format},System.String)">
-            <summary>Returns text translations from one language to another.</summary>
-            <param name="q">Required - The text to translate</param>
-            <param name="target">Required - The target language into which the text should be translated</param>
-            <param name="cid">Optional - The customization id for translate</param>
-            <param name="format">Optional - Must be one of the following values [html, text] - The format of the text</param>
-            <param name="source">Optional - The source language of the text</param>
         </member>
         <member name="T:Google.Apis.Translate.v2.TranslationsResource.Format">
             <summary>The format of the text</summary>

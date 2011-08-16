@@ -500,24 +500,6 @@ namespace Google.Apis.Audit.v1 {
             return new ListRequest(service, customerId, applicationId);
         }
         
-        /// <summary>Retrieves a list of activities for a specific customer and application.</summary>
-        /// <param name="customerId">Required - Must match pattern C.+ - Represents the customer who is the owner of target object on which action was performed.</param>
-        /// <param name="applicationId">Required - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application on which the event was performed.</param>
-        /// <param name="actorApplicationId">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application which interacted on behalf of the user while performing the event.</param>
-        /// <param name="actorEmail">Optional - Email address of the user who performed the action.</param>
-        /// <param name="caller">Optional - Must be one of the following values [application_owner, customer] - Type of the caller.</param>
-        /// <param name="continuationToken">Optional - Next page URL.</param>
-        /// <param name="endTime">Optional - Return events which occured at or before this time.</param>
-        /// <param name="eventName">Optional - Name of the event being queried.</param>
-        /// <param name="maxResults">Optional - Minimum value of 1 - Maximum value of 1000 - Number of activity records to be shown in each page.</param>
-        /// <param name="parameters">Optional - Event parameters in the form
-        ///:
-        ///.</param>
-        /// <param name="startTime">Optional - Return events which occured at or after this time.</param>
-        public virtual ListRequest List(string customerId, long applicationId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? actorApplicationId, [System.Runtime.InteropServices.OptionalAttribute()] string actorEmail, [System.Runtime.InteropServices.OptionalAttribute()] Caller? caller, [System.Runtime.InteropServices.OptionalAttribute()] string continuationToken, [System.Runtime.InteropServices.OptionalAttribute()] string endTime, [System.Runtime.InteropServices.OptionalAttribute()] string eventName, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string parameters, [System.Runtime.InteropServices.OptionalAttribute()] string startTime) {
-            return new ListRequest(service, customerId, applicationId, actorApplicationId, actorEmail, caller, continuationToken, endTime, eventName, maxResults, parameters, startTime);
-        }
-        
         /// <summary>Type of the caller.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Caller {
@@ -559,21 +541,6 @@ namespace Google.Apis.Audit.v1 {
                     base(service) {
                 this.customerId = customerId;
                 this.applicationId = applicationId;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, long applicationId, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? actorApplicationId, [System.Runtime.InteropServices.OptionalAttribute()] string actorEmail, [System.Runtime.InteropServices.OptionalAttribute()] Caller? caller, [System.Runtime.InteropServices.OptionalAttribute()] string continuationToken, [System.Runtime.InteropServices.OptionalAttribute()] string endTime, [System.Runtime.InteropServices.OptionalAttribute()] string eventName, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string parameters, [System.Runtime.InteropServices.OptionalAttribute()] string startTime) : 
-                    base(service) {
-                this.customerId = customerId;
-                this.applicationId = applicationId;
-                this.actorApplicationId = actorApplicationId;
-                this.actorEmail = actorEmail;
-                this.caller = caller;
-                this.continuationToken = continuationToken;
-                this.endTime = endTime;
-                this.eventName = eventName;
-                this.maxResults = maxResults;
-                this.parameters = parameters;
-                this.startTime = startTime;
             }
             
             /// <summary>Application ID of the application which interacted on behalf of the user while performing the event.</summary>

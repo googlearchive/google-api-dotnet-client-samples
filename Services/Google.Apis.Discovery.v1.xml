@@ -300,12 +300,6 @@
         <member name="M:Google.Apis.Discovery.v1.ApisResource.List">
             <summary>Retrieve the list of APIs supported at this endpoint.</summary>
         </member>
-        <member name="M:Google.Apis.Discovery.v1.ApisResource.List(System.Nullable{Google.Apis.Discovery.v1.ApisResource.Label},System.String,System.Nullable{System.Boolean})">
-            <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-            <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
-            <param name="name">Optional - Only include APIs with the given name.</param>
-            <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        </member>
         <member name="T:Google.Apis.Discovery.v1.ApisResource.Label">
             <summary>Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</summary>
         </member>

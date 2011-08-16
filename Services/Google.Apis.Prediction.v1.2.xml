@@ -50,10 +50,6 @@
         <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Insert(Google.Apis.Prediction.v1_2.Data.Training)">
             <summary>Begin training your model</summary>
         </member>
-        <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Insert(Google.Apis.Prediction.v1_2.Data.Training,System.String)">
-            <summary>Begin training your model</summary>
-            <param name="data">Optional - mybucket%2Fmydata resource in Google Storage</param>
-        </member>
         <member name="M:Google.Apis.Prediction.v1_2.TrainingResource.Update(Google.Apis.Prediction.v1_2.Data.Update,System.String)">
             <summary>Add new data to a trained model</summary>
             <param name="data">Required</param>

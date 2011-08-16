@@ -121,7 +121,7 @@ namespace TasksSample.CreateTasks
         private static void ListTaskLists(TasksService service)
         {
             CommandLine.WriteLine("   ^1Task lists:");
-            var list = service.Tasklists.List(10, null).Fetch();
+            var list = service.Tasklists.List().Fetch();
             foreach (var item in list.Items)
             {
                 CommandLine.WriteLine("     ^2" + item.Title);

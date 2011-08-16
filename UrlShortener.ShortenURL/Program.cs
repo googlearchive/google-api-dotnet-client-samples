@@ -55,7 +55,7 @@ namespace Google.Apis.Samples.CmdUrlShortener
             CommandLine.WriteLine();
 
             // Resolve URL
-            Url response = service.Url.Get(urlToResolve, null).Fetch();
+            Url response = service.Url.Get(urlToResolve).Fetch();
 
             // Display response
             CommandLine.WriteLine(" ^1Status:   ^9{0}", response.Status);

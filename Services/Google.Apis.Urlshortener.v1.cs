@@ -560,13 +560,6 @@ namespace Google.Apis.Urlshortener.v1 {
             return new GetRequest(service, shortUrl);
         }
         
-        /// <summary>Expands a short URL or gets creation time and analytics.</summary>
-        /// <param name="shortUrl">Required - The short URL, including the protocol.</param>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, ANALYTICS_TOP_STRINGS, FULL] - Additional information to return.</param>
-        public virtual GetRequest Get(string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) {
-            return new GetRequest(service, shortUrl, projection);
-        }
-        
         /// <summary>Creates a new short URL.</summary>
         public virtual InsertRequest Insert(Google.Apis.Urlshortener.v1.Data.Url body) {
             return new InsertRequest(service, body);
@@ -575,13 +568,6 @@ namespace Google.Apis.Urlshortener.v1 {
         /// <summary>Retrieves a list of URLs shortened by a user.</summary>
         public virtual ListRequest List() {
             return new ListRequest(service);
-        }
-        
-        /// <summary>Retrieves a list of URLs shortened by a user.</summary>
-        /// <param name="projection">Optional - Must be one of the following values [ANALYTICS_CLICKS, FULL] - Additional information to return.</param>
-        /// <param name="startToken">start-token - Optional - Token for requesting successive pages of results.</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) {
-            return new ListRequest(service, projection, startToken);
         }
         
         /// <summary>Additional information to return.</summary>
@@ -623,12 +609,6 @@ namespace Google.Apis.Urlshortener.v1 {
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shortUrl) : 
                     base(service) {
                 this.shortUrl = shortUrl;
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shortUrl, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection) : 
-                    base(service) {
-                this.shortUrl = shortUrl;
-                this.projection = projection;
             }
             
             /// <summary>Additional information to return.</summary>
@@ -707,12 +687,6 @@ namespace Google.Apis.Urlshortener.v1 {
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] ProjectionEnum? projection, [System.Runtime.InteropServices.OptionalAttribute()] string startToken) : 
-                    base(service) {
-                this.projection = projection;
-                this.startToken = startToken;
             }
             
             /// <summary>Additional information to return.</summary>

@@ -896,15 +896,6 @@ namespace Google.Apis.Pagespeedonline.v1 {
             return new RunpagespeedRequest(service, url);
         }
         
-        /// <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
-        /// <param name="url">Required - Must match pattern http(s)?://.* - The URL to fetch and analyze</param>
-        /// <param name="locale">Optional - Must match pattern [a-zA-Z]+(_[a-zA-Z]+)? - The locale used to localize formatted results</param>
-        /// <param name="rule">Optional - Must match pattern [a-zA-Z]+ - A Page Speed rule to run; if none are given, all rules are run</param>
-        /// <param name="strategy">Optional - Must be one of the following values [desktop, mobile] - The analysis strategy to use</param>
-        public virtual RunpagespeedRequest Runpagespeed(string url, [System.Runtime.InteropServices.OptionalAttribute()] string locale, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> rule, [System.Runtime.InteropServices.OptionalAttribute()] Strategy? strategy) {
-            return new RunpagespeedRequest(service, url, locale, rule, strategy);
-        }
-        
         /// <summary>The analysis strategy to use</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Strategy {
@@ -931,14 +922,6 @@ namespace Google.Apis.Pagespeedonline.v1 {
             public RunpagespeedRequest(Google.Apis.Discovery.IRequestProvider service, string url) : 
                     base(service) {
                 this.url = url;
-            }
-            
-            public RunpagespeedRequest(Google.Apis.Discovery.IRequestProvider service, string url, [System.Runtime.InteropServices.OptionalAttribute()] string locale, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> rule, [System.Runtime.InteropServices.OptionalAttribute()] Strategy? strategy) : 
-                    base(service) {
-                this.url = url;
-                this.locale = locale;
-                this.rule = rule;
-                this.strategy = strategy;
             }
             
             /// <summary>The locale used to localize formatted results</summary>

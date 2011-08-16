@@ -82,7 +82,11 @@ namespace SiteVerification.VerifySite
             
             // Example of a GetToken call.
             CommandLine.WriteAction("Retrieving a meta token ...");
-            var response = service.WebResource.GetToken(site, "site", "meta").Fetch();
+            var request = service.WebResource.GetToken();
+            request.Identifier = site;
+            request.Type = "site";
+            request.VerificationMethod = "meta";
+            var response = request.Fetch();
             CommandLine.WriteResult("Token", response.Token);
             Util.SetClipboard(response.Token);
             CommandLine.WriteLine();

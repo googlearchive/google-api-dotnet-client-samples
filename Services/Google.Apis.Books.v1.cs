@@ -1850,112 +1850,127 @@ namespace Google.Apis.Books.v1 {
             "have been paginated.\",\"format\":\"int32\"}}}},\"resources\":{\"bookshelves\":{\"methods\"" +
             ":{\"get\":{\"id\":\"books.bookshelves.get\",\"path\":\"users/{userId}/bookshelves/{shelf}" +
             "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a specific bookshelf for the speci" +
-            "fied user.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshel" +
-            "f to retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"de" +
-            "scription\":\"String to identify the originator of this request.\",\"location\":\"quer" +
-            "y\"},\"userId\":{\"type\":\"string\",\"description\":\"Id of user for whom to retrieve boo" +
-            "kshelves.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"shelf" +
-            "\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/auth/bo" +
-            "oks\"]},\"list\":{\"id\":\"books.bookshelves.list\",\"path\":\"users/{userId}/bookshelves\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of public bookshelves for th" +
-            "e specified user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":\"String" +
-            " to identify the originator of this request.\",\"location\":\"query\"},\"userId\":{\"typ" +
-            "e\":\"string\",\"description\":\"Id of user for whom to retrieve bookshelves.\",\"requir" +
-            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Boo" +
-            "kshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"vo" +
-            "lumes\":{\"methods\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"path\":\"users/{" +
-            "userId}/bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Retrieves" +
-            " volumes in a specific bookshelf for the specified user.\",\"parameters\":{\"shelf\":" +
-            "{\"type\":\"string\",\"description\":\"Id of bookshelf to retrieve volumes.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to iden" +
-            "tify the originator of this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Id of user for whom to retrieve bookshelf volumes.\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"shelf\"],\"response\":{\"$ref" +
-            "\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}},\"mylibrary\"" +
-            ":{\"resources\":{\"bookshelves\":{\"methods\":{\"addVolume\":{\"id\":\"books.mylibrary.book" +
-            "shelves.addVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/addVolume\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Adds a volume to a bookshelf.\",\"parameters\":{\"shelf\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Id of bookshelf to which to add a volume.\",\"required" +
-            "\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to ide" +
-            "ntify the originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Id of volume to add.\",\"required\":true,\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/books\"]},\"clearVolumes\":{\"id\":\"books.mylibrary.bookshelves.clearVolumes\",\"path" +
-            "\":\"mylibrary/bookshelves/{shelf}/clearVolumes\",\"httpMethod\":\"POST\",\"description\"" +
-            ":\"Clears all volumes from a bookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"" +
-            "description\":\"Id of bookshelf from which to remove a volume.\",\"required\":true,\"l" +
-            "ocation\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the" +
-            " originator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.b" +
-            "ookshelves.get\",\"path\":\"mylibrary/bookshelves/{shelf}\",\"httpMethod\":\"GET\",\"descr" +
-            "iption\":\"Retrieves a specific bookshelf belonging to the authenticated user.\",\"p" +
-            "arameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf to retrieve." +
-            "\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"St" +
-            "ring to identify the originator of this request.\",\"location\":\"query\"}},\"paramete" +
-            "rOrder\":[\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/books\"]},\"list\":{\"id\":\"books.mylibrary.bookshelves.list\",\"path\":\"my" +
-            "library/bookshelves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of books" +
-            "helves belonging to the authenticated user.\",\"parameters\":{\"source\":{\"type\":\"str" +
-            "ing\",\"description\":\"String to identify the originator of this request.\",\"locatio" +
-            "n\":\"query\"}},\"response\":{\"$ref\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/books\"]},\"removeVolume\":{\"id\":\"books.mylibrary.bookshelves.removeVolum" +
-            "e\",\"path\":\"mylibrary/bookshelves/{shelf}/removeVolume\",\"httpMethod\":\"POST\",\"desc" +
-            "ription\":\"Removes a volume from a bookshelf.\",\"parameters\":{\"shelf\":{\"type\":\"str" +
-            "ing\",\"description\":\"Id of bookshelf from which to remove a volume.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identi" +
-            "fy the originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Id of volume to remove.\",\"required\":true,\"location\":\"query\"}}" +
-            ",\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/books\"]}},\"resources\":{\"volumes\":{\"methods\":{\"list\":{\"id\":\"books.mylibrary.boo" +
-            "kshelves.volumes.list\",\"path\":\"mylibrary/bookshelves/{shelf}/volumes\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Gets volume information for volumes on a bookshelf.\",\"pa" +
-            "rameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
-            "ts to return\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"projecti" +
-            "on\":{\"type\":\"string\",\"description\":\"Restrict information returned to a set of se" +
-            "lected fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume " +
-            "data.\",\"Includes a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"" +
-            "query\"},\"shelf\":{\"type\":\"string\",\"description\":\"The bookshelf id or name retriev" +
-            "e volumes for.\",\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"Stri" +
-            "ng to identify the originator of this request.\",\"location\":\"query\"},\"startIndex\"" +
-            ":{\"type\":\"integer\",\"description\":\"Index of the first element to return (starts a" +
-            "t 0)\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"}},\"parameterOrder\"" +
-            ":[\"shelf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/books\"]}}}}}}},\"volumes\":{\"methods\":{\"get\":{\"id\":\"books.volumes.get\",\"path\":" +
-            "\"volumes/{volumeId}\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information f" +
-            "or a single volume.\",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"" +
-            "Restrict information returned to a set of selected fields.\",\"enum\":[\"full\",\"lite" +
-            "\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a subset of fields " +
-            "in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source\":{\"type\":\"string\",\"d" +
-            "escription\":\"String to identify the originator of this request.\",\"location\":\"que" +
-            "ry\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id of volume to retrieve.\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":" +
-            "\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"book" +
-            "s.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"description\":\"Performs a bo" +
-            "ok search.\",\"parameters\":{\"download\":{\"type\":\"string\",\"description\":\"Restrict to" +
-            " volumes by download availability.\",\"enum\":[\"epub\"],\"enumDescriptions\":[\"All vol" +
-            "umes with epub.\"],\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"F" +
-            "ilter search results.\",\"enum\":[\"ebooks\",\"free-ebooks\",\"full\",\"paid-ebooks\",\"part" +
-            "ial\"],\"enumDescriptions\":[\"All Google eBooks.\",\"Google eBook with full volume te" +
-            "xt viewability.\",\"Public can view entire volume text.\",\"Google eBook with a pric" +
-            "e.\",\"Public able to see parts of text.\"],\"location\":\"query\"},\"langRestrict\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Restrict results to books with this language code.\"," +
-            "\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number" +
-            " of results to return.\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"orderB" +
-            "y\":{\"type\":\"string\",\"description\":\"Sort search results.\",\"enum\":[\"newest\",\"relev" +
-            "ance\"],\"enumDescriptions\":[\"Most recently published.\",\"Relevance to search terms" +
-            ".\"],\"location\":\"query\"},\"printType\":{\"type\":\"string\",\"description\":\"Restrict to " +
-            "books or magazines.\",\"enum\":[\"all\",\"books\",\"magazines\"],\"enumDescriptions\":[\"All" +
-            " volume content types.\",\"Just books.\",\"Just magazines.\"],\"location\":\"query\"},\"pr" +
-            "ojection\":{\"type\":\"string\",\"description\":\"Restrict information returned to a set" +
-            " of selected fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all v" +
-            "olume data.\",\"Includes a subset of fields in volumeInfo and accessInfo.\"],\"locat" +
-            "ion\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string." +
-            "\",\"required\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"S" +
-            "tring to identify the originator of this request.\",\"location\":\"query\"},\"startInd" +
-            "ex\":{\"type\":\"integer\",\"description\":\"Index of the first result to return (starts" +
-            " at 0)\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"}},\"parameterOrde" +
-            "r\":[\"q\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/books\"]}}}}}";
+            "fied user.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 c" +
+            "ode to override the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":\"str" +
+            "ing\",\"description\":\"Id of bookshelf to retrieve.\",\"required\":true,\"location\":\"pa" +
+            "th\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator " +
+            "of this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"I" +
+            "d of user for whom to retrieve bookshelves.\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"userId\",\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.bookshelves.list\",\"" +
+            "path\":\"users/{userId}/bookshelves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a" +
+            " list of public bookshelves for the specified user.\",\"parameters\":{\"country\":{\"t" +
+            "ype\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based location.\"" +
+            ",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify" +
+            " the originator of this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\"," +
+            "\"description\":\"Id of user for whom to retrieve bookshelves.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Bookshelves\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"met" +
+            "hods\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"path\":\"users/{userId}/book" +
+            "shelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Retrieves volumes in " +
+            "a specific bookshelf for the specified user.\",\"parameters\":{\"country\":{\"type\":\"s" +
+            "tring\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"locat" +
+            "ion\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf to retriev" +
+            "e volumes.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"descri" +
+            "ption\":\"String to identify the originator of this request.\",\"location\":\"query\"}," +
+            "\"userId\":{\"type\":\"string\",\"description\":\"Id of user for whom to retrieve bookshe" +
+            "lf volumes.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"she" +
+            "lf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/bo" +
+            "oks\"]}}}}},\"mylibrary\":{\"resources\":{\"bookshelves\":{\"methods\":{\"addVolume\":{\"id\"" +
+            ":\"books.mylibrary.bookshelves.addVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/a" +
+            "ddVolume\",\"httpMethod\":\"POST\",\"description\":\"Adds a volume to a bookshelf.\",\"par" +
+            "ameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override " +
+            "the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Id of bookshelf to which to add a volume.\",\"required\":true,\"location\":\"path\"" +
+            "},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of " +
+            "this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id" +
+            " of volume to add.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shel" +
+            "f\",\"volumeId\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"clearVolumes" +
+            "\":{\"id\":\"books.mylibrary.bookshelves.clearVolumes\",\"path\":\"mylibrary/bookshelves" +
+            "/{shelf}/clearVolumes\",\"httpMethod\":\"POST\",\"description\":\"Clears all volumes fro" +
+            "m a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166" +
+            "-1 code to override the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":" +
+            "\"string\",\"description\":\"Id of bookshelf from which to remove a volume.\",\"require" +
+            "d\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to id" +
+            "entify the originator of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"" +
+            "shelf\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"get\":{\"id\":\"books.m" +
+            "ylibrary.bookshelves.get\",\"path\":\"mylibrary/bookshelves/{shelf}\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Retrieves a specific bookshelf belonging to the authenticated" +
+            " user.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code " +
+            "to override the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\"" +
+            ",\"description\":\"Id of bookshelf to retrieve.\",\"required\":true,\"location\":\"path\"}" +
+            ",\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of t" +
+            "his request.\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"response\":{\"$ref\"" +
+            ":\"Bookshelf\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"" +
+            "books.mylibrary.bookshelves.list\",\"path\":\"mylibrary/bookshelves\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Retrieves a list of bookshelves belonging to the authenticate" +
+            "d user.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code" +
+            " to override the IP-based location.\",\"location\":\"query\"},\"source\":{\"type\":\"strin" +
+            "g\",\"description\":\"String to identify the originator of this request.\",\"location\"" +
+            ":\"query\"}},\"response\":{\"$ref\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/books\"]},\"removeVolume\":{\"id\":\"books.mylibrary.bookshelves.removeVolume\"" +
+            ",\"path\":\"mylibrary/bookshelves/{shelf}/removeVolume\",\"httpMethod\":\"POST\",\"descri" +
+            "ption\":\"Removes a volume from a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"str" +
+            "ing\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"locatio" +
+            "n\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf from which t" +
+            "o remove a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\"" +
+            ",\"description\":\"String to identify the originator of this request.\",\"location\":\"" +
+            "query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id of volume to remove.\",\"req" +
+            "uired\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"methods\":{\"" +
+            "list\":{\"id\":\"books.mylibrary.bookshelves.volumes.list\",\"path\":\"mylibrary/bookshe" +
+            "lves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information " +
+            "for volumes on a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"descripti" +
+            "on\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"},\"ma" +
+            "xResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\"," +
+            "\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"projection\":{\"type\":\"s" +
+            "tring\",\"description\":\"Restrict information returned to a set of selected fields." +
+            "\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includ" +
+            "es a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"shelf" +
+            "\":{\"type\":\"string\",\"description\":\"The bookshelf id or name retrieve volumes for." +
+            "\",\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify" +
+            " the originator of this request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"inte" +
+            "ger\",\"description\":\"Index of the first element to return (starts at 0)\",\"minimum" +
+            "\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"re" +
+            "sponse\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}" +
+            "}}}},\"volumes\":{\"methods\":{\"get\":{\"id\":\"books.volumes.get\",\"path\":\"volumes/{volu" +
+            "meId}\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information for a single vo" +
+            "lume.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code t" +
+            "o override the IP-based location.\",\"location\":\"query\"},\"projection\":{\"type\":\"str" +
+            "ing\",\"description\":\"Restrict information returned to a set of selected fields.\"," +
+            "\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes" +
+            " a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source\"" +
+            ":{\"type\":\"string\",\"description\":\"String to identify the originator of this reque" +
+            "st.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id of volume" +
+            " to retrieve.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"]" +
+            ",\"response\":{\"$ref\":\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]" +
+            "},\"list\":{\"id\":\"books.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"descrip" +
+            "tion\":\"Performs a book search.\",\"parameters\":{\"country\":{\"type\":\"string\",\"descri" +
+            "ption\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"}," +
+            "\"download\":{\"type\":\"string\",\"description\":\"Restrict to volumes by download avail" +
+            "ability.\",\"enum\":[\"epub\"],\"enumDescriptions\":[\"All volumes with epub.\"],\"locatio" +
+            "n\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Filter search results.\",\"en" +
+            "um\":[\"ebooks\",\"free-ebooks\",\"full\",\"paid-ebooks\",\"partial\"],\"enumDescriptions\":[" +
+            "\"All Google eBooks.\",\"Google eBook with full volume text viewability.\",\"Public c" +
+            "an view entire volume text.\",\"Google eBook with a price.\",\"Public able to see pa" +
+            "rts of text.\"],\"location\":\"query\"},\"langRestrict\":{\"type\":\"string\",\"description\"" +
+            ":\"Restrict results to books with this language code.\",\"location\":\"query\"},\"maxRe" +
+            "sults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"m" +
+            "inimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Sort search results.\",\"enum\":[\"newest\",\"relevance\"],\"enumDescriptions\":" +
+            "[\"Most recently published.\",\"Relevance to search terms.\"],\"location\":\"query\"},\"p" +
+            "rintType\":{\"type\":\"string\",\"description\":\"Restrict to books or magazines.\",\"enum" +
+            "\":[\"all\",\"books\",\"magazines\"],\"enumDescriptions\":[\"All volume content types.\",\"J" +
+            "ust books.\",\"Just magazines.\"],\"location\":\"query\"},\"projection\":{\"type\":\"string\"" +
+            ",\"description\":\"Restrict information returned to a set of selected fields.\",\"enu" +
+            "m\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a s" +
+            "ubset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"q\":{\"type\":" +
+            "\"string\",\"description\":\"Full-text search query string.\",\"required\":true,\"locatio" +
+            "n\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the orig" +
+            "inator of this request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"des" +
+            "cription\":\"Index of the first result to return (starts at 0)\",\"minimum\":\"0\",\"max" +
+            "imum\":\"4294967295\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref" +
+            "\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -2049,25 +2064,10 @@ namespace Google.Apis.Books.v1 {
             return new GetRequest(service, userId, shelf);
         }
         
-        /// <summary>Retrieves a specific bookshelf for the specified user.</summary>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual GetRequest Get(string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-            return new GetRequest(service, userId, shelf, source);
-        }
-        
         /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
         /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
         public virtual ListRequest List(string userId) {
             return new ListRequest(service, userId);
-        }
-        
-        /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual ListRequest List(string userId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-            return new ListRequest(service, userId, source);
         }
         
         public class VolumesResource {
@@ -2087,15 +2087,9 @@ namespace Google.Apis.Books.v1 {
                 return new ListRequest(service, userId, shelf);
             }
             
-            /// <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            /// <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual ListRequest List(string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new ListRequest(service, userId, shelf, source);
-            }
-            
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
+                
+                private string country;
                 
                 private string shelf;
                 
@@ -2109,11 +2103,15 @@ namespace Google.Apis.Books.v1 {
                     this.shelf = shelf;
                 }
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.userId = userId;
-                    this.shelf = shelf;
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>Id of bookshelf to retrieve volumes.</summary>
@@ -2159,6 +2157,8 @@ namespace Google.Apis.Books.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
             
+            private string country;
+            
             private string shelf;
             
             private string source;
@@ -2171,11 +2171,15 @@ namespace Google.Apis.Books.v1 {
                 this.shelf = shelf;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                    base(service) {
-                this.userId = userId;
-                this.shelf = shelf;
-                this.source = source;
+            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
             }
             
             /// <summary>Id of bookshelf to retrieve.</summary>
@@ -2220,6 +2224,8 @@ namespace Google.Apis.Books.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
             
+            private string country;
+            
             private string source;
             
             private string userId;
@@ -2229,10 +2235,15 @@ namespace Google.Apis.Books.v1 {
                 this.userId = userId;
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                    base(service) {
-                this.userId = userId;
-                this.source = source;
+            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
             }
             
             /// <summary>String to identify the originator of this request.</summary>
@@ -2313,25 +2324,10 @@ namespace Google.Apis.Books.v1 {
                 return new AddVolumeRequest(service, shelf, volumeId);
             }
             
-            /// <summary>Adds a volume to a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
-            /// <param name="volumeId">Required - Id of volume to add.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual AddVolumeRequest AddVolume(string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new AddVolumeRequest(service, shelf, volumeId, source);
-            }
-            
             /// <summary>Clears all volumes from a bookshelf.</summary>
             /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             public virtual ClearVolumesRequest ClearVolumes(string shelf) {
                 return new ClearVolumesRequest(service, shelf);
-            }
-            
-            /// <summary>Clears all volumes from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual ClearVolumesRequest ClearVolumes(string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new ClearVolumesRequest(service, shelf, source);
             }
             
             /// <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
@@ -2340,22 +2336,9 @@ namespace Google.Apis.Books.v1 {
                 return new GetRequest(service, shelf);
             }
             
-            /// <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual GetRequest Get(string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new GetRequest(service, shelf, source);
-            }
-            
             /// <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
             public virtual ListRequest List() {
                 return new ListRequest(service);
-            }
-            
-            /// <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new ListRequest(service, source);
             }
             
             /// <summary>Removes a volume from a bookshelf.</summary>
@@ -2363,14 +2346,6 @@ namespace Google.Apis.Books.v1 {
             /// <param name="volumeId">Required - Id of volume to remove.</param>
             public virtual RemoveVolumeRequest RemoveVolume(string shelf, string volumeId) {
                 return new RemoveVolumeRequest(service, shelf, volumeId);
-            }
-            
-            /// <summary>Removes a volume from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            /// <param name="volumeId">Required - Id of volume to remove.</param>
-            /// <param name="source">Optional - String to identify the originator of this request.</param>
-            public virtual RemoveVolumeRequest RemoveVolume(string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-                return new RemoveVolumeRequest(service, shelf, volumeId, source);
             }
             
             public class VolumesResource {
@@ -2388,16 +2363,6 @@ namespace Google.Apis.Books.v1 {
                     return new ListRequest(service);
                 }
                 
-                /// <summary>Gets volume information for volumes on a bookshelf.</summary>
-                /// <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
-                /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-                /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-                /// <param name="source">Optional - String to identify the originator of this request.</param>
-                /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
-                public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string shelf, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-                    return new ListRequest(service, shelf, maxResults, projection, source, startIndex);
-                }
-                
                 /// <summary>Restrict information returned to a set of selected fields.</summary>
                 [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
                 public enum Projection {
@@ -2413,6 +2378,8 @@ namespace Google.Apis.Books.v1 {
                 
                 public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
                     
+                    private string country;
+                    
                     private System.Int64? maxResults;
                     
                     private Projection? projection;
@@ -2427,13 +2394,15 @@ namespace Google.Apis.Books.v1 {
                             base(service) {
                     }
                     
-                    public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string shelf, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                            base(service) {
-                        this.shelf = shelf;
-                        this.maxResults = maxResults;
-                        this.projection = projection;
-                        this.source = source;
-                        this.startIndex = startIndex;
+                    /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                    [Google.Apis.Util.RequestParameterAttribute("country")]
+                    public virtual string Country {
+                        get {
+                            return this.country;
+                        }
+                        set {
+                            this.country = value;
+                        }
                     }
                     
                     /// <summary>Maximum number of results to return</summary>
@@ -2507,6 +2476,8 @@ namespace Google.Apis.Books.v1 {
             
             public class AddVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
+                private string country;
+                
                 private string shelf;
                 
                 private string source;
@@ -2519,11 +2490,15 @@ namespace Google.Apis.Books.v1 {
                     this.volumeId = volumeId;
                 }
                 
-                public AddVolumeRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.shelf = shelf;
-                    this.volumeId = volumeId;
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>Id of bookshelf to which to add a volume.</summary>
@@ -2568,6 +2543,8 @@ namespace Google.Apis.Books.v1 {
             
             public class ClearVolumesRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
+                private string country;
+                
                 private string shelf;
                 
                 private string source;
@@ -2577,10 +2554,15 @@ namespace Google.Apis.Books.v1 {
                     this.shelf = shelf;
                 }
                 
-                public ClearVolumesRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.shelf = shelf;
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>Id of bookshelf from which to remove a volume.</summary>
@@ -2617,6 +2599,8 @@ namespace Google.Apis.Books.v1 {
             
             public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
                 
+                private string country;
+                
                 private string shelf;
                 
                 private string source;
@@ -2626,10 +2610,15 @@ namespace Google.Apis.Books.v1 {
                     this.shelf = shelf;
                 }
                 
-                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.shelf = shelf;
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>Id of bookshelf to retrieve.</summary>
@@ -2666,15 +2655,23 @@ namespace Google.Apis.Books.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
                 
+                private string country;
+                
                 private string source;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
                 }
                 
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
@@ -2703,6 +2700,8 @@ namespace Google.Apis.Books.v1 {
             
             public class RemoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
+                private string country;
+                
                 private string shelf;
                 
                 private string source;
@@ -2715,11 +2714,15 @@ namespace Google.Apis.Books.v1 {
                     this.volumeId = volumeId;
                 }
                 
-                public RemoveVolumeRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                        base(service) {
-                    this.shelf = shelf;
-                    this.volumeId = volumeId;
-                    this.source = source;
+                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("country")]
+                public virtual string Country {
+                    get {
+                        return this.country;
+                    }
+                    set {
+                        this.country = value;
+                    }
                 }
                 
                 /// <summary>Id of bookshelf from which to remove a volume.</summary>
@@ -2780,33 +2783,10 @@ namespace Google.Apis.Books.v1 {
             return new GetRequest(service, volumeId);
         }
         
-        /// <summary>Gets volume information for a single volume.</summary>
-        /// <param name="volumeId">Required - Id of volume to retrieve.</param>
-        /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        public virtual GetRequest Get(string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-            return new GetRequest(service, volumeId, projection, source);
-        }
-        
         /// <summary>Performs a book search.</summary>
         /// <param name="q">Required - Full-text search query string.</param>
         public virtual ListRequest List(string q) {
             return new ListRequest(service, q);
-        }
-        
-        /// <summary>Performs a book search.</summary>
-        /// <param name="q">Required - Full-text search query string.</param>
-        /// <param name="download">Optional - Must be one of the following values [epub] - Restrict to volumes by download availability.</param>
-        /// <param name="filter">Optional - Must be one of the following values [ebooks, free-ebooks, full, paid-ebooks, partial] - Filter search results.</param>
-        /// <param name="langRestrict">Optional - Restrict results to books with this language code.</param>
-        /// <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 40 - Maximum number of results to return.</param>
-        /// <param name="orderBy">Optional - Must be one of the following values [newest, relevance] - Sort search results.</param>
-        /// <param name="printType">Optional - Must be one of the following values [all, books, magazines] - Restrict to books or magazines.</param>
-        /// <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-        /// <param name="source">Optional - String to identify the originator of this request.</param>
-        /// <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to return (starts at 0)</param>
-        public virtual ListRequest List(string q, [System.Runtime.InteropServices.OptionalAttribute()] Download? download, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string langRestrict, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] OrderBy? orderBy, [System.Runtime.InteropServices.OptionalAttribute()] PrintType? printType, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) {
-            return new ListRequest(service, q, download, filter, langRestrict, maxResults, orderBy, printType, projection, source, startIndex);
         }
         
         /// <summary>Restrict information returned to a set of selected fields.</summary>
@@ -2888,6 +2868,8 @@ namespace Google.Apis.Books.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volume> {
             
+            private string country;
+            
             private Projection? projection;
             
             private string source;
@@ -2899,11 +2881,15 @@ namespace Google.Apis.Books.v1 {
                 this.volumeId = volumeId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                    base(service) {
-                this.volumeId = volumeId;
-                this.projection = projection;
-                this.source = source;
+            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
@@ -2951,6 +2937,8 @@ namespace Google.Apis.Books.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
             
+            private string country;
+            
             private Download? download;
             
             private Filter? filter;
@@ -2976,18 +2964,15 @@ namespace Google.Apis.Books.v1 {
                 this.q = q;
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q, [System.Runtime.InteropServices.OptionalAttribute()] Download? download, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string langRestrict, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] OrderBy? orderBy, [System.Runtime.InteropServices.OptionalAttribute()] PrintType? printType, [System.Runtime.InteropServices.OptionalAttribute()] Projection? projection, [System.Runtime.InteropServices.OptionalAttribute()] string source, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? startIndex) : 
-                    base(service) {
-                this.q = q;
-                this.download = download;
-                this.filter = filter;
-                this.langRestrict = langRestrict;
-                this.maxResults = maxResults;
-                this.orderBy = orderBy;
-                this.printType = printType;
-                this.projection = projection;
-                this.source = source;
-                this.startIndex = startIndex;
+            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("country")]
+            public virtual string Country {
+                get {
+                    return this.country;
+                }
+                set {
+                    this.country = value;
+                }
             }
             
             /// <summary>Restrict to volumes by download availability.</summary>

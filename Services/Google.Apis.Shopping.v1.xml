@@ -329,80 +329,9 @@
             <param name="productIdType">Required - Type of productId</param>
             <param name="productId">Required - Id of product</param>
         </member>
-        <member name="M:Google.Apis.Shopping.v1.ProductsResource.Get(System.String,System.Int64,System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.String,System.String)">
-            <summary>Returns a single product</summary>
-            <param name="source">Required - Query source</param>
-            <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
-            <param name="productIdType">Required - Type of productId</param>
-            <param name="productId">Required - Id of product</param>
-            <param name="attributeFilter">Optional - Comma separated list of attributes to return</param>
-            <param name="categoriesEnabled">categories.enabled - Optional - Whether to return category information</param>
-            <param name="categoriesInclude">categories.include - Optional - Category specification</param>
-            <param name="categoriesUseGcsConfig">categories.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="debugEnabled">debug.enabled - Optional - Google Internal</param>
-            <param name="debugEnableLogging">debug.enableLogging - Optional - Google Internal</param>
-            <param name="debugSearchRequest">debug.searchRequest - Optional - Google Internal</param>
-            <param name="debugSearchResponse">debug.searchResponse - Optional - Google Internal</param>
-            <param name="productFields">Optional - Google Internal</param>
-            <param name="recommendationsEnabled">recommendations.enabled - Optional - Whether to return recommendation information</param>
-            <param name="recommendationsInclude">recommendations.include - Optional - Recommendation specification</param>
-            <param name="recommendationsUseGcsConfig">recommendations.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="taxonomy">Optional - Merchant taxonomy</param>
-            <param name="thumbnails">Optional - Thumbnail specification</param>
-        </member>
         <member name="M:Google.Apis.Shopping.v1.ProductsResource.List(System.String)">
             <summary>Returns a list of products and content modules</summary>
             <param name="source">Required - Query source</param>
-        </member>
-        <member name="M:Google.Apis.Shopping.v1.ProductsResource.List(System.String,System.String,System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Shopping.v1.ProductsResource.MinAvailability},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int64},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int64},System.String,System.String,System.String)">
-            <summary>Returns a list of products and content modules</summary>
-            <param name="source">Required - Query source</param>
-            <param name="attributeFilter">Optional - Comma separated list of attributes to return</param>
-            <param name="boostBy">Optional - Boosting specification</param>
-            <param name="categoriesEnabled">categories.enabled - Optional - Whether to return category information</param>
-            <param name="categoriesInclude">categories.include - Optional - Category specification</param>
-            <param name="categoriesUseGcsConfig">categories.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="channels">Optional - Channels specification</param>
-            <param name="country">Optional - Country restriction (ISO 3166)</param>
-            <param name="crowdBy">Optional - Crowding specification</param>
-            <param name="currency">Optional - Currency restriction (ISO 4217)</param>
-            <param name="debugEnabled">debug.enabled - Optional - Google Internal</param>
-            <param name="debugEnableLogging">debug.enableLogging - Optional - Google Internal</param>
-            <param name="debugGeocodeRequest">debug.geocodeRequest - Optional - Google Internal</param>
-            <param name="debugGeocodeResponse">debug.geocodeResponse - Optional - Google Internal</param>
-            <param name="debugRdcRequest">debug.rdcRequest - Optional - Google Internal</param>
-            <param name="debugRdcResponse">debug.rdcResponse - Optional - Google Internal</param>
-            <param name="debugSearchRequest">debug.searchRequest - Optional - Google Internal</param>
-            <param name="debugSearchResponse">debug.searchResponse - Optional - Google Internal</param>
-            <param name="facetsDiscover">facets.discover - Optional - Facets to discover</param>
-            <param name="facetsEnabled">facets.enabled - Optional - Whether to return facet information</param>
-            <param name="facetsInclude">facets.include - Optional - Facets to include (applies when useGcsConfig == false)</param>
-            <param name="facetsUseGcsConfig">facets.useGcsConfig - Optional - Whether to return facet information as configured in the GCS account</param>
-            <param name="language">Optional - Language restriction (BCP 47)</param>
-            <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-            <param name="minAvailability">Optional - Must be one of the following values [inStock, limited, outOfStock, unknown]</param>
-            <param name="productFields">Optional - Google Internal</param>
-            <param name="promotionsEnabled">promotions.enabled - Optional - Whether to return promotion information</param>
-            <param name="promotionsUseGcsConfig">promotions.useGcsConfig - Optional - Whether to return promotion information as configured in the GCS account</param>
-            <param name="q">Optional - Search query</param>
-            <param name="rankBy">Optional - Ranking specification</param>
-            <param name="redirectsEnabled">redirects.enabled - Optional - Whether to return redirect information</param>
-            <param name="redirectsUseGcsConfig">redirects.useGcsConfig - Optional - Whether to return redirect information as configured in the GCS account</param>
-            <param name="relatedQueriesEnabled">relatedQueries.enabled - Optional - Whether to return related queries</param>
-            <param name="relatedQueriesUseGcsConfig">relatedQueries.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="restrictBy">Optional - Restriction specification</param>
-            <param name="safe">Optional - Whether safe search is enabled. Default: true</param>
-            <param name="saytEnabled">sayt.enabled - Optional - Google Internal</param>
-            <param name="saytUseGcsConfig">sayt.useGcsConfig - Optional - Google Internal</param>
-            <param name="shelfSpaceAdsEnabled">shelfSpaceAds.enabled - Optional - Whether to return shelf space ads</param>
-            <param name="shelfSpaceAdsMaxResults">shelfSpaceAds.maxResults - Optional - Minimum value of 0 - Maximum value of 4294967295 - The maximum number of shelf space ads to return</param>
-            <param name="shelfSpaceAdsUseGcsConfig">shelfSpaceAds.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="spellingEnabled">spelling.enabled - Optional - Whether to return spelling suggestions</param>
-            <param name="spellingUseGcsConfig">spelling.useGcsConfig - Optional - This parameter is currently ignored</param>
-            <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index (1-based) of first product to return</param>
-            <param name="taxonomy">Optional - Taxonomy name</param>
-            <param name="thumbnails">Optional - Image thumbnails specification</param>
-            <param name="useCase">Optional - One of CommerceSearchUseCase, ShoppingApiUseCase</param>
         </member>
         <member name="F:Google.Apis.Shopping.v1.ProductsResource.MinAvailability.InStock">
             <summary>Only in stcok prodicts will be returned</summary>

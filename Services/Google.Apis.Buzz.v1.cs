@@ -5311,13 +5311,6 @@ namespace Google.Apis.Buzz.v1 {
             return new CountRequest(service);
         }
         
-        /// <summary>Get a count of link shares</summary>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="url">Optional - URLs for which to get share counts.</param>
-        public virtual CountRequest Count([System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> url) {
-            return new CountRequest(service, hl, url);
-        }
-        
         /// <summary>Delete an activity</summary>
         /// <param name="userId">Required - ID of the user whose post to delete.</param>
         /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
@@ -5326,34 +5319,9 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, scope, postId);
         }
         
-        /// <summary>Delete an activity</summary>
-        /// <param name="userId">Required - ID of the user whose post to delete.</param>
-        /// <param name="scope">Required - Must be one of the following values [@liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, scope, postId, alt, hl);
-        }
-        
         /// <summary>Search for people by topic</summary>
         public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch() {
             return new ExtractPeopleFromSearchRequest(service);
-        }
-        
-        /// <summary>Search for people by topic</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual ExtractPeopleFromSearchRequest ExtractPeopleFromSearch([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) {
-            return new ExtractPeopleFromSearchRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius);
         }
         
         /// <summary>Get an activity</summary>
@@ -5363,31 +5331,10 @@ namespace Google.Apis.Buzz.v1 {
             return new GetRequest(service, userId, postId);
         }
         
-        /// <summary>Get an activity</summary>
-        /// <param name="userId">Required - ID of the user whose post to get.</param>
-        /// <param name="postId">Required - ID of the post to get.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual GetRequest Get(string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
-            return new GetRequest(service, userId, postId, alt, hl, maxComments, maxLiked, truncateAtom);
-        }
-        
         /// <summary>Create a new activity</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Activity body, string userId) {
             return new InsertRequest(service, body, userId);
-        }
-        
-        /// <summary>Create a new activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="preview">Optional - If true, only preview the action.</param>
-        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Activity body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preview) {
-            return new InsertRequest(service, body, userId, alt, hl, preview);
         }
         
         /// <summary>List activities</summary>
@@ -5395,20 +5342,6 @@ namespace Google.Apis.Buzz.v1 {
         /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
         public virtual ListRequest List(string userId, ScopeEnum scope) {
             return new ListRequest(service, userId, scope);
-        }
-        
-        /// <summary>List activities</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@comments, @consumption, @liked, @public, @self] - The collection of activities to list.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxComments">max-comments - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of comments to include.</param>
-        /// <param name="maxLiked">max-liked - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of likes to include.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual ListRequest List(string userId, ScopeEnum scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
-            return new ListRequest(service, userId, scope, alt, c, hl, maxComments, maxLiked, maxResults, truncateAtom);
         }
         
         /// <summary>Update an activity. This method supports patch semantics.</summary>
@@ -5419,56 +5352,14 @@ namespace Google.Apis.Buzz.v1 {
             return new PatchRequest(service, body, userId, scope, postId);
         }
         
-        /// <summary>Update an activity. This method supports patch semantics.</summary>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new PatchRequest(service, body, userId, scope, postId, abuseType, alt, hl);
-        }
-        
         /// <summary>Search for activities</summary>
         public virtual SearchRequest Search() {
             return new SearchRequest(service);
         }
         
-        /// <summary>Search for activities</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        /// <param name="truncateAtom">Optional - Truncate the value of the atom:content element.</param>
-        public virtual SearchRequest Search([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) {
-            return new SearchRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius, truncateAtom);
-        }
-        
         /// <summary>Get real-time activity tracking information</summary>
         public virtual TrackRequest Track() {
             return new TrackRequest(service);
-        }
-        
-        /// <summary>Get real-time activity tracking information</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="bbox">Optional - Bounding box to use in a geographic location query.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="lat">Optional - Latitude to use in a geographic location query.</param>
-        /// <param name="lon">Optional - Longitude to use in a geographic location query.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="pid">Optional - ID of a place to use in a geographic location query.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        /// <param name="radius">Optional - Radius to use in a geographic location query.</param>
-        public virtual TrackRequest Track([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) {
-            return new TrackRequest(service, alt, bbox, c, hl, lat, lon, maxResults, pid, q, radius);
         }
         
         /// <summary>Update an activity</summary>
@@ -5477,17 +5368,6 @@ namespace Google.Apis.Buzz.v1 {
         /// <param name="postId">Required - ID of the activity to update.</param>
         public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId) {
             return new UpdateRequest(service, body, userId, scope, postId);
-        }
-        
-        /// <summary>Update an activity</summary>
-        /// <param name="userId">Required - ID of the user whose post to update.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @liked, @muted, @self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity to update.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new UpdateRequest(service, body, userId, scope, postId, abuseType, alt, hl);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -5576,12 +5456,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
             }
             
-            public CountRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> url) : 
-                    base(service) {
-                this.hl = hl;
-                this.url = url;
-            }
-            
             /// <summary>Language code to limit language results.</summary>
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
@@ -5634,15 +5508,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.scope = scope;
                 this.postId = postId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -5728,20 +5593,6 @@ namespace Google.Apis.Buzz.v1 {
             
             public ExtractPeopleFromSearchRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ExtractPeopleFromSearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) : 
-                    base(service) {
-                this.alt = alt;
-                this.bbox = bbox;
-                this.c = c;
-                this.hl = hl;
-                this.lat = lat;
-                this.lon = lon;
-                this.maxResults = maxResults;
-                this.pid = pid;
-                this.q = q;
-                this.radius = radius;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -5889,17 +5740,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.postId = postId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
-                    base(service) {
-                this.userId = userId;
-                this.postId = postId;
-                this.alt = alt;
-                this.hl = hl;
-                this.maxComments = maxComments;
-                this.maxLiked = maxLiked;
-                this.truncateAtom = truncateAtom;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -6002,15 +5842,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
             }
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preview) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-                this.preview = preview;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -6103,19 +5934,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.userId = userId;
                 this.scope = scope;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, ScopeEnum scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxComments, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxLiked, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxComments = maxComments;
-                this.maxLiked = maxLiked;
-                this.maxResults = maxResults;
-                this.truncateAtom = truncateAtom;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -6248,17 +6066,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.postId = postId;
             }
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.abuseType = abuseType;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             [Google.Apis.Util.RequestParameterAttribute("abuseType")]
             public virtual string AbuseType {
                 get {
@@ -6368,21 +6175,6 @@ namespace Google.Apis.Buzz.v1 {
             
             public SearchRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? truncateAtom) : 
-                    base(service) {
-                this.alt = alt;
-                this.bbox = bbox;
-                this.c = c;
-                this.hl = hl;
-                this.lat = lat;
-                this.lon = lon;
-                this.maxResults = maxResults;
-                this.pid = pid;
-                this.q = q;
-                this.radius = radius;
-                this.truncateAtom = truncateAtom;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -6545,20 +6337,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
             }
             
-            public TrackRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string bbox, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] string lat, [System.Runtime.InteropServices.OptionalAttribute()] string lon, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pid, [System.Runtime.InteropServices.OptionalAttribute()] string q, [System.Runtime.InteropServices.OptionalAttribute()] string radius) : 
-                    base(service) {
-                this.alt = alt;
-                this.bbox = bbox;
-                this.c = c;
-                this.hl = hl;
-                this.lat = lat;
-                this.lon = lon;
-                this.maxResults = maxResults;
-                this.pid = pid;
-                this.q = q;
-                this.radius = radius;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -6706,17 +6484,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.postId = postId;
             }
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Activity body, string userId, ScopeMember scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.abuseType = abuseType;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             [Google.Apis.Util.RequestParameterAttribute("abuseType")]
             public virtual string AbuseType {
                 get {
@@ -6819,32 +6586,12 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, postId, commentId);
         }
         
-        /// <summary>Delete a comment</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to delete the comment.</param>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, postId, commentId, alt, hl);
-        }
-        
         /// <summary>Get a comment</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="postId">Required - ID of the activity for which to get comments.</param>
         /// <param name="commentId">Required - ID of the comment being referenced.</param>
         public virtual GetRequest Get(string userId, string postId, string commentId) {
             return new GetRequest(service, userId, postId, commentId);
-        }
-        
-        /// <summary>Get a comment</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new GetRequest(service, userId, postId, commentId, alt, hl);
         }
         
         /// <summary>Create a comment</summary>
@@ -6854,33 +6601,12 @@ namespace Google.Apis.Buzz.v1 {
             return new InsertRequest(service, body, userId, postId);
         }
         
-        /// <summary>Create a comment</summary>
-        /// <param name="userId">Required - ID of the user on whose behalf to comment.</param>
-        /// <param name="postId">Required - ID of the activity on which to comment.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new InsertRequest(service, body, userId, postId, alt, hl);
-        }
-        
         /// <summary>List comments</summary>
         /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
         /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
         /// <param name="postId">Required - ID of the activity for which to get comments.</param>
         public virtual ListRequest List(string userId, Scope scope, string postId) {
             return new ListRequest(service, userId, scope, postId);
-        }
-        
-        /// <summary>List comments</summary>
-        /// <param name="userId">Required - ID of the user for whose post to get comments.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity for which to get comments.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListRequest(service, userId, scope, postId, alt, c, hl, maxResults);
         }
         
         /// <summary>Update a comment. This method supports patch semantics.</summary>
@@ -6892,18 +6618,6 @@ namespace Google.Apis.Buzz.v1 {
             return new PatchRequest(service, body, userId, scope, postId, commentId);
         }
         
-        /// <summary>Update a comment. This method supports patch semantics.</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new PatchRequest(service, body, userId, scope, postId, commentId, abuseType, alt, hl);
-        }
-        
         /// <summary>Update a comment</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
@@ -6911,18 +6625,6 @@ namespace Google.Apis.Buzz.v1 {
         /// <param name="commentId">Required - ID of the comment being referenced.</param>
         public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId) {
             return new UpdateRequest(service, body, userId, scope, postId, commentId);
-        }
-        
-        /// <summary>Update a comment</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@abuse, @self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity for which to update the comment.</param>
-        /// <param name="commentId">Required - ID of the comment being referenced.</param>
-        /// <param name="abuseType">Optional</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new UpdateRequest(service, body, userId, scope, postId, commentId, abuseType, alt, hl);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -6977,15 +6679,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.postId = postId;
                 this.commentId = commentId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.postId = postId;
-                this.commentId = commentId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -7066,15 +6759,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.commentId = commentId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.postId = postId;
-                this.commentId = commentId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -7151,15 +6835,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.Body = body;
                 this.userId = userId;
                 this.postId = postId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.postId = postId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -7248,17 +6923,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.scope = scope;
                 this.postId = postId;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -7367,18 +7031,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.scope = scope;
                 this.postId = postId;
                 this.commentId = commentId;
-            }
-            
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.commentId = commentId;
-                this.abuseType = abuseType;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             [Google.Apis.Util.RequestParameterAttribute("abuseType")]
@@ -7499,18 +7151,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.commentId = commentId;
             }
             
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Comment body, string userId, ScopeEnum scope, string postId, string commentId, [System.Runtime.InteropServices.OptionalAttribute()] string abuseType, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.commentId = commentId;
-                this.abuseType = abuseType;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             [Google.Apis.Util.RequestParameterAttribute("abuseType")]
             public virtual string AbuseType {
                 get {
@@ -7620,29 +7260,11 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, groupId);
         }
         
-        /// <summary>Delete a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="groupId">Required - ID of the group to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, groupId, alt, hl);
-        }
-        
         /// <summary>Get a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="groupId">Required - ID of the group to get.</param>
         public virtual GetRequest Get(string userId, string groupId) {
             return new GetRequest(service, userId, groupId);
-        }
-        
-        /// <summary>Get a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="groupId">Required - ID of the group to get.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new GetRequest(service, userId, groupId, alt, hl);
         }
         
         /// <summary>Create a group</summary>
@@ -7651,28 +7273,10 @@ namespace Google.Apis.Buzz.v1 {
             return new InsertRequest(service, body, userId);
         }
         
-        /// <summary>Create a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Group body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new InsertRequest(service, body, userId, alt, hl);
-        }
-        
         /// <summary>Get a user&apos;s groups</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         public virtual ListRequest List(string userId) {
             return new ListRequest(service, userId);
-        }
-        
-        /// <summary>Get a user&apos;s groups</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListRequest(service, userId, alt, c, hl, maxResults);
         }
         
         /// <summary>Update a group. This method supports patch semantics.</summary>
@@ -7682,29 +7286,11 @@ namespace Google.Apis.Buzz.v1 {
             return new PatchRequest(service, body, userId, groupId);
         }
         
-        /// <summary>Update a group. This method supports patch semantics.</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new PatchRequest(service, body, userId, groupId, alt, hl);
-        }
-        
         /// <summary>Update a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="groupId">Required - ID of the group to update.</param>
         public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId) {
             return new UpdateRequest(service, body, userId, groupId);
-        }
-        
-        /// <summary>Update a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="groupId">Required - ID of the group to update.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new UpdateRequest(service, body, userId, groupId, alt, hl);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -7734,14 +7320,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.userId = userId;
                 this.groupId = groupId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -7811,14 +7389,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.groupId = groupId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -7884,14 +7454,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.Body = body;
                 this.userId = userId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -7966,15 +7528,6 @@ namespace Google.Apis.Buzz.v1 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
                 this.userId = userId;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -8061,15 +7614,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.groupId = groupId;
             }
             
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -8152,15 +7696,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.Body = body;
                 this.userId = userId;
                 this.groupId = groupId;
-            }
-            
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Group body, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -8247,28 +7782,10 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, groupId, personId);
         }
         
-        /// <summary>Remove a person from a group</summary>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="groupId">Required - ID of the group from which to remove the person.</param>
-        /// <param name="personId">Required - ID of the person to remove from the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, groupId, personId, alt, hl);
-        }
-        
         /// <summary>Get a user profile</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         public virtual GetRequest Get(string userId) {
             return new GetRequest(service, userId);
-        }
-        
-        /// <summary>Get a user profile</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new GetRequest(service, userId, alt, hl);
         }
         
         /// <summary>Get people who liked an activity</summary>
@@ -8280,35 +7797,11 @@ namespace Google.Apis.Buzz.v1 {
             return new LikedRequest(service, userId, scope, postId, groupId);
         }
         
-        /// <summary>Get people who liked an activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="postId">Required - ID of the activity that was liked.</param>
-        /// <param name="groupId">Required - Must be one of the following values [@liked]</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual LikedRequest Liked(string userId, string scope, string postId, GroupId groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new LikedRequest(service, userId, scope, postId, groupId, alt, c, hl, maxResults);
-        }
-        
         /// <summary>Get people in a group</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="groupId">Required - ID of the group for which to list users.</param>
         public virtual ListRequest List(string userId, string groupId) {
             return new ListRequest(service, userId, groupId);
-        }
-        
-        /// <summary>Get people in a group</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="groupId">Required - ID of the group for which to list users.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListRequest(service, userId, groupId, alt, c, hl, maxResults);
         }
         
         /// <summary>Add a person to a group. This method supports patch semantics.</summary>
@@ -8317,16 +7810,6 @@ namespace Google.Apis.Buzz.v1 {
         /// <param name="personId">Required - ID of the person to add to the group.</param>
         public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) {
             return new PatchRequest(service, body, userId, groupId, personId);
-        }
-        
-        /// <summary>Add a person to a group. This method supports patch semantics.</summary>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual PatchRequest Patch(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new PatchRequest(service, body, userId, groupId, personId, alt, hl);
         }
         
         /// <summary>Get people who reshared an activity</summary>
@@ -8338,32 +7821,9 @@ namespace Google.Apis.Buzz.v1 {
             return new ResharedRequest(service, userId, scope, postId, groupId);
         }
         
-        /// <summary>Get people who reshared an activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required</param>
-        /// <param name="postId">Required - ID of the activity that was reshared.</param>
-        /// <param name="groupId">Required - Must be one of the following values [@reshared]</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ResharedRequest Reshared(string userId, string scope, string postId, GroupIdEnum groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ResharedRequest(service, userId, scope, postId, groupId, alt, c, hl, maxResults);
-        }
-        
         /// <summary>Search for people</summary>
         public virtual SearchRequest Search() {
             return new SearchRequest(service);
-        }
-        
-        /// <summary>Search for people</summary>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        /// <param name="q">Optional - Full-text search query string.</param>
-        public virtual SearchRequest Search([System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q) {
-            return new SearchRequest(service, alt, c, hl, maxResults, q);
         }
         
         /// <summary>Add a person to a group</summary>
@@ -8372,16 +7832,6 @@ namespace Google.Apis.Buzz.v1 {
         /// <param name="personId">Required - ID of the person to add to the group.</param>
         public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId) {
             return new UpdateRequest(service, body, userId, groupId, personId);
-        }
-        
-        /// <summary>Add a person to a group</summary>
-        /// <param name="userId">Required - ID of the owner of the group.</param>
-        /// <param name="groupId">Required - ID of the group to which to add the person.</param>
-        /// <param name="personId">Required - ID of the person to add to the group.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual UpdateRequest Update(Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new UpdateRequest(service, body, userId, groupId, personId, alt, hl);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -8430,15 +7880,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.groupId = groupId;
-                this.personId = personId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -8513,13 +7954,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -8587,18 +8021,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.scope = scope;
                 this.postId = postId;
                 this.groupId = groupId;
-            }
-            
-            public LikedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupId groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -8708,16 +8130,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.groupId = groupId;
             }
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -8811,16 +8223,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-            }
-            
-            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.groupId = groupId;
-                this.personId = personId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -8920,18 +8322,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.scope = scope;
                 this.postId = postId;
                 this.groupId = groupId;
-            }
-            
-            public ResharedRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string scope, string postId, GroupIdEnum groupId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.groupId = groupId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -9037,15 +8427,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
             }
             
-            public SearchRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string q) : 
-                    base(service) {
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
-                this.q = q;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -9134,16 +8515,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.groupId = groupId;
                 this.personId = personId;
-            }
-            
-            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Person body, string userId, string groupId, string personId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.groupId = groupId;
-                this.personId = personId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -9237,29 +8608,11 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, albumId);
         }
         
-        /// <summary>Delete a photo album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, albumId, alt, hl);
-        }
-        
         /// <summary>Get a photo album</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album to get.</param>
         public virtual GetRequest Get(string userId, string albumId) {
             return new GetRequest(service, userId, albumId);
-        }
-        
-        /// <summary>Get a photo album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album to get.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new GetRequest(service, userId, albumId, alt, hl);
         }
         
         /// <summary>Create a photo album</summary>
@@ -9268,30 +8621,11 @@ namespace Google.Apis.Buzz.v1 {
             return new InsertRequest(service, body, userId);
         }
         
-        /// <summary>Create a photo album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.Album body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new InsertRequest(service, body, userId, alt, hl);
-        }
-        
         /// <summary>List a user&apos;s photo albums</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
         public virtual ListRequest List(string userId, Scope scope) {
             return new ListRequest(service, userId, scope);
-        }
-        
-        /// <summary>List a user&apos;s photo albums</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection of albums to list.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListRequest List(string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListRequest(service, userId, scope, alt, c, hl, maxResults);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -9330,14 +8664,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.userId = userId;
                 this.albumId = albumId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.albumId = albumId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>ID of the album to delete.</summary>
@@ -9407,14 +8733,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.albumId = albumId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.albumId = albumId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>ID of the album to get.</summary>
             [Google.Apis.Util.RequestParameterAttribute("albumId")]
             public virtual string AlbumId {
@@ -9480,14 +8798,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.Body = body;
                 this.userId = userId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.Album body, string userId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -9565,16 +8875,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.userId = userId;
                 this.scope = scope;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
@@ -9669,32 +8969,12 @@ namespace Google.Apis.Buzz.v1 {
             return new DeleteRequest(service, userId, albumId, photoId);
         }
         
-        /// <summary>Delete a photo</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album to which to photo belongs.</param>
-        /// <param name="photoId">Required - ID of the photo to delete.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual DeleteRequest Delete(string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new DeleteRequest(service, userId, albumId, photoId, alt, hl);
-        }
-        
         /// <summary>Get photo metadata</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album containing the photo.</param>
         /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
         public virtual GetRequest Get(string userId, string albumId, string photoId) {
             return new GetRequest(service, userId, albumId, photoId);
-        }
-        
-        /// <summary>Get photo metadata</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album containing the photo.</param>
-        /// <param name="photoId">Required - ID of the photo for which to get metadata.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual GetRequest Get(string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new GetRequest(service, userId, albumId, photoId, alt, hl);
         }
         
         /// <summary>Upload a photo to an album</summary>
@@ -9707,26 +8987,8 @@ namespace Google.Apis.Buzz.v1 {
         /// <summary>Upload a photo to an album</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual InsertRequest Insert(Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new InsertRequest(service, body, userId, albumId, alt, hl);
-        }
-        
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
         public virtual Insert2Request Insert2(Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId) {
             return new Insert2Request(service, body, userId, albumId);
-        }
-        
-        /// <summary>Upload a photo to an album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album to which to upload.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual Insert2Request Insert2(Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new Insert2Request(service, body, userId, albumId, alt, hl);
         }
         
         /// <summary>List photos in an album</summary>
@@ -9736,33 +8998,11 @@ namespace Google.Apis.Buzz.v1 {
             return new ListByAlbumRequest(service, userId, albumId);
         }
         
-        /// <summary>List photos in an album</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="albumId">Required - ID of the album for which to list photos.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListByAlbumRequest ListByAlbum(string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListByAlbumRequest(service, userId, albumId, alt, c, hl, maxResults);
-        }
-        
         /// <summary>Get a user&apos;s photos</summary>
         /// <param name="userId">Required - ID of the user being referenced.</param>
         /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
         public virtual ListByScopeRequest ListByScope(string userId, Scope scope) {
             return new ListByScopeRequest(service, userId, scope);
-        }
-        
-        /// <summary>Get a user&apos;s photos</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@recent] - The collection of photos to list.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="c">Optional - A continuation token that allows pagination.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        /// <param name="maxResults">max-results - Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to include.</param>
-        public virtual ListByScopeRequest ListByScope(string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) {
-            return new ListByScopeRequest(service, userId, scope, alt, c, hl, maxResults);
         }
         
         /// <summary>Specifies an alternative representation type.</summary>
@@ -9804,15 +9044,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.albumId = albumId;
                 this.photoId = photoId;
-            }
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>ID of the album to which to photo belongs.</summary>
@@ -9893,15 +9124,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.photoId = photoId;
             }
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, string photoId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.albumId = albumId;
-                this.photoId = photoId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>ID of the album containing the photo.</summary>
             [Google.Apis.Util.RequestParameterAttribute("albumId")]
             public virtual string AlbumId {
@@ -9978,15 +9200,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.Body = body;
                 this.userId = userId;
                 this.albumId = albumId;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.AlbumLite body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.albumId = albumId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>ID of the album to which to upload.</summary>
@@ -10073,15 +9286,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.albumId = albumId;
             }
             
-            public Insert2Request(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Buzz.v1.Data.ChiliPhotosResourceJson body, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.Body = body;
-                this.userId = userId;
-                this.albumId = albumId;
-                this.alt = alt;
-                this.hl = hl;
-            }
-            
             /// <summary>ID of the album to which to upload.</summary>
             [Google.Apis.Util.RequestParameterAttribute("albumId")]
             public virtual string AlbumId {
@@ -10165,16 +9369,6 @@ namespace Google.Apis.Buzz.v1 {
                     base(service) {
                 this.userId = userId;
                 this.albumId = albumId;
-            }
-            
-            public ListByAlbumRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string albumId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.albumId = albumId;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
             }
             
             /// <summary>ID of the album for which to list photos.</summary>
@@ -10270,16 +9464,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.scope = scope;
             }
             
-            public ListByScopeRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string c, [System.Runtime.InteropServices.OptionalAttribute()] string hl, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.alt = alt;
-                this.c = c;
-                this.hl = hl;
-                this.maxResults = maxResults;
-            }
-            
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
             public virtual Alt? Alt {
@@ -10372,16 +9556,6 @@ namespace Google.Apis.Buzz.v1 {
             return new ListRequest(service, userId, scope, postId);
         }
         
-        /// <summary>Get related links for an activity</summary>
-        /// <param name="userId">Required - ID of the user being referenced.</param>
-        /// <param name="scope">Required - Must be one of the following values [@self] - The collection to which the activity belongs.</param>
-        /// <param name="postId">Required - ID of the activity to which to get related links.</param>
-        /// <param name="alt">Optional - Must be one of the following values [atom, json] - Specifies an alternative representation type.</param>
-        /// <param name="hl">Optional - Language code to limit language results.</param>
-        public virtual ListRequest List(string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) {
-            return new ListRequest(service, userId, scope, postId, alt, hl);
-        }
-        
         /// <summary>Specifies an alternative representation type.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Alt {
@@ -10421,15 +9595,6 @@ namespace Google.Apis.Buzz.v1 {
                 this.userId = userId;
                 this.scope = scope;
                 this.postId = postId;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Scope scope, string postId, [System.Runtime.InteropServices.OptionalAttribute()] Alt? alt, [System.Runtime.InteropServices.OptionalAttribute()] string hl) : 
-                    base(service) {
-                this.userId = userId;
-                this.scope = scope;
-                this.postId = postId;
-                this.alt = alt;
-                this.hl = hl;
             }
             
             /// <summary>Specifies an alternative representation type.</summary>

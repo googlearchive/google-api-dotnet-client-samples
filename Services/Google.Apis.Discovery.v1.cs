@@ -1393,14 +1393,6 @@ namespace Google.Apis.Discovery.v1 {
             return new ListRequest(service);
         }
         
-        /// <summary>Retrieve the list of APIs supported at this endpoint.</summary>
-        /// <param name="label">Optional - Must be one of the following values [deprecated, graduated, labs] - Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</param>
-        /// <param name="name">Optional - Only include APIs with the given name.</param>
-        /// <param name="preferred">Optional - Return only the preferred version of an API.</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) {
-            return new ListRequest(service, label, name, preferred);
-        }
-        
         /// <summary>Only include APIs with a matching label, such as &apos;graduated&apos; or &apos;labs&apos;.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Label {
@@ -1469,13 +1461,6 @@ namespace Google.Apis.Discovery.v1 {
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] Label? label, [System.Runtime.InteropServices.OptionalAttribute()] string name, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? preferred) : 
-                    base(service) {
-                this.label = label;
-                this.name = name;
-                this.preferred = preferred;
             }
             
             /// <summary>Only include APIs with a matching label, such as 'graduated' or 'labs'.</summary>

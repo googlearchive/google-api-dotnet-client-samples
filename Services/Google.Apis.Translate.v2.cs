@@ -434,23 +434,12 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service);
         }
         
-        /// <summary>List the source/target languages supported by the API</summary>
-        /// <param name="target">Optional - the language and collation in which the localized results should be returned</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string target) {
-            return new ListRequest(service, target);
-        }
-        
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
             
             private string target;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string target) : 
-                    base(service) {
-                this.target = target;
             }
             
             /// <summary>the language and collation in which the localized results should be returned</summary>
@@ -495,16 +484,6 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service, q, target);
         }
         
-        /// <summary>Returns text translations from one language to another.</summary>
-        /// <param name="q">Required - The text to translate</param>
-        /// <param name="target">Required - The target language into which the text should be translated</param>
-        /// <param name="cid">Optional - The customization id for translate</param>
-        /// <param name="format">Optional - Must be one of the following values [html, text] - The format of the text</param>
-        /// <param name="source">Optional - The source language of the text</param>
-        public virtual ListRequest List(Google.Apis.Util.Repeatable<string> q, string target, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> cid, [System.Runtime.InteropServices.OptionalAttribute()] Format? format, [System.Runtime.InteropServices.OptionalAttribute()] string source) {
-            return new ListRequest(service, q, target, cid, format, source);
-        }
-        
         /// <summary>The format of the text</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Format {
@@ -534,15 +513,6 @@ namespace Google.Apis.Translate.v2 {
                     base(service) {
                 this.q = q;
                 this.target = target;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> q, string target, [System.Runtime.InteropServices.OptionalAttribute()] Google.Apis.Util.Repeatable<string> cid, [System.Runtime.InteropServices.OptionalAttribute()] Format? format, [System.Runtime.InteropServices.OptionalAttribute()] string source) : 
-                    base(service) {
-                this.q = q;
-                this.target = target;
-                this.cid = cid;
-                this.format = format;
-                this.source = source;
             }
             
             /// <summary>The customization id for translate</summary>

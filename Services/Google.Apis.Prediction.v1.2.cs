@@ -560,12 +560,6 @@ namespace Google.Apis.Prediction.v1_2 {
             return new InsertRequest(service, body);
         }
         
-        /// <summary>Begin training your model</summary>
-        /// <param name="data">Optional - mybucket%2Fmydata resource in Google Storage</param>
-        public virtual InsertRequest Insert(Google.Apis.Prediction.v1_2.Data.Training body, [System.Runtime.InteropServices.OptionalAttribute()] string data) {
-            return new InsertRequest(service, body, data);
-        }
-        
         /// <summary>Add new data to a trained model</summary>
         /// <param name="data">Required</param>
         public virtual UpdateRequest Update(Google.Apis.Prediction.v1_2.Data.Update body, string data) {
@@ -641,12 +635,6 @@ namespace Google.Apis.Prediction.v1_2 {
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Training body) : 
                     base(service) {
                 this.Body = body;
-            }
-            
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Training body, [System.Runtime.InteropServices.OptionalAttribute()] string data) : 
-                    base(service) {
-                this.Body = body;
-                this.data = data;
             }
             
             /// <summary>mybucket%2Fmydata resource in Google Storage</summary>

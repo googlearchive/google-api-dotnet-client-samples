@@ -93,12 +93,6 @@
             <param name="project">Required - The project under which the queue lies.</param>
             <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
         </member>
-        <member name="M:Google.Apis.Taskqueue.v1beta1.TaskqueuesResource.Get(System.String,System.String,System.Nullable{System.Boolean})">
-            <summary>Get detailed information about a TaskQueue.</summary>
-            <param name="project">Required - The project under which the queue lies.</param>
-            <param name="taskqueue">Required - The id of the taskqueue to get the properties of.</param>
-            <param name="getStats">Optional - Whether to get stats. Optional.</param>
-        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta1.TaskqueuesResource.GetRequest.GetStats">
             <summary>Whether to get stats. Optional.</summary>
         </member>

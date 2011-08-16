@@ -385,31 +385,17 @@
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.BookshelvesResource.Get(System.String,System.String,System.String)">
-            <summary>Retrieves a specific bookshelf for the specified user.</summary>
-            <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
         <member name="M:Google.Apis.Books.v1.BookshelvesResource.List(System.String)">
             <summary>Retrieves a list of public bookshelves for the specified user.</summary>
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        </member>
-        <member name="M:Google.Apis.Books.v1.BookshelvesResource.List(System.String,System.String)">
-            <summary>Retrieves a list of public bookshelves for the specified user.</summary>
-            <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.List(System.String,System.String)">
             <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
             <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
             <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.List(System.String,System.String,System.String)">
-            <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
-            <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Shelf">
             <summary>Id of bookshelf to retrieve volumes.</summary>
@@ -420,6 +406,9 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelf volumes.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.Shelf">
             <summary>Id of bookshelf to retrieve.</summary>
         </member>
@@ -428,6 +417,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
@@ -440,58 +432,24 @@
             <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
             <param name="volumeId">Required - Id of volume to add.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolume(System.String,System.String,System.String)">
-            <summary>Adds a volume to a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
-            <param name="volumeId">Required - Id of volume to add.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumes(System.String)">
             <summary>Clears all volumes from a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-        </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumes(System.String,System.String)">
-            <summary>Clears all volumes from a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.Get(System.String)">
             <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.Get(System.String,System.String)">
-            <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
-            <param name="shelf">Required - Id of bookshelf to retrieve.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.List">
             <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
-        </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.List(System.String)">
-            <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
-            <param name="source">Optional - String to identify the originator of this request.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String)">
             <summary>Removes a volume from a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             <param name="volumeId">Required - Id of volume to remove.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String,System.String)">
-            <summary>Removes a volume from a bookshelf.</summary>
-            <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            <param name="volumeId">Required - Id of volume to remove.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.List">
             <summary>Gets volume information for volumes on a bookshelf.</summary>
-        </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.List(System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.Projection},System.String,System.Nullable{System.Int64})">
-            <summary>Gets volume information for volumes on a bookshelf.</summary>
-            <param name="shelf">Optional - The bookshelf id or name retrieve volumes for.</param>
-            <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 4294967295 - Maximum number of results to return</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-            <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first element to return (starts at 0)</param>
         </member>
         <member name="T:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
@@ -501,6 +459,9 @@
         </member>
         <member name="F:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.Projection.Lite">
             <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
@@ -517,6 +478,9 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.StartIndex">
             <summary>Index of the first element to return (starts at 0)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Shelf">
             <summary>Id of bookshelf to which to add a volume.</summary>
         </member>
@@ -526,11 +490,17 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.VolumeId">
             <summary>Id of volume to add.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Shelf">
             <summary>Id of bookshelf from which to remove a volume.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Shelf">
             <summary>Id of bookshelf to retrieve.</summary>
@@ -538,8 +508,14 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Shelf">
             <summary>Id of bookshelf from which to remove a volume.</summary>
@@ -554,28 +530,9 @@
             <summary>Gets volume information for a single volume.</summary>
             <param name="volumeId">Required - Id of volume to retrieve.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.VolumesResource.Get(System.String,System.Nullable{Google.Apis.Books.v1.VolumesResource.Projection},System.String)">
-            <summary>Gets volume information for a single volume.</summary>
-            <param name="volumeId">Required - Id of volume to retrieve.</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-        </member>
         <member name="M:Google.Apis.Books.v1.VolumesResource.List(System.String)">
             <summary>Performs a book search.</summary>
             <param name="q">Required - Full-text search query string.</param>
-        </member>
-        <member name="M:Google.Apis.Books.v1.VolumesResource.List(System.String,System.Nullable{Google.Apis.Books.v1.VolumesResource.Download},System.Nullable{Google.Apis.Books.v1.VolumesResource.Filter},System.String,System.Nullable{System.Int64},System.Nullable{Google.Apis.Books.v1.VolumesResource.OrderBy},System.Nullable{Google.Apis.Books.v1.VolumesResource.PrintType},System.Nullable{Google.Apis.Books.v1.VolumesResource.Projection},System.String,System.Nullable{System.Int64})">
-            <summary>Performs a book search.</summary>
-            <param name="q">Required - Full-text search query string.</param>
-            <param name="download">Optional - Must be one of the following values [epub] - Restrict to volumes by download availability.</param>
-            <param name="filter">Optional - Must be one of the following values [ebooks, free-ebooks, full, paid-ebooks, partial] - Filter search results.</param>
-            <param name="langRestrict">Optional - Restrict results to books with this language code.</param>
-            <param name="maxResults">Optional - Minimum value of 0 - Maximum value of 40 - Maximum number of results to return.</param>
-            <param name="orderBy">Optional - Must be one of the following values [newest, relevance] - Sort search results.</param>
-            <param name="printType">Optional - Must be one of the following values [all, books, magazines] - Restrict to books or magazines.</param>
-            <param name="projection">Optional - Must be one of the following values [full, lite] - Restrict information returned to a set of selected fields.</param>
-            <param name="source">Optional - String to identify the originator of this request.</param>
-            <param name="startIndex">Optional - Minimum value of 0 - Maximum value of 4294967295 - Index of the first result to return (starts at 0)</param>
         </member>
         <member name="T:Google.Apis.Books.v1.VolumesResource.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
@@ -631,6 +588,9 @@
         <member name="F:Google.Apis.Books.v1.VolumesResource.PrintType.Magazines">
             <summary>Just magazines.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
         </member>
@@ -639,6 +599,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.VolumeId">
             <summary>Id of volume to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Download">
             <summary>Restrict to volumes by download availability.</summary>

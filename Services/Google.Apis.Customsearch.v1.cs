@@ -816,22 +816,6 @@ namespace Google.Apis.Customsearch.v1 {
             return new ListRequest(service, q);
         }
         
-        /// <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
-        /// <param name="q">Required - Query</param>
-        /// <param name="cr">Optional - Country restrict(s).</param>
-        /// <param name="cref">Optional - The URL of a linked custom search engine</param>
-        /// <param name="cx">Optional - The custom search engine ID to scope this search query</param>
-        /// <param name="filter">Optional - Must be one of the following values [0, 1] - Controls turning on or off the duplicate content filter.</param>
-        /// <param name="gl">Optional - Geolocation of end user.</param>
-        /// <param name="lr">Optional - Must be one of the following values [lang_ar, lang_bg, lang_ca, lang_cs, lang_da, lang_de, lang_el, lang_en, lang_es, lang_et, lang_fi, lang_fr, lang_hr, lang_hu, lang_id, lang_is, lang_it, lang_iw, lang_ja, lang_ko, lang_lt, lang_lv, lang_nl, lang_no, lang_pl, lang_pt, lang_ro, lang_ru, lang_sk, lang_sl, lang_sr, lang_sv, lang_tr, lang_zh-CN, lang_zh-TW] - The language restriction for the search results</param>
-        /// <param name="num">Optional - Number of search results to return</param>
-        /// <param name="safe">Optional - Must be one of the following values [high, medium, off] - Search safety level</param>
-        /// <param name="sort">Optional - The sort expression to apply to the results</param>
-        /// <param name="start">Optional - The index of the first result to return</param>
-        public virtual ListRequest List(string q, [System.Runtime.InteropServices.OptionalAttribute()] string cr, [System.Runtime.InteropServices.OptionalAttribute()] string cref, [System.Runtime.InteropServices.OptionalAttribute()] string cx, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string gl, [System.Runtime.InteropServices.OptionalAttribute()] Lr? lr, [System.Runtime.InteropServices.OptionalAttribute()] string num, [System.Runtime.InteropServices.OptionalAttribute()] Safe? safe, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] string start) {
-            return new ListRequest(service, q, cr, cref, cx, filter, gl, lr, num, safe, sort, start);
-        }
-        
         /// <summary>Controls turning on or off the duplicate content filter.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Filter {
@@ -1034,21 +1018,6 @@ namespace Google.Apis.Customsearch.v1 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
                     base(service) {
                 this.q = q;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q, [System.Runtime.InteropServices.OptionalAttribute()] string cr, [System.Runtime.InteropServices.OptionalAttribute()] string cref, [System.Runtime.InteropServices.OptionalAttribute()] string cx, [System.Runtime.InteropServices.OptionalAttribute()] Filter? filter, [System.Runtime.InteropServices.OptionalAttribute()] string gl, [System.Runtime.InteropServices.OptionalAttribute()] Lr? lr, [System.Runtime.InteropServices.OptionalAttribute()] string num, [System.Runtime.InteropServices.OptionalAttribute()] Safe? safe, [System.Runtime.InteropServices.OptionalAttribute()] string sort, [System.Runtime.InteropServices.OptionalAttribute()] string start) : 
-                    base(service) {
-                this.q = q;
-                this.cr = cr;
-                this.cref = cref;
-                this.cx = cx;
-                this.filter = filter;
-                this.gl = gl;
-                this.lr = lr;
-                this.num = num;
-                this.safe = safe;
-                this.sort = sort;
-                this.start = start;
             }
             
             /// <summary>Country restrict(s).</summary>

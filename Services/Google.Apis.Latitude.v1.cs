@@ -543,12 +543,6 @@ namespace Google.Apis.Latitude.v1 {
             return new GetRequest(service);
         }
         
-        /// <summary>Returns the authenticated user&apos;s current location.</summary>
-        /// <param name="granularity">Optional - Granularity of the requested location.</param>
-        public virtual GetRequest Get([System.Runtime.InteropServices.OptionalAttribute()] string granularity) {
-            return new GetRequest(service, granularity);
-        }
-        
         /// <summary>Updates or creates the user&apos;s current location.</summary>
         public virtual InsertRequest Insert(Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson body) {
             return new InsertRequest(service, body);
@@ -579,11 +573,6 @@ namespace Google.Apis.Latitude.v1 {
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) : 
-                    base(service) {
-                this.granularity = granularity;
             }
             
             /// <summary>Granularity of the requested location.</summary>
@@ -669,13 +658,6 @@ namespace Google.Apis.Latitude.v1 {
             return new GetRequest(service, locationId);
         }
         
-        /// <summary>Reads a location from the user&apos;s location history.</summary>
-        /// <param name="locationId">Required - Timestamp of the location to read (ms since epoch).</param>
-        /// <param name="granularity">Optional - Granularity of the location to return.</param>
-        public virtual GetRequest Get(string locationId, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) {
-            return new GetRequest(service, locationId, granularity);
-        }
-        
         /// <summary>Inserts or updates a location in the user&apos;s location history.</summary>
         public virtual InsertRequest Insert(Google.Apis.Latitude.v1.Data.Location body) {
             return new InsertRequest(service, body);
@@ -684,15 +666,6 @@ namespace Google.Apis.Latitude.v1 {
         /// <summary>Lists the user&apos;s location history.</summary>
         public virtual ListRequest List() {
             return new ListRequest(service);
-        }
-        
-        /// <summary>Lists the user&apos;s location history.</summary>
-        /// <param name="granularity">Optional - Granularity of the requested locations.</param>
-        /// <param name="maxResults">max-results - Optional - Maximum number of locations to return.</param>
-        /// <param name="maxTime">max-time - Optional - Maximum timestamp of locations to return (ms since epoch).</param>
-        /// <param name="minTime">min-time - Optional - Minimum timestamp of locations to return (ms since epoch).</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] string granularity, [System.Runtime.InteropServices.OptionalAttribute()] string maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string maxTime, [System.Runtime.InteropServices.OptionalAttribute()] string minTime) {
-            return new ListRequest(service, granularity, maxResults, maxTime, minTime);
         }
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
@@ -734,12 +707,6 @@ namespace Google.Apis.Latitude.v1 {
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string locationId) : 
                     base(service) {
                 this.locationId = locationId;
-            }
-            
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string locationId, [System.Runtime.InteropServices.OptionalAttribute()] string granularity) : 
-                    base(service) {
-                this.locationId = locationId;
-                this.granularity = granularity;
             }
             
             /// <summary>Granularity of the location to return.</summary>
@@ -822,14 +789,6 @@ namespace Google.Apis.Latitude.v1 {
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string granularity, [System.Runtime.InteropServices.OptionalAttribute()] string maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string maxTime, [System.Runtime.InteropServices.OptionalAttribute()] string minTime) : 
-                    base(service) {
-                this.granularity = granularity;
-                this.maxResults = maxResults;
-                this.maxTime = maxTime;
-                this.minTime = minTime;
             }
             
             /// <summary>Granularity of the requested locations.</summary>

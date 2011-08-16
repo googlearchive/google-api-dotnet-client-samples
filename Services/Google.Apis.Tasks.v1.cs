@@ -719,13 +719,6 @@ namespace Google.Apis.Tasks.v1 {
             return new ListRequest(service);
         }
         
-        /// <summary>Returns all the authenticated user&apos;s task lists.</summary>
-        /// <param name="maxResults">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Maximum number of task lists returned on one page. Optional. The default is 100.</param>
-        /// <param name="pageToken">Optional - Token specifying the result page to return. Optional.</param>
-        public virtual ListRequest List([System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken) {
-            return new ListRequest(service, maxResults, pageToken);
-        }
-        
         /// <summary>Updates the authenticated user&apos;s specified task list. This method supports patch semantics.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
         public virtual PatchRequest Patch(Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) {
@@ -842,12 +835,6 @@ namespace Google.Apis.Tasks.v1 {
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken) : 
-                    base(service) {
-                this.maxResults = maxResults;
-                this.pageToken = pageToken;
             }
             
             /// <summary>Maximum number of task lists returned on one page. Optional. The default is 100.</summary>
@@ -1016,34 +1003,10 @@ namespace Google.Apis.Tasks.v1 {
             return new InsertRequest(service, body, tasklist);
         }
         
-        /// <summary>Creates a new task on the specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="parent">Optional - Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</param>
-        /// <param name="previous">Optional - Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual InsertRequest Insert(Google.Apis.Tasks.v1.Data.Task body, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) {
-            return new InsertRequest(service, body, tasklist, parent, previous);
-        }
-        
         /// <summary>Returns all tasks in the specified task list.</summary>
         /// <param name="tasklist">Required - Task list identifier.</param>
         public virtual ListRequest List(string tasklist) {
             return new ListRequest(service, tasklist);
-        }
-        
-        /// <summary>Returns all tasks in the specified task list.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="completedMax">Optional - Upper bound for a task&apos;s completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</param>
-        /// <param name="completedMin">Optional - Lower bound for a task&apos;s completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</param>
-        /// <param name="dueMax">Optional - Upper bound for a task&apos;s due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</param>
-        /// <param name="dueMin">Optional - Lower bound for a task&apos;s due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</param>
-        /// <param name="maxResults">Optional - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Maximum number of task lists returned on one page. Optional. The default is 100.</param>
-        /// <param name="pageToken">Optional - Token specifying the result page to return. Optional.</param>
-        /// <param name="showCompleted">Optional - Flag indicating whether completed tasks are returned in the result. Optional. The default is True.</param>
-        /// <param name="showDeleted">Optional - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</param>
-        /// <param name="showHidden">Optional - Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</param>
-        /// <param name="updatedMin">Optional - Lower bound for a task&apos;s last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</param>
-        public virtual ListRequest List(string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string completedMax, [System.Runtime.InteropServices.OptionalAttribute()] string completedMin, [System.Runtime.InteropServices.OptionalAttribute()] string dueMax, [System.Runtime.InteropServices.OptionalAttribute()] string dueMin, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showCompleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showDeleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showHidden, [System.Runtime.InteropServices.OptionalAttribute()] string updatedMin) {
-            return new ListRequest(service, tasklist, completedMax, completedMin, dueMax, dueMin, maxResults, pageToken, showCompleted, showDeleted, showHidden, updatedMin);
         }
         
         /// <summary>Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.</summary>
@@ -1051,15 +1014,6 @@ namespace Google.Apis.Tasks.v1 {
         /// <param name="task">Required - Task identifier.</param>
         public virtual MoveRequest Move(string tasklist, string task) {
             return new MoveRequest(service, tasklist, task);
-        }
-        
-        /// <summary>Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.</summary>
-        /// <param name="tasklist">Required - Task list identifier.</param>
-        /// <param name="task">Required - Task identifier.</param>
-        /// <param name="parent">Optional - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</param>
-        /// <param name="previous">Optional - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.</param>
-        public virtual MoveRequest Move(string tasklist, string task, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) {
-            return new MoveRequest(service, tasklist, task, parent, previous);
         }
         
         /// <summary>Updates the specified task. This method supports patch semantics.</summary>
@@ -1204,14 +1158,6 @@ namespace Google.Apis.Tasks.v1 {
                 this.tasklist = tasklist;
             }
             
-            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) : 
-                    base(service) {
-                this.Body = body;
-                this.tasklist = tasklist;
-                this.parent = parent;
-                this.previous = previous;
-            }
-            
             /// <summary>Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("parent")]
             public virtual string Parent {
@@ -1296,21 +1242,6 @@ namespace Google.Apis.Tasks.v1 {
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
                     base(service) {
                 this.tasklist = tasklist;
-            }
-            
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, [System.Runtime.InteropServices.OptionalAttribute()] string completedMax, [System.Runtime.InteropServices.OptionalAttribute()] string completedMin, [System.Runtime.InteropServices.OptionalAttribute()] string dueMax, [System.Runtime.InteropServices.OptionalAttribute()] string dueMin, [System.Runtime.InteropServices.OptionalAttribute()] System.Int64? maxResults, [System.Runtime.InteropServices.OptionalAttribute()] string pageToken, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showCompleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showDeleted, [System.Runtime.InteropServices.OptionalAttribute()] System.Boolean? showHidden, [System.Runtime.InteropServices.OptionalAttribute()] string updatedMin) : 
-                    base(service) {
-                this.tasklist = tasklist;
-                this.completedMax = completedMax;
-                this.completedMin = completedMin;
-                this.dueMax = dueMax;
-                this.dueMin = dueMin;
-                this.maxResults = maxResults;
-                this.pageToken = pageToken;
-                this.showCompleted = showCompleted;
-                this.showDeleted = showDeleted;
-                this.showHidden = showHidden;
-                this.updatedMin = updatedMin;
             }
             
             /// <summary>Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</summary>
@@ -1458,14 +1389,6 @@ namespace Google.Apis.Tasks.v1 {
                     base(service) {
                 this.tasklist = tasklist;
                 this.task = task;
-            }
-            
-            public MoveRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task, [System.Runtime.InteropServices.OptionalAttribute()] string parent, [System.Runtime.InteropServices.OptionalAttribute()] string previous) : 
-                    base(service) {
-                this.tasklist = tasklist;
-                this.task = task;
-                this.parent = parent;
-                this.previous = previous;
             }
             
             /// <summary>New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</summary>

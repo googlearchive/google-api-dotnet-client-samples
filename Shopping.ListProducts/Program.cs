@@ -47,8 +47,11 @@ namespace Shopping.ListProducts
             CommandLine.RequestUserInput("Product to search for", ref query);
             CommandLine.WriteLine();
             CommandLine.WriteAction("Executing request ...");
-            var request = service.Products.List("public", country: "us", q:query);
             
+            var request = service.Products.List("public");
+            request.Country = "us";
+            request.Q = query;
+
             // Parse the response.
             long startIndex = 1;
             do

@@ -459,14 +459,6 @@ namespace Google.Apis.SiteVerification.v1 {
             return new GetTokenRequest(service);
         }
         
-        /// <summary>Get a verification token for placing on a website or domain.</summary>
-        /// <param name="identifier">Optional - The URL or domain to verify.</param>
-        /// <param name="type">Optional - Type of resource to verify. Can be &apos;site&apos; (URL) or &apos;inet_domain&apos; (domain name).</param>
-        /// <param name="verificationMethod">Optional - The method to use for verifying a site or domain.</param>
-        public virtual GetTokenRequest GetToken([System.Runtime.InteropServices.OptionalAttribute()] string identifier, [System.Runtime.InteropServices.OptionalAttribute()] string type, [System.Runtime.InteropServices.OptionalAttribute()] string verificationMethod) {
-            return new GetTokenRequest(service, identifier, type, verificationMethod);
-        }
-        
         /// <summary>Attempt verification of a website or domain.</summary>
         /// <param name="verificationMethod">Required - The method to use for verifying a site or domain.</param>
         public virtual InsertRequest Insert(Google.Apis.SiteVerification.v1.Data.SiteverificationWebResourceResource body, string verificationMethod) {
@@ -560,13 +552,6 @@ namespace Google.Apis.SiteVerification.v1 {
             
             public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-            }
-            
-            public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service, [System.Runtime.InteropServices.OptionalAttribute()] string identifier, [System.Runtime.InteropServices.OptionalAttribute()] string type, [System.Runtime.InteropServices.OptionalAttribute()] string verificationMethod) : 
-                    base(service) {
-                this.identifier = identifier;
-                this.type = type;
-                this.verificationMethod = verificationMethod;
             }
             
             /// <summary>The URL or domain to verify.</summary>
