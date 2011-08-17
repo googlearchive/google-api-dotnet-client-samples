@@ -74,7 +74,7 @@ namespace TasksSample.CreateTasks
             const string KEY = "y},drdzf11x9;87";
 
             // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
+            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
             if (state != null)
             {
                 try
@@ -88,15 +88,9 @@ namespace TasksSample.CreateTasks
                 }
             }
 
-            // Retrieve the authorization url:
-            state = new AuthorizationState(new[] { Scope })
-                        { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = client.RequestUserAuthorization(state);
-
-            // Do a new authorization request.
-            string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = client.ProcessUserAuthorization(authCode, state);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state, Scope);
+            // Retrieve the authorization from the user.
+            state = AuthorizationMgr.RequestNativeAuthorization(client, Scope);
+            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
             return state;
         }
 

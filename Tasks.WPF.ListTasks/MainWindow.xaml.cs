@@ -58,7 +58,7 @@ namespace Tasks.WPF.ListTasks
             string scope = TasksService.Scopes.Tasks.GetStringValue();
 
             // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, scope);
+            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
             if (state != null)
             {
                 try
@@ -72,15 +72,9 @@ namespace Tasks.WPF.ListTasks
                 }
             }
 
-            // Retrieve the authorization url:
-            state = new AuthorizationState(new[] { scope })
-                        { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = client.RequestUserAuthorization(state);
-
-            // Do a new authorization request.
-            string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = client.ProcessUserAuthorization(authCode, state);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state, scope);
+            // Retrieve the authorization from the user.
+            state = AuthorizationMgr.RequestNativeAuthorization(client, scope);
+            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
             return state;
         }
 

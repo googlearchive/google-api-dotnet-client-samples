@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -24,6 +25,14 @@ namespace Google.Apis.Samples.Helper
     /// </summary>
     public class Util
     {
+        /// <summary>
+        /// Returns the name of the application currently being run.
+        /// </summary>
+        public static string ApplicationName
+        {
+            get { return Assembly.GetEntryAssembly().GetName().Name; }
+        }
+
         /// <summary>
         /// Tries to retrieve and return the content of the clipboard. Will trim the content to the specified length.
         /// Removes all new line characters from the input.

@@ -93,7 +93,7 @@ namespace UrlShortener.ListURLs
             const string KEY = "S7Uf8AsapUWrac798uga5U8e5azePhAf";
 
             // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
+            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
             if (state != null)
             {
                 try
@@ -107,15 +107,9 @@ namespace UrlShortener.ListURLs
                 }
             }
 
-            // Retrieve the authorization url:
-            state = new AuthorizationState(new[] { Scope })
-                        { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = client.RequestUserAuthorization(state);
-
-            // Do a new authorization request.
-            string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = client.ProcessUserAuthorization(authCode, state);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state, Scope);
+            // Retrieve the authorization from the user.
+            state = AuthorizationMgr.RequestNativeAuthorization(client, Scope);
+            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
             return state;
         }
     }

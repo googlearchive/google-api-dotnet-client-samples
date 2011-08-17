@@ -15,134 +15,115 @@ limitations under the License.
 */
 
 using System;
-using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Authentication;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows.Forms;
 using DotNetOpenAuth.OAuth2;
-using Google.Apis.Samples.Helper.Forms;
+using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
+using Google.Apis.Samples.Helper.NativeAuthorizationFlows;
 
 namespace Google.Apis.Samples.Helper
 {
     /// <summary>
-    /// Authorization helper class.
+    /// Authorization helper for Native Applications.
     /// </summary>
     public static class AuthorizationMgr
     {
+        private static readonly INativeAuthorizationFlow[] NativeFlows = new INativeAuthorizationFlow[]
+                                                                        {
+                                                                            new LoopbackServerAuthorizationFlow(), 
+                                                                            new WindowTitleNativeAuthorizationFlow() 
+                                                                        };
+
         /// <summary>
-        /// Requests an authorization code by using the specified authorization URL.
-        /// Implements the Native-Application-Flow by opening a Request-Form and the browser.
+        /// Requests authorization on a native client by using a predefined set of authorization flows.
         /// </summary>
-        /// <param name="authUri">The URL where the authorization code can be retrieved.</param>
-        /// <returns>The authorization code, or throws an AuthenticationException if the request failed.</returns>
-        public static string RequestAuthorization(Uri authUri)
+        /// <param name="client">The client used for authentication.</param>
+        /// <param name="authState">The requested authorization state.</param>
+        /// <returns>The authorization code, or null if cancelled by the user.</returns>
+        /// <exception cref="NotSupportedException">Thrown if no supported flow was found.</exception>
+        public static string RequestNativeAuthorization(NativeApplicationClient client, IAuthorizationState authState)
         {
-            if (!Application.RenderWithVisualStyles)
+            // Try each available flow until we get an authorization / error.
+            foreach (INativeAuthorizationFlow flow in NativeFlows)
             {
-                Application.EnableVisualStyles();
+                try
+                {
+                    return flow.RetrieveAuthorization(client, authState);
+                } 
+                catch (NotSupportedException) { /* Flow unsupported on this environment */ }
             }
 
-            Application.DoEvents();
-            string authCode = OAuth2AuthorizationDialog.ShowDialog(authUri);
-            Application.DoEvents();
+            throw new NotSupportedException("Foound no supported native authorization flow.");
+        }
+
+        /// <summary>
+        /// Requests authorization on a native client by using a predefined set of authorization flows.
+        /// </summary>
+        /// <param name="client">The client used for authorization.</param>
+        /// <param name="scopes">The requested set of scopes.</param>
+        /// <returns>The authorized state.</returns>
+        /// <exception cref="AuthenticationException">Thrown if the request was cancelled by the user.</exception>
+        public static IAuthorizationState RequestNativeAuthorization(NativeApplicationClient client,
+                                                                     params string[] scopes)
+        {
+            IAuthorizationState state = new AuthorizationState(scopes);
+            string authCode = RequestNativeAuthorization(client, state);
 
             if (string.IsNullOrEmpty(authCode))
             {
-                throw new AuthenticationException("Authentication request cancelled by user.");
+                throw new AuthenticationException("The authentication request was cancelled by the user.");
             }
 
-            return authCode;
+            return client.ProcessUserAuthorization(authCode, state);
         }
 
         /// <summary>
         /// Returns a cached refresh token for this application, or null if unavailable.
         /// </summary>
         public static AuthorizationState GetCachedRefreshToken(string storageName,
-                                                               string key,
-                                                               params string[] requiredScopes)
+                                                               string key)
         {
-            string file = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), storageName + ".auth");
+            string file = storageName + ".auth";
+            byte[] contents = AppData.ReadFile(file);
 
-            if (!File.Exists(file))
+            if (contents == null)
             {
-                return null;
+                return null; // No cached token available.
             }
 
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Key = GetCompatibleKey(key, des);
-            des.IV = des.Key;
-
-            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
-            {
-                using (CryptoStream cryptoStream = new CryptoStream(fs, des.CreateDecryptor(), CryptoStreamMode.Read))
-                {
-                    var reader = new StreamReader(cryptoStream);
-                    string[] scopes = reader.ReadLine().Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-                    string refreshToken = reader.ReadLine();
-
-                    if (scopes.Intersect(requiredScopes).Count() != requiredScopes.Length)
-                    {
-                        return null; // Not every scope is covered.
-                    }
-
-                    return new AuthorizationState(scopes) { RefreshToken = refreshToken };
-                }
-            }
+            byte[] salt = Encoding.Unicode.GetBytes(Assembly.GetEntryAssembly().FullName + key);
+            byte[] decrypted = ProtectedData.Unprotect(contents, salt, DataProtectionScope.CurrentUser);
+            string[] content = Encoding.Unicode.GetString(decrypted)
+                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+         
+            // Create the authorization state.
+            string[] scopes = content[0].Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            string refreshToken = content[1];
+            return new AuthorizationState(scopes) { RefreshToken = refreshToken };
         }
-
+        
         /// <summary>
         /// Saves a refresh token to the specified storage name, and encrypts it using the specified key.
         /// </summary>
         public static void SetCachedRefreshToken(string storageName,
                                                  string key,
-                                                 IAuthorizationState state,
-                                                 params string[] scopesToAdd)
+                                                 IAuthorizationState state)
         {
-            // Add granted scopes to the authorization state if missing.
-            foreach (string scope in scopesToAdd)
-            {
-                if (!state.Scope.Contains(scope))
-                {
-                    state.Scope.Add(scope);
-                }
-            }
+            // Create the file content.
+            string scopes = state.Scope.Aggregate("", (left, append) => left + " " + append);
+            string content = scopes + Environment.NewLine + state.RefreshToken;
 
-            // Get the auth file name.
-            string file = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), storageName + ".auth");
+            // Encrypt it.
+            byte[] salt = Encoding.Unicode.GetBytes(Assembly.GetEntryAssembly().FullName + key);
+            byte[] encrypted = ProtectedData.Protect(
+                Encoding.Unicode.GetBytes(content), salt, DataProtectionScope.CurrentUser);
 
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
-            des.Key = GetCompatibleKey(key, des);
-            des.IV = des.Key;
-
-            using (FileStream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Write))
-            {
-                using (CryptoStream cryptoStream = new CryptoStream(fs, des.CreateEncryptor(), CryptoStreamMode.Write)
-                    )
-                {
-                    StreamWriter writer = new StreamWriter(cryptoStream);
-
-                    // Save the set of scopes.
-                    string scopes = state.Scope.Aggregate("", (left, append) => left + " " + append);
-                    writer.WriteLine(scopes);
-
-                    // Save the refresh token.
-                    writer.WriteLine(state.RefreshToken);
-
-                    writer.Flush();
-                }
-            }
-        }
-
-        private static byte[] GetCompatibleKey(string inputKey, DESCryptoServiceProvider cryptoService)
-        {
-            byte[] byteKey = Encoding.ASCII.GetBytes(inputKey);
-            byte[] cryptoKey = new byte[cryptoService.BlockSize / 8];
-            Array.Copy(byteKey, cryptoKey, Math.Min(byteKey.Length, cryptoKey.Length));
-            return cryptoKey;
+            // Save the data to the auth file.
+            string file = storageName + ".auth";
+            AppData.WriteFile(file, encrypted);
         }
     }
 }

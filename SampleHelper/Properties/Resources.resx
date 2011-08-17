@@ -117,9 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="google" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\google.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoopbackServerHtmlResponse" xml:space="preserve">
+    <value>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;{APP} - OAuth Authentication&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Authorization for {APP}&lt;/h1&gt;
+    &lt;p&gt;The application has received your response. You can close this window now.&lt;/p&gt;
+    &lt;script type='text/javascript'&gt;
+      window.setTimeout(function() { window.open('', '_self', ''); window.close(); }, 100);
+      if (window.opener) { window.opener.checkToken(); }
+     &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
   <data name="search-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\search-48.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

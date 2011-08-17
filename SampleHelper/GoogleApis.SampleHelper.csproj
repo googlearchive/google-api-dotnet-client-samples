@@ -34,9 +34,13 @@
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\Lib\ThirdParty\DotNetOpenAuth.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2">
+      <HintPath>..\Lib\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData.cs" />
+    <Compile Include="NativeAuthorizationFlows\INativeAuthorizationFlow.cs" />
+    <Compile Include="NativeAuthorizationFlows\LoopbackServerAuthorizationFlow.cs" />
+    <Compile Include="NativeAuthorizationFlows\WindowTitleNativeAuthorizationFlow.cs" />
     <Compile Include="AuthorizationMgr.cs" />
     <Compile Include="CommandLine.cs" />
     <Compile Include="Extensions.cs" />

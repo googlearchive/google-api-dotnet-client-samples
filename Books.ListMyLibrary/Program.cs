@@ -16,7 +16,6 @@ limitations under the License.
 
 using System;
 using DotNetOpenAuth.OAuth2;
-using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Books.v1;
@@ -62,7 +61,7 @@ namespace Books.ListMyLibrary
             const string KEY = "=UwuqAtRaqe-3daV";
 
             // Check if there is a cached refresh token available.
-            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY, Scope);
+            IAuthorizationState state = AuthorizationMgr.GetCachedRefreshToken(STORAGE, KEY);
             if (state != null)
             {
                 try
@@ -76,14 +75,9 @@ namespace Books.ListMyLibrary
                 }
             }
 
-            // Retrieve the authorization url:
-            state = new AuthorizationState(new[] { Scope }) { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = client.RequestUserAuthorization(state);
-
-            // Do a new authorization request.
-            string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = client.ProcessUserAuthorization(authCode, state);
-            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state, Scope);
+            // Retrieve the authorization from the user.
+            state = AuthorizationMgr.RequestNativeAuthorization(client, Scope);
+            AuthorizationMgr.SetCachedRefreshToken(STORAGE, KEY, state);
             return state;
         }
 

@@ -58,15 +58,8 @@ namespace SiteVerification.VerifySite
 
         private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
         {
-            // Retrieve the authorization url:
-            IAuthorizationState state = new AuthorizationState(new[] { Scope })
-                                            { Callback = new Uri(NativeApplicationClient.OutOfBandCallbackUrl) };
-            Uri authUri = client.RequestUserAuthorization(state);
-
-            // Do a new authorization request.
-            string authCode = AuthorizationMgr.RequestAuthorization(authUri);
-            state = client.ProcessUserAuthorization(authCode, state);
-            return state;
+            // Retrieve the authorization from the user.
+            return AuthorizationMgr.RequestNativeAuthorization(client, Scope);
         }
 
         /// <summary>
