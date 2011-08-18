@@ -26,9 +26,9 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         
         private Result.PageStatsData pageStats;
         
-        private long responseCode;
+        private System.Nullable<long> responseCode;
         
-        private long score;
+        private System.Nullable<long> score;
         
         private string title;
         
@@ -95,7 +95,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         
         /// <summary>Response code for the document. 200 indicates a normal page load. 4xx/5xx indicates an error.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("responseCode")]
-        public virtual long ResponseCode {
+        public virtual System.Nullable<long> ResponseCode {
             get {
                 return this.responseCode;
             }
@@ -106,7 +106,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         
         /// <summary>The Page Speed Score (0-100), which indicates how much faster a page could be. A high score indicates little room for improvement, while a lower score indicates more room for improvement.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("score")]
-        public virtual long Score {
+        public virtual System.Nullable<long> Score {
             get {
                 return this.score;
             }
@@ -193,9 +193,9 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     
                     private string localizedRuleName;
                     
-                    private double ruleImpact;
+                    private System.Nullable<double> ruleImpact;
                     
-                    private long ruleScore;
+                    private System.Nullable<long> ruleScore;
                     
                     private IList<RuleResultsDataSchema.UrlBlocksData> urlBlocks;
                     
@@ -212,7 +212,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     
                     /// <summary>The impact (unbounded floating point value) that implementing the suggestions for this rule would have on making the page faster. Impact is comparable between rules to determine which rule&apos;s suggestions would have a higher or lower impact on making a page faster. For instance, if enabling compression would save 1MB, while optimizing images would save 500kB, the enable compression rule would have 2x the impact of the image optimization rule, all other things being equal.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("ruleImpact")]
-                    public virtual double RuleImpact {
+                    public virtual System.Nullable<double> RuleImpact {
                         get {
                             return this.ruleImpact;
                         }
@@ -223,7 +223,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     
                     /// <summary>The score (0-100) for this rule. The rule score indicates how well a page implements the recommendations for the given rule. For instance, if none of the compressible resources on a page are compressed, the rule score would be 0, while if all of the compressible resources on a page are compressed, the rule score would be 100.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("ruleScore")]
-                    public virtual long RuleScore {
+                    public virtual System.Nullable<long> RuleScore {
                         get {
                             return this.ruleScore;
                         }
@@ -493,15 +493,15 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             private string javascriptResponseBytes;
             
-            private long numberCssResources;
+            private System.Nullable<long> numberCssResources;
             
-            private long numberHosts;
+            private System.Nullable<long> numberHosts;
             
-            private long numberJsResources;
+            private System.Nullable<long> numberJsResources;
             
-            private long numberResources;
+            private System.Nullable<long> numberResources;
             
-            private long numberStaticResources;
+            private System.Nullable<long> numberStaticResources;
             
             private string otherResponseBytes;
             
@@ -566,7 +566,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>Number of CSS resources referenced by the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("numberCssResources")]
-            public virtual long NumberCssResources {
+            public virtual System.Nullable<long> NumberCssResources {
                 get {
                     return this.numberCssResources;
                 }
@@ -577,7 +577,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>Number of unique hosts referenced by the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("numberHosts")]
-            public virtual long NumberHosts {
+            public virtual System.Nullable<long> NumberHosts {
                 get {
                     return this.numberHosts;
                 }
@@ -588,7 +588,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>Number of JavaScript resources referenced by the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("numberJsResources")]
-            public virtual long NumberJsResources {
+            public virtual System.Nullable<long> NumberJsResources {
                 get {
                     return this.numberJsResources;
                 }
@@ -599,7 +599,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>Number of HTTP resources loaded by the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("numberResources")]
-            public virtual long NumberResources {
+            public virtual System.Nullable<long> NumberResources {
                 get {
                     return this.numberResources;
                 }
@@ -610,7 +610,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>Number of static (i.e. cacheable) resources on the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("numberStaticResources")]
-            public virtual long NumberStaticResources {
+            public virtual System.Nullable<long> NumberStaticResources {
                 get {
                     return this.numberStaticResources;
                 }
@@ -656,13 +656,13 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         /// <summary>The version of the Page Speed SDK used to generate these results.</summary>
         public class VersionData {
             
-            private long major;
+            private System.Nullable<long> major;
             
-            private long minor;
+            private System.Nullable<long> minor;
             
             /// <summary>The major version number of the Page Speed SDK used to generate these results.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("major")]
-            public virtual long Major {
+            public virtual System.Nullable<long> Major {
                 get {
                     return this.major;
                 }
@@ -673,7 +673,7 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             
             /// <summary>The minor version number of the Page Speed SDK used to generate these results.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("minor")]
-            public virtual long Minor {
+            public virtual System.Nullable<long> Minor {
                 get {
                     return this.minor;
                 }

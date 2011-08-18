@@ -57,7 +57,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
         
         private IList<Output.OutputMultiData> outputMulti;
         
-        private double outputValue;
+        private System.Nullable<double> outputValue;
         
         private string selfLink;
         
@@ -111,7 +111,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
         
         /// <summary>The estimated regression value [Regression models only].</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("outputValue")]
-        public virtual double OutputValue {
+        public virtual System.Nullable<double> OutputValue {
             get {
                 return this.outputValue;
             }
@@ -154,7 +154,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
             
             private string label;
             
-            private double score;
+            private System.Nullable<double> score;
             
             /// <summary>The class label.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
@@ -169,7 +169,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
             
             /// <summary>The probability of the class.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("score")]
-            public virtual double Score {
+            public virtual System.Nullable<double> Score {
                 get {
                     return this.score;
                 }
@@ -286,15 +286,15 @@ namespace Google.Apis.Prediction.v1_3.Data {
         /// <summary>Model metadata.</summary>
         public class ModelInfoData {
             
-            private double classWeightedAccuracy;
+            private System.Nullable<double> classWeightedAccuracy;
             
-            private double classificationAccuracy;
+            private System.Nullable<double> classificationAccuracy;
             
             private ModelInfoData.ConfusionMatrixData confusionMatrix;
             
             private ModelInfoData.ConfusionMatrixRowTotalsData confusionMatrixRowTotals;
             
-            private double meanSquaredError;
+            private System.Nullable<double> meanSquaredError;
             
             private string modelType;
             
@@ -304,7 +304,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
             
             /// <summary>Estimated accuracy of model taking utility weights into account [Categorical models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("classWeightedAccuracy")]
-            public virtual double ClassWeightedAccuracy {
+            public virtual System.Nullable<double> ClassWeightedAccuracy {
                 get {
                     return this.classWeightedAccuracy;
                 }
@@ -315,7 +315,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
             
             /// <summary>A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based on the amount and quality of the training data, of the estimated prediction accuracy. You can use this is a guide to decide whether the results are accurate enough for your needs. This estimate will be more reliable if your real input data is similar to your training data [Categorical models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("classificationAccuracy")]
-            public virtual double ClassificationAccuracy {
+            public virtual System.Nullable<double> ClassificationAccuracy {
                 get {
                     return this.classificationAccuracy;
                 }
@@ -348,7 +348,7 @@ namespace Google.Apis.Prediction.v1_3.Data {
             
             /// <summary>An estimated mean squared error. The can be used to measure the quality of the predicted model [Regression models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("meanSquaredError")]
-            public virtual double MeanSquaredError {
+            public virtual System.Nullable<double> MeanSquaredError {
                 get {
                     return this.meanSquaredError;
                 }
@@ -394,17 +394,17 @@ namespace Google.Apis.Prediction.v1_3.Data {
             public class ConfusionMatrixData : System.Collections.Generic.Dictionary<string, ConfusionMatrixData.ConfusionMatrixDataSchema> {
                 
                 /// <summary>The true class label.</summary>
-                public class ConfusionMatrixDataSchema : System.Collections.Generic.Dictionary<string, double> {
+                public class ConfusionMatrixDataSchema : System.Collections.Generic.Dictionary<string, System.Nullable<double>> {
                 }
             }
             
             /// <summary>A list of the confusion matrix row totals</summary>
-            public class ConfusionMatrixRowTotalsData : System.Collections.Generic.Dictionary<string, double> {
+            public class ConfusionMatrixRowTotalsData : System.Collections.Generic.Dictionary<string, System.Nullable<double>> {
             }
         }
         
         /// <summary>Class label (string).</summary>
-        public class UtilityData : System.Collections.Generic.Dictionary<string, double> {
+        public class UtilityData : System.Collections.Generic.Dictionary<string, System.Nullable<double>> {
         }
     }
     

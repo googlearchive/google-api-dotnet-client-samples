@@ -58,15 +58,15 @@ namespace Google.Apis.Translate.v2.Data {
         
         public class Entry {
             
-            private double confidence;
+            private System.Nullable<double> confidence;
             
-            private bool isReliable;
+            private System.Nullable<bool> isReliable;
             
             private string language;
             
             /// <summary>The confidence of the detection resul of this language.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("confidence")]
-            public virtual double Confidence {
+            public virtual System.Nullable<double> Confidence {
                 get {
                     return this.confidence;
                 }
@@ -77,7 +77,7 @@ namespace Google.Apis.Translate.v2.Data {
             
             /// <summary>A boolean to indicate is the language detection result reliable.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("isReliable")]
-            public virtual bool IsReliable {
+            public virtual System.Nullable<bool> IsReliable {
                 get {
                     return this.isReliable;
                 }

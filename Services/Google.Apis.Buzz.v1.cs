@@ -423,14 +423,14 @@ namespace Google.Apis.Buzz.v1.Data {
             
             public class LikedData {
                 
-                private long count;
+                private System.Nullable<long> count;
                 
                 private string href;
                 
                 private string type;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("count")]
-                public virtual long Count {
+                public virtual System.Nullable<long> Count {
                     get {
                         return this.count;
                     }
@@ -1510,7 +1510,7 @@ namespace Google.Apis.Buzz.v1.Data {
         
         private ChiliPhotosResourceJson.OwnerData owner;
         
-        private double timestamp;
+        private System.Nullable<double> timestamp;
         
         private string title;
         
@@ -1613,7 +1613,7 @@ namespace Google.Apis.Buzz.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("timestamp")]
-        public virtual double Timestamp {
+        public virtual System.Nullable<double> Timestamp {
             get {
                 return this.timestamp;
             }
@@ -2594,9 +2594,9 @@ namespace Google.Apis.Buzz.v1.Data {
     
     public class Link {
         
-        private long count;
+        private System.Nullable<long> count;
         
-        private long height;
+        private System.Nullable<long> height;
         
         private string href;
         
@@ -2606,10 +2606,10 @@ namespace Google.Apis.Buzz.v1.Data {
         
         private string updated;
         
-        private long width;
+        private System.Nullable<long> width;
         
         [Newtonsoft.Json.JsonPropertyAttribute("count")]
-        public virtual long Count {
+        public virtual System.Nullable<long> Count {
             get {
                 return this.count;
             }
@@ -2619,7 +2619,7 @@ namespace Google.Apis.Buzz.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("height")]
-        public virtual long Height {
+        public virtual System.Nullable<long> Height {
             get {
                 return this.height;
             }
@@ -2669,7 +2669,7 @@ namespace Google.Apis.Buzz.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("width")]
-        public virtual long Width {
+        public virtual System.Nullable<long> Width {
             get {
                 return this.width;
             }

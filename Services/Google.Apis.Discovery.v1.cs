@@ -83,7 +83,7 @@ namespace Google.Apis.Discovery.v1.Data {
             
             private string name;
             
-            private bool preferred;
+            private System.Nullable<bool> preferred;
             
             private string title;
             
@@ -179,7 +179,7 @@ namespace Google.Apis.Discovery.v1.Data {
             
             /// <summary>True if this version is the preferred version to use.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("preferred")]
-            public virtual bool Preferred {
+            public virtual System.Nullable<bool> Preferred {
                 get {
                     return this.preferred;
                 }
@@ -272,9 +272,9 @@ namespace Google.Apis.Discovery.v1.Data {
         
         private Jsonschema.PropertiesData properties;
         
-        private bool repeated;
+        private System.Nullable<bool> repeated;
         
-        private bool required;
+        private System.Nullable<bool> required;
         
         private string type;
         
@@ -432,7 +432,7 @@ namespace Google.Apis.Discovery.v1.Data {
         
         /// <summary>Whether this parameter may appear multiple times.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("repeated")]
-        public virtual bool Repeated {
+        public virtual System.Nullable<bool> Repeated {
             get {
                 return this.repeated;
             }
@@ -443,7 +443,7 @@ namespace Google.Apis.Discovery.v1.Data {
         
         /// <summary>Whether the parameter is required.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("required")]
-        public virtual bool Required {
+        public virtual System.Nullable<bool> Required {
             get {
                 return this.required;
             }
@@ -1022,13 +1022,13 @@ namespace Google.Apis.Discovery.v1.Data {
                 /// <summary>Supports the Resumable Media Upload protocol.</summary>
                 public class ResumableData {
                     
-                    private bool multipart;
+                    private System.Nullable<bool> multipart;
                     
                     private string path;
                     
                     /// <summary>True if this endpoint supports uploading multipart media.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("multipart")]
-                    public virtual bool Multipart {
+                    public virtual System.Nullable<bool> Multipart {
                         get {
                             return this.multipart;
                         }
@@ -1052,13 +1052,13 @@ namespace Google.Apis.Discovery.v1.Data {
                 /// <summary>Supports uploading as a single HTTP request.</summary>
                 public class SimpleData {
                     
-                    private bool multipart;
+                    private System.Nullable<bool> multipart;
                     
                     private string path;
                     
                     /// <summary>True if this endpoint supports upload multipart media.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("multipart")]
-                    public virtual bool Multipart {
+                    public virtual System.Nullable<bool> Multipart {
                         get {
                             return this.multipart;
                         }

@@ -22,7 +22,7 @@ namespace Google.Apis.Books.v1.Data {
         
         private string description;
         
-        private long id;
+        private System.Nullable<long> id;
         
         private string kind;
         
@@ -32,7 +32,7 @@ namespace Google.Apis.Books.v1.Data {
         
         private string updated;
         
-        private long volumeCount;
+        private System.Nullable<long> volumeCount;
         
         private string volumesLastUpdated;
         
@@ -75,7 +75,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>Id of this bookshelf, only unique by user.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
-        public virtual long Id {
+        public virtual System.Nullable<long> Id {
             get {
                 return this.id;
             }
@@ -130,7 +130,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>Number of volumes in this bookshelf.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("volumeCount")]
-        public virtual long VolumeCount {
+        public virtual System.Nullable<long> VolumeCount {
             get {
                 return this.volumeCount;
             }
@@ -224,15 +224,15 @@ namespace Google.Apis.Books.v1.Data {
     
     public class DownloadAccessRestriction {
         
-        private bool deviceAllowed;
+        private System.Nullable<bool> deviceAllowed;
         
-        private long downloadsAcquired;
+        private System.Nullable<long> downloadsAcquired;
         
-        private bool justAcquired;
+        private System.Nullable<bool> justAcquired;
         
         private string kind;
         
-        private long maxDownloadDevices;
+        private System.Nullable<long> maxDownloadDevices;
         
         private string message;
         
@@ -240,7 +240,7 @@ namespace Google.Apis.Books.v1.Data {
         
         private string reasonCode;
         
-        private bool restricted;
+        private System.Nullable<bool> restricted;
         
         private string signature;
         
@@ -250,7 +250,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>If restricted, whether access is granted for this (user, device, volume).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("deviceAllowed")]
-        public virtual bool DeviceAllowed {
+        public virtual System.Nullable<bool> DeviceAllowed {
             get {
                 return this.deviceAllowed;
             }
@@ -261,7 +261,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>If restricted, the number of content download licenses already acquired (including the requesting client, if licensed).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("downloadsAcquired")]
-        public virtual long DownloadsAcquired {
+        public virtual System.Nullable<long> DownloadsAcquired {
             get {
                 return this.downloadsAcquired;
             }
@@ -272,7 +272,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>If deviceAllowed, whether access was just acquired with this request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("justAcquired")]
-        public virtual bool JustAcquired {
+        public virtual System.Nullable<bool> JustAcquired {
             get {
                 return this.justAcquired;
             }
@@ -294,7 +294,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>If restricted, the maximum number of content download licenses for this volume.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("maxDownloadDevices")]
-        public virtual long MaxDownloadDevices {
+        public virtual System.Nullable<long> MaxDownloadDevices {
             get {
                 return this.maxDownloadDevices;
             }
@@ -338,7 +338,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>Whether this volume has any download access restrictions.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("restricted")]
-        public virtual bool Restricted {
+        public virtual System.Nullable<bool> Restricted {
             get {
                 return this.restricted;
             }
@@ -795,13 +795,13 @@ namespace Google.Apis.Books.v1.Data {
             
             private DownloadAccessRestriction downloadAccess;
             
-            private bool embeddable;
+            private System.Nullable<bool> embeddable;
             
             private AccessInfoData.EpubData epub;
             
             private AccessInfoData.PdfData pdf;
             
-            private bool publicDomain;
+            private System.Nullable<bool> publicDomain;
             
             private string textToSpeechPermission;
             
@@ -841,7 +841,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>Whether this volume can be embedded in a viewport using the Embedded Viewer API.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("embeddable")]
-            public virtual bool Embeddable {
+            public virtual System.Nullable<bool> Embeddable {
                 get {
                     return this.embeddable;
                 }
@@ -874,7 +874,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>Whether or not this book is public domain in the country listed above.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("publicDomain")]
-            public virtual bool PublicDomain {
+            public virtual System.Nullable<bool> PublicDomain {
                 get {
                     return this.publicDomain;
                 }
@@ -973,7 +973,7 @@ namespace Google.Apis.Books.v1.Data {
             
             private string country;
             
-            private bool isEbook;
+            private System.Nullable<bool> isEbook;
             
             private SaleInfoData.ListPriceData listPrice;
             
@@ -1005,7 +1005,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>Whether or not this volume is an eBook (can be added to the My eBooks shelf).</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("isEbook")]
-            public virtual bool IsEbook {
+            public virtual System.Nullable<bool> IsEbook {
                 get {
                     return this.isEbook;
                 }
@@ -1050,13 +1050,13 @@ namespace Google.Apis.Books.v1.Data {
             /// <summary>Suggested retail price. (In LITE projection.)</summary>
             public class ListPriceData {
                 
-                private double amount;
+                private System.Nullable<double> amount;
                 
                 private string currencyCode;
                 
                 /// <summary>Amount in the currency listed below. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("amount")]
-                public virtual double Amount {
+                public virtual System.Nullable<double> Amount {
                     get {
                         return this.amount;
                     }
@@ -1080,13 +1080,13 @@ namespace Google.Apis.Books.v1.Data {
             /// <summary>The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)</summary>
             public class RetailPriceData {
                 
-                private double amount;
+                private System.Nullable<double> amount;
                 
                 private string currencyCode;
                 
                 /// <summary>Amount in the currency listed below. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("amount")]
-                public virtual double Amount {
+                public virtual System.Nullable<double> Amount {
                     get {
                         return this.amount;
                     }
@@ -1111,7 +1111,7 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)</summary>
         public class UserInfoData {
             
-            private bool isPurchased;
+            private System.Nullable<bool> isPurchased;
             
             private ReadingPosition readingPosition;
             
@@ -1121,7 +1121,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>Whether or not this volume was purchased by the authenticated user making the request. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("isPurchased")]
-            public virtual bool IsPurchased {
+            public virtual System.Nullable<bool> IsPurchased {
                 get {
                     return this.isPurchased;
                 }
@@ -1167,7 +1167,7 @@ namespace Google.Apis.Books.v1.Data {
             
             private IList<System.String> authors;
             
-            private double averageRating;
+            private System.Nullable<double> averageRating;
             
             private IList<System.String> categories;
             
@@ -1187,7 +1187,7 @@ namespace Google.Apis.Books.v1.Data {
             
             private string mainCategory;
             
-            private long pageCount;
+            private System.Nullable<long> pageCount;
             
             private string previewLink;
             
@@ -1197,7 +1197,7 @@ namespace Google.Apis.Books.v1.Data {
             
             private string publisher;
             
-            private long ratingsCount;
+            private System.Nullable<long> ratingsCount;
             
             private string subtitle;
             
@@ -1216,7 +1216,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>The mean review rating for this volume. (min = 1.0, max = 5.0)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("averageRating")]
-            public virtual double AverageRating {
+            public virtual System.Nullable<double> AverageRating {
                 get {
                     return this.averageRating;
                 }
@@ -1327,7 +1327,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>Total number of pages.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("pageCount")]
-            public virtual long PageCount {
+            public virtual System.Nullable<long> PageCount {
                 get {
                     return this.pageCount;
                 }
@@ -1382,7 +1382,7 @@ namespace Google.Apis.Books.v1.Data {
             
             /// <summary>The number of review ratings for this volume.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("ratingsCount")]
-            public virtual long RatingsCount {
+            public virtual System.Nullable<long> RatingsCount {
                 get {
                     return this.ratingsCount;
                 }
@@ -1575,7 +1575,7 @@ namespace Google.Apis.Books.v1.Data {
         
         private string kind;
         
-        private long totalItems;
+        private System.Nullable<long> totalItems;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -1605,7 +1605,7 @@ namespace Google.Apis.Books.v1.Data {
         
         /// <summary>Total number of volumes found. This might be greater than the number of volumes returned in this response if results have been paginated.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
-        public virtual long TotalItems {
+        public virtual System.Nullable<long> TotalItems {
             get {
                 return this.totalItems;
             }

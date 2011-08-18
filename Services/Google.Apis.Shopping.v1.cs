@@ -177,7 +177,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private IList<ShoppingModelCategoryJsonV1> categories;
         
-        private long currentItemCount;
+        private System.Nullable<long> currentItemCount;
         
         private ShoppingModelDebugJsonV1 debug;
         
@@ -189,7 +189,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private IList<Product> items;
         
-        private long itemsPerPage;
+        private System.Nullable<long> itemsPerPage;
         
         private string kind;
         
@@ -209,11 +209,11 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private Products.SpellingData spelling;
         
-        private long startIndex;
+        private System.Nullable<long> startIndex;
         
         private IList<Products.StoresData> stores;
         
-        private long totalItems;
+        private System.Nullable<long> totalItems;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -230,7 +230,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Current item count.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("currentItemCount")]
-        public virtual long CurrentItemCount {
+        public virtual System.Nullable<long> CurrentItemCount {
             get {
                 return this.currentItemCount;
             }
@@ -295,7 +295,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Number of items per page of results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
-        public virtual long ItemsPerPage {
+        public virtual System.Nullable<long> ItemsPerPage {
             get {
                 return this.itemsPerPage;
             }
@@ -404,7 +404,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>1-based index of the first item in the search results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
-        public virtual long StartIndex {
+        public virtual System.Nullable<long> StartIndex {
             get {
                 return this.startIndex;
             }
@@ -426,7 +426,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Total number of search results.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
-        public virtual long TotalItems {
+        public virtual System.Nullable<long> TotalItems {
             get {
                 return this.totalItems;
             }
@@ -449,7 +449,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             private IList<FacetsData.BucketsData> buckets;
             
-            private long count;
+            private System.Nullable<long> count;
             
             private string displayName;
             
@@ -474,7 +474,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>Number of products matching the query that have a value for the facet&apos;s property or attribute.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("count")]
-            public virtual long Count {
+            public virtual System.Nullable<long> Count {
                 get {
                     return this.count;
                 }
@@ -540,21 +540,21 @@ namespace Google.Apis.Shopping.v1.Data {
             
             public class BucketsData {
                 
-                private long count;
+                private System.Nullable<long> count;
                 
                 private string max;
                 
-                private bool maxExclusive;
+                private System.Nullable<bool> maxExclusive;
                 
                 private string min;
                 
-                private bool minExclusive;
+                private System.Nullable<bool> minExclusive;
                 
                 private string value;
                 
                 /// <summary>Number of products matching the query that have a value for the facet&apos;s property or attribute that matches the bucket.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("count")]
-                public virtual long Count {
+                public virtual System.Nullable<long> Count {
                     get {
                         return this.count;
                     }
@@ -576,7 +576,7 @@ namespace Google.Apis.Shopping.v1.Data {
                 
                 /// <summary>Whether the upper bound of the bucket is exclusive (omitted for value buckets or if the range has no upper bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("maxExclusive")]
-                public virtual bool MaxExclusive {
+                public virtual System.Nullable<bool> MaxExclusive {
                     get {
                         return this.maxExclusive;
                     }
@@ -598,7 +598,7 @@ namespace Google.Apis.Shopping.v1.Data {
                 
                 /// <summary>Whether the lower bound of the bucket is exclusive (omitted for value buckets or if the range has no lower bound).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("minExclusive")]
-                public virtual bool MinExclusive {
+                public virtual System.Nullable<bool> MinExclusive {
                     get {
                         return this.minExclusive;
                     }
@@ -1384,11 +1384,11 @@ namespace Google.Apis.Shopping.v1.Data {
                 
                 private string content;
                 
-                private long height;
+                private System.Nullable<long> height;
                 
                 private string link;
                 
-                private long width;
+                private System.Nullable<long> width;
                 
                 /// <summary>Content of thumbnail (only available for the first thumbnail of the top results if SAYT is enabled).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("content")]
@@ -1403,7 +1403,7 @@ namespace Google.Apis.Shopping.v1.Data {
                 
                 /// <summary>Height of thumbnail (omitted if not specified in the request).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("height")]
-                public virtual long Height {
+                public virtual System.Nullable<long> Height {
                     get {
                         return this.height;
                     }
@@ -1425,7 +1425,7 @@ namespace Google.Apis.Shopping.v1.Data {
                 
                 /// <summary>Width of thumbnail (omitted if not specified in the request).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("width")]
-                public virtual long Width {
+                public virtual System.Nullable<long> Width {
                     get {
                         return this.width;
                     }
@@ -1444,11 +1444,11 @@ namespace Google.Apis.Shopping.v1.Data {
             
             private string currency;
             
-            private double distance;
+            private System.Nullable<double> distance;
             
             private string distanceUnit;
             
-            private double price;
+            private System.Nullable<double> price;
             
             private string storeId;
             
@@ -1487,7 +1487,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>Distance of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("distance")]
-            public virtual double Distance {
+            public virtual System.Nullable<double> Distance {
                 get {
                     return this.distance;
                 }
@@ -1509,7 +1509,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>Price of product inventory.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("price")]
-            public virtual double Price {
+            public virtual System.Nullable<double> Price {
                 get {
                     return this.price;
                 }

@@ -54,7 +54,7 @@ namespace Google.Apis.Prediction.v1_2.Data {
         
         private IList<Output.OutputMultiData> outputMulti;
         
-        private double outputValue;
+        private System.Nullable<double> outputValue;
         
         private string selfLink;
         
@@ -103,7 +103,7 @@ namespace Google.Apis.Prediction.v1_2.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputValue")]
-        public virtual double OutputValue {
+        public virtual System.Nullable<double> OutputValue {
             get {
                 return this.outputValue;
             }
@@ -145,7 +145,7 @@ namespace Google.Apis.Prediction.v1_2.Data {
             
             private string label;
             
-            private double score;
+            private System.Nullable<double> score;
             
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
             public virtual string Label {
@@ -158,7 +158,7 @@ namespace Google.Apis.Prediction.v1_2.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("score")]
-            public virtual double Score {
+            public virtual System.Nullable<double> Score {
                 get {
                     return this.score;
                 }
@@ -256,14 +256,14 @@ namespace Google.Apis.Prediction.v1_2.Data {
         
         public class ModelInfoData {
             
-            private double classificationAccuracy;
+            private System.Nullable<double> classificationAccuracy;
             
-            private double meanSquaredError;
+            private System.Nullable<double> meanSquaredError;
             
             private string modelType;
             
             [Newtonsoft.Json.JsonPropertyAttribute("classificationAccuracy")]
-            public virtual double ClassificationAccuracy {
+            public virtual System.Nullable<double> ClassificationAccuracy {
                 get {
                     return this.classificationAccuracy;
                 }
@@ -273,7 +273,7 @@ namespace Google.Apis.Prediction.v1_2.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("meanSquaredError")]
-            public virtual double MeanSquaredError {
+            public virtual System.Nullable<double> MeanSquaredError {
                 get {
                     return this.meanSquaredError;
                 }

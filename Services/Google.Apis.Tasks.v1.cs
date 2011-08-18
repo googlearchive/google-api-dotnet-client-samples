@@ -18,13 +18,13 @@ namespace Google.Apis.Tasks.v1.Data {
         
         private string completed;
         
-        private bool deleted;
+        private System.Nullable<bool> deleted;
         
         private string due;
         
         private string etag;
         
-        private bool hidden;
+        private System.Nullable<bool> hidden;
         
         private string id;
         
@@ -59,7 +59,7 @@ namespace Google.Apis.Tasks.v1.Data {
         
         /// <summary>Flag indicating whether the task has been deleted. The default if False.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
-        public virtual bool Deleted {
+        public virtual System.Nullable<bool> Deleted {
             get {
                 return this.deleted;
             }
@@ -92,7 +92,7 @@ namespace Google.Apis.Tasks.v1.Data {
         
         /// <summary>Flag indicating whether the task is hidden. This is the case if the task had been marked completed when the task list was last cleared. The default is False. This field is read-only.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("hidden")]
-        public virtual bool Hidden {
+        public virtual System.Nullable<bool> Hidden {
             get {
                 return this.hidden;
             }

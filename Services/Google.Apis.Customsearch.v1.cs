@@ -171,14 +171,14 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         public class ImageData {
             
-            private long height;
+            private System.Nullable<long> height;
             
             private string source;
             
-            private long width;
+            private System.Nullable<long> width;
             
             [Newtonsoft.Json.JsonPropertyAttribute("height")]
-            public virtual long Height {
+            public virtual System.Nullable<long> Height {
                 get {
                     return this.height;
                 }
@@ -198,7 +198,7 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("width")]
-            public virtual long Width {
+            public virtual System.Nullable<long> Width {
                 get {
                     return this.width;
                 }
@@ -211,7 +211,7 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Query {
         
-        private long count;
+        private System.Nullable<long> count;
         
         private string cr;
         
@@ -235,16 +235,16 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         private string sort;
         
-        private long startIndex;
+        private System.Nullable<long> startIndex;
         
-        private long startPage;
+        private System.Nullable<long> startPage;
         
         private string title;
         
-        private long totalResults;
+        private System.Nullable<long> totalResults;
         
         [Newtonsoft.Json.JsonPropertyAttribute("count")]
-        public virtual long Count {
+        public virtual System.Nullable<long> Count {
             get {
                 return this.count;
             }
@@ -364,7 +364,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
-        public virtual long StartIndex {
+        public virtual System.Nullable<long> StartIndex {
             get {
                 return this.startIndex;
             }
@@ -374,7 +374,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("startPage")]
-        public virtual long StartPage {
+        public virtual System.Nullable<long> StartPage {
             get {
                 return this.startPage;
             }
@@ -394,7 +394,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
-        public virtual long TotalResults {
+        public virtual System.Nullable<long> TotalResults {
             get {
                 return this.totalResults;
             }

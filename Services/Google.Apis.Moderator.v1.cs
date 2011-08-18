@@ -196,14 +196,14 @@ namespace Google.Apis.Moderator.v1.Data {
             
             public class GeoData {
                 
-                private double latitude;
+                private System.Nullable<double> latitude;
                 
                 private string location;
                 
-                private double longitude;
+                private System.Nullable<double> longitude;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
-                public virtual double Latitude {
+                public virtual System.Nullable<double> Latitude {
                     get {
                         return this.latitude;
                     }
@@ -223,7 +223,7 @@ namespace Google.Apis.Moderator.v1.Data {
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
-                public virtual double Longitude {
+                public virtual System.Nullable<double> Longitude {
                     get {
                         return this.longitude;
                     }
@@ -252,7 +252,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class Series : Google.Apis.Requests.IDirectResponseSchema {
         
-        private bool anonymousSubmissionAllowed;
+        private System.Nullable<bool> anonymousSubmissionAllowed;
         
         private Series.CountersData counters;
         
@@ -264,18 +264,18 @@ namespace Google.Apis.Moderator.v1.Data {
         
         private string name;
         
-        private long numTopics;
+        private System.Nullable<long> numTopics;
         
         private Series.RulesData rules;
         
-        private bool videoSubmissionAllowed;
+        private System.Nullable<bool> videoSubmissionAllowed;
         
         private Google.Apis.Requests.RequestError error;
         
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("anonymousSubmissionAllowed")]
-        public virtual bool AnonymousSubmissionAllowed {
+        public virtual System.Nullable<bool> AnonymousSubmissionAllowed {
             get {
                 return this.anonymousSubmissionAllowed;
             }
@@ -335,7 +335,7 @@ namespace Google.Apis.Moderator.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("numTopics")]
-        public virtual long NumTopics {
+        public virtual System.Nullable<long> NumTopics {
             get {
                 return this.numTopics;
             }
@@ -355,7 +355,7 @@ namespace Google.Apis.Moderator.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissionAllowed")]
-        public virtual bool VideoSubmissionAllowed {
+        public virtual System.Nullable<bool> VideoSubmissionAllowed {
             get {
                 return this.videoSubmissionAllowed;
             }
@@ -385,22 +385,22 @@ namespace Google.Apis.Moderator.v1.Data {
         
         public class CountersData {
             
-            private long anonymousSubmissions;
+            private System.Nullable<long> anonymousSubmissions;
             
-            private long minusVotes;
+            private System.Nullable<long> minusVotes;
             
-            private long noneVotes;
+            private System.Nullable<long> noneVotes;
             
-            private long plusVotes;
+            private System.Nullable<long> plusVotes;
             
-            private long submissions;
+            private System.Nullable<long> submissions;
             
-            private long users;
+            private System.Nullable<long> users;
             
-            private long videoSubmissions;
+            private System.Nullable<long> videoSubmissions;
             
             [Newtonsoft.Json.JsonPropertyAttribute("anonymousSubmissions")]
-            public virtual long AnonymousSubmissions {
+            public virtual System.Nullable<long> AnonymousSubmissions {
                 get {
                     return this.anonymousSubmissions;
                 }
@@ -410,7 +410,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
-            public virtual long MinusVotes {
+            public virtual System.Nullable<long> MinusVotes {
                 get {
                     return this.minusVotes;
                 }
@@ -420,7 +420,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
-            public virtual long NoneVotes {
+            public virtual System.Nullable<long> NoneVotes {
                 get {
                     return this.noneVotes;
                 }
@@ -430,7 +430,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
-            public virtual long PlusVotes {
+            public virtual System.Nullable<long> PlusVotes {
                 get {
                     return this.plusVotes;
                 }
@@ -440,7 +440,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
-            public virtual long Submissions {
+            public virtual System.Nullable<long> Submissions {
                 get {
                     return this.submissions;
                 }
@@ -450,7 +450,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("users")]
-            public virtual long Users {
+            public virtual System.Nullable<long> Users {
                 get {
                     return this.users;
                 }
@@ -460,7 +460,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissions")]
-            public virtual long VideoSubmissions {
+            public virtual System.Nullable<long> VideoSubmissions {
                 get {
                     return this.videoSubmissions;
                 }
@@ -839,14 +839,14 @@ namespace Google.Apis.Moderator.v1.Data {
         
         public class CountersData {
             
-            private long minusVotes;
+            private System.Nullable<long> minusVotes;
             
-            private long noneVotes;
+            private System.Nullable<long> noneVotes;
             
-            private long plusVotes;
+            private System.Nullable<long> plusVotes;
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
-            public virtual long MinusVotes {
+            public virtual System.Nullable<long> MinusVotes {
                 get {
                     return this.minusVotes;
                 }
@@ -856,7 +856,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
-            public virtual long NoneVotes {
+            public virtual System.Nullable<long> NoneVotes {
                 get {
                     return this.noneVotes;
                 }
@@ -866,7 +866,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
-            public virtual long PlusVotes {
+            public virtual System.Nullable<long> PlusVotes {
                 get {
                     return this.plusVotes;
                 }
@@ -878,14 +878,14 @@ namespace Google.Apis.Moderator.v1.Data {
         
         public class GeoData {
             
-            private double latitude;
+            private System.Nullable<double> latitude;
             
             private string location;
             
-            private double longitude;
+            private System.Nullable<double> longitude;
             
             [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
-            public virtual double Latitude {
+            public virtual System.Nullable<double> Latitude {
                 get {
                     return this.latitude;
                 }
@@ -905,7 +905,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
-            public virtual double Longitude {
+            public virtual System.Nullable<double> Longitude {
                 get {
                     return this.longitude;
                 }
@@ -1309,20 +1309,20 @@ namespace Google.Apis.Moderator.v1.Data {
         
         public class CountersData {
             
-            private long minusVotes;
+            private System.Nullable<long> minusVotes;
             
-            private long noneVotes;
+            private System.Nullable<long> noneVotes;
             
-            private long plusVotes;
+            private System.Nullable<long> plusVotes;
             
-            private long submissions;
+            private System.Nullable<long> submissions;
             
-            private long users;
+            private System.Nullable<long> users;
             
-            private long videoSubmissions;
+            private System.Nullable<long> videoSubmissions;
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
-            public virtual long MinusVotes {
+            public virtual System.Nullable<long> MinusVotes {
                 get {
                     return this.minusVotes;
                 }
@@ -1332,7 +1332,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
-            public virtual long NoneVotes {
+            public virtual System.Nullable<long> NoneVotes {
                 get {
                     return this.noneVotes;
                 }
@@ -1342,7 +1342,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
-            public virtual long PlusVotes {
+            public virtual System.Nullable<long> PlusVotes {
                 get {
                     return this.plusVotes;
                 }
@@ -1352,7 +1352,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
-            public virtual long Submissions {
+            public virtual System.Nullable<long> Submissions {
                 get {
                     return this.submissions;
                 }
@@ -1362,7 +1362,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("users")]
-            public virtual long Users {
+            public virtual System.Nullable<long> Users {
                 get {
                     return this.users;
                 }
@@ -1372,7 +1372,7 @@ namespace Google.Apis.Moderator.v1.Data {
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissions")]
-            public virtual long VideoSubmissions {
+            public virtual System.Nullable<long> VideoSubmissions {
                 get {
                     return this.videoSubmissions;
                 }

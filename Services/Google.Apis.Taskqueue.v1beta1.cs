@@ -126,7 +126,7 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         
         private string kind;
         
-        private long maxLeases;
+        private System.Nullable<long> maxLeases;
         
         private Taskqueue.StatsData stats;
         
@@ -169,7 +169,7 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         
         /// <summary>The number of times we should lease out tasks before giving up on them. If unset we lease them out forever until a worker deletes the task.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("maxLeases")]
-        public virtual long MaxLeases {
+        public virtual System.Nullable<long> MaxLeases {
             get {
                 return this.maxLeases;
             }
@@ -260,7 +260,7 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             
             private string oldestTask;
             
-            private long totalTasks;
+            private System.Nullable<long> totalTasks;
             
             /// <summary>Number of tasks leased in the last hour.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("leasedLastHour")]
@@ -297,7 +297,7 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             
             /// <summary>Number of tasks in the queue.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("totalTasks")]
-            public virtual long TotalTasks {
+            public virtual System.Nullable<long> TotalTasks {
                 get {
                     return this.totalTasks;
                 }

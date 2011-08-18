@@ -294,13 +294,13 @@ namespace Google.Apis.Urlshortener.v1.Data {
         
         private IList<Url> items;
         
-        private long itemsPerPage;
+        private System.Nullable<long> itemsPerPage;
         
         private string kind;
         
         private string nextPageToken;
         
-        private long totalItems;
+        private System.Nullable<long> totalItems;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -319,7 +319,7 @@ namespace Google.Apis.Urlshortener.v1.Data {
         
         /// <summary>Number of items returned with each full &quot;page&quot; of results. Note that the last page could have fewer items than the &quot;itemsPerPage&quot; value.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
-        public virtual long ItemsPerPage {
+        public virtual System.Nullable<long> ItemsPerPage {
             get {
                 return this.itemsPerPage;
             }
@@ -352,7 +352,7 @@ namespace Google.Apis.Urlshortener.v1.Data {
         
         /// <summary>Total number of short URLs associated with this user (may be approximate).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
-        public virtual long TotalItems {
+        public virtual System.Nullable<long> TotalItems {
             get {
                 return this.totalItems;
             }
