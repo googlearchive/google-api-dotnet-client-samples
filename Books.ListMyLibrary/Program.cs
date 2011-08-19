@@ -97,18 +97,21 @@ namespace Books.ListMyLibrary
                 CommandLine.WriteResult(item.Title, item.VolumeCount + " volumes");
 
                 // List all volumes in this bookshelf.
-                var request = service.Mylibrary.Bookshelves.Volumes.List();
-                request.Shelf = item.Id.ToString();
-                Volumes inBookshelf = request.Fetch();
-                if (inBookshelf.Items == null)
+                if (item.VolumeCount > 0)
                 {
-                    continue;
-                }
+                    var request = service.Mylibrary.Bookshelves.Volumes.List();
+                    request.Shelf = item.Id.ToString();
+                    Volumes inBookshelf = request.Fetch();
+                    if (inBookshelf.Items == null)
+                    {
+                        continue;
+                    }
 
-                foreach (Volume volume in inBookshelf.Items)
-                {
-                    CommandLine.WriteResult(
-                        "-- " + volume.VolumeInfo.Title, volume.VolumeInfo.Description ?? "no description");
+                    foreach (Volume volume in inBookshelf.Items)
+                    {
+                        CommandLine.WriteResult(
+                            "-- " + volume.VolumeInfo.Title, volume.VolumeInfo.Description ?? "no description");
+                    }
                 }
             }
         }

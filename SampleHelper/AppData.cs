@@ -57,7 +57,7 @@ namespace Google.Apis.Samples.Helper
         public static byte[] ReadFile(string file)
         {
             string path = GetFilePath(file);
-            return File.Exists(path) ? File.ReadAllBytes(file) : null;
+            return File.Exists(path) ? File.ReadAllBytes(path) : null;
         }
 
         /// <summary>

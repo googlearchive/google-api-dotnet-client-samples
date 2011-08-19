@@ -96,8 +96,7 @@ namespace Google.Apis.Samples.Helper
 
             byte[] salt = Encoding.Unicode.GetBytes(Assembly.GetEntryAssembly().FullName + key);
             byte[] decrypted = ProtectedData.Unprotect(contents, salt, DataProtectionScope.CurrentUser);
-            string[] content = Encoding.Unicode.GetString(decrypted)
-                .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] content = Encoding.Unicode.GetString(decrypted).Split(new[] { "\r\n" }, StringSplitOptions.None);
          
             // Create the authorization state.
             string[] scopes = content[0].Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
@@ -114,7 +113,7 @@ namespace Google.Apis.Samples.Helper
         {
             // Create the file content.
             string scopes = state.Scope.Aggregate("", (left, append) => left + " " + append);
-            string content = scopes + Environment.NewLine + state.RefreshToken;
+            string content = scopes + "\r\n" + state.RefreshToken;
 
             // Encrypt it.
             byte[] salt = Encoding.Unicode.GetBytes(Assembly.GetEntryAssembly().FullName + key);
