@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppData.cs" />
+    <Compile Include="CommandLineFlags.cs" />
     <Compile Include="NativeAuthorizationFlows\INativeAuthorizationFlow.cs" />
     <Compile Include="NativeAuthorizationFlows\LoopbackServerAuthorizationFlow.cs" />
     <Compile Include="NativeAuthorizationFlows\WindowTitleNativeAuthorizationFlow.cs" />
@@ -79,7 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reflection.cs" />
+    <Compile Include="ReflectionUtils.cs" />
     <Compile Include="UserOption.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>

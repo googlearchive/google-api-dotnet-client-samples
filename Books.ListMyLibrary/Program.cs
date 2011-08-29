@@ -27,7 +27,7 @@ namespace Books.ListMyLibrary
 {
     /// <summary>
     /// Sample which demonstrates how to use the Books API.
-    /// Lists all volumes in the own library, and retrieves more detailed information about the first volume.
+    /// Lists all volumes in the the users library, and retrieves more detailed information about the first volume.
     /// https://code.google.com/apis/books/docs/v1/getting_started.html
     /// </summary>
     internal class Program

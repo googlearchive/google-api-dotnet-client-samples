@@ -105,7 +105,7 @@ namespace Google.Apis.Samples.Helper.NativeAuthorizationFlows
             var webserver = new HttpListener();
             webserver.Prefixes.Add(url);
 
-            // Retrieve the authentication url.
+            // Retrieve the authorization url.
             Uri authUrl = client.RequestUserAuthorization(authorizationState);
 
             try

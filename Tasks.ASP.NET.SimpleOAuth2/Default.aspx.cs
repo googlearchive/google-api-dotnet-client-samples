@@ -75,12 +75,12 @@ namespace Tasks.ASP.NET.SimpleOAuth2
             var provider = new WebServerClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            var authenticator = new OAuth2Authenticator<WebServerClient>(provider, GetAuthentication);
-                                    //{ NoCaching = true }; // TODO(mlinder): Uncomment when CL is merged.
+            var authenticator = 
+                new OAuth2Authenticator<WebServerClient>(provider, GetAuthorization) { NoCaching = true };
             return authenticator;
         }
 
-        private IAuthorizationState GetAuthentication(WebServerClient client)
+        private IAuthorizationState GetAuthorization(WebServerClient client)
         {
             // If this user is already authenticated, then just return the auth state.
             IAuthorizationState state = AuthState;

@@ -46,7 +46,7 @@ namespace UrlShortener.ListURLs
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.
             var service = new UrlshortenerService(auth);
@@ -85,7 +85,7 @@ namespace UrlShortener.ListURLs
             CommandLine.PressAnyKeyToExit();
         }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
+        private static IAuthorizationState GetAuthorization(NativeApplicationClient client)
         {
             // You should use a more secure way of storing the key here as
             // .NET applications can be disassembled using a reflection tool.

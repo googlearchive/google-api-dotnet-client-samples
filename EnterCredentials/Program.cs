@@ -19,7 +19,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Google.Apis.Samples.Helper;
-using Cmd = Google.Apis.Samples.Helper.CommandLine.ArgumentAttribute;
 
 namespace EnterCredentials
 {
@@ -31,16 +30,16 @@ namespace EnterCredentials
     {
         private class CommandLineArguments
         {
-            [Cmd("id", ShortName = "i", Category="Credentials", Description = "Sets your Client-ID.")]
+            [Argument("id", ShortName = "i", Category="Credentials", Description = "Sets your Client-ID.")]
             public string ClientID { get; set; }
 
-            [Cmd("secret", ShortName = "s", Category = "Credentials", Description = "Sets your Client-Secret.")]
+            [Argument("secret", ShortName = "s", Category = "Credentials", Description = "Sets your Client-Secret.")]
             public string ClientSecret { get; set; }
 
-            [Cmd("key", ShortName = "k", Category = "Credentials", Description = "Sets your API-Key.")]
+            [Argument("key", ShortName = "k", Category = "Credentials", Description = "Sets your API-Key.")]
             public string ApiKey { get; set; }
 
-            [Cmd("remove", ShortName = "r", Category = "Commands", Description = "Removes all credentials.")]
+            [Argument("remove", ShortName = "r", Category = "Commands", Description = "Removes all credentials.")]
             public bool RemoveCredentials { get; set; }
         }
 
@@ -53,7 +52,7 @@ namespace EnterCredentials
             CommandLine.WriteLine();
 
             var cmdArgs = new CommandLineArguments();
-            CommandLine.ParseArguments(cmdArgs, args);
+            CommandLineFlags.ParseArguments(cmdArgs, args);
 
             // Get our values for client id/secret/api key.
             if (cmdArgs.RemoveCredentials)

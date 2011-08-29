@@ -49,7 +49,7 @@ namespace Tasks.ASP.NET.SimpleOAuth2
         #region Verify Credentials
         static ClientCredentials()
         {
-            Reflection.VerifyCredentials(typeof(ClientCredentials));
+            ReflectionUtils.VerifyCredentials(typeof(ClientCredentials));
         }
         #endregion
     }

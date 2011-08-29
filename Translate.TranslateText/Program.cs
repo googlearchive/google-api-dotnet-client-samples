@@ -36,7 +36,7 @@ namespace Translate.TranslateText
         /// User input for this example.
         /// </summary>
         [Description("input")]
-        public class ServiceDescription
+        public class TranslateInput
         {
             [Description("text to translate")] public string SourceText = "Who ate my candy?";
             [Description("target language")] public string TargetLanguage = "fr";
@@ -50,7 +50,7 @@ namespace Translate.TranslateText
             CommandLine.DisplayGoogleSampleHeader("Translate Sample");
 
             // Ask for the user input.
-            ServiceDescription input = CommandLine.CreateClassFromUserinput<ServiceDescription>();
+            TranslateInput input = CommandLine.CreateClassFromUserinput<TranslateInput>();
 
             // Create the service.
             var service = new TranslateService { Key = ClientCredentials.ApiKey };

@@ -21,7 +21,6 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Google.Apis.Tasks.v1.Data;
-using Timer = System.Threading.Timer;
 
 namespace TasksExample.WinForms.NoteMgr
 {

@@ -49,7 +49,7 @@ namespace Books.ListMyLibrary
         #region Verify Credentials
         static ClientCredentials()
         {
-            Reflection.VerifyCredentials(typeof(ClientCredentials));
+            ReflectionUtils.VerifyCredentials(typeof(ClientCredentials));
         }
         #endregion
     }

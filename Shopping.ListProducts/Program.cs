@@ -67,7 +67,7 @@ namespace Shopping.ListProducts
                 // Show the items.
                 foreach (Product item in response.Items)
                 {
-                    CommandLine.WriteResult((startIndex++) + ". Result", item.ProductValue.Title.TrimLength(60));
+                    CommandLine.WriteResult((startIndex++) + ". Result", item.ProductValue.Title.TrimByLength(60));
                 }
             } while (CommandLine.RequestUserChoice("Do you want to see more items?"));
         }

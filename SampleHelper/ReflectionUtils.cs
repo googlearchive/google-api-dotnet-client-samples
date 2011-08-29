@@ -19,7 +19,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Security.Authentication;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -28,7 +27,7 @@ namespace Google.Apis.Samples.Helper
     /// <summary>
     /// Reflection Helper
     /// </summary>
-    public static class Reflection
+    public static class ReflectionUtils
     {
         /// <summary>
         /// Tries to return a descriptive name for the specified member info. 

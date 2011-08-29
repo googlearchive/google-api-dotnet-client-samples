@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApis.SampleHelper", "SampleHelper\GoogleApis.SampleHelper.csproj", "{08079AFF-9A91-4387-8792-C731D18D4373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApis.ServiceGenerator", "ServiceGenerator\GoogleApis.ServiceGenerator.csproj", "{539CFFAA-70D1-4620-B717-DFF5081819D4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.CreateTasks", "Tasks.CreateTasks\Tasks.CreateTasks.csproj", "{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.SimpleOAuth2", "Tasks.SimpleOAuth2\Tasks.SimpleOAuth2.csproj", "{F3E675B8-24D9-48E7-9C5C-E009CB6E21F7}"
@@ -67,16 +65,6 @@ Global
 		{08079AFF-9A91-4387-8792-C731D18D4373}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{08079AFF-9A91-4387-8792-C731D18D4373}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{08079AFF-9A91-4387-8792-C731D18D4373}.Release|x86.ActiveCfg = Release|Any CPU
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Debug|x86.ActiveCfg = Debug|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Debug|x86.Build.0 = Debug|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Release|Any CPU.ActiveCfg = Release|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Release|Mixed Platforms.Build.0 = Release|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Release|x86.ActiveCfg = Release|x86
-		{539CFFAA-70D1-4620-B717-DFF5081819D4}.Release|x86.Build.0 = Release|x86
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}.Debug|Mixed Platforms.Build.0 = Debug|x86

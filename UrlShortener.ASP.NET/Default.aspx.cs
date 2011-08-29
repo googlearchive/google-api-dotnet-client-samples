@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using System;
+using System.Text.RegularExpressions;
 using Google;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
@@ -82,10 +83,12 @@ namespace UrlShortener.ASP.NET
             }
         }
 
+        private static readonly Regex ShortUrlRegex = 
+                    new Regex("^http[s]?://goo.gl/", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
         private static bool IsShortUrl(string url)
         {
-            return url.TrimStart("http://", "https://").StartsWith(
-                "goo.gl", StringComparison.InvariantCultureIgnoreCase);
+            return ShortUrlRegex.IsMatch(url);
         }
     }
 }

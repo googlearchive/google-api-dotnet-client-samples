@@ -15,9 +15,7 @@ limitations under the License.
 */
 
 using System;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using DotNetOpenAuth.OAuth2;
@@ -46,10 +44,10 @@ namespace Tasks.WPF.ListTasks
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+            return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
         }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient client)
+        private static IAuthorizationState GetAuthorization(NativeApplicationClient client)
         {
             // You should use a more secure way of storing the key here as
             // .NET applications can be disassembled using a reflection tool.

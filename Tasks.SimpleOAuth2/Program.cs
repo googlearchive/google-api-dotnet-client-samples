@@ -17,7 +17,6 @@ limitations under the License.
 using System;
 using System.Diagnostics;
 using DotNetOpenAuth.OAuth2;
-using Google.Apis.Authentication;
 using Google.Apis.Authentication.OAuth2;
 using Google.Apis.Authentication.OAuth2.DotNetOpenAuth;
 using Google.Apis.Samples.Helper;
@@ -43,7 +42,7 @@ namespace Google.Apis.Samples.TasksOAuth2
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
             provider.ClientIdentifier = ClientCredentials.ClientID;
             provider.ClientSecret = ClientCredentials.ClientSecret;
-            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
+            var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.
             var service = new TasksService(auth);
@@ -56,7 +55,7 @@ namespace Google.Apis.Samples.TasksOAuth2
             CommandLine.PressAnyKeyToExit();
         }
 
-        private static IAuthorizationState GetAuthentication(NativeApplicationClient arg)
+        private static IAuthorizationState GetAuthorization(NativeApplicationClient arg)
         {
             // Get the auth URL:
             IAuthorizationState state = new AuthorizationState(new[] { TasksService.Scopes.Tasks.GetStringValue() });

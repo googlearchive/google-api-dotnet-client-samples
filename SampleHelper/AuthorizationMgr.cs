@@ -83,6 +83,9 @@ namespace Google.Apis.Samples.Helper
         /// <summary>
         /// Returns a cached refresh token for this application, or null if unavailable.
         /// </summary>
+        /// <param name="storageName">The file name (without extension) used for storage.</param>
+        /// <param name="key">The key to decrypt the data with.</param>
+        /// <returns>The authorization state containing a Refresh Token, or null if unavailable</returns>
         public static AuthorizationState GetCachedRefreshToken(string storageName,
                                                                string key)
         {

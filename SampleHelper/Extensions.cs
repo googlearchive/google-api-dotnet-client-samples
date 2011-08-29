@@ -24,7 +24,7 @@ public static class Extensions
     /// <summary>
     /// Trims the string to the specified length, and replaces the end with "..." if trimmed.
     /// </summary>
-    public static string TrimLength(this string str, int maxLength)
+    public static string TrimByLength(this string str, int maxLength)
     {
         if (maxLength < 3)
         {
@@ -37,24 +37,6 @@ public static class Extensions
         }
 
         return str.Substring(0, maxLength - 3) + "...";
-    }
-
-    /// <summary>
-    /// Trims the specified list of words from the beginning of the stream. Case is ignored.
-    /// </summary>
-    /// <param name="str">The source string.</param>
-    /// <param name="words">The list of words to remove from the beginning.</param>
-    /// <returns>Trimmed string.</returns>
-    public static string TrimStart(this string str, params string[] words)
-    {
-        foreach (string word in words)
-        {
-            while (str.StartsWith(word, StringComparison.InvariantCultureIgnoreCase))
-            {
-                str = str.Substring(word.Length);
-            }
-        }
-        return str;
     }
 
     /// <summary>
