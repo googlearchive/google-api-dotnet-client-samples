@@ -532,26 +532,26 @@ namespace Google.Apis.Prediction.v1_3 {
             "googleapis.com/auth/prediction\"]}}},\"training\":{\"methods\":{\"delete\":{\"id\":\"predi" +
             "ction.training.delete\",\"path\":\"training/{data}\",\"httpMethod\":\"DELETE\",\"descripti" +
             "on\":\"Delete a trained model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\"" +
-            ":\"mybucket%2Fmydata resource in Google Storage\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.googleapis.com/auth/predict" +
-            "ion\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"training/{data}\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Check training status of your model\",\"parameters\":{\"data" +
-            "\":{\"type\":\"string\",\"description\":\"mybucket%2Fmydata resource in Google Storage\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"response\":{\"$ref\"" +
-            ":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{" +
-            "\"id\":\"prediction.training.insert\",\"path\":\"training\",\"httpMethod\":\"POST\",\"descrip" +
-            "tion\":\"Begin training your model\",\"request\":{\"$ref\":\"Training\"},\"response\":{\"$re" +
-            "f\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"predict" +
-            "\":{\"id\":\"prediction.training.predict\",\"path\":\"training/{data}/predict\",\"httpMeth" +
-            "od\":\"POST\",\"description\":\"Submit data and request a prediction\",\"parameters\":{\"d" +
-            "ata\":{\"type\":\"string\",\"description\":\"mybucket%2Fmydata resource in Google Storag" +
-            "e\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$re" +
-            "f\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/prediction\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"training/{" +
-            "data}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model\",\"param" +
-            "eters\":{\"data\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"data\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
+            ":\"mybucket/mydata resource in Google Storage\",\"required\":true,\"location\":\"path\"}" +
+            "},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.googleapis.com/auth/predictio" +
+            "n\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"training/{data}\",\"httpMethod\"" +
+            ":\"GET\",\"description\":\"Check training status of your model\",\"parameters\":{\"data\":" +
+            "{\"type\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"req" +
+            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"response\":{\"$ref\":\"Tr" +
+            "aining\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\"" +
+            ":\"prediction.training.insert\",\"path\":\"training\",\"httpMethod\":\"POST\",\"description" +
+            "\":\"Begin training your model\",\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"" +
+            "Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"predict\":{\"" +
+            "id\":\"prediction.training.predict\",\"path\":\"training/{data}/predict\",\"httpMethod\":" +
+            "\"POST\",\"description\":\"Submit data and request a prediction\",\"parameters\":{\"data\"" +
+            ":{\"type\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$ref\":\"In" +
+            "put\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/pr" +
+            "ediction\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"training/{data}\"" +
+            ",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model\",\"parameters\"" +
+            ":{\"data\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"data\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/prediction\"]}}}}}";
         
         private const string Version = "v1.3";
         
@@ -693,13 +693,13 @@ namespace Google.Apis.Prediction.v1_3 {
         }
         
         /// <summary>Delete a trained model</summary>
-        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        /// <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         public virtual DeleteRequest Delete(string data) {
             return new DeleteRequest(service, data);
         }
         
         /// <summary>Check training status of your model</summary>
-        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        /// <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         public virtual GetRequest Get(string data) {
             return new GetRequest(service, data);
         }
@@ -710,7 +710,7 @@ namespace Google.Apis.Prediction.v1_3 {
         }
         
         /// <summary>Submit data and request a prediction</summary>
-        /// <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+        /// <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         public virtual PredictRequest Predict(Google.Apis.Prediction.v1_3.Data.Input body, string data) {
             return new PredictRequest(service, body, data);
         }
@@ -730,7 +730,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 this.data = data;
             }
             
-            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            /// <summary>mybucket/mydata resource in Google Storage</summary>
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
@@ -760,7 +760,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 this.data = data;
             }
             
-            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            /// <summary>mybucket/mydata resource in Google Storage</summary>
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
@@ -829,7 +829,7 @@ namespace Google.Apis.Prediction.v1_3 {
                 this.data = data;
             }
             
-            /// <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            /// <summary>mybucket/mydata resource in Google Storage</summary>
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {

@@ -79,10 +79,10 @@
         <member name="P:Google.Apis.Audit.v1.AuditService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
-        <member name="M:Google.Apis.Audit.v1.ActivitiesResource.List(System.String,System.Int64)">
+        <member name="M:Google.Apis.Audit.v1.ActivitiesResource.List(System.String,System.String)">
             <summary>Retrieves a list of activities for a specific customer and application.</summary>
             <param name="customerId">Required - Must match pattern C.+ - Represents the customer who is the owner of target object on which action was performed.</param>
-            <param name="applicationId">Required - Minimum value of -9223372036854775808 - Maximum value of 9223372036854775807 - Application ID of the application on which the event was performed.</param>
+            <param name="applicationId">Required - Application ID of the application on which the event was performed.</param>
         </member>
         <member name="T:Google.Apis.Audit.v1.ActivitiesResource.Caller">
             <summary>Type of the caller.</summary>
@@ -117,13 +117,14 @@
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.EventName">
             <summary>Name of the event being queried.</summary>
         </member>
+        <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.IpAddress">
+            <summary>IP Address of host where the event was performed. Supports both IPv4 and IPv6 addresses.</summary>
+        </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.MaxResults">
             <summary>Number of activity records to be shown in each page.</summary>
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.Parameters">
-             <summary>Event parameters in the form
-            :
-            .</summary>
+            <summary>Event parameters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...</summary>
         </member>
         <member name="P:Google.Apis.Audit.v1.ActivitiesResource.ListRequest.StartTime">
             <summary>Return events which occured at or after this time.</summary>

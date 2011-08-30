@@ -4704,519 +4704,515 @@ namespace Google.Apis.Buzz.v1 {
             "n query.\",\"location\":\"query\"},\"lon\":{\"type\":\"string\",\"description\":\"Longitude to" +
             " use in a geographic location query.\",\"location\":\"query\"},\"max-results\":{\"type\":" +
             "\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":\"20\",\"" +
-            "minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"pid\":{\"type\":\"string\",\"" +
-            "description\":\"ID of a place to use in a geographic location query.\",\"location\":\"" +
-            "query\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"loc" +
-            "ation\":\"query\"},\"radius\":{\"type\":\"string\",\"description\":\"Radius to use in a geog" +
-            "raphic location query.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"PeopleFeed\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/" +
-            "buzz.readonly\"]},\"get\":{\"id\":\"chili.activities.get\",\"path\":\"activities/{userId}/" +
-            "@self/{postId}\",\"httpMethod\":\"GET\",\"description\":\"Get an activity\",\"parameters\":" +
-            "{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation t" +
-            "ype.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML " +
-            "format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Language code to limit language results.\",\"location\":\"query\"},\"max-comments\"" +
-            ":{\"type\":\"integer\",\"description\":\"Maximum number of comments to include.\",\"defau" +
-            "lt\":\"0\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"max-liked\":{\"t" +
-            "ype\":\"integer\",\"description\":\"Maximum number of likes to include.\",\"default\":\"0\"" +
-            ",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"postId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ID of the post to get.\",\"required\":true,\"location\":\"path\"},\"t" +
-            "runcateAtom\":{\"type\":\"boolean\",\"description\":\"Truncate the value of the atom:con" +
-            "tent element.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID o" +
-            "f the user whose post to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"userId\",\"postId\"],\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"inser" +
-            "t\":{\"id\":\"chili.activities.insert\",\"path\":\"activities/{userId}/@self\",\"httpMetho" +
-            "d\":\"POST\",\"description\":\"Create a new activity\",\"parameters\":{\"alt\":{\"type\":\"str" +
+            "format\":\"uint32\",\"location\":\"query\"},\"pid\":{\"type\":\"string\",\"description\":\"ID of" +
+            " a place to use in a geographic location query.\",\"location\":\"query\"},\"q\":{\"type\"" +
+            ":\"string\",\"description\":\"Full-text search query string.\",\"location\":\"query\"},\"ra" +
+            "dius\":{\"type\":\"string\",\"description\":\"Radius to use in a geographic location que" +
+            "ry.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"g" +
+            "et\":{\"id\":\"chili.activities.get\",\"path\":\"activities/{userId}/@self/{postId}\",\"ht" +
+            "tpMethod\":\"GET\",\"description\":\"Get an activity\",\"parameters\":{\"alt\":{\"type\":\"str" +
             "ing\",\"description\":\"Specifies an alternative representation type.\",\"default\":\"at" +
             "om\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON f" +
             "ormat\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code t" +
-            "o limit language results.\",\"location\":\"query\"},\"preview\":{\"type\":\"boolean\",\"desc" +
-            "ription\":\"If true, only preview the action.\",\"default\":\"false\",\"location\":\"query" +
-            "\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"request\":{\"$ref\":" +
-            "\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/buzz\"],\"mediaUpload\":{\"accept\":[\"image/*\"],\"maxSize\":\"10MB\",\"protocols\":{\"" +
-            "simple\":{\"multipart\":true,\"path\":\"upload/activities/{userId}/@self\"},\"resumable\"" +
-            ":{\"multipart\":true,\"path\":\"resumable/upload/activities/{userId}/@self\"}}}},\"list" +
-            "\":{\"id\":\"chili.activities.list\",\"path\":\"activities/{userId}/{scope}\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"List activities\",\"parameters\":{\"alt\":{\"type\":\"string\",\"de" +
-            "scription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enu" +
-            "m\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"]," +
-            "\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token tha" +
-            "t allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"L" +
-            "anguage code to limit language results.\",\"location\":\"query\"},\"max-comments\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Maximum number of comments to include.\",\"default\":\"" +
-            "0\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"max-liked\":{\"type\":" +
-            "\"integer\",\"description\":\"Maximum number of likes to include.\",\"default\":\"0\",\"min" +
-            "imum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"max-results\":{\"type\":\"inte" +
-            "ger\",\"description\":\"Maximum number of results to include.\",\"default\":\"20\",\"minim" +
-            "um\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"scope\":{\"type\":\"string\",\"des" +
-            "cription\":\"The collection of activities to list.\",\"required\":true,\"enum\":[\"@comm" +
-            "ents\",\"@consumption\",\"@liked\",\"@public\",\"@self\"],\"enumDescriptions\":[\"Limit to a" +
-            "ctivities commented on by the user.\",\"Limit to activities to be consumed by the " +
-            "user.\",\"Limit to activities liked by the user.\",\"Limit to public activities post" +
-            "ed by the user.\",\"Limit to activities posted by the user.\"],\"location\":\"path\"},\"" +
-            "truncateAtom\":{\"type\":\"boolean\",\"description\":\"Truncate the value of the atom:co" +
-            "ntent element.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID " +
-            "of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"userId\",\"scope\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"pa" +
-            "tch\":{\"id\":\"chili.activities.patch\",\"path\":\"activities/{userId}/{scope}/{postId}" +
-            "\",\"httpMethod\":\"PATCH\",\"description\":\"Update an activity. This method supports p" +
-            "atch semantics.\",\"parameters\":{\"abuseType\":{\"type\":\"string\",\"location\":\"query\"}," +
-            "\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation ty" +
-            "pe.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML f" +
-            "ormat\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description" +
-            "\":\"Language code to limit language results.\",\"location\":\"query\"},\"postId\":{\"type" +
-            "\":\"string\",\"description\":\"ID of the activity to update.\",\"required\":true,\"locati" +
-            "on\":\"path\"},\"scope\":{\"type\":\"string\",\"description\":\"The collection to which the " +
-            "activity belongs.\",\"required\":true,\"enum\":[\"@abuse\",\"@liked\",\"@muted\",\"@self\"],\"" +
-            "enumDescriptions\":[\"Activities reported by the user.\",\"Activities liked by the u" +
-            "ser.\",\"Activities muted by the user.\",\"Activities posted by the user.\"],\"locatio" +
-            "n\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user whose post to" +
-            " update.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\"" +
-            ",\"postId\"],\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/buzz\"]},\"search\":{\"id\":\"chili.activities.sear" +
-            "ch\",\"path\":\"activities/search\",\"httpMethod\":\"GET\",\"description\":\"Search for acti" +
-            "vities\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alterna" +
-            "tive representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescript" +
-            "ions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"bbox\":{\"typ" +
-            "e\":\"string\",\"description\":\"Bounding box to use in a geographic location query.\"," +
-            "\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token tha" +
-            "t allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"L" +
-            "anguage code to limit language results.\",\"location\":\"query\"},\"lat\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Latitude to use in a geographic location query.\",\"location\":\"" +
-            "query\"},\"lon\":{\"type\":\"string\",\"description\":\"Longitude to use in a geographic l" +
-            "ocation query.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description" +
-            "\":\"Maximum number of results to include.\",\"default\":\"20\",\"minimum\":\"0\",\"maximum\"" +
-            ":\"4294967295\",\"location\":\"query\"},\"pid\":{\"type\":\"string\",\"description\":\"ID of a " +
-            "place to use in a geographic location query.\",\"location\":\"query\"},\"q\":{\"type\":\"s" +
-            "tring\",\"description\":\"Full-text search query string.\",\"location\":\"query\"},\"radiu" +
-            "s\":{\"type\":\"string\",\"description\":\"Radius to use in a geographic location query." +
-            "\",\"location\":\"query\"},\"truncateAtom\":{\"type\":\"boolean\",\"description\":\"Truncate t" +
-            "he value of the atom:content element.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"" +
-            "ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.goo" +
-            "gleapis.com/auth/buzz.readonly\"]},\"track\":{\"id\":\"chili.activities.track\",\"path\":" +
-            "\"activities/track\",\"httpMethod\":\"GET\",\"description\":\"Get real-time activity trac" +
-            "king information\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies " +
-            "an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"en" +
-            "umDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"b" +
-            "box\":{\"type\":\"string\",\"description\":\"Bounding box to use in a geographic locatio" +
-            "n query.\",\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation" +
-            " token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Language code to limit language results.\",\"location\":\"query\"},\"lat\":{\"t" +
-            "ype\":\"string\",\"description\":\"Latitude to use in a geographic location query.\",\"l" +
-            "ocation\":\"query\"},\"lon\":{\"type\":\"string\",\"description\":\"Longitude to use in a ge" +
-            "ographic location query.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"d" +
-            "escription\":\"Maximum number of results to include.\",\"default\":\"20\",\"minimum\":\"0\"" +
-            ",\"maximum\":\"4294967295\",\"location\":\"query\"},\"pid\":{\"type\":\"string\",\"description\"" +
-            ":\"ID of a place to use in a geographic location query.\",\"location\":\"query\"},\"q\":" +
-            "{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"location\":\"quer" +
-            "y\"},\"radius\":{\"type\":\"string\",\"description\":\"Radius to use in a geographic locat" +
-            "ion query.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.reado" +
-            "nly\"]},\"update\":{\"id\":\"chili.activities.update\",\"path\":\"activities/{userId}/{sco" +
-            "pe}/{postId}\",\"httpMethod\":\"PUT\",\"description\":\"Update an activity\",\"parameters\"" +
-            ":{\"abuseType\":{\"type\":\"string\",\"location\":\"query\"},\"alt\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":" +
-            "[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"lo" +
-            "cation\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit lan" +
-            "guage results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID " +
-            "of the activity to update.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"" +
-            "string\",\"description\":\"The collection to which the activity belongs.\",\"required\"" +
-            ":true,\"enum\":[\"@abuse\",\"@liked\",\"@muted\",\"@self\"],\"enumDescriptions\":[\"Activitie" +
-            "s reported by the user.\",\"Activities liked by the user.\",\"Activities muted by th" +
-            "e user.\",\"Activities posted by the user.\"],\"location\":\"path\"},\"userId\":{\"type\":\"" +
-            "string\",\"description\":\"ID of the user whose post to update.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\"],\"request\":{\"$ref\":" +
-            "\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/buzz\"]}}},\"comments\":{\"methods\":{\"delete\":{\"id\":\"chili.comments.delete\",\"p" +
-            "ath\":\"activities/{userId}/@self/{postId}/@comments/{commentId}\",\"httpMethod\":\"DE" +
-            "LETE\",\"description\":\"Delete a comment\",\"parameters\":{\"alt\":{\"type\":\"string\",\"des" +
-            "cription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum" +
-            "\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"" +
-            "location\":\"query\"},\"commentId\":{\"type\":\"string\",\"description\":\"ID of the comment" +
-            " being referenced.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"de" +
-            "scription\":\"Language code to limit language results.\",\"location\":\"query\"},\"postI" +
-            "d\":{\"type\":\"string\",\"description\":\"ID of the activity for which to delete the co" +
-            "mment.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"userId\",\"postId\",\"commentId\"],\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/buzz\"]},\"get\":{\"id\":\"chili.comments.get\",\"path\":\"activities/{userId}/@self" +
-            "/{postId}/@comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Get a comment" +
-            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative r" +
-            "epresentation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":" +
-            "[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId\":{\"type" +
-            "\":\"string\",\"description\":\"ID of the comment being referenced.\",\"required\":true,\"" +
-            "location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit la" +
-            "nguage results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID" +
-            " of the activity for which to get comments.\",\"required\":true,\"location\":\"path\"}," +
-            "\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"postId\",\"commentId\"]," +
-            "\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"" +
-            "https://www.googleapis.com/auth/buzz.readonly\"]},\"insert\":{\"id\":\"chili.comments." +
-            "insert\",\"path\":\"activities/{userId}/@self/{postId}/@comments\",\"httpMethod\":\"POST" +
-            "\",\"description\":\"Create a comment\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"" +
-            "atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"loca" +
-            "tion\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit langu" +
-            "age results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of" +
-            " the activity on which to comment.\",\"required\":true,\"location\":\"path\"},\"userId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of the user on whose behalf to comment.\",\"req" +
-            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"postId\"],\"request\":{" +
-            "\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/buzz\"]},\"list\":{\"id\":\"chili.comments.list\",\"path\":\"activities/{userId" +
-            "}/{scope}/{postId}/@comments\",\"httpMethod\":\"GET\",\"description\":\"List comments\",\"" +
-            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative repr" +
-            "esentation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"U" +
-            "se Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\"," +
-            "\"description\":\"A continuation token that allows pagination.\",\"location\":\"query\"}" +
-            ",\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language results.\"," +
-            "\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum numbe" +
-            "r of results to include.\",\"default\":\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"l" +
-            "ocation\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity fo" +
-            "r which to get comments.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"st" +
-            "ring\",\"description\":\"The collection to which the activity belongs.\",\"required\":t" +
-            "rue,\"enum\":[\"@self\"],\"enumDescriptions\":[\"Activities posted by the user.\"],\"loca" +
-            "tion\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user for whose " +
-            "post to get comments.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"us" +
-            "erId\",\"scope\",\"postId\"],\"response\":{\"$ref\":\"CommentFeed\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"pa" +
-            "tch\":{\"id\":\"chili.comments.patch\",\"path\":\"activities/{userId}/{scope}/{postId}/@" +
-            "comments/{commentId}\",\"httpMethod\":\"PATCH\",\"description\":\"Update a comment. This" +
-            " method supports patch semantics.\",\"parameters\":{\"abuseType\":{\"type\":\"string\",\"l" +
-            "ocation\":\"query\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative" +
-            " representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions" +
-            "\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"ID of the comment being referenced.\",\"required\":true" +
-            ",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit " +
-            "language results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of the activity for which to update the comment.\",\"required\":true,\"location\":" +
-            "\"path\"},\"scope\":{\"type\":\"string\",\"description\":\"The collection to which the acti" +
-            "vity belongs.\",\"required\":true,\"enum\":[\"@abuse\",\"@self\"],\"enumDescriptions\":[\"Co" +
-            "mments reported by the user.\",\"Comments posted by the user.\"],\"location\":\"path\"}" +
-            ",\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"req" +
-            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\",\"com" +
-            "mentId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/buzz\"]},\"update\":{\"id\":\"chili.comments.update\",\"p" +
-            "ath\":\"activities/{userId}/{scope}/{postId}/@comments/{commentId}\",\"httpMethod\":\"" +
-            "PUT\",\"description\":\"Update a comment\",\"parameters\":{\"abuseType\":{\"type\":\"string\"" +
-            ",\"location\":\"query\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternat" +
-            "ive representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescripti" +
-            "ons\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId\":{" +
-            "\"type\":\"string\",\"description\":\"ID of the comment being referenced.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to lim" +
-            "it language results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description" +
-            "\":\"ID of the activity for which to update the comment.\",\"required\":true,\"locatio" +
-            "n\":\"path\"},\"scope\":{\"type\":\"string\",\"description\":\"The collection to which the a" +
-            "ctivity belongs.\",\"required\":true,\"enum\":[\"@abuse\",\"@self\"],\"enumDescriptions\":[" +
-            "\"Comments reported by the user.\",\"Comments posted by the user.\"],\"location\":\"pat" +
-            "h\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\",\"" +
-            "commentId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/buzz\"]}}},\"groups\":{\"methods\":{\"delete\":{\"id\":" +
-            "\"chili.groups.delete\",\"path\":\"people/{userId}/@groups/{groupId}\",\"httpMethod\":\"D" +
-            "ELETE\",\"description\":\"Delete a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\"" +
-            ":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"l" +
-            "ocation\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group to d" +
-            "elete.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"" +
-            "Language code to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"" +
-            "string\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"scopes\":[\"https://www.google" +
-            "apis.com/auth/buzz\"]},\"get\":{\"id\":\"chili.groups.get\",\"path\":\"people/{userId}/@gr" +
-            "oups/{groupId}/@self\",\"httpMethod\":\"GET\",\"description\":\"Get a group\",\"parameters" +
-            "\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation" +
-            " type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XM" +
-            "L format\",\"Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"des" +
-            "cription\":\"ID of the group to get.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Language code to limit language results.\",\"location\"" +
-            ":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenc" +
-            "ed.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"" +
-            "response\":{\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"htt" +
-            "ps://www.googleapis.com/auth/buzz.readonly\"]},\"insert\":{\"id\":\"chili.groups.inser" +
-            "t\",\"path\":\"people/{userId}/@groups\",\"httpMethod\":\"POST\",\"description\":\"Create a " +
-            "group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternat" +
-            "ive representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescripti" +
-            "ons\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":" +
-            "\"string\",\"description\":\"Language code to limit language results.\",\"location\":\"qu" +
-            "ery\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"request\":{\"$re" +
-            "f\":\"Group\"},\"response\":{\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/buzz\"]},\"list\":{\"id\":\"chili.groups.list\",\"path\":\"people/{userId}/@groups\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Get a user\'s groups\",\"parameters\":{\"alt\":{\"type\":" +
-            "\"string\",\"description\":\"Specifies an alternative representation type.\",\"default\"" +
-            ":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JS" +
-            "ON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuati" +
-            "on token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"des" +
-            "cription\":\"Language code to limit language results.\",\"location\":\"query\"},\"max-re" +
+            "o limit language results.\",\"location\":\"query\"},\"max-comments\":{\"type\":\"integer\"," +
+            "\"description\":\"Maximum number of comments to include.\",\"default\":\"0\",\"format\":\"u" +
+            "int32\",\"location\":\"query\"},\"max-liked\":{\"type\":\"integer\",\"description\":\"Maximum " +
+            "number of likes to include.\",\"default\":\"0\",\"format\":\"uint32\",\"location\":\"query\"}" +
+            ",\"postId\":{\"type\":\"string\",\"description\":\"ID of the post to get.\",\"required\":tru" +
+            "e,\"location\":\"path\"},\"truncateAtom\":{\"type\":\"boolean\",\"description\":\"Truncate th" +
+            "e value of the atom:content element.\",\"location\":\"query\"},\"userId\":{\"type\":\"stri" +
+            "ng\",\"description\":\"ID of the user whose post to get.\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"userId\",\"postId\"],\"response\":{\"$ref\":\"Activity\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/" +
+            "buzz.readonly\"]},\"insert\":{\"id\":\"chili.activities.insert\",\"path\":\"activities/{us" +
+            "erId}/@self\",\"httpMethod\":\"POST\",\"description\":\"Create a new activity\",\"paramete" +
+            "rs\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representati" +
+            "on type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom " +
+            "XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Language code to limit language results.\",\"location\":\"query\"},\"preview\":" +
+            "{\"type\":\"boolean\",\"description\":\"If true, only preview the action.\",\"default\":\"f" +
+            "alse\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the use" +
+            "r being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"user" +
+            "Id\"],\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/buzz\"],\"mediaUpload\":{\"accept\":[\"image/*\"],\"maxSize" +
+            "\":\"10MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"upload/activities/{user" +
+            "Id}/@self\"},\"resumable\":{\"multipart\":true,\"path\":\"resumable/upload/activities/{u" +
+            "serId}/@self\"}}}},\"list\":{\"id\":\"chili.activities.list\",\"path\":\"activities/{userI" +
+            "d}/{scope}\",\"httpMethod\":\"GET\",\"description\":\"List activities\",\"parameters\":{\"al" +
+            "t\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation type." +
+            "\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML form" +
+            "at\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A" +
+            " continuation token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"s" +
+            "tring\",\"description\":\"Language code to limit language results.\",\"location\":\"quer" +
+            "y\"},\"max-comments\":{\"type\":\"integer\",\"description\":\"Maximum number of comments t" +
+            "o include.\",\"default\":\"0\",\"format\":\"uint32\",\"location\":\"query\"},\"max-liked\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"Maximum number of likes to include.\",\"default\":\"0\"," +
+            "\"format\":\"uint32\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"Maximum number of results to include.\",\"default\":\"20\",\"format\":\"uint32\",\"lo" +
+            "cation\":\"query\"},\"scope\":{\"type\":\"string\",\"description\":\"The collection of activ" +
+            "ities to list.\",\"required\":true,\"enum\":[\"@comments\",\"@consumption\",\"@liked\",\"@pu" +
+            "blic\",\"@self\"],\"enumDescriptions\":[\"Limit to activities commented on by the user" +
+            ".\",\"Limit to activities to be consumed by the user.\",\"Limit to activities liked " +
+            "by the user.\",\"Limit to public activities posted by the user.\",\"Limit to activit" +
+            "ies posted by the user.\"],\"location\":\"path\"},\"truncateAtom\":{\"type\":\"boolean\",\"d" +
+            "escription\":\"Truncate the value of the atom:content element.\",\"location\":\"query\"" +
+            "},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\"],\"response\":" +
+            "{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https:" +
+            "//www.googleapis.com/auth/buzz.readonly\"]},\"patch\":{\"id\":\"chili.activities.patch" +
+            "\",\"path\":\"activities/{userId}/{scope}/{postId}\",\"httpMethod\":\"PATCH\",\"descriptio" +
+            "n\":\"Update an activity. This method supports patch semantics.\",\"parameters\":{\"ab" +
+            "useType\":{\"type\":\"string\",\"location\":\"query\"},\"alt\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"ato" +
+            "m\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"locatio" +
+            "n\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language" +
+            " results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of th" +
+            "e activity to update.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"strin" +
+            "g\",\"description\":\"The collection to which the activity belongs.\",\"required\":true" +
+            ",\"enum\":[\"@abuse\",\"@liked\",\"@muted\",\"@self\"],\"enumDescriptions\":[\"Activities rep" +
+            "orted by the user.\",\"Activities liked by the user.\",\"Activities muted by the use" +
+            "r.\",\"Activities posted by the user.\"],\"location\":\"path\"},\"userId\":{\"type\":\"strin" +
+            "g\",\"description\":\"ID of the user whose post to update.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\"],\"request\":{\"$ref\":\"Acti" +
+            "vity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/buzz\"]},\"search\":{\"id\":\"chili.activities.search\",\"path\":\"activities/search\",\"ht" +
+            "tpMethod\":\"GET\",\"description\":\"Search for activities\",\"parameters\":{\"alt\":{\"type" +
+            "\":\"string\",\"description\":\"Specifies an alternative representation type.\",\"defaul" +
+            "t\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use " +
+            "JSON format\"],\"location\":\"query\"},\"bbox\":{\"type\":\"string\",\"description\":\"Boundin" +
+            "g box to use in a geographic location query.\",\"location\":\"query\"},\"c\":{\"type\":\"s" +
+            "tring\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"" +
+            "query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language res" +
+            "ults.\",\"location\":\"query\"},\"lat\":{\"type\":\"string\",\"description\":\"Latitude to use" +
+            " in a geographic location query.\",\"location\":\"query\"},\"lon\":{\"type\":\"string\",\"de" +
+            "scription\":\"Longitude to use in a geographic location query.\",\"location\":\"query\"" +
+            "},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of results to in" +
+            "clude.\",\"default\":\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"pid\":{\"type\":\"stri" +
+            "ng\",\"description\":\"ID of a place to use in a geographic location query.\",\"locati" +
+            "on\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string.\"" +
+            ",\"location\":\"query\"},\"radius\":{\"type\":\"string\",\"description\":\"Radius to use in a" +
+            " geographic location query.\",\"location\":\"query\"},\"truncateAtom\":{\"type\":\"boolean" +
+            "\",\"description\":\"Truncate the value of the atom:content element.\",\"location\":\"qu" +
+            "ery\"}},\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"track\":{\"id\":\"chil" +
+            "i.activities.track\",\"path\":\"activities/track\",\"httpMethod\":\"GET\",\"description\":\"" +
+            "Get real-time activity tracking information\",\"parameters\":{\"alt\":{\"type\":\"string" +
+            "\",\"description\":\"Specifies an alternative representation type.\",\"default\":\"atom\"" +
+            ",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON form" +
+            "at\"],\"location\":\"query\"},\"bbox\":{\"type\":\"string\",\"description\":\"Bounding box to " +
+            "use in a geographic location query.\",\"location\":\"query\"},\"c\":{\"type\":\"string\",\"d" +
+            "escription\":\"A continuation token that allows pagination.\",\"location\":\"query\"},\"" +
+            "hl\":{\"type\":\"string\",\"description\":\"Language code to limit language results.\",\"l" +
+            "ocation\":\"query\"},\"lat\":{\"type\":\"string\",\"description\":\"Latitude to use in a geo" +
+            "graphic location query.\",\"location\":\"query\"},\"lon\":{\"type\":\"string\",\"description" +
+            "\":\"Longitude to use in a geographic location query.\",\"location\":\"query\"},\"max-re" +
             "sults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to include.\",\"" +
-            "default\":\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"userId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"GroupFeed\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/a" +
-            "uth/buzz.readonly\"]},\"patch\":{\"id\":\"chili.groups.patch\",\"path\":\"people/{userId}/" +
-            "@groups/{groupId}/@self\",\"httpMethod\":\"PATCH\",\"description\":\"Update a group. Thi" +
-            "s method supports patch semantics.\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[" +
-            "\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"loc" +
-            "ation\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group to upd" +
-            "ate.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"La" +
-            "nguage code to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"st" +
-            "ring\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"request\":{\"$ref\":\"Group\"},\"res" +
-            "ponse\":{\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\"]},\"upda" +
-            "te\":{\"id\":\"chili.groups.update\",\"path\":\"people/{userId}/@groups/{groupId}/@self\"" +
-            ",\"httpMethod\":\"PUT\",\"description\":\"Update a group\",\"parameters\":{\"alt\":{\"type\":\"" +
-            "string\",\"description\":\"Specifies an alternative representation type.\",\"default\":" +
-            "\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSO" +
-            "N format\"],\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of t" +
-            "he group to update.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"d" +
-            "escription\":\"Language code to limit language results.\",\"location\":\"query\"},\"user" +
-            "Id\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\"" +
-            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"request\":{\"$ref" +
-            "\":\"Group\"},\"response\":{\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/buzz\"]}}},\"people\":{\"methods\":{\"delete\":{\"id\":\"chili.people.delete\",\"path\":\"pe" +
-            "ople/{userId}/@groups/{groupId}/{personId}\",\"httpMethod\":\"DELETE\",\"description\":" +
-            "\"Remove a person from a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description" +
-            "\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom" +
-            "\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location" +
-            "\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group from which " +
-            "to remove the person.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\"," +
-            "\"description\":\"Language code to limit language results.\",\"location\":\"query\"},\"pe" +
-            "rsonId\":{\"type\":\"string\",\"description\":\"ID of the person to remove from the grou" +
-            "p.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of the owner of the group.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"userId\",\"groupId\",\"personId\"],\"scopes\":[\"https://www.googleapis.com/auth/b" +
-            "uzz\"]},\"get\":{\"id\":\"chili.people.get\",\"path\":\"people/{userId}/@self\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Get a user profile\",\"parameters\":{\"alt\":{\"type\":\"string\"," +
+            "default\":\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"pid\":{\"type\":\"string\",\"desc" +
+            "ription\":\"ID of a place to use in a geographic location query.\",\"location\":\"quer" +
+            "y\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"locatio" +
+            "n\":\"query\"},\"radius\":{\"type\":\"string\",\"description\":\"Radius to use in a geograph" +
+            "ic location query.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ActivityFeed\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/bu" +
+            "zz.readonly\"]},\"update\":{\"id\":\"chili.activities.update\",\"path\":\"activities/{user" +
+            "Id}/{scope}/{postId}\",\"httpMethod\":\"PUT\",\"description\":\"Update an activity\",\"par" +
+            "ameters\":{\"abuseType\":{\"type\":\"string\",\"location\":\"query\"},\"alt\":{\"type\":\"string" +
+            "\",\"description\":\"Specifies an alternative representation type.\",\"default\":\"atom\"" +
+            ",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON form" +
+            "at\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to l" +
+            "imit language results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"ID of the activity to update.\",\"required\":true,\"location\":\"path\"},\"scope\":{" +
+            "\"type\":\"string\",\"description\":\"The collection to which the activity belongs.\",\"r" +
+            "equired\":true,\"enum\":[\"@abuse\",\"@liked\",\"@muted\",\"@self\"],\"enumDescriptions\":[\"A" +
+            "ctivities reported by the user.\",\"Activities liked by the user.\",\"Activities mut" +
+            "ed by the user.\",\"Activities posted by the user.\"],\"location\":\"path\"},\"userId\":{" +
+            "\"type\":\"string\",\"description\":\"ID of the user whose post to update.\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\"],\"request\":" +
+            "{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/buzz\"]}}},\"comments\":{\"methods\":{\"delete\":{\"id\":\"chili.comments.de" +
+            "lete\",\"path\":\"activities/{userId}/@self/{postId}/@comments/{commentId}\",\"httpMet" +
+            "hod\":\"DELETE\",\"description\":\"Delete a comment\",\"parameters\":{\"alt\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Specifies an alternative representation type.\",\"default\":\"ato" +
+            "m\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON fo" +
+            "rmat\"],\"location\":\"query\"},\"commentId\":{\"type\":\"string\",\"description\":\"ID of the" +
+            " comment being referenced.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"str" +
+            "ing\",\"description\":\"Language code to limit language results.\",\"location\":\"query\"" +
+            "},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity for which to delet" +
+            "e the comment.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"de" +
+            "scription\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}" +
+            "},\"parameterOrder\":[\"userId\",\"postId\",\"commentId\"],\"scopes\":[\"https://www.google" +
+            "apis.com/auth/buzz\"]},\"get\":{\"id\":\"chili.comments.get\",\"path\":\"activities/{userI" +
+            "d}/@self/{postId}/@comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Get a" +
+            " comment\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alter" +
+            "native representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescri" +
+            "ptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId" +
+            "\":{\"type\":\"string\",\"description\":\"ID of the comment being referenced.\",\"required" +
+            "\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to " +
+            "limit language results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ID of the activity for which to get comments.\",\"required\":true,\"location\":" +
+            "\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced" +
+            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"postId\",\"comm" +
+            "entId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"insert\":{\"id\":\"chili.c" +
+            "omments.insert\",\"path\":\"activities/{userId}/@self/{postId}/@comments\",\"httpMetho" +
+            "d\":\"POST\",\"description\":\"Create a comment\",\"parameters\":{\"alt\":{\"type\":\"string\"," +
             "\"description\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"" +
             "enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format" +
             "\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to lim" +
-            "it language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description" +
-            "\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"parame" +
-            "terOrder\":[\"userId\"],\"response\":{\"$ref\":\"Person\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"liked\":{\"i" +
-            "d\":\"chili.people.liked\",\"path\":\"activities/{userId}/{scope}/{postId}/{groupId}\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Get people who liked an activity\",\"parameters\"" +
-            ":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation " +
-            "type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML" +
-            " format\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A continuation token that allows pagination.\",\"location\":\"query\"},\"groupId\":" +
-            "{\"type\":\"string\",\"required\":true,\"enum\":[\"@liked\"],\"enumDescriptions\":[\"People w" +
-            "ho liked this activity.\"],\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\"" +
-            ":\"Language code to limit language results.\",\"location\":\"query\"},\"max-results\":{\"" +
-            "type\":\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":" +
-            "\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"postId\":{\"type\":\"" +
-            "string\",\"description\":\"ID of the activity that was liked.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"scope\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"userI" +
-            "d\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":" +
-            "true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\",\"groupId\"]," +
-            "\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz" +
-            "\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"list\":{\"id\":\"chili.people.l" +
-            "ist\",\"path\":\"people/{userId}/@groups/{groupId}\",\"httpMethod\":\"GET\",\"description\"" +
-            ":\"Get people in a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Spe" +
-            "cifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"jso" +
-            "n\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"que" +
-            "ry\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token that allows pagina" +
-            "tion.\",\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the g" +
-            "roup for which to list users.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"" +
-            "string\",\"description\":\"Language code to limit language results.\",\"location\":\"que" +
-            "ry\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of results to" +
-            " include.\",\"default\":\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query" +
-            "\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"respons" +
-            "e\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https" +
-            "://www.googleapis.com/auth/buzz.readonly\"]},\"patch\":{\"id\":\"chili.people.patch\",\"" +
-            "path\":\"people/{userId}/@groups/{groupId}/{personId}\",\"httpMethod\":\"PATCH\",\"descr" +
-            "iption\":\"Add a person to a group. This method supports patch semantics.\",\"parame" +
-            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representa" +
-            "tion type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Ato" +
-            "m XML format\",\"Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"type\":\"string\"," +
-            "\"description\":\"ID of the group to which to add the person.\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit langu" +
-            "age results.\",\"location\":\"query\"},\"personId\":{\"type\":\"string\",\"description\":\"ID " +
-            "of the person to add to the group.\",\"required\":true,\"location\":\"path\"},\"userId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of the owner of the group.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\",\"personId\"],\"request\":{\"" +
-            "$ref\":\"Person\"},\"response\":{\"$ref\":\"Person\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/buzz\"]},\"reshared\":{\"id\":\"chili.people.reshared\",\"path\":\"activities/{use" +
-            "rId}/{scope}/{postId}/{groupId}\",\"httpMethod\":\"GET\",\"description\":\"Get people wh" +
-            "o reshared an activity\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Spec" +
-            "ifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json" +
-            "\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"quer" +
-            "y\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token that allows paginat" +
-            "ion.\",\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"required\":true,\"enum\":[\"@r" +
-            "eshared\"],\"enumDescriptions\":[\"People who reshared this activity.\"],\"location\":\"" +
-            "path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language resu" +
-            "lts.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum" +
-            " number of results to include.\",\"default\":\"20\",\"minimum\":\"0\",\"maximum\":\"42949672" +
-            "95\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activ" +
-            "ity that was reshared.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"stri" +
-            "ng\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
-            "Order\":[\"userId\",\"scope\",\"postId\",\"groupId\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/" +
-            "buzz.readonly\"]},\"search\":{\"id\":\"chili.people.search\",\"path\":\"people/search\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Search for people\",\"parameters\":{\"alt\":{\"type\":\"s" +
-            "tring\",\"description\":\"Specifies an alternative representation type.\",\"default\":\"" +
-            "atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON" +
-            " format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation" +
-            " token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Language code to limit language results.\",\"location\":\"query\"},\"max-resu" +
-            "lts\":{\"type\":\"integer\",\"description\":\"Maximum number of results to include.\",\"de" +
-            "fault\":\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"q\":{\"type\"" +
-            ":\"string\",\"description\":\"Full-text search query string.\",\"location\":\"query\"}},\"r" +
-            "esponse\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\"," +
-            "\"https://www.googleapis.com/auth/buzz.readonly\"]},\"update\":{\"id\":\"chili.people.u" +
-            "pdate\",\"path\":\"people/{userId}/@groups/{groupId}/{personId}\",\"httpMethod\":\"PUT\"," +
-            "\"description\":\"Add a person to a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"de" +
-            "scription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enu" +
-            "m\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"]," +
-            "\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group to" +
-            " which to add the person.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Language code to limit language results.\",\"location\":\"query\"}" +
-            ",\"personId\":{\"type\":\"string\",\"description\":\"ID of the person to add to the group" +
-            ".\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"I" +
-            "D of the owner of the group.\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"userId\",\"groupId\",\"personId\"],\"request\":{\"$ref\":\"Person\"},\"response\":{\"$ref" +
-            "\":\"Person\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\"]}}},\"photoAlbums\":{" +
-            "\"methods\":{\"delete\":{\"id\":\"chili.photoAlbums.delete\",\"path\":\"photos/{userId}/@se" +
-            "lf/{albumId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a photo album\",\"parame" +
-            "ters\":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album to delete.\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies " +
-            "an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"en" +
-            "umDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"h" +
-            "l\":{\"type\":\"string\",\"description\":\"Language code to limit language results.\",\"lo" +
-            "cation\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being r" +
-            "eferenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albu" +
-            "mId\"],\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"get\":{\"id\":\"chili.ph" +
-            "otoAlbums.get\",\"path\":\"photos/{userId}/@self/{albumId}\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Get a photo album\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"ID of the album to get.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"" +
-            "string\",\"description\":\"Specifies an alternative representation type.\",\"default\":" +
-            "\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSO" +
-            "N format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language cod" +
-            "e to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"des" +
-            "cription\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"userId\",\"albumId\"],\"response\":{\"$ref\":\"Album\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/picasa\"]},\"insert\":{\"id\":\"chili.photoAlbums.insert" +
-            "\",\"path\":\"photos/{userId}/@self\",\"httpMethod\":\"POST\",\"description\":\"Create a pho" +
-            "to album\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alter" +
-            "native representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescri" +
-            "ptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"typ" +
-            "e\":\"string\",\"description\":\"Language code to limit language results.\",\"location\":" +
-            "\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being reference" +
-            "d.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"request\":{\"" +
-            "$ref\":\"Album\"},\"response\":{\"$ref\":\"Album\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/picasa\"]},\"list\":{\"id\":\"chili.photoAlbums.list\",\"path\":\"photos/{userId}/{s" +
-            "cope}\",\"httpMethod\":\"GET\",\"description\":\"List a user\'s photo albums\",\"parameters" +
-            "\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation" +
-            " type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XM" +
-            "L format\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"descripti" +
-            "on\":\"A continuation token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Language code to limit language results.\",\"location\"" +
-            ":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of resul" +
-            "ts to include.\",\"default\":\"20\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"" +
-            "query\"},\"scope\":{\"type\":\"string\",\"description\":\"The collection of albums to list" +
-            ".\",\"required\":true,\"enum\":[\"@self\"],\"enumDescriptions\":[\"Albums posted by the us" +
-            "er.\"],\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user" +
-            " being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userI" +
-            "d\",\"scope\"],\"response\":{\"$ref\":\"AlbumsFeed\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/picasa\"]}}},\"photos\":{\"methods\":{\"delete\":{\"id\":\"chili.photos.delete\",\"p" +
-            "ath\":\"photos/{userId}/@self/{albumId}/@photos/{photoId}\",\"httpMethod\":\"DELETE\",\"" +
-            "description\":\"Delete a photo\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"ID of the album to which to photo belongs.\",\"required\":true,\"location\":\"pa" +
-            "th\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representati" +
-            "on type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom " +
-            "XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Language code to limit language results.\",\"location\":\"query\"},\"photoId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of the photo to delete.\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being ref" +
-            "erenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albumI" +
-            "d\",\"photoId\"],\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"get\":{\"id\":\"" +
-            "chili.photos.get\",\"path\":\"photos/{userId}/@self/{albumId}/@photos/{photoId}\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Get photo metadata\",\"parameters\":{\"albumId\":{\"typ" +
-            "e\":\"string\",\"description\":\"ID of the album containing the photo.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternat" +
+            "it language results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description" +
+            "\":\"ID of the activity on which to comment.\",\"required\":true,\"location\":\"path\"},\"" +
+            "userId\":{\"type\":\"string\",\"description\":\"ID of the user on whose behalf to commen" +
+            "t.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"postId\"],\"re" +
+            "quest\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/buzz\"]},\"list\":{\"id\":\"chili.comments.list\",\"path\":\"activities" +
+            "/{userId}/{scope}/{postId}/@comments\",\"httpMethod\":\"GET\",\"description\":\"List com" +
+            "ments\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternat" +
             "ive representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescripti" +
-            "ons\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":" +
-            "\"string\",\"description\":\"Language code to limit language results.\",\"location\":\"qu" +
-            "ery\"},\"photoId\":{\"type\":\"string\",\"description\":\"ID of the photo for which to get" +
-            " metadata.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"userId\",\"albumId\",\"photoId\"],\"response\":{\"$ref\":\"ChiliPhotosRes" +
-            "ourceJson\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"insert\":{\"id\":" +
-            "\"chili.photos.insert\",\"path\":\"photos/{userId}/{albumId}\",\"httpMethod\":\"POST\",\"de" +
-            "scription\":\"Upload a photo to an album\",\"parameters\":{\"albumId\":{\"type\":\"string\"" +
-            ",\"description\":\"ID of the album to which to upload.\",\"required\":true,\"location\":" +
-            "\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative represent" +
-            "ation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use At" +
-            "om XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"des" +
-            "cription\":\"Language code to limit language results.\",\"location\":\"query\"},\"userId" +
+            "ons\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"" +
+            "string\",\"description\":\"A continuation token that allows pagination.\",\"location\":" +
+            "\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language re" +
+            "sults.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maxim" +
+            "um number of results to include.\",\"default\":\"20\",\"format\":\"uint32\",\"location\":\"q" +
+            "uery\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity for which to " +
+            "get comments.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The collection to which the activity belongs.\",\"required\":true,\"enum\":" +
+            "[\"@self\"],\"enumDescriptions\":[\"Activities posted by the user.\"],\"location\":\"path" +
+            "\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user for whose post to get" +
+            " comments.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scop" +
+            "e\",\"postId\"],\"response\":{\"$ref\":\"CommentFeed\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"patch\":{\"id\":" +
+            "\"chili.comments.patch\",\"path\":\"activities/{userId}/{scope}/{postId}/@comments/{c" +
+            "ommentId}\",\"httpMethod\":\"PATCH\",\"description\":\"Update a comment. This method sup" +
+            "ports patch semantics.\",\"parameters\":{\"abuseType\":{\"type\":\"string\",\"location\":\"q" +
+            "uery\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representa" +
+            "tion type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Ato" +
+            "m XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId\":{\"type\":\"string" +
+            "\",\"description\":\"ID of the comment being referenced.\",\"required\":true,\"location\"" +
+            ":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language re" +
+            "sults.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the a" +
+            "ctivity for which to update the comment.\",\"required\":true,\"location\":\"path\"},\"sc" +
+            "ope\":{\"type\":\"string\",\"description\":\"The collection to which the activity belong" +
+            "s.\",\"required\":true,\"enum\":[\"@abuse\",\"@self\"],\"enumDescriptions\":[\"Comments repo" +
+            "rted by the user.\",\"Comments posted by the user.\"],\"location\":\"path\"},\"userId\":{" +
+            "\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":true" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\",\"commentId\"],\"r" +
+            "equest\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/buzz\"]},\"update\":{\"id\":\"chili.comments.update\",\"path\":\"activ" +
+            "ities/{userId}/{scope}/{postId}/@comments/{commentId}\",\"httpMethod\":\"PUT\",\"descr" +
+            "iption\":\"Update a comment\",\"parameters\":{\"abuseType\":{\"type\":\"string\",\"location\"" +
+            ":\"query\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative represe" +
+            "ntation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use " +
+            "Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"commentId\":{\"type\":\"str" +
+            "ing\",\"description\":\"ID of the comment being referenced.\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language" +
+            " results.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of th" +
+            "e activity for which to update the comment.\",\"required\":true,\"location\":\"path\"}," +
+            "\"scope\":{\"type\":\"string\",\"description\":\"The collection to which the activity bel" +
+            "ongs.\",\"required\":true,\"enum\":[\"@abuse\",\"@self\"],\"enumDescriptions\":[\"Comments r" +
+            "eported by the user.\",\"Comments posted by the user.\"],\"location\":\"path\"},\"userId" +
             "\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":t" +
-            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albumId\"],\"request\":{\"$ref\":" +
-            "\"AlbumLite\"},\"response\":{\"$ref\":\"AlbumLite\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/buzz\"],\"mediaUpload\":{\"accept\":[\"image/*\"],\"maxSize\":\"30MB\",\"protocols\":" +
-            "{\"simple\":{\"multipart\":true,\"path\":\"upload/photos/{userId}/{albumId}\"},\"resumabl" +
-            "e\":{\"multipart\":true,\"path\":\"resumable/upload/photos/{userId}/{albumId}\"}}}},\"in" +
-            "sert2\":{\"id\":\"chili.photos.insert2\",\"path\":\"photos/{userId}/@self/{albumId}/@pho" +
-            "tos\",\"httpMethod\":\"POST\",\"description\":\"Upload a photo to an album\",\"parameters\"" +
-            ":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album to which to upload.\"" +
-            ",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specif" +
-            "ies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"]" +
-            ",\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"" +
-            "},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language results.\"" +
-            ",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user bei" +
-            "ng referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"" +
-            "albumId\"],\"request\":{\"$ref\":\"ChiliPhotosResourceJson\"},\"response\":{\"$ref\":\"Chili" +
-            "PhotosResourceJson\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"],\"mediaU" +
-            "pload\":{\"accept\":[\"image/*\"],\"maxSize\":\"30MB\",\"protocols\":{\"simple\":{\"multipart\"" +
-            ":true,\"path\":\"upload/photos/{userId}/@self/{albumId}/@photos\"},\"resumable\":{\"mul" +
-            "tipart\":true,\"path\":\"resumable/upload/photos/{userId}/@self/{albumId}/@photos\"}}" +
-            "}},\"listByAlbum\":{\"id\":\"chili.photos.listByAlbum\",\"path\":\"photos/{userId}/@self/" +
-            "{albumId}/@photos\",\"httpMethod\":\"GET\",\"description\":\"List photos in an album\",\"p" +
-            "arameters\":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album for which " +
-            "to list photos.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\"" +
-            ":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"l" +
-            "ocation\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token that " +
-            "allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Lan" +
-            "guage code to limit language results.\",\"location\":\"query\"},\"max-results\":{\"type\"" +
-            ":\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":\"20\"," +
-            "\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"userId\":{\"type\":\"strin" +
-            "g\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"userId\",\"albumId\"],\"response\":{\"$ref\":\"PhotosFeed\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"listByScope\":{\"id\":\"chili.p" +
-            "hotos.listByScope\",\"path\":\"photos/{userId}/@self/{scope}/@photos\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Get a user\'s photos\",\"parameters\":{\"alt\":{\"type\":\"string\",\"d" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\",\"postId\",\"commentId\"]" +
+            ",\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/buzz\"]}}},\"groups\":{\"methods\":{\"delete\":{\"id\":\"chili.grou" +
+            "ps.delete\",\"path\":\"people/{userId}/@groups/{groupId}\",\"httpMethod\":\"DELETE\",\"des" +
+            "cription\":\"Delete a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"S" +
+            "pecifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"j" +
+            "son\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"q" +
+            "uery\"},\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group to delete.\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language co" +
+            "de to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"de" +
+            "scription\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}" +
+            "},\"parameterOrder\":[\"userId\",\"groupId\"],\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/buzz\"]},\"get\":{\"id\":\"chili.groups.get\",\"path\":\"people/{userId}/@groups/{group" +
+            "Id}/@self\",\"httpMethod\":\"GET\",\"description\":\"Get a group\",\"parameters\":{\"alt\":{\"" +
+            "type\":\"string\",\"description\":\"Specifies an alternative representation type.\",\"de" +
+            "fault\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"" +
+            "Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"description\":\"" +
+            "ID of the group to get.\",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string" +
+            "\",\"description\":\"Language code to limit language results.\",\"location\":\"query\"},\"" +
+            "userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\"],\"response\":{" +
+            "\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.go" +
+            "ogleapis.com/auth/buzz.readonly\"]},\"insert\":{\"id\":\"chili.groups.insert\",\"path\":\"" +
+            "people/{userId}/@groups\",\"httpMethod\":\"POST\",\"description\":\"Create a group\",\"par" +
+            "ameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative represe" +
+            "ntation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use " +
+            "Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"d" +
+            "escription\":\"Language code to limit language results.\",\"location\":\"query\"},\"user" +
+            "Id\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\"" +
+            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"request\":{\"$ref\":\"Group\"}" +
+            ",\"response\":{\"$ref\":\"Group\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\"]}," +
+            "\"list\":{\"id\":\"chili.groups.list\",\"path\":\"people/{userId}/@groups\",\"httpMethod\":\"" +
+            "GET\",\"description\":\"Get a user\'s groups\",\"parameters\":{\"alt\":{\"type\":\"string\",\"d" +
             "escription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"en" +
             "um\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"]" +
             ",\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token th" +
             "at allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"" +
             "Language code to limit language results.\",\"location\":\"query\"},\"max-results\":{\"ty" +
             "pe\":\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":\"2" +
-            "0\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":\"query\"},\"scope\":{\"type\":\"str" +
-            "ing\",\"description\":\"The collection of photos to list.\",\"required\":true,\"enum\":[\"" +
-            "@recent\"],\"enumDescriptions\":[\"Recent photos uploaded by the user.\"],\"location\":" +
-            "\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\"],\"resp" +
-            "onse\":{\"$ref\":\"PhotosFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]}" +
-            "}},\"related\":{\"methods\":{\"list\":{\"id\":\"chili.related.list\",\"path\":\"activities/{u" +
-            "serId}/{scope}/{postId}/@related\",\"httpMethod\":\"GET\",\"description\":\"Get related " +
-            "links for an activity\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Speci" +
-            "fies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"" +
-            "],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query" +
-            "\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language results." +
-            "\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activit" +
-            "y to which to get related links.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"t" +
-            "ype\":\"string\",\"description\":\"The collection to which the activity belongs.\",\"req" +
-            "uired\":true,\"enum\":[\"@self\"],\"enumDescriptions\":[\"Activities posted by the user." +
-            "\"],\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user be" +
-            "ing referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"," +
-            "\"scope\",\"postId\"],\"response\":{\"$ref\":\"RelatedFeed\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]}}}}}";
+            "0\",\"format\":\"uint32\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\"" +
+            ":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"userId\"],\"response\":{\"$ref\":\"GroupFeed\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"patch\":{" +
+            "\"id\":\"chili.groups.patch\",\"path\":\"people/{userId}/@groups/{groupId}/@self\",\"http" +
+            "Method\":\"PATCH\",\"description\":\"Update a group. This method supports patch semant" +
+            "ics.\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternati" +
+            "ve representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptio" +
+            "ns\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"ID of the group to update.\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language " +
+            "results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the" +
+            " user being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "userId\",\"groupId\"],\"request\":{\"$ref\":\"Group\"},\"response\":{\"$ref\":\"Group\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/buzz\"]},\"update\":{\"id\":\"chili.groups.update" +
+            "\",\"path\":\"people/{userId}/@groups/{groupId}/@self\",\"httpMethod\":\"PUT\",\"descripti" +
+            "on\":\"Update a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifi" +
+            "es an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"]," +
+            "\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"}" +
+            ",\"groupId\":{\"type\":\"string\",\"description\":\"ID of the group to update.\",\"required" +
+            "\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to " +
+            "limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"userId\",\"groupId\"],\"request\":{\"$ref\":\"Group\"},\"response\":{\"$ref\":" +
+            "\"Group\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\"]}}},\"people\":{\"methods" +
+            "\":{\"delete\":{\"id\":\"chili.people.delete\",\"path\":\"people/{userId}/@groups/{groupId" +
+            "}/{personId}\",\"httpMethod\":\"DELETE\",\"description\":\"Remove a person from a group\"" +
+            ",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative re" +
+            "presentation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[" +
+            "\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"type\":\"" +
+            "string\",\"description\":\"ID of the group from which to remove the person.\",\"requir" +
+            "ed\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code t" +
+            "o limit language results.\",\"location\":\"query\"},\"personId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"ID of the person to remove from the group.\",\"required\":true,\"location\"" +
+            ":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the owner of the group.\"" +
+            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\",\"perso" +
+            "nId\"],\"scopes\":[\"https://www.googleapis.com/auth/buzz\"]},\"get\":{\"id\":\"chili.peop" +
+            "le.get\",\"path\":\"people/{userId}/@self\",\"httpMethod\":\"GET\",\"description\":\"Get a u" +
+            "ser profile\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an al" +
+            "ternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDes" +
+            "criptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"" +
+            "type\":\"string\",\"description\":\"Language code to limit language results.\",\"locatio" +
+            "n\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being refere" +
+            "nced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response" +
+            "\":{\"$ref\":\"Person\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https://ww" +
+            "w.googleapis.com/auth/buzz.readonly\"]},\"liked\":{\"id\":\"chili.people.liked\",\"path\"" +
+            ":\"activities/{userId}/{scope}/{postId}/{groupId}\",\"httpMethod\":\"GET\",\"descriptio" +
+            "n\":\"Get people who liked an activity\",\"parameters\":{\"alt\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\"" +
+            ":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"l" +
+            "ocation\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token that " +
+            "allows pagination.\",\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"required\":tr" +
+            "ue,\"enum\":[\"@liked\"],\"enumDescriptions\":[\"People who liked this activity.\"],\"loc" +
+            "ation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit langu" +
+            "age results.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":" +
+            "\"Maximum number of results to include.\",\"default\":\"20\",\"format\":\"uint32\",\"locati" +
+            "on\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity that wa" +
+            "s liked.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"string\",\"required\"" +
+            ":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user" +
+            " being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userI" +
+            "d\",\"scope\",\"postId\",\"groupId\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"" +
+            "]},\"list\":{\"id\":\"chili.people.list\",\"path\":\"people/{userId}/@groups/{groupId}\",\"" +
+            "httpMethod\":\"GET\",\"description\":\"Get people in a group\",\"parameters\":{\"alt\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Specifies an alternative representation type.\",\"defa" +
+            "ult\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Us" +
+            "e JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A contin" +
+            "uation token that allows pagination.\",\"location\":\"query\"},\"groupId\":{\"type\":\"str" +
+            "ing\",\"description\":\"ID of the group for which to list users.\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit lan" +
+            "guage results.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description" +
+            "\":\"Maximum number of results to include.\",\"default\":\"20\",\"format\":\"uint32\",\"loca" +
+            "tion\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being ref" +
+            "erenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupI" +
+            "d\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]},\"patch\":{\"id\":\"chili.peo" +
+            "ple.patch\",\"path\":\"people/{userId}/@groups/{groupId}/{personId}\",\"httpMethod\":\"P" +
+            "ATCH\",\"description\":\"Add a person to a group. This method supports patch semanti" +
+            "cs.\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternativ" +
+            "e representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescription" +
+            "s\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"groupId\":{\"typ" +
+            "e\":\"string\",\"description\":\"ID of the group to which to add the person.\",\"require" +
+            "d\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to" +
+            " limit language results.\",\"location\":\"query\"},\"personId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"ID of the person to add to the group.\",\"required\":true,\"location\":\"path" +
+            "\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the owner of the group.\",\"requ" +
+            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\",\"personId\"]," +
+            "\"request\":{\"$ref\":\"Person\"},\"response\":{\"$ref\":\"Person\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/buzz\"]},\"reshared\":{\"id\":\"chili.people.reshared\",\"path\":\"act" +
+            "ivities/{userId}/{scope}/{postId}/{groupId}\",\"httpMethod\":\"GET\",\"description\":\"G" +
+            "et people who reshared an activity\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[" +
+            "\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"loc" +
+            "ation\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token that al" +
+            "lows pagination.\",\"location\":\"query\"},\"groupId\":{\"type\":\"string\",\"required\":true" +
+            ",\"enum\":[\"@reshared\"],\"enumDescriptions\":[\"People who reshared this activity.\"]," +
+            "\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit l" +
+            "anguage results.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"Maximum number of results to include.\",\"default\":\"20\",\"format\":\"uint32\",\"lo" +
+            "cation\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity tha" +
+            "t was reshared.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type\":\"string\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of t" +
+            "he user being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
+            "[\"userId\",\"scope\",\"postId\",\"groupId\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.re" +
+            "adonly\"]},\"search\":{\"id\":\"chili.people.search\",\"path\":\"people/search\",\"httpMetho" +
+            "d\":\"GET\",\"description\":\"Search for people\",\"parameters\":{\"alt\":{\"type\":\"string\"," +
+            "\"description\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"" +
+            "enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format" +
+            "\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token " +
+            "that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\"" +
+            ":\"Language code to limit language results.\",\"location\":\"query\"},\"max-results\":{\"" +
+            "type\":\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":" +
+            "\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"F" +
+            "ull-text search query string.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"PeopleFe" +
+            "ed\"},\"scopes\":[\"https://www.googleapis.com/auth/buzz\",\"https://www.googleapis.co" +
+            "m/auth/buzz.readonly\"]},\"update\":{\"id\":\"chili.people.update\",\"path\":\"people/{use" +
+            "rId}/@groups/{groupId}/{personId}\",\"httpMethod\":\"PUT\",\"description\":\"Add a perso" +
+            "n to a group\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifies an a" +
+            "lternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDe" +
+            "scriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"},\"group" +
+            "Id\":{\"type\":\"string\",\"description\":\"ID of the group to which to add the person.\"" +
+            ",\"required\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Languag" +
+            "e code to limit language results.\",\"location\":\"query\"},\"personId\":{\"type\":\"strin" +
+            "g\",\"description\":\"ID of the person to add to the group.\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the owner of the grou" +
+            "p.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"groupId\",\"pe" +
+            "rsonId\"],\"request\":{\"$ref\":\"Person\"},\"response\":{\"$ref\":\"Person\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/buzz\"]}}},\"photoAlbums\":{\"methods\":{\"delete\":{\"id\":" +
+            "\"chili.photoAlbums.delete\",\"path\":\"photos/{userId}/@self/{albumId}\",\"httpMethod\"" +
+            ":\"DELETE\",\"description\":\"Delete a photo album\",\"parameters\":{\"albumId\":{\"type\":\"" +
+            "string\",\"description\":\"ID of the album to delete.\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representat" +
+            "ion type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom" +
+            " XML format\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Language code to limit language results.\",\"location\":\"query\"},\"userId\":" +
+            "{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":tru" +
+            "e,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albumId\"],\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/picasa\"]},\"get\":{\"id\":\"chili.photoAlbums.get\",\"path\":\"pho" +
+            "tos/{userId}/@self/{albumId}\",\"httpMethod\":\"GET\",\"description\":\"Get a photo albu" +
+            "m\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album to ge" +
+            "t.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Spe" +
+            "cifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"jso" +
+            "n\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"que" +
+            "ry\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language result" +
+            "s.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user " +
+            "being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId" +
+            "\",\"albumId\"],\"response\":{\"$ref\":\"Album\"},\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/picasa\"]},\"insert\":{\"id\":\"chili.photoAlbums.insert\",\"path\":\"photos/{userId}/" +
+            "@self\",\"httpMethod\":\"POST\",\"description\":\"Create a photo album\",\"parameters\":{\"a" +
+            "lt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation type" +
+            ".\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML for" +
+            "mat\",\"Use JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":" +
+            "\"Language code to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":" +
+            "\"string\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"locat" +
+            "ion\":\"path\"}},\"parameterOrder\":[\"userId\"],\"request\":{\"$ref\":\"Album\"},\"response\":" +
+            "{\"$ref\":\"Album\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"list\":{\"i" +
+            "d\":\"chili.photoAlbums.list\",\"path\":\"photos/{userId}/{scope}\",\"httpMethod\":\"GET\"," +
+            "\"description\":\"List a user\'s photo albums\",\"parameters\":{\"alt\":{\"type\":\"string\"," +
+            "\"description\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"" +
+            "enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format" +
+            "\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A continuation token " +
+            "that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\"" +
+            ":\"Language code to limit language results.\",\"location\":\"query\"},\"max-results\":{\"" +
+            "type\":\"integer\",\"description\":\"Maximum number of results to include.\",\"default\":" +
+            "\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"scope\":{\"type\":\"string\",\"description" +
+            "\":\"The collection of albums to list.\",\"required\":true,\"enum\":[\"@self\"],\"enumDesc" +
+            "riptions\":[\"Albums posted by the user.\"],\"location\":\"path\"},\"userId\":{\"type\":\"st" +
+            "ring\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"location" +
+            "\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\"],\"response\":{\"$ref\":\"AlbumsFeed\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]}}},\"photos\":{\"methods\":{\"del" +
+            "ete\":{\"id\":\"chili.photos.delete\",\"path\":\"photos/{userId}/@self/{albumId}/@photos" +
+            "/{photoId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a photo\",\"parameters\":{\"" +
+            "albumId\":{\"type\":\"string\",\"description\":\"ID of the album to which to photo belon" +
+            "gs.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Sp" +
+            "ecifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"js" +
+            "on\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"qu" +
+            "ery\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language resul" +
+            "ts.\",\"location\":\"query\"},\"photoId\":{\"type\":\"string\",\"description\":\"ID of the pho" +
+            "to to delete.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"des" +
+            "cription\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"userId\",\"albumId\",\"photoId\"],\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/picasa\"]},\"get\":{\"id\":\"chili.photos.get\",\"path\":\"photos/{userId}/@se" +
+            "lf/{albumId}/@photos/{photoId}\",\"httpMethod\":\"GET\",\"description\":\"Get photo meta" +
+            "data\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album co" +
+            "ntaining the photo.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"" +
+            "description\":\"Specifies an alternative representation type.\",\"default\":\"atom\",\"e" +
+            "num\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"" +
+            "],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limi" +
+            "t language results.\",\"location\":\"query\"},\"photoId\":{\"type\":\"string\",\"description" +
+            "\":\"ID of the photo for which to get metadata.\",\"required\":true,\"location\":\"path\"" +
+            "},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albumId\",\"photoId\"]" +
+            ",\"response\":{\"$ref\":\"ChiliPhotosResourceJson\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/picasa\"]},\"insert\":{\"id\":\"chili.photos.insert\",\"path\":\"photos/{userId}" +
+            "/{albumId}\",\"httpMethod\":\"POST\",\"description\":\"Upload a photo to an album\",\"para" +
+            "meters\":{\"albumId\":{\"type\":\"string\",\"description\":\"ID of the album to which to u" +
+            "pload.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":" +
+            "\"Specifies an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\"," +
+            "\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":" +
+            "\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language re" +
+            "sults.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the u" +
+            "ser being referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"us" +
+            "erId\",\"albumId\"],\"request\":{\"$ref\":\"AlbumLite\"},\"response\":{\"$ref\":\"AlbumLite\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/buzz\"],\"mediaUpload\":{\"accept\":[\"imag" +
+            "e/*\"],\"maxSize\":\"30MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"upload/ph" +
+            "otos/{userId}/{albumId}\"},\"resumable\":{\"multipart\":true,\"path\":\"resumable/upload" +
+            "/photos/{userId}/{albumId}\"}}}},\"insert2\":{\"id\":\"chili.photos.insert2\",\"path\":\"p" +
+            "hotos/{userId}/@self/{albumId}/@photos\",\"httpMethod\":\"POST\",\"description\":\"Uploa" +
+            "d a photo to an album\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"description\":\"I" +
+            "D of the album to which to upload.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"t" +
+            "ype\":\"string\",\"description\":\"Specifies an alternative representation type.\",\"def" +
+            "ault\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"U" +
+            "se JSON format\"],\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Langua" +
+            "ge code to limit language results.\",\"location\":\"query\"},\"userId\":{\"type\":\"string" +
+            "\",\"description\":\"ID of the user being referenced.\",\"required\":true,\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"userId\",\"albumId\"],\"request\":{\"$ref\":\"ChiliPhotosResou" +
+            "rceJson\"},\"response\":{\"$ref\":\"ChiliPhotosResourceJson\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/picasa\"],\"mediaUpload\":{\"accept\":[\"image/*\"],\"maxSize\":\"30MB\"" +
+            ",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"upload/photos/{userId}/@self/{a" +
+            "lbumId}/@photos\"},\"resumable\":{\"multipart\":true,\"path\":\"resumable/upload/photos/" +
+            "{userId}/@self/{albumId}/@photos\"}}}},\"listByAlbum\":{\"id\":\"chili.photos.listByAl" +
+            "bum\",\"path\":\"photos/{userId}/@self/{albumId}/@photos\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"List photos in an album\",\"parameters\":{\"albumId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"ID of the album for which to list photos.\",\"required\":true,\"location\":\"" +
+            "path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative representa" +
+            "tion type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Ato" +
+            "m XML format\",\"Use JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"descr" +
+            "iption\":\"A continuation token that allows pagination.\",\"location\":\"query\"},\"hl\":" +
+            "{\"type\":\"string\",\"description\":\"Language code to limit language results.\",\"locat" +
+            "ion\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of r" +
+            "esults to include.\",\"default\":\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"userId" +
+            "\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\",\"required\":t" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"albumId\"],\"response\":{\"$ref\"" +
+            ":\"PhotosFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]},\"listByScope" +
+            "\":{\"id\":\"chili.photos.listByScope\",\"path\":\"photos/{userId}/@self/{scope}/@photos" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Get a user\'s photos\",\"parameters\":{\"alt\":{\"t" +
+            "ype\":\"string\",\"description\":\"Specifies an alternative representation type.\",\"def" +
+            "ault\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Use Atom XML format\",\"U" +
+            "se JSON format\"],\"location\":\"query\"},\"c\":{\"type\":\"string\",\"description\":\"A conti" +
+            "nuation token that allows pagination.\",\"location\":\"query\"},\"hl\":{\"type\":\"string\"" +
+            ",\"description\":\"Language code to limit language results.\",\"location\":\"query\"},\"m" +
+            "ax-results\":{\"type\":\"integer\",\"description\":\"Maximum number of results to includ" +
+            "e.\",\"default\":\"20\",\"format\":\"uint32\",\"location\":\"query\"},\"scope\":{\"type\":\"string" +
+            "\",\"description\":\"The collection of photos to list.\",\"required\":true,\"enum\":[\"@re" +
+            "cent\"],\"enumDescriptions\":[\"Recent photos uploaded by the user.\"],\"location\":\"pa" +
+            "th\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being referenced.\"," +
+            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"scope\"],\"respons" +
+            "e\":{\"$ref\":\"PhotosFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/picasa\"]}}}," +
+            "\"related\":{\"methods\":{\"list\":{\"id\":\"chili.related.list\",\"path\":\"activities/{user" +
+            "Id}/{scope}/{postId}/@related\",\"httpMethod\":\"GET\",\"description\":\"Get related lin" +
+            "ks for an activity\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Specifie" +
+            "s an alternative representation type.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"" +
+            "enumDescriptions\":[\"Use Atom XML format\",\"Use JSON format\"],\"location\":\"query\"}," +
+            "\"hl\":{\"type\":\"string\",\"description\":\"Language code to limit language results.\",\"" +
+            "location\":\"query\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the activity t" +
+            "o which to get related links.\",\"required\":true,\"location\":\"path\"},\"scope\":{\"type" +
+            "\":\"string\",\"description\":\"The collection to which the activity belongs.\",\"requir" +
+            "ed\":true,\"enum\":[\"@self\"],\"enumDescriptions\":[\"Activities posted by the user.\"]," +
+            "\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user being" +
+            " referenced.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"sc" +
+            "ope\",\"postId\"],\"response\":{\"$ref\":\"RelatedFeed\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/buzz\",\"https://www.googleapis.com/auth/buzz.readonly\"]}}}}}";
         
         private const string Version = "v1";
         

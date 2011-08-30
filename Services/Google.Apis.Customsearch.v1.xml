@@ -155,6 +155,9 @@
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Gl">
             <summary>Geolocation of end user.</summary>
         </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Googlehost">
+            <summary>The local Google domain to use to perform the search.</summary>
+        </member>
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Lr">
             <summary>The language restriction for the search results</summary>
         </member>

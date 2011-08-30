@@ -156,6 +156,77 @@
             The description of this scope.
             </summary>
         </member>
+        <member name="T:Google.Apis.Requests.UriFactory">
+            <summary>
+            Class used to create instances of the Uri class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.Create(System.String)">
+            <summary>
+            Creates a new Uri instance.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.Create(System.Uri,System.String)">
+            <summary>
+            Creates a new Uri instance.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.Create(System.Uri,System.Uri)">
+            <summary>
+            Creates a new Uri instance.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.UriFactory.IUriModifier">
+            <summary>
+            Describes a class which is used to modify an Uri.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.IUriModifier.RequiresModification(System.Uri)">
+            <summary>
+            True if the specified Uri should be modified using this modifier.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.IUriModifier.Modify(System.Uri)">
+            <summary>
+            Modifies the specified uri.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.UriFactory.UriSlashUnescapeWorkaround">
+            <summary>
+            This is a workaround for the "Uri-Slash-Unescape" bug in the System.Uri class of the Microsoft .NET 
+            Framework. The bug causes all "%2F" to be unescaped into "/", therefore making it impossible to pass "/" 
+            as a value in any  parameter. The issue only occures in the Microsoft .NET Framework, not on mono.
+            
+            Microsoft's response: 
+             http://connect.microsoft.com/VisualStudio/feedback/details/94109/system-uri-constructor-evaluates-escaped-slashes-and-removes-double-slashes
+            Stackoverflow solution: 
+             http://stackoverflow.com/questions/781205/c-net-getting-a-url-with-an-url-encoded-slash
+            
+            This Workaround will only work as long as the internals of the System.Uri class do not change. If you have
+            any other option, then prefer it over this one. The code is just provided to make the library usable under
+            Microsoft .NET
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.UriFactory.UriSlashUnescapeWorkaround.Modify(System.Uri)">
+            <summary>
+            Uses reflection to modify a private field in the Uri object in order to disable to Unescape-mechanism
+            for the PathAndQuery field. This will only work as long as the internal implementation of the Uri
+            class does not drastically change. 
+            </summary>
+            <param name="uri">The Uri to modify.</param>
+            <returns>The uri which has been passed as a parameter (with the Unescape-mechanism disabled)</returns>
+        </member>
+        <member name="T:Google.Apis.Util.LazyResult`1">
+            <summary>
+            Lazily returns the result of an operation. Can be used to pass Exceptions along asynchronous methods.
+            </summary>
+            <typeparam name="T">Type of the result.</typeparam>
+        </member>
+        <member name="M:Google.Apis.Util.LazyResult`1.GetResult">
+            <summary>
+            Returns the result associated with this object. Might throw an exception.
+            </summary>
+        </member>
         <member name="M:System.Web.HttpUtility.HtmlDecode(System.String)">
             <summary>
             Decodes an HTML-encoded string and returns the decoded string.
@@ -482,6 +553,25 @@
             <summary>
             Builds an executeable base request containing the data of this request class.
             </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetAsyncResponse(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
+            <summary>
+            Retrieves a response asynchronously
+            </summary>
+            <param name="responseHandler">Method to call once a response has been received.</param>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.GetResponse">
+            <summary>
+            Receives a response synchronously.
+            </summary>
+            <returns>The received response.</returns>
+        </member>
+        <member name="M:Google.Apis.Requests.ServiceRequest`1.FetchObject(Google.Apis.Requests.IResponse)">
+            <summary>
+            Fetches the specified response as an object.
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
         </member>
         <member name="M:Google.Apis.Requests.ServiceRequest`1.Fetch">
              <summary>
@@ -1392,6 +1482,11 @@
             <summary>
             Request to a service.
             </summary>
+            <remarks>
+            Features which are not (yet) supported on SilverLight:
+            - The UserAgent header.
+            - GZip Compression
+            </remarks>
         </member>
         <member name="T:Google.Apis.Requests.IRequest">
             <summary>
@@ -1462,6 +1557,12 @@
             <summary>
             Sets the ETag-behavior of this request.
             </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.IRequest.ExecuteRequestAsync(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
+            <summary>
+            Executes the request asynchronously, and calls the specified delegate once done.
+            </summary>
+            <param name="responseHandler">The method to call once a response has been received.</param>
         </member>
         <member name="M:Google.Apis.Requests.IRequest.ExecuteRequest">
             <summary>
@@ -1540,6 +1641,28 @@
             Adds an ETag to this request.
             </summary>
         </member>
+        <member name="M:Google.Apis.Requests.Request.InternalBeginExecuteRequest(Google.Apis.Requests.Request.AsyncExecutionState)">
+            <summary>
+            Begins executing a request based upon the current execution state.
+            </summary>
+            <remarks>Does not check preconditions.</remarks>
+        </member>
+        <member name="M:Google.Apis.Requests.Request.InternalEndExecuteRequest(System.IAsyncResult)">
+            <summary>
+            Ends executing an asynchronous request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.Request.HandleFailedRequest(Google.Apis.Requests.Request.AsyncExecutionState,System.Net.WebException)">
+            <summary>
+            Handles a failed request, and tries to fix it if possible.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.Request.ExecuteRequestAsync(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
+            <summary>
+            Executes the request asynchronously, and calls the specified delegate once done.
+            </summary>
+            <param name="responseHandler">The method to call once a response has been received.</param>
+        </member>
         <member name="M:Google.Apis.Requests.Request.ExecuteRequest">
             <summary>
             Executes a request given the configuration options supplied.
@@ -1599,6 +1722,11 @@
             </summary>
             <remarks>Automatically applies GZip-compression if globally enabled.</remarks>
         </member>
+        <member name="M:Google.Apis.Requests.Request.EndAttachBody(System.IAsyncResult)">
+            <summary>
+            Ends the AttachBody request asynchronously.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Requests.Request.HttpMethodHasBody(System.String)">
             <summary>
             Returns true if this http method can have a body.
@@ -1643,6 +1771,47 @@
             <summary>
             Defines whether this request can be sent multiple times.
             </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.Request.AsyncExecutionState">
+            <summary>
+            Container struct for the asynchronous execution of a request.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Requests.Request.AsyncExecutionState.Try">
+            <summary>
+            The current try we are in. 1 based.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Requests.Request.AsyncExecutionState.WaitTime">
+            <summary>
+            The time we will wait between the current and the next request if the current one fails.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Requests.Request.AsyncExecutionState.ResponseHandler">
+            <summary>
+            The method which will be called once the request has been completed.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Requests.Request.AsyncExecutionState.CurrentRequest">
+            <summary>
+            The request which is currently being executed.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.Request.AsyncRequestResult">
+            <summary>
+            Represents the result of an asynchronous Request.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Requests.IAsyncRequestResult">
+            <summary>
+            Represents the result of a asynchronous Request.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.IAsyncRequestResult.GetResponse">
+            <summary>
+            Retrieves the response to this request.
+            </summary>
+            <exception cref="T:Google.GoogleApiRequestException">Thrown if the request failed</exception>
         </member>
         <member name="T:Google.Apis.Discovery.BaseMethod">
             <summary>
@@ -2103,7 +2272,7 @@
             </summary>
             <returns>A nonce suitable for Google's two-legged OAuth implementation</returns>
         </member>
-        <member name="M:Google.Apis.OAuthUtil.GenerateHeader(System.Uri,System.String,System.String,System.String)">
+        <member name="M:Google.Apis.OAuthUtil.GenerateAuthorizationHeader(System.Uri,System.String,System.String,System.String)">
             <summary>
             Generates an OAuth header.
             </summary>
@@ -2130,6 +2299,11 @@
         <member name="F:Google.Apis.Utilities.DefaultUser">
             <summary>
             default user string
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Utilities.IsRunningOnMono">
+            <summary>
+            True when the Mono-runtime is used to execute this code.
             </summary>
         </member>
         <member name="M:Google.Apis.Utilities.EncodeString(System.String)">
@@ -2165,12 +2339,6 @@
             </summary>
             <param name="value">the string to decode</param>
         </member>
-        <member name="M:Google.Apis.Utilities.UriEncodeReserved(System.String)">
-            <summary>helper to read in a string and replace the reserved URI 
-            characters with hex encoding</summary> 
-            <param name="content">the parameter string</param>
-            <returns>hex encoded string</returns>
-        </member>
         <member name="M:Google.Apis.Utilities.IsWeakETag(System.String)">
             <summary>
              tests an etag for weakness. returns TRUE for weak etags and for null strings
@@ -2178,19 +2346,8 @@
             <param name="eTag"></param>
             <returns></returns>
         </member>
-        <member name="M:Google.Apis.Utilities.UriEncodeUnsafe(System.String)">
-            <summary>helper to read in a string and replace the reserved URI 
-            characters with hex encoding</summary> 
-            <param name="content">the parameter string</param>
-            <returns>hex encoded string</returns>
-        </member>
         <member name="M:Google.Apis.Utilities.LocalDateInUTC(System.DateTime)">
             <summary>Method to output just the date portion as string</summary>
-            <param name="dateTime">the DateTime object to output as a string</param>
-            <returns>an rfc-3339 string</returns>
-        </member>
-        <member name="M:Google.Apis.Utilities.LocalDateTimeInUTC(System.DateTime)">
-            <summary>Method to output DateTime as string</summary>
             <param name="dateTime">the DateTime object to output as a string</param>
             <returns>an rfc-3339 string</returns>
         </member>
@@ -2204,20 +2361,10 @@
             <param name="timeSpan">the TimeSpan to format</param>
             <returns>a string in "hh:mm" format.</returns>
         </member>
-        <member name="M:Google.Apis.Utilities.GetAttributeValue(System.String,System.Xml.XmlNode)">
+        <member name="M:Google.Apis.Utilities.GetLibraryVersion">
             <summary>
-            save method to get an attribute value from an xmlnode
+            Returns the version of the Core library.
             </summary>
-            <param name="attributeName"></param>
-            <param name="xmlNode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Utilities.GetAssemblyVersion">
-            <summary>
-            returns the current assembly version using split() instead of the version 
-            attribute to avoid security issues
-            </summary>
-            <returns>the current assembly version as a string</returns>
         </member>
         <member name="M:Google.Apis.Utilities.GetAssemblyTitle">
             <summary>
@@ -2756,38 +2903,6 @@
             Returns true when the collection is null or empty
             </summary>
         </member>
-        <member name="M:Google.Apis.Util.Utilities.FindFieldByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
-            <summary>
-            Returns the first <see cref="T:System.CodeDom.CodeMemberProperty"/> with a 
-            name that matches the passed in name - or null if no match is found.
-            </summary>
-            <param name="coll">May not be null</param>
-            <param name="name">May not be null or empty</param>
-        </member>
-        <member name="M:Google.Apis.Util.Utilities.FindMemberByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
-            <summary>
-            Returns the first <see cref="T:System.CodeDom.CodeTypeMember"/> with a 
-            name that matches the passed in name - or null if no match is found.
-            </summary>
-            <param name="coll">May not be null</param>
-            <param name="name">May not be null or empty</param>
-        </member>
-        <member name="M:Google.Apis.Util.Utilities.FindTypeMemberByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
-            <summary>
-            Returns the first <see cref="T:System.CodeDom.CodeTypeDeclaration"/> with a 
-            name that matches the passed in name - or null if no match is found.
-            </summary>
-            <param name="coll">May not be null</param>
-            <param name="name">May not be null or empty</param>
-        </member>
-        <member name="M:Google.Apis.Util.Utilities.FindPropertyByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
-            <summary>
-            Returns the first <see cref="T:System.CodeDom.CodeMemberProperty"/> with a 
-            name that matches the passed in name - or Null if no match found.
-            </summary>
-            <param name="coll">May not be null</param>
-            <param name="name">May not be null or empty</param>
-        </member>
         <member name="M:Google.Apis.Util.Utilities.GetCustomAttribute``1(System.Reflection.MemberInfo)">
             <summary>
             Returns the first matching custom attribute (or null) of the specified member
@@ -2812,6 +2927,16 @@
             </summary>
             <param name="o"></param>
             <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.GetAsciiString(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Parses the specified array as an ascii string.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Util.Utilities.GetBytesFromAsciiString(System.String)">
+            <summary>
+            Converts the specified string into an ascii byte array.
+            </summary>
         </member>
         <member name="M:Google.Apis.Util.Utilities.IsMonoRuntime">
             <summary>

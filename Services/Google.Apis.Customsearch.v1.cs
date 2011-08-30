@@ -223,6 +223,8 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         private string gl;
         
+        private string googleHost;
+        
         private string inputEncoding;
         
         private string language;
@@ -300,6 +302,16 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             set {
                 this.gl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("googleHost")]
+        public virtual string GoogleHost {
+            get {
+                return this.googleHost;
+            }
+            set {
+                this.googleHost = value;
             }
         }
         
@@ -692,57 +704,59 @@ namespace Google.Apis.Customsearch.v1 {
             "\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"string\"},\"title\":{" +
             "\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"properties\":{\"count\":{" +
             "\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\":{\"type\":\"string" +
-            "\"},\"cx\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\":\"string\"},\"inp" +
-            "utEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"outputEncoding\":{\"ty" +
-            "pe\":\"string\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"sort\":{\"" +
-            "type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"int32\"},\"startPage\":{\"t" +
-            "ype\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"},\"totalResults\":{\"type" +
-            "\":\"integer\",\"format\":\"int32\"}}},\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"propert" +
-            "ies\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"string\"},\"htmlSnippet\":" +
-            "{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"default" +
-            "\":\"customsearch#result\"},\"link\":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"ad" +
-            "ditionalProperties\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"additionalProperti" +
-            "es\":{\"type\":\"any\"}}}},\"snippet\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"S" +
-            "earch\":{\"id\":\"Search\",\"type\":\"object\",\"properties\":{\"context\":{\"$ref\":\"Context\"}" +
-            ",\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"def" +
-            "ault\":\"customsearch#search\"},\"promotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promo" +
-            "tion\"}},\"queries\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items" +
-            "\":{\"$ref\":\"Query\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template\":{\"type\":\"st" +
-            "ring\",\"default\":\"https://www.googleapis.com/customsearch/v1?q={searchTerms}&num=" +
-            "{count?}&start={startIndex?}&hr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&s" +
-            "ort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&alt=json\"},\"type\":{\"type\":\"string" +
-            "\",\"default\":\"application/json\"}}}}}},\"resources\":{\"cse\":{\"methods\":{\"list\":{\"id\"" +
-            ":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\",\"description\":\"Returns metadat" +
-            "a about the search performed, metadata about the custom search engine used for t" +
-            "he search, and the search results.\",\"parameters\":{\"cr\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Country restrict(s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The URL of a linked custom search engine\",\"location\":\"query\"},\"cx\":{\"typ" +
-            "e\":\"string\",\"description\":\"The custom search engine ID to scope this search quer" +
-            "y\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls turning" +
-            " on or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"" +
-            "Turns off duplicate content filter.\",\"Turns on duplicate content filter.\"],\"loca" +
-            "tion\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end user.\",\"l" +
-            "ocation\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":\"The language restriction " +
-            "for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"lang_ca\",\"lang_cs\",\"lang_da" +
-            "\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"lang_fi\",\"lang_fr\",\"lang_hr" +
-            "\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"lang_ja\",\"lang_ko\",\"lang_lt" +
-            "\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"lang_ro\",\"lang_ru\",\"lang_sk" +
-            "\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\",\"lang_zh-TW\"],\"enumDescri" +
-            "ptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danish\",\"German\",\"Greek\",\"Engli" +
-            "sh\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\",\"Hungarian\",\"Indonesian\"," +
-            "\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Lithuanian\",\"Latvian\",\"Dutch" +
-            "\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russian\",\"Slovak\",\"Slovenian\",\"S" +
-            "erbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Chinese (Traditional)\"],\"loc" +
-            "ation\":\"query\"},\"num\":{\"type\":\"string\",\"description\":\"Number of search results t" +
-            "o return\",\"default\":\"10\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":" +
-            "\"Query\",\"required\":true,\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"description" +
-            "\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enumDesc" +
-            "riptions\":[\"Enables highest level of safe search filtering.\",\"Enables moderate s" +
-            "afe search filtering.\",\"Disables safe search filtering.\"],\"location\":\"query\"},\"s" +
-            "ort\":{\"type\":\"string\",\"description\":\"The sort expression to apply to the results" +
-            "\",\"location\":\"query\"},\"start\":{\"type\":\"string\",\"description\":\"The index of the f" +
-            "irst result to return\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"" +
-            "$ref\":\"Search\"}}}}}}";
+            "\"},\"cx\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\":\"string\"},\"goo" +
+            "gleHost\":{\"type\":\"string\"},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":" +
+            "\"string\"},\"outputEncoding\":{\"type\":\"string\"},\"safe\":{\"type\":\"string\"},\"searchTer" +
+            "ms\":{\"type\":\"string\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"f" +
+            "ormat\":\"int32\"},\"startPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":" +
+            "\"string\"},\"totalResults\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"Result\":{\"id\":\"R" +
+            "esult\",\"type\":\"object\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{" +
+            "\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"" +
+            "kind\":{\"type\":\"string\",\"default\":\"customsearch#result\"},\"link\":{\"type\":\"string\"}" +
+            ",\"pagemap\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"typ" +
+            "e\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}}},\"snippet\":{\"type\":\"string\"}" +
+            ",\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Search\",\"type\":\"object\",\"properties" +
+            "\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Result\"" +
+            "}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#search\"},\"promotions\":{\"type\"" +
+            ":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{\"type\":\"object\",\"additionalPro" +
+            "perties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}},\"url\":{\"type\":\"object\",\"prop" +
+            "erties\":{\"template\":{\"type\":\"string\",\"default\":\"https://www.googleapis.com/custo" +
+            "msearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&hr={language?}&safe=" +
+            "{safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&go" +
+            "oglehost={googleHost?}&alt=json\"},\"type\":{\"type\":\"string\",\"default\":\"application" +
+            "/json\"}}}}}},\"resources\":{\"cse\":{\"methods\":{\"list\":{\"id\":\"search.cse.list\",\"path" +
+            "\":\"v1\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata about the search perfo" +
+            "rmed, metadata about the custom search engine used for the search, and the searc" +
+            "h results.\",\"parameters\":{\"cr\":{\"type\":\"string\",\"description\":\"Country restrict(" +
+            "s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL of a lin" +
+            "ked custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"description" +
+            "\":\"The custom search engine ID to scope this search query\",\"location\":\"query\"},\"" +
+            "filter\":{\"type\":\"string\",\"description\":\"Controls turning on or off the duplicate" +
+            " content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"Turns off duplicate cont" +
+            "ent filter.\",\"Turns on duplicate content filter.\"],\"location\":\"query\"},\"gl\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Geolocation of end user.\",\"location\":\"query\"},\"googl" +
+            "ehost\":{\"type\":\"string\",\"description\":\"The local Google domain to use to perform" +
+            " the search.\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":\"The langu" +
+            "age restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"lang_ca\",\"l" +
+            "ang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"lang_fi\",\"l" +
+            "ang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"lang_ja\",\"l" +
+            "ang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"lang_ro\",\"l" +
+            "ang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\",\"lang_zh-" +
+            "TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danish\",\"German" +
+            "\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\",\"Hungaria" +
+            "n\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Lithuanian\"," +
+            "\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russian\",\"Slovak" +
+            "\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Chinese (Tra" +
+            "ditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"string\",\"description\":\"Number of " +
+            "search results to return\",\"default\":\"10\",\"location\":\"query\"},\"q\":{\"type\":\"string" +
+            "\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"safe\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\"," +
+            "\"off\"],\"enumDescriptions\":[\"Enables highest level of safe search filtering.\",\"En" +
+            "ables moderate safe search filtering.\",\"Disables safe search filtering.\"],\"locat" +
+            "ion\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The sort expression to appl" +
+            "y to the results\",\"location\":\"query\"},\"start\":{\"type\":\"string\",\"description\":\"Th" +
+            "e index of the first result to return\",\"location\":\"query\"}},\"parameterOrder\":[\"q" +
+            "\"],\"response\":{\"$ref\":\"Search\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -1003,6 +1017,8 @@ namespace Google.Apis.Customsearch.v1 {
             
             private string gl;
             
+            private string googlehost;
+            
             private Lr? lr;
             
             private string num;
@@ -1072,6 +1088,17 @@ namespace Google.Apis.Customsearch.v1 {
                 }
                 set {
                     this.gl = value;
+                }
+            }
+            
+            /// <summary>The local Google domain to use to perform the search.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("googlehost")]
+            public virtual string Googlehost {
+                get {
+                    return this.googlehost;
+                }
+                set {
+                    this.googlehost = value;
                 }
             }
             

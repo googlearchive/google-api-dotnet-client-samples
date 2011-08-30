@@ -325,7 +325,7 @@
         <member name="M:Google.Apis.Shopping.v1.ProductsResource.Get(System.String,System.Int64,System.String,System.String)">
             <summary>Returns a single product</summary>
             <param name="source">Required - Query source</param>
-            <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
+            <param name="accountId">Required - Merchant center account id</param>
             <param name="productIdType">Required - Type of productId</param>
             <param name="productId">Required - Id of product</param>
         </member>

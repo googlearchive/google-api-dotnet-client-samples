@@ -754,6 +754,38 @@
             Returns a list of used and therefore forbidden words from a type declaration.
             </summary>
         </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.FindFieldByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
+            <summary>
+            Returns the first <see cref="T:System.CodeDom.CodeMemberProperty"/> with a 
+            name that matches the passed in name - or null if no match is found.
+            </summary>
+            <param name="coll">May not be null</param>
+            <param name="name">May not be null or empty</param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.FindMemberByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
+            <summary>
+            Returns the first <see cref="T:System.CodeDom.CodeTypeMember"/> with a 
+            name that matches the passed in name - or null if no match is found.
+            </summary>
+            <param name="coll">May not be null</param>
+            <param name="name">May not be null or empty</param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.FindTypeMemberByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
+            <summary>
+            Returns the first <see cref="T:System.CodeDom.CodeTypeDeclaration"/> with a 
+            name that matches the passed in name - or null if no match is found.
+            </summary>
+            <param name="coll">May not be null</param>
+            <param name="name">May not be null or empty</param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.FindPropertyByName(System.CodeDom.CodeTypeMemberCollection,System.String)">
+            <summary>
+            Returns the first <see cref="T:System.CodeDom.CodeMemberProperty"/> with a 
+            name that matches the passed in name - or Null if no match found.
+            </summary>
+            <param name="coll">May not be null</param>
+            <param name="name">May not be null or empty</param>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.GeneratorUtils.TargetCase">
             <summary>
             Defines a change operation which should be applied to a letter.

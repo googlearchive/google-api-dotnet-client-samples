@@ -121,34 +121,34 @@
         </member>
         <member name="M:Google.Apis.Prediction.v1_3.TrainingResource.Delete(System.String)">
             <summary>Delete a trained model</summary>
-            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+            <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         </member>
         <member name="M:Google.Apis.Prediction.v1_3.TrainingResource.Get(System.String)">
             <summary>Check training status of your model</summary>
-            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+            <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         </member>
         <member name="M:Google.Apis.Prediction.v1_3.TrainingResource.Insert(Google.Apis.Prediction.v1_3.Data.Training)">
             <summary>Begin training your model</summary>
         </member>
         <member name="M:Google.Apis.Prediction.v1_3.TrainingResource.Predict(Google.Apis.Prediction.v1_3.Data.Input,System.String)">
             <summary>Submit data and request a prediction</summary>
-            <param name="data">Required - mybucket%2Fmydata resource in Google Storage</param>
+            <param name="data">Required - mybucket/mydata resource in Google Storage</param>
         </member>
         <member name="M:Google.Apis.Prediction.v1_3.TrainingResource.Update(Google.Apis.Prediction.v1_3.Data.Update,System.String)">
             <summary>Add new data to a trained model</summary>
             <param name="data">Required</param>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.DeleteRequest.Data">
-            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.GetRequest.Data">
-            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.Data">
-            <summary>mybucket%2Fmydata resource in Google Storage</summary>
+            <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

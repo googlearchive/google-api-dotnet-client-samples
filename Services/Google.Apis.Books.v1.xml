@@ -278,8 +278,7 @@
             <summary>An identifier for the version of the volume content (text &amp; images). (In LITE projection)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.Description">
-             <summary>A synopsis of the volume. The text of the description is formatted in HTML and includes simple formatting elements, such as , ,
-            , etc. (In LITE projection.)</summary>
+            <summary>A synopsis of the volume. The text of the description is formatted in HTML and includes simple formatting elements, such as b, i, and br tags. (In LITE projection.)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.Dimensions">
             <summary>Physical dimensions of this volume.</summary>
@@ -469,6 +468,9 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Q">
+            <summary>Full-text search query string in this bookshelf.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Shelf">
             <summary>The bookshelf id or name retrieve volumes for.</summary>
         </member>
@@ -567,6 +569,15 @@
         <member name="F:Google.Apis.Books.v1.VolumesResource.Filter.Partial">
             <summary>Public able to see parts of text.</summary>
         </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.LibraryRestrict">
+            <summary>Restrict search to this user&apos;s library.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.LibraryRestrict.MyLibrary">
+            <summary>Restrict to the user&apos;s library, any shelf.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.LibraryRestrict.NoRestrict">
+            <summary>Do not restrict based on user&apos;s library.</summary>
+        </member>
         <member name="T:Google.Apis.Books.v1.VolumesResource.OrderBy">
             <summary>Sort search results.</summary>
         </member>
@@ -591,6 +602,9 @@
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Partner">
+            <summary>Identifier of partner for whom to brand results.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
         </member>
@@ -612,11 +626,17 @@
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.LangRestrict">
             <summary>Restrict results to books with this language code.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.LibraryRestrict">
+            <summary>Restrict search to this user's library.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.OrderBy">
             <summary>Sort search results.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Partner">
+            <summary>Identifier of partner for whom to restrict and brand results.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.PrintType">
             <summary>Restrict to books or magazines.</summary>

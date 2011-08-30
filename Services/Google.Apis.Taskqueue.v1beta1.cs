@@ -516,22 +516,22 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             "/auth/taskqueue.consumer\"]},\"lease\":{\"id\":\"taskqueue.tasks.lease\",\"path\":\"{proje" +
             "ct}/taskqueues/{taskqueue}/tasks/lease\",\"httpMethod\":\"POST\",\"description\":\"Lease" +
             " 1 or more tasks from a TaskQueue.\",\"parameters\":{\"leaseSecs\":{\"type\":\"integer\"," +
-            "\"description\":\"The lease in seconds.\",\"required\":true,\"location\":\"query\"},\"numTa" +
-            "sks\":{\"type\":\"integer\",\"description\":\"The number of tasks to lease.\",\"required\":" +
-            "true,\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"The project u" +
-            "nder which the queue lies.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"typ" +
-            "e\":\"string\",\"description\":\"The taskqueue to lease a task from.\",\"required\":true," +
-            "\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"numTasks\",\"leaseSec" +
-            "s\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googleapis.com/auth/taskq" +
-            "ueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"list\":{\"id\":\"taskq" +
-            "ueue.tasks.list\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"List Tasks in a TaskQueue\",\"parameters\":{\"project\":{\"type\":\"s" +
-            "tring\",\"description\":\"The project under which the queue lies.\",\"required\":true,\"" +
-            "location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The id of the task" +
-            "queue to list tasks from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"Tasks2\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]" +
-            "}}}}}";
+            "\"description\":\"The lease in seconds.\",\"required\":true,\"format\":\"int32\",\"location" +
+            "\":\"query\"},\"numTasks\":{\"type\":\"integer\",\"description\":\"The number of tasks to le" +
+            "ase.\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"type\":\"st" +
+            "ring\",\"description\":\"The project under which the queue lies.\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to le" +
+            "ase a task from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project" +
+            "\",\"taskqueue\",\"numTasks\",\"leaseSecs\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskque" +
+            "ue.consumer\"]},\"list\":{\"id\":\"taskqueue.tasks.list\",\"path\":\"{project}/taskqueues/" +
+            "{taskqueue}/tasks\",\"httpMethod\":\"GET\",\"description\":\"List Tasks in a TaskQueue\"," +
+            "\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"The project under which " +
+            "the queue lies.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\"" +
+            ",\"description\":\"The id of the taskqueue to list tasks from.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"Ta" +
+            "sks2\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.google" +
+            "apis.com/auth/taskqueue.consumer\"]}}}}}";
         
         private const string Version = "v1beta1";
         

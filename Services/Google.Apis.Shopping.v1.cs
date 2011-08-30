@@ -1701,98 +1701,97 @@ namespace Google.Apis.Shopping.v1 {
             "ct.\"}}}},\"resources\":{\"products\":{\"methods\":{\"get\":{\"id\":\"shopping.products.get\"" +
             ",\"path\":\"{source}/products/{accountId}/{productIdType}/{productId}\",\"httpMethod\"" +
             ":\"GET\",\"description\":\"Returns a single product\",\"parameters\":{\"accountId\":{\"type" +
-            "\":\"integer\",\"description\":\"Merchant center account id\",\"required\":true,\"minimum\"" +
-            ":\"0\",\"maximum\":\"4294967295\",\"location\":\"path\"},\"attributeFilter\":{\"type\":\"string" +
-            "\",\"description\":\"Comma separated list of attributes to return\",\"location\":\"query" +
-            "\"},\"categories.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return categ" +
-            "ory information\",\"location\":\"query\"},\"categories.include\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Category specification\",\"location\":\"query\"},\"categories.useGcsConfig\":" +
-            "{\"type\":\"boolean\",\"description\":\"This parameter is currently ignored\",\"location\"" +
-            ":\"query\"},\"debug.enableLogging\":{\"type\":\"boolean\",\"description\":\"Google Internal" +
-            "\",\"location\":\"query\"},\"debug.enabled\":{\"type\":\"boolean\",\"description\":\"Google In" +
-            "ternal\",\"location\":\"query\"},\"debug.searchRequest\":{\"type\":\"boolean\",\"description" +
-            "\":\"Google Internal\",\"location\":\"query\"},\"debug.searchResponse\":{\"type\":\"boolean\"" +
-            ",\"description\":\"Google Internal\",\"location\":\"query\"},\"productFields\":{\"type\":\"st" +
-            "ring\",\"description\":\"Google Internal\",\"location\":\"query\"},\"productId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Id of product\",\"required\":true,\"location\":\"path\"},\"product" +
-            "IdType\":{\"type\":\"string\",\"description\":\"Type of productId\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"recommendations.enabled\":{\"type\":\"boolean\",\"description\":\"Whether" +
-            " to return recommendation information\",\"location\":\"query\"},\"recommendations.incl" +
-            "ude\":{\"type\":\"string\",\"description\":\"Recommendation specification\",\"location\":\"q" +
-            "uery\"},\"recommendations.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This para" +
-            "meter is currently ignored\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Query source\",\"required\":true,\"location\":\"path\"},\"taxonomy\":{\"type\":\"st" +
-            "ring\",\"description\":\"Merchant taxonomy\",\"location\":\"query\"},\"thumbnails\":{\"type\"" +
-            ":\"string\",\"description\":\"Thumbnail specification\",\"location\":\"query\"}},\"paramete" +
-            "rOrder\":[\"source\",\"accountId\",\"productIdType\",\"productId\"],\"response\":{\"$ref\":\"P" +
-            "roduct\"}},\"list\":{\"id\":\"shopping.products.list\",\"path\":\"{source}/products\",\"http" +
-            "Method\":\"GET\",\"description\":\"Returns a list of products and content modules\",\"pa" +
-            "rameters\":{\"attributeFilter\":{\"type\":\"string\",\"description\":\"Comma separated lis" +
-            "t of attributes to return\",\"location\":\"query\"},\"boostBy\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Boosting specification\",\"location\":\"query\"},\"categories.enabled\":{\"type" +
-            "\":\"boolean\",\"description\":\"Whether to return category information\",\"location\":\"q" +
-            "uery\"},\"categories.include\":{\"type\":\"string\",\"description\":\"Category specificati" +
-            "on\",\"location\":\"query\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"description" +
-            "\":\"This parameter is currently ignored\",\"location\":\"query\"},\"channels\":{\"type\":\"" +
-            "string\",\"description\":\"Channels specification\",\"location\":\"query\"},\"country\":{\"t" +
-            "ype\":\"string\",\"description\":\"Country restriction (ISO 3166)\",\"location\":\"query\"}" +
-            ",\"crowdBy\":{\"type\":\"string\",\"description\":\"Crowding specification\",\"location\":\"q" +
-            "uery\"},\"currency\":{\"type\":\"string\",\"description\":\"Currency restriction (ISO 4217" +
-            ")\",\"location\":\"query\"},\"debug.enableLogging\":{\"type\":\"boolean\",\"description\":\"Go" +
-            "ogle Internal\",\"location\":\"query\"},\"debug.enabled\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Google Internal\",\"location\":\"query\"},\"debug.geocodeRequest\":{\"type\":\"boolean" +
-            "\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.geocodeResponse\":{\"" +
-            "type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.rdcRe" +
-            "quest\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"de" +
-            "bug.rdcResponse\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"q" +
-            "uery\"},\"debug.searchRequest\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"" +
-            "location\":\"query\"},\"debug.searchResponse\":{\"type\":\"boolean\",\"description\":\"Googl" +
-            "e Internal\",\"location\":\"query\"},\"facets.discover\":{\"type\":\"string\",\"description\"" +
-            ":\"Facets to discover\",\"location\":\"query\"},\"facets.enabled\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Whether to return facet information\",\"location\":\"query\"},\"facets.inc" +
-            "lude\":{\"type\":\"string\",\"description\":\"Facets to include (applies when useGcsConf" +
-            "ig == false)\",\"location\":\"query\"},\"facets.useGcsConfig\":{\"type\":\"boolean\",\"descr" +
-            "iption\":\"Whether to return facet information as configured in the GCS account\",\"" +
-            "location\":\"query\"},\"language\":{\"type\":\"string\",\"description\":\"Language restricti" +
-            "on (BCP 47)\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"M" +
-            "aximum number of results to return\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"locati" +
-            "on\":\"query\"},\"minAvailability\":{\"type\":\"string\",\"enum\":[\"inStock\",\"limited\",\"out" +
-            "OfStock\",\"unknown\"],\"enumDescriptions\":[\"Only in stcok prodicts will be returned" +
-            "\",\"Limited availability and in stock products will be returned\",\"Out of stock, l" +
-            "imited availability and in stock products will be returned\",\"All products will b" +
-            "e returned\"],\"location\":\"query\"},\"productFields\":{\"type\":\"string\",\"description\":" +
-            "\"Google Internal\",\"location\":\"query\"},\"promotions.enabled\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Whether to return promotion information\",\"location\":\"query\"},\"promot" +
-            "ions.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether to return promotion " +
-            "information as configured in the GCS account\",\"location\":\"query\"},\"q\":{\"type\":\"s" +
-            "tring\",\"description\":\"Search query\",\"location\":\"query\"},\"rankBy\":{\"type\":\"string" +
-            "\",\"description\":\"Ranking specification\",\"location\":\"query\"},\"redirects.enabled\":" +
-            "{\"type\":\"boolean\",\"description\":\"Whether to return redirect information\",\"locati" +
-            "on\":\"query\"},\"redirects.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether t" +
-            "o return redirect information as configured in the GCS account\",\"location\":\"quer" +
-            "y\"},\"relatedQueries.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return " +
-            "related queries\",\"location\":\"query\"},\"relatedQueries.useGcsConfig\":{\"type\":\"bool" +
-            "ean\",\"description\":\"This parameter is currently ignored\",\"location\":\"query\"},\"re" +
-            "strictBy\":{\"type\":\"string\",\"description\":\"Restriction specification\",\"location\":" +
-            "\"query\"},\"safe\":{\"type\":\"boolean\",\"description\":\"Whether safe search is enabled." +
-            " Default: true\",\"location\":\"query\"},\"sayt.enabled\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Google Internal\",\"location\":\"query\"},\"sayt.useGcsConfig\":{\"type\":\"boolean\",\"" +
-            "description\":\"Google Internal\",\"location\":\"query\"},\"shelfSpaceAds.enabled\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Whether to return shelf space ads\",\"location\":\"query" +
-            "\"},\"shelfSpaceAds.maxResults\":{\"type\":\"integer\",\"description\":\"The maximum numbe" +
-            "r of shelf space ads to return\",\"minimum\":\"0\",\"maximum\":\"4294967295\",\"location\":" +
-            "\"query\"},\"shelfSpaceAds.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This para" +
-            "meter is currently ignored\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Query source\",\"required\":true,\"location\":\"path\"},\"spelling.enabled\":{\"t" +
-            "ype\":\"boolean\",\"description\":\"Whether to return spelling suggestions\",\"location\"" +
-            ":\"query\"},\"spelling.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This paramete" +
-            "r is currently ignored\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"Index (1-based) of first product to return\",\"minimum\":\"0\",\"maximum\":\"4" +
-            "294967295\",\"location\":\"query\"},\"taxonomy\":{\"type\":\"string\",\"description\":\"Taxono" +
-            "my name\",\"location\":\"query\"},\"thumbnails\":{\"type\":\"string\",\"description\":\"Image " +
-            "thumbnails specification\",\"location\":\"query\"},\"useCase\":{\"type\":\"string\",\"descri" +
-            "ption\":\"One of CommerceSearchUseCase, ShoppingApiUseCase\",\"location\":\"query\"}},\"" +
-            "parameterOrder\":[\"source\"],\"response\":{\"$ref\":\"Products\"}}}}}}";
+            "\":\"integer\",\"description\":\"Merchant center account id\",\"required\":true,\"format\":" +
+            "\"uint32\",\"location\":\"path\"},\"attributeFilter\":{\"type\":\"string\",\"description\":\"Co" +
+            "mma separated list of attributes to return\",\"location\":\"query\"},\"categories.enab" +
+            "led\":{\"type\":\"boolean\",\"description\":\"Whether to return category information\",\"l" +
+            "ocation\":\"query\"},\"categories.include\":{\"type\":\"string\",\"description\":\"Category " +
+            "specification\",\"location\":\"query\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"" +
+            "description\":\"This parameter is currently ignored\",\"location\":\"query\"},\"debug.en" +
+            "ableLogging\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query" +
+            "\"},\"debug.enabled\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":" +
+            "\"query\"},\"debug.searchRequest\":{\"type\":\"boolean\",\"description\":\"Google Internal\"" +
+            ",\"location\":\"query\"},\"debug.searchResponse\":{\"type\":\"boolean\",\"description\":\"Goo" +
+            "gle Internal\",\"location\":\"query\"},\"productFields\":{\"type\":\"string\",\"description\"" +
+            ":\"Google Internal\",\"location\":\"query\"},\"productId\":{\"type\":\"string\",\"description" +
+            "\":\"Id of product\",\"required\":true,\"location\":\"path\"},\"productIdType\":{\"type\":\"st" +
+            "ring\",\"description\":\"Type of productId\",\"required\":true,\"location\":\"path\"},\"reco" +
+            "mmendations.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return recommen" +
+            "dation information\",\"location\":\"query\"},\"recommendations.include\":{\"type\":\"strin" +
+            "g\",\"description\":\"Recommendation specification\",\"location\":\"query\"},\"recommendat" +
+            "ions.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter is currently " +
+            "ignored\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"Query sour" +
+            "ce\",\"required\":true,\"location\":\"path\"},\"taxonomy\":{\"type\":\"string\",\"description\"" +
+            ":\"Merchant taxonomy\",\"location\":\"query\"},\"thumbnails\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Thumbnail specification\",\"location\":\"query\"}},\"parameterOrder\":[\"source\",\"" +
+            "accountId\",\"productIdType\",\"productId\"],\"response\":{\"$ref\":\"Product\"}},\"list\":{\"" +
+            "id\":\"shopping.products.list\",\"path\":\"{source}/products\",\"httpMethod\":\"GET\",\"desc" +
+            "ription\":\"Returns a list of products and content modules\",\"parameters\":{\"attribu" +
+            "teFilter\":{\"type\":\"string\",\"description\":\"Comma separated list of attributes to " +
+            "return\",\"location\":\"query\"},\"boostBy\":{\"type\":\"string\",\"description\":\"Boosting s" +
+            "pecification\",\"location\":\"query\"},\"categories.enabled\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Whether to return category information\",\"location\":\"query\"},\"categories." +
+            "include\":{\"type\":\"string\",\"description\":\"Category specification\",\"location\":\"que" +
+            "ry\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter i" +
+            "s currently ignored\",\"location\":\"query\"},\"channels\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Channels specification\",\"location\":\"query\"},\"country\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Country restriction (ISO 3166)\",\"location\":\"query\"},\"crowdBy\":{\"type\":" +
+            "\"string\",\"description\":\"Crowding specification\",\"location\":\"query\"},\"currency\":{" +
+            "\"type\":\"string\",\"description\":\"Currency restriction (ISO 4217)\",\"location\":\"quer" +
+            "y\"},\"debug.enableLogging\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"loc" +
+            "ation\":\"query\"},\"debug.enabled\":{\"type\":\"boolean\",\"description\":\"Google Internal" +
+            "\",\"location\":\"query\"},\"debug.geocodeRequest\":{\"type\":\"boolean\",\"description\":\"Go" +
+            "ogle Internal\",\"location\":\"query\"},\"debug.geocodeResponse\":{\"type\":\"boolean\",\"de" +
+            "scription\":\"Google Internal\",\"location\":\"query\"},\"debug.rdcRequest\":{\"type\":\"boo" +
+            "lean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.rdcResponse\":{\"" +
+            "type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.searc" +
+            "hRequest\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"}," +
+            "\"debug.searchResponse\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"locati" +
+            "on\":\"query\"},\"facets.discover\":{\"type\":\"string\",\"description\":\"Facets to discove" +
+            "r\",\"location\":\"query\"},\"facets.enabled\":{\"type\":\"boolean\",\"description\":\"Whether" +
+            " to return facet information\",\"location\":\"query\"},\"facets.include\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Facets to include (applies when useGcsConfig == false)\",\"loca" +
+            "tion\":\"query\"},\"facets.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether to" +
+            " return facet information as configured in the GCS account\",\"location\":\"query\"}," +
+            "\"language\":{\"type\":\"string\",\"description\":\"Language restriction (BCP 47)\",\"locat" +
+            "ion\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of re" +
+            "sults to return\",\"format\":\"uint32\",\"location\":\"query\"},\"minAvailability\":{\"type\"" +
+            ":\"string\",\"enum\":[\"inStock\",\"limited\",\"outOfStock\",\"unknown\"],\"enumDescriptions\"" +
+            ":[\"Only in stcok prodicts will be returned\",\"Limited availability and in stock p" +
+            "roducts will be returned\",\"Out of stock, limited availability and in stock produ" +
+            "cts will be returned\",\"All products will be returned\"],\"location\":\"query\"},\"prod" +
+            "uctFields\":{\"type\":\"string\",\"description\":\"Google Internal\",\"location\":\"query\"}," +
+            "\"promotions.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return promotio" +
+            "n information\",\"location\":\"query\"},\"promotions.useGcsConfig\":{\"type\":\"boolean\",\"" +
+            "description\":\"Whether to return promotion information as configured in the GCS a" +
+            "ccount\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query\",\"l" +
+            "ocation\":\"query\"},\"rankBy\":{\"type\":\"string\",\"description\":\"Ranking specification" +
+            "\",\"location\":\"query\"},\"redirects.enabled\":{\"type\":\"boolean\",\"description\":\"Wheth" +
+            "er to return redirect information\",\"location\":\"query\"},\"redirects.useGcsConfig\":" +
+            "{\"type\":\"boolean\",\"description\":\"Whether to return redirect information as confi" +
+            "gured in the GCS account\",\"location\":\"query\"},\"relatedQueries.enabled\":{\"type\":\"" +
+            "boolean\",\"description\":\"Whether to return related queries\",\"location\":\"query\"},\"" +
+            "relatedQueries.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter is " +
+            "currently ignored\",\"location\":\"query\"},\"restrictBy\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Restriction specification\",\"location\":\"query\"},\"safe\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Whether safe search is enabled. Default: true\",\"location\":\"query\"},\"s" +
+            "ayt.enabled\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query" +
+            "\"},\"sayt.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"locati" +
+            "on\":\"query\"},\"shelfSpaceAds.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to" +
+            " return shelf space ads\",\"location\":\"query\"},\"shelfSpaceAds.maxResults\":{\"type\":" +
+            "\"integer\",\"description\":\"The maximum number of shelf space ads to return\",\"forma" +
+            "t\":\"uint32\",\"location\":\"query\"},\"shelfSpaceAds.useGcsConfig\":{\"type\":\"boolean\",\"" +
+            "description\":\"This parameter is currently ignored\",\"location\":\"query\"},\"source\":" +
+            "{\"type\":\"string\",\"description\":\"Query source\",\"required\":true,\"location\":\"path\"}" +
+            ",\"spelling.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return spelling " +
+            "suggestions\",\"location\":\"query\"},\"spelling.useGcsConfig\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"This parameter is currently ignored\",\"location\":\"query\"},\"startIndex\":" +
+            "{\"type\":\"integer\",\"description\":\"Index (1-based) of first product to return\",\"fo" +
+            "rmat\":\"uint32\",\"location\":\"query\"},\"taxonomy\":{\"type\":\"string\",\"description\":\"Ta" +
+            "xonomy name\",\"location\":\"query\"},\"thumbnails\":{\"type\":\"string\",\"description\":\"Im" +
+            "age thumbnails specification\",\"location\":\"query\"},\"useCase\":{\"type\":\"string\",\"de" +
+            "scription\":\"One of CommerceSearchUseCase, ShoppingApiUseCase\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"source\"],\"response\":{\"$ref\":\"Products\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -1862,7 +1861,7 @@ namespace Google.Apis.Shopping.v1 {
         
         /// <summary>Returns a single product</summary>
         /// <param name="source">Required - Query source</param>
-        /// <param name="accountId">Required - Minimum value of 0 - Maximum value of 4294967295 - Merchant center account id</param>
+        /// <param name="accountId">Required - Merchant center account id</param>
         /// <param name="productIdType">Required - Type of productId</param>
         /// <param name="productId">Required - Id of product</param>
         public virtual GetRequest Get(string source, long accountId, string productIdType, string productId) {

@@ -410,61 +410,82 @@ namespace Google.Apis.Latitude.v1 {
             "ery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inden" +
             "tations and line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"userIp\":{\"type\"" +
             ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
-            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"features\":" +
-            "[\"dataWrapper\"],\"schemas\":{\"LatitudeCurrentlocationResourceJson\":{\"$ref\":\"Locati" +
-            "on\"},\"Location\":{\"id\":\"Location\",\"type\":\"object\",\"description\":\"A Location resou" +
-            "rce identifies a user\'s position at a particular time. It may include metadata a" +
-            "bout the user\'s position, such as a venue if the location was recorded at the ti" +
-            "me of a check-in.\",\"properties\":{\"accuracy\":{\"type\":\"any\",\"description\":\"Accurac" +
-            "y of the latitude and longitude coordinates, in non-negative meters. Optional.\"}" +
-            ",\"activityId\":{\"type\":\"any\",\"description\":\"Unique ID of the Buzz message that co" +
-            "rresponds to the check-in associated with this location. Available only for chec" +
-            "k-in locations. Optional.\"},\"altitude\":{\"type\":\"any\",\"description\":\"Altitude of " +
-            "the location, in meters. Optional.\"},\"altitudeAccuracy\":{\"type\":\"any\",\"descripti" +
-            "on\":\"Accuracy of the altitude value, in meters. Optional.\"},\"heading\":{\"type\":\"a" +
-            "ny\",\"description\":\"Direction of travel of the user when this location was record" +
-            "ed. In degrees, clockwise relative to true north. Optional.\"},\"kind\":{\"type\":\"st" +
-            "ring\",\"description\":\"Kind of this item.\",\"default\":\"latitude#location\"},\"latitud" +
-            "e\":{\"type\":\"any\",\"description\":\"Latitude of the location, in decimal degrees.\"}," +
-            "\"longitude\":{\"type\":\"any\",\"description\":\"Longitude of the location, in decimal d" +
-            "egrees.\"},\"speed\":{\"type\":\"any\",\"description\":\"Ground speed of the user at the t" +
-            "ime this location was recorded, in meters per second. Non-negative. Optional.\"}," +
-            "\"timestampMs\":{\"type\":\"any\",\"description\":\"Timestamp of the Location Resource, i" +
-            "n milliseconds since the epoch (UTC). This is also the Location Resource\'s uniqu" +
-            "e id.\"}}},\"LocationFeed\":{\"id\":\"LocationFeed\",\"type\":\"object\",\"properties\":{\"ite" +
-            "ms\":{\"type\":\"array\",\"items\":{\"$ref\":\"Location\"}},\"kind\":{\"type\":\"string\",\"defaul" +
-            "t\":\"latitude#locationFeed\"}}}},\"resources\":{\"currentLocation\":{\"methods\":{\"delet" +
-            "e\":{\"id\":\"latitude.currentLocation.delete\",\"path\":\"currentLocation\",\"httpMethod\"" +
-            ":\"DELETE\",\"description\":\"Deletes the authenticated user\'s current location.\"},\"g" +
-            "et\":{\"id\":\"latitude.currentLocation.get\",\"path\":\"currentLocation\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Returns the authenticated user\'s current location.\",\"paramet" +
-            "ers\":{\"granularity\":{\"type\":\"string\",\"description\":\"Granularity of the requested" +
-            " location.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"LatitudeCurrentlocationReso" +
-            "urceJson\"}},\"insert\":{\"id\":\"latitude.currentLocation.insert\",\"path\":\"currentLoca" +
-            "tion\",\"httpMethod\":\"POST\",\"description\":\"Updates or creates the user\'s current l" +
-            "ocation.\",\"request\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"},\"response\":{\"" +
-            "$ref\":\"LatitudeCurrentlocationResourceJson\"}}}},\"location\":{\"methods\":{\"delete\":" +
-            "{\"id\":\"latitude.location.delete\",\"path\":\"location/{locationId}\",\"httpMethod\":\"DE" +
-            "LETE\",\"description\":\"Deletes a location from the user\'s location history.\",\"para" +
-            "meters\":{\"locationId\":{\"type\":\"string\",\"description\":\"Timestamp of the location " +
-            "to delete (ms since epoch).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder" +
-            "\":[\"locationId\"]},\"get\":{\"id\":\"latitude.location.get\",\"path\":\"location/{location" +
-            "Id}\",\"httpMethod\":\"GET\",\"description\":\"Reads a location from the user\'s location" +
-            " history.\",\"parameters\":{\"granularity\":{\"type\":\"string\",\"description\":\"Granulari" +
-            "ty of the location to return.\",\"location\":\"query\"},\"locationId\":{\"type\":\"string\"" +
-            ",\"description\":\"Timestamp of the location to read (ms since epoch).\",\"required\":" +
-            "true,\"location\":\"path\"}},\"parameterOrder\":[\"locationId\"],\"response\":{\"$ref\":\"Loc" +
-            "ation\"}},\"insert\":{\"id\":\"latitude.location.insert\",\"path\":\"location\",\"httpMethod" +
-            "\":\"POST\",\"description\":\"Inserts or updates a location in the user\'s location his" +
-            "tory.\",\"request\":{\"$ref\":\"Location\"},\"response\":{\"$ref\":\"Location\"}},\"list\":{\"id" +
-            "\":\"latitude.location.list\",\"path\":\"location\",\"httpMethod\":\"GET\",\"description\":\"L" +
-            "ists the user\'s location history.\",\"parameters\":{\"granularity\":{\"type\":\"string\"," +
-            "\"description\":\"Granularity of the requested locations.\",\"location\":\"query\"},\"max" +
-            "-results\":{\"type\":\"string\",\"description\":\"Maximum number of locations to return." +
-            "\",\"location\":\"query\"},\"max-time\":{\"type\":\"string\",\"description\":\"Maximum timesta" +
-            "mp of locations to return (ms since epoch).\",\"location\":\"query\"},\"min-time\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Minimum timestamp of locations to return (ms since e" +
-            "poch).\",\"location\":\"query\"}},\"response\":{\"$ref\":\"LocationFeed\"}}}}}}";
+            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oa" +
+            "uth2\":{\"scopes\":{\"https://www.googleapis.com/auth/latitude.all.best\":{\"descripti" +
+            "on\":\"Manage your best-available location and location history\"},\"https://www.goo" +
+            "gleapis.com/auth/latitude.all.city\":{\"description\":\"Manage your city-level locat" +
+            "ion and location history\"},\"https://www.googleapis.com/auth/latitude.current.bes" +
+            "t\":{\"description\":\"Manage your best-available location\"},\"https://www.googleapis" +
+            ".com/auth/latitude.current.city\":{\"description\":\"Manage your city-level location" +
+            "\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"LatitudeCurrentlocationResourceJson" +
+            "\":{\"$ref\":\"Location\"},\"Location\":{\"id\":\"Location\",\"type\":\"object\",\"description\":" +
+            "\"A Location resource identifies a user\'s position at a particular time. It may i" +
+            "nclude metadata about the user\'s position, such as a venue if the location was r" +
+            "ecorded at the time of a check-in.\",\"properties\":{\"accuracy\":{\"type\":\"any\",\"desc" +
+            "ription\":\"Accuracy of the latitude and longitude coordinates, in non-negative me" +
+            "ters. Optional.\"},\"activityId\":{\"type\":\"any\",\"description\":\"Unique ID of the Buz" +
+            "z message that corresponds to the check-in associated with this location. Availa" +
+            "ble only for check-in locations. Optional.\"},\"altitude\":{\"type\":\"any\",\"descripti" +
+            "on\":\"Altitude of the location, in meters. Optional.\"},\"altitudeAccuracy\":{\"type\"" +
+            ":\"any\",\"description\":\"Accuracy of the altitude value, in meters. Optional.\"},\"he" +
+            "ading\":{\"type\":\"any\",\"description\":\"Direction of travel of the user when this lo" +
+            "cation was recorded. In degrees, clockwise relative to true north. Optional.\"},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Kind of this item.\",\"default\":\"latitude#lo" +
+            "cation\"},\"latitude\":{\"type\":\"any\",\"description\":\"Latitude of the location, in de" +
+            "cimal degrees.\"},\"longitude\":{\"type\":\"any\",\"description\":\"Longitude of the locat" +
+            "ion, in decimal degrees.\"},\"speed\":{\"type\":\"any\",\"description\":\"Ground speed of " +
+            "the user at the time this location was recorded, in meters per second. Non-negat" +
+            "ive. Optional.\"},\"timestampMs\":{\"type\":\"any\",\"description\":\"Timestamp of the Loc" +
+            "ation Resource, in milliseconds since the epoch (UTC). This is also the Location" +
+            " Resource\'s unique id.\"}}},\"LocationFeed\":{\"id\":\"LocationFeed\",\"type\":\"object\",\"" +
+            "properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Location\"}},\"kind\":{\"type\"" +
+            ":\"string\",\"default\":\"latitude#locationFeed\"}}}},\"resources\":{\"currentLocation\":{" +
+            "\"methods\":{\"delete\":{\"id\":\"latitude.currentLocation.delete\",\"path\":\"currentLocat" +
+            "ion\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the authenticated user\'s curre" +
+            "nt location.\",\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"htt" +
+            "ps://www.googleapis.com/auth/latitude.all.city\",\"https://www.googleapis.com/auth" +
+            "/latitude.current.best\",\"https://www.googleapis.com/auth/latitude.current.city\"]" +
+            "},\"get\":{\"id\":\"latitude.currentLocation.get\",\"path\":\"currentLocation\",\"httpMetho" +
+            "d\":\"GET\",\"description\":\"Returns the authenticated user\'s current location.\",\"par" +
+            "ameters\":{\"granularity\":{\"type\":\"string\",\"description\":\"Granularity of the reque" +
+            "sted location.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"LatitudeCurrentlocation" +
+            "ResourceJson\"},\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"ht" +
+            "tps://www.googleapis.com/auth/latitude.all.city\",\"https://www.googleapis.com/aut" +
+            "h/latitude.current.best\",\"https://www.googleapis.com/auth/latitude.current.city\"" +
+            "]},\"insert\":{\"id\":\"latitude.currentLocation.insert\",\"path\":\"currentLocation\",\"ht" +
+            "tpMethod\":\"POST\",\"description\":\"Updates or creates the user\'s current location.\"" +
+            ",\"request\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"},\"response\":{\"$ref\":\"La" +
+            "titudeCurrentlocationResourceJson\"},\"scopes\":[\"https://www.googleapis.com/auth/l" +
+            "atitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\",\"https://w" +
+            "ww.googleapis.com/auth/latitude.current.best\",\"https://www.googleapis.com/auth/l" +
+            "atitude.current.city\"]}}},\"location\":{\"methods\":{\"delete\":{\"id\":\"latitude.locati" +
+            "on.delete\",\"path\":\"location/{locationId}\",\"httpMethod\":\"DELETE\",\"description\":\"D" +
+            "eletes a location from the user\'s location history.\",\"parameters\":{\"locationId\":" +
+            "{\"type\":\"string\",\"description\":\"Timestamp of the location to delete (ms since ep" +
+            "och).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"locationId\"],\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"https://www.googleapis" +
+            ".com/auth/latitude.all.city\"]},\"get\":{\"id\":\"latitude.location.get\",\"path\":\"locat" +
+            "ion/{locationId}\",\"httpMethod\":\"GET\",\"description\":\"Reads a location from the us" +
+            "er\'s location history.\",\"parameters\":{\"granularity\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Granularity of the location to return.\",\"location\":\"query\"},\"locationId\":{\"t" +
+            "ype\":\"string\",\"description\":\"Timestamp of the location to read (ms since epoch)." +
+            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"locationId\"],\"response\"" +
+            ":{\"$ref\":\"Location\"},\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.bes" +
+            "t\",\"https://www.googleapis.com/auth/latitude.all.city\"]},\"insert\":{\"id\":\"latitud" +
+            "e.location.insert\",\"path\":\"location\",\"httpMethod\":\"POST\",\"description\":\"Inserts " +
+            "or updates a location in the user\'s location history.\",\"request\":{\"$ref\":\"Locati" +
+            "on\"},\"response\":{\"$ref\":\"Location\"},\"scopes\":[\"https://www.googleapis.com/auth/l" +
+            "atitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\"]},\"list\":{" +
+            "\"id\":\"latitude.location.list\",\"path\":\"location\",\"httpMethod\":\"GET\",\"description\"" +
+            ":\"Lists the user\'s location history.\",\"parameters\":{\"granularity\":{\"type\":\"strin" +
+            "g\",\"description\":\"Granularity of the requested locations.\",\"location\":\"query\"},\"" +
+            "max-results\":{\"type\":\"string\",\"description\":\"Maximum number of locations to retu" +
+            "rn.\",\"location\":\"query\"},\"max-time\":{\"type\":\"string\",\"description\":\"Maximum time" +
+            "stamp of locations to return (ms since epoch).\",\"location\":\"query\"},\"min-time\":{" +
+            "\"type\":\"string\",\"description\":\"Minimum timestamp of locations to return (ms sinc" +
+            "e epoch).\",\"location\":\"query\"}},\"response\":{\"$ref\":\"LocationFeed\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/latitude.all.best\",\"https://www.googleapis.com/aut" +
+            "h/latitude.all.city\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -520,6 +541,26 @@ namespace Google.Apis.Latitude.v1 {
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
             return genericService.DeserializeResponse<T>(response);
+        }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Manage your best-available location and location history</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/latitude.all.best")]
+            LatitudeAllBest,
+            
+            /// <summary>Manage your city-level location and location history</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/latitude.all.city")]
+            LatitudeAllCity,
+            
+            /// <summary>Manage your best-available location</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/latitude.current.best")]
+            LatitudeCurrentBest,
+            
+            /// <summary>Manage your city-level location</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/latitude.current.city")]
+            LatitudeCurrentCity,
         }
     }
     

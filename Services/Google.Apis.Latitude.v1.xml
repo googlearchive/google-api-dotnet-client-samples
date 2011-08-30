@@ -73,6 +73,21 @@
         <member name="P:Google.Apis.Latitude.v1.LatitudeService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
+        <member name="T:Google.Apis.Latitude.v1.LatitudeService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LatitudeService.Scopes.LatitudeAllBest">
+            <summary>Manage your best-available location and location history</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LatitudeService.Scopes.LatitudeAllCity">
+            <summary>Manage your city-level location and location history</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LatitudeService.Scopes.LatitudeCurrentBest">
+            <summary>Manage your best-available location</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LatitudeService.Scopes.LatitudeCurrentCity">
+            <summary>Manage your city-level location</summary>
+        </member>
         <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Delete">
             <summary>Deletes the authenticated user&apos;s current location.</summary>
         </member>
