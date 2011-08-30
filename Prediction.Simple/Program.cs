@@ -90,16 +90,18 @@ namespace Prediction.Simple
         private static void RunPrediction(PredictionService service)
         {
             // Train the service with the existing bucket data.
+            string id = ClientCredentials.BucketPath;
             CommandLine.WriteAction("Performing training of the service ...");
-            CommandLine.WriteResult("Bucket", ClientCredentials.BucketPath);
-            Training training = new Training() { Id = ClientCredentials.BucketPath };
+            CommandLine.WriteResult("Bucket", id);
+            Training training = new Training { Id = id };
             training = service.Training.Insert(training).Fetch();
 
             // Wait until the training is complete.
-            while ((training = service.Training.Get(training.Id).Fetch()).TrainingStatus == "RUNNING")
+            while (training.TrainingStatus == "RUNNING")
             {
                 CommandLine.Write("..");
                 Thread.Sleep(1000);
+                training = service.Training.Get(id).Fetch();
             }
             CommandLine.WriteLine();
             CommandLine.WriteAction("Training complete!");
@@ -111,7 +113,7 @@ namespace Prediction.Simple
             CommandLine.RequestUserInput("Text to analyze", ref text);
 
             var input = new Input { InputValue = new Input.InputData { CsvInstance = new List<string> { text } } };
-            Output result = service.Training.Predict(input, training.Id).Fetch();
+            Output result = service.Training.Predict(input, id).Fetch();
             CommandLine.WriteResult("Language", result.OutputLabel);
         }
     }

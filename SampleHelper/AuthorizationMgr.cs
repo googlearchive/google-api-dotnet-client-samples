@@ -56,7 +56,7 @@ namespace Google.Apis.Samples.Helper
                 catch (NotSupportedException) { /* Flow unsupported on this environment */ }
             }
 
-            throw new NotSupportedException("Foound no supported native authorization flow.");
+            throw new NotSupportedException("Found no supported native authorization flow.");
         }
 
         /// <summary>
