@@ -36,9 +36,9 @@ namespace Tasks.ASP.NET.SimpleOAuth2
     public partial class _Default : System.Web.UI.Page
     {
         private static TasksService _service; // We don't need individual service instances for each client.
+        private static OAuth2Authenticator<WebServerClient> _authenticator;
         private IAuthorizationState _state;
-        private OAuth2Authenticator<WebServerClient> _authenticator;
-
+        
         /// <summary>
         /// Returns the authorization state which was either cached or set for this session.
         /// </summary>
