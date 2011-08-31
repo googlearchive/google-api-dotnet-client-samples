@@ -1288,6 +1288,7 @@
             
              </summary>
              <example>
+                 <code>
              var webDiscovery = new WebDiscoveryDevice { DiscoveryURI = "http://test.com"};
              var d = new Discover(webDiscovery);
              var buzzApi = d.CreateAPI();
@@ -1307,6 +1308,7 @@
              var buzzApi = d.CreateAPI();
              
              var buzzFeed = buzzApi.WithCredentials().On().Get(Dictionary());
+                 </code>
              </example>
         </member>
         <member name="T:Google.Apis.Discovery.IDiscoveryService">

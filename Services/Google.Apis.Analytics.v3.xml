@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Analytics.v3</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.ChildLink">
+            <summary>Child link for an account entry. Points to the list of web properties for this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.Created">
+            <summary>Time the account was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.Id">
+            <summary>Account ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.Kind">
+            <summary>Resource type for Analytics account.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.Name">
+            <summary>Account name.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.SelfLink">
+            <summary>Link for this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.Updated">
+            <summary>Time the account was last modified.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Account.ChildLinkData">
+            <summary>Child link for an account entry. Points to the list of web properties for this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.ChildLinkData.Href">
+            <summary>Link to the list of web properties for this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Account.ChildLinkData.Type">
+            <summary>Type of the child link. Its value is &quot;analytics#webproperties&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Items">
+            <summary>A list of accounts.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.ItemsPerPage">
+            <summary>The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.NextLink">
+            <summary>Next link for this account collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.PreviousLink">
+            <summary>Previous link for this account collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.StartIndex">
+            <summary>The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.AccountId">
+            <summary>Account ID to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Active">
+            <summary>Determines whether this goal is active.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Created">
+            <summary>Time this goal was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetails">
+            <summary>Details for the goal of the type EVENT.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Id">
+            <summary>Goal ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.InternalWebPropertyId">
+            <summary>Internal ID for the web property to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Kind">
+            <summary>Resource type for an Analytics goal.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Name">
+            <summary>Goal name.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.ParentLink">
+            <summary>Parent link for a goal. Points to the profile to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.ProfileId">
+            <summary>Profile ID to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.SelfLink">
+            <summary>Link for this goal.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Type">
+            <summary>Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Updated">
+            <summary>Time this goal was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetails">
+            <summary>Details for the goal of the type URL_DESTINATION.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.Value">
+            <summary>Goal value.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitNumPagesDetails">
+            <summary>Details for the goal of the type VISIT_NUM_PAGES.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitTimeOnSiteDetails">
+            <summary>Details for the goal of the type VISIT_TIME_ON_SITE.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.WebPropertyId">
+            <summary>Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData">
+            <summary>Details for the goal of the type EVENT.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.UseEventValue">
+            <summary>Determines if the event value should be used as the value for this goal.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditionsData.ComparisonType">
+            <summary>Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditionsData.ComparisonValue">
+            <summary>Value used for this comparison.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditionsData.Expression">
+            <summary>Expression used for this match.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditionsData.MatchType">
+            <summary>Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH, or EXACT.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditionsData.Type">
+            <summary>Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Goal.ParentLinkData">
+            <summary>Parent link for a goal. Points to the profile to which this goal belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData">
+            <summary>Details for the goal of the type URL_DESTINATION.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.CaseSensitive">
+            <summary>Determines if the goal URL must exactly match the capitalization of visited URLs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.FirstStepRequired">
+            <summary>Determines if the first step in this goal is required.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.MatchType">
+            <summary>Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.Steps">
+            <summary>List of steps configured for this goal funnel.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.Url">
+            <summary>URL for this goal.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.StepsData.Name">
+            <summary>Step name.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.StepsData.Number">
+            <summary>Step number.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData.StepsData.Url">
+            <summary>URL for this step.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Goal.VisitNumPagesDetailsData">
+            <summary>Details for the goal of the type VISIT_NUM_PAGES.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitNumPagesDetailsData.ComparisonType">
+            <summary>Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitNumPagesDetailsData.ComparisonValue">
+            <summary>Value used for this comparison.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Goal.VisitTimeOnSiteDetailsData">
+            <summary>Details for the goal of the type VISIT_TIME_ON_SITE.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitTimeOnSiteDetailsData.ComparisonType">
+            <summary>Type of comparison. Possible values are LESS_THAN or GREATER_THAN.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.VisitTimeOnSiteDetailsData.ComparisonValue">
+            <summary>Value used for this comparison.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.Items">
+            <summary>A list of goals.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.NextLink">
+            <summary>Link to next page for this goal collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.PreviousLink">
+            <summary>Link to previous page for this goal collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of resources in the result.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goals.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.AccountId">
+            <summary>Account ID to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ChildLink">
+            <summary>Child link for this profile. Points to the list of goals for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Created">
+            <summary>Time this profile was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Currency">
+            <summary>The currency type associated with this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.DefaultPage">
+            <summary>Default page for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ExcludeQueryParameters">
+            <summary>The query parameters that are excluded from this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Id">
+            <summary>Profile ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.InternalWebPropertyId">
+            <summary>Internal ID for the web property to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Kind">
+            <summary>Resource type for Analytics profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Name">
+            <summary>Name of this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ParentLink">
+            <summary>Parent link for this profile. Points to the web property to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.SelfLink">
+            <summary>Link for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.SiteSearchCategoryParameters">
+            <summary>Site search category parameters for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.SiteSearchQueryParameters">
+            <summary>The site search query parameters for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Timezone">
+            <summary>Time zone for which this profile has been configured.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.Updated">
+            <summary>Time this profile was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.WebPropertyId">
+            <summary>Web property ID of the form UA-XXXXX-YY to which this profile belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Profile.ChildLinkData">
+            <summary>Child link for this profile. Points to the list of goals for this profile.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Profile.ParentLinkData">
+            <summary>Parent link for this profile. Points to the web property to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.Items">
+            <summary>A list of profiles.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.Kind">
+            <summary>Resource type for a profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.NextLink">
+            <summary>Link to next page for this profile collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.PreviousLink">
+            <summary>Link to previous page for this profile collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profiles.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Created">
+            <summary>Time the advanced segment was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Definition">
+            <summary>Advanced segment definition.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Id">
+            <summary>Advanced segment ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Kind">
+            <summary>Resource type for Analytics advanced segment.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Name">
+            <summary>Advanced segment name.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.SelfLink">
+            <summary>Link for this advanced segment.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segment.Updated">
+            <summary>Time the advanced segment was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.Items">
+            <summary>A list of advanced segments.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.Kind">
+            <summary>Resource type for advanced segments.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.NextLink">
+            <summary>Link to next page for this advanced segment collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.PreviousLink">
+            <summary>Link to previous page for this advanced segment collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Segments.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.Items">
+            <summary>A list of web properties.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.ItemsPerPage">
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.NextLink">
+            <summary>Link to next page for this web property collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.PreviousLink">
+            <summary>Link to previous page for this web property collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.StartIndex">
+            <summary>The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.TotalResults">
+            <summary>The total number of results for the query, regardless of the number of results in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.Username">
+            <summary>Email ID of the authenticated user</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.AccountId">
+            <summary>Account ID to which this web property belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ChildLink">
+            <summary>Child link for this web property. Points to the list of profiles for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.Created">
+            <summary>Time this web property was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.Id">
+            <summary>Web property ID of the form UA-XXXXX-YY.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.InternalWebPropertyId">
+            <summary>Internal ID for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.Kind">
+            <summary>Resource type for Analytics WebProperty.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.Name">
+            <summary>Name of this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ParentLink">
+            <summary>Parent link for this web property. Points to the account to which this web property belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.SelfLink">
+            <summary>Link for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.Updated">
+            <summary>Time this web property was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.WebsiteUrl">
+            <summary>Website url for this web property.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Webproperty.ChildLinkData">
+            <summary>Child link for this web property. Points to the list of profiles for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ChildLinkData.Href">
+            <summary>Link to the list of profiles for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ChildLinkData.Type">
+            <summary>Type of the parent link. Its value is &quot;analytics#profiles&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.Webproperty.ParentLinkData">
+            <summary>Parent link for this web property. Points to the account to which this web property belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ParentLinkData.Href">
+            <summary>Link to the account for this web property.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Webproperty.ParentLinkData.Type">
+            <summary>Type of the parent link. Its value is &quot;analytics#account&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.AnalyticsService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.AnalyticsService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Analytics.v3.AnalyticsService.Scopes.AnalyticsReadonly">
+            <summary>View your Google Analytics data</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.List">
+            <summary>Lists all accounts to which the user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.List(System.String,System.String,System.String)">
+            <summary>Lists goals to which the user has access.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
+            <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID for the web properties to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
+            <param name="profileId">Required - Must match pattern ~all|[0-9]+ - Profile ID for the web properties to retrieve. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles to which the user has access.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.AccountId">
+            <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.ProfileId">
+            <summary>Profile ID for the web properties to retrieve. Can either be a specific profile ID or '~all', which refers to all the profiles to which the user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.WebPropertyId">
+            <summary>Web property ID for the web properties to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.List(System.String,System.String)">
+            <summary>Lists profiles to which the user has access.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
+            <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID for the web properties to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.AccountId">
+            <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.WebPropertyId">
+            <summary>Web property ID for the web properties to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.List">
+            <summary>Lists advanced segments to which the user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.List(System.String)">
+            <summary>Lists web properties to which the user has access.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which user has access.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
+            <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which user has access.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+    </members>
+</doc>

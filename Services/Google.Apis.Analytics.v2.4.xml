@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Analytics.v2.4</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Analytics.v2_4.AnalyticsService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v2_4.AnalyticsService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Analytics.v2_4.AnalyticsService.Scopes.AnalyticsReadonly">
+            <summary>View your Google Analytics data</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.List">
+            <summary>Lists all accounts that a user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.List(System.String,System.String,System.String)">
+            <summary>Lists goals that a user has access to.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
+            <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID to retrieve web properties for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
+            <param name="profileId">Required - Must match pattern ~all|[0-9]+ - Profile ID to retrieve web properties for. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles that user has access to.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.AccountId">
+            <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.ProfileId">
+            <summary>Profile ID to retrieve web properties for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.WebPropertyId">
+            <summary>Web property ID to retrieve web properties for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.List(System.String,System.String)">
+            <summary>Lists profiles that a user has access to.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
+            <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID to retrieve web properties for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.AccountId">
+            <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.WebPropertyId">
+            <summary>Web property ID to retrieve web properties for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.List">
+            <summary>Lists advanced segments that a user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.List(System.String)">
+            <summary>Lists web properties that a user has access to.</summary>
+            <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
+            <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+    </members>
+</doc>
