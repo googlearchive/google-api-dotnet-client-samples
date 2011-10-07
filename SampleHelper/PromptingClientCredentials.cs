@@ -42,7 +42,8 @@ namespace Google.Apis.Samples.Helper
             "Samples if you have already got your API key please enter it here (you can find your key " +
             "at https://code.google.com/apis/console/#:access). Otherwise " +
             "please follow the instructions at http://code.google.com/p/google-api-dotnet-client/wiki/GettingStarted " +
-            " look out for the API Console.";
+            " look out for the API Console. " + 
+            "This will be stored encrypted on the hard drive so that only this user can access these keys.";
         private const string PromptSimpleCreate = PromptCreate + " For the sample you are running you need just need API Key.";
         private const string PromptFullCreate = PromptCreate + " For the sample you are running you need both an API Key and " + 
             "a Client ID for installed applications.";
