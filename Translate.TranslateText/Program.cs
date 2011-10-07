@@ -42,6 +42,10 @@ namespace Translate.TranslateText
             [Description("target language")] public string TargetLanguage = "fr";
         }
 
+        private static string GetApiKey() {
+            return PromptingClientCredentials.EnsureSimpleClientCredentials().ApiKey;
+        }
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -53,7 +57,7 @@ namespace Translate.TranslateText
             TranslateInput input = CommandLine.CreateClassFromUserinput<TranslateInput>();
 
             // Create the service.
-            var service = new TranslateService { Key = ClientCredentials.ApiKey };
+            var service = new TranslateService { Key = GetApiKey() };
 
             // Execute the first translation request.
             CommandLine.WriteAction("Translating to '"+input.TargetLanguage+"' ...");
