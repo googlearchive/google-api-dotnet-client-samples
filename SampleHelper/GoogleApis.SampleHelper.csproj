@@ -74,6 +74,7 @@
     <Compile Include="Forms\OAuth2IntroPanel.Designer.cs">
       <DependentUpon>OAuth2IntroPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PromptingClientCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
