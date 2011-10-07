@@ -17,19 +17,39 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Google.Apis.Samples.Helper
 {
+    /// <summary>
+    /// This class is for use of samples only, on first use this class prompts the user for
+    /// ApiKey and optionaly ClientId and ClientSecret, these are stored encrypted in a file.
+    /// This is not sutible for production use as the user can access these keys.
+    /// </summary>
     public static class PromptingClientCredentials
     {
         private const string ApplicationFolderName = "Google.Apis.Samples";
         private const string ClientCredentialsFileName = "client.dat";
-        private const string FileKeyApiKey = "ApiKey";
-        private const string FileKeyClientId = "ClientId";
-        private const string FileKeyClientSecret = "ClientSecret";
-        private const string PromptSimpleCreate = "Blah Blah Blah please create a Simple For First time";
-
-
+        private const string FileKeyApiKey = "ProtectedApiKey";
+        private const string FileKeyClientId = "ProtectedClientId";
+        private const string FileKeyClientSecret = "ProtectedClientSecret";
+        private const byte[] entropy = new byte[] { 
+            150, 116, 112, 35, 243, 210, 144, 9, 188, 122, 157, 253, 124, 115, 87, 51, 84, 178, 43, 176, 239, 198, 198, 
+            249, 116, 190, 61, 129, 238, 23, 250, 163, 59, 26, 139 };
+        
+        private const string PromptCreate = "This looks like the first time your running the Google(tm) API " +
+            "Samples if you have already got your API key please enter it here (you can find your key " +
+            "at https://code.google.com/apis/console/#:access). Otherwise " +
+            "please follow the instructions at http://code.google.com/p/google-api-dotnet-client/wiki/GettingStarted " +
+            " look out for the API Console.";
+        private const string PromptSimpleCreate = PromptCreate + " For the sample you are running you need just need API Key.";
+        private const string PromptFullCreate = PromptCreate + " For the sample you are running you need both an API Key and " + 
+            "a Client ID for installed applications.";
+        private const string PromptFullExtend = "Another sample? Cool! This one requires ClientId for Installed applications " +
+            " as well as the API Key you entered earlier. You can pick up your from new ClientId from " +
+            "https://code.google.com/apis/console/#:access";
+        
         private static FileInfo CredentialsFile
         {
             get
@@ -67,33 +87,59 @@ namespace Google.Apis.Samples.Helper
 
         private static SimpleClientCredentials CreateSimpleClientCredentials()
         {
+            CommandLine.WriteLine(PromptSimpleCreate);
             SimpleClientCredentials simpleCredentials =
                 CommandLine.CreateClassFromUserinput<SimpleClientCredentials>();
             using (FileStream fStream = CredentialsFile.OpenWrite())
             {
                 using (TextWriter tw = new StreamWriter(fStream))
                 {
-                    tw.WriteLine("{0}={1}", FileKeyApiKey, simpleCredentials.ApiKey);
+                    tw.WriteLine("{0}={1}", FileKeyApiKey, Protect(simpleCredentials.ApiKey));
                 }
             }
             return simpleCredentials;
         }
 
+        private static string Protect(string clearText)
+        {
+            byte[] encryptedData = ProtectedData.Protect(Encoding.ASCII.GetBytes(clearText), entropy, DataProtectionScope.CurrentUser);
+            return Convert.ToBase64String(encryptedData);
+        }
+
+        private static string Unprotect(string encrypted)
+        {
+            byte[] encryptedData = Convert.FromBase64String(encrypted);
+            byte[] clearText = ProtectedData.Unprotect(encryptedData, entropy, DataProtectionScope.CurrentUser);
+            return Encoding.ASCII.GetString(clearText);
+        }
+
         private static FullClientCredentials CreateFullClientCredentials(bool isExtension)
         {
+            if (isExtension)
+            {
+                CommandLine.WriteLine(PromptFullExtend);
+            }
+            else
+            {
+                CommandLine.WriteLine(PromptFullCreate);
+            }
+
             FullClientCredentials fullCredentials = CommandLine.CreateClassFromUserinput<FullClientCredentials>();
             using (FileStream fStream = CredentialsFile.OpenWrite())
             {
                 using (TextWriter tw = new StreamWriter(fStream))
                 {
-                    tw.WriteLine("{0}={1}", FileKeyApiKey, fullCredentials.ApiKey);
-                    tw.WriteLine("{0}={1}", FileKeyClientId, fullCredentials.ClientId);
-                    tw.WriteLine("{0}={1}", FileKeyClientSecret, fullCredentials.ClientSecret);
+                    tw.WriteLine("{0}={1}", FileKeyApiKey, Protect(fullCredentials.ApiKey));
+                    tw.WriteLine("{0}={1}", FileKeyClientId, Protect(fullCredentials.ClientId));
+                    tw.WriteLine("{0}={1}", FileKeyClientSecret, Protect(fullCredentials.ClientSecret));
                 }
             }
             return fullCredentials;
         }
 
+        /// <summary>
+        /// Fetches the users ApiKey either from local disk or prompts the user in the command line.
+        /// </summary>
         public static SimpleClientCredentials EnsureSimpleClientCredentials()
         {
             if (CredentialsFile.Exists == false)
@@ -106,9 +152,12 @@ namespace Google.Apis.Samples.Helper
             {
                 return CreateSimpleClientCredentials();
             }
-            return new SimpleClientCredentials() { ApiKey = values[FileKeyApiKey] };
+            return new SimpleClientCredentials() { ApiKey = Unprotect(values[FileKeyApiKey]) };
         }
 
+        /// <summary>
+        /// Fetches the users ApiKey, ClientId and ClientSecreat either from local disk or prompts the user in the command line.
+        /// </summary>
         public static FullClientCredentials EnsureFullClientCredentials()
         {
             if (CredentialsFile.Exists == false)
@@ -125,12 +174,15 @@ namespace Google.Apis.Samples.Helper
             }
 
             return new FullClientCredentials() { 
-                ApiKey = values[FileKeyApiKey],
-                ClientId = values[FileKeyClientId], 
-                ClientSecret = values[FileKeyClientSecret]};
+                ApiKey = Unprotect(values[FileKeyApiKey]),
+                ClientId = Unprotect(values[FileKeyClientId]), 
+                ClientSecret = Unprotect(values[FileKeyClientSecret])};
 
         }
 
+        /// <summary>
+        /// Removes the stored credentials from this computer
+        /// </summary>
         public static void ClearClientCredentials()
         {
             FileInfo clientCredentials = CredentialsFile;
