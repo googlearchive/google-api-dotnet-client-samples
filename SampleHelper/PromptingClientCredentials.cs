@@ -34,6 +34,9 @@ namespace Google.Apis.Samples.Helper
         private const string FileKeyApiKey = "ProtectedApiKey";
         private const string FileKeyClientId = "ProtectedClientId";
         private const string FileKeyClientSecret = "ProtectedClientSecret";
+
+        // Random data used to make this encryption key different from other information encyrpted with ProtectedData
+        // This does not make it hard to decrypt just adds another small step.  
         private const byte[] entropy = new byte[] { 
             150, 116, 112, 35, 243, 210, 144, 9, 188, 122, 157, 253, 124, 115, 87, 51, 84, 178, 43, 176, 239, 198, 198, 
             249, 116, 190, 61, 129, 238, 23, 250, 163, 59, 26, 139 };
@@ -42,13 +45,13 @@ namespace Google.Apis.Samples.Helper
             "Samples if you have already got your API key please enter it here (you can find your key " +
             "at https://code.google.com/apis/console/#:access). Otherwise " +
             "please follow the instructions at http://code.google.com/p/google-api-dotnet-client/wiki/GettingStarted " +
-            " look out for the API Console. " + 
+            " look out for the API Console section. " + 
             "This will be stored encrypted on the hard drive so that only this user can access these keys.";
         private const string PromptSimpleCreate = PromptCreate + " For the sample you are running you need just need API Key.";
         private const string PromptFullCreate = PromptCreate + " For the sample you are running you need both an API Key and " + 
             "a Client ID for installed applications.";
         private const string PromptFullExtend = "Another sample? Cool! This one requires ClientId for Installed applications " +
-            " as well as the API Key you entered earlier. You can pick up your from new ClientId from " +
+            " as well as the API Key you entered earlier. You can pick up your new ClientId from " +
             "https://code.google.com/apis/console/#:access";
         
         private static FileInfo CredentialsFile
