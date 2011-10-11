@@ -47,10 +47,13 @@ namespace Google.Apis.Samples.Helper
             "please follow the instructions at http://code.google.com/p/google-api-dotnet-client/wiki/GettingStarted " +
             " look out for the API Console section. " + 
             "This will be stored encrypted on the hard drive so that only this user can access these keys.";
-        private const string PromptSimpleCreate = PromptCreate + " For the sample you are running you need just need API Key.";
-        private const string PromptFullCreate = PromptCreate + " For the sample you are running you need both an API Key and " + 
+        private const string PromptSimpleCreate = PromptCreate + 
+            " For the sample you are running you need just need API Key.";
+        private const string PromptFullCreate = PromptCreate + 
+            " For the sample you are running you need both an API Key and " + 
             "a Client ID for installed applications.";
-        private const string PromptFullExtend = "Another sample? Cool! This one requires ClientId for Installed applications " +
+        private const string PromptFullExtend = 
+            "Another sample? Cool! This one requires ClientId for Installed applications " +
             " as well as the API Key you entered earlier. You can pick up your new ClientId from " +
             "https://code.google.com/apis/console/#:access";
         
@@ -106,7 +109,8 @@ namespace Google.Apis.Samples.Helper
 
         private static string Protect(string clearText)
         {
-            byte[] encryptedData = ProtectedData.Protect(Encoding.ASCII.GetBytes(clearText), entropy, DataProtectionScope.CurrentUser);
+            byte[] encryptedData = ProtectedData.Protect(
+                Encoding.ASCII.GetBytes(clearText), entropy, DataProtectionScope.CurrentUser);
             return Convert.ToBase64String(encryptedData);
         }
 
@@ -160,7 +164,8 @@ namespace Google.Apis.Samples.Helper
         }
 
         /// <summary>
-        /// Fetches the users ApiKey, ClientId and ClientSecreat either from local disk or prompts the user in the command line.
+        /// Fetches the users ApiKey, ClientId and ClientSecreat either from local disk or 
+        /// prompts the user in the command line.
         /// </summary>
         public static FullClientCredentials EnsureFullClientCredentials()
         {
