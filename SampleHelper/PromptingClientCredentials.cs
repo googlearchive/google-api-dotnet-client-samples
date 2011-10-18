@@ -57,6 +57,8 @@ namespace Google.Apis.Samples.Helper
             " as well as the API Key you entered earlier. You can pick up your new ClientId from " +
             "https://code.google.com/apis/console/#:access";
         
+        
+        /// <summary>Gives a fileInfo pointing to the CredentialsFile, creating directories if required.</summary>
         private static FileInfo CredentialsFile
         {
             get
@@ -72,6 +74,13 @@ namespace Google.Apis.Samples.Helper
             }
         }
 
+        /// <summary>
+        ///     Returns a IDictionary of keys and values from the CredentialsFile which is expected to be of the form
+        ///     <example>
+        ///       key=value
+        ///       key2=value2
+        ///     </example>
+        /// </summary>
         private static IDictionary<string, string> ParseFile()
         {
             var parsedValues = new Dictionary<string, string>(5);
@@ -92,6 +101,10 @@ namespace Google.Apis.Samples.Helper
             return parsedValues;
         }
 
+        /// <summary>
+        /// By prompting the user this constructs <code>SimpleClientCredentials</code> and stores them in the 
+        /// <code>CredentialsFile</code>
+        /// </summary>
         private static SimpleClientCredentials CreateSimpleClientCredentials()
         {
             CommandLine.WriteLine(PromptSimpleCreate);
@@ -107,30 +120,13 @@ namespace Google.Apis.Samples.Helper
             return simpleCredentials;
         }
 
-        private static string Protect(string clearText)
-        {
-            byte[] encryptedData = ProtectedData.Protect(
-                Encoding.ASCII.GetBytes(clearText), entropy, DataProtectionScope.CurrentUser);
-            return Convert.ToBase64String(encryptedData);
-        }
-
-        private static string Unprotect(string encrypted)
-        {
-            byte[] encryptedData = Convert.FromBase64String(encrypted);
-            byte[] clearText = ProtectedData.Unprotect(encryptedData, entropy, DataProtectionScope.CurrentUser);
-            return Encoding.ASCII.GetString(clearText);
-        }
-
+        /// <summary>
+        /// By prompting the user this constructs <code>FullClientCredentials</code> and stores them in the 
+        /// <code>CredentialsFile</code>
+        /// </summary>
         private static FullClientCredentials CreateFullClientCredentials(bool isExtension)
         {
-            if (isExtension)
-            {
-                CommandLine.WriteLine(PromptFullExtend);
-            }
-            else
-            {
-                CommandLine.WriteLine(PromptFullCreate);
-            }
+            CommandLine.WriteLine(isExtension ? PromptFullExtend : PromptFullCreate);
 
             FullClientCredentials fullCredentials = CommandLine.CreateClassFromUserinput<FullClientCredentials>();
             using (FileStream fStream = CredentialsFile.OpenWrite())
@@ -143,6 +139,27 @@ namespace Google.Apis.Samples.Helper
                 }
             }
             return fullCredentials;
+        }
+
+        /// <summary>
+        /// Encrypts the clearText using the current users key, this prevents other users being able to read this
+        /// but does not stop the current user from reading this.
+        /// </summary>
+        private static string Protect(string clearText)
+        {
+            byte[] encryptedData = ProtectedData.Protect(
+                Encoding.ASCII.GetBytes(clearText), entropy, DataProtectionScope.CurrentUser);
+            return Convert.ToBase64String(encryptedData);
+        }
+
+        /// <summary>
+        /// The inverse of <code>Protect</code> this decrypts the passed-in string.
+        /// </summary>
+        private static string Unprotect(string encrypted)
+        {
+            byte[] encryptedData = Convert.FromBase64String(encrypted);
+            byte[] clearText = ProtectedData.Unprotect(encryptedData, entropy, DataProtectionScope.CurrentUser);
+            return Encoding.ASCII.GetString(clearText);
         }
 
         /// <summary>
@@ -202,6 +219,7 @@ namespace Google.Apis.Samples.Helper
         }
     }
 
+    /// <summary>Simple DTO holding all the credentials required to work with the Google Api</summary>
     public class FullClientCredentials : SimpleClientCredentials
     {
         [Description("Client ID as shown in the 'Client ID for installed applications' section")]
@@ -210,6 +228,7 @@ namespace Google.Apis.Samples.Helper
         public string ClientSecret;
     }
 
+    /// <summary>Simple DTO holding a minimal set of credentials required to work with the Google Api</summary>
     public class SimpleClientCredentials
     {
         [Description("API key as shown in the Simple API Access section.")]
