@@ -29,6 +29,7 @@ namespace Google.Apis.Samples.Helper
     /// </summary>
     public static class PromptingClientCredentials
     {
+        private static bool firstRun = true;
         private const string ApplicationFolderName = "Google.Apis.Samples";
         private const string ClientCredentialsFileName = "client.dat";
         private const string FileKeyApiKey = "ProtectedApiKey";
@@ -37,7 +38,7 @@ namespace Google.Apis.Samples.Helper
 
         // Random data used to make this encryption key different from other information encyrpted with ProtectedData
         // This does not make it hard to decrypt just adds another small step.  
-        private const byte[] entropy = new byte[] { 
+        private static readonly byte[] entropy = new byte[] { 
             150, 116, 112, 35, 243, 210, 144, 9, 188, 122, 157, 253, 124, 115, 87, 51, 84, 178, 43, 176, 239, 198, 198, 
             249, 116, 190, 61, 129, 238, 23, 250, 163, 59, 26, 139 };
         
@@ -162,11 +163,25 @@ namespace Google.Apis.Samples.Helper
             return Encoding.ASCII.GetString(clearText);
         }
 
+        private static void PromptForReuse()
+        {
+            if ((!firstRun) || (!CredentialsFile.Exists))
+            {
+                return;
+            }
+            firstRun = false;
+            CommandLine.RequestUserChoice(
+                "There are stored API Keys on this computer do you wish to use these or enter new credentials?",
+                new UserOption("Reuse existing API Keys", () => { ;}),
+                new UserOption("Enter new credentials", ClearClientCredentials));
+        }
+
         /// <summary>
         /// Fetches the users ApiKey either from local disk or prompts the user in the command line.
         /// </summary>
         public static SimpleClientCredentials EnsureSimpleClientCredentials()
         {
+            PromptForReuse();
             if (CredentialsFile.Exists == false)
             {
                 return CreateSimpleClientCredentials();
@@ -186,6 +201,7 @@ namespace Google.Apis.Samples.Helper
         /// </summary>
         public static FullClientCredentials EnsureFullClientCredentials()
         {
+            PromptForReuse();
             if (CredentialsFile.Exists == false)
             {
                 return CreateFullClientCredentials(false);
