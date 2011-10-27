@@ -23,7 +23,6 @@ using Google.Apis.Samples.Helper;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
 using Google.Apis.Util;
-using UrlShortener.v1.Cmd.OAuth2;
 
 namespace UrlShortener.ListURLs
 {
@@ -44,8 +43,9 @@ namespace UrlShortener.ListURLs
 
             // Register the authenticator.
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
+            provider.ClientIdentifier = credentials.ClientId;
+            provider.ClientSecret = credentials.ClientSecret;
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.

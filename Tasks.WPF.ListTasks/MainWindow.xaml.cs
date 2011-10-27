@@ -42,8 +42,9 @@ namespace Tasks.WPF.ListTasks
         private static IAuthenticator CreateAuthenticator()
         {
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
+            provider.ClientIdentifier = credentials.ClientId;
+            provider.ClientSecret = credentials.ClientSecret;
             return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
         }
 

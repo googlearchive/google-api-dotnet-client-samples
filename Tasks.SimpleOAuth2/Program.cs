@@ -40,8 +40,9 @@ namespace Google.Apis.Samples.TasksOAuth2
 
             // Register the authenticator.
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
+            provider.ClientIdentifier = credentials.ClientId;
+            provider.ClientSecret = credentials.ClientSecret;
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthorization);
 
             // Create the service.
