@@ -42,9 +42,8 @@ namespace TasksExample.WinForms.NoteMgr
         private static IAuthenticator CreateAuthenticator()
         {
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
-            provider.ClientIdentifier = credentials.ClientId;
-            provider.ClientSecret = credentials.ClientSecret;
+            provider.ClientIdentifier = ClientCredentials.ClientID;
+            provider.ClientSecret = ClientCredentials.ClientSecret;
             return new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
         }
 
