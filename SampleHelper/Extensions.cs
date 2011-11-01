@@ -16,78 +16,81 @@ limitations under the License.
 
 using System;
 
-/// <summary>
-/// Extension method container class.
-/// </summary>
-public static class Extensions
+namespace Google.Apis.Samples.Helper
 {
     /// <summary>
-    /// Trims the string to the specified length, and replaces the end with "..." if trimmed.
+    /// Extension method container class.
     /// </summary>
-    public static string TrimByLength(this string str, int maxLength)
+    public static class Extensions
     {
-        if (maxLength < 3)
+        /// <summary>
+        /// Trims the string to the specified length, and replaces the end with "..." if trimmed.
+        /// </summary>
+        public static string TrimByLength(this string str, int maxLength)
         {
-            throw new ArgumentException("Please specify a maximum length of at least 3", "maxLength");
+            if (maxLength < 3)
+            {
+                throw new ArgumentException("Please specify a maximum length of at least 3", "maxLength");
+            }
+
+            if (str.Length <= maxLength)
+            {
+                return str; // Nothing to do.
+            }
+
+            return str.Substring(0, maxLength - 3) + "...";
         }
 
-        if (str.Length <= maxLength)
+        /// <summary>
+        /// Formats an Exception as a HTML string.
+        /// </summary>
+        /// <param name="ex">The exception to format.</param>
+        /// <returns>Formatted HTML string.</returns>
+        public static string ToHtmlString(this Exception ex)
         {
-            return str; // Nothing to do.
+            string str = ex.ToString();
+            str = str.Replace(Environment.NewLine, Environment.NewLine + "<br/>");
+            str = str.Replace("  ", " &nbsp;");
+            return string.Format("<font color=\"red\">{0}</font>", str);
         }
 
-        return str.Substring(0, maxLength - 3) + "...";
-    }
-
-    /// <summary>
-    /// Formats an Exception as a HTML string.
-    /// </summary>
-    /// <param name="ex">The exception to format.</param>
-    /// <returns>Formatted HTML string.</returns>
-    public static string ToHtmlString(this Exception ex)
-    {
-        string str = ex.ToString();
-        str = str.Replace(Environment.NewLine, Environment.NewLine + "<br/>");
-        str = str.Replace("  ", " &nbsp;");
-        return string.Format("<font color=\"red\">{0}</font>", str);
-    }
-
-    /// <summary>
-    /// Throws an ArgumentNullException if the specified object is null.
-    /// </summary>
-    /// <param name="toCheck">The object to check.</param>
-    /// <param name="paramName">The name of the parameter.</param>
-    public static void ThrowIfNull(this object toCheck, string paramName)
-    {
-        if (toCheck == null)
+        /// <summary>
+        /// Throws an ArgumentNullException if the specified object is null.
+        /// </summary>
+        /// <param name="toCheck">The object to check.</param>
+        /// <param name="paramName">The name of the parameter.</param>
+        public static void ThrowIfNull(this object toCheck, string paramName)
         {
-            throw new ArgumentNullException(paramName);
+            if (toCheck == null)
+            {
+                throw new ArgumentNullException(paramName);
+            }
         }
-    }
 
-    /// <summary>
-    /// Throws an ArgumentNullException if the specified string is null or empty.
-    /// </summary>
-    /// <param name="toCheck">The object to check.</param>
-    /// <param name="paramName">The name of the parameter.</param>
-    public static void ThrowIfNullOrEmpty(this string toCheck, string paramName)
-    {
-        if (string.IsNullOrEmpty(toCheck))
+        /// <summary>
+        /// Throws an ArgumentNullException if the specified string is null or empty.
+        /// </summary>
+        /// <param name="toCheck">The object to check.</param>
+        /// <param name="paramName">The name of the parameter.</param>
+        public static void ThrowIfNullOrEmpty(this string toCheck, string paramName)
         {
-            throw new ArgumentNullException(paramName);
+            if (string.IsNullOrEmpty(toCheck))
+            {
+                throw new ArgumentNullException(paramName);
+            }
         }
-    }
 
-    /// <summary>
-    /// Throws an ArgumentNullException if the specified array is null or empty.
-    /// </summary>
-    /// <param name="toCheck">The object to check.</param>
-    /// <param name="paramName">The name of the parameter.</param>
-    public static void ThrowIfNullOrEmpty(this object[] toCheck, string paramName)
-    {
-        if (toCheck == null || toCheck.Length == 0)
+        /// <summary>
+        /// Throws an ArgumentNullException if the specified array is null or empty.
+        /// </summary>
+        /// <param name="toCheck">The object to check.</param>
+        /// <param name="paramName">The name of the parameter.</param>
+        public static void ThrowIfNullOrEmpty(this object[] toCheck, string paramName)
         {
-            throw new ArgumentNullException(paramName);
+            if (toCheck == null || toCheck.Length == 0)
+            {
+                throw new ArgumentNullException(paramName);
+            }
         }
     }
 }
