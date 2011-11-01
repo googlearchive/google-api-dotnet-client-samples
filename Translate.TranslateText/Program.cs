@@ -53,7 +53,7 @@ namespace Translate.TranslateText
             TranslateInput input = CommandLine.CreateClassFromUserinput<TranslateInput>();
 
             // Create the service.
-            var service = new TranslateService { Key = ClientCredentials.ApiKey };
+            var service = new TranslateService { Key = GetApiKey() };
 
             // Execute the first translation request.
             CommandLine.WriteAction("Translating to '"+input.TargetLanguage+"' ...");
@@ -80,6 +80,11 @@ namespace Translate.TranslateText
 
             // ...and we are done.
             CommandLine.PressAnyKeyToExit();
+        }
+
+        private static string GetApiKey()
+        {
+            return PromptingClientCredentials.EnsureSimpleClientCredentials().ApiKey;
         }
     }
 }

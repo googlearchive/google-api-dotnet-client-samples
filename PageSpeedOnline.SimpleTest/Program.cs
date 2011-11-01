@@ -34,7 +34,8 @@ namespace PageSpeedOnline.SimpleTest
             CommandLine.DisplayGoogleSampleHeader("Page Speed Online API");
 
             // Create the service.
-            var service = new PagespeedonlineService() { Key = ClientCredentials.ApiKey };
+
+            var service = new PagespeedonlineService() { Key = GetApiKey() };
             RunSample(service);
             CommandLine.PressAnyKeyToExit();
         }
@@ -51,6 +52,11 @@ namespace PageSpeedOnline.SimpleTest
             
             // Display the results.
             CommandLine.WriteResult("Page score", result.Score);
+        }
+
+        private static string GetApiKey()
+        {
+            return PromptingClientCredentials.EnsureSimpleClientCredentials().ApiKey;
         }
     }
 }

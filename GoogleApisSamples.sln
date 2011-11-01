@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApis.SampleHelper", "SampleHelper\GoogleApis.SampleHelper.csproj", "{08079AFF-9A91-4387-8792-C731D18D4373}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.CreateTasks", "Tasks.CreateTasks\Tasks.CreateTasks.csproj", "{7A03215D-1ED3-4C21-BEBA-83AC31802CB1}"
@@ -38,8 +38,6 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Discovery.VB.ListAPIs", "Discovery.VB.ListAPIs\Discovery.VB.ListAPIs.vbproj", "{68CC1535-13A8-4D58-8CD3-68E639C28B1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prediction.Simple", "Prediction.Simple\Prediction.Simple.csproj", "{B30BF86E-AB69-4E74-8AB9-39EA376A4298}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterCredentials", "EnterCredentials\EnterCredentials.csproj", "{4E8B14D2-919E-4CCB-958C-93D3598C9882}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prediction.HostedExample", "Prediction.HostedExample\Prediction.HostedExample.csproj", "{CC7B83BF-553F-4BA3-89EF-AA77C9B13658}"
 EndProject
@@ -245,16 +243,6 @@ Global
 		{B30BF86E-AB69-4E74-8AB9-39EA376A4298}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B30BF86E-AB69-4E74-8AB9-39EA376A4298}.Release|x86.ActiveCfg = Release|x86
 		{B30BF86E-AB69-4E74-8AB9-39EA376A4298}.Release|x86.Build.0 = Release|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Debug|x86.ActiveCfg = Debug|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Debug|x86.Build.0 = Debug|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Release|Any CPU.ActiveCfg = Release|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Release|Mixed Platforms.Build.0 = Release|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Release|x86.ActiveCfg = Release|x86
-		{4E8B14D2-919E-4CCB-958C-93D3598C9882}.Release|x86.Build.0 = Release|x86
 		{CC7B83BF-553F-4BA3-89EF-AA77C9B13658}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{CC7B83BF-553F-4BA3-89EF-AA77C9B13658}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{CC7B83BF-553F-4BA3-89EF-AA77C9B13658}.Debug|Mixed Platforms.Build.0 = Debug|x86

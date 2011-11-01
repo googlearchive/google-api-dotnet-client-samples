@@ -27,7 +27,7 @@ using Google.Apis.Samples.Helper;
 using Google.Apis.Util;
 using Prediction.HostedExample;
 
-namespace Prediction.Simple
+namespace Prediction.HostedExample
 {
     /// <summary>
     /// Sample for the prediction API.
@@ -47,8 +47,10 @@ namespace Prediction.Simple
 
             // Register the authenticator.
             var provider = new NativeApplicationClient(GoogleAuthenticationServer.Description);
-            provider.ClientIdentifier = ClientCredentials.ClientID;
-            provider.ClientSecret = ClientCredentials.ClientSecret;
+            FullClientCredentials credentials = PromptingClientCredentials.EnsureFullClientCredentials();
+            provider.ClientIdentifier = credentials.ClientId;
+            provider.ClientSecret = credentials.ClientSecret;
+
             var auth = new OAuth2Authenticator<NativeApplicationClient>(provider, GetAuthentication);
 
             // Create the service.

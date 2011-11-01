@@ -85,18 +85,20 @@ namespace Google.Apis.Samples.Helper
         private static IDictionary<string, string> ParseFile()
         {
             var parsedValues = new Dictionary<string, string>(5);
-            StreamReader sr = CredentialsFile.OpenText();
-            string currentLine = sr.ReadLine();
-            while (currentLine != null)
+            using (StreamReader sr = CredentialsFile.OpenText())
             {
-                int firstEquals = currentLine.IndexOf('=');
-                if (firstEquals > 0 && firstEquals + 1 < currentLine.Length)
+                string currentLine = sr.ReadLine();
+                while (currentLine != null)
                 {
-                    string key = currentLine.Substring(0, firstEquals);
-                    string value = currentLine.Substring(firstEquals + 1);
-                    parsedValues.Add(key, value);
+                    int firstEquals = currentLine.IndexOf('=');
+                    if (firstEquals > 0 && firstEquals + 1 < currentLine.Length)
+                    {
+                        string key = currentLine.Substring(0, firstEquals);
+                        string value = currentLine.Substring(firstEquals + 1);
+                        parsedValues.Add(key, value);
+                    }
+                    currentLine = sr.ReadLine();
                 }
-                currentLine = sr.ReadLine();
             }
 
             return parsedValues;
