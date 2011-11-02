@@ -17,6 +17,7 @@ limitations under the License.
 using System;
 using System.Text.RegularExpressions;
 using Google;
+using Google.Apis.Samples.Helper;
 using Google.Apis.Urlshortener.v1;
 using Google.Apis.Urlshortener.v1.Data;
 
