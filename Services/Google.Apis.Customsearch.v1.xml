@@ -140,6 +140,15 @@
         <member name="F:Google.Apis.Customsearch.v1.CseResource.Safe.Off">
             <summary>Disables safe search filtering.</summary>
         </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Customsearch.v1.CseResource.ListRequest.Cr">
             <summary>Country restrict(s).</summary>
         </member>

@@ -16,6 +16,9 @@
         <member name="P:Google.Apis.Shopping.v1.Data.Product.Recommendations">
             <summary>Recommendations for product.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.Product.RequestId">
+            <summary>Unique identifier for this request.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Product.SelfLink">
             <summary>Self link of product.</summary>
         </member>
@@ -63,6 +66,9 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.RelatedQueries">
             <summary>Related queries.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.Products.RequestId">
+            <summary>Unique identifier for this request.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.SelfLink">
             <summary>Self link of feed.</summary>
@@ -184,6 +190,12 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelCategoryJsonV1.Url">
             <summary>URL of category.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimes">
+            <summary>Google internal</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.ElapsedMillis">
+            <summary>Google internal.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.RdcResponse">
             <summary>Google internal.</summary>
         </member>
@@ -192,6 +204,18 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.SearchResponse">
             <summary>Google internal.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimesData.ElapsedMillis">
+            <summary>Google internal</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimesData.HostName">
+            <summary>Google internal</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimesData.Name">
+            <summary>Google internal</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelDebugJsonV1.BackendTimesData.ServerMillis">
+            <summary>Google internal</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Attributes">
             <summary>Attributes of product (available only with a cx source).</summary>
@@ -241,11 +265,23 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.ModificationTime">
             <summary>RFC 3339 formatted modification time and date of product.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.PlusOne">
+            <summary>Code to add to the page to render the +1 content.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.ProvidedId">
             <summary>Merchant-provided id of product (available only with a cx source).</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.QueryMatched">
+            <summary>Whether this product matched the user query. Only set for the variant offers (if any) attached to a product offer.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Title">
             <summary>Title of product.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.TotalMatchingVariants">
+            <summary>The number of variant offers returned that matched the query.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Variants">
+            <summary>A list of variant offers associated with this product.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.AttributesData.DisplayName">
             <summary>Display Name of prodct attribute.</summary>
@@ -316,8 +352,14 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Price">
             <summary>Price of product inventory.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Shipping">
+            <summary>Shipping cost of product inventory.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.StoreId">
             <summary>Store ID of product inventory.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Tax">
+            <summary>Tax of product inventory.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ShoppingService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -344,6 +386,15 @@
         </member>
         <member name="F:Google.Apis.Shopping.v1.ProductsResource.MinAvailability.Unknown">
             <summary>All products will be returned</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.AccountId">
             <summary>Merchant center account id</summary>
@@ -372,6 +423,12 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.DebugSearchResponse">
             <summary>Google Internal</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.Location">
+            <summary>Location used to determine tax and shipping</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOne">
+            <summary>+1 rendering specification.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.ProductFields">
             <summary>Google Internal</summary>
         </member>
@@ -398,6 +455,15 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.Thumbnails">
             <summary>Thumbnail specification</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.AttributeFilter">
             <summary>Comma separated list of attributes to return</summary>
@@ -465,8 +531,17 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Language">
             <summary>Language restriction (BCP 47)</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Location">
+            <summary>Location used to determine tax and shipping</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.MaxVariants">
+            <summary>Maximum number of variant results to return per result</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOne">
+            <summary>+1 rendering specification.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ProductFields">
             <summary>Google Internal</summary>
@@ -506,15 +581,6 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.SaytUseGcsConfig">
             <summary>Google Internal</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ShelfSpaceAdsEnabled">
-            <summary>Whether to return shelf space ads</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ShelfSpaceAdsMaxResults">
-            <summary>The maximum number of shelf space ads to return</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ShelfSpaceAdsUseGcsConfig">
-            <summary>This parameter is currently ignored</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Source">
             <summary>Query source</summary>

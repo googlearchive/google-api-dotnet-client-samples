@@ -13,6 +13,15 @@
             <param name="last_letter">Required - Flag to indicate whether the last letter in a word should be diacritized or not</param>
             <param name="lang">Required - Language of the message</param>
         </member>
+        <member name="P:Google.Apis.Diacritize.v1.DiacritizeResource.CorpusResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Diacritize.v1.DiacritizeResource.CorpusResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Diacritize.v1.DiacritizeResource.CorpusResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Diacritize.v1.DiacritizeResource.CorpusResource.GetRequest.Lang">
             <summary>Language of the message</summary>
         </member>

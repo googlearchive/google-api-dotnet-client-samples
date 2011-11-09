@@ -393,8 +393,20 @@
             <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
             <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
         </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Shelf">
             <summary>Id of bookshelf to retrieve volumes.</summary>
@@ -402,8 +414,20 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.StartIndex">
+            <summary>Index of the first element to return (starts at 0)</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelf volumes.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
@@ -416,6 +440,15 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
@@ -459,6 +492,15 @@
         <member name="F:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.Projection.Lite">
             <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -480,6 +522,15 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.StartIndex">
             <summary>Index of the first element to return (starts at 0)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -492,6 +543,15 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.VolumeId">
             <summary>Id of volume to add.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -500,6 +560,15 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
@@ -510,11 +579,29 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
@@ -599,6 +686,15 @@
         <member name="F:Google.Apis.Books.v1.VolumesResource.PrintType.Magazines">
             <summary>Just magazines.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -613,6 +709,15 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.VolumeId">
             <summary>Id of volume to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>

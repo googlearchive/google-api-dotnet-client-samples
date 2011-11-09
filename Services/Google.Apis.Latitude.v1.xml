@@ -97,8 +97,35 @@
         <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Insert(Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson)">
             <summary>Updates or creates the user&apos;s current location.</summary>
         </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.GetRequest.Granularity">
             <summary>Granularity of the requested location.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -117,8 +144,26 @@
         <member name="M:Google.Apis.Latitude.v1.LocationResource.List">
             <summary>Lists the user&apos;s location history.</summary>
         </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.LocationId">
             <summary>Timestamp of the location to delete (ms since epoch).</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.GetRequest.Granularity">
             <summary>Granularity of the location to return.</summary>
@@ -126,8 +171,26 @@
         <member name="P:Google.Apis.Latitude.v1.LocationResource.GetRequest.LocationId">
             <summary>Timestamp of the location to read (ms since epoch).</summary>
         </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Latitude.v1.LocationResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.ListRequest.Granularity">
             <summary>Granularity of the requested locations.</summary>

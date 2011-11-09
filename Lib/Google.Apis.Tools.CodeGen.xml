@@ -190,7 +190,7 @@
             Retrieves the underlying, unmodified type of a parameter.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterTypeReference(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IParameter,Google.Apis.Discovery.IMethod)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceBaseGenerator.GetParameterTypeReference(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IParameter)">
             <summary>
             Returns the reference to the type which is described in the parameter. Creates types if necessary.
             </summary>
@@ -273,12 +273,26 @@
             Creates a new ServiceRequestInheritanceDecorator, which uses the specified type provider.
             </summary>
         </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ParameterPropertyDecorator">
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BaseParameterPropertyDecorator">
             <summary>
             Decorator which adds a property for each parameter in the method to the request class.
             e.g.
                 <c>public string Name { get; set; }</c>
             </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ParameterPropertyDecorator">
+            <summary>
+            Parameter property decorator for method parameters.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.CommonParameterRequestDecorator">
+            <summary>
+            Adds service-wide parameters to the request objects.
+            </summary>
+            <remarks>
+            Services have parameters which apply to all methods on that service. These are specified
+            at the service level.
+            </remarks>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.SubresourceClassDecorator">
             <summary>
@@ -712,6 +726,13 @@
             Returns a safe and appropriate name for an enumeration value.
             </summary>
         </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.GetNamespaceName(System.String)">
+            <summary>
+            Return a safe name for a namespace.
+            </summary>
+            <param name="basename">The target (potentially unsafe) name.</param>
+            <returns>A safe namepsace name.</returns>
+        </member>
         <member name="M:Google.Apis.Tools.CodeGen.GeneratorUtils.GetClassName(Google.Apis.Discovery.IResourceContainer,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Returns a safe and appropriate class name for the specified resource container.
@@ -928,7 +949,7 @@
             {1}: Version
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareRequestDecorators(System.String)">
+        <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareRequestDecorators(System.String,Google.Apis.Discovery.IService)">
             <summary>
             List of all request class decorators
             </summary>

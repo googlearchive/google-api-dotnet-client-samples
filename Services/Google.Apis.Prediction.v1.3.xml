@@ -113,6 +113,15 @@
             <summary>Submit input and request an output against a hosted model</summary>
             <param name="hostedModelName">Required - The name of a hosted model</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_3.HostedmodelsResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.HostedmodelsResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.HostedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_3.HostedmodelsResource.PredictRequest.HostedModelName">
             <summary>The name of a hosted model</summary>
         </member>
@@ -138,20 +147,65 @@
             <summary>Add new data to a trained model</summary>
             <param name="data">Required</param>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.DeleteRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.GetRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.PredictRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_3.TrainingResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

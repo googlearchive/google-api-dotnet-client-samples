@@ -58,6 +58,108 @@
         <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Username">
             <summary>Email ID of the authenticated user</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ColumnHeaders">
+            <summary>Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ContainsSampledData">
+            <summary>Determines if the report contains sampled data.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.Id">
+            <summary>Report ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ItemsPerPage">
+            <summary>The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.NextLink">
+            <summary>Link to next page for this report query.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.PreviousLink">
+            <summary>Link to previous page for this report query.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfo">
+            <summary>Information for the profile, for which the report data was requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.Query">
+            <summary>Report request query parameters.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.Rows">
+            <summary>Report data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.SelfLink">
+            <summary>Link to this page.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.TotalResults">
+            <summary>The total number of rows for the query, regardless of the number of rows in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.TotalsForAllResults">
+            <summary>Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ColumnHeadersData.ColumnType">
+            <summary>Column Type. Either DIMENSION or METRIC.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ColumnHeadersData.DataType">
+            <summary>Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ColumnHeadersData.Name">
+            <summary>Column name.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData">
+            <summary>Information for the profile, for which the report data was requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData.AccountId">
+            <summary>Account ID to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData.ProfileId">
+            <summary>Profile ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData.ProfileName">
+            <summary>Profile name.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData.TableId">
+            <summary>Table ID for profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.ProfileInfoData.WebPropertyId">
+            <summary>Web Property ID to which this profile belongs.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.GaReport.QueryData">
+            <summary>Report request query parameters.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Dimensions">
+            <summary>List of analytics dimensions.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.EndDate">
+            <summary>End date.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Filters">
+            <summary>Comma-separated list of dimension or metric filters.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Ids">
+            <summary>Unique table ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.MaxResults">
+            <summary>Maximum results per page.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Metrics">
+            <summary>List of analytics metrics.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Segment">
+            <summary>Analytics advanced segment.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.Sort">
+            <summary>List of dimensions or metrics based on which report data is sorted.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.StartDate">
+            <summary>Start date.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.GaReport.QueryData.StartIndex">
+            <summary>Start index.</summary>
+        </member>
+        <member name="T:Google.Apis.Analytics.v3.Data.GaReport.TotalsForAllResultsData">
+            <summary>Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Goal.AccountId">
             <summary>Account ID to which this goal belongs.</summary>
         </member>
@@ -115,6 +217,9 @@
         <member name="T:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData">
             <summary>Details for the goal of the type EVENT.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.EventConditions">
+            <summary>List of event conditions.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Goal.EventDetailsData.UseEventValue">
             <summary>Determines if the event value should be used as the value for this goal.</summary>
         </member>
@@ -135,6 +240,12 @@
         </member>
         <member name="T:Google.Apis.Analytics.v3.Data.Goal.ParentLinkData">
             <summary>Parent link for a goal. Points to the profile to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.ParentLinkData.Href">
+            <summary>Link to the profile to which this goal belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Goal.ParentLinkData.Type">
+            <summary>Value is &quot;analytics#profile&quot;.</summary>
         </member>
         <member name="T:Google.Apis.Analytics.v3.Data.Goal.UrlDestinationDetailsData">
             <summary>Details for the goal of the type URL_DESTINATION.</summary>
@@ -259,8 +370,20 @@
         <member name="T:Google.Apis.Analytics.v3.Data.Profile.ChildLinkData">
             <summary>Child link for this profile. Points to the list of goals for this profile.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ChildLinkData.Href">
+            <summary>Link to the list of goals for this profile.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ChildLinkData.Type">
+            <summary>Value is &quot;analytics#goals&quot;.</summary>
+        </member>
         <member name="T:Google.Apis.Analytics.v3.Data.Profile.ParentLinkData">
             <summary>Parent link for this profile. Points to the web property to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ParentLinkData.Href">
+            <summary>Link to the web property to which this profile belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ParentLinkData.Type">
+            <summary>Value is &quot;analytics#webproperty&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Profiles.Items">
             <summary>A list of profiles.</summary>
@@ -418,6 +541,15 @@
         <member name="M:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.List">
             <summary>Lists all accounts to which the user has access.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of entries to include in this response.</summary>
         </member>
@@ -429,6 +561,15 @@
             <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
             <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID for the web properties to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
             <param name="profileId">Required - Must match pattern ~all|[0-9]+ - Profile ID for the web properties to retrieve. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles to which the user has access.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.AccountId">
             <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
@@ -450,6 +591,15 @@
             <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
             <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID for the web properties to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.AccountId">
             <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
         </member>
@@ -465,6 +615,15 @@
         <member name="M:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.List">
             <summary>Lists advanced segments to which the user has access.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.MaxResults">
             <summary>The maximum number of entries to include in this response.</summary>
         </member>
@@ -475,6 +634,15 @@
             <summary>Lists web properties to which the user has access.</summary>
             <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID for the web properties to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which user has access.</param>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
             <summary>Account ID for the web properties to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which user has access.</summary>
         </member>
@@ -482,6 +650,52 @@
             <summary>The maximum number of entries to include in this response.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+        </member>
+        <member name="M:Google.Apis.Analytics.v3.ReportResource.Get(System.String,System.String,System.String,System.String)">
+            <summary>Returns Analytics report data for a profile.</summary>
+            <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching report data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
+            <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date for fetching report data. All requests should specify a start date formatted as YYYY-MM-DD.</param>
+            <param name="metrics">Required - Must match pattern ga:.+ - A comma-separated list of Analytics metrics. E.g., &apos;ga:visits,ga:pageviews&apos;. At least one metric must be specified to retrieve a valid Analytics report.</param>
+            <param name="ids">Required - Must match pattern ga:[0-9]+ - Unique table ID for retrieving report data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile ID.</param>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Dimensions">
+            <summary>A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.EndDate">
+            <summary>End date for fetching report data. All requests should specify an end date formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Filters">
+            <summary>A comma-separated list of dimension or metric filters to be applied to the report data.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Ids">
+            <summary>Unique table ID for retrieving report data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.MaxResults">
+            <summary>The maximum number of entries to include in this feed.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Metrics">
+            <summary>A comma-separated list of Analytics metrics. E.g., 'ga:visits,ga:pageviews'. At least one metric must be specified to retrieve a valid Analytics report.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Segment">
+            <summary>An Analytics advanced segment to be applied to the report data.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.Sort">
+            <summary>A comma-separated list of dimensions or metrics that determine the sort order for the report data.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.StartDate">
+            <summary>Start date for fetching report data. All requests should specify a start date formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Analytics.v3.ReportResource.GetRequest.StartIndex">
             <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
         </member>
     </members>

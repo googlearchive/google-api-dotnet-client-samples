@@ -117,11 +117,29 @@
         <member name="F:Google.Apis.Buzz.v1.ActivitiesResource.ScopeMember.Self">
             <summary>Activities posted by the user.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.CountRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.CountRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.CountRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.CountRequest.Hl">
             <summary>Language code to limit language results.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.CountRequest.Url">
             <summary>URLs for which to get share counts.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.DeleteRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -137,6 +155,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.DeleteRequest.UserId">
             <summary>ID of the user whose post to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ExtractPeopleFromSearchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ExtractPeopleFromSearchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ExtractPeopleFromSearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ExtractPeopleFromSearchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -168,6 +195,15 @@
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ExtractPeopleFromSearchRequest.Radius">
             <summary>Radius to use in a geographic location query.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.GetRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -189,6 +225,15 @@
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.GetRequest.UserId">
             <summary>ID of the user whose post to get.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.InsertRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -203,6 +248,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -231,6 +285,15 @@
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.ListRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.PatchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -248,6 +311,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.SearchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.SearchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.SearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.SearchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -282,6 +354,15 @@
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.SearchRequest.TruncateAtom">
             <summary>Truncate the value of the atom:content element.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.TrackRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.TrackRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.TrackRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.TrackRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -311,6 +392,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.TrackRequest.Radius">
             <summary>Radius to use in a geographic location query.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.ActivitiesResource.UpdateRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -391,6 +481,15 @@
         <member name="F:Google.Apis.Buzz.v1.CommentsResource.ScopeEnum.Self">
             <summary>Comments posted by the user.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.DeleteRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -405,6 +504,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.DeleteRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.GetRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -421,6 +529,15 @@
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.GetRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.InsertRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -435,6 +552,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -457,6 +583,15 @@
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.ListRequest.UserId">
             <summary>ID of the user for whose post to get comments.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.PatchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -477,6 +612,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.CommentsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.CommentsResource.UpdateRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -536,6 +680,15 @@
         <member name="F:Google.Apis.Buzz.v1.GroupsResource.Alt.Json">
             <summary>Use JSON format</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.DeleteRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -547,6 +700,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.DeleteRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.GetRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -560,6 +722,15 @@
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.GetRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.InsertRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -571,6 +742,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -587,6 +767,15 @@
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.ListRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.PatchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -601,6 +790,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.GroupsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.GroupsResource.UpdateRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -676,6 +874,15 @@
         <member name="F:Google.Apis.Buzz.v1.PeopleResource.GroupIdEnum.Reshared">
             <summary>People who reshared this activity.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.DeleteRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -691,6 +898,15 @@
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.DeleteRequest.UserId">
             <summary>ID of the owner of the group.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.GetRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -699,6 +915,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.GetRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.LikedRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.LikedRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.LikedRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.LikedRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -718,6 +943,15 @@
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.LikedRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -735,6 +969,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.ListRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.PatchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -754,6 +997,15 @@
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ResharedRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ResharedRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.ResharedRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.ResharedRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -772,6 +1024,15 @@
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.ResharedRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.SearchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.SearchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.SearchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.SearchRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -786,6 +1047,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.SearchRequest.Q">
             <summary>Full-text search query string.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PeopleResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PeopleResource.UpdateRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -839,6 +1109,15 @@
         <member name="F:Google.Apis.Buzz.v1.PhotoAlbumsResource.Scope.Self">
             <summary>Albums posted by the user.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.DeleteRequest.AlbumId">
             <summary>ID of the album to delete.</summary>
         </member>
@@ -850,6 +1129,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.DeleteRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.GetRequest.AlbumId">
             <summary>ID of the album to get.</summary>
@@ -863,6 +1151,15 @@
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.GetRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.InsertRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
         </member>
@@ -874,6 +1171,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotoAlbumsResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -940,6 +1246,15 @@
         <member name="F:Google.Apis.Buzz.v1.PhotosResource.Scope.Recent">
             <summary>Recent photos uploaded by the user.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.DeleteRequest.AlbumId">
             <summary>ID of the album to which to photo belongs.</summary>
         </member>
@@ -954,6 +1269,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.DeleteRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.GetRequest.AlbumId">
             <summary>ID of the album containing the photo.</summary>
@@ -970,6 +1294,15 @@
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.GetRequest.UserId">
             <summary>ID of the user being referenced.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.InsertRequest.AlbumId">
             <summary>ID of the album to which to upload.</summary>
         </member>
@@ -985,6 +1318,15 @@
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.Insert2Request.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.Insert2Request.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.Insert2Request.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.Insert2Request.AlbumId">
             <summary>ID of the album to which to upload.</summary>
         </member>
@@ -999,6 +1341,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.Insert2Request.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByAlbumRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByAlbumRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByAlbumRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByAlbumRequest.AlbumId">
             <summary>ID of the album for which to list photos.</summary>
@@ -1017,6 +1368,15 @@
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByAlbumRequest.UserId">
             <summary>ID of the user being referenced.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByScopeRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByScopeRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByScopeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.PhotosResource.ListByScopeRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>
@@ -1056,6 +1416,15 @@
         </member>
         <member name="F:Google.Apis.Buzz.v1.RelatedResource.Scope.Self">
             <summary>Activities posted by the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.RelatedResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.RelatedResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Buzz.v1.RelatedResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Buzz.v1.RelatedResource.ListRequest.Alt">
             <summary>Specifies an alternative representation type.</summary>

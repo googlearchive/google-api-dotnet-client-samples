@@ -98,14 +98,41 @@
         <member name="F:Google.Apis.Urlshortener.v1.UrlResource.ProjectionEnum.FULL">
             <summary>Returns short URL click counts.</summary>
         </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.Projection">
             <summary>Additional information to return.</summary>
         </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.ShortUrl">
             <summary>The short URL, including the protocol.</summary>
         </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.Projection">
             <summary>Additional information to return.</summary>

@@ -734,11 +734,6 @@
             <param name="property">The property to get the value from.</param>
             <returns>Delegate pointing to the specified property getter.</returns>
         </member>
-        <member name="T:Google.Apis.Testing.MockResponse">
-            <summary>
-            Mock-Response for testing purposes.
-            </summary>
-        </member>
         <member name="T:Google.Apis.Util.RequestParameterAttribute">
             <summary>
             An attribute which is used to specially mark a property for reflective purposes, and (optionally) to assign
@@ -775,12 +770,12 @@
             Converts a number of elements into a repeatable.
             </summary>
         </member>
-        <member name="T:Google.Apis.JSON.IJsonSerializer">
+        <member name="T:Google.Apis.Json.IJsonSerializer">
             <summary>
             Represents a Json Serializer
             </summary>
         </member>
-        <member name="T:Google.Apis.JSON.NewtonsoftJsonSerializer">
+        <member name="T:Google.Apis.Json.NewtonsoftJsonSerializer">
             <summary>
             Class for serialization and deserialization of Json documents using the Newtonsoft Library
             </summary>
@@ -894,137 +889,6 @@
             <summary>
             A specialized type converter which will convert any enum type into the string 
             specified in the StringValue attribute.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tests.Apis.Requests.MockMethod">
-            <summary>
-            A mock method for testing purposes.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.IMethod">
-            <summary>
-            Represents one method as defined by the Google Api Discovery Document.
-            This will usally be found within a resource. There may well be differnt implementations
-            of this interface for different versions of discovery.
-            </summary>
-            <see cref="T:Google.Apis.Discovery.IResource"/>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.Name">
-            <summary>
-            Name of this method
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.Description">
-            <summary>
-            A description of this method
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.RestPath">
-            <summary>
-            The rest path to this method
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.RpcName">
-            <summary>
-            The name of the RPC
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.HttpMethod">
-            <summary>
-            The http method required by this method
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.ResponseType">
-            <summary>
-            The response type of the request
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.RequestType">
-            <summary>
-            The type of the request required by this method
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.HasBody">
-            <summary>
-            Whether this request has a body attached to it.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.Parameters">
-            <summary>
-            A set of parameters passed with the request
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IMethod.ParameterOrder">
-            <summary>
-            The order in which parameters should be passed in a request.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tests.Apis.Requests.MockParameter">
-            <summary>
-            Mock class for testing purposes
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.IParameter">
-            <summary>Represents a parameter for a method. </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Name">
-            <summary>
-            Name of the parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.ParameterType">
-            <summary>
-            The type of the parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Pattern">
-            <summary>
-            The pattern in which this parameter has to be defined.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.IsRequired">
-            <summary>
-            Defines whether this parameter is optional or required.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.IsRepeatable">
-            <summary>
-            Defines whether this parameter can be repeated multiple times.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.DefaultValue">
-            <summary>
-            The default value of this parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.ValueType">
-            <summary>
-            The type of the value.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Description">
-            <summary>
-            Description of this parameter.
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Maximum">
-            <summary>
-            The maximum valid value. (Only for numeric values)
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.Minimum">
-            <summary>
-            The minimum valid value. (Only for numeric values)
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.EnumValues">
-            <summary>
-            A list of valid enum values. (Only for enum values)
-            </summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.IParameter.EnumValueDescriptions">
-            <summary>
-            A list of valid enum value descriptions. (Only for enum values)
             </summary>
         </member>
         <member name="T:Google.Apis.Util.StandardResponse`1">
@@ -1147,6 +1011,14 @@
             Deserializes the stream defined by the format used by this service into a .NET object
             </summary>
         </member>
+        <member name="M:Google.Apis.Discovery.IService.DeserializeError(Google.Apis.Requests.IResponse)">
+            <summary>
+            Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
+            </summary>
+            <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
+            <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
+            <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
+        </member>
         <member name="M:Google.Apis.Discovery.IService.HasFeature(Google.Apis.Discovery.Features)">
             <summary>
             Returns true if this feature is defined for this service
@@ -1207,6 +1079,14 @@
         <member name="P:Google.Apis.Discovery.IService.Schemas">
             <summary>A dictionary containing all the schemas defined in this Service </summary>
         </member>
+        <member name="P:Google.Apis.Discovery.IService.Parameters">
+            <summary>
+            A dictionary containing all of the common parameters for this service.
+            </summary>
+            <remarks>
+            Common parameters are parameters which apply to all methods of a particular service.
+            </remarks>
+        </member>
         <member name="P:Google.Apis.Discovery.IService.Serializer">
             <summary>
             Defines the serialisator to use for requests and responses
@@ -1238,12 +1118,26 @@
             Always returns a valid dictionary.
             </summary>
         </member>
+        <member name="M:Google.Apis.Discovery.BaseService.LoadParameters">
+            <summary>
+            Loads the common parameters from the json information dictionary and parses it into a dictionary.
+            Always returns a valid dictionary.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Discovery.BaseService.GetResource(Google.Apis.Discovery.IResource,System.String)">
             <summary>
             Retrieves a resource using the full resource name.
             Example:
                 TopResource.SubResource will retrieve the SubResource which can be found under the TopResource.
             </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.BaseService.DeserializeError(Google.Apis.Requests.IResponse)">
+            <summary>
+            Deserializes an error response into a <see cref="T:Google.Apis.Requests.RequestError"/> object
+            </summary>
+            <exception cref="T:Google.GoogleApiException">If no error is found in the response.</exception>
+            <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
+            <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
         </member>
         <member name="M:Google.Apis.Discovery.BaseService.CreateResource(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
             <summary>
@@ -1654,10 +1548,17 @@
             Ends executing an asynchronous request.
             </summary>
         </member>
-        <member name="M:Google.Apis.Requests.Request.HandleFailedRequest(Google.Apis.Requests.Request.AsyncExecutionState,System.Net.WebException)">
+        <member name="M:Google.Apis.Requests.Request.HandleFailedRequest(Google.Apis.Requests.Request.AsyncExecutionState,System.Net.WebException,Google.Apis.Requests.Request.AsyncRequestResult@)">
             <summary>
             Handles a failed request, and tries to fix it if possible.
             </summary>
+            <remarks>
+            Can not throw an exception.
+            </remarks>
+            <returns>
+            Returns true if the request was handled and is being retried.
+            Returns false if the request could not be retried.
+            </returns>
         </member>
         <member name="M:Google.Apis.Requests.Request.ExecuteRequestAsync(System.Action{Google.Apis.Requests.IAsyncRequestResult})">
             <summary>
@@ -1818,6 +1719,64 @@
         <member name="T:Google.Apis.Discovery.BaseMethod">
             <summary>
             Abstract implementation of a method
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.IMethod">
+            <summary>
+            Represents one method as defined by the Google Api Discovery Document.
+            This will usally be found within a resource. There may well be differnt implementations
+            of this interface for different versions of discovery.
+            </summary>
+            <see cref="T:Google.Apis.Discovery.IResource"/>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.Name">
+            <summary>
+            Name of this method
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.Description">
+            <summary>
+            A description of this method
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.RestPath">
+            <summary>
+            The rest path to this method
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.RpcName">
+            <summary>
+            The name of the RPC
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.HttpMethod">
+            <summary>
+            The http method required by this method
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.ResponseType">
+            <summary>
+            The response type of the request
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.RequestType">
+            <summary>
+            The type of the request required by this method
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.HasBody">
+            <summary>
+            Whether this request has a body attached to it.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.Parameters">
+            <summary>
+            A set of parameters passed with the request
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IMethod.ParameterOrder">
+            <summary>
+            The order in which parameters should be passed in a request.
             </summary>
         </member>
         <member name="T:Google.Apis.Discovery.MethodV1_0">
@@ -2024,16 +1983,6 @@
             The content return type of a request
             </summary>
         </member>
-        <member name="T:Google.Apis.Testing.MockRequest">
-            <summary>
-            Mock request for testing purposes.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tests.Apis.Requests.MockService">
-            <summary>
-            Mock service for testing purposes
-            </summary>
-        </member>
         <member name="T:Google.Apis.Discovery.IRequestProvider">
             <summary>
             Implementors of this interface are able to create arbitory requests against a service
@@ -2125,11 +2074,6 @@
             <summary>
             basic JsonReader that can parse either strings or streams into some
             dictionary form.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Json.JsonReader.GetInstance">
-            <summary>
-            Returns the default instance of this class
             </summary>
         </member>
         <member name="M:Google.Apis.Json.JsonReader.Parse(System.String)">
@@ -2415,6 +2359,69 @@
         <member name="T:Google.Apis.Discovery.ParameterFactory.BaseParameter">
             <summary>
             Abstract implementation of a parameter.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.IParameter">
+            <summary>Represents a parameter for a method. </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Name">
+            <summary>
+            Name of the parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.ParameterType">
+            <summary>
+            The type of the parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Pattern">
+            <summary>
+            The pattern in which this parameter has to be defined.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.IsRequired">
+            <summary>
+            Defines whether this parameter is optional or required.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.IsRepeatable">
+            <summary>
+            Defines whether this parameter can be repeated multiple times.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.DefaultValue">
+            <summary>
+            The default value of this parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.ValueType">
+            <summary>
+            The type of the value.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Description">
+            <summary>
+            Description of this parameter.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Maximum">
+            <summary>
+            The maximum valid value. (Only for numeric values)
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.Minimum">
+            <summary>
+            The minimum valid value. (Only for numeric values)
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.EnumValues">
+            <summary>
+            A list of valid enum values. (Only for enum values)
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.IParameter.EnumValueDescriptions">
+            <summary>
+            A list of valid enum value descriptions. (Only for enum values)
             </summary>
         </member>
         <member name="M:Google.Apis.Discovery.ParameterFactory.BaseParameter.#ctor(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
@@ -3015,26 +3022,6 @@
         <member name="P:Google.Apis.Discovery.Schema.FutureJsonSchema.Resolved">
             <summary>
             Determines whether this schema has been resolved
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Testing.MoreAsserts">
-            <summary>
-            Assertion helper methods
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Testing.MoreAsserts.ContentsEqualAndInOrder(System.Collections.IEnumerable,System.Collections.IEnumerable)">
-            <summary>
-            Asserts whether both enumerables have the equal content, and whether it is in the same order
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Testing.MoreAsserts.IsEmpty``1(System.Collections.Generic.IList{``0})">
-            <summary>
-            Asserts that the list is empty
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Testing.MoreAsserts.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            Asserts that the enumerable is empty
             </summary>
         </member>
         <member name="T:Google.GoogleApiException">
