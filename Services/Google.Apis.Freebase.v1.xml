@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Freebase.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Freebase.v1.Data.ContentserviceGet.Result">
+            <summary>The text requested.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.Image(Google.Apis.Util.Repeatable{System.String})">
+            <summary>Returns the scaled/cropped image attached to a freebase node.</summary>
+            <param name="id">Required - Freebase entity or content id, mid, or guid.</param>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.Mqlread(System.String)">
+            <summary>Performs MQL Queries.</summary>
+            <param name="query">Required - An envelope containing a single MQL query.</param>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Freebase.v1.FreebaseService.Mode">
+            <summary>Method used to scale or crop image.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Mode.Fill">
+            <summary>TODO(bendrees)</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Mode.Fillcrop">
+            <summary>TODO(bendrees)</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Mode.Fillcropmid">
+            <summary>TODO(bendrees)</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Mode.Fit">
+            <summary>TODO(bendrees)</summary>
+        </member>
+        <member name="T:Google.Apis.Freebase.v1.FreebaseService.Uniqueness_failure">
+            <summary>How MQL responds to uniqueness failures.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Uniqueness_failure.Hard">
+            <summary>Be strict - throw an error.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Uniqueness_failure.Soft">
+            <summary>Just return the first encountered object.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Fallbackid">
+            <summary>Use the image associated with this secondary id if no image is associated with the primary id.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Id">
+            <summary>Freebase entity or content id, mid, or guid.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Maxheight">
+            <summary>Maximum height in pixels for resulting image.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Maxwidth">
+            <summary>Maximum width in pixels for resulting image.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Mode">
+            <summary>Method used to scale or crop image.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.ImageRequest.Pad">
+            <summary>A boolean specifying whether the resulting image should be padded up to the requested dimensions.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.As_of_time">
+            <summary>Run the query as it would've been run at the specified point in time.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Callback">
+            <summary>JS method name for JSONP callbacks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Cost">
+            <summary>Show the costs or not.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Cursor">
+            <summary>The mql cursor.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Html_escape">
+            <summary>Whether or not to escape entities.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Indent">
+            <summary>How many spaces to indent the json.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Lang">
+            <summary>The language of the results - an id of a /type/lang object.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Query">
+            <summary>An envelope containing a single MQL query.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Uniqueness_failure">
+            <summary>How MQL responds to uniqueness failures.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.TextResource.Get(Google.Apis.Util.Repeatable{System.String})">
+            <summary>Returns blob attached to node at specified id as HTML</summary>
+            <param name="id">Required - The id of the item that you want data about</param>
+        </member>
+        <member name="T:Google.Apis.Freebase.v1.TextResource.Format">
+            <summary>Sanitizing transformation.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.TextResource.Format.Html">
+            <summary>Return valid, sanitized html.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.TextResource.Format.Plain">
+            <summary>Return plain text - strip html tags.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.TextResource.Format.Raw">
+            <summary>Return the entire content as-is.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.Format">
+            <summary>Sanitizing transformation.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.Id">
+            <summary>The id of the item that you want data about</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.Maxlength">
+            <summary>The max number of characters to return. Valid only for 'plain' format.</summary>
+        </member>
+    </members>
+</doc>

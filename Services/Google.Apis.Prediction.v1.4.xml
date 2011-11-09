@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Prediction.v1.4</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Input.InputValue">
+            <summary>Input to the model for a prediction</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Input.InputData">
+            <summary>Input to the model for a prediction</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Input.InputData.CsvInstance">
+            <summary>A list of input features, these can be strings or doubles.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.OutputLabel">
+            <summary>The most likely class label [Categorical models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.OutputMulti">
+            <summary>A list of class labels with their estimated probabilities [Categorical models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.OutputValue">
+            <summary>The estimated regression value [Regression models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.OutputMultiData.Label">
+            <summary>The class label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Output.OutputMultiData.Score">
+            <summary>The probability of the class label.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.DataAnalysis">
+            <summary>Data Analysis.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.Kind">
+            <summary>What kind of resource this is.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfo">
+            <summary>Model metadata.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.SelfLink">
+            <summary>A URL to re-request this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.StorageDataLocation">
+            <summary>Google storage location of the training data file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.StoragePMMLLocation">
+            <summary>Google storage location of the preprocessing pmml file.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.TrainingStatus">
+            <summary>The current status of the training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.Utility">
+            <summary>A class weighting function, which allows the importance weights for class labels to be specified [Categorical models only].</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Training.DataAnalysisData">
+            <summary>Data Analysis.</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData">
+            <summary>Model metadata.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ClassWeightedAccuracy">
+            <summary>Estimated accuracy of model taking utility weights into account [Categorical models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ClassificationAccuracy">
+            <summary>A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based on the amount and quality of the training data, of the estimated prediction accuracy. You can use this is a guide to decide whether the results are accurate enough for your needs. This estimate will be more reliable if your real input data is similar to your training data [Categorical models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ConfusionMatrix">
+            <summary>An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label [Categorical models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ConfusionMatrixRowTotals">
+            <summary>A list of the confusion matrix row totals</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.MeanSquaredError">
+            <summary>An estimated mean squared error. The can be used to measure the quality of the predicted model [Regression models only].</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ModelType">
+            <summary>Type of predictive model (CLASSIFICATION or REGRESSION)</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.NumberInstances">
+            <summary>Number of valid data instances used in the trained model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.NumberLabels">
+            <summary>Number of class labels in the trained model [Categorical models only].</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ConfusionMatrixData">
+            <summary>An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label [Categorical models only].</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Training.ModelInfoData.ConfusionMatrixRowTotalsData">
+            <summary>A list of the confusion matrix row totals</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.Data.Training.UtilityData">
+            <summary>Class label (string).</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Update.CsvInstance">
+            <summary>The input features for this instance</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.Data.Update.Label">
+            <summary>The true class label of this instance</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.PredictionService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Prediction.v1_4.PredictionService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_4.PredictionService.Scopes.Prediction">
+            <summary>Manage your data in the Google Prediction API</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.HostedmodelsResource.Predict(Google.Apis.Prediction.v1_4.Data.Input,System.String)">
+            <summary>Submit input and request an output against a hosted model.</summary>
+            <param name="hostedModelName">Required - The name of a hosted model.</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.HostedmodelsResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.HostedmodelsResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.HostedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.HostedmodelsResource.PredictRequest.HostedModelName">
+            <summary>The name of a hosted model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.HostedmodelsResource.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.TrainedmodelsResource.Delete(System.String)">
+            <summary>Delete a trained model.</summary>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.TrainedmodelsResource.Get(System.String)">
+            <summary>Check training status of your model.</summary>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.TrainedmodelsResource.Insert(Google.Apis.Prediction.v1_4.Data.Training)">
+            <summary>Begin training your model.</summary>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.TrainedmodelsResource.Predict(Google.Apis.Prediction.v1_4.Data.Input,System.String)">
+            <summary>Submit model id and request a prediction</summary>
+            <param name="id">Required - The unique name for the predictive model.</param>
+        </member>
+        <member name="M:Google.Apis.Prediction.v1_4.TrainedmodelsResource.Update(Google.Apis.Prediction.v1_4.Data.Update,System.String)">
+            <summary>Add new data to a trained model.</summary>
+            <param name="id">Required</param>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.DeleteRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.GetRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.PredictRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.PredictRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.PredictRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.PredictRequest.Id">
+            <summary>The unique name for the predictive model.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.PredictRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Prediction.v1_4.TrainedmodelsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

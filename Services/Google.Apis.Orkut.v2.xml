@@ -1,0 +1,580 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Orkut.v2</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.Description">
+            <summary>Human readable description of the access granted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.Items">
+            <summary>The list of ACL entries.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.Kind">
+            <summary>Identifies this resource as an access control list. Value: &quot;orkut#acl&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.TotalParticipants">
+            <summary>The total count of participants of the parent resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.ItemsData.Id">
+            <summary>The ID of the entity. For entities of type &quot;person&quot; or &quot;circle&quot;, this is the ID of the resource. For other types, this will be unset.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Acl.ItemsData.Type">
+            <summary>The type of entity to whom access is granted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Id">
+            <summary>The ID for the activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Kind">
+            <summary>The kind of activity. Always orkut#activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Links">
+            <summary>Links to resources related to this activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Object">
+            <summary>The activity&apos;s object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Published">
+            <summary>The time at which the activity was initially published.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Title">
+            <summary>Title of the activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Updated">
+            <summary>The time at which the activity was last updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.Verb">
+             <summary>This activity&apos;s verb, indicating what action was performed. Possible values are:  
+            - add - User added new content to profile or album, e.g. video, photo. 
+            - post - User publish content to the stream, e.g. status, scrap. 
+            - update - User commented on an activity. 
+            - make-friend - User added a new friend. 
+            - birthday - User has a birthday.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.Activity.ObjectData">
+            <summary>The activity&apos;s object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.Content">
+            <summary>The HTML-formatted content, suitable for display. When updating an activity&apos;s content, post the changes to this property, using the value of originalContent as a starting point. If the update is successful, the server adds HTML formatting and responds with this formatted content.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.Items">
+            <summary>The list of additional items.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.ObjectType">
+            <summary>The type of the object affected by the activity. Clients can use this information to style the rendered activity object differently depending on the content.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.Replies">
+            <summary>Comments in reply to this activity.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.Activity.ObjectData.RepliesData">
+            <summary>Comments in reply to this activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.RepliesData.Items">
+            <summary>The list of comments.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.RepliesData.TotalItems">
+            <summary>Total number of comments.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Activity.ObjectData.RepliesData.Url">
+            <summary>URL for the collection of comments in reply to this activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.ActivityList.Items">
+            <summary>List of activities retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.ActivityList.Kind">
+            <summary>Identifies this resource as a collection of activities. Value: &quot;orkut#activityList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.ActivityList.NextPageToken">
+            <summary>The value of pageToken query parameter in activities.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.BadgeLargeLogo">
+            <summary>The URL for the 64x64 badge logo.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.BadgeSmallLogo">
+            <summary>The URL for the 24x24 badge logo.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.Caption">
+            <summary>The name of the badge, suitable for display.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.Description">
+            <summary>The description for the badge, suitable for display.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.Id">
+            <summary>The unique ID for the badge.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.Kind">
+            <summary>Identifies this resource as a badge. Value: &quot;orkut#badge&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.SponsorLogo">
+            <summary>The URL for the 32x32 badge sponsor logo.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.SponsorName">
+            <summary>The name of the badge sponsor, suitable for display.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Badge.SponsorUrl">
+            <summary>The URL for the badge sponsor.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.BadgeList.Items">
+            <summary>List of badges retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.BadgeList.Kind">
+            <summary>Identifies this resource as a collection of badges. Value: &quot;orkut#badgeList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.Content">
+            <summary>The content of the comment in text/html</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.Id">
+            <summary>The unique ID for the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.InReplyTo">
+            <summary>Link to the original activity where this comment was posted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.Kind">
+            <summary>Identifies this resource as a comment. Value: &quot;orkut#comment&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.Links">
+            <summary>List of resources for the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.Published">
+            <summary>The time the comment was initially published, in RFC 3339 format.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.Comment.InReplyToData">
+            <summary>Link to the original activity where this comment was posted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.InReplyToData.Href">
+            <summary>Link to the post on activity stream being commented.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.InReplyToData.Ref">
+            <summary>Unique identifier of the post on activity stream being commented.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.InReplyToData.Rel">
+            <summary>Relationship between the comment and the post on activity stream being commented. Always inReplyTo.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Comment.InReplyToData.Type">
+            <summary>Type of the post on activity stream being commented. Always text/html.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommentList.Items">
+            <summary>List of comments retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommentList.Kind">
+            <summary>Identifies this resource as a collection of comments. Value: &quot;orkut#commentList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommentList.NextPageToken">
+            <summary>The value of pageToken query parameter in comments.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommentList.PreviousPageToken">
+            <summary>The value of pageToken query parameter in comments.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Counters.Items">
+            <summary>List of counters retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Counters.Kind">
+            <summary>Identifies this resource as a collection of counters. Value: &quot;orkut#counters&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivityobjectsResource.Content">
+            <summary>The HTML-formatted content, suitable for display. When updating an activity&apos;s content, post the changes to this property, using the value of originalContent as a starting point. If the update is successful, the server adds HTML formatting and responds with this formatted content.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivityobjectsResource.DisplayName">
+            <summary>The title of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivityobjectsResource.Id">
+            <summary>The ID for the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivityobjectsResource.Links">
+            <summary>Links to other resources related to this object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivityobjectsResource.ObjectType">
+            <summary>The object type.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Birthday">
+            <summary>The person&apos;s date of birth, represented as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Gender">
+            <summary>The person&apos;s gender. Values include &quot;male&quot;, &quot;female&quot;, and &quot;other&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Id">
+            <summary>The person&apos;s opensocial ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Image">
+            <summary>The person&apos;s profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Name">
+            <summary>An object that encapsulates the individual components of a person&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.Url">
+            <summary>The person&apos;s profile url. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.ImageData">
+            <summary>The person&apos;s profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.ImageData.Url">
+            <summary>The URL of the person&apos;s profile photo.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.NameData">
+            <summary>An object that encapsulates the individual components of a person&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.NameData.FamilyName">
+            <summary>The family name (last name) of this person.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutActivitypersonResource.NameData.GivenName">
+            <summary>The given name (first name) of this person.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.DisplayName">
+            <summary>The name of the author, suitable for display.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.Id">
+            <summary>Unique identifier of the person who posted the comment. This is the person&apos;s OpenSocial ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.Image">
+            <summary>Image data about the actor.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.Url">
+            <summary>The URL of the author who posted the comment [not yet implemented]</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.ImageData">
+            <summary>Image data about the actor.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.ImageData.Url">
+            <summary>A URL that points to a thumbnail photo of the author.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCounterResource.Link">
+            <summary>Links to resources related to the parent object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCounterResource.Name">
+             <summary>The name of the counted collection. Currently supported collections are:  
+            - scraps - The scraps of the user. 
+            - photos - The photos of the user. 
+            - videos - The videos of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCounterResource.Total">
+            <summary>The number of resources on the counted collection.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.OrkutLinkResource">
+            <summary>Links to resources related to the parent object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutLinkResource.Href">
+            <summary>URL of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutLinkResource.Rel">
+            <summary>Relation between the resource and the parent object.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutLinkResource.Title">
+            <summary>Title of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutLinkResource.Type">
+            <summary>Media type of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Visibility.Kind">
+            <summary>Identifies this resource as a visibility item. Value: &quot;orkut#visibility&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Visibility.Links">
+            <summary>List of resources for the visibility item.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Visibility.VisibilityValue">
+             <summary>The visibility of the resource. Possible values are:  
+            - default: not hidden by the user 
+            - hidden: hidden</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.OrkutService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.OrkutService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.OrkutService.Scopes.Orkut">
+            <summary>Manage your Orkut activity</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.OrkutService.Scopes.OrkutReadonly">
+            <summary>View your Orkut data</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.AclResource.Delete(System.String,System.String)">
+            <summary>Excludes an element from the ACL of the activity.</summary>
+            <param name="activityId">Required - ID of the activity.</param>
+            <param name="userId">Required - ID of the user to be removed from the activity.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.ActivityId">
+            <summary>ID of the activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.UserId">
+            <summary>ID of the user to be removed from the activity.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ActivitiesResource.Delete(System.String)">
+            <summary>Deletes an existing activity, if the access controls allow it.</summary>
+            <param name="activityId">Required - ID of the activity to remove.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ActivitiesResource.List(System.String,Google.Apis.Orkut.v2.ActivitiesResource.Collection)">
+            <summary>Retrieves a list of activities.</summary>
+            <param name="userId">Required - The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the authenticated user).</param>
+            <param name="collection">Required - Must be one of the following values [all, scraps, stream] - The collection of activities to list.</param>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.ActivitiesResource.Collection">
+            <summary>The collection of activities to list.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.ActivitiesResource.Collection.All">
+            <summary>All activities created by the specified user that the authenticated user is authorized to view.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.ActivitiesResource.Collection.Scraps">
+            <summary>The specified user&apos;s scrapbook.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.ActivitiesResource.Collection.Stream">
+            <summary>The specified user&apos;s stream feed, intended for consumption. This includes activities posted by people that the user is following, and activities in which the user has been mentioned.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.ActivityId">
+            <summary>ID of the activity to remove.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.Collection">
+            <summary>The collection of activities to list.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.MaxResults">
+            <summary>The maximum number of activities to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.UserId">
+            <summary>The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the authenticated user).</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ActivityVisibilityResource.Get(System.String)">
+            <summary>Gets the visibility of an existing activity.</summary>
+            <param name="activityId">Required - ID of the activity to get the visibility.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ActivityVisibilityResource.Patch(Google.Apis.Orkut.v2.Data.Visibility,System.String)">
+            <summary>Updates the visibility of an existing activity. This method supports patch semantics.</summary>
+            <param name="activityId">Required - ID of the activity.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ActivityVisibilityResource.Update(Google.Apis.Orkut.v2.Data.Visibility,System.String)">
+            <summary>Updates the visibility of an existing activity.</summary>
+            <param name="activityId">Required - ID of the activity.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.ActivityId">
+            <summary>ID of the activity to get the visibility.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.ActivityId">
+            <summary>ID of the activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.ActivityId">
+            <summary>ID of the activity.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.BadgesResource.Get(System.String,System.String)">
+            <summary>Retrieves a badge from a user.</summary>
+            <param name="userId">Required - The ID of the user whose badges will be listed. Can be me to refer to caller.</param>
+            <param name="badgeId">Required - The ID of the badge that will be retrieved.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.BadgesResource.List(System.String)">
+            <summary>Retrieves the list of visible badges of a user.</summary>
+            <param name="userId">Required - The id of the user whose badges will be listed. Can be me to refer to caller.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.BadgeId">
+            <summary>The ID of the badge that will be retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.UserId">
+            <summary>The ID of the user whose badges will be listed. Can be me to refer to caller.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.UserId">
+            <summary>The id of the user whose badges will be listed. Can be me to refer to caller.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommentsResource.Delete(System.String)">
+            <summary>Deletes an existing comment.</summary>
+            <param name="commentId">Required - ID of the comment to remove.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommentsResource.Get(System.String)">
+            <summary>Retrieves an existing comment.</summary>
+            <param name="commentId">Required - ID of the comment to get.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommentsResource.Insert(Google.Apis.Orkut.v2.Data.Comment,System.String)">
+            <summary>Inserts a new comment to an activity.</summary>
+            <param name="activityId">Required - The ID of the activity to contain the new comment.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommentsResource.List(System.String)">
+            <summary>Retrieves a list of comments, possibly filtered.</summary>
+            <param name="activityId">Required - The ID of the activity containing the comments.</param>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.CommentsResource.OrderBy">
+            <summary>Sort search results.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.CommentsResource.OrderBy.Ascending">
+            <summary>Use ascending sort order.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.CommentsResource.OrderBy.Descending">
+            <summary>Use descending sort order.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.CommentId">
+            <summary>ID of the comment to remove.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.CommentId">
+            <summary>ID of the comment to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.ActivityId">
+            <summary>The ID of the activity to contain the new comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.ActivityId">
+            <summary>The ID of the activity containing the comments.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of activities to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.OrderBy">
+            <summary>Sort search results.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CountersResource.List(System.String)">
+            <summary>Retrieves the counters of an user.</summary>
+            <param name="userId">Required - The ID of the user whose counters will be listed. Can be me to refer to caller.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.UserId">
+            <summary>The ID of the user whose counters will be listed. Can be me to refer to caller.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.ScrapsResource.Insert(Google.Apis.Orkut.v2.Data.Activity)">
+            <summary>Creates a new scrap.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

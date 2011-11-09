@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Webfonts.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Family">
+            <summary>The name of the font.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Subsets">
+            <summary>The scripts supported by the font.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Variants">
+            <summary>The available variants for the font.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.Data.WebfontList.Items">
+            <summary>The list of fonts currently served by the Google Fonts API.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.Data.WebfontList.Kind">
+            <summary>The object kind.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Webfonts.v1.WebfontsResource.List">
+            <summary>Retrieves the list of fonts currently served by the Google Web Fonts Developer API</summary>
+        </member>
+        <member name="T:Google.Apis.Webfonts.v1.WebfontsResource.Sort">
+            <summary>Enables sorting of the list</summary>
+        </member>
+        <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Alpha">
+            <summary>Sort alphabetically</summary>
+        </member>
+        <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Date">
+            <summary>Sort by date added</summary>
+        </member>
+        <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Popularity">
+            <summary>Sort by popularity</summary>
+        </member>
+        <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Style">
+            <summary>Sort by number of styles</summary>
+        </member>
+        <member name="F:Google.Apis.Webfonts.v1.WebfontsResource.Sort.Trending">
+            <summary>Sort by trending</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Sort">
+            <summary>Enables sorting of the list</summary>
+        </member>
+    </members>
+</doc>
