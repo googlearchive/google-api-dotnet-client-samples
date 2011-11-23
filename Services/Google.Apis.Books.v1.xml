@@ -4,6 +4,87 @@
         <name>Google.Apis.Books.v1</name>
     </assembly>
     <members>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.AfterSelectedText">
+            <summary>Anchor text after excerpt.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.BeforeSelectedText">
+            <summary>Anchor text before excerpt.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.ClientVersionRanges">
+            <summary>Selection ranges sent from the client.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Created">
+            <summary>Timestamp for the created time of this annotation.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.CurrentVersionRanges">
+            <summary>Selection ranges for the most recent content version.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Data">
+            <summary>User-created data for this annotation.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.HighlightStyle">
+            <summary>The highlight style for this annotation.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Id">
+            <summary>Id of this annotation, in the form of a GUID.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.LayerId">
+            <summary>The layer this annotation is for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.PageIds">
+            <summary>Pages that this annotation spans.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.SelectedText">
+            <summary>Excerpt from the volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.SelfLink">
+            <summary>URL to this resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Updated">
+            <summary>Timestamp for the last time this annotation was modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.VolumeId">
+            <summary>The volume that this annotation belongs to.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.Data.Annotation.ClientVersionRangesData">
+            <summary>Selection ranges sent from the client.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.ClientVersionRangesData.ContentVersion">
+            <summary>Content version the client sent in.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.Data.Annotation.CurrentVersionRangesData">
+            <summary>Selection ranges for the most recent content version.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.CurrentVersionRangesData.ContentVersion">
+            <summary>Content version applicable to ranges below.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotations.Items">
+            <summary>A list of annotations.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotations.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotations.NextPageToken">
+            <summary>Token to pass in for pagination for the next page. This will not be present if this request does not have more results.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotations.TotalItems">
+            <summary>Total number of annotations found. This may be greater than the number of notes returned in this response if results have been paginated.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksAnnotationsRange.EndOffset">
+            <summary>The offset from the ending position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksAnnotationsRange.EndPosition">
+            <summary>The ending position for the range.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksAnnotationsRange.StartOffset">
+            <summary>The offset from the starting position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksAnnotationsRange.StartPosition">
+            <summary>The starting position for the range.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Bookshelf.Access">
             <summary>Whether this bookshelf is PUBLIC or PRIVATE.</summary>
         </member>
@@ -229,11 +310,14 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfoData.ListPrice">
             <summary>Suggested retail price. (In LITE projection.)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfoData.OnSaleDate">
+            <summary>The date on which this book is available for sale.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfoData.RetailPrice">
             <summary>The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfoData.Saleability">
-            <summary>Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FREE or NOT_FOR_SALE.</summary>
+            <summary>Whether or not this book is available for sale or offered for free in the Google eBookstore for the country listed above. Possible values are FOR_SALE, FREE, NOT_FOR_SALE, or FOR_PREORDER.</summary>
         </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.SaleInfoData.ListPriceData">
             <summary>Suggested retail price. (In LITE projection.)</summary>
@@ -256,6 +340,9 @@
         <member name="T:Google.Apis.Books.v1.Data.Volume.UserInfoData">
             <summary>User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.UserInfoData.IsPreordered">
+            <summary>Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE projection.)</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.UserInfoData.IsPurchased">
             <summary>Whether or not this volume was purchased by the authenticated user making the request. (In LITE projection.)</summary>
         </member>
@@ -270,6 +357,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.AverageRating">
             <summary>The mean review rating for this volume. (min = 1.0, max = 5.0)</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.CanonicalVolumeLink">
+            <summary>Canonical URL for a volume. Use this URL to plus one a Google Book. (In LITE projection)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.Categories">
             <summary>A list of subject categories, such as &quot;Fiction&quot;, &quot;Suspense&quot;, etc.</summary>
@@ -411,6 +501,9 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Shelf">
             <summary>Id of bookshelf to retrieve volumes.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.ShowPreorders">
+            <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
@@ -458,6 +551,132 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.Delete(System.String)">
+            <summary>Deletes an annotation.</summary>
+            <param name="annotationId">Required - The annotation identifier for the annotation to delete.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.Get(System.String)">
+            <summary>Gets an annotation by its id.</summary>
+            <param name="annotationId">Required - The annotation identifier for the annotation to retrieve.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.Insert(Google.Apis.Books.v1.Data.Annotation)">
+            <summary>Inserts a new annotation.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.List">
+            <summary>Retrieves a list of annotations, possibly filtered.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.Update(Google.Apis.Books.v1.Data.Annotation,System.String)">
+            <summary>Updates an existing annotation.</summary>
+            <param name="annotationId">Required - The annotation identifier for the annotation to update.</param>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.AnnotationId">
+            <summary>The annotation identifier for the annotation to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.AnnotationId">
+            <summary>The annotation identifier for the annotation to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.ContentVersion">
+            <summary>The content version for the requested volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.LayerId">
+            <summary>The layer id to limit annotation by.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.PageIds">
+            <summary>The page id(s) for the volume that is being queried.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.PageToken">
+            <summary>The value of the nextToken from the previous page.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.VolumeId">
+            <summary>The volume to restrict annotations to.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.AnnotationId">
+            <summary>The annotation identifier for the annotation to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolume(System.String,System.String)">
             <summary>Adds a volume to a bookshelf.</summary>
@@ -515,6 +734,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Shelf">
             <summary>The bookshelf id or name retrieve volumes for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.ShowPreorders">
+            <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
@@ -751,6 +973,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Q">
             <summary>Full-text search query string.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.ShowPreorders">
+            <summary>Set to true to show books available for preorder. Defaults to false.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>

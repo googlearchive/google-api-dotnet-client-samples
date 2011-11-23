@@ -66,6 +66,9 @@
         <member name="P:Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse.Headers">
             <summary>The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request.</summary>
         </member>
+        <member name="P:Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse.Kind">
+            <summary>Kind this is, in this case adsense#report.</summary>
+        </member>
         <member name="P:Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse.Rows">
             <summary>The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers.</summary>
         </member>

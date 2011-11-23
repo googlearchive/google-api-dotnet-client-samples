@@ -227,21 +227,21 @@
             Returns the result associated with this object. Might throw an exception.
             </summary>
         </member>
-        <member name="M:System.Web.HttpUtility.HtmlDecode(System.String)">
+        <member name="M:ImportedFromMono.System.Web.HttpUtility.HtmlDecode(System.String)">
             <summary>
             Decodes an HTML-encoded string and returns the decoded string.
             </summary>
             <param name="s">The HTML string to decode. </param>
             <returns>The decoded text.</returns>
         </member>
-        <member name="M:System.Web.HttpUtility.HtmlDecode(System.String,System.IO.TextWriter)">
+        <member name="M:ImportedFromMono.System.Web.HttpUtility.HtmlDecode(System.String,System.IO.TextWriter)">
             <summary>
             Decodes an HTML-encoded string and sends the resulting output to a TextWriter output stream.
             </summary>
             <param name="s">The HTML string to decode</param>
             <param name="output">The TextWriter output stream containing the decoded string. </param>
         </member>
-        <member name="M:System.Web.HttpUtility.HtmlEncode(System.String,System.IO.TextWriter)">
+        <member name="M:ImportedFromMono.System.Web.HttpUtility.HtmlEncode(System.String,System.IO.TextWriter)">
             <summary>
             HTML-encodes a string and sends the resulting output to a TextWriter output stream.
             </summary>
