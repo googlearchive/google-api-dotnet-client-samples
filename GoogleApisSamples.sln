@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageSpeedOnline.SimpleTest"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discovery.ListAPIs", "Discovery.ListAPIs\Discovery.ListAPIs.csproj", "{57DDF57A-56A9-43F8-864F-EBAEE37EE78C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzz.ListActivities", "Buzz.ListActivities\Buzz.ListActivities.csproj", "{184B9A99-5ACB-4EB7-80A4-6ECA169DD780}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books.ListMyLibrary", "Books.ListMyLibrary\Books.ListMyLibrary.csproj", "{7D6858B4-B98C-4157-9959-68DAA7289F76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.ETagCollision", "Tasks.ETagCollision\Tasks.ETagCollision.csproj", "{E8B4C3A1-83F9-4228-A116-01A818AF84A4}"
@@ -93,10 +91,6 @@ Global
 		{57DDF57A-56A9-43F8-864F-EBAEE37EE78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57DDF57A-56A9-43F8-864F-EBAEE37EE78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57DDF57A-56A9-43F8-864F-EBAEE37EE78C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{184B9A99-5ACB-4EB7-80A4-6ECA169DD780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{184B9A99-5ACB-4EB7-80A4-6ECA169DD780}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{184B9A99-5ACB-4EB7-80A4-6ECA169DD780}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{184B9A99-5ACB-4EB7-80A4-6ECA169DD780}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D6858B4-B98C-4157-9959-68DAA7289F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D6858B4-B98C-4157-9959-68DAA7289F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D6858B4-B98C-4157-9959-68DAA7289F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
