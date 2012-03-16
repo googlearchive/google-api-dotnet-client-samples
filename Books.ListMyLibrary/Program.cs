@@ -100,8 +100,7 @@ namespace Books.ListMyLibrary
                 // List all volumes in this bookshelf.
                 if (item.VolumeCount > 0)
                 {
-                    var request = service.Mylibrary.Bookshelves.Volumes.List();
-                    request.Shelf = item.Id.ToString();
+                    var request = service.Mylibrary.Bookshelves.Volumes.List(item.Id.ToString());
                     Volumes inBookshelf = request.Fetch();
                     if (inBookshelf.Items == null)
                     {
