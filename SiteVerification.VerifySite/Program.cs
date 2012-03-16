@@ -76,10 +76,15 @@ namespace SiteVerification.VerifySite
             
             // Example of a GetToken call.
             CommandLine.WriteAction("Retrieving a meta token ...");
-            var request = service.WebResource.GetToken();
-            request.Identifier = site;
-            request.Type = "site";
-            request.VerificationMethod = "meta";
+            var request = service.WebResource.GetToken(new SiteVerificationWebResourceGettokenRequest()
+            {
+                VerificationMethod = "meta",
+                Site = new SiteVerificationWebResourceGettokenRequest.SiteData()
+                {
+                    Identifier = site,
+                    Type = "site"
+                }
+            });
             var response = request.Fetch();
             CommandLine.WriteResult("Token", response.Token);
             Util.SetClipboard(response.Token);
@@ -91,8 +96,8 @@ namespace SiteVerification.VerifySite
 
             // Example of an Insert call.
             CommandLine.WriteAction("Verifiying...");
-            var body = new SiteverificationWebResourceResource();
-            body.Site = new SiteverificationWebResourceResource.SiteData();
+            var body = new SiteVerificationWebResourceResource();
+            body.Site = new SiteVerificationWebResourceResource.SiteData();
             body.Site.Identifier = site;
             body.Site.Type = "site";
             var verificationResponse = service.WebResource.Insert(body, "meta").Fetch();
