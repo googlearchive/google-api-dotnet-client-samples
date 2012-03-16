@@ -85,6 +85,9 @@
         <member name="P:Google.Apis.Blogger.v2.Data.Comment.Id">
             <summary>The identifier for this resource.</summary>
         </member>
+        <member name="P:Google.Apis.Blogger.v2.Data.Comment.InReplyTo">
+            <summary>Data about the comment this is in reply to.</summary>
+        </member>
         <member name="P:Google.Apis.Blogger.v2.Data.Comment.Kind">
             <summary>The kind of this entry. Always blogger#comment</summary>
         </member>
@@ -126,6 +129,12 @@
         </member>
         <member name="P:Google.Apis.Blogger.v2.Data.Comment.BlogData.Id">
             <summary>The identifier of the blog containing this comment.</summary>
+        </member>
+        <member name="T:Google.Apis.Blogger.v2.Data.Comment.InReplyToData">
+            <summary>Data about the comment this is in reply to.</summary>
+        </member>
+        <member name="P:Google.Apis.Blogger.v2.Data.Comment.InReplyToData.Id">
+            <summary>The identified of the parent of this comment.</summary>
         </member>
         <member name="T:Google.Apis.Blogger.v2.Data.Comment.PostData">
             <summary>Data about the post containing this comment.</summary>
@@ -511,7 +520,7 @@
         </member>
         <member name="M:Google.Apis.Blogger.v2.UsersResource.BlogsResource.List(System.String)">
             <summary>Retrieves a list of blogs, possibly filtered.</summary>
-            <param name="userId">Required - ID of the user whose blogs are to be fetched.</param>
+            <param name="userId">Required - ID of the user whose blogs are to be fetched. Either the word &apos;self&apos; (sans quote marks) or the user&apos;s profile identifier.</param>
         </member>
         <member name="P:Google.Apis.Blogger.v2.UsersResource.BlogsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -523,7 +532,7 @@
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v2.UsersResource.BlogsResource.ListRequest.UserId">
-            <summary>ID of the user whose blogs are to be fetched.</summary>
+            <summary>ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v2.UsersResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

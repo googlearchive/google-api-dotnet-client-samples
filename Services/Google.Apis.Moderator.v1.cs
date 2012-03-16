@@ -593,7 +593,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class SeriesList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Series> items;
+        private System.Collections.Generic.IList<Series> items;
         
         private string kind;
         
@@ -602,7 +602,7 @@ namespace Google.Apis.Moderator.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Series> Items {
+        public virtual System.Collections.Generic.IList<Series> Items {
             get {
                 return this.items;
             }
@@ -663,9 +663,9 @@ namespace Google.Apis.Moderator.v1.Data {
         
         private string text;
         
-        private IList<ModeratorTopicsResourcePartial> topics;
+        private System.Collections.Generic.IList<ModeratorTopicsResourcePartial> topics;
         
-        private IList<Submission.TranslationsData> translations;
+        private System.Collections.Generic.IList<Submission.TranslationsData> translations;
         
         private ModeratorVotesResourcePartial vote;
         
@@ -774,7 +774,7 @@ namespace Google.Apis.Moderator.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("topics")]
-        public virtual IList<ModeratorTopicsResourcePartial> Topics {
+        public virtual System.Collections.Generic.IList<ModeratorTopicsResourcePartial> Topics {
             get {
                 return this.topics;
             }
@@ -784,7 +784,7 @@ namespace Google.Apis.Moderator.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("translations")]
-        public virtual IList<Submission.TranslationsData> Translations {
+        public virtual System.Collections.Generic.IList<Submission.TranslationsData> Translations {
             get {
                 return this.translations;
             }
@@ -1023,7 +1023,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class SubmissionList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Submission> items;
+        private System.Collections.Generic.IList<Submission> items;
         
         private string kind;
         
@@ -1032,7 +1032,7 @@ namespace Google.Apis.Moderator.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Submission> Items {
+        public virtual System.Collections.Generic.IList<Submission> Items {
             get {
                 return this.items;
             }
@@ -1174,7 +1174,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class TagList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Tag> items;
+        private System.Collections.Generic.IList<Tag> items;
         
         private string kind;
         
@@ -1183,7 +1183,7 @@ namespace Google.Apis.Moderator.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Tag> Items {
+        public virtual System.Collections.Generic.IList<Tag> Items {
             get {
                 return this.items;
             }
@@ -1529,7 +1529,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class TopicList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Topic> items;
+        private System.Collections.Generic.IList<Topic> items;
         
         private string kind;
         
@@ -1538,7 +1538,7 @@ namespace Google.Apis.Moderator.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Topic> Items {
+        public virtual System.Collections.Generic.IList<Topic> Items {
             get {
                 return this.items;
             }
@@ -1680,7 +1680,7 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class VoteList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Vote> items;
+        private System.Collections.Generic.IList<Vote> items;
         
         private string kind;
         
@@ -1689,7 +1689,7 @@ namespace Google.Apis.Moderator.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Vote> Items {
+        public virtual System.Collections.Generic.IList<Vote> Items {
             get {
                 return this.items;
             }
@@ -1742,368 +1742,369 @@ namespace Google.Apis.Moderator.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"moderator:v1\",\"name\":\"moderator\",\"versi" +
-            "on\":\"v1\",\"title\":\"Moderator API\",\"description\":\"Moderator API\",\"icons\":{\"x16\":\"h" +
-            "ttp://www.google.com/images/icons/product/moderator-32.png\",\"x32\":\"http://www.go" +
-            "ogle.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"http://code.g" +
-            "oogle.com/apis/moderator/v1/using_rest.html\",\"labels\":[\"labs\"],\"protocol\":\"rest\"" +
-            ",\"basePath\":\"/moderator/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":" +
-            "\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptio" +
-            "ns\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fie" +
-            "lds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include" +
-            " in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description" +
-            "\":\"API key. Your API key identifies your project and provides you with API acces" +
-            "s, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locatio" +
-            "n\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for th" +
-            "e current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Returns response with indentations and line breaks.\",\"default\":\"false\",\"loca" +
-            "tion\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for " +
-            "quota purposes for server-side applications. Can be any arbitrary string assigne" +
-            "d to a user, but should not exceed 40 characters. Overrides userIp if both are p" +
-            "rovided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addres" +
-            "s of the site where the request originates. Use this if you want to enforce per-" +
-            "user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goog" +
-            "leapis.com/auth/moderator\":{\"description\":\"Manage your activity in Google Modera" +
-            "tor\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"ModeratorTopicsResourcePartial\":" +
-            "{\"id\":\"ModeratorTopicsResourcePartial\",\"type\":\"object\",\"properties\":{\"id\":{\"type" +
-            "\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"topicId\"" +
-            ":{\"type\":\"string\",\"format\":\"int64\"}}}}},\"ModeratorVotesResourcePartial\":{\"id\":\"M" +
-            "oderatorVotesResourcePartial\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"stri" +
-            "ng\"},\"vote\":{\"type\":\"string\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"prope" +
-            "rties\":{\"attribution\":{\"type\":\"object\",\"properties\":{\"avatarUrl\":{\"type\":\"string" +
-            "\"},\"displayName\":{\"type\":\"string\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitud" +
-            "e\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\":" +
-            "{\"type\":\"number\",\"format\":\"double\"}}},\"location\":{\"type\":\"string\"}}},\"id\":{\"type" +
-            "\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"string\",\"def" +
-            "ault\":\"moderator#profile\"}}},\"Series\":{\"id\":\"Series\",\"type\":\"object\",\"properties" +
-            "\":{\"anonymousSubmissionAllowed\":{\"type\":\"boolean\"},\"counters\":{\"type\":\"object\",\"" +
-            "properties\":{\"anonymousSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"minusVo" +
-            "tes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\",\"format\":" +
-            "\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"submissions\":{\"type\":\"" +
-            "integer\",\"format\":\"int32\"},\"users\":{\"type\":\"integer\",\"format\":\"int32\"},\"videoSub" +
-            "missions\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"description\":{\"type\":\"string\"}," +
-            "\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"" +
-            "}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#series\"},\"name\":{\"type\":\"string" +
-            "\"},\"numTopics\":{\"type\":\"integer\",\"format\":\"int32\"},\"rules\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\"," +
-            "\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"votes\":{\"type\":" +
-            "\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type" +
-            "\":\"string\",\"format\":\"uint64\"}}}}},\"unauthSubmissionAllowed\":{\"type\":\"boolean\"},\"" +
-            "unauthVotingAllowed\":{\"type\":\"boolean\"},\"videoSubmissionAllowed\":{\"type\":\"boolea" +
-            "n\"}}},\"SeriesList\":{\"id\":\"SeriesList\",\"type\":\"object\",\"properties\":{\"items\":{\"ty" +
-            "pe\":\"array\",\"items\":{\"$ref\":\"Series\"}},\"kind\":{\"type\":\"string\",\"default\":\"modera" +
-            "tor#seriesList\"}}},\"Submission\":{\"id\":\"Submission\",\"type\":\"object\",\"properties\":" +
-            "{\"attachmentUrl\":{\"type\":\"string\"},\"attribution\":{\"type\":\"object\",\"properties\":{" +
-            "\"avatarUrl\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"location\":{\"type\"" +
-            ":\"string\"}}},\"author\":{\"type\":\"string\"},\"counters\":{\"type\":\"object\",\"properties\"" +
-            ":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\"" +
-            ",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"created\":{" +
-            "\"type\":\"string\",\"format\":\"uint64\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitud" +
-            "e\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\":" +
-            "{\"type\":\"number\",\"format\":\"double\"}}},\"id\":{\"type\":\"object\",\"properties\":{\"serie" +
-            "sId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\"" +
-            ":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#submission\"},\"parentSub" +
-            "missionId\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"" +
-            "int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"text\":{\"type\":\"stri" +
-            "ng\"},\"topics\":{\"type\":\"array\",\"items\":{\"$ref\":\"ModeratorTopicsResourcePartial\"}}" +
-            ",\"translations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"lang\":{\"" +
-            "type\":\"string\"},\"text\":{\"type\":\"string\"}}}},\"vote\":{\"$ref\":\"ModeratorVotesResour" +
-            "cePartial\"}}},\"SubmissionList\":{\"id\":\"SubmissionList\",\"type\":\"object\",\"propertie" +
-            "s\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Submission\"}},\"kind\":{\"type\":\"strin" +
-            "g\",\"default\":\"moderator#submissionList\"}}},\"Tag\":{\"id\":\"Tag\",\"type\":\"object\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"form" +
-            "at\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"},\"tagId\":{\"type\":\"" +
-            "string\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#tag\"},\"text\":{\"type\":\"st" +
-            "ring\"}}},\"TagList\":{\"id\":\"TagList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
-            ":\"array\",\"items\":{\"$ref\":\"Tag\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#ta" +
-            "gList\"}}},\"Topic\":{\"id\":\"Topic\",\"type\":\"object\",\"properties\":{\"counters\":{\"type\"" +
-            ":\"object\",\"properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVo" +
-            "tes\":{\"type\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":" +
-            "\"int32\"},\"submissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"inte" +
-            "ger\",\"format\":\"int32\"},\"videoSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}}," +
-            "\"description\":{\"type\":\"string\"},\"featuredSubmission\":{\"$ref\":\"Submission\"},\"id\":" +
-            "{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"to" +
-            "picId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"m" +
-            "oderator#topic\"},\"name\":{\"type\":\"string\"},\"presenter\":{\"type\":\"string\"},\"rules\":" +
-            "{\"type\":\"object\",\"properties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"clo" +
-            "se\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64" +
-            "\"}}},\"votes\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"u" +
-            "int64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}}}}}},\"TopicList\":{\"id\":\"Topi" +
-            "cList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"To" +
-            "pic\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#topicList\"}}},\"Vote\":{\"id\":\"" +
-            "Vote\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"string\"},\"id\":{\"type\":\"objec" +
-            "t\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"" +
-            "type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#" +
-            "vote\"},\"vote\":{\"type\":\"string\"}}},\"VoteList\":{\"id\":\"VoteList\",\"type\":\"object\",\"p" +
-            "roperties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Vote\"}},\"kind\":{\"type\":\"str" +
-            "ing\",\"default\":\"moderator#voteList\"}}}},\"resources\":{\"featured\":{\"resources\":{\"s" +
-            "eries\":{\"methods\":{\"list\":{\"id\":\"moderator.featured.series.list\",\"path\":\"series/" +
-            "featured\",\"httpMethod\":\"GET\",\"description\":\"Lists the featured series.\",\"respons" +
-            "e\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}" +
-            "}}}},\"global\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.global." +
-            "series.list\",\"path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Searches the publ" +
-            "ic series and returns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"" +
-            "integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\"," +
-            "\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location" +
-            "\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first res" +
-            "ult to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"response\":{\"$ref\":" +
-            "\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}}}},\"my\":{" +
-            "\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.my.series.list\",\"path\"" +
-            ":\"series/@me/mine\",\"httpMethod\":\"GET\",\"description\":\"Lists all series created by" +
-            " the authenticated user.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/moderator\"]}}}}},\"myrecent\":{\"resources\":{\"series\":{\"metho" +
-            "ds\":{\"list\":{\"id\":\"moderator.myrecent.series.list\",\"path\":\"series/@me/recent\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Lists the series the authenticated user has visi" +
-            "ted.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/moderator\"]}}}}},\"profiles\":{\"methods\":{\"get\":{\"id\":\"moderator.profiles.get\",\"" +
-            "path\":\"profiles/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the profile infor" +
-            "mation for the authenticated user.\",\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.profiles.patc" +
-            "h\",\"path\":\"profiles/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the profile" +
-            " information for the authenticated user. This method supports patch semantics.\"," +
-            "\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.profiles.update\",\"p" +
-            "ath\":\"profiles/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the profile inform" +
-            "ation for the authenticated user.\",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$re" +
-            "f\":\"Profile\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"respons" +
-            "es\":{\"methods\":{\"insert\":{\"id\":\"moderator.responses.insert\",\"path\":\"series/{seri" +
-            "esId}/topics/{topicId}/submissions/{parentSubmissionId}/responses\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Inserts a response for the specified submission in the spe" +
-            "cified topic within the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"bo" +
-            "olean\",\"description\":\"Set to true to mark the new submission as anonymous.\",\"loc" +
-            "ation\":\"query\"},\"parentSubmissionId\":{\"type\":\"integer\",\"description\":\"The decima" +
-            "l ID of the parent Submission within the Series.\",\"required\":true,\"format\":\"uint" +
-            "32\",\"location\":\"path\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal I" +
-            "D of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\"" +
-            ":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within the Series." +
-            "\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"User identifier for unauthenticated usage mode\",\"location\":" +
-            "\"query\"}},\"parameterOrder\":[\"seriesId\",\"topicId\",\"parentSubmissionId\"],\"request\"" +
-            ":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"Submission\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.responses.list\",\"path\":\"" +
-            "series/{seriesId}/submissions/{submissionId}/responses\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Lists or searches the responses for the specified submission within th" +
-            "e specified series and returns the search results.\",\"parameters\":{\"author\":{\"typ" +
-            "e\":\"string\",\"description\":\"Restricts the results to submissions by a specific au" +
-            "thor.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"S" +
-            "pecifies whether to restrict to submissions that have videos attached.\",\"locatio" +
-            "n\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of res" +
-            "ults to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"des" +
-            "cription\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"loca" +
-            "tion\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\",\"location\":\"qu" +
-            "ery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result t" +
-            "o be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"},\"submissionId\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The decimal ID of the Submission within the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"" +
-            "submissionId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/moderator\"]}}},\"series\":{\"methods\":{\"get\":{\"id\":\"moderator.series" +
-            ".get\",\"path\":\"series/{seriesId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the s" +
-            "pecified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The " +
-            "decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.series.insert\",\"pa" +
-            "th\":\"series\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new series.\",\"request\"" +
-            ":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.series.list\",\"path\":\"series\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Searches the series and returns the search result" +
-            "s.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number " +
-            "of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string" +
-            "\",\"description\":\"Search query.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integ" +
-            "er\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\"" +
-            ",\"location\":\"query\"}},\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.series.patch\",\"path\":\"se" +
-            "ries/{seriesId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified serie" +
-            "s. This method supports patch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"inte" +
-            "ger\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uin" +
-            "t32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Series" +
-            "\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapis.com/auth/moder" +
-            "ator\"]},\"update\":{\"id\":\"moderator.series.update\",\"path\":\"series/{seriesId}\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Updates the specified series.\",\"parameters\":{\"seri" +
-            "esId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\"" +
-            ":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"reque" +
-            "st\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/moderator\"]}},\"resources\":{\"responses\":{\"methods\":{\"list\":{\"id\":\"m" +
-            "oderator.series.responses.list\",\"path\":\"series/{seriesId}/responses\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Searches the responses for the specified series and retur" +
-            "ns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"description\":\"R" +
-            "estricts the results to submissions by a specific author.\",\"location\":\"query\"},\"" +
-            "hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whether to restrict" +
-            " to submissions that have videos attached.\",\"location\":\"query\"},\"max-results\":{\"" +
-            "type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"l" +
-            "ocation\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of " +
-            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\"" +
-            ":\"string\",\"description\":\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":" +
-            "\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Se" +
-            "riesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"submission" +
-            "s\":{\"methods\":{\"list\":{\"id\":\"moderator.series.submissions.list\",\"path\":\"series/{" +
-            "seriesId}/submissions\",\"httpMethod\":\"GET\",\"description\":\"Searches the submission" +
-            "s for the specified series and returns the search results.\",\"parameters\":{\"autho" +
-            "r\":{\"type\":\"string\",\"description\":\"Restricts the results to submissions by a spe" +
-            "cific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Specifies whether to restrict to submissions that have videos attached.\"," +
-            "\"location\":\"query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies wh" +
-            "ether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"type\":\"st" +
-            "ring\",\"description\":\"The language code for the language the client prefers resul" +
-            "s in.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximu" +
-            "m number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type" +
-            "\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":" +
-            "\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\"" +
-            ":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\"" +
-            ",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the" +
-            " first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"paramete" +
-            "rOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/moderator\"]}}}}},\"submissions\":{\"methods\":{\"get\":{\"id\":\"mod" +
-            "erator.submissions.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Returns the specified submission within the spec" +
-            "ified series.\",\"parameters\":{\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Spe" +
-            "cifies whether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"" +
-            "type\":\"string\",\"description\":\"The language code for the language the client pref" +
-            "ers resuls in.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"" +
-            "The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"pat" +
-            "h\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submis" +
-            "sion within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"Submission\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.s" +
-            "ubmissions.insert\",\"path\":\"series/{seriesId}/topics/{topicId}/submissions\",\"http" +
-            "Method\":\"POST\",\"description\":\"Inserts a new submission in the specified topic wi" +
-            "thin the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Set to true to mark the new submission as anonymous.\",\"location\":\"query\"}" +
-            ",\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The decimal ID of the Topic within the Series.\",\"required\":true,\"for" +
-            "mat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":\"U" +
-            "ser identifier for unauthenticated usage mode\",\"location\":\"query\"}},\"parameterOr" +
-            "der\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"" +
-            "Submission\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"tags\":{\"" +
-            "methods\":{\"delete\":{\"id\":\"moderator.tags.delete\",\"path\":\"series/{seriesId}/submi" +
-            "ssions/{submissionId}/tags/{tagId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
-            " the specified tag from the specified submission within the specified series.\",\"" +
-            "parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the S" +
-            "eries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The decimal ID of the Submission within the Series." +
-            "\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"tagId\":{\"type\":\"string\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"," +
-            "\"tagId\"],\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":" +
-            "\"moderator.tags.insert\",\"path\":\"series/{seriesId}/submissions/{submissionId}/tag" +
-            "s\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new tag for the specified submis" +
-            "sion within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"l" +
-            "ocation\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID " +
-            "of the Submission within the Series.\",\"required\":true,\"format\":\"uint32\",\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Tag\"" +
-            "},\"response\":{\"$ref\":\"Tag\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator" +
-            "\"]},\"list\":{\"id\":\"moderator.tags.list\",\"path\":\"series/{seriesId}/submissions/{su" +
-            "bmissionId}/tags\",\"httpMethod\":\"GET\",\"description\":\"Lists all tags for the speci" +
-            "fied submission within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"" +
-            "integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":" +
-            "\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The " +
-            "decimal ID of the Submission within the Series.\",\"required\":true,\"format\":\"uint3" +
-            "2\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{" +
-            "\"$ref\":\"TagList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"top" +
-            "ics\":{\"methods\":{\"get\":{\"id\":\"moderator.topics.get\",\"path\":\"series/{seriesId}/to" +
-            "pics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified topic fr" +
-            "om the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descriptio" +
-            "n\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":" +
-            "\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic w" +
-            "ithin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parame" +
-            "terOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.topics.insert\",\"p" +
-            "ath\":\"series/{seriesId}/topics\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new" +
-            " topic into the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Topic\"},\"resp" +
-            "onse\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"" +
-            "list\":{\"id\":\"moderator.topics.list\",\"path\":\"series/{seriesId}/topics\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Searches the topics within the specified series and retu" +
-            "rns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"mode\":{\"type\":\"string\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\"" +
-            ":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"moderator:v1\",\"" +
+            "name\":\"moderator\",\"version\":\"v1\",\"revision\":\"19700115\",\"title\":\"Moderator API\",\"" +
+            "description\":\"Moderator API\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/" +
+            "product/moderator-32.png\",\"x32\":\"http://www.google.com/images/icons/product/sear" +
+            "ch-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/moderator/v1/using_" +
+            "rest.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/moderator/v1/" +
+            "\",\"basePath\":\"/moderator/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\"" +
+            ":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescripti" +
+            "ons\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fi" +
+            "elds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to includ" +
+            "e in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"API key. Your API key identifies your project and provides you with API acce" +
+            "ss, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locati" +
+            "on\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for t" +
+            "he current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descripti" +
+            "on\":\"Returns response with indentations and line breaks.\",\"default\":\"false\",\"loc" +
+            "ation\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for" +
+            " quota purposes for server-side applications. Can be any arbitrary string assign" +
+            "ed to a user, but should not exceed 40 characters. Overrides userIp if both are " +
+            "provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addre" +
+            "ss of the site where the request originates. Use this if you want to enforce per" +
+            "-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goo" +
+            "gleapis.com/auth/moderator\":{\"description\":\"Manage your activity in Google Moder" +
+            "ator\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"ModeratorTopicsResourcePartial\"" +
+            ":{\"id\":\"ModeratorTopicsResourcePartial\",\"type\":\"object\",\"properties\":{\"id\":{\"typ" +
+            "e\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"topicId" +
+            "\":{\"type\":\"string\",\"format\":\"int64\"}}}}},\"ModeratorVotesResourcePartial\":{\"id\":\"" +
+            "ModeratorVotesResourcePartial\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"str" +
+            "ing\"},\"vote\":{\"type\":\"string\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"prop" +
+            "erties\":{\"attribution\":{\"type\":\"object\",\"properties\":{\"avatarUrl\":{\"type\":\"strin" +
+            "g\"},\"displayName\":{\"type\":\"string\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitu" +
+            "de\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\"" +
+            ":{\"type\":\"number\",\"format\":\"double\"}}},\"location\":{\"type\":\"string\"}}},\"id\":{\"typ" +
+            "e\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"string\",\"de" +
+            "fault\":\"moderator#profile\"}}},\"Series\":{\"id\":\"Series\",\"type\":\"object\",\"propertie" +
+            "s\":{\"anonymousSubmissionAllowed\":{\"type\":\"boolean\"},\"counters\":{\"type\":\"object\"," +
+            "\"properties\":{\"anonymousSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"minusV" +
+            "otes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\",\"format\"" +
+            ":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"submissions\":{\"type\":" +
+            "\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"integer\",\"format\":\"int32\"},\"videoSu" +
+            "bmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"description\":{\"type\":\"string\"}" +
+            ",\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64" +
+            "\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#series\"},\"name\":{\"type\":\"strin" +
+            "g\"},\"numTopics\":{\"type\":\"integer\",\"format\":\"int32\"},\"rules\":{\"type\":\"object\",\"pr" +
+            "operties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\"" +
+            ",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"votes\":{\"type\"" +
+            ":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"typ" +
+            "e\":\"string\",\"format\":\"uint64\"}}}}},\"unauthSubmissionAllowed\":{\"type\":\"boolean\"}," +
+            "\"unauthVotingAllowed\":{\"type\":\"boolean\"},\"videoSubmissionAllowed\":{\"type\":\"boole" +
+            "an\"}}},\"SeriesList\":{\"id\":\"SeriesList\",\"type\":\"object\",\"properties\":{\"items\":{\"t" +
+            "ype\":\"array\",\"items\":{\"$ref\":\"Series\"}},\"kind\":{\"type\":\"string\",\"default\":\"moder" +
+            "ator#seriesList\"}}},\"Submission\":{\"id\":\"Submission\",\"type\":\"object\",\"properties\"" +
+            ":{\"attachmentUrl\":{\"type\":\"string\"},\"attribution\":{\"type\":\"object\",\"properties\":" +
+            "{\"avatarUrl\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"location\":{\"type" +
+            "\":\"string\"}}},\"author\":{\"type\":\"string\"},\"counters\":{\"type\":\"object\",\"properties" +
+            "\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer" +
+            "\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"created\":" +
+            "{\"type\":\"string\",\"format\":\"uint64\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitu" +
+            "de\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\"" +
+            ":{\"type\":\"number\",\"format\":\"double\"}}},\"id\":{\"type\":\"object\",\"properties\":{\"seri" +
+            "esId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format" +
+            "\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#submission\"},\"parentSu" +
+            "bmissionId\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":" +
+            "\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"text\":{\"type\":\"str" +
+            "ing\"},\"topics\":{\"type\":\"array\",\"items\":{\"$ref\":\"ModeratorTopicsResourcePartial\"}" +
+            "},\"translations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"lang\":{" +
+            "\"type\":\"string\"},\"text\":{\"type\":\"string\"}}}},\"vote\":{\"$ref\":\"ModeratorVotesResou" +
+            "rcePartial\"}}},\"SubmissionList\":{\"id\":\"SubmissionList\",\"type\":\"object\",\"properti" +
+            "es\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Submission\"}},\"kind\":{\"type\":\"stri" +
+            "ng\",\"default\":\"moderator#submissionList\"}}},\"Tag\":{\"id\":\"Tag\",\"type\":\"object\",\"p" +
+            "roperties\":{\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"for" +
+            "mat\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"},\"tagId\":{\"type\":" +
+            "\"string\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#tag\"},\"text\":{\"type\":\"s" +
+            "tring\"}}},\"TagList\":{\"id\":\"TagList\",\"type\":\"object\",\"properties\":{\"items\":{\"type" +
+            "\":\"array\",\"items\":{\"$ref\":\"Tag\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#t" +
+            "agList\"}}},\"Topic\":{\"id\":\"Topic\",\"type\":\"object\",\"properties\":{\"counters\":{\"type" +
+            "\":\"object\",\"properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneV" +
+            "otes\":{\"type\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\"" +
+            ":\"int32\"},\"submissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"int" +
+            "eger\",\"format\":\"int32\"},\"videoSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}}" +
+            ",\"description\":{\"type\":\"string\"},\"featuredSubmission\":{\"$ref\":\"Submission\"},\"id\"" +
+            ":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"t" +
+            "opicId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"" +
+            "moderator#topic\"},\"name\":{\"type\":\"string\"},\"presenter\":{\"type\":\"string\"},\"rules\"" +
+            ":{\"type\":\"object\",\"properties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"cl" +
+            "ose\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint6" +
+            "4\"}}},\"votes\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"" +
+            "uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}}}}}},\"TopicList\":{\"id\":\"Top" +
+            "icList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"T" +
+            "opic\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#topicList\"}}},\"Vote\":{\"id\":" +
+            "\"Vote\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"string\"},\"id\":{\"type\":\"obje" +
+            "ct\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{" +
+            "\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator" +
+            "#vote\"},\"vote\":{\"type\":\"string\"}}},\"VoteList\":{\"id\":\"VoteList\",\"type\":\"object\",\"" +
+            "properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Vote\"}},\"kind\":{\"type\":\"st" +
+            "ring\",\"default\":\"moderator#voteList\"}}}},\"resources\":{\"featured\":{\"resources\":{\"" +
+            "series\":{\"methods\":{\"list\":{\"id\":\"moderator.featured.series.list\",\"path\":\"series" +
+            "/featured\",\"httpMethod\":\"GET\",\"description\":\"Lists the featured series.\",\"respon" +
+            "se\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]" +
+            "}}}}},\"global\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.global" +
+            ".series.list\",\"path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Searches the pub" +
+            "lic series and returns the search results.\",\"parameters\":{\"max-results\":{\"type\":" +
+            "\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\"" +
+            ",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"locatio" +
+            "n\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first re" +
+            "sult to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"response\":{\"$ref\"" +
+            ":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}}}},\"my\":" +
+            "{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.my.series.list\",\"path" +
+            "\":\"series/@me/mine\",\"httpMethod\":\"GET\",\"description\":\"Lists all series created b" +
+            "y the authenticated user.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/moderator\"]}}}}},\"myrecent\":{\"resources\":{\"series\":{\"meth" +
+            "ods\":{\"list\":{\"id\":\"moderator.myrecent.series.list\",\"path\":\"series/@me/recent\",\"" +
+            "httpMethod\":\"GET\",\"description\":\"Lists the series the authenticated user has vis" +
+            "ited.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/moderator\"]}}}}},\"profiles\":{\"methods\":{\"get\":{\"id\":\"moderator.profiles.get\"," +
+            "\"path\":\"profiles/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the profile info" +
+            "rmation for the authenticated user.\",\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.profiles.pat" +
+            "ch\",\"path\":\"profiles/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the profil" +
+            "e information for the authenticated user. This method supports patch semantics.\"" +
+            ",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.profiles.update\",\"" +
+            "path\":\"profiles/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the profile infor" +
+            "mation for the authenticated user.\",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$r" +
+            "ef\":\"Profile\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"respon" +
+            "ses\":{\"methods\":{\"insert\":{\"id\":\"moderator.responses.insert\",\"path\":\"series/{ser" +
+            "iesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Inserts a response for the specified submission in the sp" +
+            "ecified topic within the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"b" +
+            "oolean\",\"description\":\"Set to true to mark the new submission as anonymous.\",\"lo" +
+            "cation\":\"query\"},\"parentSubmissionId\":{\"type\":\"integer\",\"description\":\"The decim" +
+            "al ID of the parent Submission within the Series.\",\"required\":true,\"format\":\"uin" +
+            "t32\",\"location\":\"path\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal " +
+            "ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId" +
+            "\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within the Series" +
+            ".\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"s" +
+            "tring\",\"description\":\"User identifier for unauthenticated usage mode\",\"location\"" +
+            ":\"query\"}},\"parameterOrder\":[\"seriesId\",\"topicId\",\"parentSubmissionId\"],\"request" +
+            "\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"Submission\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.responses.list\",\"path\":" +
+            "\"series/{seriesId}/submissions/{submissionId}/responses\",\"httpMethod\":\"GET\",\"des" +
+            "cription\":\"Lists or searches the responses for the specified submission within t" +
+            "he specified series and returns the search results.\",\"parameters\":{\"author\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Restricts the results to submissions by a specific a" +
+            "uthor.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"" +
+            "Specifies whether to restrict to submissions that have videos attached.\",\"locati" +
+            "on\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of re" +
+            "sults to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"de" +
+            "scription\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"des" +
+            "cription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"loc" +
+            "ation\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\",\"location\":\"q" +
+            "uery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result " +
+            "to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"},\"submissionId\":{\"type\":\"" +
+            "integer\",\"description\":\"The decimal ID of the Submission within the Series.\",\"re" +
+            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"," +
+            "\"submissionId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www.goog" +
+            "leapis.com/auth/moderator\"]}}},\"series\":{\"methods\":{\"get\":{\"id\":\"moderator.serie" +
+            "s.get\",\"path\":\"series/{seriesId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the " +
+            "specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The" +
+            " decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}" +
+            "},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.series.insert\",\"p" +
+            "ath\":\"series\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new series.\",\"request" +
+            "\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.series.list\",\"path\":\"series\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Searches the series and returns the search resul" +
+            "ts.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number" +
+            " of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"strin" +
+            "g\",\"description\":\"Search query.\",\"location\":\"query\"},\"start-index\":{\"type\":\"inte" +
+            "ger\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32" +
+            "\",\"location\":\"query\"}},\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.series.patch\",\"path\":\"s" +
+            "eries/{seriesId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified seri" +
+            "es. This method supports patch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"int" +
+            "eger\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"ui" +
+            "nt32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Serie" +
+            "s\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapis.com/auth/mode" +
+            "rator\"]},\"update\":{\"id\":\"moderator.series.update\",\"path\":\"series/{seriesId}\",\"ht" +
+            "tpMethod\":\"PUT\",\"description\":\"Updates the specified series.\",\"parameters\":{\"ser" +
+            "iesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required" +
+            "\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"requ" +
+            "est\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/moderator\"]}},\"resources\":{\"responses\":{\"methods\":{\"list\":{\"id\":\"" +
+            "moderator.series.responses.list\",\"path\":\"series/{seriesId}/responses\",\"httpMetho" +
+            "d\":\"GET\",\"description\":\"Searches the responses for the specified series and retu" +
+            "rns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"description\":\"" +
+            "Restricts the results to submissions by a specific author.\",\"location\":\"query\"}," +
+            "\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whether to restric" +
+            "t to submissions that have videos attached.\",\"location\":\"query\"},\"max-results\":{" +
+            "\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"" +
+            "uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"" +
+            "location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of" +
+            " the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type" +
+            "\":\"string\",\"description\":\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\"" +
+            ":\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"" +
+            "uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"S" +
+            "eriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"submissio" +
+            "ns\":{\"methods\":{\"list\":{\"id\":\"moderator.series.submissions.list\",\"path\":\"series/" +
+            "{seriesId}/submissions\",\"httpMethod\":\"GET\",\"description\":\"Searches the submissio" +
+            "ns for the specified series and returns the search results.\",\"parameters\":{\"auth" +
+            "or\":{\"type\":\"string\",\"description\":\"Restricts the results to submissions by a sp" +
+            "ecific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Specifies whether to restrict to submissions that have videos attached.\"" +
+            ",\"location\":\"query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies w" +
+            "hether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"type\":\"s" +
+            "tring\",\"description\":\"The language code for the language the client prefers resu" +
+            "ls in.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maxim" +
+            "um number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"typ" +
+            "e\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\"" +
+            ":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format" +
+            "\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order." +
+            "\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of th" +
+            "e first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"paramet" +
+            "erOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/moderator\"]}}}}},\"submissions\":{\"methods\":{\"get\":{\"id\":\"mo" +
+            "derator.submissions.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}\",\"" +
+            "httpMethod\":\"GET\",\"description\":\"Returns the specified submission within the spe" +
+            "cified series.\",\"parameters\":{\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Sp" +
+            "ecifies whether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{" +
+            "\"type\":\"string\",\"description\":\"The language code for the language the client pre" +
+            "fers resuls in.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":" +
             "\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"pa" +
-            "th\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result to" +
-            " be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"series" +
-            "Id\"],\"response\":{\"$ref\":\"TopicList\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "moderator\"]},\"update\":{\"id\":\"moderator.topics.update\",\"path\":\"series/{seriesId}/" +
-            "topics/{topicId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified topic " +
-            "within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"locati" +
-            "on\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Top" +
-            "ic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Topic\"},\"response\":{\"$re" +
-            "f\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}},\"resources\"" +
-            ":{\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.topics.submissions.list\",\"pa" +
-            "th\":\"series/{seriesId}/topics/{topicId}/submissions\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Searches the submissions for the specified topic within the specified ser" +
-            "ies and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"de" +
-            "scription\":\"Restricts the results to submissions by a specific author.\",\"locatio" +
-            "n\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whethe" +
-            "r to restrict to submissions that have videos attached.\",\"location\":\"query\"},\"in" +
-            "cludeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies whether to include the cu" +
-            "rrent user\'s vote\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descript" +
+            "th\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submi" +
+            "ssion within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"Submission\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator." +
+            "submissions.insert\",\"path\":\"series/{seriesId}/topics/{topicId}/submissions\",\"htt" +
+            "pMethod\":\"POST\",\"description\":\"Inserts a new submission in the specified topic w" +
+            "ithin the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Set to true to mark the new submission as anonymous.\",\"location\":\"query\"" +
+            "},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
+            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"d" +
+            "escription\":\"The decimal ID of the Topic within the Series.\",\"required\":true,\"fo" +
+            "rmat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":\"" +
+            "User identifier for unauthenticated usage mode\",\"location\":\"query\"}},\"parameterO" +
+            "rder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":" +
+            "\"Submission\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"tags\":{" +
+            "\"methods\":{\"delete\":{\"id\":\"moderator.tags.delete\",\"path\":\"series/{seriesId}/subm" +
+            "issions/{submissionId}/tags/{tagId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete" +
+            "s the specified tag from the specified submission within the specified series.\"," +
+            "\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the " +
+            "Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"t" +
+            "ype\":\"integer\",\"description\":\"The decimal ID of the Submission within the Series" +
+            ".\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"tagId\":{\"type\":\"string\"" +
+            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"" +
+            ",\"tagId\"],\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\"" +
+            ":\"moderator.tags.insert\",\"path\":\"series/{seriesId}/submissions/{submissionId}/ta" +
+            "gs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new tag for the specified submi" +
+            "ssion within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"" +
+            "description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"" +
+            "location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID" +
+            " of the Submission within the Series.\",\"required\":true,\"format\":\"uint32\",\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Tag" +
+            "\"},\"response\":{\"$ref\":\"Tag\"},\"scopes\":[\"https://www.googleapis.com/auth/moderato" +
+            "r\"]},\"list\":{\"id\":\"moderator.tags.list\",\"path\":\"series/{seriesId}/submissions/{s" +
+            "ubmissionId}/tags\",\"httpMethod\":\"GET\",\"description\":\"Lists all tags for the spec" +
+            "ified submission within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":" +
+            "\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\"" +
+            ":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The" +
+            " decimal ID of the Submission within the Series.\",\"required\":true,\"format\":\"uint" +
+            "32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":" +
+            "{\"$ref\":\"TagList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"to" +
+            "pics\":{\"methods\":{\"get\":{\"id\":\"moderator.topics.get\",\"path\":\"series/{seriesId}/t" +
+            "opics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified topic f" +
+            "rom the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\"" +
+            ":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic " +
+            "within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"Topic\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.topics.insert\",\"" +
+            "path\":\"series/{seriesId}/topics\",\"httpMethod\":\"POST\",\"description\":\"Inserts a ne" +
+            "w topic into the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"" +
+            "description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Topic\"},\"res" +
+            "ponse\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}," +
+            "\"list\":{\"id\":\"moderator.topics.list\",\"path\":\"series/{seriesId}/topics\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Searches the topics within the specified series and ret" +
+            "urns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query" +
+            "\"},\"mode\":{\"type\":\"string\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description" +
+            "\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\"" +
+            ":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"p" +
+            "ath\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result t" +
+            "o be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"serie" +
+            "sId\"],\"response\":{\"$ref\":\"TopicList\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/moderator\"]},\"update\":{\"id\":\"moderator.topics.update\",\"path\":\"series/{seriesId}" +
+            "/topics/{topicId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified topic" +
+            " within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"locat" +
+            "ion\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the To" +
+            "pic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Topic\"},\"response\":{\"$r" +
+            "ef\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}},\"resources" +
+            "\":{\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.topics.submissions.list\",\"p" +
+            "ath\":\"series/{seriesId}/topics/{topicId}/submissions\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"Searches the submissions for the specified topic within the specified se" +
+            "ries and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"d" +
+            "escription\":\"Restricts the results to submissions by a specific author.\",\"locati" +
+            "on\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies wheth" +
+            "er to restrict to submissions that have videos attached.\",\"location\":\"query\"},\"i" +
+            "ncludeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies whether to include the c" +
+            "urrent user\'s vote\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query" +
+            "\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"serie" +
+            "sId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":" +
+            "true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":" +
+            "\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":" +
+            "\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query" +
+            "\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within" +
+            " the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"http" +
+            "s://www.googleapis.com/auth/moderator\"]}}}}},\"votes\":{\"methods\":{\"get\":{\"id\":\"mo" +
+            "derator.votes.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@m" +
+            "e\",\"httpMethod\":\"GET\",\"description\":\"Returns the votes by the authenticated user" +
+            " for the specified submission within the specified series.\",\"parameters\":{\"serie" +
+            "sId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":" +
+            "true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"The decimal ID of the Submission within the Series.\",\"required\":true,\"" +
+            "format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\"" +
+            ":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"userId\":{" +
+            "\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"" +
+            "],\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderato" +
+            "r\"]},\"insert\":{\"id\":\"moderator.votes.insert\",\"path\":\"series/{seriesId}/submissio" +
+            "ns/{submissionId}/votes/@me\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new vo" +
+            "te by the authenticated user for the specified submission within the specified s" +
+            "eries.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID" +
+            " of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissio" +
+            "nId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within th" +
+            "e Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"" +
+            "type\":\"string\",\"description\":\"User identifier for unauthenticated usage mode\",\"l" +
+            "ocation\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref" +
+            "\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "moderator\"]},\"list\":{\"id\":\"moderator.votes.list\",\"path\":\"series/{seriesId}/votes" +
+            "/@me\",\"httpMethod\":\"GET\",\"description\":\"Lists the votes by the authenticated use" +
+            "r for the given series.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descript" +
             "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"series" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":t" +
-            "rue,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"" +
-            "Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"" +
-            "Index of the first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within " +
-            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/moderator\"]}}}}},\"votes\":{\"methods\":{\"get\":{\"id\":\"mod" +
-            "erator.votes.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Returns the votes by the authenticated user " +
-            "for the specified submission within the specified series.\",\"parameters\":{\"series" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":t" +
-            "rue,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The decimal ID of the Submission within the Series.\",\"required\":true,\"f" +
-            "ormat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":" +
-            "\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"userId\":{\"" +
-            "type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"]" +
-            ",\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator" +
-            "\"]},\"insert\":{\"id\":\"moderator.votes.insert\",\"path\":\"series/{seriesId}/submission" +
-            "s/{submissionId}/votes/@me\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new vot" +
-            "e by the authenticated user for the specified submission within the specified se" +
-            "ries.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID " +
-            "of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submission" +
-            "Id\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within the" +
-            " Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"User identifier for unauthenticated usage mode\",\"lo" +
-            "cation\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\"" +
-            ":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/m" +
-            "oderator\"]},\"list\":{\"id\":\"moderator.votes.list\",\"path\":\"series/{seriesId}/votes/" +
-            "@me\",\"httpMethod\":\"GET\",\"description\":\"Lists the votes by the authenticated user" +
-            " for the given series.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"}" +
-            ",\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"start-index\":{\"type\":\"integer\"" +
-            ",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"l" +
-            "ocation\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"VoteList\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator" +
-            ".votes.patch\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me\",\"h" +
-            "ttpMethod\":\"PATCH\",\"description\":\"Updates the votes by the authenticated user fo" +
-            "r the specified submission within the specified series. This method supports pat" +
-            "ch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The dec" +
-            "imal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"su" +
-            "bmissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission wi" +
-            "thin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthTo" +
-            "ken\":{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usage m" +
-            "ode\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref" +
-            "\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"update\":{\"id\"" +
-            ":\"moderator.votes.update\",\"path\":\"series/{seriesId}/submissions/{submissionId}/v" +
-            "otes/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the votes by the authenticat" +
-            "ed user for the specified submission within the specified series.\",\"parameters\":" +
-            "{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"req" +
-            "uired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer" +
-            "\",\"description\":\"The decimal ID of the Submission within the Series.\",\"required\"" +
-            ":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"descr" +
-            "iption\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"us" +
-            "erId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submis" +
-            "sionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/moderator\"]}}}}}";
+            "},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
+            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"start-index\":{\"type\":\"integer" +
+            "\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"" +
+            "location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"VoteList\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderato" +
+            "r.votes.patch\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me\",\"" +
+            "httpMethod\":\"PATCH\",\"description\":\"Updates the votes by the authenticated user f" +
+            "or the specified submission within the specified series. This method supports pa" +
+            "tch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The de" +
+            "cimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"s" +
+            "ubmissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission w" +
+            "ithin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthT" +
+            "oken\":{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usage " +
+            "mode\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"parame" +
+            "terOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$re" +
+            "f\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"update\":{\"id" +
+            "\":\"moderator.votes.update\",\"path\":\"series/{seriesId}/submissions/{submissionId}/" +
+            "votes/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the votes by the authentica" +
+            "ted user for the specified submission within the specified series.\",\"parameters\"" +
+            ":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
+            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"intege" +
+            "r\",\"description\":\"The decimal ID of the Submission within the Series.\",\"required" +
+            "\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"desc" +
+            "ription\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"u" +
+            "serId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submi" +
+            "ssionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/moderator\"]}}}}}";
         
         private const string Version = "v1";
         

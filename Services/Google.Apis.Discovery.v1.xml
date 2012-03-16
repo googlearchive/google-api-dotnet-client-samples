@@ -4,6 +4,9 @@
         <name>Google.Apis.Discovery.v1</name>
     </assembly>
     <members>
+        <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.DiscoveryVersion">
+            <summary>Indicate the version of the Discovery API used to generate this doc.</summary>
+        </member>
         <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.Items">
             <summary>The individual directory entries. One entry per api/version pair.</summary>
         </member>
@@ -15,6 +18,9 @@
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.ItemsData.DiscoveryLink">
             <summary>A link to the discovery document.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.ItemsData.DiscoveryRestUrl">
+            <summary>The url for the discovery REST document.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.ItemsData.DocumentationLink">
             <summary>A link to human readable documentation for the API.</summary>
@@ -52,62 +58,68 @@
         <member name="P:Google.Apis.Discovery.v1.Data.DirectoryList.ItemsData.IconsData.X32">
             <summary>The url of the 32x32 icon.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Ref">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Ref">
             <summary>A reference to another schema. The value of this property is the &quot;id&quot; of another schema.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Default">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Default">
             <summary>The default value of this property (if one exists).</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Description">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Description">
             <summary>A description of this object.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Enum">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Enum">
             <summary>Values this parameter may take (if it is an enum).</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.EnumDescriptions">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.EnumDescriptions">
             <summary>The descriptions for the enums. Each position maps to the corresponding value in the &quot;enum&quot; array.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Format">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Format">
             <summary>An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Id">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Id">
             <summary>Unique identifier for this schema.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Location">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Location">
             <summary>Whether this parameter goes in the query or the path for REST requests.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Maximum">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Maximum">
             <summary>The maximum value of this parameter.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Minimum">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Minimum">
             <summary>The minimum value of this parameter.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Pattern">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Pattern">
             <summary>The regular expression this parameter must conform to.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Properties">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Properties">
             <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Repeated">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Repeated">
             <summary>Whether this parameter may appear multiple times.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Required">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Required">
             <summary>Whether the parameter is required.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Jsonschema.Type">
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Type">
             <summary>The value type for this schema. A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Jsonschema.PropertiesData">
+        <member name="T:Google.Apis.Discovery.v1.Data.JsonSchema.PropertiesData">
             <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Auth">
             <summary>Authentication information.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.BasePath">
-            <summary>The base URI path for REST requests.</summary>
+            <summary>The base path for REST requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.BaseUrl">
+            <summary>The base URL for REST requests.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Description">
             <summary>The description of this API.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.DiscoveryVersion">
+            <summary>Indicate the version of the Discovery API used to generate this doc.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.DocumentationLink">
             <summary>A link to human readable documentation for the API.</summary>
@@ -141,6 +153,9 @@
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Resources">
             <summary>The resources in this API.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Revision">
+            <summary>The version of this API.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Schemas">
             <summary>The schemas for this API.</summary>
@@ -193,100 +208,100 @@
         <member name="T:Google.Apis.Discovery.v1.Data.RestDescription.SchemasData">
             <summary>The schemas for this API.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Description">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Description">
             <summary>Description of this method.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.HttpMethod">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.HttpMethod">
             <summary>HTTP method used by this method.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Id">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Id">
             <summary>A unique ID for this method. This property can be used to match methods between different versions of Discovery.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUpload">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUpload">
             <summary>Media upload parameters.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.ParameterOrder">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.ParameterOrder">
             <summary>Ordered list of required parameters, serves as a hint to clients on how to structure their method signatures. The array is ordered such that the &quot;most-significant&quot; parameter appears first.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Parameters">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Parameters">
             <summary>Details for all parameters in this method.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Path">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Path">
             <summary>The URI path of this REST method. Should be used in conjunction with the basePath property at the api-level.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Request">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Request">
             <summary>The schema for the request.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Response">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Response">
             <summary>The schema for the response.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.Scopes">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Scopes">
             <summary>OAuth 2.0 scopes applicable to this method.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData">
             <summary>Media upload parameters.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.Accept">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.Accept">
             <summary>MIME Media Ranges for acceptable media uploads to this method.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.MaxSize">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.MaxSize">
             <summary>Maximum size of a media upload, such as &quot;1MB&quot;, &quot;2GB&quot; or &quot;3TB&quot;.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.Protocols">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.Protocols">
             <summary>Supported upload protocols.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData">
             <summary>Supported upload protocols.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.Resumable">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.Resumable">
             <summary>Supports the Resumable Media Upload protocol.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.Simple">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.Simple">
             <summary>Supports uploading as a single HTTP request.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.ResumableData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.ResumableData">
             <summary>Supports the Resumable Media Upload protocol.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.ResumableData.Multipart">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.ResumableData.Multipart">
             <summary>True if this endpoint supports uploading multipart media.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.ResumableData.Path">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.ResumableData.Path">
             <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.SimpleData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.SimpleData">
             <summary>Supports uploading as a single HTTP request.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.SimpleData.Multipart">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.SimpleData.Multipart">
             <summary>True if this endpoint supports upload multipart media.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.MediaUploadData.ProtocolsData.SimpleData.Path">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData.ProtocolsData.SimpleData.Path">
             <summary>The URI path to be used for upload. Should be used in conjunction with the basePath property at the api-level.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.ParametersData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.ParametersData">
             <summary>Details for all parameters in this method.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.RequestData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.RequestData">
             <summary>The schema for the request.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.RequestData.Ref">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.RequestData.Ref">
             <summary>Schema ID for the request schema.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restmethod.ResponseData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.ResponseData">
             <summary>The schema for the response.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restmethod.ResponseData.Ref">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.ResponseData.Ref">
             <summary>Schema ID for the response schema.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restresource.Methods">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestResource.Methods">
             <summary>Methods on this resource.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.Data.Restresource.Resources">
+        <member name="P:Google.Apis.Discovery.v1.Data.RestResource.Resources">
             <summary>Sub-resources on this resource.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restresource.MethodsData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestResource.MethodsData">
             <summary>Methods on this resource.</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.v1.Data.Restresource.ResourcesData">
+        <member name="T:Google.Apis.Discovery.v1.Data.RestResource.ResourcesData">
             <summary>Sub-resources on this resource.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.DiscoveryService.Key">

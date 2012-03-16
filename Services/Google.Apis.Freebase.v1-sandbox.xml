@@ -90,6 +90,9 @@
         <member name="P:Google.Apis.Freebase.v1_sandbox.FreebaseService.MqlreadRequest.Cursor">
             <summary>The mql cursor.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1_sandbox.FreebaseService.MqlreadRequest.Dateline">
+            <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
+        </member>
         <member name="P:Google.Apis.Freebase.v1_sandbox.FreebaseService.MqlreadRequest.Html_escape">
             <summary>Whether or not to escape entities.</summary>
         </member>

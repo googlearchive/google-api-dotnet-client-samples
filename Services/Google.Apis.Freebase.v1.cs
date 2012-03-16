@@ -67,12 +67,13 @@ namespace Google.Apis.Freebase.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"freebase:v1\",\"name\":\"freebase\",\"version" +
-            "\":\"v1\",\"title\":\"Freebase API\",\"description\":\"Lets you access the Freebase reposi" +
-            "tory of open data.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/f" +
-            "reebase-16.png\",\"x32\":\"http://www.google.com/images/icons/product/freebase-32.pn" +
-            "g\"},\"documentationLink\":\"http://wiki.freebase.com/wiki/New_Freebase_API\",\"labels" +
-            "\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/freebase/v1/\",\"parameters\":{\"alt\":{\"ty" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1\",\"n" +
+            "ame\":\"freebase\",\"version\":\"v1\",\"revision\":\"20111102\",\"title\":\"Freebase API\",\"des" +
+            "cription\":\"Lets you access the Freebase repository of open data.\",\"icons\":{\"x16\"" +
+            ":\"http://www.google.com/images/icons/product/freebase-16.png\",\"x32\":\"http://www." +
+            "google.com/images/icons/product/freebase-32.png\"},\"documentationLink\":\"http://wi" +
+            "ki.freebase.com/wiki/New_Freebase_API\",\"protocol\":\"rest\",\"baseUrl\":\"https://www." +
+            "googleapis.com/freebase/v1/\",\"basePath\":\"/freebase/v1/\",\"parameters\":{\"alt\":{\"ty" +
             "pe\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enu" +
             "m\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json" +
             "\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specify" +
@@ -112,27 +113,29 @@ namespace Google.Apis.Freebase.v1 {
             "tring\",\"description\":\"JS method name for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-" +
             "9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"type\":\"boolean\",\"description\":\"Sho" +
             "w the costs or not.\",\"default\":\"false\",\"location\":\"query\"},\"cursor\":{\"type\":\"str" +
-            "ing\",\"description\":\"The mql cursor.\",\"location\":\"query\"},\"html_escape\":{\"type\":\"" +
-            "boolean\",\"description\":\"Whether or not to escape entities.\",\"default\":\"true\",\"lo" +
-            "cation\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How many spaces to in" +
-            "dent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"location\":\"query" +
-            "\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the results - an id of" +
-            " a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"query\":{\"type\":" +
-            "\"string\",\"description\":\"An envelope containing a single MQL query.\",\"required\":t" +
-            "rue,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\",\"description\":\"How" +
-            " MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"" +
-            "enumDescriptions\":[\"Be strict - throw an error.\",\"Just return the first encounte" +
-            "red object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"]}},\"resources\":{\"te" +
-            "xt\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Returns blob attached to node at specified id as HTML\",\"pa" +
-            "rameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\"," +
-            "\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return vali" +
-            "d, sanitized html.\",\"Return plain text - strip html tags.\",\"Return the entire co" +
-            "ntent as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id o" +
-            "f the item that you want data about\",\"required\":true,\"repeated\":true,\"location\":" +
-            "\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of character" +
-            "s to return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query" +
-            "\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}}}}";
+            "ing\",\"description\":\"The mql cursor.\",\"location\":\"query\"},\"dateline\":{\"type\":\"str" +
+            "ing\",\"description\":\"The dateline that you get in a mqlwrite response to ensure c" +
+            "onsistent results.\",\"location\":\"query\"},\"html_escape\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"Whether or not to escape entities.\",\"default\":\"true\",\"location\":\"query\"}," +
+            "\"indent\":{\"type\":\"integer\",\"description\":\"How many spaces to indent the json.\",\"" +
+            "default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"location\":\"query\"},\"lang\":{\"type\"" +
+            ":\"string\",\"description\":\"The language of the results - an id of a /type/lang obj" +
+            "ect.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"An envelope containing a single MQL query.\",\"required\":true,\"location\":\"q" +
+            "uery\"},\"uniqueness_failure\":{\"type\":\"string\",\"description\":\"How MQL responds to " +
+            "uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\"" +
+            ":[\"Be strict - throw an error.\",\"Just return the first encountered object.\"],\"lo" +
+            "cation\":\"query\"}},\"parameterOrder\":[\"query\"]}},\"resources\":{\"text\":{\"methods\":{\"" +
+            "get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\":\"GET\",\"descripti" +
+            "on\":\"Returns blob attached to node at specified id as HTML\",\"parameters\":{\"forma" +
+            "t\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\",\"default\":\"plain\"" +
+            ",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return valid, sanitized html" +
+            ".\",\"Return plain text - strip html tags.\",\"Return the entire content as-is.\"],\"l" +
+            "ocation\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id of the item that y" +
+            "ou want data about\",\"required\":true,\"repeated\":true,\"location\":\"path\"},\"maxlengt" +
+            "h\":{\"type\":\"integer\",\"description\":\"The max number of characters to return. Vali" +
+            "d only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrd" +
+            "er\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -533,6 +536,8 @@ namespace Google.Apis.Freebase.v1 {
             
             private string cursor;
             
+            private string dateline;
+            
             private System.Boolean? html_escape;
             
             private System.Int64? indent;
@@ -622,6 +627,17 @@ namespace Google.Apis.Freebase.v1 {
                 }
                 set {
                     this.cursor = value;
+                }
+            }
+            
+            /// <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dateline")]
+            public virtual string Dateline {
+                get {
+                    return this.dateline;
+                }
+                set {
+                    this.dateline = value;
                 }
             }
             

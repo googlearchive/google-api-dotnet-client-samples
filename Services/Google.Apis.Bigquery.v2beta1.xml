@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Bigquery.v2beta1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.Access">
+             <summary>[Optional] Describes users&apos; rights on the dataset. You can assign the same role to multiple users, and assign multiple roles to the same user.
+            Default values assigned to a new dataset are as follows: OWNER - Project owners, dataset creator READ - Project readers WRITE - Project writers
+            See ACLs and Rights for a description of these rights. If you specify any of these roles when creating a dataset, the assigned roles will overwrite the defaults listed above.
+            To revoke rights to a dataset, call datasets.update() and omit the names of anyone whose rights you wish to revoke. However, every dataset must have at least one entity granted OWNER role.
+            Each access object can have only one of the following members: userByEmail, groupByEmail, domain, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.CreationTime">
+            <summary>[Output only] The date when this dataset was created, in milliseconds since the epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.DatasetId">
+            <summary>[Deprecated -- overlaps with datasetRef] A unique ID for this dataset. Must a string of 1-1024 characters satisfying the regular expression [A-Za-z0-9_].</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.Description">
+            <summary>[Optional] An arbitrary string description for the dataset. This might be shown in BigQuery UI for browsing the dataset.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.FriendlyName">
+            <summary>[Optional] A descriptive name for this dataset, which might be shown in any BigQuery user interfaces for browsing the dataset. Use datasetId for making API calls.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.Id">
+            <summary>[Output only] The fully-qualified unique name of this dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.Kind">
+            <summary>[Output only] The resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.LastModifiedTime">
+            <summary>[Output only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.ProjectId">
+            <summary>[Deprecated -- overlaps with datasetRef].</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.SelfLink">
+            <summary>[Output only] An URL that can be used to access this resource again. You can use this URL in Get or Update requests to this resource. Not used as an input to helix.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.AllAuthenticatedUsers">
+            <summary>[Pick one] If True, any authenticated user is granted the assigned role.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.Domain">
+            <summary>[Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: &quot;example.com&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.GroupByEmail">
+            <summary>[Pick one] A fully-qualified email address of a mailing list to grant access to. This must be either a Google Groups mailing list (ends in @googlegroups.com) or a group managed by an enterprise version of Google Groups.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.Role">
+            <summary>[Required] Describes the rights granted to the user specified by the other member of the access object. The following string values are supported: READ - User can call any list() or get() method on any collection or resource. WRITE - User can call any method on any collection except for datasets, on which they can call list() and get(). OWNER - User can call any method. The dataset creator is granted this role by default.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.SpecialGroup">
+            <summary>[Pick one] A special group to grant access to. The valid values are: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Dataset.AccessData.UserByEmail">
+            <summary>[Pick one] A fully qualified email address of a user to grant access to. For example: fred@example.com.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.Datasets">
+            <summary>An array of one or more summarized dataset resources. Absent when there are no datasets in the specified project.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.ETag">
+            <summary>A hash of this page of results. See Paging Through Results in the developer&apos;s guide.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.Kind">
+            <summary>The resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.NextPageToken">
+            <summary>A token to request the next page of results. Present only when there is more than one page of results.* See Paging Through Results in the developer&apos;s guide.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.DatasetsData.DatasetId">
+            <summary>[Deprecated] A unique ID for this dataset; this is the id values without the project name.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.DatasetsData.FriendlyName">
+            <summary>A descriptive name for this dataset, if one exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.DatasetsData.Id">
+            <summary>The fully-qualified unique name of this dataset in the format projectId:datasetId.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.DatasetList.DatasetsData.ProjectId">
+            <summary>[Deprecated] The ID of the container project.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Datasetreference.DatasetId">
+            <summary>[Required] A unique ID for this dataset, without the project name.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.Datasetreference.ProjectId">
+            <summary>[Optional] The ID of the container project.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest.MaxResults">
+            <summary>[Optional] The maximum number of results to return per page of results. If the response list exceeds the maximum response size for a single response, you will have to page through the results. Default is to return the maximum response size.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest.Query">
+            <summary>[Required] A query string, following the BigQuery query syntax of the query to execute. Table names should be qualified by dataset name in the format projectId:datasetId.tableId unless you specify the defaultDataset value. If the table is in the same project as the job, you can omit the project ID. Example: SELECT f1 FROM myProjectId:myDatasetId.myTableId.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.BigqueryService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Bigquery.v2beta1.BigqueryService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.BigqueryService.Scopes.Bigquery">
+            <summary>View and manage your data in Google BigQuery</summary>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.Delete(System.String,System.String)">
+            <summary>Deletes the dataset specified by datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.</summary>
+            <param name="projectId">Required - Project identifier of dataset being deleted.</param>
+            <param name="datasetId">Required - Dataset identifier of dataset being deleted.</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.Get(System.String,System.String)">
+            <summary>Returns the dataset specified by datasetID.</summary>
+            <param name="projectId">Required - Project identifier containing dataset requested.</param>
+            <param name="datasetId">Required - Dataset identifier of the dataset requested.</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.Insert(Google.Apis.Bigquery.v2beta1.Data.Dataset,System.String)">
+            <summary>Creates a new empty dataset.</summary>
+            <param name="projectId">Required - Project identifier that will contain dataset being created.</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.List(System.String)">
+            <summary>Lists all the datasets in the specified project to which the caller has read access; however, a project owner can list (but not necessarily get) all datasets in his project.</summary>
+            <param name="projectId">Required - Project identifier containing datasets to be listed.</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.Patch(Google.Apis.Bigquery.v2beta1.Data.Dataset,System.String,System.String)">
+            <summary>Updates information in an existing dataset, specified by datasetId. Properties not included in the submitted resource will not be changed. If you include the access property without any values assigned, the request will fail as you must specify at least one owner for a dataset. This method supports patch semantics.</summary>
+            <param name="projectId">Required - Project identifier containing dataset being updated.</param>
+            <param name="datasetId">Required - Dataset identifier containing dataset being updated.</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.DatasetsResource.Update(Google.Apis.Bigquery.v2beta1.Data.Dataset,System.String,System.String)">
+            <summary>Updates information in an existing dataset, specified by datasetId. Properties not included in the submitted resource will not be changed. If you include the access property without any values assigned, the request will fail as you must specify at least one owner for a dataset.</summary>
+            <param name="projectId">Required - Project identifier containing dataset being updated.</param>
+            <param name="datasetId">Required - Dataset identifier containing dataset being updated.</param>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.DatasetId">
+            <summary>Dataset identifier of dataset being deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.DeleteContents">
+            <summary>[Optional] If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.DeleteRequest.ProjectId">
+            <summary>Project identifier of dataset being deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.GetRequest.DatasetId">
+            <summary>Dataset identifier of the dataset requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.GetRequest.ProjectId">
+            <summary>Project identifier containing dataset requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.InsertRequest.ProjectId">
+            <summary>Project identifier that will contain dataset being created.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.MaxResults">
+            <summary>[Optional] The maximum number of rows to return. If not specified, it will return up to the maximum amount of data that will fit in a reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.PageToken">
+            <summary>[Optional] A page token used when requesting a specific page in a set of paged results.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.ListRequest.ProjectId">
+            <summary>Project identifier containing datasets to be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.DatasetId">
+            <summary>Dataset identifier containing dataset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.ProjectId">
+            <summary>Project identifier containing dataset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.DatasetId">
+            <summary>Dataset identifier containing dataset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.ProjectId">
+            <summary>Project identifier containing dataset being updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Delete(System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="jobId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Get(System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="jobId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Insert(Google.Apis.Bigquery.v2beta1.Data.Job,System.String)">
+            <param name="projectId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.List(System.String)">
+            <param name="projectId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Query(Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest,System.String)">
+            <param name="projectId">Required - project name billed for the query</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Stop(System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="jobId">Required</param>
+        </member>
+        <member name="T:Google.Apis.Bigquery.v2beta1.JobsResource.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.Projection.Full">
+            <summary>Includes all job data.</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.Projection.Minimal">
+            <summary>Does not include the job configuration.</summary>
+        </member>
+        <member name="T:Google.Apis.Bigquery.v2beta1.JobsResource.StateFilter">
+            <summary>filter for job state</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.StateFilter.Done">
+            <summary>finished jobs</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.StateFilter.Pending">
+            <summary>pending jobs</summary>
+        </member>
+        <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.StateFilter.Running">
+            <summary>running jobs</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.AllUsers">
+            <summary>Whether to display jobs owned by all users in the project</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.MaxResults">
+            <summary>maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.StartIndex">
+            <summary>start index for paginated results</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.ListRequest.StateFilter">
+            <summary>filter for job state</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.QueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.QueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.QueryRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.QueryRequest.ProjectId">
+            <summary>project name billed for the query</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.QueryRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.StopRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.StopRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.StopRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.ProjectsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.ProjectsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.ProjectsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TabledataResource.List(System.String,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+            <param name="tableId">Required</param>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TabledataResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TabledataResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TabledataResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.Delete(System.String,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+            <param name="tableId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.Get(System.String,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+            <param name="tableId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.Insert(Google.Apis.Bigquery.v2beta1.Data.Table,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.List(System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.Patch(Google.Apis.Bigquery.v2beta1.Data.Table,System.String,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+            <param name="tableId">Required</param>
+        </member>
+        <member name="M:Google.Apis.Bigquery.v2beta1.TablesResource.Update(Google.Apis.Bigquery.v2beta1.Data.Table,System.String,System.String,System.String)">
+            <param name="projectId">Required</param>
+            <param name="datasetId">Required</param>
+            <param name="tableId">Required</param>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2beta1.TablesResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

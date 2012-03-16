@@ -16,12 +16,12 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Context {
         
-        private IList<IList<Context.FacetsData>> facets;
+        private System.Collections.Generic.IList<System.Collections.Generic.IList<Context.FacetsData>> facets;
         
         private string title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("facets")]
-        public virtual IList<IList<Context.FacetsData>> Facets {
+        public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<Context.FacetsData>> Facets {
             get {
                 return this.facets;
             }
@@ -70,7 +70,7 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Promotion {
         
-        private IList<Promotion.BodyLinesData> bodyLines;
+        private System.Collections.Generic.IList<Promotion.BodyLinesData> bodyLines;
         
         private string displayLink;
         
@@ -81,7 +81,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         private string title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("bodyLines")]
-        public virtual IList<Promotion.BodyLinesData> BodyLines {
+        public virtual System.Collections.Generic.IList<Promotion.BodyLinesData> BodyLines {
             get {
                 return this.bodyLines;
             }
@@ -219,21 +219,61 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         private string cx;
         
+        private string dateRestrict;
+        
+        private string disableCnTwTranslation;
+        
+        private string exactTerms;
+        
+        private string excludeTerms;
+        
+        private string fileType;
+        
         private string filter;
         
         private string gl;
         
         private string googleHost;
         
+        private string highRange;
+        
+        private string hl;
+        
+        private string hq;
+        
+        private string imgColorType;
+        
+        private string imgDominantColor;
+        
+        private string imgSize;
+        
+        private string imgType;
+        
         private string inputEncoding;
         
         private string language;
         
+        private string linkSite;
+        
+        private string lowRange;
+        
+        private string orTerms;
+        
         private string outputEncoding;
+        
+        private string relatedSite;
+        
+        private string rights;
         
         private string safe;
         
         private string searchTerms;
+        
+        private string searchType;
+        
+        private string siteSearch;
+        
+        private string siteSearchFilter;
         
         private string sort;
         
@@ -285,6 +325,56 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("dateRestrict")]
+        public virtual string DateRestrict {
+            get {
+                return this.dateRestrict;
+            }
+            set {
+                this.dateRestrict = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("disableCnTwTranslation")]
+        public virtual string DisableCnTwTranslation {
+            get {
+                return this.disableCnTwTranslation;
+            }
+            set {
+                this.disableCnTwTranslation = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("exactTerms")]
+        public virtual string ExactTerms {
+            get {
+                return this.exactTerms;
+            }
+            set {
+                this.exactTerms = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("excludeTerms")]
+        public virtual string ExcludeTerms {
+            get {
+                return this.excludeTerms;
+            }
+            set {
+                this.excludeTerms = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("fileType")]
+        public virtual string FileType {
+            get {
+                return this.fileType;
+            }
+            set {
+                this.fileType = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("filter")]
         public virtual string Filter {
             get {
@@ -315,6 +405,76 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("highRange")]
+        public virtual string HighRange {
+            get {
+                return this.highRange;
+            }
+            set {
+                this.highRange = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("hl")]
+        public virtual string Hl {
+            get {
+                return this.hl;
+            }
+            set {
+                this.hl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("hq")]
+        public virtual string Hq {
+            get {
+                return this.hq;
+            }
+            set {
+                this.hq = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("imgColorType")]
+        public virtual string ImgColorType {
+            get {
+                return this.imgColorType;
+            }
+            set {
+                this.imgColorType = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("imgDominantColor")]
+        public virtual string ImgDominantColor {
+            get {
+                return this.imgDominantColor;
+            }
+            set {
+                this.imgDominantColor = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("imgSize")]
+        public virtual string ImgSize {
+            get {
+                return this.imgSize;
+            }
+            set {
+                this.imgSize = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("imgType")]
+        public virtual string ImgType {
+            get {
+                return this.imgType;
+            }
+            set {
+                this.imgType = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("inputEncoding")]
         public virtual string InputEncoding {
             get {
@@ -335,6 +495,36 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("linkSite")]
+        public virtual string LinkSite {
+            get {
+                return this.linkSite;
+            }
+            set {
+                this.linkSite = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lowRange")]
+        public virtual string LowRange {
+            get {
+                return this.lowRange;
+            }
+            set {
+                this.lowRange = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("orTerms")]
+        public virtual string OrTerms {
+            get {
+                return this.orTerms;
+            }
+            set {
+                this.orTerms = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("outputEncoding")]
         public virtual string OutputEncoding {
             get {
@@ -342,6 +532,26 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             set {
                 this.outputEncoding = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("relatedSite")]
+        public virtual string RelatedSite {
+            get {
+                return this.relatedSite;
+            }
+            set {
+                this.relatedSite = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("rights")]
+        public virtual string Rights {
+            get {
+                return this.rights;
+            }
+            set {
+                this.rights = value;
             }
         }
         
@@ -362,6 +572,36 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             set {
                 this.searchTerms = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("searchType")]
+        public virtual string SearchType {
+            get {
+                return this.searchType;
+            }
+            set {
+                this.searchType = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("siteSearch")]
+        public virtual string SiteSearch {
+            get {
+                return this.siteSearch;
+            }
+            set {
+                this.siteSearch = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("siteSearchFilter")]
+        public virtual string SiteSearchFilter {
+            get {
+                return this.siteSearchFilter;
+            }
+            set {
+                this.siteSearchFilter = value;
             }
         }
         
@@ -422,13 +662,25 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         private string displayLink;
         
+        private string fileFormat;
+        
+        private string formattedUrl;
+        
+        private string htmlFormattedUrl;
+        
         private string htmlSnippet;
         
         private string htmlTitle;
         
+        private Result.ImageData image;
+        
         private string kind;
         
+        private System.Collections.Generic.IList<Result.LabelsData> labels;
+        
         private string link;
+        
+        private string mime;
         
         private Result.PagemapData pagemap;
         
@@ -456,6 +708,36 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("fileFormat")]
+        public virtual string FileFormat {
+            get {
+                return this.fileFormat;
+            }
+            set {
+                this.fileFormat = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("formattedUrl")]
+        public virtual string FormattedUrl {
+            get {
+                return this.formattedUrl;
+            }
+            set {
+                this.formattedUrl = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("htmlFormattedUrl")]
+        public virtual string HtmlFormattedUrl {
+            get {
+                return this.htmlFormattedUrl;
+            }
+            set {
+                this.htmlFormattedUrl = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("htmlSnippet")]
         public virtual string HtmlSnippet {
             get {
@@ -476,6 +758,16 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("image")]
+        public virtual Result.ImageData Image {
+            get {
+                return this.image;
+            }
+            set {
+                this.image = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -486,6 +778,16 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("labels")]
+        public virtual System.Collections.Generic.IList<Result.LabelsData> Labels {
+            get {
+                return this.labels;
+            }
+            set {
+                this.labels = value;
+            }
+        }
+        
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual string Link {
             get {
@@ -493,6 +795,16 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             set {
                 this.link = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("mime")]
+        public virtual string Mime {
+            get {
+                return this.mime;
+            }
+            set {
+                this.mime = value;
             }
         }
         
@@ -526,7 +838,121 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
-        public class PagemapData : System.Collections.Generic.Dictionary<string, IList<PagemapData.PagemapDataSchema>> {
+        public class ImageData {
+            
+            private System.Nullable<long> byteSize;
+            
+            private string contextLink;
+            
+            private System.Nullable<long> height;
+            
+            private System.Nullable<long> thumbnailHeight;
+            
+            private string thumbnailLink;
+            
+            private System.Nullable<long> thumbnailWidth;
+            
+            private System.Nullable<long> width;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("byteSize")]
+            public virtual System.Nullable<long> ByteSize {
+                get {
+                    return this.byteSize;
+                }
+                set {
+                    this.byteSize = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("contextLink")]
+            public virtual string ContextLink {
+                get {
+                    return this.contextLink;
+                }
+                set {
+                    this.contextLink = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("height")]
+            public virtual System.Nullable<long> Height {
+                get {
+                    return this.height;
+                }
+                set {
+                    this.height = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailHeight")]
+            public virtual System.Nullable<long> ThumbnailHeight {
+                get {
+                    return this.thumbnailHeight;
+                }
+                set {
+                    this.thumbnailHeight = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailLink")]
+            public virtual string ThumbnailLink {
+                get {
+                    return this.thumbnailLink;
+                }
+                set {
+                    this.thumbnailLink = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("thumbnailWidth")]
+            public virtual System.Nullable<long> ThumbnailWidth {
+                get {
+                    return this.thumbnailWidth;
+                }
+                set {
+                    this.thumbnailWidth = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("width")]
+            public virtual System.Nullable<long> Width {
+                get {
+                    return this.width;
+                }
+                set {
+                    this.width = value;
+                }
+            }
+        }
+        
+        public class LabelsData {
+            
+            private string displayName;
+            
+            private string name;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
+            public virtual string DisplayName {
+                get {
+                    return this.displayName;
+                }
+                set {
+                    this.displayName = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("name")]
+            public virtual string Name {
+                get {
+                    return this.name;
+                }
+                set {
+                    this.name = value;
+                }
+            }
+        }
+        
+        public class PagemapData : System.Collections.Generic.Dictionary<string, System.Collections.Generic.IList<PagemapData.PagemapDataSchema>> {
             
             public class PagemapDataSchema : System.Collections.Generic.Dictionary<string, string> {
             }
@@ -537,13 +963,17 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         private Context context;
         
-        private IList<Result> items;
+        private System.Collections.Generic.IList<Result> items;
         
         private string kind;
         
-        private IList<Promotion> promotions;
+        private System.Collections.Generic.IList<Promotion> promotions;
         
         private Search.QueriesData queries;
+        
+        private Search.SearchInformationData searchInformation;
+        
+        private Search.SpellingData spelling;
         
         private Search.UrlData url;
         
@@ -562,7 +992,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Result> Items {
+        public virtual System.Collections.Generic.IList<Result> Items {
             get {
                 return this.items;
             }
@@ -582,7 +1012,7 @@ namespace Google.Apis.Customsearch.v1.Data {
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("promotions")]
-        public virtual IList<Promotion> Promotions {
+        public virtual System.Collections.Generic.IList<Promotion> Promotions {
             get {
                 return this.promotions;
             }
@@ -598,6 +1028,26 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
             set {
                 this.queries = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("searchInformation")]
+        public virtual Search.SearchInformationData SearchInformation {
+            get {
+                return this.searchInformation;
+            }
+            set {
+                this.searchInformation = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("spelling")]
+        public virtual Search.SpellingData Spelling {
+            get {
+                return this.spelling;
+            }
+            set {
+                this.spelling = value;
             }
         }
         
@@ -630,7 +1080,85 @@ namespace Google.Apis.Customsearch.v1.Data {
             }
         }
         
-        public class QueriesData : System.Collections.Generic.Dictionary<string, IList<Query>> {
+        public class QueriesData : System.Collections.Generic.Dictionary<string, System.Collections.Generic.IList<Query>> {
+        }
+        
+        public class SearchInformationData {
+            
+            private string formattedSearchTime;
+            
+            private string formattedTotalResults;
+            
+            private System.Nullable<double> searchTime;
+            
+            private string totalResults;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("formattedSearchTime")]
+            public virtual string FormattedSearchTime {
+                get {
+                    return this.formattedSearchTime;
+                }
+                set {
+                    this.formattedSearchTime = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("formattedTotalResults")]
+            public virtual string FormattedTotalResults {
+                get {
+                    return this.formattedTotalResults;
+                }
+                set {
+                    this.formattedTotalResults = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("searchTime")]
+            public virtual System.Nullable<double> SearchTime {
+                get {
+                    return this.searchTime;
+                }
+                set {
+                    this.searchTime = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
+            public virtual string TotalResults {
+                get {
+                    return this.totalResults;
+                }
+                set {
+                    this.totalResults = value;
+                }
+            }
+        }
+        
+        public class SpellingData {
+            
+            private string correctedQuery;
+            
+            private string htmlCorrectedQuery;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("correctedQuery")]
+            public virtual string CorrectedQuery {
+                get {
+                    return this.correctedQuery;
+                }
+                set {
+                    this.correctedQuery = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("htmlCorrectedQuery")]
+            public virtual string HtmlCorrectedQuery {
+                get {
+                    return this.htmlCorrectedQuery;
+                }
+                set {
+                    this.htmlCorrectedQuery = value;
+                }
+            }
         }
         
         public class UrlData {
@@ -675,91 +1203,164 @@ namespace Google.Apis.Customsearch.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"customsearch:v1\",\"name\":\"customsearch\"," +
-            "\"version\":\"v1\",\"title\":\"CustomSearch API\",\"description\":\"Lets you search over a " +
-            "website or collection of websites\",\"icons\":{\"x16\":\"http://www.google.com/images/" +
-            "icons/product/search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/s" +
-            "earch-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/customsearch/v1/" +
-            "using_rest.html\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/customsearch/\"" +
-            ",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respons" +
-            "e.\",\"default\":\"json\",\"enum\":[\"json\",\"atom\"],\"enumDescriptions\":[\"Responses with " +
-            "Content-Type of application/json\",\"Responses with Content-Type of application/at" +
-            "om+xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
-            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
-            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
-            "t and provides you with API access, quota, and reports. Required unless you prov" +
-            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
-            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
-            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
-            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
-            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
-            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
-            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
-            "string\",\"description\":\"IP address of the site where the request originates. Use " +
-            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"C" +
-            "ontext\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type\":\"array\",\"" +
-            "items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor\":{\"type\":\"" +
-            "string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"Promotion\":{" +
-            "\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"array\",\"item" +
-            "s\":{\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"string\"},\"title\":{\"type\":\"stri" +
-            "ng\"},\"url\":{\"type\":\"string\"}}}},\"displayLink\":{\"type\":\"string\"},\"image\":{\"type\":" +
-            "\"object\",\"properties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"t" +
-            "ype\":\"string\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"str" +
-            "ing\"},\"title\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"propert" +
-            "ies\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\":" +
-            "{\"type\":\"string\"},\"cx\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\"" +
-            ":\"string\"},\"googleHost\":{\"type\":\"string\"},\"inputEncoding\":{\"type\":\"string\"},\"lan" +
-            "guage\":{\"type\":\"string\"},\"outputEncoding\":{\"type\":\"string\"},\"safe\":{\"type\":\"stri" +
-            "ng\"},\"searchTerms\":{\"type\":\"string\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"typ" +
-            "e\":\"integer\",\"format\":\"int32\"},\"startPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"" +
-            "title\":{\"type\":\"string\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Re" +
-            "sult\":{\"id\":\"Result\",\"type\":\"object\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"" +
-            "displayLink\":{\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"typ" +
-            "e\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#result\"},\"link\":{\"t" +
-            "ype\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\"" +
-            ",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}}},\"snippet\":{\"t" +
-            "ype\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Search\",\"type\":\"objec" +
-            "t\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"array\",\"items\":{\"" +
-            "$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#search\"},\"promo" +
-            "tions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{\"type\":\"object\"," +
-            "\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}},\"url\":{\"type\":" +
-            "\"object\",\"properties\":{\"template\":{\"type\":\"string\",\"default\":\"https://www.google" +
-            "apis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&hr={la" +
-            "nguage?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl" +
-            "?}&cr={cr?}&googlehost={googleHost?}&alt=json\"},\"type\":{\"type\":\"string\",\"default" +
-            "\":\"application/json\"}}}}}},\"resources\":{\"cse\":{\"methods\":{\"list\":{\"id\":\"search.c" +
-            "se.list\",\"path\":\"v1\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata about th" +
-            "e search performed, metadata about the custom search engine used for the search," +
-            " and the search results.\",\"parameters\":{\"cr\":{\"type\":\"string\",\"description\":\"Cou" +
-            "ntry restrict(s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"Th" +
-            "e URL of a linked custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string" +
-            "\",\"description\":\"The custom search engine ID to scope this search query\",\"locati" +
-            "on\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls turning on or off" +
-            " the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"Turns off " +
-            "duplicate content filter.\",\"Turns on duplicate content filter.\"],\"location\":\"que" +
-            "ry\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end user.\",\"location\":\"" +
-            "query\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local Google domain to " +
-            "use to perform the search.\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The language restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg" +
-            "\",\"lang_ca\",\"lang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et" +
-            "\",\"lang_fi\",\"lang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw" +
-            "\",\"lang_ja\",\"lang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt" +
-            "\",\"lang_ro\",\"lang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh" +
-            "-CN\",\"lang_zh-TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"D" +
-            "anish\",\"German\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croat" +
-            "ian\",\"Hungarian\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\"" +
-            ",\"Lithuanian\",\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Ru" +
-            "ssian\",\"Slovak\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\"" +
-            ",\"Chinese (Traditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Number of search results to return\",\"default\":\"10\",\"location\":\"query\"},\"q\":{" +
-            "\"type\":\"string\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"safe\"" +
-            ":{\"type\":\"string\",\"description\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"h" +
-            "igh\",\"medium\",\"off\"],\"enumDescriptions\":[\"Enables highest level of safe search f" +
-            "iltering.\",\"Enables moderate safe search filtering.\",\"Disables safe search filte" +
-            "ring.\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The sort expr" +
-            "ession to apply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"string\",\"de" +
-            "scription\":\"The index of the first result to return\",\"location\":\"query\"}},\"param" +
-            "eterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"customsearch:v1" +
+            "\",\"name\":\"customsearch\",\"version\":\"v1\",\"revision\":\"20120214\",\"title\":\"CustomSear" +
+            "ch API\",\"description\":\"Lets you search over a website or collection of websites\"" +
+            ",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\"" +
+            ":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\"" +
+            ":\"http://code.google.com/apis/customsearch/v1/using_rest.html\",\"protocol\":\"rest\"" +
+            ",\"baseUrl\":\"https://www.googleapis.com/customsearch/\",\"basePath\":\"/customsearch/" +
+            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respon" +
+            "se.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with" +
+            " Content-Type of application/atom+xml\",\"Responses with Content-Type of applicati" +
+            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
+            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
+            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
+            "ct and provides you with API access, quota, and reports. Required unless you pro" +
+            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
+            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
+            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
+            "e breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
+            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
+            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
+            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
+            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
+            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"" +
+            "Context\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type\":\"array\"," +
+            "\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor\":{\"type\":" +
+            "\"string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"Promotion\":" +
+            "{\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"array\",\"ite" +
+            "ms\":{\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"string\"},\"title\":{\"type\":\"str" +
+            "ing\"},\"url\":{\"type\":\"string\"}}}},\"displayLink\":{\"type\":\"string\"},\"image\":{\"type\"" +
+            ":\"object\",\"properties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"" +
+            "type\":\"string\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"st" +
+            "ring\"},\"title\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"proper" +
+            "ties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\"" +
+            ":{\"type\":\"string\"},\"cx\":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"string\"},\"disa" +
+            "bleCnTwTranslation\":{\"type\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"excludeTer" +
+            "ms\":{\"type\":\"string\"},\"fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"g" +
+            "l\":{\"type\":\"string\"},\"googleHost\":{\"type\":\"string\"},\"highRange\":{\"type\":\"string\"" +
+            "},\"hl\":{\"type\":\"string\"},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\":\"string\"}" +
+            ",\"imgDominantColor\":{\"type\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"imgType\":{\"ty" +
+            "pe\":\"string\"},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"li" +
+            "nkSite\":{\"type\":\"string\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"type\":\"string" +
+            "\"},\"outputEncoding\":{\"type\":\"string\"},\"relatedSite\":{\"type\":\"string\"},\"rights\":{" +
+            "\"type\":\"string\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"searc" +
+            "hType\":{\"type\":\"string\"},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFilter\":{\"typ" +
+            "e\":\"string\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"i" +
+            "nt32\"},\"startPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"}" +
+            ",\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"Result\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"st" +
+            "ring\"},\"fileFormat\":{\"type\":\"string\"},\"formattedUrl\":{\"type\":\"string\"},\"htmlForm" +
+            "attedUrl\":{\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":" +
+            "\"string\"},\"image\":{\"type\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"integer\",\"f" +
+            "ormat\":\"int32\"},\"contextLink\":{\"type\":\"string\"},\"height\":{\"type\":\"integer\",\"form" +
+            "at\":\"int32\"},\"thumbnailHeight\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnailLin" +
+            "k\":{\"type\":\"string\"},\"thumbnailWidth\":{\"type\":\"integer\",\"format\":\"int32\"},\"width" +
+            "\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"default\":\"custo" +
+            "msearch#result\"},\"labels\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":" +
+            "{\"displayName\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"type\":\"str" +
+            "ing\"},\"mime\":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\"" +
+            ":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}" +
+            "}},\"snippet\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Searc" +
+            "h\",\"type\":\"object\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"a" +
+            "rray\",\"items\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch" +
+            "#search\"},\"promotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{" +
+            "\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}" +
+            "},\"searchInformation\":{\"type\":\"object\",\"properties\":{\"formattedSearchTime\":{\"typ" +
+            "e\":\"string\"},\"formattedTotalResults\":{\"type\":\"string\"},\"searchTime\":{\"type\":\"num" +
+            "ber\",\"format\":\"double\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"spe" +
+            "lling\":{\"type\":\"object\",\"properties\":{\"correctedQuery\":{\"type\":\"string\"},\"htmlCo" +
+            "rrectedQuery\":{\"type\":\"string\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template" +
+            "\":{\"type\":\"string\",\"default\":\"https://www.googleapis.com/customsearch/v1?q={sear" +
+            "chTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&c" +
+            "ref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHo" +
+            "st?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}" +
+            "&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={exc" +
+            "ludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&d" +
+            "ateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchTy" +
+            "pe={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType" +
+            "={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&al" +
+            "t=json\"},\"type\":{\"type\":\"string\",\"default\":\"application/json\"}}}}}},\"resources\":" +
+            "{\"cse\":{\"methods\":{\"list\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\"" +
+            ",\"description\":\"Returns metadata about the search performed, metadata about the " +
+            "custom search engine used for the search, and the search results.\",\"parameters\":" +
+            "{\"c2coff\":{\"type\":\"string\",\"description\":\"Turns off the translation between zh-C" +
+            "N and zh-TW.\",\"location\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":\"Country r" +
+            "estrict(s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL " +
+            "of a linked custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"des" +
+            "cription\":\"The custom search engine ID to scope this search query\",\"location\":\"q" +
+            "uery\"},\"dateRestrict\":{\"type\":\"string\",\"description\":\"Specifies all search resul" +
+            "ts are from a time period\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"string\",\"de" +
+            "scription\":\"Identifies a phrase that all documents in the search results must co" +
+            "ntain\",\"location\":\"query\"},\"excludeTerms\":{\"type\":\"string\",\"description\":\"Identi" +
+            "fies a word or phrase that should not appear in any documents in the search resu" +
+            "lts\",\"location\":\"query\"},\"fileType\":{\"type\":\"string\",\"description\":\"Returns imag" +
+            "es of a specified type. Some of the allowed values are: bmp, gif, png, jpg, svg," +
+            " pdf, ...\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls" +
+            " turning on or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescript" +
+            "ions\":[\"Turns off duplicate content filter.\",\"Turns on duplicate content filter." +
+            "\"],\"location\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end u" +
+            "ser.\",\"location\":\"query\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local" +
+            " Google domain to use to perform the search.\",\"location\":\"query\"},\"highRange\":{\"" +
+            "type\":\"string\",\"description\":\"Creates a range in form as_nlo value..as_nhi value" +
+            " and attempts to append it to query\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"" +
+            "description\":\"Sets the user interface language.\",\"location\":\"query\"},\"hq\":{\"type" +
+            "\":\"string\",\"description\":\"Appends the extra query terms to the query.\",\"location" +
+            "\":\"query\"},\"imgColorType\":{\"type\":\"string\",\"description\":\"Returns black and whit" +
+            "e, grayscale, or color images: mono, gray, and color.\",\"enum\":[\"color\",\"gray\",\"m" +
+            "ono\"],\"enumDescriptions\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"imgDominan" +
+            "tColor\":{\"type\":\"string\",\"description\":\"Returns images of a specific dominant co" +
+            "lor: yellow, green, teal, blue, purple, pink, white, gray, black and brown.\",\"en" +
+            "um\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yello" +
+            "w\"],\"enumDescriptions\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"t" +
+            "eal\",\"white\",\"yellow\"],\"location\":\"query\"},\"imgSize\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Returns images of a specified size, where size can be one of: icon, small, " +
+            "medium, large, xlarge, xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"large\",\"medium" +
+            "\",\"small\",\"xlarge\",\"xxlarge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large\",\"medium\"" +
+            ",\"small\",\"xlarge\",\"xxlarge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"string\",\"des" +
+            "cription\":\"Returns images of a type, which can be one of: clipart, face, lineart" +
+            ", news, and photo.\",\"enum\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"enumDesc" +
+            "riptions\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"location\":\"query\"},\"linkS" +
+            "ite\":{\"type\":\"string\",\"description\":\"Specifies that all search results should co" +
+            "ntain a link to a particular URL\",\"location\":\"query\"},\"lowRange\":{\"type\":\"string" +
+            "\",\"description\":\"Creates a range in form as_nlo value..as_nhi value and attempts" +
+            " to append it to query\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":" +
+            "\"The language restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"l" +
+            "ang_ca\",\"lang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"l" +
+            "ang_fi\",\"lang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"l" +
+            "ang_ja\",\"lang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"l" +
+            "ang_ro\",\"lang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\"" +
+            ",\"lang_zh-TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danis" +
+            "h\",\"German\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\"" +
+            ",\"Hungarian\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Li" +
+            "thuanian\",\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russia" +
+            "n\",\"Slovak\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Ch" +
+            "inese (Traditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"integer\",\"description\":" +
+            "\"Number of search results to return\",\"default\":\"10\",\"format\":\"uint32\",\"location\"" +
+            ":\"query\"},\"orTerms\":{\"type\":\"string\",\"description\":\"Provides additional search t" +
+            "erms to check for in a document, where each document in the search results must " +
+            "contain at least one of the additional search terms\",\"location\":\"query\"},\"q\":{\"t" +
+            "ype\":\"string\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"related" +
+            "Site\":{\"type\":\"string\",\"description\":\"Specifies that all search results should b" +
+            "e pages that are related to the specified URL\",\"location\":\"query\"},\"rights\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Filters based on licensing. Supported values include" +
+            ": cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived " +
+            "and combinations of these.\",\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enum" +
+            "Descriptions\":[\"Enables highest level of safe search filtering.\",\"Enables modera" +
+            "te safe search filtering.\",\"Disables safe search filtering.\"],\"location\":\"query\"" +
+            "},\"searchType\":{\"type\":\"string\",\"description\":\"Specifies the search type: image." +
+            "\",\"enum\":[\"image\"],\"enumDescriptions\":[\"custom image search\"],\"location\":\"query\"" +
+            "},\"siteSearch\":{\"type\":\"string\",\"description\":\"Specifies all search results shou" +
+            "ld be pages from a given site\",\"location\":\"query\"},\"siteSearchFilter\":{\"type\":\"s" +
+            "tring\",\"description\":\"Controls whether to include or exclude results from the si" +
+            "te named in the as_sitesearch parameter\",\"enum\":[\"e\",\"i\"],\"enumDescriptions\":[\"e" +
+            "xclude\",\"include\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"Th" +
+            "e sort expression to apply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"" +
+            "integer\",\"description\":\"The index of the first result to return\",\"format\":\"uint3" +
+            "2\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}" +
+            "";
         
         private const string Version = "v1";
         
@@ -844,6 +1445,126 @@ namespace Google.Apis.Customsearch.v1 {
             /// <summary>Turns on duplicate content filter.</summary>
             [Google.Apis.Util.StringValueAttribute("1")]
             Member,
+        }
+        
+        /// <summary>Returns black and white, grayscale, or color images: mono, gray, and color.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ImgColorType {
+            
+            /// <summary>color</summary>
+            [Google.Apis.Util.StringValueAttribute("color")]
+            Color,
+            
+            /// <summary>gray</summary>
+            [Google.Apis.Util.StringValueAttribute("gray")]
+            Gray,
+            
+            /// <summary>mono</summary>
+            [Google.Apis.Util.StringValueAttribute("mono")]
+            Mono,
+        }
+        
+        /// <summary>Returns images of a specific dominant color: yellow, green, teal, blue, purple, pink, white, gray, black and brown.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ImgDominantColor {
+            
+            /// <summary>black</summary>
+            [Google.Apis.Util.StringValueAttribute("black")]
+            Black,
+            
+            /// <summary>blue</summary>
+            [Google.Apis.Util.StringValueAttribute("blue")]
+            Blue,
+            
+            /// <summary>brown</summary>
+            [Google.Apis.Util.StringValueAttribute("brown")]
+            Brown,
+            
+            /// <summary>gray</summary>
+            [Google.Apis.Util.StringValueAttribute("gray")]
+            Gray,
+            
+            /// <summary>green</summary>
+            [Google.Apis.Util.StringValueAttribute("green")]
+            Green,
+            
+            /// <summary>pink</summary>
+            [Google.Apis.Util.StringValueAttribute("pink")]
+            Pink,
+            
+            /// <summary>purple</summary>
+            [Google.Apis.Util.StringValueAttribute("purple")]
+            Purple,
+            
+            /// <summary>teal</summary>
+            [Google.Apis.Util.StringValueAttribute("teal")]
+            Teal,
+            
+            /// <summary>white</summary>
+            [Google.Apis.Util.StringValueAttribute("white")]
+            White,
+            
+            /// <summary>yellow</summary>
+            [Google.Apis.Util.StringValueAttribute("yellow")]
+            Yellow,
+        }
+        
+        /// <summary>Returns images of a specified size, where size can be one of: icon, small, medium, large, xlarge, xxlarge, and huge.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ImgSize {
+            
+            /// <summary>huge</summary>
+            [Google.Apis.Util.StringValueAttribute("huge")]
+            Huge,
+            
+            /// <summary>icon</summary>
+            [Google.Apis.Util.StringValueAttribute("icon")]
+            Icon,
+            
+            /// <summary>large</summary>
+            [Google.Apis.Util.StringValueAttribute("large")]
+            Large,
+            
+            /// <summary>medium</summary>
+            [Google.Apis.Util.StringValueAttribute("medium")]
+            Medium,
+            
+            /// <summary>small</summary>
+            [Google.Apis.Util.StringValueAttribute("small")]
+            Small,
+            
+            /// <summary>xlarge</summary>
+            [Google.Apis.Util.StringValueAttribute("xlarge")]
+            Xlarge,
+            
+            /// <summary>xxlarge</summary>
+            [Google.Apis.Util.StringValueAttribute("xxlarge")]
+            Xxlarge,
+        }
+        
+        /// <summary>Returns images of a type, which can be one of: clipart, face, lineart, news, and photo.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum ImgType {
+            
+            /// <summary>clipart</summary>
+            [Google.Apis.Util.StringValueAttribute("clipart")]
+            Clipart,
+            
+            /// <summary>face</summary>
+            [Google.Apis.Util.StringValueAttribute("face")]
+            Face,
+            
+            /// <summary>lineart</summary>
+            [Google.Apis.Util.StringValueAttribute("lineart")]
+            Lineart,
+            
+            /// <summary>news</summary>
+            [Google.Apis.Util.StringValueAttribute("news")]
+            News,
+            
+            /// <summary>photo</summary>
+            [Google.Apis.Util.StringValueAttribute("photo")]
+            Photo,
         }
         
         /// <summary>The language restriction for the search results</summary>
@@ -1008,6 +1729,28 @@ namespace Google.Apis.Customsearch.v1 {
             Off,
         }
         
+        /// <summary>Specifies the search type: image.</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum SearchType {
+            
+            /// <summary>custom image search</summary>
+            [Google.Apis.Util.StringValueAttribute("image")]
+            Image,
+        }
+        
+        /// <summary>Controls whether to include or exclude results from the site named in the as_sitesearch parameter</summary>
+        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
+        public enum SiteSearchFilter {
+            
+            /// <summary>exclude</summary>
+            [Google.Apis.Util.StringValueAttribute("e")]
+            E,
+            
+            /// <summary>include</summary>
+            [Google.Apis.Util.StringValueAttribute("i")]
+            I,
+        }
+        
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
             
             private string oauth_token;
@@ -1016,11 +1759,21 @@ namespace Google.Apis.Customsearch.v1 {
             
             private string quotaUser;
             
+            private string c2coff;
+            
             private string cr;
             
             private string cref;
             
             private string cx;
+            
+            private string dateRestrict;
+            
+            private string exactTerms;
+            
+            private string excludeTerms;
+            
+            private string fileType;
             
             private Filter? filter;
             
@@ -1028,17 +1781,47 @@ namespace Google.Apis.Customsearch.v1 {
             
             private string googlehost;
             
+            private string highRange;
+            
+            private string hl;
+            
+            private string hq;
+            
+            private ImgColorType? imgColorType;
+            
+            private ImgDominantColor? imgDominantColor;
+            
+            private ImgSize? imgSize;
+            
+            private ImgType? imgType;
+            
+            private string linkSite;
+            
+            private string lowRange;
+            
             private Lr? lr;
             
-            private string num;
+            private System.Int64? num;
+            
+            private string orTerms;
             
             private string q;
             
+            private string relatedSite;
+            
+            private string rights;
+            
             private Safe? safe;
+            
+            private SearchType? searchType;
+            
+            private string siteSearch;
+            
+            private SiteSearchFilter? siteSearchFilter;
             
             private string sort;
             
-            private string start;
+            private System.Int64? start;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
                     base(service) {
@@ -1078,6 +1861,17 @@ namespace Google.Apis.Customsearch.v1 {
                 }
             }
             
+            /// <summary>Turns off the translation between zh-CN and zh-TW.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("c2coff")]
+            public virtual string C2coff {
+                get {
+                    return this.c2coff;
+                }
+                set {
+                    this.c2coff = value;
+                }
+            }
+            
             /// <summary>Country restrict(s).</summary>
             [Google.Apis.Util.RequestParameterAttribute("cr")]
             public virtual string Cr {
@@ -1108,6 +1902,50 @@ namespace Google.Apis.Customsearch.v1 {
                 }
                 set {
                     this.cx = value;
+                }
+            }
+            
+            /// <summary>Specifies all search results are from a time period</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dateRestrict")]
+            public virtual string DateRestrict {
+                get {
+                    return this.dateRestrict;
+                }
+                set {
+                    this.dateRestrict = value;
+                }
+            }
+            
+            /// <summary>Identifies a phrase that all documents in the search results must contain</summary>
+            [Google.Apis.Util.RequestParameterAttribute("exactTerms")]
+            public virtual string ExactTerms {
+                get {
+                    return this.exactTerms;
+                }
+                set {
+                    this.exactTerms = value;
+                }
+            }
+            
+            /// <summary>Identifies a word or phrase that should not appear in any documents in the search results</summary>
+            [Google.Apis.Util.RequestParameterAttribute("excludeTerms")]
+            public virtual string ExcludeTerms {
+                get {
+                    return this.excludeTerms;
+                }
+                set {
+                    this.excludeTerms = value;
+                }
+            }
+            
+            /// <summary>Returns images of a specified type. Some of the allowed values are: bmp, gif, png, jpg, svg, pdf, ...</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileType")]
+            public virtual string FileType {
+                get {
+                    return this.fileType;
+                }
+                set {
+                    this.fileType = value;
                 }
             }
             
@@ -1144,6 +1982,105 @@ namespace Google.Apis.Customsearch.v1 {
                 }
             }
             
+            /// <summary>Creates a range in form as_nlo value..as_nhi value and attempts to append it to query</summary>
+            [Google.Apis.Util.RequestParameterAttribute("highRange")]
+            public virtual string HighRange {
+                get {
+                    return this.highRange;
+                }
+                set {
+                    this.highRange = value;
+                }
+            }
+            
+            /// <summary>Sets the user interface language.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this.hl;
+                }
+                set {
+                    this.hl = value;
+                }
+            }
+            
+            /// <summary>Appends the extra query terms to the query.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("hq")]
+            public virtual string Hq {
+                get {
+                    return this.hq;
+                }
+                set {
+                    this.hq = value;
+                }
+            }
+            
+            /// <summary>Returns black and white, grayscale, or color images: mono, gray, and color.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("imgColorType")]
+            public virtual ImgColorType? ImgColorType {
+                get {
+                    return this.imgColorType;
+                }
+                set {
+                    this.imgColorType = value;
+                }
+            }
+            
+            /// <summary>Returns images of a specific dominant color: yellow, green, teal, blue, purple, pink, white, gray, black and brown.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("imgDominantColor")]
+            public virtual ImgDominantColor? ImgDominantColor {
+                get {
+                    return this.imgDominantColor;
+                }
+                set {
+                    this.imgDominantColor = value;
+                }
+            }
+            
+            /// <summary>Returns images of a specified size, where size can be one of: icon, small, medium, large, xlarge, xxlarge, and huge.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("imgSize")]
+            public virtual ImgSize? ImgSize {
+                get {
+                    return this.imgSize;
+                }
+                set {
+                    this.imgSize = value;
+                }
+            }
+            
+            /// <summary>Returns images of a type, which can be one of: clipart, face, lineart, news, and photo.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("imgType")]
+            public virtual ImgType? ImgType {
+                get {
+                    return this.imgType;
+                }
+                set {
+                    this.imgType = value;
+                }
+            }
+            
+            /// <summary>Specifies that all search results should contain a link to a particular URL</summary>
+            [Google.Apis.Util.RequestParameterAttribute("linkSite")]
+            public virtual string LinkSite {
+                get {
+                    return this.linkSite;
+                }
+                set {
+                    this.linkSite = value;
+                }
+            }
+            
+            /// <summary>Creates a range in form as_nlo value..as_nhi value and attempts to append it to query</summary>
+            [Google.Apis.Util.RequestParameterAttribute("lowRange")]
+            public virtual string LowRange {
+                get {
+                    return this.lowRange;
+                }
+                set {
+                    this.lowRange = value;
+                }
+            }
+            
             /// <summary>The language restriction for the search results</summary>
             [Google.Apis.Util.RequestParameterAttribute("lr")]
             public virtual Lr? Lr {
@@ -1157,12 +2094,23 @@ namespace Google.Apis.Customsearch.v1 {
             
             /// <summary>Number of search results to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("num")]
-            public virtual string Num {
+            public virtual System.Int64? Num {
                 get {
                     return this.num;
                 }
                 set {
                     this.num = value;
+                }
+            }
+            
+            /// <summary>Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms</summary>
+            [Google.Apis.Util.RequestParameterAttribute("orTerms")]
+            public virtual string OrTerms {
+                get {
+                    return this.orTerms;
+                }
+                set {
+                    this.orTerms = value;
                 }
             }
             
@@ -1174,6 +2122,28 @@ namespace Google.Apis.Customsearch.v1 {
                 }
             }
             
+            /// <summary>Specifies that all search results should be pages that are related to the specified URL</summary>
+            [Google.Apis.Util.RequestParameterAttribute("relatedSite")]
+            public virtual string RelatedSite {
+                get {
+                    return this.relatedSite;
+                }
+                set {
+                    this.relatedSite = value;
+                }
+            }
+            
+            /// <summary>Filters based on licensing. Supported values include: cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived and combinations of these.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("rights")]
+            public virtual string Rights {
+                get {
+                    return this.rights;
+                }
+                set {
+                    this.rights = value;
+                }
+            }
+            
             /// <summary>Search safety level</summary>
             [Google.Apis.Util.RequestParameterAttribute("safe")]
             public virtual Safe? Safe {
@@ -1182,6 +2152,39 @@ namespace Google.Apis.Customsearch.v1 {
                 }
                 set {
                     this.safe = value;
+                }
+            }
+            
+            /// <summary>Specifies the search type: image.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("searchType")]
+            public virtual SearchType? SearchType {
+                get {
+                    return this.searchType;
+                }
+                set {
+                    this.searchType = value;
+                }
+            }
+            
+            /// <summary>Specifies all search results should be pages from a given site</summary>
+            [Google.Apis.Util.RequestParameterAttribute("siteSearch")]
+            public virtual string SiteSearch {
+                get {
+                    return this.siteSearch;
+                }
+                set {
+                    this.siteSearch = value;
+                }
+            }
+            
+            /// <summary>Controls whether to include or exclude results from the site named in the as_sitesearch parameter</summary>
+            [Google.Apis.Util.RequestParameterAttribute("siteSearchFilter")]
+            public virtual SiteSearchFilter? SiteSearchFilter {
+                get {
+                    return this.siteSearchFilter;
+                }
+                set {
+                    this.siteSearchFilter = value;
                 }
             }
             
@@ -1198,7 +2201,7 @@ namespace Google.Apis.Customsearch.v1 {
             
             /// <summary>The index of the first result to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("start")]
-            public virtual string Start {
+            public virtual System.Int64? Start {
                 get {
                     return this.start;
                 }

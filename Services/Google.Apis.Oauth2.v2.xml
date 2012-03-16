@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Oauth2.v2</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Access_type">
+            <summary>The access type granted with this toke. It can be offline or online.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Audience">
+            <summary>Who is the intended audience for this token. In general the same as issued_to.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Email">
+            <summary>The email address of the user. Present only if the email scope is present in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Expires_in">
+            <summary>The expiry time of the token, as number of seconds left until expiry.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Issued_to">
+            <summary>To whom was the token issued to. In general the same as audience.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Scope">
+            <summary>The space separated list of scopes granted to this token.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.User_id">
+            <summary>The Gaia obfuscated user id.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Verified_email">
+            <summary>Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+    </members>
+</doc>

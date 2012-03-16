@@ -73,7 +73,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         private string etag;
         
-        private IList<AdClient> items;
+        private System.Collections.Generic.IList<AdClient> items;
         
         private string kind;
         
@@ -94,7 +94,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The ad clients returned in this list response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<AdClient> Items {
+        public virtual System.Collections.Generic.IList<AdClient> Items {
             get {
                 return this.items;
             }
@@ -213,7 +213,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         private string etag;
         
-        private IList<AdUnit> items;
+        private System.Collections.Generic.IList<AdUnit> items;
         
         private string kind;
         
@@ -234,7 +234,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The ad units returned in this list response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<AdUnit> Items {
+        public virtual System.Collections.Generic.IList<AdUnit> Items {
             get {
                 return this.items;
             }
@@ -278,19 +278,19 @@ namespace Google.Apis.Adsense.v1.Data {
     
     public class AdsenseReportsGenerateResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<System.String> averages;
+        private System.Collections.Generic.IList<string> averages;
         
-        private IList<AdsenseReportsGenerateResponse.HeadersData> headers;
+        private System.Collections.Generic.IList<AdsenseReportsGenerateResponse.HeadersData> headers;
         
         private string kind;
         
-        private IList<IList<System.String>> rows;
+        private System.Collections.Generic.IList<System.Collections.Generic.IList<string>> rows;
         
         private string totalMatchedRows;
         
-        private IList<System.String> totals;
+        private System.Collections.Generic.IList<string> totals;
         
-        private IList<System.String> warnings;
+        private System.Collections.Generic.IList<string> warnings;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -298,7 +298,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("averages")]
-        public virtual IList<System.String> Averages {
+        public virtual System.Collections.Generic.IList<string> Averages {
             get {
                 return this.averages;
             }
@@ -309,7 +309,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("headers")]
-        public virtual IList<AdsenseReportsGenerateResponse.HeadersData> Headers {
+        public virtual System.Collections.Generic.IList<AdsenseReportsGenerateResponse.HeadersData> Headers {
             get {
                 return this.headers;
             }
@@ -331,7 +331,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("rows")]
-        public virtual IList<IList<System.String>> Rows {
+        public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<string>> Rows {
             get {
                 return this.rows;
             }
@@ -353,7 +353,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totals")]
-        public virtual IList<System.String> Totals {
+        public virtual System.Collections.Generic.IList<string> Totals {
             get {
                 return this.totals;
             }
@@ -364,7 +364,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>Any warnings associated with generation of the report.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("warnings")]
-        public virtual IList<System.String> Warnings {
+        public virtual System.Collections.Generic.IList<string> Warnings {
             get {
                 return this.warnings;
             }
@@ -494,7 +494,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         private string etag;
         
-        private IList<CustomChannel> items;
+        private System.Collections.Generic.IList<CustomChannel> items;
         
         private string kind;
         
@@ -515,7 +515,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The custom channels returned in this list response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<CustomChannel> Items {
+        public virtual System.Collections.Generic.IList<CustomChannel> Items {
             get {
                 return this.items;
             }
@@ -603,7 +603,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         private string etag;
         
-        private IList<UrlChannel> items;
+        private System.Collections.Generic.IList<UrlChannel> items;
         
         private string kind;
         
@@ -624,7 +624,7 @@ namespace Google.Apis.Adsense.v1.Data {
         
         /// <summary>The URL channels returned in this list response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<UrlChannel> Items {
+        public virtual System.Collections.Generic.IList<UrlChannel> Items {
             get {
                 return this.items;
             }
@@ -680,191 +680,193 @@ namespace Google.Apis.Adsense.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"adsense:v1\",\"name\":\"adsense\",\"version\":" +
-            "\"v1\",\"title\":\"AdSense Management API\",\"description\":\"Gives AdSense publishers ac" +
-            "cess to their inventory and the ability to generate reports\",\"icons\":{\"x16\":\"htt" +
-            "p://www.google.com/images/icons/product/adsense-16.png\",\"x32\":\"http://www.google" +
-            ".com/images/icons/product/adsense-32.png\"},\"documentationLink\":\"https://code.goo" +
-            "gle.com/apis/adsense/management/\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\"" +
-            ":\"/adsense/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format " +
-            "for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respons" +
-            "es with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":" +
-            "\"string\",\"description\":\"Selector specifying which fields to include in a partial" +
-            " response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Y" +
-            "our API key identifies your project and provides you with API access, quota, and" +
-            " reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"" +
-            "oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current use" +
-            "r.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns r" +
-            "esponse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"}" +
-            ",\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes" +
-            " for server-side applications. Can be any arbitrary string assigned to a user, b" +
-            "ut should not exceed 40 characters. Overrides userIp if both are provided.\",\"loc" +
-            "ation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site " +
-            "where the request originates. Use this if you want to enforce per-user limits.\"," +
-            "\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/aut" +
-            "h/adsense\":{\"description\":\"View and manage your AdSense data\"},\"https://www.goog" +
-            "leapis.com/auth/adsense.readonly\":{\"description\":\"View your AdSense data\"}}}},\"s" +
-            "chemas\":{\"AdClient\":{\"id\":\"AdClient\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":" +
-            "\"string\",\"description\":\"Unique identifier of this ad client.\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Kind of resource this is, in this case adsense#adClient.\"," +
-            "\"default\":\"adsense#adClient\"},\"productCode\":{\"type\":\"string\",\"description\":\"This" +
-            " ad client\'s product code, which corresponds to the PRODUCT_CODE report dimensio" +
-            "n.\"},\"supportsReporting\":{\"type\":\"boolean\",\"description\":\"Whether this ad client" +
-            " supports being reported on.\"}}},\"AdClients\":{\"id\":\"AdClients\",\"type\":\"object\",\"" +
-            "properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for ca" +
-            "ching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The ad clients returned" +
-            " in this list response.\",\"items\":{\"$ref\":\"AdClient\"}},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Kind of list this is, in this case adsense#adClients.\",\"default\":\"a" +
-            "dsense#adClients\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation " +
-            "token used to page through ad clients. To retrieve the next page of results, set" +
-            " the next request\'s \\\"pageToken\\\" value to this.\"}}},\"AdUnit\":{\"id\":\"AdUnit\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"Identity code " +
-            "of this ad unit, not necessarily unique across ad clients.\"},\"id\":{\"type\":\"strin" +
-            "g\",\"description\":\"Unique identifier of this ad unit. This should be considered a" +
-            "n opaque identifier; it is not safe to rely on it being in any particular format" +
-            ".\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in this cas" +
-            "e adsense#adUnit.\",\"default\":\"adsense#adUnit\"},\"name\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of this ad unit.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of" +
-            " this ad unit. Possible values are:\\nNEW: Indicates that the ad unit was created" +
-            " within the last seven days and does not yet have any activity associated with i" +
-            "t.\\n\\nACTIVE: Indicates that there has been activity on this ad unit in the last" +
-            " seven days.\\n\\nINACTIVE: Indicates that there has been no activity on this ad u" +
-            "nit in the last seven days.\"}}},\"AdUnits\":{\"id\":\"AdUnits\",\"type\":\"object\",\"prope" +
-            "rties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching" +
-            " purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The ad units returned in thi" +
-            "s list response.\",\"items\":{\"$ref\":\"AdUnit\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Kind of list this is, in this case adsense#adUnits.\",\"default\":\"adsense#adUn" +
-            "its\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token used to" +
-            " page through ad units. To retrieve the next page of results, set the next reque" +
-            "st\'s \\\"pageToken\\\" value to this.\"}}},\"AdsenseReportsGenerateResponse\":{\"id\":\"Ad" +
-            "senseReportsGenerateResponse\",\"type\":\"object\",\"properties\":{\"averages\":{\"type\":\"" +
-            "array\",\"description\":\"The averages of the report. This is the same length as any" +
-            " other row in the report; cells corresponding to dimension columns are empty.\",\"" +
-            "items\":{\"type\":\"string\"}},\"headers\":{\"type\":\"array\",\"description\":\"The header in" +
-            "formation of the columns requested in the report. This is a list of headers; one" +
-            " for each dimension in the request, followed by one for each metric in the reque" +
-            "st.\",\"items\":{\"type\":\"object\",\"properties\":{\"currency\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The currency of this column. Only present if the header type is METRIC_CU" +
-            "RRENCY.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the header.\"},\"type" +
-            "\":{\"type\":\"string\",\"description\":\"The type of the header; one of DIMENSION, METR" +
-            "IC_TALLY, METRIC_RATIO, or METRIC_CURRENCY.\"}}}},\"kind\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Kind this is, in this case adsense#report.\",\"default\":\"adsense#report\"}," +
-            "\"rows\":{\"type\":\"array\",\"description\":\"The output rows of the report. Each row is" +
-            " a list of cells; one for each dimension in the request, followed by one for eac" +
-            "h metric in the request. The dimension cells contain strings, and the metric cel" +
-            "ls contain numbers.\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"totalM" +
-            "atchedRows\":{\"type\":\"string\",\"description\":\"The total number of rows matched by " +
-            "the report request. Fewer rows may be returned in the response due to being limi" +
-            "ted by the row count requested or the report row limit.\",\"format\":\"int64\"},\"tota" +
-            "ls\":{\"type\":\"array\",\"description\":\"The totals of the report. This is the same le" +
-            "ngth as any other row in the report; cells corresponding to dimension columns ar" +
-            "e empty.\",\"items\":{\"type\":\"string\"}},\"warnings\":{\"type\":\"array\",\"description\":\"A" +
-            "ny warnings associated with generation of the report.\",\"items\":{\"type\":\"string\"}" +
-            "}}},\"CustomChannel\":{\"id\":\"CustomChannel\",\"type\":\"object\",\"properties\":{\"code\":{" +
-            "\"type\":\"string\",\"description\":\"Code of this custom channel, not necessarily uniq" +
-            "ue across ad clients.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier o" +
-            "f this custom channel. This should be considered an opaque identifier; it is not" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adsense:v1\",\"na" +
+            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120305\",\"title\":\"AdSense Management A" +
+            "PI\",\"description\":\"Gives AdSense publishers access to their inventory and the ab" +
+            "ility to generate reports\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/pr" +
+            "oduct/adsense-16.png\",\"x32\":\"http://www.google.com/images/icons/product/adsense-" +
+            "32.png\"},\"documentationLink\":\"https://code.google.com/apis/adsense/management/\"," +
+            "\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/adsense/v1/\",\"basePath\":" +
+            "\"/adsense/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format f" +
+            "or the response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Re" +
+            "sponses with Content-Type of text/csv\",\"Responses with Content-Type of applicati" +
+            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
+            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
+            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
+            "ct and provides you with API access, quota, and reports. Required unless you pro" +
+            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
+            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
+            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
+            "e breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
+            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
+            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
+            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
+            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
+            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oau" +
+            "th2\":{\"scopes\":{\"https://www.googleapis.com/auth/adsense\":{\"description\":\"View a" +
+            "nd manage your AdSense data\"},\"https://www.googleapis.com/auth/adsense.readonly\"" +
+            ":{\"description\":\"View your AdSense data\"}}}},\"schemas\":{\"AdClient\":{\"id\":\"AdClie" +
+            "nt\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique id" +
+            "entifier of this ad client.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of res" +
+            "ource this is, in this case adsense#adClient.\",\"default\":\"adsense#adClient\"},\"pr" +
+            "oductCode\":{\"type\":\"string\",\"description\":\"This ad client\'s product code, which " +
+            "corresponds to the PRODUCT_CODE report dimension.\"},\"supportsReporting\":{\"type\":" +
+            "\"boolean\",\"description\":\"Whether this ad client supports being reported on.\"}}}," +
+            "\"AdClients\":{\"id\":\"AdClients\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
+            "ng\",\"description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\"" +
+            ":\"array\",\"description\":\"The ad clients returned in this list response.\",\"items\":" +
+            "{\"$ref\":\"AdClient\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is" +
+            ", in this case adsense#adClients.\",\"default\":\"adsense#adClients\"},\"nextPageToken" +
+            "\":{\"type\":\"string\",\"description\":\"Continuation token used to page through ad cli" +
+            "ents. To retrieve the next page of results, set the next request\'s \\\"pageToken\\\"" +
+            " value to this.\"}}},\"AdUnit\":{\"id\":\"AdUnit\",\"type\":\"object\",\"properties\":{\"code\"" +
+            ":{\"type\":\"string\",\"description\":\"Identity code of this ad unit, not necessarily " +
+            "unique across ad clients.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifi" +
+            "er of this ad unit. This should be considered an opaque identifier; it is not sa" +
+            "fe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Kind of resource this is, in this case adsense#adUnit.\",\"default\":\"ads" +
+            "ense#adUnit\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this ad unit.\"},\"st" +
+            "atus\":{\"type\":\"string\",\"description\":\"Status of this ad unit. Possible values ar" +
+            "e:\\nNEW: Indicates that the ad unit was created within the last seven days and d" +
+            "oes not yet have any activity associated with it.\\n\\nACTIVE: Indicates that ther" +
+            "e has been activity on this ad unit in the last seven days.\\n\\nINACTIVE: Indicat" +
+            "es that there has been no activity on this ad unit in the last seven days.\"}}},\"" +
+            "AdUnits\":{\"id\":\"AdUnits\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"" +
+            "description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\":\"arr" +
+            "ay\",\"description\":\"The ad units returned in this list response.\",\"items\":{\"$ref\"" +
+            ":\"AdUnit\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is, in this" +
+            " case adsense#adUnits.\",\"default\":\"adsense#adUnits\"},\"nextPageToken\":{\"type\":\"st" +
+            "ring\",\"description\":\"Continuation token used to page through ad units. To retrie" +
+            "ve the next page of results, set the next request\'s \\\"pageToken\\\" value to this." +
+            "\"}}},\"AdsenseReportsGenerateResponse\":{\"id\":\"AdsenseReportsGenerateResponse\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"averages\":{\"type\":\"array\",\"description\":\"The average" +
+            "s of the report. This is the same length as any other row in the report; cells c" +
+            "orresponding to dimension columns are empty.\",\"items\":{\"type\":\"string\"}},\"header" +
+            "s\":{\"type\":\"array\",\"description\":\"The header information of the columns requeste" +
+            "d in the report. This is a list of headers; one for each dimension in the reques" +
+            "t, followed by one for each metric in the request.\",\"items\":{\"type\":\"object\",\"pr" +
+            "operties\":{\"currency\":{\"type\":\"string\",\"description\":\"The currency of this colum" +
+            "n. Only present if the header type is METRIC_CURRENCY.\"},\"name\":{\"type\":\"string\"" +
+            ",\"description\":\"The name of the header.\"},\"type\":{\"type\":\"string\",\"description\":" +
+            "\"The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC" +
+            "_CURRENCY.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Kind this is, in this cas" +
+            "e adsense#report.\",\"default\":\"adsense#report\"},\"rows\":{\"type\":\"array\",\"descripti" +
+            "on\":\"The output rows of the report. Each row is a list of cells; one for each di" +
+            "mension in the request, followed by one for each metric in the request. The dime" +
+            "nsion cells contain strings, and the metric cells contain numbers.\",\"items\":{\"ty" +
+            "pe\":\"array\",\"items\":{\"type\":\"string\"}}},\"totalMatchedRows\":{\"type\":\"string\",\"des" +
+            "cription\":\"The total number of rows matched by the report request. Fewer rows ma" +
+            "y be returned in the response due to being limited by the row count requested or" +
+            " the report row limit.\",\"format\":\"int64\"},\"totals\":{\"type\":\"array\",\"description\"" +
+            ":\"The totals of the report. This is the same length as any other row in the repo" +
+            "rt; cells corresponding to dimension columns are empty.\",\"items\":{\"type\":\"string" +
+            "\"}},\"warnings\":{\"type\":\"array\",\"description\":\"Any warnings associated with gener" +
+            "ation of the report.\",\"items\":{\"type\":\"string\"}}}},\"CustomChannel\":{\"id\":\"Custom" +
+            "Channel\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"Co" +
+            "de of this custom channel, not necessarily unique across ad clients.\"},\"id\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Unique identifier of this custom channel. This shoul" +
+            "d be considered an opaque identifier; it is not safe to rely on it being in any " +
+            "particular format.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource thi" +
+            "s is, in this case adsense#customChannel.\",\"default\":\"adsense#customChannel\"},\"n" +
+            "ame\":{\"type\":\"string\",\"description\":\"Name of this custom channel.\"}}},\"CustomCha" +
+            "nnels\":{\"id\":\"CustomChannels\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
+            "ng\",\"description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\"" +
+            ":\"array\",\"description\":\"The custom channels returned in this list response.\",\"it" +
+            "ems\":{\"$ref\":\"CustomChannel\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of li" +
+            "st this is, in this case adsense#customChannels.\",\"default\":\"adsense#customChann" +
+            "els\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token used to" +
+            " page through custom channels. To retrieve the next page of results, set the nex" +
+            "t request\'s \\\"pageToken\\\" value to this.\"}}},\"UrlChannel\":{\"id\":\"UrlChannel\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifie" +
+            "r of this URL channel. This should be considered an opaque identifier; it is not" +
             " safe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Kind of resource this is, in this case adsense#customChannel.\",\"def" +
-            "ault\":\"adsense#customChannel\"},\"name\":{\"type\":\"string\",\"description\":\"Name of th" +
-            "is custom channel.\"}}},\"CustomChannels\":{\"id\":\"CustomChannels\",\"type\":\"object\",\"" +
-            "properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for ca" +
-            "ching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The custom channels ret" +
-            "urned in this list response.\",\"items\":{\"$ref\":\"CustomChannel\"}},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"Kind of list this is, in this case adsense#customChannels" +
-            ".\",\"default\":\"adsense#customChannels\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Continuation token used to page through custom channels. To retrieve the " +
-            "next page of results, set the next request\'s \\\"pageToken\\\" value to this.\"}}},\"U" +
-            "rlChannel\":{\"id\":\"UrlChannel\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string" +
-            "\",\"description\":\"Unique identifier of this URL channel. This should be considere" +
-            "d an opaque identifier; it is not safe to rely on it being in any particular for" +
-            "mat.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource this is, in this " +
-            "case adsense#urlChannel.\",\"default\":\"adsense#urlChannel\"},\"urlPattern\":{\"type\":\"" +
-            "string\",\"description\":\"URL Pattern of this URL channel. Does not include \\\"http:" +
-            "//\\\" or \\\"https://\\\". Example: www.example.com/home\"}}},\"UrlChannels\":{\"id\":\"Url" +
-            "Channels\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"E" +
-            "Tag of this response for caching purposes.\"},\"items\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"The URL channels returned in this list response.\",\"items\":{\"$ref\":\"UrlChanne" +
-            "l\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is, in this case a" +
-            "dsense#urlChannels.\",\"default\":\"adsense#urlChannels\"},\"nextPageToken\":{\"type\":\"s" +
-            "tring\",\"description\":\"Continuation token used to page through URL channels. To r" +
-            "etrieve the next page of results, set the next request\'s \\\"pageToken\\\" value to " +
-            "this.\"}}}},\"resources\":{\"adclients\":{\"methods\":{\"list\":{\"id\":\"adsense.adclients." +
-            "list\",\"path\":\"adclients\",\"httpMethod\":\"GET\",\"description\":\"List all ad clients i" +
-            "n this AdSense account.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The maximum number of ad clients to include in the response, used for pagin" +
-            "g.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageTo" +
-            "ken\":{\"type\":\"string\",\"description\":\"A continuation token, used to page through " +
-            "ad clients. To retrieve the next page, set this parameter to the value of \\\"next" +
-            "PageToken\\\" from the previous response.\",\"location\":\"query\"}},\"response\":{\"$ref\"" +
-            ":\"AdClients\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.g" +
-            "oogleapis.com/auth/adsense.readonly\"]}}},\"adunits\":{\"methods\":{\"list\":{\"id\":\"ads" +
-            "ense.adunits.list\",\"path\":\"adclients/{adClientId}/adunits\",\"httpMethod\":\"GET\",\"d" +
-            "escription\":\"List all ad units in this AdSense account.\",\"parameters\":{\"adClient" +
-            "Id\":{\"type\":\"string\",\"description\":\"Ad client for which to list ad units.\",\"requ" +
-            "ired\":true,\"location\":\"path\"},\"includeInactive\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether to include inactive ad units. Default: true.\",\"location\":\"query\"},\"maxR" +
-            "esults\":{\"type\":\"integer\",\"description\":\"The maximum number of ad units to inclu" +
-            "de in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"" +
-            "10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continu" +
-            "ation token, used to page through ad units. To retrieve the next page, set this " +
-            "parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"AdUnits\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth" +
-            "/adsense.readonly\"]}}},\"customchannels\":{\"methods\":{\"list\":{\"id\":\"adsense.custom" +
-            "channels.list\",\"path\":\"adclients/{adClientId}/customchannels\",\"httpMethod\":\"GET\"" +
-            ",\"description\":\"List all custom channels in this AdSense account.\",\"parameters\":" +
-            "{\"adClientId\":{\"type\":\"string\",\"description\":\"Ad client for which to list custom" +
-            " channels.\",\"required\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The maximum number of custom channels to include in the response, u" +
-            "sed for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000\",\"location\":\"qu" +
-            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token, used to " +
-            "page through custom channels. To retrieve the next page, set this parameter to t" +
-            "he value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"query\"}}," +
-            "\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"CustomChannels\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adsens" +
-            "e.readonly\"]}}},\"reports\":{\"methods\":{\"generate\":{\"id\":\"adsense.reports.generate" +
-            "\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Generate an AdSense report " +
-            "based on the report request sent in the query parameters. Returns the result as " +
-            "JSON; to retrieve output in CSV format specify \\\"alt=csv\\\" as a query parameter." +
-            "\",\"parameters\":{\"currency\":{\"type\":\"string\",\"description\":\"Optional currency to " +
-            "use when reporting on monetary metrics. Defaults to the account\'s currency if no" +
-            "t set.\",\"pattern\":\"[a-zA-Z]+\",\"location\":\"query\"},\"dimension\":{\"type\":\"string\",\"" +
-            "description\":\"Dimensions to base the report on.\",\"pattern\":\"[a-zA-Z_]+\",\"repeate" +
-            "d\":true,\"location\":\"query\"},\"endDate\":{\"type\":\"string\",\"description\":\"End of the" +
-            " date range to report on in \\\"YYYY-MM-DD\\\" format, inclusive.\",\"required\":true,\"" +
-            "pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"d" +
-            "escription\":\"Filters to be run on the report.\",\"pattern\":\"[a-zA-Z_]+(==|=@).+\",\"" +
-            "repeated\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"Opti" +
-            "onal locale to use for translating report output to a local language. Defaults t" +
-            "o \\\"en_US\\\" if not specified.\",\"pattern\":\"[a-zA-Z_]+\",\"location\":\"query\"},\"maxRe" +
-            "sults\":{\"type\":\"integer\",\"description\":\"The maximum number of rows of report dat" +
-            "a to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"50000\",\"location\":\"query" +
-            "\"},\"metric\":{\"type\":\"string\",\"description\":\"Numeric columns to include in the re" +
-            "port.\",\"pattern\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"sort\":{\"type\"" +
-            ":\"string\",\"description\":\"The name of a dimension or metric to sort the resulting" +
-            " report on, optionally prefixed with \\\"+\\\" to sort ascending or \\\"-\\\" to sort de" +
-            "scending. If no prefix is specified, the column is sorted ascending.\",\"pattern\":" +
-            "\"(\\\\+|-)?[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"startDate\":{\"type\":\"st" +
-            "ring\",\"description\":\"Start of the date range to report on in \\\"YYYY-MM-DD\\\" form" +
-            "at, inclusive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}\",\"location\":\"que" +
-            "ry\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the first row of rep" +
-            "ort data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"5000\",\"location\":" +
-            "\"query\"}},\"parameterOrder\":[\"startDate\",\"endDate\"],\"response\":{\"$ref\":\"AdsenseRe" +
-            "portsGenerateResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"htt" +
-            "ps://www.googleapis.com/auth/adsense.readonly\"]}}},\"urlchannels\":{\"methods\":{\"li" +
-            "st\":{\"id\":\"adsense.urlchannels.list\",\"path\":\"adclients/{adClientId}/urlchannels\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"List all URL channels in this AdSense account" +
-            ".\",\"parameters\":{\"adClientId\":{\"type\":\"string\",\"description\":\"Ad client for whic" +
-            "h to list URL channels.\",\"required\":true,\"location\":\"path\"},\"maxResults\":{\"type\"" +
-            ":\"integer\",\"description\":\"The maximum number of URL channels to include in the r" +
-            "esponse, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000\",\"loc" +
-            "ation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token" +
-            ", used to page through URL channels. To retrieve the next page, set this paramet" +
-            "er to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"qu" +
-            "ery\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"UrlChannels\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/ad" +
-            "sense.readonly\"]}}}}}";
+            "escription\":\"Kind of resource this is, in this case adsense#urlChannel.\",\"defaul" +
+            "t\":\"adsense#urlChannel\"},\"urlPattern\":{\"type\":\"string\",\"description\":\"URL Patter" +
+            "n of this URL channel. Does not include \\\"http://\\\" or \\\"https://\\\". Example: ww" +
+            "w.example.com/home\"}}},\"UrlChannels\":{\"id\":\"UrlChannels\",\"type\":\"object\",\"proper" +
+            "ties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching " +
+            "purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The URL channels returned in " +
+            "this list response.\",\"items\":{\"$ref\":\"UrlChannel\"}},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Kind of list this is, in this case adsense#urlChannels.\",\"default\":\"a" +
+            "dsense#urlChannels\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuatio" +
+            "n token used to page through URL channels. To retrieve the next page of results," +
+            " set the next request\'s \\\"pageToken\\\" value to this.\"}}}},\"resources\":{\"adclient" +
+            "s\":{\"methods\":{\"list\":{\"id\":\"adsense.adclients.list\",\"path\":\"adclients\",\"httpMet" +
+            "hod\":\"GET\",\"description\":\"List all ad clients in this AdSense account.\",\"paramet" +
+            "ers\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of ad cli" +
+            "ents to include in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0" +
+            "\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"A continuation token, used to page through ad clients. To retrieve the next " +
+            "page, set this parameter to the value of \\\"nextPageToken\\\" from the previous res" +
+            "ponse.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"AdClients\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readon" +
+            "ly\"]}}},\"adunits\":{\"methods\":{\"list\":{\"id\":\"adsense.adunits.list\",\"path\":\"adclie" +
+            "nts/{adClientId}/adunits\",\"httpMethod\":\"GET\",\"description\":\"List all ad units in" +
+            " the specified ad client for this AdSense account.\",\"parameters\":{\"adClientId\":{" +
+            "\"type\":\"string\",\"description\":\"Ad client for which to list ad units.\",\"required\"" +
+            ":true,\"location\":\"path\"},\"includeInactive\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her to include inactive ad units. Default: true.\",\"location\":\"query\"},\"maxResult" +
+            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of ad units to include in" +
+            " the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000" +
+            "\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation" +
+            " token, used to page through ad units. To retrieve the next page, set this param" +
+            "eter to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"AdUnits\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adse" +
+            "nse.readonly\"]}}},\"customchannels\":{\"methods\":{\"list\":{\"id\":\"adsense.customchann" +
+            "els.list\",\"path\":\"adclients/{adClientId}/customchannels\",\"httpMethod\":\"GET\",\"des" +
+            "cription\":\"List all custom channels in the specified ad client for this AdSense " +
+            "account.\",\"parameters\":{\"adClientId\":{\"type\":\"string\",\"description\":\"Ad client f" +
+            "or which to list custom channels.\",\"required\":true,\"location\":\"path\"},\"maxResult" +
+            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of custom channels to inc" +
+            "lude in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\"" +
+            ":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A conti" +
+            "nuation token, used to page through custom channels. To retrieve the next page, " +
+            "set this parameter to the value of \\\"nextPageToken\\\" from the previous response." +
+            "\",\"location\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"Custo" +
+            "mChannels\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.goo" +
+            "gleapis.com/auth/adsense.readonly\"]}}},\"reports\":{\"methods\":{\"generate\":{\"id\":\"a" +
+            "dsense.reports.generate\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Gene" +
+            "rate an AdSense report based on the report request sent in the query parameters." +
+            " Returns the result as JSON; to retrieve output in CSV format specify \\\"alt=csv\\" +
+            "\" as a query parameter.\",\"parameters\":{\"currency\":{\"type\":\"string\",\"description\"" +
+            ":\"Optional currency to use when reporting on monetary metrics. Defaults to the a" +
+            "ccount\'s currency if not set.\",\"pattern\":\"[a-zA-Z]+\",\"location\":\"query\"},\"dimens" +
+            "ion\":{\"type\":\"string\",\"description\":\"Dimensions to base the report on.\",\"pattern" +
+            "\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"endDate\":{\"type\":\"string\",\"d" +
+            "escription\":\"End of the date range to report on in \\\"YYYY-MM-DD\\\" format, inclus" +
+            "ive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}\",\"location\":\"query\"},\"filt" +
+            "er\":{\"type\":\"string\",\"description\":\"Filters to be run on the report.\",\"pattern\":" +
+            "\"[a-zA-Z_]+(==|=@).+\",\"repeated\":true,\"location\":\"query\"},\"locale\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Optional locale to use for translating report output to a loc" +
+            "al language. Defaults to \\\"en_US\\\" if not specified.\",\"pattern\":\"[a-zA-Z_]+\",\"lo" +
+            "cation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum numbe" +
+            "r of rows of report data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"5" +
+            "0000\",\"location\":\"query\"},\"metric\":{\"type\":\"string\",\"description\":\"Numeric colum" +
+            "ns to include in the report.\",\"pattern\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":" +
+            "\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The name of a dimension or metri" +
+            "c to sort the resulting report on, optionally prefixed with \\\"+\\\" to sort ascend" +
+            "ing or \\\"-\\\" to sort descending. If no prefix is specified, the column is sorted" +
+            " ascending.\",\"pattern\":\"(\\\\+|-)?[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"}," +
+            "\"startDate\":{\"type\":\"string\",\"description\":\"Start of the date range to report on" +
+            " in \\\"YYYY-MM-DD\\\" format, inclusive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-" +
+            "\\\\d{2}\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index " +
+            "of the first row of report data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maxi" +
+            "mum\":\"5000\",\"location\":\"query\"}},\"parameterOrder\":[\"startDate\",\"endDate\"],\"respo" +
+            "nse\":{\"$ref\":\"AdsenseReportsGenerateResponse\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readonly\"]}}},\"urlch" +
+            "annels\":{\"methods\":{\"list\":{\"id\":\"adsense.urlchannels.list\",\"path\":\"adclients/{a" +
+            "dClientId}/urlchannels\",\"httpMethod\":\"GET\",\"description\":\"List all URL channels " +
+            "in the specified ad client for this AdSense account.\",\"parameters\":{\"adClientId\"" +
+            ":{\"type\":\"string\",\"description\":\"Ad client for which to list URL channels.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The" +
+            " maximum number of URL channels to include in the response, used for paging.\",\"f" +
+            "ormat\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{" +
+            "\"type\":\"string\",\"description\":\"A continuation token, used to page through URL ch" +
+            "annels. To retrieve the next page, set this parameter to the value of \\\"nextPage" +
+            "Token\\\" from the previous response.\",\"location\":\"query\"}},\"parameterOrder\":[\"adC" +
+            "lientId\"],\"response\":{\"$ref\":\"UrlChannels\"},\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readonly\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -1048,7 +1050,7 @@ namespace Google.Apis.Adsense.v1 {
             this.service = service;
         }
         
-        /// <summary>List all ad units in this AdSense account.</summary>
+        /// <summary>List all ad units in the specified ad client for this AdSense account.</summary>
         /// <param name="adClientId">Required - Ad client for which to list ad units.</param>
         public virtual ListRequest List(string adClientId) {
             return new ListRequest(service, adClientId);
@@ -1173,7 +1175,7 @@ namespace Google.Apis.Adsense.v1 {
             this.service = service;
         }
         
-        /// <summary>List all custom channels in this AdSense account.</summary>
+        /// <summary>List all custom channels in the specified ad client for this AdSense account.</summary>
         /// <param name="adClientId">Required - Ad client for which to list custom channels.</param>
         public virtual ListRequest List(string adClientId) {
             return new ListRequest(service, adClientId);
@@ -1487,7 +1489,7 @@ namespace Google.Apis.Adsense.v1 {
             this.service = service;
         }
         
-        /// <summary>List all URL channels in this AdSense account.</summary>
+        /// <summary>List all URL channels in the specified ad client for this AdSense account.</summary>
         /// <param name="adClientId">Required - Ad client for which to list URL channels.</param>
         public virtual ListRequest List(string adClientId) {
             return new ListRequest(service, adClientId);

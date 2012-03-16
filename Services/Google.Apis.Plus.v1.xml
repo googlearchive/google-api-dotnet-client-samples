@@ -25,6 +25,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.CrosspostSource">
             <summary>If this activity is a crosspost from another system, this property specifies the ID of the original activity.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.Geocode">
             <summary>Latitude and longitude where this activity occurred. Format is latitude followed by longitude, space separated.</summary>
         </member>
@@ -82,6 +85,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.Image">
             <summary>The image representation of the actor.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.Name">
+            <summary>An object representation of the individual components of name.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.Url">
             <summary>The link to the actor&apos;s Google profile.</summary>
         </member>
@@ -90,6 +96,15 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.ImageData.Url">
             <summary>The URL of the actor&apos;s profile photo. To re-size the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.</summary>
+        </member>
+        <member name="T:Google.Apis.Plus.v1.Data.Activity.ActorData.NameData">
+            <summary>An object representation of the individual components of name.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.NameData.FamilyName">
+            <summary>The family name (last name) of the actor.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Activity.ActorData.NameData.GivenName">
+            <summary>The given name (first name) of the actor.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Activity.ObjectData">
             <summary>The object of this activity.</summary>
@@ -246,6 +261,9 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ProviderData.Title">
             <summary>Name of the service provider.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.Id">
             <summary>The ID of this collection of activities.</summary>
         </member>
@@ -272,6 +290,9 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.Actor">
             <summary>The person who posted this comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Comment.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.Id">
             <summary>The ID of this comment.</summary>
@@ -335,6 +356,9 @@
              <summary>The object type of this comment. Possible values are:  
             - &quot;comment&quot; - A comment in reply to an activity.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.Id">
             <summary>The ID of this collection of comments.</summary>
         </member>
@@ -355,6 +379,9 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.Updated">
             <summary>The time at which this collection of comments was last updated. Formatted as an RFC 3339 timestamp.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.Items">
             <summary>The people in this page of results. Each item will include the id, displayName, image, and url for the person. To retrieve additional profile data, see the people.get method.</summary>
@@ -385,6 +412,9 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Emails">
             <summary>A list of email addresses for this person.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.Data.Person.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.Gender">
              <summary>The person&apos;s gender. Possible values are:  
@@ -553,6 +583,9 @@
         <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.PlusMe">
             <summary>Know who you are on Google</summary>
         </member>
+        <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.UserinfoEmail">
+            <summary>View your email address</summary>
+        </member>
         <member name="M:Google.Apis.Plus.v1.ActivitiesResource.Get(System.String)">
             <summary>Get an activity.</summary>
             <param name="activityId">Required - The ID of the activity to get.</param>
@@ -664,6 +697,15 @@
         <member name="F:Google.Apis.Plus.v1.CommentsResource.Alt.Json">
             <summary>Use JSON format</summary>
         </member>
+        <member name="T:Google.Apis.Plus.v1.CommentsResource.SortOrder">
+            <summary>The order in which to sort the list of comments.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.CommentsResource.SortOrder.Ascending">
+            <summary>Sort oldest comments first.</summary>
+        </member>
+        <member name="F:Google.Apis.Plus.v1.CommentsResource.SortOrder.Descending">
+            <summary>Sort newest comments first.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
@@ -696,6 +738,9 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.PageToken">
             <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.SortOrder">
+            <summary>The order in which to sort the list of comments.</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1.PeopleResource.Get(System.String)">
             <summary>Get a person&apos;s profile.</summary>

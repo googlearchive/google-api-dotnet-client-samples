@@ -16,7 +16,7 @@ namespace Google.Apis.Translate.v2.Data {
     
     public class DetectionsListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<DetectionsResource> detections;
+        private System.Collections.Generic.IList<DetectionsResource> detections;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -24,7 +24,7 @@ namespace Google.Apis.Translate.v2.Data {
         
         /// <summary>A detections contains detection results of several text</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("detections")]
-        public virtual IList<DetectionsResource> Detections {
+        public virtual System.Collections.Generic.IList<DetectionsResource> Detections {
             get {
                 return this.detections;
             }
@@ -101,7 +101,7 @@ namespace Google.Apis.Translate.v2.Data {
     
     public class LanguagesListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<LanguagesResource> languages;
+        private System.Collections.Generic.IList<LanguagesResource> languages;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -109,7 +109,7 @@ namespace Google.Apis.Translate.v2.Data {
         
         /// <summary>List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("languages")]
-        public virtual IList<LanguagesResource> Languages {
+        public virtual System.Collections.Generic.IList<LanguagesResource> Languages {
             get {
                 return this.languages;
             }
@@ -169,7 +169,7 @@ namespace Google.Apis.Translate.v2.Data {
     
     public class TranslationsListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<TranslationsResource> translations;
+        private System.Collections.Generic.IList<TranslationsResource> translations;
         
         private Google.Apis.Requests.RequestError error;
         
@@ -177,7 +177,7 @@ namespace Google.Apis.Translate.v2.Data {
         
         /// <summary>Translations contains list of translation results of given text</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("translations")]
-        public virtual IList<TranslationsResource> Translations {
+        public virtual System.Collections.Generic.IList<TranslationsResource> Translations {
             get {
                 return this.translations;
             }
@@ -249,74 +249,75 @@ namespace Google.Apis.Translate.v2 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"translate:v2\",\"name\":\"translate\",\"versi" +
-            "on\":\"v2\",\"title\":\"Translate API\",\"description\":\"Lets you translate text from one" +
-            " language to another\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product" +
-            "/translate-16.png\",\"x32\":\"http://www.google.com/images/icons/product/translate-3" +
-            "2.png\"},\"documentationLink\":\"http://code.google.com/apis/language/translate/v2/u" +
-            "sing_rest.html\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/language/transl" +
-            "ate/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the re" +
-            "sponse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Co" +
-            "ntent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"" +
-            "description\":\"Selector specifying which fields to include in a partial response." +
-            "\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API ke" +
-            "y identifies your project and provides you with API access, quota, and reports. " +
-            "Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_toke" +
-            "n\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"locat" +
-            "ion\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response wi" +
-            "th indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUse" +
-            "r\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for serve" +
-            "r-side applications. Can be any arbitrary string assigned to a user, but should " +
-            "not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"qu" +
-            "ery\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the " +
-            "request originates. Use this if you want to enforce per-user limits.\",\"location\"" +
-            ":\"query\"}},\"features\":[\"dataWrapper\"],\"schemas\":{\"DetectionsListResponse\":{\"id\":" +
-            "\"DetectionsListResponse\",\"type\":\"object\",\"properties\":{\"detections\":{\"type\":\"arr" +
-            "ay\",\"description\":\"A detections contains detection results of several text\",\"ite" +
-            "ms\":{\"$ref\":\"DetectionsResource\"}}}},\"DetectionsResource\":{\"id\":\"DetectionsResou" +
-            "rce\",\"type\":\"array\",\"description\":\"An array of languages which we detect for the" +
-            " given text The most likely language list first.\",\"items\":{\"type\":\"object\",\"prop" +
-            "erties\":{\"confidence\":{\"type\":\"number\",\"description\":\"The confidence of the dete" +
-            "ction resul of this language.\",\"format\":\"float\"},\"isReliable\":{\"type\":\"boolean\"," +
-            "\"description\":\"A boolean to indicate is the language detection result reliable.\"" +
-            "},\"language\":{\"type\":\"string\",\"description\":\"The language we detect\"}}}},\"Langua" +
-            "gesListResponse\":{\"id\":\"LanguagesListResponse\",\"type\":\"object\",\"properties\":{\"la" +
-            "nguages\":{\"type\":\"array\",\"description\":\"List of source/target languages supporte" +
-            "d by the translation API. If target parameter is unspecified, the list is sorted" +
-            " by the ASCII code point order of the language code. If target parameter is spec" +
-            "ified, the list is sorted by the collation order of the language name in the tar" +
-            "get language.\",\"items\":{\"$ref\":\"LanguagesResource\"}}}},\"LanguagesResource\":{\"id\"" +
-            ":\"LanguagesResource\",\"type\":\"object\",\"properties\":{\"language\":{\"type\":\"string\",\"" +
-            "description\":\"The language code.\"},\"name\":{\"type\":\"string\",\"description\":\"The lo" +
-            "calized name of the language if target parameter is given.\"}}},\"TranslationsList" +
-            "Response\":{\"id\":\"TranslationsListResponse\",\"type\":\"object\",\"properties\":{\"transl" +
-            "ations\":{\"type\":\"array\",\"description\":\"Translations contains list of translation" +
-            " results of given text\",\"items\":{\"$ref\":\"TranslationsResource\"}}}},\"Translations" +
-            "Resource\":{\"id\":\"TranslationsResource\",\"type\":\"object\",\"properties\":{\"detectedSo" +
-            "urceLanguage\":{\"type\":\"string\",\"description\":\"Detected source language if source" +
-            " parameter is unspecified.\"},\"translatedText\":{\"type\":\"string\",\"description\":\"Th" +
-            "e translation.\"}}}},\"resources\":{\"detections\":{\"methods\":{\"list\":{\"id\":\"language" +
-            ".detections.list\",\"path\":\"v2/detect\",\"httpMethod\":\"GET\",\"description\":\"Detect th" +
-            "e language of text.\",\"parameters\":{\"q\":{\"type\":\"string\",\"description\":\"The text " +
-            "to detect\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"parameterOrder\"" +
-            ":[\"q\"],\"response\":{\"$ref\":\"DetectionsListResponse\"}}}},\"languages\":{\"methods\":{\"" +
-            "list\":{\"id\":\"language.languages.list\",\"path\":\"v2/languages\",\"httpMethod\":\"GET\",\"" +
-            "description\":\"List the source/target languages supported by the API\",\"parameters" +
-            "\":{\"target\":{\"type\":\"string\",\"description\":\"the language and collation in which " +
-            "the localized results should be returned\",\"location\":\"query\"}},\"response\":{\"$ref" +
-            "\":\"LanguagesListResponse\"}}}},\"translations\":{\"methods\":{\"list\":{\"id\":\"language." +
-            "translations.list\",\"path\":\"v2\",\"httpMethod\":\"GET\",\"description\":\"Returns text tr" +
-            "anslations from one language to another.\",\"parameters\":{\"cid\":{\"type\":\"string\",\"" +
-            "description\":\"The customization id for translate\",\"repeated\":true,\"location\":\"qu" +
-            "ery\"},\"format\":{\"type\":\"string\",\"description\":\"The format of the text\",\"enum\":[\"" +
-            "html\",\"text\"],\"enumDescriptions\":[\"Specifies the input is in HTML\",\"Specifies th" +
-            "e input is in plain textual format\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"d" +
-            "escription\":\"The text to translate\",\"required\":true,\"repeated\":true,\"location\":\"" +
-            "query\"},\"source\":{\"type\":\"string\",\"description\":\"The source language of the text" +
-            "\",\"location\":\"query\"},\"target\":{\"type\":\"string\",\"description\":\"The target langua" +
-            "ge into which the text should be translated\",\"required\":true,\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"q\",\"target\"],\"response\":{\"$ref\":\"TranslationsListResponse\"}" +
-            "}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"translate:v2\",\"" +
+            "name\":\"translate\",\"version\":\"v2\",\"revision\":\"20120112\",\"title\":\"Translate API\",\"" +
+            "description\":\"Lets you translate text from one language to another\",\"icons\":{\"x1" +
+            "6\":\"http://www.google.com/images/icons/product/translate-16.png\",\"x32\":\"http://w" +
+            "ww.google.com/images/icons/product/translate-32.png\"},\"documentationLink\":\"http:" +
+            "//code.google.com/apis/language/translate/v2/using_rest.html\",\"protocol\":\"rest\"," +
+            "\"baseUrl\":\"https://www.googleapis.com/language/translate/\",\"basePath\":\"/language" +
+            "/translate/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for" +
+            " the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses " +
+            "with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"st" +
+            "ring\",\"description\":\"Selector specifying which fields to include in a partial re" +
+            "sponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your" +
+            " API key identifies your project and provides you with API access, quota, and re" +
+            "ports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oau" +
+            "th_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"" +
+            ",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns resp" +
+            "onse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"q" +
+            "uotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes fo" +
+            "r server-side applications. Can be any arbitrary string assigned to a user, but " +
+            "should not exceed 40 characters. Overrides userIp if both are provided.\",\"locati" +
+            "on\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site whe" +
+            "re the request originates. Use this if you want to enforce per-user limits.\",\"lo" +
+            "cation\":\"query\"}},\"features\":[\"dataWrapper\"],\"schemas\":{\"DetectionsListResponse\"" +
+            ":{\"id\":\"DetectionsListResponse\",\"type\":\"object\",\"properties\":{\"detections\":{\"typ" +
+            "e\":\"array\",\"description\":\"A detections contains detection results of several tex" +
+            "t\",\"items\":{\"$ref\":\"DetectionsResource\"}}}},\"DetectionsResource\":{\"id\":\"Detectio" +
+            "nsResource\",\"type\":\"array\",\"description\":\"An array of languages which we detect " +
+            "for the given text The most likely language list first.\",\"items\":{\"type\":\"object" +
+            "\",\"properties\":{\"confidence\":{\"type\":\"number\",\"description\":\"The confidence of t" +
+            "he detection resul of this language.\",\"format\":\"float\"},\"isReliable\":{\"type\":\"bo" +
+            "olean\",\"description\":\"A boolean to indicate is the language detection result rel" +
+            "iable.\"},\"language\":{\"type\":\"string\",\"description\":\"The language we detect\"}}}}," +
+            "\"LanguagesListResponse\":{\"id\":\"LanguagesListResponse\",\"type\":\"object\",\"propertie" +
+            "s\":{\"languages\":{\"type\":\"array\",\"description\":\"List of source/target languages s" +
+            "upported by the translation API. If target parameter is unspecified, the list is" +
+            " sorted by the ASCII code point order of the language code. If target parameter " +
+            "is specified, the list is sorted by the collation order of the language name in " +
+            "the target language.\",\"items\":{\"$ref\":\"LanguagesResource\"}}}},\"LanguagesResource" +
+            "\":{\"id\":\"LanguagesResource\",\"type\":\"object\",\"properties\":{\"language\":{\"type\":\"st" +
+            "ring\",\"description\":\"The language code.\"},\"name\":{\"type\":\"string\",\"description\":" +
+            "\"The localized name of the language if target parameter is given.\"}}},\"Translati" +
+            "onsListResponse\":{\"id\":\"TranslationsListResponse\",\"type\":\"object\",\"properties\":{" +
+            "\"translations\":{\"type\":\"array\",\"description\":\"Translations contains list of tran" +
+            "slation results of given text\",\"items\":{\"$ref\":\"TranslationsResource\"}}}},\"Trans" +
+            "lationsResource\":{\"id\":\"TranslationsResource\",\"type\":\"object\",\"properties\":{\"det" +
+            "ectedSourceLanguage\":{\"type\":\"string\",\"description\":\"Detected source language if" +
+            " source parameter is unspecified.\"},\"translatedText\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The translation.\"}}}},\"resources\":{\"detections\":{\"methods\":{\"list\":{\"id\":\"l" +
+            "anguage.detections.list\",\"path\":\"v2/detect\",\"httpMethod\":\"GET\",\"description\":\"De" +
+            "tect the language of text.\",\"parameters\":{\"q\":{\"type\":\"string\",\"description\":\"Th" +
+            "e text to detect\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"paramete" +
+            "rOrder\":[\"q\"],\"response\":{\"$ref\":\"DetectionsListResponse\"}}}},\"languages\":{\"meth" +
+            "ods\":{\"list\":{\"id\":\"language.languages.list\",\"path\":\"v2/languages\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"List the source/target languages supported by the API\",\"par" +
+            "ameters\":{\"target\":{\"type\":\"string\",\"description\":\"the language and collation in" +
+            " which the localized results should be returned\",\"location\":\"query\"}},\"response\"" +
+            ":{\"$ref\":\"LanguagesListResponse\"}}}},\"translations\":{\"methods\":{\"list\":{\"id\":\"la" +
+            "nguage.translations.list\",\"path\":\"v2\",\"httpMethod\":\"GET\",\"description\":\"Returns " +
+            "text translations from one language to another.\",\"parameters\":{\"cid\":{\"type\":\"st" +
+            "ring\",\"description\":\"The customization id for translate\",\"repeated\":true,\"locati" +
+            "on\":\"query\"},\"format\":{\"type\":\"string\",\"description\":\"The format of the text\",\"e" +
+            "num\":[\"html\",\"text\"],\"enumDescriptions\":[\"Specifies the input is in HTML\",\"Speci" +
+            "fies the input is in plain textual format\"],\"location\":\"query\"},\"q\":{\"type\":\"str" +
+            "ing\",\"description\":\"The text to translate\",\"required\":true,\"repeated\":true,\"loca" +
+            "tion\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"The source language of t" +
+            "he text\",\"location\":\"query\"},\"target\":{\"type\":\"string\",\"description\":\"The target" +
+            " language into which the text should be translated\",\"required\":true,\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"q\",\"target\"],\"response\":{\"$ref\":\"TranslationsListRes" +
+            "ponse\"}}}}}}";
         
         private const string Version = "v2";
         

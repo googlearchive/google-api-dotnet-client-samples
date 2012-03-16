@@ -28,122 +28,124 @@ namespace Google.Apis.Analytics.v2_4 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"analytics:v2.4\",\"name\":\"analytics\",\"ver" +
-            "sion\":\"v2.4\",\"title\":\"Google Analytics API\",\"description\":\"View and manage your " +
-            "Google Analytics data\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/produc" +
-            "t/analytics-16.png\",\"x32\":\"http://www.google.com/images/icons/product/analytics-" +
-            "32.png\"},\"documentationLink\":\"http://code.google.com/apis/analytics\",\"labels\":[\"" +
-            "labs\"],\"protocol\":\"rest\",\"basePath\":\"/analytics/v2.4/\",\"parameters\":{\"alt\":{\"typ" +
-            "e\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom\",\"enum" +
-            "\":[\"atom\"],\"enumDescriptions\":[\"Responses with Content-Type of application/atom+" +
-            "xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spec" +
-            "ifying which fields to include in a partial response.\",\"location\":\"query\"},\"key\"" +
-            ":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project a" +
-            "nd provides you with API access, quota, and reports. Required unless you provide" +
-            " an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descri" +
-            "ption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line br" +
-            "eaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Available to use for quota purposes for server-side applications. Can b" +
-            "e any arbitrary string assigned to a user, but should not exceed 40 characters. " +
-            "Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"st" +
-            "ring\",\"description\":\"IP address of the site where the request originates. Use th" +
-            "is if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2" +
-            "\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"View an" +
-            "d manage your Google Analytics data\"},\"https://www.googleapis.com/auth/analytics" +
-            ".readonly\":{\"description\":\"View your Google Analytics data\"}}}},\"resources\":{\"ma" +
-            "nagement\":{\"resources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.managemen" +
-            "t.accounts.list\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Lists all accounts that a user has access to.\",\"parameters\":{\"max-results\":{\"typ" +
-            "e\":\"string\",\"description\":\"The maximum number of entries to include in this feed" +
-            ".\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index o" +
-            "f the first entity to retrieve. Use this parameter as a pagination mechanism alo" +
-            "ng with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"q" +
-            "uery\"}},\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googl" +
-            "eapis.com/auth/analytics.readonly\"]}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analyti" +
-            "cs.management.goals.list\",\"path\":\"management/accounts/{accountId}/webproperties/" +
-            "{webPropertyId}/profiles/{profileId}/goals\",\"httpMethod\":\"GET\",\"description\":\"Li" +
-            "sts goals that a user has access to.\",\"parameters\":{\"accountId\":{\"type\":\"string\"" +
-            ",\"description\":\"Account ID to retrieve web properties for. Can either be a speci" +
-            "fic account ID or \'~all\', which refers to all the accounts that user has access " +
-            "to.\",\"required\":true,\"pattern\":\"~all|[0-9]+\",\"location\":\"path\"},\"max-results\":{\"" +
-            "type\":\"string\",\"description\":\"The maximum number of entries to include in this f" +
-            "eed.\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID" +
-            " to retrieve web properties for. Can either be a specific profile ID or \'~all\', " +
-            "which refers to all the profiles that user has access to.\",\"required\":true,\"patt" +
-            "ern\":\"~all|[0-9]+\",\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"An index of the first entity to retrieve. Use this parameter as a paginatio" +
-            "n mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1" +
-            "\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web proper" +
-            "ty ID to retrieve web properties for. Can either be a specific web property ID o" +
-            "r \'~all\', which refers to all the web properties that user has access to.\",\"requ" +
-            "ired\":true,\"pattern\":\"~all|UA-[0-9]+-[0-9]+\",\"location\":\"path\"}},\"parameterOrder" +
-            "\":[\"accountId\",\"webPropertyId\",\"profileId\"],\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"prof" +
-            "iles\":{\"methods\":{\"list\":{\"id\":\"analytics.management.profiles.list\",\"path\":\"mana" +
-            "gement/accounts/{accountId}/webproperties/{webPropertyId}/profiles\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Lists profiles that a user has access to.\",\"parameters\":{\"" +
-            "accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve web properties" +
-            " for. Can either be a specific account ID or \'~all\', which refers to all the acc" +
-            "ounts that user has access to.\",\"required\":true,\"pattern\":\"~all|[0-9]+\",\"locatio" +
-            "n\":\"path\"},\"max-results\":{\"type\":\"string\",\"description\":\"The maximum number of e" +
-            "ntries to include in this feed.\",\"location\":\"query\"},\"start-index\":{\"type\":\"inte" +
-            "ger\",\"description\":\"An index of the first entity to retrieve. Use this parameter" +
-            " as a pagination mechanism along with the max-results parameter.\",\"format\":\"int3" +
-            "2\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Web property ID to retrieve web properties for. Can either be a specific we" +
-            "b property ID or \'~all\', which refers to all the web properties that user has ac" +
-            "cess to.\",\"required\":true,\"pattern\":\"~all|UA-[0-9]+-[0-9]+\",\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"s" +
-            "egments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.list\",\"path\":\"m" +
-            "anagement/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advanced segments th" +
-            "at a user has access to.\",\"parameters\":{\"max-results\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The maximum number of entries to include in this feed.\",\"location\":\"query\"" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v2.4\"" +
+            ",\"name\":\"analytics\",\"version\":\"v2.4\",\"revision\":\"20120227\",\"title\":\"Google Analy" +
+            "tics API\",\"description\":\"View and manage your Google Analytics data\",\"icons\":{\"x" +
+            "16\":\"http://www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://" +
+            "www.google.com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"http" +
+            "://code.google.com/apis/analytics\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
+            "leapis.com/analytics/v2.4/\",\"basePath\":\"/analytics/v2.4/\",\"parameters\":{\"alt\":{\"" +
+            "type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom\",\"e" +
+            "num\":[\"atom\"],\"enumDescriptions\":[\"Responses with Content-Type of application/at" +
+            "om+xml\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
+            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
+            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
+            "t and provides you with API access, quota, and reports. Required unless you prov" +
+            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
+            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
+            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
+            " breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
+            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
+            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
+            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
+            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
+            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oau" +
+            "th2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics\":{\"description\":\"View" +
+            " and manage your Google Analytics data\"},\"https://www.googleapis.com/auth/analyt" +
+            "ics.readonly\":{\"description\":\"View your Google Analytics data\"}}}},\"resources\":{" +
+            "\"data\":{\"methods\":{\"get\":{\"id\":\"analytics.data.get\",\"path\":\"data\",\"httpMethod\":\"" +
+            "GET\",\"description\":\"Returns Analytics report data for a profile.\",\"parameters\":{" +
+            "\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-separated list of Analytics" +
+            " dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga:.+)?\",\"location\":\"query" +
+            "\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date for fetching report data." +
+            " All requests should specify an end date formatted as YYYY-MM-DD.\",\"required\":tr" +
+            "ue,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"filters\":{\"type\":" +
+            "\"string\",\"description\":\"A comma-separated list of dimension or metric filters to" +
+            " be applied to the report data.\",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"ids\":{\"t" +
+            "ype\":\"string\",\"description\":\"Unique table ID for retrieving report data. Table I" +
+            "D is of the form ga:XXXX, where XXXX is the Analytics profile ID.\",\"required\":tr" +
+            "ue,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The maximum number of entries to include in this feed.\",\"format\":\"in" +
+            "t32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\",\"description\":\"A comma-separ" +
+            "ated list of Analytics metrics. E.g., \'ga:visits,ga:pageviews\'. At least one met" +
+            "ric must be specified to retrieve a valid Analytics report.\",\"required\":true,\"pa" +
+            "ttern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"An " +
+            "Analytics advanced segment to be applied to the report data.\",\"location\":\"query\"" +
+            "},\"sort\":{\"type\":\"string\",\"description\":\"A comma-separated list of dimensions or" +
+            " metrics that determine the sort order for the report data.\",\"pattern\":\"(-)?ga:." +
+            "+\",\"location\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start date f" +
+            "or fetching report data. All requests should specify a start date formatted as Y" +
+            "YYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"q" +
+            "uery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first enti" +
+            "ty to retrieve. Use this parameter as a pagination mechanism along with the max-" +
+            "results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"paramet" +
+            "erOrder\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"scopes\":[\"https://www.google" +
+            "apis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}" +
+            "},\"management\":{\"resources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.mana" +
+            "gement.accounts.list\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"descripti" +
+            "on\":\"Lists all accounts to which the user has access.\",\"parameters\":{\"max-result" +
+            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of accounts to include in" +
+            " this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"int" +
+            "eger\",\"description\":\"An index of the first account to retrieve. Use this paramet" +
+            "er as a pagination mechanism along with the max-results parameter.\",\"format\":\"in" +
+            "t32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"goals\":{" +
+            "\"methods\":{\"list\":{\"id\":\"analytics.management.goals.list\",\"path\":\"management/acc" +
+            "ounts/{accountId}/webproperties/{webPropertyId}/profiles/{profileId}/goals\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Lists goals to which the user has access.\",\"parame" +
+            "ters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve goals " +
+            "for. Can either be a specific account ID or \'~all\', which refers to all the acco" +
+            "unts that user has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":" +
+            "{\"type\":\"integer\",\"description\":\"The maximum number of goals to include in this " +
+            "response.\",\"format\":\"int32\",\"location\":\"query\"},\"profileId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Profile ID to retrieve goals for. Can either be a specific profile I" +
+            "D or \'~all\', which refers to all the profiles that user has access to.\",\"require" +
+            "d\":true,\"location\":\"path\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An ind" +
+            "ex of the first goal to retrieve. Use this parameter as a pagination mechanism a" +
+            "long with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":" +
+            "\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to retr" +
+            "ieve goals for. Can either be a specific web property ID or \'~all\', which refers" +
+            " to all the web properties that user has access to.\",\"required\":true,\"location\":" +
+            "\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\",\"profileId\"],\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analy" +
+            "tics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"analytics.management.pro" +
+            "files.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropertyId" +
+            "}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profiles to which the user h" +
+            "as access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID" +
+            " for the profiles to retrieve. Can either be a specific account ID or \'~all\', wh" +
+            "ich refers to all the accounts to which the user has access.\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum numb" +
+            "er of profiles to include in this response.\",\"format\":\"int32\",\"location\":\"query\"" +
             "},\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to" +
             " retrieve. Use this parameter as a pagination mechanism along with the max-resul" +
-            "ts parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analyt" +
-            "ics.readonly\"]}}},\"webproperties\":{\"methods\":{\"list\":{\"id\":\"analytics.management" +
-            ".webproperties.list\",\"path\":\"management/accounts/{accountId}/webproperties\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Lists web properties that a user has access to.\",\"" +
-            "parameters\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to retrieve " +
-            "web properties for. Can either be a specific account ID or \'~all\', which refers " +
-            "to all the accounts that user has access to.\",\"required\":true,\"pattern\":\"~all|[0" +
-            "-9]+\",\"location\":\"path\"},\"max-results\":{\"type\":\"string\",\"description\":\"The maxim" +
-            "um number of entries to include in this feed.\",\"location\":\"query\"},\"start-index\"" +
-            ":{\"type\":\"integer\",\"description\":\"An index of the first entity to retrieve. Use " +
-            "this parameter as a pagination mechanism along with the max-results parameter.\"," +
-            "\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId" +
-            "\"],\"scopes\":[\"https://www.googleapis.com/auth/analytics\",\"https://www.googleapis" +
-            ".com/auth/analytics.readonly\"]}}}}},\"report\":{\"methods\":{\"get\":{\"id\":\"analytics." +
-            "report.get\",\"path\":\"data\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics re" +
-            "port data for a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"descripti" +
-            "on\":\"A comma-separated list of Analytics dimensions. E.g., \'ga:browser,ga:city\'." +
-            "\",\"pattern\":\"ga:.+\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"description" +
-            "\":\"End date for fetching report data. All requests should specify an end date fo" +
-            "rmatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"" +
-            "location\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-separated l" +
-            "ist of dimension or metric filters to be applied to the report data.\",\"pattern\":" +
-            "\"ga:.+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table I" +
-            "D for retrieving report data. Table ID is of the form ga:XXXX, where XXXX is the" +
-            " Analytics profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"" +
-            "},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of entries t" +
-            "o include in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":" +
-            "\"string\",\"description\":\"A comma-separated list of Analytics metrics. E.g., \'ga:v" +
-            "isits,ga:pageviews\'. At least one metric must be specified to retrieve a valid A" +
-            "nalytics report.\",\"required\":true,\"pattern\":\"ga:.+\",\"location\":\"query\"},\"segment" +
-            "\":{\"type\":\"string\",\"description\":\"An Analytics advanced segment to be applied to" +
-            " the report data.\",\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"A " +
-            "comma-separated list of dimensions or metrics that determine the sort order for " +
-            "the report data.\",\"pattern\":\"(-)?ga:.+\",\"location\":\"query\"},\"start-date\":{\"type\"" +
-            ":\"string\",\"description\":\"Start date for fetching report data. All requests shoul" +
-            "d specify a start date formatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9" +
-            "]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"des" +
-            "cription\":\"An index of the first entity to retrieve. Use this parameter as a pag" +
-            "ination mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minim" +
-            "um\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"end-date\",\"start-date\",\"metrics\"" +
-            ",\"ids\"],\"scopes\":[\"https://www.googleapis.com/auth/analytics.readonly\"]}}}}}";
+            "ts parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId" +
+            "\":{\"type\":\"string\",\"description\":\"Web property ID for the profiles to retrieve. " +
+            "Can either be a specific web property ID or \'~all\', which refers to all the web " +
+            "properties to which the user has access.\",\"required\":true,\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"accountId\",\"webPropertyId\"],\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"seg" +
+            "ments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.list\",\"path\":\"man" +
+            "agement/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advanced segments to w" +
+            "hich the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"The maximum number of advanced segments to include in this response.\",\"f" +
+            "ormat\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\"" +
+            ":\"An index of the first advanced segment to retrieve. Use this parameter as a pa" +
+            "gination mechanism along with the max-results parameter.\",\"format\":\"int32\",\"mini" +
+            "mum\":\"1\",\"location\":\"query\"}},\"scopes\":[\"https://www.googleapis.com/auth/analyti" +
+            "cs\",\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties\":{\"m" +
+            "ethods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"manageme" +
+            "nt/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Lists w" +
+            "eb properties to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"" +
+            "string\",\"description\":\"Account ID to retrieve web properties for. Can either be " +
+            "a specific account ID or \'~all\', which refers to all the accounts that user has " +
+            "access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"" +
+            "description\":\"The maximum number of web properties to include in this response.\"" +
+            ",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"An index of the first entity to retrieve. Use this parameter as a paginatio" +
+            "n mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1" +
+            "\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"scopes\":[\"https://www.goo" +
+            "gleapis.com/auth/analytics\",\"https://www.googleapis.com/auth/analytics.readonly\"" +
+            "]}}}}}}}";
         
         private const string Version = "v2.4";
         
@@ -158,8 +160,8 @@ namespace Google.Apis.Analytics.v2_4 {
         protected AnalyticsService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
+            this.data = new DataResource(this);
             this.management = new ManagementResource(this);
-            this.report = new ReportResource(this);
         }
         
         public AnalyticsService() : 
@@ -214,651 +216,23 @@ namespace Google.Apis.Analytics.v2_4 {
         }
     }
     
-    public class ManagementResource {
+    public class DataResource {
         
         private Google.Apis.Discovery.IRequestProvider service;
         
-        private const string Resource = "management";
+        private const string Resource = "data";
         
-        private AccountsResource accounts;
-        
-        private GoalsResource goals;
-        
-        private ProfilesResource profiles;
-        
-        private SegmentsResource segments;
-        
-        private WebpropertiesResource webproperties;
-        
-        public ManagementResource(AnalyticsService service) {
-            this.service = service;
-            this.accounts = new AccountsResource(service);
-            this.goals = new GoalsResource(service);
-            this.profiles = new ProfilesResource(service);
-            this.segments = new SegmentsResource(service);
-            this.webproperties = new WebpropertiesResource(service);
-        }
-        
-        public virtual AccountsResource Accounts {
-            get {
-                return this.accounts;
-            }
-        }
-        
-        public virtual GoalsResource Goals {
-            get {
-                return this.goals;
-            }
-        }
-        
-        public virtual ProfilesResource Profiles {
-            get {
-                return this.profiles;
-            }
-        }
-        
-        public virtual SegmentsResource Segments {
-            get {
-                return this.segments;
-            }
-        }
-        
-        public virtual WebpropertiesResource Webproperties {
-            get {
-                return this.webproperties;
-            }
-        }
-        
-        public class AccountsResource {
-            
-            private Google.Apis.Discovery.IRequestProvider service;
-            
-            private const string Resource = "management.accounts";
-            
-            public AccountsResource(AnalyticsService service) {
-                this.service = service;
-            }
-            
-            /// <summary>Lists all accounts that a user has access to.</summary>
-            public virtual ListRequest List() {
-                return new ListRequest(service);
-            }
-            
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
-                
-                private string oauth_token;
-                
-                private System.Boolean? prettyPrint;
-                
-                private string quotaUser;
-                
-                private string maxResults;
-                
-                private System.Int64? startIndex;
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
-                        base(service) {
-                }
-                
-                /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-                public virtual string Oauth_token {
-                    get {
-                        return this.oauth_token;
-                    }
-                    set {
-                        this.oauth_token = value;
-                    }
-                }
-                
-                /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
-                    get {
-                        return this.prettyPrint;
-                    }
-                    set {
-                        this.prettyPrint = value;
-                    }
-                }
-                
-                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-                public virtual string QuotaUser {
-                    get {
-                        return this.quotaUser;
-                    }
-                    set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>The maximum number of entries to include in this feed.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual string MaxResults {
-                    get {
-                        return this.maxResults;
-                    }
-                    set {
-                        this.maxResults = value;
-                    }
-                }
-                
-                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
-                    get {
-                        return this.startIndex;
-                    }
-                    set {
-                        this.startIndex = value;
-                    }
-                }
-                
-                protected override string ResourcePath {
-                    get {
-                        return "management.accounts";
-                    }
-                }
-                
-                protected override string MethodName {
-                    get {
-                        return "list";
-                    }
-                }
-            }
-        }
-        
-        public class GoalsResource {
-            
-            private Google.Apis.Discovery.IRequestProvider service;
-            
-            private const string Resource = "management.goals";
-            
-            public GoalsResource(AnalyticsService service) {
-                this.service = service;
-            }
-            
-            /// <summary>Lists goals that a user has access to.</summary>
-            /// <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
-            /// <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID to retrieve web properties for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
-            /// <param name="profileId">Required - Must match pattern ~all|[0-9]+ - Profile ID to retrieve web properties for. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles that user has access to.</param>
-            public virtual ListRequest List(string accountId, string webPropertyId, string profileId) {
-                return new ListRequest(service, accountId, webPropertyId, profileId);
-            }
-            
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
-                
-                private string oauth_token;
-                
-                private System.Boolean? prettyPrint;
-                
-                private string quotaUser;
-                
-                private string accountId;
-                
-                private string maxResults;
-                
-                private string profileId;
-                
-                private System.Int64? startIndex;
-                
-                private string webPropertyId;
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string profileId) : 
-                        base(service) {
-                    this.accountId = accountId;
-                    this.webPropertyId = webPropertyId;
-                    this.profileId = profileId;
-                }
-                
-                /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-                public virtual string Oauth_token {
-                    get {
-                        return this.oauth_token;
-                    }
-                    set {
-                        this.oauth_token = value;
-                    }
-                }
-                
-                /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
-                    get {
-                        return this.prettyPrint;
-                    }
-                    set {
-                        this.prettyPrint = value;
-                    }
-                }
-                
-                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-                public virtual string QuotaUser {
-                    get {
-                        return this.quotaUser;
-                    }
-                    set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("accountId")]
-                public virtual string AccountId {
-                    get {
-                        return this.accountId;
-                    }
-                }
-                
-                /// <summary>The maximum number of entries to include in this feed.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual string MaxResults {
-                    get {
-                        return this.maxResults;
-                    }
-                    set {
-                        this.maxResults = value;
-                    }
-                }
-                
-                /// <summary>Profile ID to retrieve web properties for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("profileId")]
-                public virtual string ProfileId {
-                    get {
-                        return this.profileId;
-                    }
-                }
-                
-                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
-                    get {
-                        return this.startIndex;
-                    }
-                    set {
-                        this.startIndex = value;
-                    }
-                }
-                
-                /// <summary>Web property ID to retrieve web properties for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
-                public virtual string WebPropertyId {
-                    get {
-                        return this.webPropertyId;
-                    }
-                }
-                
-                protected override string ResourcePath {
-                    get {
-                        return "management.goals";
-                    }
-                }
-                
-                protected override string MethodName {
-                    get {
-                        return "list";
-                    }
-                }
-            }
-        }
-        
-        public class ProfilesResource {
-            
-            private Google.Apis.Discovery.IRequestProvider service;
-            
-            private const string Resource = "management.profiles";
-            
-            public ProfilesResource(AnalyticsService service) {
-                this.service = service;
-            }
-            
-            /// <summary>Lists profiles that a user has access to.</summary>
-            /// <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
-            /// <param name="webPropertyId">Required - Must match pattern ~all|UA-[0-9]+-[0-9]+ - Web property ID to retrieve web properties for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
-            public virtual ListRequest List(string accountId, string webPropertyId) {
-                return new ListRequest(service, accountId, webPropertyId);
-            }
-            
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
-                
-                private string oauth_token;
-                
-                private System.Boolean? prettyPrint;
-                
-                private string quotaUser;
-                
-                private string accountId;
-                
-                private string maxResults;
-                
-                private System.Int64? startIndex;
-                
-                private string webPropertyId;
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
-                        base(service) {
-                    this.accountId = accountId;
-                    this.webPropertyId = webPropertyId;
-                }
-                
-                /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-                public virtual string Oauth_token {
-                    get {
-                        return this.oauth_token;
-                    }
-                    set {
-                        this.oauth_token = value;
-                    }
-                }
-                
-                /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
-                    get {
-                        return this.prettyPrint;
-                    }
-                    set {
-                        this.prettyPrint = value;
-                    }
-                }
-                
-                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-                public virtual string QuotaUser {
-                    get {
-                        return this.quotaUser;
-                    }
-                    set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("accountId")]
-                public virtual string AccountId {
-                    get {
-                        return this.accountId;
-                    }
-                }
-                
-                /// <summary>The maximum number of entries to include in this feed.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual string MaxResults {
-                    get {
-                        return this.maxResults;
-                    }
-                    set {
-                        this.maxResults = value;
-                    }
-                }
-                
-                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
-                    get {
-                        return this.startIndex;
-                    }
-                    set {
-                        this.startIndex = value;
-                    }
-                }
-                
-                /// <summary>Web property ID to retrieve web properties for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
-                public virtual string WebPropertyId {
-                    get {
-                        return this.webPropertyId;
-                    }
-                }
-                
-                protected override string ResourcePath {
-                    get {
-                        return "management.profiles";
-                    }
-                }
-                
-                protected override string MethodName {
-                    get {
-                        return "list";
-                    }
-                }
-            }
-        }
-        
-        public class SegmentsResource {
-            
-            private Google.Apis.Discovery.IRequestProvider service;
-            
-            private const string Resource = "management.segments";
-            
-            public SegmentsResource(AnalyticsService service) {
-                this.service = service;
-            }
-            
-            /// <summary>Lists advanced segments that a user has access to.</summary>
-            public virtual ListRequest List() {
-                return new ListRequest(service);
-            }
-            
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
-                
-                private string oauth_token;
-                
-                private System.Boolean? prettyPrint;
-                
-                private string quotaUser;
-                
-                private string maxResults;
-                
-                private System.Int64? startIndex;
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
-                        base(service) {
-                }
-                
-                /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-                public virtual string Oauth_token {
-                    get {
-                        return this.oauth_token;
-                    }
-                    set {
-                        this.oauth_token = value;
-                    }
-                }
-                
-                /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
-                    get {
-                        return this.prettyPrint;
-                    }
-                    set {
-                        this.prettyPrint = value;
-                    }
-                }
-                
-                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-                public virtual string QuotaUser {
-                    get {
-                        return this.quotaUser;
-                    }
-                    set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>The maximum number of entries to include in this feed.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual string MaxResults {
-                    get {
-                        return this.maxResults;
-                    }
-                    set {
-                        this.maxResults = value;
-                    }
-                }
-                
-                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
-                    get {
-                        return this.startIndex;
-                    }
-                    set {
-                        this.startIndex = value;
-                    }
-                }
-                
-                protected override string ResourcePath {
-                    get {
-                        return "management.segments";
-                    }
-                }
-                
-                protected override string MethodName {
-                    get {
-                        return "list";
-                    }
-                }
-            }
-        }
-        
-        public class WebpropertiesResource {
-            
-            private Google.Apis.Discovery.IRequestProvider service;
-            
-            private const string Resource = "management.webproperties";
-            
-            public WebpropertiesResource(AnalyticsService service) {
-                this.service = service;
-            }
-            
-            /// <summary>Lists web properties that a user has access to.</summary>
-            /// <param name="accountId">Required - Must match pattern ~all|[0-9]+ - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
-            public virtual ListRequest List(string accountId) {
-                return new ListRequest(service, accountId);
-            }
-            
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
-                
-                private string oauth_token;
-                
-                private System.Boolean? prettyPrint;
-                
-                private string quotaUser;
-                
-                private string accountId;
-                
-                private string maxResults;
-                
-                private System.Int64? startIndex;
-                
-                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId) : 
-                        base(service) {
-                    this.accountId = accountId;
-                }
-                
-                /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-                public virtual string Oauth_token {
-                    get {
-                        return this.oauth_token;
-                    }
-                    set {
-                        this.oauth_token = value;
-                    }
-                }
-                
-                /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
-                    get {
-                        return this.prettyPrint;
-                    }
-                    set {
-                        this.prettyPrint = value;
-                    }
-                }
-                
-                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-                public virtual string QuotaUser {
-                    get {
-                        return this.quotaUser;
-                    }
-                    set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("accountId")]
-                public virtual string AccountId {
-                    get {
-                        return this.accountId;
-                    }
-                }
-                
-                /// <summary>The maximum number of entries to include in this feed.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual string MaxResults {
-                    get {
-                        return this.maxResults;
-                    }
-                    set {
-                        this.maxResults = value;
-                    }
-                }
-                
-                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
-                    get {
-                        return this.startIndex;
-                    }
-                    set {
-                        this.startIndex = value;
-                    }
-                }
-                
-                protected override string ResourcePath {
-                    get {
-                        return "management.webproperties";
-                    }
-                }
-                
-                protected override string MethodName {
-                    get {
-                        return "list";
-                    }
-                }
-            }
-        }
-    }
-    
-    public class ReportResource {
-        
-        private Google.Apis.Discovery.IRequestProvider service;
-        
-        private const string Resource = "report";
-        
-        public ReportResource(AnalyticsService service) {
+        public DataResource(AnalyticsService service) {
             this.service = service;
         }
         
         /// <summary>Returns Analytics report data for a profile.</summary>
-        /// <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching report data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
-        /// <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date for fetching report data. All requests should specify a start date formatted as YYYY-MM-DD.</param>
-        /// <param name="metrics">Required - Must match pattern ga:.+ - A comma-separated list of Analytics metrics. E.g., &apos;ga:visits,ga:pageviews&apos;. At least one metric must be specified to retrieve a valid Analytics report.</param>
         /// <param name="ids">Required - Must match pattern ga:[0-9]+ - Unique table ID for retrieving report data. Table ID is of the form ga:XXXX, where XXXX is the Analytics profile ID.</param>
-        public virtual GetRequest Get(string endDate, string startDate, string metrics, string ids) {
-            return new GetRequest(service, endDate, startDate, metrics, ids);
+        /// <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date for fetching report data. All requests should specify a start date formatted as YYYY-MM-DD.</param>
+        /// <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching report data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
+        /// <param name="metrics">Required - Must match pattern ga:.+ - A comma-separated list of Analytics metrics. E.g., &apos;ga:visits,ga:pageviews&apos;. At least one metric must be specified to retrieve a valid Analytics report.</param>
+        public virtual GetRequest Get(string ids, string startDate, string endDate, string metrics) {
+            return new GetRequest(service, ids, startDate, endDate, metrics);
         }
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<string> {
@@ -889,12 +263,12 @@ namespace Google.Apis.Analytics.v2_4 {
             
             private System.Int64? startIndex;
             
-            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string endDate, string startDate, string metrics, string ids) : 
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
                     base(service) {
-                this.endDate = endDate;
-                this.startDate = startDate;
-                this.metrics = metrics;
                 this.ids = ids;
+                this.startDate = startDate;
+                this.endDate = endDate;
+                this.metrics = metrics;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
@@ -1030,7 +404,7 @@ namespace Google.Apis.Analytics.v2_4 {
             
             protected override string ResourcePath {
                 get {
-                    return "report";
+                    return "data";
                 }
             }
             
@@ -1042,13 +416,641 @@ namespace Google.Apis.Analytics.v2_4 {
         }
     }
     
+    public class ManagementResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
+        private const string Resource = "management";
+        
+        private AccountsResource accounts;
+        
+        private GoalsResource goals;
+        
+        private ProfilesResource profiles;
+        
+        private SegmentsResource segments;
+        
+        private WebpropertiesResource webproperties;
+        
+        public ManagementResource(AnalyticsService service) {
+            this.service = service;
+            this.accounts = new AccountsResource(service);
+            this.goals = new GoalsResource(service);
+            this.profiles = new ProfilesResource(service);
+            this.segments = new SegmentsResource(service);
+            this.webproperties = new WebpropertiesResource(service);
+        }
+        
+        public virtual AccountsResource Accounts {
+            get {
+                return this.accounts;
+            }
+        }
+        
+        public virtual GoalsResource Goals {
+            get {
+                return this.goals;
+            }
+        }
+        
+        public virtual ProfilesResource Profiles {
+            get {
+                return this.profiles;
+            }
+        }
+        
+        public virtual SegmentsResource Segments {
+            get {
+                return this.segments;
+            }
+        }
+        
+        public virtual WebpropertiesResource Webproperties {
+            get {
+                return this.webproperties;
+            }
+        }
+        
+        public class AccountsResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "management.accounts";
+            
+            public AccountsResource(AnalyticsService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Lists all accounts to which the user has access.</summary>
+            public virtual ListRequest List() {
+                return new ListRequest(service);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string oauth_token;
+                
+                private System.Boolean? prettyPrint;
+                
+                private string quotaUser;
+                
+                private System.Int64? maxResults;
+                
+                private System.Int64? startIndex;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                        base(service) {
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this.oauth_token;
+                    }
+                    set {
+                        this.oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Boolean? PrettyPrint {
+                    get {
+                        return this.prettyPrint;
+                    }
+                    set {
+                        this.prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this.quotaUser;
+                    }
+                    set {
+                        this.quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The maximum number of accounts to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                public virtual System.Int64? MaxResults {
+                    get {
+                        return this.maxResults;
+                    }
+                    set {
+                        this.maxResults = value;
+                    }
+                }
+                
+                /// <summary>An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                public virtual System.Int64? StartIndex {
+                    get {
+                        return this.startIndex;
+                    }
+                    set {
+                        this.startIndex = value;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.accounts";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class GoalsResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "management.goals";
+            
+            public GoalsResource(AnalyticsService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Lists goals to which the user has access.</summary>
+            /// <param name="accountId">Required - Account ID to retrieve goals for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
+            /// <param name="webPropertyId">Required - Web property ID to retrieve goals for. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties that user has access to.</param>
+            /// <param name="profileId">Required - Profile ID to retrieve goals for. Can either be a specific profile ID or &apos;~all&apos;, which refers to all the profiles that user has access to.</param>
+            public virtual ListRequest List(string accountId, string webPropertyId, string profileId) {
+                return new ListRequest(service, accountId, webPropertyId, profileId);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string oauth_token;
+                
+                private System.Boolean? prettyPrint;
+                
+                private string quotaUser;
+                
+                private string accountId;
+                
+                private System.Int64? maxResults;
+                
+                private string profileId;
+                
+                private System.Int64? startIndex;
+                
+                private string webPropertyId;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string profileId) : 
+                        base(service) {
+                    this.accountId = accountId;
+                    this.webPropertyId = webPropertyId;
+                    this.profileId = profileId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this.oauth_token;
+                    }
+                    set {
+                        this.oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Boolean? PrettyPrint {
+                    get {
+                        return this.prettyPrint;
+                    }
+                    set {
+                        this.prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this.quotaUser;
+                    }
+                    set {
+                        this.quotaUser = value;
+                    }
+                }
+                
+                /// <summary>Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId")]
+                public virtual string AccountId {
+                    get {
+                        return this.accountId;
+                    }
+                }
+                
+                /// <summary>The maximum number of goals to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                public virtual System.Int64? MaxResults {
+                    get {
+                        return this.maxResults;
+                    }
+                    set {
+                        this.maxResults = value;
+                    }
+                }
+                
+                /// <summary>Profile ID to retrieve goals for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("profileId")]
+                public virtual string ProfileId {
+                    get {
+                        return this.profileId;
+                    }
+                }
+                
+                /// <summary>An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                public virtual System.Int64? StartIndex {
+                    get {
+                        return this.startIndex;
+                    }
+                    set {
+                        this.startIndex = value;
+                    }
+                }
+                
+                /// <summary>Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
+                public virtual string WebPropertyId {
+                    get {
+                        return this.webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.goals";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class ProfilesResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "management.profiles";
+            
+            public ProfilesResource(AnalyticsService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Lists profiles to which the user has access.</summary>
+            /// <param name="accountId">Required - Account ID for the profiles to retrieve. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts to which the user has access.</param>
+            /// <param name="webPropertyId">Required - Web property ID for the profiles to retrieve. Can either be a specific web property ID or &apos;~all&apos;, which refers to all the web properties to which the user has access.</param>
+            public virtual ListRequest List(string accountId, string webPropertyId) {
+                return new ListRequest(service, accountId, webPropertyId);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string oauth_token;
+                
+                private System.Boolean? prettyPrint;
+                
+                private string quotaUser;
+                
+                private string accountId;
+                
+                private System.Int64? maxResults;
+                
+                private System.Int64? startIndex;
+                
+                private string webPropertyId;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
+                        base(service) {
+                    this.accountId = accountId;
+                    this.webPropertyId = webPropertyId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this.oauth_token;
+                    }
+                    set {
+                        this.oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Boolean? PrettyPrint {
+                    get {
+                        return this.prettyPrint;
+                    }
+                    set {
+                        this.prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this.quotaUser;
+                    }
+                    set {
+                        this.quotaUser = value;
+                    }
+                }
+                
+                /// <summary>Account ID for the profiles to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId")]
+                public virtual string AccountId {
+                    get {
+                        return this.accountId;
+                    }
+                }
+                
+                /// <summary>The maximum number of profiles to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                public virtual System.Int64? MaxResults {
+                    get {
+                        return this.maxResults;
+                    }
+                    set {
+                        this.maxResults = value;
+                    }
+                }
+                
+                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                public virtual System.Int64? StartIndex {
+                    get {
+                        return this.startIndex;
+                    }
+                    set {
+                        this.startIndex = value;
+                    }
+                }
+                
+                /// <summary>Web property ID for the profiles to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
+                public virtual string WebPropertyId {
+                    get {
+                        return this.webPropertyId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.profiles";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class SegmentsResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "management.segments";
+            
+            public SegmentsResource(AnalyticsService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Lists advanced segments to which the user has access.</summary>
+            public virtual ListRequest List() {
+                return new ListRequest(service);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string oauth_token;
+                
+                private System.Boolean? prettyPrint;
+                
+                private string quotaUser;
+                
+                private System.Int64? maxResults;
+                
+                private System.Int64? startIndex;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                        base(service) {
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this.oauth_token;
+                    }
+                    set {
+                        this.oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Boolean? PrettyPrint {
+                    get {
+                        return this.prettyPrint;
+                    }
+                    set {
+                        this.prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this.quotaUser;
+                    }
+                    set {
+                        this.quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The maximum number of advanced segments to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                public virtual System.Int64? MaxResults {
+                    get {
+                        return this.maxResults;
+                    }
+                    set {
+                        this.maxResults = value;
+                    }
+                }
+                
+                /// <summary>An index of the first advanced segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                public virtual System.Int64? StartIndex {
+                    get {
+                        return this.startIndex;
+                    }
+                    set {
+                        this.startIndex = value;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.segments";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class WebpropertiesResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "management.webproperties";
+            
+            public WebpropertiesResource(AnalyticsService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Lists web properties to which the user has access.</summary>
+            /// <param name="accountId">Required - Account ID to retrieve web properties for. Can either be a specific account ID or &apos;~all&apos;, which refers to all the accounts that user has access to.</param>
+            public virtual ListRequest List(string accountId) {
+                return new ListRequest(service, accountId);
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
+                
+                private string oauth_token;
+                
+                private System.Boolean? prettyPrint;
+                
+                private string quotaUser;
+                
+                private string accountId;
+                
+                private System.Int64? maxResults;
+                
+                private System.Int64? startIndex;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId) : 
+                        base(service) {
+                    this.accountId = accountId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this.oauth_token;
+                    }
+                    set {
+                        this.oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Boolean? PrettyPrint {
+                    get {
+                        return this.prettyPrint;
+                    }
+                    set {
+                        this.prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this.quotaUser;
+                    }
+                    set {
+                        this.quotaUser = value;
+                    }
+                }
+                
+                /// <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("accountId")]
+                public virtual string AccountId {
+                    get {
+                        return this.accountId;
+                    }
+                }
+                
+                /// <summary>The maximum number of web properties to include in this response.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                public virtual System.Int64? MaxResults {
+                    get {
+                        return this.maxResults;
+                    }
+                    set {
+                        this.maxResults = value;
+                    }
+                }
+                
+                /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                public virtual System.Int64? StartIndex {
+                    get {
+                        return this.startIndex;
+                    }
+                    set {
+                        this.startIndex = value;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "management.webproperties";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+    }
+    
     public partial class AnalyticsService {
         
         private const string Resource = "";
         
-        private ManagementResource management;
+        private DataResource data;
         
-        private ReportResource report;
+        private ManagementResource management;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1056,15 +1058,15 @@ namespace Google.Apis.Analytics.v2_4 {
             }
         }
         
-        public virtual ManagementResource Management {
+        public virtual DataResource Data {
             get {
-                return this.management;
+                return this.data;
             }
         }
         
-        public virtual ReportResource Report {
+        public virtual ManagementResource Management {
             get {
-                return this.report;
+                return this.management;
             }
         }
     }

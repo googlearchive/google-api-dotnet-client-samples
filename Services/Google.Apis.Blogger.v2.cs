@@ -288,7 +288,7 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class BlogList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Blog> items;
+        private System.Collections.Generic.IList<Blog> items;
         
         private string kind;
         
@@ -298,7 +298,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         /// <summary>The list of Blogs this user has Authorship or Admin rights over.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Blog> Items {
+        public virtual System.Collections.Generic.IList<Blog> Items {
             get {
                 return this.items;
             }
@@ -347,6 +347,8 @@ namespace Google.Apis.Blogger.v2.Data {
         private string content;
         
         private string id;
+        
+        private Comment.InReplyToData inReplyTo;
         
         private string kind;
         
@@ -403,6 +405,17 @@ namespace Google.Apis.Blogger.v2.Data {
             }
             set {
                 this.id = value;
+            }
+        }
+        
+        /// <summary>Data about the comment this is in reply to.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("inReplyTo")]
+        public virtual Comment.InReplyToData InReplyTo {
+            get {
+                return this.inReplyTo;
+            }
+            set {
+                this.inReplyTo = value;
             }
         }
         
@@ -570,6 +583,23 @@ namespace Google.Apis.Blogger.v2.Data {
             }
         }
         
+        /// <summary>Data about the comment this is in reply to.</summary>
+        public class InReplyToData {
+            
+            private string id;
+            
+            /// <summary>The identified of the parent of this comment.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this.id;
+                }
+                set {
+                    this.id = value;
+                }
+            }
+        }
+        
         /// <summary>Data about the post containing this comment.</summary>
         public class PostData {
             
@@ -590,7 +620,7 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class CommentList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Comment> items;
+        private System.Collections.Generic.IList<Comment> items;
         
         private string kind;
         
@@ -604,7 +634,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         /// <summary>The List of Comments for a Post.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Comment> Items {
+        public virtual System.Collections.Generic.IList<Comment> Items {
             get {
                 return this.items;
             }
@@ -914,7 +944,7 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class PageList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Page> items;
+        private System.Collections.Generic.IList<Page> items;
         
         private string kind;
         
@@ -924,7 +954,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         /// <summary>The list of Pages for a Blog.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Page> Items {
+        public virtual System.Collections.Generic.IList<Page> Items {
             get {
                 return this.items;
             }
@@ -976,7 +1006,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         private string kind;
         
-        private IList<System.String> labels;
+        private System.Collections.Generic.IList<string> labels;
         
         private string published;
         
@@ -1051,7 +1081,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         /// <summary>The list of labels this Post was tagged with.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("labels")]
-        public virtual IList<System.String> Labels {
+        public virtual System.Collections.Generic.IList<string> Labels {
             get {
                 return this.labels;
             }
@@ -1268,7 +1298,7 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class PostList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Post> items;
+        private System.Collections.Generic.IList<Post> items;
         
         private string kind;
         
@@ -1282,7 +1312,7 @@ namespace Google.Apis.Blogger.v2.Data {
         
         /// <summary>The list of Posts for this Blog.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Post> Items {
+        public virtual System.Collections.Generic.IList<Post> Items {
             get {
                 return this.items;
             }
@@ -1561,213 +1591,220 @@ namespace Google.Apis.Blogger.v2 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"blogger:v2\",\"name\":\"blogger\",\"version\":" +
-            "\"v2\",\"title\":\"Blogger API\",\"description\":\"API for access to the data within Blog" +
-            "ger.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/blogger-16.png\"" +
-            ",\"x32\":\"http://www.google.com/images/icons/product/blogger-32.png\"},\"documentati" +
-            "onLink\":\"https://code.google.com/apis/blogger/docs/2.0/json/getting_started.html" +
-            "\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/blogger/v2/\",\"parameters\":{\"a" +
-            "lt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"js" +
-            "on\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicat" +
-            "ion/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector" +
-            " specifying which fields to include in a partial response.\",\"location\":\"query\"}," +
-            "\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proj" +
-            "ect and provides you with API access, quota, and reports. Required unless you pr" +
-            "ovide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"d" +
-            "escription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyP" +
-            "rint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and li" +
-            "ne breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"d" +
-            "escription\":\"Available to use for quota purposes for server-side applications. C" +
-            "an be any arbitrary string assigned to a user, but should not exceed 40 characte" +
-            "rs. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\"" +
-            ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
-            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oa" +
-            "uth2\":{\"scopes\":{\"https://www.googleapis.com/auth/blogger\":{\"description\":\"Manag" +
-            "e your Blogger account\"}}}},\"schemas\":{\"Blog\":{\"id\":\"Blog\",\"type\":\"object\",\"prop" +
-            "erties\":{\"description\":{\"type\":\"string\",\"description\":\"The description of this b" +
-            "log. This is displayed underneath the title.\"},\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The identifier for this resource.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"The kind of this entry. Always blogger#blog\",\"default\":\"blogger#" +
-            "blog\"},\"locale\":{\"type\":\"object\",\"description\":\"The locale this Blog is set to.\"" +
-            ",\"properties\":{\"country\":{\"type\":\"string\",\"description\":\"The country this blog\'s" +
-            " locale is set to.\"},\"language\":{\"type\":\"string\",\"description\":\"The language thi" +
-            "s blog is authored in.\"},\"variant\":{\"type\":\"string\",\"description\":\"The language " +
-            "variant this blog is authored in.\"}}},\"name\":{\"type\":\"string\",\"description\":\"The" +
-            " name of this blog. This is displayed as the title.\"},\"pages\":{\"type\":\"object\",\"" +
-            "description\":\"The container of pages in this blog.\",\"properties\":{\"selfLink\":{\"t" +
-            "ype\":\"string\",\"description\":\"The URL of the container for pages in this blog.\"}," +
-            "\"totalItems\":{\"type\":\"integer\",\"description\":\"The count of pages in this blog.\"," +
-            "\"format\":\"int32\"}}},\"posts\":{\"type\":\"object\",\"description\":\"The container of pos" +
-            "ts in this blog.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The U" +
-            "RL of the container for posts in this blog.\"},\"totalItems\":{\"type\":\"integer\",\"de" +
-            "scription\":\"The count of posts in this blog.\",\"format\":\"int32\"}}},\"published\":{\"" +
-            "type\":\"string\",\"description\":\"RFC 3339 date-time when this blog was published.\"," +
-            "\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST UR" +
-            "L to fetch this resource from.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3" +
-            "339 date-time when this blog was last updated.\",\"format\":\"date-time\"},\"url\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The URL where this blog is published.\"}}},\"BlogList\"" +
-            ":{\"id\":\"BlogList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"The list of Blogs this user has Authorship or Admin rights over.\",\"items\"" +
-            ":{\"$ref\":\"Blog\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity" +
-            ". Always blogger#blogList\",\"default\":\"blogger#blogList\"}}},\"Comment\":{\"id\":\"Comm" +
-            "ent\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"object\",\"description\":\"The " +
-            "author of this Comment.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier of " +
-            "the Comment creator.\",\"format\":\"int64\"},\"image\":{\"type\":\"object\",\"description\":\"" +
-            "The comment creator\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"description" +
-            "\":\"The comment creator\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"T" +
-            "he URL of the Comment creator\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"descr" +
-            "iption\":\"Data about the blog containing this comment.\",\"properties\":{\"id\":{\"type" +
-            "\":\"string\",\"description\":\"The identifier of the blog containing this comment.\",\"" +
-            "format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The actual content " +
-            "of the comment. May include HTML markup.\"},\"id\":{\"type\":\"string\",\"description\":\"" +
-            "The identifier for this resource.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"The kind of this entry. Always blogger#comment\",\"default\":\"blogger#c" +
-            "omment\"},\"post\":{\"type\":\"object\",\"description\":\"Data about the post containing t" +
-            "his comment.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier " +
-            "of the post containing this comment.\",\"format\":\"int64\"}}},\"published\":{\"type\":\"s" +
-            "tring\",\"description\":\"RFC 3339 date-time when this comment was published.\",\"form" +
-            "at\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to " +
-            "fetch this resource from.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 d" +
-            "ate-time when this comment was last updated.\",\"format\":\"date-time\"}}},\"CommentLi" +
-            "st\":{\"id\":\"CommentList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"d" +
-            "escription\":\"The List of Comments for a Post.\",\"items\":{\"$ref\":\"Comment\"}},\"kind" +
-            "\":{\"type\":\"string\",\"description\":\"The kind of this entry. Always blogger#comment" +
-            "List\",\"default\":\"blogger#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Pagination token to fetch the next page, if one exists.\"},\"prevPageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Pagination token to fetch the previous page, if" +
-            " one exists.\"}}},\"Page\":{\"id\":\"Page\",\"type\":\"object\",\"properties\":{\"author\":{\"ty" +
-            "pe\":\"object\",\"description\":\"The author of this Page.\",\"properties\":{\"displayName" +
-            "\":{\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"des" +
-            "cription\":\"The identifier of the Page creator.\",\"format\":\"int64\"},\"image\":{\"type" +
-            "\":\"object\",\"description\":\"The page author\'s avatar.\",\"properties\":{\"url\":{\"type\"" +
-            ":\"string\",\"description\":\"The page author\'s avatar URL.\"}}},\"url\":{\"type\":\"string" +
-            "\",\"description\":\"The URL of the Page creator\'s Profile page.\"}}},\"blog\":{\"type\":" +
-            "\"object\",\"description\":\"Data about the blog containing this Page.\",\"properties\":" +
-            "{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the blog containing this" +
-            " page.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The body c" +
-            "ontent of this Page, in HTML.\"},\"id\":{\"type\":\"string\",\"description\":\"The identif" +
-            "ier for this resource.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"The kind of this entity. Always blogger#page\",\"default\":\"blogger#page\"},\"publis" +
-            "hed\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when this Page was publi" +
-            "shed.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"description\":\"The API " +
-            "REST URL to fetch this resource from.\"},\"title\":{\"type\":\"string\",\"description\":\"" +
-            "The title of this entity. This is the name displayed in the Admin user interface" +
-            ".\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when this Page " +
-            "was last updated.\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"T" +
-            "he URL that this Page is displayed at.\"}}},\"PageList\":{\"id\":\"PageList\",\"type\":\"o" +
-            "bject\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of Pages fo" +
-            "r a Blog.\",\"items\":{\"$ref\":\"Page\"}},\"kind\":{\"type\":\"string\",\"description\":\"The k" +
-            "ind of this entity. Always blogger#pageList\",\"default\":\"blogger#pageList\"}}},\"Po" +
-            "st\":{\"id\":\"Post\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"object\",\"descri" +
-            "ption\":\"The author of this Post.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"" +
-            "description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The ident" +
-            "ifier of the Post creator.\",\"format\":\"int64\"},\"image\":{\"type\":\"object\",\"descript" +
-            "ion\":\"The Post author\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The Post author\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The" +
-            " URL of the Post creator\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"Data about the blog containing this Post.\",\"properties\":{\"id\":{\"type\":\"strin" +
-            "g\",\"description\":\"The identifier of the Blog that contains this Post.\",\"format\":" +
-            "\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The content of the Post. Ma" +
-            "y contain HTML markup.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier of " +
-            "this Post.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of" +
-            " this entity. Always blogger#post\",\"default\":\"blogger#post\"},\"labels\":{\"type\":\"a" +
-            "rray\",\"description\":\"The list of labels this Post was tagged with.\",\"items\":{\"ty" +
-            "pe\":\"string\"}},\"published\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time wh" +
-            "en this Post was published.\",\"format\":\"date-time\"},\"replies\":{\"type\":\"object\",\"d" +
-            "escription\":\"The container of comments on this Post.\",\"properties\":{\"selfLink\":{" +
-            "\"type\":\"string\",\"description\":\"The URL of the comments on this post.\"},\"totalIte" +
-            "ms\":{\"type\":\"string\",\"description\":\"The count of comments on this post.\",\"format" +
-            "\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to fetc" +
-            "h this resource from.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of the" +
-            " Post.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when this " +
-            "Post was last updated.\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The URL where this Post is displayed.\"}}},\"PostList\":{\"id\":\"PostList\",\"type\"" +
-            ":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of Posts" +
-            " for this Blog.\",\"items\":{\"$ref\":\"Post\"}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"The kind of this entity. Always blogger#postList\",\"default\":\"blogger#postList\"}" +
-            ",\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pagination token to fetch the n" +
-            "ext page, if one exists.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"Pagin" +
-            "ation token to fetch the previous page, if one exists.\"}}},\"User\":{\"id\":\"User\",\"" +
-            "type\":\"object\",\"properties\":{\"about\":{\"type\":\"string\",\"description\":\"Profile sum" +
-            "mary information.\"},\"blogs\":{\"type\":\"object\",\"description\":\"The container of blo" +
-            "gs for this user.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The " +
-            "URL of the Blogs for this user.\"}}},\"created\":{\"type\":\"string\",\"description\":\"Th" +
-            "e timestamp of when this profile was created, in seconds since epoch.\",\"format\":" +
-            "\"date-time\"},\"displayName\":{\"type\":\"string\",\"description\":\"The display name.\"},\"" +
-            "id\":{\"type\":\"string\",\"description\":\"The identifier for this User.\",\"format\":\"int" +
-            "64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blog" +
-            "ger#user\",\"default\":\"blogger#user\"},\"locale\":{\"type\":\"object\",\"description\":\"Thi" +
-            "s user\'s locale\",\"properties\":{\"country\":{\"type\":\"string\",\"description\":\"The use" +
-            "r\'s country setting.\"},\"language\":{\"type\":\"string\",\"description\":\"The user\'s lan" +
-            "guage setting.\"},\"variant\":{\"type\":\"string\",\"description\":\"The user\'s language v" +
-            "ariant setting.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL " +
-            "to fetch this resource from.\"},\"url\":{\"type\":\"string\",\"description\":\"The user\'s " +
-            "profile page.\"}}}},\"resources\":{\"blogs\":{\"methods\":{\"get\":{\"id\":\"blogger.blogs.g" +
-            "et\",\"path\":\"blogs/{blogId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one blog by i" +
-            "d.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"The ID of the blog to" +
-            " get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId\"],\"response" +
-            "\":{\"$ref\":\"Blog\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}},\"comme" +
-            "nts\":{\"methods\":{\"get\":{\"id\":\"blogger.comments.get\",\"path\":\"blogs/{blogId}/posts" +
-            "/{postId}/comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one comme" +
-            "nt by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog" +
-            " to containing the comment.\",\"required\":true,\"location\":\"path\"},\"commentId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of the post to fetch p" +
-            "osts from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"post" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"blogger:v2\",\"na" +
+            "me\":\"blogger\",\"version\":\"v2\",\"revision\":\"20111216\",\"title\":\"Blogger API\",\"descri" +
+            "ption\":\"API for access to the data within Blogger.\",\"icons\":{\"x16\":\"http://www.g" +
+            "oogle.com/images/icons/product/blogger-16.png\",\"x32\":\"http://www.google.com/imag" +
+            "es/icons/product/blogger-32.png\"},\"documentationLink\":\"https://code.google.com/a" +
+            "pis/blogger/docs/2.0/json/getting_started.html\",\"labels\":[\"limited_availability\"" +
+            "],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/blogger/v2/\",\"basePath" +
+            "\":\"/blogger/v2/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format" +
+            " for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respon" +
+            "ses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\"" +
+            ":\"string\",\"description\":\"Selector specifying which fields to include in a partia" +
+            "l response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. " +
+            "Your API key identifies your project and provides you with API access, quota, an" +
+            "d reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"}," +
+            "\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current us" +
+            "er.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns " +
+            "response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"" +
+            "},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purpose" +
+            "s for server-side applications. Can be any arbitrary string assigned to a user, " +
+            "but should not exceed 40 characters. Overrides userIp if both are provided.\",\"lo" +
+            "cation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site" +
+            " where the request originates. Use this if you want to enforce per-user limits.\"" +
+            ",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/au" +
+            "th/blogger\":{\"description\":\"Manage your Blogger account\"}}}},\"schemas\":{\"Blog\":{" +
+            "\"id\":\"Blog\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The description of this blog. This is displayed underneath the title.\"}," +
+            "\"id\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\",\"format\"" +
+            ":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entry. Always " +
+            "blogger#blog\",\"default\":\"blogger#blog\"},\"locale\":{\"type\":\"object\",\"description\":" +
+            "\"The locale this Blog is set to.\",\"properties\":{\"country\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The country this blog\'s locale is set to.\"},\"language\":{\"type\":\"string" +
+            "\",\"description\":\"The language this blog is authored in.\"},\"variant\":{\"type\":\"str" +
+            "ing\",\"description\":\"The language variant this blog is authored in.\"}}},\"name\":{\"" +
+            "type\":\"string\",\"description\":\"The name of this blog. This is displayed as the ti" +
+            "tle.\"},\"pages\":{\"type\":\"object\",\"description\":\"The container of pages in this bl" +
+            "og.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the con" +
+            "tainer for pages in this blog.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"T" +
+            "he count of pages in this blog.\",\"format\":\"int32\"}}},\"posts\":{\"type\":\"object\",\"d" +
+            "escription\":\"The container of posts in this blog.\",\"properties\":{\"selfLink\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The URL of the container for posts in this blog.\"},\"" +
+            "totalItems\":{\"type\":\"integer\",\"description\":\"The count of posts in this blog.\",\"" +
+            "format\":\"int32\"}}},\"published\":{\"type\":\"string\",\"description\":\"RFC 3339 date-tim" +
+            "e when this blog was published.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"strin" +
+            "g\",\"description\":\"The API REST URL to fetch this resource from.\"},\"updated\":{\"ty" +
+            "pe\":\"string\",\"description\":\"RFC 3339 date-time when this blog was last updated.\"" +
+            ",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL where this " +
+            "blog is published.\"}}},\"BlogList\":{\"id\":\"BlogList\",\"type\":\"object\",\"properties\":" +
+            "{\"items\":{\"type\":\"array\",\"description\":\"The list of Blogs this user has Authorsh" +
+            "ip or Admin rights over.\",\"items\":{\"$ref\":\"Blog\"}},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The kind of this entity. Always blogger#blogList\",\"default\":\"blogger#b" +
+            "logList\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"author\":{\"t" +
+            "ype\":\"object\",\"description\":\"The author of this Comment.\",\"properties\":{\"display" +
+            "Name\":{\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\"," +
+            "\"description\":\"The identifier of the Comment creator.\"},\"image\":{\"type\":\"object\"" +
+            ",\"description\":\"The comment creator\'s avatar.\",\"properties\":{\"url\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The comment creator\'s avatar URL.\"}}},\"url\":{\"type\":\"string\"," +
+            "\"description\":\"The URL of the Comment creator\'s Profile page.\"}}},\"blog\":{\"type\"" +
+            ":\"object\",\"description\":\"Data about the blog containing this comment.\",\"properti" +
+            "es\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the blog containing " +
+            "this comment.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The" +
+            " actual content of the comment. May include HTML markup.\"},\"id\":{\"type\":\"string\"" +
+            ",\"description\":\"The identifier for this resource.\",\"format\":\"int64\"},\"inReplyTo\"" +
+            ":{\"type\":\"object\",\"description\":\"Data about the comment this is in reply to.\",\"p" +
+            "roperties\":{\"id\":{\"type\":\"string\",\"description\":\"The identified of the parent of" +
+            " this comment.\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"description\":\"The k" +
+            "ind of this entry. Always blogger#comment\",\"default\":\"blogger#comment\"},\"post\":{" +
+            "\"type\":\"object\",\"description\":\"Data about the post containing this comment.\",\"pr" +
+            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the post conta" +
+            "ining this comment.\",\"format\":\"int64\"}}},\"published\":{\"type\":\"string\",\"descripti" +
+            "on\":\"RFC 3339 date-time when this comment was published.\",\"format\":\"date-time\"}," +
+            "\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this resour" +
+            "ce from.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when thi" +
+            "s comment was last updated.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"Commen" +
+            "tList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The " +
+            "List of Comments for a Post.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string" +
+            "\",\"description\":\"The kind of this entry. Always blogger#commentList\",\"default\":\"" +
+            "blogger#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pagination" +
+            " token to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":\"string\"" +
+            ",\"description\":\"Pagination token to fetch the previous page, if one exists.\"}}}," +
+            "\"Page\":{\"id\":\"Page\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"object\",\"des" +
+            "cription\":\"The author of this Page.\",\"properties\":{\"displayName\":{\"type\":\"string" +
+            "\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The id" +
+            "entifier of the Page creator.\"},\"image\":{\"type\":\"object\",\"description\":\"The page" +
+            " author\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The page " +
+            "author\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL of the Pa" +
+            "ge creator\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"description\":\"Data about" +
+            " the blog containing this Page.\",\"properties\":{\"id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The identifier of the blog containing this page.\",\"format\":\"int64\"}}},\"conte" +
+            "nt\":{\"type\":\"string\",\"description\":\"The body content of this Page, in HTML.\"},\"i" +
+            "d\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\",\"format\":\"" +
+            "int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always b" +
+            "logger#page\",\"default\":\"blogger#page\"},\"published\":{\"type\":\"string\",\"description" +
+            "\":\"RFC 3339 date-time when this Page was published.\",\"format\":\"date-time\"},\"self" +
+            "Link\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this resource fr" +
+            "om.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this entity. This is " +
+            "the name displayed in the Admin user interface.\"},\"updated\":{\"type\":\"string\",\"de" +
+            "scription\":\"RFC 3339 date-time when this Page was last updated.\",\"format\":\"date-" +
+            "time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL that this Page is displayed" +
+            " at.\"}}},\"PageList\":{\"id\":\"PageList\",\"type\":\"object\",\"properties\":{\"items\":{\"typ" +
+            "e\":\"array\",\"description\":\"The list of Pages for a Blog.\",\"items\":{\"$ref\":\"Page\"}" +
+            "},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blogger" +
+            "#pageList\",\"default\":\"blogger#pageList\"}}},\"Post\":{\"id\":\"Post\",\"type\":\"object\",\"" +
+            "properties\":{\"author\":{\"type\":\"object\",\"description\":\"The author of this Post.\"," +
+            "\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The display name.\"}," +
+            "\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Post creator.\"},\"imag" +
+            "e\":{\"type\":\"object\",\"description\":\"The Post author\'s avatar.\",\"properties\":{\"url" +
+            "\":{\"type\":\"string\",\"description\":\"The Post author\'s avatar URL.\"}}},\"url\":{\"type" +
+            "\":\"string\",\"description\":\"The URL of the Post creator\'s Profile page.\"}}},\"blog\"" +
+            ":{\"type\":\"object\",\"description\":\"Data about the blog containing this Post.\",\"pro" +
+            "perties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Blog that c" +
+            "ontains this Post.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\"" +
+            ":\"The content of the Post. May contain HTML markup.\"},\"id\":{\"type\":\"string\",\"des" +
+            "cription\":\"The identifier of this Post.\",\"format\":\"int64\"},\"kind\":{\"type\":\"strin" +
+            "g\",\"description\":\"The kind of this entity. Always blogger#post\",\"default\":\"blogg" +
+            "er#post\"},\"labels\":{\"type\":\"array\",\"description\":\"The list of labels this Post w" +
+            "as tagged with.\",\"items\":{\"type\":\"string\"}},\"published\":{\"type\":\"string\",\"descri" +
+            "ption\":\"RFC 3339 date-time when this Post was published.\",\"format\":\"date-time\"}," +
+            "\"replies\":{\"type\":\"object\",\"description\":\"The container of comments on this Post" +
+            ".\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the comme" +
+            "nts on this post.\"},\"totalItems\":{\"type\":\"string\",\"description\":\"The count of co" +
+            "mments on this post.\",\"format\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The API REST URL to fetch this resource from.\"},\"title\":{\"type\":\"string\",\"d" +
+            "escription\":\"The title of the Post.\"},\"updated\":{\"type\":\"string\",\"description\":\"" +
+            "RFC 3339 date-time when this Post was last updated.\",\"format\":\"date-time\"},\"url\"" +
+            ":{\"type\":\"string\",\"description\":\"The URL where this Post is displayed.\"}}},\"Post" +
+            "List\":{\"id\":\"PostList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"de" +
+            "scription\":\"The list of Posts for this Blog.\",\"items\":{\"$ref\":\"Post\"}},\"kind\":{\"" +
+            "type\":\"string\",\"description\":\"The kind of this entity. Always blogger#postList\"," +
+            "\"default\":\"blogger#postList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pa" +
+            "gination token to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":" +
+            "\"string\",\"description\":\"Pagination token to fetch the previous page, if one exis" +
+            "ts.\"}}},\"User\":{\"id\":\"User\",\"type\":\"object\",\"properties\":{\"about\":{\"type\":\"strin" +
+            "g\",\"description\":\"Profile summary information.\"},\"blogs\":{\"type\":\"object\",\"descr" +
+            "iption\":\"The container of blogs for this user.\",\"properties\":{\"selfLink\":{\"type\"" +
+            ":\"string\",\"description\":\"The URL of the Blogs for this user.\"}}},\"created\":{\"typ" +
+            "e\":\"string\",\"description\":\"The timestamp of when this profile was created, in se" +
+            "conds since epoch.\",\"format\":\"date-time\"},\"displayName\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier " +
+            "for this User.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity." +
+            " Always blogger#user\",\"default\":\"blogger#user\"},\"locale\":{\"type\":\"object\",\"descr" +
+            "iption\":\"This user\'s locale\",\"properties\":{\"country\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The user\'s country setting.\"},\"language\":{\"type\":\"string\",\"description\":\"Th" +
+            "e user\'s language setting.\"},\"variant\":{\"type\":\"string\",\"description\":\"The user\'" +
+            "s language variant setting.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"The A" +
+            "PI REST URL to fetch this resource from.\"},\"url\":{\"type\":\"string\",\"description\":" +
+            "\"The user\'s profile page.\"}}}},\"resources\":{\"blogs\":{\"methods\":{\"get\":{\"id\":\"blo" +
+            "gger.blogs.get\",\"path\":\"blogs/{blogId}\",\"httpMethod\":\"GET\",\"description\":\"Gets o" +
+            "ne blog by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"The ID of" +
+            " the blog to get.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"blogId\"],\"response\":{\"$ref\":\"Blog\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/blogger\"]}}},\"comments\":{\"methods\":{\"get\":{\"id\":\"blogger.comments.get\"" +
+            ",\"path\":\"blogs/{blogId}/posts/{postId}/comments/{commentId}\",\"httpMethod\":\"GET\"," +
+            "\"description\":\"Gets one comment by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\"," +
+            "\"description\":\"ID of the blog to containing the comment.\",\"required\":true,\"forma" +
+            "t\":\"int64\",\"location\":\"path\"},\"commentId\":{\"type\":\"string\",\"description\":\"The ID" +
+            " of the comment to get.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"po" +
+            "stId\":{\"type\":\"string\",\"description\":\"ID of the post to fetch posts from.\",\"requ" +
+            "ired\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"post" +
             "Id\",\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis" +
             ".com/auth/blogger\"]},\"list\":{\"id\":\"blogger.comments.list\",\"path\":\"blogs/{blogId}" +
             "/posts/{postId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the commen" +
             "ts for a blog, possibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"ID of the blog to fetch comments from.\",\"required\":true,\"location\":\"pa" +
-            "th\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether the body content of " +
-            "the comments is included.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"Maximum number of comments to include in the result.\",\"format\":\"uin" +
-            "t32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuatio" +
-            "n token if request is paged.\",\"location\":\"query\"},\"postId\":{\"type\":\"string\",\"des" +
-            "cription\":\"ID of the post to fetch posts from.\",\"required\":true,\"location\":\"path" +
-            "\"},\"startDate\":{\"type\":\"string\",\"description\":\"Earliest date of comment to fetch" +
-            ".\",\"location\":\"query\"}},\"parameterOrder\":[\"blogId\",\"postId\"],\"response\":{\"$ref\":" +
-            "\"CommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}},\"pages\":{" +
-            "\"methods\":{\"get\":{\"id\":\"blogger.pages.get\",\"path\":\"blogs/{blogId}/pages/{pageId}" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Gets one blog page by id.\",\"parameters\":{\"bl" +
-            "ogId\":{\"type\":\"string\",\"description\":\"ID of the blog containing the page.\",\"requ" +
-            "ired\":true,\"location\":\"path\"},\"pageId\":{\"type\":\"string\",\"description\":\"The ID of" +
-            " the page to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"blogId" +
-            "\",\"pageId\"],\"response\":{\"$ref\":\"Page\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/blogger\"]},\"list\":{\"id\":\"blogger.pages.list\",\"path\":\"blogs/{blogId}/pages\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Retrieves pages for a blog, possibly filtered.\",\"" +
-            "parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch pa" +
-            "ges from.\",\"required\":true,\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"d" +
-            "escription\":\"Whether to retrieve the Page bodies.\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PageList\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/blogger\"]}}},\"posts\":{\"methods\":{\"get\":{\"id\":\"blogger.posts.get\",\"" +
-            "path\":\"blogs/{blogId}/posts/{postId}\",\"httpMethod\":\"GET\",\"description\":\"Get a po" +
-            "st by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog" +
-            " to fetch the post from.\",\"required\":true,\"location\":\"path\"},\"postId\":{\"type\":\"s" +
-            "tring\",\"description\":\"The ID of the post\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"blogId\",\"postId\"],\"response\":{\"$ref\":\"Post\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/blogger\"]},\"list\":{\"id\":\"blogger.posts.list\",\"path\":\"bl" +
-            "ogs/{blogId}/posts\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of posts," +
-            " possibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID o" +
-            "f the blog to fetch posts from.\",\"required\":true,\"location\":\"path\"},\"fetchBodies" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether the body content of posts is included" +
-            ".\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum num" +
-            "ber of posts to fetch.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"Continuation token if the request is paged.\",\"location" +
-            "\":\"query\"},\"startDate\":{\"type\":\"string\",\"description\":\"Earliest post date to fet" +
-            "ch.\",\"location\":\"query\"}},\"parameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PostLi" +
-            "st\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}},\"users\":{\"methods\":" +
-            "{\"get\":{\"id\":\"blogger.users.get\",\"path\":\"users/{userId}\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"Gets one user by id.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The ID of the user to get.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"userId\"],\"response\":{\"$ref\":\"User\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/blogger\"]}},\"resources\":{\"blogs\":{\"methods\":{\"list\":{\"id\":\"blogger.use" +
-            "rs.blogs.list\",\"path\":\"users/{userId}/blogs\",\"httpMethod\":\"GET\",\"description\":\"R" +
-            "etrieves a list of blogs, possibly filtered.\",\"parameters\":{\"userId\":{\"type\":\"st" +
-            "ring\",\"description\":\"ID of the user whose blogs are to be fetched.\",\"required\":t" +
-            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"BlogList" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}}}}}}";
+            "ription\":\"ID of the blog to fetch comments from.\",\"required\":true,\"format\":\"int6" +
+            "4\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether the" +
+            " body content of the comments is included.\",\"location\":\"query\"},\"maxResults\":{\"t" +
+            "ype\":\"integer\",\"description\":\"Maximum number of comments to include in the resul" +
+            "t.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Continuation token if request is paged.\",\"location\":\"query\"},\"postId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"ID of the post to fetch posts from.\",\"required\":true" +
+            ",\"format\":\"int64\",\"location\":\"path\"},\"startDate\":{\"type\":\"string\",\"description\":" +
+            "\"Earliest date of comment to fetch.\",\"location\":\"query\"}},\"parameterOrder\":[\"blo" +
+            "gId\",\"postId\"],\"response\":{\"$ref\":\"CommentList\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/blogger\"]}}},\"pages\":{\"methods\":{\"get\":{\"id\":\"blogger.pages.get\",\"pa" +
+            "th\":\"blogs/{blogId}/pages/{pageId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one b" +
+            "log page by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of th" +
+            "e blog containing the page.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}" +
+            ",\"pageId\":{\"type\":\"string\",\"description\":\"The ID of the page to get.\",\"required\"" +
+            ":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"pageId\"]," +
+            "\"response\":{\"$ref\":\"Page\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}" +
+            ",\"list\":{\"id\":\"blogger.pages.list\",\"path\":\"blogs/{blogId}/pages\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Retrieves pages for a blog, possibly filtered.\",\"parameters\":" +
+            "{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch pages from.\",\"" +
+            "required\":true,\"format\":\"int64\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Whether to retrieve the Page bodies.\",\"location\":\"query\"}},\"pa" +
+            "rameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PageList\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/blogger\"]}}},\"posts\":{\"methods\":{\"get\":{\"id\":\"blogger.posts.g" +
+            "et\",\"path\":\"blogs/{blogId}/posts/{postId}\",\"httpMethod\":\"GET\",\"description\":\"Get" +
+            " a post by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the" +
+            " blog to fetch the post from.\",\"required\":true,\"format\":\"int64\",\"location\":\"path" +
+            "\"},\"postId\":{\"type\":\"string\",\"description\":\"The ID of the post\",\"required\":true," +
+            "\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"postId\"],\"respo" +
+            "nse\":{\"$ref\":\"Post\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]},\"list" +
+            "\":{\"id\":\"blogger.posts.list\",\"path\":\"blogs/{blogId}/posts\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"Retrieves a list of posts, possibly filtered.\",\"parameters\":{\"blogI" +
+            "d\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch posts from.\",\"require" +
+            "d\":true,\"format\":\"int64\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Whether the body content of posts is included.\",\"location\":\"query\"},\"" +
+            "maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of posts to fetch.\"," +
+            "\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"Continuation token if the request is paged.\",\"location\":\"query\"},\"startDate\":{" +
+            "\"type\":\"string\",\"description\":\"Earliest post date to fetch.\",\"location\":\"query\"}" +
+            "},\"parameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PostList\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/blogger\"]}}},\"users\":{\"methods\":{\"get\":{\"id\":\"blogger.us" +
+            "ers.get\",\"path\":\"users/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one user" +
+            " by id.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"The ID of the us" +
+            "er to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"res" +
+            "ponse\":{\"$ref\":\"User\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}},\"r" +
+            "esources\":{\"blogs\":{\"methods\":{\"list\":{\"id\":\"blogger.users.blogs.list\",\"path\":\"u" +
+            "sers/{userId}/blogs\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of blogs" +
+            ", possibly filtered.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"ID " +
+            "of the user whose blogs are to be fetched. Either the word \'self\' (sans quote ma" +
+            "rks) or the user\'s profile identifier.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"BlogList\"},\"scopes\":[\"https://www.go" +
+            "ogleapis.com/auth/blogger\"]}}}}}}}";
         
         private const string Version = "v2";
         
@@ -2619,7 +2656,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Retrieves a list of blogs, possibly filtered.</summary>
-            /// <param name="userId">Required - ID of the user whose blogs are to be fetched.</param>
+            /// <param name="userId">Required - ID of the user whose blogs are to be fetched. Either the word &apos;self&apos; (sans quote marks) or the user&apos;s profile identifier.</param>
             public virtual ListRequest List(string userId) {
                 return new ListRequest(service, userId);
             }
@@ -2672,7 +2709,7 @@ namespace Google.Apis.Blogger.v2 {
                     }
                 }
                 
-                /// <summary>ID of the user whose blogs are to be fetched.</summary>
+                /// <summary>ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("userId")]
                 public virtual string UserId {
                     get {

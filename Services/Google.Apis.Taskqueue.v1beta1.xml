@@ -22,46 +22,46 @@
         <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Task.QueueName">
             <summary>Name of the queue that the task is in.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.Acl">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.Acl">
             <summary>ACLs that are applicable to this TaskQueue object.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.Id">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.Id">
             <summary>Name of the taskqueue.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.Kind">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.Kind">
             <summary>The kind of REST object returned, in this case taskqueue.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.MaxLeases">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.MaxLeases">
             <summary>The number of times we should lease out tasks before giving up on them. If unset we lease them out forever until a worker deletes the task.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.Stats">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.Stats">
             <summary>Statistics for the TaskQueue object in question.</summary>
         </member>
-        <member name="T:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.AclData">
+        <member name="T:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.AclData">
             <summary>ACLs that are applicable to this TaskQueue object.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.AclData.AdminEmails">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.AclData.AdminEmails">
             <summary>Email addresses of users who are &quot;admins&quot; of the TaskQueue. This means they can control the queue, eg set ACLs for the queue.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.AclData.ConsumerEmails">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.AclData.ConsumerEmails">
             <summary>Email addresses of users who can &quot;consume&quot; tasks from the TaskQueue. This means they can Dequeue and Delete tasks from the queue.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.AclData.ProducerEmails">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.AclData.ProducerEmails">
             <summary>Email addresses of users who can &quot;produce&quot; tasks into the TaskQueue. This means they can Insert tasks into the queue.</summary>
         </member>
-        <member name="T:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.StatsData">
+        <member name="T:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.StatsData">
             <summary>Statistics for the TaskQueue object in question.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.StatsData.LeasedLastHour">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.StatsData.LeasedLastHour">
             <summary>Number of tasks leased in the last hour.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.StatsData.LeasedLastMinute">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.StatsData.LeasedLastMinute">
             <summary>Number of tasks leased in the last minute.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.StatsData.OldestTask">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.StatsData.OldestTask">
             <summary>The timestamp (in seconds since the epoch) of the oldest unfinished task.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Taskqueue.StatsData.TotalTasks">
+        <member name="P:Google.Apis.Taskqueue.v1beta1.Data.TaskQueue.StatsData.TotalTasks">
             <summary>Number of tasks in the queue.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta1.Data.Tasks.Items">

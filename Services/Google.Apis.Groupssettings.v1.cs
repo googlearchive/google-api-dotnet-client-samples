@@ -367,82 +367,84 @@ namespace Google.Apis.Groupssettings.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"groupssettings:v1\",\"name\":\"groupssettin" +
-            "gs\",\"version\":\"v1\",\"description\":\"Groups Settings Api\",\"icons\":{\"x16\":\"http://ww" +
-            "w.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/im" +
-            "ages/icons/product/search-32.gif\"},\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath" +
-            "\":\"/groups/v1/groups/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data " +
-            "format for the response.\",\"default\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescripti" +
-            "ons\":[\"Responses with Content-Type of application/atom+xml\",\"Responses with Cont" +
-            "ent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"de" +
-            "scription\":\"Selector specifying which fields to include in a partial response.\"," +
-            "\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key " +
-            "identifies your project and provides you with API access, quota, and reports. Re" +
-            "quired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\"" +
-            ":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"locatio" +
-            "n\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with" +
-            " indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\"" +
-            ":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-" +
-            "side applications. Can be any arbitrary string assigned to a user, but should no" +
-            "t exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"quer" +
-            "y\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the re" +
-            "quest originates. Use this if you want to enforce per-user limits.\",\"location\":\"" +
-            "query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/apps.group" +
-            "s.settings\":{\"description\":\"View and manage the settings of a Google Apps Group\"" +
-            "}}}},\"schemas\":{\"Groups\":{\"id\":\"Groups\",\"type\":\"object\",\"description\":\"Groups re" +
-            "source\",\"properties\":{\"allowExternalMembers\":{\"type\":\"string\",\"description\":\"Are" +
-            " external members allowed to join the group.\"},\"allowGoogleCommunication\":{\"type" +
-            "\":\"string\",\"description\":\"Is google allowed to contact admins.\"},\"allowWebPostin" +
-            "g\":{\"type\":\"string\",\"description\":\"If posting from web is allowed.\"},\"archiveOnl" +
-            "y\":{\"type\":\"string\",\"description\":\"If the group is archive only\"},\"customReplyTo" +
-            "\":{\"type\":\"string\",\"description\":\"Default email to which reply to any message sh" +
-            "ould go.\"},\"defaultMessageDenyNotificationText\":{\"type\":\"string\",\"description\":\"" +
-            "Default message deny notification message\"},\"description\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Description of the group\"},\"email\":{\"type\":\"string\",\"description\":\"Ema" +
-            "il id of the group\"},\"isArchived\":{\"type\":\"string\",\"description\":\"If the content" +
-            "s of the group are archived.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type o" +
-            "f the resource.\",\"default\":\"groupsSettings#groups\"},\"maxMessageBytes\":{\"type\":\"i" +
-            "nteger\",\"description\":\"Maximum message size allowed.\",\"format\":\"int32\"},\"members" +
-            "CanPostAsTheGroup\":{\"type\":\"string\",\"description\":\"Can members post using the gr" +
-            "oup email address.\"},\"messageDisplayFont\":{\"type\":\"string\",\"description\":\"Defaul" +
-            "t message display font. Possible values are: DEFAULT_FONT FIXED_WIDTH_FONT\"},\"me" +
-            "ssageModerationLevel\":{\"type\":\"string\",\"description\":\"Moderation level for messa" +
-            "ges. Possible values are: MODERATE_ALL_MESSAGES MODERATE_NON_MEMBERS MODERATE_NE" +
-            "W_MEMBERS MODERATE_NONE\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the Gro" +
-            "up\"},\"primaryLanguage\":{\"type\":\"string\",\"description\":\"Primary language for the " +
-            "group.\"},\"replyTo\":{\"type\":\"string\",\"description\":\"Whome should the default repl" +
-            "y to a message go to. Possible values are: REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY" +
-            "_TO_LIST REPLY_TO_OWNER REPLY_TO_IGNORE REPLY_TO_MANAGERS\"},\"sendMessageDenyNoti" +
-            "fication\":{\"type\":\"string\",\"description\":\"Should the member be notified if his m" +
-            "essage is denied by owner.\"},\"showInGroupDirectory\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Is the group listed in groups directory\"},\"whoCanInvite\":{\"type\":\"string\",\"d" +
-            "escription\":\"Permissions to invite members. Possbile values are: ALL_MEMBERS_CAN" +
-            "_INVITE ALL_MANAGERS_CAN_INVITE\"},\"whoCanJoin\":{\"type\":\"string\",\"description\":\"P" +
-            "ermissions to join the group. Possible values are: ANYONE_CAN_JOIN ALL_IN_DOMAIN" +
-            "_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO_JOIN\"},\"whoCanPostMessage\":{\"type\":\"st" +
-            "ring\",\"description\":\"Permissions to post messages to the group. Possible values " +
-            "are: NONE_CAN_POST ALL_MANAGERS_CAN_POST ALL_MEMBERS_CAN_POST ALL_IN_DOMAIN_CAN_" +
-            "POST ANYONE_CAN_POST\"},\"whoCanViewGroup\":{\"type\":\"string\",\"description\":\"Permiss" +
-            "ions to view group. Possbile values are: ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW " +
-            "ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW\"},\"whoCanViewMembership\":{\"type\":\"str" +
-            "ing\",\"description\":\"Permissions to view membership. Possbile values are: ALL_IN_" +
-            "DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIEW\"}}}},\"resources\":{\"gr" +
-            "oups\":{\"methods\":{\"get\":{\"id\":\"groupsSettings.groups.get\",\"path\":\"{groupUniqueId" +
-            "}\",\"httpMethod\":\"GET\",\"description\":\"Gets one resource by id.\",\"parameters\":{\"gr" +
-            "oupUniqueId\":{\"type\":\"string\",\"description\":\"The resource ID\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"groupUniqueId\"],\"response\":{\"$ref\":\"Groups\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/apps.groups.settings\"]},\"patch\":{\"i" +
-            "d\":\"groupsSettings.groups.patch\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"PATCH\",\"" +
-            "description\":\"Updates an existing resource. This method supports patch semantics" +
-            ".\",\"parameters\":{\"groupUniqueId\":{\"type\":\"string\",\"description\":\"The resource ID" +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"groupUniqueId\"],\"reques" +
-            "t\":{\"$ref\":\"Groups\"},\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/apps.groups.settings\"]},\"update\":{\"id\":\"groupsSettings.groups.updat" +
-            "e\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existin" +
-            "g resource.\",\"parameters\":{\"groupUniqueId\":{\"type\":\"string\",\"description\":\"The r" +
-            "esource ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"groupUniqueId" +
-            "\"],\"request\":{\"$ref\":\"Groups\"},\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/apps.groups.settings\"]}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"groupssettings:" +
+            "v1\",\"name\":\"groupssettings\",\"version\":\"v1\",\"revision\":\"20111220\",\"description\":\"" +
+            "Groups Settings Api\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/" +
+            "search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"}" +
+            ",\"labels\":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
+            "leapis.com/groups/v1/groups/\",\"basePath\":\"/groups/v1/groups/\",\"parameters\":{\"alt" +
+            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom" +
+            "\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of app" +
+            "lication/atom+xml\",\"Responses with Content-Type of application/json\"],\"location\"" +
+            ":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fie" +
+            "lds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string" +
+            "\",\"description\":\"API key. Your API key identifies your project and provides you " +
+            "with API access, quota, and reports. Required unless you provide an OAuth 2.0 to" +
+            "ken.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2." +
+            "0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Returns response with indentations and line breaks.\",\"default\"" +
+            ":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Availabl" +
+            "e to use for quota purposes for server-side applications. Can be any arbitrary s" +
+            "tring assigned to a user, but should not exceed 40 characters. Overrides userIp " +
+            "if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"IP address of the site where the request originates. Use this if you want to" +
+            " enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"htt" +
+            "ps://www.googleapis.com/auth/apps.groups.settings\":{\"description\":\"View and mana" +
+            "ge the settings of a Google Apps Group\"}}}},\"schemas\":{\"Groups\":{\"id\":\"Groups\",\"" +
+            "type\":\"object\",\"description\":\"Groups resource\",\"properties\":{\"allowExternalMembe" +
+            "rs\":{\"type\":\"string\",\"description\":\"Are external members allowed to join the gro" +
+            "up.\"},\"allowGoogleCommunication\":{\"type\":\"string\",\"description\":\"Is google allow" +
+            "ed to contact admins.\"},\"allowWebPosting\":{\"type\":\"string\",\"description\":\"If pos" +
+            "ting from web is allowed.\"},\"archiveOnly\":{\"type\":\"string\",\"description\":\"If the" +
+            " group is archive only\"},\"customReplyTo\":{\"type\":\"string\",\"description\":\"Default" +
+            " email to which reply to any message should go.\"},\"defaultMessageDenyNotificatio" +
+            "nText\":{\"type\":\"string\",\"description\":\"Default message deny notification message" +
+            "\"},\"description\":{\"type\":\"string\",\"description\":\"Description of the group\"},\"ema" +
+            "il\":{\"type\":\"string\",\"description\":\"Email id of the group\"},\"isArchived\":{\"type\"" +
+            ":\"string\",\"description\":\"If the contents of the group are archived.\"},\"kind\":{\"t" +
+            "ype\":\"string\",\"description\":\"The type of the resource.\",\"default\":\"groupsSetting" +
+            "s#groups\"},\"maxMessageBytes\":{\"type\":\"integer\",\"description\":\"Maximum message si" +
+            "ze allowed.\",\"format\":\"int32\"},\"membersCanPostAsTheGroup\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Can members post using the group email address.\"},\"messageDisplayFont\"" +
+            ":{\"type\":\"string\",\"description\":\"Default message display font. Possible values a" +
+            "re: DEFAULT_FONT FIXED_WIDTH_FONT\"},\"messageModerationLevel\":{\"type\":\"string\",\"d" +
+            "escription\":\"Moderation level for messages. Possible values are: MODERATE_ALL_ME" +
+            "SSAGES MODERATE_NON_MEMBERS MODERATE_NEW_MEMBERS MODERATE_NONE\"},\"name\":{\"type\":" +
+            "\"string\",\"description\":\"Name of the Group\"},\"primaryLanguage\":{\"type\":\"string\",\"" +
+            "description\":\"Primary language for the group.\"},\"replyTo\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Whome should the default reply to a message go to. Possible values are" +
+            ": REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY_TO_LIST REPLY_TO_OWNER REPLY_TO_IGNORE R" +
+            "EPLY_TO_MANAGERS\"},\"sendMessageDenyNotification\":{\"type\":\"string\",\"description\":" +
+            "\"Should the member be notified if his message is denied by owner.\"},\"showInGroup" +
+            "Directory\":{\"type\":\"string\",\"description\":\"Is the group listed in groups directo" +
+            "ry\"},\"whoCanInvite\":{\"type\":\"string\",\"description\":\"Permissions to invite member" +
+            "s. Possbile values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE\"},\"whoCan" +
+            "Join\":{\"type\":\"string\",\"description\":\"Permissions to join the group. Possible va" +
+            "lues are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO" +
+            "_JOIN\"},\"whoCanPostMessage\":{\"type\":\"string\",\"description\":\"Permissions to post " +
+            "messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS_CAN_POST " +
+            "ALL_MEMBERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST\"},\"whoCanViewGroup\":" +
+            "{\"type\":\"string\",\"description\":\"Permissions to view group. Possbile values are: " +
+            "ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIE" +
+            "W\"},\"whoCanViewMembership\":{\"type\":\"string\",\"description\":\"Permissions to view m" +
+            "embership. Possbile values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_" +
+            "MANAGERS_CAN_VIEW\"}}}},\"resources\":{\"groups\":{\"methods\":{\"get\":{\"id\":\"groupsSett" +
+            "ings.groups.get\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"GET\",\"description\":\"Gets" +
+            " one resource by id.\",\"parameters\":{\"groupUniqueId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The resource ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"grou" +
+            "pUniqueId\"],\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/apps.groups.settings\"]},\"patch\":{\"id\":\"groupsSettings.groups.patch\",\"path\":\"" +
+            "{groupUniqueId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing resourc" +
+            "e. This method supports patch semantics.\",\"parameters\":{\"groupUniqueId\":{\"type\":" +
+            "\"string\",\"description\":\"The resource ID\",\"required\":true,\"location\":\"path\"}},\"pa" +
+            "rameterOrder\":[\"groupUniqueId\"],\"request\":{\"$ref\":\"Groups\"},\"response\":{\"$ref\":\"" +
+            "Groups\"},\"scopes\":[\"https://www.googleapis.com/auth/apps.groups.settings\"]},\"upd" +
+            "ate\":{\"id\":\"groupsSettings.groups.update\",\"path\":\"{groupUniqueId}\",\"httpMethod\":" +
+            "\"PUT\",\"description\":\"Updates an existing resource.\",\"parameters\":{\"groupUniqueId" +
+            "\":{\"type\":\"string\",\"description\":\"The resource ID\",\"required\":true,\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"groupUniqueId\"],\"request\":{\"$ref\":\"Groups\"},\"response\"" +
+            ":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googleapis.com/auth/apps.groups.settin" +
+            "gs\"]}}}}}";
         
         private const string Version = "v1";
         

@@ -16,7 +16,7 @@ namespace Google.Apis.Shopping.v1.Data {
     
     public class Product : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<ShoppingModelCategoryJsonV1> categories;
+        private System.Collections.Generic.IList<ShoppingModelCategoryJsonV1> categories;
         
         private ShoppingModelDebugJsonV1 debug;
         
@@ -26,7 +26,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private ShoppingModelProductJsonV1 product;
         
-        private IList<Product.RecommendationsData> recommendations;
+        private System.Collections.Generic.IList<Product.RecommendationsData> recommendations;
         
         private string requestId;
         
@@ -38,7 +38,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of categories for product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
-        public virtual IList<ShoppingModelCategoryJsonV1> Categories {
+        public virtual System.Collections.Generic.IList<ShoppingModelCategoryJsonV1> Categories {
             get {
                 return this.categories;
             }
@@ -91,7 +91,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Recommendations for product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("recommendations")]
-        public virtual IList<Product.RecommendationsData> Recommendations {
+        public virtual System.Collections.Generic.IList<Product.RecommendationsData> Recommendations {
             get {
                 return this.recommendations;
             }
@@ -143,13 +143,13 @@ namespace Google.Apis.Shopping.v1.Data {
         
         public class RecommendationsData {
             
-            private IList<RecommendationsData.RecommendationListData> recommendationList;
+            private System.Collections.Generic.IList<RecommendationsData.RecommendationListData> recommendationList;
             
             private string type;
             
             /// <summary>List of recommendations.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("recommendationList")]
-            public virtual IList<RecommendationsData.RecommendationListData> RecommendationList {
+            public virtual System.Collections.Generic.IList<RecommendationsData.RecommendationListData> RecommendationList {
                 get {
                     return this.recommendationList;
                 }
@@ -188,7 +188,7 @@ namespace Google.Apis.Shopping.v1.Data {
     
     public class Products : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<ShoppingModelCategoryJsonV1> categories;
+        private System.Collections.Generic.IList<ShoppingModelCategoryJsonV1> categories;
         
         private System.Nullable<long> currentItemCount;
         
@@ -196,11 +196,11 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private string etag;
         
-        private IList<Products.FacetsData> facets;
+        private System.Collections.Generic.IList<Products.FacetsData> facets;
         
         private string id;
         
-        private IList<Product> items;
+        private System.Collections.Generic.IList<Product> items;
         
         private System.Nullable<long> itemsPerPage;
         
@@ -210,23 +210,21 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private string previousLink;
         
-        private IList<Products.PromotionsData> promotions;
+        private System.Collections.Generic.IList<Products.PromotionsData> promotions;
         
-        private IList<System.String> redirects;
+        private System.Collections.Generic.IList<string> redirects;
         
-        private IList<System.String> relatedQueries;
+        private System.Collections.Generic.IList<string> relatedQueries;
         
         private string requestId;
         
         private string selfLink;
         
-        private IList<Products.ShelfSpaceAdsData> shelfSpaceAds;
-        
         private Products.SpellingData spelling;
         
         private System.Nullable<long> startIndex;
         
-        private IList<Products.StoresData> stores;
+        private System.Collections.Generic.IList<Products.StoresData> stores;
         
         private System.Nullable<long> totalItems;
         
@@ -234,7 +232,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of categories.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
-        public virtual IList<ShoppingModelCategoryJsonV1> Categories {
+        public virtual System.Collections.Generic.IList<ShoppingModelCategoryJsonV1> Categories {
             get {
                 return this.categories;
             }
@@ -277,7 +275,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of facets.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("facets")]
-        public virtual IList<Products.FacetsData> Facets {
+        public virtual System.Collections.Generic.IList<Products.FacetsData> Facets {
             get {
                 return this.facets;
             }
@@ -299,7 +297,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of returned products.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Product> Items {
+        public virtual System.Collections.Generic.IList<Product> Items {
             get {
                 return this.items;
             }
@@ -354,7 +352,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of promotions.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("promotions")]
-        public virtual IList<Products.PromotionsData> Promotions {
+        public virtual System.Collections.Generic.IList<Products.PromotionsData> Promotions {
             get {
                 return this.promotions;
             }
@@ -365,7 +363,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Redirects.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("redirects")]
-        public virtual IList<System.String> Redirects {
+        public virtual System.Collections.Generic.IList<string> Redirects {
             get {
                 return this.redirects;
             }
@@ -376,7 +374,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Related queries.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("relatedQueries")]
-        public virtual IList<System.String> RelatedQueries {
+        public virtual System.Collections.Generic.IList<string> RelatedQueries {
             get {
                 return this.relatedQueries;
             }
@@ -407,16 +405,6 @@ namespace Google.Apis.Shopping.v1.Data {
             }
         }
         
-        [Newtonsoft.Json.JsonPropertyAttribute("shelfSpaceAds")]
-        public virtual IList<Products.ShelfSpaceAdsData> ShelfSpaceAds {
-            get {
-                return this.shelfSpaceAds;
-            }
-            set {
-                this.shelfSpaceAds = value;
-            }
-        }
-        
         /// <summary>Spelling.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("spelling")]
         public virtual Products.SpellingData Spelling {
@@ -441,7 +429,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of returned stores.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("stores")]
-        public virtual IList<Products.StoresData> Stores {
+        public virtual System.Collections.Generic.IList<Products.StoresData> Stores {
             get {
                 return this.stores;
             }
@@ -473,7 +461,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         public class FacetsData {
             
-            private IList<FacetsData.BucketsData> buckets;
+            private System.Collections.Generic.IList<FacetsData.BucketsData> buckets;
             
             private System.Nullable<long> count;
             
@@ -489,7 +477,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>List of Buckets within facet.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("buckets")]
-            public virtual IList<FacetsData.BucketsData> Buckets {
+            public virtual System.Collections.Generic.IList<FacetsData.BucketsData> Buckets {
                 get {
                     return this.buckets;
                 }
@@ -648,7 +636,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         public class PromotionsData {
             
-            private IList<PromotionsData.CustomFieldsData> customFields;
+            private System.Collections.Generic.IList<PromotionsData.CustomFieldsData> customFields;
             
             private string customHtml;
             
@@ -668,7 +656,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>List of custom fields of promotion.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("customFields")]
-            public virtual IList<PromotionsData.CustomFieldsData> CustomFields {
+            public virtual System.Collections.Generic.IList<PromotionsData.CustomFieldsData> CustomFields {
                 get {
                     return this.customFields;
                 }
@@ -794,21 +782,6 @@ namespace Google.Apis.Shopping.v1.Data {
             }
         }
         
-        public class ShelfSpaceAdsData {
-            
-            private ShoppingModelProductJsonV1 product;
-            
-            [Newtonsoft.Json.JsonPropertyAttribute("product")]
-            public virtual ShoppingModelProductJsonV1 Product {
-                get {
-                    return this.product;
-                }
-                set {
-                    this.product = value;
-                }
-            }
-        }
-        
         /// <summary>Spelling.</summary>
         public class SpellingData {
             
@@ -912,7 +885,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private string id;
         
-        private IList<System.String> parents;
+        private System.Collections.Generic.IList<string> parents;
         
         private string shortName;
         
@@ -931,7 +904,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Ids of the parents of the category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("parents")]
-        public virtual IList<System.String> Parents {
+        public virtual System.Collections.Generic.IList<string> Parents {
             get {
                 return this.parents;
             }
@@ -965,9 +938,13 @@ namespace Google.Apis.Shopping.v1.Data {
     
     public class ShoppingModelDebugJsonV1 {
         
-        private IList<ShoppingModelDebugJsonV1.BackendTimesData> backendTimes;
+        private System.Collections.Generic.IList<ShoppingModelDebugJsonV1.BackendTimesData> backendTimes;
         
         private string elapsedMillis;
+        
+        private string facetsRequest;
+        
+        private string facetsResponse;
         
         private string rdcResponse;
         
@@ -977,7 +954,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Google internal</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("backendTimes")]
-        public virtual IList<ShoppingModelDebugJsonV1.BackendTimesData> BackendTimes {
+        public virtual System.Collections.Generic.IList<ShoppingModelDebugJsonV1.BackendTimesData> BackendTimes {
             get {
                 return this.backendTimes;
             }
@@ -994,6 +971,28 @@ namespace Google.Apis.Shopping.v1.Data {
             }
             set {
                 this.elapsedMillis = value;
+            }
+        }
+        
+        /// <summary>Google internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("facetsRequest")]
+        public virtual string FacetsRequest {
+            get {
+                return this.facetsRequest;
+            }
+            set {
+                this.facetsRequest = value;
+            }
+        }
+        
+        /// <summary>Google internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("facetsResponse")]
+        public virtual string FacetsResponse {
+            get {
+                return this.facetsResponse;
+            }
+            set {
+                this.facetsResponse = value;
             }
         }
         
@@ -1088,13 +1087,13 @@ namespace Google.Apis.Shopping.v1.Data {
     
     public class ShoppingModelProductJsonV1 {
         
-        private IList<ShoppingModelProductJsonV1.AttributesData> attributes;
+        private System.Collections.Generic.IList<ShoppingModelProductJsonV1.AttributesData> attributes;
         
         private ShoppingModelProductJsonV1.AuthorData author;
         
         private string brand;
         
-        private IList<System.String> categories;
+        private System.Collections.Generic.IList<string> categories;
         
         private string condition;
         
@@ -1108,17 +1107,41 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private string gtin;
         
-        private IList<System.String> gtins;
+        private System.Collections.Generic.IList<string> gtins;
         
-        private IList<ShoppingModelProductJsonV1.ImagesData> images;
+        private System.Collections.Generic.IList<ShoppingModelProductJsonV1.ImagesData> images;
         
-        private IList<ShoppingModelProductJsonV1.InventoriesData> inventories;
+        private System.Collections.Generic.IList<string> internal1;
+        
+        private System.Collections.Generic.IList<string> internal10;
+        
+        private string internal12;
+        
+        private System.Nullable<double> internal13;
+        
+        private System.Nullable<double> internal14;
+        
+        private System.Nullable<double> internal15;
+        
+        private string internal3;
+        
+        private System.Collections.Generic.IList<ShoppingModelProductJsonV1.Internal4Data> internal4;
+        
+        private string internal6;
+        
+        private System.Nullable<bool> internal7;
+        
+        private System.Collections.Generic.IList<string> internal8;
+        
+        private System.Collections.Generic.IList<ShoppingModelProductJsonV1.InventoriesData> inventories;
         
         private string language;
         
         private string link;
         
         private string modificationTime;
+        
+        private System.Collections.Generic.IList<string> mpns;
         
         private string plusOne;
         
@@ -1130,11 +1153,11 @@ namespace Google.Apis.Shopping.v1.Data {
         
         private System.Nullable<long> totalMatchingVariants;
         
-        private IList<ShoppingModelProductJsonV1.VariantsData> variants;
+        private System.Collections.Generic.IList<ShoppingModelProductJsonV1.VariantsData> variants;
         
         /// <summary>Attributes of product (available only with a cx source).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("attributes")]
-        public virtual IList<ShoppingModelProductJsonV1.AttributesData> Attributes {
+        public virtual System.Collections.Generic.IList<ShoppingModelProductJsonV1.AttributesData> Attributes {
             get {
                 return this.attributes;
             }
@@ -1167,7 +1190,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Categories of product according to the selected taxonomy, omitted if no taxonomy is selected.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("categories")]
-        public virtual IList<System.String> Categories {
+        public virtual System.Collections.Generic.IList<string> Categories {
             get {
                 return this.categories;
             }
@@ -1244,7 +1267,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>List of all the product&apos;s GTINs (in GTIN-14 format).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("gtins")]
-        public virtual IList<System.String> Gtins {
+        public virtual System.Collections.Generic.IList<string> Gtins {
             get {
                 return this.gtins;
             }
@@ -1255,7 +1278,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>Images of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("images")]
-        public virtual IList<ShoppingModelProductJsonV1.ImagesData> Images {
+        public virtual System.Collections.Generic.IList<ShoppingModelProductJsonV1.ImagesData> Images {
             get {
                 return this.images;
             }
@@ -1264,9 +1287,130 @@ namespace Google.Apis.Shopping.v1.Data {
             }
         }
         
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal1")]
+        public virtual System.Collections.Generic.IList<string> Internal1 {
+            get {
+                return this.internal1;
+            }
+            set {
+                this.internal1 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal10")]
+        public virtual System.Collections.Generic.IList<string> Internal10 {
+            get {
+                return this.internal10;
+            }
+            set {
+                this.internal10 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal12")]
+        public virtual string Internal12 {
+            get {
+                return this.internal12;
+            }
+            set {
+                this.internal12 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal13")]
+        public virtual System.Nullable<double> Internal13 {
+            get {
+                return this.internal13;
+            }
+            set {
+                this.internal13 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal14")]
+        public virtual System.Nullable<double> Internal14 {
+            get {
+                return this.internal14;
+            }
+            set {
+                this.internal14 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal15")]
+        public virtual System.Nullable<double> Internal15 {
+            get {
+                return this.internal15;
+            }
+            set {
+                this.internal15 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal3")]
+        public virtual string Internal3 {
+            get {
+                return this.internal3;
+            }
+            set {
+                this.internal3 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal4")]
+        public virtual System.Collections.Generic.IList<ShoppingModelProductJsonV1.Internal4Data> Internal4 {
+            get {
+                return this.internal4;
+            }
+            set {
+                this.internal4 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal6")]
+        public virtual string Internal6 {
+            get {
+                return this.internal6;
+            }
+            set {
+                this.internal6 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal7")]
+        public virtual System.Nullable<bool> Internal7 {
+            get {
+                return this.internal7;
+            }
+            set {
+                this.internal7 = value;
+            }
+        }
+        
+        /// <summary>Google Internal.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("internal8")]
+        public virtual System.Collections.Generic.IList<string> Internal8 {
+            get {
+                return this.internal8;
+            }
+            set {
+                this.internal8 = value;
+            }
+        }
+        
         /// <summary>Inventories of product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("inventories")]
-        public virtual IList<ShoppingModelProductJsonV1.InventoriesData> Inventories {
+        public virtual System.Collections.Generic.IList<ShoppingModelProductJsonV1.InventoriesData> Inventories {
             get {
                 return this.inventories;
             }
@@ -1305,6 +1449,17 @@ namespace Google.Apis.Shopping.v1.Data {
             }
             set {
                 this.modificationTime = value;
+            }
+        }
+        
+        /// <summary>List of all the product&apos;s MPNs.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("mpns")]
+        public virtual System.Collections.Generic.IList<string> Mpns {
+            get {
+                return this.mpns;
+            }
+            set {
+                this.mpns = value;
             }
         }
         
@@ -1365,7 +1520,7 @@ namespace Google.Apis.Shopping.v1.Data {
         
         /// <summary>A list of variant offers associated with this product.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("variants")]
-        public virtual IList<ShoppingModelProductJsonV1.VariantsData> Variants {
+        public virtual System.Collections.Generic.IList<ShoppingModelProductJsonV1.VariantsData> Variants {
             get {
                 return this.variants;
             }
@@ -1447,13 +1602,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             private string accountId;
             
-            private string aggregatorId;
-            
-            private string email;
-            
             private string name;
-            
-            private string uri;
             
             /// <summary>Account id of product author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
@@ -1463,28 +1612,6 @@ namespace Google.Apis.Shopping.v1.Data {
                 }
                 set {
                     this.accountId = value;
-                }
-            }
-            
-            /// <summary>Aggregator id of product author.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("aggregatorId")]
-            public virtual string AggregatorId {
-                get {
-                    return this.aggregatorId;
-                }
-                set {
-                    this.aggregatorId = value;
-                }
-            }
-            
-            /// <summary>Email address of product author.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("email")]
-            public virtual string Email {
-                get {
-                    return this.email;
-                }
-                set {
-                    this.email = value;
                 }
             }
             
@@ -1498,24 +1625,13 @@ namespace Google.Apis.Shopping.v1.Data {
                     this.name = value;
                 }
             }
-            
-            /// <summary>URI of product author.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("uri")]
-            public virtual string Uri {
-                get {
-                    return this.uri;
-                }
-                set {
-                    this.uri = value;
-                }
-            }
         }
         
         public class ImagesData {
             
             private string link;
             
-            private IList<ImagesData.ThumbnailsData> thumbnails;
+            private System.Collections.Generic.IList<ImagesData.ThumbnailsData> thumbnails;
             
             /// <summary>Link to product image.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
@@ -1530,7 +1646,7 @@ namespace Google.Apis.Shopping.v1.Data {
             
             /// <summary>Thumbnails of product image.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
-            public virtual IList<ImagesData.ThumbnailsData> Thumbnails {
+            public virtual System.Collections.Generic.IList<ImagesData.ThumbnailsData> Thumbnails {
                 get {
                     return this.thumbnails;
                 }
@@ -1591,6 +1707,35 @@ namespace Google.Apis.Shopping.v1.Data {
                     set {
                         this.width = value;
                     }
+                }
+            }
+        }
+        
+        public class Internal4Data {
+            
+            private System.Nullable<double> confidence;
+            
+            private System.Nullable<long> node;
+            
+            /// <summary>Google Internal.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("confidence")]
+            public virtual System.Nullable<double> Confidence {
+                get {
+                    return this.confidence;
+                }
+                set {
+                    this.confidence = value;
+                }
+            }
+            
+            /// <summary>Google Internal.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("node")]
+            public virtual System.Nullable<long> Node {
+                get {
+                    return this.node;
+                }
+                set {
+                    this.node = value;
                 }
             }
         }
@@ -1745,277 +1890,279 @@ namespace Google.Apis.Shopping.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"shopping:v1\",\"name\":\"shopping\",\"version" +
-            "\":\"v1\",\"title\":\"Search API for Shopping\",\"description\":\"Lets you search over pro" +
-            "duct data\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16." +
-            "gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"document" +
-            "ationLink\":\"http://code.google.com/apis/shopping/search/v1/getting_started.html\"" +
-            ",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/shopping/search/v1/\",\"paramete" +
-            "rs\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defau" +
-            "lt\":\"json\",\"enum\":[\"json\",\"atom\"],\"enumDescriptions\":[\"Responses with Content-Ty" +
-            "pe of application/json\",\"Responses with Content-Type of application/atom+xml\"],\"" +
-            "location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying " +
-            "which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type" +
-            "\":\"string\",\"description\":\"API key. Your API key identifies your project and prov" +
-            "ides you with API access, quota, and reports. Required unless you provide an OAu" +
-            "th 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":" +
-            "\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type" +
-            "\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"," +
-            "\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":" +
-            "\"Available to use for quota purposes for server-side applications. Can be any ar" +
-            "bitrary string assigned to a user, but should not exceed 40 characters. Override" +
-            "s userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"d" +
-            "escription\":\"IP address of the site where the request originates. Use this if yo" +
-            "u want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Product\":{\"" +
-            "id\":\"Product\",\"type\":\"object\",\"properties\":{\"categories\":{\"type\":\"array\",\"descri" +
-            "ption\":\"List of categories for product.\",\"items\":{\"$ref\":\"ShoppingModelCategoryJ" +
-            "sonV1\"}},\"debug\":{\"$ref\":\"ShoppingModelDebugJsonV1\",\"description\":\"Google intern" +
-            "al.\"},\"id\":{\"type\":\"string\",\"description\":\"Id of product.\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The kind of item, always shopping#product.\",\"default\":\"shoppi" +
-            "ng#product\"},\"product\":{\"$ref\":\"ShoppingModelProductJsonV1\",\"description\":\"Produ" +
-            "ct.\"},\"recommendations\":{\"type\":\"array\",\"description\":\"Recommendations for produ" +
-            "ct.\",\"items\":{\"type\":\"object\",\"properties\":{\"recommendationList\":{\"type\":\"array\"" +
-            ",\"description\":\"List of recommendations.\",\"items\":{\"type\":\"object\",\"properties\":" +
-            "{\"product\":{\"$ref\":\"ShoppingModelProductJsonV1\",\"description\":\"Recommended produ" +
-            "ct.\"}}}},\"type\":{\"type\":\"string\",\"description\":\"Type of recommendation list (one" +
-            " of: all, purchaseToPurchase, visitToVisit, visitToPurchase).\"}}}},\"requestId\":{" +
-            "\"type\":\"string\",\"description\":\"Unique identifier for this request.\"},\"selfLink\":" +
-            "{\"type\":\"string\",\"description\":\"Self link of product.\"}}},\"Products\":{\"id\":\"Prod" +
-            "ucts\",\"type\":\"object\",\"properties\":{\"categories\":{\"type\":\"array\",\"description\":\"" +
-            "List of categories.\",\"items\":{\"$ref\":\"ShoppingModelCategoryJsonV1\"}},\"currentIte" +
-            "mCount\":{\"type\":\"integer\",\"description\":\"Current item count.\",\"format\":\"int32\"}," +
-            "\"debug\":{\"$ref\":\"ShoppingModelDebugJsonV1\",\"description\":\"Google internal.\"},\"et" +
-            "ag\":{\"type\":\"string\",\"description\":\"Etag of feed.\"},\"facets\":{\"type\":\"array\",\"de" +
-            "scription\":\"List of facets.\",\"items\":{\"type\":\"object\",\"properties\":{\"buckets\":{\"" +
-            "type\":\"array\",\"description\":\"List of Buckets within facet.\",\"items\":{\"type\":\"obj" +
-            "ect\",\"properties\":{\"count\":{\"type\":\"integer\",\"description\":\"Number of products m" +
-            "atching the query that have a value for the facet\'s property or attribute that m" +
-            "atches the bucket.\",\"format\":\"int32\"},\"max\":{\"type\":\"any\",\"description\":\"Upper b" +
-            "ound of the bucket (omitted for value buckets or if the range has no upper bound" +
-            ").\"},\"maxExclusive\":{\"type\":\"boolean\",\"description\":\"Whether the upper bound of " +
-            "the bucket is exclusive (omitted for value buckets or if the range has no upper " +
-            "bound).\"},\"min\":{\"type\":\"any\",\"description\":\"Lower bound of the bucket (omitted " +
-            "for value buckets or if the range has no lower bound).\"},\"minExclusive\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether the lower bound of the bucket is exclusive (omi" +
-            "tted for value buckets or if the range has no lower bound).\"},\"value\":{\"type\":\"a" +
-            "ny\",\"description\":\"Value of the bucket (omitted for range buckets).\"}}}},\"count\"" +
-            ":{\"type\":\"integer\",\"description\":\"Number of products matching the query that hav" +
-            "e a value for the facet\'s property or attribute.\",\"format\":\"int32\"},\"displayName" +
-            "\":{\"type\":\"string\",\"description\":\"Display name of facet.\"},\"name\":{\"type\":\"strin" +
-            "g\",\"description\":\"Name of the facet\'s attribute (omitted for property facets).\"}" +
-            ",\"property\":{\"type\":\"string\",\"description\":\"Property of facet (omitted for attri" +
-            "bute facets).\"},\"type\":{\"type\":\"string\",\"description\":\"Type of facet\'s attribute" +
-            " (omitted for property facets, one of: text, bool, int, float).\"},\"unit\":{\"type\"" +
-            ":\"string\",\"description\":\"Unit of the facet\'s property or attribute (omitted if t" +
-            "he facet\'s property or attribute has no unit).\"}}}},\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Id of feed.\",\"default\":\"tag:google.com,2010:shopping/products\"},\"items\"" +
-            ":{\"type\":\"array\",\"description\":\"List of returned products.\",\"items\":{\"$ref\":\"Pro" +
-            "duct\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"Number of items per page" +
-            " of results.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed" +
-            " string \\\"shopping#products\\\". The kind of feed returned.\",\"default\":\"shopping#p" +
-            "roducts\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Next link of feed.\"},\"previ" +
-            "ousLink\":{\"type\":\"string\",\"description\":\"Previous link of feed.\"},\"promotions\":{" +
-            "\"type\":\"array\",\"description\":\"List of promotions.\",\"items\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"customFields\":{\"type\":\"array\",\"description\":\"List of custom fields of" +
-            " promotion.\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name of field.\"},\"value\":{\"type\":\"string\",\"description\":\"Value of fie" +
-            "ld.\"}}}},\"customHtml\":{\"type\":\"string\",\"description\":\"Custom HTML of promotion (" +
-            "omitted if type is not custom).\"},\"description\":{\"type\":\"string\",\"description\":\"" +
-            "Description of promotion (omitted if type is not standard).\"},\"destLink\":{\"type\"" +
-            ":\"string\",\"description\":\"Link to promotion (omitted if type is not standard).\"}," +
-            "\"imageLink\":{\"type\":\"string\",\"description\":\"Link to promotion image (omitted if " +
-            "type is not standard).\"},\"link\":{\"type\":\"string\",\"description\":\"Link to promotio" +
-            "n without scheme. DEPRECATED. WILL BE REMOVED SOON. USE destLink.\"},\"name\":{\"typ" +
-            "e\":\"string\",\"description\":\"Name of promotion (omitted if type is not standard).\"" +
-            "},\"product\":{\"$ref\":\"ShoppingModelProductJsonV1\",\"description\":\"Product of promo" +
-            "tion (omitted if type is not product).\"},\"type\":{\"type\":\"string\",\"description\":\"" +
-            "Type of promotion (one of: standard, product, custom).\"}}}},\"redirects\":{\"type\":" +
-            "\"array\",\"description\":\"Redirects.\",\"items\":{\"type\":\"string\"}},\"relatedQueries\":{" +
-            "\"type\":\"array\",\"description\":\"Related queries.\",\"items\":{\"type\":\"string\"}},\"requ" +
-            "estId\":{\"type\":\"string\",\"description\":\"Unique identifier for this request.\"},\"se" +
-            "lfLink\":{\"type\":\"string\",\"description\":\"Self link of feed.\"},\"shelfSpaceAds\":{\"t" +
-            "ype\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"product\":{\"$ref\":\"ShoppingM" +
-            "odelProductJsonV1\"}}}},\"spelling\":{\"type\":\"object\",\"description\":\"Spelling.\",\"pr" +
-            "operties\":{\"suggestion\":{\"type\":\"string\",\"description\":\"Suggestion for spelling." +
-            "\"}}},\"startIndex\":{\"type\":\"integer\",\"description\":\"1-based index of the first it" +
-            "em in the search results.\",\"format\":\"int32\"},\"stores\":{\"type\":\"array\",\"descripti" +
-            "on\":\"List of returned stores.\",\"items\":{\"type\":\"object\",\"properties\":{\"address\":" +
-            "{\"type\":\"string\",\"description\":\"Address of store.\"},\"location\":{\"type\":\"string\"," +
-            "\"description\":\"Location of store.\"},\"name\":{\"type\":\"string\",\"description\":\"Name " +
-            "of store.\"},\"storeCode\":{\"type\":\"string\",\"description\":\"Merchant-supplied store " +
-            "code.\"},\"storeId\":{\"type\":\"string\",\"description\":\"Id of store.\"},\"telephone\":{\"t" +
-            "ype\":\"string\",\"description\":\"Telephone number of store.\"}}}},\"totalItems\":{\"type" +
-            "\":\"integer\",\"description\":\"Total number of search results.\",\"format\":\"int32\"}}}," +
-            "\"ShoppingModelCategoryJsonV1\":{\"id\":\"ShoppingModelCategoryJsonV1\",\"type\":\"object" +
-            "\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Id of category.\"},\"parents\"" +
-            ":{\"type\":\"array\",\"description\":\"Ids of the parents of the category.\",\"items\":{\"t" +
-            "ype\":\"string\"}},\"shortName\":{\"type\":\"string\",\"description\":\"Short name of catego" +
-            "ry.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of category.\"}}},\"ShoppingModelD" +
-            "ebugJsonV1\":{\"id\":\"ShoppingModelDebugJsonV1\",\"type\":\"object\",\"properties\":{\"back" +
-            "endTimes\":{\"type\":\"array\",\"description\":\"Google internal\",\"items\":{\"type\":\"objec" +
-            "t\",\"properties\":{\"elapsedMillis\":{\"type\":\"string\",\"description\":\"Google internal" +
-            "\",\"format\":\"int64\"},\"hostName\":{\"type\":\"string\",\"description\":\"Google internal\"}" +
-            ",\"name\":{\"type\":\"string\",\"description\":\"Google internal\"},\"serverMillis\":{\"type\"" +
-            ":\"string\",\"description\":\"Google internal\",\"format\":\"int64\"}}}},\"elapsedMillis\":{" +
-            "\"type\":\"string\",\"description\":\"Google internal.\",\"format\":\"int64\"},\"rdcResponse\"" +
-            ":{\"type\":\"string\",\"description\":\"Google internal.\"},\"searchRequest\":{\"type\":\"str" +
-            "ing\",\"description\":\"Google internal.\"},\"searchResponse\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Google internal.\"}}},\"ShoppingModelProductJsonV1\":{\"id\":\"ShoppingModelPr" +
-            "oductJsonV1\",\"type\":\"object\",\"properties\":{\"attributes\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"Attributes of product (available only with a cx source).\",\"items\":{\"type\"" +
-            ":\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"Display Na" +
-            "me of prodct attribute.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of product" +
-            " attribute.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of product attribute (" +
-            "one of: text, bool, int, float, dateRange, url).\"},\"unit\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Unit of product attribute.\"},\"value\":{\"type\":\"any\",\"description\":\"Valu" +
-            "e of product attribute.\"}}}},\"author\":{\"type\":\"object\",\"description\":\"Author of " +
-            "product.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account id o" +
-            "f product author.\"},\"aggregatorId\":{\"type\":\"string\",\"description\":\"Aggregator id" +
-            " of product author.\"},\"email\":{\"type\":\"string\",\"description\":\"Email address of p" +
-            "roduct author.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of product author.\"" +
-            "},\"uri\":{\"type\":\"string\",\"description\":\"URI of product author.\"}}},\"brand\":{\"typ" +
-            "e\":\"string\",\"description\":\"Brand of product.\"},\"categories\":{\"type\":\"array\",\"des" +
-            "cription\":\"Categories of product according to the selected taxonomy, omitted if " +
-            "no taxonomy is selected.\",\"items\":{\"type\":\"string\"}},\"condition\":{\"type\":\"string" +
-            "\",\"description\":\"Condition of product (one of: new, refurbished, used).\"},\"count" +
-            "ry\":{\"type\":\"string\",\"description\":\"ISO 3166 code of target country of product.\"" +
-            "},\"creationTime\":{\"type\":\"string\",\"description\":\"RFC 3339 formatted creation tim" +
-            "e and date of product.\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"de" +
-            "scription\":\"Description of product.\"},\"googleId\":{\"type\":\"string\",\"description\":" +
-            "\"Google id of product.\"},\"gtin\":{\"type\":\"string\",\"description\":\"The first GTIN o" +
-            "f the product. Deprecated in favor of \\\"gtins\\\".\"},\"gtins\":{\"type\":\"array\",\"desc" +
-            "ription\":\"List of all the product\'s GTINs (in GTIN-14 format).\",\"items\":{\"type\":" +
-            "\"string\"}},\"images\":{\"type\":\"array\",\"description\":\"Images of product.\",\"items\":{" +
-            "\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"string\",\"description\":\"Link to pro" +
-            "duct image.\"},\"thumbnails\":{\"type\":\"array\",\"description\":\"Thumbnails of product " +
-            "image.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Content of thumbnail (only available for the first thumbnail of the top" +
-            " results if SAYT is enabled).\"},\"height\":{\"type\":\"integer\",\"description\":\"Height" +
-            " of thumbnail (omitted if not specified in the request).\",\"format\":\"int32\"},\"lin" +
-            "k\":{\"type\":\"string\",\"description\":\"Link to thumbnail.\"},\"width\":{\"type\":\"integer" +
-            "\",\"description\":\"Width of thumbnail (omitted if not specified in the request).\"," +
-            "\"format\":\"int32\"}}}}}}},\"inventories\":{\"type\":\"array\",\"description\":\"Inventories" +
-            " of product.\",\"items\":{\"type\":\"object\",\"properties\":{\"availability\":{\"type\":\"str" +
-            "ing\",\"description\":\"Availability of product inventory.\"},\"channel\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Channel of product inventory (one of: online, local).\"},\"curr" +
-            "ency\":{\"type\":\"string\",\"description\":\"Currency of product inventory (an ISO 4217" +
-            " alphabetic code).\"},\"distance\":{\"type\":\"number\",\"description\":\"Distance of prod" +
-            "uct inventory.\",\"format\":\"float\"},\"distanceUnit\":{\"type\":\"string\",\"description\":" +
-            "\"Distance unit of product inventory.\"},\"price\":{\"type\":\"number\",\"description\":\"P" +
-            "rice of product inventory.\",\"format\":\"float\"},\"shipping\":{\"type\":\"number\",\"descr" +
-            "iption\":\"Shipping cost of product inventory.\",\"format\":\"float\"},\"storeId\":{\"type" +
-            "\":\"string\",\"description\":\"Store ID of product inventory.\"},\"tax\":{\"type\":\"number" +
-            "\",\"description\":\"Tax of product inventory.\",\"format\":\"float\"}}}},\"language\":{\"ty" +
-            "pe\":\"string\",\"description\":\"BCP 47 language tag of language of product.\"},\"link\"" +
-            ":{\"type\":\"string\",\"description\":\"Link to product.\"},\"modificationTime\":{\"type\":\"" +
-            "string\",\"description\":\"RFC 3339 formatted modification time and date of product." +
-            "\",\"format\":\"date-time\"},\"plusOne\":{\"type\":\"string\",\"description\":\"Code to add to" +
-            " the page to render the +1 content.\"},\"providedId\":{\"type\":\"string\",\"description" +
-            "\":\"Merchant-provided id of product (available only with a cx source).\"},\"queryMa" +
-            "tched\":{\"type\":\"boolean\",\"description\":\"Whether this product matched the user qu" +
-            "ery. Only set for the variant offers (if any) attached to a product offer.\"},\"ti" +
-            "tle\":{\"type\":\"string\",\"description\":\"Title of product.\"},\"totalMatchingVariants\"" +
-            ":{\"type\":\"integer\",\"description\":\"The number of variant offers returned that mat" +
-            "ched the query.\",\"format\":\"int32\"},\"variants\":{\"type\":\"array\",\"description\":\"A l" +
-            "ist of variant offers associated with this product.\",\"items\":{\"type\":\"object\",\"p" +
-            "roperties\":{\"variant\":{\"$ref\":\"ShoppingModelProductJsonV1\",\"description\":\"The de" +
-            "tailed offer data for a particular variant offer.\"}}}}}}},\"resources\":{\"products" +
-            "\":{\"methods\":{\"get\":{\"id\":\"shopping.products.get\",\"path\":\"{source}/products/{acc" +
-            "ountId}/{productIdType}/{productId}\",\"httpMethod\":\"GET\",\"description\":\"Returns a" +
-            " single product\",\"parameters\":{\"accountId\":{\"type\":\"integer\",\"description\":\"Merc" +
-            "hant center account id\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"at" +
-            "tributeFilter\":{\"type\":\"string\",\"description\":\"Comma separated list of attribute" +
-            "s to return\",\"location\":\"query\"},\"categories.enabled\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether to return category information\",\"location\":\"query\"},\"categories.i" +
-            "nclude\":{\"type\":\"string\",\"description\":\"Category specification\",\"location\":\"quer" +
-            "y\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter is" +
-            " currently ignored\",\"location\":\"query\"},\"debug.enableLogging\":{\"type\":\"boolean\"," +
-            "\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.enabled\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.searchRequest\":" +
-            "{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.sea" +
-            "rchResponse\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query" +
-            "\"},\"location\":{\"type\":\"string\",\"description\":\"Location used to determine tax and" +
-            " shipping\",\"location\":\"query\"},\"plusOne\":{\"type\":\"string\",\"description\":\"+1 rend" +
-            "ering specification.\",\"location\":\"query\"},\"productFields\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Google Internal\",\"location\":\"query\"},\"productId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Id of product\",\"required\":true,\"location\":\"path\"},\"productIdType\":{\"t" +
-            "ype\":\"string\",\"description\":\"Type of productId\",\"required\":true,\"location\":\"path" +
-            "\"},\"recommendations.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return " +
-            "recommendation information\",\"location\":\"query\"},\"recommendations.include\":{\"type" +
-            "\":\"string\",\"description\":\"Recommendation specification\",\"location\":\"query\"},\"rec" +
-            "ommendations.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter is cu" +
-            "rrently ignored\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"Qu" +
-            "ery source\",\"required\":true,\"location\":\"path\"},\"taxonomy\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Merchant taxonomy\",\"location\":\"query\"},\"thumbnails\":{\"type\":\"string\",\"" +
-            "description\":\"Thumbnail specification\",\"location\":\"query\"}},\"parameterOrder\":[\"s" +
-            "ource\",\"accountId\",\"productIdType\",\"productId\"],\"response\":{\"$ref\":\"Product\"}},\"" +
-            "list\":{\"id\":\"shopping.products.list\",\"path\":\"{source}/products\",\"httpMethod\":\"GE" +
-            "T\",\"description\":\"Returns a list of products and content modules\",\"parameters\":{" +
-            "\"attributeFilter\":{\"type\":\"string\",\"description\":\"Comma separated list of attrib" +
-            "utes to return\",\"location\":\"query\"},\"boostBy\":{\"type\":\"string\",\"description\":\"Bo" +
-            "osting specification\",\"location\":\"query\"},\"categories.enabled\":{\"type\":\"boolean\"" +
-            ",\"description\":\"Whether to return category information\",\"location\":\"query\"},\"cat" +
-            "egories.include\":{\"type\":\"string\",\"description\":\"Category specification\",\"locati" +
-            "on\":\"query\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This par" +
-            "ameter is currently ignored\",\"location\":\"query\"},\"channels\":{\"type\":\"string\",\"de" +
-            "scription\":\"Channels specification\",\"location\":\"query\"},\"country\":{\"type\":\"strin" +
-            "g\",\"description\":\"Country restriction (ISO 3166)\",\"location\":\"query\"},\"crowdBy\":" +
-            "{\"type\":\"string\",\"description\":\"Crowding specification\",\"location\":\"query\"},\"cur" +
-            "rency\":{\"type\":\"string\",\"description\":\"Currency restriction (ISO 4217)\",\"locatio" +
-            "n\":\"query\"},\"debug.enableLogging\":{\"type\":\"boolean\",\"description\":\"Google Intern" +
-            "al\",\"location\":\"query\"},\"debug.enabled\":{\"type\":\"boolean\",\"description\":\"Google " +
-            "Internal\",\"location\":\"query\"},\"debug.geocodeRequest\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Google Internal\",\"location\":\"query\"},\"debug.geocodeResponse\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.rdcRequest\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"debug.rdcResp" +
-            "onse\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"query\"},\"deb" +
-            "ug.searchRequest\":{\"type\":\"boolean\",\"description\":\"Google Internal\",\"location\":\"" +
-            "query\"},\"debug.searchResponse\":{\"type\":\"boolean\",\"description\":\"Google Internal\"" +
-            ",\"location\":\"query\"},\"facets.discover\":{\"type\":\"string\",\"description\":\"Facets to" +
-            " discover\",\"location\":\"query\"},\"facets.enabled\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether to return facet information\",\"location\":\"query\"},\"facets.include\":{\"typ" +
-            "e\":\"string\",\"description\":\"Facets to include (applies when useGcsConfig == false" +
-            ")\",\"location\":\"query\"},\"facets.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Wh" +
-            "ether to return facet information as configured in the GCS account\",\"location\":\"" +
-            "query\"},\"language\":{\"type\":\"string\",\"description\":\"Language restriction (BCP 47)" +
-            "\",\"location\":\"query\"},\"location\":{\"type\":\"string\",\"description\":\"Location used t" +
-            "o determine tax and shipping\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\"" +
-            ",\"description\":\"Maximum number of results to return\",\"format\":\"uint32\",\"location" +
-            "\":\"query\"},\"maxVariants\":{\"type\":\"integer\",\"description\":\"Maximum number of vari" +
-            "ant results to return per result\",\"format\":\"uint32\",\"location\":\"query\"},\"minAvai" +
-            "lability\":{\"type\":\"string\",\"enum\":[\"inStock\",\"limited\",\"outOfStock\",\"unknown\"],\"" +
-            "enumDescriptions\":[\"Only in stcok prodicts will be returned\",\"Limited availabili" +
-            "ty and in stock products will be returned\",\"Out of stock, limited availability a" +
-            "nd in stock products will be returned\",\"All products will be returned\"],\"locatio" +
-            "n\":\"query\"},\"plusOne\":{\"type\":\"string\",\"description\":\"+1 rendering specification" +
-            ".\",\"location\":\"query\"},\"productFields\":{\"type\":\"string\",\"description\":\"Google In" +
-            "ternal\",\"location\":\"query\"},\"promotions.enabled\":{\"type\":\"boolean\",\"description\"" +
-            ":\"Whether to return promotion information\",\"location\":\"query\"},\"promotions.useGc" +
-            "sConfig\":{\"type\":\"boolean\",\"description\":\"Whether to return promotion informatio" +
-            "n as configured in the GCS account\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"de" +
-            "scription\":\"Search query\",\"location\":\"query\"},\"rankBy\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Ranking specification\",\"location\":\"query\"},\"redirects.enabled\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to return redirect information\",\"location\":\"query" +
-            "\"},\"redirects.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether to return r" +
-            "edirect information as configured in the GCS account\",\"location\":\"query\"},\"relat" +
-            "edQueries.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return related qu" +
-            "eries\",\"location\":\"query\"},\"relatedQueries.useGcsConfig\":{\"type\":\"boolean\",\"desc" +
-            "ription\":\"This parameter is currently ignored\",\"location\":\"query\"},\"restrictBy\":" +
-            "{\"type\":\"string\",\"description\":\"Restriction specification\",\"location\":\"query\"},\"" +
-            "safe\":{\"type\":\"boolean\",\"description\":\"Whether safe search is enabled. Default: " +
-            "true\",\"location\":\"query\"},\"sayt.enabled\":{\"type\":\"boolean\",\"description\":\"Google" +
-            " Internal\",\"location\":\"query\"},\"sayt.useGcsConfig\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Google Internal\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\"" +
-            ":\"Query source\",\"required\":true,\"location\":\"path\"},\"spelling.enabled\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to return spelling suggestions\",\"location\":\"query" +
-            "\"},\"spelling.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This parameter is cu" +
-            "rrently ignored\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description" +
-            "\":\"Index (1-based) of first product to return\",\"format\":\"uint32\",\"location\":\"que" +
-            "ry\"},\"taxonomy\":{\"type\":\"string\",\"description\":\"Taxonomy name\",\"location\":\"query" +
-            "\"},\"thumbnails\":{\"type\":\"string\",\"description\":\"Image thumbnails specification\"," +
-            "\"location\":\"query\"},\"useCase\":{\"type\":\"string\",\"description\":\"One of CommerceSea" +
-            "rchUseCase, ShoppingApiUseCase\",\"location\":\"query\"}},\"parameterOrder\":[\"source\"]" +
-            ",\"response\":{\"$ref\":\"Products\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"shopping:v1\",\"n" +
+            "ame\":\"shopping\",\"version\":\"v1\",\"revision\":\"20120308\",\"title\":\"Search API for Sho" +
+            "pping\",\"description\":\"Lets you search over product data\",\"icons\":{\"x16\":\"http://" +
+            "www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/" +
+            "images/icons/product/search-32.gif\"},\"documentationLink\":\"http://code.google.com" +
+            "/apis/shopping/search/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"http" +
+            "s://www.googleapis.com/shopping/search/v1/\",\"basePath\":\"/shopping/search/v1/\",\"p" +
+            "arameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\"" +
+            ",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Con" +
+            "tent-Type of application/atom+xml\",\"Responses with Content-Type of application/j" +
+            "son\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spec" +
+            "ifying which fields to include in a partial response.\",\"location\":\"query\"},\"key\"" +
+            ":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project a" +
+            "nd provides you with API access, quota, and reports. Required unless you provide" +
+            " an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descri" +
+            "ption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line br" +
+            "eaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Available to use for quota purposes for server-side applications. Can be" +
+            " any arbitrary string assigned to a user, but should not exceed 40 characters. O" +
+            "verrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"str" +
+            "ing\",\"description\":\"IP address of the site where the request originates. Use thi" +
+            "s if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\"" +
+            ":{\"scopes\":{\"https://www.googleapis.com/auth/shoppingapi\":{\"description\":\"View y" +
+            "our product data\"}}}},\"schemas\":{\"Product\":{\"id\":\"Product\",\"type\":\"object\",\"prop" +
+            "erties\":{\"categories\":{\"type\":\"array\",\"description\":\"List of categories for prod" +
+            "uct.\",\"items\":{\"$ref\":\"ShoppingModelCategoryJsonV1\"}},\"debug\":{\"$ref\":\"ShoppingM" +
+            "odelDebugJsonV1\",\"description\":\"Google internal.\"},\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Id of product.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of item" +
+            ", always shopping#product.\",\"default\":\"shopping#product\"},\"product\":{\"$ref\":\"Sho" +
+            "ppingModelProductJsonV1\",\"description\":\"Product.\"},\"recommendations\":{\"type\":\"ar" +
+            "ray\",\"description\":\"Recommendations for product.\",\"items\":{\"type\":\"object\",\"prop" +
+            "erties\":{\"recommendationList\":{\"type\":\"array\",\"description\":\"List of recommendat" +
+            "ions.\",\"items\":{\"type\":\"object\",\"properties\":{\"product\":{\"$ref\":\"ShoppingModelPr" +
+            "oductJsonV1\",\"description\":\"Recommended product.\"}}}},\"type\":{\"type\":\"string\",\"d" +
+            "escription\":\"Type of recommendation list (one of: all, purchaseToPurchase, visit" +
+            "ToVisit, visitToPurchase).\"}}}},\"requestId\":{\"type\":\"string\",\"description\":\"Uniq" +
+            "ue identifier for this request.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Sel" +
+            "f link of product.\"}}},\"Products\":{\"id\":\"Products\",\"type\":\"object\",\"properties\":" +
+            "{\"categories\":{\"type\":\"array\",\"description\":\"List of categories.\",\"items\":{\"$ref" +
+            "\":\"ShoppingModelCategoryJsonV1\"}},\"currentItemCount\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"Current item count.\",\"format\":\"int32\"},\"debug\":{\"$ref\":\"ShoppingModelDebug" +
+            "JsonV1\",\"description\":\"Google internal.\"},\"etag\":{\"type\":\"string\",\"description\":" +
+            "\"Etag of feed.\"},\"facets\":{\"type\":\"array\",\"description\":\"List of facets.\",\"items" +
+            "\":{\"type\":\"object\",\"properties\":{\"buckets\":{\"type\":\"array\",\"description\":\"List o" +
+            "f Buckets within facet.\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":" +
+            "\"integer\",\"description\":\"Number of products matching the query that have a value" +
+            " for the facet\'s property or attribute that matches the bucket.\",\"format\":\"int32" +
+            "\"},\"max\":{\"type\":\"any\",\"description\":\"Upper bound of the bucket (omitted for val" +
+            "ue buckets or if the range has no upper bound).\"},\"maxExclusive\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Whether the upper bound of the bucket is exclusive (omitted fo" +
+            "r value buckets or if the range has no upper bound).\"},\"min\":{\"type\":\"any\",\"desc" +
+            "ription\":\"Lower bound of the bucket (omitted for value buckets or if the range h" +
+            "as no lower bound).\"},\"minExclusive\":{\"type\":\"boolean\",\"description\":\"Whether th" +
+            "e lower bound of the bucket is exclusive (omitted for value buckets or if the ra" +
+            "nge has no lower bound).\"},\"value\":{\"type\":\"any\",\"description\":\"Value of the buc" +
+            "ket (omitted for range buckets).\"}}}},\"count\":{\"type\":\"integer\",\"description\":\"N" +
+            "umber of products matching the query that have a value for the facet\'s property " +
+            "or attribute.\",\"format\":\"int32\"},\"displayName\":{\"type\":\"string\",\"description\":\"D" +
+            "isplay name of facet.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of the facet" +
+            "\'s attribute (omitted for property facets).\"},\"property\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Property of facet (omitted for attribute facets).\"},\"type\":{\"type\":\"str" +
+            "ing\",\"description\":\"Type of facet\'s attribute (omitted for property facets, one " +
+            "of: text, bool, int, float).\"},\"unit\":{\"type\":\"string\",\"description\":\"Unit of th" +
+            "e facet\'s property or attribute (omitted if the facet\'s property or attribute ha" +
+            "s no unit).\"}}}},\"id\":{\"type\":\"string\",\"description\":\"Id of feed.\",\"default\":\"ta" +
+            "g:google.com,2010:shopping/products\"},\"items\":{\"type\":\"array\",\"description\":\"Lis" +
+            "t of returned products.\",\"items\":{\"$ref\":\"Product\"}},\"itemsPerPage\":{\"type\":\"int" +
+            "eger\",\"description\":\"Number of items per page of results.\",\"format\":\"int32\"},\"ki" +
+            "nd\":{\"type\":\"string\",\"description\":\"The fixed string \\\"shopping#products\\\". The " +
+            "kind of feed returned.\",\"default\":\"shopping#products\"},\"nextLink\":{\"type\":\"strin" +
+            "g\",\"description\":\"Next link of feed.\"},\"previousLink\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Previous link of feed.\"},\"promotions\":{\"type\":\"array\",\"description\":\"List " +
+            "of promotions.\",\"items\":{\"type\":\"object\",\"properties\":{\"customFields\":{\"type\":\"a" +
+            "rray\",\"description\":\"List of custom fields of promotion.\",\"items\":{\"type\":\"objec" +
+            "t\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Name of field.\"},\"value\"" +
+            ":{\"type\":\"string\",\"description\":\"Value of field.\"}}}},\"customHtml\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Custom HTML of promotion (omitted if type is not custom).\"},\"" +
+            "description\":{\"type\":\"string\",\"description\":\"Description of promotion (omitted i" +
+            "f type is not standard).\"},\"destLink\":{\"type\":\"string\",\"description\":\"Link to pr" +
+            "omotion (omitted if type is not standard).\"},\"imageLink\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Link to promotion image (omitted if type is not standard).\"},\"link\":{\"t" +
+            "ype\":\"string\",\"description\":\"Link to promotion without scheme. DEPRECATED. WILL " +
+            "BE REMOVED SOON. USE destLink.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of " +
+            "promotion (omitted if type is not standard).\"},\"product\":{\"$ref\":\"ShoppingModelP" +
+            "roductJsonV1\",\"description\":\"Product of promotion (omitted if type is not produc" +
+            "t).\"},\"type\":{\"type\":\"string\",\"description\":\"Type of promotion (one of: standard" +
+            ", product, custom).\"}}}},\"redirects\":{\"type\":\"array\",\"description\":\"Redirects.\"," +
+            "\"items\":{\"type\":\"string\"}},\"relatedQueries\":{\"type\":\"array\",\"description\":\"Relat" +
+            "ed queries.\",\"items\":{\"type\":\"string\"}},\"requestId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Unique identifier for this request.\"},\"selfLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Self link of feed.\"},\"spelling\":{\"type\":\"object\",\"description\":\"Spelling.\"," +
+            "\"properties\":{\"suggestion\":{\"type\":\"string\",\"description\":\"Suggestion for spelli" +
+            "ng.\"}}},\"startIndex\":{\"type\":\"integer\",\"description\":\"1-based index of the first" +
+            " item in the search results.\",\"format\":\"int32\"},\"stores\":{\"type\":\"array\",\"descri" +
+            "ption\":\"List of returned stores.\",\"items\":{\"type\":\"object\",\"properties\":{\"addres" +
+            "s\":{\"type\":\"string\",\"description\":\"Address of store.\"},\"location\":{\"type\":\"strin" +
+            "g\",\"description\":\"Location of store.\"},\"name\":{\"type\":\"string\",\"description\":\"Na" +
+            "me of store.\"},\"storeCode\":{\"type\":\"string\",\"description\":\"Merchant-supplied sto" +
+            "re code.\"},\"storeId\":{\"type\":\"string\",\"description\":\"Id of store.\"},\"telephone\":" +
+            "{\"type\":\"string\",\"description\":\"Telephone number of store.\"}}}},\"totalItems\":{\"t" +
+            "ype\":\"integer\",\"description\":\"Total number of search results.\",\"format\":\"int32\"}" +
+            "}},\"ShoppingModelCategoryJsonV1\":{\"id\":\"ShoppingModelCategoryJsonV1\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Id of category.\"},\"paren" +
+            "ts\":{\"type\":\"array\",\"description\":\"Ids of the parents of the category.\",\"items\":" +
+            "{\"type\":\"string\"}},\"shortName\":{\"type\":\"string\",\"description\":\"Short name of cat" +
+            "egory.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of category.\"}}},\"ShoppingMod" +
+            "elDebugJsonV1\":{\"id\":\"ShoppingModelDebugJsonV1\",\"type\":\"object\",\"properties\":{\"b" +
+            "ackendTimes\":{\"type\":\"array\",\"description\":\"Google internal\",\"items\":{\"type\":\"ob" +
+            "ject\",\"properties\":{\"elapsedMillis\":{\"type\":\"string\",\"description\":\"Google inter" +
+            "nal\",\"format\":\"int64\"},\"hostName\":{\"type\":\"string\",\"description\":\"Google interna" +
+            "l\"},\"name\":{\"type\":\"string\",\"description\":\"Google internal\"},\"serverMillis\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Google internal\",\"format\":\"int64\"}}}},\"elapsedMillis" +
+            "\":{\"type\":\"string\",\"description\":\"Google internal.\",\"format\":\"int64\"},\"facetsReq" +
+            "uest\":{\"type\":\"string\",\"description\":\"Google internal.\"},\"facetsResponse\":{\"type" +
+            "\":\"string\",\"description\":\"Google internal.\"},\"rdcResponse\":{\"type\":\"string\",\"des" +
+            "cription\":\"Google internal.\"},\"searchRequest\":{\"type\":\"string\",\"description\":\"Go" +
+            "ogle internal.\"},\"searchResponse\":{\"type\":\"string\",\"description\":\"Google interna" +
+            "l.\"}}},\"ShoppingModelProductJsonV1\":{\"id\":\"ShoppingModelProductJsonV1\",\"type\":\"o" +
+            "bject\",\"properties\":{\"attributes\":{\"type\":\"array\",\"description\":\"Attributes of p" +
+            "roduct (available only with a cx source).\",\"items\":{\"type\":\"object\",\"properties\"" +
+            ":{\"displayName\":{\"type\":\"string\",\"description\":\"Display Name of prodct attribute" +
+            ".\"},\"name\":{\"type\":\"string\",\"description\":\"Name of product attribute.\"},\"type\":{" +
+            "\"type\":\"string\",\"description\":\"Type of product attribute (one of: text, bool, in" +
+            "t, float, dateRange, url).\"},\"unit\":{\"type\":\"string\",\"description\":\"Unit of prod" +
+            "uct attribute.\"},\"value\":{\"type\":\"any\",\"description\":\"Value of product attribute" +
+            ".\"}}}},\"author\":{\"type\":\"object\",\"description\":\"Author of product.\",\"properties\"" +
+            ":{\"accountId\":{\"type\":\"string\",\"description\":\"Account id of product author.\",\"fo" +
+            "rmat\":\"uint64\"},\"name\":{\"type\":\"string\",\"description\":\"Name of product author.\"}" +
+            "}},\"brand\":{\"type\":\"string\",\"description\":\"Brand of product.\"},\"categories\":{\"ty" +
+            "pe\":\"array\",\"description\":\"Categories of product according to the selected taxon" +
+            "omy, omitted if no taxonomy is selected.\",\"items\":{\"type\":\"string\"}},\"condition\"" +
+            ":{\"type\":\"string\",\"description\":\"Condition of product (one of: new, refurbished," +
+            " used).\"},\"country\":{\"type\":\"string\",\"description\":\"ISO 3166 code of target coun" +
+            "try of product.\"},\"creationTime\":{\"type\":\"string\",\"description\":\"RFC 3339 format" +
+            "ted creation time and date of product.\",\"format\":\"date-time\"},\"description\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Description of product.\"},\"googleId\":{\"type\":\"string" +
+            "\",\"description\":\"Google id of product.\",\"format\":\"uint64\"},\"gtin\":{\"type\":\"strin" +
+            "g\",\"description\":\"The first GTIN of the product. Deprecated in favor of \\\"gtins\\" +
+            "\".\"},\"gtins\":{\"type\":\"array\",\"description\":\"List of all the product\'s GTINs (in " +
+            "GTIN-14 format).\",\"items\":{\"type\":\"string\"}},\"images\":{\"type\":\"array\",\"descripti" +
+            "on\":\"Images of product.\",\"items\":{\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"" +
+            "string\",\"description\":\"Link to product image.\"},\"thumbnails\":{\"type\":\"array\",\"de" +
+            "scription\":\"Thumbnails of product image.\",\"items\":{\"type\":\"object\",\"properties\":" +
+            "{\"content\":{\"type\":\"string\",\"description\":\"Content of thumbnail (only available " +
+            "for the first thumbnail of the top results if SAYT is enabled).\"},\"height\":{\"typ" +
+            "e\":\"integer\",\"description\":\"Height of thumbnail (omitted if not specified in the" +
+            " request).\",\"format\":\"int32\"},\"link\":{\"type\":\"string\",\"description\":\"Link to thu" +
+            "mbnail.\"},\"width\":{\"type\":\"integer\",\"description\":\"Width of thumbnail (omitted i" +
+            "f not specified in the request).\",\"format\":\"int32\"}}}}}}},\"internal1\":{\"type\":\"a" +
+            "rray\",\"description\":\"Google Internal.\",\"items\":{\"type\":\"string\"}},\"internal10\":{" +
+            "\"type\":\"array\",\"description\":\"Google Internal.\",\"items\":{\"type\":\"string\"}},\"inte" +
+            "rnal12\":{\"type\":\"string\",\"description\":\"Google Internal.\"},\"internal13\":{\"type\":" +
+            "\"number\",\"description\":\"Google Internal.\",\"format\":\"double\"},\"internal14\":{\"type" +
+            "\":\"number\",\"description\":\"Google Internal.\",\"format\":\"double\"},\"internal15\":{\"ty" +
+            "pe\":\"number\",\"description\":\"Google Internal.\",\"format\":\"double\"},\"internal3\":{\"t" +
+            "ype\":\"string\",\"description\":\"Google Internal.\"},\"internal4\":{\"type\":\"array\",\"des" +
+            "cription\":\"Google Internal.\",\"items\":{\"type\":\"object\",\"properties\":{\"confidence\"" +
+            ":{\"type\":\"number\",\"description\":\"Google Internal.\",\"format\":\"double\"},\"node\":{\"t" +
+            "ype\":\"integer\",\"description\":\"Google Internal.\",\"format\":\"int32\"}}}},\"internal6\"" +
+            ":{\"type\":\"string\",\"description\":\"Google Internal.\"},\"internal7\":{\"type\":\"boolean" +
+            "\",\"description\":\"Google Internal.\"},\"internal8\":{\"type\":\"array\",\"description\":\"G" +
+            "oogle Internal.\",\"items\":{\"type\":\"string\"}},\"inventories\":{\"type\":\"array\",\"descr" +
+            "iption\":\"Inventories of product.\",\"items\":{\"type\":\"object\",\"properties\":{\"availa" +
+            "bility\":{\"type\":\"string\",\"description\":\"Availability of product inventory.\"},\"ch" +
+            "annel\":{\"type\":\"string\",\"description\":\"Channel of product inventory (one of: onl" +
+            "ine, local).\"},\"currency\":{\"type\":\"string\",\"description\":\"Currency of product in" +
+            "ventory (an ISO 4217 alphabetic code).\"},\"distance\":{\"type\":\"number\",\"descriptio" +
+            "n\":\"Distance of product inventory.\",\"format\":\"float\"},\"distanceUnit\":{\"type\":\"st" +
+            "ring\",\"description\":\"Distance unit of product inventory.\"},\"price\":{\"type\":\"numb" +
+            "er\",\"description\":\"Price of product inventory.\",\"format\":\"float\"},\"shipping\":{\"t" +
+            "ype\":\"number\",\"description\":\"Shipping cost of product inventory.\",\"format\":\"floa" +
+            "t\"},\"storeId\":{\"type\":\"string\",\"description\":\"Store ID of product inventory.\"},\"" +
+            "tax\":{\"type\":\"number\",\"description\":\"Tax of product inventory.\",\"format\":\"float\"" +
+            "}}}},\"language\":{\"type\":\"string\",\"description\":\"BCP 47 language tag of language " +
+            "of product.\"},\"link\":{\"type\":\"string\",\"description\":\"Link to product.\"},\"modific" +
+            "ationTime\":{\"type\":\"string\",\"description\":\"RFC 3339 formatted modification time " +
+            "and date of product.\",\"format\":\"date-time\"},\"mpns\":{\"type\":\"array\",\"description\"" +
+            ":\"List of all the product\'s MPNs.\",\"items\":{\"type\":\"string\"}},\"plusOne\":{\"type\":" +
+            "\"string\",\"description\":\"Code to add to the page to render the +1 content.\"},\"pro" +
+            "videdId\":{\"type\":\"string\",\"description\":\"Merchant-provided id of product (availa" +
+            "ble only with a cx source).\"},\"queryMatched\":{\"type\":\"boolean\",\"description\":\"Wh" +
+            "ether this product matched the user query. Only set for the variant offers (if a" +
+            "ny) attached to a product offer.\"},\"title\":{\"type\":\"string\",\"description\":\"Title" +
+            " of product.\"},\"totalMatchingVariants\":{\"type\":\"integer\",\"description\":\"The numb" +
+            "er of variant offers returned that matched the query.\",\"format\":\"int32\"},\"varian" +
+            "ts\":{\"type\":\"array\",\"description\":\"A list of variant offers associated with this" +
+            " product.\",\"items\":{\"type\":\"object\",\"properties\":{\"variant\":{\"$ref\":\"ShoppingMod" +
+            "elProductJsonV1\",\"description\":\"The detailed offer data for a particular variant" +
+            " offer.\"}}}}}}},\"resources\":{\"products\":{\"methods\":{\"get\":{\"id\":\"shopping.produc" +
+            "ts.get\",\"path\":\"{source}/products/{accountId}/{productIdType}/{productId}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Returns a single product\",\"parameters\":{\"accountId\"" +
+            ":{\"type\":\"integer\",\"description\":\"Merchant center account id\",\"required\":true,\"f" +
+            "ormat\":\"uint32\",\"location\":\"path\"},\"attributeFilter\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Comma separated list of attributes to return\",\"location\":\"query\"},\"categori" +
+            "es.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return category informat" +
+            "ion\",\"location\":\"query\"},\"categories.include\":{\"type\":\"string\",\"description\":\"Ca" +
+            "tegory specification\",\"location\":\"query\"},\"categories.useGcsConfig\":{\"type\":\"boo" +
+            "lean\",\"description\":\"This parameter is currently ignored\",\"location\":\"query\"},\"l" +
+            "ocation\":{\"type\":\"string\",\"description\":\"Location used to determine tax and ship" +
+            "ping\",\"location\":\"query\"},\"plusOne.enabled\":{\"type\":\"boolean\",\"description\":\"Whe" +
+            "ther to return +1 button code\",\"location\":\"query\"},\"plusOne.options\":{\"type\":\"st" +
+            "ring\",\"description\":\"+1 button rendering specification\",\"location\":\"query\"},\"plu" +
+            "sOne.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether to use +1 button sty" +
+            "les configured in the GCS account\",\"location\":\"query\"},\"productId\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Id of product\",\"required\":true,\"location\":\"path\"},\"productIdT" +
+            "ype\":{\"type\":\"string\",\"description\":\"Type of productId\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"recommendations.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to" +
+            " return recommendation information\",\"location\":\"query\"},\"recommendations.include" +
+            "\":{\"type\":\"string\",\"description\":\"Recommendation specification\",\"location\":\"quer" +
+            "y\"},\"recommendations.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"This paramet" +
+            "er is currently ignored\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Query source\",\"required\":true,\"location\":\"path\"},\"taxonomy\":{\"type\":\"strin" +
+            "g\",\"description\":\"Merchant taxonomy\",\"location\":\"query\"},\"thumbnails\":{\"type\":\"s" +
+            "tring\",\"description\":\"Thumbnail specification\",\"location\":\"query\"}},\"parameterOr" +
+            "der\":[\"source\",\"accountId\",\"productIdType\",\"productId\"],\"response\":{\"$ref\":\"Prod" +
+            "uct\"},\"scopes\":[\"https://www.googleapis.com/auth/shoppingapi\"]},\"list\":{\"id\":\"sh" +
+            "opping.products.list\",\"path\":\"{source}/products\",\"httpMethod\":\"GET\",\"description" +
+            "\":\"Returns a list of products and content modules\",\"parameters\":{\"attributeFilte" +
+            "r\":{\"type\":\"string\",\"description\":\"Comma separated list of attributes to return\"" +
+            ",\"location\":\"query\"},\"availability\":{\"type\":\"string\",\"description\":\"Comma separa" +
+            "ted list of availabilities (outOfStock, limited, inStock, backOrder, preOrder, o" +
+            "nDisplayToOrder) to return\",\"location\":\"query\"},\"boostBy\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Boosting specification\",\"location\":\"query\"},\"categories.enabled\":{\"typ" +
+            "e\":\"boolean\",\"description\":\"Whether to return category information\",\"location\":\"" +
+            "query\"},\"categories.include\":{\"type\":\"string\",\"description\":\"Category specificat" +
+            "ion\",\"location\":\"query\"},\"categories.useGcsConfig\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"This parameter is currently ignored\",\"location\":\"query\"},\"channels\":{\"type\":" +
+            "\"string\",\"description\":\"Channels specification\",\"location\":\"query\"},\"country\":{\"" +
+            "type\":\"string\",\"description\":\"Country restriction (ISO 3166)\",\"location\":\"query\"" +
+            "},\"crowdBy\":{\"type\":\"string\",\"description\":\"Crowding specification\",\"location\":\"" +
+            "query\"},\"currency\":{\"type\":\"string\",\"description\":\"Currency restriction (ISO 421" +
+            "7)\",\"location\":\"query\"},\"facets.discover\":{\"type\":\"string\",\"description\":\"Facets" +
+            " to discover\",\"location\":\"query\"},\"facets.enabled\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Whether to return facet information\",\"location\":\"query\"},\"facets.include\":{\"" +
+            "type\":\"string\",\"description\":\"Facets to include (applies when useGcsConfig == fa" +
+            "lse)\",\"location\":\"query\"},\"facets.useGcsConfig\":{\"type\":\"boolean\",\"description\":" +
+            "\"Whether to return facet information as configured in the GCS account\",\"location" +
+            "\":\"query\"},\"language\":{\"type\":\"string\",\"description\":\"Language restriction (BCP " +
+            "47)\",\"location\":\"query\"},\"location\":{\"type\":\"string\",\"description\":\"Location use" +
+            "d to determine tax and shipping\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integ" +
+            "er\",\"description\":\"Maximum number of results to return\",\"format\":\"uint32\",\"locat" +
+            "ion\":\"query\"},\"maxVariants\":{\"type\":\"integer\",\"description\":\"Maximum number of v" +
+            "ariant results to return per result\",\"format\":\"int32\",\"location\":\"query\"},\"plusO" +
+            "ne.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return +1 button code\",\"" +
+            "location\":\"query\"},\"plusOne.options\":{\"type\":\"string\",\"description\":\"+1 button r" +
+            "endering specification\",\"location\":\"query\"},\"plusOne.useGcsConfig\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Whether to use +1 button styles configured in the GCS accoun" +
+            "t\",\"location\":\"query\"},\"promotions.enabled\":{\"type\":\"boolean\",\"description\":\"Whe" +
+            "ther to return promotion information\",\"location\":\"query\"},\"promotions.useGcsConf" +
+            "ig\":{\"type\":\"boolean\",\"description\":\"Whether to return promotion information as " +
+            "configured in the GCS account\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Search query\",\"location\":\"query\"},\"rankBy\":{\"type\":\"string\",\"description\"" +
+            ":\"Ranking specification\",\"location\":\"query\"},\"redirects.enabled\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Whether to return redirect information\",\"location\":\"query\"},\"r" +
+            "edirects.useGcsConfig\":{\"type\":\"boolean\",\"description\":\"Whether to return redire" +
+            "ct information as configured in the GCS account\",\"location\":\"query\"},\"relatedQue" +
+            "ries.enabled\":{\"type\":\"boolean\",\"description\":\"Whether to return related queries" +
+            "\",\"location\":\"query\"},\"relatedQueries.useGcsConfig\":{\"type\":\"boolean\",\"descripti" +
+            "on\":\"This parameter is currently ignored\",\"location\":\"query\"},\"restrictBy\":{\"typ" +
+            "e\":\"string\",\"description\":\"Restriction specification\",\"location\":\"query\"},\"safe\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Whether safe search is enabled. Default: true\"" +
+            ",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"Query source\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"spelling.enabled\":{\"type\":\"boolean\",\"description" +
+            "\":\"Whether to return spelling suggestions\",\"location\":\"query\"},\"spelling.useGcsC" +
+            "onfig\":{\"type\":\"boolean\",\"description\":\"This parameter is currently ignored\",\"lo" +
+            "cation\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index (1-based) o" +
+            "f first product to return\",\"format\":\"uint32\",\"location\":\"query\"},\"taxonomy\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Taxonomy name\",\"location\":\"query\"},\"thumbnails\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Image thumbnails specification\",\"location\":\"query\"}," +
+            "\"useCase\":{\"type\":\"string\",\"description\":\"One of CommerceSearchUseCase, Shopping" +
+            "ApiUseCase\",\"location\":\"query\"}},\"parameterOrder\":[\"source\"],\"response\":{\"$ref\":" +
+            "\"Products\"},\"scopes\":[\"https://www.googleapis.com/auth/shoppingapi\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -2071,6 +2218,14 @@ namespace Google.Apis.Shopping.v1 {
          {
             return genericService.DeserializeResponse<T>(response);
         }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>View your product data</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/shoppingapi")]
+            Shoppingapi,
+        }
     }
     
     public class ProductsResource {
@@ -2098,26 +2253,6 @@ namespace Google.Apis.Shopping.v1 {
             return new ListRequest(service, source);
         }
         
-        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
-        public enum MinAvailability {
-            
-            /// <summary>Only in stcok prodicts will be returned</summary>
-            [Google.Apis.Util.StringValueAttribute("inStock")]
-            InStock,
-            
-            /// <summary>Limited availability and in stock products will be returned</summary>
-            [Google.Apis.Util.StringValueAttribute("limited")]
-            Limited,
-            
-            /// <summary>Out of stock, limited availability and in stock products will be returned</summary>
-            [Google.Apis.Util.StringValueAttribute("outOfStock")]
-            OutOfStock,
-            
-            /// <summary>All products will be returned</summary>
-            [Google.Apis.Util.StringValueAttribute("unknown")]
-            Unknown,
-        }
-        
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Product> {
             
             private string oauth_token;
@@ -2136,19 +2271,13 @@ namespace Google.Apis.Shopping.v1 {
             
             private System.Boolean? categoriesUseGcsConfig;
             
-            private System.Boolean? debugEnableLogging;
-            
-            private System.Boolean? debugEnabled;
-            
-            private System.Boolean? debugSearchRequest;
-            
-            private System.Boolean? debugSearchResponse;
-            
             private string location;
             
-            private string plusOne;
+            private System.Boolean? plusOneEnabled;
             
-            private string productFields;
+            private string plusOneOptions;
+            
+            private System.Boolean? plusOneUseGcsConfig;
             
             private string productId;
             
@@ -2259,50 +2388,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.enableLogging")]
-            public virtual System.Boolean? DebugEnableLogging {
-                get {
-                    return this.debugEnableLogging;
-                }
-                set {
-                    this.debugEnableLogging = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.enabled")]
-            public virtual System.Boolean? DebugEnabled {
-                get {
-                    return this.debugEnabled;
-                }
-                set {
-                    this.debugEnabled = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.searchRequest")]
-            public virtual System.Boolean? DebugSearchRequest {
-                get {
-                    return this.debugSearchRequest;
-                }
-                set {
-                    this.debugSearchRequest = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.searchResponse")]
-            public virtual System.Boolean? DebugSearchResponse {
-                get {
-                    return this.debugSearchResponse;
-                }
-                set {
-                    this.debugSearchResponse = value;
-                }
-            }
-            
             /// <summary>Location used to determine tax and shipping</summary>
             [Google.Apis.Util.RequestParameterAttribute("location")]
             public virtual string Location {
@@ -2314,25 +2399,36 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            /// <summary>+1 rendering specification.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne")]
-            public virtual string PlusOne {
+            /// <summary>Whether to return +1 button code</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled")]
+            public virtual System.Boolean? PlusOneEnabled {
                 get {
-                    return this.plusOne;
+                    return this.plusOneEnabled;
                 }
                 set {
-                    this.plusOne = value;
+                    this.plusOneEnabled = value;
                 }
             }
             
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("productFields")]
-            public virtual string ProductFields {
+            /// <summary>+1 button rendering specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.options")]
+            public virtual string PlusOneOptions {
                 get {
-                    return this.productFields;
+                    return this.plusOneOptions;
                 }
                 set {
-                    this.productFields = value;
+                    this.plusOneOptions = value;
+                }
+            }
+            
+            /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig")]
+            public virtual System.Boolean? PlusOneUseGcsConfig {
+                get {
+                    return this.plusOneUseGcsConfig;
+                }
+                set {
+                    this.plusOneUseGcsConfig = value;
                 }
             }
             
@@ -2438,6 +2534,8 @@ namespace Google.Apis.Shopping.v1 {
             
             private string attributeFilter;
             
+            private string availability;
+            
             private string boostBy;
             
             private System.Boolean? categoriesEnabled;
@@ -2453,22 +2551,6 @@ namespace Google.Apis.Shopping.v1 {
             private string crowdBy;
             
             private string currency;
-            
-            private System.Boolean? debugEnableLogging;
-            
-            private System.Boolean? debugEnabled;
-            
-            private System.Boolean? debugGeocodeRequest;
-            
-            private System.Boolean? debugGeocodeResponse;
-            
-            private System.Boolean? debugRdcRequest;
-            
-            private System.Boolean? debugRdcResponse;
-            
-            private System.Boolean? debugSearchRequest;
-            
-            private System.Boolean? debugSearchResponse;
             
             private string facetsDiscover;
             
@@ -2486,11 +2568,11 @@ namespace Google.Apis.Shopping.v1 {
             
             private System.Int64? maxVariants;
             
-            private MinAvailability? minAvailability;
+            private System.Boolean? plusOneEnabled;
             
-            private string plusOne;
+            private string plusOneOptions;
             
-            private string productFields;
+            private System.Boolean? plusOneUseGcsConfig;
             
             private System.Boolean? promotionsEnabled;
             
@@ -2511,10 +2593,6 @@ namespace Google.Apis.Shopping.v1 {
             private string restrictBy;
             
             private System.Boolean? safe;
-            
-            private System.Boolean? saytEnabled;
-            
-            private System.Boolean? saytUseGcsConfig;
             
             private string source;
             
@@ -2576,6 +2654,17 @@ namespace Google.Apis.Shopping.v1 {
                 }
                 set {
                     this.attributeFilter = value;
+                }
+            }
+            
+            /// <summary>Comma separated list of availabilities (outOfStock, limited, inStock, backOrder, preOrder, onDisplayToOrder) to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("availability")]
+            public virtual string Availability {
+                get {
+                    return this.availability;
+                }
+                set {
+                    this.availability = value;
                 }
             }
             
@@ -2667,94 +2756,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.enableLogging")]
-            public virtual System.Boolean? DebugEnableLogging {
-                get {
-                    return this.debugEnableLogging;
-                }
-                set {
-                    this.debugEnableLogging = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.enabled")]
-            public virtual System.Boolean? DebugEnabled {
-                get {
-                    return this.debugEnabled;
-                }
-                set {
-                    this.debugEnabled = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.geocodeRequest")]
-            public virtual System.Boolean? DebugGeocodeRequest {
-                get {
-                    return this.debugGeocodeRequest;
-                }
-                set {
-                    this.debugGeocodeRequest = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.geocodeResponse")]
-            public virtual System.Boolean? DebugGeocodeResponse {
-                get {
-                    return this.debugGeocodeResponse;
-                }
-                set {
-                    this.debugGeocodeResponse = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.rdcRequest")]
-            public virtual System.Boolean? DebugRdcRequest {
-                get {
-                    return this.debugRdcRequest;
-                }
-                set {
-                    this.debugRdcRequest = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.rdcResponse")]
-            public virtual System.Boolean? DebugRdcResponse {
-                get {
-                    return this.debugRdcResponse;
-                }
-                set {
-                    this.debugRdcResponse = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.searchRequest")]
-            public virtual System.Boolean? DebugSearchRequest {
-                get {
-                    return this.debugSearchRequest;
-                }
-                set {
-                    this.debugSearchRequest = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("debug.searchResponse")]
-            public virtual System.Boolean? DebugSearchResponse {
-                get {
-                    return this.debugSearchResponse;
-                }
-                set {
-                    this.debugSearchResponse = value;
-                }
-            }
-            
             /// <summary>Facets to discover</summary>
             [Google.Apis.Util.RequestParameterAttribute("facets.discover")]
             public virtual string FacetsDiscover {
@@ -2843,35 +2844,36 @@ namespace Google.Apis.Shopping.v1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("minAvailability")]
-            public virtual MinAvailability? MinAvailability {
+            /// <summary>Whether to return +1 button code</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled")]
+            public virtual System.Boolean? PlusOneEnabled {
                 get {
-                    return this.minAvailability;
+                    return this.plusOneEnabled;
                 }
                 set {
-                    this.minAvailability = value;
+                    this.plusOneEnabled = value;
                 }
             }
             
-            /// <summary>+1 rendering specification.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne")]
-            public virtual string PlusOne {
+            /// <summary>+1 button rendering specification</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.options")]
+            public virtual string PlusOneOptions {
                 get {
-                    return this.plusOne;
+                    return this.plusOneOptions;
                 }
                 set {
-                    this.plusOne = value;
+                    this.plusOneOptions = value;
                 }
             }
             
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("productFields")]
-            public virtual string ProductFields {
+            /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig")]
+            public virtual System.Boolean? PlusOneUseGcsConfig {
                 get {
-                    return this.productFields;
+                    return this.plusOneUseGcsConfig;
                 }
                 set {
-                    this.productFields = value;
+                    this.plusOneUseGcsConfig = value;
                 }
             }
             
@@ -2982,28 +2984,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
                 set {
                     this.safe = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sayt.enabled")]
-            public virtual System.Boolean? SaytEnabled {
-                get {
-                    return this.saytEnabled;
-                }
-                set {
-                    this.saytEnabled = value;
-                }
-            }
-            
-            /// <summary>Google Internal</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sayt.useGcsConfig")]
-            public virtual System.Boolean? SaytUseGcsConfig {
-                get {
-                    return this.saytUseGcsConfig;
-                }
-                set {
-                    this.saytUseGcsConfig = value;
                 }
             }
             

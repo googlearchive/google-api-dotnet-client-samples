@@ -166,7 +166,7 @@
             <summary>A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
         <member name="M:Google.Apis.Adsense.v1.AdunitsResource.List(System.String)">
-            <summary>List all ad units in this AdSense account.</summary>
+            <summary>List all ad units in the specified ad client for this AdSense account.</summary>
             <param name="adClientId">Required - Ad client for which to list ad units.</param>
         </member>
         <member name="P:Google.Apis.Adsense.v1.AdunitsResource.ListRequest.Oauth_token">
@@ -191,7 +191,7 @@
             <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
         <member name="M:Google.Apis.Adsense.v1.CustomchannelsResource.List(System.String)">
-            <summary>List all custom channels in this AdSense account.</summary>
+            <summary>List all custom channels in the specified ad client for this AdSense account.</summary>
             <param name="adClientId">Required - Ad client for which to list custom channels.</param>
         </member>
         <member name="P:Google.Apis.Adsense.v1.CustomchannelsResource.ListRequest.Oauth_token">
@@ -257,7 +257,7 @@
             <summary>Index of the first row of report data to return.</summary>
         </member>
         <member name="M:Google.Apis.Adsense.v1.UrlchannelsResource.List(System.String)">
-            <summary>List all URL channels in this AdSense account.</summary>
+            <summary>List all URL channels in the specified ad client for this AdSense account.</summary>
             <param name="adClientId">Required - Ad client for which to list URL channels.</param>
         </member>
         <member name="P:Google.Apis.Adsense.v1.UrlchannelsResource.ListRequest.Oauth_token">

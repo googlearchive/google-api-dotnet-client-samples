@@ -114,7 +114,7 @@
             <summary>Geographic location of the calendar as free-form text. Optional. Read-only.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.Selected">
-            <summary>Whether the calendar content shows up in the calendar UI. Optional. The default is True.</summary>
+            <summary>Whether the calendar content shows up in the calendar UI. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.Summary">
             <summary>Title of the calendar. Read-only.</summary>
@@ -214,7 +214,7 @@
             <summary>Geographic location of the event as free-form text. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Organizer">
-            <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True.</summary>
+            <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True. To change the organizer, use the &quot;move&quot; operation. Read-only, except when importing an event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.PrivateCopy">
             <summary>Whether this is a private event copy where changes are not shared with other copies on other calendars. Optional. Immutable.</summary>
@@ -312,7 +312,7 @@
             <summary>Preferences.</summary>
         </member>
         <member name="T:Google.Apis.Calendar.v3.Data.Event.OrganizerData">
-            <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True.</summary>
+            <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True. To change the organizer, use the &quot;move&quot; operation. Read-only, except when importing an event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.DisplayName">
             <summary>The organizer&apos;s name, if available.</summary>
@@ -489,10 +489,10 @@
             <summary>Type of the collection (&quot;calendar#settings&quot;).</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.TimePeriod.End">
-            <summary>The end of the time period.</summary>
+            <summary>The (exclusive) end of the time period.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.TimePeriod.Start">
-            <summary>The start of the time period.</summary>
+            <summary>The (inclusive) start of the time period.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -907,11 +907,6 @@
             <param name="calendarId">Required - Calendar identifier.</param>
             <param name="text">Required - The text describing the event to be created.</param>
         </member>
-        <member name="M:Google.Apis.Calendar.v3.EventsResource.Reset(System.String,System.String)">
-            <summary>Resets a specialized instance of a recurring event to its original state.</summary>
-            <param name="calendarId">Required - Calendar identifier.</param>
-            <param name="eventId">Required - Event identifier.</param>
-        </member>
         <member name="M:Google.Apis.Calendar.v3.EventsResource.Update(Google.Apis.Calendar.v3.Data.Event,System.String,System.String)">
             <summary>Updates an event.</summary>
             <param name="calendarId">Required - Calendar identifier.</param>
@@ -1141,24 +1136,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.QuickAddRequest.Text">
             <summary>The text describing the event to be created.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.CalendarId">
-            <summary>Calendar identifier.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.EventId">
-            <summary>Event identifier.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ResetRequest.SendNotifications">
-            <summary>Whether to send notifications about the event update. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

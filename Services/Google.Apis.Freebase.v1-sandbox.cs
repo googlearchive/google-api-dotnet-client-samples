@@ -67,73 +67,76 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"freebase:v1-sandbox\",\"name\":\"freebase\"," +
-            "\"version\":\"v1-sandbox\",\"title\":\"Freebase API\",\"description\":\"Lets you access the" +
-            " Freebase repository of open data.\",\"icons\":{\"x16\":\"http://www.google.com/images" +
-            "/icons/product/freebase-16.png\",\"x32\":\"http://www.google.com/images/icons/produc" +
-            "t/freebase-32.png\"},\"documentationLink\":\"http://wiki.freebase.com/wiki/New_Freeb" +
-            "ase_API\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/freebase/v1-sandbox/\"," +
-            "\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response" +
-            ".\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-" +
-            "Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Selector specifying which fields to include in a partial response.\",\"loc" +
-            "ation\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key iden" +
-            "tifies your project and provides you with API access, quota, and reports. Requir" +
-            "ed unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"t" +
-            "ype\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"" +
-            "query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with ind" +
-            "entations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"t" +
-            "ype\":\"string\",\"description\":\"Available to use for quota purposes for server-side" +
-            " applications. Can be any arbitrary string assigned to a user, but should not ex" +
-            "ceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"}," +
-            "\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the reques" +
-            "t originates. Use this if you want to enforce per-user limits.\",\"location\":\"quer" +
-            "y\"}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":\"object\",\"p" +
-            "roperties\":{\"result\":{\"type\":\"string\",\"description\":\"The text requested.\"}}}},\"m" +
-            "ethods\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMethod\":\"GET\"," +
-            "\"description\":\"Returns the scaled/cropped image attached to a freebase node.\",\"p" +
-            "arameters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the image associate" +
-            "d with this secondary id if no image is associated with the primary id.\",\"defaul" +
-            "t\":\"/freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"},\"id\":{\"type\"" +
-            ":\"string\",\"description\":\"Freebase entity or content id, mid, or guid.\",\"required" +
-            "\":true,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Maximum height in pixels for resulting image.\",\"format\":\"uint32\",\"maximum" +
-            "\":\"4096\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"description\":\"Maximum" +
-            " width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096\",\"locat" +
-            "ion\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scale or cro" +
-            "p image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"],\"enumDe" +
-            "scriptions\":[\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\"" +
-            "],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolean specifyin" +
-            "g whether the resulting image should be padded up to the requested dimensions.\"," +
-            "\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"]},\"mqlread\":{\"id\":" +
-            "\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\":\"Performs M" +
-            "QL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"description\":\"Run the " +
-            "query as it would\'ve been run at the specified point in time.\",\"location\":\"query" +
-            "\"},\"callback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP callbacks" +
-            ".\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Show the costs or not.\",\"default\":\"false\",\"location\":\"query" +
-            "\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"location\":\"query\"}" +
-            ",\"html_escape\":{\"type\":\"boolean\",\"description\":\"Whether or not to escape entitie" +
-            "s.\",\"default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description" +
-            "\":\"How many spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum" +
-            "\":\"10\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The language o" +
-            "f the results - an id of a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"" +
-            "query\"},\"query\":{\"type\":\"string\",\"description\":\"An envelope containing a single " +
-            "MQL query.\",\"required\":true,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"st" +
-            "ring\",\"description\":\"How MQL responds to uniqueness failures.\",\"default\":\"hard\"," +
-            "\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an error.\",\"Just r" +
-            "eturn the first encountered object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"qu" +
-            "ery\"]}},\"resources\":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"" +
-            "text{/id*}\",\"httpMethod\":\"GET\",\"description\":\"Returns blob attached to node at s" +
-            "pecified id as HTML\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sani" +
-            "tizing transformation.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDes" +
-            "criptions\":[\"Return valid, sanitized html.\",\"Return plain text - strip html tags" +
-            ".\",\"Return the entire content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The id of the item that you want data about\",\"required\":true,\"re" +
-            "peated\":true,\"location\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The" +
-            " max number of characters to return. Valid only for \'plain\' format.\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Contents" +
-            "erviceGet\"}}}}}}";
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1-san" +
+            "dbox\",\"name\":\"freebase\",\"version\":\"v1-sandbox\",\"revision\":\"20111102\",\"title\":\"Fr" +
+            "eebase API\",\"description\":\"Lets you access the Freebase repository of open data." +
+            "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/freebase-16.png\",\"x" +
+            "32\":\"http://www.google.com/images/icons/product/freebase-32.png\"},\"documentation" +
+            "Link\":\"http://wiki.freebase.com/wiki/New_Freebase_API\",\"protocol\":\"rest\",\"baseUr" +
+            "l\":\"https://www.googleapis.com/freebase/v1-sandbox/\",\"basePath\":\"/freebase/v1-sa" +
+            "ndbox/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the " +
+            "response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with " +
+            "Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\"" +
+            ",\"description\":\"Selector specifying which fields to include in a partial respons" +
+            "e.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API " +
+            "key identifies your project and provides you with API access, quota, and reports" +
+            ". Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_to" +
+            "ken\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"loc" +
+            "ation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response " +
+            "with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaU" +
+            "ser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for ser" +
+            "ver-side applications. Can be any arbitrary string assigned to a user, but shoul" +
+            "d not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"" +
+            "query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where th" +
+            "e request originates. Use this if you want to enforce per-user limits.\",\"locatio" +
+            "n\":\"query\"}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The text requested." +
+            "\"}}}},\"methods\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Returns the scaled/cropped image attached to a freebase n" +
+            "ode.\",\"parameters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the image a" +
+            "ssociated with this secondary id if no image is associated with the primary id.\"" +
+            ",\"default\":\"/freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"},\"id\"" +
+            ":{\"type\":\"string\",\"description\":\"Freebase entity or content id, mid, or guid.\",\"" +
+            "required\":true,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integer\"," +
+            "\"description\":\"Maximum height in pixels for resulting image.\",\"format\":\"uint32\"," +
+            "\"maximum\":\"4096\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"description\":" +
+            "\"Maximum width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096" +
+            "\",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scal" +
+            "e or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"]" +
+            ",\"enumDescriptions\":[\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(be" +
+            "ndrees)\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolean s" +
+            "pecifying whether the resulting image should be padded up to the requested dimen" +
+            "sions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"]},\"mqlread" +
+            "\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\":\"Pe" +
+            "rforms MQL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"description\":\"" +
+            "Run the query as it would\'ve been run at the specified point in time.\",\"location" +
+            "\":\"query\"},\"callback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP c" +
+            "allbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Show the costs or not.\",\"default\":\"false\",\"location" +
+            "\":\"query\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"location\":" +
+            "\"query\"},\"dateline\":{\"type\":\"string\",\"description\":\"The dateline that you get in" +
+            " a mqlwrite response to ensure consistent results.\",\"location\":\"query\"},\"html_es" +
+            "cape\":{\"type\":\"boolean\",\"description\":\"Whether or not to escape entities.\",\"defa" +
+            "ult\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How ma" +
+            "ny spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"l" +
+            "ocation\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the res" +
+            "ults - an id of a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"" +
+            "query\":{\"type\":\"string\",\"description\":\"An envelope containing a single MQL query" +
+            ".\",\"required\":true,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\",\"de" +
+            "scription\":\"How MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"" +
+            "hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an error.\",\"Just return the" +
+            " first encountered object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"]}},\"" +
+            "resources\":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*" +
+            "}\",\"httpMethod\":\"GET\",\"description\":\"Returns blob attached to node at specified " +
+            "id as HTML\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing tr" +
+            "ansformation.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions" +
+            "\":[\"Return valid, sanitized html.\",\"Return plain text - strip html tags.\",\"Retur" +
+            "n the entire content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The id of the item that you want data about\",\"required\":true,\"repeated\":t" +
+            "rue,\"location\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max numb" +
+            "er of characters to return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"l" +
+            "ocation\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet" +
+            "\"}}}}}}";
         
         private const string Version = "v1-sandbox";
         
@@ -534,6 +537,8 @@ namespace Google.Apis.Freebase.v1_sandbox {
             
             private string cursor;
             
+            private string dateline;
+            
             private System.Boolean? html_escape;
             
             private System.Int64? indent;
@@ -623,6 +628,17 @@ namespace Google.Apis.Freebase.v1_sandbox {
                 }
                 set {
                     this.cursor = value;
+                }
+            }
+            
+            /// <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dateline")]
+            public virtual string Dateline {
+                get {
+                    return this.dateline;
+                }
+                set {
+                    this.dateline = value;
                 }
             }
             

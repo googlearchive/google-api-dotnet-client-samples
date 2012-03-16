@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Adsense.v1.1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Account.Id">
+            <summary>Unique identifier of this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Account.Kind">
+            <summary>Kind of resource this is, in this case adsense#account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Account.Name">
+            <summary>Name of this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Account.SubAccounts">
+            <summary>Sub accounts of the this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Accounts.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Accounts.Items">
+            <summary>The accounts returned in this list response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Accounts.Kind">
+            <summary>Kind of list this is, in this case adsense#accounts.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.Accounts.NextPageToken">
+            <summary>Continuation token used to page through accounts. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClient.Id">
+            <summary>Unique identifier of this ad client.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClient.Kind">
+            <summary>Kind of resource this is, in this case adsense#adClient.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClient.ProductCode">
+            <summary>This ad client&apos;s product code, which corresponds to the PRODUCT_CODE report dimension.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClient.SupportsReporting">
+            <summary>Whether this ad client supports being reported on.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClients.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClients.Items">
+            <summary>The ad clients returned in this list response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClients.Kind">
+            <summary>Kind of list this is, in this case adsense#adClients.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdClients.NextPageToken">
+            <summary>Continuation token used to page through ad clients. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnit.Code">
+            <summary>Identity code of this ad unit, not necessarily unique across ad clients.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnit.Id">
+            <summary>Unique identifier of this ad unit. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnit.Kind">
+            <summary>Kind of resource this is, in this case adsense#adUnit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnit.Name">
+            <summary>Name of this ad unit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnit.Status">
+             <summary>Status of this ad unit. Possible values are:
+            NEW: Indicates that the ad unit was created within the last seven days and does not yet have any activity associated with it.
+            
+            ACTIVE: Indicates that there has been activity on this ad unit in the last seven days.
+            
+            INACTIVE: Indicates that there has been no activity on this ad unit in the last seven days.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnits.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnits.Items">
+            <summary>The ad units returned in this list response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnits.Kind">
+            <summary>Kind of list this is, in this case adsense#adUnits.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdUnits.NextPageToken">
+            <summary>Continuation token used to page through ad units. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Averages">
+            <summary>The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Headers">
+            <summary>The header information of the columns requested in the report. This is a list of headers; one for each dimension in the request, followed by one for each metric in the request.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Kind">
+            <summary>Kind this is, in this case adsense#report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Rows">
+            <summary>The output rows of the report. Each row is a list of cells; one for each dimension in the request, followed by one for each metric in the request. The dimension cells contain strings, and the metric cells contain numbers.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.TotalMatchedRows">
+            <summary>The total number of rows matched by the report request. Fewer rows may be returned in the response due to being limited by the row count requested or the report row limit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Totals">
+            <summary>The totals of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.Warnings">
+            <summary>Any warnings associated with generation of the report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.HeadersData.Currency">
+            <summary>The currency of this column. Only present if the header type is METRIC_CURRENCY.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.HeadersData.Name">
+            <summary>The name of the header.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse.HeadersData.Type">
+            <summary>The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC_CURRENCY.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.Code">
+            <summary>Code of this custom channel, not necessarily unique across ad clients.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.Id">
+            <summary>Unique identifier of this custom channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.Kind">
+            <summary>Kind of resource this is, in this case adsense#customChannel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.Name">
+            <summary>Name of this custom channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfo">
+            <summary>The targeting information of this custom channel, if activated.</summary>
+        </member>
+        <member name="T:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfoData">
+            <summary>The targeting information of this custom channel, if activated.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfoData.AdsAppearOn">
+            <summary>The name used to describe this channel externally.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfoData.Description">
+            <summary>The external description of the channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfoData.Location">
+            <summary>The locations in which ads appear. (Only valid for content and mobile content ads). Acceptable values for content ads are: TOP_LEFT, TOP_CENTER, TOP_RIGHT, MIDDLE_LEFT, MIDDLE_CENTER, MIDDLE_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT, MULTIPLE_LOCATIONS. Acceptable values for mobile content ads are: TOP, MIDDLE, BOTTOM, MULTIPLE_LOCATIONS.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannel.TargetingInfoData.SiteLanguage">
+            <summary>The language of the sites ads will be displayed on.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannels.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannels.Items">
+            <summary>The custom channels returned in this list response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannels.Kind">
+            <summary>Kind of list this is, in this case adsense#customChannels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.CustomChannels.NextPageToken">
+            <summary>Continuation token used to page through custom channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannel.Id">
+            <summary>Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannel.Kind">
+            <summary>Kind of resource this is, in this case adsense#urlChannel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannel.UrlPattern">
+            <summary>URL Pattern of this URL channel. Does not include &quot;http://&quot; or &quot;https://&quot;. Example: www.example.com/home</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannels.ETag">
+            <summary>ETag of this response for caching purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannels.Items">
+            <summary>The URL channels returned in this list response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannels.Kind">
+            <summary>Kind of list this is, in this case adsense#urlChannels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.Data.UrlChannels.NextPageToken">
+            <summary>Continuation token used to page through URL channels. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdsenseService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Adsense.v1_1.AdsenseService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Adsense.v1_1.AdsenseService.Scopes.Adsense">
+            <summary>View and manage your AdSense data</summary>
+        </member>
+        <member name="F:Google.Apis.Adsense.v1_1.AdsenseService.Scopes.AdsenseReadonly">
+            <summary>View your AdSense data</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.Get(System.String)">
+            <summary>Get information about the selected AdSense account.</summary>
+            <param name="accountId">Required - Account to get information about.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.List">
+            <summary>List all accounts available to this AdSense account.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.List(System.String)">
+            <summary>List all ad clients in the specified account.</summary>
+            <param name="accountId">Required - Account for which to list ad clients.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.AccountId">
+            <summary>Account for which to list ad clients.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.Get(System.String,System.String,System.String)">
+            <summary>Gets the specified ad unit in the specified ad client for the specified account.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client for which to get the ad unit.</param>
+            <param name="adUnitId">Required - Ad unit to retrieve.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.List(System.String,System.String)">
+            <summary>List all ad units in the specified ad client for the specified account.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client for which to list ad units.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.List(System.String,System.String,System.String)">
+            <summary>List all custom channels which the specified ad unit belongs to.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client which contains the ad unit.</param>
+            <param name="adUnitId">Required - Ad unit for which to list custom channels.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client which contains the ad unit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.AdUnitId">
+            <summary>Ad unit for which to list custom channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AdClientId">
+            <summary>Ad client for which to get the ad unit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AdUnitId">
+            <summary>Ad unit to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list ad units.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.IncludeInactive">
+            <summary>Whether to include inactive ad units. Default: true.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad units to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.Get(System.String,System.String,System.String)">
+            <summary>Get the specified custom channel from the specified ad client for the specified account.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client which contains the custom channel.</param>
+            <param name="customChannelId">Required - Custom channel to retrieve.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.List(System.String,System.String)">
+            <summary>List all custom channels in the specified ad client for the specified account.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client for which to list custom channels.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.List(System.String,System.String,System.String)">
+            <summary>List all ad units in the specified custom channel.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client which contains the custom channel.</param>
+            <param name="customChannelId">Required - Custom channel for which to list ad units.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.AdClientId">
+            <summary>Ad client which contains the custom channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.CustomChannelId">
+            <summary>Custom channel for which to list ad units.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.IncludeInactive">
+            <summary>Whether to include inactive ad units. Default: true.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad units to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.AdClientId">
+            <summary>Ad client which contains the custom channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.CustomChannelId">
+            <summary>Custom channel to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list custom channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.Generate(System.String,System.String,System.String)">
+            <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
+            <param name="accountId">Required - Account upon which to report.</param>
+            <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.AccountId">
+            <summary>Account upon which to report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Currency">
+            <summary>Optional currency to use when reporting on monetary metrics. Defaults to the account's currency if not set.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Dimension">
+            <summary>Dimensions to base the report on.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.EndDate">
+            <summary>End of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Filter">
+            <summary>Filters to be run on the report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Locale">
+            <summary>Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.MaxResults">
+            <summary>The maximum number of rows of report data to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Metric">
+            <summary>Numeric columns to include in the report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.Sort">
+            <summary>The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.StartDate">
+            <summary>Start of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.StartIndex">
+            <summary>Index of the first row of report data to return.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.List(System.String,System.String)">
+            <summary>List all URL channels in the specified ad client for the specified account.</summary>
+            <param name="accountId">Required - Account to which the ad client belongs.</param>
+            <param name="adClientId">Required - Ad client for which to list URL channels.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.AccountId">
+            <summary>Account to which the ad client belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list URL channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of URL channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.AccountId">
+            <summary>Account to get information about.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.Tree">
+            <summary>Whether the tree of sub accounts should be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.MaxResults">
+            <summary>The maximum number of accounts to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AdclientsResource.List">
+            <summary>List all ad clients in this AdSense account.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AdunitsResource.Get(System.String,System.String)">
+            <summary>Gets the specified ad unit in the specified ad client.</summary>
+            <param name="adClientId">Required - Ad client for which to get the ad unit.</param>
+            <param name="adUnitId">Required - Ad unit to retrieve.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AdunitsResource.List(System.String)">
+            <summary>List all ad units in the specified ad client for this AdSense account.</summary>
+            <param name="adClientId">Required - Ad client for which to list ad units.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.List(System.String,System.String)">
+            <summary>List all custom channels which the specified ad unit belongs to.</summary>
+            <param name="adClientId">Required - Ad client which contains the ad unit.</param>
+            <param name="adUnitId">Required - Ad unit for which to list custom channels.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client which contains the ad unit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.AdUnitId">
+            <summary>Ad unit for which to list custom channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.AdClientId">
+            <summary>Ad client for which to get the ad unit.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.AdUnitId">
+            <summary>Ad unit to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list ad units.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.IncludeInactive">
+            <summary>Whether to include inactive ad units. Default: true.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad units to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.CustomchannelsResource.Get(System.String,System.String)">
+            <summary>Get the specified custom channel from the specified ad client.</summary>
+            <param name="adClientId">Required - Ad client which contains the custom channel.</param>
+            <param name="customChannelId">Required - Custom channel to retrieve.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.CustomchannelsResource.List(System.String)">
+            <summary>List all custom channels in the specified ad client for this AdSense account.</summary>
+            <param name="adClientId">Required - Ad client for which to list custom channels.</param>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.List(System.String,System.String)">
+            <summary>List all ad units in the specified custom channel.</summary>
+            <param name="adClientId">Required - Ad client which contains the custom channel.</param>
+            <param name="customChannelId">Required - Custom channel for which to list ad units.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.AdClientId">
+            <summary>Ad client which contains the custom channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.CustomChannelId">
+            <summary>Custom channel for which to list ad units.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.IncludeInactive">
+            <summary>Whether to include inactive ad units. Default: true.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.MaxResults">
+            <summary>The maximum number of ad units to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.AdClientId">
+            <summary>Ad client which contains the custom channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.CustomChannelId">
+            <summary>Custom channel to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list custom channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.ReportsResource.Generate(System.String,System.String)">
+            <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
+            <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.AccountId">
+            <summary>Accounts upon which to report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Currency">
+            <summary>Optional currency to use when reporting on monetary metrics. Defaults to the account's currency if not set.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Dimension">
+            <summary>Dimensions to base the report on.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.EndDate">
+            <summary>End of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Filter">
+            <summary>Filters to be run on the report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Locale">
+            <summary>Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.MaxResults">
+            <summary>The maximum number of rows of report data to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Metric">
+            <summary>Numeric columns to include in the report.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.Sort">
+            <summary>The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.StartDate">
+            <summary>Start of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.StartIndex">
+            <summary>Index of the first row of report data to return.</summary>
+        </member>
+        <member name="M:Google.Apis.Adsense.v1_1.UrlchannelsResource.List(System.String)">
+            <summary>List all URL channels in the specified ad client for this AdSense account.</summary>
+            <param name="adClientId">Required - Ad client for which to list URL channels.</param>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.AdClientId">
+            <summary>Ad client for which to list URL channels.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.MaxResults">
+            <summary>The maximum number of URL channels to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.PageToken">
+            <summary>A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+    </members>
+</doc>

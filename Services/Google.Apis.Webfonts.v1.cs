@@ -70,7 +70,7 @@ namespace Google.Apis.Webfonts.v1.Data {
     
     public class WebfontList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Webfont> items;
+        private System.Collections.Generic.IList<Webfont> items;
         
         private string kind;
         
@@ -80,7 +80,7 @@ namespace Google.Apis.Webfonts.v1.Data {
         
         /// <summary>The list of fonts currently served by the Google Fonts API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Webfont> Items {
+        public virtual System.Collections.Generic.IList<Webfont> Items {
             get {
                 return this.items;
             }
@@ -134,12 +134,13 @@ namespace Google.Apis.Webfonts.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"webfonts:v1\",\"name\":\"webfonts\",\"version" +
-            "\":\"v1\",\"title\":\"Google Web Fonts Developer API\",\"description\":\"The Google Web Fo" +
-            "nts Developer API.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/feature/f" +
-            "ont_api-16.png\",\"x32\":\"http://www.google.com/images/icons/feature/font_api-32.gi" +
-            "f\"},\"documentationLink\":\"http://code.google.com/apis/webfonts/docs/developer_api" +
-            ".html\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\":\"/webfonts/v1/\",\"parameter" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"webfonts:v1\",\"n" +
+            "ame\":\"webfonts\",\"version\":\"v1\",\"revision\":\"20111110\",\"title\":\"Google Web Fonts D" +
+            "eveloper API\",\"description\":\"The Google Web Fonts Developer API.\",\"icons\":{\"x16\"" +
+            ":\"http://www.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www." +
+            "google.com/images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://co" +
+            "de.google.com/apis/webfonts/docs/developer_api.html\",\"protocol\":\"rest\",\"baseUrl\"" +
+            ":\"https://www.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"parameter" +
             "s\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defaul" +
             "t\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of ap" +
             "plication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Se" +

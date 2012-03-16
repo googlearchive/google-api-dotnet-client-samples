@@ -25,6 +25,9 @@
         <member name="P:Google.Apis.Tasks.v1.Data.Task.Kind">
             <summary>Type of the resource. This is always &quot;tasks#task&quot;.</summary>
         </member>
+        <member name="P:Google.Apis.Tasks.v1.Data.Task.Links">
+            <summary>Collection of links. This collection is read-only.</summary>
+        </member>
         <member name="P:Google.Apis.Tasks.v1.Data.Task.Notes">
             <summary>Notes describing the task. Optional.</summary>
         </member>
@@ -46,6 +49,15 @@
         <member name="P:Google.Apis.Tasks.v1.Data.Task.Updated">
             <summary>Last modification time of the task (as a RFC 3339 timestamp).</summary>
         </member>
+        <member name="P:Google.Apis.Tasks.v1.Data.Task.LinksData.Description">
+            <summary>The description. In HTML speak: Everything between &lt;a&gt; and &lt;/a&gt;.</summary>
+        </member>
+        <member name="P:Google.Apis.Tasks.v1.Data.Task.LinksData.Link">
+            <summary>The URL.</summary>
+        </member>
+        <member name="P:Google.Apis.Tasks.v1.Data.Task.LinksData.Type">
+            <summary>Type of the link, e.g. &quot;email&quot;.</summary>
+        </member>
         <member name="P:Google.Apis.Tasks.v1.Data.TaskList.ETag">
             <summary>ETag of the resource.</summary>
         </member>
@@ -60,6 +72,9 @@
         </member>
         <member name="P:Google.Apis.Tasks.v1.Data.TaskList.Title">
             <summary>Title of the task list.</summary>
+        </member>
+        <member name="P:Google.Apis.Tasks.v1.Data.TaskList.Updated">
+            <summary>Last modification time of the task list (as a RFC 3339 timestamp).</summary>
         </member>
         <member name="P:Google.Apis.Tasks.v1.Data.TaskLists.ETag">
             <summary>ETag of the resource.</summary>

@@ -165,6 +165,318 @@
         <member name="P:Google.Apis.Orkut.v2.Data.CommentList.PreviousPageToken">
             <summary>The value of pageToken query parameter in comments.list request to get the previous page, if there are more to retrieve.</summary>
         </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Category">
+            <summary>The category of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Co_owners">
+            <summary>The co-owners of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Creation_date">
+            <summary>The time the community was created, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Description">
+            <summary>The description of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Id">
+            <summary>The id of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Kind">
+            <summary>Identifies this resource as a community. Value: &quot;orkut#community&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Language">
+            <summary>The official language of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Links">
+            <summary>List of resources for the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Location">
+            <summary>The location of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Member_count">
+            <summary>The number of users who are part of the community. This number may be approximate, so do not rely on it for iteration.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Moderators">
+            <summary>The list of moderators of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Name">
+            <summary>The name of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.Community.Photo_url">
+            <summary>The photo of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityList.Items">
+            <summary>List of communities retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityList.Kind">
+            <summary>Identifies this resource as a collection of communities. Value: &quot;orkut#communityList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembers.Kind">
+            <summary>Kind of this item. Always orkut#communityMembers.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.FirstPageToken">
+            <summary>The value of pageToken query parameter in community_members.list request to get the first page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.Items">
+            <summary>List of community members retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.Kind">
+            <summary>Kind of this item. Always orkut#communityMembersList.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.LastPageToken">
+            <summary>The value of pageToken query parameter in community_members.list request to get the last page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.NextPageToken">
+            <summary>The value of pageToken query parameter in community_members.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembersList.PrevPageToken">
+            <summary>The value of pageToken query parameter in community_members.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.CanCreatePoll">
+            <summary>Whether the user can create a poll in this community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.CanCreateTopic">
+            <summary>Whether the user can create a topic in this community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.CanShout">
+            <summary>Whether the user can perform a shout operation in this community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsCoOwner">
+            <summary>Whether the session user is a community co-owner.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsFollowing">
+            <summary>Whether the user is following this community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsModerator">
+            <summary>Whether the session user is a community moderator.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsOwner">
+            <summary>Whether the session user is the community owner.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsRestoreAvailable">
+            <summary>Whether the restore operation is available for the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.IsTakebackAvailable">
+            <summary>Whether the take-back operation is available for the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.Kind">
+            <summary>Kind of this item. Always orkut#communityMembershipStatus.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMembershipStatus.Status">
+            <summary>The status of the current link between the community and the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.AddedDate">
+            <summary>The timestamp of the date when the message was added, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.Body">
+            <summary>The body of the message.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.Id">
+            <summary>The ID of the message.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.IsSpam">
+            <summary>Whether this post was marked as spam by the viewer, when he/she is not the community owner or one of its moderators.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.Kind">
+            <summary>Identifies this resource as a community message. Value: &quot;orkut#communityMessage&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.Links">
+            <summary>List of resources for the community message.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessage.Subject">
+            <summary>The subject of the message.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.FirstPageToken">
+            <summary>The value of pageToken query parameter in community_messages.list request to get the first page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.Items">
+            <summary>List of messages retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.Kind">
+            <summary>Identifies this resource as a collection of community messages. Value: &quot;orkut#communityMessageList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.LastPageToken">
+            <summary>The value of pageToken query parameter in community_messages.list request to get the last page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.NextPageToken">
+            <summary>The value of pageToken query parameter in community_messages.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityMessageList.PrevPageToken">
+            <summary>The value of pageToken query parameter in community_messages.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.CommunityId">
+            <summary>The ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.CreationTime">
+            <summary>The date of creation of this poll</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Description">
+            <summary>The poll description.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.EndingTime">
+            <summary>The ending date of this poll or empty if the poll doesn&apos;t have one.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.HasVoted">
+            <summary>Whether the user has voted on this poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Id">
+            <summary>The poll ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Image">
+            <summary>The image representing the poll. Field is omitted if no image exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsClosed">
+            <summary>Whether the poll is not expired if there is an expiration date. A poll is open (that is, not closed for voting) if it either is not expired or doesn&apos;t have an expiration date at all. Note that just because a poll is open, it doesn&apos;t mean that the requester can vote on it.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsMultipleAnswers">
+            <summary>Whether this poll allows voting for more than one option.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsOpenForVoting">
+            <summary>Whether this poll is still opened for voting. A poll is open for voting if it is not closed, the user has not yet voted on it and the user has the permission to do so, which happens if he/she is either a community member or the poll is open for everybody.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsRestricted">
+            <summary>Whether this poll is restricted for members only. If a poll is open but the user can&apos;t vote on it, it&apos;s been restricted to members only. This information is important to tell this case apart from the one where the user can&apos;t vote simply because the poll is already closed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsSpam">
+            <summary>Whether the user has marked this poll as spam. This only affects the poll for this user, not globally.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsUsersVotePublic">
+            <summary>If user has already voted, whether his vote is publicly visible.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.IsVotingAllowedForNonMembers">
+            <summary>Whether non-members of the community can vote on the poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Kind">
+            <summary>Identifies this resource as a community poll. Value: &quot;orkut#communityPoll&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.LastUpdate">
+            <summary>The date of the last update of this poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Links">
+            <summary>List of resources for the community poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Options">
+            <summary>List of options of this poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.Question">
+            <summary>The poll question.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.TotalNumberOfVotes">
+            <summary>The total number of votes this poll has received.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.VotedOptions">
+            <summary>List of options the user has voted on, if there are any.</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.CommunityPoll.ImageData">
+            <summary>The image representing the poll. Field is omitted if no image exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPoll.ImageData.Url">
+            <summary>A URL that points to an image of the poll.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollComment.AddedDate">
+            <summary>The date when the message was added, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollComment.Body">
+            <summary>The body of the message.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollComment.Id">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollComment.Kind">
+            <summary>Identifies this resource as a community poll comment. Value: &quot;orkut#communityPollComment&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.FirstPageToken">
+            <summary>The value of pageToken query parameter in community_poll_comments.list request to get the first page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.Items">
+            <summary>List of community poll comments retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.Kind">
+            <summary>Identifies this resource as a collection of community poll comments. Value: &quot;orkut#CommunityPollCommentList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.LastPageToken">
+            <summary>The value of pageToken query parameter in community_poll_comments.list request to get the last page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.NextPageToken">
+            <summary>The value of pageToken query parameter in community_poll_comments.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollCommentList.PrevPageToken">
+            <summary>The value of pageToken query parameter in community_poll_comments.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.FirstPageToken">
+            <summary>The value of pageToken query parameter in community_polls.list request to get the first page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.Items">
+            <summary>List of community polls retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.Kind">
+            <summary>Identifies this resource as a collection of community polls. Value: &quot;orkut#communityPollList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.LastPageToken">
+            <summary>The value of pageToken query parameter in community_polls.list request to get the last page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.NextPageToken">
+            <summary>The value of pageToken query parameter in community_polls.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollList.PrevPageToken">
+            <summary>The value of pageToken query parameter in community_polls.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollVote.IsVotevisible">
+            <summary>Whether this vote is visible to other users or not.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollVote.Kind">
+            <summary>Identifies this resource as a community poll vote. Value: &quot;orkut#communityPollVote&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityPollVote.OptionIds">
+            <summary>The ids of the voted options.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Body">
+            <summary>The body of the topic.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Id">
+            <summary>The ID of the topic.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.IsClosed">
+            <summary>Whether the topic is closed for new messages.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Kind">
+            <summary>Identifies this resource as a community topic. Value: &quot;orkut#communityTopic&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.LastUpdate">
+            <summary>The timestamp of the last update, in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.LatestMessageSnippet">
+            <summary>Snippet of the last message posted on this topic.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Links">
+            <summary>List of resources for the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Messages">
+            <summary>Most recent messages.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.NumberOfReplies">
+            <summary>The total number of replies this topic has received.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopic.Title">
+            <summary>The title of the topic.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.FirstPageToken">
+            <summary>The value of pageToken query parameter in community_topic.list request to get the first page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.Items">
+            <summary>List of topics retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.Kind">
+            <summary>Identifies this resource as a collection of community topics. Value: &quot;orkut#communityTopicList&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.LastPageToken">
+            <summary>The value of pageToken query parameter in community_topic.list request to get the last page.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.NextPageToken">
+            <summary>The value of pageToken query parameter in community_topic.list request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.CommunityTopicList.PrevPageToken">
+            <summary>The value of pageToken query parameter in community_topic.list request to get the previous page, if there are more to retrieve.</summary>
+        </member>
         <member name="P:Google.Apis.Orkut.v2.Data.Counters.Items">
             <summary>List of counters retrieved.</summary>
         </member>
@@ -226,16 +538,34 @@
             <summary>Unique identifier of the person who posted the comment. This is the person&apos;s OpenSocial ID.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.Image">
-            <summary>Image data about the actor.</summary>
+            <summary>Image data about the author.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.Url">
             <summary>The URL of the author who posted the comment [not yet implemented]</summary>
         </member>
         <member name="T:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.ImageData">
-            <summary>Image data about the actor.</summary>
+            <summary>Image data about the author.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.Data.OrkutAuthorResource.ImageData.Url">
             <summary>A URL that points to a thumbnail photo of the author.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.Description">
+            <summary>The option description.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.Image">
+            <summary>Image data about the poll option. Field is omitted if no image exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.NumberOfVotes">
+            <summary>The total number of votes that this option received.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.OptionId">
+            <summary>The poll option ID</summary>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.ImageData">
+            <summary>Image data about the poll option. Field is omitted if no image exists.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.Data.OrkutCommunitypolloptionResource.ImageData.Url">
+            <summary>A URL that points to an image of the poll question.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.Data.OrkutCounterResource.Link">
             <summary>Links to resources related to the parent object.</summary>
@@ -244,7 +574,8 @@
              <summary>The name of the counted collection. Currently supported collections are:  
             - scraps - The scraps of the user. 
             - photos - The photos of the user. 
-            - videos - The videos of the user.</summary>
+            - videos - The videos of the user. 
+            - pendingTestimonials - The pending testimonials of the user.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.Data.OrkutCounterResource.Total">
             <summary>The number of resources on the counted collection.</summary>
@@ -545,8 +876,500 @@
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.PageToken">
             <summary>A continuation token that allows pagination.</summary>
         </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunitiesResource.Get(System.Int64)">
+            <summary>Retrieves the basic information (aka. profile) of a community.</summary>
+            <param name="communityId">Required - The ID of the community to get.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunitiesResource.List(System.String)">
+            <summary>Retrieves the list of communities the current user is a member of.</summary>
+            <param name="userId">Required - The ID of the user whose communities will be listed. Can be me to refer to caller.</param>
+        </member>
+        <member name="T:Google.Apis.Orkut.v2.CommunitiesResource.OrderBy">
+            <summary>How to order the communities by.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.CommunitiesResource.OrderBy.Id">
+            <summary>Returns the communities sorted by a fixed, natural order.</summary>
+        </member>
+        <member name="F:Google.Apis.Orkut.v2.CommunitiesResource.OrderBy.Ranked">
+            <summary>Returns the communities ranked accordingly to how they are displayed on the orkut web application.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.CommunityId">
+            <summary>The ID of the community to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.MaxResults">
+            <summary>The maximum number of communities to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.OrderBy">
+            <summary>How to order the communities by.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.UserId">
+            <summary>The ID of the user whose communities will be listed. Can be me to refer to caller.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityFollowResource.Delete(System.Int64,System.String)">
+            <summary>Removes a user from the followers of a community.</summary>
+            <param name="communityId">Required - ID of the community.</param>
+            <param name="userId">Required - ID of the user.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityFollowResource.Insert(System.Int64,System.String)">
+            <summary>Adds a user as a follower of a community.</summary>
+            <param name="communityId">Required - ID of the community.</param>
+            <param name="userId">Required - ID of the user.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.CommunityId">
+            <summary>ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.UserId">
+            <summary>ID of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.CommunityId">
+            <summary>ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.UserId">
+            <summary>ID of the user.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMembersResource.Delete(System.Int64,System.String)">
+            <summary>Makes the user leave a community.</summary>
+            <param name="communityId">Required - ID of the community.</param>
+            <param name="userId">Required - ID of the user.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMembersResource.Get(System.Int64,System.String)">
+            <summary>Retrieves the relationship between a user and a community.</summary>
+            <param name="communityId">Required - ID of the community.</param>
+            <param name="userId">Required - ID of the user.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMembersResource.Insert(System.Int64,System.String)">
+            <summary>Makes the user join a community.</summary>
+            <param name="communityId">Required - ID of the community.</param>
+            <param name="userId">Required - ID of the user.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMembersResource.List(System.Int64)">
+            <summary>Lists members of a community. Use the pagination tokens to retrieve the full list; do not rely on the member count available in the community profile information to know when to stop iterating, as that count may be approximate.</summary>
+            <param name="communityId">Required - The ID of the community whose members will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.CommunityId">
+            <summary>ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.UserId">
+            <summary>ID of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.CommunityId">
+            <summary>ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.UserId">
+            <summary>ID of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.CommunityId">
+            <summary>ID of the community.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.UserId">
+            <summary>ID of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.CommunityId">
+            <summary>The ID of the community whose members will be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.FriendsOnly">
+            <summary>Whether to list only community members who are friends of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.MaxResults">
+            <summary>The maximum number of members to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMessagesResource.Delete(System.Int64,System.String,System.String)">
+            <summary>Moves a message of the community to the trash folder.</summary>
+            <param name="communityId">Required - The ID of the community whose message will be moved to the trash folder.</param>
+            <param name="topicId">Required - The ID of the topic whose message will be moved to the trash folder.</param>
+            <param name="messageId">Required - The ID of the message to be moved to the trash folder.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMessagesResource.Insert(Google.Apis.Orkut.v2.Data.CommunityMessage,System.Int64,System.String)">
+            <summary>Adds a message to a given community topic.</summary>
+            <param name="communityId">Required - The ID of the community the message should be added to.</param>
+            <param name="topicId">Required - The ID of the topic the message should be added to.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityMessagesResource.List(System.Int64,System.String)">
+            <summary>Retrieves the messages of a topic of a community.</summary>
+            <param name="communityId">Required - The ID of the community which messages will be listed.</param>
+            <param name="topicId">Required - The ID of the topic which messages will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.CommunityId">
+            <summary>The ID of the community whose message will be moved to the trash folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.MessageId">
+            <summary>The ID of the message to be moved to the trash folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.TopicId">
+            <summary>The ID of the topic whose message will be moved to the trash folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.CommunityId">
+            <summary>The ID of the community the message should be added to.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.TopicId">
+            <summary>The ID of the topic the message should be added to.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.CommunityId">
+            <summary>The ID of the community which messages will be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.MaxResults">
+            <summary>The maximum number of messages to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.TopicId">
+            <summary>The ID of the topic which messages will be listed.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityPollCommentsResource.Insert(Google.Apis.Orkut.v2.Data.CommunityPollComment,System.Int64,System.String)">
+            <summary>Adds a comment on a community poll.</summary>
+            <param name="communityId">Required - The ID of the community whose poll is being commented.</param>
+            <param name="pollId">Required - The ID of the poll being commented.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityPollCommentsResource.List(System.Int64,System.String)">
+            <summary>Retrieves the comments of a community poll.</summary>
+            <param name="communityId">Required - The ID of the community whose poll is having its comments listed.</param>
+            <param name="pollId">Required - The ID of the community whose polls will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.CommunityId">
+            <summary>The ID of the community whose poll is being commented.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.PollId">
+            <summary>The ID of the poll being commented.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.CommunityId">
+            <summary>The ID of the community whose poll is having its comments listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of comments to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.PollId">
+            <summary>The ID of the community whose polls will be listed.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityPollVotesResource.Insert(Google.Apis.Orkut.v2.Data.CommunityPollVote,System.Int64,System.String)">
+            <summary>Votes on a community poll.</summary>
+            <param name="communityId">Required - The ID of the community whose poll is being voted.</param>
+            <param name="pollId">Required - The ID of the poll being voted.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.CommunityId">
+            <summary>The ID of the community whose poll is being voted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.PollId">
+            <summary>The ID of the poll being voted.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityPollsResource.Get(System.Int64,System.String)">
+            <summary>Retrieves one specific poll of a community.</summary>
+            <param name="communityId">Required - The ID of the community for whose poll will be retrieved.</param>
+            <param name="pollId">Required - The ID of the poll to get.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityPollsResource.List(System.Int64)">
+            <summary>Retrieves the polls of a community.</summary>
+            <param name="communityId">Required - The ID of the community which polls will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.CommunityId">
+            <summary>The ID of the community for whose poll will be retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.PollId">
+            <summary>The ID of the poll to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.CommunityId">
+            <summary>The ID of the community which polls will be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.MaxResults">
+            <summary>The maximum number of polls to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityRelatedResource.List(System.Int64)">
+            <summary>Retrieves the communities related to another one.</summary>
+            <param name="communityId">Required - The ID of the community whose related communities will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.CommunityId">
+            <summary>The ID of the community whose related communities will be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityTopicsResource.Delete(System.Int64,System.String)">
+            <summary>Moves a topic of the community to the trash folder.</summary>
+            <param name="communityId">Required - The ID of the community whose topic will be moved to the trash folder.</param>
+            <param name="topicId">Required - The ID of the topic to be moved to the trash folder.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityTopicsResource.Get(System.Int64,System.String)">
+            <summary>Retrieves a topic of a community.</summary>
+            <param name="communityId">Required - The ID of the community whose topic will be retrieved.</param>
+            <param name="topicId">Required - The ID of the topic to get.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityTopicsResource.Insert(Google.Apis.Orkut.v2.Data.CommunityTopic,System.Int64)">
+            <summary>Adds a topic to a given community.</summary>
+            <param name="communityId">Required - The ID of the community the topic should be added to.</param>
+        </member>
+        <member name="M:Google.Apis.Orkut.v2.CommunityTopicsResource.List(System.Int64)">
+            <summary>Retrieves the topics of a community.</summary>
+            <param name="communityId">Required - The ID of the community which topics will be listed.</param>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.CommunityId">
+            <summary>The ID of the community whose topic will be moved to the trash folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.TopicId">
+            <summary>The ID of the topic to be moved to the trash folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.CommunityId">
+            <summary>The ID of the community whose topic will be retrieved.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.TopicId">
+            <summary>The ID of the topic to get.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.CommunityId">
+            <summary>The ID of the community the topic should be added to.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.IsShout">
+            <summary>Whether this topic is a shout.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.CommunityId">
+            <summary>The ID of the community which topics will be listed.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.Hl">
+            <summary>Specifies the interface language (host language) of your user interface.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.MaxResults">
+            <summary>The maximum number of topics to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.PageToken">
+            <summary>A continuation token that allows pagination.</summary>
+        </member>
         <member name="M:Google.Apis.Orkut.v2.CountersResource.List(System.String)">
-            <summary>Retrieves the counters of an user.</summary>
+            <summary>Retrieves the counters of a user.</summary>
             <param name="userId">Required - The ID of the user whose counters will be listed. Can be me to refer to caller.</param>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.Oauth_token">

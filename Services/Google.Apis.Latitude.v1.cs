@@ -330,7 +330,7 @@ namespace Google.Apis.Latitude.v1.Data {
     
     public class LocationFeed : Google.Apis.Requests.IDirectResponseSchema {
         
-        private IList<Location> items;
+        private System.Collections.Generic.IList<Location> items;
         
         private string kind;
         
@@ -339,7 +339,7 @@ namespace Google.Apis.Latitude.v1.Data {
         private string eTag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
-        public virtual IList<Location> Items {
+        public virtual System.Collections.Generic.IList<Location> Items {
             get {
                 return this.items;
             }
@@ -392,12 +392,13 @@ namespace Google.Apis.Latitude.v1 {
         
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
-        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"id\":\"latitude:v1\",\"name\":\"latitude\",\"version" +
-            "\":\"v1\",\"title\":\"Google Latitude API\",\"description\":\"Lets you read and update you" +
-            "r current location and work with your location history\",\"icons\":{\"x16\":\"http://w" +
-            "ww.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/i" +
-            "mages/icons/product/search-32.gif\"},\"documentationLink\":\"http://code.google.com/" +
-            "apis/latitude/v1/using_rest.html\",\"labels\":[\"labs\"],\"protocol\":\"rest\",\"basePath\"" +
+        private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"latitude:v1\",\"n" +
+            "ame\":\"latitude\",\"version\":\"v1\",\"revision\":\"19700115\",\"title\":\"Google Latitude AP" +
+            "I\",\"description\":\"Lets you read and update your current location and work with y" +
+            "our location history\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product" +
+            "/search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"" +
+            "},\"documentationLink\":\"http://code.google.com/apis/latitude/v1/using_rest.html\"," +
+            "\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/latitude/v1/\",\"basePath\"" +
             ":\"/latitude/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format" +
             " for the response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[" +
             "\"Responses with Content-Type of application/atom+xml\",\"Responses with Content-Ty" +

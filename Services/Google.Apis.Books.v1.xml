@@ -22,6 +22,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Annotation.Data">
             <summary>User-created data for this annotation.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Annotation.Deleted">
+            <summary>Indicates that this annotation is deleted.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Annotation.HighlightStyle">
             <summary>The highlight style for this annotation.</summary>
         </member>
@@ -121,6 +124,39 @@
         <member name="P:Google.Apis.Books.v1.Data.Bookshelves.Kind">
             <summary>Resource type.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.DeviceAllowed">
+            <summary>Whether access is granted for this (user, device, volume).</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Kind">
+            <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.MaxConcurrentDevices">
+            <summary>The maximum number of concurrent access licenses for this volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Message">
+            <summary>Error/warning message.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Nonce">
+            <summary>Client nonce for verification. Download access and client-validation only.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.ReasonCode">
+            <summary>Error/warning reason code.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Restricted">
+            <summary>Whether this volume has any concurrent access restrictions.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Signature">
+            <summary>Response signature.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.Source">
+            <summary>Client app identifier for verification. Download access and client-validation only.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.TimeWindowSeconds">
+            <summary>Time in seconds for license auto-expiration.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.ConcurrentAccessRestriction.VolumeId">
+            <summary>Identifies the volume for which this entry applies.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.DownloadAccessRestriction.DeviceAllowed">
             <summary>If restricted, whether access is granted for this (user, device, volume).</summary>
         </member>
@@ -157,6 +193,12 @@
         <member name="P:Google.Apis.Books.v1.Data.DownloadAccessRestriction.VolumeId">
             <summary>Identifies the volume for which this entry applies.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.DownloadAccesses.DownloadAccessList">
+            <summary>A list of download access responses.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.DownloadAccesses.Kind">
+            <summary>Resource type.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.ReadingPosition.EpubCfiPosition">
             <summary>Position in an EPUB as a CFI.</summary>
         </member>
@@ -177,6 +219,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.Data.ReadingPosition.VolumeId">
             <summary>Volume id associated with this reading position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.RequestAccess.Kind">
+            <summary>Resource type.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Review.Author">
             <summary>Author of this review.</summary>
@@ -241,6 +286,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfo">
             <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.SearchInfo">
+            <summary>Search result information related to this volume.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.SelfLink">
             <summary>URL to this resource. (In LITE projection.)</summary>
         </member>
@@ -277,6 +325,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.Viewability">
             <summary>The read access of a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends on the country listed above. A value of PARTIAL means that the publisher has allowed some portion of the volume to be viewed publicly, without purchase. This can apply to eBooks as well as non-eBooks. Public domain books will always have a value of ALL_PAGES.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.WebReaderLink">
+            <summary>URL to read this volume on the Google Books site. Link will not allow users to read non-viewable volumes.</summary>
+        </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.AccessInfoData.EpubData">
             <summary>Information about epub content. (In LITE projection.)</summary>
         </member>
@@ -286,6 +337,9 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.EpubData.DownloadLink">
             <summary>URL to download epub. (In LITE projection.)</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.EpubData.IsAvailable">
+            <summary>Is a flowing text epub available either as public domain or for purchase. (In LITE projection.)</summary>
+        </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.AccessInfoData.PdfData">
             <summary>Information about pdf content. (In LITE projection.)</summary>
         </member>
@@ -294,6 +348,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.PdfData.DownloadLink">
             <summary>URL to download pdf. (In LITE projection.)</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.AccessInfoData.PdfData.IsAvailable">
+            <summary>Is a scanned image pdf available either as public domain or for purchase. (In LITE projection.)</summary>
         </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.SaleInfoData">
             <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>
@@ -337,6 +394,12 @@
         <member name="P:Google.Apis.Books.v1.Data.Volume.SaleInfoData.RetailPriceData.CurrencyCode">
             <summary>An ISO 4217, three-letter currency code. (In LITE projection.)</summary>
         </member>
+        <member name="T:Google.Apis.Books.v1.Data.Volume.SearchInfoData">
+            <summary>Search result information related to this volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.Volume.SearchInfoData.TextSnippet">
+            <summary>A text snippet containing the search query.</summary>
+        </member>
         <member name="T:Google.Apis.Books.v1.Data.Volume.UserInfoData">
             <summary>User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)</summary>
         </member>
@@ -359,7 +422,7 @@
             <summary>The mean review rating for this volume. (min = 1.0, max = 5.0)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.CanonicalVolumeLink">
-            <summary>Canonical URL for a volume. Use this URL to plus one a Google Book. (In LITE projection)</summary>
+            <summary>Canonical URL for a volume. (In LITE projection.)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.Volume.VolumeInfoData.Categories">
             <summary>A list of subject categories, such as &quot;Fiction&quot;, &quot;Suspense&quot;, etc.</summary>
@@ -470,7 +533,7 @@
             <summary>Manage your books</summary>
         </member>
         <member name="M:Google.Apis.Books.v1.BookshelvesResource.Get(System.String,System.String)">
-            <summary>Retrieves a specific bookshelf for the specified user.</summary>
+            <summary>Retrieves metadata for a specific bookshelf for the specified user.</summary>
             <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         </member>
@@ -551,6 +614,105 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.UserId">
             <summary>Id of user for whom to retrieve bookshelves.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccess(Google.Apis.Util.Repeatable{System.String},System.String)">
+            <summary>Release downloaded content access restriction.</summary>
+            <param name="volumeIds">Required - The volume(s) to release restrictions for.</param>
+            <param name="cpksver">Required - The device/version identifier from which to release the restriction.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MyconfigResource.RequestAccess(System.String,System.String,System.String,System.String)">
+            <summary>Request concurrent and download access restrictions.</summary>
+            <param name="source">Required - String to identify the originator of this request.</param>
+            <param name="volumeId">Required - The volume to request concurrent/download restrictions for.</param>
+            <param name="nonce">Required - The client nonce value.</param>
+            <param name="cpksver">Required - The device/version identifier from which to request the restrictions.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicenses(System.String,System.String,System.String)">
+            <summary>Request downloaded content access for specified volumes on the My eBooks shelf.</summary>
+            <param name="source">Required - String to identify the originator of this request.</param>
+            <param name="nonce">Required - The client nonce value.</param>
+            <param name="cpksver">Required - The device/version identifier from which to release the restriction.</param>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Cpksver">
+            <summary>The device/version identifier from which to release the restriction.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Locale">
+            <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.VolumeIds">
+            <summary>The volume(s) to release restrictions for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Cpksver">
+            <summary>The device/version identifier from which to request the restrictions.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Locale">
+            <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Nonce">
+            <summary>The client nonce value.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.VolumeId">
+            <summary>The volume to request concurrent/download restrictions for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Cpksver">
+            <summary>The device/version identifier from which to release the restriction.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Locale">
+            <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Nonce">
+            <summary>The client nonce value.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.ShowPreorders">
+            <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.VolumeIds">
+            <summary>The volume(s) to request download restrictions for.</summary>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.Delete(System.String)">
             <summary>Deletes an annotation.</summary>
@@ -651,8 +813,17 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.PageToken">
             <summary>The value of the nextToken from the previous page.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.ShowDeleted">
+            <summary>Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.UpdatedMax">
+            <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.UpdatedMin">
+            <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.VolumeId">
             <summary>The volume to restrict annotations to.</summary>
@@ -688,19 +859,26 @@
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.Get(System.String)">
-            <summary>Retrieves a specific bookshelf belonging to the authenticated user.</summary>
+            <summary>Retrieves metadata for a specific bookshelf belonging to the authenticated user.</summary>
             <param name="shelf">Required - Id of bookshelf to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.List">
             <summary>Retrieves a list of bookshelves belonging to the authenticated user.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolume(System.String,System.String,System.Int64)">
+            <summary>Moves a volume within a bookshelf.</summary>
+            <param name="shelf">Required - Id of bookshelf with the volume.</param>
+            <param name="volumeId">Required - Id of volume to move.</param>
+            <param name="volumePosition">Required - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)</param>
         </member>
         <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolume(System.String,System.String)">
             <summary>Removes a volume from a bookshelf.</summary>
             <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
             <param name="volumeId">Required - Id of volume to remove.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.List">
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.List(System.String)">
             <summary>Gets volume information for volumes on a bookshelf.</summary>
+            <param name="shelf">Required - The bookshelf id or name retrieve volumes for.</param>
         </member>
         <member name="T:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>
@@ -816,6 +994,30 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.Shelf">
+            <summary>Id of bookshelf with the volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.VolumeId">
+            <summary>Id of volume to move.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.VolumePosition">
+            <summary>Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
@@ -836,6 +1038,88 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.VolumeId">
             <summary>Id of volume to remove.</summary>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Get(System.String)">
+            <summary>Retrieves my reading position information for a volume.</summary>
+            <param name="volumeId">Required - Id of volume for which to retrieve a reading position.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPosition(System.String,System.String,System.String)">
+            <summary>Sets my reading position information for a volume.</summary>
+            <param name="volumeId">Required - Id of volume for which to update the reading position.</param>
+            <param name="timestamp">Required - RFC 3339 UTC format timestamp associated with this reading position.</param>
+            <param name="position">Required - Position string for the new volume reading position.</param>
+        </member>
+        <member name="T:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action">
+            <summary>Action that caused this reading position to be set.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.Bookmark">
+            <summary>User chose bookmark within volume.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.Chapter">
+            <summary>User selected chapter from list.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.NextPage">
+            <summary>Next page event.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.PrevPage">
+            <summary>Previous page event.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.Scroll">
+            <summary>User navigated to page.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.Action.Search">
+            <summary>User chose search results within volume.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.ContentVersion">
+            <summary>Volume content version for which this reading position is requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.VolumeId">
+            <summary>Id of volume for which to retrieve a reading position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Action">
+            <summary>Action that caused this reading position to be set.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.ContentVersion">
+            <summary>Volume content version for which this reading position applies.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Position">
+            <summary>Position string for the new volume reading position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Timestamp">
+            <summary>RFC 3339 UTC format timestamp associated with this reading position.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.VolumeId">
+            <summary>Id of volume for which to update the reading position.</summary>
         </member>
         <member name="M:Google.Apis.Books.v1.VolumesResource.Get(System.String)">
             <summary>Gets volume information for a single volume.</summary>
