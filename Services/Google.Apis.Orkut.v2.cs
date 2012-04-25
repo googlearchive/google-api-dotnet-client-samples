@@ -16,22 +16,22 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class Acl {
         
-        private string description;
+        private string _description;
         
-        private System.Collections.Generic.IList<Acl.ItemsData> items;
+        private System.Collections.Generic.IList<Acl.ItemsData> _items;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> totalParticipants;
+        private System.Nullable<long> _totalParticipants;
         
         /// <summary>Human readable description of the access granted.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -39,10 +39,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Acl.ItemsData> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -50,10 +50,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -61,27 +61,27 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalParticipants")]
         public virtual System.Nullable<long> TotalParticipants {
             get {
-                return this.totalParticipants;
+                return this._totalParticipants;
             }
             set {
-                this.totalParticipants = value;
+                this._totalParticipants = value;
             }
         }
         
         public class ItemsData {
             
-            private string id;
+            private string _id;
             
-            private string type;
+            private string _type;
             
             /// <summary>The ID of the entity. For entities of type &quot;person&quot; or &quot;circle&quot;, this is the ID of the resource. For other types, this will be unset.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -89,10 +89,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -100,47 +100,47 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class Activity : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Acl access;
+        private Acl _access;
         
-        private OrkutAuthorResource actor;
+        private OrkutAuthorResource _actor;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private Activity.ObjectData objectValue;
+        private Activity.ObjectData _object;
         
-        private string published;
+        private string _published;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private string verb;
+        private string _verb;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("access")]
         public virtual Acl Access {
             get {
-                return this.access;
+                return this._access;
             }
             set {
-                this.access = value;
+                this._access = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("actor")]
         public virtual OrkutAuthorResource Actor {
             get {
-                return this.actor;
+                return this._actor;
             }
             set {
-                this.actor = value;
+                this._actor = value;
             }
         }
         
@@ -148,10 +148,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -159,10 +159,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -170,10 +170,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -181,10 +181,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("object")]
         public virtual Activity.ObjectData Object {
             get {
-                return this.objectValue;
+                return this._object;
             }
             set {
-                this.objectValue = value;
+                this._object = value;
             }
         }
         
@@ -192,10 +192,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -203,10 +203,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -214,10 +214,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -230,51 +230,51 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("verb")]
         public virtual string Verb {
             get {
-                return this.verb;
+                return this._verb;
             }
             set {
-                this.verb = value;
+                this._verb = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The activity&apos;s object.</summary>
         public class ObjectData {
             
-            private string content;
+            private string _content;
             
-            private System.Collections.Generic.IList<OrkutActivityobjectsResource> items;
+            private System.Collections.Generic.IList<OrkutActivityobjectsResource> _items;
             
-            private string objectType;
+            private string _objectType;
             
-            private ObjectData.RepliesData replies;
+            private ObjectData.RepliesData _replies;
             
             /// <summary>The HTML-formatted content, suitable for display. When updating an activity&apos;s content, post the changes to this property, using the value of originalContent as a starting point. If the update is successful, the server adds HTML formatting and responds with this formatted content.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("content")]
             public virtual string Content {
                 get {
-                    return this.content;
+                    return this._content;
                 }
                 set {
-                    this.content = value;
+                    this._content = value;
                 }
             }
             
@@ -282,10 +282,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("items")]
             public virtual System.Collections.Generic.IList<OrkutActivityobjectsResource> Items {
                 get {
-                    return this.items;
+                    return this._items;
                 }
                 set {
-                    this.items = value;
+                    this._items = value;
                 }
             }
             
@@ -293,10 +293,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
             public virtual string ObjectType {
                 get {
-                    return this.objectType;
+                    return this._objectType;
                 }
                 set {
-                    this.objectType = value;
+                    this._objectType = value;
                 }
             }
             
@@ -304,30 +304,30 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("replies")]
             public virtual ObjectData.RepliesData Replies {
                 get {
-                    return this.replies;
+                    return this._replies;
                 }
                 set {
-                    this.replies = value;
+                    this._replies = value;
                 }
             }
             
             /// <summary>Comments in reply to this activity.</summary>
             public class RepliesData {
                 
-                private System.Collections.Generic.IList<Comment> items;
+                private System.Collections.Generic.IList<Comment> _items;
                 
-                private string totalItems;
+                private string _totalItems;
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The list of comments.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("items")]
                 public virtual System.Collections.Generic.IList<Comment> Items {
                     get {
-                        return this.items;
+                        return this._items;
                     }
                     set {
-                        this.items = value;
+                        this._items = value;
                     }
                 }
                 
@@ -335,10 +335,10 @@ namespace Google.Apis.Orkut.v2.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
                 public virtual string TotalItems {
                     get {
-                        return this.totalItems;
+                        return this._totalItems;
                     }
                     set {
-                        this.totalItems = value;
+                        this._totalItems = value;
                     }
                 }
                 
@@ -346,10 +346,10 @@ namespace Google.Apis.Orkut.v2.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -358,24 +358,24 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class ActivityList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Activity> items;
+        private System.Collections.Generic.IList<Activity> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of activities retrieved.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Activity> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -383,10 +383,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -394,65 +394,65 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Badge : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string badgeLargeLogo;
+        private string _badgeLargeLogo;
         
-        private string badgeSmallLogo;
+        private string _badgeSmallLogo;
         
-        private string caption;
+        private string _caption;
         
-        private string description;
+        private string _description;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string sponsorLogo;
+        private string _sponsorLogo;
         
-        private string sponsorName;
+        private string _sponsorName;
         
-        private string sponsorUrl;
+        private string _sponsorUrl;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The URL for the 64x64 badge logo.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("badgeLargeLogo")]
         public virtual string BadgeLargeLogo {
             get {
-                return this.badgeLargeLogo;
+                return this._badgeLargeLogo;
             }
             set {
-                this.badgeLargeLogo = value;
+                this._badgeLargeLogo = value;
             }
         }
         
@@ -460,10 +460,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("badgeSmallLogo")]
         public virtual string BadgeSmallLogo {
             get {
-                return this.badgeSmallLogo;
+                return this._badgeSmallLogo;
             }
             set {
-                this.badgeSmallLogo = value;
+                this._badgeSmallLogo = value;
             }
         }
         
@@ -471,10 +471,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("caption")]
         public virtual string Caption {
             get {
-                return this.caption;
+                return this._caption;
             }
             set {
-                this.caption = value;
+                this._caption = value;
             }
         }
         
@@ -482,10 +482,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -493,10 +493,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -504,10 +504,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -515,10 +515,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("sponsorLogo")]
         public virtual string SponsorLogo {
             get {
-                return this.sponsorLogo;
+                return this._sponsorLogo;
             }
             set {
-                this.sponsorLogo = value;
+                this._sponsorLogo = value;
             }
         }
         
@@ -526,10 +526,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("sponsorName")]
         public virtual string SponsorName {
             get {
-                return this.sponsorName;
+                return this._sponsorName;
             }
             set {
-                this.sponsorName = value;
+                this._sponsorName = value;
             }
         }
         
@@ -537,51 +537,51 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("sponsorUrl")]
         public virtual string SponsorUrl {
             get {
-                return this.sponsorUrl;
+                return this._sponsorUrl;
             }
             set {
-                this.sponsorUrl = value;
+                this._sponsorUrl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class BadgeList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Badge> items;
+        private System.Collections.Generic.IList<Badge> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of badges retrieved.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Badge> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -589,60 +589,60 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Comment : Google.Apis.Requests.IDirectResponseSchema {
         
-        private OrkutAuthorResource actor;
+        private OrkutAuthorResource _actor;
         
-        private string content;
+        private string _content;
         
-        private string id;
+        private string _id;
         
-        private Comment.InReplyToData inReplyTo;
+        private Comment.InReplyToData _inReplyTo;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private string published;
+        private string _published;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("actor")]
         public virtual OrkutAuthorResource Actor {
             get {
-                return this.actor;
+                return this._actor;
             }
             set {
-                this.actor = value;
+                this._actor = value;
             }
         }
         
@@ -650,10 +650,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -661,10 +661,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -672,10 +672,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("inReplyTo")]
         public virtual Comment.InReplyToData InReplyTo {
             get {
-                return this.inReplyTo;
+                return this._inReplyTo;
             }
             set {
-                this.inReplyTo = value;
+                this._inReplyTo = value;
             }
         }
         
@@ -683,10 +683,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -694,10 +694,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -705,51 +705,51 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Link to the original activity where this comment was posted.</summary>
         public class InReplyToData {
             
-            private string href;
+            private string _href;
             
-            private string refValue;
+            private string _ref;
             
-            private string rel;
+            private string _rel;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the post on activity stream being commented.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -757,10 +757,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("ref")]
             public virtual string Ref {
                 get {
-                    return this.refValue;
+                    return this._ref;
                 }
                 set {
-                    this.refValue = value;
+                    this._ref = value;
                 }
             }
             
@@ -768,10 +768,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("rel")]
             public virtual string Rel {
                 get {
-                    return this.rel;
+                    return this._rel;
                 }
                 set {
-                    this.rel = value;
+                    this._rel = value;
                 }
             }
             
@@ -779,10 +779,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -790,26 +790,26 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class CommentList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Comment> items;
+        private System.Collections.Generic.IList<Comment> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string previousPageToken;
+        private string _previousPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of comments retrieved.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Comment> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -817,10 +817,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -828,10 +828,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -839,75 +839,75 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousPageToken")]
         public virtual string PreviousPageToken {
             get {
-                return this.previousPageToken;
+                return this._previousPageToken;
             }
             set {
-                this.previousPageToken = value;
+                this._previousPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Community : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string category;
+        private string _category;
         
-        private System.Collections.Generic.IList<OrkutAuthorResource> co_owners;
+        private System.Collections.Generic.IList<OrkutAuthorResource> _co_owners;
         
-        private string creation_date;
+        private string _creation_date;
         
-        private string description;
+        private string _description;
         
-        private System.Nullable<long> id;
+        private System.Nullable<long> _id;
         
-        private string kind;
+        private string _kind;
         
-        private string language;
+        private string _language;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private string location;
+        private string _location;
         
-        private System.Nullable<long> member_count;
+        private System.Nullable<long> _member_count;
         
-        private System.Collections.Generic.IList<OrkutAuthorResource> moderators;
+        private System.Collections.Generic.IList<OrkutAuthorResource> _moderators;
         
-        private string name;
+        private string _name;
         
-        private OrkutAuthorResource owner;
+        private OrkutAuthorResource _owner;
         
-        private string photo_url;
+        private string _photo_url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The category of the community.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("category")]
         public virtual string Category {
             get {
-                return this.category;
+                return this._category;
             }
             set {
-                this.category = value;
+                this._category = value;
             }
         }
         
@@ -915,10 +915,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("co_owners")]
         public virtual System.Collections.Generic.IList<OrkutAuthorResource> Co_owners {
             get {
-                return this.co_owners;
+                return this._co_owners;
             }
             set {
-                this.co_owners = value;
+                this._co_owners = value;
             }
         }
         
@@ -926,10 +926,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("creation_date")]
         public virtual string Creation_date {
             get {
-                return this.creation_date;
+                return this._creation_date;
             }
             set {
-                this.creation_date = value;
+                this._creation_date = value;
             }
         }
         
@@ -937,10 +937,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -948,10 +948,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual System.Nullable<long> Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -959,10 +959,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -970,10 +970,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("language")]
         public virtual string Language {
             get {
-                return this.language;
+                return this._language;
             }
             set {
-                this.language = value;
+                this._language = value;
             }
         }
         
@@ -981,10 +981,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -992,10 +992,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("location")]
         public virtual string Location {
             get {
-                return this.location;
+                return this._location;
             }
             set {
-                this.location = value;
+                this._location = value;
             }
         }
         
@@ -1003,10 +1003,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("member_count")]
         public virtual System.Nullable<long> Member_count {
             get {
-                return this.member_count;
+                return this._member_count;
             }
             set {
-                this.member_count = value;
+                this._member_count = value;
             }
         }
         
@@ -1014,10 +1014,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("moderators")]
         public virtual System.Collections.Generic.IList<OrkutAuthorResource> Moderators {
             get {
-                return this.moderators;
+                return this._moderators;
             }
             set {
-                this.moderators = value;
+                this._moderators = value;
             }
         }
         
@@ -1025,20 +1025,20 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("owner")]
         public virtual OrkutAuthorResource Owner {
             get {
-                return this.owner;
+                return this._owner;
             }
             set {
-                this.owner = value;
+                this._owner = value;
             }
         }
         
@@ -1046,51 +1046,51 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("photo_url")]
         public virtual string Photo_url {
             get {
-                return this.photo_url;
+                return this._photo_url;
             }
             set {
-                this.photo_url = value;
+                this._photo_url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Community> items;
+        private System.Collections.Generic.IList<Community> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of communities retrieved.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Community> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1098,52 +1098,52 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityMembers : Google.Apis.Requests.IDirectResponseSchema {
         
-        private CommunityMembershipStatus communityMembershipStatus;
+        private CommunityMembershipStatus _communityMembershipStatus;
         
-        private string kind;
+        private string _kind;
         
-        private OrkutActivitypersonResource person;
+        private OrkutActivitypersonResource _person;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("communityMembershipStatus")]
         public virtual CommunityMembershipStatus CommunityMembershipStatus {
             get {
-                return this.communityMembershipStatus;
+                return this._communityMembershipStatus;
             }
             set {
-                this.communityMembershipStatus = value;
+                this._communityMembershipStatus = value;
             }
         }
         
@@ -1151,69 +1151,69 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("person")]
         public virtual OrkutActivitypersonResource Person {
             get {
-                return this.person;
+                return this._person;
             }
             set {
-                this.person = value;
+                this._person = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityMembersList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string firstPageToken;
+        private string _firstPageToken;
         
-        private System.Collections.Generic.IList<CommunityMembers> items;
+        private System.Collections.Generic.IList<CommunityMembers> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string lastPageToken;
+        private string _lastPageToken;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The value of pageToken query parameter in community_members.list request to get the first page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("firstPageToken")]
         public virtual string FirstPageToken {
             get {
-                return this.firstPageToken;
+                return this._firstPageToken;
             }
             set {
-                this.firstPageToken = value;
+                this._firstPageToken = value;
             }
         }
         
@@ -1221,10 +1221,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CommunityMembers> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1232,10 +1232,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1243,10 +1243,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastPageToken")]
         public virtual string LastPageToken {
             get {
-                return this.lastPageToken;
+                return this._lastPageToken;
             }
             set {
-                this.lastPageToken = value;
+                this._lastPageToken = value;
             }
         }
         
@@ -1254,10 +1254,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1265,65 +1265,65 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityMembershipStatus {
         
-        private System.Nullable<bool> canCreatePoll;
+        private System.Nullable<bool> _canCreatePoll;
         
-        private System.Nullable<bool> canCreateTopic;
+        private System.Nullable<bool> _canCreateTopic;
         
-        private System.Nullable<bool> canShout;
+        private System.Nullable<bool> _canShout;
         
-        private System.Nullable<bool> isCoOwner;
+        private System.Nullable<bool> _isCoOwner;
         
-        private System.Nullable<bool> isFollowing;
+        private System.Nullable<bool> _isFollowing;
         
-        private System.Nullable<bool> isModerator;
+        private System.Nullable<bool> _isModerator;
         
-        private System.Nullable<bool> isOwner;
+        private System.Nullable<bool> _isOwner;
         
-        private System.Nullable<bool> isRestoreAvailable;
+        private System.Nullable<bool> _isRestoreAvailable;
         
-        private System.Nullable<bool> isTakebackAvailable;
+        private System.Nullable<bool> _isTakebackAvailable;
         
-        private string kind;
+        private string _kind;
         
-        private string status;
+        private string _status;
         
         /// <summary>Whether the user can create a poll in this community.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("canCreatePoll")]
         public virtual System.Nullable<bool> CanCreatePoll {
             get {
-                return this.canCreatePoll;
+                return this._canCreatePoll;
             }
             set {
-                this.canCreatePoll = value;
+                this._canCreatePoll = value;
             }
         }
         
@@ -1331,10 +1331,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("canCreateTopic")]
         public virtual System.Nullable<bool> CanCreateTopic {
             get {
-                return this.canCreateTopic;
+                return this._canCreateTopic;
             }
             set {
-                this.canCreateTopic = value;
+                this._canCreateTopic = value;
             }
         }
         
@@ -1342,10 +1342,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("canShout")]
         public virtual System.Nullable<bool> CanShout {
             get {
-                return this.canShout;
+                return this._canShout;
             }
             set {
-                this.canShout = value;
+                this._canShout = value;
             }
         }
         
@@ -1353,10 +1353,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isCoOwner")]
         public virtual System.Nullable<bool> IsCoOwner {
             get {
-                return this.isCoOwner;
+                return this._isCoOwner;
             }
             set {
-                this.isCoOwner = value;
+                this._isCoOwner = value;
             }
         }
         
@@ -1364,10 +1364,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isFollowing")]
         public virtual System.Nullable<bool> IsFollowing {
             get {
-                return this.isFollowing;
+                return this._isFollowing;
             }
             set {
-                this.isFollowing = value;
+                this._isFollowing = value;
             }
         }
         
@@ -1375,10 +1375,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isModerator")]
         public virtual System.Nullable<bool> IsModerator {
             get {
-                return this.isModerator;
+                return this._isModerator;
             }
             set {
-                this.isModerator = value;
+                this._isModerator = value;
             }
         }
         
@@ -1386,10 +1386,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isOwner")]
         public virtual System.Nullable<bool> IsOwner {
             get {
-                return this.isOwner;
+                return this._isOwner;
             }
             set {
-                this.isOwner = value;
+                this._isOwner = value;
             }
         }
         
@@ -1397,10 +1397,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isRestoreAvailable")]
         public virtual System.Nullable<bool> IsRestoreAvailable {
             get {
-                return this.isRestoreAvailable;
+                return this._isRestoreAvailable;
             }
             set {
-                this.isRestoreAvailable = value;
+                this._isRestoreAvailable = value;
             }
         }
         
@@ -1408,10 +1408,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isTakebackAvailable")]
         public virtual System.Nullable<bool> IsTakebackAvailable {
             get {
-                return this.isTakebackAvailable;
+                return this._isTakebackAvailable;
             }
             set {
-                this.isTakebackAvailable = value;
+                this._isTakebackAvailable = value;
             }
         }
         
@@ -1419,10 +1419,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1430,54 +1430,54 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual string Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
     }
     
     public class CommunityMessage : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string addedDate;
+        private string _addedDate;
         
-        private OrkutAuthorResource author;
+        private OrkutAuthorResource _author;
         
-        private string bodyValue;
+        private string _body;
         
-        private string id;
+        private string _id;
         
-        private System.Nullable<bool> isSpam;
+        private System.Nullable<bool> _isSpam;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private string subject;
+        private string _subject;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The timestamp of the date when the message was added, in RFC 3339 format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("addedDate")]
         public virtual string AddedDate {
             get {
-                return this.addedDate;
+                return this._addedDate;
             }
             set {
-                this.addedDate = value;
+                this._addedDate = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual OrkutAuthorResource Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -1485,10 +1485,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("body")]
         public virtual string Body {
             get {
-                return this.bodyValue;
+                return this._body;
             }
             set {
-                this.bodyValue = value;
+                this._body = value;
             }
         }
         
@@ -1496,10 +1496,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1507,10 +1507,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isSpam")]
         public virtual System.Nullable<bool> IsSpam {
             get {
-                return this.isSpam;
+                return this._isSpam;
             }
             set {
-                this.isSpam = value;
+                this._isSpam = value;
             }
         }
         
@@ -1518,10 +1518,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1529,10 +1529,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -1540,59 +1540,59 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("subject")]
         public virtual string Subject {
             get {
-                return this.subject;
+                return this._subject;
             }
             set {
-                this.subject = value;
+                this._subject = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityMessageList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string firstPageToken;
+        private string _firstPageToken;
         
-        private System.Collections.Generic.IList<CommunityMessage> items;
+        private System.Collections.Generic.IList<CommunityMessage> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string lastPageToken;
+        private string _lastPageToken;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The value of pageToken query parameter in community_messages.list request to get the first page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("firstPageToken")]
         public virtual string FirstPageToken {
             get {
-                return this.firstPageToken;
+                return this._firstPageToken;
             }
             set {
-                this.firstPageToken = value;
+                this._firstPageToken = value;
             }
         }
         
@@ -1600,10 +1600,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CommunityMessage> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1611,10 +1611,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1622,10 +1622,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastPageToken")]
         public virtual string LastPageToken {
             get {
-                return this.lastPageToken;
+                return this._lastPageToken;
             }
             set {
-                this.lastPageToken = value;
+                this._lastPageToken = value;
             }
         }
         
@@ -1633,10 +1633,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1644,90 +1644,90 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityPoll : Google.Apis.Requests.IDirectResponseSchema {
         
-        private OrkutAuthorResource author;
+        private OrkutAuthorResource _author;
         
-        private System.Nullable<long> communityId;
+        private System.Nullable<long> _communityId;
         
-        private string creationTime;
+        private string _creationTime;
         
-        private string description;
+        private string _description;
         
-        private string endingTime;
+        private string _endingTime;
         
-        private System.Nullable<bool> hasVoted;
+        private System.Nullable<bool> _hasVoted;
         
-        private string id;
+        private string _id;
         
-        private CommunityPoll.ImageData image;
+        private CommunityPoll.ImageData _image;
         
-        private System.Nullable<bool> isClosed;
+        private System.Nullable<bool> _isClosed;
         
-        private System.Nullable<bool> isMultipleAnswers;
+        private System.Nullable<bool> _isMultipleAnswers;
         
-        private System.Nullable<bool> isOpenForVoting;
+        private System.Nullable<bool> _isOpenForVoting;
         
-        private System.Nullable<bool> isRestricted;
+        private System.Nullable<bool> _isRestricted;
         
-        private System.Nullable<bool> isSpam;
+        private System.Nullable<bool> _isSpam;
         
-        private System.Nullable<bool> isUsersVotePublic;
+        private System.Nullable<bool> _isUsersVotePublic;
         
-        private System.Nullable<bool> isVotingAllowedForNonMembers;
+        private System.Nullable<bool> _isVotingAllowedForNonMembers;
         
-        private string kind;
+        private string _kind;
         
-        private string lastUpdate;
+        private string _lastUpdate;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private System.Collections.Generic.IList<OrkutCommunitypolloptionResource> options;
+        private System.Collections.Generic.IList<OrkutCommunitypolloptionResource> _options;
         
-        private string question;
+        private string _question;
         
-        private System.Nullable<long> totalNumberOfVotes;
+        private System.Nullable<long> _totalNumberOfVotes;
         
-        private System.Collections.Generic.IList<System.Nullable<long>> votedOptions;
+        private System.Collections.Generic.IList<System.Nullable<long>> _votedOptions;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual OrkutAuthorResource Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -1735,10 +1735,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("communityId")]
         public virtual System.Nullable<long> CommunityId {
             get {
-                return this.communityId;
+                return this._communityId;
             }
             set {
-                this.communityId = value;
+                this._communityId = value;
             }
         }
         
@@ -1746,10 +1746,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
         public virtual string CreationTime {
             get {
-                return this.creationTime;
+                return this._creationTime;
             }
             set {
-                this.creationTime = value;
+                this._creationTime = value;
             }
         }
         
@@ -1757,10 +1757,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -1768,10 +1768,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("endingTime")]
         public virtual string EndingTime {
             get {
-                return this.endingTime;
+                return this._endingTime;
             }
             set {
-                this.endingTime = value;
+                this._endingTime = value;
             }
         }
         
@@ -1779,10 +1779,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("hasVoted")]
         public virtual System.Nullable<bool> HasVoted {
             get {
-                return this.hasVoted;
+                return this._hasVoted;
             }
             set {
-                this.hasVoted = value;
+                this._hasVoted = value;
             }
         }
         
@@ -1790,10 +1790,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1801,10 +1801,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual CommunityPoll.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
@@ -1812,10 +1812,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isClosed")]
         public virtual System.Nullable<bool> IsClosed {
             get {
-                return this.isClosed;
+                return this._isClosed;
             }
             set {
-                this.isClosed = value;
+                this._isClosed = value;
             }
         }
         
@@ -1823,10 +1823,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isMultipleAnswers")]
         public virtual System.Nullable<bool> IsMultipleAnswers {
             get {
-                return this.isMultipleAnswers;
+                return this._isMultipleAnswers;
             }
             set {
-                this.isMultipleAnswers = value;
+                this._isMultipleAnswers = value;
             }
         }
         
@@ -1834,10 +1834,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isOpenForVoting")]
         public virtual System.Nullable<bool> IsOpenForVoting {
             get {
-                return this.isOpenForVoting;
+                return this._isOpenForVoting;
             }
             set {
-                this.isOpenForVoting = value;
+                this._isOpenForVoting = value;
             }
         }
         
@@ -1845,10 +1845,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isRestricted")]
         public virtual System.Nullable<bool> IsRestricted {
             get {
-                return this.isRestricted;
+                return this._isRestricted;
             }
             set {
-                this.isRestricted = value;
+                this._isRestricted = value;
             }
         }
         
@@ -1856,10 +1856,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isSpam")]
         public virtual System.Nullable<bool> IsSpam {
             get {
-                return this.isSpam;
+                return this._isSpam;
             }
             set {
-                this.isSpam = value;
+                this._isSpam = value;
             }
         }
         
@@ -1867,10 +1867,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isUsersVotePublic")]
         public virtual System.Nullable<bool> IsUsersVotePublic {
             get {
-                return this.isUsersVotePublic;
+                return this._isUsersVotePublic;
             }
             set {
-                this.isUsersVotePublic = value;
+                this._isUsersVotePublic = value;
             }
         }
         
@@ -1878,10 +1878,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isVotingAllowedForNonMembers")]
         public virtual System.Nullable<bool> IsVotingAllowedForNonMembers {
             get {
-                return this.isVotingAllowedForNonMembers;
+                return this._isVotingAllowedForNonMembers;
             }
             set {
-                this.isVotingAllowedForNonMembers = value;
+                this._isVotingAllowedForNonMembers = value;
             }
         }
         
@@ -1889,10 +1889,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1900,10 +1900,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastUpdate")]
         public virtual string LastUpdate {
             get {
-                return this.lastUpdate;
+                return this._lastUpdate;
             }
             set {
-                this.lastUpdate = value;
+                this._lastUpdate = value;
             }
         }
         
@@ -1911,10 +1911,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -1922,10 +1922,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("options")]
         public virtual System.Collections.Generic.IList<OrkutCommunitypolloptionResource> Options {
             get {
-                return this.options;
+                return this._options;
             }
             set {
-                this.options = value;
+                this._options = value;
             }
         }
         
@@ -1933,10 +1933,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("question")]
         public virtual string Question {
             get {
-                return this.question;
+                return this._question;
             }
             set {
-                this.question = value;
+                this._question = value;
             }
         }
         
@@ -1944,10 +1944,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalNumberOfVotes")]
         public virtual System.Nullable<long> TotalNumberOfVotes {
             get {
-                return this.totalNumberOfVotes;
+                return this._totalNumberOfVotes;
             }
             set {
-                this.totalNumberOfVotes = value;
+                this._totalNumberOfVotes = value;
             }
         }
         
@@ -1955,45 +1955,45 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("votedOptions")]
         public virtual System.Collections.Generic.IList<System.Nullable<long>> VotedOptions {
             get {
-                return this.votedOptions;
+                return this._votedOptions;
             }
             set {
-                this.votedOptions = value;
+                this._votedOptions = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The image representing the poll. Field is omitted if no image exists.</summary>
         public class ImageData {
             
-            private string url;
+            private string _url;
             
             /// <summary>A URL that points to an image of the poll.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -2001,38 +2001,38 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class CommunityPollComment : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string addedDate;
+        private string _addedDate;
         
-        private OrkutAuthorResource author;
+        private OrkutAuthorResource _author;
         
-        private string bodyValue;
+        private string _body;
         
-        private System.Nullable<long> id;
+        private System.Nullable<long> _id;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The date when the message was added, in RFC 3339 format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("addedDate")]
         public virtual string AddedDate {
             get {
-                return this.addedDate;
+                return this._addedDate;
             }
             set {
-                this.addedDate = value;
+                this._addedDate = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual OrkutAuthorResource Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -2040,10 +2040,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("body")]
         public virtual string Body {
             get {
-                return this.bodyValue;
+                return this._body;
             }
             set {
-                this.bodyValue = value;
+                this._body = value;
             }
         }
         
@@ -2051,10 +2051,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual System.Nullable<long> Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2062,59 +2062,59 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityPollCommentList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string firstPageToken;
+        private string _firstPageToken;
         
-        private System.Collections.Generic.IList<CommunityPollComment> items;
+        private System.Collections.Generic.IList<CommunityPollComment> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string lastPageToken;
+        private string _lastPageToken;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The value of pageToken query parameter in community_poll_comments.list request to get the first page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("firstPageToken")]
         public virtual string FirstPageToken {
             get {
-                return this.firstPageToken;
+                return this._firstPageToken;
             }
             set {
-                this.firstPageToken = value;
+                this._firstPageToken = value;
             }
         }
         
@@ -2122,10 +2122,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CommunityPollComment> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2133,10 +2133,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2144,10 +2144,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastPageToken")]
         public virtual string LastPageToken {
             get {
-                return this.lastPageToken;
+                return this._lastPageToken;
             }
             set {
-                this.lastPageToken = value;
+                this._lastPageToken = value;
             }
         }
         
@@ -2155,10 +2155,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -2166,59 +2166,59 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityPollList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string firstPageToken;
+        private string _firstPageToken;
         
-        private System.Collections.Generic.IList<CommunityPoll> items;
+        private System.Collections.Generic.IList<CommunityPoll> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string lastPageToken;
+        private string _lastPageToken;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The value of pageToken query parameter in community_polls.list request to get the first page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("firstPageToken")]
         public virtual string FirstPageToken {
             get {
-                return this.firstPageToken;
+                return this._firstPageToken;
             }
             set {
-                this.firstPageToken = value;
+                this._firstPageToken = value;
             }
         }
         
@@ -2226,10 +2226,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CommunityPoll> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2237,10 +2237,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2248,10 +2248,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastPageToken")]
         public virtual string LastPageToken {
             get {
-                return this.lastPageToken;
+                return this._lastPageToken;
             }
             set {
-                this.lastPageToken = value;
+                this._lastPageToken = value;
             }
         }
         
@@ -2259,10 +2259,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -2270,53 +2270,53 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityPollVote : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Nullable<bool> isVotevisible;
+        private System.Nullable<bool> _isVotevisible;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<System.Nullable<long>> optionIds;
+        private System.Collections.Generic.IList<System.Nullable<long>> _optionIds;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Whether this vote is visible to other users or not.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("isVotevisible")]
         public virtual System.Nullable<bool> IsVotevisible {
             get {
-                return this.isVotevisible;
+                return this._isVotevisible;
             }
             set {
-                this.isVotevisible = value;
+                this._isVotevisible = value;
             }
         }
         
@@ -2324,10 +2324,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2335,68 +2335,68 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("optionIds")]
         public virtual System.Collections.Generic.IList<System.Nullable<long>> OptionIds {
             get {
-                return this.optionIds;
+                return this._optionIds;
             }
             set {
-                this.optionIds = value;
+                this._optionIds = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityTopic : Google.Apis.Requests.IDirectResponseSchema {
         
-        private OrkutAuthorResource author;
+        private OrkutAuthorResource _author;
         
-        private string bodyValue;
+        private string _body;
         
-        private string id;
+        private string _id;
         
-        private System.Nullable<bool> isClosed;
+        private System.Nullable<bool> _isClosed;
         
-        private string kind;
+        private string _kind;
         
-        private string lastUpdate;
+        private string _lastUpdate;
         
-        private string latestMessageSnippet;
+        private string _latestMessageSnippet;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private System.Collections.Generic.IList<CommunityMessage> messages;
+        private System.Collections.Generic.IList<CommunityMessage> _messages;
         
-        private System.Nullable<long> numberOfReplies;
+        private System.Nullable<long> _numberOfReplies;
         
-        private string title;
+        private string _title;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual OrkutAuthorResource Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -2404,10 +2404,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("body")]
         public virtual string Body {
             get {
-                return this.bodyValue;
+                return this._body;
             }
             set {
-                this.bodyValue = value;
+                this._body = value;
             }
         }
         
@@ -2415,10 +2415,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2426,10 +2426,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isClosed")]
         public virtual System.Nullable<bool> IsClosed {
             get {
-                return this.isClosed;
+                return this._isClosed;
             }
             set {
-                this.isClosed = value;
+                this._isClosed = value;
             }
         }
         
@@ -2437,10 +2437,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2448,10 +2448,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastUpdate")]
         public virtual string LastUpdate {
             get {
-                return this.lastUpdate;
+                return this._lastUpdate;
             }
             set {
-                this.lastUpdate = value;
+                this._lastUpdate = value;
             }
         }
         
@@ -2459,10 +2459,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("latestMessageSnippet")]
         public virtual string LatestMessageSnippet {
             get {
-                return this.latestMessageSnippet;
+                return this._latestMessageSnippet;
             }
             set {
-                this.latestMessageSnippet = value;
+                this._latestMessageSnippet = value;
             }
         }
         
@@ -2470,10 +2470,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -2481,10 +2481,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("messages")]
         public virtual System.Collections.Generic.IList<CommunityMessage> Messages {
             get {
-                return this.messages;
+                return this._messages;
             }
             set {
-                this.messages = value;
+                this._messages = value;
             }
         }
         
@@ -2492,10 +2492,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("numberOfReplies")]
         public virtual System.Nullable<long> NumberOfReplies {
             get {
-                return this.numberOfReplies;
+                return this._numberOfReplies;
             }
             set {
-                this.numberOfReplies = value;
+                this._numberOfReplies = value;
             }
         }
         
@@ -2503,59 +2503,59 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class CommunityTopicList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string firstPageToken;
+        private string _firstPageToken;
         
-        private System.Collections.Generic.IList<CommunityTopic> items;
+        private System.Collections.Generic.IList<CommunityTopic> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string lastPageToken;
+        private string _lastPageToken;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The value of pageToken query parameter in community_topic.list request to get the first page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("firstPageToken")]
         public virtual string FirstPageToken {
             get {
-                return this.firstPageToken;
+                return this._firstPageToken;
             }
             set {
-                this.firstPageToken = value;
+                this._firstPageToken = value;
             }
         }
         
@@ -2563,10 +2563,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CommunityTopic> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2574,10 +2574,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2585,10 +2585,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastPageToken")]
         public virtual string LastPageToken {
             get {
-                return this.lastPageToken;
+                return this._lastPageToken;
             }
             set {
-                this.lastPageToken = value;
+                this._lastPageToken = value;
             }
         }
         
@@ -2596,10 +2596,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -2607,51 +2607,51 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Counters : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<OrkutCounterResource> items;
+        private System.Collections.Generic.IList<OrkutCounterResource> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of counters retrieved.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<OrkutCounterResource> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2659,56 +2659,56 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class OrkutActivityobjectsResource {
         
-        private Community community;
+        private Community _community;
         
-        private string content;
+        private string _content;
         
-        private string displayName;
+        private string _displayName;
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private string objectType;
+        private string _objectType;
         
-        private OrkutActivitypersonResource person;
+        private OrkutActivitypersonResource _person;
         
         [Newtonsoft.Json.JsonPropertyAttribute("community")]
         public virtual Community Community {
             get {
-                return this.community;
+                return this._community;
             }
             set {
-                this.community = value;
+                this._community = value;
             }
         }
         
@@ -2716,10 +2716,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -2727,10 +2727,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
         public virtual string DisplayName {
             get {
-                return this.displayName;
+                return this._displayName;
             }
             set {
-                this.displayName = value;
+                this._displayName = value;
             }
         }
         
@@ -2738,10 +2738,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2749,10 +2749,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -2760,46 +2760,46 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
         public virtual string ObjectType {
             get {
-                return this.objectType;
+                return this._objectType;
             }
             set {
-                this.objectType = value;
+                this._objectType = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("person")]
         public virtual OrkutActivitypersonResource Person {
             get {
-                return this.person;
+                return this._person;
             }
             set {
-                this.person = value;
+                this._person = value;
             }
         }
     }
     
     public class OrkutActivitypersonResource {
         
-        private string birthday;
+        private string _birthday;
         
-        private string gender;
+        private string _gender;
         
-        private string id;
+        private string _id;
         
-        private OrkutActivitypersonResource.ImageData image;
+        private OrkutActivitypersonResource.ImageData _image;
         
-        private OrkutActivitypersonResource.NameData name;
+        private OrkutActivitypersonResource.NameData _name;
         
-        private string url;
+        private string _url;
         
         /// <summary>The person&apos;s date of birth, represented as YYYY-MM-DD.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("birthday")]
         public virtual string Birthday {
             get {
-                return this.birthday;
+                return this._birthday;
             }
             set {
-                this.birthday = value;
+                this._birthday = value;
             }
         }
         
@@ -2807,10 +2807,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("gender")]
         public virtual string Gender {
             get {
-                return this.gender;
+                return this._gender;
             }
             set {
-                this.gender = value;
+                this._gender = value;
             }
         }
         
@@ -2818,10 +2818,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2829,10 +2829,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual OrkutActivitypersonResource.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
@@ -2840,10 +2840,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual OrkutActivitypersonResource.NameData Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -2851,26 +2851,26 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         /// <summary>The person&apos;s profile photo. This is adapted from Google+ and was originaly introduced as extra OpenSocial convenience fields.</summary>
         public class ImageData {
             
-            private string url;
+            private string _url;
             
             /// <summary>The URL of the person&apos;s profile photo.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -2878,18 +2878,18 @@ namespace Google.Apis.Orkut.v2.Data {
         /// <summary>An object that encapsulates the individual components of a person&apos;s name.</summary>
         public class NameData {
             
-            private string familyName;
+            private string _familyName;
             
-            private string givenName;
+            private string _givenName;
             
             /// <summary>The family name (last name) of this person.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
             public virtual string FamilyName {
                 get {
-                    return this.familyName;
+                    return this._familyName;
                 }
                 set {
-                    this.familyName = value;
+                    this._familyName = value;
                 }
             }
             
@@ -2897,10 +2897,10 @@ namespace Google.Apis.Orkut.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
             public virtual string GivenName {
                 get {
-                    return this.givenName;
+                    return this._givenName;
                 }
                 set {
-                    this.givenName = value;
+                    this._givenName = value;
                 }
             }
         }
@@ -2908,22 +2908,22 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class OrkutAuthorResource {
         
-        private string displayName;
+        private string _displayName;
         
-        private string id;
+        private string _id;
         
-        private OrkutAuthorResource.ImageData image;
+        private OrkutAuthorResource.ImageData _image;
         
-        private string url;
+        private string _url;
         
         /// <summary>The name of the author, suitable for display.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
         public virtual string DisplayName {
             get {
-                return this.displayName;
+                return this._displayName;
             }
             set {
-                this.displayName = value;
+                this._displayName = value;
             }
         }
         
@@ -2931,10 +2931,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2942,10 +2942,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual OrkutAuthorResource.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
@@ -2953,26 +2953,26 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         /// <summary>Image data about the author.</summary>
         public class ImageData {
             
-            private string url;
+            private string _url;
             
             /// <summary>A URL that points to a thumbnail photo of the author.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -2980,22 +2980,22 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class OrkutCommunitypolloptionResource {
         
-        private string description;
+        private string _description;
         
-        private OrkutCommunitypolloptionResource.ImageData image;
+        private OrkutCommunitypolloptionResource.ImageData _image;
         
-        private System.Nullable<long> numberOfVotes;
+        private System.Nullable<long> _numberOfVotes;
         
-        private System.Nullable<long> optionId;
+        private System.Nullable<long> _optionId;
         
         /// <summary>The option description.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -3003,10 +3003,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual OrkutCommunitypolloptionResource.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
@@ -3014,10 +3014,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("numberOfVotes")]
         public virtual System.Nullable<long> NumberOfVotes {
             get {
-                return this.numberOfVotes;
+                return this._numberOfVotes;
             }
             set {
-                this.numberOfVotes = value;
+                this._numberOfVotes = value;
             }
         }
         
@@ -3025,26 +3025,26 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("optionId")]
         public virtual System.Nullable<long> OptionId {
             get {
-                return this.optionId;
+                return this._optionId;
             }
             set {
-                this.optionId = value;
+                this._optionId = value;
             }
         }
         
         /// <summary>Image data about the poll option. Field is omitted if no image exists.</summary>
         public class ImageData {
             
-            private string url;
+            private string _url;
             
             /// <summary>A URL that points to an image of the poll question.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -3052,20 +3052,20 @@ namespace Google.Apis.Orkut.v2.Data {
     
     public class OrkutCounterResource {
         
-        private OrkutLinkResource link;
+        private OrkutLinkResource _link;
         
-        private string name;
+        private string _name;
         
-        private System.Nullable<long> total;
+        private System.Nullable<long> _total;
         
         /// <summary>Links to resources related to the parent object.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual OrkutLinkResource Link {
             get {
-                return this.link;
+                return this._link;
             }
             set {
-                this.link = value;
+                this._link = value;
             }
         }
         
@@ -3077,10 +3077,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -3088,10 +3088,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("total")]
         public virtual System.Nullable<long> Total {
             get {
-                return this.total;
+                return this._total;
             }
             set {
-                this.total = value;
+                this._total = value;
             }
         }
     }
@@ -3099,22 +3099,22 @@ namespace Google.Apis.Orkut.v2.Data {
     /// <summary>Links to resources related to the parent object.</summary>
     public class OrkutLinkResource {
         
-        private string href;
+        private string _href;
         
-        private string rel;
+        private string _rel;
         
-        private string title;
+        private string _title;
         
-        private string type;
+        private string _type;
         
         /// <summary>URL of the link.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("href")]
         public virtual string Href {
             get {
-                return this.href;
+                return this._href;
             }
             set {
-                this.href = value;
+                this._href = value;
             }
         }
         
@@ -3122,10 +3122,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("rel")]
         public virtual string Rel {
             get {
-                return this.rel;
+                return this._rel;
             }
             set {
-                this.rel = value;
+                this._rel = value;
             }
         }
         
@@ -3133,10 +3133,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -3144,34 +3144,34 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
-                return this.type;
+                return this._type;
             }
             set {
-                this.type = value;
+                this._type = value;
             }
         }
     }
     
     public class Visibility : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<OrkutLinkResource> links;
+        private System.Collections.Generic.IList<OrkutLinkResource> _links;
         
-        private string visibility;
+        private string _visibility;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Identifies this resource as a visibility item. Value: &quot;orkut#visibility&quot;</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -3179,10 +3179,10 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<OrkutLinkResource> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -3192,29 +3192,29 @@ namespace Google.Apis.Orkut.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("visibility")]
         public virtual string VisibilityValue {
             get {
-                return this.visibility;
+                return this._visibility;
             }
             set {
-                this.visibility = value;
+                this._visibility = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -3239,666 +3239,667 @@ namespace Google.Apis.Orkut.v2 {
             " time.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/orkut-16.png\"" +
             ",\"x32\":\"http://www.google.com/images/icons/product/orkut-32.png\"},\"documentation" +
             "Link\":\"http://code.google.com/apis/orkut/v2/reference.html\",\"protocol\":\"rest\",\"b" +
-            "aseUrl\":\"https://www.googleapis.com/orkut/v2/\",\"basePath\":\"/orkut/v2/\",\"paramete" +
-            "rs\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defau" +
-            "lt\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of a" +
-            "pplication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"S" +
-            "elector specifying which fields to include in a partial response.\",\"location\":\"q" +
-            "uery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies yo" +
-            "ur project and provides you with API access, quota, and reports. Required unless" +
-            " you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"str" +
-            "ing\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"" +
-            "prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations" +
-            " and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"str" +
-            "ing\",\"description\":\"Available to use for quota purposes for server-side applicat" +
-            "ions. Can be any arbitrary string assigned to a user, but should not exceed 40 c" +
-            "haracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":" +
-            "{\"type\":\"string\",\"description\":\"IP address of the site where the request origina" +
-            "tes. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"aut" +
-            "h\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/orkut\":{\"description\":\"" +
-            "Manage your Orkut activity\"},\"https://www.googleapis.com/auth/orkut.readonly\":{\"" +
-            "description\":\"View your Orkut data\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Human readable " +
-            "description of the access granted.\"},\"items\":{\"type\":\"array\",\"description\":\"The " +
-            "list of ACL entries.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"strin" +
-            "g\",\"description\":\"The ID of the entity. For entities of type \\\"person\\\" or \\\"cir" +
-            "cle\\\", this is the ID of the resource. For other types, this will be unset.\"},\"t" +
-            "ype\":{\"type\":\"string\",\"description\":\"The type of entity to whom access is grante" +
-            "d.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an ac" +
-            "cess control list. Value: \\\"orkut#acl\\\"\",\"default\":\"orkut#acl\"},\"totalParticipan" +
-            "ts\":{\"type\":\"integer\",\"description\":\"The total count of participants of the pare" +
-            "nt resource.\",\"format\":\"int32\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"p" +
-            "roperties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access to s" +
-            "ee this activity.\"},\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The per" +
-            "son who performed the activity.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID fo" +
-            "r the activity.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of activity. A" +
-            "lways orkut#activity.\",\"default\":\"orkut#activity\"},\"links\":{\"type\":\"array\",\"desc" +
-            "ription\":\"Links to resources related to this activity.\",\"items\":{\"$ref\":\"OrkutLi" +
-            "nkResource\"}},\"object\":{\"type\":\"object\",\"description\":\"The activity\'s object.\",\"" +
-            "properties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted conten" +
-            "t, suitable for display. When updating an activity\'s content, post the changes t" +
-            "o this property, using the value of originalContent as a starting point. If the " +
-            "update is successful, the server adds HTML formatting and responds with this for" +
-            "matted content.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of additional " +
-            "items.\",\"items\":{\"$ref\":\"OrkutActivityobjectsResource\"}},\"objectType\":{\"type\":\"s" +
-            "tring\",\"description\":\"The type of the object affected by the activity. Clients c" +
-            "an use this information to style the rendered activity object differently depend" +
-            "ing on the content.\"},\"replies\":{\"type\":\"object\",\"description\":\"Comments in repl" +
-            "y to this activity.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The li" +
-            "st of comments.\",\"items\":{\"$ref\":\"Comment\"}},\"totalItems\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Total number of comments.\",\"format\":\"uint64\"},\"url\":{\"type\":\"string\",\"" +
-            "description\":\"URL for the collection of comments in reply to this activity.\"}}}}" +
-            "},\"published\":{\"type\":\"string\",\"description\":\"The time at which the activity was" +
-            " initially published.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Title of the activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time" +
-            " at which the activity was last updated.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"" +
-            "string\",\"description\":\"This activity\'s verb, indicating what action was performe" +
-            "d. Possible values are:  \\n- add - User added new content to profile or album, e" +
-            ".g. video, photo. \\n- post - User publish content to the stream, e.g. status, sc" +
-            "rap. \\n- update - User commented on an activity. \\n- make-friend - User added a " +
-            "new friend. \\n- birthday - User has a birthday.\"}}},\"ActivityList\":{\"id\":\"Activi" +
-            "tyList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Lis" +
-            "t of activities retrieved.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifies this resource as a collection of activities. Value: \\" +
-            "\"orkut#activityList\\\"\",\"default\":\"orkut#activityList\"},\"nextPageToken\":{\"type\":\"" +
-            "string\",\"description\":\"The value of pageToken query parameter in activities.list" +
-            " request to get the next page, if there are more to retrieve.\"}}},\"Badge\":{\"id\":" +
-            "\"Badge\",\"type\":\"object\",\"properties\":{\"badgeLargeLogo\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The URL for the 64x64 badge logo.\"},\"badgeSmallLogo\":{\"type\":\"string\",\"de" +
-            "scription\":\"The URL for the 24x24 badge logo.\"},\"caption\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The name of the badge, suitable for display.\"},\"description\":{\"type\":\"" +
-            "string\",\"description\":\"The description for the badge, suitable for display.\"},\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"The unique ID for the badge.\",\"format\":\"int64" +
-            "\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a badge. V" +
-            "alue: \\\"orkut#badge\\\"\",\"default\":\"orkut#badge\"},\"sponsorLogo\":{\"type\":\"string\",\"" +
-            "description\":\"The URL for the 32x32 badge sponsor logo.\"},\"sponsorName\":{\"type\":" +
-            "\"string\",\"description\":\"The name of the badge sponsor, suitable for display.\"},\"" +
-            "sponsorUrl\":{\"type\":\"string\",\"description\":\"The URL for the badge sponsor.\"}}},\"" +
-            "BadgeList\":{\"id\":\"BadgeList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arra" +
-            "y\",\"description\":\"List of badges retrieved.\",\"items\":{\"$ref\":\"Badge\"}},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Identifies this resource as a collection of badges" +
-            ". Value: \\\"orkut#badgeList\\\"\",\"default\":\"orkut#badgeList\"}}},\"Comment\":{\"id\":\"Co" +
-            "mment\",\"type\":\"object\",\"properties\":{\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"desc" +
-            "ription\":\"The person who posted the comment.\"},\"content\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The content of the comment in text/html\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The unique ID for the comment.\"},\"inReplyTo\":{\"type\":\"object\",\"descripti" +
-            "on\":\"Link to the original activity where this comment was posted.\",\"properties\":" +
-            "{\"href\":{\"type\":\"string\",\"description\":\"Link to the post on activity stream bein" +
-            "g commented.\"},\"ref\":{\"type\":\"string\",\"description\":\"Unique identifier of the po" +
-            "st on activity stream being commented.\"},\"rel\":{\"type\":\"string\",\"description\":\"R" +
-            "elationship between the comment and the post on activity stream being commented." +
-            " Always inReplyTo.\",\"default\":\"inReplyTo\"},\"type\":{\"type\":\"string\",\"description\"" +
-            ":\"Type of the post on activity stream being commented. Always text/html.\"}}},\"ki" +
-            "nd\":{\"type\":\"string\",\"description\":\"Identifies this resource as a comment. Value" +
-            ": \\\"orkut#comment\\\"\",\"default\":\"orkut#comment\"},\"links\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"List of resources for the comment.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}}" +
-            ",\"published\":{\"type\":\"string\",\"description\":\"The time the comment was initially " +
-            "published, in RFC 3339 format.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"Com" +
-            "mentList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"L" +
-            "ist of comments retrieved.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Identifies this resource as a collection of comments. Value: \\\"or" +
-            "kut#commentList\\\"\",\"default\":\"orkut#commentList\"},\"nextPageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"The value of pageToken query parameter in comments.list reques" +
-            "t to get the next page, if there are more to retrieve.\"},\"previousPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"The value of pageToken query parameter in comments." +
-            "list request to get the previous page, if there are more to retrieve.\"}}},\"Commu" +
-            "nity\":{\"id\":\"Community\",\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"string" +
-            "\",\"description\":\"The category of the community.\"},\"co_owners\":{\"type\":\"array\",\"d" +
-            "escription\":\"The co-owners of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResour" +
-            "ce\"}},\"creation_date\":{\"type\":\"string\",\"description\":\"The time the community was" +
-            " created, in RFC 3339 format.\",\"format\":\"date-time\"},\"description\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The description of the community.\"},\"id\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The id of the community.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifies this resource as a community. Value: \\\"orkut#communit" +
-            "y\\\"\",\"default\":\"orkut#community\"},\"language\":{\"type\":\"string\",\"description\":\"The" +
-            " official language of the community.\"},\"links\":{\"type\":\"array\",\"description\":\"Li" +
-            "st of resources for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"locat" +
-            "ion\":{\"type\":\"string\",\"description\":\"The location of the community.\"},\"member_co" +
-            "unt\":{\"type\":\"integer\",\"description\":\"The number of users who are part of the co" +
-            "mmunity. This number may be approximate, so do not rely on it for iteration.\",\"f" +
-            "ormat\":\"int32\"},\"moderators\":{\"type\":\"array\",\"description\":\"The list of moderato" +
-            "rs of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}},\"name\":{\"type\":\"st" +
-            "ring\",\"description\":\"The name of the community.\"},\"owner\":{\"$ref\":\"OrkutAuthorRe" +
-            "source\",\"description\":\"The person who owns the community.\"},\"photo_url\":{\"type\":" +
-            "\"string\",\"description\":\"The photo of the community.\"}}},\"CommunityList\":{\"id\":\"C" +
-            "ommunityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
-            "\":\"List of communities retrieved.\",\"items\":{\"$ref\":\"Community\"}},\"kind\":{\"type\":" +
-            "\"string\",\"description\":\"Identifies this resource as a collection of communities." +
-            " Value: \\\"orkut#communityList\\\"\",\"default\":\"orkut#communityList\"}}},\"CommunityMe" +
-            "mbers\":{\"id\":\"CommunityMembers\",\"type\":\"object\",\"properties\":{\"communityMembersh" +
-            "ipStatus\":{\"$ref\":\"CommunityMembershipStatus\",\"description\":\"Status and permissi" +
-            "ons of the user related to the community.\"},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Kind of this item. Always orkut#communityMembers.\",\"default\":\"orkut#community" +
-            "Members\"},\"person\":{\"$ref\":\"OrkutActivitypersonResource\",\"description\":\"Descript" +
-            "ion of the community member.\"}}},\"CommunityMembersList\":{\"id\":\"CommunityMembersL" +
-            "ist\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The value of pageToken query parameter in community_members.list request to " +
-            "get the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community m" +
-            "embers retrieved.\",\"items\":{\"$ref\":\"CommunityMembers\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Kind of this item. Always orkut#communityMembersList.\",\"default\":" +
-            "\"orkut#communityMembersList\"},\"lastPageToken\":{\"type\":\"string\",\"description\":\"Th" +
-            "e value of pageToken query parameter in community_members.list request to get th" +
-            "e last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The value of page" +
-            "Token query parameter in community_members.list request to get the next page, if" +
-            " there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"T" +
-            "he value of pageToken query parameter in community_members.list request to get t" +
-            "he previous page, if there are more to retrieve.\"}}},\"CommunityMembershipStatus\"" +
-            ":{\"id\":\"CommunityMembershipStatus\",\"type\":\"object\",\"properties\":{\"canCreatePoll\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether the user can create a poll in this com" +
-            "munity.\"},\"canCreateTopic\":{\"type\":\"boolean\",\"description\":\"Whether the user can" +
-            " create a topic in this community.\"},\"canShout\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether the user can perform a shout operation in this community.\"},\"isCoOwner\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether the session user is a community co-own" +
-            "er.\"},\"isFollowing\":{\"type\":\"boolean\",\"description\":\"Whether the user is followi" +
-            "ng this community.\"},\"isModerator\":{\"type\":\"boolean\",\"description\":\"Whether the " +
-            "session user is a community moderator.\"},\"isOwner\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Whether the session user is the community owner.\"},\"isRestoreAvailable\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether the restore operation is available for the " +
-            "community.\"},\"isTakebackAvailable\":{\"type\":\"boolean\",\"description\":\"Whether the " +
-            "take-back operation is available for the community.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Kind of this item. Always orkut#communityMembershipStatus.\",\"defaul" +
-            "t\":\"orkut#communityMembershipStatus\"},\"status\":{\"type\":\"string\",\"description\":\"T" +
-            "he status of the current link between the community and the user.\"}}},\"Community" +
-            "Message\":{\"id\":\"CommunityMessage\",\"type\":\"object\",\"properties\":{\"addedDate\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The timestamp of the date when the message was added" +
-            ", in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"OrkutAuthorResour" +
-            "ce\",\"description\":\"The creator of the message. If ommited, the message is annoni" +
-            "mous.\"},\"body\":{\"type\":\"string\",\"description\":\"The body of the message.\"},\"id\":{" +
-            "\"type\":\"string\",\"description\":\"The ID of the message.\",\"format\":\"int64\"},\"isSpam" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether this post was marked as spam by the v" +
-            "iewer, when he/she is not the community owner or one of its moderators.\"},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Identifies this resource as a community message" +
-            ". Value: \\\"orkut#communityMessage\\\"\",\"default\":\"orkut#communityMessage\"},\"links\"" +
-            ":{\"type\":\"array\",\"description\":\"List of resources for the community message.\",\"i" +
-            "tems\":{\"$ref\":\"OrkutLinkResource\"}},\"subject\":{\"type\":\"string\",\"description\":\"Th" +
-            "e subject of the message.\"}}},\"CommunityMessageList\":{\"id\":\"CommunityMessageList" +
-            "\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"The value of pageToken query parameter in community_messages.list request to ge" +
-            "t the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of messages retr" +
-            "ieved.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"kind\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Identifies this resource as a collection of community messages. Value: \\\"ork" +
-            "ut#communityMessageList\\\"\",\"default\":\"orkut#communityMessageList\"},\"lastPageToke" +
+            "aseUrl\":\"https://www.googleapis.com/orkut/v2/\",\"basePath\":\"/orkut/v2/\",\"rootUrl\"" +
+            ":\"https://www.googleapis.com/\",\"servicePath\":\"orkut/v2/\",\"batchPath\":\"batch\",\"pa" +
+            "rameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\"," +
+            "\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Typ" +
+            "e of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Selector specifying which fields to include in a partial response.\",\"locati" +
+            "on\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identif" +
+            "ies your project and provides you with API access, quota, and reports. Required " +
+            "unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type" +
+            "\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"que" +
+            "ry\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indent" +
+            "ations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type" +
+            "\":\"string\",\"description\":\"Available to use for quota purposes for server-side ap" +
+            "plications. Can be any arbitrary string assigned to a user, but should not excee" +
+            "d 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"us" +
+            "erIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request o" +
+            "riginates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}" +
+            "},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/orkut\":{\"descript" +
+            "ion\":\"Manage your Orkut activity\"},\"https://www.googleapis.com/auth/orkut.readon" +
+            "ly\":{\"description\":\"View your Orkut data\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type" +
+            "\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Human rea" +
+            "dable description of the access granted.\"},\"items\":{\"type\":\"array\",\"description\"" +
+            ":\"The list of ACL entries.\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":" +
+            "\"string\",\"description\":\"The ID of the entity. For entities of type \\\"person\\\" or" +
+            " \\\"circle\\\", this is the ID of the resource. For other types, this will be unset" +
+            ".\"},\"type\":{\"type\":\"string\",\"description\":\"The type of entity to whom access is " +
+            "granted.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as" +
+            " an access control list. Value: \\\"orkut#acl\\\"\",\"default\":\"orkut#acl\"},\"totalPart" +
+            "icipants\":{\"type\":\"integer\",\"description\":\"The total count of participants of th" +
+            "e parent resource.\",\"format\":\"int32\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"obje" +
+            "ct\",\"properties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has acces" +
+            "s to see this activity.\"},\"actor\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"T" +
+            "he person who performed the activity.\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
+            " ID for the activity.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of activ" +
+            "ity. Always orkut#activity.\",\"default\":\"orkut#activity\"},\"links\":{\"type\":\"array\"" +
+            ",\"description\":\"Links to resources related to this activity.\",\"items\":{\"$ref\":\"O" +
+            "rkutLinkResource\"}},\"object\":{\"type\":\"object\",\"description\":\"The activity\'s obje" +
+            "ct.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"The HTML-formatted " +
+            "content, suitable for display. When updating an activity\'s content, post the cha" +
+            "nges to this property, using the value of originalContent as a starting point. I" +
+            "f the update is successful, the server adds HTML formatting and responds with th" +
+            "is formatted content.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of addit" +
+            "ional items.\",\"items\":{\"$ref\":\"OrkutActivityobjectsResource\"}},\"objectType\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The type of the object affected by the activity. Cli" +
+            "ents can use this information to style the rendered activity object differently " +
+            "depending on the content.\"},\"replies\":{\"type\":\"object\",\"description\":\"Comments i" +
+            "n reply to this activity.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"" +
+            "The list of comments.\",\"items\":{\"$ref\":\"Comment\"}},\"totalItems\":{\"type\":\"string\"" +
+            ",\"description\":\"Total number of comments.\",\"format\":\"uint64\"},\"url\":{\"type\":\"str" +
+            "ing\",\"description\":\"URL for the collection of comments in reply to this activity" +
+            ".\"}}}}},\"published\":{\"type\":\"string\",\"description\":\"The time at which the activi" +
+            "ty was initially published.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"des" +
+            "cription\":\"Title of the activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"Th" +
+            "e time at which the activity was last updated.\",\"format\":\"date-time\"},\"verb\":{\"t" +
+            "ype\":\"string\",\"description\":\"This activity\'s verb, indicating what action was pe" +
+            "rformed. Possible values are:  \\n- add - User added new content to profile or al" +
+            "bum, e.g. video, photo. \\n- post - User publish content to the stream, e.g. stat" +
+            "us, scrap. \\n- update - User commented on an activity. \\n- make-friend - User ad" +
+            "ded a new friend. \\n- birthday - User has a birthday.\"}}},\"ActivityList\":{\"id\":\"" +
+            "ActivityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description" +
+            "\":\"List of activities retrieved.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Identifies this resource as a collection of activities. Va" +
+            "lue: \\\"orkut#activityList\\\"\",\"default\":\"orkut#activityList\"},\"nextPageToken\":{\"t" +
+            "ype\":\"string\",\"description\":\"The value of pageToken query parameter in activitie" +
+            "s.list request to get the next page, if there are more to retrieve.\"}}},\"Badge\":" +
+            "{\"id\":\"Badge\",\"type\":\"object\",\"properties\":{\"badgeLargeLogo\":{\"type\":\"string\",\"d" +
+            "escription\":\"The URL for the 64x64 badge logo.\"},\"badgeSmallLogo\":{\"type\":\"strin" +
+            "g\",\"description\":\"The URL for the 24x24 badge logo.\"},\"caption\":{\"type\":\"string\"" +
+            ",\"description\":\"The name of the badge, suitable for display.\"},\"description\":{\"t" +
+            "ype\":\"string\",\"description\":\"The description for the badge, suitable for display" +
+            ".\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID for the badge.\",\"format\":" +
+            "\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a ba" +
+            "dge. Value: \\\"orkut#badge\\\"\",\"default\":\"orkut#badge\"},\"sponsorLogo\":{\"type\":\"str" +
+            "ing\",\"description\":\"The URL for the 32x32 badge sponsor logo.\"},\"sponsorName\":{\"" +
+            "type\":\"string\",\"description\":\"The name of the badge sponsor, suitable for displa" +
+            "y.\"},\"sponsorUrl\":{\"type\":\"string\",\"description\":\"The URL for the badge sponsor." +
+            "\"}}},\"BadgeList\":{\"id\":\"BadgeList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
+            ":\"array\",\"description\":\"List of badges retrieved.\",\"items\":{\"$ref\":\"Badge\"}},\"ki" +
+            "nd\":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection of " +
+            "badges. Value: \\\"orkut#badgeList\\\"\",\"default\":\"orkut#badgeList\"}}},\"Comment\":{\"i" +
+            "d\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"$ref\":\"OrkutAuthorResource\"" +
+            ",\"description\":\"The person who posted the comment.\"},\"content\":{\"type\":\"string\"," +
+            "\"description\":\"The content of the comment in text/html\"},\"id\":{\"type\":\"string\",\"" +
+            "description\":\"The unique ID for the comment.\"},\"inReplyTo\":{\"type\":\"object\",\"des" +
+            "cription\":\"Link to the original activity where this comment was posted.\",\"proper" +
+            "ties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the post on activity strea" +
+            "m being commented.\"},\"ref\":{\"type\":\"string\",\"description\":\"Unique identifier of " +
+            "the post on activity stream being commented.\"},\"rel\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Relationship between the comment and the post on activity stream being comm" +
+            "ented. Always inReplyTo.\",\"default\":\"inReplyTo\"},\"type\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Type of the post on activity stream being commented. Always text/html.\"}" +
+            "}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a comment." +
+            " Value: \\\"orkut#comment\\\"\",\"default\":\"orkut#comment\"},\"links\":{\"type\":\"array\",\"d" +
+            "escription\":\"List of resources for the comment.\",\"items\":{\"$ref\":\"OrkutLinkResou" +
+            "rce\"}},\"published\":{\"type\":\"string\",\"description\":\"The time the comment was init" +
+            "ially published, in RFC 3339 format.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id" +
+            "\":\"CommentList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descripti" +
+            "on\":\"List of comments retrieved.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Identifies this resource as a collection of comments. Value" +
+            ": \\\"orkut#commentList\\\"\",\"default\":\"orkut#commentList\"},\"nextPageToken\":{\"type\":" +
+            "\"string\",\"description\":\"The value of pageToken query parameter in comments.list " +
+            "request to get the next page, if there are more to retrieve.\"},\"previousPageToke" +
             "n\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in com" +
-            "munity_messages.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"The value of pageToken query parameter in community_message" +
-            "s.list request to get the next page, if there are more to retrieve.\"},\"prevPageT" +
-            "oken\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in " +
-            "community_messages.list request to get the previous page, if there are more to r" +
-            "etrieve.\"}}},\"CommunityPoll\":{\"id\":\"CommunityPoll\",\"type\":\"object\",\"properties\":" +
-            "{\"author\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person who created th" +
-            "e poll.\"},\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community" +
-            ".\",\"format\":\"int32\"},\"creationTime\":{\"type\":\"string\",\"description\":\"The date of " +
-            "creation of this poll\",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"des" +
-            "cription\":\"The poll description.\"},\"endingTime\":{\"type\":\"string\",\"description\":\"" +
-            "The ending date of this poll or empty if the poll doesn\'t have one.\",\"format\":\"d" +
-            "ate-time\"},\"hasVoted\":{\"type\":\"boolean\",\"description\":\"Whether the user has vote" +
-            "d on this poll.\"},\"id\":{\"type\":\"string\",\"description\":\"The poll ID.\"},\"image\":{\"" +
-            "type\":\"object\",\"description\":\"The image representing the poll. Field is omitted " +
-            "if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL t" +
-            "hat points to an image of the poll.\"}}},\"isClosed\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Whether the poll is not expired if there is an expiration date. A poll is op" +
-            "en (that is, not closed for voting) if it either is not expired or doesn\'t have " +
-            "an expiration date at all. Note that just because a poll is open, it doesn\'t mea" +
-            "n that the requester can vote on it.\"},\"isMultipleAnswers\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Whether this poll allows voting for more than one option.\"},\"isOpenF" +
-            "orVoting\":{\"type\":\"boolean\",\"description\":\"Whether this poll is still opened for" +
-            " voting. A poll is open for voting if it is not closed, the user has not yet vot" +
-            "ed on it and the user has the permission to do so, which happens if he/she is ei" +
-            "ther a community member or the poll is open for everybody.\"},\"isRestricted\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether this poll is restricted for members only. I" +
-            "f a poll is open but the user can\'t vote on it, it\'s been restricted to members " +
-            "only. This information is important to tell this case apart from the one where t" +
-            "he user can\'t vote simply because the poll is already closed.\"},\"isSpam\":{\"type\"" +
-            ":\"boolean\",\"description\":\"Whether the user has marked this poll as spam. This on" +
-            "ly affects the poll for this user, not globally.\"},\"isUsersVotePublic\":{\"type\":\"" +
-            "boolean\",\"description\":\"If user has already voted, whether his vote is publicly " +
-            "visible.\"},\"isVotingAllowedForNonMembers\":{\"type\":\"boolean\",\"description\":\"Wheth" +
-            "er non-members of the community can vote on the poll.\"},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"Identifies this resource as a community poll. Value: \\\"orkut#comm" +
-            "unityPoll\\\"\",\"default\":\"orkut#communityPoll\"},\"lastUpdate\":{\"type\":\"string\",\"des" +
-            "cription\":\"The date of the last update of this poll.\",\"format\":\"date-time\"},\"lin" +
-            "ks\":{\"type\":\"array\",\"description\":\"List of resources for the community poll.\",\"i" +
-            "tems\":{\"$ref\":\"OrkutLinkResource\"}},\"options\":{\"type\":\"array\",\"description\":\"Lis" +
-            "t of options of this poll.\",\"items\":{\"$ref\":\"OrkutCommunitypolloptionResource\"}}" +
-            ",\"question\":{\"type\":\"string\",\"description\":\"The poll question.\"},\"totalNumberOfV" +
-            "otes\":{\"type\":\"integer\",\"description\":\"The total number of votes this poll has r" +
-            "eceived.\",\"format\":\"int32\"},\"votedOptions\":{\"type\":\"array\",\"description\":\"List o" +
-            "f options the user has voted on, if there are any.\",\"items\":{\"type\":\"integer\",\"f" +
-            "ormat\":\"int32\"}}}},\"CommunityPollComment\":{\"id\":\"CommunityPollComment\",\"type\":\"o" +
-            "bject\",\"properties\":{\"addedDate\":{\"type\":\"string\",\"description\":\"The date when t" +
-            "he message was added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref" +
-            "\":\"OrkutAuthorResource\",\"description\":\"The creator of the comment.\"},\"body\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The body of the message.\"},\"id\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The ID of the comment.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Identifies this resource as a community poll comment. Value: \\\"ork" +
-            "ut#communityPollComment\\\"\",\"default\":\"orkut#communityPollComment\"}}},\"CommunityP" +
-            "ollCommentList\":{\"id\":\"CommunityPollCommentList\",\"type\":\"object\",\"properties\":{\"" +
-            "firstPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query par" +
-            "ameter in community_poll_comments.list request to get the first page.\"},\"items\":" +
-            "{\"type\":\"array\",\"description\":\"List of community poll comments retrieved.\",\"item" +
-            "s\":{\"$ref\":\"CommunityPollComment\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ident" +
-            "ifies this resource as a collection of community poll comments. Value: \\\"orkut#C" +
-            "ommunityPollCommentList\\\"\",\"default\":\"orkut#CommunityPollCommentList\"},\"lastPage" +
-            "Token\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in" +
-            " community_poll_comments.list request to get the last page.\"},\"nextPageToken\":{\"" +
-            "type\":\"string\",\"description\":\"The value of pageToken query parameter in communit" +
-            "y_poll_comments.list request to get the next page, if there are more to retrieve" +
-            ".\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query" +
-            " parameter in community_poll_comments.list request to get the previous page, if " +
-            "there are more to retrieve.\"}}},\"CommunityPollList\":{\"id\":\"CommunityPollList\",\"t" +
-            "ype\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The" +
-            " value of pageToken query parameter in community_polls.list request to get the f" +
-            "irst page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community polls retr" +
-            "ieved.\",\"items\":{\"$ref\":\"CommunityPoll\"}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Identifies this resource as a collection of community polls. Value: \\\"orkut#com" +
-            "munityPollList\\\"\",\"default\":\"orkut#communityPollList\"},\"lastPageToken\":{\"type\":\"" +
-            "string\",\"description\":\"The value of pageToken query parameter in community_polls" +
-            ".list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The value of pageToken query parameter in community_polls.list request to " +
-            "get the next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"str" +
-            "ing\",\"description\":\"The value of pageToken query parameter in community_polls.li" +
-            "st request to get the previous page, if there are more to retrieve.\"}}},\"Communi" +
-            "tyPollVote\":{\"id\":\"CommunityPollVote\",\"type\":\"object\",\"properties\":{\"isVotevisib" +
-            "le\":{\"type\":\"boolean\",\"description\":\"Whether this vote is visible to other users" +
-            " or not.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a " +
-            "community poll vote. Value: \\\"orkut#communityPollVote\\\"\",\"default\":\"orkut#commun" +
-            "ityPollVote\"},\"optionIds\":{\"type\":\"array\",\"description\":\"The ids of the voted op" +
-            "tions.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}}}},\"CommunityTopic\":{\"id\":\"C" +
-            "ommunityTopic\",\"type\":\"object\",\"properties\":{\"author\":{\"$ref\":\"OrkutAuthorResour" +
-            "ce\",\"description\":\"The creator of the topic.\"},\"body\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The body of the topic.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of th" +
-            "e topic.\",\"format\":\"int64\"},\"isClosed\":{\"type\":\"boolean\",\"description\":\"Whether " +
-            "the topic is closed for new messages.\"},\"kind\":{\"type\":\"string\",\"description\":\"I" +
-            "dentifies this resource as a community topic. Value: \\\"orkut#communityTopic\\\"\",\"" +
-            "default\":\"orkut#communityTopic\"},\"lastUpdate\":{\"type\":\"string\",\"description\":\"Th" +
-            "e timestamp of the last update, in RFC 3339 format.\",\"format\":\"date-time\"},\"late" +
-            "stMessageSnippet\":{\"type\":\"string\",\"description\":\"Snippet of the last message po" +
-            "sted on this topic.\"},\"links\":{\"type\":\"array\",\"description\":\"List of resources f" +
-            "or the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"messages\":{\"type\":\"arr" +
-            "ay\",\"description\":\"Most recent messages.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"" +
-            "numberOfReplies\":{\"type\":\"integer\",\"description\":\"The total number of replies th" +
-            "is topic has received.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\"" +
-            ":\"The title of the topic.\"}}},\"CommunityTopicList\":{\"id\":\"CommunityTopicList\",\"t" +
-            "ype\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The" +
-            " value of pageToken query parameter in community_topic.list request to get the f" +
-            "irst page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of topics retrieved.\",\"" +
-            "items\":{\"$ref\":\"CommunityTopic\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identif" +
-            "ies this resource as a collection of community topics. Value: \\\"orkut#communityT" +
-            "opicList\\\"\",\"default\":\"orkut#communityTopicList\"},\"lastPageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"The value of pageToken query parameter in community_topic.list" +
-            " request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"The value of pageToken query parameter in community_topic.list request to get t" +
-            "he next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\"," +
-            "\"description\":\"The value of pageToken query parameter in community_topic.list re" +
-            "quest to get the previous page, if there are more to retrieve.\"}}},\"Counters\":{\"" +
-            "id\":\"Counters\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"List of counters retrieved.\",\"items\":{\"$ref\":\"OrkutCounterResource\"}},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection of cou" +
-            "nters. Value: \\\"orkut#counters\\\"\",\"default\":\"orkut#counters\"}}},\"OrkutActivityob" +
-            "jectsResource\":{\"id\":\"OrkutActivityobjectsResource\",\"type\":\"object\",\"properties\"" +
-            ":{\"community\":{\"$ref\":\"Community\",\"description\":\"The community which is related " +
-            "with this activity, e.g. a joined community.\"},\"content\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The HTML-formatted content, suitable for display. When updating an acti" +
-            "vity\'s content, post the changes to this property, using the value of originalCo" +
-            "ntent as a starting point. If the update is successful, the server adds HTML for" +
-            "matting and responds with this formatted content.\"},\"displayName\":{\"type\":\"strin" +
-            "g\",\"description\":\"The title of the object.\"},\"id\":{\"type\":\"string\",\"description\"" +
-            ":\"The ID for the object.\"},\"links\":{\"type\":\"array\",\"description\":\"Links to other" +
-            " resources related to this object.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"objec" +
-            "tType\":{\"type\":\"string\",\"description\":\"The object type.\"},\"person\":{\"$ref\":\"Orku" +
-            "tActivitypersonResource\",\"description\":\"The person who is related with this acti" +
-            "vity, e.g. an Added User.\"}}},\"OrkutActivitypersonResource\":{\"id\":\"OrkutActivity" +
-            "personResource\",\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"gender\":{\"typ" +
-            "e\":\"string\",\"description\":\"The person\'s gender. Values include \\\"male\\\", \\\"femal" +
-            "e\\\", and \\\"other\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"The person\'s opensoci" +
-            "al ID.\"},\"image\":{\"type\":\"object\",\"description\":\"The person\'s profile photo. Thi" +
-            "s is adapted from Google+ and was originaly introduced as extra OpenSocial conve" +
-            "nience fields.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of t" +
-            "he person\'s profile photo.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object " +
-            "that encapsulates the individual components of a person\'s name.\",\"properties\":{\"" +
-            "familyName\":{\"type\":\"string\",\"description\":\"The family name (last name) of this " +
-            "person.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name" +
-            ") of this person.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The person\'s profile" +
-            " url. This is adapted from Google+ and was originaly introduced as extra OpenSoc" +
-            "ial convenience fields.\"}}},\"OrkutAuthorResource\":{\"id\":\"OrkutAuthorResource\",\"t" +
-            "ype\":\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The na" +
-            "me of the author, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":\"U" +
-            "nique identifier of the person who posted the comment. This is the person\'s Open" +
-            "Social ID.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the author" +
-            ".\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points to a th" +
-            "umbnail photo of the author.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL o" +
-            "f the author who posted the comment [not yet implemented]\"}}},\"OrkutCommunitypol" +
-            "loptionResource\":{\"id\":\"OrkutCommunitypolloptionResource\",\"type\":\"object\",\"prope" +
-            "rties\":{\"description\":{\"type\":\"string\",\"description\":\"The option description.\"}," +
-            "\"image\":{\"type\":\"object\",\"description\":\"Image data about the poll option. Field " +
-            "is omitted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A URL that points to an image of the poll question.\"}}},\"numberOfVotes\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The total number of votes that this option received" +
-            ".\",\"format\":\"int32\"},\"optionId\":{\"type\":\"integer\",\"description\":\"The poll option" +
-            " ID\",\"format\":\"int32\"}}},\"OrkutCounterResource\":{\"id\":\"OrkutCounterResource\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"link\":{\"$ref\":\"OrkutLinkResource\",\"description\":\"Lin" +
-            "k to the collection being counted.\"},\"name\":{\"type\":\"string\",\"description\":\"The " +
-            "name of the counted collection. Currently supported collections are:  \\n- scraps" +
-            " - The scraps of the user. \\n- photos - The photos of the user. \\n- videos - The" +
-            " videos of the user. \\n- pendingTestimonials - The pending testimonials of the u" +
-            "ser.\"},\"total\":{\"type\":\"integer\",\"description\":\"The number of resources on the c" +
-            "ounted collection.\",\"format\":\"int32\"}}},\"OrkutLinkResource\":{\"id\":\"OrkutLinkReso" +
-            "urce\",\"type\":\"object\",\"description\":\"Links to resources related to the parent ob" +
-            "ject.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"URL of the link.\"},\"" +
-            "rel\":{\"type\":\"string\",\"description\":\"Relation between the resource and the paren" +
-            "t object.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the link.\"},\"type\":" +
-            "{\"type\":\"string\",\"description\":\"Media type of the link.\"}}},\"Visibility\":{\"id\":\"" +
-            "Visibility\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Identifies this resource as a visibility item. Value: \\\"orkut#visibility\\\"\",\"de" +
-            "fault\":\"orkut#visibility\"},\"links\":{\"type\":\"array\",\"description\":\"List of resour" +
-            "ces for the visibility item.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"visibility\"" +
-            ":{\"type\":\"string\",\"description\":\"The visibility of the resource. Possible values" +
-            " are:  \\n- default: not hidden by the user \\n- hidden: hidden\"}}}},\"resources\":{" +
-            "\"acl\":{\"methods\":{\"delete\":{\"id\":\"orkut.acl.delete\",\"path\":\"activities/{activity" +
-            "Id}/acl/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Excludes an element from " +
-            "the ACL of the activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"ID of the activity.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"type\":\"s" +
-            "tring\",\"description\":\"ID of the user to be removed from the activity.\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\",\"userId\"],\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/orkut\"]}}},\"activities\":{\"methods\":{\"delete\":{\"id" +
-            "\":\"orkut.activities.delete\",\"path\":\"activities/{activityId}\",\"httpMethod\":\"DELET" +
-            "E\",\"description\":\"Deletes an existing activity, if the access controls allow it." +
-            "\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of the activity " +
-            "to remove.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\"]," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.activiti" +
-            "es.list\",\"path\":\"people/{userId}/activities/{collection}\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Retrieves a list of activities.\",\"parameters\":{\"collection\":{\"type\":" +
-            "\"string\",\"description\":\"The collection of activities to list.\",\"required\":true,\"" +
-            "enum\":[\"all\",\"scraps\",\"stream\"],\"enumDescriptions\":[\"All activities created by t" +
-            "he specified user that the authenticated user is authorized to view.\",\"The speci" +
-            "fied user\'s scrapbook.\",\"The specified user\'s stream feed, intended for consumpt" +
-            "ion. This includes activities posted by people that the user is following, and a" +
-            "ctivities in which the user has been mentioned.\"],\"location\":\"path\"},\"hl\":{\"type" +
-            "\":\"string\",\"description\":\"Specifies the interface language (host language) of yo" +
-            "ur user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"The maximum number of activities to include in the response.\",\"format\":\"ui" +
-            "nt32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"str" +
-            "ing\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"qu" +
-            "ery\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose activiti" +
-            "es will be listed. Can be me to refer to the viewer (i.e. the authenticated user" +
-            ").\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"]" +
-            ",\"response\":{\"$ref\":\"ActivityList\"},\"scopes\":[\"https://www.googleapis.com/auth/o" +
-            "rkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"activityVisibility\":" +
-            "{\"methods\":{\"get\":{\"id\":\"orkut.activityVisibility.get\",\"path\":\"activities/{activ" +
-            "ityId}/visibility\",\"httpMethod\":\"GET\",\"description\":\"Gets the visibility of an e" +
-            "xisting activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID" +
-            " of the activity to get the visibility.\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"" +
-            "]},\"patch\":{\"id\":\"orkut.activityVisibility.patch\",\"path\":\"activities/{activityId" +
-            "}/visibility\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the visibility of an e" +
-            "xisting activity. This method supports patch semantics.\",\"parameters\":{\"activity" +
-            "Id\":{\"type\":\"string\",\"description\":\"ID of the activity.\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"request\":{\"$ref\":\"Visibility\"},\"re" +
-            "sponse\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]" +
-            "},\"update\":{\"id\":\"orkut.activityVisibility.update\",\"path\":\"activities/{activityI" +
-            "d}/visibility\",\"httpMethod\":\"PUT\",\"description\":\"Updates the visibility of an ex" +
-            "isting activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID " +
-            "of the activity.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activit" +
-            "yId\"],\"request\":{\"$ref\":\"Visibility\"},\"response\":{\"$ref\":\"Visibility\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/orkut\"]}}},\"badges\":{\"methods\":{\"get\":{\"id\":\"o" +
-            "rkut.badges.get\",\"path\":\"people/{userId}/badges/{badgeId}\",\"httpMethod\":\"GET\",\"d" +
-            "escription\":\"Retrieves a badge from a user.\",\"parameters\":{\"badgeId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The ID of the badge that will be retrieved.\",\"required\":tru" +
-            "e,\"format\":\"int64\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"T" +
-            "he ID of the user whose badges will be listed. Can be me to refer to caller.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"badgeId\"],\"respons" +
-            "e\":{\"$ref\":\"Badge\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://w" +
-            "ww.googleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.badges.list\",\"path\"" +
-            ":\"people/{userId}/badges\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list o" +
-            "f visible badges of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The id of the user whose badges will be listed. Can be me to refer to caller" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"" +
-            "$ref\":\"BadgeList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://ww" +
-            "w.googleapis.com/auth/orkut.readonly\"]}}},\"comments\":{\"methods\":{\"delete\":{\"id\":" +
-            "\"orkut.comments.delete\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"DELETE\",\"des" +
-            "cription\":\"Deletes an existing comment.\",\"parameters\":{\"commentId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ID of the comment to remove.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"commentId\"],\"scopes\":[\"https://www.googleapis.com/auth/o" +
-            "rkut\"]},\"get\":{\"id\":\"orkut.comments.get\",\"path\":\"comments/{commentId}\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Retrieves an existing comment.\",\"parameters\":{\"commentI" +
-            "d\":{\"type\":\"string\",\"description\":\"ID of the comment to get.\",\"required\":true,\"l" +
-            "ocation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface la" +
-            "nguage (host language) of your user interface.\",\"location\":\"query\"}},\"parameterO" +
-            "rder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":" +
-            "{\"id\":\"orkut.comments.insert\",\"path\":\"activities/{activityId}/comments\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Inserts a new comment to an activity.\",\"parameters\":{" +
-            "\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to contain t" +
-            "he new comment.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activity" +
-            "Id\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.comments.list\",\"path\":\"a" +
-            "ctivities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a l" +
-            "ist of comments, possibly filtered.\",\"parameters\":{\"activityId\":{\"type\":\"string\"" +
-            ",\"description\":\"The ID of the activity containing the comments.\",\"required\":true" +
-            ",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface" +
-            " language (host language) of your user interface.\",\"location\":\"query\"},\"maxResul" +
-            "ts\":{\"type\":\"integer\",\"description\":\"The maximum number of activities to include" +
-            " in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\"" +
-            ":{\"type\":\"string\",\"description\":\"Sort search results.\",\"default\":\"DESCENDING_SOR" +
-            "T\",\"enum\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Use ascending sort ord" +
-            "er.\",\"Use descending sort order.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"stri" +
-            "ng\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"que" +
-            "ry\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentList\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut" +
-            ".readonly\"]}}},\"communities\":{\"methods\":{\"get\":{\"id\":\"orkut.communities.get\",\"pa" +
-            "th\":\"communities/{communityId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the " +
-            "basic information (aka. profile) of a community.\",\"parameters\":{\"communityId\":{\"" +
-            "type\":\"integer\",\"description\":\"The ID of the community to get.\",\"required\":true," +
-            "\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifi" +
-            "es the interface language (host language) of your user interface.\",\"location\":\"q" +
-            "uery\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Community\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orku" +
-            "t.readonly\"]},\"list\":{\"id\":\"orkut.communities.list\",\"path\":\"people/{userId}/comm" +
-            "unities\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of communities the" +
-            " current user is a member of.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"description\"" +
-            ":\"Specifies the interface language (host language) of your user interface.\",\"loc" +
-            "ation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number" +
-            " of communities to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"lo" +
-            "cation\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"How to order the comm" +
-            "unities by.\",\"enum\":[\"id\",\"ranked\"],\"enumDescriptions\":[\"Returns the communities" +
-            " sorted by a fixed, natural order.\",\"Returns the communities ranked accordingly " +
-            "to how they are displayed on the orkut web application.\"],\"location\":\"query\"},\"u" +
-            "serId\":{\"type\":\"string\",\"description\":\"The ID of the user whose communities will" +
-            " be listed. Can be me to refer to caller.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly" +
-            "\"]}}},\"communityFollow\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityFollow.delete" +
-            "\",\"path\":\"communities/{communityId}/followers/{userId}\",\"httpMethod\":\"DELETE\",\"d" +
-            "escription\":\"Removes a user from the followers of a community.\",\"parameters\":{\"c" +
-            "ommunityId\":{\"type\":\"integer\",\"description\":\"ID of the community.\",\"required\":tr" +
-            "ue,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"" +
-            "ID of the user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communit" +
-            "yId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"insert\":{\"id" +
-            "\":\"orkut.communityFollow.insert\",\"path\":\"communities/{communityId}/followers/{us" +
-            "erId}\",\"httpMethod\":\"POST\",\"description\":\"Adds a user as a follower of a communi" +
-            "ty.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the comm" +
-            "unity.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"st" +
-            "ring\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityMembers\":{\"methods\":{" +
-            "\"delete\":{\"id\":\"orkut.communityMembers.delete\",\"path\":\"communities/{communityId}" +
-            "/members/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Makes the user leave a c" +
+            "ments.list request to get the previous page, if there are more to retrieve.\"}}}," +
+            "\"Community\":{\"id\":\"Community\",\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"" +
+            "string\",\"description\":\"The category of the community.\"},\"co_owners\":{\"type\":\"arr" +
+            "ay\",\"description\":\"The co-owners of the community.\",\"items\":{\"$ref\":\"OrkutAuthor" +
+            "Resource\"}},\"creation_date\":{\"type\":\"string\",\"description\":\"The time the communi" +
+            "ty was created, in RFC 3339 format.\",\"format\":\"date-time\"},\"description\":{\"type\"" +
+            ":\"string\",\"description\":\"The description of the community.\"},\"id\":{\"type\":\"integ" +
+            "er\",\"description\":\"The id of the community.\",\"format\":\"int32\"},\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Identifies this resource as a community. Value: \\\"orkut#co" +
+            "mmunity\\\"\",\"default\":\"orkut#community\"},\"language\":{\"type\":\"string\",\"description" +
+            "\":\"The official language of the community.\"},\"links\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"List of resources for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}}," +
+            "\"location\":{\"type\":\"string\",\"description\":\"The location of the community.\"},\"mem" +
+            "ber_count\":{\"type\":\"integer\",\"description\":\"The number of users who are part of " +
+            "the community. This number may be approximate, so do not rely on it for iteratio" +
+            "n.\",\"format\":\"int32\"},\"moderators\":{\"type\":\"array\",\"description\":\"The list of mo" +
+            "derators of the community.\",\"items\":{\"$ref\":\"OrkutAuthorResource\"}},\"name\":{\"typ" +
+            "e\":\"string\",\"description\":\"The name of the community.\"},\"owner\":{\"$ref\":\"OrkutAu" +
+            "thorResource\",\"description\":\"The person who owns the community.\"},\"photo_url\":{\"" +
+            "type\":\"string\",\"description\":\"The photo of the community.\"}}},\"CommunityList\":{\"" +
+            "id\":\"CommunityList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descr" +
+            "iption\":\"List of communities retrieved.\",\"items\":{\"$ref\":\"Community\"}},\"kind\":{\"" +
+            "type\":\"string\",\"description\":\"Identifies this resource as a collection of commun" +
+            "ities. Value: \\\"orkut#communityList\\\"\",\"default\":\"orkut#communityList\"}}},\"Commu" +
+            "nityMembers\":{\"id\":\"CommunityMembers\",\"type\":\"object\",\"properties\":{\"communityMe" +
+            "mbershipStatus\":{\"$ref\":\"CommunityMembershipStatus\",\"description\":\"Status and pe" +
+            "rmissions of the user related to the community.\"},\"kind\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Kind of this item. Always orkut#communityMembers.\",\"default\":\"orkut#com" +
+            "munityMembers\"},\"person\":{\"$ref\":\"OrkutActivitypersonResource\",\"description\":\"De" +
+            "scription of the community member.\"}}},\"CommunityMembersList\":{\"id\":\"CommunityMe" +
+            "mbersList\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The value of pageToken query parameter in community_members.list reque" +
+            "st to get the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of commu" +
+            "nity members retrieved.\",\"items\":{\"$ref\":\"CommunityMembers\"}},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Kind of this item. Always orkut#communityMembersList.\",\"def" +
+            "ault\":\"orkut#communityMembersList\"},\"lastPageToken\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The value of pageToken query parameter in community_members.list request to " +
+            "get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The value o" +
+            "f pageToken query parameter in community_members.list request to get the next pa" +
+            "ge, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The value of pageToken query parameter in community_members.list request to" +
+            " get the previous page, if there are more to retrieve.\"}}},\"CommunityMembershipS" +
+            "tatus\":{\"id\":\"CommunityMembershipStatus\",\"type\":\"object\",\"properties\":{\"canCreat" +
+            "ePoll\":{\"type\":\"boolean\",\"description\":\"Whether the user can create a poll in th" +
+            "is community.\"},\"canCreateTopic\":{\"type\":\"boolean\",\"description\":\"Whether the us" +
+            "er can create a topic in this community.\"},\"canShout\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"Whether the user can perform a shout operation in this community.\"},\"isCo" +
+            "Owner\":{\"type\":\"boolean\",\"description\":\"Whether the session user is a community " +
+            "co-owner.\"},\"isFollowing\":{\"type\":\"boolean\",\"description\":\"Whether the user is f" +
+            "ollowing this community.\"},\"isModerator\":{\"type\":\"boolean\",\"description\":\"Whethe" +
+            "r the session user is a community moderator.\"},\"isOwner\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"Whether the session user is the community owner.\"},\"isRestoreAvailable" +
+            "\":{\"type\":\"boolean\",\"description\":\"Whether the restore operation is available fo" +
+            "r the community.\"},\"isTakebackAvailable\":{\"type\":\"boolean\",\"description\":\"Whethe" +
+            "r the take-back operation is available for the community.\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Kind of this item. Always orkut#communityMembershipStatus.\",\"" +
+            "default\":\"orkut#communityMembershipStatus\"},\"status\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The status of the current link between the community and the user.\"}}},\"Com" +
+            "munityMessage\":{\"id\":\"CommunityMessage\",\"type\":\"object\",\"properties\":{\"addedDate" +
+            "\":{\"type\":\"string\",\"description\":\"The timestamp of the date when the message was" +
+            " added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":{\"$ref\":\"OrkutAuthor" +
+            "Resource\",\"description\":\"The creator of the message. If ommited, the message is " +
+            "annonimous.\"},\"body\":{\"type\":\"string\",\"description\":\"The body of the message.\"}," +
+            "\"id\":{\"type\":\"string\",\"description\":\"The ID of the message.\",\"format\":\"int64\"},\"" +
+            "isSpam\":{\"type\":\"boolean\",\"description\":\"Whether this post was marked as spam by" +
+            " the viewer, when he/she is not the community owner or one of its moderators.\"}," +
+            "\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a community m" +
+            "essage. Value: \\\"orkut#communityMessage\\\"\",\"default\":\"orkut#communityMessage\"},\"" +
+            "links\":{\"type\":\"array\",\"description\":\"List of resources for the community messag" +
+            "e.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"subject\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The subject of the message.\"}}},\"CommunityMessageList\":{\"id\":\"CommunityMessa" +
+            "geList\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The value of pageToken query parameter in community_messages.list request" +
+            " to get the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of message" +
+            "s retrieved.\",\"items\":{\"$ref\":\"CommunityMessage\"}},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Identifies this resource as a collection of community messages. Value:" +
+            " \\\"orkut#communityMessageList\\\"\",\"default\":\"orkut#communityMessageList\"},\"lastPa" +
+            "geToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter " +
+            "in community_messages.list request to get the last page.\"},\"nextPageToken\":{\"typ" +
+            "e\":\"string\",\"description\":\"The value of pageToken query parameter in community_m" +
+            "essages.list request to get the next page, if there are more to retrieve.\"},\"pre" +
+            "vPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query paramet" +
+            "er in community_messages.list request to get the previous page, if there are mor" +
+            "e to retrieve.\"}}},\"CommunityPoll\":{\"id\":\"CommunityPoll\",\"type\":\"object\",\"proper" +
+            "ties\":{\"author\":{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The person who crea" +
+            "ted the poll.\"},\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the com" +
+            "munity.\",\"format\":\"int32\"},\"creationTime\":{\"type\":\"string\",\"description\":\"The da" +
+            "te of creation of this poll\",\"format\":\"date-time\"},\"description\":{\"type\":\"string" +
+            "\",\"description\":\"The poll description.\"},\"endingTime\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ending date of this poll or empty if the poll doesn\'t have one.\",\"form" +
+            "at\":\"date-time\"},\"hasVoted\":{\"type\":\"boolean\",\"description\":\"Whether the user ha" +
+            "s voted on this poll.\"},\"id\":{\"type\":\"string\",\"description\":\"The poll ID.\"},\"ima" +
+            "ge\":{\"type\":\"object\",\"description\":\"The image representing the poll. Field is om" +
+            "itted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A" +
+            " URL that points to an image of the poll.\"}}},\"isClosed\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"Whether the poll is not expired if there is an expiration date. A poll" +
+            " is open (that is, not closed for voting) if it either is not expired or doesn\'t" +
+            " have an expiration date at all. Note that just because a poll is open, it doesn" +
+            "\'t mean that the requester can vote on it.\"},\"isMultipleAnswers\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Whether this poll allows voting for more than one option.\"},\"i" +
+            "sOpenForVoting\":{\"type\":\"boolean\",\"description\":\"Whether this poll is still open" +
+            "ed for voting. A poll is open for voting if it is not closed, the user has not y" +
+            "et voted on it and the user has the permission to do so, which happens if he/she" +
+            " is either a community member or the poll is open for everybody.\"},\"isRestricted" +
+            "\":{\"type\":\"boolean\",\"description\":\"Whether this poll is restricted for members o" +
+            "nly. If a poll is open but the user can\'t vote on it, it\'s been restricted to me" +
+            "mbers only. This information is important to tell this case apart from the one w" +
+            "here the user can\'t vote simply because the poll is already closed.\"},\"isSpam\":{" +
+            "\"type\":\"boolean\",\"description\":\"Whether the user has marked this poll as spam. T" +
+            "his only affects the poll for this user, not globally.\"},\"isUsersVotePublic\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"If user has already voted, whether his vote is pub" +
+            "licly visible.\"},\"isVotingAllowedForNonMembers\":{\"type\":\"boolean\",\"description\":" +
+            "\"Whether non-members of the community can vote on the poll.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Identifies this resource as a community poll. Value: \\\"orku" +
+            "t#communityPoll\\\"\",\"default\":\"orkut#communityPoll\"},\"lastUpdate\":{\"type\":\"string" +
+            "\",\"description\":\"The date of the last update of this poll.\",\"format\":\"date-time\"" +
+            "},\"links\":{\"type\":\"array\",\"description\":\"List of resources for the community pol" +
+            "l.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"options\":{\"type\":\"array\",\"description" +
+            "\":\"List of options of this poll.\",\"items\":{\"$ref\":\"OrkutCommunitypolloptionResou" +
+            "rce\"}},\"question\":{\"type\":\"string\",\"description\":\"The poll question.\"},\"totalNum" +
+            "berOfVotes\":{\"type\":\"integer\",\"description\":\"The total number of votes this poll" +
+            " has received.\",\"format\":\"int32\"},\"votedOptions\":{\"type\":\"array\",\"description\":\"" +
+            "List of options the user has voted on, if there are any.\",\"items\":{\"type\":\"integ" +
+            "er\",\"format\":\"int32\"}}}},\"CommunityPollComment\":{\"id\":\"CommunityPollComment\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"addedDate\":{\"type\":\"string\",\"description\":\"The date " +
+            "when the message was added, in RFC 3339 format.\",\"format\":\"date-time\"},\"author\":" +
+            "{\"$ref\":\"OrkutAuthorResource\",\"description\":\"The creator of the comment.\"},\"body" +
+            "\":{\"type\":\"string\",\"description\":\"The body of the message.\"},\"id\":{\"type\":\"integ" +
+            "er\",\"description\":\"The ID of the comment.\",\"format\":\"int32\"},\"kind\":{\"type\":\"str" +
+            "ing\",\"description\":\"Identifies this resource as a community poll comment. Value:" +
+            " \\\"orkut#communityPollComment\\\"\",\"default\":\"orkut#communityPollComment\"}}},\"Comm" +
+            "unityPollCommentList\":{\"id\":\"CommunityPollCommentList\",\"type\":\"object\",\"properti" +
+            "es\":{\"firstPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken que" +
+            "ry parameter in community_poll_comments.list request to get the first page.\"},\"i" +
+            "tems\":{\"type\":\"array\",\"description\":\"List of community poll comments retrieved.\"" +
+            ",\"items\":{\"$ref\":\"CommunityPollComment\"}},\"kind\":{\"type\":\"string\",\"description\":" +
+            "\"Identifies this resource as a collection of community poll comments. Value: \\\"o" +
+            "rkut#CommunityPollCommentList\\\"\",\"default\":\"orkut#CommunityPollCommentList\"},\"la" +
+            "stPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken query parame" +
+            "ter in community_poll_comments.list request to get the last page.\"},\"nextPageTok" +
+            "en\":{\"type\":\"string\",\"description\":\"The value of pageToken query parameter in co" +
+            "mmunity_poll_comments.list request to get the next page, if there are more to re" +
+            "trieve.\"},\"prevPageToken\":{\"type\":\"string\",\"description\":\"The value of pageToken" +
+            " query parameter in community_poll_comments.list request to get the previous pag" +
+            "e, if there are more to retrieve.\"}}},\"CommunityPollList\":{\"id\":\"CommunityPollLi" +
+            "st\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description" +
+            "\":\"The value of pageToken query parameter in community_polls.list request to get" +
+            " the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of community poll" +
+            "s retrieved.\",\"items\":{\"$ref\":\"CommunityPoll\"}},\"kind\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Identifies this resource as a collection of community polls. Value: \\\"ork" +
+            "ut#communityPollList\\\"\",\"default\":\"orkut#communityPollList\"},\"lastPageToken\":{\"t" +
+            "ype\":\"string\",\"description\":\"The value of pageToken query parameter in community" +
+            "_polls.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"de" +
+            "scription\":\"The value of pageToken query parameter in community_polls.list reque" +
+            "st to get the next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type" +
+            "\":\"string\",\"description\":\"The value of pageToken query parameter in community_po" +
+            "lls.list request to get the previous page, if there are more to retrieve.\"}}},\"C" +
+            "ommunityPollVote\":{\"id\":\"CommunityPollVote\",\"type\":\"object\",\"properties\":{\"isVot" +
+            "evisible\":{\"type\":\"boolean\",\"description\":\"Whether this vote is visible to other" +
+            " users or not.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource" +
+            " as a community poll vote. Value: \\\"orkut#communityPollVote\\\"\",\"default\":\"orkut#" +
+            "communityPollVote\"},\"optionIds\":{\"type\":\"array\",\"description\":\"The ids of the vo" +
+            "ted options.\",\"items\":{\"type\":\"integer\",\"format\":\"int32\"}}}},\"CommunityTopic\":{\"" +
+            "id\":\"CommunityTopic\",\"type\":\"object\",\"properties\":{\"author\":{\"$ref\":\"OrkutAuthor" +
+            "Resource\",\"description\":\"The creator of the topic.\"},\"body\":{\"type\":\"string\",\"de" +
+            "scription\":\"The body of the topic.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID" +
+            " of the topic.\",\"format\":\"int64\"},\"isClosed\":{\"type\":\"boolean\",\"description\":\"Wh" +
+            "ether the topic is closed for new messages.\"},\"kind\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Identifies this resource as a community topic. Value: \\\"orkut#communityTopi" +
+            "c\\\"\",\"default\":\"orkut#communityTopic\"},\"lastUpdate\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The timestamp of the last update, in RFC 3339 format.\",\"format\":\"date-time\"}" +
+            ",\"latestMessageSnippet\":{\"type\":\"string\",\"description\":\"Snippet of the last mess" +
+            "age posted on this topic.\"},\"links\":{\"type\":\"array\",\"description\":\"List of resou" +
+            "rces for the community.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"messages\":{\"type" +
+            "\":\"array\",\"description\":\"Most recent messages.\",\"items\":{\"$ref\":\"CommunityMessag" +
+            "e\"}},\"numberOfReplies\":{\"type\":\"integer\",\"description\":\"The total number of repl" +
+            "ies this topic has received.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The title of the topic.\"}}},\"CommunityTopicList\":{\"id\":\"CommunityTopicLi" +
+            "st\",\"type\":\"object\",\"properties\":{\"firstPageToken\":{\"type\":\"string\",\"description" +
+            "\":\"The value of pageToken query parameter in community_topic.list request to get" +
+            " the first page.\"},\"items\":{\"type\":\"array\",\"description\":\"List of topics retriev" +
+            "ed.\",\"items\":{\"$ref\":\"CommunityTopic\"}},\"kind\":{\"type\":\"string\",\"description\":\"I" +
+            "dentifies this resource as a collection of community topics. Value: \\\"orkut#comm" +
+            "unityTopicList\\\"\",\"default\":\"orkut#communityTopicList\"},\"lastPageToken\":{\"type\":" +
+            "\"string\",\"description\":\"The value of pageToken query parameter in community_topi" +
+            "c.list request to get the last page.\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The value of pageToken query parameter in community_topic.list request to" +
+            " get the next page, if there are more to retrieve.\"},\"prevPageToken\":{\"type\":\"st" +
+            "ring\",\"description\":\"The value of pageToken query parameter in community_topic.l" +
+            "ist request to get the previous page, if there are more to retrieve.\"}}},\"Counte" +
+            "rs\":{\"id\":\"Counters\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"desc" +
+            "ription\":\"List of counters retrieved.\",\"items\":{\"$ref\":\"OrkutCounterResource\"}}," +
+            "\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection " +
+            "of counters. Value: \\\"orkut#counters\\\"\",\"default\":\"orkut#counters\"}}},\"OrkutActi" +
+            "vityobjectsResource\":{\"id\":\"OrkutActivityobjectsResource\",\"type\":\"object\",\"prope" +
+            "rties\":{\"community\":{\"$ref\":\"Community\",\"description\":\"The community which is re" +
+            "lated with this activity, e.g. a joined community.\"},\"content\":{\"type\":\"string\"," +
+            "\"description\":\"The HTML-formatted content, suitable for display. When updating a" +
+            "n activity\'s content, post the changes to this property, using the value of orig" +
+            "inalContent as a starting point. If the update is successful, the server adds HT" +
+            "ML formatting and responds with this formatted content.\"},\"displayName\":{\"type\":" +
+            "\"string\",\"description\":\"The title of the object.\"},\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The ID for the object.\"},\"links\":{\"type\":\"array\",\"description\":\"Links to" +
+            " other resources related to this object.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}}," +
+            "\"objectType\":{\"type\":\"string\",\"description\":\"The object type.\"},\"person\":{\"$ref\"" +
+            ":\"OrkutActivitypersonResource\",\"description\":\"The person who is related with thi" +
+            "s activity, e.g. an Added User.\"}}},\"OrkutActivitypersonResource\":{\"id\":\"OrkutAc" +
+            "tivitypersonResource\",\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\"," +
+            "\"description\":\"The person\'s date of birth, represented as YYYY-MM-DD.\"},\"gender\"" +
+            ":{\"type\":\"string\",\"description\":\"The person\'s gender. Values include \\\"male\\\", \\" +
+            "\"female\\\", and \\\"other\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"The person\'s op" +
+            "ensocial ID.\"},\"image\":{\"type\":\"object\",\"description\":\"The person\'s profile phot" +
+            "o. This is adapted from Google+ and was originaly introduced as extra OpenSocial" +
+            " convenience fields.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The UR" +
+            "L of the person\'s profile photo.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An o" +
+            "bject that encapsulates the individual components of a person\'s name.\",\"properti" +
+            "es\":{\"familyName\":{\"type\":\"string\",\"description\":\"The family name (last name) of" +
+            " this person.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (firs" +
+            "t name) of this person.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The person\'s p" +
+            "rofile url. This is adapted from Google+ and was originaly introduced as extra O" +
+            "penSocial convenience fields.\"}}},\"OrkutAuthorResource\":{\"id\":\"OrkutAuthorResour" +
+            "ce\",\"type\":\"object\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"" +
+            "The name of the author, suitable for display.\"},\"id\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Unique identifier of the person who posted the comment. This is the person\'" +
+            "s OpenSocial ID.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the " +
+            "author.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points t" +
+            "o a thumbnail photo of the author.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The" +
+            " URL of the author who posted the comment [not yet implemented]\"}}},\"OrkutCommun" +
+            "itypolloptionResource\":{\"id\":\"OrkutCommunitypolloptionResource\",\"type\":\"object\"," +
+            "\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"The option descripti" +
+            "on.\"},\"image\":{\"type\":\"object\",\"description\":\"Image data about the poll option. " +
+            "Field is omitted if no image exists.\",\"properties\":{\"url\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A URL that points to an image of the poll question.\"}}},\"numberOfVotes" +
+            "\":{\"type\":\"integer\",\"description\":\"The total number of votes that this option re" +
+            "ceived.\",\"format\":\"int32\"},\"optionId\":{\"type\":\"integer\",\"description\":\"The poll " +
+            "option ID\",\"format\":\"int32\"}}},\"OrkutCounterResource\":{\"id\":\"OrkutCounterResourc" +
+            "e\",\"type\":\"object\",\"properties\":{\"link\":{\"$ref\":\"OrkutLinkResource\",\"description" +
+            "\":\"Link to the collection being counted.\"},\"name\":{\"type\":\"string\",\"description\"" +
+            ":\"The name of the counted collection. Currently supported collections are:  \\n- " +
+            "scraps - The scraps of the user. \\n- photos - The photos of the user. \\n- videos" +
+            " - The videos of the user. \\n- pendingTestimonials - The pending testimonials of" +
+            " the user.\"},\"total\":{\"type\":\"integer\",\"description\":\"The number of resources on" +
+            " the counted collection.\",\"format\":\"int32\"}}},\"OrkutLinkResource\":{\"id\":\"OrkutLi" +
+            "nkResource\",\"type\":\"object\",\"description\":\"Links to resources related to the par" +
+            "ent object.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"URL of the lin" +
+            "k.\"},\"rel\":{\"type\":\"string\",\"description\":\"Relation between the resource and the" +
+            " parent object.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the link.\"},\"" +
+            "type\":{\"type\":\"string\",\"description\":\"Media type of the link.\"}}},\"Visibility\":{" +
+            "\"id\":\"Visibility\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Identifies this resource as a visibility item. Value: \\\"orkut#visibility\\" +
+            "\"\",\"default\":\"orkut#visibility\"},\"links\":{\"type\":\"array\",\"description\":\"List of " +
+            "resources for the visibility item.\",\"items\":{\"$ref\":\"OrkutLinkResource\"}},\"visib" +
+            "ility\":{\"type\":\"string\",\"description\":\"The visibility of the resource. Possible " +
+            "values are:  \\n- default: not hidden by the user \\n- hidden: hidden\"}}}},\"resour" +
+            "ces\":{\"acl\":{\"methods\":{\"delete\":{\"id\":\"orkut.acl.delete\",\"path\":\"activities/{ac" +
+            "tivityId}/acl/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Excludes an element" +
+            " from the ACL of the activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"des" +
+            "cription\":\"ID of the activity.\",\"required\":true,\"location\":\"path\"},\"userId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"ID of the user to be removed from the activity.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId\",\"userId\"],\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"activities\":{\"methods\":{\"delete" +
+            "\":{\"id\":\"orkut.activities.delete\",\"path\":\"activities/{activityId}\",\"httpMethod\":" +
+            "\"DELETE\",\"description\":\"Deletes an existing activity, if the access controls all" +
+            "ow it.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"ID of the act" +
+            "ivity to remove.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activit" +
+            "yId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.ac" +
+            "tivities.list\",\"path\":\"people/{userId}/activities/{collection}\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Retrieves a list of activities.\",\"parameters\":{\"collection\":{\"" +
+            "type\":\"string\",\"description\":\"The collection of activities to list.\",\"required\":" +
+            "true,\"enum\":[\"all\",\"scraps\",\"stream\"],\"enumDescriptions\":[\"All activities create" +
+            "d by the specified user that the authenticated user is authorized to view.\",\"The" +
+            " specified user\'s scrapbook.\",\"The specified user\'s stream feed, intended for co" +
+            "nsumption. This includes activities posted by people that the user is following," +
+            " and activities in which the user has been mentioned.\"],\"location\":\"path\"},\"hl\":" +
+            "{\"type\":\"string\",\"description\":\"Specifies the interface language (host language)" +
+            " of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The maximum number of activities to include in the response.\",\"forma" +
+            "t\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type" +
+            "\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"locatio" +
+            "n\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose ac" +
+            "tivities will be listed. Can be me to refer to the viewer (i.e. the authenticate" +
+            "d user).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collec" +
+            "tion\"],\"response\":{\"$ref\":\"ActivityList\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"activityVisibi" +
+            "lity\":{\"methods\":{\"get\":{\"id\":\"orkut.activityVisibility.get\",\"path\":\"activities/" +
+            "{activityId}/visibility\",\"httpMethod\":\"GET\",\"description\":\"Gets the visibility o" +
+            "f an existing activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"ID of the activity to get the visibility.\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.rea" +
+            "donly\"]},\"patch\":{\"id\":\"orkut.activityVisibility.patch\",\"path\":\"activities/{acti" +
+            "vityId}/visibility\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the visibility o" +
+            "f an existing activity. This method supports patch semantics.\",\"parameters\":{\"ac" +
+            "tivityId\":{\"type\":\"string\",\"description\":\"ID of the activity.\",\"required\":true,\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"activityId\"],\"request\":{\"$ref\":\"Visibility" +
+            "\"},\"response\":{\"$ref\":\"Visibility\"},\"scopes\":[\"https://www.googleapis.com/auth/o" +
+            "rkut\"]},\"update\":{\"id\":\"orkut.activityVisibility.update\",\"path\":\"activities/{act" +
+            "ivityId}/visibility\",\"httpMethod\":\"PUT\",\"description\":\"Updates the visibility of" +
+            " an existing activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description" +
+            "\":\"ID of the activity.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"a" +
+            "ctivityId\"],\"request\":{\"$ref\":\"Visibility\"},\"response\":{\"$ref\":\"Visibility\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"badges\":{\"methods\":{\"get\":{\"" +
+            "id\":\"orkut.badges.get\",\"path\":\"people/{userId}/badges/{badgeId}\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Retrieves a badge from a user.\",\"parameters\":{\"badgeId\":{\"typ" +
+            "e\":\"string\",\"description\":\"The ID of the badge that will be retrieved.\",\"require" +
+            "d\":true,\"format\":\"int64\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The ID of the user whose badges will be listed. Can be me to refer to calle" +
+            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"badgeId\"],\"r" +
+            "esponse\":{\"$ref\":\"Badge\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"htt" +
+            "ps://www.googleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.badges.list\"," +
+            "\"path\":\"people/{userId}/badges\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the " +
+            "list of visible badges of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The id of the user whose badges will be listed. Can be me to refer to " +
+            "caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"respon" +
+            "se\":{\"$ref\":\"BadgeList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"http" +
+            "s://www.googleapis.com/auth/orkut.readonly\"]}}},\"comments\":{\"methods\":{\"delete\":" +
+            "{\"id\":\"orkut.comments.delete\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"DELETE" +
+            "\",\"description\":\"Deletes an existing comment.\",\"parameters\":{\"commentId\":{\"type\"" +
+            ":\"string\",\"description\":\"ID of the comment to remove.\",\"required\":true,\"location" +
+            "\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/orkut\"]},\"get\":{\"id\":\"orkut.comments.get\",\"path\":\"comments/{commentId}\",\"ht" +
+            "tpMethod\":\"GET\",\"description\":\"Retrieves an existing comment.\",\"parameters\":{\"co" +
+            "mmentId\":{\"type\":\"string\",\"description\":\"ID of the comment to get.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interf" +
+            "ace language (host language) of your user interface.\",\"location\":\"query\"}},\"para" +
+            "meterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"in" +
+            "sert\":{\"id\":\"orkut.comments.insert\",\"path\":\"activities/{activityId}/comments\",\"h" +
+            "ttpMethod\":\"POST\",\"description\":\"Inserts a new comment to an activity.\",\"paramet" +
+            "ers\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to con" +
+            "tain the new comment.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ac" +
+            "tivityId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.comments.list\",\"pa" +
+            "th\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
+            "es a list of comments, possibly filtered.\",\"parameters\":{\"activityId\":{\"type\":\"s" +
+            "tring\",\"description\":\"The ID of the activity containing the comments.\",\"required" +
+            "\":true,\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the int" +
+            "erface language (host language) of your user interface.\",\"location\":\"query\"},\"ma" +
+            "xResults\":{\"type\":\"integer\",\"description\":\"The maximum number of activities to i" +
+            "nclude in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"or" +
+            "derBy\":{\"type\":\"string\",\"description\":\"Sort search results.\",\"default\":\"DESCENDI" +
+            "NG_SORT\",\"enum\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Use ascending so" +
+            "rt order.\",\"Use descending sort order.\"],\"location\":\"query\"},\"pageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"A continuation token that allows pagination.\",\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentList\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth" +
+            "/orkut.readonly\"]}}},\"communities\":{\"methods\":{\"get\":{\"id\":\"orkut.communities.ge" +
+            "t\",\"path\":\"communities/{communityId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
+            "s the basic information (aka. profile) of a community.\",\"parameters\":{\"community" +
+            "Id\":{\"type\":\"integer\",\"description\":\"The ID of the community to get.\",\"required\"" +
+            ":true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"S" +
+            "pecifies the interface language (host language) of your user interface.\",\"locati" +
+            "on\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Community\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/aut" +
+            "h/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communities.list\",\"path\":\"people/{userId" +
+            "}/communities\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of communiti" +
+            "es the current user is a member of.\",\"parameters\":{\"hl\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Specifies the interface language (host language) of your user interface." +
+            "\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum " +
+            "number of communities to include in the response.\",\"format\":\"uint32\",\"minimum\":\"" +
+            "1\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"How to order th" +
+            "e communities by.\",\"enum\":[\"id\",\"ranked\"],\"enumDescriptions\":[\"Returns the commu" +
+            "nities sorted by a fixed, natural order.\",\"Returns the communities ranked accord" +
+            "ingly to how they are displayed on the orkut web application.\"],\"location\":\"quer" +
+            "y\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user whose communitie" +
+            "s will be listed. Can be me to refer to caller.\",\"required\":true,\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.re" +
+            "adonly\"]}}},\"communityFollow\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityFollow." +
+            "delete\",\"path\":\"communities/{communityId}/followers/{userId}\",\"httpMethod\":\"DELE" +
+            "TE\",\"description\":\"Removes a user from the followers of a community.\",\"parameter" +
+            "s\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of the community.\",\"requir" +
+            "ed\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"co" +
+            "mmunityId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"insert" +
+            "\":{\"id\":\"orkut.communityFollow.insert\",\"path\":\"communities/{communityId}/followe" +
+            "rs/{userId}\",\"httpMethod\":\"POST\",\"description\":\"Adds a user as a follower of a c" +
             "ommunity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID of th" +
             "e community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\":{\"typ" +
             "e\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"communityId\",\"userId\"],\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/orkut\"]},\"get\":{\"id\":\"orkut.communityMembers.get\",\"path\":\"communities/{comm" +
-            "unityId}/members/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the relat" +
-            "ionship between a user and a community.\",\"parameters\":{\"communityId\":{\"type\":\"in" +
-            "teger\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"lo" +
-            "cation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface lan" +
-            "guage (host language) of your user interface.\",\"location\":\"query\"},\"userId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/" +
-            "auth/orkut.readonly\"]},\"insert\":{\"id\":\"orkut.communityMembers.insert\",\"path\":\"co" +
-            "mmunities/{communityId}/members/{userId}\",\"httpMethod\":\"POST\",\"description\":\"Mak" +
-            "es the user join a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"de" +
-            "scription\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"location\":\"p" +
-            "ath\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true," +
-            "\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\"" +
-            ":\"CommunityMembers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":" +
-            "{\"id\":\"orkut.communityMembers.list\",\"path\":\"communities/{communityId}/members\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Lists members of a community. Use the paginatio" +
-            "n tokens to retrieve the full list; do not rely on the member count available in" +
-            " the community profile information to know when to stop iterating, as that count" +
-            " may be approximate.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description" +
-            "\":\"The ID of the community whose members will be listed.\",\"required\":true,\"forma" +
-            "t\":\"int32\",\"location\":\"path\"},\"friendsOnly\":{\"type\":\"boolean\",\"description\":\"Whe" +
-            "ther to list only community members who are friends of the user.\",\"location\":\"qu" +
-            "ery\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (hos" +
-            "t language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The maximum number of members to include in the response." +
-            "\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"A continuation token that allows pagination.\",\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityMembersList\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/a" +
-            "uth/orkut.readonly\"]}}},\"communityMessages\":{\"methods\":{\"delete\":{\"id\":\"orkut.co" +
-            "mmunityMessages.delete\",\"path\":\"communities/{communityId}/topics/{topicId}/messa" +
-            "ges/{messageId}\",\"httpMethod\":\"DELETE\",\"description\":\"Moves a message of the com" +
-            "munity to the trash folder.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The ID of the community whose message will be moved to the trash folde" +
-            "r.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"messageId\":{\"type\":\"str" +
-            "ing\",\"description\":\"The ID of the message to be moved to the trash folder.\",\"req" +
-            "uired\":true,\"format\":\"int64\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The ID of the topic whose message will be moved to the trash folder.\"," +
-            "\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communit" +
-            "yId\",\"topicId\",\"messageId\"],\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}," +
-            "\"insert\":{\"id\":\"orkut.communityMessages.insert\",\"path\":\"communities/{communityId" +
-            "}/topics/{topicId}/messages\",\"httpMethod\":\"POST\",\"description\":\"Adds a message t" +
-            "o a given community topic.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The ID of the community the message should be added to.\",\"required\":tru" +
-            "e,\"format\":\"int32\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"" +
-            "The ID of the topic the message should be added to.\",\"required\":true,\"format\":\"i" +
-            "nt64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"request\":{" +
-            "\"$ref\":\"CommunityMessage\"},\"response\":{\"$ref\":\"CommunityMessage\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.communityMessages.list" +
-            "\",\"path\":\"communities/{communityId}/topics/{topicId}/messages\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Retrieves the messages of a topic of a community.\",\"parameters\"" +
-            ":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community which m" +
-            "essages will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"hl" +
-            "\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host languag" +
-            "e) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"" +
-            "description\":\"The maximum number of messages to include in the response.\",\"forma" +
-            "t\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"locatio" +
-            "n\":\"query\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic which " +
-            "messages will be listed.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"communityId\",\"topicId\"],\"response\":{\"$ref\":\"CommunityMessageLi" +
-            "st\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.c" +
-            "om/auth/orkut.readonly\"]}}},\"communityPollComments\":{\"methods\":{\"insert\":{\"id\":\"" +
-            "orkut.communityPollComments.insert\",\"path\":\"communities/{communityId}/polls/{pol" +
-            "lId}/comments\",\"httpMethod\":\"POST\",\"description\":\"Adds a comment on a community " +
-            "poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of th" +
-            "e community whose poll is being commented.\",\"required\":true,\"format\":\"int32\",\"lo" +
-            "cation\":\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll bein" +
-            "g commented.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId" +
-            "\",\"pollId\"],\"request\":{\"$ref\":\"CommunityPollComment\"},\"response\":{\"$ref\":\"Commun" +
-            "ityPollComment\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id" +
-            "\":\"orkut.communityPollComments.list\",\"path\":\"communities/{communityId}/polls/{po" +
-            "llId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the comments of a co" +
-            "mmunity poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The " +
-            "ID of the community whose poll is having its comments listed.\",\"required\":true,\"" +
-            "format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifie" +
-            "s the interface language (host language) of your user interface.\",\"location\":\"qu" +
-            "ery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of commen" +
-            "ts to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"quer" +
-            "y\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows" +
-            " pagination.\",\"location\":\"query\"},\"pollId\":{\"type\":\"string\",\"description\":\"The I" +
-            "D of the community whose polls will be listed.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"CommunityPollC" +
-            "ommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.goog" +
-            "leapis.com/auth/orkut.readonly\"]}}},\"communityPollVotes\":{\"methods\":{\"insert\":{\"" +
-            "id\":\"orkut.communityPollVotes.insert\",\"path\":\"communities/{communityId}/polls/{p" +
-            "ollId}/votes\",\"httpMethod\":\"POST\",\"description\":\"Votes on a community poll.\",\"pa" +
-            "rameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the communit" +
-            "y whose poll is being voted.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"" +
-            "},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll being voted.\",\"req" +
-            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"reque" +
-            "st\":{\"$ref\":\"CommunityPollVote\"},\"response\":{\"$ref\":\"CommunityPollVote\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityPolls\":{\"methods\":{\"get" +
-            "\":{\"id\":\"orkut.communityPolls.get\",\"path\":\"communities/{communityId}/polls/{poll" +
-            "Id}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves one specific poll of a communit" +
-            "y.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the c" +
-            "ommunity for whose poll will be retrieved.\",\"required\":true,\"format\":\"int32\",\"lo" +
-            "cation\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface lan" +
-            "guage (host language) of your user interface.\",\"location\":\"query\"},\"pollId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID of the poll to get.\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"Commun" +
-            "ityPoll\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googlea" +
-            "pis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communityPolls.list\",\"path\":\"" +
-            "communities/{communityId}/polls\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the" +
-            " polls of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The ID of the community which polls will be listed.\",\"required\":true,\"forma" +
-            "t\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the" +
-            " interface language (host language) of your user interface.\",\"location\":\"query\"}" +
-            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of polls to in" +
-            "clude in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pag" +
-            "eToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows paginat" +
-            "ion.\",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"" +
-            "CommunityPollList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://w" +
-            "ww.googleapis.com/auth/orkut.readonly\"]}}},\"communityRelated\":{\"methods\":{\"list\"" +
-            ":{\"id\":\"orkut.communityRelated.list\",\"path\":\"communities/{communityId}/related\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Retrieves the communities related to another o" +
-            "ne.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the " +
-            "community whose related communities will be listed.\",\"required\":true,\"format\":\"i" +
-            "nt32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the inte" +
-            "rface language (host language) of your user interface.\",\"location\":\"query\"}},\"pa" +
-            "rameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.reado" +
-            "nly\"]}}},\"communityTopics\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityTopics.del" +
-            "ete\",\"path\":\"communities/{communityId}/topics/{topicId}\",\"httpMethod\":\"DELETE\",\"" +
-            "description\":\"Moves a topic of the community to the trash folder.\",\"parameters\":" +
-            "{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community whose to" +
-            "pic will be moved to the trash folder.\",\"required\":true,\"format\":\"int32\",\"locati" +
-            "on\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic to be " +
-            "moved to the trash folder.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"communityId\",\"topicId\"],\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/orkut\"]},\"get\":{\"id\":\"orkut.communityTopics.get\",\"path\":\"communities/{com" +
-            "munityId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a topic " +
-            "of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"Th" +
-            "e ID of the community whose topic will be retrieved.\",\"required\":true,\"format\":\"" +
-            "int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the int" +
-            "erface language (host language) of your user interface.\",\"location\":\"query\"},\"to" +
-            "picId\":{\"type\":\"string\",\"description\":\"The ID of the topic to get.\",\"required\":t" +
-            "rue,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicI" +
-            "d\"],\"response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"id\":\"or" +
-            "kut.communityTopics.insert\",\"path\":\"communities/{communityId}/topics\",\"httpMetho" +
-            "d\":\"POST\",\"description\":\"Adds a topic to a given community.\",\"parameters\":{\"comm" +
-            "unityId\":{\"type\":\"integer\",\"description\":\"The ID of the community the topic shou" +
-            "ld be added to.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"isShout\":{" +
-            "\"type\":\"boolean\",\"description\":\"Whether this topic is a shout.\",\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"communityId\"],\"request\":{\"$ref\":\"CommunityTopic\"},\"respo" +
-            "nse\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"" +
-            "]},\"list\":{\"id\":\"orkut.communityTopics.list\",\"path\":\"communities/{communityId}/t" +
-            "opics\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the topics of a community.\",\"" +
-            "parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the commun" +
-            "ity which topics will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"p" +
-            "ath\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (hos" +
-            "t language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"i" +
-            "nteger\",\"description\":\"The maximum number of topics to include in the response.\"" +
-            ",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"Communi" +
-            "tyTopicList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.goo" +
-            "gleapis.com/auth/orkut.readonly\"]}}},\"counters\":{\"methods\":{\"list\":{\"id\":\"orkut." +
-            "counters.list\",\"path\":\"people/{userId}/counters\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Retrieves the counters of a user.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID of the user whose counters will be listed. Can be me to refe" +
-            "r to caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"r" +
-            "esponse\":{\"$ref\":\"Counters\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"" +
-            "https://www.googleapis.com/auth/orkut.readonly\"]}}},\"scraps\":{\"methods\":{\"insert" +
-            "\":{\"id\":\"orkut.scraps.insert\",\"path\":\"activities/scraps\",\"httpMethod\":\"POST\",\"de" +
-            "scription\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$re" +
-            "f\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
+            "\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMembers\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityMembers\":{\"meth" +
+            "ods\":{\"delete\":{\"id\":\"orkut.communityMembers.delete\",\"path\":\"communities/{commun" +
+            "ityId}/members/{userId}\",\"httpMethod\":\"DELETE\",\"description\":\"Makes the user lea" +
+            "ve a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"ID" +
+            " of the community.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"userId\"" +
+            ":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"pa" +
+            "th\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/orkut\"]},\"get\":{\"id\":\"orkut.communityMembers.get\",\"path\":\"communities" +
+            "/{communityId}/members/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the" +
+            " relationship between a user and a community.\",\"parameters\":{\"communityId\":{\"typ" +
+            "e\":\"integer\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int3" +
+            "2\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfa" +
+            "ce language (host language) of your user interface.\",\"location\":\"query\"},\"userId" +
+            "\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\":true,\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{\"$ref\":\"CommunityMe" +
+            "mbers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapi" +
+            "s.com/auth/orkut.readonly\"]},\"insert\":{\"id\":\"orkut.communityMembers.insert\",\"pat" +
+            "h\":\"communities/{communityId}/members/{userId}\",\"httpMethod\":\"POST\",\"description" +
+            "\":\"Makes the user join a community.\",\"parameters\":{\"communityId\":{\"type\":\"intege" +
+            "r\",\"description\":\"ID of the community.\",\"required\":true,\"format\":\"int32\",\"locati" +
+            "on\":\"path\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of the user.\",\"required\"" +
+            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"userId\"],\"response\":{" +
+            "\"$ref\":\"CommunityMembers\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"" +
+            "list\":{\"id\":\"orkut.communityMembers.list\",\"path\":\"communities/{communityId}/memb" +
+            "ers\",\"httpMethod\":\"GET\",\"description\":\"Lists members of a community. Use the pag" +
+            "ination tokens to retrieve the full list; do not rely on the member count availa" +
+            "ble in the community profile information to know when to stop iterating, as that" +
+            " count may be approximate.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"The ID of the community whose members will be listed.\",\"required\":true," +
+            "\"format\":\"int32\",\"location\":\"path\"},\"friendsOnly\":{\"type\":\"boolean\",\"description" +
+            "\":\"Whether to list only community members who are friends of the user.\",\"locatio" +
+            "n\":\"query\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
+            "e (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"The maximum number of members to include in the res" +
+            "ponse.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
+            "\"string\",\"description\":\"A continuation token that allows pagination.\",\"location\"" +
+            ":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityMembers" +
+            "List\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis" +
+            ".com/auth/orkut.readonly\"]}}},\"communityMessages\":{\"methods\":{\"delete\":{\"id\":\"or" +
+            "kut.communityMessages.delete\",\"path\":\"communities/{communityId}/topics/{topicId}" +
+            "/messages/{messageId}\",\"httpMethod\":\"DELETE\",\"description\":\"Moves a message of t" +
+            "he community to the trash folder.\",\"parameters\":{\"communityId\":{\"type\":\"integer\"" +
+            ",\"description\":\"The ID of the community whose message will be moved to the trash" +
+            " folder.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"messageId\":{\"type" +
+            "\":\"string\",\"description\":\"The ID of the message to be moved to the trash folder." +
+            "\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\"" +
+            ",\"description\":\"The ID of the topic whose message will be moved to the trash fol" +
+            "der.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"co" +
+            "mmunityId\",\"topicId\",\"messageId\"],\"scopes\":[\"https://www.googleapis.com/auth/ork" +
+            "ut\"]},\"insert\":{\"id\":\"orkut.communityMessages.insert\",\"path\":\"communities/{commu" +
+            "nityId}/topics/{topicId}/messages\",\"httpMethod\":\"POST\",\"description\":\"Adds a mes" +
+            "sage to a given community topic.\",\"parameters\":{\"communityId\":{\"type\":\"integer\"," +
+            "\"description\":\"The ID of the community the message should be added to.\",\"require" +
+            "d\":true,\"format\":\"int32\",\"location\":\"path\"},\"topicId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ID of the topic the message should be added to.\",\"required\":true,\"form" +
+            "at\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"requ" +
+            "est\":{\"$ref\":\"CommunityMessage\"},\"response\":{\"$ref\":\"CommunityMessage\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/orkut\"]},\"list\":{\"id\":\"orkut.communityMessage" +
+            "s.list\",\"path\":\"communities/{communityId}/topics/{topicId}/messages\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Retrieves the messages of a topic of a community.\",\"param" +
+            "eters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community w" +
+            "hich messages will be listed.\",\"required\":true,\"format\":\"int32\",\"location\":\"path" +
+            "\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface language (host l" +
+            "anguage) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"inte" +
+            "ger\",\"description\":\"The maximum number of messages to include in the response.\"," +
+            "\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":" +
+            "{\"type\":\"string\",\"description\":\"A continuation token that allows pagination.\",\"l" +
+            "ocation\":\"query\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic " +
+            "which messages will be listed.\",\"required\":true,\"format\":\"int64\",\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"response\":{\"$ref\":\"CommunityMes" +
+            "sageList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.google" +
+            "apis.com/auth/orkut.readonly\"]}}},\"communityPollComments\":{\"methods\":{\"insert\":{" +
+            "\"id\":\"orkut.communityPollComments.insert\",\"path\":\"communities/{communityId}/poll" +
+            "s/{pollId}/comments\",\"httpMethod\":\"POST\",\"description\":\"Adds a comment on a comm" +
+            "unity poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID" +
+            " of the community whose poll is being commented.\",\"required\":true,\"format\":\"int3" +
+            "2\",\"location\":\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the pol" +
+            "l being commented.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"commu" +
+            "nityId\",\"pollId\"],\"request\":{\"$ref\":\"CommunityPollComment\"},\"response\":{\"$ref\":\"" +
+            "CommunityPollComment\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]},\"list" +
+            "\":{\"id\":\"orkut.communityPollComments.list\",\"path\":\"communities/{communityId}/pol" +
+            "ls/{pollId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the comments o" +
+            "f a community poll.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\"" +
+            ":\"The ID of the community whose poll is having its comments listed.\",\"required\":" +
+            "true,\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Sp" +
+            "ecifies the interface language (host language) of your user interface.\",\"locatio" +
+            "n\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of " +
+            "comments to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\"" +
+            ":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that " +
+            "allows pagination.\",\"location\":\"query\"},\"pollId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID of the community whose polls will be listed.\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"Communit" +
+            "yPollCommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://ww" +
+            "w.googleapis.com/auth/orkut.readonly\"]}}},\"communityPollVotes\":{\"methods\":{\"inse" +
+            "rt\":{\"id\":\"orkut.communityPollVotes.insert\",\"path\":\"communities/{communityId}/po" +
+            "lls/{pollId}/votes\",\"httpMethod\":\"POST\",\"description\":\"Votes on a community poll" +
+            ".\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the co" +
+            "mmunity whose poll is being voted.\",\"required\":true,\"format\":\"int32\",\"location\":" +
+            "\"path\"},\"pollId\":{\"type\":\"string\",\"description\":\"The ID of the poll being voted." +
+            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"]," +
+            "\"request\":{\"$ref\":\"CommunityPollVote\"},\"response\":{\"$ref\":\"CommunityPollVote\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}},\"communityPolls\":{\"methods\"" +
+            ":{\"get\":{\"id\":\"orkut.communityPolls.get\",\"path\":\"communities/{communityId}/polls" +
+            "/{pollId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves one specific poll of a co" +
+            "mmunity.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of" +
+            " the community for whose poll will be retrieved.\",\"required\":true,\"format\":\"int3" +
+            "2\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interfa" +
+            "ce language (host language) of your user interface.\",\"location\":\"query\"},\"pollId" +
+            "\":{\"type\":\"string\",\"description\":\"The ID of the poll to get.\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"communityId\",\"pollId\"],\"response\":{\"$ref\":\"" +
+            "CommunityPoll\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://www.g" +
+            "oogleapis.com/auth/orkut.readonly\"]},\"list\":{\"id\":\"orkut.communityPolls.list\",\"p" +
+            "ath\":\"communities/{communityId}/polls\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
+            "es the polls of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"des" +
+            "cription\":\"The ID of the community which polls will be listed.\",\"required\":true," +
+            "\"format\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifi" +
+            "es the interface language (host language) of your user interface.\",\"location\":\"q" +
+            "uery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of polls" +
+            " to include in the response.\",\"format\":\"uint32\",\"minimum\":\"1\",\"location\":\"query\"" +
+            "},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation token that allows p" +
+            "agination.\",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$" +
+            "ref\":\"CommunityPollList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"htt" +
+            "ps://www.googleapis.com/auth/orkut.readonly\"]}}},\"communityRelated\":{\"methods\":{" +
+            "\"list\":{\"id\":\"orkut.communityRelated.list\",\"path\":\"communities/{communityId}/rel" +
+            "ated\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the communities related to ano" +
+            "ther one.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID o" +
+            "f the community whose related communities will be listed.\",\"required\":true,\"form" +
+            "at\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies th" +
+            "e interface language (host language) of your user interface.\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"CommunityList\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/orkut\",\"https://www.googleapis.com/auth/orkut" +
+            ".readonly\"]}}},\"communityTopics\":{\"methods\":{\"delete\":{\"id\":\"orkut.communityTopi" +
+            "cs.delete\",\"path\":\"communities/{communityId}/topics/{topicId}\",\"httpMethod\":\"DEL" +
+            "ETE\",\"description\":\"Moves a topic of the community to the trash folder.\",\"parame" +
+            "ters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community wh" +
+            "ose topic will be moved to the trash folder.\",\"required\":true,\"format\":\"int32\",\"" +
+            "location\":\"path\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic " +
+            "to be moved to the trash folder.\",\"required\":true,\"format\":\"int64\",\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"communityId\",\"topicId\"],\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/orkut\"]},\"get\":{\"id\":\"orkut.communityTopics.get\",\"path\":\"communitie" +
+            "s/{communityId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a " +
+            "topic of a community.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"descriptio" +
+            "n\":\"The ID of the community whose topic will be retrieved.\",\"required\":true,\"for" +
+            "mat\":\"int32\",\"location\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies t" +
+            "he interface language (host language) of your user interface.\",\"location\":\"query" +
+            "\"},\"topicId\":{\"type\":\"string\",\"description\":\"The ID of the topic to get.\",\"requi" +
+            "red\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"communityId\",\"" +
+            "topicId\"],\"response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/orkut\",\"https://www.googleapis.com/auth/orkut.readonly\"]},\"insert\":{\"i" +
+            "d\":\"orkut.communityTopics.insert\",\"path\":\"communities/{communityId}/topics\",\"htt" +
+            "pMethod\":\"POST\",\"description\":\"Adds a topic to a given community.\",\"parameters\":" +
+            "{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the community the topi" +
+            "c should be added to.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"isSh" +
+            "out\":{\"type\":\"boolean\",\"description\":\"Whether this topic is a shout.\",\"location\"" +
+            ":\"query\"}},\"parameterOrder\":[\"communityId\"],\"request\":{\"$ref\":\"CommunityTopic\"}," +
+            "\"response\":{\"$ref\":\"CommunityTopic\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "orkut\"]},\"list\":{\"id\":\"orkut.communityTopics.list\",\"path\":\"communities/{communit" +
+            "yId}/topics\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the topics of a communi" +
+            "ty.\",\"parameters\":{\"communityId\":{\"type\":\"integer\",\"description\":\"The ID of the " +
+            "community which topics will be listed.\",\"required\":true,\"format\":\"int32\",\"locati" +
+            "on\":\"path\"},\"hl\":{\"type\":\"string\",\"description\":\"Specifies the interface languag" +
+            "e (host language) of your user interface.\",\"location\":\"query\"},\"maxResults\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"The maximum number of topics to include in the resp" +
+            "onse.\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"page" +
+            "Token\":{\"type\":\"string\",\"description\":\"A continuation token that allows paginati" +
+            "on.\",\"location\":\"query\"}},\"parameterOrder\":[\"communityId\"],\"response\":{\"$ref\":\"C" +
+            "ommunityTopicList\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\",\"https://w" +
+            "ww.googleapis.com/auth/orkut.readonly\"]}}},\"counters\":{\"methods\":{\"list\":{\"id\":\"" +
+            "orkut.counters.list\",\"path\":\"people/{userId}/counters\",\"httpMethod\":\"GET\",\"descr" +
+            "iption\":\"Retrieves the counters of a user.\",\"parameters\":{\"userId\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The ID of the user whose counters will be listed. Can be me t" +
+            "o refer to caller.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userI" +
+            "d\"],\"response\":{\"$ref\":\"Counters\"},\"scopes\":[\"https://www.googleapis.com/auth/or" +
+            "kut\",\"https://www.googleapis.com/auth/orkut.readonly\"]}}},\"scraps\":{\"methods\":{\"" +
+            "insert\":{\"id\":\"orkut.scraps.insert\",\"path\":\"activities/scraps\",\"httpMethod\":\"POS" +
+            "T\",\"description\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\"" +
+            ":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
         
         private const string Version = "v2";
         
@@ -3908,27 +3909,27 @@ namespace Google.Apis.Orkut.v2 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected OrkutService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.acl = new AclResource(this);
-            this.activities = new ActivitiesResource(this);
-            this.activityVisibility = new ActivityVisibilityResource(this);
-            this.badges = new BadgesResource(this);
-            this.comments = new CommentsResource(this);
-            this.communities = new CommunitiesResource(this);
-            this.communityFollow = new CommunityFollowResource(this);
-            this.communityMembers = new CommunityMembersResource(this);
-            this.communityMessages = new CommunityMessagesResource(this);
-            this.communityPollComments = new CommunityPollCommentsResource(this);
-            this.communityPollVotes = new CommunityPollVotesResource(this);
-            this.communityPolls = new CommunityPollsResource(this);
-            this.communityRelated = new CommunityRelatedResource(this);
-            this.communityTopics = new CommunityTopicsResource(this);
-            this.counters = new CountersResource(this);
-            this.scraps = new ScrapsResource(this);
+            this._acl = new AclResource(this);
+            this._activities = new ActivitiesResource(this);
+            this._activityVisibility = new ActivityVisibilityResource(this);
+            this._badges = new BadgesResource(this);
+            this._comments = new CommentsResource(this);
+            this._communities = new CommunitiesResource(this);
+            this._communityFollow = new CommunityFollowResource(this);
+            this._communityMembers = new CommunityMembersResource(this);
+            this._communityMessages = new CommunityMessagesResource(this);
+            this._communityPollComments = new CommunityPollCommentsResource(this);
+            this._communityPollVotes = new CommunityPollVotesResource(this);
+            this._communityPolls = new CommunityPollsResource(this);
+            this._communityRelated = new CommunityRelatedResource(this);
+            this._communityTopics = new CommunityTopicsResource(this);
+            this._counters = new CountersResource(this);
+            this._scraps = new ScrapsResource(this);
         }
         
         public OrkutService() : 
@@ -3936,22 +3937,22 @@ namespace Google.Apis.Orkut.v2 {
         }
         
         public OrkutService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(OrkutService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(OrkutService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(OrkutService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(OrkutService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -4002,41 +4003,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private string userId;
+            private string _userId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string activityId, string userId) : 
                     base(service) {
-                this.activityId = activityId;
-                this.userId = userId;
+                this._activityId = activityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4044,10 +4045,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4055,7 +4056,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
@@ -4063,7 +4064,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -4123,38 +4124,38 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4162,10 +4163,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4173,7 +4174,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
@@ -4192,47 +4193,47 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Collection collection;
+            private Collection _collection;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Collection collection) : 
                     base(service) {
-                this.userId = userId;
-                this.collection = collection;
+                this._userId = userId;
+                this._collection = collection;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4240,10 +4241,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4251,7 +4252,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("collection")]
             public virtual Collection Collection {
                 get {
-                    return this.collection;
+                    return this._collection;
                 }
             }
             
@@ -4259,21 +4260,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of activities to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -4281,10 +4282,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -4292,7 +4293,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -4340,38 +4341,38 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4379,10 +4380,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4390,7 +4391,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
@@ -4409,41 +4410,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Google.Apis.Orkut.v2.Data.Visibility bodyValue;
+            private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4451,10 +4452,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4462,17 +4463,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.Visibility Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4495,41 +4496,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Google.Apis.Orkut.v2.Data.Visibility bodyValue;
+            private Google.Apis.Orkut.v2.Data.Visibility _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Visibility body, string activityId) : 
                     base(service) {
                 this.Body = body;
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4537,10 +4538,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4548,17 +4549,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.Visibility Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4605,41 +4606,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string badgeId;
+            private string _badgeId;
             
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string badgeId) : 
                     base(service) {
-                this.userId = userId;
-                this.badgeId = badgeId;
+                this._userId = userId;
+                this._badgeId = badgeId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4647,10 +4648,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4658,7 +4659,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("badgeId")]
             public virtual string BadgeId {
                 get {
-                    return this.badgeId;
+                    return this._badgeId;
                 }
             }
             
@@ -4666,7 +4667,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -4685,38 +4686,38 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4724,10 +4725,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4735,7 +4736,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -4802,38 +4803,38 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string commentId;
+            private string _commentId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
                     base(service) {
-                this.commentId = commentId;
+                this._commentId = commentId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4841,10 +4842,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4852,7 +4853,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("commentId")]
             public virtual string CommentId {
                 get {
-                    return this.commentId;
+                    return this._commentId;
                 }
             }
             
@@ -4871,40 +4872,40 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string commentId;
+            private string _commentId;
             
-            private string hl;
+            private string _hl;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
                     base(service) {
-                this.commentId = commentId;
+                this._commentId = commentId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4912,10 +4913,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4923,7 +4924,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("commentId")]
             public virtual string CommentId {
                 get {
-                    return this.commentId;
+                    return this._commentId;
                 }
             }
             
@@ -4931,10 +4932,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -4953,41 +4954,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Google.Apis.Orkut.v2.Data.Comment bodyValue;
+            private Google.Apis.Orkut.v2.Data.Comment _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Comment body, string activityId) : 
                     base(service) {
                 this.Body = body;
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4995,10 +4996,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5006,17 +5007,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.Comment Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5039,46 +5040,46 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private OrderBy? orderBy;
+            private System.Nullable<OrderBy> _orderBy;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5086,10 +5087,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5097,7 +5098,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
@@ -5105,32 +5106,32 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of activities to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>Sort search results.</summary>
             [Google.Apis.Util.RequestParameterAttribute("orderBy")]
-            public virtual OrderBy? OrderBy {
+            public virtual System.Nullable<OrderBy> OrderBy {
                 get {
-                    return this.orderBy;
+                    return this._orderBy;
                 }
                 set {
-                    this.orderBy = value;
+                    this._orderBy = value;
                 }
             }
             
@@ -5138,10 +5139,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -5196,40 +5197,40 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
                     base(service) {
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5237,10 +5238,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5248,7 +5249,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5256,10 +5257,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -5278,44 +5279,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private OrderBy? orderBy;
+            private System.Nullable<OrderBy> _orderBy;
             
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5323,10 +5324,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5334,32 +5335,32 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of communities to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>How to order the communities by.</summary>
             [Google.Apis.Util.RequestParameterAttribute("orderBy")]
-            public virtual OrderBy? OrderBy {
+            public virtual System.Nullable<OrderBy> OrderBy {
                 get {
-                    return this.orderBy;
+                    return this._orderBy;
                 }
                 set {
-                    this.orderBy = value;
+                    this._orderBy = value;
                 }
             }
             
@@ -5367,7 +5368,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5411,41 +5412,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string userId;
+            private string _userId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.userId = userId;
+                this._communityId = communityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5453,10 +5454,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5464,7 +5465,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5472,7 +5473,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5491,41 +5492,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string userId;
+            private string _userId;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.userId = userId;
+                this._communityId = communityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5533,10 +5534,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5544,7 +5545,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5552,7 +5553,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5609,41 +5610,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string userId;
+            private string _userId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.userId = userId;
+                this._communityId = communityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5651,10 +5652,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5662,7 +5663,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5670,7 +5671,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5689,43 +5690,43 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.userId = userId;
+                this._communityId = communityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5733,10 +5734,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5744,7 +5745,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5752,10 +5753,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -5763,7 +5764,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5782,41 +5783,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string userId;
+            private string _userId;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string userId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.userId = userId;
+                this._communityId = communityId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5824,10 +5825,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5835,7 +5836,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -5843,7 +5844,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -5862,46 +5863,46 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private System.Boolean? friendsOnly;
+            private System.Nullable<bool> _friendsOnly;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
                     base(service) {
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5909,10 +5910,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5920,18 +5921,18 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
             /// <summary>Whether to list only community members who are friends of the user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("friendsOnly")]
-            public virtual System.Boolean? FriendsOnly {
+            public virtual System.Nullable<bool> FriendsOnly {
                 get {
-                    return this.friendsOnly;
+                    return this._friendsOnly;
                 }
                 set {
-                    this.friendsOnly = value;
+                    this._friendsOnly = value;
                 }
             }
             
@@ -5939,21 +5940,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of members to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -5961,10 +5962,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -6016,44 +6017,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string messageId;
+            private string _messageId;
             
-            private string topicId;
+            private string _topicId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId, string messageId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.topicId = topicId;
-                this.messageId = messageId;
+                this._communityId = communityId;
+                this._topicId = topicId;
+                this._messageId = messageId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6061,10 +6062,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6072,7 +6073,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6080,7 +6081,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("messageId")]
             public virtual string MessageId {
                 get {
-                    return this.messageId;
+                    return this._messageId;
                 }
             }
             
@@ -6088,7 +6089,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -6107,44 +6108,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string topicId;
+            private string _topicId;
             
-            private Google.Apis.Orkut.v2.Data.CommunityMessage bodyValue;
+            private Google.Apis.Orkut.v2.Data.CommunityMessage _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityMessage body, long communityId, string topicId) : 
                     base(service) {
                 this.Body = body;
-                this.communityId = communityId;
-                this.topicId = topicId;
+                this._communityId = communityId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6152,10 +6153,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6163,7 +6164,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6171,17 +6172,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.CommunityMessage Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -6204,47 +6205,47 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string topicId;
+            private string _topicId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.topicId = topicId;
+                this._communityId = communityId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6252,10 +6253,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6263,7 +6264,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6271,21 +6272,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of messages to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -6293,10 +6294,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -6304,7 +6305,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -6348,44 +6349,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string pollId;
+            private string _pollId;
             
-            private Google.Apis.Orkut.v2.Data.CommunityPollComment bodyValue;
+            private Google.Apis.Orkut.v2.Data.CommunityPollComment _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityPollComment body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
-                this.communityId = communityId;
-                this.pollId = pollId;
+                this._communityId = communityId;
+                this._pollId = pollId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6393,10 +6394,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6404,7 +6405,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6412,17 +6413,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pollId")]
             public virtual string PollId {
                 get {
-                    return this.pollId;
+                    return this._pollId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.CommunityPollComment Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -6445,47 +6446,47 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string pollId;
+            private string _pollId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string pollId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.pollId = pollId;
+                this._communityId = communityId;
+                this._pollId = pollId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6493,10 +6494,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6504,7 +6505,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6512,21 +6513,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of comments to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -6534,10 +6535,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -6545,7 +6546,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pollId")]
             public virtual string PollId {
                 get {
-                    return this.pollId;
+                    return this._pollId;
                 }
             }
             
@@ -6582,44 +6583,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string pollId;
+            private string _pollId;
             
-            private Google.Apis.Orkut.v2.Data.CommunityPollVote bodyValue;
+            private Google.Apis.Orkut.v2.Data.CommunityPollVote _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityPollVote body, long communityId, string pollId) : 
                     base(service) {
                 this.Body = body;
-                this.communityId = communityId;
-                this.pollId = pollId;
+                this._communityId = communityId;
+                this._pollId = pollId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6627,10 +6628,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6638,7 +6639,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6646,17 +6647,17 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pollId")]
             public virtual string PollId {
                 get {
-                    return this.pollId;
+                    return this._pollId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.CommunityPollVote Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -6703,43 +6704,43 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private string pollId;
+            private string _pollId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string pollId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.pollId = pollId;
+                this._communityId = communityId;
+                this._pollId = pollId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6747,10 +6748,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6758,7 +6759,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6766,10 +6767,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -6777,7 +6778,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pollId")]
             public virtual string PollId {
                 get {
-                    return this.pollId;
+                    return this._pollId;
                 }
             }
             
@@ -6796,44 +6797,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
                     base(service) {
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6841,10 +6842,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6852,7 +6853,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6860,21 +6861,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of polls to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -6882,10 +6883,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -6921,40 +6922,40 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
                     base(service) {
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6962,10 +6963,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6973,7 +6974,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -6981,10 +6982,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -7040,41 +7041,41 @@ namespace Google.Apis.Orkut.v2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string topicId;
+            private string _topicId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.topicId = topicId;
+                this._communityId = communityId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7082,10 +7083,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -7093,7 +7094,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -7101,7 +7102,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -7120,43 +7121,43 @@ namespace Google.Apis.Orkut.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private string topicId;
+            private string _topicId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long communityId, string topicId) : 
                     base(service) {
-                this.communityId = communityId;
-                this.topicId = topicId;
+                this._communityId = communityId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7164,10 +7165,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -7175,7 +7176,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -7183,10 +7184,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -7194,7 +7195,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -7213,43 +7214,43 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private System.Boolean? isShout;
+            private System.Nullable<bool> _isShout;
             
-            private Google.Apis.Orkut.v2.Data.CommunityTopic bodyValue;
+            private Google.Apis.Orkut.v2.Data.CommunityTopic _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.CommunityTopic body, long communityId) : 
                     base(service) {
                 this.Body = body;
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7257,10 +7258,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -7268,28 +7269,28 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
             /// <summary>Whether this topic is a shout.</summary>
             [Google.Apis.Util.RequestParameterAttribute("isShout")]
-            public virtual System.Boolean? IsShout {
+            public virtual System.Nullable<bool> IsShout {
                 get {
-                    return this.isShout;
+                    return this._isShout;
                 }
                 set {
-                    this.isShout = value;
+                    this._isShout = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.CommunityTopic Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -7312,44 +7313,44 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long communityId;
+            private long _communityId;
             
-            private string hl;
+            private string _hl;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long communityId) : 
                     base(service) {
-                this.communityId = communityId;
+                this._communityId = communityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7357,10 +7358,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -7368,7 +7369,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("communityId")]
             public virtual long CommunityId {
                 get {
-                    return this.communityId;
+                    return this._communityId;
                 }
             }
             
@@ -7376,21 +7377,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
             /// <summary>The maximum number of topics to include in the response.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -7398,10 +7399,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -7437,38 +7438,38 @@ namespace Google.Apis.Orkut.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7476,10 +7477,10 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -7487,7 +7488,7 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -7522,13 +7523,13 @@ namespace Google.Apis.Orkut.v2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Orkut.v2.Data.Activity bodyValue;
+            private Google.Apis.Orkut.v2.Data.Activity _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Orkut.v2.Data.Activity body) : 
                     base(service) {
@@ -7539,21 +7540,21 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -7561,20 +7562,20 @@ namespace Google.Apis.Orkut.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Orkut.v2.Data.Activity Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -7600,37 +7601,37 @@ namespace Google.Apis.Orkut.v2 {
         
         private const string Resource = "";
         
-        private AclResource acl;
+        private AclResource _acl;
         
-        private ActivitiesResource activities;
+        private ActivitiesResource _activities;
         
-        private ActivityVisibilityResource activityVisibility;
+        private ActivityVisibilityResource _activityVisibility;
         
-        private BadgesResource badges;
+        private BadgesResource _badges;
         
-        private CommentsResource comments;
+        private CommentsResource _comments;
         
-        private CommunitiesResource communities;
+        private CommunitiesResource _communities;
         
-        private CommunityFollowResource communityFollow;
+        private CommunityFollowResource _communityFollow;
         
-        private CommunityMembersResource communityMembers;
+        private CommunityMembersResource _communityMembers;
         
-        private CommunityMessagesResource communityMessages;
+        private CommunityMessagesResource _communityMessages;
         
-        private CommunityPollCommentsResource communityPollComments;
+        private CommunityPollCommentsResource _communityPollComments;
         
-        private CommunityPollVotesResource communityPollVotes;
+        private CommunityPollVotesResource _communityPollVotes;
         
-        private CommunityPollsResource communityPolls;
+        private CommunityPollsResource _communityPolls;
         
-        private CommunityRelatedResource communityRelated;
+        private CommunityRelatedResource _communityRelated;
         
-        private CommunityTopicsResource communityTopics;
+        private CommunityTopicsResource _communityTopics;
         
-        private CountersResource counters;
+        private CountersResource _counters;
         
-        private ScrapsResource scraps;
+        private ScrapsResource _scraps;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -7640,97 +7641,97 @@ namespace Google.Apis.Orkut.v2 {
         
         public virtual AclResource Acl {
             get {
-                return this.acl;
+                return this._acl;
             }
         }
         
         public virtual ActivitiesResource Activities {
             get {
-                return this.activities;
+                return this._activities;
             }
         }
         
         public virtual ActivityVisibilityResource ActivityVisibility {
             get {
-                return this.activityVisibility;
+                return this._activityVisibility;
             }
         }
         
         public virtual BadgesResource Badges {
             get {
-                return this.badges;
+                return this._badges;
             }
         }
         
         public virtual CommentsResource Comments {
             get {
-                return this.comments;
+                return this._comments;
             }
         }
         
         public virtual CommunitiesResource Communities {
             get {
-                return this.communities;
+                return this._communities;
             }
         }
         
         public virtual CommunityFollowResource CommunityFollow {
             get {
-                return this.communityFollow;
+                return this._communityFollow;
             }
         }
         
         public virtual CommunityMembersResource CommunityMembers {
             get {
-                return this.communityMembers;
+                return this._communityMembers;
             }
         }
         
         public virtual CommunityMessagesResource CommunityMessages {
             get {
-                return this.communityMessages;
+                return this._communityMessages;
             }
         }
         
         public virtual CommunityPollCommentsResource CommunityPollComments {
             get {
-                return this.communityPollComments;
+                return this._communityPollComments;
             }
         }
         
         public virtual CommunityPollVotesResource CommunityPollVotes {
             get {
-                return this.communityPollVotes;
+                return this._communityPollVotes;
             }
         }
         
         public virtual CommunityPollsResource CommunityPolls {
             get {
-                return this.communityPolls;
+                return this._communityPolls;
             }
         }
         
         public virtual CommunityRelatedResource CommunityRelated {
             get {
-                return this.communityRelated;
+                return this._communityRelated;
             }
         }
         
         public virtual CommunityTopicsResource CommunityTopics {
             get {
-                return this.communityTopics;
+                return this._communityTopics;
             }
         }
         
         public virtual CountersResource Counters {
             get {
-                return this.counters;
+                return this._counters;
             }
         }
         
         public virtual ScrapsResource Scraps {
             get {
-                return this.scraps;
+                return this._scraps;
             }
         }
     }

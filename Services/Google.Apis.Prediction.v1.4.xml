@@ -118,6 +118,9 @@
         <member name="T:Google.Apis.Prediction.v1_4.PredictionService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
+        <member name="F:Google.Apis.Prediction.v1_4.PredictionService.Scopes.DevstorageRead_only">
+            <summary>View your data in Google Cloud Storage</summary>
+        </member>
         <member name="F:Google.Apis.Prediction.v1_4.PredictionService.Scopes.Prediction">
             <summary>Manage your data in the Google Prediction API</summary>
         </member>

@@ -16,28 +16,41 @@ namespace Google.Apis.Prediction.v1_5.Data {
     
     public class Analyze : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Analyze.DataDescriptionData dataDescription;
+        private Analyze.DataDescriptionData _dataDescription;
         
-        private string id;
+        private System.Collections.Generic.IList<Analyze.ErrorsData> _errors;
         
-        private string kind;
+        private string _id;
         
-        private Analyze.ModelDescriptionData modelDescription;
+        private string _kind;
         
-        private string selfLink;
+        private Analyze.ModelDescriptionData _modelDescription;
         
-        private Google.Apis.Requests.RequestError error;
+        private string _selfLink;
         
-        private string eTag;
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
         
         /// <summary>Description of the data the model was trained on.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("dataDescription")]
         public virtual Analyze.DataDescriptionData DataDescription {
             get {
-                return this.dataDescription;
+                return this._dataDescription;
             }
             set {
-                this.dataDescription = value;
+                this._dataDescription = value;
+            }
+        }
+        
+        /// <summary>List of errors with the data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("errors")]
+        public virtual System.Collections.Generic.IList<Analyze.ErrorsData> Errors {
+            get {
+                return this._errors;
+            }
+            set {
+                this._errors = value;
             }
         }
         
@@ -45,10 +58,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -56,10 +69,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -67,10 +80,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("modelDescription")]
         public virtual Analyze.ModelDescriptionData ModelDescription {
             get {
-                return this.modelDescription;
+                return this._modelDescription;
             }
             set {
-                this.modelDescription = value;
+                this._modelDescription = value;
             }
         }
         
@@ -78,47 +91,47 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Description of the data the model was trained on.</summary>
         public class DataDescriptionData {
             
-            private System.Collections.Generic.IList<DataDescriptionData.FeaturesData> features;
+            private System.Collections.Generic.IList<DataDescriptionData.FeaturesData> _features;
             
-            private DataDescriptionData.OutputFeatureData outputFeature;
+            private DataDescriptionData.OutputFeatureData _outputFeature;
             
             /// <summary>Description of the input features in the data set.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("features")]
             public virtual System.Collections.Generic.IList<DataDescriptionData.FeaturesData> Features {
                 get {
-                    return this.features;
+                    return this._features;
                 }
                 set {
-                    this.features = value;
+                    this._features = value;
                 }
             }
             
@@ -126,31 +139,31 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("outputFeature")]
             public virtual DataDescriptionData.OutputFeatureData OutputFeature {
                 get {
-                    return this.outputFeature;
+                    return this._outputFeature;
                 }
                 set {
-                    this.outputFeature = value;
+                    this._outputFeature = value;
                 }
             }
             
             public class FeaturesData {
                 
-                private FeaturesData.CategoricalData categorical;
+                private FeaturesData.CategoricalData _categorical;
                 
-                private string index;
+                private string _index;
                 
-                private FeaturesData.NumericData numeric;
+                private FeaturesData.NumericData _numeric;
                 
-                private FeaturesData.TextData text;
+                private FeaturesData.TextData _text;
                 
                 /// <summary>Description of the categorical values of this feature.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("categorical")]
                 public virtual FeaturesData.CategoricalData Categorical {
                     get {
-                        return this.categorical;
+                        return this._categorical;
                     }
                     set {
-                        this.categorical = value;
+                        this._categorical = value;
                     }
                 }
                 
@@ -158,10 +171,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("index")]
                 public virtual string Index {
                     get {
-                        return this.index;
+                        return this._index;
                     }
                     set {
-                        this.index = value;
+                        this._index = value;
                     }
                 }
                 
@@ -169,10 +182,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("numeric")]
                 public virtual FeaturesData.NumericData Numeric {
                     get {
-                        return this.numeric;
+                        return this._numeric;
                     }
                     set {
-                        this.numeric = value;
+                        this._numeric = value;
                     }
                 }
                 
@@ -180,28 +193,28 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("text")]
                 public virtual FeaturesData.TextData Text {
                     get {
-                        return this.text;
+                        return this._text;
                     }
                     set {
-                        this.text = value;
+                        this._text = value;
                     }
                 }
                 
                 /// <summary>Description of the categorical values of this feature.</summary>
                 public class CategoricalData {
                     
-                    private string count;
+                    private string _count;
                     
-                    private System.Collections.Generic.IList<CategoricalData.ValuesData> values;
+                    private System.Collections.Generic.IList<CategoricalData.ValuesData> _values;
                     
                     /// <summary>Number of categorical values for this feature in the data.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("count")]
                     public virtual string Count {
                         get {
-                            return this.count;
+                            return this._count;
                         }
                         set {
-                            this.count = value;
+                            this._count = value;
                         }
                     }
                     
@@ -209,27 +222,27 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("values")]
                     public virtual System.Collections.Generic.IList<CategoricalData.ValuesData> Values {
                         get {
-                            return this.values;
+                            return this._values;
                         }
                         set {
-                            this.values = value;
+                            this._values = value;
                         }
                     }
                     
                     public class ValuesData {
                         
-                        private string count;
+                        private string _count;
                         
-                        private string value;
+                        private string _value;
                         
                         /// <summary>Number of times this feature had this value.</summary>
                         [Newtonsoft.Json.JsonPropertyAttribute("count")]
                         public virtual string Count {
                             get {
-                                return this.count;
+                                return this._count;
                             }
                             set {
-                                this.count = value;
+                                this._count = value;
                             }
                         }
                         
@@ -237,10 +250,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                         [Newtonsoft.Json.JsonPropertyAttribute("value")]
                         public virtual string Value {
                             get {
-                                return this.value;
+                                return this._value;
                             }
                             set {
-                                this.value = value;
+                                this._value = value;
                             }
                         }
                     }
@@ -249,20 +262,20 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 /// <summary>Description of the numeric values of this feature.</summary>
                 public class NumericData {
                     
-                    private string count;
+                    private string _count;
                     
-                    private System.Nullable<double> mean;
+                    private System.Nullable<double> _mean;
                     
-                    private System.Nullable<double> variance;
+                    private System.Nullable<double> _variance;
                     
                     /// <summary>Number of numeric values for this feature in the data set.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("count")]
                     public virtual string Count {
                         get {
-                            return this.count;
+                            return this._count;
                         }
                         set {
-                            this.count = value;
+                            this._count = value;
                         }
                     }
                     
@@ -270,10 +283,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("mean")]
                     public virtual System.Nullable<double> Mean {
                         get {
-                            return this.mean;
+                            return this._mean;
                         }
                         set {
-                            this.mean = value;
+                            this._mean = value;
                         }
                     }
                     
@@ -281,10 +294,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("variance")]
                     public virtual System.Nullable<double> Variance {
                         get {
-                            return this.variance;
+                            return this._variance;
                         }
                         set {
-                            this.variance = value;
+                            this._variance = value;
                         }
                     }
                 }
@@ -292,16 +305,16 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 /// <summary>Description of multiple-word text values of this feature.</summary>
                 public class TextData {
                     
-                    private string count;
+                    private string _count;
                     
                     /// <summary>Number of multiple-word text values for this feature.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("count")]
                     public virtual string Count {
                         get {
-                            return this.count;
+                            return this._count;
                         }
                         set {
-                            this.count = value;
+                            this._count = value;
                         }
                     }
                 }
@@ -310,18 +323,18 @@ namespace Google.Apis.Prediction.v1_5.Data {
             /// <summary>Description of the output value or label.</summary>
             public class OutputFeatureData {
                 
-                private OutputFeatureData.NumericData numeric;
+                private OutputFeatureData.NumericData _numeric;
                 
-                private System.Collections.Generic.IList<OutputFeatureData.TextData> text;
+                private System.Collections.Generic.IList<OutputFeatureData.TextData> _text;
                 
                 /// <summary>Description of the output values in the data set.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("numeric")]
                 public virtual OutputFeatureData.NumericData Numeric {
                     get {
-                        return this.numeric;
+                        return this._numeric;
                     }
                     set {
-                        this.numeric = value;
+                        this._numeric = value;
                     }
                 }
                 
@@ -329,30 +342,30 @@ namespace Google.Apis.Prediction.v1_5.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("text")]
                 public virtual System.Collections.Generic.IList<OutputFeatureData.TextData> Text {
                     get {
-                        return this.text;
+                        return this._text;
                     }
                     set {
-                        this.text = value;
+                        this._text = value;
                     }
                 }
                 
                 /// <summary>Description of the output values in the data set.</summary>
                 public class NumericData {
                     
-                    private string count;
+                    private string _count;
                     
-                    private System.Nullable<double> mean;
+                    private System.Nullable<double> _mean;
                     
-                    private System.Nullable<double> variance;
+                    private System.Nullable<double> _variance;
                     
                     /// <summary>Number of numeric output values in the data set.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("count")]
                     public virtual string Count {
                         get {
-                            return this.count;
+                            return this._count;
                         }
                         set {
-                            this.count = value;
+                            this._count = value;
                         }
                     }
                     
@@ -360,10 +373,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("mean")]
                     public virtual System.Nullable<double> Mean {
                         get {
-                            return this.mean;
+                            return this._mean;
                         }
                         set {
-                            this.mean = value;
+                            this._mean = value;
                         }
                     }
                     
@@ -371,28 +384,28 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("variance")]
                     public virtual System.Nullable<double> Variance {
                         get {
-                            return this.variance;
+                            return this._variance;
                         }
                         set {
-                            this.variance = value;
+                            this._variance = value;
                         }
                     }
                 }
                 
                 public class TextData {
                     
-                    private string count;
+                    private string _count;
                     
-                    private string value;
+                    private string _value;
                     
                     /// <summary>Number of times the output label occurred in the data set.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("count")]
                     public virtual string Count {
                         get {
-                            return this.count;
+                            return this._count;
                         }
                         set {
-                            this.count = value;
+                            this._count = value;
                         }
                     }
                     
@@ -400,33 +413,36 @@ namespace Google.Apis.Prediction.v1_5.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("value")]
                     public virtual string Value {
                         get {
-                            return this.value;
+                            return this._value;
                         }
                         set {
-                            this.value = value;
+                            this._value = value;
                         }
                     }
                 }
             }
         }
         
+        public class ErrorsData : System.Collections.Generic.Dictionary<string, string> {
+        }
+        
         /// <summary>Description of the model.</summary>
         public class ModelDescriptionData {
             
-            private ModelDescriptionData.ConfusionMatrixData confusionMatrix;
+            private ModelDescriptionData.ConfusionMatrixData _confusionMatrix;
             
-            private ModelDescriptionData.ConfusionMatrixRowTotalsData confusionMatrixRowTotals;
+            private ModelDescriptionData.ConfusionMatrixRowTotalsData _confusionMatrixRowTotals;
             
-            private Training modelinfo;
+            private Training _modelinfo;
             
             /// <summary>An output confusion matrix. This shows an estimate for how this model will do in predictions. This is first indexed by the true class label. For each true class label, this provides a pair {predicted_label, count}, where count is the estimated number of times the model will predict the predicted label given the true label. Will not output if more then 100 classes [Categorical models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("confusionMatrix")]
             public virtual ModelDescriptionData.ConfusionMatrixData ConfusionMatrix {
                 get {
-                    return this.confusionMatrix;
+                    return this._confusionMatrix;
                 }
                 set {
-                    this.confusionMatrix = value;
+                    this._confusionMatrix = value;
                 }
             }
             
@@ -434,20 +450,20 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("confusionMatrixRowTotals")]
             public virtual ModelDescriptionData.ConfusionMatrixRowTotalsData ConfusionMatrixRowTotals {
                 get {
-                    return this.confusionMatrixRowTotals;
+                    return this._confusionMatrixRowTotals;
                 }
                 set {
-                    this.confusionMatrixRowTotals = value;
+                    this._confusionMatrixRowTotals = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("modelinfo")]
             public virtual Training Modelinfo {
                 get {
-                    return this.modelinfo;
+                    return this._modelinfo;
                 }
                 set {
-                    this.modelinfo = value;
+                    this._modelinfo = value;
                 }
             }
             
@@ -466,32 +482,32 @@ namespace Google.Apis.Prediction.v1_5.Data {
     
     public class Input {
         
-        private Input.InputData input;
+        private Input.InputData _input;
         
         /// <summary>Input to the model for a prediction</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("input")]
         public virtual Input.InputData InputValue {
             get {
-                return this.input;
+                return this._input;
             }
             set {
-                this.input = value;
+                this._input = value;
             }
         }
         
         /// <summary>Input to the model for a prediction</summary>
         public class InputData {
             
-            private System.Collections.Generic.IList<string> csvInstance;
+            private System.Collections.Generic.IList<string> _csvInstance;
             
             /// <summary>A list of input features, these can be strings or doubles.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
             public virtual System.Collections.Generic.IList<string> CsvInstance {
                 get {
-                    return this.csvInstance;
+                    return this._csvInstance;
                 }
                 set {
-                    this.csvInstance = value;
+                    this._csvInstance = value;
                 }
             }
         }
@@ -499,26 +515,26 @@ namespace Google.Apis.Prediction.v1_5.Data {
     
     public class List : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Training> items;
+        private System.Collections.Generic.IList<Training> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of models.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Training> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -526,10 +542,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -537,10 +553,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -548,59 +564,59 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Output : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string outputLabel;
+        private string _outputLabel;
         
-        private System.Collections.Generic.IList<Output.OutputMultiData> outputMulti;
+        private System.Collections.Generic.IList<Output.OutputMultiData> _outputMulti;
         
-        private System.Nullable<double> outputValue;
+        private System.Nullable<double> _outputValue;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The unique name for the predictive model.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -608,10 +624,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -619,10 +635,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputLabel")]
         public virtual string OutputLabel {
             get {
-                return this.outputLabel;
+                return this._outputLabel;
             }
             set {
-                this.outputLabel = value;
+                this._outputLabel = value;
             }
         }
         
@@ -630,10 +646,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputMulti")]
         public virtual System.Collections.Generic.IList<Output.OutputMultiData> OutputMulti {
             get {
-                return this.outputMulti;
+                return this._outputMulti;
             }
             set {
-                this.outputMulti = value;
+                this._outputMulti = value;
             }
         }
         
@@ -641,10 +657,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputValue")]
         public virtual System.Nullable<double> OutputValue {
             get {
-                return this.outputValue;
+                return this._outputValue;
             }
             set {
-                this.outputValue = value;
+                this._outputValue = value;
             }
         }
         
@@ -652,46 +668,46 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class OutputMultiData {
             
-            private string label;
+            private string _label;
             
-            private System.Nullable<double> score;
+            private System.Nullable<double> _score;
             
             /// <summary>The class label.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
             public virtual string Label {
                 get {
-                    return this.label;
+                    return this._label;
                 }
                 set {
-                    this.label = value;
+                    this._label = value;
                 }
             }
             
@@ -699,10 +715,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("score")]
             public virtual System.Nullable<double> Score {
                 get {
-                    return this.score;
+                    return this._score;
                 }
                 set {
-                    this.score = value;
+                    this._score = value;
                 }
             }
         }
@@ -710,40 +726,40 @@ namespace Google.Apis.Prediction.v1_5.Data {
     
     public class Training : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string created;
+        private string _created;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Training.ModelInfoData modelInfo;
+        private Training.ModelInfoData _modelInfo;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string storageDataLocation;
+        private string _storageDataLocation;
         
-        private string storagePMMLLocation;
+        private string _storagePMMLLocation;
         
-        private string storagePMMLModelLocation;
+        private string _storagePMMLModelLocation;
         
-        private string trainingComplete;
+        private string _trainingComplete;
         
-        private string trainingStatus;
+        private string _trainingStatus;
         
-        private System.Collections.Generic.IList<Training.UtilityData> utility;
+        private System.Collections.Generic.IList<Training.UtilityData> _utility;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Insert time of the model (as a RFC 3339 timestamp).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -751,10 +767,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -762,10 +778,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -773,10 +789,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("modelInfo")]
         public virtual Training.ModelInfoData ModelInfo {
             get {
-                return this.modelInfo;
+                return this._modelInfo;
             }
             set {
-                this.modelInfo = value;
+                this._modelInfo = value;
             }
         }
         
@@ -784,10 +800,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -795,10 +811,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("storageDataLocation")]
         public virtual string StorageDataLocation {
             get {
-                return this.storageDataLocation;
+                return this._storageDataLocation;
             }
             set {
-                this.storageDataLocation = value;
+                this._storageDataLocation = value;
             }
         }
         
@@ -806,10 +822,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("storagePMMLLocation")]
         public virtual string StoragePMMLLocation {
             get {
-                return this.storagePMMLLocation;
+                return this._storagePMMLLocation;
             }
             set {
-                this.storagePMMLLocation = value;
+                this._storagePMMLLocation = value;
             }
         }
         
@@ -817,10 +833,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("storagePMMLModelLocation")]
         public virtual string StoragePMMLModelLocation {
             get {
-                return this.storagePMMLModelLocation;
+                return this._storagePMMLModelLocation;
             }
             set {
-                this.storagePMMLModelLocation = value;
+                this._storagePMMLModelLocation = value;
             }
         }
         
@@ -828,10 +844,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("trainingComplete")]
         public virtual string TrainingComplete {
             get {
-                return this.trainingComplete;
+                return this._trainingComplete;
             }
             set {
-                this.trainingComplete = value;
+                this._trainingComplete = value;
             }
         }
         
@@ -839,10 +855,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("trainingStatus")]
         public virtual string TrainingStatus {
             get {
-                return this.trainingStatus;
+                return this._trainingStatus;
             }
             set {
-                this.trainingStatus = value;
+                this._trainingStatus = value;
             }
         }
         
@@ -850,55 +866,55 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("utility")]
         public virtual System.Collections.Generic.IList<Training.UtilityData> Utility {
             get {
-                return this.utility;
+                return this._utility;
             }
             set {
-                this.utility = value;
+                this._utility = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Model metadata.</summary>
         public class ModelInfoData {
             
-            private System.Nullable<double> classWeightedAccuracy;
+            private System.Nullable<double> _classWeightedAccuracy;
             
-            private System.Nullable<double> classificationAccuracy;
+            private System.Nullable<double> _classificationAccuracy;
             
-            private System.Nullable<double> meanSquaredError;
+            private System.Nullable<double> _meanSquaredError;
             
-            private string modelType;
+            private string _modelType;
             
-            private string numberInstances;
+            private string _numberInstances;
             
-            private string numberLabels;
+            private string _numberLabels;
             
             /// <summary>Estimated accuracy of model taking utility weights into account [Categorical models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("classWeightedAccuracy")]
             public virtual System.Nullable<double> ClassWeightedAccuracy {
                 get {
-                    return this.classWeightedAccuracy;
+                    return this._classWeightedAccuracy;
                 }
                 set {
-                    this.classWeightedAccuracy = value;
+                    this._classWeightedAccuracy = value;
                 }
             }
             
@@ -906,10 +922,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("classificationAccuracy")]
             public virtual System.Nullable<double> ClassificationAccuracy {
                 get {
-                    return this.classificationAccuracy;
+                    return this._classificationAccuracy;
                 }
                 set {
-                    this.classificationAccuracy = value;
+                    this._classificationAccuracy = value;
                 }
             }
             
@@ -917,10 +933,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("meanSquaredError")]
             public virtual System.Nullable<double> MeanSquaredError {
                 get {
-                    return this.meanSquaredError;
+                    return this._meanSquaredError;
                 }
                 set {
-                    this.meanSquaredError = value;
+                    this._meanSquaredError = value;
                 }
             }
             
@@ -928,10 +944,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("modelType")]
             public virtual string ModelType {
                 get {
-                    return this.modelType;
+                    return this._modelType;
                 }
                 set {
-                    this.modelType = value;
+                    this._modelType = value;
                 }
             }
             
@@ -939,10 +955,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberInstances")]
             public virtual string NumberInstances {
                 get {
-                    return this.numberInstances;
+                    return this._numberInstances;
                 }
                 set {
-                    this.numberInstances = value;
+                    this._numberInstances = value;
                 }
             }
             
@@ -950,10 +966,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberLabels")]
             public virtual string NumberLabels {
                 get {
-                    return this.numberLabels;
+                    return this._numberLabels;
                 }
                 set {
-                    this.numberLabels = value;
+                    this._numberLabels = value;
                 }
             }
         }
@@ -965,18 +981,18 @@ namespace Google.Apis.Prediction.v1_5.Data {
     
     public class Update {
         
-        private System.Collections.Generic.IList<string> csvInstance;
+        private System.Collections.Generic.IList<string> _csvInstance;
         
-        private string label;
+        private string _label;
         
         /// <summary>The input features for this instance</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
         public virtual System.Collections.Generic.IList<string> CsvInstance {
             get {
-                return this.csvInstance;
+                return this._csvInstance;
             }
             set {
-                this.csvInstance = value;
+                this._csvInstance = value;
             }
         }
         
@@ -984,10 +1000,10 @@ namespace Google.Apis.Prediction.v1_5.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("label")]
         public virtual string Label {
             get {
-                return this.label;
+                return this._label;
             }
             set {
-                this.label = value;
+                this._label = value;
             }
         }
     }
@@ -1007,172 +1023,178 @@ namespace Google.Apis.Prediction.v1_5 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.5" +
-            "\",\"name\":\"prediction\",\"version\":\"v1.5\",\"revision\":\"20120227\",\"title\":\"Prediction" +
+            "\",\"name\":\"prediction\",\"version\":\"v1.5\",\"revision\":\"20120423\",\"title\":\"Prediction" +
             " API\",\"description\":\"Lets you access a cloud hosted machine learning service tha" +
             "t makes it easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/image" +
             "s/icons/feature/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/" +
             "feature/predictionapi-32.png\"},\"documentationLink\":\"http://code.google.com/apis/" +
             "predict/docs/developer-guide.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/prediction/v1.5/\",\"basePath\":\"/prediction/v1.5/\",\"parameters\":{\"alt\":" +
-            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
-            "\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/" +
-            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
-            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
-            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
-            "and provides you with API access, quota, and reports. Required unless you provid" +
-            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
-            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
-            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
-            "reaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Available to use for quota purposes for server-side applications. Can b" +
-            "e any arbitrary string assigned to a user, but should not exceed 40 characters. " +
-            "Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"st" +
-            "ring\",\"description\":\"IP address of the site where the request originates. Use th" +
-            "is if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2" +
-            "\":{\"scopes\":{\"https://www.googleapis.com/auth/prediction\":{\"description\":\"Manage" +
-            " your data in the Google Prediction API\"}}}},\"schemas\":{\"Analyze\":{\"id\":\"Analyze" +
-            "\",\"type\":\"object\",\"properties\":{\"dataDescription\":{\"type\":\"object\",\"description\"" +
-            ":\"Description of the data the model was trained on.\",\"properties\":{\"features\":{\"" +
-            "type\":\"array\",\"description\":\"Description of the input features in the data set.\"" +
-            ",\"items\":{\"type\":\"object\",\"properties\":{\"categorical\":{\"type\":\"object\",\"descript" +
-            "ion\":\"Description of the categorical values of this feature.\",\"properties\":{\"cou" +
-            "nt\":{\"type\":\"string\",\"description\":\"Number of categorical values for this featur" +
-            "e in the data.\",\"format\":\"int64\"},\"values\":{\"type\":\"array\",\"description\":\"List o" +
-            "f all the categories for this feature in the data set.\",\"items\":{\"type\":\"object\"" +
-            ",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of times this feat" +
-            "ure had this value.\",\"format\":\"int64\"},\"value\":{\"type\":\"string\",\"description\":\"T" +
-            "he category name.\"}}}}}},\"index\":{\"type\":\"string\",\"description\":\"The feature ind" +
-            "ex.\",\"format\":\"int64\"},\"numeric\":{\"type\":\"object\",\"description\":\"Description of " +
-            "the numeric values of this feature.\",\"properties\":{\"count\":{\"type\":\"string\",\"des" +
-            "cription\":\"Number of numeric values for this feature in the data set.\",\"format\":" +
-            "\"int64\"},\"mean\":{\"type\":\"number\",\"description\":\"Mean of the numeric values of th" +
-            "is feature in the data set.\",\"format\":\"double\"},\"variance\":{\"type\":\"number\",\"des" +
-            "cription\":\"Variance of the numeric values of this feature in the data set.\",\"for" +
-            "mat\":\"double\"}}},\"text\":{\"type\":\"object\",\"description\":\"Description of multiple-" +
-            "word text values of this feature.\",\"properties\":{\"count\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Number of multiple-word text values for this feature.\",\"format\":\"int64\"" +
-            "}}}}}},\"outputFeature\":{\"type\":\"object\",\"description\":\"Description of the output" +
-            " value or label.\",\"properties\":{\"numeric\":{\"type\":\"object\",\"description\":\"Descri" +
-            "ption of the output values in the data set.\",\"properties\":{\"count\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Number of numeric output values in the data set.\",\"format\":\"i" +
-            "nt64\"},\"mean\":{\"type\":\"number\",\"description\":\"Mean of the output values in the d" +
-            "ata set.\",\"format\":\"double\"},\"variance\":{\"type\":\"number\",\"description\":\"Variance" +
-            " of the output values in the data set.\",\"format\":\"double\"}}},\"text\":{\"type\":\"arr" +
-            "ay\",\"description\":\"Description of the output labels in the data set.\",\"items\":{\"" +
-            "type\":\"object\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of t" +
-            "imes the output label occurred in the data set.\",\"format\":\"int64\"},\"value\":{\"typ" +
-            "e\":\"string\",\"description\":\"The output label.\"}}}}}}}},\"id\":{\"type\":\"string\",\"des" +
-            "cription\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"What kind of resource this is.\",\"default\":\"prediction#analyze\"},\"m" +
-            "odelDescription\":{\"type\":\"object\",\"description\":\"Description of the model.\",\"pro" +
-            "perties\":{\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output confusion " +
-            "matrix. This shows an estimate for how this model will do in predictions. This i" +
-            "s first indexed by the true class label. For each true class label, this provide" +
-            "s a pair {predicted_label, count}, where count is the estimated number of times " +
-            "the model will predict the predicted label given the true label. Will not output" +
-            " if more then 100 classes [Categorical models only].\",\"additionalProperties\":{\"t" +
-            "ype\":\"object\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}}},\"conf" +
-            "usionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list of the confusion ma" +
-            "trix row totals\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}},\"mo" +
-            "delinfo\":{\"$ref\":\"Training\",\"description\":\"Basic information about the model.\"}}" +
-            "},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"" +
-            "}}},\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"object\"" +
-            ",\"description\":\"Input to the model for a prediction\",\"properties\":{\"csvInstance\"" +
-            ":{\"type\":\"array\",\"description\":\"A list of input features, these can be strings o" +
-            "r doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"List\":{\"id\":\"List\",\"type\":\"object\",\"pro" +
-            "perties\":{\"items\":{\"type\":\"array\",\"description\":\"List of models.\",\"items\":{\"$ref" +
-            "\":\"Training\"}},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this" +
-            " is.\",\"default\":\"prediction#list\"},\"nextPageToken\":{\"type\":\"string\",\"description" +
-            "\":\"Pagination token to fetch the next page, if one exists.\"},\"selfLink\":{\"type\":" +
-            "\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Output\":{\"id\":\"O" +
-            "utput\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The un" +
-            "ique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"description\":\"Wha" +
-            "t kind of resource this is.\",\"default\":\"prediction#output\"},\"outputLabel\":{\"type" +
-            "\":\"string\",\"description\":\"The most likely class label [Categorical models only]." +
-            "\"},\"outputMulti\":{\"type\":\"array\",\"description\":\"A list of class labels with thei" +
-            "r estimated probabilities [Categorical models only].\",\"items\":{\"type\":\"object\",\"" +
-            "properties\":{\"label\":{\"type\":\"string\",\"description\":\"The class label.\"},\"score\":" +
-            "{\"type\":\"number\",\"description\":\"The probability of the class label.\",\"format\":\"d" +
-            "ouble\"}}}},\"outputValue\":{\"type\":\"number\",\"description\":\"The estimated regressio" +
-            "n value [Regression models only].\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string" +
-            "\",\"description\":\"A URL to re-request this resource.\"}}},\"Training\":{\"id\":\"Traini" +
-            "ng\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"description\":\"Inse" +
-            "rt time of the model (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"id\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The unique name for the predictive model.\"},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"What kind of resource this is.\",\"default\":\"predic" +
-            "tion#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"Model metadata.\",\"pr" +
-            "operties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"description\":\"Estimated acc" +
-            "uracy of model taking utility weights into account [Categorical models only].\",\"" +
-            "format\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\",\"description\":\"A num" +
-            "ber between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estimate, based " +
-            "on the amount and quality of the training data, of the estimated prediction accu" +
-            "racy. You can use this is a guide to decide whether the results are accurate eno" +
-            "ugh for your needs. This estimate will be more reliable if your real input data " +
-            "is similar to your training data [Categorical models only].\",\"format\":\"double\"}," +
-            "\"meanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean squared err" +
-            "or. The can be used to measure the quality of the predicted model [Regression mo" +
-            "dels only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"description\":\"Type" +
-            " of predictive model (CLASSIFICATION or REGRESSION)\"},\"numberInstances\":{\"type\":" +
-            "\"string\",\"description\":\"Number of valid data instances used in the trained model" +
-            ".\",\"format\":\"int64\"},\"numberLabels\":{\"type\":\"string\",\"description\":\"Number of cl" +
-            "ass labels in the trained model [Categorical models only].\",\"format\":\"int64\"}}}," +
-            "\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"}," +
-            "\"storageDataLocation\":{\"type\":\"string\",\"description\":\"Google storage location of" +
-            " the training data file.\"},\"storagePMMLLocation\":{\"type\":\"string\",\"description\":" +
-            "\"Google storage location of the preprocessing pmml file.\"},\"storagePMMLModelLoca" +
-            "tion\":{\"type\":\"string\",\"description\":\"Google storage location of the pmml model " +
-            "file.\"},\"trainingComplete\":{\"type\":\"string\",\"description\":\"Training completion t" +
-            "ime (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"trainingStatus\":{\"type\":\"" +
-            "string\",\"description\":\"The current status of the training job. This can be one o" +
-            "f following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"utility\":{\"t" +
-            "ype\":\"array\",\"description\":\"A class weighting function, which allows the importa" +
-            "nce weights for class labels to be specified [Categorical models only].\",\"items\"" +
-            ":{\"type\":\"object\",\"description\":\"Class label (string).\",\"additionalProperties\":{" +
-            "\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":\"object\",\"" +
-            "properties\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"The input features for" +
-            " this instance\",\"items\":{\"type\":\"any\"}},\"label\":{\"type\":\"string\",\"description\":\"" +
-            "The true class label of this instance\"}}}},\"resources\":{\"hostedmodels\":{\"methods" +
-            "\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{hoste" +
-            "dModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and request" +
-            " an output against a hosted model.\",\"parameters\":{\"hostedModelName\":{\"type\":\"str" +
-            "ing\",\"description\":\"The name of a hosted model.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":" +
-            "{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}},\"tr" +
-            "ainedmodels\":{\"methods\":{\"analyze\":{\"id\":\"prediction.trainedmodels.analyze\",\"pat" +
-            "h\":\"trainedmodels/{id}/analyze\",\"httpMethod\":\"GET\",\"description\":\"Get analysis o" +
-            "f the model and the data the model was trained on.\",\"parameters\":{\"id\":{\"type\":\"" +
-            "string\",\"description\":\"The unique name for the predictive model.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Analyze\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/prediction\"]},\"delete\":{\"id\":\"prediction." +
-            "trainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"descrip" +
-            "tion\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description" +
-            "\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"" +
-            "]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"Check training status of your model.\",\"parameters\":{" +
-            "\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"" +
-            "Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"i" +
-            "d\":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"POST\"," +
-            "\"description\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"respon" +
-            "se\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}" +
-            ",\"list\":{\"id\":\"prediction.trainedmodels.list\",\"path\":\"trainedmodels/list\",\"httpM" +
-            "ethod\":\"GET\",\"description\":\"List available models.\",\"parameters\":{\"maxResults\":{" +
-            "\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"u" +
-            "int32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Pagination token\",\"location\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"prediction.trai" +
-            "nedmodels.predict\",\"path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST\",\"desc" +
-            "ription\":\"Submit model id and request a prediction.\",\"parameters\":{\"id\":{\"type\":" +
-            "\"string\",\"description\":\"The unique name for the predictive model.\",\"required\":tr" +
-            "ue,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"respo" +
-            "nse\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}," +
-            "\"update\":{\"id\":\"prediction.trainedmodels.update\",\"path\":\"trainedmodels/{id}\",\"ht" +
-            "tpMethod\":\"PUT\",\"description\":\"Add new data to a trained model.\",\"parameters\":{\"" +
-            "id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Up" +
-            "date\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/prediction\"]}}}}}";
+            "leapis.com/prediction/v1.5/\",\"basePath\":\"/prediction/v1.5/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"prediction/v1.5/\",\"batchPath\":\"batch\",\"parame" +
+            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
+            "ault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
+            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
+            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
+            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
+            "your project and provides you with API access, quota, and reports. Required unle" +
+            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
+            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
+            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
+            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
+            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
+            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
+            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
+            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
+            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"a" +
+            "uth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\"" +
+            ":{\"description\":\"View your data in Google Cloud Storage\"},\"https://www.googleapi" +
+            "s.com/auth/prediction\":{\"description\":\"Manage your data in the Google Prediction" +
+            " API\"}}}},\"schemas\":{\"Analyze\":{\"id\":\"Analyze\",\"type\":\"object\",\"properties\":{\"da" +
+            "taDescription\":{\"type\":\"object\",\"description\":\"Description of the data the model" +
+            " was trained on.\",\"properties\":{\"features\":{\"type\":\"array\",\"description\":\"Descri" +
+            "ption of the input features in the data set.\",\"items\":{\"type\":\"object\",\"properti" +
+            "es\":{\"categorical\":{\"type\":\"object\",\"description\":\"Description of the categorica" +
+            "l values of this feature.\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":" +
+            "\"Number of categorical values for this feature in the data.\",\"format\":\"int64\"},\"" +
+            "values\":{\"type\":\"array\",\"description\":\"List of all the categories for this featu" +
+            "re in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"str" +
+            "ing\",\"description\":\"Number of times this feature had this value.\",\"format\":\"int6" +
+            "4\"},\"value\":{\"type\":\"string\",\"description\":\"The category name.\"}}}}}},\"index\":{\"" +
+            "type\":\"string\",\"description\":\"The feature index.\",\"format\":\"int64\"},\"numeric\":{\"" +
+            "type\":\"object\",\"description\":\"Description of the numeric values of this feature." +
+            "\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeric values" +
+            " for this feature in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"d" +
+            "escription\":\"Mean of the numeric values of this feature in the data set.\",\"forma" +
+            "t\":\"double\"},\"variance\":{\"type\":\"number\",\"description\":\"Variance of the numeric " +
+            "values of this feature in the data set.\",\"format\":\"double\"}}},\"text\":{\"type\":\"ob" +
+            "ject\",\"description\":\"Description of multiple-word text values of this feature.\"," +
+            "\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of multiple-word te" +
+            "xt values for this feature.\",\"format\":\"int64\"}}}}}},\"outputFeature\":{\"type\":\"obj" +
+            "ect\",\"description\":\"Description of the output value or label.\",\"properties\":{\"nu" +
+            "meric\":{\"type\":\"object\",\"description\":\"Description of the output values in the d" +
+            "ata set.\",\"properties\":{\"count\":{\"type\":\"string\",\"description\":\"Number of numeri" +
+            "c output values in the data set.\",\"format\":\"int64\"},\"mean\":{\"type\":\"number\",\"des" +
+            "cription\":\"Mean of the output values in the data set.\",\"format\":\"double\"},\"varia" +
+            "nce\":{\"type\":\"number\",\"description\":\"Variance of the output values in the data s" +
+            "et.\",\"format\":\"double\"}}},\"text\":{\"type\":\"array\",\"description\":\"Description of t" +
+            "he output labels in the data set.\",\"items\":{\"type\":\"object\",\"properties\":{\"count" +
+            "\":{\"type\":\"string\",\"description\":\"Number of times the output label occurred in t" +
+            "he data set.\",\"format\":\"int64\"},\"value\":{\"type\":\"string\",\"description\":\"The outp" +
+            "ut label.\"}}}}}}}},\"errors\":{\"type\":\"array\",\"description\":\"List of errors with t" +
+            "he data.\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Error level followed by a detailed error message.\"}}},\"id\":{\"type\":\"st" +
+            "ring\",\"description\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":" +
+            "\"string\",\"description\":\"What kind of resource this is.\",\"default\":\"prediction#an" +
+            "alyze\"},\"modelDescription\":{\"type\":\"object\",\"description\":\"Description of the mo" +
+            "del.\",\"properties\":{\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output " +
+            "confusion matrix. This shows an estimate for how this model will do in predictio" +
+            "ns. This is first indexed by the true class label. For each true class label, th" +
+            "is provides a pair {predicted_label, count}, where count is the estimated number" +
+            " of times the model will predict the predicted label given the true label. Will " +
+            "not output if more then 100 classes [Categorical models only].\",\"additionalPrope" +
+            "rties\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double" +
+            "\"}}},\"confusionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list of the co" +
+            "nfusion matrix row totals\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"dou" +
+            "ble\"}},\"modelinfo\":{\"$ref\":\"Training\",\"description\":\"Basic information about the" +
+            " model.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this " +
+            "resource.\"}}},\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\":{\"type" +
+            "\":\"object\",\"description\":\"Input to the model for a prediction\",\"properties\":{\"cs" +
+            "vInstance\":{\"type\":\"array\",\"description\":\"A list of input features, these can be" +
+            " strings or doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"List\":{\"id\":\"List\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of models.\",\"ite" +
+            "ms\":{\"$ref\":\"Training\"}},\"kind\":{\"type\":\"string\",\"description\":\"What kind of res" +
+            "ource this is.\",\"default\":\"prediction#list\"},\"nextPageToken\":{\"type\":\"string\",\"d" +
+            "escription\":\"Pagination token to fetch the next page, if one exists.\"},\"selfLink" +
+            "\":{\"type\":\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Output" +
+            "\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"What kind of resource this is.\",\"default\":\"prediction#output\"},\"outputLab" +
+            "el\":{\"type\":\"string\",\"description\":\"The most likely class label [Categorical mod" +
+            "els only].\"},\"outputMulti\":{\"type\":\"array\",\"description\":\"A list of class labels" +
+            " with their estimated probabilities [Categorical models only].\",\"items\":{\"type\":" +
+            "\"object\",\"properties\":{\"label\":{\"type\":\"string\",\"description\":\"The class label.\"" +
+            "},\"score\":{\"type\":\"number\",\"description\":\"The probability of the class label.\",\"" +
+            "format\":\"double\"}}}},\"outputValue\":{\"type\":\"number\",\"description\":\"The estimated" +
+            " regression value [Regression models only].\",\"format\":\"double\"},\"selfLink\":{\"typ" +
+            "e\":\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Training\":{\"i" +
+            "d\":\"Training\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Insert time of the model (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}" +
+            ",\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\"" +
+            "},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this is.\",\"defaul" +
+            "t\":\"prediction#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"Model meta" +
+            "data.\",\"properties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"description\":\"Est" +
+            "imated accuracy of model taking utility weights into account [Categorical models" +
+            " only].\",\"format\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\",\"descripti" +
+            "on\":\"A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is an estima" +
+            "te, based on the amount and quality of the training data, of the estimated predi" +
+            "ction accuracy. You can use this is a guide to decide whether the results are ac" +
+            "curate enough for your needs. This estimate will be more reliable if your real i" +
+            "nput data is similar to your training data [Categorical models only].\",\"format\":" +
+            "\"double\"},\"meanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean s" +
+            "quared error. The can be used to measure the quality of the predicted model [Reg" +
+            "ression models only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Type of predictive model (CLASSIFICATION or REGRESSION)\"},\"numberInstances" +
+            "\":{\"type\":\"string\",\"description\":\"Number of valid data instances used in the tra" +
+            "ined model.\",\"format\":\"int64\"},\"numberLabels\":{\"type\":\"string\",\"description\":\"Nu" +
+            "mber of class labels in the trained model [Categorical models only].\",\"format\":\"" +
+            "int64\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this re" +
+            "source.\"},\"storageDataLocation\":{\"type\":\"string\",\"description\":\"Google storage l" +
+            "ocation of the training data file.\"},\"storagePMMLLocation\":{\"type\":\"string\",\"des" +
+            "cription\":\"Google storage location of the preprocessing pmml file.\"},\"storagePMM" +
+            "LModelLocation\":{\"type\":\"string\",\"description\":\"Google storage location of the p" +
+            "mml model file.\"},\"trainingComplete\":{\"type\":\"string\",\"description\":\"Training co" +
+            "mpletion time (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"trainingStatus\"" +
+            ":{\"type\":\"string\",\"description\":\"The current status of the training job. This ca" +
+            "n be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"ut" +
+            "ility\":{\"type\":\"array\",\"description\":\"A class weighting function, which allows t" +
+            "he importance weights for class labels to be specified [Categorical models only]" +
+            ".\",\"items\":{\"type\":\"object\",\"description\":\"Class label (string).\",\"additionalPro" +
+            "perties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":" +
+            "\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"The input fe" +
+            "atures for this instance\",\"items\":{\"type\":\"any\"}},\"label\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The true class label of this instance\"}}}},\"resources\":{\"hostedmodels\"" +
+            ":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmod" +
+            "els/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit input a" +
+            "nd request an output against a hosted model.\",\"parameters\":{\"hostedModelName\":{\"" +
+            "type\":\"string\",\"description\":\"The name of a hosted model.\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"" +
+            "response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/predictio" +
+            "n\"]}}},\"trainedmodels\":{\"methods\":{\"analyze\":{\"id\":\"prediction.trainedmodels.ana" +
+            "lyze\",\"path\":\"trainedmodels/{id}/analyze\",\"httpMethod\":\"GET\",\"description\":\"Get " +
+            "analysis of the model and the data the model was trained on.\",\"parameters\":{\"id\"" +
+            ":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"req" +
+            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Anal" +
+            "yze\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"delete\":{\"id\":\"p" +
+            "rediction.trainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE" +
+            "\",\"description\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"The unique name for the predictive model.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/p" +
+            "rediction\"]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{i" +
+            "d}\",\"httpMethod\":\"GET\",\"description\":\"Check training status of your model.\",\"par" +
+            "ameters\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictiv" +
+            "e model.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\"" +
+            ":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"i" +
+            "nsert\":{\"id\":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMetho" +
+            "d\":\"POST\",\"description\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training" +
+            "\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/dev" +
+            "storage.read_only\",\"https://www.googleapis.com/auth/prediction\"]},\"list\":{\"id\":\"" +
+            "prediction.trainedmodels.list\",\"path\":\"trainedmodels/list\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"List available models.\",\"parameters\":{\"maxResults\":{\"type\":\"integer" +
+            "\",\"description\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum" +
+            "\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Pagination" +
+            " token\",\"location\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"prediction.trainedmodels.predi" +
+            "ct\",\"path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submi" +
+            "t model id and request a prediction.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"O" +
+            "utput\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":" +
+            "\"prediction.trainedmodels.update\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"PUT\"" +
+            ",\"description\":\"Add new data to a trained model.\",\"parameters\":{\"id\":{\"type\":\"st" +
+            "ring\",\"description\":\"The unique name for the predictive model.\",\"required\":true," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Update\"},\"respons" +
+            "e\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}" +
+            "}}}";
         
         private const string Version = "v1.5";
         
@@ -1182,13 +1204,13 @@ namespace Google.Apis.Prediction.v1_5 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.hostedmodels = new HostedmodelsResource(this);
-            this.trainedmodels = new TrainedmodelsResource(this);
+            this._hostedmodels = new HostedmodelsResource(this);
+            this._trainedmodels = new TrainedmodelsResource(this);
         }
         
         public PredictionService() : 
@@ -1196,22 +1218,22 @@ namespace Google.Apis.Prediction.v1_5 {
         }
         
         public PredictionService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PredictionService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PredictionService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -1232,6 +1254,10 @@ namespace Google.Apis.Prediction.v1_5 {
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         public enum Scopes {
+            
+            /// <summary>View your data in Google Cloud Storage</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/devstorage.read_only")]
+            DevstorageRead_only,
             
             /// <summary>Manage your data in the Google Prediction API</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/prediction")]
@@ -1257,41 +1283,41 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string hostedModelName;
+            private string _hostedModelName;
             
-            private Google.Apis.Prediction.v1_5.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_5.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_5.Data.Input body, string hostedModelName) : 
                     base(service) {
                 this.Body = body;
-                this.hostedModelName = hostedModelName;
+                this._hostedModelName = hostedModelName;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1299,10 +1325,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1310,17 +1336,17 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("hostedModelName")]
             public virtual string HostedModelName {
                 get {
-                    return this.hostedModelName;
+                    return this._hostedModelName;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_5.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1394,38 +1420,38 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class AnalyzeRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Analyze> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
             public AnalyzeRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1433,10 +1459,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1444,7 +1470,7 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
@@ -1463,38 +1489,38 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1502,10 +1528,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1513,7 +1539,7 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
@@ -1532,38 +1558,38 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1571,10 +1597,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1582,7 +1608,7 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
@@ -1601,13 +1627,13 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Prediction.v1_5.Data.Training bodyValue;
+            private Google.Apis.Prediction.v1_5.Data.Training _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_5.Data.Training body) : 
                     base(service) {
@@ -1618,21 +1644,21 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1640,20 +1666,20 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_5.Data.Training Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1676,15 +1702,15 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.List> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -1694,21 +1720,21 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1716,21 +1742,21 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Maximum number of results to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1738,10 +1764,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1760,41 +1786,41 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
-            private Google.Apis.Prediction.v1_5.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_5.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_5.Data.Input body, string id) : 
                     base(service) {
                 this.Body = body;
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1802,10 +1828,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1813,17 +1839,17 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_5.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1846,41 +1872,41 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
-            private Google.Apis.Prediction.v1_5.Data.Update bodyValue;
+            private Google.Apis.Prediction.v1_5.Data.Update _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_5.Data.Update body, string id) : 
                     base(service) {
                 this.Body = body;
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1888,10 +1914,10 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1899,17 +1925,17 @@ namespace Google.Apis.Prediction.v1_5 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_5.Data.Update Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1935,9 +1961,9 @@ namespace Google.Apis.Prediction.v1_5 {
         
         private const string Resource = "";
         
-        private HostedmodelsResource hostedmodels;
+        private HostedmodelsResource _hostedmodels;
         
-        private TrainedmodelsResource trainedmodels;
+        private TrainedmodelsResource _trainedmodels;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1947,13 +1973,13 @@ namespace Google.Apis.Prediction.v1_5 {
         
         public virtual HostedmodelsResource Hostedmodels {
             get {
-                return this.hostedmodels;
+                return this._hostedmodels;
             }
         }
         
         public virtual TrainedmodelsResource Trainedmodels {
             get {
-                return this.trainedmodels;
+                return this._trainedmodels;
             }
         }
     }

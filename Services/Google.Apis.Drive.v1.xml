@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Drive.v1</name>
+    </assembly>
+    <members>
+        <member name="P:Google.Apis.Drive.v1.Data.File.CreatedDate">
+            <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Description">
+            <summary>A short description of the file</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.DownloadUrl">
+            <summary>Short term download URL for the file This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ETag">
+            <summary>ETag of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.FileExtension">
+            <summary>The file extension used when downloading this file. This field is read only. To set the extension, include it on title when creating the file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.FileSize">
+            <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Id">
+            <summary>The id of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.IndexableText">
+            <summary>Indexable text attributes for the file (can only be written)</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Kind">
+            <summary>The type of file. This is always drive#file</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Labels">
+            <summary>Labels for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.LastViewedDate">
+            <summary>Last time this file was viewed by anyone (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Md5Checksum">
+            <summary>An MD5 checksum for the content of this file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.MimeType">
+            <summary>The mimetype of the file</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ModifiedByMeDate">
+            <summary>Last time this file was modified by the user (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ModifiedDate">
+            <summary>Last time this file was modified by anyone (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ParentsCollection">
+             <summary>Collection of parent folders which contain this file.
+            On insert, setting this field will put the file in all of the provided folders. If no folders are provided, the file will be placed in the default root folder. On update, this field is ignored.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.SelfLink">
+            <summary>A link back to this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.Title">
+            <summary>The title of this file.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v1.Data.File.IndexableTextData">
+            <summary>Indexable text attributes for the file (can only be written)</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.IndexableTextData.Text">
+            <summary>The text to be indexed for this file</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v1.Data.File.LabelsData">
+            <summary>Labels for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.LabelsData.Hidden">
+            <summary>Whether this file is hidden from the user</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.LabelsData.Starred">
+            <summary>Whether this file is starred by the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.LabelsData.Trashed">
+            <summary>Whether this file has been trashed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ParentsCollectionData.Id">
+            <summary>The id of this parent</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.File.ParentsCollectionData.ParentLink">
+            <summary>A link to get the metadata for this parent</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.Permission.AdditionalRoles">
+            <summary>Any additional roles that this permission describes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.Permission.ETag">
+            <summary>An etag for this permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.Permission.Kind">
+            <summary>The kind of this permission. This is always drive#permission</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.Permission.Role">
+            <summary>The role that this permission describes. (For example: reader, writer, owner)</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.Data.Permission.Type">
+            <summary>The type of permission (For example: user, group etc).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.DriveService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v1.DriveService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v1.DriveService.Scopes.DriveFile">
+            <summary>View and manage Google Drive files that you have opened or created with this app</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v1.FilesResource.Get(System.String)">
+            <summary>Gets a file&apos;s metadata by id.</summary>
+            <param name="id">Required - The id for the file in question.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v1.FilesResource.Insert(Google.Apis.Drive.v1.Data.File)">
+            <summary>Inserts a file, and any settable metadata or blob content sent with the request.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v1.FilesResource.Patch(Google.Apis.Drive.v1.Data.File,System.String)">
+            <summary>Updates file metadata and/or content. This method supports patch semantics.</summary>
+            <param name="id">Required - The id for the file in question.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v1.FilesResource.Update(Google.Apis.Drive.v1.Data.File,System.String)">
+            <summary>Updates file metadata and/or content</summary>
+            <param name="id">Required - The id for the file in question.</param>
+        </member>
+        <member name="T:Google.Apis.Drive.v1.FilesResource.Projection">
+            <summary>Restrict information returned for simplicity and optimization.</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v1.FilesResource.Projection.BASIC">
+            <summary>Includes only the basic metadata fields</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v1.FilesResource.Projection.FULL">
+            <summary>Includes all metadata fields</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Id">
+            <summary>The id for the file in question.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Projection">
+            <summary>Restrict information returned for simplicity and optimization.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully retrieving the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.Id">
+            <summary>The id for the file in question.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.NewRevision">
+            <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.UpdateModifiedDate">
+            <summary>Controls updating the modified date of the file. If true, the modified date will be updated to the current time, regardless of whether other changes are being made. If false, the modified date will only be updated to the current time if other changes are also being made (changing the title, for example).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.Id">
+            <summary>The id for the file in question.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.NewRevision">
+            <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.UpdateModifiedDate">
+            <summary>Controls updating the modified date of the file. If true, the modified date will be updated to the current time, regardless of whether other changes are being made. If false, the modified date will only be updated to the current time if other changes are also being made (changing the title, for example).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

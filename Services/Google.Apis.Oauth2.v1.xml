@@ -31,6 +31,24 @@
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenGetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenGetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.IssueTokenGetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>

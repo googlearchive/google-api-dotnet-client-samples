@@ -17,66 +17,66 @@ namespace Google.Apis.Groupssettings.v1.Data {
     /// <summary>Groups resource</summary>
     public class Groups : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string allowExternalMembers;
+        private string _allowExternalMembers;
         
-        private string allowGoogleCommunication;
+        private string _allowGoogleCommunication;
         
-        private string allowWebPosting;
+        private string _allowWebPosting;
         
-        private string archiveOnly;
+        private string _archiveOnly;
         
-        private string customReplyTo;
+        private string _customReplyTo;
         
-        private string defaultMessageDenyNotificationText;
+        private string _defaultMessageDenyNotificationText;
         
-        private string description;
+        private string _description;
         
-        private string email;
+        private string _email;
         
-        private string isArchived;
+        private string _isArchived;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> maxMessageBytes;
+        private System.Nullable<long> _maxMessageBytes;
         
-        private string membersCanPostAsTheGroup;
+        private string _membersCanPostAsTheGroup;
         
-        private string messageDisplayFont;
+        private string _messageDisplayFont;
         
-        private string messageModerationLevel;
+        private string _messageModerationLevel;
         
-        private string name;
+        private string _name;
         
-        private string primaryLanguage;
+        private string _primaryLanguage;
         
-        private string replyTo;
+        private string _replyTo;
         
-        private string sendMessageDenyNotification;
+        private string _sendMessageDenyNotification;
         
-        private string showInGroupDirectory;
+        private string _showInGroupDirectory;
         
-        private string whoCanInvite;
+        private string _whoCanInvite;
         
-        private string whoCanJoin;
+        private string _whoCanJoin;
         
-        private string whoCanPostMessage;
+        private string _whoCanPostMessage;
         
-        private string whoCanViewGroup;
+        private string _whoCanViewGroup;
         
-        private string whoCanViewMembership;
+        private string _whoCanViewMembership;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Are external members allowed to join the group.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("allowExternalMembers")]
         public virtual string AllowExternalMembers {
             get {
-                return this.allowExternalMembers;
+                return this._allowExternalMembers;
             }
             set {
-                this.allowExternalMembers = value;
+                this._allowExternalMembers = value;
             }
         }
         
@@ -84,10 +84,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("allowGoogleCommunication")]
         public virtual string AllowGoogleCommunication {
             get {
-                return this.allowGoogleCommunication;
+                return this._allowGoogleCommunication;
             }
             set {
-                this.allowGoogleCommunication = value;
+                this._allowGoogleCommunication = value;
             }
         }
         
@@ -95,10 +95,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("allowWebPosting")]
         public virtual string AllowWebPosting {
             get {
-                return this.allowWebPosting;
+                return this._allowWebPosting;
             }
             set {
-                this.allowWebPosting = value;
+                this._allowWebPosting = value;
             }
         }
         
@@ -106,10 +106,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("archiveOnly")]
         public virtual string ArchiveOnly {
             get {
-                return this.archiveOnly;
+                return this._archiveOnly;
             }
             set {
-                this.archiveOnly = value;
+                this._archiveOnly = value;
             }
         }
         
@@ -117,10 +117,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("customReplyTo")]
         public virtual string CustomReplyTo {
             get {
-                return this.customReplyTo;
+                return this._customReplyTo;
             }
             set {
-                this.customReplyTo = value;
+                this._customReplyTo = value;
             }
         }
         
@@ -128,10 +128,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("defaultMessageDenyNotificationText")]
         public virtual string DefaultMessageDenyNotificationText {
             get {
-                return this.defaultMessageDenyNotificationText;
+                return this._defaultMessageDenyNotificationText;
             }
             set {
-                this.defaultMessageDenyNotificationText = value;
+                this._defaultMessageDenyNotificationText = value;
             }
         }
         
@@ -139,10 +139,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -150,10 +150,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("email")]
         public virtual string Email {
             get {
-                return this.email;
+                return this._email;
             }
             set {
-                this.email = value;
+                this._email = value;
             }
         }
         
@@ -161,10 +161,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("isArchived")]
         public virtual string IsArchived {
             get {
-                return this.isArchived;
+                return this._isArchived;
             }
             set {
-                this.isArchived = value;
+                this._isArchived = value;
             }
         }
         
@@ -172,10 +172,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -183,10 +183,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("maxMessageBytes")]
         public virtual System.Nullable<long> MaxMessageBytes {
             get {
-                return this.maxMessageBytes;
+                return this._maxMessageBytes;
             }
             set {
-                this.maxMessageBytes = value;
+                this._maxMessageBytes = value;
             }
         }
         
@@ -194,10 +194,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("membersCanPostAsTheGroup")]
         public virtual string MembersCanPostAsTheGroup {
             get {
-                return this.membersCanPostAsTheGroup;
+                return this._membersCanPostAsTheGroup;
             }
             set {
-                this.membersCanPostAsTheGroup = value;
+                this._membersCanPostAsTheGroup = value;
             }
         }
         
@@ -205,10 +205,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("messageDisplayFont")]
         public virtual string MessageDisplayFont {
             get {
-                return this.messageDisplayFont;
+                return this._messageDisplayFont;
             }
             set {
-                this.messageDisplayFont = value;
+                this._messageDisplayFont = value;
             }
         }
         
@@ -216,10 +216,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("messageModerationLevel")]
         public virtual string MessageModerationLevel {
             get {
-                return this.messageModerationLevel;
+                return this._messageModerationLevel;
             }
             set {
-                this.messageModerationLevel = value;
+                this._messageModerationLevel = value;
             }
         }
         
@@ -227,10 +227,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -238,10 +238,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("primaryLanguage")]
         public virtual string PrimaryLanguage {
             get {
-                return this.primaryLanguage;
+                return this._primaryLanguage;
             }
             set {
-                this.primaryLanguage = value;
+                this._primaryLanguage = value;
             }
         }
         
@@ -249,10 +249,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("replyTo")]
         public virtual string ReplyTo {
             get {
-                return this.replyTo;
+                return this._replyTo;
             }
             set {
-                this.replyTo = value;
+                this._replyTo = value;
             }
         }
         
@@ -260,10 +260,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("sendMessageDenyNotification")]
         public virtual string SendMessageDenyNotification {
             get {
-                return this.sendMessageDenyNotification;
+                return this._sendMessageDenyNotification;
             }
             set {
-                this.sendMessageDenyNotification = value;
+                this._sendMessageDenyNotification = value;
             }
         }
         
@@ -271,10 +271,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("showInGroupDirectory")]
         public virtual string ShowInGroupDirectory {
             get {
-                return this.showInGroupDirectory;
+                return this._showInGroupDirectory;
             }
             set {
-                this.showInGroupDirectory = value;
+                this._showInGroupDirectory = value;
             }
         }
         
@@ -282,10 +282,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("whoCanInvite")]
         public virtual string WhoCanInvite {
             get {
-                return this.whoCanInvite;
+                return this._whoCanInvite;
             }
             set {
-                this.whoCanInvite = value;
+                this._whoCanInvite = value;
             }
         }
         
@@ -293,10 +293,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("whoCanJoin")]
         public virtual string WhoCanJoin {
             get {
-                return this.whoCanJoin;
+                return this._whoCanJoin;
             }
             set {
-                this.whoCanJoin = value;
+                this._whoCanJoin = value;
             }
         }
         
@@ -304,10 +304,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("whoCanPostMessage")]
         public virtual string WhoCanPostMessage {
             get {
-                return this.whoCanPostMessage;
+                return this._whoCanPostMessage;
             }
             set {
-                this.whoCanPostMessage = value;
+                this._whoCanPostMessage = value;
             }
         }
         
@@ -315,10 +315,10 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("whoCanViewGroup")]
         public virtual string WhoCanViewGroup {
             get {
-                return this.whoCanViewGroup;
+                return this._whoCanViewGroup;
             }
             set {
-                this.whoCanViewGroup = value;
+                this._whoCanViewGroup = value;
             }
         }
         
@@ -326,29 +326,29 @@ namespace Google.Apis.Groupssettings.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("whoCanViewMembership")]
         public virtual string WhoCanViewMembership {
             get {
-                return this.whoCanViewMembership;
+                return this._whoCanViewMembership;
             }
             set {
-                this.whoCanViewMembership = value;
+                this._whoCanViewMembership = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -368,83 +368,85 @@ namespace Google.Apis.Groupssettings.v1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"groupssettings:" +
-            "v1\",\"name\":\"groupssettings\",\"version\":\"v1\",\"revision\":\"20111220\",\"description\":\"" +
-            "Groups Settings Api\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/" +
-            "search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"}" +
-            ",\"labels\":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/groups/v1/groups/\",\"basePath\":\"/groups/v1/groups/\",\"parameters\":{\"alt" +
-            "\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"atom" +
-            "\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of app" +
-            "lication/atom+xml\",\"Responses with Content-Type of application/json\"],\"location\"" +
-            ":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fie" +
-            "lds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string" +
-            "\",\"description\":\"API key. Your API key identifies your project and provides you " +
-            "with API access, quota, and reports. Required unless you provide an OAuth 2.0 to" +
-            "ken.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2." +
-            "0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Returns response with indentations and line breaks.\",\"default\"" +
-            ":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Availabl" +
-            "e to use for quota purposes for server-side applications. Can be any arbitrary s" +
-            "tring assigned to a user, but should not exceed 40 characters. Overrides userIp " +
-            "if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"IP address of the site where the request originates. Use this if you want to" +
-            " enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"htt" +
-            "ps://www.googleapis.com/auth/apps.groups.settings\":{\"description\":\"View and mana" +
-            "ge the settings of a Google Apps Group\"}}}},\"schemas\":{\"Groups\":{\"id\":\"Groups\",\"" +
-            "type\":\"object\",\"description\":\"Groups resource\",\"properties\":{\"allowExternalMembe" +
-            "rs\":{\"type\":\"string\",\"description\":\"Are external members allowed to join the gro" +
-            "up.\"},\"allowGoogleCommunication\":{\"type\":\"string\",\"description\":\"Is google allow" +
-            "ed to contact admins.\"},\"allowWebPosting\":{\"type\":\"string\",\"description\":\"If pos" +
-            "ting from web is allowed.\"},\"archiveOnly\":{\"type\":\"string\",\"description\":\"If the" +
-            " group is archive only\"},\"customReplyTo\":{\"type\":\"string\",\"description\":\"Default" +
-            " email to which reply to any message should go.\"},\"defaultMessageDenyNotificatio" +
-            "nText\":{\"type\":\"string\",\"description\":\"Default message deny notification message" +
-            "\"},\"description\":{\"type\":\"string\",\"description\":\"Description of the group\"},\"ema" +
-            "il\":{\"type\":\"string\",\"description\":\"Email id of the group\"},\"isArchived\":{\"type\"" +
-            ":\"string\",\"description\":\"If the contents of the group are archived.\"},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"The type of the resource.\",\"default\":\"groupsSetting" +
-            "s#groups\"},\"maxMessageBytes\":{\"type\":\"integer\",\"description\":\"Maximum message si" +
-            "ze allowed.\",\"format\":\"int32\"},\"membersCanPostAsTheGroup\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Can members post using the group email address.\"},\"messageDisplayFont\"" +
-            ":{\"type\":\"string\",\"description\":\"Default message display font. Possible values a" +
-            "re: DEFAULT_FONT FIXED_WIDTH_FONT\"},\"messageModerationLevel\":{\"type\":\"string\",\"d" +
-            "escription\":\"Moderation level for messages. Possible values are: MODERATE_ALL_ME" +
-            "SSAGES MODERATE_NON_MEMBERS MODERATE_NEW_MEMBERS MODERATE_NONE\"},\"name\":{\"type\":" +
-            "\"string\",\"description\":\"Name of the Group\"},\"primaryLanguage\":{\"type\":\"string\",\"" +
-            "description\":\"Primary language for the group.\"},\"replyTo\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Whome should the default reply to a message go to. Possible values are" +
-            ": REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY_TO_LIST REPLY_TO_OWNER REPLY_TO_IGNORE R" +
-            "EPLY_TO_MANAGERS\"},\"sendMessageDenyNotification\":{\"type\":\"string\",\"description\":" +
-            "\"Should the member be notified if his message is denied by owner.\"},\"showInGroup" +
-            "Directory\":{\"type\":\"string\",\"description\":\"Is the group listed in groups directo" +
-            "ry\"},\"whoCanInvite\":{\"type\":\"string\",\"description\":\"Permissions to invite member" +
-            "s. Possbile values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE\"},\"whoCan" +
-            "Join\":{\"type\":\"string\",\"description\":\"Permissions to join the group. Possible va" +
-            "lues are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_REQUEST_TO" +
-            "_JOIN\"},\"whoCanPostMessage\":{\"type\":\"string\",\"description\":\"Permissions to post " +
-            "messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS_CAN_POST " +
-            "ALL_MEMBERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST\"},\"whoCanViewGroup\":" +
-            "{\"type\":\"string\",\"description\":\"Permissions to view group. Possbile values are: " +
-            "ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGERS_CAN_VIE" +
-            "W\"},\"whoCanViewMembership\":{\"type\":\"string\",\"description\":\"Permissions to view m" +
-            "embership. Possbile values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_" +
-            "MANAGERS_CAN_VIEW\"}}}},\"resources\":{\"groups\":{\"methods\":{\"get\":{\"id\":\"groupsSett" +
-            "ings.groups.get\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"GET\",\"description\":\"Gets" +
-            " one resource by id.\",\"parameters\":{\"groupUniqueId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The resource ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"grou" +
-            "pUniqueId\"],\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/apps.groups.settings\"]},\"patch\":{\"id\":\"groupsSettings.groups.patch\",\"path\":\"" +
-            "{groupUniqueId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing resourc" +
-            "e. This method supports patch semantics.\",\"parameters\":{\"groupUniqueId\":{\"type\":" +
-            "\"string\",\"description\":\"The resource ID\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"groupUniqueId\"],\"request\":{\"$ref\":\"Groups\"},\"response\":{\"$ref\":\"" +
-            "Groups\"},\"scopes\":[\"https://www.googleapis.com/auth/apps.groups.settings\"]},\"upd" +
-            "ate\":{\"id\":\"groupsSettings.groups.update\",\"path\":\"{groupUniqueId}\",\"httpMethod\":" +
-            "\"PUT\",\"description\":\"Updates an existing resource.\",\"parameters\":{\"groupUniqueId" +
+            "v1\",\"name\":\"groupssettings\",\"version\":\"v1\",\"revision\":\"20120417\",\"title\":\"Groups" +
+            " Settings API\",\"description\":\"Lets you manage permission levels and related sett" +
+            "ings of a group\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/sear" +
+            "ch-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"la" +
+            "bels\":[\"limited_availability\"],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleap" +
+            "is.com/groups/v1/groups/\",\"basePath\":\"/groups/v1/groups/\",\"rootUrl\":\"https://www" +
+            ".googleapis.com/\",\"servicePath\":\"groups/v1/groups/\",\"batchPath\":\"batch\",\"paramet" +
+            "ers\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defa" +
+            "ult\":\"atom\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-T" +
+            "ype of application/atom+xml\",\"Responses with Content-Type of application/json\"]," +
+            "\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying" +
+            " which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"typ" +
+            "e\":\"string\",\"description\":\"API key. Your API key identifies your project and pro" +
+            "vides you with API access, quota, and reports. Required unless you provide an OA" +
+            "uth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\"" +
+            ":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"typ" +
+            "e\":\"boolean\",\"description\":\"Returns response with indentations and line breaks.\"" +
+            ",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\"" +
+            ":\"Available to use for quota purposes for server-side applications. Can be any a" +
+            "rbitrary string assigned to a user, but should not exceed 40 characters. Overrid" +
+            "es userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"" +
+            "description\":\"IP address of the site where the request originates. Use this if y" +
+            "ou want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"sco" +
+            "pes\":{\"https://www.googleapis.com/auth/apps.groups.settings\":{\"description\":\"Vie" +
+            "w and manage the settings of a Google Apps Group\"}}}},\"schemas\":{\"Groups\":{\"id\":" +
+            "\"Groups\",\"type\":\"object\",\"description\":\"Groups resource\",\"properties\":{\"allowExt" +
+            "ernalMembers\":{\"type\":\"string\",\"description\":\"Are external members allowed to jo" +
+            "in the group.\"},\"allowGoogleCommunication\":{\"type\":\"string\",\"description\":\"Is go" +
+            "ogle allowed to contact admins.\"},\"allowWebPosting\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"If posting from web is allowed.\"},\"archiveOnly\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"If the group is archive only\"},\"customReplyTo\":{\"type\":\"string\",\"description" +
+            "\":\"Default email to which reply to any message should go.\"},\"defaultMessageDenyN" +
+            "otificationText\":{\"type\":\"string\",\"description\":\"Default message deny notificati" +
+            "on message\"},\"description\":{\"type\":\"string\",\"description\":\"Description of the gr" +
+            "oup\"},\"email\":{\"type\":\"string\",\"description\":\"Email id of the group\"},\"isArchive" +
+            "d\":{\"type\":\"string\",\"description\":\"If the contents of the group are archived.\"}," +
+            "\"kind\":{\"type\":\"string\",\"description\":\"The type of the resource.\",\"default\":\"gro" +
+            "upsSettings#groups\"},\"maxMessageBytes\":{\"type\":\"integer\",\"description\":\"Maximum " +
+            "message size allowed.\",\"format\":\"int32\"},\"membersCanPostAsTheGroup\":{\"type\":\"str" +
+            "ing\",\"description\":\"Can members post using the group email address.\"},\"messageDi" +
+            "splayFont\":{\"type\":\"string\",\"description\":\"Default message display font. Possibl" +
+            "e values are: DEFAULT_FONT FIXED_WIDTH_FONT\"},\"messageModerationLevel\":{\"type\":\"" +
+            "string\",\"description\":\"Moderation level for messages. Possible values are: MODER" +
+            "ATE_ALL_MESSAGES MODERATE_NON_MEMBERS MODERATE_NEW_MEMBERS MODERATE_NONE\"},\"name" +
+            "\":{\"type\":\"string\",\"description\":\"Name of the Group\"},\"primaryLanguage\":{\"type\":" +
+            "\"string\",\"description\":\"Primary language for the group.\"},\"replyTo\":{\"type\":\"str" +
+            "ing\",\"description\":\"Whome should the default reply to a message go to. Possible " +
+            "values are: REPLY_TO_CUSTOM REPLY_TO_SENDER REPLY_TO_LIST REPLY_TO_OWNER REPLY_T" +
+            "O_IGNORE REPLY_TO_MANAGERS\"},\"sendMessageDenyNotification\":{\"type\":\"string\",\"des" +
+            "cription\":\"Should the member be notified if his message is denied by owner.\"},\"s" +
+            "howInGroupDirectory\":{\"type\":\"string\",\"description\":\"Is the group listed in grou" +
+            "ps directory\"},\"whoCanInvite\":{\"type\":\"string\",\"description\":\"Permissions to inv" +
+            "ite members. Possbile values are: ALL_MEMBERS_CAN_INVITE ALL_MANAGERS_CAN_INVITE" +
+            "\"},\"whoCanJoin\":{\"type\":\"string\",\"description\":\"Permissions to join the group. P" +
+            "ossible values are: ANYONE_CAN_JOIN ALL_IN_DOMAIN_CAN_JOIN INVITED_CAN_JOIN CAN_" +
+            "REQUEST_TO_JOIN\"},\"whoCanPostMessage\":{\"type\":\"string\",\"description\":\"Permission" +
+            "s to post messages to the group. Possible values are: NONE_CAN_POST ALL_MANAGERS" +
+            "_CAN_POST ALL_MEMBERS_CAN_POST ALL_IN_DOMAIN_CAN_POST ANYONE_CAN_POST\"},\"whoCanV" +
+            "iewGroup\":{\"type\":\"string\",\"description\":\"Permissions to view group. Possbile va" +
+            "lues are: ANYONE_CAN_VIEW ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN_VIEW ALL_MANAGE" +
+            "RS_CAN_VIEW\"},\"whoCanViewMembership\":{\"type\":\"string\",\"description\":\"Permissions" +
+            " to view membership. Possbile values are: ALL_IN_DOMAIN_CAN_VIEW ALL_MEMBERS_CAN" +
+            "_VIEW ALL_MANAGERS_CAN_VIEW\"}}}},\"resources\":{\"groups\":{\"methods\":{\"get\":{\"id\":\"" +
+            "groupsSettings.groups.get\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"GET\",\"descript" +
+            "ion\":\"Gets one resource by id.\",\"parameters\":{\"groupUniqueId\":{\"type\":\"string\",\"" +
+            "description\":\"The resource ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"groupUniqueId\"],\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/apps.groups.settings\"]},\"patch\":{\"id\":\"groupsSettings.groups.patch" +
+            "\",\"path\":\"{groupUniqueId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existi" +
+            "ng resource. This method supports patch semantics.\",\"parameters\":{\"groupUniqueId" +
             "\":{\"type\":\"string\",\"description\":\"The resource ID\",\"required\":true,\"location\":\"p" +
             "ath\"}},\"parameterOrder\":[\"groupUniqueId\"],\"request\":{\"$ref\":\"Groups\"},\"response\"" +
             ":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googleapis.com/auth/apps.groups.settin" +
-            "gs\"]}}}}}";
+            "gs\"]},\"update\":{\"id\":\"groupsSettings.groups.update\",\"path\":\"{groupUniqueId}\",\"ht" +
+            "tpMethod\":\"PUT\",\"description\":\"Updates an existing resource.\",\"parameters\":{\"gro" +
+            "upUniqueId\":{\"type\":\"string\",\"description\":\"The resource ID\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"groupUniqueId\"],\"request\":{\"$ref\":\"Groups\"}," +
+            "\"response\":{\"$ref\":\"Groups\"},\"scopes\":[\"https://www.googleapis.com/auth/apps.gro" +
+            "ups.settings\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -454,12 +456,12 @@ namespace Google.Apis.Groupssettings.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected GroupssettingsService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.groups = new GroupsResource(this);
+            this._groups = new GroupsResource(this);
         }
         
         public GroupssettingsService() : 
@@ -467,22 +469,22 @@ namespace Google.Apis.Groupssettings.v1 {
         }
         
         public GroupssettingsService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(GroupssettingsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(GroupssettingsService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(GroupssettingsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(GroupssettingsService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -540,38 +542,38 @@ namespace Google.Apis.Groupssettings.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string groupUniqueId;
+            private string _groupUniqueId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string groupUniqueId) : 
                     base(service) {
-                this.groupUniqueId = groupUniqueId;
+                this._groupUniqueId = groupUniqueId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -579,10 +581,10 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -590,7 +592,7 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("groupUniqueId")]
             public virtual string GroupUniqueId {
                 get {
-                    return this.groupUniqueId;
+                    return this._groupUniqueId;
                 }
             }
             
@@ -609,41 +611,41 @@ namespace Google.Apis.Groupssettings.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string groupUniqueId;
+            private string _groupUniqueId;
             
-            private Google.Apis.Groupssettings.v1.Data.Groups bodyValue;
+            private Google.Apis.Groupssettings.v1.Data.Groups _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
                     base(service) {
                 this.Body = body;
-                this.groupUniqueId = groupUniqueId;
+                this._groupUniqueId = groupUniqueId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -651,10 +653,10 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -662,17 +664,17 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("groupUniqueId")]
             public virtual string GroupUniqueId {
                 get {
-                    return this.groupUniqueId;
+                    return this._groupUniqueId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Groupssettings.v1.Data.Groups Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -695,41 +697,41 @@ namespace Google.Apis.Groupssettings.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string groupUniqueId;
+            private string _groupUniqueId;
             
-            private Google.Apis.Groupssettings.v1.Data.Groups bodyValue;
+            private Google.Apis.Groupssettings.v1.Data.Groups _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Groupssettings.v1.Data.Groups body, string groupUniqueId) : 
                     base(service) {
                 this.Body = body;
-                this.groupUniqueId = groupUniqueId;
+                this._groupUniqueId = groupUniqueId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -737,10 +739,10 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -748,17 +750,17 @@ namespace Google.Apis.Groupssettings.v1 {
             [Google.Apis.Util.RequestParameterAttribute("groupUniqueId")]
             public virtual string GroupUniqueId {
                 get {
-                    return this.groupUniqueId;
+                    return this._groupUniqueId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Groupssettings.v1.Data.Groups Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -784,7 +786,7 @@ namespace Google.Apis.Groupssettings.v1 {
         
         private const string Resource = "";
         
-        private GroupsResource groups;
+        private GroupsResource _groups;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -794,7 +796,7 @@ namespace Google.Apis.Groupssettings.v1 {
         
         public virtual GroupsResource Groups {
             get {
-                return this.groups;
+                return this._groups;
             }
         }
     }

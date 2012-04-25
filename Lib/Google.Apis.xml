@@ -15,26 +15,37 @@
             a WebRequest with the approreate authentication embed in the request.
             </summary>
         </member>
-        <member name="M:Google.Apis.Authentication.IAuthenticator.CreateHttpWebRequest(System.String,System.Uri)">
+        <member name="M:Google.Apis.Authentication.IAuthenticator.ApplyAuthenticationToRequest(System.Net.HttpWebRequest)">
             <summary>
-            Creates the final Web Request which uses the current authentification
+            Takes an existing httpwebrequest and modifies its headers according to 
+            the authentication system used.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Google.Apis.Authentication.DelegateAuthenticator.modifyRequestDelegate">
+            <summary>
+            The delegate which is used to modify the webrequest.
             </summary>
         </member>
-        <member name="M:Google.Apis.Authentication.DelegateAuthenticator.#ctor(System.Action{System.Net.HttpWebRequest})">
+        <member name="M:Google.Apis.Authentication.DelegateAuthenticator.#ctor(Google.Apis.Authentication.DelegateAuthenticator.RequestModifier)">
             <summary>
             Creates a new DelegateAuthenticator.
             </summary>
             <param name="modifyRequest">Delegate used to modify the webrequest.</param>
         </member>
-        <member name="P:Google.Apis.Authentication.DelegateAuthenticator.PreviousAuthenticator">
+        <member name="M:Google.Apis.Authentication.DelegateAuthenticator.ApplyAuthenticationToRequest(System.Net.HttpWebRequest)">
             <summary>
-            The previous authenticator in the chain to call. Used to construct the HttpWebRequest.
+            Apply authentication to the request. Calls the RequestModifier delegate
+            modify the request by adding authentication information.
             </summary>
+            <param name="webRequest">The request needing authentication.</param>
         </member>
-        <member name="P:Google.Apis.Authentication.DelegateAuthenticator.ModifyRequestDelegate">
+        <member name="T:Google.Apis.Authentication.DelegateAuthenticator.RequestModifier">
             <summary>
-            The delegate which is used to modify the webrequest.
+            Delegate used to modify a request for authentication.
             </summary>
+            <param name="webRequest">The request needing authentication.</param>
         </member>
         <member name="T:Google.Apis.Authentication.OAuth3LeggedAuthenticator">
             <summary>
@@ -44,49 +55,6 @@
         <member name="T:Google.Apis.Authentication.OAuthAuthenticator">
             <summary>
             The abstract class used for all OAuth authenticators
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Authentication.Authenticator">
-            <summary>
-            Base authentication class. Takes credentials and applicationname
-            and is able to create a HttpWebRequest augmented with the right
-            authentication
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Authentication.Authenticator.CreateHttpWebRequest(System.String,System.Uri)">
-            <summary>
-            Creates a HttpWebRequest object that can be used against a given service. 
-            for a RequestSetting object that is using client login, this might call 
-            to get an authentication token from the service, if it is not already set.
-            
-            if this uses client login, and you need to use a proxy, set the application wide
-            proxy first using the GlobalProxySelection
-            </summary>
-            <param name="serviceName"></param>
-            <param name="httpMethod"></param>
-            <param name="targetUri"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Authentication.Authenticator.ApplyAuthenticationToRequest(System.Net.HttpWebRequest)">
-            <summary>
-            Takes an existing httpwebrequest and modifies its headers according to 
-            the authentication system used.
-            </summary>
-            <param name="request"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Authentication.Authenticator.ApplyAuthenticationToUri(System.Uri)">
-            <summary>
-            Takes an existing httpwebrequest and modifies its uri according to 
-            the authentication system used. Only overridden in 2leggedoauth case
-            </summary>
-            <param name="source">the original uri</param>
-            <returns></returns>
-        </member>
-        <member name="P:Google.Apis.Authentication.Authenticator.RequestFactory">
-            <summary>
-            The factory which is used for creating the final request
             </summary>
         </member>
         <member name="P:Google.Apis.Authentication.OAuthAuthenticator.ConsumerKey">
@@ -136,6 +104,22 @@
             If this feature is specified, then the data of a response is encapsulated within a "data" resource
             </summary>
         </member>
+        <member name="M:Google.Apis.Discovery.MediaUpload.#ctor(Google.Apis.Json.JsonDictionary)">
+            <summary>
+            Initialize a new MediaUpload object from a JsonDictionary describing its configuration.
+            </summary>
+            <param name="dict"></param>
+        </member>
+        <member name="P:Google.Apis.Discovery.MediaUpload.Accepts">
+            <summary>
+            MIME Media Ranges for acceptable media uploads to this method.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.MediaUpload.MaxSize">
+            <summary>
+            Maximum size of a media upload, such as "1MB", "2GB" or "3TB".
+            </summary>
+        </member>
         <member name="T:Google.Apis.Discovery.Scope">
             <summary>
             Represents an authentication scope used in a discovery document.
@@ -154,6 +138,53 @@
         <member name="P:Google.Apis.Discovery.Scope.Description">
             <summary>
             The description of this scope.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.ServiceObject">
+            <summary>
+            Base class for all objects that are part of the Discovery Service and a
+            constructed by the IServiceFactory
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Discovery.ServiceObject.#ctor(Google.Apis.Discovery.IServiceFactory)">
+            <summary>
+            Construct this object with it's Factory.
+            </summary>
+            <param name="factory">The factory used to construct objects for this service</param>
+        </member>
+        <member name="M:Google.Apis.Discovery.ServiceObject.CreateMethod(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Helper method which takes a KeyValuePair from a JsonDictionary and
+            constructs a Method from the data within.
+            </summary>
+            <param name="kvp">A KeyValuePair containing the name and data for this 
+            portion of the service document. The key should be the name of the method,
+            value should be a JsonDictionary describing the method.</param>
+            <returns>An IMethod instance as defined by the json description.</returns>
+        </member>
+        <member name="M:Google.Apis.Discovery.ServiceObject.CreateResource(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Helper method which takes a KeyValuePair from a JsonDictionary and
+            constructs a Resource from the data within.
+            </summary>
+            <param name="kvp">A KeyValuePair containing the name and data for this 
+            portion of the service document. The key should be the name of the resource,
+            value should be a JsonDictionary describing the resource.</param>
+            <returns>An IResource instance as defined by the json description.</returns>
+        </member>
+        <member name="M:Google.Apis.Discovery.ServiceObject.CreateParameter(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Helper method which takes a KeyValuePair from a JsonDictionary and
+            constructs a Parameter from the data within.
+            </summary>
+            <param name="kvp">A KeyValuePair containing the name and data for this 
+            portion of the service document. The key should be the name of the parameter,
+            value should be a JsonDictionary describing the parameter.</param>
+            <returns>An IParameter instance as defined by the json description.</returns>
+        </member>
+        <member name="P:Google.Apis.Discovery.ServiceObject.Factory">
+            <summary>
+            The factory used to construct objects for this service
             </summary>
         </member>
         <member name="T:Google.Apis.Requests.UriFactory">
@@ -1092,6 +1123,11 @@
             Defines the serialisator to use for requests and responses
             </summary>
         </member>
+        <member name="P:Google.Apis.Discovery.IService.Factory">
+            <summary>
+            The IServiceFactory used to construct objects for this discovery service.
+            </summary>
+        </member>
         <member name="F:Google.Apis.Discovery.BaseService.SerializationMethodName">
             <summary>
             Name of the method used for serialization (object -> json)
@@ -1139,13 +1175,14 @@
             <param name="input"><see cref="T:Google.Apis.Requests.IResponse"/> containing an error.</param>
             <returns>The <see cref="T:Google.Apis.Requests.RequestError"/> object deserialized from the stream.</returns>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseService.CreateResource(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+        <member name="M:Google.Apis.Discovery.BaseService.RemoveAnnotations(Google.Apis.Json.JsonDictionary,System.Int32)">
             <summary>
-            Creates a version specific resource containing 
-            out of the specified KeyValuePair
+            Newtonsoft JSon parser fails to parse json containing a "$ref" and an adjacent
+            object property. Google service discovery currently generates this in the "annotations"
+            property.
             </summary>
-            <param name="kvp"></param>
-            <returns></returns>
+            <param name="js"></param>
+            <param name="depth"></param>
         </member>
         <member name="M:Google.Apis.Discovery.BaseService.GetDiscoveryDocument">
             <summary>
@@ -1158,7 +1195,7 @@
             Represents a Service as defined in Discovery V1.0
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.ServiceV1_0.#ctor(Google.Apis.Discovery.FactoryParameterV1_0,Google.Apis.Json.JsonDictionary)">
+        <member name="M:Google.Apis.Discovery.ServiceV1_0.#ctor(Google.Apis.Discovery.IServiceFactory,Google.Apis.Json.JsonDictionary,Google.Apis.Discovery.FactoryParameters)">
             <summary>
             Creates a v1.0 service
             </summary>
@@ -1168,7 +1205,7 @@
             Represents a Service as defined in Discovery V0.3
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.ServiceV0_3.#ctor(Google.Apis.Discovery.FactoryParameterV0_3,Google.Apis.Json.JsonDictionary)">
+        <member name="M:Google.Apis.Discovery.ServiceV0_3.#ctor(Google.Apis.Discovery.IServiceFactory,Google.Apis.Json.JsonDictionary,Google.Apis.Discovery.FactoryParameters)">
             <summary>
             Creates a v0.3 service
             </summary>
@@ -1210,7 +1247,7 @@
             Knows how to get the IService of a given version and discoveryVersion.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.IDiscoveryService.GetService(Google.Apis.Discovery.DiscoveryVersion,Google.Apis.Discovery.IFactoryParameter)">
+        <member name="M:Google.Apis.Discovery.IDiscoveryService.GetService(Google.Apis.Discovery.DiscoveryVersion,Google.Apis.Discovery.FactoryParameters)">
             <summary>
             Creates an instance of a service by using discovery with the specified parameters
             </summary>
@@ -1225,19 +1262,20 @@
             Insantiates the discovery class
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.DiscoveryService.GetService(Google.Apis.Discovery.DiscoveryVersion,Google.Apis.Discovery.IFactoryParameter)">
-            <summary>
-            Creates an API object that provides access to the methods defined in the discovery document.
-            </summary>
-            <param name="version"></param>
-            <param name="param"></param>
-            <param name="discoveryVersion">The version of discovery used to create the service</param>
-        </member>
         <member name="M:Google.Apis.Discovery.DiscoveryService.GetService(Google.Apis.Discovery.DiscoveryVersion)">
             <summary>
-            Creates an API object that provides access to the methods defined in the discovery document.
-            Uses default factory parameters to construct the service
+            Create a service object for a specific version of discovery.
             </summary>
+            <param name="version">Version of discovery to use.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Discovery.DiscoveryService.GetService(Google.Apis.Discovery.DiscoveryVersion,Google.Apis.Discovery.FactoryParameters)">
+            <summary>
+            Create a service object for a specific version of discovery.
+            </summary>
+            <param name="version">Version of discovery to use.</param>
+            <param name="param">Parameters intended to initialize the factory.</param>
+            <returns></returns>
         </member>
         <member name="P:Google.Apis.Discovery.DiscoveryService.DiscoveryDevice">
             <summary>
@@ -1337,18 +1375,40 @@
             </summary>
             <seealso cref="T:Google.Apis.Discovery.ServiceFactory"/>
         </member>
-        <member name="M:Google.Apis.Discovery.IServiceFactory.GetService">
+        <member name="M:Google.Apis.Discovery.IServiceFactory.CreateService(Google.Apis.Json.JsonDictionary,Google.Apis.Discovery.FactoryParameters)">
             <summary>
-            Creates and returns the service this factory can create.
+            Creates the service from a JsonDictionary.
             </summary>
+            <param name="dictionary">A JsonDictionary describing the service.</param>
+            <param name="param">Parameters to the service construction (if needed).</param>
+            <returns></returns>
         </member>
-        <member name="T:Google.Apis.Discovery.IFactoryParameter">
+        <member name="M:Google.Apis.Discovery.IServiceFactory.CreateMethod(System.String,Google.Apis.Json.JsonDictionary)">
             <summary>
-            A marker interface, different versions of discovery use different 
-            IFactoryParameters, you will need to pass in one that matches the
-            version of discovery you use.
+            Creates an IMethod from a JsonDictionary description.
             </summary>
-            <seealso cref="!:FactoryParmeterV0_3"/>
+            <param name="name">The name of the method.</param>
+            <param name="dictionary">A JsonDictionary describing the method.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Google.Apis.Discovery.IServiceFactory.CreateParameter(System.String,Google.Apis.Json.JsonDictionary)">
+            <summary>
+            Creates an IParameter from a JsonDictionary description.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <param name="dictionary">A JsonDictionary describing the parameter.</param>
+        </member>
+        <member name="M:Google.Apis.Discovery.IServiceFactory.CreateResource(System.String,Google.Apis.Json.JsonDictionary)">
+            <summary>
+            Creates an IResource from a JsonDictionary description.
+            </summary>
+            <param name="name">The name of the resource.</param>
+            <param name="dictionary">A JsonDictionary describing the resource.</param>
+        </member>
+        <member name="P:Google.Apis.Discovery.IServiceFactory.Version">
+            <summary>
+            The version of discovery represented by this factory.
+            </summary>
         </member>
         <member name="T:Google.Apis.Discovery.ServiceFactory">
             <summary>
@@ -1356,23 +1416,18 @@
             the individual service factory required for a specific discovery version
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.ServiceFactory.CreateServiceFactory(System.IO.Stream,Google.Apis.Discovery.DiscoveryVersion,Google.Apis.Discovery.IFactoryParameter)">
+        <member name="M:Google.Apis.Discovery.ServiceFactory.Get(Google.Apis.Discovery.DiscoveryVersion)">
             <summary>
-            Creates a service factory for the discovery version requested, with the given parameters
+            Get an IServiceFactory instance for a specific version of the discovery service.
             </summary>
-            <param name="discovery">A stream which contains information about the service to construct</param>
-            <param name="version">The discovery version to use</param>
-            <param name="parameters">
-            A set of (optional) factory parameters used to construct the service. 
-            If this parameter is null, then a default set of FactoryParameters is created
-            </param>
+            <remarks>
+            Currently supports discovery versions 0.3 and 1.0
+            </remarks>
         </member>
-        <member name="M:Google.Apis.Discovery.ServiceFactory.CreateServiceFactory(System.IO.Stream,Google.Apis.Discovery.DiscoveryVersion)">
+        <member name="P:Google.Apis.Discovery.ServiceFactory.Default">
             <summary>
-            Creates a service factory for the discovery version requested
+            The Service Factory for the current default version of discovery (Currently Version 1.0)
             </summary>
-            <param name="discovery">A stream which contains information about the service to construct</param>
-            <param name="version">The discovery version to use</param>
         </member>
         <member name="T:Google.Apis.Requests.Request">
             <summary>
@@ -1675,6 +1730,11 @@
             Defines whether this request can be sent multiple times.
             </summary>
         </member>
+        <member name="P:Google.Apis.Requests.Request.WebRequestFactory">
+            <summary>
+            Factory used to create HttpWebRequest objects.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Requests.Request.AsyncExecutionState">
             <summary>
             Container struct for the asynchronous execution of a request.
@@ -1769,6 +1829,11 @@
             Whether this request has a body attached to it.
             </summary>
         </member>
+        <member name="P:Google.Apis.Discovery.IMethod.MediaUpload">
+            <summary>
+            Media upload information (if this is a media upload method).
+            </summary>
+        </member>
         <member name="P:Google.Apis.Discovery.IMethod.Parameters">
             <summary>
             A set of parameters passed with the request
@@ -1789,35 +1854,30 @@
             Represents a Method from Discovery Version 0.3
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.BaseResource">
+        <member name="T:Google.Apis.Discovery.Resource">
             <summary>
             Abstract implementation of a resource.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseResource.#ctor(Google.Apis.Discovery.DiscoveryVersion,System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+        <member name="M:Google.Apis.Discovery.Resource.#ctor(Google.Apis.Discovery.IServiceFactory,System.String,Google.Apis.Json.JsonDictionary)">
             <summary>
             Creates a new resource for the specified discovery version with the specified name and json dictionary.
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseResource.GetFullName(Google.Apis.Discovery.IResource)">
+        <member name="M:Google.Apis.Discovery.Resource.GetFullName(Google.Apis.Discovery.IResource)">
             <summary>
             Retrieves the full name of a resource,
             e.g. TopResource.SubResource
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseResource.DiscoveryVersion">
-            <summary>
-            The discovery version used for creating this resource.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.ResourceV0_3">
-            <summary>
-            Represents a Resource as defined by Discovery V0.3
-            </summary>
-        </member>
         <member name="T:Google.Apis.Discovery.MockResource">
             <summary>
             Mock resource for testing purposes.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Discovery.ServiceFactoryDiscoveryV1_0">
+            <summary>
+            A Factory used by discovery to create v1.0 Services
             </summary>
         </member>
         <member name="T:Google.Apis.Authentication.HttpRequestFactory">
@@ -1833,12 +1893,6 @@
         <member name="F:Google.Apis.Authentication.NullAuthenticator.Instance">
             <summary>
             Returns the default instance of the NullAuthenticator.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Authentication.NullAuthenticator.NullAuthenticatorImpl">
-            <summary>
-            We use this to hide the fact that NullAuthenticator uses Authenticator behind the scenes
-            This is particularly useful as we are setting the application name to null. 
             </summary>
         </member>
         <member name="T:Google.Apis.Authentication.OAuth2LeggedAuthenticator">
@@ -1862,15 +1916,6 @@
             the authentication system used.
             </summary>
             <param name="request"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Google.Apis.Authentication.OAuth2LeggedAuthenticator.ApplyAuthenticationToUri(System.Uri)">
-            <summary>
-            Takes an existing httpwebrequest and modifies its uri according to 
-            the authentication system used. Only overridden in 2leggedoauth case
-            Here we need to add the xoauthrequestor parameter
-            </summary>
-            <param name="source">the original uri</param>
             <returns></returns>
         </member>
         <member name="T:Google.Apis.MethodValidator">
@@ -2346,17 +2391,7 @@
         <member name="F:Google.Apis.Discovery.DiscoveryVersion.Version_1_0">
             <summary>Version 1.0</summary>
         </member>
-        <member name="T:Google.Apis.Discovery.ParameterFactory">
-            <summary>
-            Abstract parameter factory.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.ParameterFactory.GetParameter(Google.Apis.Discovery.DiscoveryVersion,System.Collections.Generic.KeyValuePair{System.String,System.Object})">
-            <summary>
-            Returns a parameter with the given values.
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.ParameterFactory.BaseParameter">
+        <member name="T:Google.Apis.Discovery.BaseParameter">
             <summary>
             Abstract implementation of a parameter.
             </summary>
@@ -2424,124 +2459,68 @@
             A list of valid enum value descriptions. (Only for enum values)
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.ParameterFactory.BaseParameter.#ctor(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+        <member name="M:Google.Apis.Discovery.BaseParameter.#ctor(Google.Apis.Discovery.IServiceFactory,System.String,Google.Apis.Json.JsonDictionary)">
             <summary>
             Creates a new parameter with the specified name and value.
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.ParameterFactory.BaseParameter.EnumValueDescriptions">
+        <member name="P:Google.Apis.Discovery.BaseParameter.EnumValueDescriptions">
             <summary>
             Returns a set of enum value descriptions.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.ParameterFactory.ParameterV0_3">
+        <member name="T:Google.Apis.Discovery.ParameterV0_3">
             <summary>
             A discovery v0.3 implementation of a parameter.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.ParameterFactory.ParameterV1_0">
+        <member name="T:Google.Apis.Discovery.ParameterV1_0">
             <summary>
             A discovery v1.0 implementation of a parameter.
             </summary>
         </member>
-        <member name="T:Google.Apis.Discovery.FactoryParameterV1_0">
-            <summary>
-            Defines the factory parameters which are used to create a v1.0 Service
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.BaseFactoryParameters">
+        <member name="T:Google.Apis.Discovery.FactoryParameters">
             <summary>
             Defines the base factory parameters which are used to create a service
             </summary>
         </member>
-        <member name="F:Google.Apis.Discovery.BaseFactoryParameters.DefaultServerUrl">
+        <member name="F:Google.Apis.Discovery.FactoryParameters.DefaultServerUrl">
             <summary>
             The default server URL used
             Points to the Google API repository
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseFactoryParameters.#ctor">
+        <member name="M:Google.Apis.Discovery.FactoryParameters.#ctor">
             <summary>
             Creates a new factory parameter for a service
             Sets the server url to the default google url
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseFactoryParameters.#ctor(System.Uri)">
+        <member name="M:Google.Apis.Discovery.FactoryParameters.#ctor(System.Uri)">
             <summary>
             Creates a new factory parameter by splitting the specified service URI into ServerUrl and BasePath
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseFactoryParameters.#ctor(System.String)">
+        <member name="M:Google.Apis.Discovery.FactoryParameters.#ctor(System.String)">
             <summary>
             Creates a new factory parameter for a service
             </summary>
         </member>
-        <member name="M:Google.Apis.Discovery.BaseFactoryParameters.#ctor(System.String,System.String)">
+        <member name="M:Google.Apis.Discovery.FactoryParameters.#ctor(System.String,System.String)">
             <summary>
             Creates a new factory parameter for a service
             </summary>
             <param name="serverUrl">URL of this service</param>
             <param name="basePath">Base path to the service</param>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseFactoryParameters.ServerUrl">
+        <member name="P:Google.Apis.Discovery.FactoryParameters.ServerUrl">
             <summary>
             The absolute server URL
             </summary>
         </member>
-        <member name="P:Google.Apis.Discovery.BaseFactoryParameters.BasePath">
+        <member name="P:Google.Apis.Discovery.FactoryParameters.BasePath">
             <summary>
             The relative base path
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV1_0.#ctor(System.Uri)">
-            <summary>
-            Creates a new v1.0 factory parameter by splitting the specified service URI into ServerUrl and BasePath
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV1_0.#ctor(System.String)">
-            <summary>
-            Creates a parameter set for a v1.0 service
-            </summary>
-            <param name="serverUrl">The absolute URL pointing to the server on which the service resides</param>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV1_0.#ctor(System.String,System.String)">
-            <summary>
-            Creates a parameter set for a v1.0 service
-            </summary>
-            <param name="serverUrl">The absolute URL pointing to the server on which the service resides</param>
-            <param name="basePath">The relative path to the service on the server</param>
-        </member>
-        <member name="T:Google.Apis.Discovery.FactoryParameterV0_3">
-            <summary>
-              Defines the factory parameters which are used to create a v0.3 Service
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV0_3.#ctor(System.Uri)">
-            <summary>
-            Creates a new v0.3 factory parameter by splitting the specified service URI into ServerUrl and BasePath
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV0_3.#ctor(System.String)">
-            <summary>
-            Creates a parameter set for a v0.3 service
-            </summary>
-            <param name="serverUrl">The absolute URL pointing to the server on which the service resides</param>
-        </member>
-        <member name="M:Google.Apis.Discovery.FactoryParameterV0_3.#ctor(System.String,System.String)">
-            <summary>
-            Creates a parameter set for a v0.3 service
-            </summary>
-            <param name="serverUrl">The absolute URL pointing to the server on which the service resides</param>
-            <param name="basePath">The relative path to the service on the server</param>
-        </member>
-        <member name="T:Google.Apis.Discovery.ServiceFactoryDiscoveryV1_0">
-            <summary>
-            A Factory used by discovery to create v1.0 Services
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Discovery.BaseServiceFactory">
-            <summary>
-              An abstract version independent implementation of a service factory
             </summary>
         </member>
         <member name="T:Google.Apis.Discovery.ServiceFactoryDiscoveryV0_3">

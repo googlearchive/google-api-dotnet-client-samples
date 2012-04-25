@@ -16,36 +16,36 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
     
     public class Result : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Result.FormattedResultsData formattedResults;
+        private Result.FormattedResultsData _formattedResults;
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<string> invalidRules;
+        private System.Collections.Generic.IList<string> _invalidRules;
         
-        private string kind;
+        private string _kind;
         
-        private Result.PageStatsData pageStats;
+        private Result.PageStatsData _pageStats;
         
-        private System.Nullable<long> responseCode;
+        private System.Nullable<long> _responseCode;
         
-        private System.Nullable<long> score;
+        private System.Nullable<long> _score;
         
-        private string title;
+        private string _title;
         
-        private Result.VersionData version;
+        private Result.VersionData _version;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Localized Page Speed results. Contains a ruleResults entry for each Page Speed rule instantiated and run by the server.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("formattedResults")]
         public virtual Result.FormattedResultsData FormattedResults {
             get {
-                return this.formattedResults;
+                return this._formattedResults;
             }
             set {
-                this.formattedResults = value;
+                this._formattedResults = value;
             }
         }
         
@@ -53,10 +53,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -64,10 +64,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("invalidRules")]
         public virtual System.Collections.Generic.IList<string> InvalidRules {
             get {
-                return this.invalidRules;
+                return this._invalidRules;
             }
             set {
-                this.invalidRules = value;
+                this._invalidRules = value;
             }
         }
         
@@ -75,10 +75,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -86,10 +86,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("pageStats")]
         public virtual Result.PageStatsData PageStats {
             get {
-                return this.pageStats;
+                return this._pageStats;
             }
             set {
-                this.pageStats = value;
+                this._pageStats = value;
             }
         }
         
@@ -97,10 +97,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("responseCode")]
         public virtual System.Nullable<long> ResponseCode {
             get {
-                return this.responseCode;
+                return this._responseCode;
             }
             set {
-                this.responseCode = value;
+                this._responseCode = value;
             }
         }
         
@@ -108,10 +108,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("score")]
         public virtual System.Nullable<long> Score {
             get {
-                return this.score;
+                return this._score;
             }
             set {
-                this.score = value;
+                this._score = value;
             }
         }
         
@@ -119,10 +119,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -130,47 +130,47 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("version")]
         public virtual Result.VersionData Version {
             get {
-                return this.version;
+                return this._version;
             }
             set {
-                this.version = value;
+                this._version = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Localized Page Speed results. Contains a ruleResults entry for each Page Speed rule instantiated and run by the server.</summary>
         public class FormattedResultsData {
             
-            private string locale;
+            private string _locale;
             
-            private FormattedResultsData.RuleResultsData ruleResults;
+            private FormattedResultsData.RuleResultsData _ruleResults;
             
             /// <summary>The locale of the formattedResults, e.g. &quot;en_US&quot;.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
@@ -178,10 +178,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("ruleResults")]
             public virtual FormattedResultsData.RuleResultsData RuleResults {
                 get {
-                    return this.ruleResults;
+                    return this._ruleResults;
                 }
                 set {
-                    this.ruleResults = value;
+                    this._ruleResults = value;
                 }
             }
             
@@ -191,22 +191,22 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                 /// <summary>The enum-like identifier for this rule. For instance &quot;EnableKeepAlive&quot; or &quot;AvoidCssImport&quot;. Not localized.</summary>
                 public class RuleResultsDataSchema {
                     
-                    private string localizedRuleName;
+                    private string _localizedRuleName;
                     
-                    private System.Nullable<double> ruleImpact;
+                    private System.Nullable<double> _ruleImpact;
                     
-                    private System.Nullable<long> ruleScore;
+                    private System.Nullable<long> _ruleScore;
                     
-                    private System.Collections.Generic.IList<RuleResultsDataSchema.UrlBlocksData> urlBlocks;
+                    private System.Collections.Generic.IList<RuleResultsDataSchema.UrlBlocksData> _urlBlocks;
                     
                     /// <summary>Localized name of the rule, intended for presentation to a user.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("localizedRuleName")]
                     public virtual string LocalizedRuleName {
                         get {
-                            return this.localizedRuleName;
+                            return this._localizedRuleName;
                         }
                         set {
-                            this.localizedRuleName = value;
+                            this._localizedRuleName = value;
                         }
                     }
                     
@@ -214,10 +214,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("ruleImpact")]
                     public virtual System.Nullable<double> RuleImpact {
                         get {
-                            return this.ruleImpact;
+                            return this._ruleImpact;
                         }
                         set {
-                            this.ruleImpact = value;
+                            this._ruleImpact = value;
                         }
                     }
                     
@@ -225,10 +225,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("ruleScore")]
                     public virtual System.Nullable<long> RuleScore {
                         get {
-                            return this.ruleScore;
+                            return this._ruleScore;
                         }
                         set {
-                            this.ruleScore = value;
+                            this._ruleScore = value;
                         }
                     }
                     
@@ -236,27 +236,27 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("urlBlocks")]
                     public virtual System.Collections.Generic.IList<RuleResultsDataSchema.UrlBlocksData> UrlBlocks {
                         get {
-                            return this.urlBlocks;
+                            return this._urlBlocks;
                         }
                         set {
-                            this.urlBlocks = value;
+                            this._urlBlocks = value;
                         }
                     }
                     
                     public class UrlBlocksData {
                         
-                        private UrlBlocksData.HeaderData header;
+                        private UrlBlocksData.HeaderData _header;
                         
-                        private System.Collections.Generic.IList<UrlBlocksData.UrlsData> urls;
+                        private System.Collections.Generic.IList<UrlBlocksData.UrlsData> _urls;
                         
                         /// <summary>Heading to be displayed with the list of URLs.</summary>
                         [Newtonsoft.Json.JsonPropertyAttribute("header")]
                         public virtual UrlBlocksData.HeaderData Header {
                             get {
-                                return this.header;
+                                return this._header;
                             }
                             set {
-                                this.header = value;
+                                this._header = value;
                             }
                         }
                         
@@ -264,28 +264,28 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                         [Newtonsoft.Json.JsonPropertyAttribute("urls")]
                         public virtual System.Collections.Generic.IList<UrlBlocksData.UrlsData> Urls {
                             get {
-                                return this.urls;
+                                return this._urls;
                             }
                             set {
-                                this.urls = value;
+                                this._urls = value;
                             }
                         }
                         
                         /// <summary>Heading to be displayed with the list of URLs.</summary>
                         public class HeaderData {
                             
-                            private System.Collections.Generic.IList<HeaderData.ArgsData> args;
+                            private System.Collections.Generic.IList<HeaderData.ArgsData> _args;
                             
-                            private string format;
+                            private string _format;
                             
                             /// <summary>List of arguments for the format string.</summary>
                             [Newtonsoft.Json.JsonPropertyAttribute("args")]
                             public virtual System.Collections.Generic.IList<HeaderData.ArgsData> Args {
                                 get {
-                                    return this.args;
+                                    return this._args;
                                 }
                                 set {
-                                    this.args = value;
+                                    this._args = value;
                                 }
                             }
                             
@@ -293,27 +293,27 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                             [Newtonsoft.Json.JsonPropertyAttribute("format")]
                             public virtual string Format {
                                 get {
-                                    return this.format;
+                                    return this._format;
                                 }
                                 set {
-                                    this.format = value;
+                                    this._format = value;
                                 }
                             }
                             
                             public class ArgsData {
                                 
-                                private string type;
+                                private string _type;
                                 
-                                private string value;
+                                private string _value;
                                 
                                 /// <summary>Type of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.</summary>
                                 [Newtonsoft.Json.JsonPropertyAttribute("type")]
                                 public virtual string Type {
                                     get {
-                                        return this.type;
+                                        return this._type;
                                     }
                                     set {
-                                        this.type = value;
+                                        this._type = value;
                                     }
                                 }
                                 
@@ -321,10 +321,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                                 [Newtonsoft.Json.JsonPropertyAttribute("value")]
                                 public virtual string Value {
                                     get {
-                                        return this.value;
+                                        return this._value;
                                     }
                                     set {
-                                        this.value = value;
+                                        this._value = value;
                                     }
                                 }
                             }
@@ -332,18 +332,18 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                         
                         public class UrlsData {
                             
-                            private System.Collections.Generic.IList<UrlsData.DetailsData> details;
+                            private System.Collections.Generic.IList<UrlsData.DetailsData> _details;
                             
-                            private UrlsData.ResultData result;
+                            private UrlsData.ResultData _result;
                             
                             /// <summary>List of entries that provide additional details about a single URL. Optional.</summary>
                             [Newtonsoft.Json.JsonPropertyAttribute("details")]
                             public virtual System.Collections.Generic.IList<UrlsData.DetailsData> Details {
                                 get {
-                                    return this.details;
+                                    return this._details;
                                 }
                                 set {
-                                    this.details = value;
+                                    this._details = value;
                                 }
                             }
                             
@@ -351,27 +351,27 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                             [Newtonsoft.Json.JsonPropertyAttribute("result")]
                             public virtual UrlsData.ResultData Result {
                                 get {
-                                    return this.result;
+                                    return this._result;
                                 }
                                 set {
-                                    this.result = value;
+                                    this._result = value;
                                 }
                             }
                             
                             public class DetailsData {
                                 
-                                private System.Collections.Generic.IList<DetailsData.ArgsData> args;
+                                private System.Collections.Generic.IList<DetailsData.ArgsData> _args;
                                 
-                                private string format;
+                                private string _format;
                                 
                                 /// <summary>List of arguments for the format string.</summary>
                                 [Newtonsoft.Json.JsonPropertyAttribute("args")]
                                 public virtual System.Collections.Generic.IList<DetailsData.ArgsData> Args {
                                     get {
-                                        return this.args;
+                                        return this._args;
                                     }
                                     set {
-                                        this.args = value;
+                                        this._args = value;
                                     }
                                 }
                                 
@@ -379,27 +379,27 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                                 [Newtonsoft.Json.JsonPropertyAttribute("format")]
                                 public virtual string Format {
                                     get {
-                                        return this.format;
+                                        return this._format;
                                     }
                                     set {
-                                        this.format = value;
+                                        this._format = value;
                                     }
                                 }
                                 
                                 public class ArgsData {
                                     
-                                    private string type;
+                                    private string _type;
                                     
-                                    private string value;
+                                    private string _value;
                                     
                                     /// <summary>Type of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.</summary>
                                     [Newtonsoft.Json.JsonPropertyAttribute("type")]
                                     public virtual string Type {
                                         get {
-                                            return this.type;
+                                            return this._type;
                                         }
                                         set {
-                                            this.type = value;
+                                            this._type = value;
                                         }
                                     }
                                     
@@ -407,10 +407,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                                     [Newtonsoft.Json.JsonPropertyAttribute("value")]
                                     public virtual string Value {
                                         get {
-                                            return this.value;
+                                            return this._value;
                                         }
                                         set {
-                                            this.value = value;
+                                            this._value = value;
                                         }
                                     }
                                 }
@@ -419,18 +419,18 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                             /// <summary>A format string that gives information about the URL, and a list of arguments for that format string.</summary>
                             public class ResultData {
                                 
-                                private System.Collections.Generic.IList<ResultData.ArgsData> args;
+                                private System.Collections.Generic.IList<ResultData.ArgsData> _args;
                                 
-                                private string format;
+                                private string _format;
                                 
                                 /// <summary>List of arguments for the format string.</summary>
                                 [Newtonsoft.Json.JsonPropertyAttribute("args")]
                                 public virtual System.Collections.Generic.IList<ResultData.ArgsData> Args {
                                     get {
-                                        return this.args;
+                                        return this._args;
                                     }
                                     set {
-                                        this.args = value;
+                                        this._args = value;
                                     }
                                 }
                                 
@@ -438,27 +438,27 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                                 [Newtonsoft.Json.JsonPropertyAttribute("format")]
                                 public virtual string Format {
                                     get {
-                                        return this.format;
+                                        return this._format;
                                     }
                                     set {
-                                        this.format = value;
+                                        this._format = value;
                                     }
                                 }
                                 
                                 public class ArgsData {
                                     
-                                    private string type;
+                                    private string _type;
                                     
-                                    private string value;
+                                    private string _value;
                                     
                                     /// <summary>Type of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.</summary>
                                     [Newtonsoft.Json.JsonPropertyAttribute("type")]
                                     public virtual string Type {
                                         get {
-                                            return this.type;
+                                            return this._type;
                                         }
                                         set {
-                                            this.type = value;
+                                            this._type = value;
                                         }
                                     }
                                     
@@ -466,10 +466,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
                                     [Newtonsoft.Json.JsonPropertyAttribute("value")]
                                     public virtual string Value {
                                         get {
-                                            return this.value;
+                                            return this._value;
                                         }
                                         set {
-                                            this.value = value;
+                                            this._value = value;
                                         }
                                     }
                                 }
@@ -483,40 +483,40 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         /// <summary>Summary statistics for the page, such as number of JavaScript bytes, number of HTML bytes, etc.</summary>
         public class PageStatsData {
             
-            private string cssResponseBytes;
+            private string _cssResponseBytes;
             
-            private string flashResponseBytes;
+            private string _flashResponseBytes;
             
-            private string htmlResponseBytes;
+            private string _htmlResponseBytes;
             
-            private string imageResponseBytes;
+            private string _imageResponseBytes;
             
-            private string javascriptResponseBytes;
+            private string _javascriptResponseBytes;
             
-            private System.Nullable<long> numberCssResources;
+            private System.Nullable<long> _numberCssResources;
             
-            private System.Nullable<long> numberHosts;
+            private System.Nullable<long> _numberHosts;
             
-            private System.Nullable<long> numberJsResources;
+            private System.Nullable<long> _numberJsResources;
             
-            private System.Nullable<long> numberResources;
+            private System.Nullable<long> _numberResources;
             
-            private System.Nullable<long> numberStaticResources;
+            private System.Nullable<long> _numberStaticResources;
             
-            private string otherResponseBytes;
+            private string _otherResponseBytes;
             
-            private string textResponseBytes;
+            private string _textResponseBytes;
             
-            private string totalRequestBytes;
+            private string _totalRequestBytes;
             
             /// <summary>Number of uncompressed response bytes for CSS resources on the page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("cssResponseBytes")]
             public virtual string CssResponseBytes {
                 get {
-                    return this.cssResponseBytes;
+                    return this._cssResponseBytes;
                 }
                 set {
-                    this.cssResponseBytes = value;
+                    this._cssResponseBytes = value;
                 }
             }
             
@@ -524,10 +524,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("flashResponseBytes")]
             public virtual string FlashResponseBytes {
                 get {
-                    return this.flashResponseBytes;
+                    return this._flashResponseBytes;
                 }
                 set {
-                    this.flashResponseBytes = value;
+                    this._flashResponseBytes = value;
                 }
             }
             
@@ -535,10 +535,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("htmlResponseBytes")]
             public virtual string HtmlResponseBytes {
                 get {
-                    return this.htmlResponseBytes;
+                    return this._htmlResponseBytes;
                 }
                 set {
-                    this.htmlResponseBytes = value;
+                    this._htmlResponseBytes = value;
                 }
             }
             
@@ -546,10 +546,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("imageResponseBytes")]
             public virtual string ImageResponseBytes {
                 get {
-                    return this.imageResponseBytes;
+                    return this._imageResponseBytes;
                 }
                 set {
-                    this.imageResponseBytes = value;
+                    this._imageResponseBytes = value;
                 }
             }
             
@@ -557,10 +557,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("javascriptResponseBytes")]
             public virtual string JavascriptResponseBytes {
                 get {
-                    return this.javascriptResponseBytes;
+                    return this._javascriptResponseBytes;
                 }
                 set {
-                    this.javascriptResponseBytes = value;
+                    this._javascriptResponseBytes = value;
                 }
             }
             
@@ -568,10 +568,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberCssResources")]
             public virtual System.Nullable<long> NumberCssResources {
                 get {
-                    return this.numberCssResources;
+                    return this._numberCssResources;
                 }
                 set {
-                    this.numberCssResources = value;
+                    this._numberCssResources = value;
                 }
             }
             
@@ -579,10 +579,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberHosts")]
             public virtual System.Nullable<long> NumberHosts {
                 get {
-                    return this.numberHosts;
+                    return this._numberHosts;
                 }
                 set {
-                    this.numberHosts = value;
+                    this._numberHosts = value;
                 }
             }
             
@@ -590,10 +590,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberJsResources")]
             public virtual System.Nullable<long> NumberJsResources {
                 get {
-                    return this.numberJsResources;
+                    return this._numberJsResources;
                 }
                 set {
-                    this.numberJsResources = value;
+                    this._numberJsResources = value;
                 }
             }
             
@@ -601,10 +601,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberResources")]
             public virtual System.Nullable<long> NumberResources {
                 get {
-                    return this.numberResources;
+                    return this._numberResources;
                 }
                 set {
-                    this.numberResources = value;
+                    this._numberResources = value;
                 }
             }
             
@@ -612,10 +612,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberStaticResources")]
             public virtual System.Nullable<long> NumberStaticResources {
                 get {
-                    return this.numberStaticResources;
+                    return this._numberStaticResources;
                 }
                 set {
-                    this.numberStaticResources = value;
+                    this._numberStaticResources = value;
                 }
             }
             
@@ -623,10 +623,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("otherResponseBytes")]
             public virtual string OtherResponseBytes {
                 get {
-                    return this.otherResponseBytes;
+                    return this._otherResponseBytes;
                 }
                 set {
-                    this.otherResponseBytes = value;
+                    this._otherResponseBytes = value;
                 }
             }
             
@@ -634,10 +634,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("textResponseBytes")]
             public virtual string TextResponseBytes {
                 get {
-                    return this.textResponseBytes;
+                    return this._textResponseBytes;
                 }
                 set {
-                    this.textResponseBytes = value;
+                    this._textResponseBytes = value;
                 }
             }
             
@@ -645,10 +645,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("totalRequestBytes")]
             public virtual string TotalRequestBytes {
                 get {
-                    return this.totalRequestBytes;
+                    return this._totalRequestBytes;
                 }
                 set {
-                    this.totalRequestBytes = value;
+                    this._totalRequestBytes = value;
                 }
             }
         }
@@ -656,18 +656,18 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
         /// <summary>The version of the Page Speed SDK used to generate these results.</summary>
         public class VersionData {
             
-            private System.Nullable<long> major;
+            private System.Nullable<long> _major;
             
-            private System.Nullable<long> minor;
+            private System.Nullable<long> _minor;
             
             /// <summary>The major version number of the Page Speed SDK used to generate these results.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("major")]
             public virtual System.Nullable<long> Major {
                 get {
-                    return this.major;
+                    return this._major;
                 }
                 set {
-                    this.major = value;
+                    this._major = value;
                 }
             }
             
@@ -675,10 +675,10 @@ namespace Google.Apis.Pagespeedonline.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("minor")]
             public virtual System.Nullable<long> Minor {
                 get {
-                    return this.minor;
+                    return this._minor;
                 }
                 set {
-                    this.minor = value;
+                    this._minor = value;
                 }
             }
         }
@@ -706,128 +706,129 @@ namespace Google.Apis.Pagespeedonline.v1 {
             "om/images/icons/product/pagespeed-32.png\"},\"documentationLink\":\"https://code.goo" +
             "gle.com/apis/pagespeedonline/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl" +
             "\":\"https://www.googleapis.com/pagespeedonline/v1/\",\"basePath\":\"/pagespeedonline/" +
-            "v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the res" +
-            "ponse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Con" +
-            "tent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"d" +
-            "escription\":\"Selector specifying which fields to include in a partial response.\"" +
-            ",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key" +
-            " identifies your project and provides you with API access, quota, and reports. R" +
-            "equired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token" +
-            "\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"locati" +
-            "on\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response wit" +
-            "h indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser" +
-            "\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server" +
-            "-side applications. Can be any arbitrary string assigned to a user, but should n" +
-            "ot exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"que" +
-            "ry\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the r" +
-            "equest originates. Use this if you want to enforce per-user limits.\",\"location\":" +
-            "\"query\"}},\"schemas\":{\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"properties\":{\"form" +
-            "attedResults\":{\"type\":\"object\",\"description\":\"Localized Page Speed results. Cont" +
-            "ains a ruleResults entry for each Page Speed rule instantiated and run by the se" +
-            "rver.\",\"properties\":{\"locale\":{\"type\":\"string\",\"description\":\"The locale of the " +
-            "formattedResults, e.g. \\\"en_US\\\".\"},\"ruleResults\":{\"type\":\"object\",\"description\"" +
-            ":\"Dictionary of formatted rule results, with one entry for each Page Speed rule " +
-            "instantiated and run by the server.\",\"additionalProperties\":{\"type\":\"object\",\"de" +
-            "scription\":\"The enum-like identifier for this rule. For instance \\\"EnableKeepAli" +
-            "ve\\\" or \\\"AvoidCssImport\\\". Not localized.\",\"properties\":{\"localizedRuleName\":{\"" +
-            "type\":\"string\",\"description\":\"Localized name of the rule, intended for presentat" +
-            "ion to a user.\"},\"ruleImpact\":{\"type\":\"number\",\"description\":\"The impact (unboun" +
-            "ded floating point value) that implementing the suggestions for this rule would " +
-            "have on making the page faster. Impact is comparable between rules to determine " +
-            "which rule\'s suggestions would have a higher or lower impact on making a page fa" +
-            "ster. For instance, if enabling compression would save 1MB, while optimizing ima" +
-            "ges would save 500kB, the enable compression rule would have 2x the impact of th" +
-            "e image optimization rule, all other things being equal.\",\"format\":\"double\"},\"ru" +
-            "leScore\":{\"type\":\"integer\",\"description\":\"The score (0-100) for this rule. The r" +
-            "ule score indicates how well a page implements the recommendations for the given" +
-            " rule. For instance, if none of the compressible resources on a page are compres" +
-            "sed, the rule score would be 0, while if all of the compressible resources on a " +
-            "page are compressed, the rule score would be 100.\",\"format\":\"int32\"},\"urlBlocks\"" +
-            ":{\"type\":\"array\",\"description\":\"List of blocks of URLs. Each block may contain a" +
-            " heading and a list of URLs. Each URL may optionally include additional details." +
-            "\",\"items\":{\"type\":\"object\",\"properties\":{\"header\":{\"type\":\"object\",\"description\"" +
-            ":\"Heading to be displayed with the list of URLs.\",\"properties\":{\"args\":{\"type\":\"" +
-            "array\",\"description\":\"List of arguments for the format string.\",\"items\":{\"type\":" +
-            "\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argument. " +
-            "One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"" +
-            "string\",\"description\":\"Argument value, as a localized string.\"}}}},\"format\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A localized format string with $N placeholders, wher" +
-            "e N is the 1-indexed argument number, e.g. \'Minifying the following $1 resources" +
-            " would save a total of $2 bytes\'.\"}}},\"urls\":{\"type\":\"array\",\"description\":\"List" +
-            " of entries that provide information about URLs in the url block. Optional.\",\"it" +
-            "ems\":{\"type\":\"object\",\"properties\":{\"details\":{\"type\":\"array\",\"description\":\"Lis" +
-            "t of entries that provide additional details about a single URL. Optional.\",\"ite" +
-            "ms\":{\"type\":\"object\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"List of" +
-            " arguments for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"type\"" +
-            ":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITERAL, I" +
-            "NT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"Argume" +
-            "nt value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"description\":\"A" +
-            " localized format string with $N placeholders, where N is the 1-indexed argument" +
-            " number, e.g. \'Unnecessary metadata for this resource adds an additional $1 byte" +
-            "s to its download size\'.\"}}}},\"result\":{\"type\":\"object\",\"description\":\"A format " +
-            "string that gives information about the URL, and a list of arguments for that fo" +
-            "rmat string.\",\"properties\":{\"args\":{\"type\":\"array\",\"description\":\"List of argume" +
-            "nts for the format string.\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type" +
-            "\":\"string\",\"description\":\"Type of argument. One of URL, STRING_LITERAL, INT_LITE" +
-            "RAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description\":\"Argument valu" +
-            "e, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"description\":\"A locali" +
-            "zed format string with $N placeholders, where N is the 1-indexed argument number" +
-            ", e.g. \'Minifying the resource at URL $1 can save $2 bytes\'.\"}}}}}}}}}}}}}},\"id\"" +
-            ":{\"type\":\"string\",\"description\":\"Canonicalized and final URL for the document, a" +
-            "fter following page redirects (if any).\"},\"invalidRules\":{\"type\":\"array\",\"descri" +
-            "ption\":\"List of rules that were specified in the request, but which the server d" +
-            "id not know how to instantiate.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Kind of result.\",\"default\":\"pagespeedonline#result\"},\"pageSta" +
-            "ts\":{\"type\":\"object\",\"description\":\"Summary statistics for the page, such as num" +
-            "ber of JavaScript bytes, number of HTML bytes, etc.\",\"properties\":{\"cssResponseB" +
-            "ytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed response bytes for " +
-            "CSS resources on the page.\",\"format\":\"int64\"},\"flashResponseBytes\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Number of response bytes for flash resources on the page.\",\"f" +
-            "ormat\":\"int64\"},\"htmlResponseBytes\":{\"type\":\"string\",\"description\":\"Number of un" +
-            "compressed response bytes for the main HTML document and all iframes on the page" +
-            ".\",\"format\":\"int64\"},\"imageResponseBytes\":{\"type\":\"string\",\"description\":\"Number" +
-            " of response bytes for image resources on the page.\",\"format\":\"int64\"},\"javascri" +
-            "ptResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed response" +
-            " bytes for JS resources on the page.\",\"format\":\"int64\"},\"numberCssResources\":{\"t" +
-            "ype\":\"integer\",\"description\":\"Number of CSS resources referenced by the page.\",\"" +
-            "format\":\"int32\"},\"numberHosts\":{\"type\":\"integer\",\"description\":\"Number of unique" +
-            " hosts referenced by the page.\",\"format\":\"int32\"},\"numberJsResources\":{\"type\":\"i" +
-            "nteger\",\"description\":\"Number of JavaScript resources referenced by the page.\",\"" +
-            "format\":\"int32\"},\"numberResources\":{\"type\":\"integer\",\"description\":\"Number of HT" +
-            "TP resources loaded by the page.\",\"format\":\"int32\"},\"numberStaticResources\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Number of static (i.e. cacheable) resources on the " +
-            "page.\",\"format\":\"int32\"},\"otherResponseBytes\":{\"type\":\"string\",\"description\":\"Nu" +
-            "mber of response bytes for other resources on the page.\",\"format\":\"int64\"},\"text" +
-            "ResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed response b" +
-            "ytes for text resources not covered by other statistics (i.e non-HTML, non-scrip" +
-            "t, non-CSS resources) on the page.\",\"format\":\"int64\"},\"totalRequestBytes\":{\"type" +
-            "\":\"string\",\"description\":\"Total size of all request bytes sent by the page.\",\"fo" +
-            "rmat\":\"int64\"}}},\"responseCode\":{\"type\":\"integer\",\"description\":\"Response code f" +
-            "or the document. 200 indicates a normal page load. 4xx/5xx indicates an error.\"," +
-            "\"format\":\"int32\"},\"score\":{\"type\":\"integer\",\"description\":\"The Page Speed Score " +
-            "(0-100), which indicates how much faster a page could be. A high score indicates" +
-            " little room for improvement, while a lower score indicates more room for improv" +
-            "ement.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the p" +
-            "age, as displayed in the browser\'s title bar.\"},\"version\":{\"type\":\"object\",\"desc" +
-            "ription\":\"The version of the Page Speed SDK used to generate these results.\",\"pr" +
-            "operties\":{\"major\":{\"type\":\"integer\",\"description\":\"The major version number of " +
-            "the Page Speed SDK used to generate these results.\",\"format\":\"int32\"},\"minor\":{\"" +
-            "type\":\"integer\",\"description\":\"The minor version number of the Page Speed SDK us" +
-            "ed to generate these results.\",\"format\":\"int32\"}}}}}},\"resources\":{\"pagespeedapi" +
-            "\":{\"methods\":{\"runpagespeed\":{\"id\":\"pagespeedonline.pagespeedapi.runpagespeed\",\"" +
-            "path\":\"runPagespeed\",\"httpMethod\":\"GET\",\"description\":\"Runs Page Speed analysis " +
-            "on the page at the specified URL, and returns a Page Speed score, a list of sugg" +
-            "estions to make that page faster, and other information.\",\"parameters\":{\"locale\"" +
-            ":{\"type\":\"string\",\"description\":\"The locale used to localize formatted results\"," +
-            "\"pattern\":\"[a-zA-Z]+(_[a-zA-Z]+)?\",\"location\":\"query\"},\"rule\":{\"type\":\"string\",\"" +
-            "description\":\"A Page Speed rule to run; if none are given, all rules are run\",\"p" +
-            "attern\":\"[a-zA-Z]+\",\"repeated\":true,\"location\":\"query\"},\"strategy\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The analysis strategy to use\",\"enum\":[\"desktop\",\"mobile\"],\"en" +
-            "umDescriptions\":[\"Fetch and analyze the URL for desktop browsers\",\"Fetch and ana" +
-            "lyze the URL for mobile devices\"],\"location\":\"query\"},\"url\":{\"type\":\"string\",\"de" +
-            "scription\":\"The URL to fetch and analyze\",\"required\":true,\"pattern\":\"http(s)?://" +
-            ".*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$ref\":\"Result\"}}}" +
-            "}}}";
+            "v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"pagespeedonline/v1/\"" +
+            ",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data fo" +
+            "rmat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Re" +
+            "sponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"t" +
+            "ype\":\"string\",\"description\":\"Selector specifying which fields to include in a pa" +
+            "rtial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API k" +
+            "ey. Your API key identifies your project and provides you with API access, quota" +
+            ", and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"quer" +
+            "y\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curren" +
+            "t user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Retu" +
+            "rns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"qu" +
+            "ery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pur" +
+            "poses for server-side applications. Can be any arbitrary string assigned to a us" +
+            "er, but should not exceed 40 characters. Overrides userIp if both are provided.\"" +
+            ",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the " +
+            "site where the request originates. Use this if you want to enforce per-user limi" +
+            "ts.\",\"location\":\"query\"}},\"schemas\":{\"Result\":{\"id\":\"Result\",\"type\":\"object\",\"pr" +
+            "operties\":{\"formattedResults\":{\"type\":\"object\",\"description\":\"Localized Page Spe" +
+            "ed results. Contains a ruleResults entry for each Page Speed rule instantiated a" +
+            "nd run by the server.\",\"properties\":{\"locale\":{\"type\":\"string\",\"description\":\"Th" +
+            "e locale of the formattedResults, e.g. \\\"en_US\\\".\"},\"ruleResults\":{\"type\":\"objec" +
+            "t\",\"description\":\"Dictionary of formatted rule results, with one entry for each " +
+            "Page Speed rule instantiated and run by the server.\",\"additionalProperties\":{\"ty" +
+            "pe\":\"object\",\"description\":\"The enum-like identifier for this rule. For instance" +
+            " \\\"EnableKeepAlive\\\" or \\\"AvoidCssImport\\\". Not localized.\",\"properties\":{\"local" +
+            "izedRuleName\":{\"type\":\"string\",\"description\":\"Localized name of the rule, intend" +
+            "ed for presentation to a user.\"},\"ruleImpact\":{\"type\":\"number\",\"description\":\"Th" +
+            "e impact (unbounded floating point value) that implementing the suggestions for " +
+            "this rule would have on making the page faster. Impact is comparable between rul" +
+            "es to determine which rule\'s suggestions would have a higher or lower impact on " +
+            "making a page faster. For instance, if enabling compression would save 1MB, whil" +
+            "e optimizing images would save 500kB, the enable compression rule would have 2x " +
+            "the impact of the image optimization rule, all other things being equal.\",\"forma" +
+            "t\":\"double\"},\"ruleScore\":{\"type\":\"integer\",\"description\":\"The score (0-100) for " +
+            "this rule. The rule score indicates how well a page implements the recommendatio" +
+            "ns for the given rule. For instance, if none of the compressible resources on a " +
+            "page are compressed, the rule score would be 0, while if all of the compressible" +
+            " resources on a page are compressed, the rule score would be 100.\",\"format\":\"int" +
+            "32\"},\"urlBlocks\":{\"type\":\"array\",\"description\":\"List of blocks of URLs. Each blo" +
+            "ck may contain a heading and a list of URLs. Each URL may optionally include add" +
+            "itional details.\",\"items\":{\"type\":\"object\",\"properties\":{\"header\":{\"type\":\"objec" +
+            "t\",\"description\":\"Heading to be displayed with the list of URLs.\",\"properties\":{" +
+            "\"args\":{\"type\":\"array\",\"description\":\"List of arguments for the format string.\"," +
+            "\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Ty" +
+            "pe of argument. One of URL, STRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"" +
+            "value\":{\"type\":\"string\",\"description\":\"Argument value, as a localized string.\"}}" +
+            "}},\"format\":{\"type\":\"string\",\"description\":\"A localized format string with $N pl" +
+            "aceholders, where N is the 1-indexed argument number, e.g. \'Minifying the follow" +
+            "ing $1 resources would save a total of $2 bytes\'.\"}}},\"urls\":{\"type\":\"array\",\"de" +
+            "scription\":\"List of entries that provide information about URLs in the url block" +
+            ". Optional.\",\"items\":{\"type\":\"object\",\"properties\":{\"details\":{\"type\":\"array\",\"d" +
+            "escription\":\"List of entries that provide additional details about a single URL." +
+            " Optional.\",\"items\":{\"type\":\"object\",\"properties\":{\"args\":{\"type\":\"array\",\"descr" +
+            "iption\":\"List of arguments for the format string.\",\"items\":{\"type\":\"object\",\"pro" +
+            "perties\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, S" +
+            "TRING_LITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Argument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\"," +
+            "\"description\":\"A localized format string with $N placeholders, where N is the 1-" +
+            "indexed argument number, e.g. \'Unnecessary metadata for this resource adds an ad" +
+            "ditional $1 bytes to its download size\'.\"}}}},\"result\":{\"type\":\"object\",\"descrip" +
+            "tion\":\"A format string that gives information about the URL, and a list of argum" +
+            "ents for that format string.\",\"properties\":{\"args\":{\"type\":\"array\",\"description\"" +
+            ":\"List of arguments for the format string.\",\"items\":{\"type\":\"object\",\"properties" +
+            "\":{\"type\":{\"type\":\"string\",\"description\":\"Type of argument. One of URL, STRING_L" +
+            "ITERAL, INT_LITERAL, BYTES, or DURATION.\"},\"value\":{\"type\":\"string\",\"description" +
+            "\":\"Argument value, as a localized string.\"}}}},\"format\":{\"type\":\"string\",\"descri" +
+            "ption\":\"A localized format string with $N placeholders, where N is the 1-indexed" +
+            " argument number, e.g. \'Minifying the resource at URL $1 can save $2 bytes\'.\"}}}" +
+            "}}}}}}}}}}},\"id\":{\"type\":\"string\",\"description\":\"Canonicalized and final URL for" +
+            " the document, after following page redirects (if any).\"},\"invalidRules\":{\"type\"" +
+            ":\"array\",\"description\":\"List of rules that were specified in the request, but wh" +
+            "ich the server did not know how to instantiate.\",\"items\":{\"type\":\"string\"}},\"kin" +
+            "d\":{\"type\":\"string\",\"description\":\"Kind of result.\",\"default\":\"pagespeedonline#r" +
+            "esult\"},\"pageStats\":{\"type\":\"object\",\"description\":\"Summary statistics for the p" +
+            "age, such as number of JavaScript bytes, number of HTML bytes, etc.\",\"properties" +
+            "\":{\"cssResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompressed res" +
+            "ponse bytes for CSS resources on the page.\",\"format\":\"int64\"},\"flashResponseByte" +
+            "s\":{\"type\":\"string\",\"description\":\"Number of response bytes for flash resources " +
+            "on the page.\",\"format\":\"int64\"},\"htmlResponseBytes\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Number of uncompressed response bytes for the main HTML document and all ifr" +
+            "ames on the page.\",\"format\":\"int64\"},\"imageResponseBytes\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Number of response bytes for image resources on the page.\",\"format\":\"i" +
+            "nt64\"},\"javascriptResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncom" +
+            "pressed response bytes for JS resources on the page.\",\"format\":\"int64\"},\"numberC" +
+            "ssResources\":{\"type\":\"integer\",\"description\":\"Number of CSS resources referenced" +
+            " by the page.\",\"format\":\"int32\"},\"numberHosts\":{\"type\":\"integer\",\"description\":\"" +
+            "Number of unique hosts referenced by the page.\",\"format\":\"int32\"},\"numberJsResou" +
+            "rces\":{\"type\":\"integer\",\"description\":\"Number of JavaScript resources referenced" +
+            " by the page.\",\"format\":\"int32\"},\"numberResources\":{\"type\":\"integer\",\"descriptio" +
+            "n\":\"Number of HTTP resources loaded by the page.\",\"format\":\"int32\"},\"numberStati" +
+            "cResources\":{\"type\":\"integer\",\"description\":\"Number of static (i.e. cacheable) r" +
+            "esources on the page.\",\"format\":\"int32\"},\"otherResponseBytes\":{\"type\":\"string\",\"" +
+            "description\":\"Number of response bytes for other resources on the page.\",\"format" +
+            "\":\"int64\"},\"textResponseBytes\":{\"type\":\"string\",\"description\":\"Number of uncompr" +
+            "essed response bytes for text resources not covered by other statistics (i.e non" +
+            "-HTML, non-script, non-CSS resources) on the page.\",\"format\":\"int64\"},\"totalRequ" +
+            "estBytes\":{\"type\":\"string\",\"description\":\"Total size of all request bytes sent b" +
+            "y the page.\",\"format\":\"int64\"}}},\"responseCode\":{\"type\":\"integer\",\"description\":" +
+            "\"Response code for the document. 200 indicates a normal page load. 4xx/5xx indic" +
+            "ates an error.\",\"format\":\"int32\"},\"score\":{\"type\":\"integer\",\"description\":\"The P" +
+            "age Speed Score (0-100), which indicates how much faster a page could be. A high" +
+            " score indicates little room for improvement, while a lower score indicates more" +
+            " room for improvement.\",\"format\":\"int32\"},\"title\":{\"type\":\"string\",\"description\"" +
+            ":\"Title of the page, as displayed in the browser\'s title bar.\"},\"version\":{\"type" +
+            "\":\"object\",\"description\":\"The version of the Page Speed SDK used to generate the" +
+            "se results.\",\"properties\":{\"major\":{\"type\":\"integer\",\"description\":\"The major ve" +
+            "rsion number of the Page Speed SDK used to generate these results.\",\"format\":\"in" +
+            "t32\"},\"minor\":{\"type\":\"integer\",\"description\":\"The minor version number of the P" +
+            "age Speed SDK used to generate these results.\",\"format\":\"int32\"}}}}}},\"resources" +
+            "\":{\"pagespeedapi\":{\"methods\":{\"runpagespeed\":{\"id\":\"pagespeedonline.pagespeedapi" +
+            ".runpagespeed\",\"path\":\"runPagespeed\",\"httpMethod\":\"GET\",\"description\":\"Runs Page" +
+            " Speed analysis on the page at the specified URL, and returns a Page Speed score" +
+            ", a list of suggestions to make that page faster, and other information.\",\"param" +
+            "eters\":{\"locale\":{\"type\":\"string\",\"description\":\"The locale used to localize for" +
+            "matted results\",\"pattern\":\"[a-zA-Z]+(_[a-zA-Z]+)?\",\"location\":\"query\"},\"rule\":{\"" +
+            "type\":\"string\",\"description\":\"A Page Speed rule to run; if none are given, all r" +
+            "ules are run\",\"pattern\":\"[a-zA-Z]+\",\"repeated\":true,\"location\":\"query\"},\"strateg" +
+            "y\":{\"type\":\"string\",\"description\":\"The analysis strategy to use\",\"enum\":[\"deskto" +
+            "p\",\"mobile\"],\"enumDescriptions\":[\"Fetch and analyze the URL for desktop browsers" +
+            "\",\"Fetch and analyze the URL for mobile devices\"],\"location\":\"query\"},\"url\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The URL to fetch and analyze\",\"required\":true,\"patte" +
+            "rn\":\"http(s)?://.*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$" +
+            "ref\":\"Result\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -837,12 +838,12 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected PagespeedonlineService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.pagespeedapi = new PagespeedapiResource(this);
+            this._pagespeedapi = new PagespeedapiResource(this);
         }
         
         public PagespeedonlineService() : 
@@ -850,22 +851,22 @@ namespace Google.Apis.Pagespeedonline.v1 {
         }
         
         public PagespeedonlineService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PagespeedonlineService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PagespeedonlineService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PagespeedonlineService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PagespeedonlineService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -916,44 +917,44 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         public class RunpagespeedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string locale;
+            private string _locale;
             
-            private Google.Apis.Util.Repeatable<string> rule;
+            private Google.Apis.Util.Repeatable<string> _rule;
             
-            private Strategy? strategy;
+            private System.Nullable<Strategy> _strategy;
             
-            private string url;
+            private string _url;
             
             public RunpagespeedRequest(Google.Apis.Discovery.IRequestProvider service, string url) : 
                     base(service) {
-                this.url = url;
+                this._url = url;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -961,10 +962,10 @@ namespace Google.Apis.Pagespeedonline.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -972,10 +973,10 @@ namespace Google.Apis.Pagespeedonline.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
@@ -983,21 +984,21 @@ namespace Google.Apis.Pagespeedonline.v1 {
             [Google.Apis.Util.RequestParameterAttribute("rule")]
             public virtual Google.Apis.Util.Repeatable<string> Rule {
                 get {
-                    return this.rule;
+                    return this._rule;
                 }
                 set {
-                    this.rule = value;
+                    this._rule = value;
                 }
             }
             
             /// <summary>The analysis strategy to use</summary>
             [Google.Apis.Util.RequestParameterAttribute("strategy")]
-            public virtual Strategy? Strategy {
+            public virtual System.Nullable<Strategy> Strategy {
                 get {
-                    return this.strategy;
+                    return this._strategy;
                 }
                 set {
-                    this.strategy = value;
+                    this._strategy = value;
                 }
             }
             
@@ -1005,7 +1006,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             [Google.Apis.Util.RequestParameterAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
             }
             
@@ -1027,7 +1028,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         private const string Resource = "";
         
-        private PagespeedapiResource pagespeedapi;
+        private PagespeedapiResource _pagespeedapi;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1037,7 +1038,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
         
         public virtual PagespeedapiResource Pagespeedapi {
             get {
-                return this.pagespeedapi;
+                return this._pagespeedapi;
             }
         }
     }

@@ -125,6 +125,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLink.SourceUri">
             <summary>[Required] URI of source table to link.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLink.WriteDisposition">
+            <summary>[Optional] Whether to overwrite an existing table (WRITE_TRUNCATE), append to an existing table (WRITE_APPEND), or require that the the table is empty (WRITE_EMPTY). Default is WRITE_APPEND.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.CreateDisposition">
             <summary>[Optional] Whether to create the table if it doesn&apos;t already exist (CREATE_IF_NEEDED) or to require the table already exist (CREATE_NEVER). Default is CREATE_IF_NEEDED.</summary>
         </member>
@@ -492,11 +495,6 @@
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
-        <member name="M:Google.Apis.Bigquery.v2.JobsResource.Delete(System.String,System.String)">
-            <summary>Deletes a completed job specified by job ID.</summary>
-            <param name="projectId">Required - Project ID of the job to delete</param>
-            <param name="jobId">Required - Job ID of the job to delete</param>
-        </member>
         <member name="M:Google.Apis.Bigquery.v2.JobsResource.Get(System.String,System.String)">
             <summary>Retrieves the specified job by ID.</summary>
             <param name="projectId">Required - Project ID of the requested job</param>
@@ -539,21 +537,6 @@
         </member>
         <member name="F:Google.Apis.Bigquery.v2.JobsResource.StateFilter.Running">
             <summary>Running jobs</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.DeleteRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.DeleteRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.DeleteRequest.JobId">
-            <summary>Job ID of the job to delete</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.DeleteRequest.ProjectId">
-            <summary>Project ID of the job to delete</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

@@ -16,53 +16,53 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Context {
         
-        private System.Collections.Generic.IList<System.Collections.Generic.IList<Context.FacetsData>> facets;
+        private System.Collections.Generic.IList<System.Collections.Generic.IList<Context.FacetsData>> _facets;
         
-        private string title;
+        private string _title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("facets")]
         public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<Context.FacetsData>> Facets {
             get {
-                return this.facets;
+                return this._facets;
             }
             set {
-                this.facets = value;
+                this._facets = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         public class FacetsData {
             
-            private string anchor;
+            private string _anchor;
             
-            private string label;
+            private string _label;
             
             [Newtonsoft.Json.JsonPropertyAttribute("anchor")]
             public virtual string Anchor {
                 get {
-                    return this.anchor;
+                    return this._anchor;
                 }
                 set {
-                    this.anchor = value;
+                    this._anchor = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
             public virtual string Label {
                 get {
-                    return this.label;
+                    return this._label;
                 }
                 set {
-                    this.label = value;
+                    this._label = value;
                 }
             }
         }
@@ -70,140 +70,140 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Promotion {
         
-        private System.Collections.Generic.IList<Promotion.BodyLinesData> bodyLines;
+        private System.Collections.Generic.IList<Promotion.BodyLinesData> _bodyLines;
         
-        private string displayLink;
+        private string _displayLink;
         
-        private Promotion.ImageData image;
+        private Promotion.ImageData _image;
         
-        private string link;
+        private string _link;
         
-        private string title;
+        private string _title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("bodyLines")]
         public virtual System.Collections.Generic.IList<Promotion.BodyLinesData> BodyLines {
             get {
-                return this.bodyLines;
+                return this._bodyLines;
             }
             set {
-                this.bodyLines = value;
+                this._bodyLines = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("displayLink")]
         public virtual string DisplayLink {
             get {
-                return this.displayLink;
+                return this._displayLink;
             }
             set {
-                this.displayLink = value;
+                this._displayLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual Promotion.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual string Link {
             get {
-                return this.link;
+                return this._link;
             }
             set {
-                this.link = value;
+                this._link = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         public class BodyLinesData {
             
-            private string link;
+            private string _link;
             
-            private string title;
+            private string _title;
             
-            private string url;
+            private string _url;
             
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
             public virtual string Link {
                 get {
-                    return this.link;
+                    return this._link;
                 }
                 set {
-                    this.link = value;
+                    this._link = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("title")]
             public virtual string Title {
                 get {
-                    return this.title;
+                    return this._title;
                 }
                 set {
-                    this.title = value;
+                    this._title = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
         
         public class ImageData {
             
-            private System.Nullable<long> height;
+            private System.Nullable<long> _height;
             
-            private string source;
+            private string _source;
             
-            private System.Nullable<long> width;
+            private System.Nullable<long> _width;
             
             [Newtonsoft.Json.JsonPropertyAttribute("height")]
             public virtual System.Nullable<long> Height {
                 get {
-                    return this.height;
+                    return this._height;
                 }
                 set {
-                    this.height = value;
+                    this._height = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("width")]
             public virtual System.Nullable<long> Width {
                 get {
-                    return this.width;
+                    return this._width;
                 }
                 set {
-                    this.width = value;
+                    this._width = value;
                 }
             }
         }
@@ -211,743 +211,743 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Query {
         
-        private System.Nullable<long> count;
+        private System.Nullable<long> _count;
         
-        private string cr;
+        private string _cr;
         
-        private string cref;
+        private string _cref;
         
-        private string cx;
+        private string _cx;
         
-        private string dateRestrict;
+        private string _dateRestrict;
         
-        private string disableCnTwTranslation;
+        private string _disableCnTwTranslation;
         
-        private string exactTerms;
+        private string _exactTerms;
         
-        private string excludeTerms;
+        private string _excludeTerms;
         
-        private string fileType;
+        private string _fileType;
         
-        private string filter;
+        private string _filter;
         
-        private string gl;
+        private string _gl;
         
-        private string googleHost;
+        private string _googleHost;
         
-        private string highRange;
+        private string _highRange;
         
-        private string hl;
+        private string _hl;
         
-        private string hq;
+        private string _hq;
         
-        private string imgColorType;
+        private string _imgColorType;
         
-        private string imgDominantColor;
+        private string _imgDominantColor;
         
-        private string imgSize;
+        private string _imgSize;
         
-        private string imgType;
+        private string _imgType;
         
-        private string inputEncoding;
+        private string _inputEncoding;
         
-        private string language;
+        private string _language;
         
-        private string linkSite;
+        private string _linkSite;
         
-        private string lowRange;
+        private string _lowRange;
         
-        private string orTerms;
+        private string _orTerms;
         
-        private string outputEncoding;
+        private string _outputEncoding;
         
-        private string relatedSite;
+        private string _relatedSite;
         
-        private string rights;
+        private string _rights;
         
-        private string safe;
+        private string _safe;
         
-        private string searchTerms;
+        private string _searchTerms;
         
-        private string searchType;
+        private string _searchType;
         
-        private string siteSearch;
+        private string _siteSearch;
         
-        private string siteSearchFilter;
+        private string _siteSearchFilter;
         
-        private string sort;
+        private string _sort;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> startPage;
+        private System.Nullable<long> _startPage;
         
-        private string title;
+        private string _title;
         
-        private string totalResults;
+        private string _totalResults;
         
         [Newtonsoft.Json.JsonPropertyAttribute("count")]
         public virtual System.Nullable<long> Count {
             get {
-                return this.count;
+                return this._count;
             }
             set {
-                this.count = value;
+                this._count = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("cr")]
         public virtual string Cr {
             get {
-                return this.cr;
+                return this._cr;
             }
             set {
-                this.cr = value;
+                this._cr = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("cref")]
         public virtual string Cref {
             get {
-                return this.cref;
+                return this._cref;
             }
             set {
-                this.cref = value;
+                this._cref = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("cx")]
         public virtual string Cx {
             get {
-                return this.cx;
+                return this._cx;
             }
             set {
-                this.cx = value;
+                this._cx = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("dateRestrict")]
         public virtual string DateRestrict {
             get {
-                return this.dateRestrict;
+                return this._dateRestrict;
             }
             set {
-                this.dateRestrict = value;
+                this._dateRestrict = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("disableCnTwTranslation")]
         public virtual string DisableCnTwTranslation {
             get {
-                return this.disableCnTwTranslation;
+                return this._disableCnTwTranslation;
             }
             set {
-                this.disableCnTwTranslation = value;
+                this._disableCnTwTranslation = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("exactTerms")]
         public virtual string ExactTerms {
             get {
-                return this.exactTerms;
+                return this._exactTerms;
             }
             set {
-                this.exactTerms = value;
+                this._exactTerms = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("excludeTerms")]
         public virtual string ExcludeTerms {
             get {
-                return this.excludeTerms;
+                return this._excludeTerms;
             }
             set {
-                this.excludeTerms = value;
+                this._excludeTerms = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("fileType")]
         public virtual string FileType {
             get {
-                return this.fileType;
+                return this._fileType;
             }
             set {
-                this.fileType = value;
+                this._fileType = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("filter")]
         public virtual string Filter {
             get {
-                return this.filter;
+                return this._filter;
             }
             set {
-                this.filter = value;
+                this._filter = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("gl")]
         public virtual string Gl {
             get {
-                return this.gl;
+                return this._gl;
             }
             set {
-                this.gl = value;
+                this._gl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("googleHost")]
         public virtual string GoogleHost {
             get {
-                return this.googleHost;
+                return this._googleHost;
             }
             set {
-                this.googleHost = value;
+                this._googleHost = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("highRange")]
         public virtual string HighRange {
             get {
-                return this.highRange;
+                return this._highRange;
             }
             set {
-                this.highRange = value;
+                this._highRange = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("hl")]
         public virtual string Hl {
             get {
-                return this.hl;
+                return this._hl;
             }
             set {
-                this.hl = value;
+                this._hl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("hq")]
         public virtual string Hq {
             get {
-                return this.hq;
+                return this._hq;
             }
             set {
-                this.hq = value;
+                this._hq = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("imgColorType")]
         public virtual string ImgColorType {
             get {
-                return this.imgColorType;
+                return this._imgColorType;
             }
             set {
-                this.imgColorType = value;
+                this._imgColorType = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("imgDominantColor")]
         public virtual string ImgDominantColor {
             get {
-                return this.imgDominantColor;
+                return this._imgDominantColor;
             }
             set {
-                this.imgDominantColor = value;
+                this._imgDominantColor = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("imgSize")]
         public virtual string ImgSize {
             get {
-                return this.imgSize;
+                return this._imgSize;
             }
             set {
-                this.imgSize = value;
+                this._imgSize = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("imgType")]
         public virtual string ImgType {
             get {
-                return this.imgType;
+                return this._imgType;
             }
             set {
-                this.imgType = value;
+                this._imgType = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("inputEncoding")]
         public virtual string InputEncoding {
             get {
-                return this.inputEncoding;
+                return this._inputEncoding;
             }
             set {
-                this.inputEncoding = value;
+                this._inputEncoding = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("language")]
         public virtual string Language {
             get {
-                return this.language;
+                return this._language;
             }
             set {
-                this.language = value;
+                this._language = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("linkSite")]
         public virtual string LinkSite {
             get {
-                return this.linkSite;
+                return this._linkSite;
             }
             set {
-                this.linkSite = value;
+                this._linkSite = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("lowRange")]
         public virtual string LowRange {
             get {
-                return this.lowRange;
+                return this._lowRange;
             }
             set {
-                this.lowRange = value;
+                this._lowRange = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("orTerms")]
         public virtual string OrTerms {
             get {
-                return this.orTerms;
+                return this._orTerms;
             }
             set {
-                this.orTerms = value;
+                this._orTerms = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputEncoding")]
         public virtual string OutputEncoding {
             get {
-                return this.outputEncoding;
+                return this._outputEncoding;
             }
             set {
-                this.outputEncoding = value;
+                this._outputEncoding = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("relatedSite")]
         public virtual string RelatedSite {
             get {
-                return this.relatedSite;
+                return this._relatedSite;
             }
             set {
-                this.relatedSite = value;
+                this._relatedSite = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("rights")]
         public virtual string Rights {
             get {
-                return this.rights;
+                return this._rights;
             }
             set {
-                this.rights = value;
+                this._rights = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("safe")]
         public virtual string Safe {
             get {
-                return this.safe;
+                return this._safe;
             }
             set {
-                this.safe = value;
+                this._safe = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("searchTerms")]
         public virtual string SearchTerms {
             get {
-                return this.searchTerms;
+                return this._searchTerms;
             }
             set {
-                this.searchTerms = value;
+                this._searchTerms = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("searchType")]
         public virtual string SearchType {
             get {
-                return this.searchType;
+                return this._searchType;
             }
             set {
-                this.searchType = value;
+                this._searchType = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("siteSearch")]
         public virtual string SiteSearch {
             get {
-                return this.siteSearch;
+                return this._siteSearch;
             }
             set {
-                this.siteSearch = value;
+                this._siteSearch = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("siteSearchFilter")]
         public virtual string SiteSearchFilter {
             get {
-                return this.siteSearchFilter;
+                return this._siteSearchFilter;
             }
             set {
-                this.siteSearchFilter = value;
+                this._siteSearchFilter = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("sort")]
         public virtual string Sort {
             get {
-                return this.sort;
+                return this._sort;
             }
             set {
-                this.sort = value;
+                this._sort = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("startPage")]
         public virtual System.Nullable<long> StartPage {
             get {
-                return this.startPage;
+                return this._startPage;
             }
             set {
-                this.startPage = value;
+                this._startPage = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual string TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
     }
     
     public class Result {
         
-        private string cacheId;
+        private string _cacheId;
         
-        private string displayLink;
+        private string _displayLink;
         
-        private string fileFormat;
+        private string _fileFormat;
         
-        private string formattedUrl;
+        private string _formattedUrl;
         
-        private string htmlFormattedUrl;
+        private string _htmlFormattedUrl;
         
-        private string htmlSnippet;
+        private string _htmlSnippet;
         
-        private string htmlTitle;
+        private string _htmlTitle;
         
-        private Result.ImageData image;
+        private Result.ImageData _image;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<Result.LabelsData> labels;
+        private System.Collections.Generic.IList<Result.LabelsData> _labels;
         
-        private string link;
+        private string _link;
         
-        private string mime;
+        private string _mime;
         
-        private Result.PagemapData pagemap;
+        private Result.PagemapData _pagemap;
         
-        private string snippet;
+        private string _snippet;
         
-        private string title;
+        private string _title;
         
         [Newtonsoft.Json.JsonPropertyAttribute("cacheId")]
         public virtual string CacheId {
             get {
-                return this.cacheId;
+                return this._cacheId;
             }
             set {
-                this.cacheId = value;
+                this._cacheId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("displayLink")]
         public virtual string DisplayLink {
             get {
-                return this.displayLink;
+                return this._displayLink;
             }
             set {
-                this.displayLink = value;
+                this._displayLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("fileFormat")]
         public virtual string FileFormat {
             get {
-                return this.fileFormat;
+                return this._fileFormat;
             }
             set {
-                this.fileFormat = value;
+                this._fileFormat = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("formattedUrl")]
         public virtual string FormattedUrl {
             get {
-                return this.formattedUrl;
+                return this._formattedUrl;
             }
             set {
-                this.formattedUrl = value;
+                this._formattedUrl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("htmlFormattedUrl")]
         public virtual string HtmlFormattedUrl {
             get {
-                return this.htmlFormattedUrl;
+                return this._htmlFormattedUrl;
             }
             set {
-                this.htmlFormattedUrl = value;
+                this._htmlFormattedUrl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("htmlSnippet")]
         public virtual string HtmlSnippet {
             get {
-                return this.htmlSnippet;
+                return this._htmlSnippet;
             }
             set {
-                this.htmlSnippet = value;
+                this._htmlSnippet = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("htmlTitle")]
         public virtual string HtmlTitle {
             get {
-                return this.htmlTitle;
+                return this._htmlTitle;
             }
             set {
-                this.htmlTitle = value;
+                this._htmlTitle = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual Result.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("labels")]
         public virtual System.Collections.Generic.IList<Result.LabelsData> Labels {
             get {
-                return this.labels;
+                return this._labels;
             }
             set {
-                this.labels = value;
+                this._labels = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual string Link {
             get {
-                return this.link;
+                return this._link;
             }
             set {
-                this.link = value;
+                this._link = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("mime")]
         public virtual string Mime {
             get {
-                return this.mime;
+                return this._mime;
             }
             set {
-                this.mime = value;
+                this._mime = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("pagemap")]
         public virtual Result.PagemapData Pagemap {
             get {
-                return this.pagemap;
+                return this._pagemap;
             }
             set {
-                this.pagemap = value;
+                this._pagemap = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
         public virtual string Snippet {
             get {
-                return this.snippet;
+                return this._snippet;
             }
             set {
-                this.snippet = value;
+                this._snippet = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         public class ImageData {
             
-            private System.Nullable<long> byteSize;
+            private System.Nullable<long> _byteSize;
             
-            private string contextLink;
+            private string _contextLink;
             
-            private System.Nullable<long> height;
+            private System.Nullable<long> _height;
             
-            private System.Nullable<long> thumbnailHeight;
+            private System.Nullable<long> _thumbnailHeight;
             
-            private string thumbnailLink;
+            private string _thumbnailLink;
             
-            private System.Nullable<long> thumbnailWidth;
+            private System.Nullable<long> _thumbnailWidth;
             
-            private System.Nullable<long> width;
+            private System.Nullable<long> _width;
             
             [Newtonsoft.Json.JsonPropertyAttribute("byteSize")]
             public virtual System.Nullable<long> ByteSize {
                 get {
-                    return this.byteSize;
+                    return this._byteSize;
                 }
                 set {
-                    this.byteSize = value;
+                    this._byteSize = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("contextLink")]
             public virtual string ContextLink {
                 get {
-                    return this.contextLink;
+                    return this._contextLink;
                 }
                 set {
-                    this.contextLink = value;
+                    this._contextLink = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("height")]
             public virtual System.Nullable<long> Height {
                 get {
-                    return this.height;
+                    return this._height;
                 }
                 set {
-                    this.height = value;
+                    this._height = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("thumbnailHeight")]
             public virtual System.Nullable<long> ThumbnailHeight {
                 get {
-                    return this.thumbnailHeight;
+                    return this._thumbnailHeight;
                 }
                 set {
-                    this.thumbnailHeight = value;
+                    this._thumbnailHeight = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("thumbnailLink")]
             public virtual string ThumbnailLink {
                 get {
-                    return this.thumbnailLink;
+                    return this._thumbnailLink;
                 }
                 set {
-                    this.thumbnailLink = value;
+                    this._thumbnailLink = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("thumbnailWidth")]
             public virtual System.Nullable<long> ThumbnailWidth {
                 get {
-                    return this.thumbnailWidth;
+                    return this._thumbnailWidth;
                 }
                 set {
-                    this.thumbnailWidth = value;
+                    this._thumbnailWidth = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("width")]
             public virtual System.Nullable<long> Width {
                 get {
-                    return this.width;
+                    return this._width;
                 }
                 set {
-                    this.width = value;
+                    this._width = value;
                 }
             }
         }
         
         public class LabelsData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string name;
+            private string _name;
             
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
         }
@@ -961,122 +961,122 @@ namespace Google.Apis.Customsearch.v1.Data {
     
     public class Search : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Context context;
+        private Context _context;
         
-        private System.Collections.Generic.IList<Result> items;
+        private System.Collections.Generic.IList<Result> _items;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<Promotion> promotions;
+        private System.Collections.Generic.IList<Promotion> _promotions;
         
-        private Search.QueriesData queries;
+        private Search.QueriesData _queries;
         
-        private Search.SearchInformationData searchInformation;
+        private Search.SearchInformationData _searchInformation;
         
-        private Search.SpellingData spelling;
+        private Search.SpellingData _spelling;
         
-        private Search.UrlData url;
+        private Search.UrlData _url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("context")]
         public virtual Context Context {
             get {
-                return this.context;
+                return this._context;
             }
             set {
-                this.context = value;
+                this._context = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Result> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("promotions")]
         public virtual System.Collections.Generic.IList<Promotion> Promotions {
             get {
-                return this.promotions;
+                return this._promotions;
             }
             set {
-                this.promotions = value;
+                this._promotions = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("queries")]
         public virtual Search.QueriesData Queries {
             get {
-                return this.queries;
+                return this._queries;
             }
             set {
-                this.queries = value;
+                this._queries = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("searchInformation")]
         public virtual Search.SearchInformationData SearchInformation {
             get {
-                return this.searchInformation;
+                return this._searchInformation;
             }
             set {
-                this.searchInformation = value;
+                this._searchInformation = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("spelling")]
         public virtual Search.SpellingData Spelling {
             get {
-                return this.spelling;
+                return this._spelling;
             }
             set {
-                this.spelling = value;
+                this._spelling = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual Search.UrlData Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
@@ -1085,105 +1085,105 @@ namespace Google.Apis.Customsearch.v1.Data {
         
         public class SearchInformationData {
             
-            private string formattedSearchTime;
+            private string _formattedSearchTime;
             
-            private string formattedTotalResults;
+            private string _formattedTotalResults;
             
-            private System.Nullable<double> searchTime;
+            private System.Nullable<double> _searchTime;
             
-            private string totalResults;
+            private string _totalResults;
             
             [Newtonsoft.Json.JsonPropertyAttribute("formattedSearchTime")]
             public virtual string FormattedSearchTime {
                 get {
-                    return this.formattedSearchTime;
+                    return this._formattedSearchTime;
                 }
                 set {
-                    this.formattedSearchTime = value;
+                    this._formattedSearchTime = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("formattedTotalResults")]
             public virtual string FormattedTotalResults {
                 get {
-                    return this.formattedTotalResults;
+                    return this._formattedTotalResults;
                 }
                 set {
-                    this.formattedTotalResults = value;
+                    this._formattedTotalResults = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("searchTime")]
             public virtual System.Nullable<double> SearchTime {
                 get {
-                    return this.searchTime;
+                    return this._searchTime;
                 }
                 set {
-                    this.searchTime = value;
+                    this._searchTime = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
             public virtual string TotalResults {
                 get {
-                    return this.totalResults;
+                    return this._totalResults;
                 }
                 set {
-                    this.totalResults = value;
+                    this._totalResults = value;
                 }
             }
         }
         
         public class SpellingData {
             
-            private string correctedQuery;
+            private string _correctedQuery;
             
-            private string htmlCorrectedQuery;
+            private string _htmlCorrectedQuery;
             
             [Newtonsoft.Json.JsonPropertyAttribute("correctedQuery")]
             public virtual string CorrectedQuery {
                 get {
-                    return this.correctedQuery;
+                    return this._correctedQuery;
                 }
                 set {
-                    this.correctedQuery = value;
+                    this._correctedQuery = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("htmlCorrectedQuery")]
             public virtual string HtmlCorrectedQuery {
                 get {
-                    return this.htmlCorrectedQuery;
+                    return this._htmlCorrectedQuery;
                 }
                 set {
-                    this.htmlCorrectedQuery = value;
+                    this._htmlCorrectedQuery = value;
                 }
             }
         }
         
         public class UrlData {
             
-            private string template;
+            private string _template;
             
-            private string type;
+            private string _type;
             
             [Newtonsoft.Json.JsonPropertyAttribute("template")]
             public virtual string Template {
                 get {
-                    return this.template;
+                    return this._template;
                 }
                 set {
-                    this.template = value;
+                    this._template = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -1210,157 +1210,158 @@ namespace Google.Apis.Customsearch.v1 {
             ":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\"" +
             ":\"http://code.google.com/apis/customsearch/v1/using_rest.html\",\"protocol\":\"rest\"" +
             ",\"baseUrl\":\"https://www.googleapis.com/customsearch/\",\"basePath\":\"/customsearch/" +
-            "\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respon" +
-            "se.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with" +
-            " Content-Type of application/atom+xml\",\"Responses with Content-Type of applicati" +
-            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
-            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
-            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
-            "ct and provides you with API access, quota, and reports. Required unless you pro" +
-            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
-            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
-            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
-            "e breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
-            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
-            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
-            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
-            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
-            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"" +
-            "Context\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type\":\"array\"," +
-            "\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor\":{\"type\":" +
-            "\"string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"Promotion\":" +
-            "{\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"array\",\"ite" +
-            "ms\":{\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"string\"},\"title\":{\"type\":\"str" +
-            "ing\"},\"url\":{\"type\":\"string\"}}}},\"displayLink\":{\"type\":\"string\"},\"image\":{\"type\"" +
-            ":\"object\",\"properties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"" +
-            "type\":\"string\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"st" +
-            "ring\"},\"title\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"proper" +
-            "ties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\"" +
-            ":{\"type\":\"string\"},\"cx\":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"string\"},\"disa" +
-            "bleCnTwTranslation\":{\"type\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"excludeTer" +
-            "ms\":{\"type\":\"string\"},\"fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"g" +
-            "l\":{\"type\":\"string\"},\"googleHost\":{\"type\":\"string\"},\"highRange\":{\"type\":\"string\"" +
-            "},\"hl\":{\"type\":\"string\"},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\":\"string\"}" +
-            ",\"imgDominantColor\":{\"type\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"imgType\":{\"ty" +
-            "pe\":\"string\"},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"li" +
-            "nkSite\":{\"type\":\"string\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"type\":\"string" +
-            "\"},\"outputEncoding\":{\"type\":\"string\"},\"relatedSite\":{\"type\":\"string\"},\"rights\":{" +
-            "\"type\":\"string\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"searc" +
-            "hType\":{\"type\":\"string\"},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFilter\":{\"typ" +
-            "e\":\"string\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"i" +
-            "nt32\"},\"startPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"}" +
-            ",\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"Result\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"st" +
-            "ring\"},\"fileFormat\":{\"type\":\"string\"},\"formattedUrl\":{\"type\":\"string\"},\"htmlForm" +
-            "attedUrl\":{\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":" +
-            "\"string\"},\"image\":{\"type\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"integer\",\"f" +
-            "ormat\":\"int32\"},\"contextLink\":{\"type\":\"string\"},\"height\":{\"type\":\"integer\",\"form" +
-            "at\":\"int32\"},\"thumbnailHeight\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnailLin" +
-            "k\":{\"type\":\"string\"},\"thumbnailWidth\":{\"type\":\"integer\",\"format\":\"int32\"},\"width" +
-            "\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"default\":\"custo" +
-            "msearch#result\"},\"labels\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":" +
-            "{\"displayName\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"type\":\"str" +
-            "ing\"},\"mime\":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\"" +
-            ":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}" +
-            "}},\"snippet\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Searc" +
-            "h\",\"type\":\"object\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"a" +
-            "rray\",\"items\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch" +
-            "#search\"},\"promotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{" +
-            "\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}" +
-            "},\"searchInformation\":{\"type\":\"object\",\"properties\":{\"formattedSearchTime\":{\"typ" +
-            "e\":\"string\"},\"formattedTotalResults\":{\"type\":\"string\"},\"searchTime\":{\"type\":\"num" +
-            "ber\",\"format\":\"double\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"spe" +
-            "lling\":{\"type\":\"object\",\"properties\":{\"correctedQuery\":{\"type\":\"string\"},\"htmlCo" +
-            "rrectedQuery\":{\"type\":\"string\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template" +
-            "\":{\"type\":\"string\",\"default\":\"https://www.googleapis.com/customsearch/v1?q={sear" +
-            "chTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&c" +
-            "ref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHo" +
-            "st?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}" +
-            "&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={exc" +
-            "ludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&d" +
-            "ateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchTy" +
-            "pe={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType" +
-            "={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&al" +
-            "t=json\"},\"type\":{\"type\":\"string\",\"default\":\"application/json\"}}}}}},\"resources\":" +
-            "{\"cse\":{\"methods\":{\"list\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\"" +
-            ",\"description\":\"Returns metadata about the search performed, metadata about the " +
-            "custom search engine used for the search, and the search results.\",\"parameters\":" +
-            "{\"c2coff\":{\"type\":\"string\",\"description\":\"Turns off the translation between zh-C" +
-            "N and zh-TW.\",\"location\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":\"Country r" +
-            "estrict(s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL " +
-            "of a linked custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"des" +
-            "cription\":\"The custom search engine ID to scope this search query\",\"location\":\"q" +
-            "uery\"},\"dateRestrict\":{\"type\":\"string\",\"description\":\"Specifies all search resul" +
-            "ts are from a time period\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"string\",\"de" +
-            "scription\":\"Identifies a phrase that all documents in the search results must co" +
-            "ntain\",\"location\":\"query\"},\"excludeTerms\":{\"type\":\"string\",\"description\":\"Identi" +
-            "fies a word or phrase that should not appear in any documents in the search resu" +
-            "lts\",\"location\":\"query\"},\"fileType\":{\"type\":\"string\",\"description\":\"Returns imag" +
-            "es of a specified type. Some of the allowed values are: bmp, gif, png, jpg, svg," +
-            " pdf, ...\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls" +
-            " turning on or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescript" +
-            "ions\":[\"Turns off duplicate content filter.\",\"Turns on duplicate content filter." +
-            "\"],\"location\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end u" +
-            "ser.\",\"location\":\"query\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local" +
-            " Google domain to use to perform the search.\",\"location\":\"query\"},\"highRange\":{\"" +
-            "type\":\"string\",\"description\":\"Creates a range in form as_nlo value..as_nhi value" +
-            " and attempts to append it to query\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"" +
-            "description\":\"Sets the user interface language.\",\"location\":\"query\"},\"hq\":{\"type" +
-            "\":\"string\",\"description\":\"Appends the extra query terms to the query.\",\"location" +
-            "\":\"query\"},\"imgColorType\":{\"type\":\"string\",\"description\":\"Returns black and whit" +
-            "e, grayscale, or color images: mono, gray, and color.\",\"enum\":[\"color\",\"gray\",\"m" +
-            "ono\"],\"enumDescriptions\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"imgDominan" +
-            "tColor\":{\"type\":\"string\",\"description\":\"Returns images of a specific dominant co" +
-            "lor: yellow, green, teal, blue, purple, pink, white, gray, black and brown.\",\"en" +
-            "um\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yello" +
-            "w\"],\"enumDescriptions\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"t" +
-            "eal\",\"white\",\"yellow\"],\"location\":\"query\"},\"imgSize\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Returns images of a specified size, where size can be one of: icon, small, " +
-            "medium, large, xlarge, xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"large\",\"medium" +
-            "\",\"small\",\"xlarge\",\"xxlarge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large\",\"medium\"" +
-            ",\"small\",\"xlarge\",\"xxlarge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"string\",\"des" +
-            "cription\":\"Returns images of a type, which can be one of: clipart, face, lineart" +
-            ", news, and photo.\",\"enum\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"enumDesc" +
-            "riptions\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"location\":\"query\"},\"linkS" +
-            "ite\":{\"type\":\"string\",\"description\":\"Specifies that all search results should co" +
-            "ntain a link to a particular URL\",\"location\":\"query\"},\"lowRange\":{\"type\":\"string" +
-            "\",\"description\":\"Creates a range in form as_nlo value..as_nhi value and attempts" +
-            " to append it to query\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":" +
-            "\"The language restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"l" +
-            "ang_ca\",\"lang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"l" +
-            "ang_fi\",\"lang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"l" +
-            "ang_ja\",\"lang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"l" +
-            "ang_ro\",\"lang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\"" +
-            ",\"lang_zh-TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danis" +
-            "h\",\"German\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\"" +
-            ",\"Hungarian\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Li" +
-            "thuanian\",\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russia" +
-            "n\",\"Slovak\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Ch" +
-            "inese (Traditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"integer\",\"description\":" +
-            "\"Number of search results to return\",\"default\":\"10\",\"format\":\"uint32\",\"location\"" +
-            ":\"query\"},\"orTerms\":{\"type\":\"string\",\"description\":\"Provides additional search t" +
-            "erms to check for in a document, where each document in the search results must " +
-            "contain at least one of the additional search terms\",\"location\":\"query\"},\"q\":{\"t" +
-            "ype\":\"string\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"related" +
-            "Site\":{\"type\":\"string\",\"description\":\"Specifies that all search results should b" +
-            "e pages that are related to the specified URL\",\"location\":\"query\"},\"rights\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Filters based on licensing. Supported values include" +
-            ": cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived " +
-            "and combinations of these.\",\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enum" +
-            "Descriptions\":[\"Enables highest level of safe search filtering.\",\"Enables modera" +
-            "te safe search filtering.\",\"Disables safe search filtering.\"],\"location\":\"query\"" +
-            "},\"searchType\":{\"type\":\"string\",\"description\":\"Specifies the search type: image." +
-            "\",\"enum\":[\"image\"],\"enumDescriptions\":[\"custom image search\"],\"location\":\"query\"" +
-            "},\"siteSearch\":{\"type\":\"string\",\"description\":\"Specifies all search results shou" +
-            "ld be pages from a given site\",\"location\":\"query\"},\"siteSearchFilter\":{\"type\":\"s" +
-            "tring\",\"description\":\"Controls whether to include or exclude results from the si" +
-            "te named in the as_sitesearch parameter\",\"enum\":[\"e\",\"i\"],\"enumDescriptions\":[\"e" +
-            "xclude\",\"include\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"Th" +
-            "e sort expression to apply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"" +
-            "integer\",\"description\":\"The index of the first result to return\",\"format\":\"uint3" +
-            "2\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}" +
-            "";
+            "\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"customsearch/\",\"batchPa" +
+            "th\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for " +
+            "the response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Resp" +
+            "onses with Content-Type of application/atom+xml\",\"Responses with Content-Type of" +
+            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
+            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
+            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
+            "your project and provides you with API access, quota, and reports. Required unle" +
+            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
+            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
+            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
+            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
+            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
+            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
+            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
+            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
+            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"s" +
+            "chemas\":{\"Context\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type" +
+            "\":\"array\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor" +
+            "\":{\"type\":\"string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"P" +
+            "romotion\":{\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"a" +
+            "rray\",\"items\":{\"type\":\"object\",\"properties\":{\"link\":{\"type\":\"string\"},\"title\":{\"" +
+            "type\":\"string\"},\"url\":{\"type\":\"string\"}}}},\"displayLink\":{\"type\":\"string\"},\"imag" +
+            "e\":{\"type\":\"object\",\"properties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"" +
+            "source\":{\"type\":\"string\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{" +
+            "\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"objec" +
+            "t\",\"properties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"strin" +
+            "g\"},\"cref\":{\"type\":\"string\"},\"cx\":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"stri" +
+            "ng\"},\"disableCnTwTranslation\":{\"type\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"" +
+            "excludeTerms\":{\"type\":\"string\"},\"fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"s" +
+            "tring\"},\"gl\":{\"type\":\"string\"},\"googleHost\":{\"type\":\"string\"},\"highRange\":{\"type" +
+            "\":\"string\"},\"hl\":{\"type\":\"string\"},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\"" +
+            ":\"string\"},\"imgDominantColor\":{\"type\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"img" +
+            "Type\":{\"type\":\"string\"},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"st" +
+            "ring\"},\"linkSite\":{\"type\":\"string\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"typ" +
+            "e\":\"string\"},\"outputEncoding\":{\"type\":\"string\"},\"relatedSite\":{\"type\":\"string\"}," +
+            "\"rights\":{\"type\":\"string\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"strin" +
+            "g\"},\"searchType\":{\"type\":\"string\"},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFil" +
+            "ter\":{\"type\":\"string\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"" +
+            "format\":\"int32\"},\"startPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\"" +
+            ":\"string\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"R" +
+            "esult\",\"type\":\"object\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{" +
+            "\"type\":\"string\"},\"fileFormat\":{\"type\":\"string\"},\"formattedUrl\":{\"type\":\"string\"}" +
+            ",\"htmlFormattedUrl\":{\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle" +
+            "\":{\"type\":\"string\"},\"image\":{\"type\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"i" +
+            "nteger\",\"format\":\"int32\"},\"contextLink\":{\"type\":\"string\"},\"height\":{\"type\":\"inte" +
+            "ger\",\"format\":\"int32\"},\"thumbnailHeight\":{\"type\":\"integer\",\"format\":\"int32\"},\"th" +
+            "umbnailLink\":{\"type\":\"string\"},\"thumbnailWidth\":{\"type\":\"integer\",\"format\":\"int3" +
+            "2\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"defau" +
+            "lt\":\"customsearch#result\"},\"labels\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"pr" +
+            "operties\":{\"displayName\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"" +
+            "type\":\"string\"},\"mime\":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalP" +
+            "roperties\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"typ" +
+            "e\":\"any\"}}}},\"snippet\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"" +
+            "id\":\"Search\",\"type\":\"object\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":" +
+            "{\"type\":\"array\",\"items\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"cu" +
+            "stomsearch#search\"},\"promotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"" +
+            "queries\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\"" +
+            ":\"Query\"}}},\"searchInformation\":{\"type\":\"object\",\"properties\":{\"formattedSearchT" +
+            "ime\":{\"type\":\"string\"},\"formattedTotalResults\":{\"type\":\"string\"},\"searchTime\":{\"" +
+            "type\":\"number\",\"format\":\"double\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int6" +
+            "4\"}}},\"spelling\":{\"type\":\"object\",\"properties\":{\"correctedQuery\":{\"type\":\"string" +
+            "\"},\"htmlCorrectedQuery\":{\"type\":\"string\"}}},\"url\":{\"type\":\"object\",\"properties\":" +
+            "{\"template\":{\"type\":\"string\",\"default\":\"https://www.googleapis.com/customsearch/" +
+            "v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&" +
+            "cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost" +
+            "={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={si" +
+            "teSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&exclude" +
+            "Terms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relat" +
+            "edSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?" +
+            "}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize" +
+            "?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominant" +
+            "Color?}&alt=json\"},\"type\":{\"type\":\"string\",\"default\":\"application/json\"}}}}}},\"r" +
+            "esources\":{\"cse\":{\"methods\":{\"list\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMet" +
+            "hod\":\"GET\",\"description\":\"Returns metadata about the search performed, metadata " +
+            "about the custom search engine used for the search, and the search results.\",\"pa" +
+            "rameters\":{\"c2coff\":{\"type\":\"string\",\"description\":\"Turns off the translation be" +
+            "tween zh-CN and zh-TW.\",\"location\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":" +
+            "\"Country restrict(s).\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\"" +
+            ":\"The URL of a linked custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"st" +
+            "ring\",\"description\":\"The custom search engine ID to scope this search query\",\"lo" +
+            "cation\":\"query\"},\"dateRestrict\":{\"type\":\"string\",\"description\":\"Specifies all se" +
+            "arch results are from a time period\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"s" +
+            "tring\",\"description\":\"Identifies a phrase that all documents in the search resul" +
+            "ts must contain\",\"location\":\"query\"},\"excludeTerms\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Identifies a word or phrase that should not appear in any documents in the s" +
+            "earch results\",\"location\":\"query\"},\"fileType\":{\"type\":\"string\",\"description\":\"Re" +
+            "turns images of a specified type. Some of the allowed values are: bmp, gif, png," +
+            " jpg, svg, pdf, ...\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\"" +
+            ":\"Controls turning on or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"en" +
+            "umDescriptions\":[\"Turns off duplicate content filter.\",\"Turns on duplicate conte" +
+            "nt filter.\"],\"location\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocatio" +
+            "n of end user.\",\"location\":\"query\"},\"googlehost\":{\"type\":\"string\",\"description\":" +
+            "\"The local Google domain to use to perform the search.\",\"location\":\"query\"},\"hig" +
+            "hRange\":{\"type\":\"string\",\"description\":\"Creates a range in form as_nlo value..as" +
+            "_nhi value and attempts to append it to query\",\"location\":\"query\"},\"hl\":{\"type\":" +
+            "\"string\",\"description\":\"Sets the user interface language.\",\"location\":\"query\"},\"" +
+            "hq\":{\"type\":\"string\",\"description\":\"Appends the extra query terms to the query.\"" +
+            ",\"location\":\"query\"},\"imgColorType\":{\"type\":\"string\",\"description\":\"Returns blac" +
+            "k and white, grayscale, or color images: mono, gray, and color.\",\"enum\":[\"color\"" +
+            ",\"gray\",\"mono\"],\"enumDescriptions\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"" +
+            "imgDominantColor\":{\"type\":\"string\",\"description\":\"Returns images of a specific d" +
+            "ominant color: yellow, green, teal, blue, purple, pink, white, gray, black and b" +
+            "rown.\",\"enum\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"whi" +
+            "te\",\"yellow\"],\"enumDescriptions\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"" +
+            "purple\",\"teal\",\"white\",\"yellow\"],\"location\":\"query\"},\"imgSize\":{\"type\":\"string\"," +
+            "\"description\":\"Returns images of a specified size, where size can be one of: ico" +
+            "n, small, medium, large, xlarge, xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"larg" +
+            "e\",\"medium\",\"small\",\"xlarge\",\"xxlarge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large" +
+            "\",\"medium\",\"small\",\"xlarge\",\"xxlarge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"st" +
+            "ring\",\"description\":\"Returns images of a type, which can be one of: clipart, fac" +
+            "e, lineart, news, and photo.\",\"enum\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"]" +
+            ",\"enumDescriptions\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"location\":\"quer" +
+            "y\"},\"linkSite\":{\"type\":\"string\",\"description\":\"Specifies that all search results" +
+            " should contain a link to a particular URL\",\"location\":\"query\"},\"lowRange\":{\"typ" +
+            "e\":\"string\",\"description\":\"Creates a range in form as_nlo value..as_nhi value an" +
+            "d attempts to append it to query\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"des" +
+            "cription\":\"The language restriction for the search results\",\"enum\":[\"lang_ar\",\"l" +
+            "ang_bg\",\"lang_ca\",\"lang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"l" +
+            "ang_et\",\"lang_fi\",\"lang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"l" +
+            "ang_iw\",\"lang_ja\",\"lang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"l" +
+            "ang_pt\",\"lang_ro\",\"lang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"l" +
+            "ang_zh-CN\",\"lang_zh-TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Cze" +
+            "ch\",\"Danish\",\"German\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\"," +
+            "\"Croatian\",\"Hungarian\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"K" +
+            "orean\",\"Lithuanian\",\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romania" +
+            "n\",\"Russian\",\"Slovak\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simpli" +
+            "fied)\",\"Chinese (Traditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"integer\",\"des" +
+            "cription\":\"Number of search results to return\",\"default\":\"10\",\"format\":\"uint32\"," +
+            "\"location\":\"query\"},\"orTerms\":{\"type\":\"string\",\"description\":\"Provides additiona" +
+            "l search terms to check for in a document, where each document in the search res" +
+            "ults must contain at least one of the additional search terms\",\"location\":\"query" +
+            "\"},\"q\":{\"type\":\"string\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"" +
+            "},\"relatedSite\":{\"type\":\"string\",\"description\":\"Specifies that all search result" +
+            "s should be pages that are related to the specified URL\",\"location\":\"query\"},\"ri" +
+            "ghts\":{\"type\":\"string\",\"description\":\"Filters based on licensing. Supported valu" +
+            "es include: cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_n" +
+            "onderived and combinations of these.\",\"location\":\"query\"},\"safe\":{\"type\":\"string" +
+            "\",\"description\":\"Search safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"o" +
+            "ff\"],\"enumDescriptions\":[\"Enables highest level of safe search filtering.\",\"Enab" +
+            "les moderate safe search filtering.\",\"Disables safe search filtering.\"],\"locatio" +
+            "n\":\"query\"},\"searchType\":{\"type\":\"string\",\"description\":\"Specifies the search ty" +
+            "pe: image.\",\"enum\":[\"image\"],\"enumDescriptions\":[\"custom image search\"],\"locatio" +
+            "n\":\"query\"},\"siteSearch\":{\"type\":\"string\",\"description\":\"Specifies all search re" +
+            "sults should be pages from a given site\",\"location\":\"query\"},\"siteSearchFilter\":" +
+            "{\"type\":\"string\",\"description\":\"Controls whether to include or exclude results f" +
+            "rom the site named in the as_sitesearch parameter\",\"enum\":[\"e\",\"i\"],\"enumDescrip" +
+            "tions\":[\"exclude\",\"include\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The sort expression to apply to the results\",\"location\":\"query\"},\"start\"" +
+            ":{\"type\":\"integer\",\"description\":\"The index of the first result to return\",\"form" +
+            "at\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Sea" +
+            "rch\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -1370,12 +1371,12 @@ namespace Google.Apis.Customsearch.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected CustomsearchService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.cse = new CseResource(this);
+            this._cse = new CseResource(this);
         }
         
         public CustomsearchService() : 
@@ -1383,22 +1384,22 @@ namespace Google.Apis.Customsearch.v1 {
         }
         
         public CustomsearchService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(CustomsearchService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(CustomsearchService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -1753,100 +1754,100 @@ namespace Google.Apis.Customsearch.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string c2coff;
+            private string _c2coff;
             
-            private string cr;
+            private string _cr;
             
-            private string cref;
+            private string _cref;
             
-            private string cx;
+            private string _cx;
             
-            private string dateRestrict;
+            private string _dateRestrict;
             
-            private string exactTerms;
+            private string _exactTerms;
             
-            private string excludeTerms;
+            private string _excludeTerms;
             
-            private string fileType;
+            private string _fileType;
             
-            private Filter? filter;
+            private System.Nullable<Filter> _filter;
             
-            private string gl;
+            private string _gl;
             
-            private string googlehost;
+            private string _googlehost;
             
-            private string highRange;
+            private string _highRange;
             
-            private string hl;
+            private string _hl;
             
-            private string hq;
+            private string _hq;
             
-            private ImgColorType? imgColorType;
+            private System.Nullable<ImgColorType> _imgColorType;
             
-            private ImgDominantColor? imgDominantColor;
+            private System.Nullable<ImgDominantColor> _imgDominantColor;
             
-            private ImgSize? imgSize;
+            private System.Nullable<ImgSize> _imgSize;
             
-            private ImgType? imgType;
+            private System.Nullable<ImgType> _imgType;
             
-            private string linkSite;
+            private string _linkSite;
             
-            private string lowRange;
+            private string _lowRange;
             
-            private Lr? lr;
+            private System.Nullable<Lr> _lr;
             
-            private System.Int64? num;
+            private System.Nullable<long> _num;
             
-            private string orTerms;
+            private string _orTerms;
             
-            private string q;
+            private string _q;
             
-            private string relatedSite;
+            private string _relatedSite;
             
-            private string rights;
+            private string _rights;
             
-            private Safe? safe;
+            private System.Nullable<Safe> _safe;
             
-            private SearchType? searchType;
+            private System.Nullable<SearchType> _searchType;
             
-            private string siteSearch;
+            private string _siteSearch;
             
-            private SiteSearchFilter? siteSearchFilter;
+            private System.Nullable<SiteSearchFilter> _siteSearchFilter;
             
-            private string sort;
+            private string _sort;
             
-            private System.Int64? start;
+            private System.Nullable<long> _start;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
                     base(service) {
-                this.q = q;
+                this._q = q;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1854,10 +1855,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1865,10 +1866,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("c2coff")]
             public virtual string C2coff {
                 get {
-                    return this.c2coff;
+                    return this._c2coff;
                 }
                 set {
-                    this.c2coff = value;
+                    this._c2coff = value;
                 }
             }
             
@@ -1876,10 +1877,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("cr")]
             public virtual string Cr {
                 get {
-                    return this.cr;
+                    return this._cr;
                 }
                 set {
-                    this.cr = value;
+                    this._cr = value;
                 }
             }
             
@@ -1887,10 +1888,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("cref")]
             public virtual string Cref {
                 get {
-                    return this.cref;
+                    return this._cref;
                 }
                 set {
-                    this.cref = value;
+                    this._cref = value;
                 }
             }
             
@@ -1898,10 +1899,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("cx")]
             public virtual string Cx {
                 get {
-                    return this.cx;
+                    return this._cx;
                 }
                 set {
-                    this.cx = value;
+                    this._cx = value;
                 }
             }
             
@@ -1909,10 +1910,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("dateRestrict")]
             public virtual string DateRestrict {
                 get {
-                    return this.dateRestrict;
+                    return this._dateRestrict;
                 }
                 set {
-                    this.dateRestrict = value;
+                    this._dateRestrict = value;
                 }
             }
             
@@ -1920,10 +1921,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("exactTerms")]
             public virtual string ExactTerms {
                 get {
-                    return this.exactTerms;
+                    return this._exactTerms;
                 }
                 set {
-                    this.exactTerms = value;
+                    this._exactTerms = value;
                 }
             }
             
@@ -1931,10 +1932,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("excludeTerms")]
             public virtual string ExcludeTerms {
                 get {
-                    return this.excludeTerms;
+                    return this._excludeTerms;
                 }
                 set {
-                    this.excludeTerms = value;
+                    this._excludeTerms = value;
                 }
             }
             
@@ -1942,21 +1943,21 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("fileType")]
             public virtual string FileType {
                 get {
-                    return this.fileType;
+                    return this._fileType;
                 }
                 set {
-                    this.fileType = value;
+                    this._fileType = value;
                 }
             }
             
             /// <summary>Controls turning on or off the duplicate content filter.</summary>
             [Google.Apis.Util.RequestParameterAttribute("filter")]
-            public virtual Filter? Filter {
+            public virtual System.Nullable<Filter> Filter {
                 get {
-                    return this.filter;
+                    return this._filter;
                 }
                 set {
-                    this.filter = value;
+                    this._filter = value;
                 }
             }
             
@@ -1964,10 +1965,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("gl")]
             public virtual string Gl {
                 get {
-                    return this.gl;
+                    return this._gl;
                 }
                 set {
-                    this.gl = value;
+                    this._gl = value;
                 }
             }
             
@@ -1975,10 +1976,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("googlehost")]
             public virtual string Googlehost {
                 get {
-                    return this.googlehost;
+                    return this._googlehost;
                 }
                 set {
-                    this.googlehost = value;
+                    this._googlehost = value;
                 }
             }
             
@@ -1986,10 +1987,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("highRange")]
             public virtual string HighRange {
                 get {
-                    return this.highRange;
+                    return this._highRange;
                 }
                 set {
-                    this.highRange = value;
+                    this._highRange = value;
                 }
             }
             
@@ -1997,10 +1998,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("hl")]
             public virtual string Hl {
                 get {
-                    return this.hl;
+                    return this._hl;
                 }
                 set {
-                    this.hl = value;
+                    this._hl = value;
                 }
             }
             
@@ -2008,54 +2009,54 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("hq")]
             public virtual string Hq {
                 get {
-                    return this.hq;
+                    return this._hq;
                 }
                 set {
-                    this.hq = value;
+                    this._hq = value;
                 }
             }
             
             /// <summary>Returns black and white, grayscale, or color images: mono, gray, and color.</summary>
             [Google.Apis.Util.RequestParameterAttribute("imgColorType")]
-            public virtual ImgColorType? ImgColorType {
+            public virtual System.Nullable<ImgColorType> ImgColorType {
                 get {
-                    return this.imgColorType;
+                    return this._imgColorType;
                 }
                 set {
-                    this.imgColorType = value;
+                    this._imgColorType = value;
                 }
             }
             
             /// <summary>Returns images of a specific dominant color: yellow, green, teal, blue, purple, pink, white, gray, black and brown.</summary>
             [Google.Apis.Util.RequestParameterAttribute("imgDominantColor")]
-            public virtual ImgDominantColor? ImgDominantColor {
+            public virtual System.Nullable<ImgDominantColor> ImgDominantColor {
                 get {
-                    return this.imgDominantColor;
+                    return this._imgDominantColor;
                 }
                 set {
-                    this.imgDominantColor = value;
+                    this._imgDominantColor = value;
                 }
             }
             
             /// <summary>Returns images of a specified size, where size can be one of: icon, small, medium, large, xlarge, xxlarge, and huge.</summary>
             [Google.Apis.Util.RequestParameterAttribute("imgSize")]
-            public virtual ImgSize? ImgSize {
+            public virtual System.Nullable<ImgSize> ImgSize {
                 get {
-                    return this.imgSize;
+                    return this._imgSize;
                 }
                 set {
-                    this.imgSize = value;
+                    this._imgSize = value;
                 }
             }
             
             /// <summary>Returns images of a type, which can be one of: clipart, face, lineart, news, and photo.</summary>
             [Google.Apis.Util.RequestParameterAttribute("imgType")]
-            public virtual ImgType? ImgType {
+            public virtual System.Nullable<ImgType> ImgType {
                 get {
-                    return this.imgType;
+                    return this._imgType;
                 }
                 set {
-                    this.imgType = value;
+                    this._imgType = value;
                 }
             }
             
@@ -2063,10 +2064,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("linkSite")]
             public virtual string LinkSite {
                 get {
-                    return this.linkSite;
+                    return this._linkSite;
                 }
                 set {
-                    this.linkSite = value;
+                    this._linkSite = value;
                 }
             }
             
@@ -2074,32 +2075,32 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("lowRange")]
             public virtual string LowRange {
                 get {
-                    return this.lowRange;
+                    return this._lowRange;
                 }
                 set {
-                    this.lowRange = value;
+                    this._lowRange = value;
                 }
             }
             
             /// <summary>The language restriction for the search results</summary>
             [Google.Apis.Util.RequestParameterAttribute("lr")]
-            public virtual Lr? Lr {
+            public virtual System.Nullable<Lr> Lr {
                 get {
-                    return this.lr;
+                    return this._lr;
                 }
                 set {
-                    this.lr = value;
+                    this._lr = value;
                 }
             }
             
             /// <summary>Number of search results to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("num")]
-            public virtual System.Int64? Num {
+            public virtual System.Nullable<long> Num {
                 get {
-                    return this.num;
+                    return this._num;
                 }
                 set {
-                    this.num = value;
+                    this._num = value;
                 }
             }
             
@@ -2107,10 +2108,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("orTerms")]
             public virtual string OrTerms {
                 get {
-                    return this.orTerms;
+                    return this._orTerms;
                 }
                 set {
-                    this.orTerms = value;
+                    this._orTerms = value;
                 }
             }
             
@@ -2118,7 +2119,7 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
             }
             
@@ -2126,10 +2127,10 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("relatedSite")]
             public virtual string RelatedSite {
                 get {
-                    return this.relatedSite;
+                    return this._relatedSite;
                 }
                 set {
-                    this.relatedSite = value;
+                    this._relatedSite = value;
                 }
             }
             
@@ -2137,32 +2138,32 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("rights")]
             public virtual string Rights {
                 get {
-                    return this.rights;
+                    return this._rights;
                 }
                 set {
-                    this.rights = value;
+                    this._rights = value;
                 }
             }
             
             /// <summary>Search safety level</summary>
             [Google.Apis.Util.RequestParameterAttribute("safe")]
-            public virtual Safe? Safe {
+            public virtual System.Nullable<Safe> Safe {
                 get {
-                    return this.safe;
+                    return this._safe;
                 }
                 set {
-                    this.safe = value;
+                    this._safe = value;
                 }
             }
             
             /// <summary>Specifies the search type: image.</summary>
             [Google.Apis.Util.RequestParameterAttribute("searchType")]
-            public virtual SearchType? SearchType {
+            public virtual System.Nullable<SearchType> SearchType {
                 get {
-                    return this.searchType;
+                    return this._searchType;
                 }
                 set {
-                    this.searchType = value;
+                    this._searchType = value;
                 }
             }
             
@@ -2170,21 +2171,21 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("siteSearch")]
             public virtual string SiteSearch {
                 get {
-                    return this.siteSearch;
+                    return this._siteSearch;
                 }
                 set {
-                    this.siteSearch = value;
+                    this._siteSearch = value;
                 }
             }
             
             /// <summary>Controls whether to include or exclude results from the site named in the as_sitesearch parameter</summary>
             [Google.Apis.Util.RequestParameterAttribute("siteSearchFilter")]
-            public virtual SiteSearchFilter? SiteSearchFilter {
+            public virtual System.Nullable<SiteSearchFilter> SiteSearchFilter {
                 get {
-                    return this.siteSearchFilter;
+                    return this._siteSearchFilter;
                 }
                 set {
-                    this.siteSearchFilter = value;
+                    this._siteSearchFilter = value;
                 }
             }
             
@@ -2192,21 +2193,21 @@ namespace Google.Apis.Customsearch.v1 {
             [Google.Apis.Util.RequestParameterAttribute("sort")]
             public virtual string Sort {
                 get {
-                    return this.sort;
+                    return this._sort;
                 }
                 set {
-                    this.sort = value;
+                    this._sort = value;
                 }
             }
             
             /// <summary>The index of the first result to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("start")]
-            public virtual System.Int64? Start {
+            public virtual System.Nullable<long> Start {
                 get {
-                    return this.start;
+                    return this._start;
                 }
                 set {
-                    this.start = value;
+                    this._start = value;
                 }
             }
             
@@ -2228,7 +2229,7 @@ namespace Google.Apis.Customsearch.v1 {
         
         private const string Resource = "";
         
-        private CseResource cse;
+        private CseResource _cse;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -2238,7 +2239,7 @@ namespace Google.Apis.Customsearch.v1 {
         
         public virtual CseResource Cse {
             get {
-                return this.cse;
+                return this._cse;
             }
         }
     }

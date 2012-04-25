@@ -16,18 +16,18 @@ namespace Google.Apis.SiteVerification.v1.Data {
     
     public class SiteVerificationWebResourceGettokenRequest {
         
-        private SiteVerificationWebResourceGettokenRequest.SiteData site;
+        private SiteVerificationWebResourceGettokenRequest.SiteData _site;
         
-        private string verificationMethod;
+        private string _verificationMethod;
         
         /// <summary>The site for which a verification token will be generated.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("site")]
         public virtual SiteVerificationWebResourceGettokenRequest.SiteData Site {
             get {
-                return this.site;
+                return this._site;
             }
             set {
-                this.site = value;
+                this._site = value;
             }
         }
         
@@ -35,28 +35,28 @@ namespace Google.Apis.SiteVerification.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("verificationMethod")]
         public virtual string VerificationMethod {
             get {
-                return this.verificationMethod;
+                return this._verificationMethod;
             }
             set {
-                this.verificationMethod = value;
+                this._verificationMethod = value;
             }
         }
         
         /// <summary>The site for which a verification token will be generated.</summary>
         public class SiteData {
             
-            private string identifier;
+            private string _identifier;
             
-            private string type;
+            private string _type;
             
             /// <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("identifier")]
             public virtual string Identifier {
                 get {
-                    return this.identifier;
+                    return this._identifier;
                 }
                 set {
-                    this.identifier = value;
+                    this._identifier = value;
                 }
             }
             
@@ -64,10 +64,10 @@ namespace Google.Apis.SiteVerification.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -75,22 +75,22 @@ namespace Google.Apis.SiteVerification.v1.Data {
     
     public class SiteVerificationWebResourceGettokenResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string method;
+        private string _method;
         
-        private string token;
+        private string _token;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The verification method to use in conjunction with this token. For FILE, the token should be placed in the top-level directory of the site, stored inside a file of the same name. For META, the token should be placed in the HEAD tag of the default page that is loaded for the site. For DNS, the token should be placed in a TXT record of the domain.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("method")]
         public virtual string Method {
             get {
-                return this.method;
+                return this._method;
             }
             set {
-                this.method = value;
+                this._method = value;
             }
         }
         
@@ -98,92 +98,92 @@ namespace Google.Apis.SiteVerification.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("token")]
         public virtual string Token {
             get {
-                return this.token;
+                return this._token;
             }
             set {
-                this.token = value;
+                this._token = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class SiteVerificationWebResourceListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<SiteVerificationWebResourceResource> items;
+        private System.Collections.Generic.IList<SiteVerificationWebResourceResource> _items;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The list of sites that are owned by the authenticated user.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<SiteVerificationWebResourceResource> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class SiteVerificationWebResourceResource : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<string> owners;
+        private System.Collections.Generic.IList<string> _owners;
         
-        private SiteVerificationWebResourceResource.SiteData site;
+        private SiteVerificationWebResourceResource.SiteData _site;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The string used to identify this site. This value should be used in the &quot;id&quot; portion of the REST URL for the Get, Update, and Delete operations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -191,10 +191,10 @@ namespace Google.Apis.SiteVerification.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("owners")]
         public virtual System.Collections.Generic.IList<string> Owners {
             get {
-                return this.owners;
+                return this._owners;
             }
             set {
-                this.owners = value;
+                this._owners = value;
             }
         }
         
@@ -202,47 +202,47 @@ namespace Google.Apis.SiteVerification.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("site")]
         public virtual SiteVerificationWebResourceResource.SiteData Site {
             get {
-                return this.site;
+                return this._site;
             }
             set {
-                this.site = value;
+                this._site = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The address and type of a site that is verified or will be verified.</summary>
         public class SiteData {
             
-            private string identifier;
+            private string _identifier;
             
-            private string type;
+            private string _type;
             
             /// <summary>The site identifier. If the type is set to SITE, the identifier is a URL. If the type is set to INET_DOMAIN, the site identifier is a domain name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("identifier")]
             public virtual string Identifier {
                 get {
-                    return this.identifier;
+                    return this._identifier;
                 }
                 set {
-                    this.identifier = value;
+                    this._identifier = value;
                 }
             }
             
@@ -250,10 +250,10 @@ namespace Google.Apis.SiteVerification.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -280,97 +280,98 @@ namespace Google.Apis.SiteVerification.v1 {
             "images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/images/icons/pr" +
             "oduct/search-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/siteverif" +
             "ication/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/siteVerificati" +
-            "on/v1/\",\"basePath\":\"/siteVerification/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\"," +
-            "\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"" +
-            "enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"location\"" +
-            ":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fie" +
-            "lds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string" +
-            "\",\"description\":\"API key. Your API key identifies your project and provides you " +
-            "with API access, quota, and reports. Required unless you provide an OAuth 2.0 to" +
-            "ken.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2." +
-            "0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Returns response with indentations and line breaks.\",\"default\"" +
-            ":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Availab" +
-            "le to use for quota purposes for server-side applications. Can be any arbitrary " +
-            "string assigned to a user, but should not exceed 40 characters. Overrides userIp" +
-            " if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descripti" +
-            "on\":\"IP address of the site where the request originates. Use this if you want t" +
-            "o enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"ht" +
-            "tps://www.googleapis.com/auth/siteverification\":{\"description\":\"Manage the list " +
-            "of sites and domains you control\"},\"https://www.googleapis.com/auth/siteverifica" +
-            "tion.verify_only\":{\"description\":\"Manage your new site verifications with Google" +
-            "\"}}}},\"schemas\":{\"SiteVerificationWebResourceGettokenRequest\":{\"id\":\"SiteVerific" +
-            "ationWebResourceGettokenRequest\",\"type\":\"object\",\"properties\":{\"site\":{\"type\":\"o" +
-            "bject\",\"description\":\"The site for which a verification token will be generated." +
-            "\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"The site identifier" +
-            ". If the type is set to SITE, the identifier is a URL. If the type is set to INE" +
-            "T_DOMAIN, the site identifier is a domain name.\"},\"type\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The type of resource to be verified. Can be SITE or INET_DOMAIN (domain" +
-            " name).\"}}},\"verificationMethod\":{\"type\":\"string\",\"description\":\"The verificatio" +
-            "n method that will be used to verify this site. For sites, \'FILE\' or \'META\' meth" +
-            "ods may be used. For domains, only \'DNS\' may be used.\"}}},\"SiteVerificationWebRe" +
-            "sourceGettokenResponse\":{\"id\":\"SiteVerificationWebResourceGettokenResponse\",\"typ" +
-            "e\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"description\":\"The verificat" +
-            "ion method to use in conjunction with this token. For FILE, the token should be " +
-            "placed in the top-level directory of the site, stored inside a file of the same " +
-            "name. For META, the token should be placed in the HEAD tag of the default page t" +
-            "hat is loaded for the site. For DNS, the token should be placed in a TXT record " +
-            "of the domain.\"},\"token\":{\"type\":\"string\",\"description\":\"The verification token." +
-            " The token must be placed appropriately in order for verification to succeed.\"}}" +
-            "},\"SiteVerificationWebResourceListResponse\":{\"id\":\"SiteVerificationWebResourceLi" +
-            "stResponse\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":" +
-            "\"The list of sites that are owned by the authenticated user.\",\"items\":{\"$ref\":\"S" +
-            "iteVerificationWebResourceResource\"}}}},\"SiteVerificationWebResourceResource\":{\"" +
-            "id\":\"SiteVerificationWebResourceResource\",\"type\":\"object\",\"properties\":{\"id\":{\"t" +
-            "ype\":\"string\",\"description\":\"The string used to identify this site. This value s" +
-            "hould be used in the \\\"id\\\" portion of the REST URL for the Get, Update, and Del" +
-            "ete operations.\"},\"owners\":{\"type\":\"array\",\"description\":\"The email addresses of" +
-            " all verified owners.\",\"items\":{\"type\":\"string\"}},\"site\":{\"type\":\"object\",\"descr" +
-            "iption\":\"The address and type of a site that is verified or will be verified.\",\"" +
-            "properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"The site identifier. I" +
-            "f the type is set to SITE, the identifier is a URL. If the type is set to INET_D" +
-            "OMAIN, the site identifier is a domain name.\"},\"type\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The site type. Can be SITE or INET_DOMAIN (domain name).\"}}}}}},\"resources" +
-            "\":{\"webResource\":{\"methods\":{\"delete\":{\"id\":\"siteVerification.webResource.delete" +
-            "\",\"path\":\"webResource/{id}\",\"httpMethod\":\"DELETE\",\"description\":\"Relinquish owne" +
-            "rship of a website or domain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\"" +
-            ":\"The id of a verified site or domain.\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/siteverification\"" +
-            "]},\"get\":{\"id\":\"siteVerification.webResource.get\",\"path\":\"webResource/{id}\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Get the most current data for a website or domain." +
-            "\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id of a verified site o" +
-            "r domain.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response" +
-            "\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/siteverification\"]},\"getToken\":{\"id\":\"siteVerification.webResource.g" +
-            "etToken\",\"path\":\"token\",\"httpMethod\":\"POST\",\"description\":\"Get a verification to" +
-            "ken for placing on a website or domain.\",\"request\":{\"$ref\":\"SiteVerificationWebR" +
-            "esourceGettokenRequest\"},\"response\":{\"$ref\":\"SiteVerificationWebResourceGettoken" +
-            "Response\"},\"scopes\":[\"https://www.googleapis.com/auth/siteverification\",\"https:/" +
-            "/www.googleapis.com/auth/siteverification.verify_only\"]},\"insert\":{\"id\":\"siteVer" +
-            "ification.webResource.insert\",\"path\":\"webResource\",\"httpMethod\":\"POST\",\"descript" +
-            "ion\":\"Attempt verification of a website or domain.\",\"parameters\":{\"verificationM" +
-            "ethod\":{\"type\":\"string\",\"description\":\"The method to use for verifying a site or" +
-            " domain.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"verificationMe" +
-            "thod\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"response\":{\"$re" +
-            "f\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/siteverification\",\"https://www.googleapis.com/auth/siteverification.verify_" +
-            "only\"]},\"list\":{\"id\":\"siteVerification.webResource.list\",\"path\":\"webResource\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Get the list of your verified websites and domai" +
-            "ns.\",\"response\":{\"$ref\":\"SiteVerificationWebResourceListResponse\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/siteverification\"]},\"patch\":{\"id\":\"siteVerificatio" +
-            "n.webResource.patch\",\"path\":\"webResource/{id}\",\"httpMethod\":\"PATCH\",\"description" +
-            "\":\"Modify the list of owners for your website or domain. This method supports pa" +
-            "tch semantics.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id of a v" +
-            "erified site or domain.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "id\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"response\":{\"$ref\"" +
-            ":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/siteverification\"]},\"update\":{\"id\":\"siteVerification.webResource.update\",\"pat" +
-            "h\":\"webResource/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Modify the list of owner" +
-            "s for your website or domain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\"" +
-            ":\"The id of a verified site or domain.\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"id\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"re" +
-            "sponse\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/siteverification\"]}}}}}";
+            "on/v1/\",\"basePath\":\"/siteVerification/v1/\",\"rootUrl\":\"https://www.googleapis.com" +
+            "/\",\"servicePath\":\"siteVerification/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":" +
+            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
+            "\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/" +
+            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
+            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
+            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
+            "and provides you with API access, quota, and reports. Required unless you provid" +
+            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
+            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
+            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
+            "reaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Available to use for quota purposes for server-side applications. Can " +
+            "be any arbitrary string assigned to a user, but should not exceed 40 characters." +
+            " Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"s" +
+            "tring\",\"description\":\"IP address of the site where the request originates. Use t" +
+            "his if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth" +
+            "2\":{\"scopes\":{\"https://www.googleapis.com/auth/siteverification\":{\"description\":" +
+            "\"Manage the list of sites and domains you control\"},\"https://www.googleapis.com/" +
+            "auth/siteverification.verify_only\":{\"description\":\"Manage your new site verifica" +
+            "tions with Google\"}}}},\"schemas\":{\"SiteVerificationWebResourceGettokenRequest\":{" +
+            "\"id\":\"SiteVerificationWebResourceGettokenRequest\",\"type\":\"object\",\"properties\":{" +
+            "\"site\":{\"type\":\"object\",\"description\":\"The site for which a verification token w" +
+            "ill be generated.\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"Th" +
+            "e site identifier. If the type is set to SITE, the identifier is a URL. If the t" +
+            "ype is set to INET_DOMAIN, the site identifier is a domain name.\"},\"type\":{\"type" +
+            "\":\"string\",\"description\":\"The type of resource to be verified. Can be SITE or IN" +
+            "ET_DOMAIN (domain name).\"}}},\"verificationMethod\":{\"type\":\"string\",\"description\"" +
+            ":\"The verification method that will be used to verify this site. For sites, \'FIL" +
+            "E\' or \'META\' methods may be used. For domains, only \'DNS\' may be used.\"}}},\"Site" +
+            "VerificationWebResourceGettokenResponse\":{\"id\":\"SiteVerificationWebResourceGetto" +
+            "kenResponse\",\"type\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The verification method to use in conjunction with this token. For FILE, the" +
+            " token should be placed in the top-level directory of the site, stored inside a " +
+            "file of the same name. For META, the token should be placed in the HEAD tag of t" +
+            "he default page that is loaded for the site. For DNS, the token should be placed" +
+            " in a TXT record of the domain.\"},\"token\":{\"type\":\"string\",\"description\":\"The ve" +
+            "rification token. The token must be placed appropriately in order for verificati" +
+            "on to succeed.\"}}},\"SiteVerificationWebResourceListResponse\":{\"id\":\"SiteVerifica" +
+            "tionWebResourceListResponse\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arra" +
+            "y\",\"description\":\"The list of sites that are owned by the authenticated user.\",\"" +
+            "items\":{\"$ref\":\"SiteVerificationWebResourceResource\"}}}},\"SiteVerificationWebRes" +
+            "ourceResource\":{\"id\":\"SiteVerificationWebResourceResource\",\"type\":\"object\",\"prop" +
+            "erties\":{\"id\":{\"type\":\"string\",\"description\":\"The string used to identify this s" +
+            "ite. This value should be used in the \\\"id\\\" portion of the REST URL for the Get" +
+            ", Update, and Delete operations.\"},\"owners\":{\"type\":\"array\",\"description\":\"The e" +
+            "mail addresses of all verified owners.\",\"items\":{\"type\":\"string\"}},\"site\":{\"type" +
+            "\":\"object\",\"description\":\"The address and type of a site that is verified or wil" +
+            "l be verified.\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"The s" +
+            "ite identifier. If the type is set to SITE, the identifier is a URL. If the type" +
+            " is set to INET_DOMAIN, the site identifier is a domain name.\"},\"type\":{\"type\":\"" +
+            "string\",\"description\":\"The site type. Can be SITE or INET_DOMAIN (domain name).\"" +
+            "}}}}}},\"resources\":{\"webResource\":{\"methods\":{\"delete\":{\"id\":\"siteVerification.w" +
+            "ebResource.delete\",\"path\":\"webResource/{id}\",\"httpMethod\":\"DELETE\",\"description\"" +
+            ":\"Relinquish ownership of a website or domain.\",\"parameters\":{\"id\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The id of a verified site or domain.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "siteverification\"]},\"get\":{\"id\":\"siteVerification.webResource.get\",\"path\":\"webRe" +
+            "source/{id}\",\"httpMethod\":\"GET\",\"description\":\"Get the most current data for a w" +
+            "ebsite or domain.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The id of " +
+            "a verified site or domain.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\"" +
+            ":[\"id\"],\"response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/siteverification\"]},\"getToken\":{\"id\":\"siteVerificat" +
+            "ion.webResource.getToken\",\"path\":\"token\",\"httpMethod\":\"POST\",\"description\":\"Get " +
+            "a verification token for placing on a website or domain.\",\"request\":{\"$ref\":\"Sit" +
+            "eVerificationWebResourceGettokenRequest\"},\"response\":{\"$ref\":\"SiteVerificationWe" +
+            "bResourceGettokenResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/siteverif" +
+            "ication\",\"https://www.googleapis.com/auth/siteverification.verify_only\"]},\"inser" +
+            "t\":{\"id\":\"siteVerification.webResource.insert\",\"path\":\"webResource\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Attempt verification of a website or domain.\",\"parameters" +
+            "\":{\"verificationMethod\":{\"type\":\"string\",\"description\":\"The method to use for ve" +
+            "rifying a site or domain.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\"" +
+            ":[\"verificationMethod\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"}" +
+            ",\"response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/siteverification\",\"https://www.googleapis.com/auth/sitever" +
+            "ification.verify_only\"]},\"list\":{\"id\":\"siteVerification.webResource.list\",\"path\"" +
+            ":\"webResource\",\"httpMethod\":\"GET\",\"description\":\"Get the list of your verified w" +
+            "ebsites and domains.\",\"response\":{\"$ref\":\"SiteVerificationWebResourceListRespons" +
+            "e\"},\"scopes\":[\"https://www.googleapis.com/auth/siteverification\"]},\"patch\":{\"id\"" +
+            ":\"siteVerification.webResource.patch\",\"path\":\"webResource/{id}\",\"httpMethod\":\"PA" +
+            "TCH\",\"description\":\"Modify the list of owners for your website or domain. This m" +
+            "ethod supports patch semantics.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The id of a verified site or domain.\",\"required\":true,\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"id\"],\"request\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"" +
+            "response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/siteverification\"]},\"update\":{\"id\":\"siteVerification.webReso" +
+            "urce.update\",\"path\":\"webResource/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Modify " +
+            "the list of owners for your website or domain.\",\"parameters\":{\"id\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The id of a verified site or domain.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"SiteVerificationWebResou" +
+            "rceResource\"},\"response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/siteverification\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -380,12 +381,12 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected SiteVerificationService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.webResource = new WebResourceResource(this);
+            this._webResource = new WebResourceResource(this);
         }
         
         public SiteVerificationService() : 
@@ -393,22 +394,22 @@ namespace Google.Apis.SiteVerification.v1 {
         }
         
         public SiteVerificationService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(SiteVerificationService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(SiteVerificationService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -492,38 +493,38 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -531,10 +532,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -542,7 +543,7 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
@@ -561,38 +562,38 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -600,10 +601,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -611,7 +612,7 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
@@ -630,13 +631,13 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class GetTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest bodyValue;
+            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest _Body;
             
             public GetTokenRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest body) : 
                     base(service) {
@@ -647,21 +648,21 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -669,20 +670,20 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenRequest Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -705,41 +706,41 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string verificationMethod;
+            private string _verificationMethod;
             
-            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource bodyValue;
+            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string verificationMethod) : 
                     base(service) {
                 this.Body = body;
-                this.verificationMethod = verificationMethod;
+                this._verificationMethod = verificationMethod;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -747,10 +748,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -758,17 +759,17 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("verificationMethod")]
             public virtual string VerificationMethod {
                 get {
-                    return this.verificationMethod;
+                    return this._verificationMethod;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -791,11 +792,11 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -805,21 +806,21 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -827,10 +828,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -849,41 +850,41 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
-            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource bodyValue;
+            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
                     base(service) {
                 this.Body = body;
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -891,10 +892,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -902,17 +903,17 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -935,41 +936,41 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string id;
+            private string _id;
             
-            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource bodyValue;
+            private Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource body, string id) : 
                     base(service) {
                 this.Body = body;
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -977,10 +978,10 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -988,17 +989,17 @@ namespace Google.Apis.SiteVerification.v1 {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1024,7 +1025,7 @@ namespace Google.Apis.SiteVerification.v1 {
         
         private const string Resource = "";
         
-        private WebResourceResource webResource;
+        private WebResourceResource _webResource;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1034,7 +1035,7 @@ namespace Google.Apis.SiteVerification.v1 {
         
         public virtual WebResourceResource WebResource {
             get {
-                return this.webResource;
+                return this._webResource;
             }
         }
     }

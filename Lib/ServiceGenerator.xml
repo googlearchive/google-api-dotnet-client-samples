@@ -81,6 +81,11 @@
             <param name="code">Where to add the attribute.</param>
             <param name="value">The string value of the attribute.</param>
         </member>
+        <member name="P:GoogleApis.Tools.ServiceGenerator.Generator.CodeDomProviderLanguage">
+            <summary>
+            Set the language of the CodeDomProvider
+            </summary>
+        </member>
         <member name="P:GoogleApis.Tools.ServiceGenerator.Generator.OutputDir">
             <summary>
             The directory where the generated files will be put.

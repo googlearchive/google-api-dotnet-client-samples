@@ -16,32 +16,32 @@ namespace Google.Apis.Webfonts.v1.Data {
     
     public class Webfont {
         
-        private string family;
+        private string _family;
         
-        private string kind;
+        private string _kind;
         
-        private string subsets;
+        private string _subsets;
         
-        private string variants;
+        private string _variants;
         
         /// <summary>The name of the font.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("family")]
         public virtual string Family {
             get {
-                return this.family;
+                return this._family;
             }
             set {
-                this.family = value;
+                this._family = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -49,10 +49,10 @@ namespace Google.Apis.Webfonts.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("subsets")]
         public virtual string Subsets {
             get {
-                return this.subsets;
+                return this._subsets;
             }
             set {
-                this.subsets = value;
+                this._subsets = value;
             }
         }
         
@@ -60,32 +60,32 @@ namespace Google.Apis.Webfonts.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("variants")]
         public virtual string Variants {
             get {
-                return this.variants;
+                return this._variants;
             }
             set {
-                this.variants = value;
+                this._variants = value;
             }
         }
     }
     
     public class WebfontList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Webfont> items;
+        private System.Collections.Generic.IList<Webfont> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The list of fonts currently served by the Google Fonts API.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Webfont> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -93,29 +93,29 @@ namespace Google.Apis.Webfonts.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -140,37 +140,38 @@ namespace Google.Apis.Webfonts.v1 {
             ":\"http://www.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www." +
             "google.com/images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://co" +
             "de.google.com/apis/webfonts/docs/developer_api.html\",\"protocol\":\"rest\",\"baseUrl\"" +
-            ":\"https://www.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"parameter" +
-            "s\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defaul" +
-            "t\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of ap" +
-            "plication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Se" +
-            "lector specifying which fields to include in a partial response.\",\"location\":\"qu" +
-            "ery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies you" +
-            "r project and provides you with API access, quota, and reports. Required unless " +
-            "you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"stri" +
-            "ng\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"p" +
-            "rettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations " +
-            "and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Available to use for quota purposes for server-side applicati" +
-            "ons. Can be any arbitrary string assigned to a user, but should not exceed 40 ch" +
-            "aracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{" +
-            "\"type\":\"string\",\"description\":\"IP address of the site where the request originat" +
-            "es. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"sche" +
-            "mas\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":{\"type\":\"" +
-            "any\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"default\":\"w" +
-            "ebfonts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts supported b" +
-            "y the font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available variants for" +
-            " the font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"properties\":{\"" +
-            "items\":{\"type\":\"array\",\"description\":\"The list of fonts currently served by the " +
-            "Google Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The object kind.\",\"default\":\"webfonts#webfontList\"}}}},\"resources\":{\"webfo" +
-            "nts\":{\"methods\":{\"list\":{\"id\":\"webfonts.webfonts.list\",\"path\":\"webfonts\",\"httpMe" +
-            "thod\":\"GET\",\"description\":\"Retrieves the list of fonts currently served by the G" +
-            "oogle Web Fonts Developer API\",\"parameters\":{\"sort\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Enables sorting of the list\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"style\",\"tr" +
-            "ending\"],\"enumDescriptions\":[\"Sort alphabetically\",\"Sort by date added\",\"Sort by" +
-            " popularity\",\"Sort by number of styles\",\"Sort by trending\"],\"location\":\"query\"}}" +
-            ",\"response\":{\"$ref\":\"WebfontList\"}}}}}}";
+            ":\"https://www.googleapis.com/webfonts/v1/\",\"basePath\":\"/webfonts/v1/\",\"rootUrl\":" +
+            "\"https://www.googleapis.com/\",\"servicePath\":\"webfonts/v1/\",\"batchPath\":\"batch\",\"" +
+            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response." +
+            "\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-T" +
+            "ype of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Selector specifying which fields to include in a partial response.\",\"loca" +
+            "tion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key ident" +
+            "ifies your project and provides you with API access, quota, and reports. Require" +
+            "d unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"ty" +
+            "pe\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"q" +
+            "uery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inde" +
+            "ntations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Available to use for quota purposes for server-side " +
+            "applications. Can be any arbitrary string assigned to a user, but should not exc" +
+            "eed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"" +
+            "userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request" +
+            " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
+            "\"}},\"schemas\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":" +
+            "{\"type\":\"any\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"de" +
+            "fault\":\"webfonts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts su" +
+            "pported by the font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available var" +
+            "iants for the font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"prope" +
+            "rties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of fonts currently serve" +
+            "d by the Google Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"The object kind.\",\"default\":\"webfonts#webfontList\"}}}},\"resources" +
+            "\":{\"webfonts\":{\"methods\":{\"list\":{\"id\":\"webfonts.webfonts.list\",\"path\":\"webfonts" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of fonts currently served" +
+            " by the Google Web Fonts Developer API\",\"parameters\":{\"sort\":{\"type\":\"string\",\"d" +
+            "escription\":\"Enables sorting of the list\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"s" +
+            "tyle\",\"trending\"],\"enumDescriptions\":[\"Sort alphabetically\",\"Sort by date added\"" +
+            ",\"Sort by popularity\",\"Sort by number of styles\",\"Sort by trending\"],\"location\":" +
+            "\"query\"}},\"response\":{\"$ref\":\"WebfontList\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -180,12 +181,12 @@ namespace Google.Apis.Webfonts.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected WebfontsService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.webfonts = new WebfontsResource(this);
+            this._webfonts = new WebfontsResource(this);
         }
         
         public WebfontsService() : 
@@ -193,22 +194,22 @@ namespace Google.Apis.Webfonts.v1 {
         }
         
         public WebfontsService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(WebfontsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(WebfontsService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(WebfontsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(WebfontsService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -270,13 +271,13 @@ namespace Google.Apis.Webfonts.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Webfonts.v1.Data.WebfontList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Sort? sort;
+            private System.Nullable<Sort> _sort;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -286,21 +287,21 @@ namespace Google.Apis.Webfonts.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -308,21 +309,21 @@ namespace Google.Apis.Webfonts.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Enables sorting of the list</summary>
             [Google.Apis.Util.RequestParameterAttribute("sort")]
-            public virtual Sort? Sort {
+            public virtual System.Nullable<Sort> Sort {
                 get {
-                    return this.sort;
+                    return this._sort;
                 }
                 set {
-                    this.sort = value;
+                    this._sort = value;
                 }
             }
             
@@ -344,7 +345,7 @@ namespace Google.Apis.Webfonts.v1 {
         
         private const string Resource = "";
         
-        private WebfontsResource webfonts;
+        private WebfontsResource _webfonts;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -354,7 +355,7 @@ namespace Google.Apis.Webfonts.v1 {
         
         public virtual WebfontsResource Webfonts {
             get {
-                return this.webfonts;
+                return this._webfonts;
             }
         }
     }

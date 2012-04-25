@@ -7,6 +7,9 @@
         <member name="P:Google.Apis.Prediction.v1_5.Data.Analyze.DataDescription">
             <summary>Description of the data the model was trained on.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Analyze.Errors">
+            <summary>List of errors with the data.</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Analyze.Id">
             <summary>The unique name for the predictive model.</summary>
         </member>
@@ -228,6 +231,9 @@
         </member>
         <member name="T:Google.Apis.Prediction.v1_5.PredictionService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Prediction.v1_5.PredictionService.Scopes.DevstorageRead_only">
+            <summary>View your data in Google Cloud Storage</summary>
         </member>
         <member name="F:Google.Apis.Prediction.v1_5.PredictionService.Scopes.Prediction">
             <summary>Manage your data in the Google Prediction API</summary>

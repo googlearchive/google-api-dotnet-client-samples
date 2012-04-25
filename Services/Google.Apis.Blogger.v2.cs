@@ -16,40 +16,40 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class Blog : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string description;
+        private string _description;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Blog.LocaleData locale;
+        private Blog.LocaleData _locale;
         
-        private string name;
+        private string _name;
         
-        private Blog.PagesData pages;
+        private Blog.PagesData _pages;
         
-        private Blog.PostsData posts;
+        private Blog.PostsData _posts;
         
-        private string published;
+        private string _published;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
-        private string url;
+        private string _url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The description of this blog. This is displayed underneath the title.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -57,10 +57,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -68,10 +68,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -79,10 +79,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("locale")]
         public virtual Blog.LocaleData Locale {
             get {
-                return this.locale;
+                return this._locale;
             }
             set {
-                this.locale = value;
+                this._locale = value;
             }
         }
         
@@ -90,10 +90,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -101,10 +101,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("pages")]
         public virtual Blog.PagesData Pages {
             get {
-                return this.pages;
+                return this._pages;
             }
             set {
-                this.pages = value;
+                this._pages = value;
             }
         }
         
@@ -112,10 +112,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("posts")]
         public virtual Blog.PostsData Posts {
             get {
-                return this.posts;
+                return this._posts;
             }
             set {
-                this.posts = value;
+                this._posts = value;
             }
         }
         
@@ -123,10 +123,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -134,10 +134,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -145,10 +145,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -156,49 +156,49 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The locale this Blog is set to.</summary>
         public class LocaleData {
             
-            private string country;
+            private string _country;
             
-            private string language;
+            private string _language;
             
-            private string variant;
+            private string _variant;
             
             /// <summary>The country this blog&apos;s locale is set to.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("country")]
             public virtual string Country {
                 get {
-                    return this.country;
+                    return this._country;
                 }
                 set {
-                    this.country = value;
+                    this._country = value;
                 }
             }
             
@@ -206,10 +206,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
             
@@ -217,10 +217,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("variant")]
             public virtual string Variant {
                 get {
-                    return this.variant;
+                    return this._variant;
                 }
                 set {
-                    this.variant = value;
+                    this._variant = value;
                 }
             }
         }
@@ -228,18 +228,18 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>The container of pages in this blog.</summary>
         public class PagesData {
             
-            private string selfLink;
+            private string _selfLink;
             
-            private System.Nullable<long> totalItems;
+            private System.Nullable<long> _totalItems;
             
             /// <summary>The URL of the container for pages in this blog.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
             public virtual string SelfLink {
                 get {
-                    return this.selfLink;
+                    return this._selfLink;
                 }
                 set {
-                    this.selfLink = value;
+                    this._selfLink = value;
                 }
             }
             
@@ -247,10 +247,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
             public virtual System.Nullable<long> TotalItems {
                 get {
-                    return this.totalItems;
+                    return this._totalItems;
                 }
                 set {
-                    this.totalItems = value;
+                    this._totalItems = value;
                 }
             }
         }
@@ -258,18 +258,18 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>The container of posts in this blog.</summary>
         public class PostsData {
             
-            private string selfLink;
+            private string _selfLink;
             
-            private System.Nullable<long> totalItems;
+            private System.Nullable<long> _totalItems;
             
             /// <summary>The URL of the container for posts in this blog.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
             public virtual string SelfLink {
                 get {
-                    return this.selfLink;
+                    return this._selfLink;
                 }
                 set {
-                    this.selfLink = value;
+                    this._selfLink = value;
                 }
             }
             
@@ -277,10 +277,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
             public virtual System.Nullable<long> TotalItems {
                 get {
-                    return this.totalItems;
+                    return this._totalItems;
                 }
                 set {
-                    this.totalItems = value;
+                    this._totalItems = value;
                 }
             }
         }
@@ -288,22 +288,22 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class BlogList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Blog> items;
+        private System.Collections.Generic.IList<Blog> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The list of Blogs this user has Authorship or Admin rights over.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Blog> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -311,67 +311,67 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Comment : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Comment.AuthorData author;
+        private Comment.AuthorData _author;
         
-        private Comment.BlogData blog;
+        private Comment.BlogData _blog;
         
-        private string content;
+        private string _content;
         
-        private string id;
+        private string _id;
         
-        private Comment.InReplyToData inReplyTo;
+        private Comment.InReplyToData _inReplyTo;
         
-        private string kind;
+        private string _kind;
         
-        private Comment.PostData post;
+        private Comment.PostData _post;
         
-        private string published;
+        private string _published;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The author of this Comment.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual Comment.AuthorData Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -379,10 +379,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("blog")]
         public virtual Comment.BlogData Blog {
             get {
-                return this.blog;
+                return this._blog;
             }
             set {
-                this.blog = value;
+                this._blog = value;
             }
         }
         
@@ -390,10 +390,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -401,10 +401,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -412,10 +412,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("inReplyTo")]
         public virtual Comment.InReplyToData InReplyTo {
             get {
-                return this.inReplyTo;
+                return this._inReplyTo;
             }
             set {
-                this.inReplyTo = value;
+                this._inReplyTo = value;
             }
         }
         
@@ -423,10 +423,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -434,10 +434,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("post")]
         public virtual Comment.PostData Post {
             get {
-                return this.post;
+                return this._post;
             }
             set {
-                this.post = value;
+                this._post = value;
             }
         }
         
@@ -445,10 +445,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -456,10 +456,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -467,51 +467,51 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The author of this Comment.</summary>
         public class AuthorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string id;
+            private string _id;
             
-            private AuthorData.ImageData image;
+            private AuthorData.ImageData _image;
             
-            private string url;
+            private string _url;
             
             /// <summary>The display name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -519,10 +519,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -530,10 +530,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("image")]
             public virtual AuthorData.ImageData Image {
                 get {
-                    return this.image;
+                    return this._image;
                 }
                 set {
-                    this.image = value;
+                    this._image = value;
                 }
             }
             
@@ -541,26 +541,26 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>The comment creator&apos;s avatar.</summary>
             public class ImageData {
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The comment creator&apos;s avatar URL.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -569,16 +569,16 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>Data about the blog containing this comment.</summary>
         public class BlogData {
             
-            private string id;
+            private string _id;
             
             /// <summary>The identifier of the blog containing this comment.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
         }
@@ -586,16 +586,16 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>Data about the comment this is in reply to.</summary>
         public class InReplyToData {
             
-            private string id;
+            private string _id;
             
             /// <summary>The identified of the parent of this comment.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
         }
@@ -603,16 +603,16 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>Data about the post containing this comment.</summary>
         public class PostData {
             
-            private string id;
+            private string _id;
             
             /// <summary>The identifier of the post containing this comment.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
         }
@@ -620,26 +620,26 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class CommentList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Comment> items;
+        private System.Collections.Generic.IList<Comment> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The List of Comments for a Post.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Comment> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -647,10 +647,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -658,10 +658,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -669,67 +669,67 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Page : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Page.AuthorData author;
+        private Page.AuthorData _author;
         
-        private Page.BlogData blog;
+        private Page.BlogData _blog;
         
-        private string content;
+        private string _content;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string published;
+        private string _published;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private string url;
+        private string _url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The author of this Page.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual Page.AuthorData Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -737,10 +737,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("blog")]
         public virtual Page.BlogData Blog {
             get {
-                return this.blog;
+                return this._blog;
             }
             set {
-                this.blog = value;
+                this._blog = value;
             }
         }
         
@@ -748,10 +748,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -759,10 +759,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -770,10 +770,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -781,10 +781,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -792,10 +792,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -803,10 +803,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -814,10 +814,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -825,51 +825,51 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The author of this Page.</summary>
         public class AuthorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string id;
+            private string _id;
             
-            private AuthorData.ImageData image;
+            private AuthorData.ImageData _image;
             
-            private string url;
+            private string _url;
             
             /// <summary>The display name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -877,10 +877,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -888,10 +888,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("image")]
             public virtual AuthorData.ImageData Image {
                 get {
-                    return this.image;
+                    return this._image;
                 }
                 set {
-                    this.image = value;
+                    this._image = value;
                 }
             }
             
@@ -899,26 +899,26 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>The page author&apos;s avatar.</summary>
             public class ImageData {
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The page author&apos;s avatar URL.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -927,16 +927,16 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>Data about the blog containing this Page.</summary>
         public class BlogData {
             
-            private string id;
+            private string _id;
             
             /// <summary>The identifier of the blog containing this page.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
         }
@@ -944,22 +944,22 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class PageList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Page> items;
+        private System.Collections.Generic.IList<Page> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The list of Pages for a Blog.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Page> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -967,71 +967,71 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Post : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Post.AuthorData author;
+        private Post.AuthorData _author;
         
-        private Post.BlogData blog;
+        private Post.BlogData _blog;
         
-        private string content;
+        private string _content;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<string> labels;
+        private System.Collections.Generic.IList<string> _labels;
         
-        private string published;
+        private string _published;
         
-        private Post.RepliesData replies;
+        private Post.RepliesData _replies;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private string url;
+        private string _url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The author of this Post.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual Post.AuthorData Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -1039,10 +1039,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("blog")]
         public virtual Post.BlogData Blog {
             get {
-                return this.blog;
+                return this._blog;
             }
             set {
-                this.blog = value;
+                this._blog = value;
             }
         }
         
@@ -1050,10 +1050,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -1061,10 +1061,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1072,10 +1072,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1083,10 +1083,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("labels")]
         public virtual System.Collections.Generic.IList<string> Labels {
             get {
-                return this.labels;
+                return this._labels;
             }
             set {
-                this.labels = value;
+                this._labels = value;
             }
         }
         
@@ -1094,10 +1094,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -1105,10 +1105,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("replies")]
         public virtual Post.RepliesData Replies {
             get {
-                return this.replies;
+                return this._replies;
             }
             set {
-                this.replies = value;
+                this._replies = value;
             }
         }
         
@@ -1116,10 +1116,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1127,10 +1127,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -1138,10 +1138,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -1149,51 +1149,51 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The author of this Post.</summary>
         public class AuthorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string id;
+            private string _id;
             
-            private AuthorData.ImageData image;
+            private AuthorData.ImageData _image;
             
-            private string url;
+            private string _url;
             
             /// <summary>The display name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -1201,10 +1201,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -1212,10 +1212,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("image")]
             public virtual AuthorData.ImageData Image {
                 get {
-                    return this.image;
+                    return this._image;
                 }
                 set {
-                    this.image = value;
+                    this._image = value;
                 }
             }
             
@@ -1223,26 +1223,26 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>The Post author&apos;s avatar.</summary>
             public class ImageData {
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The Post author&apos;s avatar URL.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -1251,16 +1251,16 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>Data about the blog containing this Post.</summary>
         public class BlogData {
             
-            private string id;
+            private string _id;
             
             /// <summary>The identifier of the Blog that contains this Post.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
         }
@@ -1268,18 +1268,18 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>The container of comments on this Post.</summary>
         public class RepliesData {
             
-            private string selfLink;
+            private string _selfLink;
             
-            private string totalItems;
+            private string _totalItems;
             
             /// <summary>The URL of the comments on this post.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
             public virtual string SelfLink {
                 get {
-                    return this.selfLink;
+                    return this._selfLink;
                 }
                 set {
-                    this.selfLink = value;
+                    this._selfLink = value;
                 }
             }
             
@@ -1287,10 +1287,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
             public virtual string TotalItems {
                 get {
-                    return this.totalItems;
+                    return this._totalItems;
                 }
                 set {
-                    this.totalItems = value;
+                    this._totalItems = value;
                 }
             }
         }
@@ -1298,26 +1298,26 @@ namespace Google.Apis.Blogger.v2.Data {
     
     public class PostList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Post> items;
+        private System.Collections.Generic.IList<Post> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string prevPageToken;
+        private string _prevPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The list of Posts for this Blog.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Post> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1325,10 +1325,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1336,10 +1336,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1347,65 +1347,65 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("prevPageToken")]
         public virtual string PrevPageToken {
             get {
-                return this.prevPageToken;
+                return this._prevPageToken;
             }
             set {
-                this.prevPageToken = value;
+                this._prevPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class User : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string about;
+        private string _about;
         
-        private User.BlogsData blogs;
+        private User.BlogsData _blogs;
         
-        private string created;
+        private string _created;
         
-        private string displayName;
+        private string _displayName;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private User.LocaleData locale;
+        private User.LocaleData _locale;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string url;
+        private string _url;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Profile summary information.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("about")]
         public virtual string About {
             get {
-                return this.about;
+                return this._about;
             }
             set {
-                this.about = value;
+                this._about = value;
             }
         }
         
@@ -1413,10 +1413,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("blogs")]
         public virtual User.BlogsData Blogs {
             get {
-                return this.blogs;
+                return this._blogs;
             }
             set {
-                this.blogs = value;
+                this._blogs = value;
             }
         }
         
@@ -1424,10 +1424,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -1435,10 +1435,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
         public virtual string DisplayName {
             get {
-                return this.displayName;
+                return this._displayName;
             }
             set {
-                this.displayName = value;
+                this._displayName = value;
             }
         }
         
@@ -1446,10 +1446,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1457,10 +1457,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1468,10 +1468,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("locale")]
         public virtual User.LocaleData Locale {
             get {
-                return this.locale;
+                return this._locale;
             }
             set {
-                this.locale = value;
+                this._locale = value;
             }
         }
         
@@ -1479,10 +1479,10 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1490,45 +1490,45 @@ namespace Google.Apis.Blogger.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>The container of blogs for this user.</summary>
         public class BlogsData {
             
-            private string selfLink;
+            private string _selfLink;
             
             /// <summary>The URL of the Blogs for this user.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
             public virtual string SelfLink {
                 get {
-                    return this.selfLink;
+                    return this._selfLink;
                 }
                 set {
-                    this.selfLink = value;
+                    this._selfLink = value;
                 }
             }
         }
@@ -1536,20 +1536,20 @@ namespace Google.Apis.Blogger.v2.Data {
         /// <summary>This user&apos;s locale</summary>
         public class LocaleData {
             
-            private string country;
+            private string _country;
             
-            private string language;
+            private string _language;
             
-            private string variant;
+            private string _variant;
             
             /// <summary>The user&apos;s country setting.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("country")]
             public virtual string Country {
                 get {
-                    return this.country;
+                    return this._country;
                 }
                 set {
-                    this.country = value;
+                    this._country = value;
                 }
             }
             
@@ -1557,10 +1557,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
             
@@ -1568,10 +1568,10 @@ namespace Google.Apis.Blogger.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("variant")]
             public virtual string Variant {
                 get {
-                    return this.variant;
+                    return this._variant;
                 }
                 set {
-                    this.variant = value;
+                    this._variant = value;
                 }
             }
         }
@@ -1598,213 +1598,211 @@ namespace Google.Apis.Blogger.v2 {
             "es/icons/product/blogger-32.png\"},\"documentationLink\":\"https://code.google.com/a" +
             "pis/blogger/docs/2.0/json/getting_started.html\",\"labels\":[\"limited_availability\"" +
             "],\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/blogger/v2/\",\"basePath" +
-            "\":\"/blogger/v2/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format" +
-            " for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respon" +
-            "ses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\"" +
-            ":\"string\",\"description\":\"Selector specifying which fields to include in a partia" +
-            "l response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. " +
-            "Your API key identifies your project and provides you with API access, quota, an" +
-            "d reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"}," +
-            "\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current us" +
-            "er.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns " +
-            "response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"" +
-            "},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purpose" +
-            "s for server-side applications. Can be any arbitrary string assigned to a user, " +
-            "but should not exceed 40 characters. Overrides userIp if both are provided.\",\"lo" +
-            "cation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site" +
-            " where the request originates. Use this if you want to enforce per-user limits.\"" +
-            ",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/au" +
-            "th/blogger\":{\"description\":\"Manage your Blogger account\"}}}},\"schemas\":{\"Blog\":{" +
-            "\"id\":\"Blog\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The description of this blog. This is displayed underneath the title.\"}," +
-            "\"id\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\",\"format\"" +
-            ":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entry. Always " +
-            "blogger#blog\",\"default\":\"blogger#blog\"},\"locale\":{\"type\":\"object\",\"description\":" +
-            "\"The locale this Blog is set to.\",\"properties\":{\"country\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The country this blog\'s locale is set to.\"},\"language\":{\"type\":\"string" +
-            "\",\"description\":\"The language this blog is authored in.\"},\"variant\":{\"type\":\"str" +
-            "ing\",\"description\":\"The language variant this blog is authored in.\"}}},\"name\":{\"" +
-            "type\":\"string\",\"description\":\"The name of this blog. This is displayed as the ti" +
-            "tle.\"},\"pages\":{\"type\":\"object\",\"description\":\"The container of pages in this bl" +
-            "og.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the con" +
-            "tainer for pages in this blog.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"T" +
-            "he count of pages in this blog.\",\"format\":\"int32\"}}},\"posts\":{\"type\":\"object\",\"d" +
-            "escription\":\"The container of posts in this blog.\",\"properties\":{\"selfLink\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The URL of the container for posts in this blog.\"},\"" +
-            "totalItems\":{\"type\":\"integer\",\"description\":\"The count of posts in this blog.\",\"" +
-            "format\":\"int32\"}}},\"published\":{\"type\":\"string\",\"description\":\"RFC 3339 date-tim" +
-            "e when this blog was published.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"The API REST URL to fetch this resource from.\"},\"updated\":{\"ty" +
-            "pe\":\"string\",\"description\":\"RFC 3339 date-time when this blog was last updated.\"" +
-            ",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL where this " +
-            "blog is published.\"}}},\"BlogList\":{\"id\":\"BlogList\",\"type\":\"object\",\"properties\":" +
-            "{\"items\":{\"type\":\"array\",\"description\":\"The list of Blogs this user has Authorsh" +
-            "ip or Admin rights over.\",\"items\":{\"$ref\":\"Blog\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The kind of this entity. Always blogger#blogList\",\"default\":\"blogger#b" +
-            "logList\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"author\":{\"t" +
-            "ype\":\"object\",\"description\":\"The author of this Comment.\",\"properties\":{\"display" +
-            "Name\":{\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\"," +
-            "\"description\":\"The identifier of the Comment creator.\"},\"image\":{\"type\":\"object\"" +
-            ",\"description\":\"The comment creator\'s avatar.\",\"properties\":{\"url\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The comment creator\'s avatar URL.\"}}},\"url\":{\"type\":\"string\"," +
-            "\"description\":\"The URL of the Comment creator\'s Profile page.\"}}},\"blog\":{\"type\"" +
-            ":\"object\",\"description\":\"Data about the blog containing this comment.\",\"properti" +
-            "es\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the blog containing " +
-            "this comment.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\":\"The" +
-            " actual content of the comment. May include HTML markup.\"},\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The identifier for this resource.\",\"format\":\"int64\"},\"inReplyTo\"" +
-            ":{\"type\":\"object\",\"description\":\"Data about the comment this is in reply to.\",\"p" +
-            "roperties\":{\"id\":{\"type\":\"string\",\"description\":\"The identified of the parent of" +
-            " this comment.\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"description\":\"The k" +
-            "ind of this entry. Always blogger#comment\",\"default\":\"blogger#comment\"},\"post\":{" +
-            "\"type\":\"object\",\"description\":\"Data about the post containing this comment.\",\"pr" +
-            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the post conta" +
-            "ining this comment.\",\"format\":\"int64\"}}},\"published\":{\"type\":\"string\",\"descripti" +
-            "on\":\"RFC 3339 date-time when this comment was published.\",\"format\":\"date-time\"}," +
-            "\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this resour" +
-            "ce from.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when thi" +
-            "s comment was last updated.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\":\"Commen" +
-            "tList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The " +
-            "List of Comments for a Post.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string" +
-            "\",\"description\":\"The kind of this entry. Always blogger#commentList\",\"default\":\"" +
-            "blogger#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pagination" +
-            " token to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":\"string\"" +
-            ",\"description\":\"Pagination token to fetch the previous page, if one exists.\"}}}," +
-            "\"Page\":{\"id\":\"Page\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"object\",\"des" +
-            "cription\":\"The author of this Page.\",\"properties\":{\"displayName\":{\"type\":\"string" +
-            "\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The id" +
-            "entifier of the Page creator.\"},\"image\":{\"type\":\"object\",\"description\":\"The page" +
-            " author\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The page " +
-            "author\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL of the Pa" +
-            "ge creator\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"description\":\"Data about" +
-            " the blog containing this Page.\",\"properties\":{\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The identifier of the blog containing this page.\",\"format\":\"int64\"}}},\"conte" +
-            "nt\":{\"type\":\"string\",\"description\":\"The body content of this Page, in HTML.\"},\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\",\"format\":\"" +
-            "int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always b" +
-            "logger#page\",\"default\":\"blogger#page\"},\"published\":{\"type\":\"string\",\"description" +
-            "\":\"RFC 3339 date-time when this Page was published.\",\"format\":\"date-time\"},\"self" +
-            "Link\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this resource fr" +
-            "om.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this entity. This is " +
-            "the name displayed in the Admin user interface.\"},\"updated\":{\"type\":\"string\",\"de" +
-            "scription\":\"RFC 3339 date-time when this Page was last updated.\",\"format\":\"date-" +
-            "time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL that this Page is displayed" +
-            " at.\"}}},\"PageList\":{\"id\":\"PageList\",\"type\":\"object\",\"properties\":{\"items\":{\"typ" +
-            "e\":\"array\",\"description\":\"The list of Pages for a Blog.\",\"items\":{\"$ref\":\"Page\"}" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blogger" +
-            "#pageList\",\"default\":\"blogger#pageList\"}}},\"Post\":{\"id\":\"Post\",\"type\":\"object\",\"" +
-            "properties\":{\"author\":{\"type\":\"object\",\"description\":\"The author of this Post.\"," +
-            "\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The display name.\"}," +
-            "\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Post creator.\"},\"imag" +
-            "e\":{\"type\":\"object\",\"description\":\"The Post author\'s avatar.\",\"properties\":{\"url" +
-            "\":{\"type\":\"string\",\"description\":\"The Post author\'s avatar URL.\"}}},\"url\":{\"type" +
-            "\":\"string\",\"description\":\"The URL of the Post creator\'s Profile page.\"}}},\"blog\"" +
-            ":{\"type\":\"object\",\"description\":\"Data about the blog containing this Post.\",\"pro" +
-            "perties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Blog that c" +
-            "ontains this Post.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"description\"" +
-            ":\"The content of the Post. May contain HTML markup.\"},\"id\":{\"type\":\"string\",\"des" +
-            "cription\":\"The identifier of this Post.\",\"format\":\"int64\"},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"The kind of this entity. Always blogger#post\",\"default\":\"blogg" +
-            "er#post\"},\"labels\":{\"type\":\"array\",\"description\":\"The list of labels this Post w" +
-            "as tagged with.\",\"items\":{\"type\":\"string\"}},\"published\":{\"type\":\"string\",\"descri" +
-            "ption\":\"RFC 3339 date-time when this Post was published.\",\"format\":\"date-time\"}," +
-            "\"replies\":{\"type\":\"object\",\"description\":\"The container of comments on this Post" +
-            ".\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of the comme" +
-            "nts on this post.\"},\"totalItems\":{\"type\":\"string\",\"description\":\"The count of co" +
-            "mments on this post.\",\"format\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The API REST URL to fetch this resource from.\"},\"title\":{\"type\":\"string\",\"d" +
-            "escription\":\"The title of the Post.\"},\"updated\":{\"type\":\"string\",\"description\":\"" +
-            "RFC 3339 date-time when this Post was last updated.\",\"format\":\"date-time\"},\"url\"" +
-            ":{\"type\":\"string\",\"description\":\"The URL where this Post is displayed.\"}}},\"Post" +
-            "List\":{\"id\":\"PostList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"de" +
-            "scription\":\"The list of Posts for this Blog.\",\"items\":{\"$ref\":\"Post\"}},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"The kind of this entity. Always blogger#postList\"," +
-            "\"default\":\"blogger#postList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pa" +
+            "\":\"/blogger/v2/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"blogger/" +
+            "v2/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Dat" +
+            "a format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":" +
+            "[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\"" +
+            ":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in " +
+            "a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"A" +
+            "PI key. Your API key identifies your project and provides you with API access, q" +
+            "uota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"" +
+            "query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the cu" +
+            "rrent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"" +
+            "Returns response with indentations and line breaks.\",\"default\":\"true\",\"location\"" +
+            ":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota" +
+            " purposes for server-side applications. Can be any arbitrary string assigned to " +
+            "a user, but should not exceed 40 characters. Overrides userIp if both are provid" +
+            "ed.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of " +
+            "the site where the request originates. Use this if you want to enforce per-user " +
+            "limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapi" +
+            "s.com/auth/blogger\":{\"description\":\"Manage your Blogger account\"}}}},\"schemas\":{" +
+            "\"Blog\":{\"id\":\"Blog\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\"" +
+            ",\"description\":\"The description of this blog. This is displayed underneath the t" +
+            "itle.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\"," +
+            "\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entry." +
+            " Always blogger#blog\",\"default\":\"blogger#blog\"},\"locale\":{\"type\":\"object\",\"descr" +
+            "iption\":\"The locale this Blog is set to.\",\"properties\":{\"country\":{\"type\":\"strin" +
+            "g\",\"description\":\"The country this blog\'s locale is set to.\"},\"language\":{\"type\"" +
+            ":\"string\",\"description\":\"The language this blog is authored in.\"},\"variant\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The language variant this blog is authored in.\"}}},\"" +
+            "name\":{\"type\":\"string\",\"description\":\"The name of this blog. This is displayed a" +
+            "s the title.\"},\"pages\":{\"type\":\"object\",\"description\":\"The container of pages in" +
+            " this blog.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of" +
+            " the container for pages in this blog.\"},\"totalItems\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"The count of pages in this blog.\",\"format\":\"int32\"}}},\"posts\":{\"type\":\"ob" +
+            "ject\",\"description\":\"The container of posts in this blog.\",\"properties\":{\"selfLi" +
+            "nk\":{\"type\":\"string\",\"description\":\"The URL of the container for posts in this b" +
+            "log.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"The count of posts in this " +
+            "blog.\",\"format\":\"int32\"}}},\"published\":{\"type\":\"string\",\"description\":\"RFC 3339 " +
+            "date-time when this blog was published.\",\"format\":\"date-time\"},\"selfLink\":{\"type" +
+            "\":\"string\",\"description\":\"The API REST URL to fetch this resource from.\"},\"updat" +
+            "ed\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time when this blog was last u" +
+            "pdated.\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL whe" +
+            "re this blog is published.\"}}},\"BlogList\":{\"id\":\"BlogList\",\"type\":\"object\",\"prop" +
+            "erties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of Blogs this user has " +
+            "Authorship or Admin rights over.\",\"items\":{\"$ref\":\"Blog\"}},\"kind\":{\"type\":\"strin" +
+            "g\",\"description\":\"The kind of this entity. Always blogger#blogList\",\"default\":\"b" +
+            "logger#blogList\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"aut" +
+            "hor\":{\"type\":\"object\",\"description\":\"The author of this Comment.\",\"properties\":{" +
+            "\"displayName\":{\"type\":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"" +
+            "string\",\"description\":\"The identifier of the Comment creator.\"},\"image\":{\"type\":" +
+            "\"object\",\"description\":\"The comment creator\'s avatar.\",\"properties\":{\"url\":{\"typ" +
+            "e\":\"string\",\"description\":\"The comment creator\'s avatar URL.\"}}},\"url\":{\"type\":\"" +
+            "string\",\"description\":\"The URL of the Comment creator\'s Profile page.\"}}},\"blog\"" +
+            ":{\"type\":\"object\",\"description\":\"Data about the blog containing this comment.\",\"" +
+            "properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the blog con" +
+            "taining this comment.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The actual content of the comment. May include HTML markup.\"},\"id\":{\"type\":" +
+            "\"string\",\"description\":\"The identifier for this resource.\",\"format\":\"int64\"},\"in" +
+            "ReplyTo\":{\"type\":\"object\",\"description\":\"Data about the comment this is in reply" +
+            " to.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identified of the p" +
+            "arent of this comment.\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"The kind of this entry. Always blogger#comment\",\"default\":\"blogger#comment\"}," +
+            "\"post\":{\"type\":\"object\",\"description\":\"Data about the post containing this comme" +
+            "nt.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the po" +
+            "st containing this comment.\",\"format\":\"int64\"}}},\"published\":{\"type\":\"string\",\"d" +
+            "escription\":\"RFC 3339 date-time when this comment was published.\",\"format\":\"date" +
+            "-time\"},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch thi" +
+            "s resource from.\"},\"updated\":{\"type\":\"string\",\"description\":\"RFC 3339 date-time " +
+            "when this comment was last updated.\",\"format\":\"date-time\"}}},\"CommentList\":{\"id\"" +
+            ":\"CommentList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"The List of Comments for a Post.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"The kind of this entry. Always blogger#commentList\",\"de" +
+            "fault\":\"blogger#commentList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Pa" +
             "gination token to fetch the next page, if one exists.\"},\"prevPageToken\":{\"type\":" +
             "\"string\",\"description\":\"Pagination token to fetch the previous page, if one exis" +
-            "ts.\"}}},\"User\":{\"id\":\"User\",\"type\":\"object\",\"properties\":{\"about\":{\"type\":\"strin" +
-            "g\",\"description\":\"Profile summary information.\"},\"blogs\":{\"type\":\"object\",\"descr" +
-            "iption\":\"The container of blogs for this user.\",\"properties\":{\"selfLink\":{\"type\"" +
-            ":\"string\",\"description\":\"The URL of the Blogs for this user.\"}}},\"created\":{\"typ" +
-            "e\":\"string\",\"description\":\"The timestamp of when this profile was created, in se" +
-            "conds since epoch.\",\"format\":\"date-time\"},\"displayName\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier " +
-            "for this User.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity." +
-            " Always blogger#user\",\"default\":\"blogger#user\"},\"locale\":{\"type\":\"object\",\"descr" +
-            "iption\":\"This user\'s locale\",\"properties\":{\"country\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The user\'s country setting.\"},\"language\":{\"type\":\"string\",\"description\":\"Th" +
-            "e user\'s language setting.\"},\"variant\":{\"type\":\"string\",\"description\":\"The user\'" +
-            "s language variant setting.\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"The A" +
-            "PI REST URL to fetch this resource from.\"},\"url\":{\"type\":\"string\",\"description\":" +
-            "\"The user\'s profile page.\"}}}},\"resources\":{\"blogs\":{\"methods\":{\"get\":{\"id\":\"blo" +
-            "gger.blogs.get\",\"path\":\"blogs/{blogId}\",\"httpMethod\":\"GET\",\"description\":\"Gets o" +
-            "ne blog by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"The ID of" +
-            " the blog to get.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"blogId\"],\"response\":{\"$ref\":\"Blog\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/blogger\"]}}},\"comments\":{\"methods\":{\"get\":{\"id\":\"blogger.comments.get\"" +
-            ",\"path\":\"blogs/{blogId}/posts/{postId}/comments/{commentId}\",\"httpMethod\":\"GET\"," +
-            "\"description\":\"Gets one comment by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\"," +
-            "\"description\":\"ID of the blog to containing the comment.\",\"required\":true,\"forma" +
-            "t\":\"int64\",\"location\":\"path\"},\"commentId\":{\"type\":\"string\",\"description\":\"The ID" +
-            " of the comment to get.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"},\"po" +
-            "stId\":{\"type\":\"string\",\"description\":\"ID of the post to fetch posts from.\",\"requ" +
-            "ired\":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"post" +
-            "Id\",\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/blogger\"]},\"list\":{\"id\":\"blogger.comments.list\",\"path\":\"blogs/{blogId}" +
-            "/posts/{postId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the commen" +
-            "ts for a blog, possibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"desc" +
-            "ription\":\"ID of the blog to fetch comments from.\",\"required\":true,\"format\":\"int6" +
-            "4\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether the" +
-            " body content of the comments is included.\",\"location\":\"query\"},\"maxResults\":{\"t" +
-            "ype\":\"integer\",\"description\":\"Maximum number of comments to include in the resul" +
-            "t.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Continuation token if request is paged.\",\"location\":\"query\"},\"postId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"ID of the post to fetch posts from.\",\"required\":true" +
-            ",\"format\":\"int64\",\"location\":\"path\"},\"startDate\":{\"type\":\"string\",\"description\":" +
-            "\"Earliest date of comment to fetch.\",\"location\":\"query\"}},\"parameterOrder\":[\"blo" +
-            "gId\",\"postId\"],\"response\":{\"$ref\":\"CommentList\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/blogger\"]}}},\"pages\":{\"methods\":{\"get\":{\"id\":\"blogger.pages.get\",\"pa" +
-            "th\":\"blogs/{blogId}/pages/{pageId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one b" +
-            "log page by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of th" +
-            "e blog containing the page.\",\"required\":true,\"format\":\"int64\",\"location\":\"path\"}" +
-            ",\"pageId\":{\"type\":\"string\",\"description\":\"The ID of the page to get.\",\"required\"" +
-            ":true,\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"pageId\"]," +
-            "\"response\":{\"$ref\":\"Page\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}" +
-            ",\"list\":{\"id\":\"blogger.pages.list\",\"path\":\"blogs/{blogId}/pages\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Retrieves pages for a blog, possibly filtered.\",\"parameters\":" +
-            "{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch pages from.\",\"" +
-            "required\":true,\"format\":\"int64\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Whether to retrieve the Page bodies.\",\"location\":\"query\"}},\"pa" +
-            "rameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PageList\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/blogger\"]}}},\"posts\":{\"methods\":{\"get\":{\"id\":\"blogger.posts.g" +
-            "et\",\"path\":\"blogs/{blogId}/posts/{postId}\",\"httpMethod\":\"GET\",\"description\":\"Get" +
-            " a post by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the" +
-            " blog to fetch the post from.\",\"required\":true,\"format\":\"int64\",\"location\":\"path" +
-            "\"},\"postId\":{\"type\":\"string\",\"description\":\"The ID of the post\",\"required\":true," +
-            "\"format\":\"int64\",\"location\":\"path\"}},\"parameterOrder\":[\"blogId\",\"postId\"],\"respo" +
-            "nse\":{\"$ref\":\"Post\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]},\"list" +
-            "\":{\"id\":\"blogger.posts.list\",\"path\":\"blogs/{blogId}/posts\",\"httpMethod\":\"GET\",\"d" +
-            "escription\":\"Retrieves a list of posts, possibly filtered.\",\"parameters\":{\"blogI" +
-            "d\":{\"type\":\"string\",\"description\":\"ID of the blog to fetch posts from.\",\"require" +
-            "d\":true,\"format\":\"int64\",\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"des" +
-            "cription\":\"Whether the body content of posts is included.\",\"location\":\"query\"},\"" +
-            "maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of posts to fetch.\"," +
-            "\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\"" +
-            ":\"Continuation token if the request is paged.\",\"location\":\"query\"},\"startDate\":{" +
-            "\"type\":\"string\",\"description\":\"Earliest post date to fetch.\",\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PostList\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/blogger\"]}}},\"users\":{\"methods\":{\"get\":{\"id\":\"blogger.us" +
-            "ers.get\",\"path\":\"users/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one user" +
-            " by id.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"The ID of the us" +
-            "er to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"res" +
-            "ponse\":{\"$ref\":\"User\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}},\"r" +
-            "esources\":{\"blogs\":{\"methods\":{\"list\":{\"id\":\"blogger.users.blogs.list\",\"path\":\"u" +
-            "sers/{userId}/blogs\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of blogs" +
-            ", possibly filtered.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"ID " +
-            "of the user whose blogs are to be fetched. Either the word \'self\' (sans quote ma" +
-            "rks) or the user\'s profile identifier.\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"BlogList\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/blogger\"]}}}}}}}";
+            "ts.\"}}},\"Page\":{\"id\":\"Page\",\"type\":\"object\",\"properties\":{\"author\":{\"type\":\"obje" +
+            "ct\",\"description\":\"The author of this Page.\",\"properties\":{\"displayName\":{\"type\"" +
+            ":\"string\",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\"" +
+            ":\"The identifier of the Page creator.\"},\"image\":{\"type\":\"object\",\"description\":\"" +
+            "The page author\'s avatar.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"T" +
+            "he page author\'s avatar URL.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The URL o" +
+            "f the Page creator\'s Profile page.\"}}},\"blog\":{\"type\":\"object\",\"description\":\"Da" +
+            "ta about the blog containing this Page.\",\"properties\":{\"id\":{\"type\":\"string\",\"de" +
+            "scription\":\"The identifier of the blog containing this page.\",\"format\":\"int64\"}}" +
+            "},\"content\":{\"type\":\"string\",\"description\":\"The body content of this Page, in HT" +
+            "ML.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier for this resource.\",\"f" +
+            "ormat\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. " +
+            "Always blogger#page\",\"default\":\"blogger#page\"},\"published\":{\"type\":\"string\",\"des" +
+            "cription\":\"RFC 3339 date-time when this Page was published.\",\"format\":\"date-time" +
+            "\"},\"selfLink\":{\"type\":\"string\",\"description\":\"The API REST URL to fetch this res" +
+            "ource from.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this entity. " +
+            "This is the name displayed in the Admin user interface.\"},\"updated\":{\"type\":\"str" +
+            "ing\",\"description\":\"RFC 3339 date-time when this Page was last updated.\",\"format" +
+            "\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The URL that this Page is d" +
+            "isplayed at.\"}}},\"PageList\":{\"id\":\"PageList\",\"type\":\"object\",\"properties\":{\"item" +
+            "s\":{\"type\":\"array\",\"description\":\"The list of Pages for a Blog.\",\"items\":{\"$ref\"" +
+            ":\"Page\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always" +
+            " blogger#pageList\",\"default\":\"blogger#pageList\"}}},\"Post\":{\"id\":\"Post\",\"type\":\"o" +
+            "bject\",\"properties\":{\"author\":{\"type\":\"object\",\"description\":\"The author of this" +
+            " Post.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The display " +
+            "name.\"},\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Post creator." +
+            "\"},\"image\":{\"type\":\"object\",\"description\":\"The Post author\'s avatar.\",\"propertie" +
+            "s\":{\"url\":{\"type\":\"string\",\"description\":\"The Post author\'s avatar URL.\"}}},\"url" +
+            "\":{\"type\":\"string\",\"description\":\"The URL of the Post creator\'s Profile page.\"}}" +
+            "},\"blog\":{\"type\":\"object\",\"description\":\"Data about the blog containing this Pos" +
+            "t.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of the Blo" +
+            "g that contains this Post.\",\"format\":\"int64\"}}},\"content\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The content of the Post. May contain HTML markup.\"},\"id\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The identifier of this Post.\",\"format\":\"int64\"},\"kind\":{\"type" +
+            "\":\"string\",\"description\":\"The kind of this entity. Always blogger#post\",\"default" +
+            "\":\"blogger#post\"},\"labels\":{\"type\":\"array\",\"description\":\"The list of labels thi" +
+            "s Post was tagged with.\",\"items\":{\"type\":\"string\"}},\"published\":{\"type\":\"string\"" +
+            ",\"description\":\"RFC 3339 date-time when this Post was published.\",\"format\":\"date" +
+            "-time\"},\"replies\":{\"type\":\"object\",\"description\":\"The container of comments on t" +
+            "his Post.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL of t" +
+            "he comments on this post.\"},\"totalItems\":{\"type\":\"string\",\"description\":\"The cou" +
+            "nt of comments on this post.\",\"format\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"d" +
+            "escription\":\"The API REST URL to fetch this resource from.\"},\"title\":{\"type\":\"st" +
+            "ring\",\"description\":\"The title of the Post.\"},\"updated\":{\"type\":\"string\",\"descri" +
+            "ption\":\"RFC 3339 date-time when this Post was last updated.\",\"format\":\"date-time" +
+            "\"},\"url\":{\"type\":\"string\",\"description\":\"The URL where this Post is displayed.\"}" +
+            "}},\"PostList\":{\"id\":\"PostList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"ar" +
+            "ray\",\"description\":\"The list of Posts for this Blog.\",\"items\":{\"$ref\":\"Post\"}},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"The kind of this entity. Always blogger#po" +
+            "stList\",\"default\":\"blogger#postList\"},\"nextPageToken\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Pagination token to fetch the next page, if one exists.\"},\"prevPageToken\":" +
+            "{\"type\":\"string\",\"description\":\"Pagination token to fetch the previous page, if " +
+            "one exists.\"}}},\"User\":{\"id\":\"User\",\"type\":\"object\",\"properties\":{\"about\":{\"type" +
+            "\":\"string\",\"description\":\"Profile summary information.\"},\"blogs\":{\"type\":\"object" +
+            "\",\"description\":\"The container of blogs for this user.\",\"properties\":{\"selfLink\"" +
+            ":{\"type\":\"string\",\"description\":\"The URL of the Blogs for this user.\"}}},\"create" +
+            "d\":{\"type\":\"string\",\"description\":\"The timestamp of when this profile was create" +
+            "d, in seconds since epoch.\",\"format\":\"date-time\"},\"displayName\":{\"type\":\"string\"" +
+            ",\"description\":\"The display name.\"},\"id\":{\"type\":\"string\",\"description\":\"The ide" +
+            "ntifier for this User.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of this" +
+            " entity. Always blogger#user\",\"default\":\"blogger#user\"},\"locale\":{\"type\":\"object" +
+            "\",\"description\":\"This user\'s locale\",\"properties\":{\"country\":{\"type\":\"string\",\"d" +
+            "escription\":\"The user\'s country setting.\"},\"language\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The user\'s language setting.\"},\"variant\":{\"type\":\"string\",\"description\":\"T" +
+            "he user\'s language variant setting.\"}}},\"selfLink\":{\"type\":\"string\",\"description" +
+            "\":\"The API REST URL to fetch this resource from.\"},\"url\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The user\'s profile page.\"}}}},\"resources\":{\"blogs\":{\"methods\":{\"get\":{\"" +
+            "id\":\"blogger.blogs.get\",\"path\":\"blogs/{blogId}\",\"httpMethod\":\"GET\",\"description\"" +
+            ":\"Gets one blog by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"T" +
+            "he ID of the blog to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
+            "[\"blogId\"],\"response\":{\"$ref\":\"Blog\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/blogger\"]}}},\"comments\":{\"methods\":{\"get\":{\"id\":\"blogger.comments.get\",\"path\":\"" +
+            "blogs/{blogId}/posts/{postId}/comments/{commentId}\",\"httpMethod\":\"GET\",\"descript" +
+            "ion\":\"Gets one comment by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ID of the blog to containing the comment.\",\"required\":true,\"location\":\"pat" +
+            "h\"},\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment to get.\",\"" +
+            "required\":true,\"location\":\"path\"},\"postId\":{\"type\":\"string\",\"description\":\"ID of" +
+            " the post to fetch posts from.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"blogId\",\"postId\",\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/blogger\"]},\"list\":{\"id\":\"blogger.comments.list\",\"p" +
+            "ath\":\"blogs/{blogId}/posts/{postId}/comments\",\"httpMethod\":\"GET\",\"description\":\"" +
+            "Retrieves the comments for a blog, possibly filtered.\",\"parameters\":{\"blogId\":{\"" +
+            "type\":\"string\",\"description\":\"ID of the blog to fetch comments from.\",\"required\"" +
+            ":true,\"location\":\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "the body content of the comments is included.\",\"location\":\"query\"},\"maxResults\":" +
+            "{\"type\":\"integer\",\"description\":\"Maximum number of comments to include in the re" +
+            "sult.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Continuation token if request is paged.\",\"location\":\"query\"},\"postId\":{" +
+            "\"type\":\"string\",\"description\":\"ID of the post to fetch posts from.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"startDate\":{\"type\":\"string\",\"description\":\"Earliest date" +
+            " of comment to fetch.\",\"location\":\"query\"}},\"parameterOrder\":[\"blogId\",\"postId\"]" +
+            ",\"response\":{\"$ref\":\"CommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/bl" +
+            "ogger\"]}}},\"pages\":{\"methods\":{\"get\":{\"id\":\"blogger.pages.get\",\"path\":\"blogs/{bl" +
+            "ogId}/pages/{pageId}\",\"httpMethod\":\"GET\",\"description\":\"Gets one blog page by id" +
+            ".\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of the blog contain" +
+            "ing the page.\",\"required\":true,\"location\":\"path\"},\"pageId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The ID of the page to get.\",\"required\":true,\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"blogId\",\"pageId\"],\"response\":{\"$ref\":\"Page\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/blogger\"]},\"list\":{\"id\":\"blogger.pages.list\",\"path\":\"blogs" +
+            "/{blogId}/pages\",\"httpMethod\":\"GET\",\"description\":\"Retrieves pages for a blog, p" +
+            "ossibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"description\":\"ID of " +
+            "the blog to fetch pages from.\",\"required\":true,\"location\":\"path\"},\"fetchBodies\":" +
+            "{\"type\":\"boolean\",\"description\":\"Whether to retrieve the Page bodies.\",\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"blogId\"],\"response\":{\"$ref\":\"PageList\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/blogger\"]}}},\"posts\":{\"methods\":{\"get\":{\"id\":\"" +
+            "blogger.posts.get\",\"path\":\"blogs/{blogId}/posts/{postId}\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Get a post by id.\",\"parameters\":{\"blogId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"ID of the blog to fetch the post from.\",\"required\":true,\"location\":\"path\"}" +
+            ",\"postId\":{\"type\":\"string\",\"description\":\"The ID of the post\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"blogId\",\"postId\"],\"response\":{\"$ref\":\"Post\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]},\"list\":{\"id\":\"blogger.po" +
+            "sts.list\",\"path\":\"blogs/{blogId}/posts\",\"httpMethod\":\"GET\",\"description\":\"Retrie" +
+            "ves a list of posts, possibly filtered.\",\"parameters\":{\"blogId\":{\"type\":\"string\"" +
+            ",\"description\":\"ID of the blog to fetch posts from.\",\"required\":true,\"location\":" +
+            "\"path\"},\"fetchBodies\":{\"type\":\"boolean\",\"description\":\"Whether the body content " +
+            "of posts is included.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"Maximum number of posts to fetch.\",\"format\":\"uint32\",\"location\":\"query\"" +
+            "},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token if the request " +
+            "is paged.\",\"location\":\"query\"},\"startDate\":{\"type\":\"string\",\"description\":\"Earli" +
+            "est post date to fetch.\",\"location\":\"query\"}},\"parameterOrder\":[\"blogId\"],\"respo" +
+            "nse\":{\"$ref\":\"PostList\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}}" +
+            ",\"users\":{\"methods\":{\"get\":{\"id\":\"blogger.users.get\",\"path\":\"users/{userId}\",\"ht" +
+            "tpMethod\":\"GET\",\"description\":\"Gets one user by id.\",\"parameters\":{\"userId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The ID of the user to get.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"User\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/blogger\"]}},\"resources\":{\"blogs\":{\"methods\":{\"list" +
+            "\":{\"id\":\"blogger.users.blogs.list\",\"path\":\"users/{userId}/blogs\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"Retrieves a list of blogs, possibly filtered.\",\"parameters\":{" +
+            "\"userId\":{\"type\":\"string\",\"description\":\"ID of the user whose blogs are to be fe" +
+            "tched. Either the word \'self\' (sans quote marks) or the user\'s profile identifie" +
+            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{" +
+            "\"$ref\":\"BlogList\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}}}}}}";
         
         private const string Version = "v2";
         
@@ -1814,16 +1812,16 @@ namespace Google.Apis.Blogger.v2 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected BloggerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.blogs = new BlogsResource(this);
-            this.comments = new CommentsResource(this);
-            this.pages = new PagesResource(this);
-            this.posts = new PostsResource(this);
-            this.users = new UsersResource(this);
+            this._blogs = new BlogsResource(this);
+            this._comments = new CommentsResource(this);
+            this._pages = new PagesResource(this);
+            this._posts = new PostsResource(this);
+            this._users = new UsersResource(this);
         }
         
         public BloggerService() : 
@@ -1831,22 +1829,22 @@ namespace Google.Apis.Blogger.v2 {
         }
         
         public BloggerService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BloggerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BloggerService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BloggerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BloggerService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -1892,38 +1890,38 @@ namespace Google.Apis.Blogger.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
                     base(service) {
-                this.blogId = blogId;
+                this._blogId = blogId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1931,10 +1929,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1942,7 +1940,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
@@ -1987,44 +1985,44 @@ namespace Google.Apis.Blogger.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private string commentId;
+            private string _commentId;
             
-            private string postId;
+            private string _postId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId, string commentId) : 
                     base(service) {
-                this.blogId = blogId;
-                this.postId = postId;
-                this.commentId = commentId;
+                this._blogId = blogId;
+                this._postId = postId;
+                this._commentId = commentId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2032,10 +2030,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2043,7 +2041,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
@@ -2051,7 +2049,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("commentId")]
             public virtual string CommentId {
                 get {
-                    return this.commentId;
+                    return this._commentId;
                 }
             }
             
@@ -2059,7 +2057,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("postId")]
             public virtual string PostId {
                 get {
-                    return this.postId;
+                    return this._postId;
                 }
             }
             
@@ -2078,49 +2076,49 @@ namespace Google.Apis.Blogger.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private System.Boolean? fetchBodies;
+            private System.Nullable<bool> _fetchBodies;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string postId;
+            private string _postId;
             
-            private string startDate;
+            private string _startDate;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId) : 
                     base(service) {
-                this.blogId = blogId;
-                this.postId = postId;
+                this._blogId = blogId;
+                this._postId = postId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2128,10 +2126,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2139,29 +2137,29 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
             /// <summary>Whether the body content of the comments is included.</summary>
             [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
-            public virtual System.Boolean? FetchBodies {
+            public virtual System.Nullable<bool> FetchBodies {
                 get {
-                    return this.fetchBodies;
+                    return this._fetchBodies;
                 }
                 set {
-                    this.fetchBodies = value;
+                    this._fetchBodies = value;
                 }
             }
             
             /// <summary>Maximum number of comments to include in the result.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -2169,10 +2167,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -2180,7 +2178,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("postId")]
             public virtual string PostId {
                 get {
-                    return this.postId;
+                    return this._postId;
                 }
             }
             
@@ -2188,10 +2186,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("startDate")]
             public virtual string StartDate {
                 get {
-                    return this.startDate;
+                    return this._startDate;
                 }
                 set {
-                    this.startDate = value;
+                    this._startDate = value;
                 }
             }
             
@@ -2234,41 +2232,41 @@ namespace Google.Apis.Blogger.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private string pageId;
+            private string _pageId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string pageId) : 
                     base(service) {
-                this.blogId = blogId;
-                this.pageId = pageId;
+                this._blogId = blogId;
+                this._pageId = pageId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2276,10 +2274,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2287,7 +2285,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
@@ -2295,7 +2293,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageId")]
             public virtual string PageId {
                 get {
-                    return this.pageId;
+                    return this._pageId;
                 }
             }
             
@@ -2314,40 +2312,40 @@ namespace Google.Apis.Blogger.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private System.Boolean? fetchBodies;
+            private System.Nullable<bool> _fetchBodies;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
                     base(service) {
-                this.blogId = blogId;
+                this._blogId = blogId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2355,10 +2353,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2366,18 +2364,18 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
             /// <summary>Whether to retrieve the Page bodies.</summary>
             [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
-            public virtual System.Boolean? FetchBodies {
+            public virtual System.Nullable<bool> FetchBodies {
                 get {
-                    return this.fetchBodies;
+                    return this._fetchBodies;
                 }
                 set {
-                    this.fetchBodies = value;
+                    this._fetchBodies = value;
                 }
             }
             
@@ -2420,41 +2418,41 @@ namespace Google.Apis.Blogger.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private string postId;
+            private string _postId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string blogId, string postId) : 
                     base(service) {
-                this.blogId = blogId;
-                this.postId = postId;
+                this._blogId = blogId;
+                this._postId = postId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2462,10 +2460,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2473,7 +2471,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
@@ -2481,7 +2479,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("postId")]
             public virtual string PostId {
                 get {
-                    return this.postId;
+                    return this._postId;
                 }
             }
             
@@ -2500,46 +2498,46 @@ namespace Google.Apis.Blogger.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string blogId;
+            private string _blogId;
             
-            private System.Boolean? fetchBodies;
+            private System.Nullable<bool> _fetchBodies;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string startDate;
+            private string _startDate;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string blogId) : 
                     base(service) {
-                this.blogId = blogId;
+                this._blogId = blogId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2547,10 +2545,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2558,29 +2556,29 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("blogId")]
             public virtual string BlogId {
                 get {
-                    return this.blogId;
+                    return this._blogId;
                 }
             }
             
             /// <summary>Whether the body content of posts is included.</summary>
             [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
-            public virtual System.Boolean? FetchBodies {
+            public virtual System.Nullable<bool> FetchBodies {
                 get {
-                    return this.fetchBodies;
+                    return this._fetchBodies;
                 }
                 set {
-                    this.fetchBodies = value;
+                    this._fetchBodies = value;
                 }
             }
             
             /// <summary>Maximum number of posts to fetch.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -2588,10 +2586,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -2599,10 +2597,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("startDate")]
             public virtual string StartDate {
                 get {
-                    return this.startDate;
+                    return this._startDate;
                 }
                 set {
-                    this.startDate = value;
+                    this._startDate = value;
                 }
             }
             
@@ -2626,16 +2624,16 @@ namespace Google.Apis.Blogger.v2 {
         
         private const string Resource = "users";
         
-        private BlogsResource blogs;
+        private BlogsResource _blogs;
         
         public UsersResource(BloggerService service) {
             this.service = service;
-            this.blogs = new BlogsResource(service);
+            this._blogs = new BlogsResource(service);
         }
         
         public virtual BlogsResource Blogs {
             get {
-                return this.blogs;
+                return this._blogs;
             }
         }
         
@@ -2663,38 +2661,38 @@ namespace Google.Apis.Blogger.v2 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string userId;
+                private string _userId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                         base(service) {
-                    this.userId = userId;
+                    this._userId = userId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2702,10 +2700,10 @@ namespace Google.Apis.Blogger.v2 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -2713,7 +2711,7 @@ namespace Google.Apis.Blogger.v2 {
                 [Google.Apis.Util.RequestParameterAttribute("userId")]
                 public virtual string UserId {
                     get {
-                        return this.userId;
+                        return this._userId;
                     }
                 }
                 
@@ -2733,38 +2731,38 @@ namespace Google.Apis.Blogger.v2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2772,10 +2770,10 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2783,7 +2781,7 @@ namespace Google.Apis.Blogger.v2 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -2805,15 +2803,15 @@ namespace Google.Apis.Blogger.v2 {
         
         private const string Resource = "";
         
-        private BlogsResource blogs;
+        private BlogsResource _blogs;
         
-        private CommentsResource comments;
+        private CommentsResource _comments;
         
-        private PagesResource pages;
+        private PagesResource _pages;
         
-        private PostsResource posts;
+        private PostsResource _posts;
         
-        private UsersResource users;
+        private UsersResource _users;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -2823,31 +2821,31 @@ namespace Google.Apis.Blogger.v2 {
         
         public virtual BlogsResource Blogs {
             get {
-                return this.blogs;
+                return this._blogs;
             }
         }
         
         public virtual CommentsResource Comments {
             get {
-                return this.comments;
+                return this._comments;
             }
         }
         
         public virtual PagesResource Pages {
             get {
-                return this.pages;
+                return this._pages;
             }
         }
         
         public virtual PostsResource Posts {
             get {
-                return this.posts;
+                return this._posts;
             }
         }
         
         public virtual UsersResource Users {
             get {
-                return this.users;
+                return this._users;
             }
         }
     }

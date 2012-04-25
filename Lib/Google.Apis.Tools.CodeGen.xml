@@ -9,7 +9,7 @@
             Helper class for all decorators.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.DecoratorUtil.CreateAutoProperty(System.String,System.String,System.CodeDom.CodeTypeReference,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Type)">
             <summary>
             Creates and adds a public auto-property (property and backening field) to the class.
             </summary>
@@ -397,6 +397,19 @@
             This Decorator constructs an IList implementation for the schema
             </summary>
         </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.IPropertyDecorator">
+            <summary>
+            Interface for decoration of the public properties generated on schema.
+            These decorators are child decorators of the StandardPropertyDecorator.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.IPropertyDecorator.DecorateProperty(System.CodeDom.CodeMemberProperty,System.Collections.Generic.KeyValuePair{System.String,Newtonsoft.Json.Schema.JsonSchema})">
+            <summary>
+            Decorate the CodeDom property member.
+            </summary>
+            <param name="propertyDefinition">CodeDom property object.</param>
+            <param name="propertyPair">The name/value pair representing a property in the schema.</param>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.ResponseInterfaceDecorator">
             <summary>
             Implements the IResponse interface on a schema. Adds an "Error"- and an "ETag"-property.
@@ -554,7 +567,7 @@
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.CreateRequestMethodServiceDecorator.GenerateCreateRequestMethod">
             <summary>
-            Generates the <c>IRequest.CreateRequest()</c> method.
+            Generates the <c>IRequestProvider.CreateRequest()</c> method.
             </summary>
             <returns><c>CodeMemberMethod</c> describing the method.</returns>
         </member>
@@ -1005,7 +1018,7 @@
             Create the class for a given resource and add all the methods.
             </summary>
             <param name="res">
-            A <see cref="!:Resource"/>
+            A <see cref="T:Google.Apis.Discovery.Resource"/>
             </param>
             <returns>
             A <see cref="T:System.CodeDom.CodeTypeDeclaration"/>
@@ -1228,16 +1241,6 @@
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.StandardSchemaCommentDecorator">
             <summary>
             Decorator which adds comments to schemas
-            </summary>
-        </member>
-        <member name="T:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.SchemaUtil">
-            <summary>
-            Utility class for schemas
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.SchemaDecorator.SchemaUtil.FindCodePropertyForName(System.CodeDom.CodeTypeDeclaration,System.String,System.Int32,System.Collections.Generic.IEnumerable{System.String})">
-            <summary>
-            Finds a property by the name specified within the schema
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.IMethodCommentCreator">

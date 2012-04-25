@@ -16,46 +16,46 @@ namespace Google.Apis.Tasks.v1.Data {
     
     public class Task : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string completed;
+        private string _completed;
         
-        private System.Nullable<bool> deleted;
+        private System.Nullable<bool> _deleted;
         
-        private string due;
+        private string _due;
         
-        private string etag;
+        private string _etag;
         
-        private System.Nullable<bool> hidden;
+        private System.Nullable<bool> _hidden;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<Task.LinksData> links;
+        private System.Collections.Generic.IList<Task.LinksData> _links;
         
-        private string notes;
+        private string _notes;
         
-        private string parent;
+        private string _parent;
         
-        private string position;
+        private string _position;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string status;
+        private string _status;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>Completion date of the task (as a RFC 3339 timestamp). This field is omitted if the task has not been completed.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("completed")]
         public virtual string Completed {
             get {
-                return this.completed;
+                return this._completed;
             }
             set {
-                this.completed = value;
+                this._completed = value;
             }
         }
         
@@ -63,10 +63,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
         public virtual System.Nullable<bool> Deleted {
             get {
-                return this.deleted;
+                return this._deleted;
             }
             set {
-                this.deleted = value;
+                this._deleted = value;
             }
         }
         
@@ -74,10 +74,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("due")]
         public virtual string Due {
             get {
-                return this.due;
+                return this._due;
             }
             set {
-                this.due = value;
+                this._due = value;
             }
         }
         
@@ -85,10 +85,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -96,10 +96,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("hidden")]
         public virtual System.Nullable<bool> Hidden {
             get {
-                return this.hidden;
+                return this._hidden;
             }
             set {
-                this.hidden = value;
+                this._hidden = value;
             }
         }
         
@@ -107,10 +107,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -118,10 +118,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -129,10 +129,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("links")]
         public virtual System.Collections.Generic.IList<Task.LinksData> Links {
             get {
-                return this.links;
+                return this._links;
             }
             set {
-                this.links = value;
+                this._links = value;
             }
         }
         
@@ -140,10 +140,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("notes")]
         public virtual string Notes {
             get {
-                return this.notes;
+                return this._notes;
             }
             set {
-                this.notes = value;
+                this._notes = value;
             }
         }
         
@@ -151,10 +151,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("parent")]
         public virtual string Parent {
             get {
-                return this.parent;
+                return this._parent;
             }
             set {
-                this.parent = value;
+                this._parent = value;
             }
         }
         
@@ -162,10 +162,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("position")]
         public virtual string Position {
             get {
-                return this.position;
+                return this._position;
             }
             set {
-                this.position = value;
+                this._position = value;
             }
         }
         
@@ -173,10 +173,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -184,10 +184,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual string Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
         
@@ -195,10 +195,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -206,39 +206,39 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class LinksData {
             
-            private string description;
+            private string _description;
             
-            private string link;
+            private string _link;
             
-            private string type;
+            private string _type;
             
             /// <summary>The description. In HTML speak: Everything between &lt;a&gt; and &lt;/a&gt;.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("description")]
             public virtual string Description {
                 get {
-                    return this.description;
+                    return this._description;
                 }
                 set {
-                    this.description = value;
+                    this._description = value;
                 }
             }
             
@@ -246,10 +246,10 @@ namespace Google.Apis.Tasks.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
             public virtual string Link {
                 get {
-                    return this.link;
+                    return this._link;
                 }
                 set {
-                    this.link = value;
+                    this._link = value;
                 }
             }
             
@@ -257,10 +257,10 @@ namespace Google.Apis.Tasks.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -268,28 +268,28 @@ namespace Google.Apis.Tasks.v1.Data {
     
     public class TaskList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -297,10 +297,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -308,10 +308,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -319,10 +319,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -330,10 +330,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -341,44 +341,44 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class TaskLists : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<TaskList> items;
+        private System.Collections.Generic.IList<TaskList> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -386,10 +386,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<TaskList> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -397,10 +397,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -408,44 +408,44 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class Tasks : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<Task> items;
+        private System.Collections.Generic.IList<Task> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -453,10 +453,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Task> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -464,10 +464,10 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -475,20 +475,20 @@ namespace Google.Apis.Tasks.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
@@ -513,188 +513,189 @@ namespace Google.Apis.Tasks.v1 {
             "com/images/icons/product/tasks-16.png\",\"x32\":\"http://www.google.com/images/icons" +
             "/product/tasks-32.png\"},\"documentationLink\":\"http://code.google.com/apis/tasks/v" +
             "1/using.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/tasks/v1/\"" +
-            ",\"basePath\":\"/tasks/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Dat" +
-            "a format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":" +
-            "[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\"" +
-            ":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in " +
-            "a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"A" +
-            "PI key. Your API key identifies your project and provides you with API access, q" +
-            "uota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"" +
-            "query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the cu" +
-            "rrent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"" +
-            "Returns response with indentations and line breaks.\",\"default\":\"true\",\"location\"" +
-            ":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota" +
-            " purposes for server-side applications. Can be any arbitrary string assigned to " +
-            "a user, but should not exceed 40 characters. Overrides userIp if both are provid" +
-            "ed.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of " +
-            "the site where the request originates. Use this if you want to enforce per-user " +
-            "limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapi" +
-            "s.com/auth/tasks\":{\"description\":\"Manage your tasks\"},\"https://www.googleapis.co" +
-            "m/auth/tasks.readonly\":{\"description\":\"View your tasks\"}}}},\"schemas\":{\"Task\":{\"" +
-            "id\":\"Task\",\"type\":\"object\",\"properties\":{\"completed\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Completion date of the task (as a RFC 3339 timestamp). This field is omitte" +
-            "d if the task has not been completed.\",\"format\":\"date-time\"},\"deleted\":{\"type\":\"" +
-            "boolean\",\"description\":\"Flag indicating whether the task has been deleted. The d" +
-            "efault if False.\"},\"due\":{\"type\":\"string\",\"description\":\"Due date of the task (a" +
-            "s a RFC 3339 timestamp). Optional.\",\"format\":\"date-time\"},\"etag\":{\"type\":\"string" +
-            "\",\"description\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"description" +
-            "\":\"Flag indicating whether the task is hidden. This is the case if the task had " +
-            "been marked completed when the task list was last cleared. The default is False." +
-            " This field is read-only.\"},\"id\":{\"type\":\"string\",\"description\":\"Task identifier" +
-            ".\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is always " +
-            "\\\"tasks#task\\\".\",\"default\":\"tasks#task\"},\"links\":{\"type\":\"array\",\"description\":\"" +
-            "Collection of links. This collection is read-only.\",\"items\":{\"type\":\"object\",\"pr" +
-            "operties\":{\"description\":{\"type\":\"string\",\"description\":\"The description. In HTM" +
-            "L speak: Everything between <a> and </a>.\"},\"link\":{\"type\":\"string\",\"description" +
-            "\":\"The URL.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the link, e.g. \\\"em" +
-            "ail\\\".\"}}}},\"notes\":{\"type\":\"string\",\"description\":\"Notes describing the task. O" +
-            "ptional.\"},\"parent\":{\"type\":\"string\",\"description\":\"Parent task identifier. This" +
-            " field is omitted if it is a top-level task. This field is read-only. Use the \\\"" +
-            "move\\\" method to move the task under a different parent or to the top level.\"},\"" +
-            "position\":{\"type\":\"string\",\"description\":\"String indicating the position of the " +
-            "task among its sibling tasks under the same parent task or at the top level. If " +
-            "this string is greater than another task\'s corresponding position string accordi" +
-            "ng to lexicographical ordering, the task is positioned after the other task unde" +
-            "r the same parent task (or at the top level). This field is read-only. Use the \\" +
-            "\"move\\\" method to move the task to another position.\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"URL pointing to this task. Used to retrieve, update, or delete" +
-            " this task.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the task. This " +
-            "is either \\\"needsAction\\\" or \\\"completed\\\".\"},\"title\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Title of the task.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modifi" +
-            "cation time of the task (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"Tas" +
-            "kList\":{\"id\":\"TaskList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"d" +
-            "escription\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Task l" +
-            "ist identifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. T" +
-            "his is always \\\"tasks#taskList\\\".\",\"default\":\"tasks#taskList\"},\"selfLink\":{\"type" +
-            "\":\"string\",\"description\":\"URL pointing to this task list. Used to retrieve, upda" +
-            "te, or delete this task list.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of" +
-            " the task list.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification ti" +
-            "me of the task list (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"TaskLis" +
-            "ts\":{\"id\":\"TaskLists\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"des" +
-            "cription\":\"ETag of the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"Collec" +
-            "tion of task lists.\",\"items\":{\"$ref\":\"TaskList\"}},\"kind\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Type of the resource. This is always \\\"tasks#taskLists\\\".\",\"default\":\"t" +
-            "asks#taskLists\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token that can " +
-            "be used to request the next page of this result.\"}}},\"Tasks\":{\"id\":\"Tasks\",\"type" +
-            "\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the reso" +
-            "urce.\"},\"items\":{\"type\":\"array\",\"description\":\"Collection of tasks.\",\"items\":{\"$" +
-            "ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This " +
-            "is always \\\"tasks#tasks\\\".\",\"default\":\"tasks#tasks\"},\"nextPageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"Token used to access the next page of this result.\"}}}},\"re" +
-            "sources\":{\"tasklists\":{\"methods\":{\"delete\":{\"id\":\"tasks.tasklists.delete\",\"path\"" +
-            ":\"users/@me/lists/{tasklist}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the a" +
-            "uthenticated user\'s specified task list.\",\"parameters\":{\"tasklist\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"tasklist\"],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]}," +
-            "\"get\":{\"id\":\"tasks.tasklists.get\",\"path\":\"users/@me/lists/{tasklist}\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Returns the authenticated user\'s specified task list.\",\"" +
-            "parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"response\":{\"$r" +
-            "ef\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.g" +
-            "oogleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasklists.insert\",\"pa" +
-            "th\":\"users/@me/lists\",\"httpMethod\":\"POST\",\"description\":\"Creates a new task list" +
-            " and adds it to the authenticated user\'s task lists.\",\"request\":{\"$ref\":\"TaskLis" +
-            "t\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/ta" +
-            "sks\"]},\"list\":{\"id\":\"tasks.tasklists.list\",\"path\":\"users/@me/lists\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Returns all the authenticated user\'s task lists.\",\"paramet" +
-            "ers\":{\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task lists " +
-            "returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"location\"" +
-            ":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the resul" +
-            "t page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"TaskLists\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.googleapis.com/" +
-            "auth/tasks.readonly\"]},\"patch\":{\"id\":\"tasks.tasklists.patch\",\"path\":\"users/@me/l" +
-            "ists/{tasklist}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the authenticated u" +
-            "ser\'s specified task list. This method supports patch semantics.\",\"parameters\":{" +
-            "\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\":{\"$ref\":\"TaskList\"" +
-            "},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/task" +
-            "s\"]},\"update\":{\"id\":\"tasks.tasklists.update\",\"path\":\"users/@me/lists/{tasklist}\"" +
-            ",\"httpMethod\":\"PUT\",\"description\":\"Updates the authenticated user\'s specified ta" +
-            "sk list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list ide" +
-            "ntifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"req" +
-            "uest\":{\"$ref\":\"TaskList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/tasks\"]}}},\"tasks\":{\"methods\":{\"clear\":{\"id\":\"tasks.tasks.cl" +
-            "ear\",\"path\":\"lists/{tasklist}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears a" +
-            "ll completed tasks from the specified task list. The affected tasks will be mark" +
-            "ed as \'hidden\' and no longer be returned by default when retrieving all tasks fo" +
-            "r a task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task li" +
+            ",\"basePath\":\"/tasks/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"" +
+            "tasks/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description" +
+            "\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescript" +
+            "ions\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"f" +
+            "ields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to inclu" +
+            "de in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"descripti" +
+            "on\":\"API key. Your API key identifies your project and provides you with API acc" +
+            "ess, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locat" +
+            "ion\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for " +
+            "the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descript" +
+            "ion\":\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"loc" +
+            "ation\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for" +
+            " quota purposes for server-side applications. Can be any arbitrary string assign" +
+            "ed to a user, but should not exceed 40 characters. Overrides userIp if both are " +
+            "provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addre" +
+            "ss of the site where the request originates. Use this if you want to enforce per" +
+            "-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goo" +
+            "gleapis.com/auth/tasks\":{\"description\":\"Manage your tasks\"},\"https://www.googlea" +
+            "pis.com/auth/tasks.readonly\":{\"description\":\"View your tasks\"}}}},\"schemas\":{\"Ta" +
+            "sk\":{\"id\":\"Task\",\"type\":\"object\",\"properties\":{\"completed\":{\"type\":\"string\",\"des" +
+            "cription\":\"Completion date of the task (as a RFC 3339 timestamp). This field is " +
+            "omitted if the task has not been completed.\",\"format\":\"date-time\"},\"deleted\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"Flag indicating whether the task has been deleted." +
+            " The default if False.\"},\"due\":{\"type\":\"string\",\"description\":\"Due date of the t" +
+            "ask (as a RFC 3339 timestamp). Optional.\",\"format\":\"date-time\"},\"etag\":{\"type\":\"" +
+            "string\",\"description\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"descr" +
+            "iption\":\"Flag indicating whether the task is hidden. This is the case if the tas" +
+            "k had been marked completed when the task list was last cleared. The default is " +
+            "False. This field is read-only.\"},\"id\":{\"type\":\"string\",\"description\":\"Task iden" +
+            "tifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource. This is a" +
+            "lways \\\"tasks#task\\\".\",\"default\":\"tasks#task\"},\"links\":{\"type\":\"array\",\"descript" +
+            "ion\":\"Collection of links. This collection is read-only.\",\"items\":{\"type\":\"objec" +
+            "t\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"The description. " +
+            "In HTML speak: Everything between <a> and </a>.\"},\"link\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The URL.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the link, e.g" +
+            ". \\\"email\\\".\"}}}},\"notes\":{\"type\":\"string\",\"description\":\"Notes describing the t" +
+            "ask. Optional.\"},\"parent\":{\"type\":\"string\",\"description\":\"Parent task identifier" +
+            ". This field is omitted if it is a top-level task. This field is read-only. Use " +
+            "the \\\"move\\\" method to move the task under a different parent or to the top leve" +
+            "l.\"},\"position\":{\"type\":\"string\",\"description\":\"String indicating the position o" +
+            "f the task among its sibling tasks under the same parent task or at the top leve" +
+            "l. If this string is greater than another task\'s corresponding position string a" +
+            "ccording to lexicographical ordering, the task is positioned after the other tas" +
+            "k under the same parent task (or at the top level). This field is read-only. Use" +
+            " the \\\"move\\\" method to move the task to another position.\"},\"selfLink\":{\"type\":" +
+            "\"string\",\"description\":\"URL pointing to this task. Used to retrieve, update, or " +
+            "delete this task.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the task." +
+            " This is either \\\"needsAction\\\" or \\\"completed\\\".\"},\"title\":{\"type\":\"string\",\"de" +
+            "scription\":\"Title of the task.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last " +
+            "modification time of the task (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}" +
+            "},\"TaskList\":{\"id\":\"TaskList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
+            "ng\",\"description\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"" +
+            "Task list identifier.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resou" +
+            "rce. This is always \\\"tasks#taskList\\\".\",\"default\":\"tasks#taskList\"},\"selfLink\":" +
+            "{\"type\":\"string\",\"description\":\"URL pointing to this task list. Used to retrieve" +
+            ", update, or delete this task list.\"},\"title\":{\"type\":\"string\",\"description\":\"Ti" +
+            "tle of the task list.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modificat" +
+            "ion time of the task list (as a RFC 3339 timestamp).\",\"format\":\"date-time\"}}},\"T" +
+            "askLists\":{\"id\":\"TaskLists\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string" +
+            "\",\"description\":\"ETag of the resource.\"},\"items\":{\"type\":\"array\",\"description\":\"" +
+            "Collection of task lists.\",\"items\":{\"$ref\":\"TaskList\"}},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"Type of the resource. This is always \\\"tasks#taskLists\\\".\",\"defau" +
+            "lt\":\"tasks#taskLists\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token tha" +
+            "t can be used to request the next page of this result.\"}}},\"Tasks\":{\"id\":\"Tasks\"" +
+            ",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of th" +
+            "e resource.\"},\"items\":{\"type\":\"array\",\"description\":\"Collection of tasks.\",\"item" +
+            "s\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource." +
+            " This is always \\\"tasks#tasks\\\".\",\"default\":\"tasks#tasks\"},\"nextPageToken\":{\"typ" +
+            "e\":\"string\",\"description\":\"Token used to access the next page of this result.\"}}" +
+            "}},\"resources\":{\"tasklists\":{\"methods\":{\"delete\":{\"id\":\"tasks.tasklists.delete\"," +
+            "\"path\":\"users/@me/lists/{tasklist}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
+            " the authenticated user\'s specified task list.\",\"parameters\":{\"tasklist\":{\"type\"" +
+            ":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"tasklist\"],\"scopes\":[\"https://www.googleapis.com/auth/tas" +
+            "ks\"]},\"get\":{\"id\":\"tasks.tasklists.get\",\"path\":\"users/@me/lists/{tasklist}\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Returns the authenticated user\'s specified task li" +
+            "st.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifi" +
+            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"response" +
+            "\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https:/" +
+            "/www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.tasklists.inser" +
+            "t\",\"path\":\"users/@me/lists\",\"httpMethod\":\"POST\",\"description\":\"Creates a new tas" +
+            "k list and adds it to the authenticated user\'s task lists.\",\"request\":{\"$ref\":\"T" +
+            "askList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/tasks\"]},\"list\":{\"id\":\"tasks.tasklists.list\",\"path\":\"users/@me/lists\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"Returns all the authenticated user\'s task lists.\",\"p" +
+            "arameters\":{\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task " +
+            "lists returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"loc" +
+            "ation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying the" +
+            " result page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Task" +
+            "Lists\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\",\"https://www.googleapi" +
+            "s.com/auth/tasks.readonly\"]},\"patch\":{\"id\":\"tasks.tasklists.patch\",\"path\":\"users" +
+            "/@me/lists/{tasklist}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the authentic" +
+            "ated user\'s specified task list. This method supports patch semantics.\",\"paramet" +
+            "ers\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"request\":{\"$ref\":\"Tas" +
+            "kList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/tasks\"]},\"update\":{\"id\":\"tasks.tasklists.update\",\"path\":\"users/@me/lists/{task" +
+            "list}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the authenticated user\'s specif" +
+            "ied task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"Task li" +
             "st identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"" +
-            "],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"delete\":{\"id\":\"tasks.task" +
-            "s.delete\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"descript" +
-            "ion\":\"Deletes the specified task from the task list.\",\"parameters\":{\"task\":{\"typ" +
-            "e\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"}," +
-            "\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/tasks\"]},\"get\":{\"id\":\"tasks.tasks.get\",\"path\":\"lists/{task" +
-            "list}/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified task" +
-            ".\",\"parameters\":{\"task\":{\"type\":\"string\",\"description\":\"Task identifier.\",\"requi" +
-            "red\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task lis" +
-            "t identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"," +
-            "\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/ta" +
-            "sks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"tasks.ta" +
-            "sks.insert\",\"path\":\"lists/{tasklist}/tasks\",\"httpMethod\":\"POST\",\"description\":\"C" +
-            "reates a new task on the specified task list.\",\"parameters\":{\"parent\":{\"type\":\"s" +
-            "tring\",\"description\":\"Parent task identifier. If the task is created at the top " +
-            "level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"previous\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Previous sibling task identifier. If the task is cre" +
-            "ated at the first position among its siblings, this parameter is omitted. Option" +
-            "al.\",\"location\":\"query\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list id" +
-            "entifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\"],\"re" +
-            "quest\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/tasks\"]},\"list\":{\"id\":\"tasks.tasks.list\",\"path\":\"lists/{tasklist}/t" +
-            "asks\",\"httpMethod\":\"GET\",\"description\":\"Returns all tasks in the specified task " +
-            "list.\",\"parameters\":{\"completedMax\":{\"type\":\"string\",\"description\":\"Upper bound " +
-            "for a task\'s completion date (as a RFC 3339 timestamp) to filter by. Optional. T" +
-            "he default is not to filter by completion date.\",\"location\":\"query\"},\"completedM" +
-            "in\":{\"type\":\"string\",\"description\":\"Lower bound for a task\'s completion date (as" +
-            " a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by c" +
-            "ompletion date.\",\"location\":\"query\"},\"dueMax\":{\"type\":\"string\",\"description\":\"Up" +
-            "per bound for a task\'s due date (as a RFC 3339 timestamp) to filter by. Optional" +
-            ". The default is not to filter by due date.\",\"location\":\"query\"},\"dueMin\":{\"type" +
-            "\":\"string\",\"description\":\"Lower bound for a task\'s due date (as a RFC 3339 times" +
-            "tamp) to filter by. Optional. The default is not to filter by due date.\",\"locati" +
-            "on\":\"query\"},\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number of task" +
-            " lists returned on one page. Optional. The default is 100.\",\"format\":\"int64\",\"lo" +
-            "cation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying th" +
-            "e result page to return. Optional.\",\"location\":\"query\"},\"showCompleted\":{\"type\":" +
-            "\"boolean\",\"description\":\"Flag indicating whether completed tasks are returned in" +
-            " the result. Optional. The default is True.\",\"location\":\"query\"},\"showDeleted\":{" +
-            "\"type\":\"boolean\",\"description\":\"Flag indicating whether deleted tasks are return" +
-            "ed in the result. Optional. The default is False.\",\"location\":\"query\"},\"showHidd" +
-            "en\":{\"type\":\"boolean\",\"description\":\"Flag indicating whether hidden tasks are re" +
-            "turned in the result. Optional. The default is False.\",\"location\":\"query\"},\"task" +
-            "list\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"lo" +
-            "cation\":\"path\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound for a t" +
-            "ask\'s last modification time (as a RFC 3339 timestamp) to filter by. Optional. T" +
-            "he default is not to filter by last modification time.\",\"location\":\"query\"}},\"pa" +
-            "rameterOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"mov" +
-            "e\":{\"id\":\"tasks.tasks.move\",\"path\":\"lists/{tasklist}/tasks/{task}/move\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Moves the specified task to another position in the t" +
-            "ask list. This can include putting it as a child task under a new parent and/or " +
-            "move it to a different position among its sibling tasks.\",\"parameters\":{\"parent\"" +
-            ":{\"type\":\"string\",\"description\":\"New parent task identifier. If the task is move" +
-            "d to the top level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"p" +
-            "revious\":{\"type\":\"string\",\"description\":\"New previous sibling task identifier. I" +
-            "f the task is moved to the first position among its siblings, this parameter is " +
-            "omitted. Optional.\",\"location\":\"query\"},\"task\":{\"type\":\"string\",\"description\":\"T" +
-            "ask identifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\"," +
-            "\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"tasklist\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/tasks\"]},\"patch\":{\"id\":\"tasks.tasks.patch\",\"path\":\"lists/{t" +
-            "asklist}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified" +
-            " task. This method supports patch semantics.\",\"parameters\":{\"task\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"tasklis" +
-            "t\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task\"},\"re" +
-            "sponse\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"upd" +
-            "ate\":{\"id\":\"tasks.tasks.update\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMeth" +
-            "od\":\"PUT\",\"description\":\"Updates the specified task.\",\"parameters\":{\"task\":{\"typ" +
-            "e\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"}," +
-            "\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Ta" +
-            "sk\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks" +
-            "\"]}}}}}";
+            "],\"request\":{\"$ref\":\"TaskList\"},\"response\":{\"$ref\":\"TaskList\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/tasks\"]}}},\"tasks\":{\"methods\":{\"clear\":{\"id\":\"tasks.ta" +
+            "sks.clear\",\"path\":\"lists/{tasklist}/clear\",\"httpMethod\":\"POST\",\"description\":\"Cl" +
+            "ears all completed tasks from the specified task list. The affected tasks will b" +
+            "e marked as \'hidden\' and no longer be returned by default when retrieving all ta" +
+            "sks for a task list.\",\"parameters\":{\"tasklist\":{\"type\":\"string\",\"description\":\"T" +
+            "ask list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tas" +
+            "klist\"],\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]},\"delete\":{\"id\":\"task" +
+            "s.tasks.delete\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"de" +
+            "scription\":\"Deletes the specified task from the task list.\",\"parameters\":{\"task\"" +
+            ":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"scopes\":[\"http" +
+            "s://www.googleapis.com/auth/tasks\"]},\"get\":{\"id\":\"tasks.tasks.get\",\"path\":\"lists" +
+            "/{tasklist}/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specifie" +
+            "d task.\",\"parameters\":{\"task\":{\"type\":\"string\",\"description\":\"Task identifier.\"," +
+            "\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Ta" +
+            "sk list identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"task" +
+            "list\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]},\"insert\":{\"id\":\"ta" +
+            "sks.tasks.insert\",\"path\":\"lists/{tasklist}/tasks\",\"httpMethod\":\"POST\",\"descripti" +
+            "on\":\"Creates a new task on the specified task list.\",\"parameters\":{\"parent\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Parent task identifier. If the task is created at th" +
+            "e top level, this parameter is omitted. Optional.\",\"location\":\"query\"},\"previous" +
+            "\":{\"type\":\"string\",\"description\":\"Previous sibling task identifier. If the task " +
+            "is created at the first position among its siblings, this parameter is omitted. " +
+            "Optional.\",\"location\":\"query\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task l" +
+            "ist identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist" +
+            "\"],\"request\":{\"$ref\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/tasks\"]},\"list\":{\"id\":\"tasks.tasks.list\",\"path\":\"lists/{taskl" +
+            "ist}/tasks\",\"httpMethod\":\"GET\",\"description\":\"Returns all tasks in the specified" +
+            " task list.\",\"parameters\":{\"completedMax\":{\"type\":\"string\",\"description\":\"Upper " +
+            "bound for a task\'s completion date (as a RFC 3339 timestamp) to filter by. Optio" +
+            "nal. The default is not to filter by completion date.\",\"location\":\"query\"},\"comp" +
+            "letedMin\":{\"type\":\"string\",\"description\":\"Lower bound for a task\'s completion da" +
+            "te (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filte" +
+            "r by completion date.\",\"location\":\"query\"},\"dueMax\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Upper bound for a task\'s due date (as a RFC 3339 timestamp) to filter by. Op" +
+            "tional. The default is not to filter by due date.\",\"location\":\"query\"},\"dueMin\":" +
+            "{\"type\":\"string\",\"description\":\"Lower bound for a task\'s due date (as a RFC 3339" +
+            " timestamp) to filter by. Optional. The default is not to filter by due date.\",\"" +
+            "location\":\"query\"},\"maxResults\":{\"type\":\"string\",\"description\":\"Maximum number o" +
+            "f task lists returned on one page. Optional. The default is 100.\",\"format\":\"int6" +
+            "4\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specify" +
+            "ing the result page to return. Optional.\",\"location\":\"query\"},\"showCompleted\":{\"" +
+            "type\":\"boolean\",\"description\":\"Flag indicating whether completed tasks are retur" +
+            "ned in the result. Optional. The default is True.\",\"location\":\"query\"},\"showDele" +
+            "ted\":{\"type\":\"boolean\",\"description\":\"Flag indicating whether deleted tasks are " +
+            "returned in the result. Optional. The default is False.\",\"location\":\"query\"},\"sh" +
+            "owHidden\":{\"type\":\"boolean\",\"description\":\"Flag indicating whether hidden tasks " +
+            "are returned in the result. Optional. The default is False.\",\"location\":\"query\"}" +
+            ",\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":tr" +
+            "ue,\"location\":\"path\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound f" +
+            "or a task\'s last modification time (as a RFC 3339 timestamp) to filter by. Optio" +
+            "nal. The default is not to filter by last modification time.\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"tasklist\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/tasks\",\"https://www.googleapis.com/auth/tasks.readonly\"]" +
+            "},\"move\":{\"id\":\"tasks.tasks.move\",\"path\":\"lists/{tasklist}/tasks/{task}/move\",\"h" +
+            "ttpMethod\":\"POST\",\"description\":\"Moves the specified task to another position in" +
+            " the task list. This can include putting it as a child task under a new parent a" +
+            "nd/or move it to a different position among its sibling tasks.\",\"parameters\":{\"p" +
+            "arent\":{\"type\":\"string\",\"description\":\"New parent task identifier. If the task i" +
+            "s moved to the top level, this parameter is omitted. Optional.\",\"location\":\"quer" +
+            "y\"},\"previous\":{\"type\":\"string\",\"description\":\"New previous sibling task identif" +
+            "ier. If the task is moved to the first position among its siblings, this paramet" +
+            "er is omitted. Optional.\",\"location\":\"query\"},\"task\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"tasklist\":{\"type\":\"st" +
+            "ring\",\"description\":\"Task list identifier.\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"tasklist\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/tasks\"]},\"patch\":{\"id\":\"tasks.tasks.patch\",\"path\":\"li" +
+            "sts/{tasklist}/tasks/{task}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the spe" +
+            "cified task. This method supports patch semantics.\",\"parameters\":{\"task\":{\"type\"" +
+            ":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"path\"},\"t" +
+            "asklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"required\":true," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$ref\":\"Task" +
+            "\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/tasks\"]" +
+            "},\"update\":{\"id\":\"tasks.tasks.update\",\"path\":\"lists/{tasklist}/tasks/{task}\",\"ht" +
+            "tpMethod\":\"PUT\",\"description\":\"Updates the specified task.\",\"parameters\":{\"task\"" +
+            ":{\"type\":\"string\",\"description\":\"Task identifier.\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"tasklist\":{\"type\":\"string\",\"description\":\"Task list identifier.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tasklist\",\"task\"],\"request\":{\"$re" +
+            "f\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/tasks\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -704,13 +705,13 @@ namespace Google.Apis.Tasks.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected TasksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.tasklists = new TasklistsResource(this);
-            this.tasks = new TasksResource(this);
+            this._tasklists = new TasklistsResource(this);
+            this._tasks = new TasksResource(this);
         }
         
         public TasksService() : 
@@ -718,22 +719,22 @@ namespace Google.Apis.Tasks.v1 {
         }
         
         public TasksService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TasksService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(TasksService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -811,38 +812,38 @@ namespace Google.Apis.Tasks.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string tasklist;
+            private string _tasklist;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
                     base(service) {
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -850,10 +851,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -861,7 +862,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -880,38 +881,38 @@ namespace Google.Apis.Tasks.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string tasklist;
+            private string _tasklist;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
                     base(service) {
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -919,10 +920,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -930,7 +931,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -949,13 +950,13 @@ namespace Google.Apis.Tasks.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Tasks.v1.Data.TaskList bodyValue;
+            private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body) : 
                     base(service) {
@@ -966,21 +967,21 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -988,20 +989,20 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.TaskList Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1024,15 +1025,15 @@ namespace Google.Apis.Tasks.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string maxResults;
+            private string _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -1042,21 +1043,21 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1064,10 +1065,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1075,10 +1076,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
             public virtual string MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1086,10 +1087,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1108,41 +1109,41 @@ namespace Google.Apis.Tasks.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private Google.Apis.Tasks.v1.Data.TaskList bodyValue;
+            private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1150,10 +1151,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1161,17 +1162,17 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.TaskList Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1194,41 +1195,41 @@ namespace Google.Apis.Tasks.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private Google.Apis.Tasks.v1.Data.TaskList bodyValue;
+            private Google.Apis.Tasks.v1.Data.TaskList _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.TaskList body, string tasklist) : 
                     base(service) {
                 this.Body = body;
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1236,10 +1237,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1247,17 +1248,17 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.TaskList Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1344,38 +1345,38 @@ namespace Google.Apis.Tasks.v1 {
         
         public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string tasklist;
+            private string _tasklist;
             
             public ClearRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
                     base(service) {
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1383,10 +1384,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1394,7 +1395,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -1413,41 +1414,41 @@ namespace Google.Apis.Tasks.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string task;
+            private string _task;
             
-            private string tasklist;
+            private string _tasklist;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
                     base(service) {
-                this.tasklist = tasklist;
-                this.task = task;
+                this._tasklist = tasklist;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1455,10 +1456,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1466,7 +1467,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -1474,7 +1475,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -1493,41 +1494,41 @@ namespace Google.Apis.Tasks.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string task;
+            private string _task;
             
-            private string tasklist;
+            private string _tasklist;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
                     base(service) {
-                this.tasklist = tasklist;
-                this.task = task;
+                this._tasklist = tasklist;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1535,10 +1536,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1546,7 +1547,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -1554,7 +1555,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -1573,45 +1574,45 @@ namespace Google.Apis.Tasks.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string parent;
+            private string _parent;
             
-            private string previous;
+            private string _previous;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private Google.Apis.Tasks.v1.Data.Task bodyValue;
+            private Google.Apis.Tasks.v1.Data.Task _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist) : 
                     base(service) {
                 this.Body = body;
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1619,10 +1620,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1630,10 +1631,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("parent")]
             public virtual string Parent {
                 get {
-                    return this.parent;
+                    return this._parent;
                 }
                 set {
-                    this.parent = value;
+                    this._parent = value;
                 }
             }
             
@@ -1641,10 +1642,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("previous")]
             public virtual string Previous {
                 get {
-                    return this.previous;
+                    return this._previous;
                 }
                 set {
-                    this.previous = value;
+                    this._previous = value;
                 }
             }
             
@@ -1652,17 +1653,17 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.Task Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1685,58 +1686,58 @@ namespace Google.Apis.Tasks.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string completedMax;
+            private string _completedMax;
             
-            private string completedMin;
+            private string _completedMin;
             
-            private string dueMax;
+            private string _dueMax;
             
-            private string dueMin;
+            private string _dueMin;
             
-            private string maxResults;
+            private string _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private System.Boolean? showCompleted;
+            private System.Nullable<bool> _showCompleted;
             
-            private System.Boolean? showDeleted;
+            private System.Nullable<bool> _showDeleted;
             
-            private System.Boolean? showHidden;
+            private System.Nullable<bool> _showHidden;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private string updatedMin;
+            private string _updatedMin;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist) : 
                     base(service) {
-                this.tasklist = tasklist;
+                this._tasklist = tasklist;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1744,10 +1745,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1755,10 +1756,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("completedMax")]
             public virtual string CompletedMax {
                 get {
-                    return this.completedMax;
+                    return this._completedMax;
                 }
                 set {
-                    this.completedMax = value;
+                    this._completedMax = value;
                 }
             }
             
@@ -1766,10 +1767,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("completedMin")]
             public virtual string CompletedMin {
                 get {
-                    return this.completedMin;
+                    return this._completedMin;
                 }
                 set {
-                    this.completedMin = value;
+                    this._completedMin = value;
                 }
             }
             
@@ -1777,10 +1778,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("dueMax")]
             public virtual string DueMax {
                 get {
-                    return this.dueMax;
+                    return this._dueMax;
                 }
                 set {
-                    this.dueMax = value;
+                    this._dueMax = value;
                 }
             }
             
@@ -1788,10 +1789,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("dueMin")]
             public virtual string DueMin {
                 get {
-                    return this.dueMin;
+                    return this._dueMin;
                 }
                 set {
-                    this.dueMin = value;
+                    this._dueMin = value;
                 }
             }
             
@@ -1799,10 +1800,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
             public virtual string MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1810,43 +1811,43 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             /// <summary>Flag indicating whether completed tasks are returned in the result. Optional. The default is True.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showCompleted")]
-            public virtual System.Boolean? ShowCompleted {
+            public virtual System.Nullable<bool> ShowCompleted {
                 get {
-                    return this.showCompleted;
+                    return this._showCompleted;
                 }
                 set {
-                    this.showCompleted = value;
+                    this._showCompleted = value;
                 }
             }
             
             /// <summary>Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
-            public virtual System.Boolean? ShowDeleted {
+            public virtual System.Nullable<bool> ShowDeleted {
                 get {
-                    return this.showDeleted;
+                    return this._showDeleted;
                 }
                 set {
-                    this.showDeleted = value;
+                    this._showDeleted = value;
                 }
             }
             
             /// <summary>Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showHidden")]
-            public virtual System.Boolean? ShowHidden {
+            public virtual System.Nullable<bool> ShowHidden {
                 get {
-                    return this.showHidden;
+                    return this._showHidden;
                 }
                 set {
-                    this.showHidden = value;
+                    this._showHidden = value;
                 }
             }
             
@@ -1854,7 +1855,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -1862,10 +1863,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
             public virtual string UpdatedMin {
                 get {
-                    return this.updatedMin;
+                    return this._updatedMin;
                 }
                 set {
-                    this.updatedMin = value;
+                    this._updatedMin = value;
                 }
             }
             
@@ -1884,45 +1885,45 @@ namespace Google.Apis.Tasks.v1 {
         
         public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string parent;
+            private string _parent;
             
-            private string previous;
+            private string _previous;
             
-            private string task;
+            private string _task;
             
-            private string tasklist;
+            private string _tasklist;
             
             public MoveRequest(Google.Apis.Discovery.IRequestProvider service, string tasklist, string task) : 
                     base(service) {
-                this.tasklist = tasklist;
-                this.task = task;
+                this._tasklist = tasklist;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1930,10 +1931,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1941,10 +1942,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("parent")]
             public virtual string Parent {
                 get {
-                    return this.parent;
+                    return this._parent;
                 }
                 set {
-                    this.parent = value;
+                    this._parent = value;
                 }
             }
             
@@ -1952,10 +1953,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("previous")]
             public virtual string Previous {
                 get {
-                    return this.previous;
+                    return this._previous;
                 }
                 set {
-                    this.previous = value;
+                    this._previous = value;
                 }
             }
             
@@ -1963,7 +1964,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -1971,7 +1972,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
@@ -1990,44 +1991,44 @@ namespace Google.Apis.Tasks.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string task;
+            private string _task;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private Google.Apis.Tasks.v1.Data.Task bodyValue;
+            private Google.Apis.Tasks.v1.Data.Task _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
-                this.tasklist = tasklist;
-                this.task = task;
+                this._tasklist = tasklist;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2035,10 +2036,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2046,7 +2047,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -2054,17 +2055,17 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.Task Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2087,44 +2088,44 @@ namespace Google.Apis.Tasks.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string task;
+            private string _task;
             
-            private string tasklist;
+            private string _tasklist;
             
-            private Google.Apis.Tasks.v1.Data.Task bodyValue;
+            private Google.Apis.Tasks.v1.Data.Task _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Tasks.v1.Data.Task body, string tasklist, string task) : 
                     base(service) {
                 this.Body = body;
-                this.tasklist = tasklist;
-                this.task = task;
+                this._tasklist = tasklist;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2132,10 +2133,10 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2143,7 +2144,7 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -2151,17 +2152,17 @@ namespace Google.Apis.Tasks.v1 {
             [Google.Apis.Util.RequestParameterAttribute("tasklist")]
             public virtual string Tasklist {
                 get {
-                    return this.tasklist;
+                    return this._tasklist;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Tasks.v1.Data.Task Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2187,9 +2188,9 @@ namespace Google.Apis.Tasks.v1 {
         
         private const string Resource = "";
         
-        private TasklistsResource tasklists;
+        private TasklistsResource _tasklists;
         
-        private TasksResource tasks;
+        private TasksResource _tasks;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -2199,13 +2200,13 @@ namespace Google.Apis.Tasks.v1 {
         
         public virtual TasklistsResource Tasklists {
             get {
-                return this.tasklists;
+                return this._tasklists;
             }
         }
         
         public virtual TasksResource Tasks {
             get {
-                return this.tasks;
+                return this._tasks;
             }
         }
     }

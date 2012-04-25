@@ -61,6 +61,9 @@
         <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Ref">
             <summary>A reference to another schema. The value of this property is the &quot;id&quot; of another schema.</summary>
         </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Annotations">
+            <summary>Additional information about this property.</summary>
+        </member>
         <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Default">
             <summary>The default value of this property (if one exists).</summary>
         </member>
@@ -103,6 +106,12 @@
         <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.Type">
             <summary>The value type for this schema. A list of values can be found here: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1</summary>
         </member>
+        <member name="T:Google.Apis.Discovery.v1.Data.JsonSchema.AnnotationsData">
+            <summary>Additional information about this property.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.JsonSchema.AnnotationsData.Required">
+            <summary>A list of methods for which this property is required on requests.</summary>
+        </member>
         <member name="T:Google.Apis.Discovery.v1.Data.JsonSchema.PropertiesData">
             <summary>If this is a schema for an object, list the schema for each property of this object.</summary>
         </member>
@@ -110,10 +119,13 @@
             <summary>Authentication information.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.BasePath">
-            <summary>The base path for REST requests.</summary>
+            <summary>[DEPRECATED] The base path for REST requests.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.BaseUrl">
-            <summary>The base URL for REST requests.</summary>
+            <summary>[DEPRECATED] The base URL for REST requests.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.BatchPath">
+            <summary>The path for REST batch requests.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Description">
             <summary>The description of this API.</summary>
@@ -157,8 +169,14 @@
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Revision">
             <summary>The version of this API.</summary>
         </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.RootUrl">
+            <summary>The root url under which all API services live.</summary>
+        </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Schemas">
             <summary>The schemas for this API.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.ServicePath">
+            <summary>The base path for all REST requests.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.Data.RestDescription.Title">
             <summary>The title of this API.</summary>

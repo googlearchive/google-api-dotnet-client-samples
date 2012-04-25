@@ -16,20 +16,20 @@ namespace Google.Apis.Plus.v1.Data {
     
     public class Acl {
         
-        private string description;
+        private string _description;
         
-        private System.Collections.Generic.IList<PlusAclentryResource> items;
+        private System.Collections.Generic.IList<PlusAclentryResource> _items;
         
-        private string kind;
+        private string _kind;
         
         /// <summary>Description of the access granted, suitable for display.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -37,10 +37,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<PlusAclentryResource> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -48,65 +48,65 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
     }
     
     public class Activity : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Acl access;
+        private Acl _access;
         
-        private Activity.ActorData actor;
+        private Activity.ActorData _actor;
         
-        private string address;
+        private string _address;
         
-        private string annotation;
+        private string _annotation;
         
-        private string crosspostSource;
+        private string _crosspostSource;
         
-        private string etag;
+        private string _etag;
         
-        private string geocode;
+        private string _geocode;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Activity.ObjectData objectValue;
+        private Activity.ObjectData _object;
         
-        private string placeId;
+        private string _placeId;
         
-        private string placeName;
+        private string _placeName;
         
-        private System.Nullable<bool> placeholder;
+        private System.Nullable<bool> _placeholder;
         
-        private Activity.ProviderData provider;
+        private Activity.ProviderData _provider;
         
-        private string published;
+        private string _published;
         
-        private string radius;
+        private string _radius;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private string url;
+        private string _url;
         
-        private string verb;
+        private string _verb;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         [Newtonsoft.Json.JsonPropertyAttribute("access")]
         public virtual Acl Access {
             get {
-                return this.access;
+                return this._access;
             }
             set {
-                this.access = value;
+                this._access = value;
             }
         }
         
@@ -114,10 +114,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("actor")]
         public virtual Activity.ActorData Actor {
             get {
-                return this.actor;
+                return this._actor;
             }
             set {
-                this.actor = value;
+                this._actor = value;
             }
         }
         
@@ -125,10 +125,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("address")]
         public virtual string Address {
             get {
-                return this.address;
+                return this._address;
             }
             set {
-                this.address = value;
+                this._address = value;
             }
         }
         
@@ -136,10 +136,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("annotation")]
         public virtual string Annotation {
             get {
-                return this.annotation;
+                return this._annotation;
             }
             set {
-                this.annotation = value;
+                this._annotation = value;
             }
         }
         
@@ -147,10 +147,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("crosspostSource")]
         public virtual string CrosspostSource {
             get {
-                return this.crosspostSource;
+                return this._crosspostSource;
             }
             set {
-                this.crosspostSource = value;
+                this._crosspostSource = value;
             }
         }
         
@@ -158,10 +158,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -169,10 +169,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("geocode")]
         public virtual string Geocode {
             get {
-                return this.geocode;
+                return this._geocode;
             }
             set {
-                this.geocode = value;
+                this._geocode = value;
             }
         }
         
@@ -180,10 +180,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -191,10 +191,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -202,10 +202,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("object")]
         public virtual Activity.ObjectData Object {
             get {
-                return this.objectValue;
+                return this._object;
             }
             set {
-                this.objectValue = value;
+                this._object = value;
             }
         }
         
@@ -213,10 +213,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("placeId")]
         public virtual string PlaceId {
             get {
-                return this.placeId;
+                return this._placeId;
             }
             set {
-                this.placeId = value;
+                this._placeId = value;
             }
         }
         
@@ -224,10 +224,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("placeName")]
         public virtual string PlaceName {
             get {
-                return this.placeName;
+                return this._placeName;
             }
             set {
-                this.placeName = value;
+                this._placeName = value;
             }
         }
         
@@ -235,10 +235,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("placeholder")]
         public virtual System.Nullable<bool> Placeholder {
             get {
-                return this.placeholder;
+                return this._placeholder;
             }
             set {
-                this.placeholder = value;
+                this._placeholder = value;
             }
         }
         
@@ -246,10 +246,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("provider")]
         public virtual Activity.ProviderData Provider {
             get {
-                return this.provider;
+                return this._provider;
             }
             set {
-                this.provider = value;
+                this._provider = value;
             }
         }
         
@@ -257,10 +257,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -268,10 +268,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("radius")]
         public virtual string Radius {
             get {
-                return this.radius;
+                return this._radius;
             }
             set {
-                this.radius = value;
+                this._radius = value;
             }
         }
         
@@ -279,10 +279,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -290,10 +290,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -301,10 +301,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
@@ -315,44 +315,44 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("verb")]
         public virtual string Verb {
             get {
-                return this.verb;
+                return this._verb;
             }
             set {
-                this.verb = value;
+                this._verb = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         /// <summary>The person who performed this activity.</summary>
         public class ActorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string id;
+            private string _id;
             
-            private ActorData.ImageData image;
+            private ActorData.ImageData _image;
             
-            private ActorData.NameData name;
+            private ActorData.NameData _name;
             
-            private string url;
+            private string _url;
             
             /// <summary>The name of the actor, suitable for display.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -360,10 +360,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -371,10 +371,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("image")]
             public virtual ActorData.ImageData Image {
                 get {
-                    return this.image;
+                    return this._image;
                 }
                 set {
-                    this.image = value;
+                    this._image = value;
                 }
             }
             
@@ -382,10 +382,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual ActorData.NameData Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
             
@@ -393,26 +393,26 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>The image representation of the actor.</summary>
             public class ImageData {
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The URL of the actor&apos;s profile photo. To re-size the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -420,18 +420,18 @@ namespace Google.Apis.Plus.v1.Data {
             /// <summary>An object representation of the individual components of name.</summary>
             public class NameData {
                 
-                private string familyName;
+                private string _familyName;
                 
-                private string givenName;
+                private string _givenName;
                 
                 /// <summary>The family name (last name) of the actor.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
                 public virtual string FamilyName {
                     get {
-                        return this.familyName;
+                        return this._familyName;
                     }
                     set {
-                        this.familyName = value;
+                        this._familyName = value;
                     }
                 }
                 
@@ -439,10 +439,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
                 public virtual string GivenName {
                     get {
-                        return this.givenName;
+                        return this._givenName;
                     }
                     set {
-                        this.givenName = value;
+                        this._givenName = value;
                     }
                 }
             }
@@ -451,34 +451,34 @@ namespace Google.Apis.Plus.v1.Data {
         /// <summary>The object of this activity.</summary>
         public class ObjectData {
             
-            private ObjectData.ActorData actor;
+            private ObjectData.ActorData _actor;
             
-            private System.Collections.Generic.IList<ObjectData.AttachmentsData> attachments;
+            private System.Collections.Generic.IList<ObjectData.AttachmentsData> _attachments;
             
-            private string content;
+            private string _content;
             
-            private string id;
+            private string _id;
             
-            private string objectType;
+            private string _objectType;
             
-            private string originalContent;
+            private string _originalContent;
             
-            private ObjectData.PlusonersData plusoners;
+            private ObjectData.PlusonersData _plusoners;
             
-            private ObjectData.RepliesData replies;
+            private ObjectData.RepliesData _replies;
             
-            private ObjectData.ResharersData resharers;
+            private ObjectData.ResharersData _resharers;
             
-            private string url;
+            private string _url;
             
             /// <summary>If this activity&apos;s object is itself another activity (for example, when a person reshares an activity), this property specifies the original activity&apos;s actor.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("actor")]
             public virtual ObjectData.ActorData Actor {
                 get {
-                    return this.actor;
+                    return this._actor;
                 }
                 set {
-                    this.actor = value;
+                    this._actor = value;
                 }
             }
             
@@ -486,10 +486,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("attachments")]
             public virtual System.Collections.Generic.IList<ObjectData.AttachmentsData> Attachments {
                 get {
-                    return this.attachments;
+                    return this._attachments;
                 }
                 set {
-                    this.attachments = value;
+                    this._attachments = value;
                 }
             }
             
@@ -497,10 +497,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("content")]
             public virtual string Content {
                 get {
-                    return this.content;
+                    return this._content;
                 }
                 set {
-                    this.content = value;
+                    this._content = value;
                 }
             }
             
@@ -508,10 +508,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -521,10 +521,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
             public virtual string ObjectType {
                 get {
-                    return this.objectType;
+                    return this._objectType;
                 }
                 set {
-                    this.objectType = value;
+                    this._objectType = value;
                 }
             }
             
@@ -532,10 +532,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("originalContent")]
             public virtual string OriginalContent {
                 get {
-                    return this.originalContent;
+                    return this._originalContent;
                 }
                 set {
-                    this.originalContent = value;
+                    this._originalContent = value;
                 }
             }
             
@@ -543,10 +543,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("plusoners")]
             public virtual ObjectData.PlusonersData Plusoners {
                 get {
-                    return this.plusoners;
+                    return this._plusoners;
                 }
                 set {
-                    this.plusoners = value;
+                    this._plusoners = value;
                 }
             }
             
@@ -554,10 +554,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("replies")]
             public virtual ObjectData.RepliesData Replies {
                 get {
-                    return this.replies;
+                    return this._replies;
                 }
                 set {
-                    this.replies = value;
+                    this._replies = value;
                 }
             }
             
@@ -565,10 +565,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("resharers")]
             public virtual ObjectData.ResharersData Resharers {
                 get {
-                    return this.resharers;
+                    return this._resharers;
                 }
                 set {
-                    this.resharers = value;
+                    this._resharers = value;
                 }
             }
             
@@ -576,32 +576,32 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>If this activity&apos;s object is itself another activity (for example, when a person reshares an activity), this property specifies the original activity&apos;s actor.</summary>
             public class ActorData {
                 
-                private string displayName;
+                private string _displayName;
                 
-                private string id;
+                private string _id;
                 
-                private ActorData.ImageData image;
+                private ActorData.ImageData _image;
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The original actor&apos;s name, suitable for display.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
                 public virtual string DisplayName {
                     get {
-                        return this.displayName;
+                        return this._displayName;
                     }
                     set {
-                        this.displayName = value;
+                        this._displayName = value;
                     }
                 }
                 
@@ -609,10 +609,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("id")]
                 public virtual string Id {
                     get {
-                        return this.id;
+                        return this._id;
                     }
                     set {
-                        this.id = value;
+                        this._id = value;
                     }
                 }
                 
@@ -620,10 +620,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("image")]
                 public virtual ActorData.ImageData Image {
                     get {
-                        return this.image;
+                        return this._image;
                     }
                     set {
-                        this.image = value;
+                        this._image = value;
                     }
                 }
                 
@@ -631,26 +631,26 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
                 
                 /// <summary>The image representation of the original actor.</summary>
                 public class ImageData {
                     
-                    private string url;
+                    private string _url;
                     
                     /// <summary>A URL that points to a thumbnail photo of the original actor.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("url")]
                     public virtual string Url {
                         get {
-                            return this.url;
+                            return this._url;
                         }
                         set {
-                            this.url = value;
+                            this._url = value;
                         }
                     }
                 }
@@ -658,30 +658,30 @@ namespace Google.Apis.Plus.v1.Data {
             
             public class AttachmentsData {
                 
-                private string content;
+                private string _content;
                 
-                private string displayName;
+                private string _displayName;
                 
-                private AttachmentsData.EmbedData embed;
+                private AttachmentsData.EmbedData _embed;
                 
-                private AttachmentsData.FullImageData fullImage;
+                private AttachmentsData.FullImageData _fullImage;
                 
-                private string id;
+                private string _id;
                 
-                private AttachmentsData.ImageData image;
+                private AttachmentsData.ImageData _image;
                 
-                private string objectType;
+                private string _objectType;
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>If the attachment is an article, this property contains a snippet of text from the article.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("content")]
                 public virtual string Content {
                     get {
-                        return this.content;
+                        return this._content;
                     }
                     set {
-                        this.content = value;
+                        this._content = value;
                     }
                 }
                 
@@ -689,10 +689,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
                 public virtual string DisplayName {
                     get {
-                        return this.displayName;
+                        return this._displayName;
                     }
                     set {
-                        this.displayName = value;
+                        this._displayName = value;
                     }
                 }
                 
@@ -700,10 +700,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("embed")]
                 public virtual AttachmentsData.EmbedData Embed {
                     get {
-                        return this.embed;
+                        return this._embed;
                     }
                     set {
-                        this.embed = value;
+                        this._embed = value;
                     }
                 }
                 
@@ -711,10 +711,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("fullImage")]
                 public virtual AttachmentsData.FullImageData FullImage {
                     get {
-                        return this.fullImage;
+                        return this._fullImage;
                     }
                     set {
-                        this.fullImage = value;
+                        this._fullImage = value;
                     }
                 }
                 
@@ -722,10 +722,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("id")]
                 public virtual string Id {
                     get {
-                        return this.id;
+                        return this._id;
                     }
                     set {
-                        this.id = value;
+                        this._id = value;
                     }
                 }
                 
@@ -733,10 +733,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("image")]
                 public virtual AttachmentsData.ImageData Image {
                     get {
-                        return this.image;
+                        return this._image;
                     }
                     set {
-                        this.image = value;
+                        this._image = value;
                     }
                 }
                 
@@ -747,10 +747,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
                 public virtual string ObjectType {
                     get {
-                        return this.objectType;
+                        return this._objectType;
                     }
                     set {
-                        this.objectType = value;
+                        this._objectType = value;
                     }
                 }
                 
@@ -758,28 +758,28 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
                 
                 /// <summary>If the attachment is a video, the embeddable link.</summary>
                 public class EmbedData {
                     
-                    private string type;
+                    private string _type;
                     
-                    private string url;
+                    private string _url;
                     
                     /// <summary>Media type of the link.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("type")]
                     public virtual string Type {
                         get {
-                            return this.type;
+                            return this._type;
                         }
                         set {
-                            this.type = value;
+                            this._type = value;
                         }
                     }
                     
@@ -787,10 +787,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("url")]
                     public virtual string Url {
                         get {
-                            return this.url;
+                            return this._url;
                         }
                         set {
-                            this.url = value;
+                            this._url = value;
                         }
                     }
                 }
@@ -798,22 +798,22 @@ namespace Google.Apis.Plus.v1.Data {
                 /// <summary>The full image url for photo attachments.</summary>
                 public class FullImageData {
                     
-                    private System.Nullable<long> height;
+                    private System.Nullable<long> _height;
                     
-                    private string type;
+                    private string _type;
                     
-                    private string url;
+                    private string _url;
                     
-                    private System.Nullable<long> width;
+                    private System.Nullable<long> _width;
                     
                     /// <summary>The height, in pixels, of the linked resource.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("height")]
                     public virtual System.Nullable<long> Height {
                         get {
-                            return this.height;
+                            return this._height;
                         }
                         set {
-                            this.height = value;
+                            this._height = value;
                         }
                     }
                     
@@ -821,10 +821,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("type")]
                     public virtual string Type {
                         get {
-                            return this.type;
+                            return this._type;
                         }
                         set {
-                            this.type = value;
+                            this._type = value;
                         }
                     }
                     
@@ -832,10 +832,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("url")]
                     public virtual string Url {
                         get {
-                            return this.url;
+                            return this._url;
                         }
                         set {
-                            this.url = value;
+                            this._url = value;
                         }
                     }
                     
@@ -843,10 +843,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("width")]
                     public virtual System.Nullable<long> Width {
                         get {
-                            return this.width;
+                            return this._width;
                         }
                         set {
-                            this.width = value;
+                            this._width = value;
                         }
                     }
                 }
@@ -854,22 +854,22 @@ namespace Google.Apis.Plus.v1.Data {
                 /// <summary>The preview image for photos or videos.</summary>
                 public class ImageData {
                     
-                    private System.Nullable<long> height;
+                    private System.Nullable<long> _height;
                     
-                    private string type;
+                    private string _type;
                     
-                    private string url;
+                    private string _url;
                     
-                    private System.Nullable<long> width;
+                    private System.Nullable<long> _width;
                     
                     /// <summary>The height, in pixels, of the linked resource.</summary>
                     [Newtonsoft.Json.JsonPropertyAttribute("height")]
                     public virtual System.Nullable<long> Height {
                         get {
-                            return this.height;
+                            return this._height;
                         }
                         set {
-                            this.height = value;
+                            this._height = value;
                         }
                     }
                     
@@ -877,10 +877,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("type")]
                     public virtual string Type {
                         get {
-                            return this.type;
+                            return this._type;
                         }
                         set {
-                            this.type = value;
+                            this._type = value;
                         }
                     }
                     
@@ -888,10 +888,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("url")]
                     public virtual string Url {
                         get {
-                            return this.url;
+                            return this._url;
                         }
                         set {
-                            this.url = value;
+                            this._url = value;
                         }
                     }
                     
@@ -899,10 +899,10 @@ namespace Google.Apis.Plus.v1.Data {
                     [Newtonsoft.Json.JsonPropertyAttribute("width")]
                     public virtual System.Nullable<long> Width {
                         get {
-                            return this.width;
+                            return this._width;
                         }
                         set {
-                            this.width = value;
+                            this._width = value;
                         }
                     }
                 }
@@ -911,18 +911,18 @@ namespace Google.Apis.Plus.v1.Data {
             /// <summary>People who +1&apos;d this activity.</summary>
             public class PlusonersData {
                 
-                private string selfLink;
+                private string _selfLink;
                 
-                private System.Nullable<long> totalItems;
+                private System.Nullable<long> _totalItems;
                 
                 /// <summary>The URL for the collection of people who +1&apos;d this activity.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
                 public virtual string SelfLink {
                     get {
-                        return this.selfLink;
+                        return this._selfLink;
                     }
                     set {
-                        this.selfLink = value;
+                        this._selfLink = value;
                     }
                 }
                 
@@ -930,10 +930,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
                 public virtual System.Nullable<long> TotalItems {
                     get {
-                        return this.totalItems;
+                        return this._totalItems;
                     }
                     set {
-                        this.totalItems = value;
+                        this._totalItems = value;
                     }
                 }
             }
@@ -941,18 +941,18 @@ namespace Google.Apis.Plus.v1.Data {
             /// <summary>Comments in reply to this activity.</summary>
             public class RepliesData {
                 
-                private string selfLink;
+                private string _selfLink;
                 
-                private System.Nullable<long> totalItems;
+                private System.Nullable<long> _totalItems;
                 
                 /// <summary>The URL for the collection of comments in reply to this activity.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
                 public virtual string SelfLink {
                     get {
-                        return this.selfLink;
+                        return this._selfLink;
                     }
                     set {
-                        this.selfLink = value;
+                        this._selfLink = value;
                     }
                 }
                 
@@ -960,10 +960,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
                 public virtual System.Nullable<long> TotalItems {
                     get {
-                        return this.totalItems;
+                        return this._totalItems;
                     }
                     set {
-                        this.totalItems = value;
+                        this._totalItems = value;
                     }
                 }
             }
@@ -971,18 +971,18 @@ namespace Google.Apis.Plus.v1.Data {
             /// <summary>People who reshared this activity.</summary>
             public class ResharersData {
                 
-                private string selfLink;
+                private string _selfLink;
                 
-                private System.Nullable<long> totalItems;
+                private System.Nullable<long> _totalItems;
                 
                 /// <summary>The URL for the collection of resharers.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
                 public virtual string SelfLink {
                     get {
-                        return this.selfLink;
+                        return this._selfLink;
                     }
                     set {
-                        this.selfLink = value;
+                        this._selfLink = value;
                     }
                 }
                 
@@ -990,10 +990,10 @@ namespace Google.Apis.Plus.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
                 public virtual System.Nullable<long> TotalItems {
                     get {
-                        return this.totalItems;
+                        return this._totalItems;
                     }
                     set {
-                        this.totalItems = value;
+                        this._totalItems = value;
                     }
                 }
             }
@@ -1002,16 +1002,16 @@ namespace Google.Apis.Plus.v1.Data {
         /// <summary>The service provider that initially published this activity.</summary>
         public class ProviderData {
             
-            private string title;
+            private string _title;
             
             /// <summary>Name of the service provider.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("title")]
             public virtual string Title {
                 get {
-                    return this.title;
+                    return this._title;
                 }
                 set {
-                    this.title = value;
+                    this._title = value;
                 }
             }
         }
@@ -1019,34 +1019,34 @@ namespace Google.Apis.Plus.v1.Data {
     
     public class ActivityFeed : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<Activity> items;
+        private System.Collections.Generic.IList<Activity> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1054,10 +1054,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1065,10 +1065,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Activity> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1076,10 +1076,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1087,10 +1087,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -1098,10 +1098,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1109,10 +1109,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1120,10 +1120,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -1131,56 +1131,56 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class Comment : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Comment.ActorData actor;
+        private Comment.ActorData _actor;
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<Comment.InReplyToData> inReplyTo;
+        private System.Collections.Generic.IList<Comment.InReplyToData> _inReplyTo;
         
-        private string kind;
+        private string _kind;
         
-        private Comment.ObjectData objectValue;
+        private Comment.ObjectData _object;
         
-        private string published;
+        private string _published;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
-        private string verb;
+        private string _verb;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>The person who posted this comment.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("actor")]
         public virtual Comment.ActorData Actor {
             get {
-                return this.actor;
+                return this._actor;
             }
             set {
-                this.actor = value;
+                this._actor = value;
             }
         }
         
@@ -1188,10 +1188,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1199,10 +1199,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1210,10 +1210,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("inReplyTo")]
         public virtual System.Collections.Generic.IList<Comment.InReplyToData> InReplyTo {
             get {
-                return this.inReplyTo;
+                return this._inReplyTo;
             }
             set {
-                this.inReplyTo = value;
+                this._inReplyTo = value;
             }
         }
         
@@ -1221,10 +1221,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1232,10 +1232,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("object")]
         public virtual Comment.ObjectData Object {
             get {
-                return this.objectValue;
+                return this._object;
             }
             set {
-                this.objectValue = value;
+                this._object = value;
             }
         }
         
@@ -1243,10 +1243,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("published")]
         public virtual string Published {
             get {
-                return this.published;
+                return this._published;
             }
             set {
-                this.published = value;
+                this._published = value;
             }
         }
         
@@ -1254,10 +1254,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1265,10 +1265,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -1277,42 +1277,42 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("verb")]
         public virtual string Verb {
             get {
-                return this.verb;
+                return this._verb;
             }
             set {
-                this.verb = value;
+                this._verb = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         /// <summary>The person who posted this comment.</summary>
         public class ActorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string id;
+            private string _id;
             
-            private ActorData.ImageData image;
+            private ActorData.ImageData _image;
             
-            private string url;
+            private string _url;
             
             /// <summary>The name of this actor, suitable for display.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -1320,10 +1320,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -1331,10 +1331,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("image")]
             public virtual ActorData.ImageData Image {
                 get {
-                    return this.image;
+                    return this._image;
                 }
                 set {
-                    this.image = value;
+                    this._image = value;
                 }
             }
             
@@ -1342,26 +1342,26 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             /// <summary>The image representation of this actor.</summary>
             public class ImageData {
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>The URL of the actor&apos;s profile photo. To re-size the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -1369,18 +1369,18 @@ namespace Google.Apis.Plus.v1.Data {
         
         public class InReplyToData {
             
-            private string id;
+            private string _id;
             
-            private string url;
+            private string _url;
             
             /// <summary>The id of the activity.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -1388,10 +1388,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -1399,18 +1399,18 @@ namespace Google.Apis.Plus.v1.Data {
         /// <summary>The object of this comment.</summary>
         public class ObjectData {
             
-            private string content;
+            private string _content;
             
-            private string objectType;
+            private string _objectType;
             
             /// <summary>The content of this comment.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("content")]
             public virtual string Content {
                 get {
-                    return this.content;
+                    return this._content;
                 }
                 set {
-                    this.content = value;
+                    this._content = value;
                 }
             }
             
@@ -1419,10 +1419,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
             public virtual string ObjectType {
                 get {
-                    return this.objectType;
+                    return this._objectType;
                 }
                 set {
-                    this.objectType = value;
+                    this._objectType = value;
                 }
             }
         }
@@ -1430,32 +1430,32 @@ namespace Google.Apis.Plus.v1.Data {
     
     public class CommentFeed : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private System.Collections.Generic.IList<Comment> items;
+        private System.Collections.Generic.IList<Comment> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1463,10 +1463,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1474,10 +1474,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Comment> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1485,10 +1485,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1496,10 +1496,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -1507,10 +1507,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1518,10 +1518,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -1529,48 +1529,48 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class PeopleFeed : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<Person> items;
+        private System.Collections.Generic.IList<Person> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1578,10 +1578,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Person> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1589,10 +1589,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1600,10 +1600,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1611,10 +1611,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1622,78 +1622,78 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class Person : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string aboutMe;
+        private string _aboutMe;
         
-        private string birthday;
+        private string _birthday;
         
-        private string currentLocation;
+        private string _currentLocation;
         
-        private string displayName;
+        private string _displayName;
         
-        private System.Collections.Generic.IList<Person.EmailsData> emails;
+        private System.Collections.Generic.IList<Person.EmailsData> _emails;
         
-        private string etag;
+        private string _etag;
         
-        private string gender;
+        private string _gender;
         
-        private System.Nullable<bool> hasApp;
+        private System.Nullable<bool> _hasApp;
         
-        private string id;
+        private string _id;
         
-        private Person.ImageData image;
+        private Person.ImageData _image;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<string> languagesSpoken;
+        private System.Collections.Generic.IList<string> _languagesSpoken;
         
-        private Person.NameData name;
+        private Person.NameData _name;
         
-        private string nickname;
+        private string _nickname;
         
-        private string objectType;
+        private string _objectType;
         
-        private System.Collections.Generic.IList<Person.OrganizationsData> organizations;
+        private System.Collections.Generic.IList<Person.OrganizationsData> _organizations;
         
-        private System.Collections.Generic.IList<Person.PlacesLivedData> placesLived;
+        private System.Collections.Generic.IList<Person.PlacesLivedData> _placesLived;
         
-        private string relationshipStatus;
+        private string _relationshipStatus;
         
-        private string tagline;
+        private string _tagline;
         
-        private string url;
+        private string _url;
         
-        private System.Collections.Generic.IList<Person.UrlsData> urls;
+        private System.Collections.Generic.IList<Person.UrlsData> _urls;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>A short biography for this person.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("aboutMe")]
         public virtual string AboutMe {
             get {
-                return this.aboutMe;
+                return this._aboutMe;
             }
             set {
-                this.aboutMe = value;
+                this._aboutMe = value;
             }
         }
         
@@ -1701,10 +1701,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("birthday")]
         public virtual string Birthday {
             get {
-                return this.birthday;
+                return this._birthday;
             }
             set {
-                this.birthday = value;
+                this._birthday = value;
             }
         }
         
@@ -1712,10 +1712,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("currentLocation")]
         public virtual string CurrentLocation {
             get {
-                return this.currentLocation;
+                return this._currentLocation;
             }
             set {
-                this.currentLocation = value;
+                this._currentLocation = value;
             }
         }
         
@@ -1723,10 +1723,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
         public virtual string DisplayName {
             get {
-                return this.displayName;
+                return this._displayName;
             }
             set {
-                this.displayName = value;
+                this._displayName = value;
             }
         }
         
@@ -1734,10 +1734,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("emails")]
         public virtual System.Collections.Generic.IList<Person.EmailsData> Emails {
             get {
-                return this.emails;
+                return this._emails;
             }
             set {
-                this.emails = value;
+                this._emails = value;
             }
         }
         
@@ -1745,10 +1745,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1759,10 +1759,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("gender")]
         public virtual string Gender {
             get {
-                return this.gender;
+                return this._gender;
             }
             set {
-                this.gender = value;
+                this._gender = value;
             }
         }
         
@@ -1770,10 +1770,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("hasApp")]
         public virtual System.Nullable<bool> HasApp {
             get {
-                return this.hasApp;
+                return this._hasApp;
             }
             set {
-                this.hasApp = value;
+                this._hasApp = value;
             }
         }
         
@@ -1781,10 +1781,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1792,10 +1792,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("image")]
         public virtual Person.ImageData Image {
             get {
-                return this.image;
+                return this._image;
             }
             set {
-                this.image = value;
+                this._image = value;
             }
         }
         
@@ -1803,10 +1803,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1814,10 +1814,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("languagesSpoken")]
         public virtual System.Collections.Generic.IList<string> LanguagesSpoken {
             get {
-                return this.languagesSpoken;
+                return this._languagesSpoken;
             }
             set {
-                this.languagesSpoken = value;
+                this._languagesSpoken = value;
             }
         }
         
@@ -1825,10 +1825,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual Person.NameData Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -1836,10 +1836,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nickname")]
         public virtual string Nickname {
             get {
-                return this.nickname;
+                return this._nickname;
             }
             set {
-                this.nickname = value;
+                this._nickname = value;
             }
         }
         
@@ -1849,10 +1849,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("objectType")]
         public virtual string ObjectType {
             get {
-                return this.objectType;
+                return this._objectType;
             }
             set {
-                this.objectType = value;
+                this._objectType = value;
             }
         }
         
@@ -1860,10 +1860,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("organizations")]
         public virtual System.Collections.Generic.IList<Person.OrganizationsData> Organizations {
             get {
-                return this.organizations;
+                return this._organizations;
             }
             set {
-                this.organizations = value;
+                this._organizations = value;
             }
         }
         
@@ -1871,10 +1871,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("placesLived")]
         public virtual System.Collections.Generic.IList<Person.PlacesLivedData> PlacesLived {
             get {
-                return this.placesLived;
+                return this._placesLived;
             }
             set {
-                this.placesLived = value;
+                this._placesLived = value;
             }
         }
         
@@ -1891,10 +1891,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("relationshipStatus")]
         public virtual string RelationshipStatus {
             get {
-                return this.relationshipStatus;
+                return this._relationshipStatus;
             }
             set {
-                this.relationshipStatus = value;
+                this._relationshipStatus = value;
             }
         }
         
@@ -1902,10 +1902,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("tagline")]
         public virtual string Tagline {
             get {
-                return this.tagline;
+                return this._tagline;
             }
             set {
-                this.tagline = value;
+                this._tagline = value;
             }
         }
         
@@ -1913,10 +1913,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("url")]
         public virtual string Url {
             get {
-                return this.url;
+                return this._url;
             }
             set {
-                this.url = value;
+                this._url = value;
             }
         }
         
@@ -1924,39 +1924,39 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("urls")]
         public virtual System.Collections.Generic.IList<Person.UrlsData> Urls {
             get {
-                return this.urls;
+                return this._urls;
             }
             set {
-                this.urls = value;
+                this._urls = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class EmailsData {
             
-            private System.Nullable<bool> primary;
+            private System.Nullable<bool> _primary;
             
-            private string type;
+            private string _type;
             
-            private string value;
+            private string _value;
             
             /// <summary>If &quot;true&quot;, indicates this email address is the person&apos;s primary one.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("primary")]
             public virtual System.Nullable<bool> Primary {
                 get {
-                    return this.primary;
+                    return this._primary;
                 }
                 set {
-                    this.primary = value;
+                    this._primary = value;
                 }
             }
             
@@ -1967,10 +1967,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
             
@@ -1978,10 +1978,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("value")]
             public virtual string Value {
                 get {
-                    return this.value;
+                    return this._value;
                 }
                 set {
-                    this.value = value;
+                    this._value = value;
                 }
             }
         }
@@ -1989,16 +1989,16 @@ namespace Google.Apis.Plus.v1.Data {
         /// <summary>The representation of the person&apos;s profile photo.</summary>
         public class ImageData {
             
-            private string url;
+            private string _url;
             
             /// <summary>The URL of the person&apos;s profile photo. To re-size the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -2006,26 +2006,26 @@ namespace Google.Apis.Plus.v1.Data {
         /// <summary>An object representation of the individual components of a person&apos;s name.</summary>
         public class NameData {
             
-            private string familyName;
+            private string _familyName;
             
-            private string formatted;
+            private string _formatted;
             
-            private string givenName;
+            private string _givenName;
             
-            private string honorificPrefix;
+            private string _honorificPrefix;
             
-            private string honorificSuffix;
+            private string _honorificSuffix;
             
-            private string middleName;
+            private string _middleName;
             
             /// <summary>The family name (last name) of this person.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("familyName")]
             public virtual string FamilyName {
                 get {
-                    return this.familyName;
+                    return this._familyName;
                 }
                 set {
-                    this.familyName = value;
+                    this._familyName = value;
                 }
             }
             
@@ -2033,10 +2033,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("formatted")]
             public virtual string Formatted {
                 get {
-                    return this.formatted;
+                    return this._formatted;
                 }
                 set {
-                    this.formatted = value;
+                    this._formatted = value;
                 }
             }
             
@@ -2044,10 +2044,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("givenName")]
             public virtual string GivenName {
                 get {
-                    return this.givenName;
+                    return this._givenName;
                 }
                 set {
-                    this.givenName = value;
+                    this._givenName = value;
                 }
             }
             
@@ -2055,10 +2055,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("honorificPrefix")]
             public virtual string HonorificPrefix {
                 get {
-                    return this.honorificPrefix;
+                    return this._honorificPrefix;
                 }
                 set {
-                    this.honorificPrefix = value;
+                    this._honorificPrefix = value;
                 }
             }
             
@@ -2066,10 +2066,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("honorificSuffix")]
             public virtual string HonorificSuffix {
                 get {
-                    return this.honorificSuffix;
+                    return this._honorificSuffix;
                 }
                 set {
-                    this.honorificSuffix = value;
+                    this._honorificSuffix = value;
                 }
             }
             
@@ -2077,42 +2077,42 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("middleName")]
             public virtual string MiddleName {
                 get {
-                    return this.middleName;
+                    return this._middleName;
                 }
                 set {
-                    this.middleName = value;
+                    this._middleName = value;
                 }
             }
         }
         
         public class OrganizationsData {
             
-            private string department;
+            private string _department;
             
-            private string description;
+            private string _description;
             
-            private string endDate;
+            private string _endDate;
             
-            private string location;
+            private string _location;
             
-            private string name;
+            private string _name;
             
-            private System.Nullable<bool> primary;
+            private System.Nullable<bool> _primary;
             
-            private string startDate;
+            private string _startDate;
             
-            private string title;
+            private string _title;
             
-            private string type;
+            private string _type;
             
             /// <summary>The department within the organization.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("department")]
             public virtual string Department {
                 get {
-                    return this.department;
+                    return this._department;
                 }
                 set {
-                    this.department = value;
+                    this._department = value;
                 }
             }
             
@@ -2120,10 +2120,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("description")]
             public virtual string Description {
                 get {
-                    return this.description;
+                    return this._description;
                 }
                 set {
-                    this.description = value;
+                    this._description = value;
                 }
             }
             
@@ -2131,10 +2131,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("endDate")]
             public virtual string EndDate {
                 get {
-                    return this.endDate;
+                    return this._endDate;
                 }
                 set {
-                    this.endDate = value;
+                    this._endDate = value;
                 }
             }
             
@@ -2142,10 +2142,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("location")]
             public virtual string Location {
                 get {
-                    return this.location;
+                    return this._location;
                 }
                 set {
-                    this.location = value;
+                    this._location = value;
                 }
             }
             
@@ -2153,10 +2153,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
             
@@ -2164,10 +2164,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("primary")]
             public virtual System.Nullable<bool> Primary {
                 get {
-                    return this.primary;
+                    return this._primary;
                 }
                 set {
-                    this.primary = value;
+                    this._primary = value;
                 }
             }
             
@@ -2175,10 +2175,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("startDate")]
             public virtual string StartDate {
                 get {
-                    return this.startDate;
+                    return this._startDate;
                 }
                 set {
-                    this.startDate = value;
+                    this._startDate = value;
                 }
             }
             
@@ -2186,10 +2186,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("title")]
             public virtual string Title {
                 get {
-                    return this.title;
+                    return this._title;
                 }
                 set {
-                    this.title = value;
+                    this._title = value;
                 }
             }
             
@@ -2199,28 +2199,28 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
         
         public class PlacesLivedData {
             
-            private System.Nullable<bool> primary;
+            private System.Nullable<bool> _primary;
             
-            private string value;
+            private string _value;
             
             /// <summary>If &quot;true&quot;, this place of residence is this person&apos;s primary residence.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("primary")]
             public virtual System.Nullable<bool> Primary {
                 get {
-                    return this.primary;
+                    return this._primary;
                 }
                 set {
-                    this.primary = value;
+                    this._primary = value;
                 }
             }
             
@@ -2228,30 +2228,30 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("value")]
             public virtual string Value {
                 get {
-                    return this.value;
+                    return this._value;
                 }
                 set {
-                    this.value = value;
+                    this._value = value;
                 }
             }
         }
         
         public class UrlsData {
             
-            private System.Nullable<bool> primary;
+            private System.Nullable<bool> _primary;
             
-            private string type;
+            private string _type;
             
-            private string value;
+            private string _value;
             
             /// <summary>If &quot;true&quot;, this URL is the person&apos;s primary URL.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("primary")]
             public virtual System.Nullable<bool> Primary {
                 get {
-                    return this.primary;
+                    return this._primary;
                 }
                 set {
-                    this.primary = value;
+                    this._primary = value;
                 }
             }
             
@@ -2264,10 +2264,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
             
@@ -2275,10 +2275,10 @@ namespace Google.Apis.Plus.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("value")]
             public virtual string Value {
                 get {
-                    return this.value;
+                    return this._value;
                 }
                 set {
-                    this.value = value;
+                    this._value = value;
                 }
             }
         }
@@ -2286,18 +2286,18 @@ namespace Google.Apis.Plus.v1.Data {
     
     public class PlusAclentryResource {
         
-        private string id;
+        private string _id;
         
-        private string type;
+        private string _type;
         
         /// <summary>The ID of the entry. For entries of type &quot;person&quot; or &quot;circle&quot;, this is the ID of the resource. For other types, this property is not set.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2310,10 +2310,10 @@ namespace Google.Apis.Plus.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
-                return this.type;
+                return this._type;
             }
             set {
-                this.type = value;
+                this._type = value;
             }
         }
     }
@@ -2333,380 +2333,381 @@ namespace Google.Apis.Plus.v1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1\",\"name\"" +
-            ":\"plus\",\"version\":\"v1\",\"revision\":\"20120214\",\"title\":\"Google+ API\",\"description\"" +
+            ":\"plus\",\"version\":\"v1\",\"revision\":\"20120416\",\"title\":\"Google+ API\",\"description\"" +
             ":\"The Google+ API enables developers to build on top of the Google+ platform.\",\"" +
             "icons\":{\"x16\":\"http://www.google.com/images/icons/product/gplus-16.png\",\"x32\":\"h" +
             "ttp://www.google.com/images/icons/product/gplus-32.png\"},\"documentationLink\":\"ht" +
             "tp://developers.google.com/+/api/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/plus/v1/\",\"basePath\":\"/plus/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\"" +
-            ",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"]," +
-            "\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"location" +
-            "\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fi" +
-            "elds to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"strin" +
-            "g\",\"description\":\"API key. Your API key identifies your project and provides you" +
-            " with API access, quota, and reports. Required unless you provide an OAuth 2.0 t" +
-            "oken.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2" +
-            ".0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boole" +
-            "an\",\"description\":\"Returns response with indentations and line breaks.\",\"default" +
-            "\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Availab" +
-            "le to use for quota purposes for server-side applications. Can be any arbitrary " +
-            "string assigned to a user, but should not exceed 40 characters. Overrides userIp" +
-            " if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descripti" +
-            "on\":\"IP address of the site where the request originates. Use this if you want t" +
-            "o enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"ht" +
-            "tps://www.googleapis.com/auth/plus.me\":{\"description\":\"Know who you are on Googl" +
-            "e\"},\"https://www.googleapis.com/auth/userinfo.email\":{\"description\":\"View your e" +
-            "mail address\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"properties\":{\"de" +
-            "scription\":{\"type\":\"string\",\"description\":\"Description of the access granted, su" +
-            "itable for display.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of access " +
-            "entries.\",\"items\":{\"$ref\":\"PlusAclentryResource\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Identifies this resource as a collection of access controls. Value: \\\"" +
-            "plus#acl\\\".\",\"default\":\"plus#acl\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\"" +
-            ",\"properties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access t" +
-            "o see this activity.\"},\"actor\":{\"type\":\"object\",\"description\":\"The person who pe" +
-            "rformed this activity.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The name of the actor, suitable for display.\"},\"id\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The ID of the actor\'s person resource.\"},\"image\":{\"type\":\"object\",\"descr" +
-            "iption\":\"The image representation of the actor.\",\"properties\":{\"url\":{\"type\":\"st" +
-            "ring\",\"description\":\"The URL of the actor\'s profile photo. To re-size the image " +
-            "and crop it to a square, append the query string ?sz=x, where x is the dimension" +
-            " in pixels of each side.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object re" +
-            "presentation of the individual components of name.\",\"properties\":{\"familyName\":{" +
-            "\"type\":\"string\",\"description\":\"The family name (last name) of the actor.\"},\"give" +
-            "nName\":{\"type\":\"string\",\"description\":\"The given name (first name) of the actor." +
-            "\"}}},\"url\":{\"type\":\"string\",\"description\":\"The link to the actor\'s Google profil" +
-            "e.\"}}},\"address\":{\"type\":\"string\",\"description\":\"Street address where this activ" +
-            "ity occurred.\"},\"annotation\":{\"type\":\"string\",\"description\":\"Additional content " +
-            "added by the person who shared this activity, applicable only when resharing an " +
-            "activity.\"},\"crosspostSource\":{\"type\":\"string\",\"description\":\"If this activity i" +
-            "s a crosspost from another system, this property specifies the ID of the origina" +
-            "l activity.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for c" +
-            "aching purposes.\"},\"geocode\":{\"type\":\"string\",\"description\":\"Latitude and longit" +
-            "ude where this activity occurred. Format is latitude followed by longitude, spac" +
-            "e separated.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this activity.\"},\"" +
-            "kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an activity. V" +
-            "alue: \\\"plus#activity\\\".\",\"default\":\"plus#activity\"},\"object\":{\"type\":\"object\",\"" +
-            "description\":\"The object of this activity.\",\"properties\":{\"actor\":{\"type\":\"objec" +
-            "t\",\"description\":\"If this activity\'s object is itself another activity (for exam" +
-            "ple, when a person reshares an activity), this property specifies the original a" +
-            "ctivity\'s actor.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"Th" +
-            "e original actor\'s name, suitable for display.\"},\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"ID of the original actor.\"},\"image\":{\"type\":\"object\",\"description\":\"The im" +
-            "age representation of the original actor.\",\"properties\":{\"url\":{\"type\":\"string\"," +
-            "\"description\":\"A URL that points to a thumbnail photo of the original actor.\"}}}" +
-            ",\"url\":{\"type\":\"string\",\"description\":\"A link to the original actor\'s Google pro" +
-            "file.\"}}},\"attachments\":{\"type\":\"array\",\"description\":\"The media objects attache" +
-            "d to this activity.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"type\":\"s" +
-            "tring\",\"description\":\"If the attachment is an article, this property contains a " +
-            "snippet of text from the article.\"},\"displayName\":{\"type\":\"string\",\"description\"" +
-            ":\"The title of the attachment (such as a photo caption or an article title).\"},\"" +
-            "embed\":{\"type\":\"object\",\"description\":\"If the attachment is a video, the embedda" +
-            "ble link.\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Media type of th" +
-            "e link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"}}},\"fullImage\"" +
-            ":{\"type\":\"object\",\"description\":\"The full image url for photo attachments.\",\"pro" +
-            "perties\":{\"height\":{\"type\":\"integer\",\"description\":\"The height, in pixels, of th" +
-            "e linked resource.\",\"format\":\"uint32\"},\"type\":{\"type\":\"string\",\"description\":\"Me" +
-            "dia type of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"}" +
-            ",\"width\":{\"type\":\"integer\",\"description\":\"The width, in pixels, of the linked re" +
-            "source.\",\"format\":\"uint32\"}}},\"id\":{\"type\":\"string\",\"description\":\"The ID of the" +
-            " media object\'s resource.\"},\"image\":{\"type\":\"object\",\"description\":\"The preview " +
-            "image for photos or videos.\",\"properties\":{\"height\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The height, in pixels, of the linked resource.\",\"format\":\"uint32\"},\"type\":{" +
-            "\"type\":\"string\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"string\"," +
-            "\"description\":\"URL of the link.\"},\"width\":{\"type\":\"integer\",\"description\":\"The w" +
-            "idth, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"objectType\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The type of media object. Possible values are:  \\n- " +
-            "\\\"photo\\\" - A photo. \\n- \\\"video\\\" - A video. \\n- \\\"article\\\" - An article, spec" +
-            "ified by a link.\"},\"url\":{\"type\":\"string\",\"description\":\"The link to the attachm" +
-            "ent, should be of type text/html.\"}}}},\"content\":{\"type\":\"string\",\"description\":" +
-            "\"The HTML-formatted content, suitable for display. When creating or updating an " +
-            "activity, this value must be supplied as plain text in the request. If successfu" +
-            "l, the response will contain the HTML-formatted content. When updating an activi" +
-            "ty, use originalContent as the starting value, then assign the updated text to t" +
-            "his property.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the object. When " +
-            "resharing an activity, this is the ID of the activity being reshared.\"},\"objectT" +
-            "ype\":{\"type\":\"string\",\"description\":\"The type of the object. Possible values are" +
-            ":  \\n- \\\"note\\\" - Textual content. \\n- \\\"activity\\\" - A Google+ activity.\"},\"ori" +
-            "ginalContent\":{\"type\":\"string\",\"description\":\"The content (text) as provided by " +
-            "the author, stored without any HTML formatting. When updating an activity\'s cont" +
-            "ent, use the value of originalContent as the starting point from which to make e" +
-            "dits.\"},\"plusoners\":{\"type\":\"object\",\"description\":\"People who +1\'d this activit" +
-            "y.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the col" +
-            "lection of people who +1\'d this activity.\"},\"totalItems\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"Total number of people who +1\'d this activity.\",\"format\":\"uint32\"}}},\"" +
-            "replies\":{\"type\":\"object\",\"description\":\"Comments in reply to this activity.\",\"p" +
-            "roperties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collectio" +
-            "n of comments in reply to this activity.\"},\"totalItems\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"Total number of comments on this activity.\",\"format\":\"uint32\"}}},\"resha" +
-            "rers\":{\"type\":\"object\",\"description\":\"People who reshared this activity.\",\"prope" +
-            "rties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collection of" +
-            " resharers.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of peop" +
-            "le who reshared this activity.\",\"format\":\"uint32\"}}},\"url\":{\"type\":\"string\",\"des" +
-            "cription\":\"The URL that points to the linked resource.\"}}},\"placeId\":{\"type\":\"st" +
-            "ring\",\"description\":\"ID of the place where this activity occurred.\"},\"placeName\"" +
-            ":{\"type\":\"string\",\"description\":\"Name of the place where this activity occurred." +
-            "\"},\"placeholder\":{\"type\":\"boolean\",\"description\":\"True if this activity is a pla" +
-            "ceholder.\"},\"provider\":{\"type\":\"object\",\"description\":\"The service provider that" +
-            " initially published this activity.\",\"properties\":{\"title\":{\"type\":\"string\",\"des" +
-            "cription\":\"Name of the service provider.\"}}},\"published\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The time at which this activity was initially published. Formatted as a" +
-            "n RFC 3339 timestamp.\",\"format\":\"date-time\"},\"radius\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Radius, in meters, of the region where this activity occurred, centered at" +
-            " the latitude and longitude identified in geocode.\"},\"title\":{\"type\":\"string\",\"d" +
-            "escription\":\"Title of this activity.\"},\"updated\":{\"type\":\"string\",\"description\":" +
-            "\"The time at which this activity was last updated. Formatted as an RFC 3339 time" +
-            "stamp.\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The link to " +
-            "this activity.\"},\"verb\":{\"type\":\"string\",\"description\":\"This activity\'s verb, in" +
-            "dicating what action was performed. Possible values are:  \\n- \\\"post\\\" - Publish" +
-            " content to the stream. \\n- \\\"checkin\\\" - Check in to a location. \\n- \\\"share\\\" " +
-            "- Reshare an activity.\"}}},\"ActivityFeed\":{\"id\":\"ActivityFeed\",\"type\":\"object\",\"" +
-            "properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for ca" +
-            "ching purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this collection" +
-            " of activities.\"},\"items\":{\"type\":\"array\",\"description\":\"The activities in this " +
-            "page of results.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Identifies this resource as a collection of activities. Value: \\\"plus#acti" +
-            "vityFeed\\\".\",\"default\":\"plus#activityFeed\"},\"nextLink\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Link to the next page of activities.\"},\"nextPageToken\":{\"type\":\"string\",\"" +
-            "description\":\"The continuation token, used to page through large result sets. Pr" +
-            "ovide this value in a subsequent request to return the next page of results.\"},\"" +
-            "selfLink\":{\"type\":\"string\",\"description\":\"Link to this activity resource.\"},\"tit" +
-            "le\":{\"type\":\"string\",\"description\":\"The title of this collection of activities.\"" +
-            "},\"updated\":{\"type\":\"string\",\"description\":\"The time at which this collection of" +
-            " activities was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"dat" +
-            "e-time\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"typ" +
-            "e\":\"object\",\"description\":\"The person who posted this comment.\",\"properties\":{\"d" +
-            "isplayName\":{\"type\":\"string\",\"description\":\"The name of this actor, suitable for" +
-            " display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the actor.\"},\"image\":" +
-            "{\"type\":\"object\",\"description\":\"The image representation of this actor.\",\"proper" +
-            "ties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the actor\'s profile phot" +
-            "o. To re-size the image and crop it to a square, append the query string ?sz=x, " +
-            "where x is the dimension in pixels of each side.\"}}},\"url\":{\"type\":\"string\",\"des" +
-            "cription\":\"A link to the person resource for this actor.\"}}},\"etag\":{\"type\":\"str" +
-            "ing\",\"description\":\"ETag of this response for caching purposes.\"},\"id\":{\"type\":\"" +
-            "string\",\"description\":\"The ID of this comment.\"},\"inReplyTo\":{\"type\":\"array\",\"de" +
-            "scription\":\"The activity this comment replied to.\",\"items\":{\"type\":\"object\",\"pro" +
-            "perties\":{\"id\":{\"type\":\"string\",\"description\":\"The id of the activity.\"},\"url\":{" +
-            "\"type\":\"string\",\"description\":\"The url of the activity.\"}}}},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Identifies this resource as a comment. Value: \\\"plus#comment" +
-            "\\\".\",\"default\":\"plus#comment\"},\"object\":{\"type\":\"object\",\"description\":\"The obje" +
-            "ct of this comment.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"The" +
-            " content of this comment.\"},\"objectType\":{\"type\":\"string\",\"description\":\"The obj" +
-            "ect type of this comment. Possible values are:  \\n- \\\"comment\\\" - A comment in r" +
-            "eply to an activity.\",\"default\":\"comment\"}}},\"published\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The time at which this comment was initially published. Formatted as an" +
-            " RFC 3339 timestamp.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Link to this comment resource.\"},\"updated\":{\"type\":\"string\",\"description\"" +
-            ":\"The time at which this comment was last updated. Formatted as an RFC 3339 time" +
-            "stamp.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"string\",\"description\":\"This commen" +
-            "t\'s verb, indicating what action was performed. Possible values are:  \\n- \\\"post" +
-            "\\\" - Publish content to the stream.\",\"default\":\"post\"}}},\"CommentFeed\":{\"id\":\"Co" +
-            "mmentFeed\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"" +
-            "ETag of this response for caching purposes.\"},\"id\":{\"type\":\"string\",\"description" +
-            "\":\"The ID of this collection of comments.\"},\"items\":{\"type\":\"array\",\"description" +
-            "\":\"The comments in this page of results.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"Identifies this resource as a collection of comment" +
-            "s. Value: \\\"plus#commentFeed\\\".\",\"default\":\"plus#commentFeed\"},\"nextLink\":{\"type" +
-            "\":\"string\",\"description\":\"Link to the next page of activities.\"},\"nextPageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"The continuation token, used to page through la" +
-            "rge result sets. Provide this value in a subsequent request to return the next p" +
-            "age of results.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this coll" +
-            "ection of comments.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at whic" +
-            "h this collection of comments was last updated. Formatted as an RFC 3339 timesta" +
-            "mp.\",\"format\":\"date-time\"}}},\"PeopleFeed\":{\"id\":\"PeopleFeed\",\"type\":\"object\",\"pr" +
-            "operties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for cach" +
-            "ing purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The people in this page o" +
-            "f results. Each item will include the id, displayName, image, and url for the pe" +
-            "rson. To retrieve additional profile data, see the people.get method.\",\"items\":{" +
-            "\"$ref\":\"Person\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resourc" +
-            "e as a collection of people. Value: \\\"plus#peopleFeed\\\".\",\"default\":\"plus#people" +
-            "Feed\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The continuation token, u" +
-            "sed to page through large result sets. Provide this value in a subsequent reques" +
-            "t to return the next page of results.\"},\"selfLink\":{\"type\":\"string\",\"description" +
-            "\":\"Link to this resource.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of" +
-            " this collection of people.\"}}},\"Person\":{\"id\":\"Person\",\"type\":\"object\",\"propert" +
-            "ies\":{\"aboutMe\":{\"type\":\"string\",\"description\":\"A short biography for this perso" +
-            "n.\"},\"birthday\":{\"type\":\"string\",\"description\":\"The person\'s date of birth, repr" +
-            "esented as YYYY-MM-DD.\"},\"currentLocation\":{\"type\":\"string\",\"description\":\"The c" +
-            "urrent location for this person.\"},\"displayName\":{\"type\":\"string\",\"description\":" +
-            "\"The name of this person, suitable for display.\"},\"emails\":{\"type\":\"array\",\"desc" +
-            "ription\":\"A list of email addresses for this person.\",\"items\":{\"type\":\"object\",\"" +
-            "properties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates t" +
-            "his email address is the person\'s primary one.\"},\"type\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The type of address. Possible values are:  \\n- \\\"home\\\" - Home email add" +
-            "ress. \\n- \\\"work\\\" - Work email address. \\n- \\\"other\\\" - Other.\"},\"value\":{\"type" +
-            "\":\"string\",\"description\":\"The email address.\"}}}},\"etag\":{\"type\":\"string\",\"descr" +
-            "iption\":\"ETag of this response for caching purposes.\"},\"gender\":{\"type\":\"string\"" +
-            ",\"description\":\"The person\'s gender. Possible values are:  \\n- \\\"male\\\" - Male g" +
-            "ender. \\n- \\\"female\\\" - Female gender. \\n- \\\"other\\\" - Other.\"},\"hasApp\":{\"type\"" +
-            ":\"boolean\",\"description\":\"If \\\"true\\\", indicates that the person has installed t" +
-            "he app that is making the request and has chosen to expose this install state to" +
-            " the caller. A value of \\\"false\\\" indicates that the install state cannot be det" +
-            "ermined (it is either not installed or the person has chosen to keep this inform" +
-            "ation private).\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this person.\"}," +
-            "\"image\":{\"type\":\"object\",\"description\":\"The representation of the person\'s profi" +
-            "le photo.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the pe" +
-            "rson\'s profile photo. To re-size the image and crop it to a square, append the q" +
-            "uery string ?sz=x, where x is the dimension in pixels of each side.\"}}},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Identifies this resource as a person. Value: \\\"pl" +
-            "us#person\\\".\",\"default\":\"plus#person\"},\"languagesSpoken\":{\"type\":\"array\",\"descri" +
-            "ption\":\"The languages spoken by this person.\",\"items\":{\"type\":\"string\"}},\"name\":" +
-            "{\"type\":\"object\",\"description\":\"An object representation of the individual compo" +
-            "nents of a person\'s name.\",\"properties\":{\"familyName\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The family name (last name) of this person.\"},\"formatted\":{\"type\":\"string\"" +
-            ",\"description\":\"The full name of this person, including middle names, suffixes, " +
-            "etc.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name) o" +
-            "f this person.\"},\"honorificPrefix\":{\"type\":\"string\",\"description\":\"The honorific" +
-            " prefixes (such as \\\"Dr.\\\" or \\\"Mrs.\\\") for this person.\"},\"honorificSuffix\":{\"t" +
-            "ype\":\"string\",\"description\":\"The honorific suffixes (such as \\\"Jr.\\\") for this p" +
-            "erson.\"},\"middleName\":{\"type\":\"string\",\"description\":\"The middle name of this pe" +
-            "rson.\"}}},\"nickname\":{\"type\":\"string\",\"description\":\"The nickname of this person" +
-            ".\"},\"objectType\":{\"type\":\"string\",\"description\":\"Type of person within Google+. " +
-            "Possible values are:  \\n- \\\"person\\\" - represents an actual person. \\n- \\\"page\\\"" +
-            " - represents a page.\"},\"organizations\":{\"type\":\"array\",\"description\":\"A list of" +
-            " current or past organizations with which this person is associated.\",\"items\":{\"" +
-            "type\":\"object\",\"properties\":{\"department\":{\"type\":\"string\",\"description\":\"The de" +
-            "partment within the organization.\"},\"description\":{\"type\":\"string\",\"description\"" +
-            ":\"A short description of the person\'s role in this organization.\"},\"endDate\":{\"t" +
-            "ype\":\"string\",\"description\":\"The date the person left this organization.\"},\"loca" +
-            "tion\":{\"type\":\"string\",\"description\":\"The location of this organization.\"},\"name" +
-            "\":{\"type\":\"string\",\"description\":\"The name of the organization.\"},\"primary\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"If \\\"true\\\", indicates this organization is the per" +
-            "son\'s primary one (typically interpreted as current one).\"},\"startDate\":{\"type\":" +
-            "\"string\",\"description\":\"The date the person joined this organization.\"},\"title\":" +
-            "{\"type\":\"string\",\"description\":\"The person\'s job title or role within the organi" +
-            "zation.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of organization. Possi" +
-            "ble values are:  \\n- \\\"work\\\" - Work. \\n- \\\"school\\\" - School.\"}}}},\"placesLived" +
-            "\":{\"type\":\"array\",\"description\":\"A list of places where this person has lived.\"," +
-            "\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"description\"" +
-            ":\"If \\\"true\\\", this place of residence is this person\'s primary residence.\"},\"va" +
-            "lue\":{\"type\":\"string\",\"description\":\"A place where this person has lived. For ex" +
-            "ample: \\\"Seattle, WA\\\", \\\"Near Toronto\\\".\"}}}},\"relationshipStatus\":{\"type\":\"str" +
-            "ing\",\"description\":\"The person\'s relationship status. Possible values are:  \\n- " +
-            "\\\"single\\\" - Person is single. \\n- \\\"in_a_relationship\\\" - Person is in a relati" +
-            "onship. \\n- \\\"engaged\\\" - Person is engaged. \\n- \\\"married\\\" - Person is married" +
-            ". \\n- \\\"its_complicated\\\" - The relationship is complicated. \\n- \\\"open_relation" +
-            "ship\\\" - Person is in an open relationship. \\n- \\\"widowed\\\" - Person is widowed." +
-            " \\n- \\\"in_domestic_partnership\\\" - Person is in a domestic partnership. \\n- \\\"in" +
-            "_civil_union\\\" - Person is in a civil union.\"},\"tagline\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The brief description (tagline) of this person.\"},\"url\":{\"type\":\"string" +
-            "\",\"description\":\"The URL of this person\'s profile.\"},\"urls\":{\"type\":\"array\",\"des" +
-            "cription\":\"A list of URLs for this person.\",\"items\":{\"type\":\"object\",\"properties" +
-            "\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", this URL is the perso" +
-            "n\'s primary URL.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of URL. Possi" +
-            "ble values are:  \\n- \\\"home\\\" - URL for home. \\n- \\\"work\\\" - URL for work. \\n- \\" +
-            "\"blog\\\" - URL for blog. \\n- \\\"profile\\\" - URL for profile. \\n- \\\"other\\\" - Other" +
-            ".\"},\"value\":{\"type\":\"string\",\"description\":\"The URL value.\"}}}}}},\"PlusAclentryR" +
-            "esource\":{\"id\":\"PlusAclentryResource\",\"type\":\"object\",\"properties\":{\"id\":{\"type\"" +
-            ":\"string\",\"description\":\"The ID of the entry. For entries of type \\\"person\\\" or " +
-            "\\\"circle\\\", this is the ID of the resource. For other types, this property is no" +
-            "t set.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of entry describing to " +
-            "whom access is granted. Possible values are:  \\n- \\\"person\\\" - Access to an indi" +
-            "vidual. \\n- \\\"circle\\\" - Access to members of a circle. \\n- \\\"myCircles\\\" - Acce" +
-            "ss to members of all the person\'s circles. \\n- \\\"extendedCircles\\\" - Access to m" +
-            "embers of everyone in a person\'s circles, plus all of the people in their circle" +
-            "s. \\n- \\\"public\\\" - Access to anyone on the web.\"}}}},\"resources\":{\"activities\":" +
-            "{\"methods\":{\"get\":{\"id\":\"plus.activities.get\",\"path\":\"activities/{activityId}\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Get an activity.\",\"parameters\":{\"activityId\":{\"" +
-            "type\":\"string\",\"description\":\"The ID of the activity to get.\",\"required\":true,\"l" +
-            "ocation\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative " +
-            "representation type.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Use " +
-            "JSON format\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"" +
-            "$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{" +
-            "\"id\":\"plus.activities.list\",\"path\":\"people/{userId}/activities/{collection}\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"List all of the activities in the specified colle" +
-            "ction for a particular user.\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\"" +
-            ":\"Specifies an alternative representation type.\",\"default\":\"json\",\"enum\":[\"json\"" +
-            "],\"enumDescriptions\":[\"Use JSON format\"],\"location\":\"query\"},\"collection\":{\"type" +
-            "\":\"string\",\"description\":\"The collection of activities to list.\",\"required\":true" +
-            ",\"enum\":[\"public\"],\"enumDescriptions\":[\"All public activities created by the spe" +
-            "cified user.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"" +
-            "The maximum number of activities to include in the response, used for paging. Fo" +
-            "r any response, the actual number returned may be less than the specified maxRes" +
-            "ults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\"" +
-            ":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, us" +
-            "ed to page through large result sets. To get the next page of results, set this " +
-            "parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"locati" +
-            "on\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to get " +
-            "activities for. The special value \\\"me\\\" can be used to indicate the authenticat" +
-            "ed user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"userId\",\"collection\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.activities.search\",\"p" +
-            "ath\":\"activities\",\"httpMethod\":\"GET\",\"description\":\"Search public activities.\",\"" +
-            "parameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the preferred la" +
-            "nguage to search with. See search language codes for available values.\",\"default" +
-            "\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maxim" +
-            "um number of activities to include in the response, used for paging. For any res" +
-            "ponse, the actual number returned may be less than the specified maxResults.\",\"d" +
-            "efault\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"}," +
-            "\"orderBy\":{\"type\":\"string\",\"description\":\"Specifies how to order search results." +
-            "\",\"default\":\"recent\",\"enum\":[\"best\",\"recent\"],\"enumDescriptions\":[\"Sort activiti" +
-            "es by relevance to the user, most relevant first.\",\"Sort activities by published" +
-            " date, most recent first.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"de" +
-            "scription\":\"The continuation token, used to page through large result sets. To g" +
-            "et the next page of results, set this parameter to the value of \\\"nextPageToken\\" +
-            "\" from the previous response. This token may be of any length.\",\"location\":\"quer" +
-            "y\"},\"query\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"req" +
-            "uired\":true,\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"" +
-            "ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"comments" +
-            "\":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"path\":\"comments/{commentId}\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Get a comment.\",\"parameters\":{\"commentId\":{\"type\":" +
-            "\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"location" +
-            "\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comments.list\"," +
-            "\"path\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"List" +
-            " all of the comments for an activity.\",\"parameters\":{\"activityId\":{\"type\":\"strin" +
-            "g\",\"description\":\"The ID of the activity to get comments for.\",\"required\":true,\"" +
-            "location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alternative" +
-            " representation type.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Use" +
-            " JSON format\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"The maximum number of comments to include in the response, used for paging. For" +
-            " any response, the actual number returned may be less than the specified maxResu" +
-            "lts.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":" +
-            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, use" +
-            "d to page through large result sets. To get the next page of results, set this p" +
-            "arameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"locatio" +
-            "n\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"The order in which to so" +
-            "rt the list of comments.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"descending\"" +
-            "],\"enumDescriptions\":[\"Sort oldest comments first.\",\"Sort newest comments first." +
-            "\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Comm" +
-            "entFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"people\":{\"met" +
-            "hods\":{\"get\":{\"id\":\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMethod\":\"GET\"" +
-            ",\"description\":\"Get a person\'s profile.\",\"parameters\":{\"userId\":{\"type\":\"string\"" +
-            ",\"description\":\"The ID of the person to get the profile for. The special value \\" +
-            "\"me\\\" can be used to indicate the authenticated user.\",\"required\":true,\"pattern\"" +
-            ":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":" +
-            "\"Person\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\",\"https://www.googl" +
-            "eapis.com/auth/userinfo.email\"]},\"listByActivity\":{\"id\":\"plus.people.listByActiv" +
-            "ity\",\"path\":\"activities/{activityId}/people/{collection}\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"List all of the people in the specified collection for a particular " +
-            "activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of " +
-            "the activity to get the list of people for.\",\"required\":true,\"location\":\"path\"}," +
-            "\"collection\":{\"type\":\"string\",\"description\":\"The collection of people to list.\"," +
-            "\"required\":true,\"enum\":[\"plusoners\",\"resharers\"],\"enumDescriptions\":[\"List all p" +
-            "eople who have +1\'d this activity.\",\"List all people who have reshared this acti" +
-            "vity.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The max" +
-            "imum number of people to include in the response, used for paging. For any respo" +
-            "nse, the actual number returned may be less than the specified maxResults.\",\"def" +
-            "ault\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"" +
-            "pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to page " +
-            "through large result sets. To get the next page of results, set this parameter t" +
-            "o the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"activityId\",\"collection\"],\"response\":{\"$ref\":\"PeopleFeed\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.peop" +
-            "le.search\",\"path\":\"people\",\"httpMethod\":\"GET\",\"description\":\"Search all public p" +
-            "rofiles.\",\"parameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the p" +
-            "referred language to search with. See search language codes for available values" +
-            ".\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\"" +
-            ":\"The maximum number of people to include in the response, used for paging. For " +
-            "any response, the actual number returned may be less than the specified maxResul" +
-            "ts.\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"q" +
-            "uery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used " +
-            "to page through large result sets. To get the next page of results, set this par" +
-            "ameter to the value of \\\"nextPageToken\\\" from the previous response. This token " +
-            "may be of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description" +
-            "\":\"Full-text search query string.\",\"required\":true,\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/plus.me\"]}}}}}";
+            "leapis.com/plus/v1/\",\"basePath\":\"/plus/v1/\",\"rootUrl\":\"https://www.googleapis.co" +
+            "m/\",\"servicePath\":\"plus/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"st" +
+            "ring\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"js" +
+            "on\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"loc" +
+            "ation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying whi" +
+            "ch fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"" +
+            "string\",\"description\":\"API key. Your API key identifies your project and provide" +
+            "s you with API access, quota, and reports. Required unless you provide an OAuth " +
+            "2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OA" +
+            "uth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"" +
+            "boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"de" +
+            "fault\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Av" +
+            "ailable to use for quota purposes for server-side applications. Can be any arbit" +
+            "rary string assigned to a user, but should not exceed 40 characters. Overrides u" +
+            "serIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"desc" +
+            "ription\":\"IP address of the site where the request originates. Use this if you w" +
+            "ant to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\"" +
+            ":{\"https://www.googleapis.com/auth/plus.me\":{\"description\":\"Know who you are on " +
+            "Google\"},\"https://www.googleapis.com/auth/userinfo.email\":{\"description\":\"View y" +
+            "our email address\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"properties\"" +
+            ":{\"description\":{\"type\":\"string\",\"description\":\"Description of the access grante" +
+            "d, suitable for display.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of ac" +
+            "cess entries.\",\"items\":{\"$ref\":\"PlusAclentryResource\"}},\"kind\":{\"type\":\"string\"," +
+            "\"description\":\"Identifies this resource as a collection of access controls. Valu" +
+            "e: \\\"plus#acl\\\".\",\"default\":\"plus#acl\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has acc" +
+            "ess to see this activity.\"},\"actor\":{\"type\":\"object\",\"description\":\"The person w" +
+            "ho performed this activity.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The name of the actor, suitable for display.\"},\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID of the actor\'s person resource.\"},\"image\":{\"type\":\"object\",\"" +
+            "description\":\"The image representation of the actor.\",\"properties\":{\"url\":{\"type" +
+            "\":\"string\",\"description\":\"The URL of the actor\'s profile photo. To re-size the i" +
+            "mage and crop it to a square, append the query string ?sz=x, where x is the dime" +
+            "nsion in pixels of each side.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An obje" +
+            "ct representation of the individual components of name.\",\"properties\":{\"familyNa" +
+            "me\":{\"type\":\"string\",\"description\":\"The family name (last name) of the actor.\"}," +
+            "\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name) of the a" +
+            "ctor.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The link to the actor\'s Google p" +
+            "rofile.\"}}},\"address\":{\"type\":\"string\",\"description\":\"Street address where this " +
+            "activity occurred.\"},\"annotation\":{\"type\":\"string\",\"description\":\"Additional con" +
+            "tent added by the person who shared this activity, applicable only when resharin" +
+            "g an activity.\"},\"crosspostSource\":{\"type\":\"string\",\"description\":\"If this activ" +
+            "ity is a crosspost from another system, this property specifies the ID of the or" +
+            "iginal activity.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response " +
+            "for caching purposes.\"},\"geocode\":{\"type\":\"string\",\"description\":\"Latitude and l" +
+            "ongitude where this activity occurred. Format is latitude followed by longitude," +
+            " space separated.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this activity" +
+            ".\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an activi" +
+            "ty. Value: \\\"plus#activity\\\".\",\"default\":\"plus#activity\"},\"object\":{\"type\":\"obje" +
+            "ct\",\"description\":\"The object of this activity.\",\"properties\":{\"actor\":{\"type\":\"" +
+            "object\",\"description\":\"If this activity\'s object is itself another activity (for" +
+            " example, when a person reshares an activity), this property specifies the origi" +
+            "nal activity\'s actor.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description" +
+            "\":\"The original actor\'s name, suitable for display.\"},\"id\":{\"type\":\"string\",\"des" +
+            "cription\":\"ID of the original actor.\"},\"image\":{\"type\":\"object\",\"description\":\"T" +
+            "he image representation of the original actor.\",\"properties\":{\"url\":{\"type\":\"str" +
+            "ing\",\"description\":\"A URL that points to a thumbnail photo of the original actor" +
+            ".\"}}},\"url\":{\"type\":\"string\",\"description\":\"A link to the original actor\'s Googl" +
+            "e profile.\"}}},\"attachments\":{\"type\":\"array\",\"description\":\"The media objects at" +
+            "tached to this activity.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"typ" +
+            "e\":\"string\",\"description\":\"If the attachment is an article, this property contai" +
+            "ns a snippet of text from the article.\"},\"displayName\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The title of the attachment (such as a photo caption or an article title)" +
+            ".\"},\"embed\":{\"type\":\"object\",\"description\":\"If the attachment is a video, the em" +
+            "beddable link.\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Media type " +
+            "of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"}}},\"fullI" +
+            "mage\":{\"type\":\"object\",\"description\":\"The full image url for photo attachments.\"" +
+            ",\"properties\":{\"height\":{\"type\":\"integer\",\"description\":\"The height, in pixels, " +
+            "of the linked resource.\",\"format\":\"uint32\"},\"type\":{\"type\":\"string\",\"description" +
+            "\":\"Media type of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the li" +
+            "nk.\"},\"width\":{\"type\":\"integer\",\"description\":\"The width, in pixels, of the link" +
+            "ed resource.\",\"format\":\"uint32\"}}},\"id\":{\"type\":\"string\",\"description\":\"The ID o" +
+            "f the media object\'s resource.\"},\"image\":{\"type\":\"object\",\"description\":\"The pre" +
+            "view image for photos or videos.\",\"properties\":{\"height\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"The height, in pixels, of the linked resource.\",\"format\":\"uint32\"},\"ty" +
+            "pe\":{\"type\":\"string\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"str" +
+            "ing\",\"description\":\"URL of the link.\"},\"width\":{\"type\":\"integer\",\"description\":\"" +
+            "The width, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"objectType\"" +
+            ":{\"type\":\"string\",\"description\":\"The type of media object. Possible values are: " +
+            " \\n- \\\"photo\\\" - A photo. \\n- \\\"video\\\" - A video. \\n- \\\"article\\\" - An article," +
+            " specified by a link.\"},\"url\":{\"type\":\"string\",\"description\":\"The link to the at" +
+            "tachment, should be of type text/html.\"}}}},\"content\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The HTML-formatted content, suitable for display. When creating or updatin" +
+            "g an activity, this value must be supplied as plain text in the request. If succ" +
+            "essful, the response will contain the HTML-formatted content. When updating an a" +
+            "ctivity, use originalContent as the starting value, then assign the updated text" +
+            " to this property.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the object. " +
+            "When resharing an activity, this is the ID of the activity being reshared.\"},\"ob" +
+            "jectType\":{\"type\":\"string\",\"description\":\"The type of the object. Possible value" +
+            "s are:  \\n- \\\"note\\\" - Textual content. \\n- \\\"activity\\\" - A Google+ activity.\"}" +
+            ",\"originalContent\":{\"type\":\"string\",\"description\":\"The content (text) as provide" +
+            "d by the author, stored without any HTML formatting. When updating an activity\'s" +
+            " content, use the value of originalContent as the starting point from which to m" +
+            "ake edits.\"},\"plusoners\":{\"type\":\"object\",\"description\":\"People who +1\'d this ac" +
+            "tivity.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for th" +
+            "e collection of people who +1\'d this activity.\"},\"totalItems\":{\"type\":\"integer\"," +
+            "\"description\":\"Total number of people who +1\'d this activity.\",\"format\":\"uint32\"" +
+            "}}},\"replies\":{\"type\":\"object\",\"description\":\"Comments in reply to this activity" +
+            ".\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the coll" +
+            "ection of comments in reply to this activity.\"},\"totalItems\":{\"type\":\"integer\",\"" +
+            "description\":\"Total number of comments on this activity.\",\"format\":\"uint32\"}}},\"" +
+            "resharers\":{\"type\":\"object\",\"description\":\"People who reshared this activity.\",\"" +
+            "properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collecti" +
+            "on of resharers.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of" +
+            " people who reshared this activity.\",\"format\":\"uint32\"}}},\"url\":{\"type\":\"string\"" +
+            ",\"description\":\"The URL that points to the linked resource.\"}}},\"placeId\":{\"type" +
+            "\":\"string\",\"description\":\"ID of the place where this activity occurred.\"},\"place" +
+            "Name\":{\"type\":\"string\",\"description\":\"Name of the place where this activity occu" +
+            "rred.\"},\"placeholder\":{\"type\":\"boolean\",\"description\":\"True if this activity is " +
+            "a placeholder.\"},\"provider\":{\"type\":\"object\",\"description\":\"The service provider" +
+            " that initially published this activity.\",\"properties\":{\"title\":{\"type\":\"string\"" +
+            ",\"description\":\"Name of the service provider.\"}}},\"published\":{\"type\":\"string\",\"" +
+            "description\":\"The time at which this activity was initially published. Formatted" +
+            " as an RFC 3339 timestamp.\",\"format\":\"date-time\"},\"radius\":{\"type\":\"string\",\"des" +
+            "cription\":\"Radius, in meters, of the region where this activity occurred, center" +
+            "ed at the latitude and longitude identified in geocode.\"},\"title\":{\"type\":\"strin" +
+            "g\",\"description\":\"Title of this activity.\"},\"updated\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The time at which this activity was last updated. Formatted as an RFC 3339" +
+            " timestamp.\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The lin" +
+            "k to this activity.\"},\"verb\":{\"type\":\"string\",\"description\":\"This activity\'s ver" +
+            "b, indicating what action was performed. Possible values are:  \\n- \\\"post\\\" - Pu" +
+            "blish content to the stream. \\n- \\\"checkin\\\" - Check in to a location. \\n- \\\"sha" +
+            "re\\\" - Reshare an activity.\"}}},\"ActivityFeed\":{\"id\":\"ActivityFeed\",\"type\":\"obje" +
+            "ct\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response f" +
+            "or caching purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this colle" +
+            "ction of activities.\"},\"items\":{\"type\":\"array\",\"description\":\"The activities in " +
+            "this page of results.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Identifies this resource as a collection of activities. Value: \\\"plus" +
+            "#activityFeed\\\".\",\"default\":\"plus#activityFeed\"},\"nextLink\":{\"type\":\"string\",\"de" +
+            "scription\":\"Link to the next page of activities.\"},\"nextPageToken\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The continuation token, used to page through large result set" +
+            "s. Provide this value in a subsequent request to return the next page of results" +
+            ".\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link to this activity resource.\"}" +
+            ",\"title\":{\"type\":\"string\",\"description\":\"The title of this collection of activit" +
+            "ies.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at which this collecti" +
+            "on of activities was last updated. Formatted as an RFC 3339 timestamp.\",\"format\"" +
+            ":\"date-time\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":" +
+            "{\"type\":\"object\",\"description\":\"The person who posted this comment.\",\"properties" +
+            "\":{\"displayName\":{\"type\":\"string\",\"description\":\"The name of this actor, suitabl" +
+            "e for display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the actor.\"},\"im" +
+            "age\":{\"type\":\"object\",\"description\":\"The image representation of this actor.\",\"p" +
+            "roperties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the actor\'s profile" +
+            " photo. To re-size the image and crop it to a square, append the query string ?s" +
+            "z=x, where x is the dimension in pixels of each side.\"}}},\"url\":{\"type\":\"string\"" +
+            ",\"description\":\"A link to the person resource for this actor.\"}}},\"etag\":{\"type\"" +
+            ":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"id\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The ID of this comment.\"},\"inReplyTo\":{\"type\":\"array" +
+            "\",\"description\":\"The activity this comment replied to.\",\"items\":{\"type\":\"object\"" +
+            ",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The id of the activity.\"},\"u" +
+            "rl\":{\"type\":\"string\",\"description\":\"The url of the activity.\"}}}},\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"Identifies this resource as a comment. Value: \\\"plus#co" +
+            "mment\\\".\",\"default\":\"plus#comment\"},\"object\":{\"type\":\"object\",\"description\":\"The" +
+            " object of this comment.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\"" +
+            ":\"The content of this comment.\"},\"objectType\":{\"type\":\"string\",\"description\":\"Th" +
+            "e object type of this comment. Possible values are:  \\n- \\\"comment\\\" - A comment" +
+            " in reply to an activity.\",\"default\":\"comment\"}}},\"published\":{\"type\":\"string\",\"" +
+            "description\":\"The time at which this comment was initially published. Formatted " +
+            "as an RFC 3339 timestamp.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"de" +
+            "scription\":\"Link to this comment resource.\"},\"updated\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The time at which this comment was last updated. Formatted as an RFC 3339" +
+            " timestamp.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"string\",\"description\":\"This c" +
+            "omment\'s verb, indicating what action was performed. Possible values are:  \\n- \\" +
+            "\"post\\\" - Publish content to the stream.\",\"default\":\"post\"}}},\"CommentFeed\":{\"id" +
+            "\":\"CommentFeed\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descripti" +
+            "on\":\"ETag of this response for caching purposes.\"},\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The ID of this collection of comments.\"},\"items\":{\"type\":\"array\",\"descri" +
+            "ption\":\"The comments in this page of results.\",\"items\":{\"$ref\":\"Comment\"}},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"Identifies this resource as a collection of co" +
+            "mments. Value: \\\"plus#commentFeed\\\".\",\"default\":\"plus#commentFeed\"},\"nextLink\":{" +
+            "\"type\":\"string\",\"description\":\"Link to the next page of activities.\"},\"nextPageT" +
+            "oken\":{\"type\":\"string\",\"description\":\"The continuation token, used to page throu" +
+            "gh large result sets. Provide this value in a subsequent request to return the n" +
+            "ext page of results.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this" +
+            " collection of comments.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at" +
+            " which this collection of comments was last updated. Formatted as an RFC 3339 ti" +
+            "mestamp.\",\"format\":\"date-time\"}}},\"PeopleFeed\":{\"id\":\"PeopleFeed\",\"type\":\"object" +
+            "\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for" +
+            " caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The people in this p" +
+            "age of results. Each item will include the id, displayName, image, and url for t" +
+            "he person. To retrieve additional profile data, see the people.get method.\",\"ite" +
+            "ms\":{\"$ref\":\"Person\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this re" +
+            "source as a collection of people. Value: \\\"plus#peopleFeed\\\".\",\"default\":\"plus#p" +
+            "eopleFeed\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The continuation tok" +
+            "en, used to page through large result sets. Provide this value in a subsequent r" +
+            "equest to return the next page of results.\"},\"selfLink\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Link to this resource.\"},\"title\":{\"type\":\"string\",\"description\":\"The tit" +
+            "le of this collection of people.\"}}},\"Person\":{\"id\":\"Person\",\"type\":\"object\",\"pr" +
+            "operties\":{\"aboutMe\":{\"type\":\"string\",\"description\":\"A short biography for this " +
+            "person.\"},\"birthday\":{\"type\":\"string\",\"description\":\"The person\'s date of birth," +
+            " represented as YYYY-MM-DD.\"},\"currentLocation\":{\"type\":\"string\",\"description\":\"" +
+            "The current location for this person.\"},\"displayName\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The name of this person, suitable for display.\"},\"emails\":{\"type\":\"array\"," +
+            "\"description\":\"A list of email addresses for this person.\",\"items\":{\"type\":\"obje" +
+            "ct\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indica" +
+            "tes this email address is the person\'s primary one.\"},\"type\":{\"type\":\"string\",\"d" +
+            "escription\":\"The type of address. Possible values are:  \\n- \\\"home\\\" - Home emai" +
+            "l address. \\n- \\\"work\\\" - Work email address. \\n- \\\"other\\\" - Other.\"},\"value\":{" +
+            "\"type\":\"string\",\"description\":\"The email address.\"}}}},\"etag\":{\"type\":\"string\",\"" +
+            "description\":\"ETag of this response for caching purposes.\"},\"gender\":{\"type\":\"st" +
+            "ring\",\"description\":\"The person\'s gender. Possible values are:  \\n- \\\"male\\\" - M" +
+            "ale gender. \\n- \\\"female\\\" - Female gender. \\n- \\\"other\\\" - Other.\"},\"hasApp\":{\"" +
+            "type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates that the person has instal" +
+            "led the app that is making the request and has chosen to expose this install sta" +
+            "te to the caller. A value of \\\"false\\\" indicates that the install state cannot b" +
+            "e determined (it is either not installed or the person has chosen to keep this i" +
+            "nformation private).\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this perso" +
+            "n.\"},\"image\":{\"type\":\"object\",\"description\":\"The representation of the person\'s " +
+            "profile photo.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of t" +
+            "he person\'s profile photo. To re-size the image and crop it to a square, append " +
+            "the query string ?sz=x, where x is the dimension in pixels of each side.\"}}},\"ki" +
+            "nd\":{\"type\":\"string\",\"description\":\"Identifies this resource as a person. Value:" +
+            " \\\"plus#person\\\".\",\"default\":\"plus#person\"},\"languagesSpoken\":{\"type\":\"array\",\"d" +
+            "escription\":\"The languages spoken by this person.\",\"items\":{\"type\":\"string\"}},\"n" +
+            "ame\":{\"type\":\"object\",\"description\":\"An object representation of the individual " +
+            "components of a person\'s name.\",\"properties\":{\"familyName\":{\"type\":\"string\",\"des" +
+            "cription\":\"The family name (last name) of this person.\"},\"formatted\":{\"type\":\"st" +
+            "ring\",\"description\":\"The full name of this person, including middle names, suffi" +
+            "xes, etc.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first na" +
+            "me) of this person.\"},\"honorificPrefix\":{\"type\":\"string\",\"description\":\"The hono" +
+            "rific prefixes (such as \\\"Dr.\\\" or \\\"Mrs.\\\") for this person.\"},\"honorificSuffix" +
+            "\":{\"type\":\"string\",\"description\":\"The honorific suffixes (such as \\\"Jr.\\\") for t" +
+            "his person.\"},\"middleName\":{\"type\":\"string\",\"description\":\"The middle name of th" +
+            "is person.\"}}},\"nickname\":{\"type\":\"string\",\"description\":\"The nickname of this p" +
+            "erson.\"},\"objectType\":{\"type\":\"string\",\"description\":\"Type of person within Goog" +
+            "le+. Possible values are:  \\n- \\\"person\\\" - represents an actual person. \\n- \\\"p" +
+            "age\\\" - represents a page.\"},\"organizations\":{\"type\":\"array\",\"description\":\"A li" +
+            "st of current or past organizations with which this person is associated.\",\"item" +
+            "s\":{\"type\":\"object\",\"properties\":{\"department\":{\"type\":\"string\",\"description\":\"T" +
+            "he department within the organization.\"},\"description\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"A short description of the person\'s role in this organization.\"},\"endDate" +
+            "\":{\"type\":\"string\",\"description\":\"The date the person left this organization.\"}," +
+            "\"location\":{\"type\":\"string\",\"description\":\"The location of this organization.\"}," +
+            "\"name\":{\"type\":\"string\",\"description\":\"The name of the organization.\"},\"primary\"" +
+            ":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates this organization is th" +
+            "e person\'s primary one (typically interpreted as current one).\"},\"startDate\":{\"t" +
+            "ype\":\"string\",\"description\":\"The date the person joined this organization.\"},\"ti" +
+            "tle\":{\"type\":\"string\",\"description\":\"The person\'s job title or role within the o" +
+            "rganization.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of organization. " +
+            "Possible values are:  \\n- \\\"work\\\" - Work. \\n- \\\"school\\\" - School.\"}}}},\"places" +
+            "Lived\":{\"type\":\"array\",\"description\":\"A list of places where this person has liv" +
+            "ed.\",\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"If \\\"true\\\", this place of residence is this person\'s primary residence.\"" +
+            "},\"value\":{\"type\":\"string\",\"description\":\"A place where this person has lived. F" +
+            "or example: \\\"Seattle, WA\\\", \\\"Near Toronto\\\".\"}}}},\"relationshipStatus\":{\"type\"" +
+            ":\"string\",\"description\":\"The person\'s relationship status. Possible values are: " +
+            " \\n- \\\"single\\\" - Person is single. \\n- \\\"in_a_relationship\\\" - Person is in a r" +
+            "elationship. \\n- \\\"engaged\\\" - Person is engaged. \\n- \\\"married\\\" - Person is ma" +
+            "rried. \\n- \\\"its_complicated\\\" - The relationship is complicated. \\n- \\\"open_rel" +
+            "ationship\\\" - Person is in an open relationship. \\n- \\\"widowed\\\" - Person is wid" +
+            "owed. \\n- \\\"in_domestic_partnership\\\" - Person is in a domestic partnership. \\n-" +
+            " \\\"in_civil_union\\\" - Person is in a civil union.\"},\"tagline\":{\"type\":\"string\",\"" +
+            "description\":\"The brief description (tagline) of this person.\"},\"url\":{\"type\":\"s" +
+            "tring\",\"description\":\"The URL of this person\'s profile.\"},\"urls\":{\"type\":\"array\"" +
+            ",\"description\":\"A list of URLs for this person.\",\"items\":{\"type\":\"object\",\"prope" +
+            "rties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", this URL is the " +
+            "person\'s primary URL.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of URL. " +
+            "Possible values are:  \\n- \\\"home\\\" - URL for home. \\n- \\\"work\\\" - URL for work. " +
+            "\\n- \\\"blog\\\" - URL for blog. \\n- \\\"profile\\\" - URL for profile. \\n- \\\"other\\\" - " +
+            "Other.\"},\"value\":{\"type\":\"string\",\"description\":\"The URL value.\"}}}}}},\"PlusAcle" +
+            "ntryResource\":{\"id\":\"PlusAclentryResource\",\"type\":\"object\",\"properties\":{\"id\":{\"" +
+            "type\":\"string\",\"description\":\"The ID of the entry. For entries of type \\\"person\\" +
+            "\" or \\\"circle\\\", this is the ID of the resource. For other types, this property " +
+            "is not set.\"},\"type\":{\"type\":\"string\",\"description\":\"The type of entry describin" +
+            "g to whom access is granted. Possible values are:  \\n- \\\"person\\\" - Access to an" +
+            " individual. \\n- \\\"circle\\\" - Access to members of a circle. \\n- \\\"myCircles\\\" -" +
+            " Access to members of all the person\'s circles. \\n- \\\"extendedCircles\\\" - Access" +
+            " to members of everyone in a person\'s circles, plus all of the people in their c" +
+            "ircles. \\n- \\\"public\\\" - Access to anyone on the web.\"}}}},\"resources\":{\"activit" +
+            "ies\":{\"methods\":{\"get\":{\"id\":\"plus.activities.get\",\"path\":\"activities/{activityI" +
+            "d}\",\"httpMethod\":\"GET\",\"description\":\"Get an activity.\",\"parameters\":{\"activityI" +
+            "d\":{\"type\":\"string\",\"description\":\"The ID of the activity to get.\",\"required\":tr" +
+            "ue,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an alterna" +
+            "tive representation type.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[" +
+            "\"Use JSON format\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"respons" +
+            "e\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"li" +
+            "st\":{\"id\":\"plus.activities.list\",\"path\":\"people/{userId}/activities/{collection}" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"List all of the activities in the specified " +
+            "collection for a particular user.\",\"parameters\":{\"alt\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Specifies an alternative representation type.\",\"default\":\"json\",\"enum\":[\"" +
+            "json\"],\"enumDescriptions\":[\"Use JSON format\"],\"location\":\"query\"},\"collection\":{" +
+            "\"type\":\"string\",\"description\":\"The collection of activities to list.\",\"required\"" +
+            ":true,\"enum\":[\"public\"],\"enumDescriptions\":[\"All public activities created by th" +
+            "e specified user.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"The maximum number of activities to include in the response, used for pagin" +
+            "g. For any response, the actual number returned may be less than the specified m" +
+            "axResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"loca" +
+            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation toke" +
+            "n, used to page through large result sets. To get the next page of results, set " +
+            "this parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"l" +
+            "ocation\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to" +
+            " get activities for. The special value \\\"me\\\" can be used to indicate the authen" +
+            "ticated user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"userId\",\"collection\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.activities.searc" +
+            "h\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"description\":\"Search public activitie" +
+            "s.\",\"parameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the preferr" +
+            "ed language to search with. See search language codes for available values.\",\"de" +
+            "fault\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The " +
+            "maximum number of activities to include in the response, used for paging. For an" +
+            "y response, the actual number returned may be less than the specified maxResults" +
+            ".\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"que" +
+            "ry\"},\"orderBy\":{\"type\":\"string\",\"description\":\"Specifies how to order search res" +
+            "ults.\",\"default\":\"recent\",\"enum\":[\"best\",\"recent\"],\"enumDescriptions\":[\"Sort act" +
+            "ivities by relevance to the user, most relevant first.\",\"Sort activities by publ" +
+            "ished date, most recent first.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string" +
+            "\",\"description\":\"The continuation token, used to page through large result sets." +
+            " To get the next page of results, set this parameter to the value of \\\"nextPageT" +
+            "oken\\\" from the previous response. This token may be of any length.\",\"location\":" +
+            "\"query\"},\"query\":{\"type\":\"string\",\"description\":\"Full-text search query string.\"" +
+            ",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$r" +
+            "ef\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"com" +
+            "ments\":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"path\":\"comments/{commentId}\"" +
+            ",\"httpMethod\":\"GET\",\"description\":\"Get a comment.\",\"parameters\":{\"commentId\":{\"t" +
+            "ype\":\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"loc" +
+            "ation\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comments.l" +
+            "ist\",\"path\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":" +
+            "\"List all of the comments for an activity.\",\"parameters\":{\"activityId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID of the activity to get comments for.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"description\":\"Specifies an altern" +
+            "ative representation type.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":" +
+            "[\"Use JSON format\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"The maximum number of comments to include in the response, used for paging" +
+            ". For any response, the actual number returned may be less than the specified ma" +
+            "xResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"locat" +
+            "ion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token" +
+            ", used to page through large result sets. To get the next page of results, set t" +
+            "his parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"lo" +
+            "cation\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"The order in which " +
+            "to sort the list of comments.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"descen" +
+            "ding\"],\"enumDescriptions\":[\"Sort oldest comments first.\",\"Sort newest comments f" +
+            "irst.\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":" +
+            "\"CommentFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"people\":" +
+            "{\"methods\":{\"get\":{\"id\":\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"Get a person\'s profile.\",\"parameters\":{\"userId\":{\"type\":\"st" +
+            "ring\",\"description\":\"The ID of the person to get the profile for. The special va" +
+            "lue \\\"me\\\" can be used to indicate the authenticated user.\",\"required\":true,\"pat" +
+            "tern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$" +
+            "ref\":\"Person\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\",\"https://www." +
+            "googleapis.com/auth/userinfo.email\"]},\"listByActivity\":{\"id\":\"plus.people.listBy" +
+            "Activity\",\"path\":\"activities/{activityId}/people/{collection}\",\"httpMethod\":\"GET" +
+            "\",\"description\":\"List all of the people in the specified collection for a partic" +
+            "ular activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"The I" +
+            "D of the activity to get the list of people for.\",\"required\":true,\"location\":\"pa" +
+            "th\"},\"collection\":{\"type\":\"string\",\"description\":\"The collection of people to li" +
+            "st.\",\"required\":true,\"enum\":[\"plusoners\",\"resharers\"],\"enumDescriptions\":[\"List " +
+            "all people who have +1\'d this activity.\",\"List all people who have reshared this" +
+            " activity.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Th" +
+            "e maximum number of people to include in the response, used for paging. For any " +
+            "response, the actual number returned may be less than the specified maxResults.\"" +
+            ",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"quer" +
+            "y\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to " +
+            "page through large result sets. To get the next page of results, set this parame" +
+            "ter to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"q" +
+            "uery\"}},\"parameterOrder\":[\"activityId\",\"collection\"],\"response\":{\"$ref\":\"PeopleF" +
+            "eed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus" +
+            ".people.search\",\"path\":\"people\",\"httpMethod\":\"GET\",\"description\":\"Search all pub" +
+            "lic profiles.\",\"parameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify " +
+            "the preferred language to search with. See search language codes for available v" +
+            "alues.\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"The maximum number of people to include in the response, used for paging." +
+            " For any response, the actual number returned may be less than the specified max" +
+            "Results.\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"locatio" +
+            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, " +
+            "used to page through large result sets. To get the next page of results, set thi" +
+            "s parameter to the value of \\\"nextPageToken\\\" from the previous response. This t" +
+            "oken may be of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Full-text search query string.\",\"required\":true,\"location\":\"query\"}},\"pa" +
+            "rameterOrder\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/plus.me\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -2716,14 +2717,14 @@ namespace Google.Apis.Plus.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected PlusService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.activities = new ActivitiesResource(this);
-            this.comments = new CommentsResource(this);
-            this.people = new PeopleResource(this);
+            this._activities = new ActivitiesResource(this);
+            this._comments = new CommentsResource(this);
+            this._people = new PeopleResource(this);
         }
         
         public PlusService() : 
@@ -2731,22 +2732,22 @@ namespace Google.Apis.Plus.v1 {
         }
         
         public PlusService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PlusService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PlusService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -2840,40 +2841,40 @@ namespace Google.Apis.Plus.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Alt? alt;
+            private System.Nullable<Alt> _alt;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2881,10 +2882,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2892,18 +2893,18 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
-            public virtual Alt? Alt {
+            public virtual System.Nullable<Alt> Alt {
                 get {
-                    return this.alt;
+                    return this._alt;
                 }
                 set {
-                    this.alt = value;
+                    this._alt = value;
                 }
             }
             
@@ -2922,47 +2923,47 @@ namespace Google.Apis.Plus.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Alt? alt;
+            private System.Nullable<Alt> _alt;
             
-            private Collection collection;
+            private Collection _collection;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, Collection collection) : 
                     base(service) {
-                this.userId = userId;
-                this.collection = collection;
+                this._userId = userId;
+                this._collection = collection;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2970,21 +2971,21 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
-            public virtual Alt? Alt {
+            public virtual System.Nullable<Alt> Alt {
                 get {
-                    return this.alt;
+                    return this._alt;
                 }
                 set {
-                    this.alt = value;
+                    this._alt = value;
                 }
             }
             
@@ -2992,18 +2993,18 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("collection")]
             public virtual Collection Collection {
                 get {
-                    return this.collection;
+                    return this._collection;
                 }
             }
             
             /// <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3011,10 +3012,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -3022,7 +3023,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -3041,46 +3042,46 @@ namespace Google.Apis.Plus.v1 {
         
         public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string language;
+            private string _language;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private OrderBy? orderBy;
+            private System.Nullable<OrderBy> _orderBy;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string query;
+            private string _query;
             
             public SearchRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
                     base(service) {
-                this.query = query;
+                this._query = query;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3088,10 +3089,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3099,32 +3100,32 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
             
             /// <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>Specifies how to order search results.</summary>
             [Google.Apis.Util.RequestParameterAttribute("orderBy")]
-            public virtual OrderBy? OrderBy {
+            public virtual System.Nullable<OrderBy> OrderBy {
                 get {
-                    return this.orderBy;
+                    return this._orderBy;
                 }
                 set {
-                    this.orderBy = value;
+                    this._orderBy = value;
                 }
             }
             
@@ -3132,10 +3133,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -3143,7 +3144,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("query")]
             public virtual string Query {
                 get {
-                    return this.query;
+                    return this._query;
                 }
             }
             
@@ -3207,38 +3208,38 @@ namespace Google.Apis.Plus.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string commentId;
+            private string _commentId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string commentId) : 
                     base(service) {
-                this.commentId = commentId;
+                this._commentId = commentId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3246,10 +3247,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3257,7 +3258,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("commentId")]
             public virtual string CommentId {
                 get {
-                    return this.commentId;
+                    return this._commentId;
                 }
             }
             
@@ -3276,46 +3277,46 @@ namespace Google.Apis.Plus.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Alt? alt;
+            private System.Nullable<Alt> _alt;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private SortOrder? sortOrder;
+            private System.Nullable<SortOrder> _sortOrder;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
-                this.activityId = activityId;
+                this._activityId = activityId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3323,10 +3324,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3334,29 +3335,29 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
             [Google.Apis.Util.RequestParameterAttribute("alt")]
-            public virtual Alt? Alt {
+            public virtual System.Nullable<Alt> Alt {
                 get {
-                    return this.alt;
+                    return this._alt;
                 }
                 set {
-                    this.alt = value;
+                    this._alt = value;
                 }
             }
             
             /// <summary>The maximum number of comments to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3364,21 +3365,21 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             /// <summary>The order in which to sort the list of comments.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sortOrder")]
-            public virtual SortOrder? SortOrder {
+            public virtual System.Nullable<SortOrder> SortOrder {
                 get {
-                    return this.sortOrder;
+                    return this._sortOrder;
                 }
                 set {
-                    this.sortOrder = value;
+                    this._sortOrder = value;
                 }
             }
             
@@ -3440,38 +3441,38 @@ namespace Google.Apis.Plus.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3479,10 +3480,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3490,7 +3491,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -3509,45 +3510,45 @@ namespace Google.Apis.Plus.v1 {
         
         public class ListByActivityRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string activityId;
+            private string _activityId;
             
-            private Collection collection;
+            private Collection _collection;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListByActivityRequest(Google.Apis.Discovery.IRequestProvider service, string activityId, Collection collection) : 
                     base(service) {
-                this.activityId = activityId;
-                this.collection = collection;
+                this._activityId = activityId;
+                this._collection = collection;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3555,10 +3556,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3566,7 +3567,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("activityId")]
             public virtual string ActivityId {
                 get {
-                    return this.activityId;
+                    return this._activityId;
                 }
             }
             
@@ -3574,18 +3575,18 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("collection")]
             public virtual Collection Collection {
                 get {
-                    return this.collection;
+                    return this._collection;
                 }
             }
             
             /// <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3593,10 +3594,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -3615,44 +3616,44 @@ namespace Google.Apis.Plus.v1 {
         
         public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string language;
+            private string _language;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string query;
+            private string _query;
             
             public SearchRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
                     base(service) {
-                this.query = query;
+                this._query = query;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3660,10 +3661,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3671,21 +3672,21 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
             
             /// <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3693,10 +3694,10 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -3704,7 +3705,7 @@ namespace Google.Apis.Plus.v1 {
             [Google.Apis.Util.RequestParameterAttribute("query")]
             public virtual string Query {
                 get {
-                    return this.query;
+                    return this._query;
                 }
             }
             
@@ -3726,11 +3727,11 @@ namespace Google.Apis.Plus.v1 {
         
         private const string Resource = "";
         
-        private ActivitiesResource activities;
+        private ActivitiesResource _activities;
         
-        private CommentsResource comments;
+        private CommentsResource _comments;
         
-        private PeopleResource people;
+        private PeopleResource _people;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -3740,19 +3741,19 @@ namespace Google.Apis.Plus.v1 {
         
         public virtual ActivitiesResource Activities {
             get {
-                return this.activities;
+                return this._activities;
             }
         }
         
         public virtual CommentsResource Comments {
             get {
-                return this.comments;
+                return this._comments;
             }
         }
         
         public virtual PeopleResource People {
             get {
-                return this.people;
+                return this._people;
             }
         }
     }

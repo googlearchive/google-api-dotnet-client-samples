@@ -22,14 +22,11 @@
         <member name="P:Google.Apis.Shopping.v1.Data.Product.SelfLink">
             <summary>Self link of product.</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.Data.Product.RecommendationsData.RecommendationList">
-            <summary>List of recommendations.</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.Data.Product.RecommendationsData.Type">
-            <summary>Type of recommendation list (one of: all, purchaseToPurchase, visitToVisit, visitToPurchase).</summary>
-        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.Categories">
             <summary>List of categories.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.Products.CategoryRecommendations">
+            <summary>Recommendations for category.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.CurrentItemCount">
             <summary>Current item count.</summary>
@@ -167,13 +164,16 @@
             <summary>Location of store.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.StoresData.Name">
-            <summary>Name of store.</summary>
+            <summary>Name of merchant.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.StoresData.StoreCode">
             <summary>Merchant-supplied store code.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.StoresData.StoreId">
             <summary>Id of store.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.Products.StoresData.StoreName">
+            <summary>Name of store.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.StoresData.Telephone">
             <summary>Telephone number of store.</summary>
@@ -400,6 +400,12 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Tax">
             <summary>Tax of product inventory.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelRecommendationsJsonV1.RecommendationList">
+            <summary>List of recommendations.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelRecommendationsJsonV1.Type">
+            <summary>Type of recommendation list (for offer-based recommendations, one of: all, purchaseToPurchase, visitToVisit, visitToPurchase, relatedItems; for category-based recommendations, one of: all, categoryMostVisited, categoryBestSeller).</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ShoppingService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
@@ -507,8 +513,23 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.CategoriesUseGcsConfig">
             <summary>This parameter is currently ignored</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.CategoryRecommendationsCategory">
+            <summary>Category for which to retrieve recommendations</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.CategoryRecommendationsEnabled">
+            <summary>Whether to return category recommendation information</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.CategoryRecommendationsInclude">
+            <summary>Category recommendation specification</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.CategoryRecommendationsUseGcsConfig">
+            <summary>This parameter is currently ignored</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Channels">
             <summary>Channels specification</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.ClickTracking">
+            <summary>Whether to add a click tracking parameter to offer URLs</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.Country">
             <summary>Country restriction (ISO 3166)</summary>

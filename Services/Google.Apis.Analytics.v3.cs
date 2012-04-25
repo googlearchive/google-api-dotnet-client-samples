@@ -16,28 +16,28 @@ namespace Google.Apis.Analytics.v3.Data {
     
     public class Account {
         
-        private Account.ChildLinkData childLink;
+        private Account.ChildLinkData _childLink;
         
-        private string created;
+        private string _created;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
         /// <summary>Child link for an account entry. Points to the list of web properties for this account.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("childLink")]
         public virtual Account.ChildLinkData ChildLink {
             get {
-                return this.childLink;
+                return this._childLink;
             }
             set {
-                this.childLink = value;
+                this._childLink = value;
             }
         }
         
@@ -45,10 +45,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -56,10 +56,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -67,10 +67,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -78,10 +78,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -89,10 +89,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -100,28 +100,28 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         /// <summary>Child link for an account entry. Points to the list of web properties for this account.</summary>
         public class ChildLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the list of web properties for this account.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -129,10 +129,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -140,34 +140,34 @@ namespace Google.Apis.Analytics.v3.Data {
     
     public class Accounts : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Account> items;
+        private System.Collections.Generic.IList<Account> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private string username;
+        private string _username;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of accounts.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Account> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -175,10 +175,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -186,10 +186,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -197,10 +197,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -208,10 +208,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -219,10 +219,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
@@ -230,10 +230,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -241,73 +241,73 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("username")]
         public virtual string Username {
             get {
-                return this.username;
+                return this._username;
             }
             set {
-                this.username = value;
+                this._username = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class GaData : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<GaData.ColumnHeadersData> columnHeaders;
+        private System.Collections.Generic.IList<GaData.ColumnHeadersData> _columnHeaders;
         
-        private System.Nullable<bool> containsSampledData;
+        private System.Nullable<bool> _containsSampledData;
         
-        private string id;
+        private string _id;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private GaData.ProfileInfoData profileInfo;
+        private GaData.ProfileInfoData _profileInfo;
         
-        private GaData.QueryData query;
+        private GaData.QueryData _query;
         
-        private System.Collections.Generic.IList<System.Collections.Generic.IList<string>> rows;
+        private System.Collections.Generic.IList<System.Collections.Generic.IList<string>> _rows;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private GaData.TotalsForAllResultsData totalsForAllResults;
+        private GaData.TotalsForAllResultsData _totalsForAllResults;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("columnHeaders")]
         public virtual System.Collections.Generic.IList<GaData.ColumnHeadersData> ColumnHeaders {
             get {
-                return this.columnHeaders;
+                return this._columnHeaders;
             }
             set {
-                this.columnHeaders = value;
+                this._columnHeaders = value;
             }
         }
         
@@ -315,10 +315,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("containsSampledData")]
         public virtual System.Nullable<bool> ContainsSampledData {
             get {
-                return this.containsSampledData;
+                return this._containsSampledData;
             }
             set {
-                this.containsSampledData = value;
+                this._containsSampledData = value;
             }
         }
         
@@ -326,10 +326,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -337,10 +337,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -348,10 +348,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -359,10 +359,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -370,10 +370,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -381,10 +381,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("profileInfo")]
         public virtual GaData.ProfileInfoData ProfileInfo {
             get {
-                return this.profileInfo;
+                return this._profileInfo;
             }
             set {
-                this.profileInfo = value;
+                this._profileInfo = value;
             }
         }
         
@@ -392,10 +392,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("query")]
         public virtual GaData.QueryData Query {
             get {
-                return this.query;
+                return this._query;
             }
             set {
-                this.query = value;
+                this._query = value;
             }
         }
         
@@ -403,10 +403,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("rows")]
         public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<string>> Rows {
             get {
-                return this.rows;
+                return this._rows;
             }
             set {
-                this.rows = value;
+                this._rows = value;
             }
         }
         
@@ -414,10 +414,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -425,10 +425,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -436,48 +436,48 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalsForAllResults")]
         public virtual GaData.TotalsForAllResultsData TotalsForAllResults {
             get {
-                return this.totalsForAllResults;
+                return this._totalsForAllResults;
             }
             set {
-                this.totalsForAllResults = value;
+                this._totalsForAllResults = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class ColumnHeadersData {
             
-            private string columnType;
+            private string _columnType;
             
-            private string dataType;
+            private string _dataType;
             
-            private string name;
+            private string _name;
             
             /// <summary>Column Type. Either DIMENSION or METRIC.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("columnType")]
             public virtual string ColumnType {
                 get {
-                    return this.columnType;
+                    return this._columnType;
                 }
                 set {
-                    this.columnType = value;
+                    this._columnType = value;
                 }
             }
             
@@ -485,10 +485,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("dataType")]
             public virtual string DataType {
                 get {
-                    return this.dataType;
+                    return this._dataType;
                 }
                 set {
-                    this.dataType = value;
+                    this._dataType = value;
                 }
             }
             
@@ -496,10 +496,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
         }
@@ -507,26 +507,26 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Information for the profile, for which the Analytics data was requested.</summary>
         public class ProfileInfoData {
             
-            private string accountId;
+            private string _accountId;
             
-            private string internalWebPropertyId;
+            private string _internalWebPropertyId;
             
-            private string profileId;
+            private string _profileId;
             
-            private string profileName;
+            private string _profileName;
             
-            private string tableId;
+            private string _tableId;
             
-            private string webPropertyId;
+            private string _webPropertyId;
             
             /// <summary>Account ID to which this profile belongs.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
             public virtual string AccountId {
                 get {
-                    return this.accountId;
+                    return this._accountId;
                 }
                 set {
-                    this.accountId = value;
+                    this._accountId = value;
                 }
             }
             
@@ -534,10 +534,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("internalWebPropertyId")]
             public virtual string InternalWebPropertyId {
                 get {
-                    return this.internalWebPropertyId;
+                    return this._internalWebPropertyId;
                 }
                 set {
-                    this.internalWebPropertyId = value;
+                    this._internalWebPropertyId = value;
                 }
             }
             
@@ -545,10 +545,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("profileId")]
             public virtual string ProfileId {
                 get {
-                    return this.profileId;
+                    return this._profileId;
                 }
                 set {
-                    this.profileId = value;
+                    this._profileId = value;
                 }
             }
             
@@ -556,10 +556,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("profileName")]
             public virtual string ProfileName {
                 get {
-                    return this.profileName;
+                    return this._profileName;
                 }
                 set {
-                    this.profileName = value;
+                    this._profileName = value;
                 }
             }
             
@@ -567,10 +567,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
                 set {
-                    this.tableId = value;
+                    this._tableId = value;
                 }
             }
             
@@ -578,10 +578,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
             public virtual string WebPropertyId {
                 get {
-                    return this.webPropertyId;
+                    return this._webPropertyId;
                 }
                 set {
-                    this.webPropertyId = value;
+                    this._webPropertyId = value;
                 }
             }
         }
@@ -589,34 +589,34 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Analytics data request query parameters.</summary>
         public class QueryData {
             
-            private string dimensions;
+            private string _dimensions;
             
-            private string endDate;
+            private string _endDate;
             
-            private string filters;
+            private string _filters;
             
-            private string ids;
+            private string _ids;
             
-            private System.Nullable<long> maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private System.Collections.Generic.IList<string> metrics;
+            private System.Collections.Generic.IList<string> _metrics;
             
-            private string segment;
+            private string _segment;
             
-            private System.Collections.Generic.IList<string> sort;
+            private System.Collections.Generic.IList<string> _sort;
             
-            private string startDate;
+            private string _startDate;
             
-            private System.Nullable<long> startIndex;
+            private System.Nullable<long> _startIndex;
             
             /// <summary>List of analytics dimensions.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("dimensions")]
             public virtual string Dimensions {
                 get {
-                    return this.dimensions;
+                    return this._dimensions;
                 }
                 set {
-                    this.dimensions = value;
+                    this._dimensions = value;
                 }
             }
             
@@ -624,10 +624,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("end-date")]
             public virtual string EndDate {
                 get {
-                    return this.endDate;
+                    return this._endDate;
                 }
                 set {
-                    this.endDate = value;
+                    this._endDate = value;
                 }
             }
             
@@ -635,10 +635,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("filters")]
             public virtual string Filters {
                 get {
-                    return this.filters;
+                    return this._filters;
                 }
                 set {
-                    this.filters = value;
+                    this._filters = value;
                 }
             }
             
@@ -646,10 +646,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("ids")]
             public virtual string Ids {
                 get {
-                    return this.ids;
+                    return this._ids;
                 }
                 set {
-                    this.ids = value;
+                    this._ids = value;
                 }
             }
             
@@ -657,10 +657,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("max-results")]
             public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -668,10 +668,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("metrics")]
             public virtual System.Collections.Generic.IList<string> Metrics {
                 get {
-                    return this.metrics;
+                    return this._metrics;
                 }
                 set {
-                    this.metrics = value;
+                    this._metrics = value;
                 }
             }
             
@@ -679,10 +679,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("segment")]
             public virtual string Segment {
                 get {
-                    return this.segment;
+                    return this._segment;
                 }
                 set {
-                    this.segment = value;
+                    this._segment = value;
                 }
             }
             
@@ -690,10 +690,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("sort")]
             public virtual System.Collections.Generic.IList<string> Sort {
                 get {
-                    return this.sort;
+                    return this._sort;
                 }
                 set {
-                    this.sort = value;
+                    this._sort = value;
                 }
             }
             
@@ -701,10 +701,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("start-date")]
             public virtual string StartDate {
                 get {
-                    return this.startDate;
+                    return this._startDate;
                 }
                 set {
-                    this.startDate = value;
+                    this._startDate = value;
                 }
             }
             
@@ -712,10 +712,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("start-index")]
             public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
         }
@@ -727,50 +727,50 @@ namespace Google.Apis.Analytics.v3.Data {
     
     public class Goal {
         
-        private string accountId;
+        private string _accountId;
         
-        private System.Nullable<bool> active;
+        private System.Nullable<bool> _active;
         
-        private string created;
+        private string _created;
         
-        private Goal.EventDetailsData eventDetails;
+        private Goal.EventDetailsData _eventDetails;
         
-        private string id;
+        private string _id;
         
-        private string internalWebPropertyId;
+        private string _internalWebPropertyId;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private Goal.ParentLinkData parentLink;
+        private Goal.ParentLinkData _parentLink;
         
-        private string profileId;
+        private string _profileId;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string type;
+        private string _type;
         
-        private string updated;
+        private string _updated;
         
-        private Goal.UrlDestinationDetailsData urlDestinationDetails;
+        private Goal.UrlDestinationDetailsData _urlDestinationDetails;
         
-        private System.Nullable<double> value;
+        private System.Nullable<double> _value;
         
-        private Goal.VisitNumPagesDetailsData visitNumPagesDetails;
+        private Goal.VisitNumPagesDetailsData _visitNumPagesDetails;
         
-        private Goal.VisitTimeOnSiteDetailsData visitTimeOnSiteDetails;
+        private Goal.VisitTimeOnSiteDetailsData _visitTimeOnSiteDetails;
         
-        private string webPropertyId;
+        private string _webPropertyId;
         
         /// <summary>Account ID to which this goal belongs.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
         public virtual string AccountId {
             get {
-                return this.accountId;
+                return this._accountId;
             }
             set {
-                this.accountId = value;
+                this._accountId = value;
             }
         }
         
@@ -778,10 +778,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("active")]
         public virtual System.Nullable<bool> Active {
             get {
-                return this.active;
+                return this._active;
             }
             set {
-                this.active = value;
+                this._active = value;
             }
         }
         
@@ -789,10 +789,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -800,10 +800,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("eventDetails")]
         public virtual Goal.EventDetailsData EventDetails {
             get {
-                return this.eventDetails;
+                return this._eventDetails;
             }
             set {
-                this.eventDetails = value;
+                this._eventDetails = value;
             }
         }
         
@@ -811,10 +811,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -822,10 +822,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("internalWebPropertyId")]
         public virtual string InternalWebPropertyId {
             get {
-                return this.internalWebPropertyId;
+                return this._internalWebPropertyId;
             }
             set {
-                this.internalWebPropertyId = value;
+                this._internalWebPropertyId = value;
             }
         }
         
@@ -833,10 +833,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -844,10 +844,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -855,10 +855,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("parentLink")]
         public virtual Goal.ParentLinkData ParentLink {
             get {
-                return this.parentLink;
+                return this._parentLink;
             }
             set {
-                this.parentLink = value;
+                this._parentLink = value;
             }
         }
         
@@ -866,10 +866,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("profileId")]
         public virtual string ProfileId {
             get {
-                return this.profileId;
+                return this._profileId;
             }
             set {
-                this.profileId = value;
+                this._profileId = value;
             }
         }
         
@@ -877,10 +877,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -888,10 +888,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
-                return this.type;
+                return this._type;
             }
             set {
-                this.type = value;
+                this._type = value;
             }
         }
         
@@ -899,10 +899,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -910,10 +910,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("urlDestinationDetails")]
         public virtual Goal.UrlDestinationDetailsData UrlDestinationDetails {
             get {
-                return this.urlDestinationDetails;
+                return this._urlDestinationDetails;
             }
             set {
-                this.urlDestinationDetails = value;
+                this._urlDestinationDetails = value;
             }
         }
         
@@ -921,10 +921,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("value")]
         public virtual System.Nullable<double> Value {
             get {
-                return this.value;
+                return this._value;
             }
             set {
-                this.value = value;
+                this._value = value;
             }
         }
         
@@ -932,10 +932,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("visitNumPagesDetails")]
         public virtual Goal.VisitNumPagesDetailsData VisitNumPagesDetails {
             get {
-                return this.visitNumPagesDetails;
+                return this._visitNumPagesDetails;
             }
             set {
-                this.visitNumPagesDetails = value;
+                this._visitNumPagesDetails = value;
             }
         }
         
@@ -943,10 +943,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("visitTimeOnSiteDetails")]
         public virtual Goal.VisitTimeOnSiteDetailsData VisitTimeOnSiteDetails {
             get {
-                return this.visitTimeOnSiteDetails;
+                return this._visitTimeOnSiteDetails;
             }
             set {
-                this.visitTimeOnSiteDetails = value;
+                this._visitTimeOnSiteDetails = value;
             }
         }
         
@@ -954,28 +954,28 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
         public virtual string WebPropertyId {
             get {
-                return this.webPropertyId;
+                return this._webPropertyId;
             }
             set {
-                this.webPropertyId = value;
+                this._webPropertyId = value;
             }
         }
         
         /// <summary>Details for the goal of the type EVENT.</summary>
         public class EventDetailsData {
             
-            private System.Collections.Generic.IList<EventDetailsData.EventConditionsData> eventConditions;
+            private System.Collections.Generic.IList<EventDetailsData.EventConditionsData> _eventConditions;
             
-            private System.Nullable<bool> useEventValue;
+            private System.Nullable<bool> _useEventValue;
             
             /// <summary>List of event conditions.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("eventConditions")]
             public virtual System.Collections.Generic.IList<EventDetailsData.EventConditionsData> EventConditions {
                 get {
-                    return this.eventConditions;
+                    return this._eventConditions;
                 }
                 set {
-                    this.eventConditions = value;
+                    this._eventConditions = value;
                 }
             }
             
@@ -983,33 +983,33 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("useEventValue")]
             public virtual System.Nullable<bool> UseEventValue {
                 get {
-                    return this.useEventValue;
+                    return this._useEventValue;
                 }
                 set {
-                    this.useEventValue = value;
+                    this._useEventValue = value;
                 }
             }
             
             public class EventConditionsData {
                 
-                private string comparisonType;
+                private string _comparisonType;
                 
-                private string comparisonValue;
+                private string _comparisonValue;
                 
-                private string expression;
+                private string _expression;
                 
-                private string matchType;
+                private string _matchType;
                 
-                private string type;
+                private string _type;
                 
                 /// <summary>Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("comparisonType")]
                 public virtual string ComparisonType {
                     get {
-                        return this.comparisonType;
+                        return this._comparisonType;
                     }
                     set {
-                        this.comparisonType = value;
+                        this._comparisonType = value;
                     }
                 }
                 
@@ -1017,10 +1017,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("comparisonValue")]
                 public virtual string ComparisonValue {
                     get {
-                        return this.comparisonValue;
+                        return this._comparisonValue;
                     }
                     set {
-                        this.comparisonValue = value;
+                        this._comparisonValue = value;
                     }
                 }
                 
@@ -1028,10 +1028,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("expression")]
                 public virtual string Expression {
                     get {
-                        return this.expression;
+                        return this._expression;
                     }
                     set {
-                        this.expression = value;
+                        this._expression = value;
                     }
                 }
                 
@@ -1039,10 +1039,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("matchType")]
                 public virtual string MatchType {
                     get {
-                        return this.matchType;
+                        return this._matchType;
                     }
                     set {
-                        this.matchType = value;
+                        this._matchType = value;
                     }
                 }
                 
@@ -1050,10 +1050,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("type")]
                 public virtual string Type {
                     get {
-                        return this.type;
+                        return this._type;
                     }
                     set {
-                        this.type = value;
+                        this._type = value;
                     }
                 }
             }
@@ -1062,18 +1062,18 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Parent link for a goal. Points to the profile to which this goal belongs.</summary>
         public class ParentLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the profile to which this goal belongs.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -1081,10 +1081,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -1092,24 +1092,24 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Details for the goal of the type URL_DESTINATION.</summary>
         public class UrlDestinationDetailsData {
             
-            private System.Nullable<bool> caseSensitive;
+            private System.Nullable<bool> _caseSensitive;
             
-            private System.Nullable<bool> firstStepRequired;
+            private System.Nullable<bool> _firstStepRequired;
             
-            private string matchType;
+            private string _matchType;
             
-            private System.Collections.Generic.IList<UrlDestinationDetailsData.StepsData> steps;
+            private System.Collections.Generic.IList<UrlDestinationDetailsData.StepsData> _steps;
             
-            private string url;
+            private string _url;
             
             /// <summary>Determines if the goal URL must exactly match the capitalization of visited URLs.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("caseSensitive")]
             public virtual System.Nullable<bool> CaseSensitive {
                 get {
-                    return this.caseSensitive;
+                    return this._caseSensitive;
                 }
                 set {
-                    this.caseSensitive = value;
+                    this._caseSensitive = value;
                 }
             }
             
@@ -1117,10 +1117,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("firstStepRequired")]
             public virtual System.Nullable<bool> FirstStepRequired {
                 get {
-                    return this.firstStepRequired;
+                    return this._firstStepRequired;
                 }
                 set {
-                    this.firstStepRequired = value;
+                    this._firstStepRequired = value;
                 }
             }
             
@@ -1128,10 +1128,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("matchType")]
             public virtual string MatchType {
                 get {
-                    return this.matchType;
+                    return this._matchType;
                 }
                 set {
-                    this.matchType = value;
+                    this._matchType = value;
                 }
             }
             
@@ -1139,10 +1139,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("steps")]
             public virtual System.Collections.Generic.IList<UrlDestinationDetailsData.StepsData> Steps {
                 get {
-                    return this.steps;
+                    return this._steps;
                 }
                 set {
-                    this.steps = value;
+                    this._steps = value;
                 }
             }
             
@@ -1150,29 +1150,29 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
             
             public class StepsData {
                 
-                private string name;
+                private string _name;
                 
-                private System.Nullable<long> number;
+                private System.Nullable<long> _number;
                 
-                private string url;
+                private string _url;
                 
                 /// <summary>Step name.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("name")]
                 public virtual string Name {
                     get {
-                        return this.name;
+                        return this._name;
                     }
                     set {
-                        this.name = value;
+                        this._name = value;
                     }
                 }
                 
@@ -1180,10 +1180,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("number")]
                 public virtual System.Nullable<long> Number {
                     get {
-                        return this.number;
+                        return this._number;
                     }
                     set {
-                        this.number = value;
+                        this._number = value;
                     }
                 }
                 
@@ -1191,10 +1191,10 @@ namespace Google.Apis.Analytics.v3.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("url")]
                 public virtual string Url {
                     get {
-                        return this.url;
+                        return this._url;
                     }
                     set {
-                        this.url = value;
+                        this._url = value;
                     }
                 }
             }
@@ -1203,18 +1203,18 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Details for the goal of the type VISIT_NUM_PAGES.</summary>
         public class VisitNumPagesDetailsData {
             
-            private string comparisonType;
+            private string _comparisonType;
             
-            private string comparisonValue;
+            private string _comparisonValue;
             
             /// <summary>Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("comparisonType")]
             public virtual string ComparisonType {
                 get {
-                    return this.comparisonType;
+                    return this._comparisonType;
                 }
                 set {
-                    this.comparisonType = value;
+                    this._comparisonType = value;
                 }
             }
             
@@ -1222,10 +1222,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("comparisonValue")]
             public virtual string ComparisonValue {
                 get {
-                    return this.comparisonValue;
+                    return this._comparisonValue;
                 }
                 set {
-                    this.comparisonValue = value;
+                    this._comparisonValue = value;
                 }
             }
         }
@@ -1233,18 +1233,18 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Details for the goal of the type VISIT_TIME_ON_SITE.</summary>
         public class VisitTimeOnSiteDetailsData {
             
-            private string comparisonType;
+            private string _comparisonType;
             
-            private string comparisonValue;
+            private string _comparisonValue;
             
             /// <summary>Type of comparison. Possible values are LESS_THAN or GREATER_THAN.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("comparisonType")]
             public virtual string ComparisonType {
                 get {
-                    return this.comparisonType;
+                    return this._comparisonType;
                 }
                 set {
-                    this.comparisonType = value;
+                    this._comparisonType = value;
                 }
             }
             
@@ -1252,10 +1252,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("comparisonValue")]
             public virtual string ComparisonValue {
                 get {
-                    return this.comparisonValue;
+                    return this._comparisonValue;
                 }
                 set {
-                    this.comparisonValue = value;
+                    this._comparisonValue = value;
                 }
             }
         }
@@ -1263,34 +1263,34 @@ namespace Google.Apis.Analytics.v3.Data {
     
     public class Goals : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Goal> items;
+        private System.Collections.Generic.IList<Goal> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private string username;
+        private string _username;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of goals.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Goal> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1298,10 +1298,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -1309,10 +1309,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1320,10 +1320,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -1331,10 +1331,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -1342,10 +1342,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
@@ -1353,10 +1353,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -1364,77 +1364,77 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("username")]
         public virtual string Username {
             get {
-                return this.username;
+                return this._username;
             }
             set {
-                this.username = value;
+                this._username = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Profile {
         
-        private string accountId;
+        private string _accountId;
         
-        private Profile.ChildLinkData childLink;
+        private Profile.ChildLinkData _childLink;
         
-        private string created;
+        private string _created;
         
-        private string currency;
+        private string _currency;
         
-        private string defaultPage;
+        private string _defaultPage;
         
-        private string excludeQueryParameters;
+        private string _excludeQueryParameters;
         
-        private string id;
+        private string _id;
         
-        private string internalWebPropertyId;
+        private string _internalWebPropertyId;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private Profile.ParentLinkData parentLink;
+        private Profile.ParentLinkData _parentLink;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string siteSearchCategoryParameters;
+        private string _siteSearchCategoryParameters;
         
-        private string siteSearchQueryParameters;
+        private string _siteSearchQueryParameters;
         
-        private string timezone;
+        private string _timezone;
         
-        private string updated;
+        private string _updated;
         
-        private string webPropertyId;
+        private string _webPropertyId;
         
         /// <summary>Account ID to which this profile belongs.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
         public virtual string AccountId {
             get {
-                return this.accountId;
+                return this._accountId;
             }
             set {
-                this.accountId = value;
+                this._accountId = value;
             }
         }
         
@@ -1442,10 +1442,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("childLink")]
         public virtual Profile.ChildLinkData ChildLink {
             get {
-                return this.childLink;
+                return this._childLink;
             }
             set {
-                this.childLink = value;
+                this._childLink = value;
             }
         }
         
@@ -1453,10 +1453,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -1464,10 +1464,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("currency")]
         public virtual string Currency {
             get {
-                return this.currency;
+                return this._currency;
             }
             set {
-                this.currency = value;
+                this._currency = value;
             }
         }
         
@@ -1475,10 +1475,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("defaultPage")]
         public virtual string DefaultPage {
             get {
-                return this.defaultPage;
+                return this._defaultPage;
             }
             set {
-                this.defaultPage = value;
+                this._defaultPage = value;
             }
         }
         
@@ -1486,10 +1486,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("excludeQueryParameters")]
         public virtual string ExcludeQueryParameters {
             get {
-                return this.excludeQueryParameters;
+                return this._excludeQueryParameters;
             }
             set {
-                this.excludeQueryParameters = value;
+                this._excludeQueryParameters = value;
             }
         }
         
@@ -1497,10 +1497,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1508,10 +1508,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("internalWebPropertyId")]
         public virtual string InternalWebPropertyId {
             get {
-                return this.internalWebPropertyId;
+                return this._internalWebPropertyId;
             }
             set {
-                this.internalWebPropertyId = value;
+                this._internalWebPropertyId = value;
             }
         }
         
@@ -1519,10 +1519,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1530,10 +1530,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -1541,10 +1541,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("parentLink")]
         public virtual Profile.ParentLinkData ParentLink {
             get {
-                return this.parentLink;
+                return this._parentLink;
             }
             set {
-                this.parentLink = value;
+                this._parentLink = value;
             }
         }
         
@@ -1552,10 +1552,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1563,10 +1563,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("siteSearchCategoryParameters")]
         public virtual string SiteSearchCategoryParameters {
             get {
-                return this.siteSearchCategoryParameters;
+                return this._siteSearchCategoryParameters;
             }
             set {
-                this.siteSearchCategoryParameters = value;
+                this._siteSearchCategoryParameters = value;
             }
         }
         
@@ -1574,10 +1574,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("siteSearchQueryParameters")]
         public virtual string SiteSearchQueryParameters {
             get {
-                return this.siteSearchQueryParameters;
+                return this._siteSearchQueryParameters;
             }
             set {
-                this.siteSearchQueryParameters = value;
+                this._siteSearchQueryParameters = value;
             }
         }
         
@@ -1585,10 +1585,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timezone")]
         public virtual string Timezone {
             get {
-                return this.timezone;
+                return this._timezone;
             }
             set {
-                this.timezone = value;
+                this._timezone = value;
             }
         }
         
@@ -1596,10 +1596,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -1607,28 +1607,28 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("webPropertyId")]
         public virtual string WebPropertyId {
             get {
-                return this.webPropertyId;
+                return this._webPropertyId;
             }
             set {
-                this.webPropertyId = value;
+                this._webPropertyId = value;
             }
         }
         
         /// <summary>Child link for this profile. Points to the list of goals for this profile.</summary>
         public class ChildLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the list of goals for this profile.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -1636,10 +1636,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -1647,18 +1647,18 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Parent link for this profile. Points to the web property to which this profile belongs.</summary>
         public class ParentLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the web property to which this profile belongs.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -1666,10 +1666,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -1677,34 +1677,34 @@ namespace Google.Apis.Analytics.v3.Data {
     
     public class Profiles : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Profile> items;
+        private System.Collections.Generic.IList<Profile> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private string username;
+        private string _username;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of profiles.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Profile> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1712,10 +1712,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -1723,10 +1723,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1734,10 +1734,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -1745,10 +1745,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -1756,10 +1756,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
@@ -1767,10 +1767,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -1778,59 +1778,59 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("username")]
         public virtual string Username {
             get {
-                return this.username;
+                return this._username;
             }
             set {
-                this.username = value;
+                this._username = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Segment {
         
-        private string created;
+        private string _created;
         
-        private string definition;
+        private string _definition;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private string segmentId;
+        private string _segmentId;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
         /// <summary>Time the advanced segment was created.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -1838,10 +1838,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("definition")]
         public virtual string Definition {
             get {
-                return this.definition;
+                return this._definition;
             }
             set {
-                this.definition = value;
+                this._definition = value;
             }
         }
         
@@ -1849,10 +1849,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1860,10 +1860,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1871,10 +1871,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -1882,10 +1882,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("segmentId")]
         public virtual string SegmentId {
             get {
-                return this.segmentId;
+                return this._segmentId;
             }
             set {
-                this.segmentId = value;
+                this._segmentId = value;
             }
         }
         
@@ -1893,10 +1893,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1904,44 +1904,44 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
     }
     
     public class Segments : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Segment> items;
+        private System.Collections.Generic.IList<Segment> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private string username;
+        private string _username;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of advanced segments.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Segment> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1949,10 +1949,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -1960,10 +1960,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1971,10 +1971,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -1982,10 +1982,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -1993,10 +1993,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
@@ -2004,10 +2004,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -2015,63 +2015,63 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("username")]
         public virtual string Username {
             get {
-                return this.username;
+                return this._username;
             }
             set {
-                this.username = value;
+                this._username = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Webproperties : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Webproperty> items;
+        private System.Collections.Generic.IList<Webproperty> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextLink;
+        private string _nextLink;
         
-        private string previousLink;
+        private string _previousLink;
         
-        private System.Nullable<long> startIndex;
+        private System.Nullable<long> _startIndex;
         
-        private System.Nullable<long> totalResults;
+        private System.Nullable<long> _totalResults;
         
-        private string username;
+        private string _username;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of web properties.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Webproperty> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2079,10 +2079,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -2090,10 +2090,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2101,10 +2101,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextLink")]
         public virtual string NextLink {
             get {
-                return this.nextLink;
+                return this._nextLink;
             }
             set {
-                this.nextLink = value;
+                this._nextLink = value;
             }
         }
         
@@ -2112,10 +2112,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("previousLink")]
         public virtual string PreviousLink {
             get {
-                return this.previousLink;
+                return this._previousLink;
             }
             set {
-                this.previousLink = value;
+                this._previousLink = value;
             }
         }
         
@@ -2123,10 +2123,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
         public virtual System.Nullable<long> StartIndex {
             get {
-                return this.startIndex;
+                return this._startIndex;
             }
             set {
-                this.startIndex = value;
+                this._startIndex = value;
             }
         }
         
@@ -2134,10 +2134,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalResults")]
         public virtual System.Nullable<long> TotalResults {
             get {
-                return this.totalResults;
+                return this._totalResults;
             }
             set {
-                this.totalResults = value;
+                this._totalResults = value;
             }
         }
         
@@ -2145,65 +2145,65 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("username")]
         public virtual string Username {
             get {
-                return this.username;
+                return this._username;
             }
             set {
-                this.username = value;
+                this._username = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Webproperty {
         
-        private string accountId;
+        private string _accountId;
         
-        private Webproperty.ChildLinkData childLink;
+        private Webproperty.ChildLinkData _childLink;
         
-        private string created;
+        private string _created;
         
-        private string id;
+        private string _id;
         
-        private string internalWebPropertyId;
+        private string _internalWebPropertyId;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private Webproperty.ParentLinkData parentLink;
+        private Webproperty.ParentLinkData _parentLink;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
-        private string websiteUrl;
+        private string _websiteUrl;
         
         /// <summary>Account ID to which this web property belongs.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accountId")]
         public virtual string AccountId {
             get {
-                return this.accountId;
+                return this._accountId;
             }
             set {
-                this.accountId = value;
+                this._accountId = value;
             }
         }
         
@@ -2211,10 +2211,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("childLink")]
         public virtual Webproperty.ChildLinkData ChildLink {
             get {
-                return this.childLink;
+                return this._childLink;
             }
             set {
-                this.childLink = value;
+                this._childLink = value;
             }
         }
         
@@ -2222,10 +2222,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -2233,10 +2233,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2244,10 +2244,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("internalWebPropertyId")]
         public virtual string InternalWebPropertyId {
             get {
-                return this.internalWebPropertyId;
+                return this._internalWebPropertyId;
             }
             set {
-                this.internalWebPropertyId = value;
+                this._internalWebPropertyId = value;
             }
         }
         
@@ -2255,10 +2255,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2266,10 +2266,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -2277,10 +2277,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("parentLink")]
         public virtual Webproperty.ParentLinkData ParentLink {
             get {
-                return this.parentLink;
+                return this._parentLink;
             }
             set {
-                this.parentLink = value;
+                this._parentLink = value;
             }
         }
         
@@ -2288,10 +2288,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -2299,10 +2299,10 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -2310,28 +2310,28 @@ namespace Google.Apis.Analytics.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("websiteUrl")]
         public virtual string WebsiteUrl {
             get {
-                return this.websiteUrl;
+                return this._websiteUrl;
             }
             set {
-                this.websiteUrl = value;
+                this._websiteUrl = value;
             }
         }
         
         /// <summary>Child link for this web property. Points to the list of profiles for this web property.</summary>
         public class ChildLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the list of profiles for this web property.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -2339,10 +2339,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -2350,18 +2350,18 @@ namespace Google.Apis.Analytics.v3.Data {
         /// <summary>Parent link for this web property. Points to the account to which this web property belongs.</summary>
         public class ParentLinkData {
             
-            private string href;
+            private string _href;
             
-            private string type;
+            private string _type;
             
             /// <summary>Link to the account for this web property.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("href")]
             public virtual string Href {
                 get {
-                    return this.href;
+                    return this._href;
                 }
                 set {
-                    this.href = value;
+                    this._href = value;
                 }
             }
             
@@ -2369,10 +2369,10 @@ namespace Google.Apis.Analytics.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -2393,360 +2393,362 @@ namespace Google.Apis.Analytics.v3 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v3\",\"" +
-            "name\":\"analytics\",\"version\":\"v3\",\"revision\":\"20120227\",\"title\":\"Google Analytics" +
+            "name\":\"analytics\",\"version\":\"v3\",\"revision\":\"20120320\",\"title\":\"Google Analytics" +
             " API\",\"description\":\"View and manage your Google Analytics data\",\"icons\":{\"x16\":" +
             "\"http://www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://www." +
             "google.com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"http://c" +
             "ode.google.com/apis/analytics\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleap" +
-            "is.com/analytics/v3/\",\"basePath\":\"/analytics/v3/\",\"parameters\":{\"alt\":{\"type\":\"s" +
-            "tring\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"j" +
-            "son\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"lo" +
-            "cation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying wh" +
-            "ich fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":" +
-            "\"string\",\"description\":\"API key. Your API key identifies your project and provid" +
-            "es you with API access, quota, and reports. Required unless you provide an OAuth" +
-            " 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"O" +
-            "Auth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":" +
-            "\"boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"d" +
-            "efault\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"" +
-            "Available to use for quota purposes for server-side applications. Can be any arb" +
-            "itrary string assigned to a user, but should not exceed 40 characters. Overrides" +
-            " userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"de" +
-            "scription\":\"IP address of the site where the request originates. Use this if you" +
-            " want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scope" +
-            "s\":{\"https://www.googleapis.com/auth/analytics.readonly\":{\"description\":\"View yo" +
-            "ur Google Analytics data\"}}}},\"schemas\":{\"Account\":{\"id\":\"Account\",\"type\":\"objec" +
-            "t\",\"properties\":{\"childLink\":{\"type\":\"object\",\"description\":\"Child link for an a" +
-            "ccount entry. Points to the list of web properties for this account.\",\"propertie" +
-            "s\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of web properties fo" +
-            "r this account.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the child link." +
-            " Its value is \\\"analytics#webproperties\\\".\",\"default\":\"analytics#webproperties\"}" +
-            "}},\"created\":{\"type\":\"string\",\"description\":\"Time the account was created.\",\"for" +
-            "mat\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Account ID.\"},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Resource type for Analytics account.\",\"default\":\"ana" +
-            "lytics#account\"},\"name\":{\"type\":\"string\",\"description\":\"Account name.\"},\"selfLin" +
-            "k\":{\"type\":\"string\",\"description\":\"Link for this account.\"},\"updated\":{\"type\":\"s" +
-            "tring\",\"description\":\"Time the account was last modified.\",\"format\":\"date-time\"}" +
-            "}},\"Accounts\":{\"id\":\"Accounts\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"ar" +
-            "ray\",\"description\":\"A list of accounts.\",\"items\":{\"$ref\":\"Account\"}},\"itemsPerPa" +
-            "ge\":{\"type\":\"integer\",\"description\":\"The maximum number of entries the response " +
-            "can contain, regardless of the actual number of entries returned. Its value rang" +
-            "es from 1 to 10,000 with a value of 1000 by default, or otherwise specified by t" +
-            "he max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Collection type.\",\"default\":\"analytics#accounts\"},\"nextLink\":{\"type\":\"" +
-            "string\",\"description\":\"Next link for this account collection.\"},\"previousLink\":{" +
-            "\"type\":\"string\",\"description\":\"Previous link for this account collection.\"},\"sta" +
-            "rtIndex\":{\"type\":\"integer\",\"description\":\"The starting index of the entries, whi" +
-            "ch is 1 by default or otherwise specified by the start-index query parameter.\",\"" +
-            "format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total numbe" +
-            "r of results for the query, regardless of the number of results in the response." +
-            "\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of the a" +
-            "uthenticated user\"}}},\"GaData\":{\"id\":\"GaData\",\"type\":\"object\",\"properties\":{\"col" +
-            "umnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list dimension na" +
-            "mes followed by the metric names. The order of dimensions and metrics is same as" +
-            " specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"columnType\":" +
-            "{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or METRIC.\"},\"data" +
-            "Type\":{\"type\":\"string\",\"description\":\"Data type. Dimension column headers have o" +
-            "nly STRING as the data type. Metric column headers have data types for metric va" +
-            "lues such as INTEGER, DOUBLE, CURRENCY etc.\"},\"name\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"description\":\"De" +
-            "termines if Analytics data contains samples.\"},\"id\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"integer\",\"descri" +
-            "ption\":\"The maximum number of rows the response can contain, regardless of the a" +
-            "ctual number of rows returned. Its value ranges from 1 to 10,000 with a value of" +
-            " 1000 by default, or otherwise specified by the max-results query parameter.\",\"f" +
-            "ormat\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\"" +
-            ":\"analytics#gaData\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next pag" +
-            "e for this Analytics data query.\"},\"previousLink\":{\"type\":\"string\",\"description\"" +
-            ":\"Link to previous page for this Analytics data query.\"},\"profileInfo\":{\"type\":\"" +
-            "object\",\"description\":\"Information for the profile, for which the Analytics data" +
-            " was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Accou" +
-            "nt ID to which this profile belongs.\"},\"internalWebPropertyId\":{\"type\":\"string\"," +
+            "is.com/analytics/v3/\",\"basePath\":\"/analytics/v3/\",\"rootUrl\":\"https://www.googlea" +
+            "pis.com/\",\"servicePath\":\"analytics/v3/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":" +
+            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
+            "\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/" +
+            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
+            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
+            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
+            "and provides you with API access, quota, and reports. Required unless you provid" +
+            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
+            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
+            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
+            "reaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Available to use for quota purposes for server-side applications. Can " +
+            "be any arbitrary string assigned to a user, but should not exceed 40 characters." +
+            " Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"s" +
+            "tring\",\"description\":\"IP address of the site where the request originates. Use t" +
+            "his if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth" +
+            "2\":{\"scopes\":{\"https://www.googleapis.com/auth/analytics.readonly\":{\"description" +
+            "\":\"View your Google Analytics data\"}}}},\"schemas\":{\"Account\":{\"id\":\"Account\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"childLink\":{\"type\":\"object\",\"description\":\"Child lin" +
+            "k for an account entry. Points to the list of web properties for this account.\"," +
+            "\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the list of web pro" +
+            "perties for this account.\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the c" +
+            "hild link. Its value is \\\"analytics#webproperties\\\".\",\"default\":\"analytics#webpr" +
+            "operties\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time the account was crea" +
+            "ted.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Account ID.\"},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Resource type for Analytics account.\",\"def" +
+            "ault\":\"analytics#account\"},\"name\":{\"type\":\"string\",\"description\":\"Account name.\"" +
+            "},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this account.\"},\"updated\":" +
+            "{\"type\":\"string\",\"description\":\"Time the account was last modified.\",\"format\":\"d" +
+            "ate-time\"}}},\"Accounts\":{\"id\":\"Accounts\",\"type\":\"object\",\"properties\":{\"items\":{" +
+            "\"type\":\"array\",\"description\":\"A list of accounts.\",\"items\":{\"$ref\":\"Account\"}},\"" +
+            "itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of entries the" +
+            " response can contain, regardless of the actual number of entries returned. Its " +
+            "value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise spec" +
+            "ified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"str" +
+            "ing\",\"description\":\"Collection type.\",\"default\":\"analytics#accounts\"},\"nextLink\"" +
+            ":{\"type\":\"string\",\"description\":\"Next link for this account collection.\"},\"previ" +
+            "ousLink\":{\"type\":\"string\",\"description\":\"Previous link for this account collecti" +
+            "on.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting index of the en" +
+            "tries, which is 1 by default or otherwise specified by the start-index query par" +
+            "ameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The t" +
+            "otal number of results for the query, regardless of the number of results in the" +
+            " response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email I" +
+            "D of the authenticated user\"}}},\"GaData\":{\"id\":\"GaData\",\"type\":\"object\",\"propert" +
+            "ies\":{\"columnHeaders\":{\"type\":\"array\",\"description\":\"Column headers that list di" +
+            "mension names followed by the metric names. The order of dimensions and metrics " +
+            "is same as specified in the request.\",\"items\":{\"type\":\"object\",\"properties\":{\"co" +
+            "lumnType\":{\"type\":\"string\",\"description\":\"Column Type. Either DIMENSION or METRI" +
+            "C.\"},\"dataType\":{\"type\":\"string\",\"description\":\"Data type. Dimension column head" +
+            "ers have only STRING as the data type. Metric column headers have data types for" +
+            " metric values such as INTEGER, DOUBLE, CURRENCY etc.\"},\"name\":{\"type\":\"string\"," +
+            "\"description\":\"Column name.\"}}}},\"containsSampledData\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Determines if Analytics data contains samples.\"},\"id\":{\"type\":\"string\",\"" +
+            "description\":\"Unique ID for this data response.\"},\"itemsPerPage\":{\"type\":\"intege" +
+            "r\",\"description\":\"The maximum number of rows the response can contain, regardles" +
+            "s of the actual number of rows returned. Its value ranges from 1 to 10,000 with " +
+            "a value of 1000 by default, or otherwise specified by the max-results query para" +
+            "meter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\"" +
+            ",\"default\":\"analytics#gaData\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link t" +
+            "o next page for this Analytics data query.\"},\"previousLink\":{\"type\":\"string\",\"de" +
+            "scription\":\"Link to previous page for this Analytics data query.\"},\"profileInfo\"" +
+            ":{\"type\":\"object\",\"description\":\"Information for the profile, for which the Anal" +
+            "ytics data was requested.\",\"properties\":{\"accountId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Account ID to which this profile belongs.\"},\"internalWebPropertyId\":{\"type\"" +
+            ":\"string\",\"description\":\"Internal ID for the web property to which this profile " +
+            "belongs.\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"profileNam" +
+            "e\":{\"type\":\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"string\",\"d" +
+            "escription\":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Web Property ID to which this profile belongs.\"}}},\"query\":{\"type\":\"object\"" +
+            ",\"description\":\"Analytics data request query parameters.\",\"properties\":{\"dimensi" +
+            "ons\":{\"type\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end-date\":" +
+            "{\"type\":\"string\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Comma-separated list of dimension or metric filters.\"},\"ids\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"Maximum results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"array\",\"des" +
+            "cription\":\"List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segment\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":\"array\"" +
+            ",\"description\":\"List of dimensions or metrics based on which Analytics data is s" +
+            "orted.\",\"items\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"description\":\"" +
+            "Start date.\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index.\",\"form" +
+            "at\":\"int32\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows, where " +
+            "each row contains a list of dimension values followed by the metric values. The " +
+            "order of dimensions and metrics is same as specified in the request.\",\"items\":{\"" +
+            "type\":\"array\",\"items\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The to" +
+            "tal number of rows for the query, regardless of the number of rows in the respon" +
+            "se.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\":\"Tot" +
+            "al values for the requested metrics over all the results, not just the results r" +
+            "eturned in this response. The order of the metric totals is same as the metric o" +
+            "rder specified in the request.\",\"additionalProperties\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Key-value pair for the total value of a metric. Key is the metric name an" +
+            "d the value is the total value for that metric.\"}}}},\"Goal\":{\"id\":\"Goal\",\"type\":" +
+            "\"object\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to" +
+            " which this goal belongs.\"},\"active\":{\"type\":\"boolean\",\"description\":\"Determines" +
+            " whether this goal is active.\"},\"created\":{\"type\":\"string\",\"description\":\"Time t" +
+            "his goal was created.\",\"format\":\"date-time\"},\"eventDetails\":{\"type\":\"object\",\"de" +
+            "scription\":\"Details for the goal of the type EVENT.\",\"properties\":{\"eventConditi" +
+            "ons\":{\"type\":\"array\",\"description\":\"List of event conditions.\",\"items\":{\"type\":\"" +
+            "object\",\"properties\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of c" +
+            "omparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL.\"},\"comparisonVa" +
+            "lue\":{\"type\":\"string\",\"description\":\"Value used for this comparison.\",\"format\":\"" +
+            "int64\"},\"expression\":{\"type\":\"string\",\"description\":\"Expression used for this ma" +
+            "tch.\"},\"matchType\":{\"type\":\"string\",\"description\":\"Type of the match to be perfo" +
+            "rmed. Possible values are REGEXP, BEGINS_WITH, or EXACT.\"},\"type\":{\"type\":\"strin" +
+            "g\",\"description\":\"Type of this event condition. Possible values are CATEGORY, AC" +
+            "TION, LABEL, or VALUE.\"}}}},\"useEventValue\":{\"type\":\"boolean\",\"description\":\"Det" +
+            "ermines if the event value should be used as the value for this goal.\"}}},\"id\":{" +
+            "\"type\":\"string\",\"description\":\"Goal ID.\"},\"internalWebPropertyId\":{\"type\":\"strin" +
+            "g\",\"description\":\"Internal ID for the web property to which this goal belongs.\"}" +
+            ",\"kind\":{\"type\":\"string\",\"description\":\"Resource type for an Analytics goal.\",\"d" +
+            "efault\":\"analytics#goal\"},\"name\":{\"type\":\"string\",\"description\":\"Goal name.\"},\"p" +
+            "arentLink\":{\"type\":\"object\",\"description\":\"Parent link for a goal. Points to the" +
+            " profile to which this goal belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"des" +
+            "cription\":\"Link to the profile to which this goal belongs.\"},\"type\":{\"type\":\"str" +
+            "ing\",\"description\":\"Value is \\\"analytics#profile\\\".\",\"default\":\"analytics#profil" +
+            "e\"}}},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID to which this goal " +
+            "belongs.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this goal.\"},\"typ" +
+            "e\":{\"type\":\"string\",\"description\":\"Goal type. Possible values are URL_DESTINATIO" +
+            "N, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT.\"},\"updated\":{\"type\":\"string\"," +
+            "\"description\":\"Time this goal was last modified.\",\"format\":\"date-time\"},\"urlDest" +
+            "inationDetails\":{\"type\":\"object\",\"description\":\"Details for the goal of the type" +
+            " URL_DESTINATION.\",\"properties\":{\"caseSensitive\":{\"type\":\"boolean\",\"description\"" +
+            ":\"Determines if the goal URL must exactly match the capitalization of visited UR" +
+            "Ls.\"},\"firstStepRequired\":{\"type\":\"boolean\",\"description\":\"Determines if the fir" +
+            "st step in this goal is required.\"},\"matchType\":{\"type\":\"string\",\"description\":\"" +
+            "Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX.\"},\"steps" +
+            "\":{\"type\":\"array\",\"description\":\"List of steps configured for this goal funnel.\"" +
+            ",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"S" +
+            "tep name.\"},\"number\":{\"type\":\"integer\",\"description\":\"Step number.\",\"format\":\"in" +
+            "t32\"},\"url\":{\"type\":\"string\",\"description\":\"URL for this step.\"}}}},\"url\":{\"type" +
+            "\":\"string\",\"description\":\"URL for this goal.\"}}},\"value\":{\"type\":\"number\",\"descr" +
+            "iption\":\"Goal value.\",\"format\":\"float\"},\"visitNumPagesDetails\":{\"type\":\"object\"," +
+            "\"description\":\"Details for the goal of the type VISIT_NUM_PAGES.\",\"properties\":{" +
+            "\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possible va" +
+            "lues are LESS_THAN, GREATER_THAN, or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\"" +
+            ",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"}}},\"visitTimeO" +
+            "nSiteDetails\":{\"type\":\"object\",\"description\":\"Details for the goal of the type V" +
+            "ISIT_TIME_ON_SITE.\",\"properties\":{\"comparisonType\":{\"type\":\"string\",\"description" +
+            "\":\"Type of comparison. Possible values are LESS_THAN or GREATER_THAN.\"},\"compari" +
+            "sonValue\":{\"type\":\"string\",\"description\":\"Value used for this comparison.\",\"form" +
+            "at\":\"int64\"}}},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID t" +
+            "o which this goal belongs. The web property ID is of the form UA-XXXXX-YY.\"}}},\"" +
+            "Goals\":{\"id\":\"Goals\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"desc" +
+            "ription\":\"A list of goals.\",\"items\":{\"$ref\":\"Goal\"}},\"itemsPerPage\":{\"type\":\"int" +
+            "eger\",\"description\":\"The maximum number of resources the response can contain, r" +
+            "egardless of the actual number of resources returned. Its value ranges from 1 to" +
+            " 10,000 with a value of 1000 by default, or otherwise specified by the max-resul" +
+            "ts query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Co" +
+            "llection type.\",\"default\":\"analytics#goals\"},\"nextLink\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Link to next page for this goal collection.\"},\"previousLink\":{\"type\":\"st" +
+            "ring\",\"description\":\"Link to previous page for this goal collection.\"},\"startInd" +
+            "ex\":{\"type\":\"integer\",\"description\":\"The starting index of the resources, which " +
+            "is 1 by default or otherwise specified by the start-index query parameter.\",\"for" +
+            "mat\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number o" +
+            "f results for the query, regardless of the number of resources in the result.\",\"" +
+            "format\":\"int32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of the auth" +
+            "enticated user\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"properties\":{\"acco" +
+            "untId\":{\"type\":\"string\",\"description\":\"Account ID to which this profile belongs." +
+            "\"},\"childLink\":{\"type\":\"object\",\"description\":\"Child link for this profile. Poin" +
+            "ts to the list of goals for this profile.\",\"properties\":{\"href\":{\"type\":\"string\"" +
+            ",\"description\":\"Link to the list of goals for this profile.\"},\"type\":{\"type\":\"st" +
+            "ring\",\"description\":\"Value is \\\"analytics#goals\\\".\",\"default\":\"analytics#goals\"}" +
+            "}},\"created\":{\"type\":\"string\",\"description\":\"Time this profile was created.\",\"fo" +
+            "rmat\":\"date-time\"},\"currency\":{\"type\":\"string\",\"description\":\"The currency type " +
+            "associated with this profile.\"},\"defaultPage\":{\"type\":\"string\",\"description\":\"De" +
+            "fault page for this profile.\"},\"excludeQueryParameters\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The query parameters that are excluded from this profile.\"},\"id\":{\"type\"" +
+            ":\"string\",\"description\":\"Profile ID.\"},\"internalWebPropertyId\":{\"type\":\"string\"," +
             "\"description\":\"Internal ID for the web property to which this profile belongs.\"}" +
-            ",\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID.\"},\"profileName\":{\"type\"" +
-            ":\"string\",\"description\":\"Profile name.\"},\"tableId\":{\"type\":\"string\",\"description" +
-            "\":\"Table ID for profile.\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web P" +
-            "roperty ID to which this profile belongs.\"}}},\"query\":{\"type\":\"object\",\"descript" +
-            "ion\":\"Analytics data request query parameters.\",\"properties\":{\"dimensions\":{\"typ" +
-            "e\":\"string\",\"description\":\"List of analytics dimensions.\"},\"end-date\":{\"type\":\"s" +
-            "tring\",\"description\":\"End date.\"},\"filters\":{\"type\":\"string\",\"description\":\"Comm" +
-            "a-separated list of dimension or metric filters.\"},\"ids\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Unique table ID.\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maxim" +
-            "um results per page.\",\"format\":\"int32\"},\"metrics\":{\"type\":\"array\",\"description\":" +
-            "\"List of analytics metrics.\",\"items\":{\"type\":\"string\"}},\"segment\":{\"type\":\"strin" +
-            "g\",\"description\":\"Analytics advanced segment.\"},\"sort\":{\"type\":\"array\",\"descript" +
-            "ion\":\"List of dimensions or metrics based on which Analytics data is sorted.\",\"i" +
-            "tems\":{\"type\":\"string\"}},\"start-date\":{\"type\":\"string\",\"description\":\"Start date" +
-            ".\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Start index.\",\"format\":\"int32" +
-            "\"}}},\"rows\":{\"type\":\"array\",\"description\":\"Analytics data rows, where each row c" +
-            "ontains a list of dimension values followed by the metric values. The order of d" +
-            "imensions and metrics is same as specified in the request.\",\"items\":{\"type\":\"arr" +
-            "ay\",\"items\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"Link " +
-            "to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number" +
-            " of rows for the query, regardless of the number of rows in the response.\",\"form" +
-            "at\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\":\"Total values " +
-            "for the requested metrics over all the results, not just the results returned in" +
-            " this response. The order of the metric totals is same as the metric order speci" +
-            "fied in the request.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"Key" +
-            "-value pair for the total value of a metric. Key is the metric name and the valu" +
-            "e is the total value for that metric.\"}}}},\"Goal\":{\"id\":\"Goal\",\"type\":\"object\",\"" +
-            "properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Account ID to which thi" +
-            "s goal belongs.\"},\"active\":{\"type\":\"boolean\",\"description\":\"Determines whether t" +
-            "his goal is active.\"},\"created\":{\"type\":\"string\",\"description\":\"Time this goal w" +
-            "as created.\",\"format\":\"date-time\"},\"eventDetails\":{\"type\":\"object\",\"description\"" +
-            ":\"Details for the goal of the type EVENT.\",\"properties\":{\"eventConditions\":{\"typ" +
-            "e\":\"array\",\"description\":\"List of event conditions.\",\"items\":{\"type\":\"object\",\"p" +
-            "roperties\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of comparison." +
-            " Possible values are LESS_THAN, GREATER_THAN or EQUAL.\"},\"comparisonValue\":{\"typ" +
-            "e\":\"string\",\"description\":\"Value used for this comparison.\",\"format\":\"int64\"},\"e" +
-            "xpression\":{\"type\":\"string\",\"description\":\"Expression used for this match.\"},\"ma" +
-            "tchType\":{\"type\":\"string\",\"description\":\"Type of the match to be performed. Poss" +
-            "ible values are REGEXP, BEGINS_WITH, or EXACT.\"},\"type\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Type of this event condition. Possible values are CATEGORY, ACTION, LABE" +
-            "L, or VALUE.\"}}}},\"useEventValue\":{\"type\":\"boolean\",\"description\":\"Determines if" +
-            " the event value should be used as the value for this goal.\"}}},\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"Goal ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Internal ID for the web property to which this goal belongs.\"},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Resource type for an Analytics goal.\",\"default\":\"a" +
-            "nalytics#goal\"},\"name\":{\"type\":\"string\",\"description\":\"Goal name.\"},\"parentLink\"" +
-            ":{\"type\":\"object\",\"description\":\"Parent link for a goal. Points to the profile t" +
-            "o which this goal belongs.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":" +
-            "\"Link to the profile to which this goal belongs.\"},\"type\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Value is \\\"analytics#profile\\\".\",\"default\":\"analytics#profile\"}}},\"pro" +
-            "fileId\":{\"type\":\"string\",\"description\":\"Profile ID to which this goal belongs.\"}" +
-            ",\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this goal.\"},\"type\":{\"type\"" +
-            ":\"string\",\"description\":\"Goal type. Possible values are URL_DESTINATION, VISIT_T" +
-            "IME_ON_SITE, VISIT_NUM_PAGES, AND EVENT.\"},\"updated\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Time this goal was last modified.\",\"format\":\"date-time\"},\"urlDestinationDet" +
-            "ails\":{\"type\":\"object\",\"description\":\"Details for the goal of the type URL_DESTI" +
-            "NATION.\",\"properties\":{\"caseSensitive\":{\"type\":\"boolean\",\"description\":\"Determin" +
-            "es if the goal URL must exactly match the capitalization of visited URLs.\"},\"fir" +
-            "stStepRequired\":{\"type\":\"boolean\",\"description\":\"Determines if the first step in" +
-            " this goal is required.\"},\"matchType\":{\"type\":\"string\",\"description\":\"Match type" +
-            " for the goal URL. Possible values are HEAD, EXACT, or REGEX.\"},\"steps\":{\"type\":" +
-            "\"array\",\"description\":\"List of steps configured for this goal funnel.\",\"items\":{" +
-            "\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Step name.\"" +
-            "},\"number\":{\"type\":\"integer\",\"description\":\"Step number.\",\"format\":\"int32\"},\"url" +
-            "\":{\"type\":\"string\",\"description\":\"URL for this step.\"}}}},\"url\":{\"type\":\"string\"" +
-            ",\"description\":\"URL for this goal.\"}}},\"value\":{\"type\":\"number\",\"description\":\"G" +
-            "oal value.\",\"format\":\"float\"},\"visitNumPagesDetails\":{\"type\":\"object\",\"descripti" +
-            "on\":\"Details for the goal of the type VISIT_NUM_PAGES.\",\"properties\":{\"compariso" +
-            "nType\":{\"type\":\"string\",\"description\":\"Type of comparison. Possible values are L" +
-            "ESS_THAN, GREATER_THAN, or EQUAL.\"},\"comparisonValue\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Value used for this comparison.\",\"format\":\"int64\"}}},\"visitTimeOnSiteDetai" +
-            "ls\":{\"type\":\"object\",\"description\":\"Details for the goal of the type VISIT_TIME_" +
-            "ON_SITE.\",\"properties\":{\"comparisonType\":{\"type\":\"string\",\"description\":\"Type of" +
-            " comparison. Possible values are LESS_THAN or GREATER_THAN.\"},\"comparisonValue\":" +
-            "{\"type\":\"string\",\"description\":\"Value used for this comparison.\",\"format\":\"int64" +
-            "\"}}},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID to which th" +
-            "is goal belongs. The web property ID is of the form UA-XXXXX-YY.\"}}},\"Goals\":{\"i" +
-            "d\":\"Goals\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"" +
-            "A list of goals.\",\"items\":{\"$ref\":\"Goal\"}},\"itemsPerPage\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The maximum number of resources the response can contain, regardless " +
-            "of the actual number of resources returned. Its value ranges from 1 to 10,000 wi" +
-            "th a value of 1000 by default, or otherwise specified by the max-results query p" +
-            "arameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection t" +
-            "ype.\",\"default\":\"analytics#goals\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Li" +
-            "nk to next page for this goal collection.\"},\"previousLink\":{\"type\":\"string\",\"des" +
-            "cription\":\"Link to previous page for this goal collection.\"},\"startIndex\":{\"type" +
-            "\":\"integer\",\"description\":\"The starting index of the resources, which is 1 by de" +
-            "fault or otherwise specified by the start-index query parameter.\",\"format\":\"int3" +
-            "2\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number of results " +
-            "for the query, regardless of the number of resources in the result.\",\"format\":\"i" +
-            "nt32\"},\"username\":{\"type\":\"string\",\"description\":\"Email ID of the authenticated " +
-            "user\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"properties\":{\"accountId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Account ID to which this profile belongs.\"},\"childL" +
-            "ink\":{\"type\":\"object\",\"description\":\"Child link for this profile. Points to the " +
-            "list of goals for this profile.\",\"properties\":{\"href\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Link to the list of goals for this profile.\"},\"type\":{\"type\":\"string\",\"des" +
-            "cription\":\"Value is \\\"analytics#goals\\\".\",\"default\":\"analytics#goals\"}}},\"create" +
-            "d\":{\"type\":\"string\",\"description\":\"Time this profile was created.\",\"format\":\"dat" +
-            "e-time\"},\"currency\":{\"type\":\"string\",\"description\":\"The currency type associated" +
-            " with this profile.\"},\"defaultPage\":{\"type\":\"string\",\"description\":\"Default page" +
-            " for this profile.\"},\"excludeQueryParameters\":{\"type\":\"string\",\"description\":\"Th" +
-            "e query parameters that are excluded from this profile.\"},\"id\":{\"type\":\"string\"," +
-            "\"description\":\"Profile ID.\"},\"internalWebPropertyId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Internal ID for the web property to which this profile belongs.\"},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"Resource type for Analytics profile.\",\"default\":\"a" +
-            "nalytics#profile\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this profile.\"" +
-            "},\"parentLink\":{\"type\":\"object\",\"description\":\"Parent link for this profile. Poi" +
-            "nts to the web property to which this profile belongs.\",\"properties\":{\"href\":{\"t" +
-            "ype\":\"string\",\"description\":\"Link to the web property to which this profile belo" +
-            "ngs.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#webproperty\\\"" +
-            ".\",\"default\":\"analytics#webproperty\"}}},\"selfLink\":{\"type\":\"string\",\"description" +
-            "\":\"Link for this profile.\"},\"siteSearchCategoryParameters\":{\"type\":\"string\",\"des" +
-            "cription\":\"Site search category parameters for this profile.\"},\"siteSearchQueryP" +
-            "arameters\":{\"type\":\"string\",\"description\":\"The site search query parameters for " +
-            "this profile.\"},\"timezone\":{\"type\":\"string\",\"description\":\"Time zone for which t" +
-            "his profile has been configured.\"},\"updated\":{\"type\":\"string\",\"description\":\"Tim" +
-            "e this profile was last modified.\",\"format\":\"date-time\"},\"webPropertyId\":{\"type\"" +
-            ":\"string\",\"description\":\"Web property ID of the form UA-XXXXX-YY to which this p" +
-            "rofile belongs.\"}}},\"Profiles\":{\"id\":\"Profiles\",\"type\":\"object\",\"properties\":{\"i" +
-            "tems\":{\"type\":\"array\",\"description\":\"A list of profiles.\",\"items\":{\"$ref\":\"Profi" +
-            "le\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum number of reso" +
-            "urces the response can contain, regardless of the actual number of resources ret" +
-            "urned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or oth" +
-            "erwise specified by the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#profiles\"}" +
-            ",\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page for this profile c" +
-            "ollection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous pag" +
-            "e for this profile collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"T" +
-            "he starting index of the resources, which is 1 by default or otherwise specified" +
-            " by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"" +
-            "integer\",\"description\":\"The total number of results for the query, regardless of" +
-            " the number of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"s" +
-            "tring\",\"description\":\"Email ID of the authenticated user\"}}},\"Segment\":{\"id\":\"Se" +
-            "gment\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"description\":\"T" +
-            "ime the advanced segment was created.\",\"format\":\"date-time\"},\"definition\":{\"type" +
-            "\":\"string\",\"description\":\"Advanced segment definition.\"},\"id\":{\"type\":\"string\",\"" +
-            "description\":\"Advanced segment ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Reso" +
-            "urce type for Analytics advanced segment.\",\"default\":\"analytics#segment\"},\"name\"" +
-            ":{\"type\":\"string\",\"description\":\"Advanced segment name.\"},\"segmentId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Segment ID. Can be used with the \'segment\' parameter in Da" +
-            "ta Feed.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this advanced seg" +
-            "ment.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time the advanced segment was " +
-            "last modified.\",\"format\":\"date-time\"}}},\"Segments\":{\"id\":\"Segments\",\"type\":\"obje" +
-            "ct\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of advanced segm" +
-            "ents.\",\"items\":{\"$ref\":\"Segment\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description" +
-            "\":\"The maximum number of resources the response can contain, regardless of the a" +
-            "ctual number of resources returned. Its value ranges from 1 to 10,000 with a val" +
-            "ue of 1000 by default, or otherwise specified by the max-results query parameter" +
-            ".\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection type for " +
-            "advanced segments.\",\"default\":\"analytics#segments\"},\"nextLink\":{\"type\":\"string\"," +
-            "\"description\":\"Link to next page for this advanced segment collection.\"},\"previo" +
-            "usLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this advanced " +
-            "segment collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting" +
-            " index of the resources, which is 1 by default or otherwise specified by the sta" +
-            "rt-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The total number of results for the query, regardless of the number" +
-            " of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"des" +
-            "cription\":\"Email ID of the authenticated user\"}}},\"Webproperties\":{\"id\":\"Webprop" +
-            "erties\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A l" +
-            "ist of web properties.\",\"items\":{\"$ref\":\"Webproperty\"}},\"itemsPerPage\":{\"type\":\"" +
-            "integer\",\"description\":\"The maximum number of resources the response can contain" +
-            ", regardless of the actual number of resources returned. Its value ranges from 1" +
-            " to 10,000 with a value of 1000 by default, or otherwise specified by the max-re" +
-            "sults query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Collection type.\",\"default\":\"analytics#webproperties\"},\"nextLink\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Link to next page for this web property collection.\"},\"previo" +
-            "usLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this web prope" +
-            "rty collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The starting ind" +
-            "ex of the resources, which is 1 by default or otherwise specified by the start-i" +
-            "ndex query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The total number of results for the query, regardless of the number of " +
-            "results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Email ID of the authenticated user\"}}},\"Webproperty\":{\"id\":\"Webproperty\"," +
-            "\"type\":\"object\",\"properties\":{\"accountId\":{\"type\":\"string\",\"description\":\"Accoun" +
-            "t ID to which this web property belongs.\"},\"childLink\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Child link for this web property. Points to the list of profiles for this" +
-            " web property.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"Link to the" +
-            " list of profiles for this web property.\"},\"type\":{\"type\":\"string\",\"description\"" +
-            ":\"Type of the parent link. Its value is \\\"analytics#profiles\\\".\",\"default\":\"anal" +
-            "ytics#profiles\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this web prope" +
-            "rty was created.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Web" +
-            " property ID of the form UA-XXXXX-YY.\"},\"internalWebPropertyId\":{\"type\":\"string\"" +
-            ",\"description\":\"Internal ID for this web property.\"},\"kind\":{\"type\":\"string\",\"de" +
-            "scription\":\"Resource type for Analytics WebProperty.\",\"default\":\"analytics#webpr" +
-            "operty\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this web property.\"},\"pa" +
-            "rentLink\":{\"type\":\"object\",\"description\":\"Parent link for this web property. Poi" +
-            "nts to the account to which this web property belongs.\",\"properties\":{\"href\":{\"t" +
-            "ype\":\"string\",\"description\":\"Link to the account for this web property.\"},\"type\"" +
-            ":{\"type\":\"string\",\"description\":\"Type of the parent link. Its value is \\\"analyti" +
-            "cs#account\\\".\",\"default\":\"analytics#account\"}}},\"selfLink\":{\"type\":\"string\",\"des" +
-            "cription\":\"Link for this web property.\"},\"updated\":{\"type\":\"string\",\"description" +
-            "\":\"Time this web property was last modified.\",\"format\":\"date-time\"},\"websiteUrl\"" +
-            ":{\"type\":\"string\",\"description\":\"Website url for this web property.\"}}}},\"resour" +
-            "ces\":{\"data\":{\"resources\":{\"ga\":{\"methods\":{\"get\":{\"id\":\"analytics.data.ga.get\"," +
-            "\"path\":\"data/ga\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics data for a " +
-            "profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A comma-sep" +
-            "arated list of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pattern\":\"(ga" +
-            ":.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"End date f" +
-            "or fetching Analytics data. All requests should specify an end date formatted as" +
-            " YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":" +
-            "\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-separated list of dim" +
-            "ension or metric filters to be applied to Analytics data.\",\"pattern\":\"ga:.+\",\"lo" +
-            "cation\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID for retri" +
-            "eving Analytics data. Table ID is of the form ga:XXXX, where XXXX is the Analyti" +
-            "cs profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"query\"},\"max-r" +
-            "esults\":{\"type\":\"integer\",\"description\":\"The maximum number of entries to includ" +
-            "e in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type\":\"string\"" +
-            ",\"description\":\"A comma-separated list of Analytics metrics. E.g., \'ga:visits,ga" +
-            ":pageviews\'. At least one metric must be specified.\",\"required\":true,\"pattern\":\"" +
-            "ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"An Analytic" +
-            "s advanced segment to be applied to data.\",\"location\":\"query\"},\"sort\":{\"type\":\"s" +
-            "tring\",\"description\":\"A comma-separated list of dimensions or metrics that deter" +
-            "mine the sort order for Analytics data.\",\"pattern\":\"(-)?ga:.+\",\"location\":\"query" +
-            "\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start date for fetching Analytic" +
-            "s data. All requests should specify a start date formatted as YYYY-MM-DD.\",\"requ" +
-            "ired\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"},\"start-ind" +
-            "ex\":{\"type\":\"integer\",\"description\":\"An index of the first entity to retrieve. U" +
-            "se this parameter as a pagination mechanism along with the max-results parameter" +
-            ".\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"ids\",\"" +
-            "start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"GaData\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/analytics.readonly\"]}}}}},\"management\":{\"resources\":{\"" +
-            "accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.management.accounts.list\",\"path\":\"" +
-            "management/accounts\",\"httpMethod\":\"GET\",\"description\":\"Lists all accounts to whi" +
-            "ch the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"The maximum number of accounts to include in this response.\",\"format\":\"int" +
-            "32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index " +
-            "of the first account to retrieve. Use this parameter as a pagination mechanism a" +
-            "long with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":" +
-            "\"query\"}},\"response\":{\"$ref\":\"Accounts\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/analytics.readonly\"]}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analytics.manageme" +
-            "nt.goals.list\",\"path\":\"management/accounts/{accountId}/webproperties/{webPropert" +
-            "yId}/profiles/{profileId}/goals\",\"httpMethod\":\"GET\",\"description\":\"Lists goals t" +
-            "o which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Account ID to retrieve goals for. Can either be a specific account ID or" +
-            " \'~all\', which refers to all the accounts that user has access to.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximu" +
-            "m number of goals to include in this response.\",\"format\":\"int32\",\"location\":\"que" +
-            "ry\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID to retrieve goals fo" +
-            "r. Can either be a specific profile ID or \'~all\', which refers to all the profil" +
-            "es that user has access to.\",\"required\":true,\"location\":\"path\"},\"start-index\":{\"" +
-            "type\":\"integer\",\"description\":\"An index of the first goal to retrieve. Use this " +
-            "parameter as a pagination mechanism along with the max-results parameter.\",\"form" +
-            "at\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"" +
-            "description\":\"Web property ID to retrieve goals for. Can either be a specific we" +
-            "b property ID or \'~all\', which refers to all the web properties that user has ac" +
-            "cess to.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"web" +
-            "PropertyId\",\"profileId\"],\"response\":{\"$ref\":\"Goals\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/analytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":{\"id\":\"ana" +
-            "lytics.management.profiles.list\",\"path\":\"management/accounts/{accountId}/webprop" +
-            "erties/{webPropertyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lists profile" +
-            "s to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Account ID for the profiles to retrieve. Can either be a specific acc" +
-            "ount ID or \'~all\', which refers to all the accounts to which the user has access" +
-            ".\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The maximum number of profiles to include in this response.\",\"format\":\"int3" +
-            "2\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"An index o" +
-            "f the first entity to retrieve. Use this parameter as a pagination mechanism alo" +
-            "ng with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"q" +
-            "uery\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID for the p" +
-            "rofiles to retrieve. Can either be a specific web property ID or \'~all\', which r" +
-            "efers to all the web properties to which the user has access.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"response\":{\"$" +
-            "ref\":\"Profiles\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics.readonly\"]" +
-            "}}},\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments.list\",\"pa" +
-            "th\":\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists advanced segme" +
+            ",\"kind\":{\"type\":\"string\",\"description\":\"Resource type for Analytics profile.\",\"d" +
+            "efault\":\"analytics#profile\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this" +
+            " profile.\"},\"parentLink\":{\"type\":\"object\",\"description\":\"Parent link for this pr" +
+            "ofile. Points to the web property to which this profile belongs.\",\"properties\":{" +
+            "\"href\":{\"type\":\"string\",\"description\":\"Link to the web property to which this pr" +
+            "ofile belongs.\"},\"type\":{\"type\":\"string\",\"description\":\"Value is \\\"analytics#web" +
+            "property\\\".\",\"default\":\"analytics#webproperty\"}}},\"selfLink\":{\"type\":\"string\",\"d" +
+            "escription\":\"Link for this profile.\"},\"siteSearchCategoryParameters\":{\"type\":\"st" +
+            "ring\",\"description\":\"Site search category parameters for this profile.\"},\"siteSe" +
+            "archQueryParameters\":{\"type\":\"string\",\"description\":\"The site search query param" +
+            "eters for this profile.\"},\"timezone\":{\"type\":\"string\",\"description\":\"Time zone f" +
+            "or which this profile has been configured.\"},\"updated\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Time this profile was last modified.\",\"format\":\"date-time\"},\"webPropertyI" +
+            "d\":{\"type\":\"string\",\"description\":\"Web property ID of the form UA-XXXXX-YY to wh" +
+            "ich this profile belongs.\"}}},\"Profiles\":{\"id\":\"Profiles\",\"type\":\"object\",\"prope" +
+            "rties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of profiles.\",\"items\":{\"$r" +
+            "ef\":\"Profile\"}},\"itemsPerPage\":{\"type\":\"integer\",\"description\":\"The maximum numb" +
+            "er of resources the response can contain, regardless of the actual number of res" +
+            "ources returned. Its value ranges from 1 to 10,000 with a value of 1000 by defau" +
+            "lt, or otherwise specified by the max-results query parameter.\",\"format\":\"int32\"" +
+            "},\"kind\":{\"type\":\"string\",\"description\":\"Collection type.\",\"default\":\"analytics#" +
+            "profiles\"},\"nextLink\":{\"type\":\"string\",\"description\":\"Link to next page for this" +
+            " profile collection.\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to pr" +
+            "evious page for this profile collection.\"},\"startIndex\":{\"type\":\"integer\",\"descr" +
+            "iption\":\"The starting index of the resources, which is 1 by default or otherwise" +
+            " specified by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\"" +
+            ":{\"type\":\"integer\",\"description\":\"The total number of results for the query, reg" +
+            "ardless of the number of results in the response.\",\"format\":\"int32\"},\"username\":" +
+            "{\"type\":\"string\",\"description\":\"Email ID of the authenticated user\"}}},\"Segment\"" +
+            ":{\"id\":\"Segment\",\"type\":\"object\",\"properties\":{\"created\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Time the advanced segment was created.\",\"format\":\"date-time\"},\"definiti" +
+            "on\":{\"type\":\"string\",\"description\":\"Advanced segment definition.\"},\"id\":{\"type\":" +
+            "\"string\",\"description\":\"Advanced segment ID.\"},\"kind\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Resource type for Analytics advanced segment.\",\"default\":\"analytics#segmen" +
+            "t\"},\"name\":{\"type\":\"string\",\"description\":\"Advanced segment name.\"},\"segmentId\":" +
+            "{\"type\":\"string\",\"description\":\"Segment ID. Can be used with the \'segment\' param" +
+            "eter in Data Feed.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"Link for this ad" +
+            "vanced segment.\"},\"updated\":{\"type\":\"string\",\"description\":\"Time the advanced se" +
+            "gment was last modified.\",\"format\":\"date-time\"}}},\"Segments\":{\"id\":\"Segments\",\"t" +
+            "ype\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of adv" +
+            "anced segments.\",\"items\":{\"$ref\":\"Segment\"}},\"itemsPerPage\":{\"type\":\"integer\",\"d" +
+            "escription\":\"The maximum number of resources the response can contain, regardles" +
+            "s of the actual number of resources returned. Its value ranges from 1 to 10,000 " +
+            "with a value of 1000 by default, or otherwise specified by the max-results query" +
+            " parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Collection" +
+            " type for advanced segments.\",\"default\":\"analytics#segments\"},\"nextLink\":{\"type\"" +
+            ":\"string\",\"description\":\"Link to next page for this advanced segment collection." +
+            "\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this" +
+            " advanced segment collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Th" +
+            "e starting index of the resources, which is 1 by default or otherwise specified " +
+            "by the start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"i" +
+            "nteger\",\"description\":\"The total number of results for the query, regardless of " +
+            "the number of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"st" +
+            "ring\",\"description\":\"Email ID of the authenticated user\"}}},\"Webproperties\":{\"id" +
+            "\":\"Webproperties\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"A list of web properties.\",\"items\":{\"$ref\":\"Webproperty\"}},\"itemsPerPage\"" +
+            ":{\"type\":\"integer\",\"description\":\"The maximum number of resources the response c" +
+            "an contain, regardless of the actual number of resources returned. Its value ran" +
+            "ges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by " +
+            "the max-results query parameter.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"des" +
+            "cription\":\"Collection type.\",\"default\":\"analytics#webproperties\"},\"nextLink\":{\"t" +
+            "ype\":\"string\",\"description\":\"Link to next page for this web property collection." +
+            "\"},\"previousLink\":{\"type\":\"string\",\"description\":\"Link to previous page for this" +
+            " web property collection.\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"The st" +
+            "arting index of the resources, which is 1 by default or otherwise specified by t" +
+            "he start-index query parameter.\",\"format\":\"int32\"},\"totalResults\":{\"type\":\"integ" +
+            "er\",\"description\":\"The total number of results for the query, regardless of the " +
+            "number of results in the response.\",\"format\":\"int32\"},\"username\":{\"type\":\"string" +
+            "\",\"description\":\"Email ID of the authenticated user\"}}},\"Webproperty\":{\"id\":\"Web" +
+            "property\",\"type\":\"object\",\"properties\":{\"accountId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Account ID to which this web property belongs.\"},\"childLink\":{\"type\":\"object" +
+            "\",\"description\":\"Child link for this web property. Points to the list of profile" +
+            "s for this web property.\",\"properties\":{\"href\":{\"type\":\"string\",\"description\":\"L" +
+            "ink to the list of profiles for this web property.\"},\"type\":{\"type\":\"string\",\"de" +
+            "scription\":\"Type of the parent link. Its value is \\\"analytics#profiles\\\".\",\"defa" +
+            "ult\":\"analytics#profiles\"}}},\"created\":{\"type\":\"string\",\"description\":\"Time this" +
+            " web property was created.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Web property ID of the form UA-XXXXX-YY.\"},\"internalWebPropertyId\":{\"type" +
+            "\":\"string\",\"description\":\"Internal ID for this web property.\"},\"kind\":{\"type\":\"s" +
+            "tring\",\"description\":\"Resource type for Analytics WebProperty.\",\"default\":\"analy" +
+            "tics#webproperty\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this web prope" +
+            "rty.\"},\"parentLink\":{\"type\":\"object\",\"description\":\"Parent link for this web pro" +
+            "perty. Points to the account to which this web property belongs.\",\"properties\":{" +
+            "\"href\":{\"type\":\"string\",\"description\":\"Link to the account for this web property" +
+            ".\"},\"type\":{\"type\":\"string\",\"description\":\"Type of the parent link. Its value is" +
+            " \\\"analytics#account\\\".\",\"default\":\"analytics#account\"}}},\"selfLink\":{\"type\":\"st" +
+            "ring\",\"description\":\"Link for this web property.\"},\"updated\":{\"type\":\"string\",\"d" +
+            "escription\":\"Time this web property was last modified.\",\"format\":\"date-time\"},\"w" +
+            "ebsiteUrl\":{\"type\":\"string\",\"description\":\"Website url for this web property.\"}}" +
+            "}},\"resources\":{\"data\":{\"resources\":{\"ga\":{\"methods\":{\"get\":{\"id\":\"analytics.dat" +
+            "a.ga.get\",\"path\":\"data/ga\",\"httpMethod\":\"GET\",\"description\":\"Returns Analytics d" +
+            "ata for a profile.\",\"parameters\":{\"dimensions\":{\"type\":\"string\",\"description\":\"A" +
+            " comma-separated list of Analytics dimensions. E.g., \'ga:browser,ga:city\'.\",\"pat" +
+            "tern\":\"(ga:.+)?\",\"location\":\"query\"},\"end-date\":{\"type\":\"string\",\"description\":\"" +
+            "End date for fetching Analytics data. All requests should specify an end date fo" +
+            "rmatted as YYYY-MM-DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"" +
+            "location\":\"query\"},\"filters\":{\"type\":\"string\",\"description\":\"A comma-separated l" +
+            "ist of dimension or metric filters to be applied to Analytics data.\",\"pattern\":\"" +
+            "ga:.+\",\"location\":\"query\"},\"ids\":{\"type\":\"string\",\"description\":\"Unique table ID" +
+            " for retrieving Analytics data. Table ID is of the form ga:XXXX, where XXXX is t" +
+            "he Analytics profile ID.\",\"required\":true,\"pattern\":\"ga:[0-9]+\",\"location\":\"quer" +
+            "y\"},\"max-results\":{\"type\":\"integer\",\"description\":\"The maximum number of entries" +
+            " to include in this feed.\",\"format\":\"int32\",\"location\":\"query\"},\"metrics\":{\"type" +
+            "\":\"string\",\"description\":\"A comma-separated list of Analytics metrics. E.g., \'ga" +
+            ":visits,ga:pageviews\'. At least one metric must be specified.\",\"required\":true,\"" +
+            "pattern\":\"ga:.+\",\"location\":\"query\"},\"segment\":{\"type\":\"string\",\"description\":\"A" +
+            "n Analytics advanced segment to be applied to data.\",\"location\":\"query\"},\"sort\":" +
+            "{\"type\":\"string\",\"description\":\"A comma-separated list of dimensions or metrics " +
+            "that determine the sort order for Analytics data.\",\"pattern\":\"(-)?ga:.+\",\"locati" +
+            "on\":\"query\"},\"start-date\":{\"type\":\"string\",\"description\":\"Start date for fetchin" +
+            "g Analytics data. All requests should specify a start date formatted as YYYY-MM-" +
+            "DD.\",\"required\":true,\"pattern\":\"[0-9]{4}-[0-9]{2}-[0-9]{2}\",\"location\":\"query\"}," +
+            "\"start-index\":{\"type\":\"integer\",\"description\":\"An index of the first entity to r" +
+            "etrieve. Use this parameter as a pagination mechanism along with the max-results" +
+            " parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"parameterOrder" +
+            "\":[\"ids\",\"start-date\",\"end-date\",\"metrics\"],\"response\":{\"$ref\":\"GaData\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/analytics.readonly\"]}}}}},\"management\":{\"res" +
+            "ources\":{\"accounts\":{\"methods\":{\"list\":{\"id\":\"analytics.management.accounts.list" +
+            "\",\"path\":\"management/accounts\",\"httpMethod\":\"GET\",\"description\":\"Lists all accou" +
             "nts to which the user has access.\",\"parameters\":{\"max-results\":{\"type\":\"integer\"" +
-            ",\"description\":\"The maximum number of advanced segments to include in this respo" +
-            "nse.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"An index of the first advanced segment to retrieve. Use this parameter" +
-            " as a pagination mechanism along with the max-results parameter.\",\"format\":\"int3" +
-            "2\",\"minimum\":\"1\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Segments\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties\":{\"method" +
-            "s\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"management/ac" +
-            "counts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Lists web pr" +
-            "operties to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Account ID to retrieve web properties for. Can either be a spe" +
-            "cific account ID or \'~all\', which refers to all the accounts that user has acces" +
-            "s to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The maximum number of web properties to include in this response.\",\"for" +
+            ",\"description\":\"The maximum number of accounts to include in this response.\",\"fo" +
+            "rmat\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":" +
+            "\"An index of the first account to retrieve. Use this parameter as a pagination m" +
+            "echanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"" +
+            "location\":\"query\"}},\"response\":{\"$ref\":\"Accounts\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/analytics.readonly\"]}}},\"goals\":{\"methods\":{\"list\":{\"id\":\"analytic" +
+            "s.management.goals.list\",\"path\":\"management/accounts/{accountId}/webproperties/{" +
+            "webPropertyId}/profiles/{profileId}/goals\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
+            "ts goals to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"strin" +
+            "g\",\"description\":\"Account ID to retrieve goals for. Can either be a specific acc" +
+            "ount ID or \'~all\', which refers to all the accounts that user has access to.\",\"r" +
+            "equired\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\",\"description\":\"" +
+            "The maximum number of goals to include in this response.\",\"format\":\"int32\",\"loca" +
+            "tion\":\"query\"},\"profileId\":{\"type\":\"string\",\"description\":\"Profile ID to retriev" +
+            "e goals for. Can either be a specific profile ID or \'~all\', which refers to all " +
+            "the profiles that user has access to.\",\"required\":true,\"location\":\"path\"},\"start" +
+            "-index\":{\"type\":\"integer\",\"description\":\"An index of the first goal to retrieve." +
+            " Use this parameter as a pagination mechanism along with the max-results paramet" +
+            "er.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"webPropertyId\":{\"type\":" +
+            "\"string\",\"description\":\"Web property ID to retrieve goals for. Can either be a s" +
+            "pecific web property ID or \'~all\', which refers to all the web properties that u" +
+            "ser has access to.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"accou" +
+            "ntId\",\"webPropertyId\",\"profileId\"],\"response\":{\"$ref\":\"Goals\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/analytics.readonly\"]}}},\"profiles\":{\"methods\":{\"list\":" +
+            "{\"id\":\"analytics.management.profiles.list\",\"path\":\"management/accounts/{accountI" +
+            "d}/webproperties/{webPropertyId}/profiles\",\"httpMethod\":\"GET\",\"description\":\"Lis" +
+            "ts profiles to which the user has access.\",\"parameters\":{\"accountId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Account ID for the profiles to retrieve. Can either be a sp" +
+            "ecific account ID or \'~all\', which refers to all the accounts to which the user " +
+            "has access.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integer\"," +
+            "\"description\":\"The maximum number of profiles to include in this response.\",\"for" +
             "mat\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"" +
             "An index of the first entity to retrieve. Use this parameter as a pagination mec" +
             "hanism along with the max-results parameter.\",\"format\":\"int32\",\"minimum\":\"1\",\"lo" +
-            "cation\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"response\":{\"$ref\":\"Webproperti" +
-            "es\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics.readonly\"]}}}}}}}";
+            "cation\":\"query\"},\"webPropertyId\":{\"type\":\"string\",\"description\":\"Web property ID" +
+            " for the profiles to retrieve. Can either be a specific web property ID or \'~all" +
+            "\', which refers to all the web properties to which the user has access.\",\"requir" +
+            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"accountId\",\"webPropertyId\"],\"res" +
+            "ponse\":{\"$ref\":\"Profiles\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics." +
+            "readonly\"]}}},\"segments\":{\"methods\":{\"list\":{\"id\":\"analytics.management.segments" +
+            ".list\",\"path\":\"management/segments\",\"httpMethod\":\"GET\",\"description\":\"Lists adva" +
+            "nced segments to which the user has access.\",\"parameters\":{\"max-results\":{\"type\"" +
+            ":\"integer\",\"description\":\"The maximum number of advanced segments to include in " +
+            "this response.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"inte" +
+            "ger\",\"description\":\"An index of the first advanced segment to retrieve. Use this" +
+            " parameter as a pagination mechanism along with the max-results parameter.\",\"for" +
+            "mat\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Segments\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/analytics.readonly\"]}}},\"webproperties" +
+            "\":{\"methods\":{\"list\":{\"id\":\"analytics.management.webproperties.list\",\"path\":\"man" +
+            "agement/accounts/{accountId}/webproperties\",\"httpMethod\":\"GET\",\"description\":\"Li" +
+            "sts web properties to which the user has access.\",\"parameters\":{\"accountId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Account ID to retrieve web properties for. Can eithe" +
+            "r be a specific account ID or \'~all\', which refers to all the accounts that user" +
+            " has access to.\",\"required\":true,\"location\":\"path\"},\"max-results\":{\"type\":\"integ" +
+            "er\",\"description\":\"The maximum number of web properties to include in this respo" +
+            "nse.\",\"format\":\"int32\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"An index of the first entity to retrieve. Use this parameter as a pagi" +
+            "nation mechanism along with the max-results parameter.\",\"format\":\"int32\",\"minimu" +
+            "m\":\"1\",\"location\":\"query\"}},\"parameterOrder\":[\"accountId\"],\"response\":{\"$ref\":\"W" +
+            "ebproperties\"},\"scopes\":[\"https://www.googleapis.com/auth/analytics.readonly\"]}}" +
+            "}}}}}";
         
         private const string Version = "v3";
         
@@ -2756,13 +2758,13 @@ namespace Google.Apis.Analytics.v3 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected AnalyticsService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.data = new DataResource(this);
-            this.management = new ManagementResource(this);
+            this._data = new DataResource(this);
+            this._management = new ManagementResource(this);
         }
         
         public AnalyticsService() : 
@@ -2770,22 +2772,22 @@ namespace Google.Apis.Analytics.v3 {
         }
         
         public AnalyticsService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AnalyticsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(AnalyticsService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AnalyticsService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AnalyticsService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -2819,16 +2821,16 @@ namespace Google.Apis.Analytics.v3 {
         
         private const string Resource = "data";
         
-        private GaResource ga;
+        private GaResource _ga;
         
         public DataResource(AnalyticsService service) {
             this.service = service;
-            this.ga = new GaResource(service);
+            this._ga = new GaResource(service);
         }
         
         public virtual GaResource Ga {
             get {
-                return this.ga;
+                return this._ga;
             }
         }
         
@@ -2853,59 +2855,59 @@ namespace Google.Apis.Analytics.v3 {
             
             public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.GaData> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string dimensions;
+                private string _dimensions;
                 
-                private string endDate;
+                private string _endDate;
                 
-                private string filters;
+                private string _filters;
                 
-                private string ids;
+                private string _ids;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string metrics;
+                private string _metrics;
                 
-                private string segment;
+                private string _segment;
                 
-                private string sort;
+                private string _sort;
                 
-                private string startDate;
+                private string _startDate;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public GetRequest(Google.Apis.Discovery.IRequestProvider service, string ids, string startDate, string endDate, string metrics) : 
                         base(service) {
-                    this.ids = ids;
-                    this.startDate = startDate;
-                    this.endDate = endDate;
-                    this.metrics = metrics;
+                    this._ids = ids;
+                    this._startDate = startDate;
+                    this._endDate = endDate;
+                    this._metrics = metrics;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2913,10 +2915,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -2924,10 +2926,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("dimensions")]
                 public virtual string Dimensions {
                     get {
-                        return this.dimensions;
+                        return this._dimensions;
                     }
                     set {
-                        this.dimensions = value;
+                        this._dimensions = value;
                     }
                 }
                 
@@ -2935,7 +2937,7 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("end-date")]
                 public virtual string EndDate {
                     get {
-                        return this.endDate;
+                        return this._endDate;
                     }
                 }
                 
@@ -2943,10 +2945,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("filters")]
                 public virtual string Filters {
                     get {
-                        return this.filters;
+                        return this._filters;
                     }
                     set {
-                        this.filters = value;
+                        this._filters = value;
                     }
                 }
                 
@@ -2954,18 +2956,18 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("ids")]
                 public virtual string Ids {
                     get {
-                        return this.ids;
+                        return this._ids;
                     }
                 }
                 
                 /// <summary>The maximum number of entries to include in this feed.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -2973,7 +2975,7 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("metrics")]
                 public virtual string Metrics {
                     get {
-                        return this.metrics;
+                        return this._metrics;
                     }
                 }
                 
@@ -2981,10 +2983,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("segment")]
                 public virtual string Segment {
                     get {
-                        return this.segment;
+                        return this._segment;
                     }
                     set {
-                        this.segment = value;
+                        this._segment = value;
                     }
                 }
                 
@@ -2992,10 +2994,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("sort")]
                 public virtual string Sort {
                     get {
-                        return this.sort;
+                        return this._sort;
                     }
                     set {
-                        this.sort = value;
+                        this._sort = value;
                     }
                 }
                 
@@ -3003,18 +3005,18 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("start-date")]
                 public virtual string StartDate {
                     get {
-                        return this.startDate;
+                        return this._startDate;
                     }
                 }
                 
                 /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3039,52 +3041,52 @@ namespace Google.Apis.Analytics.v3 {
         
         private const string Resource = "management";
         
-        private AccountsResource accounts;
+        private AccountsResource _accounts;
         
-        private GoalsResource goals;
+        private GoalsResource _goals;
         
-        private ProfilesResource profiles;
+        private ProfilesResource _profiles;
         
-        private SegmentsResource segments;
+        private SegmentsResource _segments;
         
-        private WebpropertiesResource webproperties;
+        private WebpropertiesResource _webproperties;
         
         public ManagementResource(AnalyticsService service) {
             this.service = service;
-            this.accounts = new AccountsResource(service);
-            this.goals = new GoalsResource(service);
-            this.profiles = new ProfilesResource(service);
-            this.segments = new SegmentsResource(service);
-            this.webproperties = new WebpropertiesResource(service);
+            this._accounts = new AccountsResource(service);
+            this._goals = new GoalsResource(service);
+            this._profiles = new ProfilesResource(service);
+            this._segments = new SegmentsResource(service);
+            this._webproperties = new WebpropertiesResource(service);
         }
         
         public virtual AccountsResource Accounts {
             get {
-                return this.accounts;
+                return this._accounts;
             }
         }
         
         public virtual GoalsResource Goals {
             get {
-                return this.goals;
+                return this._goals;
             }
         }
         
         public virtual ProfilesResource Profiles {
             get {
-                return this.profiles;
+                return this._profiles;
             }
         }
         
         public virtual SegmentsResource Segments {
             get {
-                return this.segments;
+                return this._segments;
             }
         }
         
         public virtual WebpropertiesResource Webproperties {
             get {
-                return this.webproperties;
+                return this._webproperties;
             }
         }
         
@@ -3105,15 +3107,15 @@ namespace Google.Apis.Analytics.v3 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Accounts> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -3123,21 +3125,21 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3145,32 +3147,32 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
                 /// <summary>The maximum number of accounts to include in this response.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
                 /// <summary>An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3208,48 +3210,48 @@ namespace Google.Apis.Analytics.v3 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Goals> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string accountId;
+                private string _accountId;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string profileId;
+                private string _profileId;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
-                private string webPropertyId;
+                private string _webPropertyId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId, string profileId) : 
                         base(service) {
-                    this.accountId = accountId;
-                    this.webPropertyId = webPropertyId;
-                    this.profileId = profileId;
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
+                    this._profileId = profileId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3257,10 +3259,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -3268,18 +3270,18 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("accountId")]
                 public virtual string AccountId {
                     get {
-                        return this.accountId;
+                        return this._accountId;
                     }
                 }
                 
                 /// <summary>The maximum number of goals to include in this response.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -3287,18 +3289,18 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("profileId")]
                 public virtual string ProfileId {
                     get {
-                        return this.profileId;
+                        return this._profileId;
                     }
                 }
                 
                 /// <summary>An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3306,7 +3308,7 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
                 public virtual string WebPropertyId {
                     get {
-                        return this.webPropertyId;
+                        return this._webPropertyId;
                     }
                 }
                 
@@ -3343,45 +3345,45 @@ namespace Google.Apis.Analytics.v3 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Profiles> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string accountId;
+                private string _accountId;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
-                private string webPropertyId;
+                private string _webPropertyId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId, string webPropertyId) : 
                         base(service) {
-                    this.accountId = accountId;
-                    this.webPropertyId = webPropertyId;
+                    this._accountId = accountId;
+                    this._webPropertyId = webPropertyId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3389,10 +3391,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -3400,29 +3402,29 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("accountId")]
                 public virtual string AccountId {
                     get {
-                        return this.accountId;
+                        return this._accountId;
                     }
                 }
                 
                 /// <summary>The maximum number of profiles to include in this response.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
                 /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3430,7 +3432,7 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("webPropertyId")]
                 public virtual string WebPropertyId {
                     get {
-                        return this.webPropertyId;
+                        return this._webPropertyId;
                     }
                 }
                 
@@ -3465,15 +3467,15 @@ namespace Google.Apis.Analytics.v3 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Segments> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -3483,21 +3485,21 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3505,32 +3507,32 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
                 /// <summary>The maximum number of advanced segments to include in this response.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
                 /// <summary>An index of the first advanced segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3566,42 +3568,42 @@ namespace Google.Apis.Analytics.v3 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Webproperties> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string accountId;
+                private string _accountId;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, string accountId) : 
                         base(service) {
-                    this.accountId = accountId;
+                    this._accountId = accountId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3609,10 +3611,10 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -3620,29 +3622,29 @@ namespace Google.Apis.Analytics.v3 {
                 [Google.Apis.Util.RequestParameterAttribute("accountId")]
                 public virtual string AccountId {
                     get {
-                        return this.accountId;
+                        return this._accountId;
                     }
                 }
                 
                 /// <summary>The maximum number of web properties to include in this response.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
                 /// <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3665,9 +3667,9 @@ namespace Google.Apis.Analytics.v3 {
         
         private const string Resource = "";
         
-        private DataResource data;
+        private DataResource _data;
         
-        private ManagementResource management;
+        private ManagementResource _management;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -3677,13 +3679,13 @@ namespace Google.Apis.Analytics.v3 {
         
         public virtual DataResource Data {
             get {
-                return this.data;
+                return this._data;
             }
         }
         
         public virtual ManagementResource Management {
             get {
-                return this.management;
+                return this._management;
             }
         }
     }

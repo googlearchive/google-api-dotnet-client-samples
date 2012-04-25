@@ -16,22 +16,22 @@ namespace Google.Apis.Adsense.v1.Data {
     
     public class AdClient {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string productCode;
+        private string _productCode;
         
-        private System.Nullable<bool> supportsReporting;
+        private System.Nullable<bool> _supportsReporting;
         
         /// <summary>Unique identifier of this ad client.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -39,10 +39,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -50,10 +50,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("productCode")]
         public virtual string ProductCode {
             get {
-                return this.productCode;
+                return this._productCode;
             }
             set {
-                this.productCode = value;
+                this._productCode = value;
             }
         }
         
@@ -61,34 +61,34 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("supportsReporting")]
         public virtual System.Nullable<bool> SupportsReporting {
             get {
-                return this.supportsReporting;
+                return this._supportsReporting;
             }
             set {
-                this.supportsReporting = value;
+                this._supportsReporting = value;
             }
         }
     }
     
     public class AdClients : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<AdClient> items;
+        private System.Collections.Generic.IList<AdClient> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -96,10 +96,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<AdClient> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -107,10 +107,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -118,44 +118,44 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class AdUnit {
         
-        private string code;
+        private string _code;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private string status;
+        private string _status;
         
         /// <summary>Identity code of this ad unit, not necessarily unique across ad clients.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("code")]
         public virtual string Code {
             get {
-                return this.code;
+                return this._code;
             }
             set {
-                this.code = value;
+                this._code = value;
             }
         }
         
@@ -163,10 +163,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -174,10 +174,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -185,10 +185,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
@@ -201,34 +201,34 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual string Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
     }
     
     public class AdUnits : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<AdUnit> items;
+        private System.Collections.Generic.IList<AdUnit> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -236,10 +236,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<AdUnit> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -247,10 +247,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -258,52 +258,52 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class AdsenseReportsGenerateResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<string> averages;
+        private System.Collections.Generic.IList<string> _averages;
         
-        private System.Collections.Generic.IList<AdsenseReportsGenerateResponse.HeadersData> headers;
+        private System.Collections.Generic.IList<AdsenseReportsGenerateResponse.HeadersData> _headers;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<System.Collections.Generic.IList<string>> rows;
+        private System.Collections.Generic.IList<System.Collections.Generic.IList<string>> _rows;
         
-        private string totalMatchedRows;
+        private string _totalMatchedRows;
         
-        private System.Collections.Generic.IList<string> totals;
+        private System.Collections.Generic.IList<string> _totals;
         
-        private System.Collections.Generic.IList<string> warnings;
+        private System.Collections.Generic.IList<string> _warnings;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The averages of the report. This is the same length as any other row in the report; cells corresponding to dimension columns are empty.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("averages")]
         public virtual System.Collections.Generic.IList<string> Averages {
             get {
-                return this.averages;
+                return this._averages;
             }
             set {
-                this.averages = value;
+                this._averages = value;
             }
         }
         
@@ -311,10 +311,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("headers")]
         public virtual System.Collections.Generic.IList<AdsenseReportsGenerateResponse.HeadersData> Headers {
             get {
-                return this.headers;
+                return this._headers;
             }
             set {
-                this.headers = value;
+                this._headers = value;
             }
         }
         
@@ -322,10 +322,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -333,10 +333,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("rows")]
         public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<string>> Rows {
             get {
-                return this.rows;
+                return this._rows;
             }
             set {
-                this.rows = value;
+                this._rows = value;
             }
         }
         
@@ -344,10 +344,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalMatchedRows")]
         public virtual string TotalMatchedRows {
             get {
-                return this.totalMatchedRows;
+                return this._totalMatchedRows;
             }
             set {
-                this.totalMatchedRows = value;
+                this._totalMatchedRows = value;
             }
         }
         
@@ -355,10 +355,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totals")]
         public virtual System.Collections.Generic.IList<string> Totals {
             get {
-                return this.totals;
+                return this._totals;
             }
             set {
-                this.totals = value;
+                this._totals = value;
             }
         }
         
@@ -366,48 +366,48 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("warnings")]
         public virtual System.Collections.Generic.IList<string> Warnings {
             get {
-                return this.warnings;
+                return this._warnings;
             }
             set {
-                this.warnings = value;
+                this._warnings = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class HeadersData {
             
-            private string currency;
+            private string _currency;
             
-            private string name;
+            private string _name;
             
-            private string type;
+            private string _type;
             
             /// <summary>The currency of this column. Only present if the header type is METRIC_CURRENCY.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("currency")]
             public virtual string Currency {
                 get {
-                    return this.currency;
+                    return this._currency;
                 }
                 set {
-                    this.currency = value;
+                    this._currency = value;
                 }
             }
             
@@ -415,10 +415,10 @@ namespace Google.Apis.Adsense.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
             
@@ -426,10 +426,10 @@ namespace Google.Apis.Adsense.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
         }
@@ -437,22 +437,22 @@ namespace Google.Apis.Adsense.v1.Data {
     
     public class CustomChannel {
         
-        private string code;
+        private string _code;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
         /// <summary>Code of this custom channel, not necessarily unique across ad clients.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("code")]
         public virtual string Code {
             get {
-                return this.code;
+                return this._code;
             }
             set {
-                this.code = value;
+                this._code = value;
             }
         }
         
@@ -460,10 +460,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -471,10 +471,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -482,34 +482,34 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
     }
     
     public class CustomChannels : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<CustomChannel> items;
+        private System.Collections.Generic.IList<CustomChannel> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -517,10 +517,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CustomChannel> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -528,10 +528,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -539,40 +539,40 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class UrlChannel {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string urlPattern;
+        private string _urlPattern;
         
         /// <summary>Unique identifier of this URL channel. This should be considered an opaque identifier; it is not safe to rely on it being in any particular format.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -580,10 +580,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -591,34 +591,34 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("urlPattern")]
         public virtual string UrlPattern {
             get {
-                return this.urlPattern;
+                return this._urlPattern;
             }
             set {
-                this.urlPattern = value;
+                this._urlPattern = value;
             }
         }
     }
     
     public class UrlChannels : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<UrlChannel> items;
+        private System.Collections.Generic.IList<UrlChannel> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of this response for caching purposes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -626,10 +626,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<UrlChannel> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -637,10 +637,10 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -648,20 +648,20 @@ namespace Google.Apis.Adsense.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
@@ -681,192 +681,195 @@ namespace Google.Apis.Adsense.v1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adsense:v1\",\"na" +
-            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120305\",\"title\":\"AdSense Management A" +
+            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120320\",\"title\":\"AdSense Management A" +
             "PI\",\"description\":\"Gives AdSense publishers access to their inventory and the ab" +
             "ility to generate reports\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/pr" +
             "oduct/adsense-16.png\",\"x32\":\"http://www.google.com/images/icons/product/adsense-" +
             "32.png\"},\"documentationLink\":\"https://code.google.com/apis/adsense/management/\"," +
             "\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/adsense/v1/\",\"basePath\":" +
-            "\"/adsense/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format f" +
-            "or the response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Re" +
-            "sponses with Content-Type of text/csv\",\"Responses with Content-Type of applicati" +
-            "on/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector " +
-            "specifying which fields to include in a partial response.\",\"location\":\"query\"},\"" +
-            "key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proje" +
-            "ct and provides you with API access, quota, and reports. Required unless you pro" +
-            "vide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"de" +
-            "scription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPr" +
-            "int\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and lin" +
-            "e breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"de" +
-            "scription\":\"Available to use for quota purposes for server-side applications. Ca" +
-            "n be any arbitrary string assigned to a user, but should not exceed 40 character" +
-            "s. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":" +
-            "\"string\",\"description\":\"IP address of the site where the request originates. Use" +
-            " this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oau" +
-            "th2\":{\"scopes\":{\"https://www.googleapis.com/auth/adsense\":{\"description\":\"View a" +
-            "nd manage your AdSense data\"},\"https://www.googleapis.com/auth/adsense.readonly\"" +
-            ":{\"description\":\"View your AdSense data\"}}}},\"schemas\":{\"AdClient\":{\"id\":\"AdClie" +
-            "nt\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique id" +
-            "entifier of this ad client.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of res" +
-            "ource this is, in this case adsense#adClient.\",\"default\":\"adsense#adClient\"},\"pr" +
-            "oductCode\":{\"type\":\"string\",\"description\":\"This ad client\'s product code, which " +
-            "corresponds to the PRODUCT_CODE report dimension.\"},\"supportsReporting\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether this ad client supports being reported on.\"}}}," +
-            "\"AdClients\":{\"id\":\"AdClients\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"The ad clients returned in this list response.\",\"items\":" +
-            "{\"$ref\":\"AdClient\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is" +
-            ", in this case adsense#adClients.\",\"default\":\"adsense#adClients\"},\"nextPageToken" +
-            "\":{\"type\":\"string\",\"description\":\"Continuation token used to page through ad cli" +
-            "ents. To retrieve the next page of results, set the next request\'s \\\"pageToken\\\"" +
-            " value to this.\"}}},\"AdUnit\":{\"id\":\"AdUnit\",\"type\":\"object\",\"properties\":{\"code\"" +
-            ":{\"type\":\"string\",\"description\":\"Identity code of this ad unit, not necessarily " +
-            "unique across ad clients.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifi" +
-            "er of this ad unit. This should be considered an opaque identifier; it is not sa" +
-            "fe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Kind of resource this is, in this case adsense#adUnit.\",\"default\":\"ads" +
-            "ense#adUnit\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this ad unit.\"},\"st" +
-            "atus\":{\"type\":\"string\",\"description\":\"Status of this ad unit. Possible values ar" +
-            "e:\\nNEW: Indicates that the ad unit was created within the last seven days and d" +
-            "oes not yet have any activity associated with it.\\n\\nACTIVE: Indicates that ther" +
-            "e has been activity on this ad unit in the last seven days.\\n\\nINACTIVE: Indicat" +
-            "es that there has been no activity on this ad unit in the last seven days.\"}}},\"" +
-            "AdUnits\":{\"id\":\"AdUnits\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"" +
-            "description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"The ad units returned in this list response.\",\"items\":{\"$ref\"" +
-            ":\"AdUnit\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is, in this" +
-            " case adsense#adUnits.\",\"default\":\"adsense#adUnits\"},\"nextPageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"Continuation token used to page through ad units. To retrie" +
-            "ve the next page of results, set the next request\'s \\\"pageToken\\\" value to this." +
-            "\"}}},\"AdsenseReportsGenerateResponse\":{\"id\":\"AdsenseReportsGenerateResponse\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"averages\":{\"type\":\"array\",\"description\":\"The average" +
-            "s of the report. This is the same length as any other row in the report; cells c" +
-            "orresponding to dimension columns are empty.\",\"items\":{\"type\":\"string\"}},\"header" +
-            "s\":{\"type\":\"array\",\"description\":\"The header information of the columns requeste" +
-            "d in the report. This is a list of headers; one for each dimension in the reques" +
-            "t, followed by one for each metric in the request.\",\"items\":{\"type\":\"object\",\"pr" +
-            "operties\":{\"currency\":{\"type\":\"string\",\"description\":\"The currency of this colum" +
-            "n. Only present if the header type is METRIC_CURRENCY.\"},\"name\":{\"type\":\"string\"" +
-            ",\"description\":\"The name of the header.\"},\"type\":{\"type\":\"string\",\"description\":" +
-            "\"The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, or METRIC" +
-            "_CURRENCY.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Kind this is, in this cas" +
-            "e adsense#report.\",\"default\":\"adsense#report\"},\"rows\":{\"type\":\"array\",\"descripti" +
-            "on\":\"The output rows of the report. Each row is a list of cells; one for each di" +
-            "mension in the request, followed by one for each metric in the request. The dime" +
-            "nsion cells contain strings, and the metric cells contain numbers.\",\"items\":{\"ty" +
-            "pe\":\"array\",\"items\":{\"type\":\"string\"}}},\"totalMatchedRows\":{\"type\":\"string\",\"des" +
-            "cription\":\"The total number of rows matched by the report request. Fewer rows ma" +
-            "y be returned in the response due to being limited by the row count requested or" +
-            " the report row limit.\",\"format\":\"int64\"},\"totals\":{\"type\":\"array\",\"description\"" +
-            ":\"The totals of the report. This is the same length as any other row in the repo" +
-            "rt; cells corresponding to dimension columns are empty.\",\"items\":{\"type\":\"string" +
-            "\"}},\"warnings\":{\"type\":\"array\",\"description\":\"Any warnings associated with gener" +
-            "ation of the report.\",\"items\":{\"type\":\"string\"}}}},\"CustomChannel\":{\"id\":\"Custom" +
-            "Channel\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"description\":\"Co" +
-            "de of this custom channel, not necessarily unique across ad clients.\"},\"id\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Unique identifier of this custom channel. This shoul" +
-            "d be considered an opaque identifier; it is not safe to rely on it being in any " +
-            "particular format.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource thi" +
-            "s is, in this case adsense#customChannel.\",\"default\":\"adsense#customChannel\"},\"n" +
-            "ame\":{\"type\":\"string\",\"description\":\"Name of this custom channel.\"}}},\"CustomCha" +
-            "nnels\":{\"id\":\"CustomChannels\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ETag of this response for caching purposes.\"},\"items\":{\"type\"" +
-            ":\"array\",\"description\":\"The custom channels returned in this list response.\",\"it" +
-            "ems\":{\"$ref\":\"CustomChannel\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of li" +
-            "st this is, in this case adsense#customChannels.\",\"default\":\"adsense#customChann" +
-            "els\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token used to" +
-            " page through custom channels. To retrieve the next page of results, set the nex" +
-            "t request\'s \\\"pageToken\\\" value to this.\"}}},\"UrlChannel\":{\"id\":\"UrlChannel\",\"ty" +
-            "pe\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique identifie" +
-            "r of this URL channel. This should be considered an opaque identifier; it is not" +
-            " safe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Kind of resource this is, in this case adsense#urlChannel.\",\"defaul" +
-            "t\":\"adsense#urlChannel\"},\"urlPattern\":{\"type\":\"string\",\"description\":\"URL Patter" +
-            "n of this URL channel. Does not include \\\"http://\\\" or \\\"https://\\\". Example: ww" +
-            "w.example.com/home\"}}},\"UrlChannels\":{\"id\":\"UrlChannels\",\"type\":\"object\",\"proper" +
-            "ties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching " +
-            "purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The URL channels returned in " +
-            "this list response.\",\"items\":{\"$ref\":\"UrlChannel\"}},\"kind\":{\"type\":\"string\",\"des" +
-            "cription\":\"Kind of list this is, in this case adsense#urlChannels.\",\"default\":\"a" +
-            "dsense#urlChannels\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuatio" +
-            "n token used to page through URL channels. To retrieve the next page of results," +
-            " set the next request\'s \\\"pageToken\\\" value to this.\"}}}},\"resources\":{\"adclient" +
-            "s\":{\"methods\":{\"list\":{\"id\":\"adsense.adclients.list\",\"path\":\"adclients\",\"httpMet" +
-            "hod\":\"GET\",\"description\":\"List all ad clients in this AdSense account.\",\"paramet" +
-            "ers\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of ad cli" +
-            "ents to include in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0" +
-            "\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A continuation token, used to page through ad clients. To retrieve the next " +
-            "page, set this parameter to the value of \\\"nextPageToken\\\" from the previous res" +
-            "ponse.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"AdClients\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readon" +
-            "ly\"]}}},\"adunits\":{\"methods\":{\"list\":{\"id\":\"adsense.adunits.list\",\"path\":\"adclie" +
-            "nts/{adClientId}/adunits\",\"httpMethod\":\"GET\",\"description\":\"List all ad units in" +
-            " the specified ad client for this AdSense account.\",\"parameters\":{\"adClientId\":{" +
-            "\"type\":\"string\",\"description\":\"Ad client for which to list ad units.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"includeInactive\":{\"type\":\"boolean\",\"description\":\"Whet" +
-            "her to include inactive ad units. Default: true.\",\"location\":\"query\"},\"maxResult" +
-            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of ad units to include in" +
-            " the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000" +
-            "\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A continuation" +
-            " token, used to page through ad units. To retrieve the next page, set this param" +
-            "eter to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"" +
-            "query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"AdUnits\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adse" +
-            "nse.readonly\"]}}},\"customchannels\":{\"methods\":{\"list\":{\"id\":\"adsense.customchann" +
-            "els.list\",\"path\":\"adclients/{adClientId}/customchannels\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"List all custom channels in the specified ad client for this AdSense " +
-            "account.\",\"parameters\":{\"adClientId\":{\"type\":\"string\",\"description\":\"Ad client f" +
-            "or which to list custom channels.\",\"required\":true,\"location\":\"path\"},\"maxResult" +
-            "s\":{\"type\":\"integer\",\"description\":\"The maximum number of custom channels to inc" +
-            "lude in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\"" +
-            ":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A conti" +
-            "nuation token, used to page through custom channels. To retrieve the next page, " +
-            "set this parameter to the value of \\\"nextPageToken\\\" from the previous response." +
-            "\",\"location\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"Custo" +
-            "mChannels\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.goo" +
-            "gleapis.com/auth/adsense.readonly\"]}}},\"reports\":{\"methods\":{\"generate\":{\"id\":\"a" +
-            "dsense.reports.generate\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"description\":\"Gene" +
-            "rate an AdSense report based on the report request sent in the query parameters." +
-            " Returns the result as JSON; to retrieve output in CSV format specify \\\"alt=csv\\" +
-            "\" as a query parameter.\",\"parameters\":{\"currency\":{\"type\":\"string\",\"description\"" +
-            ":\"Optional currency to use when reporting on monetary metrics. Defaults to the a" +
-            "ccount\'s currency if not set.\",\"pattern\":\"[a-zA-Z]+\",\"location\":\"query\"},\"dimens" +
-            "ion\":{\"type\":\"string\",\"description\":\"Dimensions to base the report on.\",\"pattern" +
-            "\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"endDate\":{\"type\":\"string\",\"d" +
-            "escription\":\"End of the date range to report on in \\\"YYYY-MM-DD\\\" format, inclus" +
-            "ive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}\",\"location\":\"query\"},\"filt" +
-            "er\":{\"type\":\"string\",\"description\":\"Filters to be run on the report.\",\"pattern\":" +
-            "\"[a-zA-Z_]+(==|=@).+\",\"repeated\":true,\"location\":\"query\"},\"locale\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Optional locale to use for translating report output to a loc" +
-            "al language. Defaults to \\\"en_US\\\" if not specified.\",\"pattern\":\"[a-zA-Z_]+\",\"lo" +
-            "cation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum numbe" +
-            "r of rows of report data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"5" +
-            "0000\",\"location\":\"query\"},\"metric\":{\"type\":\"string\",\"description\":\"Numeric colum" +
-            "ns to include in the report.\",\"pattern\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":" +
-            "\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The name of a dimension or metri" +
-            "c to sort the resulting report on, optionally prefixed with \\\"+\\\" to sort ascend" +
-            "ing or \\\"-\\\" to sort descending. If no prefix is specified, the column is sorted" +
-            " ascending.\",\"pattern\":\"(\\\\+|-)?[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"}," +
-            "\"startDate\":{\"type\":\"string\",\"description\":\"Start of the date range to report on" +
-            " in \\\"YYYY-MM-DD\\\" format, inclusive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-" +
-            "\\\\d{2}\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index " +
-            "of the first row of report data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maxi" +
-            "mum\":\"5000\",\"location\":\"query\"}},\"parameterOrder\":[\"startDate\",\"endDate\"],\"respo" +
-            "nse\":{\"$ref\":\"AdsenseReportsGenerateResponse\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readonly\"]}}},\"urlch" +
-            "annels\":{\"methods\":{\"list\":{\"id\":\"adsense.urlchannels.list\",\"path\":\"adclients/{a" +
-            "dClientId}/urlchannels\",\"httpMethod\":\"GET\",\"description\":\"List all URL channels " +
-            "in the specified ad client for this AdSense account.\",\"parameters\":{\"adClientId\"" +
-            ":{\"type\":\"string\",\"description\":\"Ad client for which to list URL channels.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The" +
-            " maximum number of URL channels to include in the response, used for paging.\",\"f" +
-            "ormat\":\"int32\",\"minimum\":\"0\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{" +
-            "\"type\":\"string\",\"description\":\"A continuation token, used to page through URL ch" +
-            "annels. To retrieve the next page, set this parameter to the value of \\\"nextPage" +
-            "Token\\\" from the previous response.\",\"location\":\"query\"}},\"parameterOrder\":[\"adC" +
-            "lientId\"],\"response\":{\"$ref\":\"UrlChannels\"},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/adsense\",\"https://www.googleapis.com/auth/adsense.readonly\"]}}}}}";
+            "\"/adsense/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"adsense/v1" +
+            "/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data " +
+            "format for the response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptio" +
+            "ns\":[\"Responses with Content-Type of text/csv\",\"Responses with Content-Type of a" +
+            "pplication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"S" +
+            "elector specifying which fields to include in a partial response.\",\"location\":\"q" +
+            "uery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies yo" +
+            "ur project and provides you with API access, quota, and reports. Required unless" +
+            " you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"str" +
+            "ing\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"" +
+            "prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations" +
+            " and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"str" +
+            "ing\",\"description\":\"Available to use for quota purposes for server-side applicat" +
+            "ions. Can be any arbitrary string assigned to a user, but should not exceed 40 c" +
+            "haracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":" +
+            "{\"type\":\"string\",\"description\":\"IP address of the site where the request origina" +
+            "tes. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"aut" +
+            "h\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/adsense\":{\"description\"" +
+            ":\"View and manage your AdSense data\"},\"https://www.googleapis.com/auth/adsense.r" +
+            "eadonly\":{\"description\":\"View your AdSense data\"}}}},\"schemas\":{\"AdClient\":{\"id\"" +
+            ":\"AdClient\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"U" +
+            "nique identifier of this ad client.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kin" +
+            "d of resource this is, in this case adsense#adClient.\",\"default\":\"adsense#adClie" +
+            "nt\"},\"productCode\":{\"type\":\"string\",\"description\":\"This ad client\'s product code" +
+            ", which corresponds to the PRODUCT_CODE report dimension.\"},\"supportsReporting\":" +
+            "{\"type\":\"boolean\",\"description\":\"Whether this ad client supports being reported " +
+            "on.\"}}},\"AdClients\":{\"id\":\"AdClients\",\"type\":\"object\",\"properties\":{\"etag\":{\"typ" +
+            "e\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"items\"" +
+            ":{\"type\":\"array\",\"description\":\"The ad clients returned in this list response.\"," +
+            "\"items\":{\"$ref\":\"AdClient\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list" +
+            " this is, in this case adsense#adClients.\",\"default\":\"adsense#adClients\"},\"nextP" +
+            "ageToken\":{\"type\":\"string\",\"description\":\"Continuation token used to page throug" +
+            "h ad clients. To retrieve the next page of results, set the next request\'s \\\"pag" +
+            "eToken\\\" value to this.\"}}},\"AdUnit\":{\"id\":\"AdUnit\",\"type\":\"object\",\"properties\"" +
+            ":{\"code\":{\"type\":\"string\",\"description\":\"Identity code of this ad unit, not nece" +
+            "ssarily unique across ad clients.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique " +
+            "identifier of this ad unit. This should be considered an opaque identifier; it i" +
+            "s not safe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"strin" +
+            "g\",\"description\":\"Kind of resource this is, in this case adsense#adUnit.\",\"defau" +
+            "lt\":\"adsense#adUnit\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this ad uni" +
+            "t.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of this ad unit. Possible v" +
+            "alues are:\\nNEW: Indicates that the ad unit was created within the last seven da" +
+            "ys and does not yet have any activity associated with it.\\n\\nACTIVE: Indicates t" +
+            "hat there has been activity on this ad unit in the last seven days.\\n\\nINACTIVE:" +
+            " Indicates that there has been no activity on this ad unit in the last seven day" +
+            "s.\"}}},\"AdUnits\":{\"id\":\"AdUnits\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"s" +
+            "tring\",\"description\":\"ETag of this response for caching purposes.\"},\"items\":{\"ty" +
+            "pe\":\"array\",\"description\":\"The ad units returned in this list response.\",\"items\"" +
+            ":{\"$ref\":\"AdUnit\"}},\"kind\":{\"type\":\"string\",\"description\":\"Kind of list this is," +
+            " in this case adsense#adUnits.\",\"default\":\"adsense#adUnits\"},\"nextPageToken\":{\"t" +
+            "ype\":\"string\",\"description\":\"Continuation token used to page through ad units. T" +
+            "o retrieve the next page of results, set the next request\'s \\\"pageToken\\\" value " +
+            "to this.\"}}},\"AdsenseReportsGenerateResponse\":{\"id\":\"AdsenseReportsGenerateRespo" +
+            "nse\",\"type\":\"object\",\"properties\":{\"averages\":{\"type\":\"array\",\"description\":\"The" +
+            " averages of the report. This is the same length as any other row in the report;" +
+            " cells corresponding to dimension columns are empty.\",\"items\":{\"type\":\"string\"}}" +
+            ",\"headers\":{\"type\":\"array\",\"description\":\"The header information of the columns " +
+            "requested in the report. This is a list of headers; one for each dimension in th" +
+            "e request, followed by one for each metric in the request.\",\"items\":{\"type\":\"obj" +
+            "ect\",\"properties\":{\"currency\":{\"type\":\"string\",\"description\":\"The currency of th" +
+            "is column. Only present if the header type is METRIC_CURRENCY.\"},\"name\":{\"type\":" +
+            "\"string\",\"description\":\"The name of the header.\"},\"type\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The type of the header; one of DIMENSION, METRIC_TALLY, METRIC_RATIO, o" +
+            "r METRIC_CURRENCY.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"Kind this is, in " +
+            "this case adsense#report.\",\"default\":\"adsense#report\"},\"rows\":{\"type\":\"array\",\"d" +
+            "escription\":\"The output rows of the report. Each row is a list of cells; one for" +
+            " each dimension in the request, followed by one for each metric in the request. " +
+            "The dimension cells contain strings, and the metric cells contain numbers.\",\"ite" +
+            "ms\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}},\"totalMatchedRows\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The total number of rows matched by the report request. Fewer" +
+            " rows may be returned in the response due to being limited by the row count requ" +
+            "ested or the report row limit.\",\"format\":\"int64\"},\"totals\":{\"type\":\"array\",\"desc" +
+            "ription\":\"The totals of the report. This is the same length as any other row in " +
+            "the report; cells corresponding to dimension columns are empty.\",\"items\":{\"type\"" +
+            ":\"string\"}},\"warnings\":{\"type\":\"array\",\"description\":\"Any warnings associated wi" +
+            "th generation of the report.\",\"items\":{\"type\":\"string\"}}}},\"CustomChannel\":{\"id\"" +
+            ":\"CustomChannel\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Code of this custom channel, not necessarily unique across ad clients.\"},\"" +
+            "id\":{\"type\":\"string\",\"description\":\"Unique identifier of this custom channel. Th" +
+            "is should be considered an opaque identifier; it is not safe to rely on it being" +
+            " in any particular format.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of reso" +
+            "urce this is, in this case adsense#customChannel.\",\"default\":\"adsense#customChan" +
+            "nel\"},\"name\":{\"type\":\"string\",\"description\":\"Name of this custom channel.\"}}},\"C" +
+            "ustomChannels\":{\"id\":\"CustomChannels\",\"type\":\"object\",\"properties\":{\"etag\":{\"typ" +
+            "e\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"items\"" +
+            ":{\"type\":\"array\",\"description\":\"The custom channels returned in this list respon" +
+            "se.\",\"items\":{\"$ref\":\"CustomChannel\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ki" +
+            "nd of list this is, in this case adsense#customChannels.\",\"default\":\"adsense#cus" +
+            "tomChannels\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Continuation token" +
+            " used to page through custom channels. To retrieve the next page of results, set" +
+            " the next request\'s \\\"pageToken\\\" value to this.\"}}},\"UrlChannel\":{\"id\":\"UrlChan" +
+            "nel\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Unique i" +
+            "dentifier of this URL channel. This should be considered an opaque identifier; i" +
+            "t is not safe to rely on it being in any particular format.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Kind of resource this is, in this case adsense#urlChannel.\"" +
+            ",\"default\":\"adsense#urlChannel\"},\"urlPattern\":{\"type\":\"string\",\"description\":\"UR" +
+            "L Pattern of this URL channel. Does not include \\\"http://\\\" or \\\"https://\\\". Exa" +
+            "mple: www.example.com/home\"}}},\"UrlChannels\":{\"id\":\"UrlChannels\",\"type\":\"object\"" +
+            ",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for " +
+            "caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The URL channels retu" +
+            "rned in this list response.\",\"items\":{\"$ref\":\"UrlChannel\"}},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Kind of list this is, in this case adsense#urlChannels.\",\"def" +
+            "ault\":\"adsense#urlChannels\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Con" +
+            "tinuation token used to page through URL channels. To retrieve the next page of " +
+            "results, set the next request\'s \\\"pageToken\\\" value to this.\"}}}},\"resources\":{\"" +
+            "adclients\":{\"methods\":{\"list\":{\"id\":\"adsense.adclients.list\",\"path\":\"adclients\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"List all ad clients in this AdSense account.\"," +
+            "\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number o" +
+            "f ad clients to include in the response, used for paging.\",\"format\":\"int32\",\"min" +
+            "imum\":\"0\",\"maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"de" +
+            "scription\":\"A continuation token, used to page through ad clients. To retrieve t" +
+            "he next page, set this parameter to the value of \\\"nextPageToken\\\" from the prev" +
+            "ious response.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"AdClients\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/auth/adsens" +
+            "e.readonly\"]}}},\"adunits\":{\"methods\":{\"list\":{\"id\":\"adsense.adunits.list\",\"path\"" +
+            ":\"adclients/{adClientId}/adunits\",\"httpMethod\":\"GET\",\"description\":\"List all ad " +
+            "units in the specified ad client for this AdSense account.\",\"parameters\":{\"adCli" +
+            "entId\":{\"type\":\"string\",\"description\":\"Ad client for which to list ad units.\",\"r" +
+            "equired\":true,\"location\":\"path\"},\"includeInactive\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Whether to include inactive ad units. Default: true.\",\"location\":\"query\"},\"m" +
+            "axResults\":{\"type\":\"integer\",\"description\":\"The maximum number of ad units to in" +
+            "clude in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum" +
+            "\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"A cont" +
+            "inuation token, used to page through ad units. To retrieve the next page, set th" +
+            "is parameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"loc" +
+            "ation\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"AdUnits\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.googleapis.com/a" +
+            "uth/adsense.readonly\"]}}},\"customchannels\":{\"methods\":{\"list\":{\"id\":\"adsense.cus" +
+            "tomchannels.list\",\"path\":\"adclients/{adClientId}/customchannels\",\"httpMethod\":\"G" +
+            "ET\",\"description\":\"List all custom channels in the specified ad client for this " +
+            "AdSense account.\",\"parameters\":{\"adClientId\":{\"type\":\"string\",\"description\":\"Ad " +
+            "client for which to list custom channels.\",\"required\":true,\"location\":\"path\"},\"m" +
+            "axResults\":{\"type\":\"integer\",\"description\":\"The maximum number of custom channel" +
+            "s to include in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"" +
+            "maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":" +
+            "\"A continuation token, used to page through custom channels. To retrieve the nex" +
+            "t page, set this parameter to the value of \\\"nextPageToken\\\" from the previous r" +
+            "esponse.\",\"location\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref" +
+            "\":\"CustomChannels\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https:/" +
+            "/www.googleapis.com/auth/adsense.readonly\"]}}},\"reports\":{\"methods\":{\"generate\":" +
+            "{\"id\":\"adsense.reports.generate\",\"path\":\"reports\",\"httpMethod\":\"GET\",\"descriptio" +
+            "n\":\"Generate an AdSense report based on the report request sent in the query par" +
+            "ameters. Returns the result as JSON; to retrieve output in CSV format specify \\\"" +
+            "alt=csv\\\" as a query parameter.\",\"parameters\":{\"currency\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Optional currency to use when reporting on monetary metrics. Defaults " +
+            "to the account\'s currency if not set.\",\"pattern\":\"[a-zA-Z]+\",\"location\":\"query\"}" +
+            ",\"dimension\":{\"type\":\"string\",\"description\":\"Dimensions to base the report on.\"," +
+            "\"pattern\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"endDate\":{\"type\":\"st" +
+            "ring\",\"description\":\"End of the date range to report on in \\\"YYYY-MM-DD\\\" format" +
+            ", inclusive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}|(today|startOfMont" +
+            "h|startOfYear)(([\\\\-\\\\+]\\\\d+[dwmy]){0,2}?)\",\"location\":\"query\"},\"filter\":{\"type\"" +
+            ":\"string\",\"description\":\"Filters to be run on the report.\",\"pattern\":\"[a-zA-Z_]+" +
+            "(==|=@).+\",\"repeated\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Optional locale to use for translating report output to a local language" +
+            ". Defaults to \\\"en_US\\\" if not specified.\",\"pattern\":\"[a-zA-Z_]+\",\"location\":\"qu" +
+            "ery\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of rows o" +
+            "f report data to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"50000\",\"loca" +
+            "tion\":\"query\"},\"metric\":{\"type\":\"string\",\"description\":\"Numeric columns to inclu" +
+            "de in the report.\",\"pattern\":\"[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"s" +
+            "ort\":{\"type\":\"string\",\"description\":\"The name of a dimension or metric to sort t" +
+            "he resulting report on, optionally prefixed with \\\"+\\\" to sort ascending or \\\"-\\" +
+            "\" to sort descending. If no prefix is specified, the column is sorted ascending." +
+            "\",\"pattern\":\"(\\\\+|-)?[a-zA-Z_]+\",\"repeated\":true,\"location\":\"query\"},\"startDate\"" +
+            ":{\"type\":\"string\",\"description\":\"Start of the date range to report on in \\\"YYYY-" +
+            "MM-DD\\\" format, inclusive.\",\"required\":true,\"pattern\":\"\\\\d{4}-\\\\d{2}-\\\\d{2}|(tod" +
+            "ay|startOfMonth|startOfYear)(([\\\\-\\\\+]\\\\d+[dwmy]){0,2}?)\",\"location\":\"query\"},\"s" +
+            "tartIndex\":{\"type\":\"integer\",\"description\":\"Index of the first row of report dat" +
+            "a to return.\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"5000\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"startDate\",\"endDate\"],\"response\":{\"$ref\":\"AdsenseReportsGe" +
+            "nerateResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://ww" +
+            "w.googleapis.com/auth/adsense.readonly\"]}}},\"urlchannels\":{\"methods\":{\"list\":{\"i" +
+            "d\":\"adsense.urlchannels.list\",\"path\":\"adclients/{adClientId}/urlchannels\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"List all URL channels in the specified ad client for" +
+            " this AdSense account.\",\"parameters\":{\"adClientId\":{\"type\":\"string\",\"description" +
+            "\":\"Ad client for which to list URL channels.\",\"required\":true,\"location\":\"path\"}" +
+            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of URL channel" +
+            "s to include in the response, used for paging.\",\"format\":\"int32\",\"minimum\":\"0\",\"" +
+            "maximum\":\"10000\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":" +
+            "\"A continuation token, used to page through URL channels. To retrieve the next p" +
+            "age, set this parameter to the value of \\\"nextPageToken\\\" from the previous resp" +
+            "onse.\",\"location\":\"query\"}},\"parameterOrder\":[\"adClientId\"],\"response\":{\"$ref\":\"" +
+            "UrlChannels\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.g" +
+            "oogleapis.com/auth/adsense.readonly\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -876,16 +879,16 @@ namespace Google.Apis.Adsense.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected AdsenseService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.adclients = new AdclientsResource(this);
-            this.adunits = new AdunitsResource(this);
-            this.customchannels = new CustomchannelsResource(this);
-            this.reports = new ReportsResource(this);
-            this.urlchannels = new UrlchannelsResource(this);
+            this._adclients = new AdclientsResource(this);
+            this._adunits = new AdunitsResource(this);
+            this._customchannels = new CustomchannelsResource(this);
+            this._reports = new ReportsResource(this);
+            this._urlchannels = new UrlchannelsResource(this);
         }
         
         public AdsenseService() : 
@@ -893,22 +896,22 @@ namespace Google.Apis.Adsense.v1 {
         }
         
         public AdsenseService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdsenseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(AdsenseService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdsenseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AdsenseService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -957,15 +960,15 @@ namespace Google.Apis.Adsense.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdClients> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -975,21 +978,21 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -997,21 +1000,21 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1019,10 +1022,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1058,44 +1061,44 @@ namespace Google.Apis.Adsense.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdUnits> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string adClientId;
+            private string _adClientId;
             
-            private System.Boolean? includeInactive;
+            private System.Nullable<bool> _includeInactive;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string adClientId) : 
                     base(service) {
-                this.adClientId = adClientId;
+                this._adClientId = adClientId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1103,10 +1106,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1114,29 +1117,29 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("adClientId")]
             public virtual string AdClientId {
                 get {
-                    return this.adClientId;
+                    return this._adClientId;
                 }
             }
             
             /// <summary>Whether to include inactive ad units. Default: true.</summary>
             [Google.Apis.Util.RequestParameterAttribute("includeInactive")]
-            public virtual System.Boolean? IncludeInactive {
+            public virtual System.Nullable<bool> IncludeInactive {
                 get {
-                    return this.includeInactive;
+                    return this._includeInactive;
                 }
                 set {
-                    this.includeInactive = value;
+                    this._includeInactive = value;
                 }
             }
             
             /// <summary>The maximum number of ad units to include in the response, used for paging.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1144,10 +1147,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1183,42 +1186,42 @@ namespace Google.Apis.Adsense.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.CustomChannels> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string adClientId;
+            private string _adClientId;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string adClientId) : 
                     base(service) {
-                this.adClientId = adClientId;
+                this._adClientId = adClientId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1226,10 +1229,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1237,18 +1240,18 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("adClientId")]
             public virtual string AdClientId {
                 get {
-                    return this.adClientId;
+                    return this._adClientId;
                 }
             }
             
             /// <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1256,10 +1259,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1288,65 +1291,65 @@ namespace Google.Apis.Adsense.v1 {
         }
         
         /// <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
-        /// <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
-        /// <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+        /// <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+        /// <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
         public virtual GenerateRequest Generate(string startDate, string endDate) {
             return new GenerateRequest(service, startDate, endDate);
         }
         
         public class GenerateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string currency;
+            private string _currency;
             
-            private Google.Apis.Util.Repeatable<string> dimension;
+            private Google.Apis.Util.Repeatable<string> _dimension;
             
-            private string endDate;
+            private string _endDate;
             
-            private Google.Apis.Util.Repeatable<string> filter;
+            private Google.Apis.Util.Repeatable<string> _filter;
             
-            private string locale;
+            private string _locale;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private Google.Apis.Util.Repeatable<string> metric;
+            private Google.Apis.Util.Repeatable<string> _metric;
             
-            private Google.Apis.Util.Repeatable<string> sort;
+            private Google.Apis.Util.Repeatable<string> _sort;
             
-            private string startDate;
+            private string _startDate;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
             public GenerateRequest(Google.Apis.Discovery.IRequestProvider service, string startDate, string endDate) : 
                     base(service) {
-                this.startDate = startDate;
-                this.endDate = endDate;
+                this._startDate = startDate;
+                this._endDate = endDate;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1354,10 +1357,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1365,10 +1368,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("currency")]
             public virtual string Currency {
                 get {
-                    return this.currency;
+                    return this._currency;
                 }
                 set {
-                    this.currency = value;
+                    this._currency = value;
                 }
             }
             
@@ -1376,10 +1379,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("dimension")]
             public virtual Google.Apis.Util.Repeatable<string> Dimension {
                 get {
-                    return this.dimension;
+                    return this._dimension;
                 }
                 set {
-                    this.dimension = value;
+                    this._dimension = value;
                 }
             }
             
@@ -1387,7 +1390,7 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("endDate")]
             public virtual string EndDate {
                 get {
-                    return this.endDate;
+                    return this._endDate;
                 }
             }
             
@@ -1395,10 +1398,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("filter")]
             public virtual Google.Apis.Util.Repeatable<string> Filter {
                 get {
-                    return this.filter;
+                    return this._filter;
                 }
                 set {
-                    this.filter = value;
+                    this._filter = value;
                 }
             }
             
@@ -1406,21 +1409,21 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
             /// <summary>The maximum number of rows of report data to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1428,10 +1431,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("metric")]
             public virtual Google.Apis.Util.Repeatable<string> Metric {
                 get {
-                    return this.metric;
+                    return this._metric;
                 }
                 set {
-                    this.metric = value;
+                    this._metric = value;
                 }
             }
             
@@ -1439,10 +1442,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("sort")]
             public virtual Google.Apis.Util.Repeatable<string> Sort {
                 get {
-                    return this.sort;
+                    return this._sort;
                 }
                 set {
-                    this.sort = value;
+                    this._sort = value;
                 }
             }
             
@@ -1450,18 +1453,18 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("startDate")]
             public virtual string StartDate {
                 get {
-                    return this.startDate;
+                    return this._startDate;
                 }
             }
             
             /// <summary>Index of the first row of report data to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("startIndex")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -1497,42 +1500,42 @@ namespace Google.Apis.Adsense.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.UrlChannels> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string adClientId;
+            private string _adClientId;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string adClientId) : 
                     base(service) {
-                this.adClientId = adClientId;
+                this._adClientId = adClientId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1540,10 +1543,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1551,18 +1554,18 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("adClientId")]
             public virtual string AdClientId {
                 get {
-                    return this.adClientId;
+                    return this._adClientId;
                 }
             }
             
             /// <summary>The maximum number of URL channels to include in the response, used for paging.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1570,10 +1573,10 @@ namespace Google.Apis.Adsense.v1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -1595,15 +1598,15 @@ namespace Google.Apis.Adsense.v1 {
         
         private const string Resource = "";
         
-        private AdclientsResource adclients;
+        private AdclientsResource _adclients;
         
-        private AdunitsResource adunits;
+        private AdunitsResource _adunits;
         
-        private CustomchannelsResource customchannels;
+        private CustomchannelsResource _customchannels;
         
-        private ReportsResource reports;
+        private ReportsResource _reports;
         
-        private UrlchannelsResource urlchannels;
+        private UrlchannelsResource _urlchannels;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1613,31 +1616,31 @@ namespace Google.Apis.Adsense.v1 {
         
         public virtual AdclientsResource Adclients {
             get {
-                return this.adclients;
+                return this._adclients;
             }
         }
         
         public virtual AdunitsResource Adunits {
             get {
-                return this.adunits;
+                return this._adunits;
             }
         }
         
         public virtual CustomchannelsResource Customchannels {
             get {
-                return this.customchannels;
+                return this._customchannels;
             }
         }
         
         public virtual ReportsResource Reports {
             get {
-                return this.reports;
+                return this._reports;
             }
         }
         
         public virtual UrlchannelsResource Urlchannels {
             get {
-                return this.urlchannels;
+                return this._urlchannels;
             }
         }
     }

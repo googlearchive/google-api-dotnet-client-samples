@@ -16,97 +16,97 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Bigqueryfield {
         
-        private System.Collections.Generic.IList<Bigqueryfield> fields;
+        private System.Collections.Generic.IList<Bigqueryfield> _fields;
         
-        private string mode;
+        private string _mode;
         
-        private string name;
+        private string _name;
         
-        private string type;
+        private string _type;
         
         [Newtonsoft.Json.JsonPropertyAttribute("fields")]
         public virtual System.Collections.Generic.IList<Bigqueryfield> Fields {
             get {
-                return this.fields;
+                return this._fields;
             }
             set {
-                this.fields = value;
+                this._fields = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("mode")]
         public virtual string Mode {
             get {
-                return this.mode;
+                return this._mode;
             }
             set {
-                this.mode = value;
+                this._mode = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
-                return this.type;
+                return this._type;
             }
             set {
-                this.type = value;
+                this._type = value;
             }
         }
     }
     
     public class Bigqueryschema {
         
-        private System.Collections.Generic.IList<Bigqueryfield> fields;
+        private System.Collections.Generic.IList<Bigqueryfield> _fields;
         
         [Newtonsoft.Json.JsonPropertyAttribute("fields")]
         public virtual System.Collections.Generic.IList<Bigqueryfield> Fields {
             get {
-                return this.fields;
+                return this._fields;
             }
             set {
-                this.fields = value;
+                this._fields = value;
             }
         }
     }
     
     public class Dataset : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Dataset.AccessData> access;
+        private System.Collections.Generic.IList<Dataset.AccessData> _access;
         
-        private string creationTime;
+        private string _creationTime;
         
-        private string datasetId;
+        private string _datasetId;
         
-        private Datasetreference datasetReference;
+        private Datasetreference _datasetReference;
         
-        private string description;
+        private string _description;
         
-        private string friendlyName;
+        private string _friendlyName;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string lastModifiedTime;
+        private string _lastModifiedTime;
         
-        private string projectId;
+        private string _projectId;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>[Optional] Describes users&apos; rights on the dataset. You can assign the same role to multiple users, and assign multiple roles to the same user.
         ///Default values assigned to a new dataset are as follows: OWNER - Project owners, dataset creator READ - Project readers WRITE - Project writers
@@ -116,10 +116,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("access")]
         public virtual System.Collections.Generic.IList<Dataset.AccessData> Access {
             get {
-                return this.access;
+                return this._access;
             }
             set {
-                this.access = value;
+                this._access = value;
             }
         }
         
@@ -127,10 +127,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
         public virtual string CreationTime {
             get {
-                return this.creationTime;
+                return this._creationTime;
             }
             set {
-                this.creationTime = value;
+                this._creationTime = value;
             }
         }
         
@@ -138,20 +138,20 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
         public virtual string DatasetId {
             get {
-                return this.datasetId;
+                return this._datasetId;
             }
             set {
-                this.datasetId = value;
+                this._datasetId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("datasetReference")]
         public virtual Datasetreference DatasetReference {
             get {
-                return this.datasetReference;
+                return this._datasetReference;
             }
             set {
-                this.datasetReference = value;
+                this._datasetReference = value;
             }
         }
         
@@ -159,10 +159,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -170,10 +170,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
         public virtual string FriendlyName {
             get {
-                return this.friendlyName;
+                return this._friendlyName;
             }
             set {
-                this.friendlyName = value;
+                this._friendlyName = value;
             }
         }
         
@@ -181,10 +181,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -192,10 +192,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -203,10 +203,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("lastModifiedTime")]
         public virtual string LastModifiedTime {
             get {
-                return this.lastModifiedTime;
+                return this._lastModifiedTime;
             }
             set {
-                this.lastModifiedTime = value;
+                this._lastModifiedTime = value;
             }
         }
         
@@ -214,10 +214,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
         
@@ -225,54 +225,54 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class AccessData {
             
-            private string allAuthenticatedUsers;
+            private string _allAuthenticatedUsers;
             
-            private string domain;
+            private string _domain;
             
-            private string groupByEmail;
+            private string _groupByEmail;
             
-            private string role;
+            private string _role;
             
-            private string specialGroup;
+            private string _specialGroup;
             
-            private string userByEmail;
+            private string _userByEmail;
             
             /// <summary>[Pick one] If True, any authenticated user is granted the assigned role.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("allAuthenticatedUsers")]
             public virtual string AllAuthenticatedUsers {
                 get {
-                    return this.allAuthenticatedUsers;
+                    return this._allAuthenticatedUsers;
                 }
                 set {
-                    this.allAuthenticatedUsers = value;
+                    this._allAuthenticatedUsers = value;
                 }
             }
             
@@ -280,10 +280,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("domain")]
             public virtual string Domain {
                 get {
-                    return this.domain;
+                    return this._domain;
                 }
                 set {
-                    this.domain = value;
+                    this._domain = value;
                 }
             }
             
@@ -291,10 +291,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("groupByEmail")]
             public virtual string GroupByEmail {
                 get {
-                    return this.groupByEmail;
+                    return this._groupByEmail;
                 }
                 set {
-                    this.groupByEmail = value;
+                    this._groupByEmail = value;
                 }
             }
             
@@ -302,10 +302,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("role")]
             public virtual string Role {
                 get {
-                    return this.role;
+                    return this._role;
                 }
                 set {
-                    this.role = value;
+                    this._role = value;
                 }
             }
             
@@ -313,10 +313,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("specialGroup")]
             public virtual string SpecialGroup {
                 get {
-                    return this.specialGroup;
+                    return this._specialGroup;
                 }
                 set {
-                    this.specialGroup = value;
+                    this._specialGroup = value;
                 }
             }
             
@@ -324,10 +324,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("userByEmail")]
             public virtual string UserByEmail {
                 get {
-                    return this.userByEmail;
+                    return this._userByEmail;
                 }
                 set {
-                    this.userByEmail = value;
+                    this._userByEmail = value;
                 }
             }
         }
@@ -335,24 +335,24 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class DatasetList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<DatasetList.DatasetsData> datasets;
+        private System.Collections.Generic.IList<DatasetList.DatasetsData> _datasets;
         
-        private string etag;
+        private string _etag;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>An array of one or more summarized dataset resources. Absent when there are no datasets in the specified project.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("datasets")]
         public virtual System.Collections.Generic.IList<DatasetList.DatasetsData> Datasets {
             get {
-                return this.datasets;
+                return this._datasets;
             }
             set {
-                this.datasets = value;
+                this._datasets = value;
             }
         }
         
@@ -360,10 +360,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -371,10 +371,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -382,53 +382,53 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class DatasetsData {
             
-            private string datasetId;
+            private string _datasetId;
             
-            private Datasetreference datasetReference;
+            private Datasetreference _datasetReference;
             
-            private string friendlyName;
+            private string _friendlyName;
             
-            private string id;
+            private string _id;
             
-            private string projectId;
+            private string _projectId;
             
             /// <summary>[Deprecated] A unique ID for this dataset; this is the id values without the project name.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
                 set {
-                    this.datasetId = value;
+                    this._datasetId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("datasetReference")]
             public virtual Datasetreference DatasetReference {
                 get {
-                    return this.datasetReference;
+                    return this._datasetReference;
                 }
                 set {
-                    this.datasetReference = value;
+                    this._datasetReference = value;
                 }
             }
             
@@ -436,10 +436,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
             public virtual string FriendlyName {
                 get {
-                    return this.friendlyName;
+                    return this._friendlyName;
                 }
                 set {
-                    this.friendlyName = value;
+                    this._friendlyName = value;
                 }
             }
             
@@ -447,10 +447,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
@@ -458,10 +458,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
                 set {
-                    this.projectId = value;
+                    this._projectId = value;
                 }
             }
         }
@@ -469,18 +469,18 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Datasetreference {
         
-        private string datasetId;
+        private string _datasetId;
         
-        private string projectId;
+        private string _projectId;
         
         /// <summary>[Required] A unique ID for this dataset, without the project name.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
         public virtual string DatasetId {
             get {
-                return this.datasetId;
+                return this._datasetId;
             }
             set {
-                this.datasetId = value;
+                this._datasetId = value;
             }
         }
         
@@ -488,440 +488,440 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
     }
     
     public class ErrorProto {
         
-        private System.Collections.Generic.IList<string> arguments;
+        private System.Collections.Generic.IList<string> _arguments;
         
-        private string code;
+        private string _code;
         
-        private string debugInfo;
+        private string _debugInfo;
         
-        private string domain;
+        private string _domain;
         
-        private string errorMessage;
+        private string _errorMessage;
         
-        private string location;
+        private string _location;
         
-        private string locationType;
+        private string _locationType;
         
         [Newtonsoft.Json.JsonPropertyAttribute("arguments")]
         public virtual System.Collections.Generic.IList<string> Arguments {
             get {
-                return this.arguments;
+                return this._arguments;
             }
             set {
-                this.arguments = value;
+                this._arguments = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("code")]
         public virtual string Code {
             get {
-                return this.code;
+                return this._code;
             }
             set {
-                this.code = value;
+                this._code = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("debugInfo")]
         public virtual string DebugInfo {
             get {
-                return this.debugInfo;
+                return this._debugInfo;
             }
             set {
-                this.debugInfo = value;
+                this._debugInfo = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("domain")]
         public virtual string Domain {
             get {
-                return this.domain;
+                return this._domain;
             }
             set {
-                this.domain = value;
+                this._domain = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("errorMessage")]
         public virtual string ErrorMessage {
             get {
-                return this.errorMessage;
+                return this._errorMessage;
             }
             set {
-                this.errorMessage = value;
+                this._errorMessage = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("location")]
         public virtual string Location {
             get {
-                return this.location;
+                return this._location;
             }
             set {
-                this.location = value;
+                this._location = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("locationType")]
         public virtual string LocationType {
             get {
-                return this.locationType;
+                return this._locationType;
             }
             set {
-                this.locationType = value;
+                this._locationType = value;
             }
         }
     }
     
     public class Job : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Jobconfiguration configuration;
+        private Jobconfiguration _configuration;
         
-        private string id;
+        private string _id;
         
-        private string jobId;
+        private string _jobId;
         
-        private Jobreference jobReference;
+        private Jobreference _jobReference;
         
-        private string kind;
+        private string _kind;
         
-        private string projectId;
+        private string _projectId;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Jobstatistics statistics;
+        private Jobstatistics _statistics;
         
-        private Jobstatus status;
+        private Jobstatus _status;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("configuration")]
         public virtual Jobconfiguration Configuration {
             get {
-                return this.configuration;
+                return this._configuration;
             }
             set {
-                this.configuration = value;
+                this._configuration = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("jobId")]
         public virtual string JobId {
             get {
-                return this.jobId;
+                return this._jobId;
             }
             set {
-                this.jobId = value;
+                this._jobId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("jobReference")]
         public virtual Jobreference JobReference {
             get {
-                return this.jobReference;
+                return this._jobReference;
             }
             set {
-                this.jobReference = value;
+                this._jobReference = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("statistics")]
         public virtual Jobstatistics Statistics {
             get {
-                return this.statistics;
+                return this._statistics;
             }
             set {
-                this.statistics = value;
+                this._statistics = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual Jobstatus Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class JobList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<JobList.JobsData> jobs;
+        private System.Collections.Generic.IList<JobList.JobsData> _jobs;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("jobs")]
         public virtual System.Collections.Generic.IList<JobList.JobsData> Jobs {
             get {
-                return this.jobs;
+                return this._jobs;
             }
             set {
-                this.jobs = value;
+                this._jobs = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class JobsData {
             
-            private Jobconfiguration configuration;
+            private Jobconfiguration _configuration;
             
-            private string endTime;
+            private string _endTime;
             
-            private ErrorProto errorResult;
+            private ErrorProto _errorResult;
             
-            private string id;
+            private string _id;
             
-            private string jobId;
+            private string _jobId;
             
-            private Jobreference jobReference;
+            private Jobreference _jobReference;
             
-            private string projectId;
+            private string _projectId;
             
-            private string startTime;
+            private string _startTime;
             
-            private string state;
+            private string _state;
             
-            private Jobstatistics statistics;
+            private Jobstatistics _statistics;
             
-            private Jobstatus status;
+            private Jobstatus _status;
             
             [Newtonsoft.Json.JsonPropertyAttribute("configuration")]
             public virtual Jobconfiguration Configuration {
                 get {
-                    return this.configuration;
+                    return this._configuration;
                 }
                 set {
-                    this.configuration = value;
+                    this._configuration = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("endTime")]
             public virtual string EndTime {
                 get {
-                    return this.endTime;
+                    return this._endTime;
                 }
                 set {
-                    this.endTime = value;
+                    this._endTime = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("errorResult")]
             public virtual ErrorProto ErrorResult {
                 get {
-                    return this.errorResult;
+                    return this._errorResult;
                 }
                 set {
-                    this.errorResult = value;
+                    this._errorResult = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("jobId")]
             public virtual string JobId {
                 get {
-                    return this.jobId;
+                    return this._jobId;
                 }
                 set {
-                    this.jobId = value;
+                    this._jobId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("jobReference")]
             public virtual Jobreference JobReference {
                 get {
-                    return this.jobReference;
+                    return this._jobReference;
                 }
                 set {
-                    this.jobReference = value;
+                    this._jobReference = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
                 set {
-                    this.projectId = value;
+                    this._projectId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("startTime")]
             public virtual string StartTime {
                 get {
-                    return this.startTime;
+                    return this._startTime;
                 }
                 set {
-                    this.startTime = value;
+                    this._startTime = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("state")]
             public virtual string State {
                 get {
-                    return this.state;
+                    return this._state;
                 }
                 set {
-                    this.state = value;
+                    this._state = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("statistics")]
             public virtual Jobstatistics Statistics {
                 get {
-                    return this.statistics;
+                    return this._statistics;
                 }
                 set {
-                    this.statistics = value;
+                    this._statistics = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("status")]
             public virtual Jobstatus Status {
                 get {
-                    return this.status;
+                    return this._status;
                 }
                 set {
-                    this.status = value;
+                    this._status = value;
                 }
             }
         }
@@ -929,43 +929,43 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class JobQueryRequest {
         
-        private Datasetreference defaultDataset;
+        private Datasetreference _defaultDataset;
         
-        private Tablereference destinationTable;
+        private Tablereference _destinationTable;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> maxResults;
+        private System.Nullable<long> _maxResults;
         
-        private string query;
+        private string _query;
         
         [Newtonsoft.Json.JsonPropertyAttribute("defaultDataset")]
         public virtual Datasetreference DefaultDataset {
             get {
-                return this.defaultDataset;
+                return this._defaultDataset;
             }
             set {
-                this.defaultDataset = value;
+                this._defaultDataset = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("destinationTable")]
         public virtual Tablereference DestinationTable {
             get {
-                return this.destinationTable;
+                return this._destinationTable;
             }
             set {
-                this.destinationTable = value;
+                this._destinationTable = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -973,10 +973,10 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("maxResults")]
         public virtual System.Nullable<long> MaxResults {
             get {
-                return this.maxResults;
+                return this._maxResults;
             }
             set {
-                this.maxResults = value;
+                this._maxResults = value;
             }
         }
         
@@ -984,276 +984,276 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("query")]
         public virtual string Query {
             get {
-                return this.query;
+                return this._query;
             }
             set {
-                this.query = value;
+                this._query = value;
             }
         }
     }
     
     public class JobStopResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string job;
+        private string _job;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("job")]
         public virtual string Job {
             get {
-                return this.job;
+                return this._job;
             }
             set {
-                this.job = value;
+                this._job = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Jobconfiguration {
         
-        private Jobconfigurationextract extract;
+        private Jobconfigurationextract _extract;
         
-        private Jobconfigurationlink link;
+        private Jobconfigurationlink _link;
         
-        private Jobconfigurationload load;
+        private Jobconfigurationload _load;
         
-        private Jobconfigurationproperties properties;
+        private Jobconfigurationproperties _properties;
         
-        private Jobconfigurationquery query;
+        private Jobconfigurationquery _query;
         
         [Newtonsoft.Json.JsonPropertyAttribute("extract")]
         public virtual Jobconfigurationextract Extract {
             get {
-                return this.extract;
+                return this._extract;
             }
             set {
-                this.extract = value;
+                this._extract = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual Jobconfigurationlink Link {
             get {
-                return this.link;
+                return this._link;
             }
             set {
-                this.link = value;
+                this._link = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("load")]
         public virtual Jobconfigurationload Load {
             get {
-                return this.load;
+                return this._load;
             }
             set {
-                this.load = value;
+                this._load = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("properties")]
         public virtual Jobconfigurationproperties Properties {
             get {
-                return this.properties;
+                return this._properties;
             }
             set {
-                this.properties = value;
+                this._properties = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("query")]
         public virtual Jobconfigurationquery Query {
             get {
-                return this.query;
+                return this._query;
             }
             set {
-                this.query = value;
+                this._query = value;
             }
         }
     }
     
     public class Jobconfigurationextract {
         
-        private string destinationUri;
+        private string _destinationUri;
         
-        private Tablereference sourceTable;
+        private Tablereference _sourceTable;
         
         [Newtonsoft.Json.JsonPropertyAttribute("destinationUri")]
         public virtual string DestinationUri {
             get {
-                return this.destinationUri;
+                return this._destinationUri;
             }
             set {
-                this.destinationUri = value;
+                this._destinationUri = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("sourceTable")]
         public virtual Tablereference SourceTable {
             get {
-                return this.sourceTable;
+                return this._sourceTable;
             }
             set {
-                this.sourceTable = value;
+                this._sourceTable = value;
             }
         }
     }
     
     public class Jobconfigurationlink {
         
-        private string createDisposition;
+        private string _createDisposition;
         
-        private Tablereference destinationTable;
+        private Tablereference _destinationTable;
         
-        private string sourceUri;
+        private System.Collections.Generic.IList<string> _sourceUri;
         
         [Newtonsoft.Json.JsonPropertyAttribute("createDisposition")]
         public virtual string CreateDisposition {
             get {
-                return this.createDisposition;
+                return this._createDisposition;
             }
             set {
-                this.createDisposition = value;
+                this._createDisposition = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("destinationTable")]
         public virtual Tablereference DestinationTable {
             get {
-                return this.destinationTable;
+                return this._destinationTable;
             }
             set {
-                this.destinationTable = value;
+                this._destinationTable = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("sourceUri")]
-        public virtual string SourceUri {
+        public virtual System.Collections.Generic.IList<string> SourceUri {
             get {
-                return this.sourceUri;
+                return this._sourceUri;
             }
             set {
-                this.sourceUri = value;
+                this._sourceUri = value;
             }
         }
     }
     
     public class Jobconfigurationload {
         
-        private string createDisposition;
+        private string _createDisposition;
         
-        private Tablereference destinationTable;
+        private Tablereference _destinationTable;
         
-        private string fieldDelimiter;
+        private string _fieldDelimiter;
         
-        private Bigqueryschema schema;
+        private Bigqueryschema _schema;
         
-        private System.Nullable<long> skipLeadingRows;
+        private System.Nullable<long> _skipLeadingRows;
         
-        private System.Collections.Generic.IList<string> sourceUris;
+        private System.Collections.Generic.IList<string> _sourceUris;
         
-        private string writeDisposition;
+        private string _writeDisposition;
         
         [Newtonsoft.Json.JsonPropertyAttribute("createDisposition")]
         public virtual string CreateDisposition {
             get {
-                return this.createDisposition;
+                return this._createDisposition;
             }
             set {
-                this.createDisposition = value;
+                this._createDisposition = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("destinationTable")]
         public virtual Tablereference DestinationTable {
             get {
-                return this.destinationTable;
+                return this._destinationTable;
             }
             set {
-                this.destinationTable = value;
+                this._destinationTable = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("fieldDelimiter")]
         public virtual string FieldDelimiter {
             get {
-                return this.fieldDelimiter;
+                return this._fieldDelimiter;
             }
             set {
-                this.fieldDelimiter = value;
+                this._fieldDelimiter = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("schema")]
         public virtual Bigqueryschema Schema {
             get {
-                return this.schema;
+                return this._schema;
             }
             set {
-                this.schema = value;
+                this._schema = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("skipLeadingRows")]
         public virtual System.Nullable<long> SkipLeadingRows {
             get {
-                return this.skipLeadingRows;
+                return this._skipLeadingRows;
             }
             set {
-                this.skipLeadingRows = value;
+                this._skipLeadingRows = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("sourceUris")]
         public virtual System.Collections.Generic.IList<string> SourceUris {
             get {
-                return this.sourceUris;
+                return this._sourceUris;
             }
             set {
-                this.sourceUris = value;
+                this._sourceUris = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("writeDisposition")]
         public virtual string WriteDisposition {
             get {
-                return this.writeDisposition;
+                return this._writeDisposition;
             }
             set {
-                this.writeDisposition = value;
+                this._writeDisposition = value;
             }
         }
     }
@@ -1263,269 +1263,269 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Jobconfigurationquery {
         
-        private string createDisposition;
+        private string _createDisposition;
         
-        private Datasetreference defaultDataset;
+        private Datasetreference _defaultDataset;
         
-        private Tablereference destinationTable;
+        private Tablereference _destinationTable;
         
-        private string query;
+        private string _query;
         
-        private string writeDisposition;
+        private string _writeDisposition;
         
         [Newtonsoft.Json.JsonPropertyAttribute("createDisposition")]
         public virtual string CreateDisposition {
             get {
-                return this.createDisposition;
+                return this._createDisposition;
             }
             set {
-                this.createDisposition = value;
+                this._createDisposition = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("defaultDataset")]
         public virtual Datasetreference DefaultDataset {
             get {
-                return this.defaultDataset;
+                return this._defaultDataset;
             }
             set {
-                this.defaultDataset = value;
+                this._defaultDataset = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("destinationTable")]
         public virtual Tablereference DestinationTable {
             get {
-                return this.destinationTable;
+                return this._destinationTable;
             }
             set {
-                this.destinationTable = value;
+                this._destinationTable = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("query")]
         public virtual string Query {
             get {
-                return this.query;
+                return this._query;
             }
             set {
-                this.query = value;
+                this._query = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("writeDisposition")]
         public virtual string WriteDisposition {
             get {
-                return this.writeDisposition;
+                return this._writeDisposition;
             }
             set {
-                this.writeDisposition = value;
+                this._writeDisposition = value;
             }
         }
     }
     
     public class Jobreference {
         
-        private string jobId;
+        private string _jobId;
         
-        private string projectId;
+        private string _projectId;
         
         [Newtonsoft.Json.JsonPropertyAttribute("jobId")]
         public virtual string JobId {
             get {
-                return this.jobId;
+                return this._jobId;
             }
             set {
-                this.jobId = value;
+                this._jobId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
     }
     
     public class Jobstatistics {
         
-        private string endTime;
+        private string _endTime;
         
-        private string startTime;
+        private string _startTime;
         
         [Newtonsoft.Json.JsonPropertyAttribute("endTime")]
         public virtual string EndTime {
             get {
-                return this.endTime;
+                return this._endTime;
             }
             set {
-                this.endTime = value;
+                this._endTime = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("startTime")]
         public virtual string StartTime {
             get {
-                return this.startTime;
+                return this._startTime;
             }
             set {
-                this.startTime = value;
+                this._startTime = value;
             }
         }
     }
     
     public class Jobstatus {
         
-        private ErrorProto errorResult;
+        private ErrorProto _errorResult;
         
-        private System.Collections.Generic.IList<ErrorProto> errors;
+        private System.Collections.Generic.IList<ErrorProto> _errors;
         
-        private string state;
+        private string _state;
         
         [Newtonsoft.Json.JsonPropertyAttribute("errorResult")]
         public virtual ErrorProto ErrorResult {
             get {
-                return this.errorResult;
+                return this._errorResult;
             }
             set {
-                this.errorResult = value;
+                this._errorResult = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("errors")]
         public virtual System.Collections.Generic.IList<ErrorProto> Errors {
             get {
-                return this.errors;
+                return this._errors;
             }
             set {
-                this.errors = value;
+                this._errors = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("state")]
         public virtual string State {
             get {
-                return this.state;
+                return this._state;
             }
             set {
-                this.state = value;
+                this._state = value;
             }
         }
     }
     
     public class ProjectList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private System.Collections.Generic.IList<ProjectList.ProjectsData> projects;
+        private System.Collections.Generic.IList<ProjectList.ProjectsData> _projects;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("projects")]
         public virtual System.Collections.Generic.IList<ProjectList.ProjectsData> Projects {
             get {
-                return this.projects;
+                return this._projects;
             }
             set {
-                this.projects = value;
+                this._projects = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class ProjectsData {
             
-            private string friendlyName;
+            private string _friendlyName;
             
-            private string id;
+            private string _id;
             
-            private Projectreference projectReference;
+            private Projectreference _projectReference;
             
             [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
             public virtual string FriendlyName {
                 get {
-                    return this.friendlyName;
+                    return this._friendlyName;
                 }
                 set {
-                    this.friendlyName = value;
+                    this._friendlyName = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("projectReference")]
             public virtual Projectreference ProjectReference {
                 get {
-                    return this.projectReference;
+                    return this._projectReference;
                 }
                 set {
-                    this.projectReference = value;
+                    this._projectReference = value;
                 }
             }
         }
@@ -1533,129 +1533,129 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Projectreference {
         
-        private string projectId;
+        private string _projectId;
         
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
     }
     
     public class QueryResults : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Job job;
+        private Job _job;
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<QueryResults.RowsData> rows;
+        private System.Collections.Generic.IList<QueryResults.RowsData> _rows;
         
-        private Bigqueryschema schema;
+        private Bigqueryschema _schema;
         
-        private string totalRows;
+        private string _totalRows;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("job")]
         public virtual Job Job {
             get {
-                return this.job;
+                return this._job;
             }
             set {
-                this.job = value;
+                this._job = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("rows")]
         public virtual System.Collections.Generic.IList<QueryResults.RowsData> Rows {
             get {
-                return this.rows;
+                return this._rows;
             }
             set {
-                this.rows = value;
+                this._rows = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("schema")]
         public virtual Bigqueryschema Schema {
             get {
-                return this.schema;
+                return this._schema;
             }
             set {
-                this.schema = value;
+                this._schema = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalRows")]
         public virtual string TotalRows {
             get {
-                return this.totalRows;
+                return this._totalRows;
             }
             set {
-                this.totalRows = value;
+                this._totalRows = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class RowsData {
             
-            private System.Collections.Generic.IList<RowsData.FData> f;
+            private System.Collections.Generic.IList<RowsData.FData> _f;
             
             [Newtonsoft.Json.JsonPropertyAttribute("f")]
             public virtual System.Collections.Generic.IList<RowsData.FData> F {
                 get {
-                    return this.f;
+                    return this._f;
                 }
                 set {
-                    this.f = value;
+                    this._f = value;
                 }
             }
             
             public class FData {
                 
-                private string v;
+                private string _v;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("v")]
                 public virtual string V {
                     get {
-                        return this.v;
+                        return this._v;
                     }
                     set {
-                        this.v = value;
+                        this._v = value;
                     }
                 }
             }
@@ -1664,260 +1664,260 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Table : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string creationTime;
+        private string _creationTime;
         
-        private string datasetId;
+        private string _datasetId;
         
-        private string description;
+        private string _description;
         
-        private string friendlyName;
+        private string _friendlyName;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string lastModifiedTime;
+        private string _lastModifiedTime;
         
-        private string projectId;
+        private string _projectId;
         
-        private Bigqueryschema schema;
+        private Bigqueryschema _schema;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string tableId;
+        private string _tableId;
         
-        private Tablereference tableReference;
+        private Tablereference _tableReference;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("creationTime")]
         public virtual string CreationTime {
             get {
-                return this.creationTime;
+                return this._creationTime;
             }
             set {
-                this.creationTime = value;
+                this._creationTime = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
         public virtual string DatasetId {
             get {
-                return this.datasetId;
+                return this._datasetId;
             }
             set {
-                this.datasetId = value;
+                this._datasetId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
         public virtual string FriendlyName {
             get {
-                return this.friendlyName;
+                return this._friendlyName;
             }
             set {
-                this.friendlyName = value;
+                this._friendlyName = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("lastModifiedTime")]
         public virtual string LastModifiedTime {
             get {
-                return this.lastModifiedTime;
+                return this._lastModifiedTime;
             }
             set {
-                this.lastModifiedTime = value;
+                this._lastModifiedTime = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("schema")]
         public virtual Bigqueryschema Schema {
             get {
-                return this.schema;
+                return this._schema;
             }
             set {
-                this.schema = value;
+                this._schema = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("tableId")]
         public virtual string TableId {
             get {
-                return this.tableId;
+                return this._tableId;
             }
             set {
-                this.tableId = value;
+                this._tableId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("tableReference")]
         public virtual Tablereference TableReference {
             get {
-                return this.tableReference;
+                return this._tableReference;
             }
             set {
-                this.tableReference = value;
+                this._tableReference = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class TableDataList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string kind;
+        private string _kind;
         
-        private System.Collections.Generic.IList<TableDataList.RowsData> rows;
+        private System.Collections.Generic.IList<TableDataList.RowsData> _rows;
         
-        private string totalRows;
+        private string _totalRows;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("rows")]
         public virtual System.Collections.Generic.IList<TableDataList.RowsData> Rows {
             get {
-                return this.rows;
+                return this._rows;
             }
             set {
-                this.rows = value;
+                this._rows = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalRows")]
         public virtual string TotalRows {
             get {
-                return this.totalRows;
+                return this._totalRows;
             }
             set {
-                this.totalRows = value;
+                this._totalRows = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class RowsData {
             
-            private System.Collections.Generic.IList<RowsData.FData> f;
+            private System.Collections.Generic.IList<RowsData.FData> _f;
             
             [Newtonsoft.Json.JsonPropertyAttribute("f")]
             public virtual System.Collections.Generic.IList<RowsData.FData> F {
                 get {
-                    return this.f;
+                    return this._f;
                 }
                 set {
-                    this.f = value;
+                    this._f = value;
                 }
             }
             
             public class FData {
                 
-                private string v;
+                private string _v;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("v")]
                 public virtual string V {
                     get {
-                        return this.v;
+                        return this._v;
                     }
                     set {
-                        this.v = value;
+                        this._v = value;
                     }
                 }
             }
@@ -1926,149 +1926,149 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class TableList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private System.Collections.Generic.IList<TableList.TablesData> tables;
+        private System.Collections.Generic.IList<TableList.TablesData> _tables;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("tables")]
         public virtual System.Collections.Generic.IList<TableList.TablesData> Tables {
             get {
-                return this.tables;
+                return this._tables;
             }
             set {
-                this.tables = value;
+                this._tables = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public class TablesData {
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string friendlyName;
+            private string _friendlyName;
             
-            private string id;
+            private string _id;
             
-            private string projectId;
+            private string _projectId;
             
-            private string tableId;
+            private string _tableId;
             
-            private Tablereference tableReference;
+            private Tablereference _tableReference;
             
             [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
                 set {
-                    this.datasetId = value;
+                    this._datasetId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("friendlyName")]
             public virtual string FriendlyName {
                 get {
-                    return this.friendlyName;
+                    return this._friendlyName;
                 }
                 set {
-                    this.friendlyName = value;
+                    this._friendlyName = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
                 set {
-                    this.id = value;
+                    this._id = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
                 set {
-                    this.projectId = value;
+                    this._projectId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
                 set {
-                    this.tableId = value;
+                    this._tableId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("tableReference")]
             public virtual Tablereference TableReference {
                 get {
-                    return this.tableReference;
+                    return this._tableReference;
                 }
                 set {
-                    this.tableReference = value;
+                    this._tableReference = value;
                 }
             }
         }
@@ -2076,39 +2076,39 @@ namespace Google.Apis.Bigquery.v2beta1.Data {
     
     public class Tablereference {
         
-        private string datasetId;
+        private string _datasetId;
         
-        private string projectId;
+        private string _projectId;
         
-        private string tableId;
+        private string _tableId;
         
         [Newtonsoft.Json.JsonPropertyAttribute("datasetId")]
         public virtual string DatasetId {
             get {
-                return this.datasetId;
+                return this._datasetId;
             }
             set {
-                this.datasetId = value;
+                this._datasetId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("projectId")]
         public virtual string ProjectId {
             get {
-                return this.projectId;
+                return this._projectId;
             }
             set {
-                this.projectId = value;
+                this._projectId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("tableId")]
         public virtual string TableId {
             get {
-                return this.tableId;
+                return this._tableId;
             }
             set {
-                this.tableId = value;
+                this._tableId = value;
             }
         }
     }
@@ -2128,338 +2128,336 @@ namespace Google.Apis.Bigquery.v2beta1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"bigquery:v2beta" +
-            "1\",\"name\":\"bigquery\",\"version\":\"v2beta1\",\"revision\":\"20120305\",\"title\":\"BigQuery" +
+            "1\",\"name\":\"bigquery\",\"version\":\"v2beta1\",\"revision\":\"20120416\",\"title\":\"BigQuery" +
             " API\",\"description\":\"A data platform for customers to create, manage, share and " +
             "query data.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-1" +
             "6.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"docume" +
             "ntationLink\":\"https://code.google.com/apis/bigquery/docs/v2/\",\"protocol\":\"rest\"," +
             "\"baseUrl\":\"https://www.googleapis.com/bigquery/v2beta1/\",\"basePath\":\"/bigquery/v" +
-            "2beta1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the" +
-            " response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptions\":[\"Response" +
-            "s with Content-Type of text/csv\",\"Responses with Content-Type of application/jso" +
-            "n\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specif" +
-            "ying which fields to include in a partial response.\",\"location\":\"query\"},\"key\":{" +
-            "\"type\":\"string\",\"description\":\"API key. Your API key identifies your project and" +
-            " provides you with API access, quota, and reports. Required unless you provide a" +
-            "n OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descript" +
-            "ion\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{" +
-            "\"type\":\"boolean\",\"description\":\"Returns response with indentations and line brea" +
-            "ks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Available to use for quota purposes for server-side applications. Can be a" +
-            "ny arbitrary string assigned to a user, but should not exceed 40 characters. Ove" +
-            "rrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"strin" +
-            "g\",\"description\":\"IP address of the site where the request originates. Use this " +
-            "if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{" +
-            "\"scopes\":{\"https://www.googleapis.com/auth/bigquery\":{\"description\":\"View and ma" +
-            "nage your data in Google BigQuery\"}}}},\"schemas\":{\"Bigqueryfield\":{\"id\":\"Bigquer" +
-            "yfield\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"array\",\"items\":{\"$ref\":\"" +
-            "Bigqueryfield\"}},\"mode\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"type\":{\"type" +
-            "\":\"string\"}}},\"Bigqueryschema\":{\"id\":\"Bigqueryschema\",\"type\":\"object\",\"propertie" +
-            "s\":{\"fields\":{\"type\":\"array\",\"items\":{\"$ref\":\"Bigqueryfield\"}}}},\"Dataset\":{\"id\"" +
-            ":\"Dataset\",\"type\":\"object\",\"properties\":{\"access\":{\"type\":\"array\",\"description\":" +
-            "\"[Optional] Describes users\' rights on the dataset. You can assign the same role" +
-            " to multiple users, and assign multiple roles to the same user.\\nDefault values " +
-            "assigned to a new dataset are as follows: OWNER - Project owners, dataset creato" +
-            "r READ - Project readers WRITE - Project writers\\nSee ACLs and Rights for a desc" +
-            "ription of these rights. If you specify any of these roles when creating a datas" +
-            "et, the assigned roles will overwrite the defaults listed above.\\nTo revoke righ" +
-            "ts to a dataset, call datasets.update() and omit the names of anyone whose right" +
-            "s you wish to revoke. However, every dataset must have at least one entity grant" +
-            "ed OWNER role.\\nEach access object can have only one of the following members: u" +
-            "serByEmail, groupByEmail, domain, or allAuthenticatedUsers.\",\"items\":{\"type\":\"ob" +
-            "ject\",\"properties\":{\"allAuthenticatedUsers\":{\"type\":\"string\",\"description\":\"[Pic" +
-            "k one] If True, any authenticated user is granted the assigned role.\"},\"domain\":" +
-            "{\"type\":\"string\",\"description\":\"[Pick one] A domain to grant access to. Any user" +
-            "s signed in with the domain specified will be granted the specified access. Exam" +
-            "ple: \\\"example.com\\\".\"},\"groupByEmail\":{\"type\":\"string\",\"description\":\"[Pick one" +
-            "] A fully-qualified email address of a mailing list to grant access to. This mus" +
-            "t be either a Google Groups mailing list (ends in @googlegroups.com) or a group " +
-            "managed by an enterprise version of Google Groups.\"},\"role\":{\"type\":\"string\",\"de" +
-            "scription\":\"[Required] Describes the rights granted to the user specified by the" +
-            " other member of the access object. The following string values are supported: R" +
-            "EAD - User can call any list() or get() method on any collection or resource. WR" +
-            "ITE - User can call any method on any collection except for datasets, on which t" +
-            "hey can call list() and get(). OWNER - User can call any method. The dataset cre" +
-            "ator is granted this role by default.\"},\"specialGroup\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"[Pick one] A special group to grant access to. The valid values are: proj" +
-            "ectOwners: Owners of the enclosing project. projectReaders: Readers of the enclo" +
-            "sing project. projectWriters: Writers of the enclosing project.\"},\"userByEmail\":" +
-            "{\"type\":\"string\",\"description\":\"[Pick one] A fully qualified email address of a " +
-            "user to grant access to. For example: fred@example.com.\"}}}},\"creationTime\":{\"ty" +
-            "pe\":\"string\",\"description\":\"[Output only] The date when this dataset was created" +
-            ", in milliseconds since the epoch.\",\"format\":\"int64\"},\"datasetId\":{\"type\":\"strin" +
-            "g\",\"description\":\"[Deprecated -- overlaps with datasetRef] A unique ID for this " +
-            "dataset. Must a string of 1-1024 characters satisfying the regular expression [A" +
-            "-Za-z0-9_].\"},\"datasetReference\":{\"$ref\":\"Datasetreference\",\"description\":\"[Requ" +
-            "ired] Reference identifying dataset.\"},\"description\":{\"type\":\"string\",\"descripti" +
-            "on\":\"[Optional] An arbitrary string description for the dataset. This might be s" +
-            "hown in BigQuery UI for browsing the dataset.\"},\"friendlyName\":{\"type\":\"string\"," +
-            "\"description\":\"[Optional] A descriptive name for this dataset, which might be sh" +
-            "own in any BigQuery user interfaces for browsing the dataset. Use datasetId for " +
-            "making API calls.\"},\"id\":{\"type\":\"string\",\"description\":\"[Output only] The fully" +
-            "-qualified unique name of this dataset in the format projectId:datasetId. The da" +
-            "taset name without the project name is given in the datasetId field. When creati" +
-            "ng a new dataset, leave this field blank, and instead specify the datasetId fiel" +
-            "d.\"},\"kind\":{\"type\":\"string\",\"description\":\"[Output only] The resource type.\",\"d" +
-            "efault\":\"bigquery#dataset\"},\"lastModifiedTime\":{\"type\":\"string\",\"description\":\"[" +
-            "Output only] The date when this dataset or any of its tables was last modified, " +
-            "in milliseconds since the epoch.\",\"format\":\"int64\"},\"projectId\":{\"type\":\"string\"" +
-            ",\"description\":\"[Deprecated -- overlaps with datasetRef].\"},\"selfLink\":{\"type\":\"" +
-            "string\",\"description\":\"[Output only] An URL that can be used to access this reso" +
-            "urce again. You can use this URL in Get or Update requests to this resource. Not" +
-            " used as an input to helix.\"}}},\"DatasetList\":{\"id\":\"DatasetList\",\"type\":\"object" +
-            "\",\"properties\":{\"datasets\":{\"type\":\"array\",\"description\":\"An array of one or mor" +
-            "e summarized dataset resources. Absent when there are no datasets in the specifi" +
-            "ed project.\",\"items\":{\"type\":\"object\",\"properties\":{\"datasetId\":{\"type\":\"string\"" +
-            ",\"description\":\"[Deprecated] A unique ID for this dataset; this is the id values" +
-            " without the project name.\"},\"datasetReference\":{\"$ref\":\"Datasetreference\",\"desc" +
-            "ription\":\"Reference identifying dataset.\"},\"friendlyName\":{\"type\":\"string\",\"desc" +
-            "ription\":\"A descriptive name for this dataset, if one exists.\"},\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"The fully-qualified unique name of this dataset in the form" +
-            "at projectId:datasetId.\"},\"projectId\":{\"type\":\"string\",\"description\":\"[Deprecate" +
-            "d] The ID of the container project.\"}}}},\"etag\":{\"type\":\"string\",\"description\":\"" +
-            "A hash of this page of results. See Paging Through Results in the developer\'s gu" +
-            "ide.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\",\"default\":\"big" +
-            "query#datasetList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token to r" +
-            "equest the next page of results. Present only when there is more than one page o" +
-            "f results.* See Paging Through Results in the developer\'s guide.\"}}},\"Datasetref" +
-            "erence\":{\"id\":\"Datasetreference\",\"type\":\"object\",\"properties\":{\"datasetId\":{\"typ" +
-            "e\":\"string\",\"description\":\"[Required] A unique ID for this dataset, without the " +
-            "project name.\"},\"projectId\":{\"type\":\"string\",\"description\":\"[Optional] The ID of" +
-            " the container project.\"}}},\"ErrorProto\":{\"id\":\"ErrorProto\",\"type\":\"object\",\"pro" +
-            "perties\":{\"arguments\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"code\":{\"type\":" +
-            "\"string\"},\"debugInfo\":{\"type\":\"string\"},\"domain\":{\"type\":\"string\"},\"errorMessage" +
-            "\":{\"type\":\"string\"},\"location\":{\"type\":\"string\"},\"locationType\":{\"type\":\"string\"" +
-            "}}},\"Job\":{\"id\":\"Job\",\"type\":\"object\",\"properties\":{\"configuration\":{\"$ref\":\"Job" +
-            "configuration\"},\"id\":{\"type\":\"string\"},\"jobId\":{\"type\":\"string\"},\"jobReference\":" +
-            "{\"$ref\":\"Jobreference\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#job\"},\"proje" +
-            "ctId\":{\"type\":\"string\"},\"selfLink\":{\"type\":\"string\"},\"statistics\":{\"$ref\":\"Jobst" +
-            "atistics\"},\"status\":{\"$ref\":\"Jobstatus\"}}},\"JobList\":{\"id\":\"JobList\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"etag\":{\"type\":\"string\"},\"jobs\":{\"type\":\"array\",\"items\":{\"typ" +
-            "e\":\"object\",\"properties\":{\"configuration\":{\"$ref\":\"Jobconfiguration\"},\"endTime\":" +
-            "{\"type\":\"string\",\"format\":\"int64\"},\"errorResult\":{\"$ref\":\"ErrorProto\"},\"id\":{\"ty" +
-            "pe\":\"string\"},\"jobId\":{\"type\":\"string\"},\"jobReference\":{\"$ref\":\"Jobreference\"},\"" +
-            "projectId\":{\"type\":\"string\"},\"startTime\":{\"type\":\"string\",\"format\":\"int64\"},\"sta" +
-            "te\":{\"type\":\"string\"},\"statistics\":{\"$ref\":\"Jobstatistics\"},\"status\":{\"$ref\":\"Jo" +
-            "bstatus\"}}}},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#jobList\"},\"nextPageToke" +
-            "n\":{\"type\":\"string\"},\"totalItems\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"JobQuer" +
-            "yRequest\":{\"id\":\"JobQueryRequest\",\"type\":\"object\",\"properties\":{\"defaultDataset\"" +
-            ":{\"$ref\":\"Datasetreference\",\"description\":\"[Optional] Specifies the default data" +
-            "setId and projectId to assume for any unqualified table names in the query. If n" +
-            "ot set, all table names in the query string must be fully-qualified in the forma" +
-            "t projectId:datasetId.tableid.\"},\"destinationTable\":{\"$ref\":\"Tablereference\",\"de" +
-            "scription\":\"[Optional] Specifies the table the query results should be written t" +
-            "o. The table will be created if it does not exist.\"},\"kind\":{\"type\":\"string\",\"de" +
-            "fault\":\"bigquery#jobQueryRequest\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"[Optional] The maximum number of results to return per page of results. If the " +
-            "response list exceeds the maximum response size for a single response, you will " +
-            "have to page through the results. Default is to return the maximum response size" +
-            ".\",\"format\":\"uint32\"},\"query\":{\"type\":\"string\",\"description\":\"[Required] A query" +
-            " string, following the BigQuery query syntax of the query to execute. Table name" +
-            "s should be qualified by dataset name in the format projectId:datasetId.tableId " +
-            "unless you specify the defaultDataset value. If the table is in the same project" +
-            " as the job, you can omit the project ID. Example: SELECT f1 FROM myProjectId:my" +
-            "DatasetId.myTableId.\"}}},\"JobStopResponse\":{\"id\":\"JobStopResponse\",\"type\":\"objec" +
-            "t\",\"properties\":{\"job\":{\"type\":\"any\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquer" +
-            "y#jobStopResponse\"}}},\"Jobconfiguration\":{\"id\":\"Jobconfiguration\",\"type\":\"object" +
-            "\",\"properties\":{\"extract\":{\"$ref\":\"Jobconfigurationextract\"},\"link\":{\"$ref\":\"Job" +
-            "configurationlink\"},\"load\":{\"$ref\":\"Jobconfigurationload\"},\"properties\":{\"$ref\":" +
-            "\"Jobconfigurationproperties\"},\"query\":{\"$ref\":\"Jobconfigurationquery\"}}},\"Jobcon" +
-            "figurationextract\":{\"id\":\"Jobconfigurationextract\",\"type\":\"object\",\"properties\":" +
-            "{\"destinationUri\":{\"type\":\"string\"},\"sourceTable\":{\"$ref\":\"Tablereference\"}}},\"J" +
-            "obconfigurationlink\":{\"id\":\"Jobconfigurationlink\",\"type\":\"object\",\"properties\":{" +
-            "\"createDisposition\":{\"type\":\"string\"},\"destinationTable\":{\"$ref\":\"Tablereference" +
-            "\"},\"sourceUri\":{\"type\":\"string\"}}},\"Jobconfigurationload\":{\"id\":\"Jobconfiguratio" +
-            "nload\",\"type\":\"object\",\"properties\":{\"createDisposition\":{\"type\":\"string\"},\"dest" +
-            "inationTable\":{\"$ref\":\"Tablereference\"},\"fieldDelimiter\":{\"type\":\"string\"},\"sche" +
-            "ma\":{\"$ref\":\"Bigqueryschema\"},\"skipLeadingRows\":{\"type\":\"integer\",\"format\":\"int3" +
-            "2\"},\"sourceUris\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"writeDisposition\":{" +
-            "\"type\":\"string\"}}},\"Jobconfigurationproperties\":{\"id\":\"Jobconfigurationpropertie" +
-            "s\",\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\"}},\"Jobconfigurationqu" +
-            "ery\":{\"id\":\"Jobconfigurationquery\",\"type\":\"object\",\"properties\":{\"createDisposit" +
-            "ion\":{\"type\":\"string\"},\"defaultDataset\":{\"$ref\":\"Datasetreference\"},\"destination" +
-            "Table\":{\"$ref\":\"Tablereference\"},\"query\":{\"type\":\"string\"},\"writeDisposition\":{\"" +
-            "type\":\"string\"}}},\"Jobreference\":{\"id\":\"Jobreference\",\"type\":\"object\",\"propertie" +
-            "s\":{\"jobId\":{\"type\":\"string\"},\"projectId\":{\"type\":\"string\"}}},\"Jobstatistics\":{\"" +
-            "id\":\"Jobstatistics\",\"type\":\"object\",\"properties\":{\"endTime\":{\"type\":\"string\",\"fo" +
-            "rmat\":\"int64\"},\"startTime\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Jobstatus\":{\"id" +
-            "\":\"Jobstatus\",\"type\":\"object\",\"properties\":{\"errorResult\":{\"$ref\":\"ErrorProto\"}," +
-            "\"errors\":{\"type\":\"array\",\"items\":{\"$ref\":\"ErrorProto\"}},\"state\":{\"type\":\"string\"" +
-            "}}},\"ProjectList\":{\"id\":\"ProjectList\",\"type\":\"object\",\"properties\":{\"etag\":{\"typ" +
-            "e\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#projectList\"},\"nextPage" +
-            "Token\":{\"type\":\"string\"},\"projects\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"pr" +
-            "operties\":{\"friendlyName\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"projectRefer" +
-            "ence\":{\"$ref\":\"Projectreference\"}}}},\"totalItems\":{\"type\":\"integer\",\"format\":\"in" +
-            "t32\"}}},\"Projectreference\":{\"id\":\"Projectreference\",\"type\":\"object\",\"properties\"" +
-            ":{\"projectId\":{\"type\":\"string\"}}},\"QueryResults\":{\"id\":\"QueryResults\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"job\":{\"$ref\":\"Job\"},\"kind\":{\"type\":\"string\",\"default\":\"bigq" +
-            "uery#queryResults\"},\"rows\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\"" +
-            ":{\"f\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"any\"}}" +
-            "}}}}},\"schema\":{\"$ref\":\"Bigqueryschema\"},\"totalRows\":{\"type\":\"string\",\"format\":\"" +
-            "uint64\"}}},\"Table\":{\"id\":\"Table\",\"type\":\"object\",\"properties\":{\"creationTime\":{\"" +
-            "type\":\"string\",\"format\":\"int64\"},\"datasetId\":{\"type\":\"string\"},\"description\":{\"t" +
-            "ype\":\"string\"},\"friendlyName\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"kind\":{\"" +
-            "type\":\"string\",\"default\":\"bigquery#table\"},\"lastModifiedTime\":{\"type\":\"string\",\"" +
-            "format\":\"int64\"},\"projectId\":{\"type\":\"string\"},\"schema\":{\"$ref\":\"Bigqueryschema\"" +
-            "},\"selfLink\":{\"type\":\"string\"},\"tableId\":{\"type\":\"string\"},\"tableReference\":{\"$r" +
-            "ef\":\"Tablereference\"}}},\"TableDataList\":{\"id\":\"TableDataList\",\"type\":\"object\",\"p" +
-            "roperties\":{\"kind\":{\"type\":\"string\",\"default\":\"bigquery#tableDataList\"},\"rows\":{" +
-            "\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"f\":{\"type\":\"array\",\"items" +
-            "\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"any\"}}}}}}},\"totalRows\":{\"type\":\"s" +
-            "tring\",\"format\":\"int64\"}}},\"TableList\":{\"id\":\"TableList\",\"type\":\"object\",\"proper" +
-            "ties\":{\"etag\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#tabl" +
-            "eList\"},\"nextPageToken\":{\"type\":\"string\"},\"tables\":{\"type\":\"array\",\"items\":{\"typ" +
-            "e\":\"object\",\"properties\":{\"datasetId\":{\"type\":\"string\"},\"friendlyName\":{\"type\":\"" +
-            "string\"},\"id\":{\"type\":\"string\"},\"projectId\":{\"type\":\"string\"},\"tableId\":{\"type\":" +
-            "\"string\"},\"tableReference\":{\"$ref\":\"Tablereference\"}}}},\"totalItems\":{\"type\":\"in" +
-            "teger\",\"format\":\"int32\"}}},\"Tablereference\":{\"id\":\"Tablereference\",\"type\":\"objec" +
-            "t\",\"properties\":{\"datasetId\":{\"type\":\"string\"},\"projectId\":{\"type\":\"string\"},\"ta" +
-            "bleId\":{\"type\":\"string\"}}}},\"resources\":{\"datasets\":{\"methods\":{\"delete\":{\"id\":\"" +
-            "bigquery.datasets.delete\",\"path\":\"projects/{projectId}/datasets/{datasetId}\",\"ht" +
-            "tpMethod\":\"DELETE\",\"description\":\"Deletes the dataset specified by datasetId val" +
-            "ue. Before you can delete a dataset, you must delete all its tables, either manu" +
-            "ally or by specifying deleteContents. Immediately after deletion, you can create" +
-            " another dataset with the same name.\",\"parameters\":{\"datasetId\":{\"type\":\"string\"" +
-            ",\"description\":\"Dataset identifier of dataset being deleted.\",\"required\":true,\"l" +
-            "ocation\":\"path\"},\"deleteContents\":{\"type\":\"boolean\",\"description\":\"[Optional] If" +
-            " True, delete all the tables in the dataset. If False and the dataset contains t" +
-            "ables, the request will fail. Default is False.\",\"location\":\"query\"},\"projectId\"" +
-            ":{\"type\":\"string\",\"description\":\"Project identifier of dataset being deleted.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"get\":{\"id\":\"bigquery.datas" +
-            "ets.get\",\"path\":\"projects/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"GET\",\"" +
-            "description\":\"Returns the dataset specified by datasetID.\",\"parameters\":{\"datase" +
-            "tId\":{\"type\":\"string\",\"description\":\"Dataset identifier of the dataset requested" +
-            ".\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"description\"" +
-            ":\"Project identifier containing dataset requested.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"response\":{\"$ref\":\"Dataset\"}" +
+            "2beta1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"bigquery/v2beta1" +
+            "/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data " +
+            "format for the response.\",\"default\":\"json\",\"enum\":[\"csv\",\"json\"],\"enumDescriptio" +
+            "ns\":[\"Responses with Content-Type of text/csv\",\"Responses with Content-Type of a" +
+            "pplication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"S" +
+            "elector specifying which fields to include in a partial response.\",\"location\":\"q" +
+            "uery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies yo" +
+            "ur project and provides you with API access, quota, and reports. Required unless" +
+            " you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"str" +
+            "ing\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"" +
+            "prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations" +
+            " and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"str" +
+            "ing\",\"description\":\"Available to use for quota purposes for server-side applicat" +
+            "ions. Can be any arbitrary string assigned to a user, but should not exceed 40 c" +
+            "haracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":" +
+            "{\"type\":\"string\",\"description\":\"IP address of the site where the request origina" +
+            "tes. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"aut" +
+            "h\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/bigquery\":{\"description" +
+            "\":\"View and manage your data in Google BigQuery\"}}}},\"schemas\":{\"Bigqueryfield\":" +
+            "{\"id\":\"Bigqueryfield\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"array\",\"it" +
+            "ems\":{\"$ref\":\"Bigqueryfield\"}},\"mode\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}" +
+            ",\"type\":{\"type\":\"string\"}}},\"Bigqueryschema\":{\"id\":\"Bigqueryschema\",\"type\":\"obje" +
+            "ct\",\"properties\":{\"fields\":{\"type\":\"array\",\"items\":{\"$ref\":\"Bigqueryfield\"}}}},\"" +
+            "Dataset\":{\"id\":\"Dataset\",\"type\":\"object\",\"properties\":{\"access\":{\"type\":\"array\"," +
+            "\"description\":\"[Optional] Describes users\' rights on the dataset. You can assign" +
+            " the same role to multiple users, and assign multiple roles to the same user.\\nD" +
+            "efault values assigned to a new dataset are as follows: OWNER - Project owners, " +
+            "dataset creator READ - Project readers WRITE - Project writers\\nSee ACLs and Rig" +
+            "hts for a description of these rights. If you specify any of these roles when cr" +
+            "eating a dataset, the assigned roles will overwrite the defaults listed above.\\n" +
+            "To revoke rights to a dataset, call datasets.update() and omit the names of anyo" +
+            "ne whose rights you wish to revoke. However, every dataset must have at least on" +
+            "e entity granted OWNER role.\\nEach access object can have only one of the follow" +
+            "ing members: userByEmail, groupByEmail, domain, or allAuthenticatedUsers.\",\"item" +
+            "s\":{\"type\":\"object\",\"properties\":{\"allAuthenticatedUsers\":{\"type\":\"string\",\"desc" +
+            "ription\":\"[Pick one] If True, any authenticated user is granted the assigned rol" +
+            "e.\"},\"domain\":{\"type\":\"string\",\"description\":\"[Pick one] A domain to grant acces" +
+            "s to. Any users signed in with the domain specified will be granted the specifie" +
+            "d access. Example: \\\"example.com\\\".\"},\"groupByEmail\":{\"type\":\"string\",\"descripti" +
+            "on\":\"[Pick one] A fully-qualified email address of a mailing list to grant acces" +
+            "s to. This must be either a Google Groups mailing list (ends in @googlegroups.co" +
+            "m) or a group managed by an enterprise version of Google Groups.\"},\"role\":{\"type" +
+            "\":\"string\",\"description\":\"[Required] Describes the rights granted to the user sp" +
+            "ecified by the other member of the access object. The following string values ar" +
+            "e supported: READ - User can call any list() or get() method on any collection o" +
+            "r resource. WRITE - User can call any method on any collection except for datase" +
+            "ts, on which they can call list() and get(). OWNER - User can call any method. T" +
+            "he dataset creator is granted this role by default.\"},\"specialGroup\":{\"type\":\"st" +
+            "ring\",\"description\":\"[Pick one] A special group to grant access to. The valid va" +
+            "lues are: projectOwners: Owners of the enclosing project. projectReaders: Reader" +
+            "s of the enclosing project. projectWriters: Writers of the enclosing project.\"}," +
+            "\"userByEmail\":{\"type\":\"string\",\"description\":\"[Pick one] A fully qualified email" +
+            " address of a user to grant access to. For example: fred@example.com.\"}}}},\"crea" +
+            "tionTime\":{\"type\":\"string\",\"description\":\"[Output only] The date when this datas" +
+            "et was created, in milliseconds since the epoch.\",\"format\":\"int64\"},\"datasetId\":" +
+            "{\"type\":\"string\",\"description\":\"[Deprecated -- overlaps with datasetRef] A uniqu" +
+            "e ID for this dataset. Must a string of 1-1024 characters satisfying the regular" +
+            " expression [A-Za-z0-9_].\"},\"datasetReference\":{\"$ref\":\"Datasetreference\",\"descr" +
+            "iption\":\"[Required] Reference identifying dataset.\"},\"description\":{\"type\":\"stri" +
+            "ng\",\"description\":\"[Optional] An arbitrary string description for the dataset. T" +
+            "his might be shown in BigQuery UI for browsing the dataset.\"},\"friendlyName\":{\"t" +
+            "ype\":\"string\",\"description\":\"[Optional] A descriptive name for this dataset, whi" +
+            "ch might be shown in any BigQuery user interfaces for browsing the dataset. Use " +
+            "datasetId for making API calls.\"},\"id\":{\"type\":\"string\",\"description\":\"[Output o" +
+            "nly] The fully-qualified unique name of this dataset in the format projectId:dat" +
+            "asetId. The dataset name without the project name is given in the datasetId fiel" +
+            "d. When creating a new dataset, leave this field blank, and instead specify the " +
+            "datasetId field.\"},\"kind\":{\"type\":\"string\",\"description\":\"[Output only] The reso" +
+            "urce type.\",\"default\":\"bigquery#dataset\"},\"lastModifiedTime\":{\"type\":\"string\",\"d" +
+            "escription\":\"[Output only] The date when this dataset or any of its tables was l" +
+            "ast modified, in milliseconds since the epoch.\",\"format\":\"int64\"},\"projectId\":{\"" +
+            "type\":\"string\",\"description\":\"[Deprecated -- overlaps with datasetRef].\"},\"selfL" +
+            "ink\":{\"type\":\"string\",\"description\":\"[Output only] An URL that can be used to ac" +
+            "cess this resource again. You can use this URL in Get or Update requests to this" +
+            " resource. Not used as an input to helix.\"}}},\"DatasetList\":{\"id\":\"DatasetList\"," +
+            "\"type\":\"object\",\"properties\":{\"datasets\":{\"type\":\"array\",\"description\":\"An array" +
+            " of one or more summarized dataset resources. Absent when there are no datasets " +
+            "in the specified project.\",\"items\":{\"type\":\"object\",\"properties\":{\"datasetId\":{\"" +
+            "type\":\"string\",\"description\":\"[Deprecated] A unique ID for this dataset; this is" +
+            " the id values without the project name.\"},\"datasetReference\":{\"$ref\":\"Datasetre" +
+            "ference\",\"description\":\"Reference identifying dataset.\"},\"friendlyName\":{\"type\":" +
+            "\"string\",\"description\":\"A descriptive name for this dataset, if one exists.\"},\"i" +
+            "d\":{\"type\":\"string\",\"description\":\"The fully-qualified unique name of this datas" +
+            "et in the format projectId:datasetId.\"},\"projectId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"[Deprecated] The ID of the container project.\"}}}},\"etag\":{\"type\":\"string\",\"" +
+            "description\":\"A hash of this page of results. See Paging Through Results in the " +
+            "developer\'s guide.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\"," +
+            "\"default\":\"bigquery#datasetList\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"A token to request the next page of results. Present only when there is more t" +
+            "han one page of results.* See Paging Through Results in the developer\'s guide.\"}" +
+            "}},\"Datasetreference\":{\"id\":\"Datasetreference\",\"type\":\"object\",\"properties\":{\"da" +
+            "tasetId\":{\"type\":\"string\",\"description\":\"[Required] A unique ID for this dataset" +
+            ", without the project name.\"},\"projectId\":{\"type\":\"string\",\"description\":\"[Optio" +
+            "nal] The ID of the container project.\"}}},\"ErrorProto\":{\"id\":\"ErrorProto\",\"type\"" +
+            ":\"object\",\"properties\":{\"arguments\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"" +
+            "code\":{\"type\":\"string\"},\"debugInfo\":{\"type\":\"string\"},\"domain\":{\"type\":\"string\"}" +
+            ",\"errorMessage\":{\"type\":\"string\"},\"location\":{\"type\":\"string\"},\"locationType\":{\"" +
+            "type\":\"string\"}}},\"Job\":{\"id\":\"Job\",\"type\":\"object\",\"properties\":{\"configuration" +
+            "\":{\"$ref\":\"Jobconfiguration\"},\"id\":{\"type\":\"string\"},\"jobId\":{\"type\":\"string\"},\"" +
+            "jobReference\":{\"$ref\":\"Jobreference\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquer" +
+            "y#job\"},\"projectId\":{\"type\":\"string\"},\"selfLink\":{\"type\":\"string\"},\"statistics\":" +
+            "{\"$ref\":\"Jobstatistics\"},\"status\":{\"$ref\":\"Jobstatus\"}}},\"JobList\":{\"id\":\"JobLis" +
+            "t\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\"},\"jobs\":{\"type\":\"array\"" +
+            ",\"items\":{\"type\":\"object\",\"properties\":{\"configuration\":{\"$ref\":\"Jobconfiguratio" +
+            "n\"},\"endTime\":{\"type\":\"string\",\"format\":\"int64\"},\"errorResult\":{\"$ref\":\"ErrorPro" +
+            "to\"},\"id\":{\"type\":\"string\"},\"jobId\":{\"type\":\"string\"},\"jobReference\":{\"$ref\":\"Jo" +
+            "breference\"},\"projectId\":{\"type\":\"string\"},\"startTime\":{\"type\":\"string\",\"format\"" +
+            ":\"int64\"},\"state\":{\"type\":\"string\"},\"statistics\":{\"$ref\":\"Jobstatistics\"},\"statu" +
+            "s\":{\"$ref\":\"Jobstatus\"}}}},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#jobList\"}" +
+            ",\"nextPageToken\":{\"type\":\"string\"},\"totalItems\":{\"type\":\"integer\",\"format\":\"int3" +
+            "2\"}}},\"JobQueryRequest\":{\"id\":\"JobQueryRequest\",\"type\":\"object\",\"properties\":{\"d" +
+            "efaultDataset\":{\"$ref\":\"Datasetreference\",\"description\":\"[Optional] Specifies th" +
+            "e default datasetId and projectId to assume for any unqualified table names in t" +
+            "he query. If not set, all table names in the query string must be fully-qualifie" +
+            "d in the format projectId:datasetId.tableid.\"},\"destinationTable\":{\"$ref\":\"Table" +
+            "reference\",\"description\":\"[Optional] Specifies the table the query results shoul" +
+            "d be written to. The table will be created if it does not exist.\"},\"kind\":{\"type" +
+            "\":\"string\",\"default\":\"bigquery#jobQueryRequest\"},\"maxResults\":{\"type\":\"integer\"," +
+            "\"description\":\"[Optional] The maximum number of results to return per page of re" +
+            "sults. If the response list exceeds the maximum response size for a single respo" +
+            "nse, you will have to page through the results. Default is to return the maximum" +
+            " response size.\",\"format\":\"uint32\"},\"query\":{\"type\":\"string\",\"description\":\"[Req" +
+            "uired] A query string, following the BigQuery query syntax of the query to execu" +
+            "te. Table names should be qualified by dataset name in the format projectId:data" +
+            "setId.tableId unless you specify the defaultDataset value. If the table is in th" +
+            "e same project as the job, you can omit the project ID. Example: SELECT f1 FROM " +
+            "myProjectId:myDatasetId.myTableId.\"}}},\"JobStopResponse\":{\"id\":\"JobStopResponse\"" +
+            ",\"type\":\"object\",\"properties\":{\"job\":{\"type\":\"any\"},\"kind\":{\"type\":\"string\",\"def" +
+            "ault\":\"bigquery#jobStopResponse\"}}},\"Jobconfiguration\":{\"id\":\"Jobconfiguration\"," +
+            "\"type\":\"object\",\"properties\":{\"extract\":{\"$ref\":\"Jobconfigurationextract\"},\"link" +
+            "\":{\"$ref\":\"Jobconfigurationlink\"},\"load\":{\"$ref\":\"Jobconfigurationload\"},\"proper" +
+            "ties\":{\"$ref\":\"Jobconfigurationproperties\"},\"query\":{\"$ref\":\"Jobconfigurationque" +
+            "ry\"}}},\"Jobconfigurationextract\":{\"id\":\"Jobconfigurationextract\",\"type\":\"object\"" +
+            ",\"properties\":{\"destinationUri\":{\"type\":\"string\"},\"sourceTable\":{\"$ref\":\"Tablere" +
+            "ference\"}}},\"Jobconfigurationlink\":{\"id\":\"Jobconfigurationlink\",\"type\":\"object\"," +
+            "\"properties\":{\"createDisposition\":{\"type\":\"string\"},\"destinationTable\":{\"$ref\":\"" +
+            "Tablereference\"},\"sourceUri\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}}}},\"Jobco" +
+            "nfigurationload\":{\"id\":\"Jobconfigurationload\",\"type\":\"object\",\"properties\":{\"cre" +
+            "ateDisposition\":{\"type\":\"string\"},\"destinationTable\":{\"$ref\":\"Tablereference\"},\"" +
+            "fieldDelimiter\":{\"type\":\"string\"},\"schema\":{\"$ref\":\"Bigqueryschema\"},\"skipLeadin" +
+            "gRows\":{\"type\":\"integer\",\"format\":\"int32\"},\"sourceUris\":{\"type\":\"array\",\"items\":" +
+            "{\"type\":\"string\"}},\"writeDisposition\":{\"type\":\"string\"}}},\"Jobconfigurationprope" +
+            "rties\":{\"id\":\"Jobconfigurationproperties\",\"type\":\"object\",\"additionalProperties\"" +
+            ":{\"type\":\"string\"}},\"Jobconfigurationquery\":{\"id\":\"Jobconfigurationquery\",\"type\"" +
+            ":\"object\",\"properties\":{\"createDisposition\":{\"type\":\"string\"},\"defaultDataset\":{" +
+            "\"$ref\":\"Datasetreference\"},\"destinationTable\":{\"$ref\":\"Tablereference\"},\"query\":" +
+            "{\"type\":\"string\"},\"writeDisposition\":{\"type\":\"string\"}}},\"Jobreference\":{\"id\":\"J" +
+            "obreference\",\"type\":\"object\",\"properties\":{\"jobId\":{\"type\":\"string\"},\"projectId\"" +
+            ":{\"type\":\"string\"}}},\"Jobstatistics\":{\"id\":\"Jobstatistics\",\"type\":\"object\",\"prop" +
+            "erties\":{\"endTime\":{\"type\":\"string\",\"format\":\"int64\"},\"startTime\":{\"type\":\"strin" +
+            "g\",\"format\":\"int64\"}}},\"Jobstatus\":{\"id\":\"Jobstatus\",\"type\":\"object\",\"properties" +
+            "\":{\"errorResult\":{\"$ref\":\"ErrorProto\"},\"errors\":{\"type\":\"array\",\"items\":{\"$ref\":" +
+            "\"ErrorProto\"}},\"state\":{\"type\":\"string\"}}},\"ProjectList\":{\"id\":\"ProjectList\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"def" +
+            "ault\":\"bigquery#projectList\"},\"nextPageToken\":{\"type\":\"string\"},\"projects\":{\"typ" +
+            "e\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"friendlyName\":{\"type\":\"string" +
+            "\"},\"id\":{\"type\":\"string\"},\"projectReference\":{\"$ref\":\"Projectreference\"}}}},\"tot" +
+            "alItems\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"Projectreference\":{\"id\":\"Project" +
+            "reference\",\"type\":\"object\",\"properties\":{\"projectId\":{\"type\":\"string\"}}},\"QueryR" +
+            "esults\":{\"id\":\"QueryResults\",\"type\":\"object\",\"properties\":{\"job\":{\"$ref\":\"Job\"}," +
+            "\"kind\":{\"type\":\"string\",\"default\":\"bigquery#queryResults\"},\"rows\":{\"type\":\"array" +
+            "\",\"items\":{\"type\":\"object\",\"properties\":{\"f\":{\"type\":\"array\",\"items\":{\"type\":\"ob" +
+            "ject\",\"properties\":{\"v\":{\"type\":\"any\"}}}}}}},\"schema\":{\"$ref\":\"Bigqueryschema\"}," +
+            "\"totalRows\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"Table\":{\"id\":\"Table\",\"type\":\"" +
+            "object\",\"properties\":{\"creationTime\":{\"type\":\"string\",\"format\":\"int64\"},\"dataset" +
+            "Id\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"friendlyName\":{\"type\":\"st" +
+            "ring\"},\"id\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"bigquery#table\"" +
+            "},\"lastModifiedTime\":{\"type\":\"string\",\"format\":\"int64\"},\"projectId\":{\"type\":\"str" +
+            "ing\"},\"schema\":{\"$ref\":\"Bigqueryschema\"},\"selfLink\":{\"type\":\"string\"},\"tableId\":" +
+            "{\"type\":\"string\"},\"tableReference\":{\"$ref\":\"Tablereference\"}}},\"TableDataList\":{" +
+            "\"id\":\"TableDataList\",\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"defa" +
+            "ult\":\"bigquery#tableDataList\"},\"rows\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"" +
+            "properties\":{\"f\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"v\":{\"ty" +
+            "pe\":\"any\"}}}}}}},\"totalRows\":{\"type\":\"string\",\"format\":\"int64\"}}},\"TableList\":{\"" +
+            "id\":\"TableList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\"},\"kind\":{\"" +
+            "type\":\"string\",\"default\":\"bigquery#tableList\"},\"nextPageToken\":{\"type\":\"string\"}" +
+            ",\"tables\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"datasetId\":{\"t" +
+            "ype\":\"string\"},\"friendlyName\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"projectI" +
+            "d\":{\"type\":\"string\"},\"tableId\":{\"type\":\"string\"},\"tableReference\":{\"$ref\":\"Table" +
+            "reference\"}}}},\"totalItems\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"Tablereferenc" +
+            "e\":{\"id\":\"Tablereference\",\"type\":\"object\",\"properties\":{\"datasetId\":{\"type\":\"str" +
+            "ing\"},\"projectId\":{\"type\":\"string\"},\"tableId\":{\"type\":\"string\"}}}},\"resources\":{" +
+            "\"datasets\":{\"methods\":{\"delete\":{\"id\":\"bigquery.datasets.delete\",\"path\":\"project" +
+            "s/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
+            " the dataset specified by datasetId value. Before you can delete a dataset, you " +
+            "must delete all its tables, either manually or by specifying deleteContents. Imm" +
+            "ediately after deletion, you can create another dataset with the same name.\",\"pa" +
+            "rameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset identifier of dat" +
+            "aset being deleted.\",\"required\":true,\"location\":\"path\"},\"deleteContents\":{\"type\"" +
+            ":\"boolean\",\"description\":\"[Optional] If True, delete all the tables in the datas" +
+            "et. If False and the dataset contains tables, the request will fail. Default is " +
+            "False.\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project " +
+            "identifier of dataset being deleted.\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"projectId\",\"datasetId\"],\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "bigquery\"]},\"get\":{\"id\":\"bigquery.datasets.get\",\"path\":\"projects/{projectId}/dat" +
+            "asets/{datasetId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the dataset specifi" +
+            "ed by datasetID.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Data" +
+            "set identifier of the dataset requested.\",\"required\":true,\"location\":\"path\"},\"pr" +
+            "ojectId\":{\"type\":\"string\",\"description\":\"Project identifier containing dataset r" +
+            "equested.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"da" +
+            "tasetId\"],\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/bigquery\"]},\"insert\":{\"id\":\"bigquery.datasets.insert\",\"path\":\"projects/{proje" +
+            "ctId}/datasets\",\"httpMethod\":\"POST\",\"description\":\"Creates a new empty dataset.\"" +
+            ",\"parameters\":{\"projectId\":{\"type\":\"string\",\"description\":\"Project identifier th" +
+            "at will contain dataset being created.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"projectId\"],\"request\":{\"$ref\":\"Dataset\"},\"response\":{\"$ref\":\"Data" +
+            "set\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"list\":{\"id\":\"bigqu" +
+            "ery.datasets.list\",\"path\":\"projects/{projectId}/datasets\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Lists all the datasets in the specified project to which the caller " +
+            "has read access; however, a project owner can list (but not necessarily get) all" +
+            " datasets in his project.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"[Optional] The maximum number of rows to return. If not specified, it wil" +
+            "l return up to the maximum amount of data that will fit in a reply.\",\"format\":\"u" +
+            "int32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"[Optional" +
+            "] A page token used when requesting a specific page in a set of paged results.\"," +
+            "\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project identifi" +
+            "er containing datasets to be listed.\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"projectId\"],\"response\":{\"$ref\":\"DatasetList\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/bigquery\"]},\"patch\":{\"id\":\"bigquery.datasets.patch\",\"path\"" +
+            ":\"projects/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"PATCH\",\"description\":" +
+            "\"Updates information in an existing dataset, specified by datasetId. Properties " +
+            "not included in the submitted resource will not be changed. If you include the a" +
+            "ccess property without any values assigned, the request will fail as you must sp" +
+            "ecify at least one owner for a dataset. This method supports patch semantics.\",\"" +
+            "parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset identifier cont" +
+            "aining dataset being updated.\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"" +
+            "type\":\"string\",\"description\":\"Project identifier containing dataset being update" +
+            "d.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId" +
+            "\"],\"request\":{\"$ref\":\"Dataset\"},\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/bigquery\"]},\"update\":{\"id\":\"bigquery.datasets.update\",\"" +
+            "path\":\"projects/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"PUT\",\"descriptio" +
+            "n\":\"Updates information in an existing dataset, specified by datasetId. Properti" +
+            "es not included in the submitted resource will not be changed. If you include th" +
+            "e access property without any values assigned, the request will fail as you must" +
+            " specify at least one owner for a dataset.\",\"parameters\":{\"datasetId\":{\"type\":\"s" +
+            "tring\",\"description\":\"Dataset identifier containing dataset being updated.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"description\":\"Proje" +
+            "ct identifier containing dataset being updated.\",\"required\":true,\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Dataset\"},\"re" +
+            "sponse\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]" +
+            "}}},\"jobs\":{\"methods\":{\"get\":{\"id\":\"bigquery.jobs.get\",\"path\":\"projects/{project" +
+            "Id}/jobs/{jobId}\",\"httpMethod\":\"GET\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"loc" +
+            "ation\":\"path\"}},\"parameterOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"}" +
             ",\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert\":{\"id\":\"bigquery" +
-            ".datasets.insert\",\"path\":\"projects/{projectId}/datasets\",\"httpMethod\":\"POST\",\"de" +
-            "scription\":\"Creates a new empty dataset.\",\"parameters\":{\"projectId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Project identifier that will contain dataset being created.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"request\":{\"" +
-            "$ref\":\"Dataset\"},\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/bigquery\"]},\"list\":{\"id\":\"bigquery.datasets.list\",\"path\":\"projects/{pr" +
-            "ojectId}/datasets\",\"httpMethod\":\"GET\",\"description\":\"Lists all the datasets in t" +
-            "he specified project to which the caller has read access; however, a project own" +
-            "er can list (but not necessarily get) all datasets in his project.\",\"parameters\"" +
-            ":{\"maxResults\":{\"type\":\"integer\",\"description\":\"[Optional] The maximum number of" +
-            " rows to return. If not specified, it will return up to the maximum amount of da" +
-            "ta that will fit in a reply.\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":" +
-            "{\"type\":\"string\",\"description\":\"[Optional] A page token used when requesting a s" +
-            "pecific page in a set of paged results.\",\"location\":\"query\"},\"projectId\":{\"type\"" +
-            ":\"string\",\"description\":\"Project identifier containing datasets to be listed.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"response\":{\"$" +
-            "ref\":\"DatasetList\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"patc" +
-            "h\":{\"id\":\"bigquery.datasets.patch\",\"path\":\"projects/{projectId}/datasets/{datase" +
-            "tId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates information in an existing dat" +
-            "aset, specified by datasetId. Properties not included in the submitted resource " +
-            "will not be changed. If you include the access property without any values assig" +
-            "ned, the request will fail as you must specify at least one owner for a dataset." +
-            " This method supports patch semantics.\",\"parameters\":{\"datasetId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Dataset identifier containing dataset being updated.\",\"require" +
-            "d\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project i" +
-            "dentifier containing dataset being updated.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Dataset\"},\"respon" +
-            "se\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"u" +
-            "pdate\":{\"id\":\"bigquery.datasets.update\",\"path\":\"projects/{projectId}/datasets/{d" +
-            "atasetId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates information in an existing " +
-            "dataset, specified by datasetId. Properties not included in the submitted resour" +
-            "ce will not be changed. If you include the access property without any values as" +
-            "signed, the request will fail as you must specify at least one owner for a datas" +
-            "et.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset identifie" +
-            "r containing dataset being updated.\",\"required\":true,\"location\":\"path\"},\"project" +
-            "Id\":{\"type\":\"string\",\"description\":\"Project identifier containing dataset being " +
-            "updated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"dat" +
-            "asetId\"],\"request\":{\"$ref\":\"Dataset\"},\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/bigquery\"]}}},\"jobs\":{\"methods\":{\"delete\":{\"id\":\"" +
-            "bigquery.jobs.delete\",\"path\":\"projects/{projectId}/jobs/{jobId}\",\"httpMethod\":\"D" +
-            "ELETE\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}" +
-            ",\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"projectId\",\"jobId\"],\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}," +
-            "\"get\":{\"id\":\"bigquery.jobs.get\",\"path\":\"projects/{projectId}/jobs/{jobId}\",\"http" +
-            "Method\":\"GET\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"required\":true,\"location\":" +
-            "\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parame" +
-            "terOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/bigquery\"]},\"insert\":{\"id\":\"bigquery.jobs.insert\",\"path\":\"p" +
-            "rojects/{projectId}/jobs\",\"httpMethod\":\"POST\",\"parameters\":{\"projectId\":{\"type\":" +
-            "\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"req" +
-            "uest\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/bigquery\"],\"mediaUpload\":{\"accept\":[\"application/octet-stream\"],\"proto" +
-            "cols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/bigquery/v2beta1/projects/{pro" +
-            "jectId}/jobs\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/bigquery/" +
-            "v2beta1/projects/{projectId}/jobs\"}}}},\"list\":{\"id\":\"bigquery.jobs.list\",\"path\":" +
-            "\"projects/{projectId}/jobs\",\"httpMethod\":\"GET\",\"parameters\":{\"allUsers\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether to display jobs owned by all users in the proje" +
-            "ct\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"maximum nu" +
-            "mber of results to return\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"t" +
-            "ype\":\"string\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"" +
-            "location\":\"path\"},\"projection\":{\"type\":\"string\",\"description\":\"Restrict informat" +
-            "ion returned to a set of selected fields.\",\"enum\":[\"full\",\"minimal\"],\"enumDescri" +
-            "ptions\":[\"Includes all job data.\",\"Does not include the job configuration.\"],\"lo" +
-            "cation\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"start index for p" +
-            "aginated results\",\"format\":\"uint32\",\"location\":\"query\"},\"stateFilter\":{\"type\":\"s" +
-            "tring\",\"description\":\"filter for job state\",\"enum\":[\"done\",\"pending\",\"running\"]," +
-            "\"enumDescriptions\":[\"finished jobs\",\"pending jobs\",\"running jobs\"],\"repeated\":tr" +
-            "ue,\"location\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"response\":{\"$ref\":\"JobLi" +
-            "st\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"query\":{\"id\":\"bigqu" +
-            "ery.jobs.query\",\"path\":\"projects/{projectId}/queries\",\"httpMethod\":\"POST\",\"param" +
-            "eters\":{\"projectId\":{\"type\":\"string\",\"description\":\"project name billed for the " +
-            "query\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"reque" +
-            "st\":{\"$ref\":\"JobQueryRequest\"},\"response\":{\"$ref\":\"QueryResults\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/bigquery\"]},\"stop\":{\"id\":\"bigquery.jobs.stop\",\"path" +
-            "\":\"project/{projectId}/jobs/{jobId}/stop\",\"httpMethod\":\"POST\",\"parameters\":{\"job" +
-            "Id\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"str" +
-            "ing\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"jobId\"]," +
-            "\"response\":{\"$ref\":\"JobStopResponse\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/bigquery\"]}}},\"projects\":{\"methods\":{\"list\":{\"id\":\"bigquery.projects.list\",\"pat" +
-            "h\":\"projects\",\"httpMethod\":\"GET\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"f" +
-            "ormat\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"location\":\"que" +
-            "ry\"}},\"response\":{\"$ref\":\"ProjectList\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/bigquery\"]}}},\"tabledata\":{\"methods\":{\"list\":{\"id\":\"bigquery.tabledata.list\"," +
-            "\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data\",\"httpMe" +
-            "thod\":\"GET\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"location" +
-            "\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"format\":\"uint32\",\"location\":\"query\"},\"" +
-            "projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"startIndex\":{\"ty" +
-            "pe\":\"string\",\"format\":\"uint64\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"tab" +
-            "leId\"],\"response\":{\"$ref\":\"TableDataList\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/bigquery\"]}}},\"tables\":{\"methods\":{\"delete\":{\"id\":\"bigquery.tables.delete\"" +
-            ",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}\",\"httpMethod" +
-            "\":\"DELETE\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"location\"" +
-            ":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"tableI" +
-            "d\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"proje" +
-            "ctId\",\"datasetId\",\"tableId\"],\"scopes\":[\"https://www.googleapis.com/auth/bigquery" +
-            "\"]},\"get\":{\"id\":\"bigquery.tables.get\",\"path\":\"projects/{projectId}/datasets/{dat" +
-            "asetId}/tables/{tableId}\",\"httpMethod\":\"GET\",\"parameters\":{\"datasetId\":{\"type\":\"" +
-            "string\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"require" +
-            "d\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"tableId\"],\"response\":{\"$ref" +
-            "\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert\":{\"id\"" +
-            ":\"bigquery.tables.insert\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tabl" +
-            "es\",\"httpMethod\":\"POST\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Table\"},\"re" +
-            "sponse\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}," +
-            "\"list\":{\"id\":\"bigquery.tables.list\",\"path\":\"projects/{projectId}/datasets/{datas" +
-            "etId}/tables\",\"httpMethod\":\"GET\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"format\":\"uint32\"," +
-            "\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"location\":\"query\"},\"projectId\"" +
-            ":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "Id\",\"datasetId\"],\"response\":{\"$ref\":\"TableList\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/bigquery\"]},\"patch\":{\"id\":\"bigquery.tables.patch\",\"path\":\"projects/{" +
-            "projectId}/datasets/{datasetId}/tables/{tableId}\",\"httpMethod\":\"PATCH\",\"paramete" +
-            "rs\":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"projectId\"" +
-            ":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"t" +
-            "ableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/bigquery\"]},\"update\":{\"id\":\"bigquery.tables.update\",\"" +
-            "path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}\",\"httpMethod\":" +
-            "\"PUT\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"location\":\"pat" +
-            "h\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"" +
-            "type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"" +
-            ",\"datasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}}}";
+            ".jobs.insert\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"POST\",\"parameters" +
+            "\":{\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"projectId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/bigquery\"],\"mediaUpload\":{\"accept\":[\"applicatio" +
+            "n/octet-stream\"],\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/bigquer" +
+            "y/v2beta1/projects/{projectId}/jobs\"},\"resumable\":{\"multipart\":true,\"path\":\"/res" +
+            "umable/upload/bigquery/v2beta1/projects/{projectId}/jobs\"}}}},\"list\":{\"id\":\"bigq" +
+            "uery.jobs.list\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"GET\",\"parameter" +
+            "s\":{\"allUsers\":{\"type\":\"boolean\",\"description\":\"Whether to display jobs owned by" +
+            " all users in the project\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"d" +
+            "escription\":\"maximum number of results to return\",\"format\":\"uint32\",\"location\":\"" +
+            "query\"},\"pageToken\":{\"type\":\"string\",\"location\":\"query\"},\"projectId\":{\"type\":\"st" +
+            "ring\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Restrict information returned to a set of selected fields.\",\"enum\":[\"full\"" +
+            ",\"minimal\"],\"enumDescriptions\":[\"Includes all job data.\",\"Does not include the j" +
+            "ob configuration.\"],\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"start index for paginated results\",\"format\":\"uint32\",\"location\":\"query\"},\"" +
+            "stateFilter\":{\"type\":\"string\",\"description\":\"filter for job state\",\"enum\":[\"done" +
+            "\",\"pending\",\"running\"],\"enumDescriptions\":[\"finished jobs\",\"pending jobs\",\"runni" +
+            "ng jobs\"],\"repeated\":true,\"location\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"r" +
+            "esponse\":{\"$ref\":\"JobList\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"" +
+            "]},\"query\":{\"id\":\"bigquery.jobs.query\",\"path\":\"projects/{projectId}/queries\",\"ht" +
+            "tpMethod\":\"POST\",\"parameters\":{\"projectId\":{\"type\":\"string\",\"description\":\"proje" +
+            "ct name billed for the query\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"projectId\"],\"request\":{\"$ref\":\"JobQueryRequest\"},\"response\":{\"$ref\":\"QueryR" +
+            "esults\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"stop\":{\"id\":\"bi" +
+            "gquery.jobs.stop\",\"path\":\"project/{projectId}/jobs/{jobId}/stop\",\"httpMethod\":\"P" +
+            "OST\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"" +
+            "projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\"" +
+            ":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"JobStopResponse\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/bigquery\"]}}},\"projects\":{\"methods\":{\"list\":{\"id\":\"bigqu" +
+            "ery.projects.list\",\"path\":\"projects\",\"httpMethod\":\"GET\",\"parameters\":{\"maxResult" +
+            "s\":{\"type\":\"integer\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"" +
+            "string\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ProjectList\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/bigquery\"]}}},\"tabledata\":{\"methods\":{\"list\":{\"id\":\"bi" +
+            "gquery.tabledata.list\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/" +
+            "{tableId}/data\",\"httpMethod\":\"GET\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"r" +
+            "equired\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"format\":\"uint32" +
+            "\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"startIndex\":{\"type\":\"string\",\"format\":\"uint64\",\"location\":\"query\"},\"table" +
+            "Id\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"proj" +
+            "ectId\",\"datasetId\",\"tableId\"],\"response\":{\"$ref\":\"TableDataList\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/bigquery\"]}}},\"tables\":{\"methods\":{\"delete\":{\"id\":\"" +
+            "bigquery.tables.delete\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables" +
+            "/{tableId}\",\"httpMethod\":\"DELETE\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"lo" +
+            "cation\":\"path\"},\"tableId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"projectId\",\"datasetId\",\"tableId\"],\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/bigquery\"]},\"get\":{\"id\":\"bigquery.tables.get\",\"path\":\"projects/{p" +
+            "rojectId}/datasets/{datasetId}/tables/{tableId}\",\"httpMethod\":\"GET\",\"parameters\"" +
+            ":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"" +
+            "type\":\"string\",\"required\":true,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"tabl" +
+            "eId\"],\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/big" +
+            "query\"]},\"insert\":{\"id\":\"bigquery.tables.insert\",\"path\":\"projects/{projectId}/da" +
+            "tasets/{datasetId}/tables\",\"httpMethod\":\"POST\",\"parameters\":{\"datasetId\":{\"type\"" +
+            ":\"string\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"reques" +
+            "t\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/bigquery\"]},\"list\":{\"id\":\"bigquery.tables.list\",\"path\":\"projects/{pro" +
+            "jectId}/datasets/{datasetId}/tables\",\"httpMethod\":\"GET\",\"parameters\":{\"datasetId" +
+            "\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"inte" +
+            "ger\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"locatio" +
+            "n\":\"query\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"pa" +
+            "rameterOrder\":[\"projectId\",\"datasetId\"],\"response\":{\"$ref\":\"TableList\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/bigquery\"]},\"patch\":{\"id\":\"bigquery.tables.pa" +
+            "tch\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}\",\"httpMe" +
+            "thod\":\"PATCH\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"},\"tab" +
+            "leId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"pr" +
+            "ojectId\",\"datasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"T" +
+            "able\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"update\":{\"id\":\"bi" +
+            "gquery.tables.update\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{" +
+            "tableId}\",\"httpMethod\":\"PUT\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"require" +
+            "d\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"tableId\":{\"type\":\"string\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"projectId\",\"datasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"respo" +
+            "nse\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}}}" +
+            "";
         
         private const string Version = "v2beta1";
         
@@ -2469,16 +2467,16 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected BigqueryService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.datasets = new DatasetsResource(this);
-            this.jobs = new JobsResource(this);
-            this.projects = new ProjectsResource(this);
-            this.tabledata = new TabledataResource(this);
-            this.tables = new TablesResource(this);
+            this._datasets = new DatasetsResource(this);
+            this._jobs = new JobsResource(this);
+            this._projects = new ProjectsResource(this);
+            this._tabledata = new TabledataResource(this);
+            this._tables = new TablesResource(this);
         }
         
         public BigqueryService() : 
@@ -2486,22 +2484,22 @@ namespace Google.Apis.Bigquery.v2beta1 {
         }
         
         public BigqueryService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BigqueryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BigqueryService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BigqueryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BigqueryService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -2581,43 +2579,43 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private System.Boolean? deleteContents;
+            private System.Nullable<bool> _deleteContents;
             
-            private string projectId;
+            private string _projectId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2625,10 +2623,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2636,18 +2634,18 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             /// <summary>[Optional] If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("deleteContents")]
-            public virtual System.Boolean? DeleteContents {
+            public virtual System.Nullable<bool> DeleteContents {
                 get {
-                    return this.deleteContents;
+                    return this._deleteContents;
                 }
                 set {
-                    this.deleteContents = value;
+                    this._deleteContents = value;
                 }
             }
             
@@ -2655,7 +2653,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -2674,41 +2672,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2716,10 +2714,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2727,7 +2725,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
@@ -2735,7 +2733,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -2754,41 +2752,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Dataset bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Dataset _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Dataset body, string projectId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
+                this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2796,10 +2794,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2807,17 +2805,17 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Dataset Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2840,42 +2838,42 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.DatasetList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string projectId;
+            private string _projectId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string projectId) : 
                     base(service) {
-                this.projectId = projectId;
+                this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2883,21 +2881,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>[Optional] The maximum number of rows to return. If not specified, it will return up to the maximum amount of data that will fit in a reply.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -2905,10 +2903,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -2916,7 +2914,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -2935,44 +2933,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Dataset bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Dataset _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Dataset body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2980,10 +2978,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2991,7 +2989,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
@@ -2999,17 +2997,17 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Dataset Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3032,44 +3030,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Dataset bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Dataset _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Dataset body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3077,10 +3075,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3088,7 +3086,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
@@ -3096,17 +3094,17 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Dataset Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3136,12 +3134,6 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public JobsResource(BigqueryService service) {
             this.service = service;
-        }
-        
-        /// <param name="projectId">Required</param>
-        /// <param name="jobId">Required</param>
-        public virtual DeleteRequest Delete(string projectId, string jobId) {
-            return new DeleteRequest(service, projectId, jobId);
         }
         
         /// <param name="projectId">Required</param>
@@ -3201,121 +3193,43 @@ namespace Google.Apis.Bigquery.v2beta1 {
             Running,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
-            
-            private string oauth_token;
-            
-            private System.Boolean? prettyPrint;
-            
-            private string quotaUser;
-            
-            private string jobId;
-            
-            private string projectId;
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string jobId) : 
-                    base(service) {
-                this.projectId = projectId;
-                this.jobId = jobId;
-            }
-            
-            /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
-            public virtual string Oauth_token {
-                get {
-                    return this.oauth_token;
-                }
-                set {
-                    this.oauth_token = value;
-                }
-            }
-            
-            /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
-                get {
-                    return this.prettyPrint;
-                }
-                set {
-                    this.prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
-            public virtual string QuotaUser {
-                get {
-                    return this.quotaUser;
-                }
-                set {
-                    this.quotaUser = value;
-                }
-            }
-            
-            [Google.Apis.Util.RequestParameterAttribute("jobId")]
-            public virtual string JobId {
-                get {
-                    return this.jobId;
-                }
-            }
-            
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
-            public virtual string ProjectId {
-                get {
-                    return this.projectId;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "jobs";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "delete";
-                }
-            }
-        }
-        
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Job> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string jobId;
+            private string _jobId;
             
-            private string projectId;
+            private string _projectId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string jobId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.jobId = jobId;
+                this._projectId = projectId;
+                this._jobId = jobId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3323,24 +3237,24 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("jobId")]
             public virtual string JobId {
                 get {
-                    return this.jobId;
+                    return this._jobId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -3359,41 +3273,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Job> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Job bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Job _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Job body, string projectId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
+                this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3401,27 +3315,27 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Job Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3444,50 +3358,50 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Boolean? allUsers;
+            private System.Nullable<bool> _allUsers;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string projectId;
+            private string _projectId;
             
-            private Projection? projection;
+            private System.Nullable<Projection> _projection;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
-            private StateFilter? stateFilter;
+            private System.Nullable<StateFilter> _stateFilter;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string projectId) : 
                     base(service) {
-                this.projectId = projectId;
+                this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3495,82 +3409,82 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Whether to display jobs owned by all users in the project</summary>
             [Google.Apis.Util.RequestParameterAttribute("allUsers")]
-            public virtual System.Boolean? AllUsers {
+            public virtual System.Nullable<bool> AllUsers {
                 get {
-                    return this.allUsers;
+                    return this._allUsers;
                 }
                 set {
-                    this.allUsers = value;
+                    this._allUsers = value;
                 }
             }
             
             /// <summary>maximum number of results to return</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
             [Google.Apis.Util.RequestParameterAttribute("projection")]
-            public virtual Projection? Projection {
+            public virtual System.Nullable<Projection> Projection {
                 get {
-                    return this.projection;
+                    return this._projection;
                 }
                 set {
-                    this.projection = value;
+                    this._projection = value;
                 }
             }
             
             /// <summary>start index for paginated results</summary>
             [Google.Apis.Util.RequestParameterAttribute("startIndex")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
             /// <summary>filter for job state</summary>
             [Google.Apis.Util.RequestParameterAttribute("stateFilter")]
-            public virtual StateFilter? StateFilter {
+            public virtual System.Nullable<StateFilter> StateFilter {
                 get {
-                    return this.stateFilter;
+                    return this._stateFilter;
                 }
                 set {
-                    this.stateFilter = value;
+                    this._stateFilter = value;
                 }
             }
             
@@ -3589,41 +3503,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.QueryResults> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest _Body;
             
             public QueryRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest body, string projectId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
+                this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3631,10 +3545,10 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3642,17 +3556,17 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.JobQueryRequest Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3675,41 +3589,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class StopRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobStopResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string jobId;
+            private string _jobId;
             
-            private string projectId;
+            private string _projectId;
             
             public StopRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string jobId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.jobId = jobId;
+                this._projectId = projectId;
+                this._jobId = jobId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3717,24 +3631,24 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("jobId")]
             public virtual string JobId {
                 get {
-                    return this.jobId;
+                    return this._jobId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -3768,15 +3682,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.ProjectList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -3786,21 +3700,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3808,30 +3722,30 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -3868,48 +3782,48 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableDataList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string projectId;
+            private string _projectId;
             
-            private string startIndex;
+            private string _startIndex;
             
-            private string tableId;
+            private string _tableId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId, string tableId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
-                this.tableId = tableId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
+                this._tableId = tableId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3917,51 +3831,51 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("startIndex")]
             public virtual string StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
             }
             
@@ -4031,44 +3945,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private string tableId;
+            private string _tableId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId, string tableId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
-                this.tableId = tableId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
+                this._tableId = tableId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4076,31 +3990,31 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
             }
             
@@ -4119,44 +4033,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private string tableId;
+            private string _tableId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId, string tableId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
-                this.tableId = tableId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
+                this._tableId = tableId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4164,31 +4078,31 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
             }
             
@@ -4207,44 +4121,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Table bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Table _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Table body, string projectId, string datasetId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4252,34 +4166,34 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Table Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4302,45 +4216,45 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string projectId;
+            private string _projectId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string projectId, string datasetId) : 
                     base(service) {
-                this.projectId = projectId;
-                this.datasetId = datasetId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4348,44 +4262,44 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
@@ -4404,47 +4318,47 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private string tableId;
+            private string _tableId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Table bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Table _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Table body, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
-                this.datasetId = datasetId;
-                this.tableId = tableId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
+                this._tableId = tableId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4452,41 +4366,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Table Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4509,47 +4423,47 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string datasetId;
+            private string _datasetId;
             
-            private string projectId;
+            private string _projectId;
             
-            private string tableId;
+            private string _tableId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Table bodyValue;
+            private Google.Apis.Bigquery.v2beta1.Data.Table _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Table body, string projectId, string datasetId, string tableId) : 
                     base(service) {
                 this.Body = body;
-                this.projectId = projectId;
-                this.datasetId = datasetId;
-                this.tableId = tableId;
+                this._projectId = projectId;
+                this._datasetId = datasetId;
+                this._tableId = tableId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4557,41 +4471,41 @@ namespace Google.Apis.Bigquery.v2beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("datasetId")]
             public virtual string DatasetId {
                 get {
-                    return this.datasetId;
+                    return this._datasetId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("projectId")]
             public virtual string ProjectId {
                 get {
-                    return this.projectId;
+                    return this._projectId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tableId")]
             public virtual string TableId {
                 get {
-                    return this.tableId;
+                    return this._tableId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Bigquery.v2beta1.Data.Table Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4617,15 +4531,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         private const string Resource = "";
         
-        private DatasetsResource datasets;
+        private DatasetsResource _datasets;
         
-        private JobsResource jobs;
+        private JobsResource _jobs;
         
-        private ProjectsResource projects;
+        private ProjectsResource _projects;
         
-        private TabledataResource tabledata;
+        private TabledataResource _tabledata;
         
-        private TablesResource tables;
+        private TablesResource _tables;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -4635,31 +4549,31 @@ namespace Google.Apis.Bigquery.v2beta1 {
         
         public virtual DatasetsResource Datasets {
             get {
-                return this.datasets;
+                return this._datasets;
             }
         }
         
         public virtual JobsResource Jobs {
             get {
-                return this.jobs;
+                return this._jobs;
             }
         }
         
         public virtual ProjectsResource Projects {
             get {
-                return this.projects;
+                return this._projects;
             }
         }
         
         public virtual TabledataResource Tabledata {
             get {
-                return this.tabledata;
+                return this._tabledata;
             }
         }
         
         public virtual TablesResource Tables {
             get {
-                return this.tables;
+                return this._tables;
             }
         }
     }

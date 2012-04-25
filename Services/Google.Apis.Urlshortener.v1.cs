@@ -16,26 +16,26 @@ namespace Google.Apis.Urlshortener.v1.Data {
     
     public class AnalyticsSnapshot {
         
-        private System.Collections.Generic.IList<StringCount> browsers;
+        private System.Collections.Generic.IList<StringCount> _browsers;
         
-        private System.Collections.Generic.IList<StringCount> countries;
+        private System.Collections.Generic.IList<StringCount> _countries;
         
-        private string longUrlClicks;
+        private string _longUrlClicks;
         
-        private System.Collections.Generic.IList<StringCount> platforms;
+        private System.Collections.Generic.IList<StringCount> _platforms;
         
-        private System.Collections.Generic.IList<StringCount> referrers;
+        private System.Collections.Generic.IList<StringCount> _referrers;
         
-        private string shortUrlClicks;
+        private string _shortUrlClicks;
         
         /// <summary>Top browsers, e.g. &quot;Chrome&quot;; sorted by (descending) click counts. Only present if this data is available.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("browsers")]
         public virtual System.Collections.Generic.IList<StringCount> Browsers {
             get {
-                return this.browsers;
+                return this._browsers;
             }
             set {
-                this.browsers = value;
+                this._browsers = value;
             }
         }
         
@@ -43,10 +43,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("countries")]
         public virtual System.Collections.Generic.IList<StringCount> Countries {
             get {
-                return this.countries;
+                return this._countries;
             }
             set {
-                this.countries = value;
+                this._countries = value;
             }
         }
         
@@ -54,10 +54,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("longUrlClicks")]
         public virtual string LongUrlClicks {
             get {
-                return this.longUrlClicks;
+                return this._longUrlClicks;
             }
             set {
-                this.longUrlClicks = value;
+                this._longUrlClicks = value;
             }
         }
         
@@ -65,10 +65,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("platforms")]
         public virtual System.Collections.Generic.IList<StringCount> Platforms {
             get {
-                return this.platforms;
+                return this._platforms;
             }
             set {
-                this.platforms = value;
+                this._platforms = value;
             }
         }
         
@@ -76,10 +76,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("referrers")]
         public virtual System.Collections.Generic.IList<StringCount> Referrers {
             get {
-                return this.referrers;
+                return this._referrers;
             }
             set {
-                this.referrers = value;
+                this._referrers = value;
             }
         }
         
@@ -87,91 +87,91 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("shortUrlClicks")]
         public virtual string ShortUrlClicks {
             get {
-                return this.shortUrlClicks;
+                return this._shortUrlClicks;
             }
             set {
-                this.shortUrlClicks = value;
+                this._shortUrlClicks = value;
             }
         }
     }
     
     public class AnalyticsSummary {
         
-        private AnalyticsSnapshot allTime;
+        private AnalyticsSnapshot _allTime;
         
-        private AnalyticsSnapshot day;
+        private AnalyticsSnapshot _day;
         
-        private AnalyticsSnapshot month;
+        private AnalyticsSnapshot _month;
         
-        private AnalyticsSnapshot twoHours;
+        private AnalyticsSnapshot _twoHours;
         
-        private AnalyticsSnapshot week;
+        private AnalyticsSnapshot _week;
         
         [Newtonsoft.Json.JsonPropertyAttribute("allTime")]
         public virtual AnalyticsSnapshot AllTime {
             get {
-                return this.allTime;
+                return this._allTime;
             }
             set {
-                this.allTime = value;
+                this._allTime = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("day")]
         public virtual AnalyticsSnapshot Day {
             get {
-                return this.day;
+                return this._day;
             }
             set {
-                this.day = value;
+                this._day = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("month")]
         public virtual AnalyticsSnapshot Month {
             get {
-                return this.month;
+                return this._month;
             }
             set {
-                this.month = value;
+                this._month = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("twoHours")]
         public virtual AnalyticsSnapshot TwoHours {
             get {
-                return this.twoHours;
+                return this._twoHours;
             }
             set {
-                this.twoHours = value;
+                this._twoHours = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("week")]
         public virtual AnalyticsSnapshot Week {
             get {
-                return this.week;
+                return this._week;
             }
             set {
-                this.week = value;
+                this._week = value;
             }
         }
     }
     
     public class StringCount {
         
-        private string count;
+        private string _count;
         
-        private string id;
+        private string _id;
         
         /// <summary>Number of clicks for this top entry, e.g. for this particular country or browser.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("count")]
         public virtual string Count {
             get {
-                return this.count;
+                return this._count;
             }
             set {
-                this.count = value;
+                this._count = value;
             }
         }
         
@@ -179,39 +179,39 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
     }
     
     public class Url : Google.Apis.Requests.IDirectResponseSchema {
         
-        private AnalyticsSummary analytics;
+        private AnalyticsSummary _analytics;
         
-        private string created;
+        private string _created;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string longUrl;
+        private string _longUrl;
         
-        private string status;
+        private string _status;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("analytics")]
         public virtual AnalyticsSummary Analytics {
             get {
-                return this.analytics;
+                return this._analytics;
             }
             set {
-                this.analytics = value;
+                this._analytics = value;
             }
         }
         
@@ -219,10 +219,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -230,10 +230,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -241,10 +241,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -252,10 +252,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("longUrl")]
         public virtual string LongUrl {
             get {
-                return this.longUrl;
+                return this._longUrl;
             }
             set {
-                this.longUrl = value;
+                this._longUrl = value;
             }
         }
         
@@ -263,57 +263,57 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual string Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class UrlHistory : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Url> items;
+        private System.Collections.Generic.IList<Url> _items;
         
-        private System.Nullable<long> itemsPerPage;
+        private System.Nullable<long> _itemsPerPage;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of URL resources.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Url> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -321,10 +321,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("itemsPerPage")]
         public virtual System.Nullable<long> ItemsPerPage {
             get {
-                return this.itemsPerPage;
+                return this._itemsPerPage;
             }
             set {
-                this.itemsPerPage = value;
+                this._itemsPerPage = value;
             }
         }
         
@@ -332,10 +332,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -343,10 +343,10 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -354,29 +354,29 @@ namespace Google.Apis.Urlshortener.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -401,88 +401,89 @@ namespace Google.Apis.Urlshortener.v1 {
             "/www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com" +
             "/images/icons/product/search-32.gif\"},\"documentationLink\":\"http://code.google.co" +
             "m/apis/urlshortener/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"https:" +
-            "//www.googleapis.com/urlshortener/v1/\",\"basePath\":\"/urlshortener/v1/\",\"parameter" +
-            "s\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defaul" +
-            "t\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of ap" +
-            "plication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Se" +
-            "lector specifying which fields to include in a partial response.\",\"location\":\"qu" +
-            "ery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies you" +
-            "r project and provides you with API access, quota, and reports. Required unless " +
-            "you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"stri" +
-            "ng\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"p" +
-            "rettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations " +
-            "and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Available to use for quota purposes for server-side applicati" +
-            "ons. Can be any arbitrary string assigned to a user, but should not exceed 40 ch" +
-            "aracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{" +
-            "\"type\":\"string\",\"description\":\"IP address of the site where the request originat" +
-            "es. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth" +
-            "\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/urlshortener\":{\"descript" +
-            "ion\":\"Manage your goo.gl short URLs\"}}}},\"schemas\":{\"AnalyticsSnapshot\":{\"id\":\"A" +
-            "nalyticsSnapshot\",\"type\":\"object\",\"properties\":{\"browsers\":{\"type\":\"array\",\"desc" +
-            "ription\":\"Top browsers, e.g. \\\"Chrome\\\"; sorted by (descending) click counts. On" +
-            "ly present if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"countrie" +
-            "s\":{\"type\":\"array\",\"description\":\"Top countries (expressed as country codes), e." +
-            "g. \\\"US\\\" or \\\"DE\\\"; sorted by (descending) click counts. Only present if this d" +
-            "ata is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"longUrlClicks\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Number of clicks on all goo.gl short URLs pointing to this lo" +
-            "ng URL.\",\"format\":\"int64\"},\"platforms\":{\"type\":\"array\",\"description\":\"Top platfo" +
-            "rms or OSes, e.g. \\\"Windows\\\"; sorted by (descending) click counts. Only present" +
-            " if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"referrers\":{\"type\"" +
-            ":\"array\",\"description\":\"Top referring hosts, e.g. \\\"www.google.com\\\"; sorted by " +
-            "(descending) click counts. Only present if this data is available.\",\"items\":{\"$r" +
-            "ef\":\"StringCount\"}},\"shortUrlClicks\":{\"type\":\"string\",\"description\":\"Number of c" +
-            "licks on this short URL.\",\"format\":\"int64\"}}},\"AnalyticsSummary\":{\"id\":\"Analytic" +
-            "sSummary\",\"type\":\"object\",\"properties\":{\"allTime\":{\"$ref\":\"AnalyticsSnapshot\",\"d" +
-            "escription\":\"Click analytics over all time.\"},\"day\":{\"$ref\":\"AnalyticsSnapshot\"," +
-            "\"description\":\"Click analytics over the last day.\"},\"month\":{\"$ref\":\"AnalyticsSn" +
-            "apshot\",\"description\":\"Click analytics over the last month.\"},\"twoHours\":{\"$ref\"" +
-            ":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last two hours.\"},\"" +
-            "week\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last w" +
-            "eek.\"}}},\"StringCount\":{\"id\":\"StringCount\",\"type\":\"object\",\"properties\":{\"count\"" +
-            ":{\"type\":\"string\",\"description\":\"Number of clicks for this top entry, e.g. for t" +
-            "his particular country or browser.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"des" +
-            "cription\":\"Label assigned to this top entry, e.g. \\\"US\\\" or \\\"Chrome\\\".\"}}},\"Url" +
-            "\":{\"id\":\"Url\",\"type\":\"object\",\"properties\":{\"analytics\":{\"$ref\":\"AnalyticsSummar" +
-            "y\",\"description\":\"A summary of the click analytics for the short and long URL. M" +
-            "ight not be present if not requested or currently unavailable.\"},\"created\":{\"typ" +
-            "e\":\"string\",\"description\":\"Time the short URL was created; ISO 8601 representati" +
-            "on using the yyyy-MM-dd\'T\'HH:mm:ss.SSSZZ format, e.g. \\\"2010-10-14T19:01:24.944+" +
-            "00:00\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"Short URL, e.g. \\\"http://goo.gl/" +
-            "l6MS\\\".\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed string \\\"urlshortener" +
-            "#url\\\".\",\"default\":\"urlshortener#url\"},\"longUrl\":{\"type\":\"string\",\"description\":" +
-            "\"Long URL, e.g. \\\"http://www.google.com/\\\". Might not be present if the status i" +
-            "s \\\"REMOVED\\\".\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the target U" +
-            "RL. Possible values: \\\"OK\\\", \\\"MALWARE\\\", \\\"PHISHING\\\", or \\\"REMOVED\\\". A URL mi" +
-            "ght be marked \\\"REMOVED\\\" if it was flagged as spam, for example.\"}}},\"UrlHistor" +
-            "y\":{\"id\":\"UrlHistory\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"des" +
-            "cription\":\"A list of URL resources.\",\"items\":{\"$ref\":\"Url\"}},\"itemsPerPage\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Number of items returned with each full \\\"page\\\" of" +
-            " results. Note that the last page could have fewer items than the \\\"itemsPerPage" +
-            "\\\" value.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed st" +
-            "ring \\\"urlshortener#urlHistory\\\".\",\"default\":\"urlshortener#urlHistory\"},\"nextPag" +
-            "eToken\":{\"type\":\"string\",\"description\":\"A token to provide to get the next page " +
-            "of results.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of shor" +
-            "t URLs associated with this user (may be approximate).\",\"format\":\"int32\"}}}},\"re" +
-            "sources\":{\"url\":{\"methods\":{\"get\":{\"id\":\"urlshortener.url.get\",\"path\":\"url\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Expands a short URL or gets creation time and anal" +
-            "ytics.\",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"Additional in" +
-            "formation to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"ANALYTICS_TOP_STRINGS\",\"FULL\"]" +
-            ",\"enumDescriptions\":[\"Returns only click counts.\",\"Returns only top string count" +
-            "s.\",\"Returns the creation timestamp and all available analytics.\"],\"location\":\"q" +
-            "uery\"},\"shortUrl\":{\"type\":\"string\",\"description\":\"The short URL, including the p" +
-            "rotocol.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"shortUrl\"],\"re" +
-            "sponse\":{\"$ref\":\"Url\"}},\"insert\":{\"id\":\"urlshortener.url.insert\",\"path\":\"url\",\"h" +
-            "ttpMethod\":\"POST\",\"description\":\"Creates a new short URL.\",\"request\":{\"$ref\":\"Ur" +
-            "l\"},\"response\":{\"$ref\":\"Url\"},\"scopes\":[\"https://www.googleapis.com/auth/urlshor" +
-            "tener\"]},\"list\":{\"id\":\"urlshortener.url.list\",\"path\":\"url/history\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves a list of URLs shortened by a user.\",\"parameters\"" +
-            ":{\"projection\":{\"type\":\"string\",\"description\":\"Additional information to return." +
-            "\",\"enum\":[\"ANALYTICS_CLICKS\",\"FULL\"],\"enumDescriptions\":[\"Returns short URL clic" +
-            "k counts.\",\"Returns short URL click counts.\"],\"location\":\"query\"},\"start-token\":" +
-            "{\"type\":\"string\",\"description\":\"Token for requesting successive pages of results" +
-            ".\",\"location\":\"query\"}},\"response\":{\"$ref\":\"UrlHistory\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/urlshortener\"]}}}}}";
+            "//www.googleapis.com/urlshortener/v1/\",\"basePath\":\"/urlshortener/v1/\",\"rootUrl\":" +
+            "\"https://www.googleapis.com/\",\"servicePath\":\"urlshortener/v1/\",\"batchPath\":\"batc" +
+            "h\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respo" +
+            "nse.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Conte" +
+            "nt-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"des" +
+            "cription\":\"Selector specifying which fields to include in a partial response.\",\"" +
+            "location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key i" +
+            "dentifies your project and provides you with API access, quota, and reports. Req" +
+            "uired unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":" +
+            "{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location" +
+            "\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with " +
+            "indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":" +
+            "{\"type\":\"string\",\"description\":\"Available to use for quota purposes for server-s" +
+            "ide applications. Can be any arbitrary string assigned to a user, but should not" +
+            " exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query" +
+            "\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the req" +
+            "uest originates. Use this if you want to enforce per-user limits.\",\"location\":\"q" +
+            "uery\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/urlshortene" +
+            "r\":{\"description\":\"Manage your goo.gl short URLs\"}}}},\"schemas\":{\"AnalyticsSnaps" +
+            "hot\":{\"id\":\"AnalyticsSnapshot\",\"type\":\"object\",\"properties\":{\"browsers\":{\"type\":" +
+            "\"array\",\"description\":\"Top browsers, e.g. \\\"Chrome\\\"; sorted by (descending) cli" +
+            "ck counts. Only present if this data is available.\",\"items\":{\"$ref\":\"StringCount" +
+            "\"}},\"countries\":{\"type\":\"array\",\"description\":\"Top countries (expressed as count" +
+            "ry codes), e.g. \\\"US\\\" or \\\"DE\\\"; sorted by (descending) click counts. Only pres" +
+            "ent if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"longUrlClicks\":" +
+            "{\"type\":\"string\",\"description\":\"Number of clicks on all goo.gl short URLs pointi" +
+            "ng to this long URL.\",\"format\":\"int64\"},\"platforms\":{\"type\":\"array\",\"description" +
+            "\":\"Top platforms or OSes, e.g. \\\"Windows\\\"; sorted by (descending) click counts." +
+            " Only present if this data is available.\",\"items\":{\"$ref\":\"StringCount\"}},\"refer" +
+            "rers\":{\"type\":\"array\",\"description\":\"Top referring hosts, e.g. \\\"www.google.com\\" +
+            "\"; sorted by (descending) click counts. Only present if this data is available.\"" +
+            ",\"items\":{\"$ref\":\"StringCount\"}},\"shortUrlClicks\":{\"type\":\"string\",\"description\"" +
+            ":\"Number of clicks on this short URL.\",\"format\":\"int64\"}}},\"AnalyticsSummary\":{\"" +
+            "id\":\"AnalyticsSummary\",\"type\":\"object\",\"properties\":{\"allTime\":{\"$ref\":\"Analytic" +
+            "sSnapshot\",\"description\":\"Click analytics over all time.\"},\"day\":{\"$ref\":\"Analyt" +
+            "icsSnapshot\",\"description\":\"Click analytics over the last day.\"},\"month\":{\"$ref\"" +
+            ":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last month.\"},\"twoH" +
+            "ours\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics over the last t" +
+            "wo hours.\"},\"week\":{\"$ref\":\"AnalyticsSnapshot\",\"description\":\"Click analytics ov" +
+            "er the last week.\"}}},\"StringCount\":{\"id\":\"StringCount\",\"type\":\"object\",\"propert" +
+            "ies\":{\"count\":{\"type\":\"string\",\"description\":\"Number of clicks for this top entr" +
+            "y, e.g. for this particular country or browser.\",\"format\":\"int64\"},\"id\":{\"type\":" +
+            "\"string\",\"description\":\"Label assigned to this top entry, e.g. \\\"US\\\" or \\\"Chrom" +
+            "e\\\".\"}}},\"Url\":{\"id\":\"Url\",\"type\":\"object\",\"properties\":{\"analytics\":{\"$ref\":\"An" +
+            "alyticsSummary\",\"description\":\"A summary of the click analytics for the short an" +
+            "d long URL. Might not be present if not requested or currently unavailable.\"},\"c" +
+            "reated\":{\"type\":\"string\",\"description\":\"Time the short URL was created; ISO 8601" +
+            " representation using the yyyy-MM-dd\'T\'HH:mm:ss.SSSZZ format, e.g. \\\"2010-10-14T" +
+            "19:01:24.944+00:00\\\".\"},\"id\":{\"type\":\"string\",\"description\":\"Short URL, e.g. \\\"h" +
+            "ttp://goo.gl/l6MS\\\".\"},\"kind\":{\"type\":\"string\",\"description\":\"The fixed string \\" +
+            "\"urlshortener#url\\\".\",\"default\":\"urlshortener#url\"},\"longUrl\":{\"type\":\"string\",\"" +
+            "description\":\"Long URL, e.g. \\\"http://www.google.com/\\\". Might not be present if" +
+            " the status is \\\"REMOVED\\\".\"},\"status\":{\"type\":\"string\",\"description\":\"Status of" +
+            " the target URL. Possible values: \\\"OK\\\", \\\"MALWARE\\\", \\\"PHISHING\\\", or \\\"REMOVE" +
+            "D\\\". A URL might be marked \\\"REMOVED\\\" if it was flagged as spam, for example.\"}" +
+            "}},\"UrlHistory\":{\"id\":\"UrlHistory\",\"type\":\"object\",\"properties\":{\"items\":{\"type\"" +
+            ":\"array\",\"description\":\"A list of URL resources.\",\"items\":{\"$ref\":\"Url\"}},\"items" +
+            "PerPage\":{\"type\":\"integer\",\"description\":\"Number of items returned with each ful" +
+            "l \\\"page\\\" of results. Note that the last page could have fewer items than the \\" +
+            "\"itemsPerPage\\\" value.\",\"format\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":" +
+            "\"The fixed string \\\"urlshortener#urlHistory\\\".\",\"default\":\"urlshortener#urlHisto" +
+            "ry\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token to provide to get t" +
+            "he next page of results.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total n" +
+            "umber of short URLs associated with this user (may be approximate).\",\"format\":\"i" +
+            "nt32\"}}}},\"resources\":{\"url\":{\"methods\":{\"get\":{\"id\":\"urlshortener.url.get\",\"pat" +
+            "h\":\"url\",\"httpMethod\":\"GET\",\"description\":\"Expands a short URL or gets creation " +
+            "time and analytics.\",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"" +
+            "Additional information to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"ANALYTICS_TOP_STR" +
+            "INGS\",\"FULL\"],\"enumDescriptions\":[\"Returns only click counts.\",\"Returns only top" +
+            " string counts.\",\"Returns the creation timestamp and all available analytics.\"]," +
+            "\"location\":\"query\"},\"shortUrl\":{\"type\":\"string\",\"description\":\"The short URL, in" +
+            "cluding the protocol.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"s" +
+            "hortUrl\"],\"response\":{\"$ref\":\"Url\"}},\"insert\":{\"id\":\"urlshortener.url.insert\",\"p" +
+            "ath\":\"url\",\"httpMethod\":\"POST\",\"description\":\"Creates a new short URL.\",\"request" +
+            "\":{\"$ref\":\"Url\"},\"response\":{\"$ref\":\"Url\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/urlshortener\"]},\"list\":{\"id\":\"urlshortener.url.list\",\"path\":\"url/history\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of URLs shortened by a user.\"" +
+            ",\"parameters\":{\"projection\":{\"type\":\"string\",\"description\":\"Additional informati" +
+            "on to return.\",\"enum\":[\"ANALYTICS_CLICKS\",\"FULL\"],\"enumDescriptions\":[\"Returns s" +
+            "hort URL click counts.\",\"Returns short URL click counts.\"],\"location\":\"query\"},\"" +
+            "start-token\":{\"type\":\"string\",\"description\":\"Token for requesting successive pag" +
+            "es of results.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"UrlHistory\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/urlshortener\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -492,12 +493,12 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected UrlshortenerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.url = new UrlResource(this);
+            this._url = new UrlResource(this);
         }
         
         public UrlshortenerService() : 
@@ -505,22 +506,22 @@ namespace Google.Apis.Urlshortener.v1 {
         }
         
         public UrlshortenerService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(UrlshortenerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(UrlshortenerService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(UrlshortenerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(UrlshortenerService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -606,40 +607,40 @@ namespace Google.Apis.Urlshortener.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Projection? projection;
+            private System.Nullable<Projection> _projection;
             
-            private string shortUrl;
+            private string _shortUrl;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shortUrl) : 
                     base(service) {
-                this.shortUrl = shortUrl;
+                this._shortUrl = shortUrl;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -647,21 +648,21 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Additional information to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("projection")]
-            public virtual Projection? Projection {
+            public virtual System.Nullable<Projection> Projection {
                 get {
-                    return this.projection;
+                    return this._projection;
                 }
                 set {
-                    this.projection = value;
+                    this._projection = value;
                 }
             }
             
@@ -669,7 +670,7 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("shortUrl")]
             public virtual string ShortUrl {
                 get {
-                    return this.shortUrl;
+                    return this._shortUrl;
                 }
             }
             
@@ -688,13 +689,13 @@ namespace Google.Apis.Urlshortener.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Urlshortener.v1.Data.Url bodyValue;
+            private Google.Apis.Urlshortener.v1.Data.Url _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Urlshortener.v1.Data.Url body) : 
                     base(service) {
@@ -705,21 +706,21 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -727,20 +728,20 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Urlshortener.v1.Data.Url Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -763,15 +764,15 @@ namespace Google.Apis.Urlshortener.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.UrlHistory> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private ProjectionEnum? projection;
+            private System.Nullable<ProjectionEnum> _projection;
             
-            private string startToken;
+            private string _startToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -781,21 +782,21 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -803,21 +804,21 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Additional information to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("projection")]
-            public virtual ProjectionEnum? Projection {
+            public virtual System.Nullable<ProjectionEnum> Projection {
                 get {
-                    return this.projection;
+                    return this._projection;
                 }
                 set {
-                    this.projection = value;
+                    this._projection = value;
                 }
             }
             
@@ -825,10 +826,10 @@ namespace Google.Apis.Urlshortener.v1 {
             [Google.Apis.Util.RequestParameterAttribute("start-token")]
             public virtual string StartToken {
                 get {
-                    return this.startToken;
+                    return this._startToken;
                 }
                 set {
-                    this.startToken = value;
+                    this._startToken = value;
                 }
             }
             
@@ -850,7 +851,7 @@ namespace Google.Apis.Urlshortener.v1 {
         
         private const string Resource = "";
         
-        private UrlResource url;
+        private UrlResource _url;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -860,7 +861,7 @@ namespace Google.Apis.Urlshortener.v1 {
         
         public virtual UrlResource Url {
             get {
-                return this.url;
+                return this._url;
             }
         }
     }

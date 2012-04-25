@@ -16,30 +16,30 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
     
     public class Task : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string enqueueTimestamp;
+        private string _enqueueTimestamp;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string leaseTimestamp;
+        private string _leaseTimestamp;
         
-        private string payloadBase64;
+        private string _payloadBase64;
         
-        private string queueName;
+        private string _queueName;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Time (in seconds since the epoch) at which the task was enqueued.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("enqueueTimestamp")]
         public virtual string EnqueueTimestamp {
             get {
-                return this.enqueueTimestamp;
+                return this._enqueueTimestamp;
             }
             set {
-                this.enqueueTimestamp = value;
+                this._enqueueTimestamp = value;
             }
         }
         
@@ -47,10 +47,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -58,10 +58,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -69,10 +69,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("leaseTimestamp")]
         public virtual string LeaseTimestamp {
             get {
-                return this.leaseTimestamp;
+                return this._leaseTimestamp;
             }
             set {
-                this.leaseTimestamp = value;
+                this._leaseTimestamp = value;
             }
         }
         
@@ -80,10 +80,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("payloadBase64")]
         public virtual string PayloadBase64 {
             get {
-                return this.payloadBase64;
+                return this._payloadBase64;
             }
             set {
-                this.payloadBase64 = value;
+                this._payloadBase64 = value;
             }
         }
         
@@ -91,57 +91,57 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("queueName")]
         public virtual string QueueName {
             get {
-                return this.queueName;
+                return this._queueName;
             }
             set {
-                this.queueName = value;
+                this._queueName = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class TaskQueue : Google.Apis.Requests.IDirectResponseSchema {
         
-        private TaskQueue.AclData acl;
+        private TaskQueue.AclData _acl;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> maxLeases;
+        private System.Nullable<long> _maxLeases;
         
-        private TaskQueue.StatsData stats;
+        private TaskQueue.StatsData _stats;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>ACLs that are applicable to this TaskQueue object.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("acl")]
         public virtual TaskQueue.AclData Acl {
             get {
-                return this.acl;
+                return this._acl;
             }
             set {
-                this.acl = value;
+                this._acl = value;
             }
         }
         
@@ -149,10 +149,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -160,10 +160,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -171,10 +171,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("maxLeases")]
         public virtual System.Nullable<long> MaxLeases {
             get {
-                return this.maxLeases;
+                return this._maxLeases;
             }
             set {
-                this.maxLeases = value;
+                this._maxLeases = value;
             }
         }
         
@@ -182,49 +182,49 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("stats")]
         public virtual TaskQueue.StatsData Stats {
             get {
-                return this.stats;
+                return this._stats;
             }
             set {
-                this.stats = value;
+                this._stats = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>ACLs that are applicable to this TaskQueue object.</summary>
         public class AclData {
             
-            private System.Collections.Generic.IList<string> adminEmails;
+            private System.Collections.Generic.IList<string> _adminEmails;
             
-            private System.Collections.Generic.IList<string> consumerEmails;
+            private System.Collections.Generic.IList<string> _consumerEmails;
             
-            private System.Collections.Generic.IList<string> producerEmails;
+            private System.Collections.Generic.IList<string> _producerEmails;
             
             /// <summary>Email addresses of users who are &quot;admins&quot; of the TaskQueue. This means they can control the queue, eg set ACLs for the queue.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("adminEmails")]
             public virtual System.Collections.Generic.IList<string> AdminEmails {
                 get {
-                    return this.adminEmails;
+                    return this._adminEmails;
                 }
                 set {
-                    this.adminEmails = value;
+                    this._adminEmails = value;
                 }
             }
             
@@ -232,10 +232,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("consumerEmails")]
             public virtual System.Collections.Generic.IList<string> ConsumerEmails {
                 get {
-                    return this.consumerEmails;
+                    return this._consumerEmails;
                 }
                 set {
-                    this.consumerEmails = value;
+                    this._consumerEmails = value;
                 }
             }
             
@@ -243,10 +243,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("producerEmails")]
             public virtual System.Collections.Generic.IList<string> ProducerEmails {
                 get {
-                    return this.producerEmails;
+                    return this._producerEmails;
                 }
                 set {
-                    this.producerEmails = value;
+                    this._producerEmails = value;
                 }
             }
         }
@@ -254,22 +254,22 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         /// <summary>Statistics for the TaskQueue object in question.</summary>
         public class StatsData {
             
-            private string leasedLastHour;
+            private string _leasedLastHour;
             
-            private string leasedLastMinute;
+            private string _leasedLastMinute;
             
-            private string oldestTask;
+            private string _oldestTask;
             
-            private System.Nullable<long> totalTasks;
+            private System.Nullable<long> _totalTasks;
             
             /// <summary>Number of tasks leased in the last hour.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("leasedLastHour")]
             public virtual string LeasedLastHour {
                 get {
-                    return this.leasedLastHour;
+                    return this._leasedLastHour;
                 }
                 set {
-                    this.leasedLastHour = value;
+                    this._leasedLastHour = value;
                 }
             }
             
@@ -277,10 +277,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("leasedLastMinute")]
             public virtual string LeasedLastMinute {
                 get {
-                    return this.leasedLastMinute;
+                    return this._leasedLastMinute;
                 }
                 set {
-                    this.leasedLastMinute = value;
+                    this._leasedLastMinute = value;
                 }
             }
             
@@ -288,10 +288,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("oldestTask")]
             public virtual string OldestTask {
                 get {
-                    return this.oldestTask;
+                    return this._oldestTask;
                 }
                 set {
-                    this.oldestTask = value;
+                    this._oldestTask = value;
                 }
             }
             
@@ -299,10 +299,10 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("totalTasks")]
             public virtual System.Nullable<long> TotalTasks {
                 get {
-                    return this.totalTasks;
+                    return this._totalTasks;
                 }
                 set {
-                    this.totalTasks = value;
+                    this._totalTasks = value;
                 }
             }
         }
@@ -310,22 +310,22 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
     
     public class Tasks : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Task> items;
+        private System.Collections.Generic.IList<Task> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The actual list of tasks returned as a result of the lease operation.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Task> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -333,51 +333,51 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Tasks2 : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Task> items;
+        private System.Collections.Generic.IList<Task> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The actual list of tasks currently active in the TaskQueue.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Task> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -385,29 +385,29 @@ namespace Google.Apis.Taskqueue.v1beta1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -433,109 +433,111 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             ".png\",\"x32\":\"http://www.google.com/images/icons/product/app_engine-32.png\"},\"doc" +
             "umentationLink\":\"http://code.google.com/appengine/docs/python/taskqueue/rest.htm" +
             "l\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/taskqueue/v1beta1/pro" +
-            "jects/\",\"basePath\":\"/taskqueue/v1beta1/projects/\",\"parameters\":{\"alt\":{\"type\":\"s" +
-            "tring\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"j" +
-            "son\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"lo" +
-            "cation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying wh" +
-            "ich fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":" +
-            "\"string\",\"description\":\"API key. Your API key identifies your project and provid" +
-            "es you with API access, quota, and reports. Required unless you provide an OAuth" +
-            " 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"O" +
-            "Auth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":" +
-            "\"boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"d" +
-            "efault\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"A" +
-            "vailable to use for quota purposes for server-side applications. Can be any arbi" +
-            "trary string assigned to a user, but should not exceed 40 characters. Overrides " +
-            "userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"des" +
-            "cription\":\"IP address of the site where the request originates. Use this if you " +
-            "want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes" +
-            "\":{\"https://www.googleapis.com/auth/taskqueue\":{\"description\":\"Manage your Tasks" +
-            " and Taskqueues\"},\"https://www.googleapis.com/auth/taskqueue.consumer\":{\"descrip" +
-            "tion\":\"Consume Tasks from your Taskqueues\"}}}},\"schemas\":{\"Task\":{\"id\":\"Task\",\"t" +
-            "ype\":\"object\",\"properties\":{\"enqueueTimestamp\":{\"type\":\"string\",\"description\":\"T" +
-            "ime (in seconds since the epoch) at which the task was enqueued.\",\"format\":\"int6" +
-            "4\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the task.\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"The kind of object returned, in this case set to task.\",\"def" +
-            "ault\":\"taskqueues#task\"},\"leaseTimestamp\":{\"type\":\"string\",\"description\":\"Time (" +
-            "in seconds since the epoch) at which the task lease will expire. This value is 0" +
-            " if the task isnt currently leased out to a worker.\",\"format\":\"int64\"},\"payloadB" +
-            "ase64\":{\"type\":\"string\",\"description\":\"A bag of bytes which is the task payload." +
-            " The payload on the JSON side is always Base64 encoded.\"},\"queueName\":{\"type\":\"s" +
-            "tring\",\"description\":\"Name of the queue that the task is in.\"}}},\"TaskQueue\":{\"i" +
-            "d\":\"TaskQueue\",\"type\":\"object\",\"properties\":{\"acl\":{\"type\":\"object\",\"description" +
-            "\":\"ACLs that are applicable to this TaskQueue object.\",\"properties\":{\"adminEmail" +
-            "s\":{\"type\":\"array\",\"description\":\"Email addresses of users who are \\\"admins\\\" of" +
-            " the TaskQueue. This means they can control the queue, eg set ACLs for the queue" +
-            ".\",\"items\":{\"type\":\"string\"}},\"consumerEmails\":{\"type\":\"array\",\"description\":\"Em" +
-            "ail addresses of users who can \\\"consume\\\" tasks from the TaskQueue. This means " +
-            "they can Dequeue and Delete tasks from the queue.\",\"items\":{\"type\":\"string\"}},\"p" +
-            "roducerEmails\":{\"type\":\"array\",\"description\":\"Email addresses of users who can \\" +
-            "\"produce\\\" tasks into the TaskQueue. This means they can Insert tasks into the q" +
-            "ueue.\",\"items\":{\"type\":\"string\"}}}},\"id\":{\"type\":\"string\",\"description\":\"Name of" +
-            " the taskqueue.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of REST object" +
-            " returned, in this case taskqueue.\",\"default\":\"taskqueues#taskqueue\"},\"maxLeases" +
-            "\":{\"type\":\"integer\",\"description\":\"The number of times we should lease out tasks" +
-            " before giving up on them. If unset we lease them out forever until a worker del" +
-            "etes the task.\",\"format\":\"int32\"},\"stats\":{\"type\":\"object\",\"description\":\"Statis" +
-            "tics for the TaskQueue object in question.\",\"properties\":{\"leasedLastHour\":{\"typ" +
-            "e\":\"string\",\"description\":\"Number of tasks leased in the last hour.\",\"format\":\"i" +
-            "nt64\"},\"leasedLastMinute\":{\"type\":\"string\",\"description\":\"Number of tasks leased" +
-            " in the last minute.\",\"format\":\"int64\"},\"oldestTask\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The timestamp (in seconds since the epoch) of the oldest unfinished task.\"," +
-            "\"format\":\"int64\"},\"totalTasks\":{\"type\":\"integer\",\"description\":\"Number of tasks " +
-            "in the queue.\",\"format\":\"int32\"}}}}},\"Tasks\":{\"id\":\"Tasks\",\"type\":\"object\",\"prop" +
-            "erties\":{\"items\":{\"type\":\"array\",\"description\":\"The actual list of tasks returne" +
-            "d as a result of the lease operation.\",\"items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"" +
+            "jects/\",\"basePath\":\"/taskqueue/v1beta1/projects/\",\"rootUrl\":\"https://www.googlea" +
+            "pis.com/\",\"servicePath\":\"taskqueue/v1beta1/projects/\",\"batchPath\":\"batch\",\"param" +
+            "eters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"de" +
+            "fault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type o" +
+            "f application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\"" +
+            ":\"Selector specifying which fields to include in a partial response.\",\"location\"" +
+            ":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies" +
+            " your project and provides you with API access, quota, and reports. Required unl" +
+            "ess you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"" +
+            "string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"" +
+            "},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentati" +
+            "ons and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"" +
+            "string\",\"description\":\"Available to use for quota purposes for server-side appli" +
+            "cations. Can be any arbitrary string assigned to a user, but should not exceed 4" +
+            "0 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userI" +
+            "p\":{\"type\":\"string\",\"description\":\"IP address of the site where the request orig" +
+            "inates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"" +
+            "auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/taskqueue\":{\"descrip" +
+            "tion\":\"Manage your Tasks and Taskqueues\"},\"https://www.googleapis.com/auth/taskq" +
+            "ueue.consumer\":{\"description\":\"Consume Tasks from your Taskqueues\"}}}},\"schemas\"" +
+            ":{\"Task\":{\"id\":\"Task\",\"type\":\"object\",\"properties\":{\"enqueueTimestamp\":{\"type\":\"" +
+            "string\",\"description\":\"Time (in seconds since the epoch) at which the task was e" +
+            "nqueued.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the tas" +
+            "k.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind of object returned, in this" +
+            " case set to task.\",\"default\":\"taskqueues#task\"},\"leaseTimestamp\":{\"type\":\"strin" +
+            "g\",\"description\":\"Time (in seconds since the epoch) at which the task lease will" +
+            " expire. This value is 0 if the task isnt currently leased out to a worker.\",\"fo" +
+            "rmat\":\"int64\"},\"payloadBase64\":{\"type\":\"string\",\"description\":\"A bag of bytes wh" +
+            "ich is the task payload. The payload on the JSON side is always Base64 encoded.\"" +
+            "},\"queueName\":{\"type\":\"string\",\"description\":\"Name of the queue that the task is" +
+            " in.\"}}},\"TaskQueue\":{\"id\":\"TaskQueue\",\"type\":\"object\",\"properties\":{\"acl\":{\"typ" +
+            "e\":\"object\",\"description\":\"ACLs that are applicable to this TaskQueue object.\",\"" +
+            "properties\":{\"adminEmails\":{\"type\":\"array\",\"description\":\"Email addresses of use" +
+            "rs who are \\\"admins\\\" of the TaskQueue. This means they can control the queue, e" +
+            "g set ACLs for the queue.\",\"items\":{\"type\":\"string\"}},\"consumerEmails\":{\"type\":\"" +
+            "array\",\"description\":\"Email addresses of users who can \\\"consume\\\" tasks from th" +
+            "e TaskQueue. This means they can Dequeue and Delete tasks from the queue.\",\"item" +
+            "s\":{\"type\":\"string\"}},\"producerEmails\":{\"type\":\"array\",\"description\":\"Email addr" +
+            "esses of users who can \\\"produce\\\" tasks into the TaskQueue. This means they can" +
+            " Insert tasks into the queue.\",\"items\":{\"type\":\"string\"}}}},\"id\":{\"type\":\"string" +
+            "\",\"description\":\"Name of the taskqueue.\"},\"kind\":{\"type\":\"string\",\"description\":" +
+            "\"The kind of REST object returned, in this case taskqueue.\",\"default\":\"taskqueue" +
+            "s#taskqueue\"},\"maxLeases\":{\"type\":\"integer\",\"description\":\"The number of times w" +
+            "e should lease out tasks before giving up on them. If unset we lease them out fo" +
+            "rever until a worker deletes the task.\",\"format\":\"int32\"},\"stats\":{\"type\":\"objec" +
+            "t\",\"description\":\"Statistics for the TaskQueue object in question.\",\"properties\"" +
+            ":{\"leasedLastHour\":{\"type\":\"string\",\"description\":\"Number of tasks leased in the" +
+            " last hour.\",\"format\":\"int64\"},\"leasedLastMinute\":{\"type\":\"string\",\"description\"" +
+            ":\"Number of tasks leased in the last minute.\",\"format\":\"int64\"},\"oldestTask\":{\"t" +
+            "ype\":\"string\",\"description\":\"The timestamp (in seconds since the epoch) of the o" +
+            "ldest unfinished task.\",\"format\":\"int64\"},\"totalTasks\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"Number of tasks in the queue.\",\"format\":\"int32\"}}}}},\"Tasks\":{\"id\":\"Task" +
+            "s\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The actu" +
+            "al list of tasks returned as a result of the lease operation.\",\"items\":{\"$ref\":\"" +
+            "Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind of object returned, a li" +
+            "st of tasks.\",\"default\":\"taskqueue#tasks\"}}},\"Tasks2\":{\"id\":\"Tasks2\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The actual list of tas" +
+            "ks currently active in the TaskQueue.\",\"items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"" +
             "string\",\"description\":\"The kind of object returned, a list of tasks.\",\"default\":" +
-            "\"taskqueue#tasks\"}}},\"Tasks2\":{\"id\":\"Tasks2\",\"type\":\"object\",\"properties\":{\"item" +
-            "s\":{\"type\":\"array\",\"description\":\"The actual list of tasks currently active in t" +
-            "he TaskQueue.\",\"items\":{\"$ref\":\"Task\"}},\"kind\":{\"type\":\"string\",\"description\":\"T" +
-            "he kind of object returned, a list of tasks.\",\"default\":\"taskqueues#tasks\"}}}},\"" +
-            "resources\":{\"taskqueues\":{\"methods\":{\"get\":{\"id\":\"taskqueue.taskqueues.get\",\"pat" +
-            "h\":\"{project}/taskqueues/{taskqueue}\",\"httpMethod\":\"GET\",\"description\":\"Get deta" +
-            "iled information about a TaskQueue.\",\"parameters\":{\"getStats\":{\"type\":\"boolean\"," +
-            "\"description\":\"Whether to get stats. Optional.\",\"location\":\"query\"},\"project\":{\"" +
-            "type\":\"string\",\"description\":\"The project under which the queue lies.\",\"required" +
-            "\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The id of " +
-            "the taskqueue to get the properties of.\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"TaskQueue\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/tas" +
-            "kqueue.consumer\"]}}},\"tasks\":{\"methods\":{\"delete\":{\"id\":\"taskqueue.tasks.delete\"" +
-            ",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"DELETE\",\"d" +
-            "escription\":\"Delete a task from a TaskQueue.\",\"parameters\":{\"project\":{\"type\":\"s" +
-            "tring\",\"description\":\"The project under which the queue lies.\",\"required\":true,\"" +
-            "location\":\"path\"},\"task\":{\"type\":\"string\",\"description\":\"The id of the task to d" +
-            "elete.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The taskqueue to delete a task from.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"project\",\"taskqueue\",\"task\"],\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"g" +
-            "et\":{\"id\":\"taskqueue.tasks.get\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{" +
-            "task}\",\"httpMethod\":\"GET\",\"description\":\"Get a particular task from a TaskQueue." +
-            "\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\":\"The project under whic" +
-            "h the queue lies.\",\"required\":true,\"location\":\"path\"},\"task\":{\"type\":\"string\",\"d" +
-            "escription\":\"The task to get properties of.\",\"required\":true,\"location\":\"path\"}," +
-            "\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue in which the task belo" +
-            "ngs.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue" +
-            "\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"lease\":{\"id\":" +
-            "\"taskqueue.tasks.lease\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/lease\",\"h" +
-            "ttpMethod\":\"POST\",\"description\":\"Lease 1 or more tasks from a TaskQueue.\",\"param" +
-            "eters\":{\"leaseSecs\":{\"type\":\"integer\",\"description\":\"The lease in seconds.\",\"req" +
-            "uired\":true,\"format\":\"int32\",\"location\":\"query\"},\"numTasks\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The number of tasks to lease.\",\"required\":true,\"format\":\"int32\",\"lo" +
-            "cation\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"The project under whi" +
-            "ch the queue lies.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The taskqueue to lease a task from.\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"numTasks\",\"leaseSecs\"],\"res" +
-            "ponse\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"h" +
-            "ttps://www.googleapis.com/auth/taskqueue.consumer\"]},\"list\":{\"id\":\"taskqueue.tas" +
-            "ks.list\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"List Tasks in a TaskQueue\",\"parameters\":{\"project\":{\"type\":\"string\",\"" +
-            "description\":\"The project under which the queue lies.\",\"required\":true,\"location" +
-            "\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The id of the taskqueue to" +
-            " list tasks from.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projec" +
-            "t\",\"taskqueue\"],\"response\":{\"$ref\":\"Tasks2\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]}}}}}";
+            "\"taskqueues#tasks\"}}}},\"resources\":{\"taskqueues\":{\"methods\":{\"get\":{\"id\":\"taskqu" +
+            "eue.taskqueues.get\",\"path\":\"{project}/taskqueues/{taskqueue}\",\"httpMethod\":\"GET\"" +
+            ",\"description\":\"Get detailed information about a TaskQueue.\",\"parameters\":{\"getS" +
+            "tats\":{\"type\":\"boolean\",\"description\":\"Whether to get stats. Optional.\",\"locatio" +
+            "n\":\"query\"},\"project\":{\"type\":\"string\",\"description\":\"The project under which th" +
+            "e queue lies.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"" +
+            "description\":\"The id of the taskqueue to get the properties of.\",\"required\":true" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\"" +
+            ":\"TaskQueue\"},\"scopes\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www" +
+            ".googleapis.com/auth/taskqueue.consumer\"]}}},\"tasks\":{\"methods\":{\"delete\":{\"id\":" +
+            "\"taskqueue.tasks.delete\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks/{task}\"," +
+            "\"httpMethod\":\"DELETE\",\"description\":\"Delete a task from a TaskQueue.\",\"parameter" +
+            "s\":{\"project\":{\"type\":\"string\",\"description\":\"The project under which the queue " +
+            "lies.\",\"required\":true,\"location\":\"path\"},\"task\":{\"type\":\"string\",\"description\":" +
+            "\"The id of the task to delete.\",\"required\":true,\"location\":\"path\"},\"taskqueue\":{" +
+            "\"type\":\"string\",\"description\":\"The taskqueue to delete a task from.\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"task\"],\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/" +
+            "taskqueue.consumer\"]},\"get\":{\"id\":\"taskqueue.tasks.get\",\"path\":\"{project}/taskqu" +
+            "eues/{taskqueue}/tasks/{task}\",\"httpMethod\":\"GET\",\"description\":\"Get a particula" +
+            "r task from a TaskQueue.\",\"parameters\":{\"project\":{\"type\":\"string\",\"description\"" +
+            ":\"The project under which the queue lies.\",\"required\":true,\"location\":\"path\"},\"t" +
+            "ask\":{\"type\":\"string\",\"description\":\"The task to get properties of.\",\"required\":" +
+            "true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueu" +
+            "e in which the task belongs.\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"project\",\"taskqueue\",\"task\"],\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.co" +
+            "nsumer\"]},\"lease\":{\"id\":\"taskqueue.tasks.lease\",\"path\":\"{project}/taskqueues/{ta" +
+            "skqueue}/tasks/lease\",\"httpMethod\":\"POST\",\"description\":\"Lease 1 or more tasks f" +
+            "rom a TaskQueue.\",\"parameters\":{\"leaseSecs\":{\"type\":\"integer\",\"description\":\"The" +
+            " lease in seconds.\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"},\"numTas" +
+            "ks\":{\"type\":\"integer\",\"description\":\"The number of tasks to lease.\",\"required\":t" +
+            "rue,\"format\":\"int32\",\"location\":\"query\"},\"project\":{\"type\":\"string\",\"description" +
+            "\":\"The project under which the queue lies.\",\"required\":true,\"location\":\"path\"},\"" +
+            "taskqueue\":{\"type\":\"string\",\"description\":\"The taskqueue to lease a task from.\"," +
+            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project\",\"taskqueue\",\"num" +
+            "Tasks\",\"leaseSecs\"],\"response\":{\"$ref\":\"Tasks\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/taskqueue\",\"https://www.googleapis.com/auth/taskqueue.consumer\"]},\"li" +
+            "st\":{\"id\":\"taskqueue.tasks.list\",\"path\":\"{project}/taskqueues/{taskqueue}/tasks\"" +
+            ",\"httpMethod\":\"GET\",\"description\":\"List Tasks in a TaskQueue\",\"parameters\":{\"pro" +
+            "ject\":{\"type\":\"string\",\"description\":\"The project under which the queue lies.\",\"" +
+            "required\":true,\"location\":\"path\"},\"taskqueue\":{\"type\":\"string\",\"description\":\"Th" +
+            "e id of the taskqueue to list tasks from.\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"project\",\"taskqueue\"],\"response\":{\"$ref\":\"Tasks2\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/task" +
+            "queue.consumer\"]}}}}}";
         
         private const string Version = "v1beta1";
         
@@ -545,13 +547,13 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected TaskqueueService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.taskqueues = new TaskqueuesResource(this);
-            this.tasks = new TasksResource(this);
+            this._taskqueues = new TaskqueuesResource(this);
+            this._tasks = new TasksResource(this);
         }
         
         public TaskqueueService() : 
@@ -559,22 +561,22 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         }
         
         public TaskqueueService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TaskqueueService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(TaskqueueService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -625,43 +627,43 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.TaskQueue> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Boolean? getStats;
+            private System.Nullable<bool> _getStats;
             
-            private string project;
+            private string _project;
             
-            private string taskqueue;
+            private string _taskqueue;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue) : 
                     base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
+                this._project = project;
+                this._taskqueue = taskqueue;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -669,21 +671,21 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Whether to get stats. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("getStats")]
-            public virtual System.Boolean? GetStats {
+            public virtual System.Nullable<bool> GetStats {
                 get {
-                    return this.getStats;
+                    return this._getStats;
                 }
                 set {
-                    this.getStats = value;
+                    this._getStats = value;
                 }
             }
             
@@ -691,7 +693,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("project")]
             public virtual string Project {
                 get {
-                    return this.project;
+                    return this._project;
                 }
             }
             
@@ -699,7 +701,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
             public virtual string Taskqueue {
                 get {
-                    return this.taskqueue;
+                    return this._taskqueue;
                 }
             }
             
@@ -761,44 +763,44 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string project;
+            private string _project;
             
-            private string task;
+            private string _task;
             
-            private string taskqueue;
+            private string _taskqueue;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue, string task) : 
                     base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
-                this.task = task;
+                this._project = project;
+                this._taskqueue = taskqueue;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -806,10 +808,10 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -817,7 +819,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("project")]
             public virtual string Project {
                 get {
-                    return this.project;
+                    return this._project;
                 }
             }
             
@@ -825,7 +827,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -833,7 +835,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
             public virtual string Taskqueue {
                 get {
-                    return this.taskqueue;
+                    return this._taskqueue;
                 }
             }
             
@@ -852,44 +854,44 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Task> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string project;
+            private string _project;
             
-            private string task;
+            private string _task;
             
-            private string taskqueue;
+            private string _taskqueue;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue, string task) : 
                     base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
-                this.task = task;
+                this._project = project;
+                this._taskqueue = taskqueue;
+                this._task = task;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -897,10 +899,10 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -908,7 +910,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("project")]
             public virtual string Project {
                 get {
-                    return this.project;
+                    return this._project;
                 }
             }
             
@@ -916,7 +918,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("task")]
             public virtual string Task {
                 get {
-                    return this.task;
+                    return this._task;
                 }
             }
             
@@ -924,7 +926,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
             public virtual string Taskqueue {
                 get {
-                    return this.taskqueue;
+                    return this._taskqueue;
                 }
             }
             
@@ -943,47 +945,47 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public class LeaseRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long leaseSecs;
+            private long _leaseSecs;
             
-            private long numTasks;
+            private long _numTasks;
             
-            private string project;
+            private string _project;
             
-            private string taskqueue;
+            private string _taskqueue;
             
             public LeaseRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue, long numTasks, long leaseSecs) : 
                     base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
-                this.numTasks = numTasks;
-                this.leaseSecs = leaseSecs;
+                this._project = project;
+                this._taskqueue = taskqueue;
+                this._numTasks = numTasks;
+                this._leaseSecs = leaseSecs;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -991,10 +993,10 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1002,7 +1004,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("leaseSecs")]
             public virtual long LeaseSecs {
                 get {
-                    return this.leaseSecs;
+                    return this._leaseSecs;
                 }
             }
             
@@ -1010,7 +1012,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("numTasks")]
             public virtual long NumTasks {
                 get {
-                    return this.numTasks;
+                    return this._numTasks;
                 }
             }
             
@@ -1018,7 +1020,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("project")]
             public virtual string Project {
                 get {
-                    return this.project;
+                    return this._project;
                 }
             }
             
@@ -1026,7 +1028,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
             public virtual string Taskqueue {
                 get {
-                    return this.taskqueue;
+                    return this._taskqueue;
                 }
             }
             
@@ -1045,41 +1047,41 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks2> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string project;
+            private string _project;
             
-            private string taskqueue;
+            private string _taskqueue;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string project, string taskqueue) : 
                     base(service) {
-                this.project = project;
-                this.taskqueue = taskqueue;
+                this._project = project;
+                this._taskqueue = taskqueue;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1087,10 +1089,10 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1098,7 +1100,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("project")]
             public virtual string Project {
                 get {
-                    return this.project;
+                    return this._project;
                 }
             }
             
@@ -1106,7 +1108,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
             public virtual string Taskqueue {
                 get {
-                    return this.taskqueue;
+                    return this._taskqueue;
                 }
             }
             
@@ -1128,9 +1130,9 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         private const string Resource = "";
         
-        private TaskqueuesResource taskqueues;
+        private TaskqueuesResource _taskqueues;
         
-        private TasksResource tasks;
+        private TasksResource _tasks;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1140,13 +1142,13 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         
         public virtual TaskqueuesResource Taskqueues {
             get {
-                return this.taskqueues;
+                return this._taskqueues;
             }
         }
         
         public virtual TasksResource Tasks {
             get {
-                return this.tasks;
+                return this._tasks;
             }
         }
     }

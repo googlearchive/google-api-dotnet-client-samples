@@ -16,50 +16,50 @@ namespace Google.Apis.Books.v1.Data {
     
     public class Annotation : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string afterSelectedText;
+        private string _afterSelectedText;
         
-        private string beforeSelectedText;
+        private string _beforeSelectedText;
         
-        private Annotation.ClientVersionRangesData clientVersionRanges;
+        private Annotation.ClientVersionRangesData _clientVersionRanges;
         
-        private string created;
+        private string _created;
         
-        private Annotation.CurrentVersionRangesData currentVersionRanges;
+        private Annotation.CurrentVersionRangesData _currentVersionRanges;
         
-        private string data;
+        private string _data;
         
-        private System.Nullable<bool> deleted;
+        private System.Nullable<bool> _deleted;
         
-        private string highlightStyle;
+        private string _highlightStyle;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string layerId;
+        private string _layerId;
         
-        private System.Collections.Generic.IList<string> pageIds;
+        private System.Collections.Generic.IList<string> _pageIds;
         
-        private string selectedText;
+        private string _selectedText;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string updated;
+        private string _updated;
         
-        private string volumeId;
+        private string _volumeId;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Anchor text after excerpt.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("afterSelectedText")]
         public virtual string AfterSelectedText {
             get {
-                return this.afterSelectedText;
+                return this._afterSelectedText;
             }
             set {
-                this.afterSelectedText = value;
+                this._afterSelectedText = value;
             }
         }
         
@@ -67,10 +67,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("beforeSelectedText")]
         public virtual string BeforeSelectedText {
             get {
-                return this.beforeSelectedText;
+                return this._beforeSelectedText;
             }
             set {
-                this.beforeSelectedText = value;
+                this._beforeSelectedText = value;
             }
         }
         
@@ -78,10 +78,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("clientVersionRanges")]
         public virtual Annotation.ClientVersionRangesData ClientVersionRanges {
             get {
-                return this.clientVersionRanges;
+                return this._clientVersionRanges;
             }
             set {
-                this.clientVersionRanges = value;
+                this._clientVersionRanges = value;
             }
         }
         
@@ -89,10 +89,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -100,10 +100,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("currentVersionRanges")]
         public virtual Annotation.CurrentVersionRangesData CurrentVersionRanges {
             get {
-                return this.currentVersionRanges;
+                return this._currentVersionRanges;
             }
             set {
-                this.currentVersionRanges = value;
+                this._currentVersionRanges = value;
             }
         }
         
@@ -111,10 +111,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("data")]
         public virtual string Data {
             get {
-                return this.data;
+                return this._data;
             }
             set {
-                this.data = value;
+                this._data = value;
             }
         }
         
@@ -122,10 +122,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
         public virtual System.Nullable<bool> Deleted {
             get {
-                return this.deleted;
+                return this._deleted;
             }
             set {
-                this.deleted = value;
+                this._deleted = value;
             }
         }
         
@@ -133,10 +133,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("highlightStyle")]
         public virtual string HighlightStyle {
             get {
-                return this.highlightStyle;
+                return this._highlightStyle;
             }
             set {
-                this.highlightStyle = value;
+                this._highlightStyle = value;
             }
         }
         
@@ -144,10 +144,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -155,10 +155,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -166,10 +166,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("layerId")]
         public virtual string LayerId {
             get {
-                return this.layerId;
+                return this._layerId;
             }
             set {
-                this.layerId = value;
+                this._layerId = value;
             }
         }
         
@@ -177,10 +177,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("pageIds")]
         public virtual System.Collections.Generic.IList<string> PageIds {
             get {
-                return this.pageIds;
+                return this._pageIds;
             }
             set {
-                this.pageIds = value;
+                this._pageIds = value;
             }
         }
         
@@ -188,10 +188,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selectedText")]
         public virtual string SelectedText {
             get {
-                return this.selectedText;
+                return this._selectedText;
             }
             set {
-                this.selectedText = value;
+                this._selectedText = value;
             }
         }
         
@@ -199,10 +199,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -210,10 +210,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -221,50 +221,50 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
         public virtual string VolumeId {
             get {
-                return this.volumeId;
+                return this._volumeId;
             }
             set {
-                this.volumeId = value;
+                this._volumeId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Selection ranges sent from the client.</summary>
         public class ClientVersionRangesData {
             
-            private BooksAnnotationsRange cfiRange;
+            private BooksAnnotationsRange _cfiRange;
             
-            private string contentVersion;
+            private string _contentVersion;
             
-            private BooksAnnotationsRange gbImageRange;
+            private BooksAnnotationsRange _gbImageRange;
             
-            private BooksAnnotationsRange gbTextRange;
+            private BooksAnnotationsRange _gbTextRange;
             
             [Newtonsoft.Json.JsonPropertyAttribute("cfiRange")]
             public virtual BooksAnnotationsRange CfiRange {
                 get {
-                    return this.cfiRange;
+                    return this._cfiRange;
                 }
                 set {
-                    this.cfiRange = value;
+                    this._cfiRange = value;
                 }
             }
             
@@ -272,30 +272,30 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("contentVersion")]
             public virtual string ContentVersion {
                 get {
-                    return this.contentVersion;
+                    return this._contentVersion;
                 }
                 set {
-                    this.contentVersion = value;
+                    this._contentVersion = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("gbImageRange")]
             public virtual BooksAnnotationsRange GbImageRange {
                 get {
-                    return this.gbImageRange;
+                    return this._gbImageRange;
                 }
                 set {
-                    this.gbImageRange = value;
+                    this._gbImageRange = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("gbTextRange")]
             public virtual BooksAnnotationsRange GbTextRange {
                 get {
-                    return this.gbTextRange;
+                    return this._gbTextRange;
                 }
                 set {
-                    this.gbTextRange = value;
+                    this._gbTextRange = value;
                 }
             }
         }
@@ -303,21 +303,21 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>Selection ranges for the most recent content version.</summary>
         public class CurrentVersionRangesData {
             
-            private BooksAnnotationsRange cfiRange;
+            private BooksAnnotationsRange _cfiRange;
             
-            private string contentVersion;
+            private string _contentVersion;
             
-            private BooksAnnotationsRange gbImageRange;
+            private BooksAnnotationsRange _gbImageRange;
             
-            private BooksAnnotationsRange gbTextRange;
+            private BooksAnnotationsRange _gbTextRange;
             
             [Newtonsoft.Json.JsonPropertyAttribute("cfiRange")]
             public virtual BooksAnnotationsRange CfiRange {
                 get {
-                    return this.cfiRange;
+                    return this._cfiRange;
                 }
                 set {
-                    this.cfiRange = value;
+                    this._cfiRange = value;
                 }
             }
             
@@ -325,57 +325,199 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("contentVersion")]
             public virtual string ContentVersion {
                 get {
-                    return this.contentVersion;
+                    return this._contentVersion;
                 }
                 set {
-                    this.contentVersion = value;
+                    this._contentVersion = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("gbImageRange")]
             public virtual BooksAnnotationsRange GbImageRange {
                 get {
-                    return this.gbImageRange;
+                    return this._gbImageRange;
                 }
                 set {
-                    this.gbImageRange = value;
+                    this._gbImageRange = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("gbTextRange")]
             public virtual BooksAnnotationsRange GbTextRange {
                 get {
-                    return this.gbTextRange;
+                    return this._gbTextRange;
                 }
                 set {
-                    this.gbTextRange = value;
+                    this._gbTextRange = value;
                 }
+            }
+        }
+    }
+    
+    public class Annotationdata : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _annotationType;
+        
+        private BooksLayerGeoData _data;
+        
+        private string _encoded_data;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private string _layerId;
+        
+        private string _selfLink;
+        
+        private string _updated;
+        
+        private string _volumeId;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>The type of annotation this data is for.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationType")]
+        public virtual string AnnotationType {
+            get {
+                return this._annotationType;
+            }
+            set {
+                this._annotationType = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("data")]
+        public virtual BooksLayerGeoData Data {
+            get {
+                return this._data;
+            }
+            set {
+                this._data = value;
+            }
+        }
+        
+        /// <summary>Base64 encoded data for this annotation data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("encoded_data")]
+        public virtual string Encoded_data {
+            get {
+                return this._encoded_data;
+            }
+            set {
+                this._encoded_data = value;
+            }
+        }
+        
+        /// <summary>Unique id for this annotation data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>Resource Type</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The Layer id for this data. *</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("layerId")]
+        public virtual string LayerId {
+            get {
+                return this._layerId;
+            }
+            set {
+                this._layerId = value;
+            }
+        }
+        
+        /// <summary>URL for this resource. *</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>Timestamp for the last time this data was updated. (RFC 3339 UTC date-time format).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this._updated;
+            }
+            set {
+                this._updated = value;
+            }
+        }
+        
+        /// <summary>The volume id for this data. *</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
+        public virtual string VolumeId {
+            get {
+                return this._volumeId;
+            }
+            set {
+                this._volumeId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
             }
         }
     }
     
     public class Annotations : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Annotation> items;
+        private System.Collections.Generic.IList<Annotation> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of annotations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Annotation> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -383,10 +525,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -394,10 +536,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -405,51 +547,129 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
+            }
+        }
+    }
+    
+    public class Annotationsdata : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<Annotationdata> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private System.Nullable<long> _totalItems;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>A list of Annotation Data.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<Annotationdata> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>Resource type</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Token to pass in for pagination for the next page. This will not be present if this request does not have more results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        /// <summary>The total number of volume annotations found.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
+        public virtual System.Nullable<long> TotalItems {
+            get {
+                return this._totalItems;
+            }
+            set {
+                this._totalItems = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
             }
         }
     }
     
     public class BooksAnnotationsRange {
         
-        private string endOffset;
+        private string _endOffset;
         
-        private string endPosition;
+        private string _endPosition;
         
-        private string startOffset;
+        private string _startOffset;
         
-        private string startPosition;
+        private string _startPosition;
         
         /// <summary>The offset from the ending position.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("endOffset")]
         public virtual string EndOffset {
             get {
-                return this.endOffset;
+                return this._endOffset;
             }
             set {
-                this.endOffset = value;
+                this._endOffset = value;
             }
         }
         
@@ -457,10 +677,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("endPosition")]
         public virtual string EndPosition {
             get {
-                return this.endPosition;
+                return this._endPosition;
             }
             set {
-                this.endPosition = value;
+                this._endPosition = value;
             }
         }
         
@@ -468,10 +688,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startOffset")]
         public virtual string StartOffset {
             get {
-                return this.startOffset;
+                return this._startOffset;
             }
             set {
-                this.startOffset = value;
+                this._startOffset = value;
             }
         }
         
@@ -479,48 +699,346 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("startPosition")]
         public virtual string StartPosition {
             get {
-                return this.startPosition;
+                return this._startPosition;
             }
             set {
-                this.startPosition = value;
+                this._startPosition = value;
+            }
+        }
+    }
+    
+    public class BooksLayerGeoData {
+        
+        private BooksLayerGeoData.CommonData _common;
+        
+        private BooksLayerGeoData.GeoData _geo;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("common")]
+        public virtual BooksLayerGeoData.CommonData Common {
+            get {
+                return this._common;
+            }
+            set {
+                this._common = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("geo")]
+        public virtual BooksLayerGeoData.GeoData Geo {
+            get {
+                return this._geo;
+            }
+            set {
+                this._geo = value;
+            }
+        }
+        
+        public class CommonData {
+            
+            private string _lang;
+            
+            private string _previewImageUrl;
+            
+            private string _snippet;
+            
+            private string _snippetUrl;
+            
+            /// <summary>The language of the information url and description.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("lang")]
+            public virtual string Lang {
+                get {
+                    return this._lang;
+                }
+                set {
+                    this._lang = value;
+                }
+            }
+            
+            /// <summary>The URL for the preview image information.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("previewImageUrl")]
+            public virtual string PreviewImageUrl {
+                get {
+                    return this._previewImageUrl;
+                }
+                set {
+                    this._previewImageUrl = value;
+                }
+            }
+            
+            /// <summary>The description for this location.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
+            public virtual string Snippet {
+                get {
+                    return this._snippet;
+                }
+                set {
+                    this._snippet = value;
+                }
+            }
+            
+            /// <summary>The URL for information for this location. Ex: wikipedia link.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("snippetUrl")]
+            public virtual string SnippetUrl {
+                get {
+                    return this._snippetUrl;
+                }
+                set {
+                    this._snippetUrl = value;
+                }
+            }
+        }
+        
+        public class GeoData {
+            
+            private System.Collections.Generic.IList<System.Collections.Generic.IList<GeoData.BoundaryData>> _boundary;
+            
+            private string _cachePolicy;
+            
+            private string _countryCode;
+            
+            private System.Nullable<double> _latitude;
+            
+            private System.Nullable<double> _longitude;
+            
+            private string _mapType;
+            
+            private string _resolution;
+            
+            private GeoData.ViewportData _viewport;
+            
+            /// <summary>The boundary of the location as a set of loops containing pairs of latitude, longitude coordinates.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("boundary")]
+            public virtual System.Collections.Generic.IList<System.Collections.Generic.IList<GeoData.BoundaryData>> Boundary {
+                get {
+                    return this._boundary;
+                }
+                set {
+                    this._boundary = value;
+                }
+            }
+            
+            /// <summary>The cache policy active for this data. EX: UNRESTRICTED, RESTRICTED, NEVER</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("cachePolicy")]
+            public virtual string CachePolicy {
+                get {
+                    return this._cachePolicy;
+                }
+                set {
+                    this._cachePolicy = value;
+                }
+            }
+            
+            /// <summary>The country code of the location.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("countryCode")]
+            public virtual string CountryCode {
+                get {
+                    return this._countryCode;
+                }
+                set {
+                    this._countryCode = value;
+                }
+            }
+            
+            /// <summary>The latitude of the location.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
+            public virtual System.Nullable<double> Latitude {
+                get {
+                    return this._latitude;
+                }
+                set {
+                    this._latitude = value;
+                }
+            }
+            
+            /// <summary>The longitude of the location.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
+            public virtual System.Nullable<double> Longitude {
+                get {
+                    return this._longitude;
+                }
+                set {
+                    this._longitude = value;
+                }
+            }
+            
+            /// <summary>The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("mapType")]
+            public virtual string MapType {
+                get {
+                    return this._mapType;
+                }
+                set {
+                    this._mapType = value;
+                }
+            }
+            
+            /// <summary>The resolution of the location. Ex: POI_LEVEL</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("resolution")]
+            public virtual string Resolution {
+                get {
+                    return this._resolution;
+                }
+                set {
+                    this._resolution = value;
+                }
+            }
+            
+            /// <summary>The viewport for showing this location. This is a latitude, longitude rectangle.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("viewport")]
+            public virtual GeoData.ViewportData Viewport {
+                get {
+                    return this._viewport;
+                }
+                set {
+                    this._viewport = value;
+                }
+            }
+            
+            public class BoundaryData {
+                
+                private System.Nullable<long> _latitude;
+                
+                private System.Nullable<long> _longitude;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
+                public virtual System.Nullable<long> Latitude {
+                    get {
+                        return this._latitude;
+                    }
+                    set {
+                        this._latitude = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
+                public virtual System.Nullable<long> Longitude {
+                    get {
+                        return this._longitude;
+                    }
+                    set {
+                        this._longitude = value;
+                    }
+                }
+            }
+            
+            /// <summary>The viewport for showing this location. This is a latitude, longitude rectangle.</summary>
+            public class ViewportData {
+                
+                private ViewportData.HiData _hi;
+                
+                private ViewportData.LoData _lo;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("hi")]
+                public virtual ViewportData.HiData Hi {
+                    get {
+                        return this._hi;
+                    }
+                    set {
+                        this._hi = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("lo")]
+                public virtual ViewportData.LoData Lo {
+                    get {
+                        return this._lo;
+                    }
+                    set {
+                        this._lo = value;
+                    }
+                }
+                
+                public class HiData {
+                    
+                    private System.Nullable<double> _latitude;
+                    
+                    private System.Nullable<double> _longitude;
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
+                    public virtual System.Nullable<double> Latitude {
+                        get {
+                            return this._latitude;
+                        }
+                        set {
+                            this._latitude = value;
+                        }
+                    }
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
+                    public virtual System.Nullable<double> Longitude {
+                        get {
+                            return this._longitude;
+                        }
+                        set {
+                            this._longitude = value;
+                        }
+                    }
+                }
+                
+                public class LoData {
+                    
+                    private System.Nullable<double> _latitude;
+                    
+                    private System.Nullable<double> _longitude;
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
+                    public virtual System.Nullable<double> Latitude {
+                        get {
+                            return this._latitude;
+                        }
+                        set {
+                            this._latitude = value;
+                        }
+                    }
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
+                    public virtual System.Nullable<double> Longitude {
+                        get {
+                            return this._longitude;
+                        }
+                        set {
+                            this._longitude = value;
+                        }
+                    }
+                }
             }
         }
     }
     
     public class Bookshelf : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string access;
+        private string _access;
         
-        private string created;
+        private string _created;
         
-        private string description;
+        private string _description;
         
-        private System.Nullable<long> id;
+        private System.Nullable<long> _id;
         
-        private string kind;
+        private string _kind;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string title;
+        private string _title;
         
-        private string updated;
+        private string _updated;
         
-        private System.Nullable<long> volumeCount;
+        private System.Nullable<long> _volumeCount;
         
-        private string volumesLastUpdated;
+        private string _volumesLastUpdated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Whether this bookshelf is PUBLIC or PRIVATE.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("access")]
         public virtual string Access {
             get {
-                return this.access;
+                return this._access;
             }
             set {
-                this.access = value;
+                this._access = value;
             }
         }
         
@@ -528,10 +1046,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -539,10 +1057,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -550,10 +1068,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual System.Nullable<long> Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -561,10 +1079,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -572,10 +1090,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -583,10 +1101,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -594,10 +1112,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -605,10 +1123,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeCount")]
         public virtual System.Nullable<long> VolumeCount {
             get {
-                return this.volumeCount;
+                return this._volumeCount;
             }
             set {
-                this.volumeCount = value;
+                this._volumeCount = value;
             }
         }
         
@@ -616,51 +1134,51 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumesLastUpdated")]
         public virtual string VolumesLastUpdated {
             get {
-                return this.volumesLastUpdated;
+                return this._volumesLastUpdated;
             }
             set {
-                this.volumesLastUpdated = value;
+                this._volumesLastUpdated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Bookshelves : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Bookshelf> items;
+        private System.Collections.Generic.IList<Bookshelf> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of bookshelves.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Bookshelf> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -668,65 +1186,65 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class ConcurrentAccessRestriction {
         
-        private System.Nullable<bool> deviceAllowed;
+        private System.Nullable<bool> _deviceAllowed;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> maxConcurrentDevices;
+        private System.Nullable<long> _maxConcurrentDevices;
         
-        private string message;
+        private string _message;
         
-        private string nonce;
+        private string _nonce;
         
-        private string reasonCode;
+        private string _reasonCode;
         
-        private System.Nullable<bool> restricted;
+        private System.Nullable<bool> _restricted;
         
-        private string signature;
+        private string _signature;
         
-        private string source;
+        private string _source;
         
-        private System.Nullable<long> timeWindowSeconds;
+        private System.Nullable<long> _timeWindowSeconds;
         
-        private string volumeId;
+        private string _volumeId;
         
         /// <summary>Whether access is granted for this (user, device, volume).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("deviceAllowed")]
         public virtual System.Nullable<bool> DeviceAllowed {
             get {
-                return this.deviceAllowed;
+                return this._deviceAllowed;
             }
             set {
-                this.deviceAllowed = value;
+                this._deviceAllowed = value;
             }
         }
         
@@ -734,10 +1252,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -745,10 +1263,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("maxConcurrentDevices")]
         public virtual System.Nullable<long> MaxConcurrentDevices {
             get {
-                return this.maxConcurrentDevices;
+                return this._maxConcurrentDevices;
             }
             set {
-                this.maxConcurrentDevices = value;
+                this._maxConcurrentDevices = value;
             }
         }
         
@@ -756,10 +1274,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("message")]
         public virtual string Message {
             get {
-                return this.message;
+                return this._message;
             }
             set {
-                this.message = value;
+                this._message = value;
             }
         }
         
@@ -767,10 +1285,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nonce")]
         public virtual string Nonce {
             get {
-                return this.nonce;
+                return this._nonce;
             }
             set {
-                this.nonce = value;
+                this._nonce = value;
             }
         }
         
@@ -778,10 +1296,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("reasonCode")]
         public virtual string ReasonCode {
             get {
-                return this.reasonCode;
+                return this._reasonCode;
             }
             set {
-                this.reasonCode = value;
+                this._reasonCode = value;
             }
         }
         
@@ -789,10 +1307,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("restricted")]
         public virtual System.Nullable<bool> Restricted {
             get {
-                return this.restricted;
+                return this._restricted;
             }
             set {
-                this.restricted = value;
+                this._restricted = value;
             }
         }
         
@@ -800,10 +1318,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("signature")]
         public virtual string Signature {
             get {
-                return this.signature;
+                return this._signature;
             }
             set {
-                this.signature = value;
+                this._signature = value;
             }
         }
         
@@ -811,10 +1329,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("source")]
         public virtual string Source {
             get {
-                return this.source;
+                return this._source;
             }
             set {
-                this.source = value;
+                this._source = value;
             }
         }
         
@@ -822,10 +1340,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeWindowSeconds")]
         public virtual System.Nullable<long> TimeWindowSeconds {
             get {
-                return this.timeWindowSeconds;
+                return this._timeWindowSeconds;
             }
             set {
-                this.timeWindowSeconds = value;
+                this._timeWindowSeconds = value;
             }
         }
         
@@ -833,48 +1351,48 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
         public virtual string VolumeId {
             get {
-                return this.volumeId;
+                return this._volumeId;
             }
             set {
-                this.volumeId = value;
+                this._volumeId = value;
             }
         }
     }
     
     public class DownloadAccessRestriction {
         
-        private System.Nullable<bool> deviceAllowed;
+        private System.Nullable<bool> _deviceAllowed;
         
-        private System.Nullable<long> downloadsAcquired;
+        private System.Nullable<long> _downloadsAcquired;
         
-        private System.Nullable<bool> justAcquired;
+        private System.Nullable<bool> _justAcquired;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> maxDownloadDevices;
+        private System.Nullable<long> _maxDownloadDevices;
         
-        private string message;
+        private string _message;
         
-        private string nonce;
+        private string _nonce;
         
-        private string reasonCode;
+        private string _reasonCode;
         
-        private System.Nullable<bool> restricted;
+        private System.Nullable<bool> _restricted;
         
-        private string signature;
+        private string _signature;
         
-        private string source;
+        private string _source;
         
-        private string volumeId;
+        private string _volumeId;
         
         /// <summary>If restricted, whether access is granted for this (user, device, volume).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("deviceAllowed")]
         public virtual System.Nullable<bool> DeviceAllowed {
             get {
-                return this.deviceAllowed;
+                return this._deviceAllowed;
             }
             set {
-                this.deviceAllowed = value;
+                this._deviceAllowed = value;
             }
         }
         
@@ -882,10 +1400,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("downloadsAcquired")]
         public virtual System.Nullable<long> DownloadsAcquired {
             get {
-                return this.downloadsAcquired;
+                return this._downloadsAcquired;
             }
             set {
-                this.downloadsAcquired = value;
+                this._downloadsAcquired = value;
             }
         }
         
@@ -893,10 +1411,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("justAcquired")]
         public virtual System.Nullable<bool> JustAcquired {
             get {
-                return this.justAcquired;
+                return this._justAcquired;
             }
             set {
-                this.justAcquired = value;
+                this._justAcquired = value;
             }
         }
         
@@ -904,10 +1422,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -915,10 +1433,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("maxDownloadDevices")]
         public virtual System.Nullable<long> MaxDownloadDevices {
             get {
-                return this.maxDownloadDevices;
+                return this._maxDownloadDevices;
             }
             set {
-                this.maxDownloadDevices = value;
+                this._maxDownloadDevices = value;
             }
         }
         
@@ -926,10 +1444,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("message")]
         public virtual string Message {
             get {
-                return this.message;
+                return this._message;
             }
             set {
-                this.message = value;
+                this._message = value;
             }
         }
         
@@ -937,10 +1455,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nonce")]
         public virtual string Nonce {
             get {
-                return this.nonce;
+                return this._nonce;
             }
             set {
-                this.nonce = value;
+                this._nonce = value;
             }
         }
         
@@ -948,10 +1466,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("reasonCode")]
         public virtual string ReasonCode {
             get {
-                return this.reasonCode;
+                return this._reasonCode;
             }
             set {
-                this.reasonCode = value;
+                this._reasonCode = value;
             }
         }
         
@@ -959,10 +1477,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("restricted")]
         public virtual System.Nullable<bool> Restricted {
             get {
-                return this.restricted;
+                return this._restricted;
             }
             set {
-                this.restricted = value;
+                this._restricted = value;
             }
         }
         
@@ -970,10 +1488,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("signature")]
         public virtual string Signature {
             get {
-                return this.signature;
+                return this._signature;
             }
             set {
-                this.signature = value;
+                this._signature = value;
             }
         }
         
@@ -981,10 +1499,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("source")]
         public virtual string Source {
             get {
-                return this.source;
+                return this._source;
             }
             set {
-                this.source = value;
+                this._source = value;
             }
         }
         
@@ -992,32 +1510,32 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
         public virtual string VolumeId {
             get {
-                return this.volumeId;
+                return this._volumeId;
             }
             set {
-                this.volumeId = value;
+                this._volumeId = value;
             }
         }
     }
     
     public class DownloadAccesses : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<DownloadAccessRestriction> downloadAccessList;
+        private System.Collections.Generic.IList<DownloadAccessRestriction> _downloadAccessList;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of download access responses.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("downloadAccessList")]
         public virtual System.Collections.Generic.IList<DownloadAccessRestriction> DownloadAccessList {
             get {
-                return this.downloadAccessList;
+                return this._downloadAccessList;
             }
             set {
-                this.downloadAccessList = value;
+                this._downloadAccessList = value;
             }
         }
         
@@ -1025,61 +1543,308 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
+            }
+        }
+    }
+    
+    public class Layersummaries : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<Layersummary> _items;
+        
+        private string _kind;
+        
+        private System.Nullable<long> _totalItems;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>A list of layer summary items.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<Layersummary> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>Resource type.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The total number of layer summaries found.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
+        public virtual System.Nullable<long> TotalItems {
+            get {
+                return this._totalItems;
+            }
+            set {
+                this._totalItems = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    public class Layersummary : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Nullable<long> _annotationCount;
+        
+        private System.Collections.Generic.IList<string> _annotationTypes;
+        
+        private string _annotationsDataLink;
+        
+        private string _annotationsLink;
+        
+        private string _contentVersion;
+        
+        private System.Nullable<long> _dataCount;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private string _layerId;
+        
+        private string _selfLink;
+        
+        private string _updated;
+        
+        private string _volumeId;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>The number of annotations for this layer.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationCount")]
+        public virtual System.Nullable<long> AnnotationCount {
+            get {
+                return this._annotationCount;
+            }
+            set {
+                this._annotationCount = value;
+            }
+        }
+        
+        /// <summary>The list of annotation types contained for this layer.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationTypes")]
+        public virtual System.Collections.Generic.IList<string> AnnotationTypes {
+            get {
+                return this._annotationTypes;
+            }
+            set {
+                this._annotationTypes = value;
+            }
+        }
+        
+        /// <summary>Link to get data for this annotation.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationsDataLink")]
+        public virtual string AnnotationsDataLink {
+            get {
+                return this._annotationsDataLink;
+            }
+            set {
+                this._annotationsDataLink = value;
+            }
+        }
+        
+        /// <summary>The link to get the annotations for this layer.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationsLink")]
+        public virtual string AnnotationsLink {
+            get {
+                return this._annotationsLink;
+            }
+            set {
+                this._annotationsLink = value;
+            }
+        }
+        
+        /// <summary>The content version this resource is for.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contentVersion")]
+        public virtual string ContentVersion {
+            get {
+                return this._contentVersion;
+            }
+            set {
+                this._contentVersion = value;
+            }
+        }
+        
+        /// <summary>The number of data items for this layer.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("dataCount")]
+        public virtual System.Nullable<long> DataCount {
+            get {
+                return this._dataCount;
+            }
+            set {
+                this._dataCount = value;
+            }
+        }
+        
+        /// <summary>Unique id of this layer summary.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>Resource Type</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The layer id for this summary.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("layerId")]
+        public virtual string LayerId {
+            get {
+                return this._layerId;
+            }
+            set {
+                this._layerId = value;
+            }
+        }
+        
+        /// <summary>URL to this resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>Timestamp for the last time an item in this layer was updated. (RFC 3339 UTC date-time format).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this._updated;
+            }
+            set {
+                this._updated = value;
+            }
+        }
+        
+        /// <summary>The volume id this resource is for.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
+        public virtual string VolumeId {
+            get {
+                return this._volumeId;
+            }
+            set {
+                this._volumeId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
             }
         }
     }
     
     public class ReadingPosition : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string epubCfiPosition;
+        private string _epubCfiPosition;
         
-        private string gbImagePosition;
+        private string _gbImagePosition;
         
-        private string gbTextPosition;
+        private string _gbTextPosition;
         
-        private string kind;
+        private string _kind;
         
-        private string pdfPosition;
+        private string _pdfPosition;
         
-        private string updated;
+        private string _updated;
         
-        private string volumeId;
+        private string _volumeId;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Position in an EPUB as a CFI.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("epubCfiPosition")]
         public virtual string EpubCfiPosition {
             get {
-                return this.epubCfiPosition;
+                return this._epubCfiPosition;
             }
             set {
-                this.epubCfiPosition = value;
+                this._epubCfiPosition = value;
             }
         }
         
@@ -1087,10 +1852,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("gbImagePosition")]
         public virtual string GbImagePosition {
             get {
-                return this.gbImagePosition;
+                return this._gbImagePosition;
             }
             set {
-                this.gbImagePosition = value;
+                this._gbImagePosition = value;
             }
         }
         
@@ -1098,10 +1863,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("gbTextPosition")]
         public virtual string GbTextPosition {
             get {
-                return this.gbTextPosition;
+                return this._gbTextPosition;
             }
             set {
-                this.gbTextPosition = value;
+                this._gbTextPosition = value;
             }
         }
         
@@ -1109,10 +1874,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1120,10 +1885,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("pdfPosition")]
         public virtual string PdfPosition {
             get {
-                return this.pdfPosition;
+                return this._pdfPosition;
             }
             set {
-                this.pdfPosition = value;
+                this._pdfPosition = value;
             }
         }
         
@@ -1131,10 +1896,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -1142,62 +1907,62 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
         public virtual string VolumeId {
             get {
-                return this.volumeId;
+                return this._volumeId;
             }
             set {
-                this.volumeId = value;
+                this._volumeId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class RequestAccess : Google.Apis.Requests.IDirectResponseSchema {
         
-        private ConcurrentAccessRestriction concurrentAccess;
+        private ConcurrentAccessRestriction _concurrentAccess;
         
-        private DownloadAccessRestriction downloadAccess;
+        private DownloadAccessRestriction _downloadAccess;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("concurrentAccess")]
         public virtual ConcurrentAccessRestriction ConcurrentAccess {
             get {
-                return this.concurrentAccess;
+                return this._concurrentAccess;
             }
             set {
-                this.concurrentAccess = value;
+                this._concurrentAccess = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("downloadAccess")]
         public virtual DownloadAccessRestriction DownloadAccess {
             get {
-                return this.downloadAccess;
+                return this._downloadAccess;
             }
             set {
-                this.downloadAccess = value;
+                this._downloadAccess = value;
             }
         }
         
@@ -1205,63 +1970,63 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Review {
         
-        private Review.AuthorData author;
+        private Review.AuthorData _author;
         
-        private string content;
+        private string _content;
         
-        private string date;
+        private string _date;
         
-        private string fullTextUrl;
+        private string _fullTextUrl;
         
-        private string kind;
+        private string _kind;
         
-        private string rating;
+        private string _rating;
         
-        private Review.SourceData source;
+        private Review.SourceData _source;
         
-        private string title;
+        private string _title;
         
-        private string type;
+        private string _type;
         
-        private string volumeId;
+        private string _volumeId;
         
         /// <summary>Author of this review.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual Review.AuthorData Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
@@ -1269,10 +2034,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("content")]
         public virtual string Content {
             get {
-                return this.content;
+                return this._content;
             }
             set {
-                this.content = value;
+                this._content = value;
             }
         }
         
@@ -1280,10 +2045,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("date")]
         public virtual string Date {
             get {
-                return this.date;
+                return this._date;
             }
             set {
-                this.date = value;
+                this._date = value;
             }
         }
         
@@ -1291,10 +2056,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("fullTextUrl")]
         public virtual string FullTextUrl {
             get {
-                return this.fullTextUrl;
+                return this._fullTextUrl;
             }
             set {
-                this.fullTextUrl = value;
+                this._fullTextUrl = value;
             }
         }
         
@@ -1302,10 +2067,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1313,10 +2078,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("rating")]
         public virtual string Rating {
             get {
-                return this.rating;
+                return this._rating;
             }
             set {
-                this.rating = value;
+                this._rating = value;
             }
         }
         
@@ -1324,10 +2089,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("source")]
         public virtual Review.SourceData Source {
             get {
-                return this.source;
+                return this._source;
             }
             set {
-                this.source = value;
+                this._source = value;
             }
         }
         
@@ -1335,10 +2100,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
-                return this.title;
+                return this._title;
             }
             set {
-                this.title = value;
+                this._title = value;
             }
         }
         
@@ -1346,10 +2111,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
-                return this.type;
+                return this._type;
             }
             set {
-                this.type = value;
+                this._type = value;
             }
         }
         
@@ -1357,26 +2122,26 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
         public virtual string VolumeId {
             get {
-                return this.volumeId;
+                return this._volumeId;
             }
             set {
-                this.volumeId = value;
+                this._volumeId = value;
             }
         }
         
         /// <summary>Author of this review.</summary>
         public class AuthorData {
             
-            private string displayName;
+            private string _displayName;
             
             /// <summary>Name of this person.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
         }
@@ -1384,20 +2149,20 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>Information regarding the source of this review, when the review is not from a Google Books user.</summary>
         public class SourceData {
             
-            private string description;
+            private string _description;
             
-            private string extraDescription;
+            private string _extraDescription;
             
-            private string url;
+            private string _url;
             
             /// <summary>Name of the source.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("description")]
             public virtual string Description {
                 get {
-                    return this.description;
+                    return this._description;
                 }
                 set {
-                    this.description = value;
+                    this._description = value;
                 }
             }
             
@@ -1405,10 +2170,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("extraDescription")]
             public virtual string ExtraDescription {
                 get {
-                    return this.extraDescription;
+                    return this._extraDescription;
                 }
                 set {
-                    this.extraDescription = value;
+                    this._extraDescription = value;
                 }
             }
             
@@ -1416,10 +2181,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("url")]
             public virtual string Url {
                 get {
-                    return this.url;
+                    return this._url;
                 }
                 set {
-                    this.url = value;
+                    this._url = value;
                 }
             }
         }
@@ -1427,34 +2192,34 @@ namespace Google.Apis.Books.v1.Data {
     
     public class Volume : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Volume.AccessInfoData accessInfo;
+        private Volume.AccessInfoData _accessInfo;
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Volume.SaleInfoData saleInfo;
+        private Volume.SaleInfoData _saleInfo;
         
-        private Volume.SearchInfoData searchInfo;
+        private Volume.SearchInfoData _searchInfo;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Volume.UserInfoData userInfo;
+        private Volume.UserInfoData _userInfo;
         
-        private Volume.VolumeInfoData volumeInfo;
+        private Volume.VolumeInfoData _volumeInfo;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accessInfo")]
         public virtual Volume.AccessInfoData AccessInfo {
             get {
-                return this.accessInfo;
+                return this._accessInfo;
             }
             set {
-                this.accessInfo = value;
+                this._accessInfo = value;
             }
         }
         
@@ -1462,10 +2227,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1473,10 +2238,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -1484,10 +2249,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1495,10 +2260,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("saleInfo")]
         public virtual Volume.SaleInfoData SaleInfo {
             get {
-                return this.saleInfo;
+                return this._saleInfo;
             }
             set {
-                this.saleInfo = value;
+                this._saleInfo = value;
             }
         }
         
@@ -1506,10 +2271,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("searchInfo")]
         public virtual Volume.SearchInfoData SearchInfo {
             get {
-                return this.searchInfo;
+                return this._searchInfo;
             }
             set {
-                this.searchInfo = value;
+                this._searchInfo = value;
             }
         }
         
@@ -1517,10 +2282,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -1528,10 +2293,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("userInfo")]
         public virtual Volume.UserInfoData UserInfo {
             get {
-                return this.userInfo;
+                return this._userInfo;
             }
             set {
-                this.userInfo = value;
+                this._userInfo = value;
             }
         }
         
@@ -1539,54 +2304,56 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("volumeInfo")]
         public virtual Volume.VolumeInfoData VolumeInfo {
             get {
-                return this.volumeInfo;
+                return this._volumeInfo;
             }
             set {
-                this.volumeInfo = value;
+                this._volumeInfo = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         /// <summary>Any information about a volume related to reading or obtaining that volume text. This information can depend on country (books may be public domain in one country but not in another, e.g.).</summary>
         public class AccessInfoData {
             
-            private string accessViewStatus;
+            private string _accessViewStatus;
             
-            private string country;
+            private string _country;
             
-            private DownloadAccessRestriction downloadAccess;
+            private DownloadAccessRestriction _downloadAccess;
             
-            private System.Nullable<bool> embeddable;
+            private System.Nullable<bool> _embeddable;
             
-            private AccessInfoData.EpubData epub;
+            private AccessInfoData.EpubData _epub;
             
-            private AccessInfoData.PdfData pdf;
+            private AccessInfoData.PdfData _pdf;
             
-            private System.Nullable<bool> publicDomain;
+            private System.Nullable<bool> _publicDomain;
             
-            private string textToSpeechPermission;
+            private string _textToSpeechPermission;
             
-            private string viewability;
+            private string _viewOrderUrl;
             
-            private string webReaderLink;
+            private string _viewability;
+            
+            private string _webReaderLink;
             
             /// <summary>Combines the access and viewability of this volume into a single status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("accessViewStatus")]
             public virtual string AccessViewStatus {
                 get {
-                    return this.accessViewStatus;
+                    return this._accessViewStatus;
                 }
                 set {
-                    this.accessViewStatus = value;
+                    this._accessViewStatus = value;
                 }
             }
             
@@ -1594,20 +2361,20 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("country")]
             public virtual string Country {
                 get {
-                    return this.country;
+                    return this._country;
                 }
                 set {
-                    this.country = value;
+                    this._country = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("downloadAccess")]
             public virtual DownloadAccessRestriction DownloadAccess {
                 get {
-                    return this.downloadAccess;
+                    return this._downloadAccess;
                 }
                 set {
-                    this.downloadAccess = value;
+                    this._downloadAccess = value;
                 }
             }
             
@@ -1615,10 +2382,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("embeddable")]
             public virtual System.Nullable<bool> Embeddable {
                 get {
-                    return this.embeddable;
+                    return this._embeddable;
                 }
                 set {
-                    this.embeddable = value;
+                    this._embeddable = value;
                 }
             }
             
@@ -1626,10 +2393,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("epub")]
             public virtual AccessInfoData.EpubData Epub {
                 get {
-                    return this.epub;
+                    return this._epub;
                 }
                 set {
-                    this.epub = value;
+                    this._epub = value;
                 }
             }
             
@@ -1637,10 +2404,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("pdf")]
             public virtual AccessInfoData.PdfData Pdf {
                 get {
-                    return this.pdf;
+                    return this._pdf;
                 }
                 set {
-                    this.pdf = value;
+                    this._pdf = value;
                 }
             }
             
@@ -1648,10 +2415,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("publicDomain")]
             public virtual System.Nullable<bool> PublicDomain {
                 get {
-                    return this.publicDomain;
+                    return this._publicDomain;
                 }
                 set {
-                    this.publicDomain = value;
+                    this._publicDomain = value;
                 }
             }
             
@@ -1659,10 +2426,21 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("textToSpeechPermission")]
             public virtual string TextToSpeechPermission {
                 get {
-                    return this.textToSpeechPermission;
+                    return this._textToSpeechPermission;
                 }
                 set {
-                    this.textToSpeechPermission = value;
+                    this._textToSpeechPermission = value;
+                }
+            }
+            
+            /// <summary>For ordered but not yet processed orders, we give a URL that can be used to go to the appropriate Google Wallet page.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("viewOrderUrl")]
+            public virtual string ViewOrderUrl {
+                get {
+                    return this._viewOrderUrl;
+                }
+                set {
+                    this._viewOrderUrl = value;
                 }
             }
             
@@ -1670,10 +2448,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("viewability")]
             public virtual string Viewability {
                 get {
-                    return this.viewability;
+                    return this._viewability;
                 }
                 set {
-                    this.viewability = value;
+                    this._viewability = value;
                 }
             }
             
@@ -1681,30 +2459,30 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("webReaderLink")]
             public virtual string WebReaderLink {
                 get {
-                    return this.webReaderLink;
+                    return this._webReaderLink;
                 }
                 set {
-                    this.webReaderLink = value;
+                    this._webReaderLink = value;
                 }
             }
             
             /// <summary>Information about epub content. (In LITE projection.)</summary>
             public class EpubData {
                 
-                private string acsTokenLink;
+                private string _acsTokenLink;
                 
-                private string downloadLink;
+                private string _downloadLink;
                 
-                private System.Nullable<bool> isAvailable;
+                private System.Nullable<bool> _isAvailable;
                 
                 /// <summary>URL to retrieve ACS token for epub download. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("acsTokenLink")]
                 public virtual string AcsTokenLink {
                     get {
-                        return this.acsTokenLink;
+                        return this._acsTokenLink;
                     }
                     set {
-                        this.acsTokenLink = value;
+                        this._acsTokenLink = value;
                     }
                 }
                 
@@ -1712,10 +2490,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("downloadLink")]
                 public virtual string DownloadLink {
                     get {
-                        return this.downloadLink;
+                        return this._downloadLink;
                     }
                     set {
-                        this.downloadLink = value;
+                        this._downloadLink = value;
                     }
                 }
                 
@@ -1723,10 +2501,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("isAvailable")]
                 public virtual System.Nullable<bool> IsAvailable {
                     get {
-                        return this.isAvailable;
+                        return this._isAvailable;
                     }
                     set {
-                        this.isAvailable = value;
+                        this._isAvailable = value;
                     }
                 }
             }
@@ -1734,20 +2512,20 @@ namespace Google.Apis.Books.v1.Data {
             /// <summary>Information about pdf content. (In LITE projection.)</summary>
             public class PdfData {
                 
-                private string acsTokenLink;
+                private string _acsTokenLink;
                 
-                private string downloadLink;
+                private string _downloadLink;
                 
-                private System.Nullable<bool> isAvailable;
+                private System.Nullable<bool> _isAvailable;
                 
                 /// <summary>URL to retrieve ACS token for pdf download. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("acsTokenLink")]
                 public virtual string AcsTokenLink {
                     get {
-                        return this.acsTokenLink;
+                        return this._acsTokenLink;
                     }
                     set {
-                        this.acsTokenLink = value;
+                        this._acsTokenLink = value;
                     }
                 }
                 
@@ -1755,10 +2533,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("downloadLink")]
                 public virtual string DownloadLink {
                     get {
-                        return this.downloadLink;
+                        return this._downloadLink;
                     }
                     set {
-                        this.downloadLink = value;
+                        this._downloadLink = value;
                     }
                 }
                 
@@ -1766,10 +2544,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("isAvailable")]
                 public virtual System.Nullable<bool> IsAvailable {
                     get {
-                        return this.isAvailable;
+                        return this._isAvailable;
                     }
                     set {
-                        this.isAvailable = value;
+                        this._isAvailable = value;
                     }
                 }
             }
@@ -1778,28 +2556,28 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>Any information about a volume related to the eBookstore and/or purchaseability. This information can depend on the country where the request originates from (i.e. books may not be for sale in certain countries).</summary>
         public class SaleInfoData {
             
-            private string buyLink;
+            private string _buyLink;
             
-            private string country;
+            private string _country;
             
-            private System.Nullable<bool> isEbook;
+            private System.Nullable<bool> _isEbook;
             
-            private SaleInfoData.ListPriceData listPrice;
+            private SaleInfoData.ListPriceData _listPrice;
             
-            private string onSaleDate;
+            private string _onSaleDate;
             
-            private SaleInfoData.RetailPriceData retailPrice;
+            private SaleInfoData.RetailPriceData _retailPrice;
             
-            private string saleability;
+            private string _saleability;
             
             /// <summary>URL to purchase this volume on the Google Books site. (In LITE projection)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("buyLink")]
             public virtual string BuyLink {
                 get {
-                    return this.buyLink;
+                    return this._buyLink;
                 }
                 set {
-                    this.buyLink = value;
+                    this._buyLink = value;
                 }
             }
             
@@ -1807,10 +2585,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("country")]
             public virtual string Country {
                 get {
-                    return this.country;
+                    return this._country;
                 }
                 set {
-                    this.country = value;
+                    this._country = value;
                 }
             }
             
@@ -1818,10 +2596,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("isEbook")]
             public virtual System.Nullable<bool> IsEbook {
                 get {
-                    return this.isEbook;
+                    return this._isEbook;
                 }
                 set {
-                    this.isEbook = value;
+                    this._isEbook = value;
                 }
             }
             
@@ -1829,10 +2607,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("listPrice")]
             public virtual SaleInfoData.ListPriceData ListPrice {
                 get {
-                    return this.listPrice;
+                    return this._listPrice;
                 }
                 set {
-                    this.listPrice = value;
+                    this._listPrice = value;
                 }
             }
             
@@ -1840,10 +2618,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("onSaleDate")]
             public virtual string OnSaleDate {
                 get {
-                    return this.onSaleDate;
+                    return this._onSaleDate;
                 }
                 set {
-                    this.onSaleDate = value;
+                    this._onSaleDate = value;
                 }
             }
             
@@ -1851,10 +2629,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("retailPrice")]
             public virtual SaleInfoData.RetailPriceData RetailPrice {
                 get {
-                    return this.retailPrice;
+                    return this._retailPrice;
                 }
                 set {
-                    this.retailPrice = value;
+                    this._retailPrice = value;
                 }
             }
             
@@ -1862,28 +2640,28 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("saleability")]
             public virtual string Saleability {
                 get {
-                    return this.saleability;
+                    return this._saleability;
                 }
                 set {
-                    this.saleability = value;
+                    this._saleability = value;
                 }
             }
             
             /// <summary>Suggested retail price. (In LITE projection.)</summary>
             public class ListPriceData {
                 
-                private System.Nullable<double> amount;
+                private System.Nullable<double> _amount;
                 
-                private string currencyCode;
+                private string _currencyCode;
                 
                 /// <summary>Amount in the currency listed below. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("amount")]
                 public virtual System.Nullable<double> Amount {
                     get {
-                        return this.amount;
+                        return this._amount;
                     }
                     set {
-                        this.amount = value;
+                        this._amount = value;
                     }
                 }
                 
@@ -1891,10 +2669,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("currencyCode")]
                 public virtual string CurrencyCode {
                     get {
-                        return this.currencyCode;
+                        return this._currencyCode;
                     }
                     set {
-                        this.currencyCode = value;
+                        this._currencyCode = value;
                     }
                 }
             }
@@ -1902,18 +2680,18 @@ namespace Google.Apis.Books.v1.Data {
             /// <summary>The actual selling price of the book. This is the same as the suggested retail or list price unless there are offers or discounts on this volume. (In LITE projection.)</summary>
             public class RetailPriceData {
                 
-                private System.Nullable<double> amount;
+                private System.Nullable<double> _amount;
                 
-                private string currencyCode;
+                private string _currencyCode;
                 
                 /// <summary>Amount in the currency listed below. (In LITE projection.)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("amount")]
                 public virtual System.Nullable<double> Amount {
                     get {
-                        return this.amount;
+                        return this._amount;
                     }
                     set {
-                        this.amount = value;
+                        this._amount = value;
                     }
                 }
                 
@@ -1921,10 +2699,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("currencyCode")]
                 public virtual string CurrencyCode {
                     get {
-                        return this.currencyCode;
+                        return this._currencyCode;
                     }
                     set {
-                        this.currencyCode = value;
+                        this._currencyCode = value;
                     }
                 }
             }
@@ -1933,16 +2711,16 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>Search result information related to this volume.</summary>
         public class SearchInfoData {
             
-            private string textSnippet;
+            private string _textSnippet;
             
             /// <summary>A text snippet containing the search query.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("textSnippet")]
             public virtual string TextSnippet {
                 get {
-                    return this.textSnippet;
+                    return this._textSnippet;
                 }
                 set {
-                    this.textSnippet = value;
+                    this._textSnippet = value;
                 }
             }
         }
@@ -1950,24 +2728,37 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>User specific information related to this volume. (e.g. page this user last read or whether they purchased this book)</summary>
         public class UserInfoData {
             
-            private System.Nullable<bool> isPreordered;
+            private System.Nullable<bool> _isInMyBooks;
             
-            private System.Nullable<bool> isPurchased;
+            private System.Nullable<bool> _isPreordered;
             
-            private ReadingPosition readingPosition;
+            private System.Nullable<bool> _isPurchased;
             
-            private Review review;
+            private ReadingPosition _readingPosition;
             
-            private string updated;
+            private Review _review;
+            
+            private string _updated;
+            
+            /// <summary>Whether or not this volume is currently in &quot;my books.&quot;</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("isInMyBooks")]
+            public virtual System.Nullable<bool> IsInMyBooks {
+                get {
+                    return this._isInMyBooks;
+                }
+                set {
+                    this._isInMyBooks = value;
+                }
+            }
             
             /// <summary>Whether or not this volume was pre-ordered by the authenticated user making the request. (In LITE projection.)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("isPreordered")]
             public virtual System.Nullable<bool> IsPreordered {
                 get {
-                    return this.isPreordered;
+                    return this._isPreordered;
                 }
                 set {
-                    this.isPreordered = value;
+                    this._isPreordered = value;
                 }
             }
             
@@ -1975,30 +2766,30 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("isPurchased")]
             public virtual System.Nullable<bool> IsPurchased {
                 get {
-                    return this.isPurchased;
+                    return this._isPurchased;
                 }
                 set {
-                    this.isPurchased = value;
+                    this._isPurchased = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("readingPosition")]
             public virtual ReadingPosition ReadingPosition {
                 get {
-                    return this.readingPosition;
+                    return this._readingPosition;
                 }
                 set {
-                    this.readingPosition = value;
+                    this._readingPosition = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("review")]
             public virtual Review Review {
                 get {
-                    return this.review;
+                    return this._review;
                 }
                 set {
-                    this.review = value;
+                    this._review = value;
                 }
             }
             
@@ -2006,10 +2797,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("updated")]
             public virtual string Updated {
                 get {
-                    return this.updated;
+                    return this._updated;
                 }
                 set {
-                    this.updated = value;
+                    this._updated = value;
                 }
             }
         }
@@ -2017,54 +2808,54 @@ namespace Google.Apis.Books.v1.Data {
         /// <summary>General volume information.</summary>
         public class VolumeInfoData {
             
-            private System.Collections.Generic.IList<string> authors;
+            private System.Collections.Generic.IList<string> _authors;
             
-            private System.Nullable<double> averageRating;
+            private System.Nullable<double> _averageRating;
             
-            private string canonicalVolumeLink;
+            private string _canonicalVolumeLink;
             
-            private System.Collections.Generic.IList<string> categories;
+            private System.Collections.Generic.IList<string> _categories;
             
-            private string contentVersion;
+            private string _contentVersion;
             
-            private string description;
+            private string _description;
             
-            private VolumeInfoData.DimensionsData dimensions;
+            private VolumeInfoData.DimensionsData _dimensions;
             
-            private VolumeInfoData.ImageLinksData imageLinks;
+            private VolumeInfoData.ImageLinksData _imageLinks;
             
-            private System.Collections.Generic.IList<VolumeInfoData.IndustryIdentifiersData> industryIdentifiers;
+            private System.Collections.Generic.IList<VolumeInfoData.IndustryIdentifiersData> _industryIdentifiers;
             
-            private string infoLink;
+            private string _infoLink;
             
-            private string language;
+            private string _language;
             
-            private string mainCategory;
+            private string _mainCategory;
             
-            private System.Nullable<long> pageCount;
+            private System.Nullable<long> _pageCount;
             
-            private string previewLink;
+            private string _previewLink;
             
-            private string printType;
+            private string _printType;
             
-            private string publishedDate;
+            private string _publishedDate;
             
-            private string publisher;
+            private string _publisher;
             
-            private System.Nullable<long> ratingsCount;
+            private System.Nullable<long> _ratingsCount;
             
-            private string subtitle;
+            private string _subtitle;
             
-            private string title;
+            private string _title;
             
             /// <summary>The names of the authors and/or editors for this volume. (In LITE projection)</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("authors")]
             public virtual System.Collections.Generic.IList<string> Authors {
                 get {
-                    return this.authors;
+                    return this._authors;
                 }
                 set {
-                    this.authors = value;
+                    this._authors = value;
                 }
             }
             
@@ -2072,10 +2863,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("averageRating")]
             public virtual System.Nullable<double> AverageRating {
                 get {
-                    return this.averageRating;
+                    return this._averageRating;
                 }
                 set {
-                    this.averageRating = value;
+                    this._averageRating = value;
                 }
             }
             
@@ -2083,10 +2874,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("canonicalVolumeLink")]
             public virtual string CanonicalVolumeLink {
                 get {
-                    return this.canonicalVolumeLink;
+                    return this._canonicalVolumeLink;
                 }
                 set {
-                    this.canonicalVolumeLink = value;
+                    this._canonicalVolumeLink = value;
                 }
             }
             
@@ -2094,10 +2885,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("categories")]
             public virtual System.Collections.Generic.IList<string> Categories {
                 get {
-                    return this.categories;
+                    return this._categories;
                 }
                 set {
-                    this.categories = value;
+                    this._categories = value;
                 }
             }
             
@@ -2105,10 +2896,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("contentVersion")]
             public virtual string ContentVersion {
                 get {
-                    return this.contentVersion;
+                    return this._contentVersion;
                 }
                 set {
-                    this.contentVersion = value;
+                    this._contentVersion = value;
                 }
             }
             
@@ -2116,10 +2907,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("description")]
             public virtual string Description {
                 get {
-                    return this.description;
+                    return this._description;
                 }
                 set {
-                    this.description = value;
+                    this._description = value;
                 }
             }
             
@@ -2127,10 +2918,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("dimensions")]
             public virtual VolumeInfoData.DimensionsData Dimensions {
                 get {
-                    return this.dimensions;
+                    return this._dimensions;
                 }
                 set {
-                    this.dimensions = value;
+                    this._dimensions = value;
                 }
             }
             
@@ -2138,10 +2929,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("imageLinks")]
             public virtual VolumeInfoData.ImageLinksData ImageLinks {
                 get {
-                    return this.imageLinks;
+                    return this._imageLinks;
                 }
                 set {
-                    this.imageLinks = value;
+                    this._imageLinks = value;
                 }
             }
             
@@ -2149,10 +2940,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("industryIdentifiers")]
             public virtual System.Collections.Generic.IList<VolumeInfoData.IndustryIdentifiersData> IndustryIdentifiers {
                 get {
-                    return this.industryIdentifiers;
+                    return this._industryIdentifiers;
                 }
                 set {
-                    this.industryIdentifiers = value;
+                    this._industryIdentifiers = value;
                 }
             }
             
@@ -2160,10 +2951,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("infoLink")]
             public virtual string InfoLink {
                 get {
-                    return this.infoLink;
+                    return this._infoLink;
                 }
                 set {
-                    this.infoLink = value;
+                    this._infoLink = value;
                 }
             }
             
@@ -2171,10 +2962,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
             
@@ -2182,10 +2973,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("mainCategory")]
             public virtual string MainCategory {
                 get {
-                    return this.mainCategory;
+                    return this._mainCategory;
                 }
                 set {
-                    this.mainCategory = value;
+                    this._mainCategory = value;
                 }
             }
             
@@ -2193,10 +2984,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("pageCount")]
             public virtual System.Nullable<long> PageCount {
                 get {
-                    return this.pageCount;
+                    return this._pageCount;
                 }
                 set {
-                    this.pageCount = value;
+                    this._pageCount = value;
                 }
             }
             
@@ -2204,10 +2995,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("previewLink")]
             public virtual string PreviewLink {
                 get {
-                    return this.previewLink;
+                    return this._previewLink;
                 }
                 set {
-                    this.previewLink = value;
+                    this._previewLink = value;
                 }
             }
             
@@ -2215,10 +3006,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("printType")]
             public virtual string PrintType {
                 get {
-                    return this.printType;
+                    return this._printType;
                 }
                 set {
-                    this.printType = value;
+                    this._printType = value;
                 }
             }
             
@@ -2226,10 +3017,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("publishedDate")]
             public virtual string PublishedDate {
                 get {
-                    return this.publishedDate;
+                    return this._publishedDate;
                 }
                 set {
-                    this.publishedDate = value;
+                    this._publishedDate = value;
                 }
             }
             
@@ -2237,10 +3028,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("publisher")]
             public virtual string Publisher {
                 get {
-                    return this.publisher;
+                    return this._publisher;
                 }
                 set {
-                    this.publisher = value;
+                    this._publisher = value;
                 }
             }
             
@@ -2248,10 +3039,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("ratingsCount")]
             public virtual System.Nullable<long> RatingsCount {
                 get {
-                    return this.ratingsCount;
+                    return this._ratingsCount;
                 }
                 set {
-                    this.ratingsCount = value;
+                    this._ratingsCount = value;
                 }
             }
             
@@ -2259,10 +3050,10 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("subtitle")]
             public virtual string Subtitle {
                 get {
-                    return this.subtitle;
+                    return this._subtitle;
                 }
                 set {
-                    this.subtitle = value;
+                    this._subtitle = value;
                 }
             }
             
@@ -2270,30 +3061,30 @@ namespace Google.Apis.Books.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("title")]
             public virtual string Title {
                 get {
-                    return this.title;
+                    return this._title;
                 }
                 set {
-                    this.title = value;
+                    this._title = value;
                 }
             }
             
             /// <summary>Physical dimensions of this volume.</summary>
             public class DimensionsData {
                 
-                private string height;
+                private string _height;
                 
-                private string thickness;
+                private string _thickness;
                 
-                private string width;
+                private string _width;
                 
                 /// <summary>Height or length of this volume (in cm).</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("height")]
                 public virtual string Height {
                     get {
-                        return this.height;
+                        return this._height;
                     }
                     set {
-                        this.height = value;
+                        this._height = value;
                     }
                 }
                 
@@ -2301,10 +3092,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("thickness")]
                 public virtual string Thickness {
                     get {
-                        return this.thickness;
+                        return this._thickness;
                     }
                     set {
-                        this.thickness = value;
+                        this._thickness = value;
                     }
                 }
                 
@@ -2312,10 +3103,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("width")]
                 public virtual string Width {
                     get {
-                        return this.width;
+                        return this._width;
                     }
                     set {
-                        this.width = value;
+                        this._width = value;
                     }
                 }
             }
@@ -2323,26 +3114,26 @@ namespace Google.Apis.Books.v1.Data {
             /// <summary>A list of image links for all the sizes that are available. (In LITE projection.)</summary>
             public class ImageLinksData {
                 
-                private string extraLarge;
+                private string _extraLarge;
                 
-                private string large;
+                private string _large;
                 
-                private string medium;
+                private string _medium;
                 
-                private string small;
+                private string _small;
                 
-                private string smallThumbnail;
+                private string _smallThumbnail;
                 
-                private string thumbnail;
+                private string _thumbnail;
                 
                 /// <summary>Image link for extra large size (width of ~1280 pixels). (In LITE projection)</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("extraLarge")]
                 public virtual string ExtraLarge {
                     get {
-                        return this.extraLarge;
+                        return this._extraLarge;
                     }
                     set {
-                        this.extraLarge = value;
+                        this._extraLarge = value;
                     }
                 }
                 
@@ -2350,10 +3141,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("large")]
                 public virtual string Large {
                     get {
-                        return this.large;
+                        return this._large;
                     }
                     set {
-                        this.large = value;
+                        this._large = value;
                     }
                 }
                 
@@ -2361,10 +3152,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("medium")]
                 public virtual string Medium {
                     get {
-                        return this.medium;
+                        return this._medium;
                     }
                     set {
-                        this.medium = value;
+                        this._medium = value;
                     }
                 }
                 
@@ -2372,10 +3163,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("small")]
                 public virtual string Small {
                     get {
-                        return this.small;
+                        return this._small;
                     }
                     set {
-                        this.small = value;
+                        this._small = value;
                     }
                 }
                 
@@ -2383,10 +3174,10 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("smallThumbnail")]
                 public virtual string SmallThumbnail {
                     get {
-                        return this.smallThumbnail;
+                        return this._smallThumbnail;
                     }
                     set {
-                        this.smallThumbnail = value;
+                        this._smallThumbnail = value;
                     }
                 }
                 
@@ -2394,28 +3185,28 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("thumbnail")]
                 public virtual string Thumbnail {
                     get {
-                        return this.thumbnail;
+                        return this._thumbnail;
                     }
                     set {
-                        this.thumbnail = value;
+                        this._thumbnail = value;
                     }
                 }
             }
             
             public class IndustryIdentifiersData {
                 
-                private string identifier;
+                private string _identifier;
                 
-                private string type;
+                private string _type;
                 
                 /// <summary>Industry specific volume identifier.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("identifier")]
                 public virtual string Identifier {
                     get {
-                        return this.identifier;
+                        return this._identifier;
                     }
                     set {
-                        this.identifier = value;
+                        this._identifier = value;
                     }
                 }
                 
@@ -2423,36 +3214,375 @@ namespace Google.Apis.Books.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("type")]
                 public virtual string Type {
                     get {
-                        return this.type;
+                        return this._type;
                     }
                     set {
-                        this.type = value;
+                        this._type = value;
                     }
                 }
             }
         }
     }
     
+    public class Volumeannotation : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _annotationDataId;
+        
+        private string _annotationDataLink;
+        
+        private string _annotationType;
+        
+        private Volumeannotation.ContentRangesData _contentRanges;
+        
+        private string _data;
+        
+        private System.Nullable<bool> _deleted;
+        
+        private string _id;
+        
+        private string _kind;
+        
+        private string _layerId;
+        
+        private System.Collections.Generic.IList<string> _pageIds;
+        
+        private string _selectedText;
+        
+        private string _selfLink;
+        
+        private string _updated;
+        
+        private string _volumeId;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>The annotation data id for this volume annotation.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationDataId")]
+        public virtual string AnnotationDataId {
+            get {
+                return this._annotationDataId;
+            }
+            set {
+                this._annotationDataId = value;
+            }
+        }
+        
+        /// <summary>Link to get data for this annotation.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationDataLink")]
+        public virtual string AnnotationDataLink {
+            get {
+                return this._annotationDataLink;
+            }
+            set {
+                this._annotationDataLink = value;
+            }
+        }
+        
+        /// <summary>The type of annotation this is.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("annotationType")]
+        public virtual string AnnotationType {
+            get {
+                return this._annotationType;
+            }
+            set {
+                this._annotationType = value;
+            }
+        }
+        
+        /// <summary>The content ranges to identify the selected text.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("contentRanges")]
+        public virtual Volumeannotation.ContentRangesData ContentRanges {
+            get {
+                return this._contentRanges;
+            }
+            set {
+                this._contentRanges = value;
+            }
+        }
+        
+        /// <summary>Data for this annotation.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("data")]
+        public virtual string Data {
+            get {
+                return this._data;
+            }
+            set {
+                this._data = value;
+            }
+        }
+        
+        /// <summary>Indicates that this annotation is deleted.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
+        public virtual System.Nullable<bool> Deleted {
+            get {
+                return this._deleted;
+            }
+            set {
+                this._deleted = value;
+            }
+        }
+        
+        /// <summary>Unique id of this volume annotation.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        /// <summary>Resource Type</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The Layer this annotation is for.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("layerId")]
+        public virtual string LayerId {
+            get {
+                return this._layerId;
+            }
+            set {
+                this._layerId = value;
+            }
+        }
+        
+        /// <summary>Pages the annotation spans.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageIds")]
+        public virtual System.Collections.Generic.IList<string> PageIds {
+            get {
+                return this._pageIds;
+            }
+            set {
+                this._pageIds = value;
+            }
+        }
+        
+        /// <summary>Excerpt from the volume.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selectedText")]
+        public virtual string SelectedText {
+            get {
+                return this._selectedText;
+            }
+            set {
+                this._selectedText = value;
+            }
+        }
+        
+        /// <summary>URL to this resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>Timestamp for the last time this anntoation was updated. (RFC 3339 UTC date-time format).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("updated")]
+        public virtual string Updated {
+            get {
+                return this._updated;
+            }
+            set {
+                this._updated = value;
+            }
+        }
+        
+        /// <summary>The Volume this annotation is for.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("volumeId")]
+        public virtual string VolumeId {
+            get {
+                return this._volumeId;
+            }
+            set {
+                this._volumeId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+        
+        /// <summary>The content ranges to identify the selected text.</summary>
+        public class ContentRangesData {
+            
+            private BooksAnnotationsRange _cfiRange;
+            
+            private string _contentVersion;
+            
+            private BooksAnnotationsRange _gbImageRange;
+            
+            private BooksAnnotationsRange _gbTextRange;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("cfiRange")]
+            public virtual BooksAnnotationsRange CfiRange {
+                get {
+                    return this._cfiRange;
+                }
+                set {
+                    this._cfiRange = value;
+                }
+            }
+            
+            /// <summary>Content version applicable to ranges below.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("contentVersion")]
+            public virtual string ContentVersion {
+                get {
+                    return this._contentVersion;
+                }
+                set {
+                    this._contentVersion = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("gbImageRange")]
+            public virtual BooksAnnotationsRange GbImageRange {
+                get {
+                    return this._gbImageRange;
+                }
+                set {
+                    this._gbImageRange = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("gbTextRange")]
+            public virtual BooksAnnotationsRange GbTextRange {
+                get {
+                    return this._gbTextRange;
+                }
+                set {
+                    this._gbTextRange = value;
+                }
+            }
+        }
+    }
+    
+    public class Volumeannotations : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<Volumeannotation> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private System.Nullable<long> _totalItems;
+        
+        private Google.Apis.Requests.RequestError _Error;
+        
+        private string _ETag;
+        
+        /// <summary>A list of volume annotations.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<Volumeannotation> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>Resource type</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>Token to pass in for pagination for the next page. This will not be present if this request does not have more results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        /// <summary>The total number of volume annotations found.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
+        public virtual System.Nullable<long> TotalItems {
+            get {
+                return this._totalItems;
+            }
+            set {
+                this._totalItems = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("error")]
+        public virtual Google.Apis.Requests.RequestError Error {
+            get {
+                return this._Error;
+            }
+            set {
+                this._Error = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
     public class Volumes : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Volume> items;
+        private System.Collections.Generic.IList<Volume> _items;
         
-        private string kind;
+        private string _kind;
         
-        private System.Nullable<long> totalItems;
+        private System.Nullable<long> _totalItems;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A list of volumes.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Volume> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2460,10 +3590,10 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2471,29 +3601,29 @@ namespace Google.Apis.Books.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("totalItems")]
         public virtual System.Nullable<long> TotalItems {
             get {
-                return this.totalItems;
+                return this._totalItems;
             }
             set {
-                this.totalItems = value;
+                this._totalItems = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -2513,566 +3643,730 @@ namespace Google.Apis.Books.v1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"books:v1\",\"name" +
-            "\":\"books\",\"version\":\"v1\",\"revision\":\"20120131\",\"title\":\"Books API\",\"description\"" +
+            "\":\"books\",\"version\":\"v1\",\"revision\":\"20120423\",\"title\":\"Books API\",\"description\"" +
             ":\"Lets you search for books and manage your Google Books library.\",\"icons\":{\"x16" +
             "\":\"http://www.google.com/images/icons/product/ebooks-16.png\",\"x32\":\"http://www.g" +
             "oogle.com/images/icons/product/ebooks-32.png\"},\"documentationLink\":\"https://code" +
             ".google.com/apis/books/docs/v1/getting_started.html\",\"protocol\":\"rest\",\"baseUrl\"" +
-            ":\"https://www.googleapis.com/books/v1/\",\"basePath\":\"/books/v1/\",\"parameters\":{\"a" +
-            "lt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"js" +
-            "on\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of applicat" +
-            "ion/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector" +
-            " specifying which fields to include in a partial response.\",\"location\":\"query\"}," +
-            "\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your proj" +
-            "ect and provides you with API access, quota, and reports. Required unless you pr" +
-            "ovide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"d" +
-            "escription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyP" +
-            "rint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and li" +
-            "ne breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"d" +
-            "escription\":\"Available to use for quota purposes for server-side applications. C" +
-            "an be any arbitrary string assigned to a user, but should not exceed 40 characte" +
-            "rs. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\"" +
-            ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
-            "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oa" +
-            "uth2\":{\"scopes\":{\"https://www.googleapis.com/auth/books\":{\"description\":\"Manage " +
-            "your books\"}}}},\"schemas\":{\"Annotation\":{\"id\":\"Annotation\",\"type\":\"object\",\"prop" +
-            "erties\":{\"afterSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text after e" +
-            "xcerpt.\"},\"beforeSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text befor" +
-            "e excerpt.\"},\"clientVersionRanges\":{\"type\":\"object\",\"description\":\"Selection ran" +
-            "ges sent from the client.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRan" +
-            "ge\",\"description\":\"Range in CFI format for this annotation sent by client.\"},\"co" +
-            "ntentVersion\":{\"type\":\"string\",\"description\":\"Content version the client sent in" +
-            ".\"},\"gbImageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB im" +
-            "age format for this annotation sent by client.\"},\"gbTextRange\":{\"$ref\":\"BooksAnn" +
-            "otationsRange\",\"description\":\"Range in GB text format for this annotation sent b" +
-            "y client.\"}}},\"created\":{\"type\":\"string\",\"description\":\"Timestamp for the create" +
-            "d time of this annotation.\",\"format\":\"date-time\"},\"currentVersionRanges\":{\"type\"" +
-            ":\"object\",\"description\":\"Selection ranges for the most recent content version.\"," +
-            "\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in" +
-            " CFI format for this annotation for version above.\"},\"contentVersion\":{\"type\":\"s" +
-            "tring\",\"description\":\"Content version applicable to ranges below.\"},\"gbImageRang" +
-            "e\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image format for t" +
-            "his annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotationsRange" +
-            "\",\"description\":\"Range in GB text format for this annotation for version above.\"" +
-            "}}},\"data\":{\"type\":\"string\",\"description\":\"User-created data for this annotation" +
-            ".\"},\"deleted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotation is" +
-            " deleted.\"},\"highlightStyle\":{\"type\":\"string\",\"description\":\"The highlight style" +
-            " for this annotation.\"},\"id\":{\"type\":\"string\",\"description\":\"Id of this annotati" +
-            "on, in the form of a GUID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource typ" +
-            "e.\",\"default\":\"books#annotation\"},\"layerId\":{\"type\":\"string\",\"description\":\"The " +
-            "layer this annotation is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages t" +
-            "hat this annotation spans.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"type\":\"s" +
-            "tring\",\"description\":\"Excerpt from the volume.\"},\"selfLink\":{\"type\":\"string\",\"de" +
-            "scription\":\"URL to this resource.\"},\"updated\":{\"type\":\"string\",\"description\":\"Ti" +
-            "mestamp for the last time this annotation was modified.\",\"format\":\"date-time\"},\"" +
-            "volumeId\":{\"type\":\"string\",\"description\":\"The volume that this annotation belong" +
-            "s to.\"}}},\"Annotations\":{\"id\":\"Annotations\",\"type\":\"object\",\"properties\":{\"items" +
-            "\":{\"type\":\"array\",\"description\":\"A list of annotations.\",\"items\":{\"$ref\":\"Annota" +
-            "tion\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":\"books#" +
-            "annotations\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token to pass in f" +
-            "or pagination for the next page. This will not be present if this request does n" +
-            "ot have more results.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total numb" +
-            "er of annotations found. This may be greater than the number of notes returned i" +
-            "n this response if results have been paginated.\",\"format\":\"int32\"}}},\"BooksAnnot" +
-            "ationsRange\":{\"id\":\"BooksAnnotationsRange\",\"type\":\"object\",\"properties\":{\"endOff" +
-            "set\":{\"type\":\"string\",\"description\":\"The offset from the ending position.\"},\"end" +
-            "Position\":{\"type\":\"string\",\"description\":\"The ending position for the range.\"},\"" +
-            "startOffset\":{\"type\":\"string\",\"description\":\"The offset from the starting positi" +
-            "on.\"},\"startPosition\":{\"type\":\"string\",\"description\":\"The starting position for " +
-            "the range.\"}}},\"Bookshelf\":{\"id\":\"Bookshelf\",\"type\":\"object\",\"properties\":{\"acce" +
-            "ss\":{\"type\":\"string\",\"description\":\"Whether this bookshelf is PUBLIC or PRIVATE." +
-            "\"},\"created\":{\"type\":\"string\",\"description\":\"Created time for this bookshelf (fo" +
-            "rmatted UTC timestamp with millisecond resolution).\",\"format\":\"date-time\"},\"desc" +
-            "ription\":{\"type\":\"string\",\"description\":\"Description of this bookshelf.\"},\"id\":{" +
-            "\"type\":\"integer\",\"description\":\"Id of this bookshelf, only unique by user.\",\"for" +
-            "mat\":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for bookshelf" +
-            " metadata.\",\"default\":\"books#bookshelf\"},\"selfLink\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"URL to this resource.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of thi" +
-            "s bookshelf.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modified time of t" +
-            "his bookshelf (formatted UTC timestamp with millisecond resolution).\",\"format\":\"" +
-            "date-time\"},\"volumeCount\":{\"type\":\"integer\",\"description\":\"Number of volumes in " +
-            "this bookshelf.\",\"format\":\"int32\"},\"volumesLastUpdated\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Last time a volume was added or removed from this bookshelf (formatted U" +
-            "TC timestamp with millisecond resolution).\",\"format\":\"date-time\"}}},\"Bookshelves" +
-            "\":{\"id\":\"Bookshelves\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"des" +
-            "cription\":\"A list of bookshelves.\",\"items\":{\"$ref\":\"Bookshelf\"}},\"kind\":{\"type\":" +
-            "\"string\",\"description\":\"Resource type.\",\"default\":\"books#bookshelves\"}}},\"Concur" +
-            "rentAccessRestriction\":{\"id\":\"ConcurrentAccessRestriction\",\"type\":\"object\",\"prop" +
-            "erties\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"Whether access is gran" +
-            "ted for this (user, device, volume).\"},\"kind\":{\"type\":\"string\",\"description\":\"Re" +
-            "source type.\",\"default\":\"books#concurrentAccessRestriction\"},\"maxConcurrentDevic" +
-            "es\":{\"type\":\"integer\",\"description\":\"The maximum number of concurrent access lic" +
-            "enses for this volume.\",\"format\":\"int32\"},\"message\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Error/warning message.\"},\"nonce\":{\"type\":\"string\",\"description\":\"Client nonc" +
-            "e for verification. Download access and client-validation only.\"},\"reasonCode\":{" +
-            "\"type\":\"string\",\"description\":\"Error/warning reason code.\"},\"restricted\":{\"type\"" +
-            ":\"boolean\",\"description\":\"Whether this volume has any concurrent access restrict" +
-            "ions.\"},\"signature\":{\"type\":\"string\",\"description\":\"Response signature.\"},\"sourc" +
-            "e\":{\"type\":\"string\",\"description\":\"Client app identifier for verification. Downl" +
-            "oad access and client-validation only.\"},\"timeWindowSeconds\":{\"type\":\"integer\",\"" +
-            "description\":\"Time in seconds for license auto-expiration.\",\"format\":\"int32\"},\"v" +
-            "olumeId\":{\"type\":\"string\",\"description\":\"Identifies the volume for which this en" +
-            "try applies.\"}}},\"DownloadAccessRestriction\":{\"id\":\"DownloadAccessRestriction\",\"" +
-            "type\":\"object\",\"properties\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"If" +
-            " restricted, whether access is granted for this (user, device, volume).\"},\"downl" +
-            "oadsAcquired\":{\"type\":\"integer\",\"description\":\"If restricted, the number of cont" +
-            "ent download licenses already acquired (including the requesting client, if lice" +
-            "nsed).\",\"format\":\"int32\"},\"justAcquired\":{\"type\":\"boolean\",\"description\":\"If dev" +
-            "iceAllowed, whether access was just acquired with this request.\"},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Resource type.\",\"default\":\"books#downloadAccessRestrict" +
-            "ion\"},\"maxDownloadDevices\":{\"type\":\"integer\",\"description\":\"If restricted, the m" +
-            "aximum number of content download licenses for this volume.\",\"format\":\"int32\"},\"" +
-            "message\":{\"type\":\"string\",\"description\":\"Error/warning message.\"},\"nonce\":{\"type" +
-            "\":\"string\",\"description\":\"Client nonce for verification. Download access and cli" +
-            "ent-validation only.\"},\"reasonCode\":{\"type\":\"string\",\"description\":\"Error/warnin" +
-            "g reason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENI" +
-            "ED_PUBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS\"},\"restr" +
-            "icted\":{\"type\":\"boolean\",\"description\":\"Whether this volume has any download acc" +
-            "ess restrictions.\"},\"signature\":{\"type\":\"string\",\"description\":\"Response signatu" +
-            "re.\"},\"source\":{\"type\":\"string\",\"description\":\"Client app identifier for verific" +
-            "ation. Download access and client-validation only.\"},\"volumeId\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifies the volume for which this entry applies.\"}}},\"Downloa" +
-            "dAccesses\":{\"id\":\"DownloadAccesses\",\"type\":\"object\",\"properties\":{\"downloadAcces" +
-            "sList\":{\"type\":\"array\",\"description\":\"A list of download access responses.\",\"ite" +
-            "ms\":{\"$ref\":\"DownloadAccessRestriction\"}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Resource type.\",\"default\":\"books#downloadAccesses\"}}},\"ReadingPosition\":{\"id\":\"" +
-            "ReadingPosition\",\"type\":\"object\",\"properties\":{\"epubCfiPosition\":{\"type\":\"string" +
-            "\",\"description\":\"Position in an EPUB as a CFI.\"},\"gbImagePosition\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Position in a volume for image-based content.\"},\"gbTextPositi" +
-            "on\":{\"type\":\"string\",\"description\":\"Position in a volume for text-based content." +
-            "\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for a reading position.\"" +
-            ",\"default\":\"books#readingPosition\"},\"pdfPosition\":{\"type\":\"string\",\"description\"" +
-            ":\"Position in a PDF file.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp " +
-            "when this reading position was last updated (formatted UTC timestamp with millis" +
-            "econd resolution).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Volume id associated with this reading position.\"}}},\"RequestAccess\":{\"id\":" +
-            "\"RequestAccess\",\"type\":\"object\",\"properties\":{\"concurrentAccess\":{\"$ref\":\"Concur" +
-            "rentAccessRestriction\",\"description\":\"A concurrent access response.\"},\"downloadA" +
-            "ccess\":{\"$ref\":\"DownloadAccessRestriction\",\"description\":\"A download access resp" +
-            "onse.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":\"books#" +
-            "requestAccess\"}}},\"Review\":{\"id\":\"Review\",\"type\":\"object\",\"properties\":{\"author\"" +
-            ":{\"type\":\"object\",\"description\":\"Author of this review.\",\"properties\":{\"displayN" +
-            "ame\":{\"type\":\"string\",\"description\":\"Name of this person.\"}}},\"content\":{\"type\":" +
-            "\"string\",\"description\":\"Review text.\"},\"date\":{\"type\":\"string\",\"description\":\"Da" +
-            "te of this review.\"},\"fullTextUrl\":{\"type\":\"string\",\"description\":\"URL for the f" +
-            "ull review text, for reviews gathered from the web.\"},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"Resource type for a review.\",\"default\":\"books#review\"},\"rating\":{\"t" +
-            "ype\":\"string\",\"description\":\"Star rating for this review. Possible values are ON" +
-            "E, TWO, THREE, FOUR, FIVE or NOT_RATED.\"},\"source\":{\"type\":\"object\",\"description" +
-            "\":\"Information regarding the source of this review, when the review is not from " +
-            "a Google Books user.\",\"properties\":{\"description\":{\"type\":\"string\",\"description\"" +
-            ":\"Name of the source.\"},\"extraDescription\":{\"type\":\"string\",\"description\":\"Extra" +
-            " text about the source of the review.\"},\"url\":{\"type\":\"string\",\"description\":\"UR" +
-            "L of the source of the review.\"}}},\"title\":{\"type\":\"string\",\"description\":\"Title" +
-            " for this review.\"},\"type\":{\"type\":\"string\",\"description\":\"Source type for this " +
-            "review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER.\"},\"volumeId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Volume that this review is for.\"}}},\"Volume\":{\"id\":" +
-            "\"Volume\",\"type\":\"object\",\"properties\":{\"accessInfo\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"Any information about a volume related to reading or obtaining that volume t" +
-            "ext. This information can depend on country (books may be public domain in one c" +
-            "ountry but not in another, e.g.).\",\"properties\":{\"accessViewStatus\":{\"type\":\"str" +
-            "ing\",\"description\":\"Combines the access and viewability of this volume into a si" +
-            "ngle status field for this user. Values can be FULL_PURCHASED, FULL_PUBLIC_DOMAI" +
-            "N, SAMPLE or NONE. (In LITE projection.)\"},\"country\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The two-letter ISO_3166-1 country code for which this access information is" +
-            " valid. (In LITE projection.)\"},\"downloadAccess\":{\"$ref\":\"DownloadAccessRestrict" +
-            "ion\",\"description\":\"Information about a volume\'s download license access restric" +
-            "tions.\"},\"embeddable\":{\"type\":\"boolean\",\"description\":\"Whether this volume can b" +
-            "e embedded in a viewport using the Embedded Viewer API.\"},\"epub\":{\"type\":\"object" +
-            "\",\"description\":\"Information about epub content. (In LITE projection.)\",\"propert" +
-            "ies\":{\"acsTokenLink\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS token f" +
-            "or epub download. (In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"descr" +
-            "iption\":\"URL to download epub. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"bo" +
-            "olean\",\"description\":\"Is a flowing text epub available either as public domain o" +
-            "r for purchase. (In LITE projection.)\"}}},\"pdf\":{\"type\":\"object\",\"description\":\"" +
-            "Information about pdf content. (In LITE projection.)\",\"properties\":{\"acsTokenLin" +
-            "k\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS token for pdf download. (" +
-            "In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"description\":\"URL to dow" +
-            "nload pdf. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"boolean\",\"description\"" +
-            ":\"Is a scanned image pdf available either as public domain or for purchase. (In " +
-            "LITE projection.)\"}}},\"publicDomain\":{\"type\":\"boolean\",\"description\":\"Whether or" +
-            " not this book is public domain in the country listed above.\"},\"textToSpeechPerm" +
-            "ission\":{\"type\":\"string\",\"description\":\"Whether text-to-speech is permitted for " +
-            "this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or NOT_ALLOWED.\"}" +
-            ",\"viewability\":{\"type\":\"string\",\"description\":\"The read access of a volume. Poss" +
-            "ible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. This value depends on t" +
-            "he country listed above. A value of PARTIAL means that the publisher has allowed" +
-            " some portion of the volume to be viewed publicly, without purchase. This can ap" +
-            "ply to eBooks as well as non-eBooks. Public domain books will always have a valu" +
-            "e of ALL_PAGES.\"},\"webReaderLink\":{\"type\":\"string\",\"description\":\"URL to read th" +
-            "is volume on the Google Books site. Link will not allow users to read non-viewab" +
-            "le volumes.\"}}},\"etag\":{\"type\":\"string\",\"description\":\"Opaque identifier for a s" +
-            "pecific version of a volume resource. (In LITE projection)\"},\"id\":{\"type\":\"strin" +
-            "g\",\"description\":\"Unique identifier for a volume. (In LITE projection.)\"},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"Resource type for a volume. (In LITE projection" +
-            ".)\",\"default\":\"books#volume\"},\"saleInfo\":{\"type\":\"object\",\"description\":\"Any inf" +
-            "ormation about a volume related to the eBookstore and/or purchaseability. This i" +
-            "nformation can depend on the country where the request originates from (i.e. boo" +
-            "ks may not be for sale in certain countries).\",\"properties\":{\"buyLink\":{\"type\":\"" +
-            "string\",\"description\":\"URL to purchase this volume on the Google Books site. (In" +
-            " LITE projection)\"},\"country\":{\"type\":\"string\",\"description\":\"The two-letter ISO" +
-            "_3166-1 country code for which this sale information is valid. (In LITE projecti" +
-            "on.)\"},\"isEbook\":{\"type\":\"boolean\",\"description\":\"Whether or not this volume is " +
-            "an eBook (can be added to the My eBooks shelf).\"},\"listPrice\":{\"type\":\"object\",\"" +
-            "description\":\"Suggested retail price. (In LITE projection.)\",\"properties\":{\"amou" +
-            "nt\":{\"type\":\"number\",\"description\":\"Amount in the currency listed below. (In LIT" +
-            "E projection.)\",\"format\":\"double\"},\"currencyCode\":{\"type\":\"string\",\"description\"" +
-            ":\"An ISO 4217, three-letter currency code. (In LITE projection.)\"}}},\"onSaleDate" +
-            "\":{\"type\":\"string\",\"description\":\"The date on which this book is available for s" +
-            "ale.\",\"format\":\"date-time\"},\"retailPrice\":{\"type\":\"object\",\"description\":\"The ac" +
-            "tual selling price of the book. This is the same as the suggested retail or list" +
-            " price unless there are offers or discounts on this volume. (In LITE projection." +
+            ":\"https://www.googleapis.com/books/v1/\",\"basePath\":\"/books/v1/\",\"rootUrl\":\"https" +
+            "://www.googleapis.com/\",\"servicePath\":\"books/v1/\",\"batchPath\":\"batch\",\"parameter" +
+            "s\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"defaul" +
+            "t\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of ap" +
+            "plication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Se" +
+            "lector specifying which fields to include in a partial response.\",\"location\":\"qu" +
+            "ery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies you" +
+            "r project and provides you with API access, quota, and reports. Required unless " +
+            "you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"stri" +
+            "ng\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"p" +
+            "rettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations " +
+            "and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Available to use for quota purposes for server-side applicati" +
+            "ons. Can be any arbitrary string assigned to a user, but should not exceed 40 ch" +
+            "aracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{" +
+            "\"type\":\"string\",\"description\":\"IP address of the site where the request originat" +
+            "es. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth" +
+            "\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/books\":{\"description\":\"M" +
+            "anage your books\"}}}},\"schemas\":{\"Annotation\":{\"id\":\"Annotation\",\"type\":\"object\"" +
+            ",\"properties\":{\"afterSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text a" +
+            "fter excerpt.\"},\"beforeSelectedText\":{\"type\":\"string\",\"description\":\"Anchor text" +
+            " before excerpt.\"},\"clientVersionRanges\":{\"type\":\"object\",\"description\":\"Selecti" +
+            "on ranges sent from the client.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotati" +
+            "onsRange\",\"description\":\"Range in CFI format for this annotation sent by client." +
+            "\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"Content version the client s" +
+            "ent in.\"},\"gbImageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in" +
+            " GB image format for this annotation sent by client.\"},\"gbTextRange\":{\"$ref\":\"Bo" +
+            "oksAnnotationsRange\",\"description\":\"Range in GB text format for this annotation " +
+            "sent by client.\"}}},\"created\":{\"type\":\"string\",\"description\":\"Timestamp for the " +
+            "created time of this annotation.\",\"format\":\"date-time\"},\"currentVersionRanges\":{" +
+            "\"type\":\"object\",\"description\":\"Selection ranges for the most recent content vers" +
+            "ion.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Ra" +
+            "nge in CFI format for this annotation for version above.\"},\"contentVersion\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Content version applicable to ranges below.\"},\"gbIma" +
+            "geRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB image format" +
+            " for this annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"BooksAnnotation" +
+            "sRange\",\"description\":\"Range in GB text format for this annotation for version a" +
+            "bove.\"}}},\"data\":{\"type\":\"string\",\"description\":\"User-created data for this anno" +
+            "tation.\"},\"deleted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotat" +
+            "ion is deleted.\"},\"highlightStyle\":{\"type\":\"string\",\"description\":\"The highlight" +
+            " style for this annotation.\"},\"id\":{\"type\":\"string\",\"description\":\"Id of this an" +
+            "notation, in the form of a GUID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resour" +
+            "ce type.\",\"default\":\"books#annotation\"},\"layerId\":{\"type\":\"string\",\"description\"" +
+            ":\"The layer this annotation is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"P" +
+            "ages that this annotation spans.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Excerpt from the volume.\"},\"selfLink\":{\"type\":\"strin" +
+            "g\",\"description\":\"URL to this resource.\"},\"updated\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Timestamp for the last time this annotation was modified.\",\"format\":\"date-ti" +
+            "me\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume that this annotation " +
+            "belongs to.\"}}},\"Annotationdata\":{\"id\":\"Annotationdata\",\"type\":\"object\",\"propert" +
+            "ies\":{\"annotationType\":{\"type\":\"string\",\"description\":\"The type of annotation th" +
+            "is data is for.\"},\"data\":{\"$ref\":\"BooksLayerGeoData\",\"description\":\"JSON encoded" +
+            " data for this annotation data.\"},\"encoded_data\":{\"type\":\"string\",\"description\":" +
+            "\"Base64 encoded data for this annotation data.\",\"format\":\"byte\"},\"id\":{\"type\":\"s" +
+            "tring\",\"description\":\"Unique id for this annotation data.\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Resource Type\",\"default\":\"books#annotationdata\"},\"layerId\":{\"" +
+            "type\":\"string\",\"description\":\"The Layer id for this data. *\"},\"selfLink\":{\"type\"" +
+            ":\"string\",\"description\":\"URL for this resource. *\"},\"updated\":{\"type\":\"string\",\"" +
+            "description\":\"Timestamp for the last time this data was updated. (RFC 3339 UTC d" +
+            "ate-time format).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The volume id for this data. *\"}}},\"Annotations\":{\"id\":\"Annotations\",\"type\":" +
+            "\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of annotati" +
+            "ons.\",\"items\":{\"$ref\":\"Annotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"Reso" +
+            "urce type.\",\"default\":\"books#annotations\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
+            "cription\":\"Token to pass in for pagination for the next page. This will not be p" +
+            "resent if this request does not have more results.\"},\"totalItems\":{\"type\":\"integ" +
+            "er\",\"description\":\"Total number of annotations found. This may be greater than t" +
+            "he number of notes returned in this response if results have been paginated.\",\"f" +
+            "ormat\":\"int32\"}}},\"Annotationsdata\":{\"id\":\"Annotationsdata\",\"type\":\"object\",\"pro" +
+            "perties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of Annotation Data.\",\"it" +
+            "ems\":{\"$ref\":\"Annotationdata\"}},\"kind\":{\"type\":\"string\",\"description\":\"Resource " +
+            "type\",\"default\":\"books#annotationsdata\"},\"nextPageToken\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Token to pass in for pagination for the next page. This will not be pre" +
+            "sent if this request does not have more results.\"},\"totalItems\":{\"type\":\"integer" +
+            "\",\"description\":\"The total number of volume annotations found.\",\"format\":\"int32\"" +
+            "}}},\"BooksAnnotationsRange\":{\"id\":\"BooksAnnotationsRange\",\"type\":\"object\",\"prope" +
+            "rties\":{\"endOffset\":{\"type\":\"string\",\"description\":\"The offset from the ending p" +
+            "osition.\"},\"endPosition\":{\"type\":\"string\",\"description\":\"The ending position for" +
+            " the range.\"},\"startOffset\":{\"type\":\"string\",\"description\":\"The offset from the " +
+            "starting position.\"},\"startPosition\":{\"type\":\"string\",\"description\":\"The startin" +
+            "g position for the range.\"}}},\"BooksLayerGeoData\":{\"id\":\"BooksLayerGeoData\",\"typ" +
+            "e\":\"object\",\"properties\":{\"common\":{\"type\":\"object\",\"properties\":{\"lang\":{\"type\"" +
+            ":\"string\",\"description\":\"The language of the information url and description.\"}," +
+            "\"previewImageUrl\":{\"type\":\"string\",\"description\":\"The URL for the preview image " +
+            "information.\"},\"snippet\":{\"type\":\"string\",\"description\":\"The description for thi" +
+            "s location.\"},\"snippetUrl\":{\"type\":\"string\",\"description\":\"The URL for informati" +
+            "on for this location. Ex: wikipedia link.\"}}},\"geo\":{\"type\":\"object\",\"properties" +
+            "\":{\"boundary\":{\"type\":\"array\",\"description\":\"The boundary of the location as a s" +
+            "et of loops containing pairs of latitude, longitude coordinates.\",\"items\":{\"type" +
+            "\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"latitude\":{\"type\":\"integer\",\"f" +
+            "ormat\":\"uint32\"},\"longitude\":{\"type\":\"integer\",\"format\":\"uint32\"}}}}},\"cachePoli" +
+            "cy\":{\"type\":\"string\",\"description\":\"The cache policy active for this data. EX: U" +
+            "NRESTRICTED, RESTRICTED, NEVER\",\"default\":\"UNRESTRICTED\"},\"countryCode\":{\"type\":" +
+            "\"string\",\"description\":\"The country code of the location.\"},\"latitude\":{\"type\":\"" +
+            "number\",\"description\":\"The latitude of the location.\",\"format\":\"double\"},\"longit" +
+            "ude\":{\"type\":\"number\",\"description\":\"The longitude of the location.\",\"format\":\"d" +
+            "ouble\"},\"mapType\":{\"type\":\"string\",\"description\":\"The type of map that should be" +
+            " used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN\"},\"resolution\":" +
+            "{\"type\":\"string\",\"description\":\"The resolution of the location. Ex: POI_LEVEL\"}," +
+            "\"viewport\":{\"type\":\"object\",\"description\":\"The viewport for showing this locatio" +
+            "n. This is a latitude, longitude rectangle.\",\"properties\":{\"hi\":{\"type\":\"object\"" +
+            ",\"properties\":{\"latitude\":{\"type\":\"number\",\"format\":\"double\"},\"longitude\":{\"type" +
+            "\":\"number\",\"format\":\"double\"}}},\"lo\":{\"type\":\"object\",\"properties\":{\"latitude\":{" +
+            "\"type\":\"number\",\"format\":\"double\"},\"longitude\":{\"type\":\"number\",\"format\":\"double" +
+            "\"}}}}}}}}},\"Bookshelf\":{\"id\":\"Bookshelf\",\"type\":\"object\",\"properties\":{\"access\":" +
+            "{\"type\":\"string\",\"description\":\"Whether this bookshelf is PUBLIC or PRIVATE.\"},\"" +
+            "created\":{\"type\":\"string\",\"description\":\"Created time for this bookshelf (format" +
+            "ted UTC timestamp with millisecond resolution).\",\"format\":\"date-time\"},\"descript" +
+            "ion\":{\"type\":\"string\",\"description\":\"Description of this bookshelf.\"},\"id\":{\"typ" +
+            "e\":\"integer\",\"description\":\"Id of this bookshelf, only unique by user.\",\"format\"" +
+            ":\"int32\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for bookshelf met" +
+            "adata.\",\"default\":\"books#bookshelf\"},\"selfLink\":{\"type\":\"string\",\"description\":\"" +
+            "URL to this resource.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of this bo" +
+            "okshelf.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modified time of this " +
+            "bookshelf (formatted UTC timestamp with millisecond resolution).\",\"format\":\"date" +
+            "-time\"},\"volumeCount\":{\"type\":\"integer\",\"description\":\"Number of volumes in this" +
+            " bookshelf.\",\"format\":\"int32\"},\"volumesLastUpdated\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Last time a volume was added or removed from this bookshelf (formatted UTC t" +
+            "imestamp with millisecond resolution).\",\"format\":\"date-time\"}}},\"Bookshelves\":{\"" +
+            "id\":\"Bookshelves\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"A list of bookshelves.\",\"items\":{\"$ref\":\"Bookshelf\"}},\"kind\":{\"type\":\"str" +
+            "ing\",\"description\":\"Resource type.\",\"default\":\"books#bookshelves\"}}},\"Concurrent" +
+            "AccessRestriction\":{\"id\":\"ConcurrentAccessRestriction\",\"type\":\"object\",\"properti" +
+            "es\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"Whether access is granted " +
+            "for this (user, device, volume).\"},\"kind\":{\"type\":\"string\",\"description\":\"Resour" +
+            "ce type.\",\"default\":\"books#concurrentAccessRestriction\"},\"maxConcurrentDevices\":" +
+            "{\"type\":\"integer\",\"description\":\"The maximum number of concurrent access license" +
+            "s for this volume.\",\"format\":\"int32\"},\"message\":{\"type\":\"string\",\"description\":\"" +
+            "Error/warning message.\"},\"nonce\":{\"type\":\"string\",\"description\":\"Client nonce fo" +
+            "r verification. Download access and client-validation only.\"},\"reasonCode\":{\"typ" +
+            "e\":\"string\",\"description\":\"Error/warning reason code.\"},\"restricted\":{\"type\":\"bo" +
+            "olean\",\"description\":\"Whether this volume has any concurrent access restrictions" +
+            ".\"},\"signature\":{\"type\":\"string\",\"description\":\"Response signature.\"},\"source\":{" +
+            "\"type\":\"string\",\"description\":\"Client app identifier for verification. Download " +
+            "access and client-validation only.\"},\"timeWindowSeconds\":{\"type\":\"integer\",\"desc" +
+            "ription\":\"Time in seconds for license auto-expiration.\",\"format\":\"int32\"},\"volum" +
+            "eId\":{\"type\":\"string\",\"description\":\"Identifies the volume for which this entry " +
+            "applies.\"}}},\"DownloadAccessRestriction\":{\"id\":\"DownloadAccessRestriction\",\"type" +
+            "\":\"object\",\"properties\":{\"deviceAllowed\":{\"type\":\"boolean\",\"description\":\"If res" +
+            "tricted, whether access is granted for this (user, device, volume).\"},\"downloads" +
+            "Acquired\":{\"type\":\"integer\",\"description\":\"If restricted, the number of content " +
+            "download licenses already acquired (including the requesting client, if licensed" +
+            ").\",\"format\":\"int32\"},\"justAcquired\":{\"type\":\"boolean\",\"description\":\"If deviceA" +
+            "llowed, whether access was just acquired with this request.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"Resource type.\",\"default\":\"books#downloadAccessRestriction\"" +
+            "},\"maxDownloadDevices\":{\"type\":\"integer\",\"description\":\"If restricted, the maxim" +
+            "um number of content download licenses for this volume.\",\"format\":\"int32\"},\"mess" +
+            "age\":{\"type\":\"string\",\"description\":\"Error/warning message.\"},\"nonce\":{\"type\":\"s" +
+            "tring\",\"description\":\"Client nonce for verification. Download access and client-" +
+            "validation only.\"},\"reasonCode\":{\"type\":\"string\",\"description\":\"Error/warning re" +
+            "ason code. Additional codes may be added in the future. 0 OK 100 ACCESS_DENIED_P" +
+            "UBLISHER_LIMIT 101 ACCESS_DENIED_LIMIT 200 WARNING_USED_LAST_ACCESS\"},\"restricte" +
+            "d\":{\"type\":\"boolean\",\"description\":\"Whether this volume has any download access " +
+            "restrictions.\"},\"signature\":{\"type\":\"string\",\"description\":\"Response signature.\"" +
+            "},\"source\":{\"type\":\"string\",\"description\":\"Client app identifier for verificatio" +
+            "n. Download access and client-validation only.\"},\"volumeId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Identifies the volume for which this entry applies.\"}}},\"DownloadAcc" +
+            "esses\":{\"id\":\"DownloadAccesses\",\"type\":\"object\",\"properties\":{\"downloadAccessLis" +
+            "t\":{\"type\":\"array\",\"description\":\"A list of download access responses.\",\"items\":" +
+            "{\"$ref\":\"DownloadAccessRestriction\"}},\"kind\":{\"type\":\"string\",\"description\":\"Res" +
+            "ource type.\",\"default\":\"books#downloadAccesses\"}}},\"Layersummaries\":{\"id\":\"Layer" +
+            "summaries\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"" +
+            "A list of layer summary items.\",\"items\":{\"$ref\":\"Layersummary\"}},\"kind\":{\"type\":" +
+            "\"string\",\"description\":\"Resource type.\",\"default\":\"books#layersummaries\"},\"total" +
+            "Items\":{\"type\":\"integer\",\"description\":\"The total number of layer summaries foun" +
+            "d.\",\"format\":\"int32\"}}},\"Layersummary\":{\"id\":\"Layersummary\",\"type\":\"object\",\"pro" +
+            "perties\":{\"annotationCount\":{\"type\":\"integer\",\"description\":\"The number of annot" +
+            "ations for this layer.\",\"format\":\"int32\"},\"annotationTypes\":{\"type\":\"array\",\"des" +
+            "cription\":\"The list of annotation types contained for this layer.\",\"items\":{\"typ" +
+            "e\":\"string\"}},\"annotationsDataLink\":{\"type\":\"string\",\"description\":\"Link to get " +
+            "data for this annotation.\"},\"annotationsLink\":{\"type\":\"string\",\"description\":\"Th" +
+            "e link to get the annotations for this layer.\"},\"contentVersion\":{\"type\":\"string" +
+            "\",\"description\":\"The content version this resource is for.\"},\"dataCount\":{\"type\"" +
+            ":\"integer\",\"description\":\"The number of data items for this layer.\",\"format\":\"in" +
+            "t32\"},\"id\":{\"type\":\"string\",\"description\":\"Unique id of this layer summary.\"},\"k" +
+            "ind\":{\"type\":\"string\",\"description\":\"Resource Type\",\"default\":\"books#layersummar" +
+            "y\"},\"layerId\":{\"type\":\"string\",\"description\":\"The layer id for this summary.\"},\"" +
+            "selfLink\":{\"type\":\"string\",\"description\":\"URL to this resource.\"},\"updated\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Timestamp for the last time an item in this layer wa" +
+            "s updated. (RFC 3339 UTC date-time format).\",\"format\":\"date-time\"},\"volumeId\":{\"" +
+            "type\":\"string\",\"description\":\"The volume id this resource is for.\"}}},\"ReadingPo" +
+            "sition\":{\"id\":\"ReadingPosition\",\"type\":\"object\",\"properties\":{\"epubCfiPosition\":" +
+            "{\"type\":\"string\",\"description\":\"Position in an EPUB as a CFI.\"},\"gbImagePosition" +
+            "\":{\"type\":\"string\",\"description\":\"Position in a volume for image-based content.\"" +
+            "},\"gbTextPosition\":{\"type\":\"string\",\"description\":\"Position in a volume for text" +
+            "-based content.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for a rea" +
+            "ding position.\",\"default\":\"books#readingPosition\"},\"pdfPosition\":{\"type\":\"string" +
+            "\",\"description\":\"Position in a PDF file.\"},\"updated\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Timestamp when this reading position was last updated (formatted UTC timest" +
+            "amp with millisecond resolution).\",\"format\":\"date-time\"},\"volumeId\":{\"type\":\"str" +
+            "ing\",\"description\":\"Volume id associated with this reading position.\"}}},\"Reques" +
+            "tAccess\":{\"id\":\"RequestAccess\",\"type\":\"object\",\"properties\":{\"concurrentAccess\":" +
+            "{\"$ref\":\"ConcurrentAccessRestriction\",\"description\":\"A concurrent access respons" +
+            "e.\"},\"downloadAccess\":{\"$ref\":\"DownloadAccessRestriction\",\"description\":\"A downl" +
+            "oad access response.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type.\",\"d" +
+            "efault\":\"books#requestAccess\"}}},\"Review\":{\"id\":\"Review\",\"type\":\"object\",\"proper" +
+            "ties\":{\"author\":{\"type\":\"object\",\"description\":\"Author of this review.\",\"propert" +
+            "ies\":{\"displayName\":{\"type\":\"string\",\"description\":\"Name of this person.\"}}},\"co" +
+            "ntent\":{\"type\":\"string\",\"description\":\"Review text.\"},\"date\":{\"type\":\"string\",\"d" +
+            "escription\":\"Date of this review.\"},\"fullTextUrl\":{\"type\":\"string\",\"description\"" +
+            ":\"URL for the full review text, for reviews gathered from the web.\"},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Resource type for a review.\",\"default\":\"books#review" +
+            "\"},\"rating\":{\"type\":\"string\",\"description\":\"Star rating for this review. Possibl" +
+            "e values are ONE, TWO, THREE, FOUR, FIVE or NOT_RATED.\"},\"source\":{\"type\":\"objec" +
+            "t\",\"description\":\"Information regarding the source of this review, when the revi" +
+            "ew is not from a Google Books user.\",\"properties\":{\"description\":{\"type\":\"string" +
+            "\",\"description\":\"Name of the source.\"},\"extraDescription\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Extra text about the source of the review.\"},\"url\":{\"type\":\"string\",\"d" +
+            "escription\":\"URL of the source of the review.\"}}},\"title\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Title for this review.\"},\"type\":{\"type\":\"string\",\"description\":\"Source" +
+            " type for this review. Possible values are EDITORIAL, WEB_USER or GOOGLE_USER.\"}" +
+            ",\"volumeId\":{\"type\":\"string\",\"description\":\"Volume that this review is for.\"}}}," +
+            "\"Volume\":{\"id\":\"Volume\",\"type\":\"object\",\"properties\":{\"accessInfo\":{\"type\":\"obje" +
+            "ct\",\"description\":\"Any information about a volume related to reading or obtainin" +
+            "g that volume text. This information can depend on country (books may be public " +
+            "domain in one country but not in another, e.g.).\",\"properties\":{\"accessViewStatu" +
+            "s\":{\"type\":\"string\",\"description\":\"Combines the access and viewability of this v" +
+            "olume into a single status field for this user. Values can be FULL_PURCHASED, FU" +
+            "LL_PUBLIC_DOMAIN, SAMPLE or NONE. (In LITE projection.)\"},\"country\":{\"type\":\"str" +
+            "ing\",\"description\":\"The two-letter ISO_3166-1 country code for which this access" +
+            " information is valid. (In LITE projection.)\"},\"downloadAccess\":{\"$ref\":\"Downloa" +
+            "dAccessRestriction\",\"description\":\"Information about a volume\'s download license" +
+            " access restrictions.\"},\"embeddable\":{\"type\":\"boolean\",\"description\":\"Whether th" +
+            "is volume can be embedded in a viewport using the Embedded Viewer API.\"},\"epub\":" +
+            "{\"type\":\"object\",\"description\":\"Information about epub content. (In LITE project" +
+            "ion.)\",\"properties\":{\"acsTokenLink\":{\"type\":\"string\",\"description\":\"URL to retri" +
+            "eve ACS token for epub download. (In LITE projection.)\"},\"downloadLink\":{\"type\":" +
+            "\"string\",\"description\":\"URL to download epub. (In LITE projection.)\"},\"isAvailab" +
+            "le\":{\"type\":\"boolean\",\"description\":\"Is a flowing text epub available either as " +
+            "public domain or for purchase. (In LITE projection.)\"}}},\"pdf\":{\"type\":\"object\"," +
+            "\"description\":\"Information about pdf content. (In LITE projection.)\",\"properties" +
+            "\":{\"acsTokenLink\":{\"type\":\"string\",\"description\":\"URL to retrieve ACS token for " +
+            "pdf download. (In LITE projection.)\"},\"downloadLink\":{\"type\":\"string\",\"descripti" +
+            "on\":\"URL to download pdf. (In LITE projection.)\"},\"isAvailable\":{\"type\":\"boolean" +
+            "\",\"description\":\"Is a scanned image pdf available either as public domain or for" +
+            " purchase. (In LITE projection.)\"}}},\"publicDomain\":{\"type\":\"boolean\",\"descripti" +
+            "on\":\"Whether or not this book is public domain in the country listed above.\"},\"t" +
+            "extToSpeechPermission\":{\"type\":\"string\",\"description\":\"Whether text-to-speech is" +
+            " permitted for this volume. Values can be ALLOWED, ALLOWED_FOR_ACCESSIBILITY, or" +
+            " NOT_ALLOWED.\"},\"viewOrderUrl\":{\"type\":\"string\",\"description\":\"For ordered but n" +
+            "ot yet processed orders, we give a URL that can be used to go to the appropriate" +
+            " Google Wallet page.\"},\"viewability\":{\"type\":\"string\",\"description\":\"The read ac" +
+            "cess of a volume. Possible values are PARTIAL, ALL_PAGES, NO_PAGES or UNKNOWN. T" +
+            "his value depends on the country listed above. A value of PARTIAL means that the" +
+            " publisher has allowed some portion of the volume to be viewed publicly, without" +
+            " purchase. This can apply to eBooks as well as non-eBooks. Public domain books w" +
+            "ill always have a value of ALL_PAGES.\"},\"webReaderLink\":{\"type\":\"string\",\"descri" +
+            "ption\":\"URL to read this volume on the Google Books site. Link will not allow us" +
+            "ers to read non-viewable volumes.\"}}},\"etag\":{\"type\":\"string\",\"description\":\"Opa" +
+            "que identifier for a specific version of a volume resource. (In LITE projection)" +
+            "\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for a volume. (In LITE" +
+            " projection.)\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource type for a volum" +
+            "e. (In LITE projection.)\",\"default\":\"books#volume\"},\"saleInfo\":{\"type\":\"object\"," +
+            "\"description\":\"Any information about a volume related to the eBookstore and/or p" +
+            "urchaseability. This information can depend on the country where the request ori" +
+            "ginates from (i.e. books may not be for sale in certain countries).\",\"properties" +
+            "\":{\"buyLink\":{\"type\":\"string\",\"description\":\"URL to purchase this volume on the " +
+            "Google Books site. (In LITE projection)\"},\"country\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The two-letter ISO_3166-1 country code for which this sale information is va" +
+            "lid. (In LITE projection.)\"},\"isEbook\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "or not this volume is an eBook (can be added to the My eBooks shelf).\"},\"listPri" +
+            "ce\":{\"type\":\"object\",\"description\":\"Suggested retail price. (In LITE projection." +
             ")\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"Amount in the currency" +
             " listed below. (In LITE projection.)\",\"format\":\"double\"},\"currencyCode\":{\"type\":" +
             "\"string\",\"description\":\"An ISO 4217, three-letter currency code. (In LITE projec" +
-            "tion.)\"}}},\"saleability\":{\"type\":\"string\",\"description\":\"Whether or not this boo" +
-            "k is available for sale or offered for free in the Google eBookstore for the cou" +
-            "ntry listed above. Possible values are FOR_SALE, FREE, NOT_FOR_SALE, or FOR_PREO" +
-            "RDER.\"}}},\"searchInfo\":{\"type\":\"object\",\"description\":\"Search result information" +
-            " related to this volume.\",\"properties\":{\"textSnippet\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A text snippet containing the search query.\"}}},\"selfLink\":{\"type\":\"string" +
-            "\",\"description\":\"URL to this resource. (In LITE projection.)\"},\"userInfo\":{\"type" +
-            "\":\"object\",\"description\":\"User specific information related to this volume. (e.g" +
-            ". page this user last read or whether they purchased this book)\",\"properties\":{\"" +
-            "isPreordered\":{\"type\":\"boolean\",\"description\":\"Whether or not this volume was pr" +
-            "e-ordered by the authenticated user making the request. (In LITE projection.)\"}," +
-            "\"isPurchased\":{\"type\":\"boolean\",\"description\":\"Whether or not this volume was pu" +
-            "rchased by the authenticated user making the request. (In LITE projection.)\"},\"r" +
-            "eadingPosition\":{\"$ref\":\"ReadingPosition\",\"description\":\"The user\'s current read" +
-            "ing position in the volume, if one is available. (In LITE projection.)\"},\"review" +
-            "\":{\"$ref\":\"Review\",\"description\":\"This user\'s review of this volume, if one exis" +
-            "ts.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp when this volume was l" +
-            "ast modified by a user action, such as a reading position update, volume purchas" +
-            "e or writing a review. (RFC 3339 UTC date-time format).\",\"format\":\"date-time\"}}}" +
-            ",\"volumeInfo\":{\"type\":\"object\",\"description\":\"General volume information.\",\"prop" +
-            "erties\":{\"authors\":{\"type\":\"array\",\"description\":\"The names of the authors and/o" +
-            "r editors for this volume. (In LITE projection)\",\"items\":{\"type\":\"string\"}},\"ave" +
-            "rageRating\":{\"type\":\"number\",\"description\":\"The mean review rating for this volu" +
-            "me. (min = 1.0, max = 5.0)\",\"format\":\"double\"},\"canonicalVolumeLink\":{\"type\":\"st" +
-            "ring\",\"description\":\"Canonical URL for a volume. (In LITE projection.)\"},\"catego" +
-            "ries\":{\"type\":\"array\",\"description\":\"A list of subject categories, such as \\\"Fic" +
-            "tion\\\", \\\"Suspense\\\", etc.\",\"items\":{\"type\":\"string\"}},\"contentVersion\":{\"type\":" +
-            "\"string\",\"description\":\"An identifier for the version of the volume content (tex" +
-            "t & images). (In LITE projection)\"},\"description\":{\"type\":\"string\",\"description\"" +
-            ":\"A synopsis of the volume. The text of the description is formatted in HTML and" +
-            " includes simple formatting elements, such as b, i, and br tags. (In LITE projec" +
-            "tion.)\"},\"dimensions\":{\"type\":\"object\",\"description\":\"Physical dimensions of thi" +
-            "s volume.\",\"properties\":{\"height\":{\"type\":\"string\",\"description\":\"Height or leng" +
-            "th of this volume (in cm).\"},\"thickness\":{\"type\":\"string\",\"description\":\"Thickne" +
-            "ss of this volume (in cm).\"},\"width\":{\"type\":\"string\",\"description\":\"Width of th" +
-            "is volume (in cm).\"}}},\"imageLinks\":{\"type\":\"object\",\"description\":\"A list of im" +
-            "age links for all the sizes that are available. (In LITE projection.)\",\"properti" +
-            "es\":{\"extraLarge\":{\"type\":\"string\",\"description\":\"Image link for extra large siz" +
-            "e (width of ~1280 pixels). (In LITE projection)\"},\"large\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Image link for large size (width of ~800 pixels). (In LITE projection)" +
-            "\"},\"medium\":{\"type\":\"string\",\"description\":\"Image link for medium size (width of" +
-            " ~575 pixels). (In LITE projection)\"},\"small\":{\"type\":\"string\",\"description\":\"Im" +
-            "age link for small size (width of ~300 pixels). (In LITE projection)\"},\"smallThu" +
-            "mbnail\":{\"type\":\"string\",\"description\":\"Image link for small thumbnail size (wid" +
-            "th of ~80 pixels). (In LITE projection)\"},\"thumbnail\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Image link for thumbnail size (width of ~128 pixels). (In LITE projection)" +
-            "\"}}},\"industryIdentifiers\":{\"type\":\"array\",\"description\":\"Industry standard iden" +
-            "tifiers for this volume.\",\"items\":{\"type\":\"object\",\"properties\":{\"identifier\":{\"" +
-            "type\":\"string\",\"description\":\"Industry specific volume identifier.\"},\"type\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Identifier type. Possible values are ISBN_10, ISBN_1" +
-            "3, ISSN and OTHER.\"}}}},\"infoLink\":{\"type\":\"string\",\"description\":\"URL to view i" +
-            "nformation about this volume on the Google Books site. (In LITE projection)\"},\"l" +
-            "anguage\":{\"type\":\"string\",\"description\":\"Best language for this volume (based on" +
-            " content). It is the two-letter ISO 639-1 code such as \'fr\', \'en\', etc.\"},\"mainC" +
-            "ategory\":{\"type\":\"string\",\"description\":\"The main category to which this volume " +
-            "belongs. It will be the category from the categories list returned below that ha" +
-            "s the highest weight.\"},\"pageCount\":{\"type\":\"integer\",\"description\":\"Total numbe" +
-            "r of pages.\",\"format\":\"int32\"},\"previewLink\":{\"type\":\"string\",\"description\":\"URL" +
-            " to preview this volume on the Google Books site.\"},\"printType\":{\"type\":\"string\"" +
-            ",\"description\":\"Type of publication of this volume. Possible values are BOOK or " +
-            "MAGAZINE.\"},\"publishedDate\":{\"type\":\"string\",\"description\":\"Date of publication." +
-            " (In LITE projection.)\"},\"publisher\":{\"type\":\"string\",\"description\":\"Publisher o" +
-            "f this volume. (In LITE projection.)\"},\"ratingsCount\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"The number of review ratings for this volume.\",\"format\":\"int32\"},\"subtitl" +
-            "e\":{\"type\":\"string\",\"description\":\"Volume subtitle. (In LITE projection.)\"},\"tit" +
-            "le\":{\"type\":\"string\",\"description\":\"Volume title. (In LITE projection.)\"}}}}},\"V" +
-            "olumes\":{\"id\":\"Volumes\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"d" +
-            "escription\":\"A list of volumes.\",\"items\":{\"$ref\":\"Volume\"}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Resource type.\",\"default\":\"books#volumes\"},\"totalItems\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Total number of volumes found. This might be greater" +
-            " than the number of volumes returned in this response if results have been pagin" +
-            "ated.\",\"format\":\"int32\"}}}},\"resources\":{\"bookshelves\":{\"methods\":{\"get\":{\"id\":\"" +
-            "books.bookshelves.get\",\"path\":\"users/{userId}/bookshelves/{shelf}\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves metadata for a specific bookshelf for the specifi" +
-            "ed user.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 cod" +
-            "e to override the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":\"strin" +
-            "g\",\"description\":\"Id of bookshelf to retrieve.\",\"required\":true,\"location\":\"path" +
-            "\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of" +
-            " this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"Id " +
-            "of user for whom to retrieve bookshelves.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"userId\",\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.bookshelves.list\",\"pa" +
-            "th\":\"users/{userId}/bookshelves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a l" +
-            "ist of public bookshelves for the specified user.\",\"parameters\":{\"country\":{\"typ" +
-            "e\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"" +
+            "tion.)\"}}},\"onSaleDate\":{\"type\":\"string\",\"description\":\"The date on which this b" +
+            "ook is available for sale.\",\"format\":\"date-time\"},\"retailPrice\":{\"type\":\"object\"" +
+            ",\"description\":\"The actual selling price of the book. This is the same as the su" +
+            "ggested retail or list price unless there are offers or discounts on this volume" +
+            ". (In LITE projection.)\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"" +
+            "Amount in the currency listed below. (In LITE projection.)\",\"format\":\"double\"},\"" +
+            "currencyCode\":{\"type\":\"string\",\"description\":\"An ISO 4217, three-letter currency" +
+            " code. (In LITE projection.)\"}}},\"saleability\":{\"type\":\"string\",\"description\":\"W" +
+            "hether or not this book is available for sale or offered for free in the Google " +
+            "eBookstore for the country listed above. Possible values are FOR_SALE, FREE, NOT" +
+            "_FOR_SALE, or FOR_PREORDER.\"}}},\"searchInfo\":{\"type\":\"object\",\"description\":\"Sea" +
+            "rch result information related to this volume.\",\"properties\":{\"textSnippet\":{\"ty" +
+            "pe\":\"string\",\"description\":\"A text snippet containing the search query.\"}}},\"sel" +
+            "fLink\":{\"type\":\"string\",\"description\":\"URL to this resource. (In LITE projection" +
+            ".)\"},\"userInfo\":{\"type\":\"object\",\"description\":\"User specific information relate" +
+            "d to this volume. (e.g. page this user last read or whether they purchased this " +
+            "book)\",\"properties\":{\"isInMyBooks\":{\"type\":\"boolean\",\"description\":\"Whether or n" +
+            "ot this volume is currently in \\\"my books.\\\"\"},\"isPreordered\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether or not this volume was pre-ordered by the authenticated u" +
+            "ser making the request. (In LITE projection.)\"},\"isPurchased\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether or not this volume was purchased by the authenticated use" +
+            "r making the request. (In LITE projection.)\"},\"readingPosition\":{\"$ref\":\"Reading" +
+            "Position\",\"description\":\"The user\'s current reading position in the volume, if o" +
+            "ne is available. (In LITE projection.)\"},\"review\":{\"$ref\":\"Review\",\"description\"" +
+            ":\"This user\'s review of this volume, if one exists.\"},\"updated\":{\"type\":\"string\"" +
+            ",\"description\":\"Timestamp when this volume was last modified by a user action, s" +
+            "uch as a reading position update, volume purchase or writing a review. (RFC 3339" +
+            " UTC date-time format).\",\"format\":\"date-time\"}}},\"volumeInfo\":{\"type\":\"object\",\"" +
+            "description\":\"General volume information.\",\"properties\":{\"authors\":{\"type\":\"arra" +
+            "y\",\"description\":\"The names of the authors and/or editors for this volume. (In L" +
+            "ITE projection)\",\"items\":{\"type\":\"string\"}},\"averageRating\":{\"type\":\"number\",\"de" +
+            "scription\":\"The mean review rating for this volume. (min = 1.0, max = 5.0)\",\"for" +
+            "mat\":\"double\"},\"canonicalVolumeLink\":{\"type\":\"string\",\"description\":\"Canonical U" +
+            "RL for a volume. (In LITE projection.)\"},\"categories\":{\"type\":\"array\",\"descripti" +
+            "on\":\"A list of subject categories, such as \\\"Fiction\\\", \\\"Suspense\\\", etc.\",\"ite" +
+            "ms\":{\"type\":\"string\"}},\"contentVersion\":{\"type\":\"string\",\"description\":\"An ident" +
+            "ifier for the version of the volume content (text & images). (In LITE projection" +
+            ")\"},\"description\":{\"type\":\"string\",\"description\":\"A synopsis of the volume. The " +
+            "text of the description is formatted in HTML and includes simple formatting elem" +
+            "ents, such as b, i, and br tags. (In LITE projection.)\"},\"dimensions\":{\"type\":\"o" +
+            "bject\",\"description\":\"Physical dimensions of this volume.\",\"properties\":{\"height" +
+            "\":{\"type\":\"string\",\"description\":\"Height or length of this volume (in cm).\"},\"th" +
+            "ickness\":{\"type\":\"string\",\"description\":\"Thickness of this volume (in cm).\"},\"wi" +
+            "dth\":{\"type\":\"string\",\"description\":\"Width of this volume (in cm).\"}}},\"imageLin" +
+            "ks\":{\"type\":\"object\",\"description\":\"A list of image links for all the sizes that" +
+            " are available. (In LITE projection.)\",\"properties\":{\"extraLarge\":{\"type\":\"strin" +
+            "g\",\"description\":\"Image link for extra large size (width of ~1280 pixels). (In L" +
+            "ITE projection)\"},\"large\":{\"type\":\"string\",\"description\":\"Image link for large s" +
+            "ize (width of ~800 pixels). (In LITE projection)\"},\"medium\":{\"type\":\"string\",\"de" +
+            "scription\":\"Image link for medium size (width of ~575 pixels). (In LITE projecti" +
+            "on)\"},\"small\":{\"type\":\"string\",\"description\":\"Image link for small size (width o" +
+            "f ~300 pixels). (In LITE projection)\"},\"smallThumbnail\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Image link for small thumbnail size (width of ~80 pixels). (In LITE proj" +
+            "ection)\"},\"thumbnail\":{\"type\":\"string\",\"description\":\"Image link for thumbnail s" +
+            "ize (width of ~128 pixels). (In LITE projection)\"}}},\"industryIdentifiers\":{\"typ" +
+            "e\":\"array\",\"description\":\"Industry standard identifiers for this volume.\",\"items" +
+            "\":{\"type\":\"object\",\"properties\":{\"identifier\":{\"type\":\"string\",\"description\":\"In" +
+            "dustry specific volume identifier.\"},\"type\":{\"type\":\"string\",\"description\":\"Iden" +
+            "tifier type. Possible values are ISBN_10, ISBN_13, ISSN and OTHER.\"}}}},\"infoLin" +
+            "k\":{\"type\":\"string\",\"description\":\"URL to view information about this volume on " +
+            "the Google Books site. (In LITE projection)\"},\"language\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Best language for this volume (based on content). It is the two-letter " +
+            "ISO 639-1 code such as \'fr\', \'en\', etc.\"},\"mainCategory\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The main category to which this volume belongs. It will be the category" +
+            " from the categories list returned below that has the highest weight.\"},\"pageCou" +
+            "nt\":{\"type\":\"integer\",\"description\":\"Total number of pages.\",\"format\":\"int32\"},\"" +
+            "previewLink\":{\"type\":\"string\",\"description\":\"URL to preview this volume on the G" +
+            "oogle Books site.\"},\"printType\":{\"type\":\"string\",\"description\":\"Type of publicat" +
+            "ion of this volume. Possible values are BOOK or MAGAZINE.\"},\"publishedDate\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Date of publication. (In LITE projection.)\"},\"publis" +
+            "her\":{\"type\":\"string\",\"description\":\"Publisher of this volume. (In LITE projecti" +
+            "on.)\"},\"ratingsCount\":{\"type\":\"integer\",\"description\":\"The number of review rati" +
+            "ngs for this volume.\",\"format\":\"int32\"},\"subtitle\":{\"type\":\"string\",\"description" +
+            "\":\"Volume subtitle. (In LITE projection.)\"},\"title\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Volume title. (In LITE projection.)\"}}}}},\"Volumeannotation\":{\"id\":\"Volumean" +
+            "notation\",\"type\":\"object\",\"properties\":{\"annotationDataId\":{\"type\":\"string\",\"des" +
+            "cription\":\"The annotation data id for this volume annotation.\"},\"annotationDataL" +
+            "ink\":{\"type\":\"string\",\"description\":\"Link to get data for this annotation.\"},\"an" +
+            "notationType\":{\"type\":\"string\",\"description\":\"The type of annotation this is.\"}," +
+            "\"contentRanges\":{\"type\":\"object\",\"description\":\"The content ranges to identify t" +
+            "he selected text.\",\"properties\":{\"cfiRange\":{\"$ref\":\"BooksAnnotationsRange\",\"des" +
+            "cription\":\"Range in CFI format for this annotation for version above.\"},\"content" +
+            "Version\":{\"type\":\"string\",\"description\":\"Content version applicable to ranges be" +
+            "low.\"},\"gbImageRange\":{\"$ref\":\"BooksAnnotationsRange\",\"description\":\"Range in GB" +
+            " image format for this annotation for version above.\"},\"gbTextRange\":{\"$ref\":\"Bo" +
+            "oksAnnotationsRange\",\"description\":\"Range in GB text format for this annotation " +
+            "for version above.\"}}},\"data\":{\"type\":\"string\",\"description\":\"Data for this anno" +
+            "tation.\"},\"deleted\":{\"type\":\"boolean\",\"description\":\"Indicates that this annotat" +
+            "ion is deleted.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique id of this volume " +
+            "annotation.\"},\"kind\":{\"type\":\"string\",\"description\":\"Resource Type\",\"default\":\"b" +
+            "ooks#volumeannotation\"},\"layerId\":{\"type\":\"string\",\"description\":\"The Layer this" +
+            " annotation is for.\"},\"pageIds\":{\"type\":\"array\",\"description\":\"Pages the annotat" +
+            "ion spans.\",\"items\":{\"type\":\"string\"}},\"selectedText\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Excerpt from the volume.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"URL " +
+            "to this resource.\"},\"updated\":{\"type\":\"string\",\"description\":\"Timestamp for the " +
+            "last time this anntoation was updated. (RFC 3339 UTC date-time format).\",\"format" +
+            "\":\"date-time\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The Volume this annota" +
+            "tion is for.\"}}},\"Volumeannotations\":{\"id\":\"Volumeannotations\",\"type\":\"object\",\"" +
+            "properties\":{\"items\":{\"type\":\"array\",\"description\":\"A list of volume annotations" +
+            ".\",\"items\":{\"$ref\":\"Volumeannotation\"}},\"kind\":{\"type\":\"string\",\"description\":\"R" +
+            "esource type\",\"default\":\"books#volumeannotations\"},\"nextPageToken\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Token to pass in for pagination for the next page. This will " +
+            "not be present if this request does not have more results.\"},\"totalItems\":{\"type" +
+            "\":\"integer\",\"description\":\"The total number of volume annotations found.\",\"forma" +
+            "t\":\"int32\"}}},\"Volumes\":{\"id\":\"Volumes\",\"type\":\"object\",\"properties\":{\"items\":{\"" +
+            "type\":\"array\",\"description\":\"A list of volumes.\",\"items\":{\"$ref\":\"Volume\"}},\"kin" +
+            "d\":{\"type\":\"string\",\"description\":\"Resource type.\",\"default\":\"books#volumes\"},\"t" +
+            "otalItems\":{\"type\":\"integer\",\"description\":\"Total number of volumes found. This " +
+            "might be greater than the number of volumes returned in this response if results" +
+            " have been paginated.\",\"format\":\"int32\"}}}},\"resources\":{\"bookshelves\":{\"methods" +
+            "\":{\"get\":{\"id\":\"books.bookshelves.get\",\"path\":\"users/{userId}/bookshelves/{shelf" +
+            "}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves metadata for a specific bookshelf" +
+            " for the specified user.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"description\":\"" +
+            "ID of bookshelf to retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type" +
+            "\":\"string\",\"description\":\"String to identify the originator of this request.\",\"l" +
+            "ocation\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of user for whom t" +
+            "o retrieve bookshelves.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "userId\",\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/books\"]},\"list\":{\"id\":\"books.bookshelves.list\",\"path\":\"users/{userId" +
+            "}/bookshelves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of public book" +
+            "shelves for the specified user.\",\"parameters\":{\"source\":{\"type\":\"string\",\"descri" +
+            "ption\":\"String to identify the originator of this request.\",\"location\":\"query\"}," +
+            "\"userId\":{\"type\":\"string\",\"description\":\"ID of user for whom to retrieve bookshe" +
+            "lves.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response" +
+            "\":{\"$ref\":\"Bookshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}},\"r" +
+            "esources\":{\"volumes\":{\"methods\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"" +
+            "path\":\"users/{userId}/bookshelves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"descripti" +
+            "on\":\"Retrieves volumes in a specific bookshelf for the specified user.\",\"paramet" +
+            "ers\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to" +
+            " return\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"shelf\":{\"type\":\"st" +
+            "ring\",\"description\":\"ID of bookshelf to retrieve volumes.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true to sh" +
+            "ow pre-ordered books. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"" +
+            "string\",\"description\":\"String to identify the originator of this request.\",\"loca" +
+            "tion\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the first " +
+            "element to return (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"que" +
+            "ry\"},\"userId\":{\"type\":\"string\",\"description\":\"ID of user for whom to retrieve bo" +
+            "okshelf volumes.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"" +
+            ",\"shelf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/books\"]}}}}},\"layers\":{\"methods\":{\"get\":{\"id\":\"books.layers.get\",\"path\":\"volu" +
+            "mes/layersummary/{summaryId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the layer s" +
+            "ummary for a volume.\",\"parameters\":{\"source\":{\"type\":\"string\",\"description\":\"Str" +
+            "ing to identify the originator of this request.\",\"location\":\"query\"},\"summaryId\"" +
+            ":{\"type\":\"string\",\"description\":\"The ID for the layer to get the summary for.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"summaryId\"],\"response\":{\"$" +
+            "ref\":\"Layersummary\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":" +
+            "{\"id\":\"books.layers.list\",\"path\":\"volumes/{volumeId}/layersummary\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"List the layer summaries for a volume.\",\"parameters\":{\"cont" +
+            "entVersion\":{\"type\":\"string\",\"description\":\"The content version for the requeste" +
+            "d volume.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Max" +
+            "imum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\"" +
+            ",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of th" +
+            "e nextToken from the previous page.\",\"location\":\"query\"},\"source\":{\"type\":\"strin" +
+            "g\",\"description\":\"String to identify the originator of this request.\",\"location\"" +
+            ":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"The volume to retrieve laye" +
+            "rs for.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"resp" +
+            "onse\":{\"$ref\":\"Layersummaries\"},\"scopes\":[\"https://www.googleapis.com/auth/books" +
+            "\"]}},\"resources\":{\"annotationData\":{\"methods\":{\"get\":{\"id\":\"books.layers.annotat" +
+            "ionData.get\",\"path\":\"volumes/{volumeId}/layers/{layerId}/data/{annotationDataId}" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Gets the annotation data.\",\"parameters\":{\"an" +
+            "notationDataId\":{\"type\":\"string\",\"description\":\"The ID of the annotation data to" +
+            " retrieve.\",\"required\":true,\"location\":\"path\"},\"h\":{\"type\":\"integer\",\"descriptio" +
+            "n\":\"The requested pixel height for any images. If height is provided width must " +
+            "also be provided.\",\"format\":\"int32\",\"location\":\"query\"},\"layerId\":{\"type\":\"strin" +
+            "g\",\"description\":\"The ID for the layer to get the annotations.\",\"required\":true," +
+            "\"location\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale informati" +
+            "on for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"" +
             "location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify t" +
-            "he originator of this request.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"d" +
-            "escription\":\"Id of user for whom to retrieve bookshelves.\",\"required\":true,\"loca" +
-            "tion\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Bookshelves\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"metho" +
-            "ds\":{\"list\":{\"id\":\"books.bookshelves.volumes.list\",\"path\":\"users/{userId}/booksh" +
-            "elves/{shelf}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Retrieves volumes in a " +
-            "specific bookshelf for the specified user.\",\"parameters\":{\"country\":{\"type\":\"str" +
-            "ing\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"locatio" +
-            "n\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of resu" +
-            "lts to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"shelf\":{\"typ" +
-            "e\":\"string\",\"description\":\"Id of bookshelf to retrieve volumes.\",\"required\":true" +
-            ",\"location\":\"path\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true" +
-            " to show pre-ordered books. Defaults to false.\",\"location\":\"query\"},\"source\":{\"t" +
-            "ype\":\"string\",\"description\":\"String to identify the originator of this request.\"" +
-            ",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the " +
-            "first element to return (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location" +
-            "\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"Id of user for whom to retri" +
-            "eve bookshelf volumes.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"u" +
-            "serId\",\"shelf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/books\"]}}}}},\"myconfig\":{\"methods\":{\"releaseDownloadAccess\":{\"id\":\"book" +
-            "s.myconfig.releaseDownloadAccess\",\"path\":\"myconfig/releaseDownloadAccess\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Release downloaded content access restriction.\",\"pa" +
-            "rameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override" +
-            " the IP-based location.\",\"location\":\"query\"},\"cpksver\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The device/version identifier from which to release the restriction.\",\"re" +
-            "quired\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-63" +
-            "9-1, ISO-3166-1 codes for message localization, i.e. en_US.\",\"location\":\"query\"}" +
-            ",\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of t" +
-            "his request.\",\"location\":\"query\"},\"volumeIds\":{\"type\":\"string\",\"description\":\"Th" +
-            "e volume(s) to release restrictions for.\",\"required\":true,\"repeated\":true,\"locat" +
-            "ion\":\"query\"}},\"parameterOrder\":[\"volumeIds\",\"cpksver\"],\"response\":{\"$ref\":\"Down" +
-            "loadAccesses\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"requestAcces" +
-            "s\":{\"id\":\"books.myconfig.requestAccess\",\"path\":\"myconfig/requestAccess\",\"httpMet" +
-            "hod\":\"POST\",\"description\":\"Request concurrent and download access restrictions.\"" +
-            ",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to over" +
-            "ride the IP-based location.\",\"location\":\"query\"},\"cpksver\":{\"type\":\"string\",\"des" +
-            "cription\":\"The device/version identifier from which to request the restrictions." +
-            "\",\"required\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"I" +
-            "SO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.\",\"location\":\"qu" +
-            "ery\"},\"nonce\":{\"type\":\"string\",\"description\":\"The client nonce value.\",\"required" +
-            "\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to id" +
-            "entify the originator of this request.\",\"required\":true,\"location\":\"query\"},\"vol" +
-            "umeId\":{\"type\":\"string\",\"description\":\"The volume to request concurrent/download" +
-            " restrictions for.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"sour" +
-            "ce\",\"volumeId\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"RequestAccess\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/books\"]},\"syncVolumeLicenses\":{\"id\":\"books.myco" +
-            "nfig.syncVolumeLicenses\",\"path\":\"myconfig/syncVolumeLicenses\",\"httpMethod\":\"POST" +
-            "\",\"description\":\"Request downloaded content access for specified volumes on the " +
-            "My eBooks shelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-31" +
-            "66-1 code to override the IP-based location.\",\"location\":\"query\"},\"cpksver\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The device/version identifier from which to release " +
-            "the restriction.\",\"required\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\"," +
-            "\"description\":\"ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US." +
-            "\",\"location\":\"query\"},\"nonce\":{\"type\":\"string\",\"description\":\"The client nonce v" +
-            "alue.\",\"required\":true,\"location\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Set to true to show pre-ordered books. Defaults to false.\",\"location" +
-            "\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the origi" +
-            "nator of this request.\",\"required\":true,\"location\":\"query\"},\"volumeIds\":{\"type\":" +
-            "\"string\",\"description\":\"The volume(s) to request download restrictions for.\",\"re" +
-            "peated\":true,\"location\":\"query\"}},\"parameterOrder\":[\"source\",\"nonce\",\"cpksver\"]," +
-            "\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]" +
-            "}}},\"mylibrary\":{\"resources\":{\"annotations\":{\"methods\":{\"delete\":{\"id\":\"books.my" +
-            "library.annotations.delete\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpM" +
-            "ethod\":\"DELETE\",\"description\":\"Deletes an annotation.\",\"parameters\":{\"annotation" +
-            "Id\":{\"type\":\"string\",\"description\":\"The annotation identifier for the annotation" +
-            " to delete.\",\"required\":true,\"location\":\"path\"},\"country\":{\"type\":\"string\",\"desc" +
-            "ription\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"" +
-            "},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of " +
-            "this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.annotatio" +
-            "ns.get\",\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Gets an annotation by its id.\",\"parameters\":{\"annotationId\":{\"type\":\"str" +
-            "ing\",\"description\":\"The annotation identifier for the annotation to retrieve.\",\"" +
-            "required\":true,\"location\":\"path\"},\"country\":{\"type\":\"string\",\"description\":\"ISO-" +
-            "3166-1 code to override the IP-based location.\",\"location\":\"query\"},\"source\":{\"t" +
-            "ype\":\"string\",\"description\":\"String to identify the originator of this request.\"" +
-            ",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"response\":{\"$ref\":\"Anno" +
-            "tation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"insert\":{\"id\":\"boo" +
-            "ks.mylibrary.annotations.insert\",\"path\":\"mylibrary/annotations\",\"httpMethod\":\"PO" +
-            "ST\",\"description\":\"Inserts a new annotation.\",\"parameters\":{\"country\":{\"type\":\"s" +
-            "tring\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"locat" +
-            "ion\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the or" +
-            "iginator of this request.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Annotation\"}," +
-            "\"response\":{\"$ref\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/book" +
-            "s\"]},\"list\":{\"id\":\"books.mylibrary.annotations.list\",\"path\":\"mylibrary/annotatio" +
-            "ns\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of annotations, possibly " +
-            "filtered.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"The co" +
-            "ntent version for the requested volume.\",\"location\":\"query\"},\"country\":{\"type\":\"" +
-            "string\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"loca" +
-            "tion\":\"query\"},\"layerId\":{\"type\":\"string\",\"description\":\"The layer id to limit a" +
-            "nnotation by.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":" +
-            "\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":" +
-            "\"40\",\"location\":\"query\"},\"pageIds\":{\"type\":\"string\",\"description\":\"The page id(s" +
-            ") for the volume that is being queried.\",\"repeated\":true,\"location\":\"query\"},\"pa" +
-            "geToken\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the pre" +
-            "vious page.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"description\":\"" +
-            "Set to true to return deleted annotations. updatedMin must be in the request to " +
-            "use this. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"des" +
-            "cription\":\"String to identify the originator of this request.\",\"location\":\"query" +
-            "\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict t" +
-            "o items updated prior to this timestamp (exclusive).\",\"location\":\"query\"},\"updat" +
-            "edMin\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to items u" +
-            "pdated since this timestamp (inclusive).\",\"location\":\"query\"},\"volumeId\":{\"type\"" +
-            ":\"string\",\"description\":\"The volume to restrict annotations to.\",\"location\":\"que" +
-            "ry\"}},\"response\":{\"$ref\":\"Annotations\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/books\"]},\"update\":{\"id\":\"books.mylibrary.annotations.update\",\"path\":\"mylibrar" +
-            "y/annotations/{annotationId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an exist" +
-            "ing annotation.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"description\":\"Th" +
-            "e annotation identifier for the annotation to update.\",\"required\":true,\"location" +
-            "\":\"path\"},\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override " +
-            "the IP-based location.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"descripti" +
-            "on\":\"String to identify the originator of this request.\",\"location\":\"query\"}},\"p" +
-            "arameterOrder\":[\"annotationId\"],\"request\":{\"$ref\":\"Annotation\"},\"response\":{\"$re" +
-            "f\":\"Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}},\"bookshel" +
-            "ves\":{\"methods\":{\"addVolume\":{\"id\":\"books.mylibrary.bookshelves.addVolume\",\"path" +
-            "\":\"mylibrary/bookshelves/{shelf}/addVolume\",\"httpMethod\":\"POST\",\"description\":\"A" +
-            "dds a volume to a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"descript" +
-            "ion\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"},\"s" +
-            "helf\":{\"type\":\"string\",\"description\":\"Id of bookshelf to which to add a volume.\"" +
-            ",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"Str" +
-            "ing to identify the originator of this request.\",\"location\":\"query\"},\"volumeId\":" +
-            "{\"type\":\"string\",\"description\":\"Id of volume to add.\",\"required\":true,\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/books\"]},\"clearVolumes\":{\"id\":\"books.mylibrary.bookshelves.clearVolu" +
-            "mes\",\"path\":\"mylibrary/bookshelves/{shelf}/clearVolumes\",\"httpMethod\":\"POST\",\"de" +
-            "scription\":\"Clears all volumes from a bookshelf.\",\"parameters\":{\"country\":{\"type" +
-            "\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based location.\",\"l" +
-            "ocation\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf from w" +
-            "hich to remove a volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"s" +
-            "tring\",\"description\":\"String to identify the originator of this request.\",\"locat" +
-            "ion\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/books\"]},\"get\":{\"id\":\"books.mylibrary.bookshelves.get\",\"path\":\"mylibrary/bo" +
-            "okshelves/{shelf}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves metadata for a sp" +
-            "ecific bookshelf belonging to the authenticated user.\",\"parameters\":{\"country\":{" +
-            "\"type\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based location" +
-            ".\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf t" +
-            "o retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"descr" +
-            "iption\":\"String to identify the originator of this request.\",\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.mylibrary.bookshelves.list\"" +
-            ",\"path\":\"mylibrary/bookshelves\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a li" +
-            "st of bookshelves belonging to the authenticated user.\",\"parameters\":{\"country\":" +
-            "{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-based locatio" +
-            "n.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to ident" +
-            "ify the originator of this request.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Bo" +
-            "okshelves\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"moveVolume\":{\"i" +
-            "d\":\"books.mylibrary.bookshelves.moveVolume\",\"path\":\"mylibrary/bookshelves/{shelf" +
-            "}/moveVolume\",\"httpMethod\":\"POST\",\"description\":\"Moves a volume within a bookshe" +
-            "lf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to " +
-            "override the IP-based location.\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"d" +
-            "escription\":\"Id of bookshelf with the volume.\",\"required\":true,\"location\":\"path\"" +
-            "},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of " +
-            "this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id" +
-            " of volume to move.\",\"required\":true,\"location\":\"query\"},\"volumePosition\":{\"type" +
-            "\":\"integer\",\"description\":\"Position on shelf to move the item (0 puts the item b" +
-            "efore the current first item, 1 puts it between the first and the second and so " +
-            "on.)\",\"required\":true,\"format\":\"int32\",\"location\":\"query\"}},\"parameterOrder\":[\"s" +
-            "helf\",\"volumeId\",\"volumePosition\"],\"scopes\":[\"https://www.googleapis.com/auth/bo" +
-            "oks\"]},\"removeVolume\":{\"id\":\"books.mylibrary.bookshelves.removeVolume\",\"path\":\"m" +
-            "ylibrary/bookshelves/{shelf}/removeVolume\",\"httpMethod\":\"POST\",\"description\":\"Re" +
-            "moves a volume from a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"desc" +
-            "ription\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"" +
-            "},\"shelf\":{\"type\":\"string\",\"description\":\"Id of bookshelf from which to remove a" +
+            "he originator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\"," +
+            "\"description\":\"The volume to retrieve annotations for.\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"w\":{\"type\":\"integer\",\"description\":\"The requested pixel width for an" +
+            "y images. If width is provided height must also be provided.\",\"format\":\"int32\",\"" +
+            "location\":\"query\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"annotationDataId\"],\"" +
+            "response\":{\"$ref\":\"Annotationdata\"},\"scopes\":[\"https://www.googleapis.com/auth/b" +
+            "ooks\"]},\"list\":{\"id\":\"books.layers.annotationData.list\",\"path\":\"volumes/{volumeI" +
+            "d}/layers/{layerId}/data\",\"httpMethod\":\"GET\",\"description\":\"Gets the annotation " +
+            "data for a volume and layer.\",\"parameters\":{\"annotationDataId\":{\"type\":\"string\"," +
+            "\"description\":\"The list of Annotation Data Ids to retrieve. Pagination is ignore" +
+            "d if this is set.\",\"repeated\":true,\"location\":\"query\"},\"contentVersion\":{\"type\":" +
+            "\"string\",\"description\":\"The content version for the requested volume.\",\"required" +
+            "\":true,\"location\":\"query\"},\"h\":{\"type\":\"integer\",\"description\":\"The requested pi" +
+            "xel height for any images. If height is provided width must also be provided.\",\"" +
+            "format\":\"int32\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\",\"description\":\"Th" +
+            "e ID for the layer to get the annotation data.\",\"required\":true,\"location\":\"path" +
+            "\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale information for the data." +
+            " ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"location\":\"query" +
+            "\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to re" +
+            "turn\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"pageTo" +
+            "ken\":{\"type\":\"string\",\"description\":\"The value of the nextToken from the previou" +
+            "s page.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to " +
+            "identify the originator of this request.\",\"location\":\"query\"},\"updatedMax\":{\"typ" +
+            "e\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to items updated prior" +
+            " to this timestamp (exclusive).\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"strin" +
+            "g\",\"description\":\"RFC 3339 timestamp to restrict to items updated since this tim" +
+            "estamp (inclusive).\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The volume to retrieve annotation data for.\",\"required\":true,\"location\":\"pat" +
+            "h\"},\"w\":{\"type\":\"integer\",\"description\":\"The requested pixel width for any image" +
+            "s. If width is provided height must also be provided.\",\"format\":\"int32\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"contentVersion\"],\"response\"" +
+            ":{\"$ref\":\"Annotationsdata\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}" +
+            "},\"volumeAnnotations\":{\"methods\":{\"get\":{\"id\":\"books.layers.volumeAnnotations.ge" +
+            "t\",\"path\":\"volumes/{volumeId}/layers/{layerId}/annotations/{annotationId}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Gets the volume annotation.\",\"parameters\":{\"annotat" +
+            "ionId\":{\"type\":\"string\",\"description\":\"The ID of the volume annotation to retrie" +
+            "ve.\",\"required\":true,\"location\":\"path\"},\"layerId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID for the layer to get the annotations.\",\"required\":true,\"location\":\"path" +
+            "\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale information for the data." +
+            " ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"location\":\"query" +
+            "\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of" +
+            " this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"T" +
+            "he volume to retrieve annotations for.\",\"required\":true,\"location\":\"path\"}},\"par" +
+            "ameterOrder\":[\"volumeId\",\"layerId\",\"annotationId\"],\"response\":{\"$ref\":\"Volumeann" +
+            "otation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"book" +
+            "s.layers.volumeAnnotations.list\",\"path\":\"volumes/{volumeId}/layers/{layerId}\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Gets the volume annotations for a volume and lay" +
+            "er.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":\"The content " +
+            "version for the requested volume.\",\"required\":true,\"location\":\"query\"},\"endOffse" +
+            "t\":{\"type\":\"string\",\"description\":\"The end offset to end retrieving data from.\"," +
+            "\"location\":\"query\"},\"endPosition\":{\"type\":\"string\",\"description\":\"The end positi" +
+            "on to end retrieving data from.\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\"," +
+            "\"description\":\"The ID for the layer to get the annotations.\",\"required\":true,\"lo" +
+            "cation\":\"path\"},\"locale\":{\"type\":\"string\",\"description\":\"The locale information " +
+            "for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: \'en_US\'.\",\"loc" +
+            "ation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of " +
+            "results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"qu" +
+            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextToken fro" +
+            "m the previous page.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"descr" +
+            "iption\":\"Set to true to return deleted annotations. updatedMin must be in the re" +
+            "quest to use this. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"str" +
+            "ing\",\"description\":\"String to identify the originator of this request.\",\"locatio" +
+            "n\":\"query\"},\"startOffset\":{\"type\":\"string\",\"description\":\"The start offset to st" +
+            "art retrieving data from.\",\"location\":\"query\"},\"startPosition\":{\"type\":\"string\"," +
+            "\"description\":\"The start position to start retrieving data from.\",\"location\":\"qu" +
+            "ery\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restric" +
+            "t to items updated prior to this timestamp (exclusive).\",\"location\":\"query\"},\"up" +
+            "datedMin\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to restrict to item" +
+            "s updated since this timestamp (inclusive).\",\"location\":\"query\"},\"volumeId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The volume to retrieve annotations for.\",\"required\":" +
+            "true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\",\"layerId\",\"contentVersion\"" +
+            "],\"response\":{\"$ref\":\"Volumeannotations\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/books\"]}}}}},\"myconfig\":{\"methods\":{\"releaseDownloadAccess\":{\"id\":\"books.my" +
+            "config.releaseDownloadAccess\",\"path\":\"myconfig/releaseDownloadAccess\",\"httpMetho" +
+            "d\":\"POST\",\"description\":\"Release downloaded content access restriction.\",\"parame" +
+            "ters\":{\"cpksver\":{\"type\":\"string\",\"description\":\"The device/version ID from whic" +
+            "h to release the restriction.\",\"required\":true,\"location\":\"query\"},\"locale\":{\"ty" +
+            "pe\":\"string\",\"description\":\"ISO-639-1, ISO-3166-1 codes for message localization" +
+            ", i.e. en_US.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"Stri" +
+            "ng to identify the originator of this request.\",\"location\":\"query\"},\"volumeIds\":" +
+            "{\"type\":\"string\",\"description\":\"The volume(s) to release restrictions for.\",\"req" +
+            "uired\":true,\"repeated\":true,\"location\":\"query\"}},\"parameterOrder\":[\"volumeIds\",\"" +
+            "cpksver\"],\"response\":{\"$ref\":\"DownloadAccesses\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/books\"]},\"requestAccess\":{\"id\":\"books.myconfig.requestAccess\",\"path\"" +
+            ":\"myconfig/requestAccess\",\"httpMethod\":\"POST\",\"description\":\"Request concurrent " +
+            "and download access restrictions.\",\"parameters\":{\"cpksver\":{\"type\":\"string\",\"des" +
+            "cription\":\"The device/version ID from which to request the restrictions.\",\"requi" +
+            "red\":true,\"location\":\"query\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1" +
+            ", ISO-3166-1 codes for message localization, i.e. en_US.\",\"location\":\"query\"},\"n" +
+            "once\":{\"type\":\"string\",\"description\":\"The client nonce value.\",\"required\":true,\"" +
+            "location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify t" +
+            "he originator of this request.\",\"required\":true,\"location\":\"query\"},\"volumeId\":{" +
+            "\"type\":\"string\",\"description\":\"The volume to request concurrent/download restric" +
+            "tions for.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"source\",\"vol" +
+            "umeId\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"RequestAccess\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/books\"]},\"syncVolumeLicenses\":{\"id\":\"books.myconfig.syn" +
+            "cVolumeLicenses\",\"path\":\"myconfig/syncVolumeLicenses\",\"httpMethod\":\"POST\",\"descr" +
+            "iption\":\"Request downloaded content access for specified volumes on the My eBook" +
+            "s shelf.\",\"parameters\":{\"cpksver\":{\"type\":\"string\",\"description\":\"The device/ver" +
+            "sion ID from which to release the restriction.\",\"required\":true,\"location\":\"quer" +
+            "y\"},\"locale\":{\"type\":\"string\",\"description\":\"ISO-639-1, ISO-3166-1 codes for mes" +
+            "sage localization, i.e. en_US.\",\"location\":\"query\"},\"nonce\":{\"type\":\"string\",\"de" +
+            "scription\":\"The client nonce value.\",\"required\":true,\"location\":\"query\"},\"showPr" +
+            "eorders\":{\"type\":\"boolean\",\"description\":\"Set to true to show pre-ordered books." +
+            " Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\"" +
+            ":\"String to identify the originator of this request.\",\"required\":true,\"location\"" +
+            ":\"query\"},\"volumeIds\":{\"type\":\"string\",\"description\":\"The volume(s) to request d" +
+            "ownload restrictions for.\",\"repeated\":true,\"location\":\"query\"}},\"parameterOrder\"" +
+            ":[\"source\",\"nonce\",\"cpksver\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/books\"]}}},\"mylibrary\":{\"resources\":{\"annotations\":{\"meth" +
+            "ods\":{\"delete\":{\"id\":\"books.mylibrary.annotations.delete\",\"path\":\"mylibrary/anno" +
+            "tations/{annotationId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes an annotati" +
+            "on.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"description\":\"The ID for the" +
+            " annotation to delete.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"str" +
+            "ing\",\"description\":\"String to identify the originator of this request.\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/books\"]},\"get\":{\"id\":\"books.mylibrary.annotations.get\",\"path\":\"mylibra" +
+            "ry/annotations/{annotationId}\",\"httpMethod\":\"GET\",\"description\":\"Gets an annotat" +
+            "ion by its ID.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"description\":\"The" +
+            " ID for the annotation to retrieve.\",\"required\":true,\"location\":\"path\"},\"source\"" +
+            ":{\"type\":\"string\",\"description\":\"String to identify the originator of this reque" +
+            "st.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"response\":{\"$ref\":\"" +
+            "Annotation\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"insert\":{\"id\":" +
+            "\"books.mylibrary.annotations.insert\",\"path\":\"mylibrary/annotations\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Inserts a new annotation.\",\"parameters\":{\"source\":{\"type\"" +
+            ":\"string\",\"description\":\"String to identify the originator of this request.\",\"lo" +
+            "cation\":\"query\"}},\"request\":{\"$ref\":\"Annotation\"},\"response\":{\"$ref\":\"Annotation" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.mylib" +
+            "rary.annotations.list\",\"path\":\"mylibrary/annotations\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"Retrieves a list of annotations, possibly filtered.\",\"parameters\":{\"cont" +
+            "entVersion\":{\"type\":\"string\",\"description\":\"The content version for the requeste" +
+            "d volume.\",\"location\":\"query\"},\"layerId\":{\"type\":\"string\",\"description\":\"The lay" +
+            "er ID to limit annotation by.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer" +
+            "\",\"description\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum" +
+            "\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"pageIds\":{\"type\":\"string\",\"description" +
+            "\":\"The page ID(s) for the volume that is being queried.\",\"repeated\":true,\"locati" +
+            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of the nextTo" +
+            "ken from the previous page.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\"" +
+            ",\"description\":\"Set to true to return deleted annotations. updatedMin must be in" +
+            " the request to use this. Defaults to false.\",\"location\":\"query\"},\"source\":{\"typ" +
+            "e\":\"string\",\"description\":\"String to identify the originator of this request.\",\"" +
+            "location\":\"query\"},\"updatedMax\":{\"type\":\"string\",\"description\":\"RFC 3339 timesta" +
+            "mp to restrict to items updated prior to this timestamp (exclusive).\",\"location\"" +
+            ":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"RFC 3339 timestamp to res" +
+            "trict to items updated since this timestamp (inclusive).\",\"location\":\"query\"},\"v" +
+            "olumeId\":{\"type\":\"string\",\"description\":\"The volume to restrict annotations to.\"" +
+            ",\"location\":\"query\"}},\"response\":{\"$ref\":\"Annotations\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/books\"]},\"update\":{\"id\":\"books.mylibrary.annotations.update\"," +
+            "\"path\":\"mylibrary/annotations/{annotationId}\",\"httpMethod\":\"PUT\",\"description\":\"" +
+            "Updates an existing annotation.\",\"parameters\":{\"annotationId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID for the annotation to update.\",\"required\":true,\"location\":\"" +
+            "path\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originato" +
+            "r of this request.\",\"location\":\"query\"}},\"parameterOrder\":[\"annotationId\"],\"requ" +
+            "est\":{\"$ref\":\"Annotation\"},\"response\":{\"$ref\":\"Annotation\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/books\"]}}},\"bookshelves\":{\"methods\":{\"addVolume\":{\"id\":\"b" +
+            "ooks.mylibrary.bookshelves.addVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/addV" +
+            "olume\",\"httpMethod\":\"POST\",\"description\":\"Adds a volume to a bookshelf.\",\"parame" +
+            "ters\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf to which to add a" +
             " volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"descript" +
             "ion\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"v" +
-            "olumeId\":{\"type\":\"string\",\"description\":\"Id of volume to remove.\",\"required\":tru" +
-            "e,\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"methods\":{\"list\":{\"id" +
-            "\":\"books.mylibrary.bookshelves.volumes.list\",\"path\":\"mylibrary/bookshelves/{shel" +
-            "f}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information for volume" +
-            "s on a bookshelf.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3" +
-            "166-1 code to override the IP-based location.\",\"location\":\"query\"},\"maxResults\":" +
-            "{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"" +
-            "uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Restrict information returned to a set of selected fields.\",\"enum\":[\"full" +
-            "\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a subset of " +
-            "fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"q\":{\"type\":\"string\"," +
-            "\"description\":\"Full-text search query string in this bookshelf.\",\"location\":\"que" +
-            "ry\"},\"shelf\":{\"type\":\"string\",\"description\":\"The bookshelf id or name retrieve v" +
-            "olumes for.\",\"required\":true,\"location\":\"path\"},\"showPreorders\":{\"type\":\"boolean" +
-            "\",\"description\":\"Set to true to show pre-ordered books. Defaults to false.\",\"loc" +
-            "ation\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the " +
-            "originator of this request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\"," +
-            "\"description\":\"Index of the first element to return (starts at 0)\",\"format\":\"uin" +
-            "t32\",\"minimum\":\"0\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"response\":{\"" +
-            "$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]}}}}},\"readin" +
-            "gpositions\":{\"methods\":{\"get\":{\"id\":\"books.mylibrary.readingpositions.get\",\"path" +
-            "\":\"mylibrary/readingpositions/{volumeId}\",\"httpMethod\":\"GET\",\"description\":\"Retr" +
-            "ieves my reading position information for a volume.\",\"parameters\":{\"contentVersi" +
-            "on\":{\"type\":\"string\",\"description\":\"Volume content version for which this readin" +
-            "g position is requested.\",\"location\":\"query\"},\"country\":{\"type\":\"string\",\"descri" +
-            "ption\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query\"}," +
-            "\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of th" +
-            "is request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id o" +
-            "f volume for which to retrieve a reading position.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"ReadingPosition\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/books\"]},\"setPosition\":{\"id\":\"books.mylib" +
-            "rary.readingpositions.setPosition\",\"path\":\"mylibrary/readingpositions/{volumeId}" +
-            "/setPosition\",\"httpMethod\":\"POST\",\"description\":\"Sets my reading position inform" +
-            "ation for a volume.\",\"parameters\":{\"action\":{\"type\":\"string\",\"description\":\"Acti" +
-            "on that caused this reading position to be set.\",\"enum\":[\"bookmark\",\"chapter\",\"n" +
-            "ext-page\",\"prev-page\",\"scroll\",\"search\"],\"enumDescriptions\":[\"User chose bookmar" +
-            "k within volume.\",\"User selected chapter from list.\",\"Next page event.\",\"Previou" +
-            "s page event.\",\"User navigated to page.\",\"User chose search results within volum" +
-            "e.\"],\"location\":\"query\"},\"contentVersion\":{\"type\":\"string\",\"description\":\"Volume" +
-            " content version for which this reading position applies.\",\"location\":\"query\"},\"" +
-            "country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 code to override the IP-base" +
-            "d location.\",\"location\":\"query\"},\"position\":{\"type\":\"string\",\"description\":\"Posi" +
-            "tion string for the new volume reading position.\",\"required\":true,\"location\":\"qu" +
-            "ery\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator" +
-            " of this request.\",\"location\":\"query\"},\"timestamp\":{\"type\":\"string\",\"description" +
-            "\":\"RFC 3339 UTC format timestamp associated with this reading position.\",\"requir" +
-            "ed\":true,\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id of vo" +
-            "lume for which to update the reading position.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"volumeId\",\"timestamp\",\"position\"],\"scopes\":[\"https://www." +
-            "googleapis.com/auth/books\"]}}}}},\"volumes\":{\"methods\":{\"get\":{\"id\":\"books.volume" +
-            "s.get\",\"path\":\"volumes/{volumeId}\",\"httpMethod\":\"GET\",\"description\":\"Gets volume" +
-            " information for a single volume.\",\"parameters\":{\"country\":{\"type\":\"string\",\"des" +
-            "cription\":\"ISO-3166-1 code to override the IP-based location.\",\"location\":\"query" +
-            "\"},\"partner\":{\"type\":\"string\",\"description\":\"Identifier of partner for whom to b" +
-            "rand results.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"" +
-            "Restrict information returned to a set of selected fields.\",\"enum\":[\"full\",\"lite" +
-            "\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a subset of fields " +
-            "in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source\":{\"type\":\"string\",\"d" +
-            "escription\":\"String to identify the originator of this request.\",\"location\":\"que" +
-            "ry\"},\"volumeId\":{\"type\":\"string\",\"description\":\"Id of volume to retrieve.\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":" +
-            "\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"book" +
-            "s.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"description\":\"Performs a bo" +
-            "ok search.\",\"parameters\":{\"country\":{\"type\":\"string\",\"description\":\"ISO-3166-1 c" +
-            "ode to override the IP-based location.\",\"location\":\"query\"},\"download\":{\"type\":\"" +
-            "string\",\"description\":\"Restrict to volumes by download availability.\",\"enum\":[\"e" +
-            "pub\"],\"enumDescriptions\":[\"All volumes with epub.\"],\"location\":\"query\"},\"filter\"" +
-            ":{\"type\":\"string\",\"description\":\"Filter search results.\",\"enum\":[\"ebooks\",\"free-" +
-            "ebooks\",\"full\",\"paid-ebooks\",\"partial\"],\"enumDescriptions\":[\"All Google eBooks.\"" +
-            ",\"Google eBook with full volume text viewability.\",\"Public can view entire volum" +
-            "e text.\",\"Google eBook with a price.\",\"Public able to see parts of text.\"],\"loca" +
-            "tion\":\"query\"},\"langRestrict\":{\"type\":\"string\",\"description\":\"Restrict results t" +
-            "o books with this language code.\",\"location\":\"query\"},\"libraryRestrict\":{\"type\":" +
-            "\"string\",\"description\":\"Restrict search to this user\'s library.\",\"enum\":[\"my-lib" +
-            "rary\",\"no-restrict\"],\"enumDescriptions\":[\"Restrict to the user\'s library, any sh" +
-            "elf.\",\"Do not restrict based on user\'s library.\"],\"location\":\"query\"},\"maxResult" +
-            "s\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"forma" +
-            "t\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"40\",\"location\":\"query\"},\"orderBy\":{\"type\":\"" +
-            "string\",\"description\":\"Sort search results.\",\"enum\":[\"newest\",\"relevance\"],\"enum" +
-            "Descriptions\":[\"Most recently published.\",\"Relevance to search terms.\"],\"locatio" +
-            "n\":\"query\"},\"partner\":{\"type\":\"string\",\"description\":\"Identifier of partner for " +
-            "whom to restrict and brand results.\",\"location\":\"query\"},\"printType\":{\"type\":\"st" +
-            "ring\",\"description\":\"Restrict to books or magazines.\",\"enum\":[\"all\",\"books\",\"mag" +
-            "azines\"],\"enumDescriptions\":[\"All volume content types.\",\"Just books.\",\"Just mag" +
-            "azines.\"],\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"Restr" +
-            "ict information returned to a set of selected fields.\",\"enum\":[\"full\",\"lite\"],\"e" +
-            "numDescriptions\":[\"Includes all volume data.\",\"Includes a subset of fields in vo" +
-            "lumeInfo and accessInfo.\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description" +
-            "\":\"Full-text search query string.\",\"required\":true,\"location\":\"query\"},\"showPreo" +
-            "rders\":{\"type\":\"boolean\",\"description\":\"Set to true to show books available for " +
-            "preorder. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"string\",\"des" +
-            "cription\":\"String to identify the originator of this request.\",\"location\":\"query" +
-            "\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the first result to re" +
-            "turn (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"}},\"parame" +
-            "terOrder\":[\"q\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/books\"]}}}}}";
+            "olumeId\":{\"type\":\"string\",\"description\":\"ID of volume to add.\",\"required\":true,\"" +
+            "location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/books\"]},\"clearVolumes\":{\"id\":\"books.mylibrary.bookshelves." +
+            "clearVolumes\",\"path\":\"mylibrary/bookshelves/{shelf}/clearVolumes\",\"httpMethod\":\"" +
+            "POST\",\"description\":\"Clears all volumes from a bookshelf.\",\"parameters\":{\"shelf\"" +
+            ":{\"type\":\"string\",\"description\":\"ID of bookshelf from which to remove a volume.\"" +
+            ",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"Str" +
+            "ing to identify the originator of this request.\",\"location\":\"query\"}},\"parameter" +
+            "Order\":[\"shelf\"],\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"get\":{\"id\"" +
+            ":\"books.mylibrary.bookshelves.get\",\"path\":\"mylibrary/bookshelves/{shelf}\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"Retrieves metadata for a specific bookshelf belongin" +
+            "g to the authenticated user.\",\"parameters\":{\"shelf\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"ID of bookshelf to retrieve.\",\"required\":true,\"location\":\"path\"},\"source\":{\"" +
+            "type\":\"string\",\"description\":\"String to identify the originator of this request." +
+            "\",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\"],\"response\":{\"$ref\":\"Bookshelf\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"books.mylibr" +
+            "ary.bookshelves.list\",\"path\":\"mylibrary/bookshelves\",\"httpMethod\":\"GET\",\"descrip" +
+            "tion\":\"Retrieves a list of bookshelves belonging to the authenticated user.\",\"pa" +
+            "rameters\":{\"source\":{\"type\":\"string\",\"description\":\"String to identify the origi" +
+            "nator of this request.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Bookshelves\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/books\"]},\"moveVolume\":{\"id\":\"books.myl" +
+            "ibrary.bookshelves.moveVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/moveVolume\"" +
+            ",\"httpMethod\":\"POST\",\"description\":\"Moves a volume within a bookshelf.\",\"paramet" +
+            "ers\":{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf with the volume.\"," +
+            "\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"description\":\"Stri" +
+            "ng to identify the originator of this request.\",\"location\":\"query\"},\"volumeId\":{" +
+            "\"type\":\"string\",\"description\":\"ID of volume to move.\",\"required\":true,\"location\"" +
+            ":\"query\"},\"volumePosition\":{\"type\":\"integer\",\"description\":\"Position on shelf to" +
+            " move the item (0 puts the item before the current first item, 1 puts it between" +
+            " the first and the second and so on.)\",\"required\":true,\"format\":\"int32\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\",\"volumePosition\"],\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/books\"]},\"removeVolume\":{\"id\":\"books.mylibrary.bo" +
+            "okshelves.removeVolume\",\"path\":\"mylibrary/bookshelves/{shelf}/removeVolume\",\"htt" +
+            "pMethod\":\"POST\",\"description\":\"Removes a volume from a bookshelf.\",\"parameters\":" +
+            "{\"shelf\":{\"type\":\"string\",\"description\":\"ID of bookshelf from which to remove a " +
+            "volume.\",\"required\":true,\"location\":\"path\"},\"source\":{\"type\":\"string\",\"descripti" +
+            "on\":\"String to identify the originator of this request.\",\"location\":\"query\"},\"vo" +
+            "lumeId\":{\"type\":\"string\",\"description\":\"ID of volume to remove.\",\"required\":true" +
+            ",\"location\":\"query\"}},\"parameterOrder\":[\"shelf\",\"volumeId\"],\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/books\"]}},\"resources\":{\"volumes\":{\"methods\":{\"list\":{\"id\"" +
+            ":\"books.mylibrary.bookshelves.volumes.list\",\"path\":\"mylibrary/bookshelves/{shelf" +
+            "}/volumes\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information for volumes" +
+            " on a bookshelf.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Ma" +
+            "ximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"q" +
+            "uery\"},\"projection\":{\"type\":\"string\",\"description\":\"Restrict information returne" +
+            "d to a set of selected fields.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Incl" +
+            "udes all volume data.\",\"Includes a subset of fields in volumeInfo and accessInfo" +
+            ".\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Full-text search que" +
+            "ry string in this bookshelf.\",\"location\":\"query\"},\"shelf\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The bookshelf ID or name retrieve volumes for.\",\"required\":true,\"locat" +
+            "ion\":\"path\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to true to sho" +
+            "w pre-ordered books. Defaults to false.\",\"location\":\"query\"},\"source\":{\"type\":\"s" +
+            "tring\",\"description\":\"String to identify the originator of this request.\",\"locat" +
+            "ion\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"Index of the first e" +
+            "lement to return (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"quer" +
+            "y\"}},\"parameterOrder\":[\"shelf\"],\"response\":{\"$ref\":\"Volumes\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/books\"]}}}}},\"readingpositions\":{\"methods\":{\"get\":{\"id\"" +
+            ":\"books.mylibrary.readingpositions.get\",\"path\":\"mylibrary/readingpositions/{volu" +
+            "meId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves my reading position informati" +
+            "on for a volume.\",\"parameters\":{\"contentVersion\":{\"type\":\"string\",\"description\":" +
+            "\"Volume content version for which this reading position is requested.\",\"location" +
+            "\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"String to identify the origi" +
+            "nator of this request.\",\"location\":\"query\"},\"volumeId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"ID of volume for which to retrieve a reading position.\",\"required\":true,\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$ref\":\"ReadingPosi" +
+            "tion\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"setPosition\":{\"id\":\"" +
+            "books.mylibrary.readingpositions.setPosition\",\"path\":\"mylibrary/readingpositions" +
+            "/{volumeId}/setPosition\",\"httpMethod\":\"POST\",\"description\":\"Sets my reading posi" +
+            "tion information for a volume.\",\"parameters\":{\"action\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Action that caused this reading position to be set.\",\"enum\":[\"bookmark\",\"" +
+            "chapter\",\"next-page\",\"prev-page\",\"scroll\",\"search\"],\"enumDescriptions\":[\"User ch" +
+            "ose bookmark within volume.\",\"User selected chapter from list.\",\"Next page event" +
+            ".\",\"Previous page event.\",\"User navigated to page.\",\"User chose search results w" +
+            "ithin volume.\"],\"location\":\"query\"},\"contentVersion\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Volume content version for which this reading position applies.\",\"location\"" +
+            ":\"query\"},\"position\":{\"type\":\"string\",\"description\":\"Position string for the new" +
+            " volume reading position.\",\"required\":true,\"location\":\"query\"},\"source\":{\"type\":" +
+            "\"string\",\"description\":\"String to identify the originator of this request.\",\"loc" +
+            "ation\":\"query\"},\"timestamp\":{\"type\":\"string\",\"description\":\"RFC 3339 UTC format " +
+            "timestamp associated with this reading position.\",\"required\":true,\"location\":\"qu" +
+            "ery\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume for which to updat" +
+            "e the reading position.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "volumeId\",\"timestamp\",\"position\"],\"scopes\":[\"https://www.googleapis.com/auth/boo" +
+            "ks\"]}}}}},\"volumes\":{\"methods\":{\"get\":{\"id\":\"books.volumes.get\",\"path\":\"volumes/" +
+            "{volumeId}\",\"httpMethod\":\"GET\",\"description\":\"Gets volume information for a sing" +
+            "le volume.\",\"parameters\":{\"partner\":{\"type\":\"string\",\"description\":\"Brand result" +
+            "s for partner ID.\",\"location\":\"query\"},\"projection\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Restrict information returned to a set of selected fields.\",\"enum\":[\"full\",\"" +
+            "lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"Includes a subset of fie" +
+            "lds in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"source\":{\"type\":\"string" +
+            "\",\"description\":\"String to identify the originator of this request.\",\"location\":" +
+            "\"query\"},\"volumeId\":{\"type\":\"string\",\"description\":\"ID of volume to retrieve.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"volumeId\"],\"response\":{\"$r" +
+            "ef\":\"Volume\"},\"scopes\":[\"https://www.googleapis.com/auth/books\"]},\"list\":{\"id\":\"" +
+            "books.volumes.list\",\"path\":\"volumes\",\"httpMethod\":\"GET\",\"description\":\"Performs " +
+            "a book search.\",\"parameters\":{\"download\":{\"type\":\"string\",\"description\":\"Restric" +
+            "t to volumes by download availability.\",\"enum\":[\"epub\"],\"enumDescriptions\":[\"All" +
+            " volumes with epub.\"],\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description" +
+            "\":\"Filter search results.\",\"enum\":[\"ebooks\",\"free-ebooks\",\"full\",\"paid-ebooks\",\"" +
+            "partial\"],\"enumDescriptions\":[\"All Google eBooks.\",\"Google eBook with full volum" +
+            "e text viewability.\",\"Public can view entire volume text.\",\"Google eBook with a " +
+            "price.\",\"Public able to see parts of text.\"],\"location\":\"query\"},\"langRestrict\":" +
+            "{\"type\":\"string\",\"description\":\"Restrict results to books with this language cod" +
+            "e.\",\"location\":\"query\"},\"libraryRestrict\":{\"type\":\"string\",\"description\":\"Restri" +
+            "ct search to this user\'s library.\",\"enum\":[\"my-library\",\"no-restrict\"],\"enumDesc" +
+            "riptions\":[\"Restrict to the user\'s library, any shelf.\",\"Do not restrict based o" +
+            "n user\'s library.\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"minimum\":\"0\",\"max" +
+            "imum\":\"40\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"Sort se" +
+            "arch results.\",\"enum\":[\"newest\",\"relevance\"],\"enumDescriptions\":[\"Most recently " +
+            "published.\",\"Relevance to search terms.\"],\"location\":\"query\"},\"partner\":{\"type\":" +
+            "\"string\",\"description\":\"Restrict and brand results for partner ID.\",\"location\":\"" +
+            "query\"},\"printType\":{\"type\":\"string\",\"description\":\"Restrict to books or magazin" +
+            "es.\",\"enum\":[\"all\",\"books\",\"magazines\"],\"enumDescriptions\":[\"All volume content " +
+            "types.\",\"Just books.\",\"Just magazines.\"],\"location\":\"query\"},\"projection\":{\"type" +
+            "\":\"string\",\"description\":\"Restrict information returned to a set of selected fie" +
+            "lds.\",\"enum\":[\"full\",\"lite\"],\"enumDescriptions\":[\"Includes all volume data.\",\"In" +
+            "cludes a subset of fields in volumeInfo and accessInfo.\"],\"location\":\"query\"},\"q" +
+            "\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"required\":tru" +
+            "e,\"location\":\"query\"},\"showPreorders\":{\"type\":\"boolean\",\"description\":\"Set to tr" +
+            "ue to show books available for preorder. Defaults to false.\",\"location\":\"query\"}" +
+            ",\"source\":{\"type\":\"string\",\"description\":\"String to identify the originator of t" +
+            "his request.\",\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"description\":\"" +
+            "Index of the first result to return (starts at 0)\",\"format\":\"uint32\",\"minimum\":\"" +
+            "0\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Volumes\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/books\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -3082,15 +4376,16 @@ namespace Google.Apis.Books.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected BooksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.bookshelves = new BookshelvesResource(this);
-            this.myconfig = new MyconfigResource(this);
-            this.mylibrary = new MylibraryResource(this);
-            this.volumes = new VolumesResource(this);
+            this._bookshelves = new BookshelvesResource(this);
+            this._layers = new LayersResource(this);
+            this._myconfig = new MyconfigResource(this);
+            this._mylibrary = new MylibraryResource(this);
+            this._volumes = new VolumesResource(this);
         }
         
         public BooksService() : 
@@ -3098,22 +4393,22 @@ namespace Google.Apis.Books.v1 {
         }
         
         public BooksService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(BooksService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BooksService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -3147,28 +4442,28 @@ namespace Google.Apis.Books.v1 {
         
         private const string Resource = "bookshelves";
         
-        private VolumesResource volumes;
+        private VolumesResource _volumes;
         
         public BookshelvesResource(BooksService service) {
             this.service = service;
-            this.volumes = new VolumesResource(service);
+            this._volumes = new VolumesResource(service);
         }
         
         public virtual VolumesResource Volumes {
             get {
-                return this.volumes;
+                return this._volumes;
             }
         }
         
         /// <summary>Retrieves metadata for a specific bookshelf for the specified user.</summary>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
-        /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
+        /// <param name="userId">Required - ID of user for whom to retrieve bookshelves.</param>
+        /// <param name="shelf">Required - ID of bookshelf to retrieve.</param>
         public virtual GetRequest Get(string userId, string shelf) {
             return new GetRequest(service, userId, shelf);
         }
         
         /// <summary>Retrieves a list of public bookshelves for the specified user.</summary>
-        /// <param name="userId">Required - Id of user for whom to retrieve bookshelves.</param>
+        /// <param name="userId">Required - ID of user for whom to retrieve bookshelves.</param>
         public virtual ListRequest List(string userId) {
             return new ListRequest(service, userId);
         }
@@ -3184,59 +4479,57 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
-            /// <param name="userId">Required - Id of user for whom to retrieve bookshelf volumes.</param>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve volumes.</param>
+            /// <param name="userId">Required - ID of user for whom to retrieve bookshelf volumes.</param>
+            /// <param name="shelf">Required - ID of bookshelf to retrieve volumes.</param>
             public virtual ListRequest List(string userId, string shelf) {
                 return new ListRequest(service, userId, shelf);
             }
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? maxResults;
+                private string _shelf;
                 
-                private string shelf;
+                private System.Nullable<bool> _showPreorders;
                 
-                private System.Boolean? showPreorders;
+                private string _source;
                 
-                private string source;
+                private System.Nullable<long> _startIndex;
                 
-                private System.Int64? startIndex;
-                
-                private string userId;
+                private string _userId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string shelf) : 
                         base(service) {
-                    this.userId = userId;
-                    this.shelf = shelf;
+                    this._userId = userId;
+                    this._shelf = shelf;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3244,51 +4537,40 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        this._quotaUser = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
                 [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
-                /// <summary>Id of bookshelf to retrieve volumes.</summary>
+                /// <summary>ID of bookshelf to retrieve volumes.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
                 /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
-                public virtual System.Boolean? ShowPreorders {
+                public virtual System.Nullable<bool> ShowPreorders {
                     get {
-                        return this.showPreorders;
+                        return this._showPreorders;
                     }
                     set {
-                        this.showPreorders = value;
+                        this._showPreorders = value;
                     }
                 }
                 
@@ -3296,29 +4578,29 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
                 /// <summary>Index of the first element to return (starts at 0)</summary>
                 [Google.Apis.Util.RequestParameterAttribute("startIndex")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
-                /// <summary>Id of user for whom to retrieve bookshelf volumes.</summary>
+                /// <summary>ID of user for whom to retrieve bookshelf volumes.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("userId")]
                 public virtual string UserId {
                     get {
-                        return this.userId;
+                        return this._userId;
                     }
                 }
                 
@@ -3338,45 +4620,43 @@ namespace Google.Apis.Books.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _shelf;
             
-            private string shelf;
+            private string _source;
             
-            private string source;
-            
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId, string shelf) : 
                     base(service) {
-                this.userId = userId;
-                this.shelf = shelf;
+                this._userId = userId;
+                this._shelf = shelf;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3384,29 +4664,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
-                }
-            }
-            
-            /// <summary>Id of bookshelf to retrieve.</summary>
+            /// <summary>ID of bookshelf to retrieve.</summary>
             [Google.Apis.Util.RequestParameterAttribute("shelf")]
             public virtual string Shelf {
                 get {
-                    return this.shelf;
+                    return this._shelf;
                 }
             }
             
@@ -3414,18 +4683,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
-            /// <summary>Id of user for whom to retrieve bookshelves.</summary>
+            /// <summary>ID of user for whom to retrieve bookshelves.</summary>
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
@@ -3444,42 +4713,40 @@ namespace Google.Apis.Books.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _source;
             
-            private string source;
-            
-            private string userId;
+            private string _userId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
                     base(service) {
-                this.userId = userId;
+                this._userId = userId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3487,21 +4754,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
-                }
-            }
-            
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3509,24 +4765,1024 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
-            /// <summary>Id of user for whom to retrieve bookshelves.</summary>
+            /// <summary>ID of user for whom to retrieve bookshelves.</summary>
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
             }
             
             protected override string ResourcePath {
                 get {
                     return "bookshelves";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
+    }
+    
+    public class LayersResource {
+        
+        private Google.Apis.Discovery.IRequestProvider service;
+        
+        private const string Resource = "layers";
+        
+        private AnnotationDataResource _annotationData;
+        
+        private VolumeAnnotationsResource _volumeAnnotations;
+        
+        public LayersResource(BooksService service) {
+            this.service = service;
+            this._annotationData = new AnnotationDataResource(service);
+            this._volumeAnnotations = new VolumeAnnotationsResource(service);
+        }
+        
+        public virtual AnnotationDataResource AnnotationData {
+            get {
+                return this._annotationData;
+            }
+        }
+        
+        public virtual VolumeAnnotationsResource VolumeAnnotations {
+            get {
+                return this._volumeAnnotations;
+            }
+        }
+        
+        /// <summary>Gets the layer summary for a volume.</summary>
+        /// <param name="summaryId">Required - The ID for the layer to get the summary for.</param>
+        public virtual GetRequest Get(string summaryId) {
+            return new GetRequest(service, summaryId);
+        }
+        
+        /// <summary>List the layer summaries for a volume.</summary>
+        /// <param name="volumeId">Required - The volume to retrieve layers for.</param>
+        public virtual ListRequest List(string volumeId) {
+            return new ListRequest(service, volumeId);
+        }
+        
+        public class AnnotationDataResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "layers.annotationData";
+            
+            public AnnotationDataResource(BooksService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Gets the annotation data.</summary>
+            /// <param name="volumeId">Required - The volume to retrieve annotations for.</param>
+            /// <param name="layerId">Required - The ID for the layer to get the annotations.</param>
+            /// <param name="annotationDataId">Required - The ID of the annotation data to retrieve.</param>
+            public virtual GetRequest Get(string volumeId, string layerId, string annotationDataId) {
+                return new GetRequest(service, volumeId, layerId, annotationDataId);
+            }
+            
+            /// <summary>Gets the annotation data for a volume and layer.</summary>
+            /// <param name="volumeId">Required - The volume to retrieve annotation data for.</param>
+            /// <param name="layerId">Required - The ID for the layer to get the annotation data.</param>
+            /// <param name="contentVersion">Required - The content version for the requested volume.</param>
+            public virtual ListRequest List(string volumeId, string layerId, string contentVersion) {
+                return new ListRequest(service, volumeId, layerId, contentVersion);
+            }
+            
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationdata> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _annotationDataId;
+                
+                private System.Nullable<long> _h;
+                
+                private string _layerId;
+                
+                private string _locale;
+                
+                private string _source;
+                
+                private string _volumeId;
+                
+                private System.Nullable<long> _w;
+                
+                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, string layerId, string annotationDataId) : 
+                        base(service) {
+                    this._volumeId = volumeId;
+                    this._layerId = layerId;
+                    this._annotationDataId = annotationDataId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The ID of the annotation data to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("annotationDataId")]
+                public virtual string AnnotationDataId {
+                    get {
+                        return this._annotationDataId;
+                    }
+                }
+                
+                /// <summary>The requested pixel height for any images. If height is provided width must also be provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("h")]
+                public virtual System.Nullable<long> H {
+                    get {
+                        return this._h;
+                    }
+                    set {
+                        this._h = value;
+                    }
+                }
+                
+                /// <summary>The ID for the layer to get the annotations.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                public virtual string LayerId {
+                    get {
+                        return this._layerId;
+                    }
+                }
+                
+                /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                public virtual string Locale {
+                    get {
+                        return this._locale;
+                    }
+                    set {
+                        this._locale = value;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this._source;
+                    }
+                    set {
+                        this._source = value;
+                    }
+                }
+                
+                /// <summary>The volume to retrieve annotations for.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this._volumeId;
+                    }
+                }
+                
+                /// <summary>The requested pixel width for any images. If width is provided height must also be provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("w")]
+                public virtual System.Nullable<long> W {
+                    get {
+                        return this._w;
+                    }
+                    set {
+                        this._w = value;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "layers.annotationData";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "get";
+                    }
+                }
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationsdata> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private Google.Apis.Util.Repeatable<string> _annotationDataId;
+                
+                private string _contentVersion;
+                
+                private System.Nullable<long> _h;
+                
+                private string _layerId;
+                
+                private string _locale;
+                
+                private System.Nullable<long> _maxResults;
+                
+                private string _pageToken;
+                
+                private string _source;
+                
+                private string _updatedMax;
+                
+                private string _updatedMin;
+                
+                private string _volumeId;
+                
+                private System.Nullable<long> _w;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, string layerId, string contentVersion) : 
+                        base(service) {
+                    this._volumeId = volumeId;
+                    this._layerId = layerId;
+                    this._contentVersion = contentVersion;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("annotationDataId")]
+                public virtual Google.Apis.Util.Repeatable<string> AnnotationDataId {
+                    get {
+                        return this._annotationDataId;
+                    }
+                    set {
+                        this._annotationDataId = value;
+                    }
+                }
+                
+                /// <summary>The content version for the requested volume.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                public virtual string ContentVersion {
+                    get {
+                        return this._contentVersion;
+                    }
+                }
+                
+                /// <summary>The requested pixel height for any images. If height is provided width must also be provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("h")]
+                public virtual System.Nullable<long> H {
+                    get {
+                        return this._h;
+                    }
+                    set {
+                        this._h = value;
+                    }
+                }
+                
+                /// <summary>The ID for the layer to get the annotation data.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                public virtual string LayerId {
+                    get {
+                        return this._layerId;
+                    }
+                }
+                
+                /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                public virtual string Locale {
+                    get {
+                        return this._locale;
+                    }
+                    set {
+                        this._locale = value;
+                    }
+                }
+                
+                /// <summary>Maximum number of results to return</summary>
+                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                public virtual System.Nullable<long> MaxResults {
+                    get {
+                        return this._maxResults;
+                    }
+                    set {
+                        this._maxResults = value;
+                    }
+                }
+                
+                /// <summary>The value of the nextToken from the previous page.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+                public virtual string PageToken {
+                    get {
+                        return this._pageToken;
+                    }
+                    set {
+                        this._pageToken = value;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this._source;
+                    }
+                    set {
+                        this._source = value;
+                    }
+                }
+                
+                /// <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
+                [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
+                public virtual string UpdatedMax {
+                    get {
+                        return this._updatedMax;
+                    }
+                    set {
+                        this._updatedMax = value;
+                    }
+                }
+                
+                /// <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
+                [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+                public virtual string UpdatedMin {
+                    get {
+                        return this._updatedMin;
+                    }
+                    set {
+                        this._updatedMin = value;
+                    }
+                }
+                
+                /// <summary>The volume to retrieve annotation data for.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this._volumeId;
+                    }
+                }
+                
+                /// <summary>The requested pixel width for any images. If width is provided height must also be provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("w")]
+                public virtual System.Nullable<long> W {
+                    get {
+                        return this._w;
+                    }
+                    set {
+                        this._w = value;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "layers.annotationData";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class VolumeAnnotationsResource {
+            
+            private Google.Apis.Discovery.IRequestProvider service;
+            
+            private const string Resource = "layers.volumeAnnotations";
+            
+            public VolumeAnnotationsResource(BooksService service) {
+                this.service = service;
+            }
+            
+            /// <summary>Gets the volume annotation.</summary>
+            /// <param name="volumeId">Required - The volume to retrieve annotations for.</param>
+            /// <param name="layerId">Required - The ID for the layer to get the annotations.</param>
+            /// <param name="annotationId">Required - The ID of the volume annotation to retrieve.</param>
+            public virtual GetRequest Get(string volumeId, string layerId, string annotationId) {
+                return new GetRequest(service, volumeId, layerId, annotationId);
+            }
+            
+            /// <summary>Gets the volume annotations for a volume and layer.</summary>
+            /// <param name="volumeId">Required - The volume to retrieve annotations for.</param>
+            /// <param name="layerId">Required - The ID for the layer to get the annotations.</param>
+            /// <param name="contentVersion">Required - The content version for the requested volume.</param>
+            public virtual ListRequest List(string volumeId, string layerId, string contentVersion) {
+                return new ListRequest(service, volumeId, layerId, contentVersion);
+            }
+            
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotation> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _annotationId;
+                
+                private string _layerId;
+                
+                private string _locale;
+                
+                private string _source;
+                
+                private string _volumeId;
+                
+                public GetRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, string layerId, string annotationId) : 
+                        base(service) {
+                    this._volumeId = volumeId;
+                    this._layerId = layerId;
+                    this._annotationId = annotationId;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The ID of the volume annotation to retrieve.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("annotationId")]
+                public virtual string AnnotationId {
+                    get {
+                        return this._annotationId;
+                    }
+                }
+                
+                /// <summary>The ID for the layer to get the annotations.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                public virtual string LayerId {
+                    get {
+                        return this._layerId;
+                    }
+                }
+                
+                /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                public virtual string Locale {
+                    get {
+                        return this._locale;
+                    }
+                    set {
+                        this._locale = value;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this._source;
+                    }
+                    set {
+                        this._source = value;
+                    }
+                }
+                
+                /// <summary>The volume to retrieve annotations for.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this._volumeId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "layers.volumeAnnotations";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "get";
+                    }
+                }
+            }
+            
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotations> {
+                
+                private string _oauth_token;
+                
+                private System.Nullable<bool> _prettyPrint;
+                
+                private string _quotaUser;
+                
+                private string _contentVersion;
+                
+                private string _endOffset;
+                
+                private string _endPosition;
+                
+                private string _layerId;
+                
+                private string _locale;
+                
+                private System.Nullable<long> _maxResults;
+                
+                private string _pageToken;
+                
+                private System.Nullable<bool> _showDeleted;
+                
+                private string _source;
+                
+                private string _startOffset;
+                
+                private string _startPosition;
+                
+                private string _updatedMax;
+                
+                private string _updatedMin;
+                
+                private string _volumeId;
+                
+                public ListRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, string layerId, string contentVersion) : 
+                        base(service) {
+                    this._volumeId = volumeId;
+                    this._layerId = layerId;
+                    this._contentVersion = contentVersion;
+                }
+                
+                /// <summary>OAuth 2.0 token for the current user.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                public virtual string Oauth_token {
+                    get {
+                        return this._oauth_token;
+                    }
+                    set {
+                        this._oauth_token = value;
+                    }
+                }
+                
+                /// <summary>Returns response with indentations and line breaks.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                public virtual System.Nullable<bool> PrettyPrint {
+                    get {
+                        return this._prettyPrint;
+                    }
+                    set {
+                        this._prettyPrint = value;
+                    }
+                }
+                
+                /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                public virtual string QuotaUser {
+                    get {
+                        return this._quotaUser;
+                    }
+                    set {
+                        this._quotaUser = value;
+                    }
+                }
+                
+                /// <summary>The content version for the requested volume.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                public virtual string ContentVersion {
+                    get {
+                        return this._contentVersion;
+                    }
+                }
+                
+                /// <summary>The end offset to end retrieving data from.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("endOffset")]
+                public virtual string EndOffset {
+                    get {
+                        return this._endOffset;
+                    }
+                    set {
+                        this._endOffset = value;
+                    }
+                }
+                
+                /// <summary>The end position to end retrieving data from.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("endPosition")]
+                public virtual string EndPosition {
+                    get {
+                        return this._endPosition;
+                    }
+                    set {
+                        this._endPosition = value;
+                    }
+                }
+                
+                /// <summary>The ID for the layer to get the annotations.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                public virtual string LayerId {
+                    get {
+                        return this._layerId;
+                    }
+                }
+                
+                /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                public virtual string Locale {
+                    get {
+                        return this._locale;
+                    }
+                    set {
+                        this._locale = value;
+                    }
+                }
+                
+                /// <summary>Maximum number of results to return</summary>
+                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                public virtual System.Nullable<long> MaxResults {
+                    get {
+                        return this._maxResults;
+                    }
+                    set {
+                        this._maxResults = value;
+                    }
+                }
+                
+                /// <summary>The value of the nextToken from the previous page.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+                public virtual string PageToken {
+                    get {
+                        return this._pageToken;
+                    }
+                    set {
+                        this._pageToken = value;
+                    }
+                }
+                
+                /// <summary>Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+                public virtual System.Nullable<bool> ShowDeleted {
+                    get {
+                        return this._showDeleted;
+                    }
+                    set {
+                        this._showDeleted = value;
+                    }
+                }
+                
+                /// <summary>String to identify the originator of this request.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("source")]
+                public virtual string Source {
+                    get {
+                        return this._source;
+                    }
+                    set {
+                        this._source = value;
+                    }
+                }
+                
+                /// <summary>The start offset to start retrieving data from.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("startOffset")]
+                public virtual string StartOffset {
+                    get {
+                        return this._startOffset;
+                    }
+                    set {
+                        this._startOffset = value;
+                    }
+                }
+                
+                /// <summary>The start position to start retrieving data from.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("startPosition")]
+                public virtual string StartPosition {
+                    get {
+                        return this._startPosition;
+                    }
+                    set {
+                        this._startPosition = value;
+                    }
+                }
+                
+                /// <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
+                [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
+                public virtual string UpdatedMax {
+                    get {
+                        return this._updatedMax;
+                    }
+                    set {
+                        this._updatedMax = value;
+                    }
+                }
+                
+                /// <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
+                [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+                public virtual string UpdatedMin {
+                    get {
+                        return this._updatedMin;
+                    }
+                    set {
+                        this._updatedMin = value;
+                    }
+                }
+                
+                /// <summary>The volume to retrieve annotations for.</summary>
+                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                public virtual string VolumeId {
+                    get {
+                        return this._volumeId;
+                    }
+                }
+                
+                protected override string ResourcePath {
+                    get {
+                        return "layers.volumeAnnotations";
+                    }
+                }
+                
+                protected override string MethodName {
+                    get {
+                        return "list";
+                    }
+                }
+            }
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummary> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _source;
+            
+            private string _summaryId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string summaryId) : 
+                    base(service) {
+                this._summaryId = summaryId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this._source;
+                }
+                set {
+                    this._source = value;
+                }
+            }
+            
+            /// <summary>The ID for the layer to get the summary for.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("summaryId")]
+            public virtual string SummaryId {
+                get {
+                    return this._summaryId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "layers";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummaries> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _contentVersion;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private string _pageToken;
+            
+            private string _source;
+            
+            private string _volumeId;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId) : 
+                    base(service) {
+                this._volumeId = volumeId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>The content version for the requested volume.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+            public virtual string ContentVersion {
+                get {
+                    return this._contentVersion;
+                }
+                set {
+                    this._contentVersion = value;
+                }
+            }
+            
+            /// <summary>Maximum number of results to return</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The value of the nextToken from the previous page.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>String to identify the originator of this request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("source")]
+            public virtual string Source {
+                get {
+                    return this._source;
+                }
+                set {
+                    this._source = value;
+                }
+            }
+            
+            /// <summary>The volume to retrieve layers for.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+            public virtual string VolumeId {
+                get {
+                    return this._volumeId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "layers";
                 }
             }
             
@@ -3550,7 +5806,7 @@ namespace Google.Apis.Books.v1 {
         
         /// <summary>Release downloaded content access restriction.</summary>
         /// <param name="volumeIds">Required - The volume(s) to release restrictions for.</param>
-        /// <param name="cpksver">Required - The device/version identifier from which to release the restriction.</param>
+        /// <param name="cpksver">Required - The device/version ID from which to release the restriction.</param>
         public virtual ReleaseDownloadAccessRequest ReleaseDownloadAccess(Google.Apis.Util.Repeatable<string> volumeIds, string cpksver) {
             return new ReleaseDownloadAccessRequest(service, volumeIds, cpksver);
         }
@@ -3559,7 +5815,7 @@ namespace Google.Apis.Books.v1 {
         /// <param name="source">Required - String to identify the originator of this request.</param>
         /// <param name="volumeId">Required - The volume to request concurrent/download restrictions for.</param>
         /// <param name="nonce">Required - The client nonce value.</param>
-        /// <param name="cpksver">Required - The device/version identifier from which to request the restrictions.</param>
+        /// <param name="cpksver">Required - The device/version ID from which to request the restrictions.</param>
         public virtual RequestAccessRequest RequestAccess(string source, string volumeId, string nonce, string cpksver) {
             return new RequestAccessRequest(service, source, volumeId, nonce, cpksver);
         }
@@ -3567,54 +5823,52 @@ namespace Google.Apis.Books.v1 {
         /// <summary>Request downloaded content access for specified volumes on the My eBooks shelf.</summary>
         /// <param name="source">Required - String to identify the originator of this request.</param>
         /// <param name="nonce">Required - The client nonce value.</param>
-        /// <param name="cpksver">Required - The device/version identifier from which to release the restriction.</param>
+        /// <param name="cpksver">Required - The device/version ID from which to release the restriction.</param>
         public virtual SyncVolumeLicensesRequest SyncVolumeLicenses(string source, string nonce, string cpksver) {
             return new SyncVolumeLicensesRequest(service, source, nonce, cpksver);
         }
         
         public class ReleaseDownloadAccessRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.DownloadAccesses> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _cpksver;
             
-            private string cpksver;
+            private string _locale;
             
-            private string locale;
+            private string _source;
             
-            private string source;
-            
-            private Google.Apis.Util.Repeatable<string> volumeIds;
+            private Google.Apis.Util.Repeatable<string> _volumeIds;
             
             public ReleaseDownloadAccessRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> volumeIds, string cpksver) : 
                     base(service) {
-                this.volumeIds = volumeIds;
-                this.cpksver = cpksver;
+                this._volumeIds = volumeIds;
+                this._cpksver = cpksver;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3622,29 +5876,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
-                }
-            }
-            
-            /// <summary>The device/version identifier from which to release the restriction.</summary>
+            /// <summary>The device/version ID from which to release the restriction.</summary>
             [Google.Apis.Util.RequestParameterAttribute("cpksver")]
             public virtual string Cpksver {
                 get {
-                    return this.cpksver;
+                    return this._cpksver;
                 }
             }
             
@@ -3652,10 +5895,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
@@ -3663,10 +5906,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
@@ -3674,7 +5917,7 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("volumeIds")]
             public virtual Google.Apis.Util.Repeatable<string> VolumeIds {
                 get {
-                    return this.volumeIds;
+                    return this._volumeIds;
                 }
             }
             
@@ -3693,51 +5936,49 @@ namespace Google.Apis.Books.v1 {
         
         public class RequestAccessRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.RequestAccess> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _cpksver;
             
-            private string cpksver;
+            private string _locale;
             
-            private string locale;
+            private string _nonce;
             
-            private string nonce;
+            private string _source;
             
-            private string source;
-            
-            private string volumeId;
+            private string _volumeId;
             
             public RequestAccessRequest(Google.Apis.Discovery.IRequestProvider service, string source, string volumeId, string nonce, string cpksver) : 
                     base(service) {
-                this.source = source;
-                this.volumeId = volumeId;
-                this.nonce = nonce;
-                this.cpksver = cpksver;
+                this._source = source;
+                this._volumeId = volumeId;
+                this._nonce = nonce;
+                this._cpksver = cpksver;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3745,29 +5986,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
-                }
-            }
-            
-            /// <summary>The device/version identifier from which to request the restrictions.</summary>
+            /// <summary>The device/version ID from which to request the restrictions.</summary>
             [Google.Apis.Util.RequestParameterAttribute("cpksver")]
             public virtual string Cpksver {
                 get {
-                    return this.cpksver;
+                    return this._cpksver;
                 }
             }
             
@@ -3775,10 +6005,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
@@ -3786,7 +6016,7 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("nonce")]
             public virtual string Nonce {
                 get {
-                    return this.nonce;
+                    return this._nonce;
                 }
             }
             
@@ -3794,7 +6024,7 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
             }
             
@@ -3802,7 +6032,7 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("volumeId")]
             public virtual string VolumeId {
                 get {
-                    return this.volumeId;
+                    return this._volumeId;
                 }
             }
             
@@ -3821,52 +6051,50 @@ namespace Google.Apis.Books.v1 {
         
         public class SyncVolumeLicensesRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _cpksver;
             
-            private string cpksver;
+            private string _locale;
             
-            private string locale;
+            private string _nonce;
             
-            private string nonce;
+            private System.Nullable<bool> _showPreorders;
             
-            private System.Boolean? showPreorders;
+            private string _source;
             
-            private string source;
-            
-            private Google.Apis.Util.Repeatable<string> volumeIds;
+            private Google.Apis.Util.Repeatable<string> _volumeIds;
             
             public SyncVolumeLicensesRequest(Google.Apis.Discovery.IRequestProvider service, string source, string nonce, string cpksver) : 
                     base(service) {
-                this.source = source;
-                this.nonce = nonce;
-                this.cpksver = cpksver;
+                this._source = source;
+                this._nonce = nonce;
+                this._cpksver = cpksver;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3874,29 +6102,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
-                }
-            }
-            
-            /// <summary>The device/version identifier from which to release the restriction.</summary>
+            /// <summary>The device/version ID from which to release the restriction.</summary>
             [Google.Apis.Util.RequestParameterAttribute("cpksver")]
             public virtual string Cpksver {
                 get {
-                    return this.cpksver;
+                    return this._cpksver;
                 }
             }
             
@@ -3904,10 +6121,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locale")]
             public virtual string Locale {
                 get {
-                    return this.locale;
+                    return this._locale;
                 }
                 set {
-                    this.locale = value;
+                    this._locale = value;
                 }
             }
             
@@ -3915,18 +6132,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("nonce")]
             public virtual string Nonce {
                 get {
-                    return this.nonce;
+                    return this._nonce;
                 }
             }
             
             /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
-            public virtual System.Boolean? ShowPreorders {
+            public virtual System.Nullable<bool> ShowPreorders {
                 get {
-                    return this.showPreorders;
+                    return this._showPreorders;
                 }
                 set {
-                    this.showPreorders = value;
+                    this._showPreorders = value;
                 }
             }
             
@@ -3934,7 +6151,7 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
             }
             
@@ -3942,10 +6159,10 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("volumeIds")]
             public virtual Google.Apis.Util.Repeatable<string> VolumeIds {
                 get {
-                    return this.volumeIds;
+                    return this._volumeIds;
                 }
                 set {
-                    this.volumeIds = value;
+                    this._volumeIds = value;
                 }
             }
             
@@ -3969,34 +6186,34 @@ namespace Google.Apis.Books.v1 {
         
         private const string Resource = "mylibrary";
         
-        private AnnotationsResource annotations;
+        private AnnotationsResource _annotations;
         
-        private BookshelvesResource bookshelves;
+        private BookshelvesResource _bookshelves;
         
-        private ReadingpositionsResource readingpositions;
+        private ReadingpositionsResource _readingpositions;
         
         public MylibraryResource(BooksService service) {
             this.service = service;
-            this.annotations = new AnnotationsResource(service);
-            this.bookshelves = new BookshelvesResource(service);
-            this.readingpositions = new ReadingpositionsResource(service);
+            this._annotations = new AnnotationsResource(service);
+            this._bookshelves = new BookshelvesResource(service);
+            this._readingpositions = new ReadingpositionsResource(service);
         }
         
         public virtual AnnotationsResource Annotations {
             get {
-                return this.annotations;
+                return this._annotations;
             }
         }
         
         public virtual BookshelvesResource Bookshelves {
             get {
-                return this.bookshelves;
+                return this._bookshelves;
             }
         }
         
         public virtual ReadingpositionsResource Readingpositions {
             get {
-                return this.readingpositions;
+                return this._readingpositions;
             }
         }
         
@@ -4011,13 +6228,13 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Deletes an annotation.</summary>
-            /// <param name="annotationId">Required - The annotation identifier for the annotation to delete.</param>
+            /// <param name="annotationId">Required - The ID for the annotation to delete.</param>
             public virtual DeleteRequest Delete(string annotationId) {
                 return new DeleteRequest(service, annotationId);
             }
             
-            /// <summary>Gets an annotation by its id.</summary>
-            /// <param name="annotationId">Required - The annotation identifier for the annotation to retrieve.</param>
+            /// <summary>Gets an annotation by its ID.</summary>
+            /// <param name="annotationId">Required - The ID for the annotation to retrieve.</param>
             public virtual GetRequest Get(string annotationId) {
                 return new GetRequest(service, annotationId);
             }
@@ -4033,49 +6250,47 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Updates an existing annotation.</summary>
-            /// <param name="annotationId">Required - The annotation identifier for the annotation to update.</param>
+            /// <param name="annotationId">Required - The ID for the annotation to update.</param>
             public virtual UpdateRequest Update(Google.Apis.Books.v1.Data.Annotation body, string annotationId) {
                 return new UpdateRequest(service, body, annotationId);
             }
             
             public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string annotationId;
+                private string _annotationId;
                 
-                private string country;
-                
-                private string source;
+                private string _source;
                 
                 public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string annotationId) : 
                         base(service) {
-                    this.annotationId = annotationId;
+                    this._annotationId = annotationId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4083,29 +6298,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>The annotation identifier for the annotation to delete.</summary>
+                /// <summary>The ID for the annotation to delete.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("annotationId")]
                 public virtual string AnnotationId {
                     get {
-                        return this.annotationId;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        return this._annotationId;
                     }
                 }
                 
@@ -4113,10 +6317,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -4135,42 +6339,40 @@ namespace Google.Apis.Books.v1 {
             
             public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string annotationId;
+                private string _annotationId;
                 
-                private string country;
-                
-                private string source;
+                private string _source;
                 
                 public GetRequest(Google.Apis.Discovery.IRequestProvider service, string annotationId) : 
                         base(service) {
-                    this.annotationId = annotationId;
+                    this._annotationId = annotationId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4178,29 +6380,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>The annotation identifier for the annotation to retrieve.</summary>
+                /// <summary>The ID for the annotation to retrieve.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("annotationId")]
                 public virtual string AnnotationId {
                     get {
-                        return this.annotationId;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        return this._annotationId;
                     }
                 }
                 
@@ -4208,10 +6399,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -4230,17 +6421,15 @@ namespace Google.Apis.Books.v1 {
             
             public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _source;
                 
-                private string source;
-                
-                private Google.Apis.Books.v1.Data.Annotation bodyValue;
+                private Google.Apis.Books.v1.Data.Annotation _Body;
                 
                 public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Books.v1.Data.Annotation body) : 
                         base(service) {
@@ -4251,21 +6440,21 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4273,21 +6462,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -4295,20 +6473,20 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
                 /// <summary>Gets/Sets the Body of this Request.</summary>
                 public virtual Google.Apis.Books.v1.Data.Annotation Body {
                     get {
-                        return this.bodyValue;
+                        return this._Body;
                     }
                     set {
-                        this.bodyValue = value;
+                        this._Body = value;
                     }
                 }
                 
@@ -4331,33 +6509,31 @@ namespace Google.Apis.Books.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotations> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string contentVersion;
+                private string _contentVersion;
                 
-                private string country;
+                private string _layerId;
                 
-                private string layerId;
+                private System.Nullable<long> _maxResults;
                 
-                private System.Int64? maxResults;
+                private Google.Apis.Util.Repeatable<string> _pageIds;
                 
-                private Google.Apis.Util.Repeatable<string> pageIds;
+                private string _pageToken;
                 
-                private string pageToken;
+                private System.Nullable<bool> _showDeleted;
                 
-                private System.Boolean? showDeleted;
+                private string _source;
                 
-                private string source;
+                private string _updatedMax;
                 
-                private string updatedMax;
+                private string _updatedMin;
                 
-                private string updatedMin;
-                
-                private string volumeId;
+                private string _volumeId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -4367,21 +6543,21 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4389,10 +6565,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -4400,54 +6576,43 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
                 public virtual string ContentVersion {
                     get {
-                        return this.contentVersion;
+                        return this._contentVersion;
                     }
                     set {
-                        this.contentVersion = value;
+                        this._contentVersion = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>The layer id to limit annotation by.</summary>
+                /// <summary>The layer ID to limit annotation by.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("layerId")]
                 public virtual string LayerId {
                     get {
-                        return this.layerId;
+                        return this._layerId;
                     }
                     set {
-                        this.layerId = value;
+                        this._layerId = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
                 [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
-                /// <summary>The page id(s) for the volume that is being queried.</summary>
+                /// <summary>The page ID(s) for the volume that is being queried.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("pageIds")]
                 public virtual Google.Apis.Util.Repeatable<string> PageIds {
                     get {
-                        return this.pageIds;
+                        return this._pageIds;
                     }
                     set {
-                        this.pageIds = value;
+                        this._pageIds = value;
                     }
                 }
                 
@@ -4455,21 +6620,21 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("pageToken")]
                 public virtual string PageToken {
                     get {
-                        return this.pageToken;
+                        return this._pageToken;
                     }
                     set {
-                        this.pageToken = value;
+                        this._pageToken = value;
                     }
                 }
                 
                 /// <summary>Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
-                public virtual System.Boolean? ShowDeleted {
+                public virtual System.Nullable<bool> ShowDeleted {
                     get {
-                        return this.showDeleted;
+                        return this._showDeleted;
                     }
                     set {
-                        this.showDeleted = value;
+                        this._showDeleted = value;
                     }
                 }
                 
@@ -4477,10 +6642,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -4488,10 +6653,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
                 public virtual string UpdatedMax {
                     get {
-                        return this.updatedMax;
+                        return this._updatedMax;
                     }
                     set {
-                        this.updatedMax = value;
+                        this._updatedMax = value;
                     }
                 }
                 
@@ -4499,10 +6664,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
                 public virtual string UpdatedMin {
                     get {
-                        return this.updatedMin;
+                        return this._updatedMin;
                     }
                     set {
-                        this.updatedMin = value;
+                        this._updatedMin = value;
                     }
                 }
                 
@@ -4510,10 +6675,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                     set {
-                        this.volumeId = value;
+                        this._volumeId = value;
                     }
                 }
                 
@@ -4532,45 +6697,43 @@ namespace Google.Apis.Books.v1 {
             
             public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string annotationId;
+                private string _annotationId;
                 
-                private string country;
+                private string _source;
                 
-                private string source;
-                
-                private Google.Apis.Books.v1.Data.Annotation bodyValue;
+                private Google.Apis.Books.v1.Data.Annotation _Body;
                 
                 public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Books.v1.Data.Annotation body, string annotationId) : 
                         base(service) {
                     this.Body = body;
-                    this.annotationId = annotationId;
+                    this._annotationId = annotationId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4578,29 +6741,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>The annotation identifier for the annotation to update.</summary>
+                /// <summary>The ID for the annotation to update.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("annotationId")]
                 public virtual string AnnotationId {
                     get {
-                        return this.annotationId;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        return this._annotationId;
                     }
                 }
                 
@@ -4608,20 +6760,20 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
                 /// <summary>Gets/Sets the Body of this Request.</summary>
                 public virtual Google.Apis.Books.v1.Data.Annotation Body {
                     get {
-                        return this.bodyValue;
+                        return this._Body;
                     }
                     set {
-                        this.bodyValue = value;
+                        this._Body = value;
                     }
                 }
                 
@@ -4649,34 +6801,34 @@ namespace Google.Apis.Books.v1 {
             
             private const string Resource = "mylibrary.bookshelves";
             
-            private VolumesResource volumes;
+            private VolumesResource _volumes;
             
             public BookshelvesResource(BooksService service) {
                 this.service = service;
-                this.volumes = new VolumesResource(service);
+                this._volumes = new VolumesResource(service);
             }
             
             public virtual VolumesResource Volumes {
                 get {
-                    return this.volumes;
+                    return this._volumes;
                 }
             }
             
             /// <summary>Adds a volume to a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to which to add a volume.</param>
-            /// <param name="volumeId">Required - Id of volume to add.</param>
+            /// <param name="shelf">Required - ID of bookshelf to which to add a volume.</param>
+            /// <param name="volumeId">Required - ID of volume to add.</param>
             public virtual AddVolumeRequest AddVolume(string shelf, string volumeId) {
                 return new AddVolumeRequest(service, shelf, volumeId);
             }
             
             /// <summary>Clears all volumes from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
+            /// <param name="shelf">Required - ID of bookshelf from which to remove a volume.</param>
             public virtual ClearVolumesRequest ClearVolumes(string shelf) {
                 return new ClearVolumesRequest(service, shelf);
             }
             
             /// <summary>Retrieves metadata for a specific bookshelf belonging to the authenticated user.</summary>
-            /// <param name="shelf">Required - Id of bookshelf to retrieve.</param>
+            /// <param name="shelf">Required - ID of bookshelf to retrieve.</param>
             public virtual GetRequest Get(string shelf) {
                 return new GetRequest(service, shelf);
             }
@@ -4687,16 +6839,16 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Moves a volume within a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf with the volume.</param>
-            /// <param name="volumeId">Required - Id of volume to move.</param>
+            /// <param name="shelf">Required - ID of bookshelf with the volume.</param>
+            /// <param name="volumeId">Required - ID of volume to move.</param>
             /// <param name="volumePosition">Required - Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)</param>
             public virtual MoveVolumeRequest MoveVolume(string shelf, string volumeId, long volumePosition) {
                 return new MoveVolumeRequest(service, shelf, volumeId, volumePosition);
             }
             
             /// <summary>Removes a volume from a bookshelf.</summary>
-            /// <param name="shelf">Required - Id of bookshelf from which to remove a volume.</param>
-            /// <param name="volumeId">Required - Id of volume to remove.</param>
+            /// <param name="shelf">Required - ID of bookshelf from which to remove a volume.</param>
+            /// <param name="volumeId">Required - ID of volume to remove.</param>
             public virtual RemoveVolumeRequest RemoveVolume(string shelf, string volumeId) {
                 return new RemoveVolumeRequest(service, shelf, volumeId);
             }
@@ -4712,7 +6864,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Gets volume information for volumes on a bookshelf.</summary>
-                /// <param name="shelf">Required - The bookshelf id or name retrieve volumes for.</param>
+                /// <param name="shelf">Required - The bookshelf ID or name retrieve volumes for.</param>
                 public virtual ListRequest List(string shelf) {
                     return new ListRequest(service, shelf);
                 }
@@ -4732,52 +6884,50 @@ namespace Google.Apis.Books.v1 {
                 
                 public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
                     
-                    private string oauth_token;
+                    private string _oauth_token;
                     
-                    private System.Boolean? prettyPrint;
+                    private System.Nullable<bool> _prettyPrint;
                     
-                    private string quotaUser;
+                    private string _quotaUser;
                     
-                    private string country;
+                    private System.Nullable<long> _maxResults;
                     
-                    private System.Int64? maxResults;
+                    private System.Nullable<Projection> _projection;
                     
-                    private Projection? projection;
+                    private string _q;
                     
-                    private string q;
+                    private string _shelf;
                     
-                    private string shelf;
+                    private System.Nullable<bool> _showPreorders;
                     
-                    private System.Boolean? showPreorders;
+                    private string _source;
                     
-                    private string source;
-                    
-                    private System.Int64? startIndex;
+                    private System.Nullable<long> _startIndex;
                     
                     public ListRequest(Google.Apis.Discovery.IRequestProvider service, string shelf) : 
                             base(service) {
-                        this.shelf = shelf;
+                        this._shelf = shelf;
                     }
                     
                     /// <summary>OAuth 2.0 token for the current user.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                     public virtual string Oauth_token {
                         get {
-                            return this.oauth_token;
+                            return this._oauth_token;
                         }
                         set {
-                            this.oauth_token = value;
+                            this._oauth_token = value;
                         }
                     }
                     
                     /// <summary>Returns response with indentations and line breaks.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                    public virtual System.Boolean? PrettyPrint {
+                    public virtual System.Nullable<bool> PrettyPrint {
                         get {
-                            return this.prettyPrint;
+                            return this._prettyPrint;
                         }
                         set {
-                            this.prettyPrint = value;
+                            this._prettyPrint = value;
                         }
                     }
                     
@@ -4785,43 +6935,32 @@ namespace Google.Apis.Books.v1 {
                     [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                     public virtual string QuotaUser {
                         get {
-                            return this.quotaUser;
+                            return this._quotaUser;
                         }
                         set {
-                            this.quotaUser = value;
-                        }
-                    }
-                    
-                    /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("country")]
-                    public virtual string Country {
-                        get {
-                            return this.country;
-                        }
-                        set {
-                            this.country = value;
+                            this._quotaUser = value;
                         }
                     }
                     
                     /// <summary>Maximum number of results to return</summary>
                     [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-                    public virtual System.Int64? MaxResults {
+                    public virtual System.Nullable<long> MaxResults {
                         get {
-                            return this.maxResults;
+                            return this._maxResults;
                         }
                         set {
-                            this.maxResults = value;
+                            this._maxResults = value;
                         }
                     }
                     
                     /// <summary>Restrict information returned to a set of selected fields.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("projection")]
-                    public virtual Projection? Projection {
+                    public virtual System.Nullable<Projection> Projection {
                         get {
-                            return this.projection;
+                            return this._projection;
                         }
                         set {
-                            this.projection = value;
+                            this._projection = value;
                         }
                     }
                     
@@ -4829,29 +6968,29 @@ namespace Google.Apis.Books.v1 {
                     [Google.Apis.Util.RequestParameterAttribute("q")]
                     public virtual string Q {
                         get {
-                            return this.q;
+                            return this._q;
                         }
                         set {
-                            this.q = value;
+                            this._q = value;
                         }
                     }
                     
-                    /// <summary>The bookshelf id or name retrieve volumes for.</summary>
+                    /// <summary>The bookshelf ID or name retrieve volumes for.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("shelf")]
                     public virtual string Shelf {
                         get {
-                            return this.shelf;
+                            return this._shelf;
                         }
                     }
                     
                     /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
-                    public virtual System.Boolean? ShowPreorders {
+                    public virtual System.Nullable<bool> ShowPreorders {
                         get {
-                            return this.showPreorders;
+                            return this._showPreorders;
                         }
                         set {
-                            this.showPreorders = value;
+                            this._showPreorders = value;
                         }
                     }
                     
@@ -4859,21 +6998,21 @@ namespace Google.Apis.Books.v1 {
                     [Google.Apis.Util.RequestParameterAttribute("source")]
                     public virtual string Source {
                         get {
-                            return this.source;
+                            return this._source;
                         }
                         set {
-                            this.source = value;
+                            this._source = value;
                         }
                     }
                     
                     /// <summary>Index of the first element to return (starts at 0)</summary>
                     [Google.Apis.Util.RequestParameterAttribute("startIndex")]
-                    public virtual System.Int64? StartIndex {
+                    public virtual System.Nullable<long> StartIndex {
                         get {
-                            return this.startIndex;
+                            return this._startIndex;
                         }
                         set {
-                            this.startIndex = value;
+                            this._startIndex = value;
                         }
                     }
                     
@@ -4893,45 +7032,43 @@ namespace Google.Apis.Books.v1 {
             
             public class AddVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _shelf;
                 
-                private string shelf;
+                private string _source;
                 
-                private string source;
-                
-                private string volumeId;
+                private string _volumeId;
                 
                 public AddVolumeRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, string volumeId) : 
                         base(service) {
-                    this.shelf = shelf;
-                    this.volumeId = volumeId;
+                    this._shelf = shelf;
+                    this._volumeId = volumeId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4939,29 +7076,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>Id of bookshelf to which to add a volume.</summary>
+                /// <summary>ID of bookshelf to which to add a volume.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
@@ -4969,18 +7095,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
-                /// <summary>Id of volume to add.</summary>
+                /// <summary>ID of volume to add.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                 }
                 
@@ -4999,42 +7125,40 @@ namespace Google.Apis.Books.v1 {
             
             public class ClearVolumesRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _shelf;
                 
-                private string shelf;
-                
-                private string source;
+                private string _source;
                 
                 public ClearVolumesRequest(Google.Apis.Discovery.IRequestProvider service, string shelf) : 
                         base(service) {
-                    this.shelf = shelf;
+                    this._shelf = shelf;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5042,29 +7166,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>Id of bookshelf from which to remove a volume.</summary>
+                /// <summary>ID of bookshelf from which to remove a volume.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
@@ -5072,10 +7185,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -5094,42 +7207,40 @@ namespace Google.Apis.Books.v1 {
             
             public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _shelf;
                 
-                private string shelf;
-                
-                private string source;
+                private string _source;
                 
                 public GetRequest(Google.Apis.Discovery.IRequestProvider service, string shelf) : 
                         base(service) {
-                    this.shelf = shelf;
+                    this._shelf = shelf;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5137,29 +7248,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>Id of bookshelf to retrieve.</summary>
+                /// <summary>ID of bookshelf to retrieve.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
@@ -5167,10 +7267,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -5189,15 +7289,13 @@ namespace Google.Apis.Books.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
-                
-                private string source;
+                private string _source;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -5207,21 +7305,21 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5229,21 +7327,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -5251,10 +7338,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -5273,48 +7360,46 @@ namespace Google.Apis.Books.v1 {
             
             public class MoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _shelf;
                 
-                private string shelf;
+                private string _source;
                 
-                private string source;
+                private string _volumeId;
                 
-                private string volumeId;
-                
-                private long volumePosition;
+                private long _volumePosition;
                 
                 public MoveVolumeRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, string volumeId, long volumePosition) : 
                         base(service) {
-                    this.shelf = shelf;
-                    this.volumeId = volumeId;
-                    this.volumePosition = volumePosition;
+                    this._shelf = shelf;
+                    this._volumeId = volumeId;
+                    this._volumePosition = volumePosition;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5322,29 +7407,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>Id of bookshelf with the volume.</summary>
+                /// <summary>ID of bookshelf with the volume.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
@@ -5352,18 +7426,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
-                /// <summary>Id of volume to move.</summary>
+                /// <summary>ID of volume to move.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                 }
                 
@@ -5371,7 +7445,7 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("volumePosition")]
                 public virtual long VolumePosition {
                     get {
-                        return this.volumePosition;
+                        return this._volumePosition;
                     }
                 }
                 
@@ -5390,45 +7464,43 @@ namespace Google.Apis.Books.v1 {
             
             public class RemoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string country;
+                private string _shelf;
                 
-                private string shelf;
+                private string _source;
                 
-                private string source;
-                
-                private string volumeId;
+                private string _volumeId;
                 
                 public RemoveVolumeRequest(Google.Apis.Discovery.IRequestProvider service, string shelf, string volumeId) : 
                         base(service) {
-                    this.shelf = shelf;
-                    this.volumeId = volumeId;
+                    this._shelf = shelf;
+                    this._volumeId = volumeId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5436,29 +7508,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
-                    }
-                }
-                
-                /// <summary>Id of bookshelf from which to remove a volume.</summary>
+                /// <summary>ID of bookshelf from which to remove a volume.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("shelf")]
                 public virtual string Shelf {
                     get {
-                        return this.shelf;
+                        return this._shelf;
                     }
                 }
                 
@@ -5466,18 +7527,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
-                /// <summary>Id of volume to remove.</summary>
+                /// <summary>ID of volume to remove.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                 }
                 
@@ -5506,13 +7567,13 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Retrieves my reading position information for a volume.</summary>
-            /// <param name="volumeId">Required - Id of volume for which to retrieve a reading position.</param>
+            /// <param name="volumeId">Required - ID of volume for which to retrieve a reading position.</param>
             public virtual GetRequest Get(string volumeId) {
                 return new GetRequest(service, volumeId);
             }
             
             /// <summary>Sets my reading position information for a volume.</summary>
-            /// <param name="volumeId">Required - Id of volume for which to update the reading position.</param>
+            /// <param name="volumeId">Required - ID of volume for which to update the reading position.</param>
             /// <param name="timestamp">Required - RFC 3339 UTC format timestamp associated with this reading position.</param>
             /// <param name="position">Required - Position string for the new volume reading position.</param>
             public virtual SetPositionRequest SetPosition(string volumeId, string timestamp, string position) {
@@ -5550,44 +7611,42 @@ namespace Google.Apis.Books.v1 {
             
             public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.ReadingPosition> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string contentVersion;
+                private string _contentVersion;
                 
-                private string country;
+                private string _source;
                 
-                private string source;
-                
-                private string volumeId;
+                private string _volumeId;
                 
                 public GetRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId) : 
                         base(service) {
-                    this.volumeId = volumeId;
+                    this._volumeId = volumeId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5595,10 +7654,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -5606,21 +7665,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
                 public virtual string ContentVersion {
                     get {
-                        return this.contentVersion;
+                        return this._contentVersion;
                     }
                     set {
-                        this.contentVersion = value;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        this._contentVersion = value;
                     }
                 }
                 
@@ -5628,18 +7676,18 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
-                /// <summary>Id of volume for which to retrieve a reading position.</summary>
+                /// <summary>ID of volume for which to retrieve a reading position.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                 }
                 
@@ -5658,52 +7706,50 @@ namespace Google.Apis.Books.v1 {
             
             public class SetPositionRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private Action? action;
+                private System.Nullable<Action> _action;
                 
-                private string contentVersion;
+                private string _contentVersion;
                 
-                private string country;
+                private string _position;
                 
-                private string position;
+                private string _source;
                 
-                private string source;
+                private string _timestamp;
                 
-                private string timestamp;
-                
-                private string volumeId;
+                private string _volumeId;
                 
                 public SetPositionRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId, string timestamp, string position) : 
                         base(service) {
-                    this.volumeId = volumeId;
-                    this.timestamp = timestamp;
-                    this.position = position;
+                    this._volumeId = volumeId;
+                    this._timestamp = timestamp;
+                    this._position = position;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -5711,21 +7757,21 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
                 /// <summary>Action that caused this reading position to be set.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("action")]
-                public virtual Action? Action {
+                public virtual System.Nullable<Action> Action {
                     get {
-                        return this.action;
+                        return this._action;
                     }
                     set {
-                        this.action = value;
+                        this._action = value;
                     }
                 }
                 
@@ -5733,21 +7779,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
                 public virtual string ContentVersion {
                     get {
-                        return this.contentVersion;
+                        return this._contentVersion;
                     }
                     set {
-                        this.contentVersion = value;
-                    }
-                }
-                
-                /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("country")]
-                public virtual string Country {
-                    get {
-                        return this.country;
-                    }
-                    set {
-                        this.country = value;
+                        this._contentVersion = value;
                     }
                 }
                 
@@ -5755,7 +7790,7 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("position")]
                 public virtual string Position {
                     get {
-                        return this.position;
+                        return this._position;
                     }
                 }
                 
@@ -5763,10 +7798,10 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("source")]
                 public virtual string Source {
                     get {
-                        return this.source;
+                        return this._source;
                     }
                     set {
-                        this.source = value;
+                        this._source = value;
                     }
                 }
                 
@@ -5774,15 +7809,15 @@ namespace Google.Apis.Books.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("timestamp")]
                 public virtual string Timestamp {
                     get {
-                        return this.timestamp;
+                        return this._timestamp;
                     }
                 }
                 
-                /// <summary>Id of volume for which to update the reading position.</summary>
+                /// <summary>ID of volume for which to update the reading position.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("volumeId")]
                 public virtual string VolumeId {
                     get {
-                        return this.volumeId;
+                        return this._volumeId;
                     }
                 }
                 
@@ -5812,7 +7847,7 @@ namespace Google.Apis.Books.v1 {
         }
         
         /// <summary>Gets volume information for a single volume.</summary>
-        /// <param name="volumeId">Required - Id of volume to retrieve.</param>
+        /// <param name="volumeId">Required - ID of volume to retrieve.</param>
         public virtual GetRequest Get(string volumeId) {
             return new GetRequest(service, volumeId);
         }
@@ -5915,46 +7950,44 @@ namespace Google.Apis.Books.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volume> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private string _partner;
             
-            private string partner;
+            private System.Nullable<Projection> _projection;
             
-            private Projection? projection;
+            private string _source;
             
-            private string source;
-            
-            private string volumeId;
+            private string _volumeId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string volumeId) : 
                     base(service) {
-                this.volumeId = volumeId;
+                this._volumeId = volumeId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5962,43 +7995,32 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
-                }
-            }
-            
-            /// <summary>Identifier of partner for whom to brand results.</summary>
+            /// <summary>Brand results for partner ID.</summary>
             [Google.Apis.Util.RequestParameterAttribute("partner")]
             public virtual string Partner {
                 get {
-                    return this.partner;
+                    return this._partner;
                 }
                 set {
-                    this.partner = value;
+                    this._partner = value;
                 }
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
             [Google.Apis.Util.RequestParameterAttribute("projection")]
-            public virtual Projection? Projection {
+            public virtual System.Nullable<Projection> Projection {
                 get {
-                    return this.projection;
+                    return this._projection;
                 }
                 set {
-                    this.projection = value;
+                    this._projection = value;
                 }
             }
             
@@ -6006,18 +8028,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
-            /// <summary>Id of volume to retrieve.</summary>
+            /// <summary>ID of volume to retrieve.</summary>
             [Google.Apis.Util.RequestParameterAttribute("volumeId")]
             public virtual string VolumeId {
                 get {
-                    return this.volumeId;
+                    return this._volumeId;
                 }
             }
             
@@ -6036,64 +8058,62 @@ namespace Google.Apis.Books.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string country;
+            private System.Nullable<Download> _download;
             
-            private Download? download;
+            private System.Nullable<Filter> _filter;
             
-            private Filter? filter;
+            private string _langRestrict;
             
-            private string langRestrict;
+            private System.Nullable<LibraryRestrict> _libraryRestrict;
             
-            private LibraryRestrict? libraryRestrict;
+            private System.Nullable<long> _maxResults;
             
-            private System.Int64? maxResults;
+            private System.Nullable<OrderBy> _orderBy;
             
-            private OrderBy? orderBy;
+            private string _partner;
             
-            private string partner;
+            private System.Nullable<PrintType> _printType;
             
-            private PrintType? printType;
+            private System.Nullable<Projection> _projection;
             
-            private Projection? projection;
+            private string _q;
             
-            private string q;
+            private System.Nullable<bool> _showPreorders;
             
-            private System.Boolean? showPreorders;
+            private string _source;
             
-            private string source;
-            
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
                     base(service) {
-                this.q = q;
+                this._q = q;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -6101,43 +8121,32 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
-                }
-            }
-            
-            /// <summary>ISO-3166-1 code to override the IP-based location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
-            public virtual string Country {
-                get {
-                    return this.country;
-                }
-                set {
-                    this.country = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Restrict to volumes by download availability.</summary>
             [Google.Apis.Util.RequestParameterAttribute("download")]
-            public virtual Download? Download {
+            public virtual System.Nullable<Download> Download {
                 get {
-                    return this.download;
+                    return this._download;
                 }
                 set {
-                    this.download = value;
+                    this._download = value;
                 }
             }
             
             /// <summary>Filter search results.</summary>
             [Google.Apis.Util.RequestParameterAttribute("filter")]
-            public virtual Filter? Filter {
+            public virtual System.Nullable<Filter> Filter {
                 get {
-                    return this.filter;
+                    return this._filter;
                 }
                 set {
-                    this.filter = value;
+                    this._filter = value;
                 }
             }
             
@@ -6145,76 +8154,76 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("langRestrict")]
             public virtual string LangRestrict {
                 get {
-                    return this.langRestrict;
+                    return this._langRestrict;
                 }
                 set {
-                    this.langRestrict = value;
+                    this._langRestrict = value;
                 }
             }
             
             /// <summary>Restrict search to this user's library.</summary>
             [Google.Apis.Util.RequestParameterAttribute("libraryRestrict")]
-            public virtual LibraryRestrict? LibraryRestrict {
+            public virtual System.Nullable<LibraryRestrict> LibraryRestrict {
                 get {
-                    return this.libraryRestrict;
+                    return this._libraryRestrict;
                 }
                 set {
-                    this.libraryRestrict = value;
+                    this._libraryRestrict = value;
                 }
             }
             
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>Sort search results.</summary>
             [Google.Apis.Util.RequestParameterAttribute("orderBy")]
-            public virtual OrderBy? OrderBy {
+            public virtual System.Nullable<OrderBy> OrderBy {
                 get {
-                    return this.orderBy;
+                    return this._orderBy;
                 }
                 set {
-                    this.orderBy = value;
+                    this._orderBy = value;
                 }
             }
             
-            /// <summary>Identifier of partner for whom to restrict and brand results.</summary>
+            /// <summary>Restrict and brand results for partner ID.</summary>
             [Google.Apis.Util.RequestParameterAttribute("partner")]
             public virtual string Partner {
                 get {
-                    return this.partner;
+                    return this._partner;
                 }
                 set {
-                    this.partner = value;
+                    this._partner = value;
                 }
             }
             
             /// <summary>Restrict to books or magazines.</summary>
             [Google.Apis.Util.RequestParameterAttribute("printType")]
-            public virtual PrintType? PrintType {
+            public virtual System.Nullable<PrintType> PrintType {
                 get {
-                    return this.printType;
+                    return this._printType;
                 }
                 set {
-                    this.printType = value;
+                    this._printType = value;
                 }
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
             [Google.Apis.Util.RequestParameterAttribute("projection")]
-            public virtual Projection? Projection {
+            public virtual System.Nullable<Projection> Projection {
                 get {
-                    return this.projection;
+                    return this._projection;
                 }
                 set {
-                    this.projection = value;
+                    this._projection = value;
                 }
             }
             
@@ -6222,18 +8231,18 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
             }
             
             /// <summary>Set to true to show books available for preorder. Defaults to false.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
-            public virtual System.Boolean? ShowPreorders {
+            public virtual System.Nullable<bool> ShowPreorders {
                 get {
-                    return this.showPreorders;
+                    return this._showPreorders;
                 }
                 set {
-                    this.showPreorders = value;
+                    this._showPreorders = value;
                 }
             }
             
@@ -6241,21 +8250,21 @@ namespace Google.Apis.Books.v1 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
             /// <summary>Index of the first result to return (starts at 0)</summary>
             [Google.Apis.Util.RequestParameterAttribute("startIndex")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -6277,13 +8286,15 @@ namespace Google.Apis.Books.v1 {
         
         private const string Resource = "";
         
-        private BookshelvesResource bookshelves;
+        private BookshelvesResource _bookshelves;
         
-        private MyconfigResource myconfig;
+        private LayersResource _layers;
         
-        private MylibraryResource mylibrary;
+        private MyconfigResource _myconfig;
         
-        private VolumesResource volumes;
+        private MylibraryResource _mylibrary;
+        
+        private VolumesResource _volumes;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -6293,25 +8304,31 @@ namespace Google.Apis.Books.v1 {
         
         public virtual BookshelvesResource Bookshelves {
             get {
-                return this.bookshelves;
+                return this._bookshelves;
+            }
+        }
+        
+        public virtual LayersResource Layers {
+            get {
+                return this._layers;
             }
         }
         
         public virtual MyconfigResource Myconfig {
             get {
-                return this.myconfig;
+                return this._myconfig;
             }
         }
         
         public virtual MylibraryResource Mylibrary {
             get {
-                return this.mylibrary;
+                return this._mylibrary;
             }
         }
         
         public virtual VolumesResource Volumes {
             get {
-                return this.volumes;
+                return this._volumes;
             }
         }
     }

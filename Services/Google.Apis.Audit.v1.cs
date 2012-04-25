@@ -16,24 +16,24 @@ namespace Google.Apis.Audit.v1.Data {
     
     public class Activities : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Activity> items;
+        private System.Collections.Generic.IList<Activity> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string next;
+        private string _next;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Each record in read response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Activity> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -41,10 +41,10 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -52,55 +52,55 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("next")]
         public virtual string Next {
             get {
-                return this.next;
+                return this._next;
             }
             set {
-                this.next = value;
+                this._next = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Activity {
         
-        private Activity.ActorData actor;
+        private Activity.ActorData _actor;
         
-        private System.Collections.Generic.IList<Activity.EventsData> events;
+        private System.Collections.Generic.IList<Activity.EventsData> _events;
         
-        private Activity.IdData id;
+        private Activity.IdData _id;
         
-        private string ipAddress;
+        private string _ipAddress;
         
-        private string kind;
+        private string _kind;
         
-        private string ownerDomain;
+        private string _ownerDomain;
         
         /// <summary>User doing the action.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("actor")]
         public virtual Activity.ActorData Actor {
             get {
-                return this.actor;
+                return this._actor;
             }
             set {
-                this.actor = value;
+                this._actor = value;
             }
         }
         
@@ -108,10 +108,10 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("events")]
         public virtual System.Collections.Generic.IList<Activity.EventsData> Events {
             get {
-                return this.events;
+                return this._events;
             }
             set {
-                this.events = value;
+                this._events = value;
             }
         }
         
@@ -119,10 +119,10 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Activity.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -130,10 +130,10 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("ipAddress")]
         public virtual string IpAddress {
             get {
-                return this.ipAddress;
+                return this._ipAddress;
             }
             set {
-                this.ipAddress = value;
+                this._ipAddress = value;
             }
         }
         
@@ -141,10 +141,10 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -152,32 +152,32 @@ namespace Google.Apis.Audit.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("ownerDomain")]
         public virtual string OwnerDomain {
             get {
-                return this.ownerDomain;
+                return this._ownerDomain;
             }
             set {
-                this.ownerDomain = value;
+                this._ownerDomain = value;
             }
         }
         
         /// <summary>User doing the action.</summary>
         public class ActorData {
             
-            private string applicationId;
+            private string _applicationId;
             
-            private string callerType;
+            private string _callerType;
             
-            private string email;
+            private string _email;
             
-            private string key;
+            private string _key;
             
             /// <summary>ID of application which interacted on behalf of the user.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("applicationId")]
             public virtual string ApplicationId {
                 get {
-                    return this.applicationId;
+                    return this._applicationId;
                 }
                 set {
-                    this.applicationId = value;
+                    this._applicationId = value;
                 }
             }
             
@@ -185,10 +185,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("callerType")]
             public virtual string CallerType {
                 get {
-                    return this.callerType;
+                    return this._callerType;
                 }
                 set {
-                    this.callerType = value;
+                    this._callerType = value;
                 }
             }
             
@@ -196,10 +196,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("email")]
             public virtual string Email {
                 get {
-                    return this.email;
+                    return this._email;
                 }
                 set {
-                    this.email = value;
+                    this._email = value;
                 }
             }
             
@@ -207,30 +207,30 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("key")]
             public virtual string Key {
                 get {
-                    return this.key;
+                    return this._key;
                 }
                 set {
-                    this.key = value;
+                    this._key = value;
                 }
             }
         }
         
         public class EventsData {
             
-            private string eventType;
+            private string _eventType;
             
-            private string name;
+            private string _name;
             
-            private System.Collections.Generic.IList<EventsData.ParametersData> parameters;
+            private System.Collections.Generic.IList<EventsData.ParametersData> _parameters;
             
             /// <summary>Type of event.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("eventType")]
             public virtual string EventType {
                 get {
-                    return this.eventType;
+                    return this._eventType;
                 }
                 set {
-                    this.eventType = value;
+                    this._eventType = value;
                 }
             }
             
@@ -238,10 +238,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("name")]
             public virtual string Name {
                 get {
-                    return this.name;
+                    return this._name;
                 }
                 set {
-                    this.name = value;
+                    this._name = value;
                 }
             }
             
@@ -249,27 +249,27 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("parameters")]
             public virtual System.Collections.Generic.IList<EventsData.ParametersData> Parameters {
                 get {
-                    return this.parameters;
+                    return this._parameters;
                 }
                 set {
-                    this.parameters = value;
+                    this._parameters = value;
                 }
             }
             
             public class ParametersData {
                 
-                private string name;
+                private string _name;
                 
-                private string value;
+                private string _value;
                 
                 /// <summary>Name of the parameter.</summary>
                 [Newtonsoft.Json.JsonPropertyAttribute("name")]
                 public virtual string Name {
                     get {
-                        return this.name;
+                        return this._name;
                     }
                     set {
-                        this.name = value;
+                        this._name = value;
                     }
                 }
                 
@@ -277,10 +277,10 @@ namespace Google.Apis.Audit.v1.Data {
                 [Newtonsoft.Json.JsonPropertyAttribute("value")]
                 public virtual string Value {
                     get {
-                        return this.value;
+                        return this._value;
                     }
                     set {
-                        this.value = value;
+                        this._value = value;
                     }
                 }
             }
@@ -289,22 +289,22 @@ namespace Google.Apis.Audit.v1.Data {
         /// <summary>Unique identifier for each activity record.</summary>
         public class IdData {
             
-            private string applicationId;
+            private string _applicationId;
             
-            private string customerId;
+            private string _customerId;
             
-            private string time;
+            private string _time;
             
-            private string uniqQualifier;
+            private string _uniqQualifier;
             
             /// <summary>Application ID of the source application.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("applicationId")]
             public virtual string ApplicationId {
                 get {
-                    return this.applicationId;
+                    return this._applicationId;
                 }
                 set {
-                    this.applicationId = value;
+                    this._applicationId = value;
                 }
             }
             
@@ -312,10 +312,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("customerId")]
             public virtual string CustomerId {
                 get {
-                    return this.customerId;
+                    return this._customerId;
                 }
                 set {
-                    this.customerId = value;
+                    this._customerId = value;
                 }
             }
             
@@ -323,10 +323,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("time")]
             public virtual string Time {
                 get {
-                    return this.time;
+                    return this._time;
                 }
                 set {
-                    this.time = value;
+                    this._time = value;
                 }
             }
             
@@ -334,10 +334,10 @@ namespace Google.Apis.Audit.v1.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("uniqQualifier")]
             public virtual string UniqQualifier {
                 get {
-                    return this.uniqQualifier;
+                    return this._uniqQualifier;
                 }
                 set {
-                    this.uniqQualifier = value;
+                    this._uniqQualifier = value;
                 }
             }
         }
@@ -364,75 +364,76 @@ namespace Google.Apis.Audit.v1 {
             "earch-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"}," +
             "\"documentationLink\":\"http://code.google.com/googleapps/domain/audit_admin/v1/get" +
             "ting_started.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/apps/" +
-            "reporting/audit/v1/\",\"basePath\":\"/apps/reporting/audit/v1/\",\"parameters\":{\"alt\":" +
-            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
-            "\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of appli" +
-            "cation/atom+xml\",\"Responses with Content-Type of application/json\"],\"location\":\"" +
-            "query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which field" +
-            "s to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\"," +
-            "\"description\":\"API key. Your API key identifies your project and provides you wi" +
-            "th API access, quota, and reports. Required unless you provide an OAuth 2.0 toke" +
-            "n.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 " +
-            "token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\"" +
-            ",\"description\":\"Returns response with indentations and line breaks.\",\"default\":\"" +
-            "true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available " +
-            "to use for quota purposes for server-side applications. Can be any arbitrary str" +
-            "ing assigned to a user, but should not exceed 40 characters. Overrides userIp if" +
-            " both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\"" +
-            ":\"IP address of the site where the request originates. Use this if you want to e" +
-            "nforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Activities\":{\"id\":\"Act" +
-            "ivities\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"Ea" +
-            "ch record in read response.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string" +
-            "\",\"description\":\"Kind of list response this is.\",\"default\":\"audit#activities\"},\"" +
-            "next\":{\"type\":\"string\",\"description\":\"Next page URL.\"}}},\"Activity\":{\"id\":\"Activ" +
-            "ity\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"object\",\"description\":\"User " +
-            "doing the action.\",\"properties\":{\"applicationId\":{\"type\":\"string\",\"description\":" +
-            "\"ID of application which interacted on behalf of the user.\",\"format\":\"int64\"},\"c" +
-            "allerType\":{\"type\":\"string\",\"description\":\"User or OAuth 2LO request.\"},\"email\":" +
-            "{\"type\":\"string\",\"description\":\"Email address of the user.\"},\"key\":{\"type\":\"stri" +
-            "ng\",\"description\":\"For OAuth 2LO API requests, consumer_key of the requestor.\"}}" +
-            "},\"events\":{\"type\":\"array\",\"description\":\"Activity events.\",\"items\":{\"type\":\"obj" +
-            "ect\",\"properties\":{\"eventType\":{\"type\":\"string\",\"description\":\"Type of event.\"}," +
-            "\"name\":{\"type\":\"string\",\"description\":\"Name of event.\"},\"parameters\":{\"type\":\"ar" +
-            "ray\",\"description\":\"Event parameters.\",\"items\":{\"type\":\"object\",\"properties\":{\"n" +
-            "ame\":{\"type\":\"string\",\"description\":\"Name of the parameter.\"},\"value\":{\"type\":\"s" +
-            "tring\",\"description\":\"Value of the parameter.\"}}}}}}},\"id\":{\"type\":\"object\",\"des" +
-            "cription\":\"Unique identifier for each activity record.\",\"properties\":{\"applicati" +
-            "onId\":{\"type\":\"string\",\"description\":\"Application ID of the source application.\"" +
-            ",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"description\":\"Obfuscated custo" +
-            "mer ID of the source customer.\"},\"time\":{\"type\":\"string\",\"description\":\"Time of " +
-            "occurrence of the activity.\",\"format\":\"date-time\"},\"uniqQualifier\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Unique qualifier if multiple events have the same time.\",\"for" +
-            "mat\":\"int64\"}}},\"ipAddress\":{\"type\":\"string\",\"description\":\"IP Address of the us" +
-            "er doing the action.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of resource t" +
-            "his is.\",\"default\":\"audit#activity\"},\"ownerDomain\":{\"type\":\"string\",\"description" +
-            "\":\"Domain of source customer.\"}}}},\"resources\":{\"activities\":{\"methods\":{\"list\":" +
-            "{\"id\":\"audit.activities.list\",\"path\":\"{customerId}/{applicationId}\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Retrieves a list of activities for a specific customer and" +
-            " application.\",\"parameters\":{\"actorApplicationId\":{\"type\":\"string\",\"description\"" +
-            ":\"Application ID of the application which interacted on behalf of the user while" +
-            " performing the event.\",\"format\":\"int64\",\"location\":\"query\"},\"actorEmail\":{\"type" +
-            "\":\"string\",\"description\":\"Email address of the user who performed the action.\",\"" +
-            "location\":\"query\"},\"actorIpAddress\":{\"type\":\"string\",\"description\":\"IP Address o" +
-            "f host where the event was performed. Supports both IPv4 and IPv6 addresses.\",\"l" +
-            "ocation\":\"query\"},\"applicationId\":{\"type\":\"string\",\"description\":\"Application ID" +
-            " of the application on which the event was performed.\",\"required\":true,\"format\":" +
-            "\"int64\",\"location\":\"path\"},\"caller\":{\"type\":\"string\",\"description\":\"Type of the " +
-            "caller.\",\"enum\":[\"application_owner\",\"customer\"],\"enumDescriptions\":[\"Caller is " +
-            "an application owner.\",\"Caller is a customer.\"],\"location\":\"query\"},\"continuatio" +
-            "nToken\":{\"type\":\"string\",\"description\":\"Next page URL.\",\"location\":\"query\"},\"cus" +
-            "tomerId\":{\"type\":\"string\",\"description\":\"Represents the customer who is the owne" +
-            "r of target object on which action was performed.\",\"required\":true,\"pattern\":\"C." +
-            "+\",\"location\":\"path\"},\"endTime\":{\"type\":\"string\",\"description\":\"Return events wh" +
-            "ich occured at or before this time.\",\"location\":\"query\"},\"eventName\":{\"type\":\"st" +
-            "ring\",\"description\":\"Name of the event being queried.\",\"location\":\"query\"},\"maxR" +
-            "esults\":{\"type\":\"integer\",\"description\":\"Number of activity records to be shown " +
-            "in each page.\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"1000\",\"location\":\"query" +
-            "\"},\"parameters\":{\"type\":\"string\",\"description\":\"Event parameters in the form [pa" +
-            "rameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...\",\"loc" +
-            "ation\":\"query\"},\"startTime\":{\"type\":\"string\",\"description\":\"Return events which " +
-            "occured at or after this time.\",\"location\":\"query\"}},\"parameterOrder\":[\"customer" +
-            "Id\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
+            "reporting/audit/v1/\",\"basePath\":\"/apps/reporting/audit/v1/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"apps/reporting/audit/v1/\",\"batchPath\":\"batch\"" +
+            ",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the respons" +
+            "e.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Responses with " +
+            "Content-Type of application/atom+xml\",\"Responses with Content-Type of applicatio" +
+            "n/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector s" +
+            "pecifying which fields to include in a partial response.\",\"location\":\"query\"},\"k" +
+            "ey\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your projec" +
+            "t and provides you with API access, quota, and reports. Required unless you prov" +
+            "ide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"des" +
+            "cription\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPri" +
+            "nt\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line" +
+            " breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"des" +
+            "cription\":\"Available to use for quota purposes for server-side applications. Can" +
+            " be any arbitrary string assigned to a user, but should not exceed 40 characters" +
+            ". Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"" +
+            "string\",\"description\":\"IP address of the site where the request originates. Use " +
+            "this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"A" +
+            "ctivities\":{\"id\":\"Activities\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arr" +
+            "ay\",\"description\":\"Each record in read response.\",\"items\":{\"$ref\":\"Activity\"}},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Kind of list response this is.\",\"default\":" +
+            "\"audit#activities\"},\"next\":{\"type\":\"string\",\"description\":\"Next page URL.\"}}},\"A" +
+            "ctivity\":{\"id\":\"Activity\",\"type\":\"object\",\"properties\":{\"actor\":{\"type\":\"object\"" +
+            ",\"description\":\"User doing the action.\",\"properties\":{\"applicationId\":{\"type\":\"s" +
+            "tring\",\"description\":\"ID of application which interacted on behalf of the user.\"" +
+            ",\"format\":\"int64\"},\"callerType\":{\"type\":\"string\",\"description\":\"User or OAuth 2L" +
+            "O request.\"},\"email\":{\"type\":\"string\",\"description\":\"Email address of the user.\"" +
+            "},\"key\":{\"type\":\"string\",\"description\":\"For OAuth 2LO API requests, consumer_key" +
+            " of the requestor.\"}}},\"events\":{\"type\":\"array\",\"description\":\"Activity events.\"" +
+            ",\"items\":{\"type\":\"object\",\"properties\":{\"eventType\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Type of event.\"},\"name\":{\"type\":\"string\",\"description\":\"Name of event.\"},\"pa" +
+            "rameters\":{\"type\":\"array\",\"description\":\"Event parameters.\",\"items\":{\"type\":\"obj" +
+            "ect\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"Name of the parameter." +
+            "\"},\"value\":{\"type\":\"string\",\"description\":\"Value of the parameter.\"}}}}}}},\"id\":" +
+            "{\"type\":\"object\",\"description\":\"Unique identifier for each activity record.\",\"pr" +
+            "operties\":{\"applicationId\":{\"type\":\"string\",\"description\":\"Application ID of the" +
+            " source application.\",\"format\":\"int64\"},\"customerId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Obfuscated customer ID of the source customer.\"},\"time\":{\"type\":\"string\",\"d" +
+            "escription\":\"Time of occurrence of the activity.\",\"format\":\"date-time\"},\"uniqQua" +
+            "lifier\":{\"type\":\"string\",\"description\":\"Unique qualifier if multiple events have" +
+            " the same time.\",\"format\":\"int64\"}}},\"ipAddress\":{\"type\":\"string\",\"description\":" +
+            "\"IP Address of the user doing the action.\"},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"Kind of resource this is.\",\"default\":\"audit#activity\"},\"ownerDomain\":{\"type\":" +
+            "\"string\",\"description\":\"Domain of source customer.\"}}}},\"resources\":{\"activities" +
+            "\":{\"methods\":{\"list\":{\"id\":\"audit.activities.list\",\"path\":\"{customerId}/{applica" +
+            "tionId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of activities for a " +
+            "specific customer and application.\",\"parameters\":{\"actorApplicationId\":{\"type\":\"" +
+            "string\",\"description\":\"Application ID of the application which interacted on beh" +
+            "alf of the user while performing the event.\",\"format\":\"int64\",\"location\":\"query\"" +
+            "},\"actorEmail\":{\"type\":\"string\",\"description\":\"Email address of the user who per" +
+            "formed the action.\",\"location\":\"query\"},\"actorIpAddress\":{\"type\":\"string\",\"descr" +
+            "iption\":\"IP Address of host where the event was performed. Supports both IPv4 an" +
+            "d IPv6 addresses.\",\"location\":\"query\"},\"applicationId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Application ID of the application on which the event was performed.\",\"req" +
+            "uired\":true,\"format\":\"int64\",\"location\":\"path\"},\"caller\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Type of the caller.\",\"enum\":[\"application_owner\",\"customer\"],\"enumDescr" +
+            "iptions\":[\"Caller is an application owner.\",\"Caller is a customer.\"],\"location\":" +
+            "\"query\"},\"continuationToken\":{\"type\":\"string\",\"description\":\"Next page URL.\",\"lo" +
+            "cation\":\"query\"},\"customerId\":{\"type\":\"string\",\"description\":\"Represents the cus" +
+            "tomer who is the owner of target object on which action was performed.\",\"require" +
+            "d\":true,\"pattern\":\"C.+\",\"location\":\"path\"},\"endTime\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Return events which occured at or before this time.\",\"location\":\"query\"},\"e" +
+            "ventName\":{\"type\":\"string\",\"description\":\"Name of the event being queried.\",\"loc" +
+            "ation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Number of activity" +
+            " records to be shown in each page.\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"10" +
+            "00\",\"location\":\"query\"},\"parameters\":{\"type\":\"string\",\"description\":\"Event param" +
+            "eters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parame" +
+            "ter2 value],...\",\"location\":\"query\"},\"startTime\":{\"type\":\"string\",\"description\":" +
+            "\"Return events which occured at or after this time.\",\"location\":\"query\"}},\"param" +
+            "eterOrder\":[\"customerId\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
         
         private const string Version = "v1";
         
@@ -442,12 +443,12 @@ namespace Google.Apis.Audit.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected AuditService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.activities = new ActivitiesResource(this);
+            this._activities = new ActivitiesResource(this);
         }
         
         public AuditService() : 
@@ -455,22 +456,22 @@ namespace Google.Apis.Audit.v1 {
         }
         
         public AuditService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AuditService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(AuditService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AuditService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AuditService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -522,61 +523,61 @@ namespace Google.Apis.Audit.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string actorApplicationId;
+            private string _actorApplicationId;
             
-            private string actorEmail;
+            private string _actorEmail;
             
-            private string actorIpAddress;
+            private string _actorIpAddress;
             
-            private string applicationId;
+            private string _applicationId;
             
-            private Caller? caller;
+            private System.Nullable<Caller> _caller;
             
-            private string continuationToken;
+            private string _continuationToken;
             
-            private string customerId;
+            private string _customerId;
             
-            private string endTime;
+            private string _endTime;
             
-            private string eventName;
+            private string _eventName;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string parameters;
+            private string _parameters;
             
-            private string startTime;
+            private string _startTime;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string customerId, string applicationId) : 
                     base(service) {
-                this.customerId = customerId;
-                this.applicationId = applicationId;
+                this._customerId = customerId;
+                this._applicationId = applicationId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -584,10 +585,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -595,10 +596,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("actorApplicationId")]
             public virtual string ActorApplicationId {
                 get {
-                    return this.actorApplicationId;
+                    return this._actorApplicationId;
                 }
                 set {
-                    this.actorApplicationId = value;
+                    this._actorApplicationId = value;
                 }
             }
             
@@ -606,10 +607,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("actorEmail")]
             public virtual string ActorEmail {
                 get {
-                    return this.actorEmail;
+                    return this._actorEmail;
                 }
                 set {
-                    this.actorEmail = value;
+                    this._actorEmail = value;
                 }
             }
             
@@ -617,10 +618,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("actorIpAddress")]
             public virtual string ActorIpAddress {
                 get {
-                    return this.actorIpAddress;
+                    return this._actorIpAddress;
                 }
                 set {
-                    this.actorIpAddress = value;
+                    this._actorIpAddress = value;
                 }
             }
             
@@ -628,18 +629,18 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("applicationId")]
             public virtual string ApplicationId {
                 get {
-                    return this.applicationId;
+                    return this._applicationId;
                 }
             }
             
             /// <summary>Type of the caller.</summary>
             [Google.Apis.Util.RequestParameterAttribute("caller")]
-            public virtual Caller? Caller {
+            public virtual System.Nullable<Caller> Caller {
                 get {
-                    return this.caller;
+                    return this._caller;
                 }
                 set {
-                    this.caller = value;
+                    this._caller = value;
                 }
             }
             
@@ -647,10 +648,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("continuationToken")]
             public virtual string ContinuationToken {
                 get {
-                    return this.continuationToken;
+                    return this._continuationToken;
                 }
                 set {
-                    this.continuationToken = value;
+                    this._continuationToken = value;
                 }
             }
             
@@ -658,7 +659,7 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("customerId")]
             public virtual string CustomerId {
                 get {
-                    return this.customerId;
+                    return this._customerId;
                 }
             }
             
@@ -666,10 +667,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("endTime")]
             public virtual string EndTime {
                 get {
-                    return this.endTime;
+                    return this._endTime;
                 }
                 set {
-                    this.endTime = value;
+                    this._endTime = value;
                 }
             }
             
@@ -677,21 +678,21 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("eventName")]
             public virtual string EventName {
                 get {
-                    return this.eventName;
+                    return this._eventName;
                 }
                 set {
-                    this.eventName = value;
+                    this._eventName = value;
                 }
             }
             
             /// <summary>Number of activity records to be shown in each page.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -699,10 +700,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("parameters")]
             public virtual string Parameters {
                 get {
-                    return this.parameters;
+                    return this._parameters;
                 }
                 set {
-                    this.parameters = value;
+                    this._parameters = value;
                 }
             }
             
@@ -710,10 +711,10 @@ namespace Google.Apis.Audit.v1 {
             [Google.Apis.Util.RequestParameterAttribute("startTime")]
             public virtual string StartTime {
                 get {
-                    return this.startTime;
+                    return this._startTime;
                 }
                 set {
-                    this.startTime = value;
+                    this._startTime = value;
                 }
             }
             
@@ -735,7 +736,7 @@ namespace Google.Apis.Audit.v1 {
         
         private const string Resource = "";
         
-        private ActivitiesResource activities;
+        private ActivitiesResource _activities;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -745,7 +746,7 @@ namespace Google.Apis.Audit.v1 {
         
         public virtual ActivitiesResource Activities {
             get {
-                return this.activities;
+                return this._activities;
             }
         }
     }

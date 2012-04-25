@@ -231,10 +231,6 @@
         <member name="P:Google.Apis.Bigquery.v2beta1.DatasetsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
-        <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Delete(System.String,System.String)">
-            <param name="projectId">Required</param>
-            <param name="jobId">Required</param>
-        </member>
         <member name="M:Google.Apis.Bigquery.v2beta1.JobsResource.Get(System.String,System.String)">
             <param name="projectId">Required</param>
             <param name="jobId">Required</param>
@@ -272,15 +268,6 @@
         </member>
         <member name="F:Google.Apis.Bigquery.v2beta1.JobsResource.StateFilter.Running">
             <summary>running jobs</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2beta1.JobsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

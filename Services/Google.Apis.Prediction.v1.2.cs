@@ -16,29 +16,29 @@ namespace Google.Apis.Prediction.v1_2.Data {
     
     public class Input {
         
-        private Input.InputData input;
+        private Input.InputData _input;
         
         [Newtonsoft.Json.JsonPropertyAttribute("input")]
         public virtual Input.InputData InputValue {
             get {
-                return this.input;
+                return this._input;
             }
             set {
-                this.input = value;
+                this._input = value;
             }
         }
         
         public class InputData {
             
-            private System.Collections.Generic.IList<string> csvInstance;
+            private System.Collections.Generic.IList<string> _csvInstance;
             
             [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
             public virtual System.Collections.Generic.IList<string> CsvInstance {
                 get {
-                    return this.csvInstance;
+                    return this._csvInstance;
                 }
                 set {
-                    this.csvInstance = value;
+                    this._csvInstance = value;
                 }
             }
         }
@@ -46,124 +46,124 @@ namespace Google.Apis.Prediction.v1_2.Data {
     
     public class Output : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string outputLabel;
+        private string _outputLabel;
         
-        private System.Collections.Generic.IList<Output.OutputMultiData> outputMulti;
+        private System.Collections.Generic.IList<Output.OutputMultiData> _outputMulti;
         
-        private System.Nullable<double> outputValue;
+        private System.Nullable<double> _outputValue;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputLabel")]
         public virtual string OutputLabel {
             get {
-                return this.outputLabel;
+                return this._outputLabel;
             }
             set {
-                this.outputLabel = value;
+                this._outputLabel = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputMulti")]
         public virtual System.Collections.Generic.IList<Output.OutputMultiData> OutputMulti {
             get {
-                return this.outputMulti;
+                return this._outputMulti;
             }
             set {
-                this.outputMulti = value;
+                this._outputMulti = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("outputValue")]
         public virtual System.Nullable<double> OutputValue {
             get {
-                return this.outputValue;
+                return this._outputValue;
             }
             set {
-                this.outputValue = value;
+                this._outputValue = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class OutputMultiData {
             
-            private string label;
+            private string _label;
             
-            private System.Nullable<double> score;
+            private System.Nullable<double> _score;
             
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
             public virtual string Label {
                 get {
-                    return this.label;
+                    return this._label;
                 }
                 set {
-                    this.label = value;
+                    this._label = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("score")]
             public virtual System.Nullable<double> Score {
                 get {
-                    return this.score;
+                    return this._score;
                 }
                 set {
-                    this.score = value;
+                    this._score = value;
                 }
             }
         }
@@ -171,124 +171,124 @@ namespace Google.Apis.Prediction.v1_2.Data {
     
     public class Training : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Training.ModelInfoData modelInfo;
+        private Training.ModelInfoData _modelInfo;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string trainingStatus;
+        private string _trainingStatus;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("modelInfo")]
         public virtual Training.ModelInfoData ModelInfo {
             get {
-                return this.modelInfo;
+                return this._modelInfo;
             }
             set {
-                this.modelInfo = value;
+                this._modelInfo = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("trainingStatus")]
         public virtual string TrainingStatus {
             get {
-                return this.trainingStatus;
+                return this._trainingStatus;
             }
             set {
-                this.trainingStatus = value;
+                this._trainingStatus = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class ModelInfoData {
             
-            private System.Nullable<double> classificationAccuracy;
+            private System.Nullable<double> _classificationAccuracy;
             
-            private System.Nullable<double> meanSquaredError;
+            private System.Nullable<double> _meanSquaredError;
             
-            private string modelType;
+            private string _modelType;
             
             [Newtonsoft.Json.JsonPropertyAttribute("classificationAccuracy")]
             public virtual System.Nullable<double> ClassificationAccuracy {
                 get {
-                    return this.classificationAccuracy;
+                    return this._classificationAccuracy;
                 }
                 set {
-                    this.classificationAccuracy = value;
+                    this._classificationAccuracy = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("meanSquaredError")]
             public virtual System.Nullable<double> MeanSquaredError {
                 get {
-                    return this.meanSquaredError;
+                    return this._meanSquaredError;
                 }
                 set {
-                    this.meanSquaredError = value;
+                    this._meanSquaredError = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("modelType")]
             public virtual string ModelType {
                 get {
-                    return this.modelType;
+                    return this._modelType;
                 }
                 set {
-                    this.modelType = value;
+                    this._modelType = value;
                 }
             }
         }
@@ -296,18 +296,18 @@ namespace Google.Apis.Prediction.v1_2.Data {
     
     public class Update {
         
-        private string classLabel;
+        private string _classLabel;
         
-        private System.Collections.Generic.IList<string> csvInstance;
+        private System.Collections.Generic.IList<string> _csvInstance;
         
         /// <summary>The true class label of this instance</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("classLabel")]
         public virtual string ClassLabel {
             get {
-                return this.classLabel;
+                return this._classLabel;
             }
             set {
-                this.classLabel = value;
+                this._classLabel = value;
             }
         }
         
@@ -315,10 +315,10 @@ namespace Google.Apis.Prediction.v1_2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
         public virtual System.Collections.Generic.IList<string> CsvInstance {
             get {
-                return this.csvInstance;
+                return this._csvInstance;
             }
             set {
-                this.csvInstance = value;
+                this._csvInstance = value;
             }
         }
     }
@@ -338,76 +338,79 @@ namespace Google.Apis.Prediction.v1_2 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.2" +
-            "\",\"name\":\"prediction\",\"version\":\"v1.2\",\"revision\":\"20120227\",\"title\":\"Prediction" +
+            "\",\"name\":\"prediction\",\"version\":\"v1.2\",\"revision\":\"20120423\",\"title\":\"Prediction" +
             " API\",\"description\":\"Lets you access a cloud hosted machine learning service tha" +
             "t makes it easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/image" +
             "s/icons/feature/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/" +
             "feature/predictionapi-32.png\"},\"documentationLink\":\"http://code.google.com/apis/" +
             "predict/docs/developer-guide.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/prediction/v1.2/\",\"basePath\":\"/prediction/v1.2/\",\"parameters\":{\"alt\":" +
-            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
-            "\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/" +
-            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
-            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
-            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
-            "and provides you with API access, quota, and reports. Required unless you provid" +
-            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
-            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
-            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
-            "reaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Available to use for quota purposes for server-side applications. Can b" +
-            "e any arbitrary string assigned to a user, but should not exceed 40 characters. " +
-            "Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"st" +
-            "ring\",\"description\":\"IP address of the site where the request originates. Use th" +
-            "is if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2" +
-            "\":{\"scopes\":{\"https://www.googleapis.com/auth/prediction\":{\"description\":\"Manage" +
-            " your data in the Google Prediction API\"}}}},\"schemas\":{\"Input\":{\"id\":\"Input\",\"t" +
-            "ype\":\"object\",\"properties\":{\"input\":{\"type\":\"object\",\"properties\":{\"csvInstance\"" +
-            ":{\"type\":\"array\",\"items\":{\"type\":\"any\"}}}}}},\"Output\":{\"id\":\"Output\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"id\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"pre" +
-            "diction#output\"},\"outputLabel\":{\"type\":\"string\"},\"outputMulti\":{\"type\":\"array\",\"" +
-            "items\":{\"type\":\"object\",\"properties\":{\"label\":{\"type\":\"string\"},\"score\":{\"type\":" +
-            "\"number\",\"format\":\"double\"}}}},\"outputValue\":{\"type\":\"number\",\"format\":\"double\"}" +
-            ",\"selfLink\":{\"type\":\"string\"}}},\"Training\":{\"id\":\"Training\",\"type\":\"object\",\"pro" +
-            "perties\":{\"id\":{\"type\":\"string\"},\"kind\":{\"type\":\"string\",\"default\":\"prediction#t" +
-            "raining\"},\"modelInfo\":{\"type\":\"object\",\"properties\":{\"classificationAccuracy\":{\"" +
-            "type\":\"number\",\"format\":\"double\"},\"meanSquaredError\":{\"type\":\"number\",\"format\":\"" +
-            "double\"},\"modelType\":{\"type\":\"string\"}}},\"selfLink\":{\"type\":\"string\"},\"trainingS" +
-            "tatus\":{\"type\":\"string\"}}},\"Update\":{\"id\":\"Update\",\"type\":\"object\",\"properties\":" +
-            "{\"classLabel\":{\"type\":\"string\",\"description\":\"The true class label of this insta" +
-            "nce\"},\"csvInstance\":{\"type\":\"array\",\"description\":\"The input features for this i" +
-            "nstance\",\"items\":{\"type\":\"any\"}}}}},\"methods\":{\"predict\":{\"id\":\"prediction.predi" +
-            "ct\",\"path\":\"training/{data}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit d" +
-            "ata and request a prediction\",\"parameters\":{\"data\":{\"type\":\"string\",\"description" +
-            "\":\"mybucket%2Fmydata resource in Google Storage\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Ou" +
-            "tput\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}},\"resources\":{\"h" +
-            "ostedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path" +
-            "\":\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Su" +
-            "bmit input and request an output against a hosted model\",\"parameters\":{\"hostedMo" +
-            "delName\":{\"type\":\"string\",\"description\":\"The name of a hosted model\",\"required\":" +
-            "true,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":" +
-            "\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/prediction\"]}}},\"training\":{\"methods\":{\"delete\":{\"id\":\"prediction.training.dele" +
-            "te\",\"path\":\"training/{data}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a train" +
-            "ed model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata r" +
-            "esource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"data\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"get\":{\"id\":\"p" +
-            "rediction.training.get\",\"path\":\"training/{data}\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Check training status of your model\",\"parameters\":{\"data\":{\"type\":\"string\",\"d" +
-            "escription\":\"mybucket/mydata resource in Google Storage\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"data\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\":\"prediction.traini" +
-            "ng.insert\",\"path\":\"training\",\"httpMethod\":\"POST\",\"description\":\"Begin training y" +
-            "our model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata " +
-            "resource in Google Storage\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Training\"},\"" +
-            "response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/predict" +
-            "ion\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"training/{data}\",\"htt" +
-            "pMethod\":\"PUT\",\"description\":\"Add new data to a trained model\",\"parameters\":{\"da" +
-            "ta\":{\"type\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$ref\":" +
-            "\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/prediction\"]}}}}}";
+            "leapis.com/prediction/v1.2/\",\"basePath\":\"/prediction/v1.2/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"prediction/v1.2/\",\"batchPath\":\"batch\",\"parame" +
+            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
+            "ault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
+            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
+            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
+            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
+            "your project and provides you with API access, quota, and reports. Required unle" +
+            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
+            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
+            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
+            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
+            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
+            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
+            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
+            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
+            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"a" +
+            "uth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\"" +
+            ":{\"description\":\"View your data in Google Cloud Storage\"},\"https://www.googleapi" +
+            "s.com/auth/prediction\":{\"description\":\"Manage your data in the Google Prediction" +
+            " API\"}}}},\"schemas\":{\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\"" +
+            ":{\"type\":\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"items\":{\"type\":\"a" +
+            "ny\"}}}}}},\"Output\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"st" +
+            "ring\"},\"kind\":{\"type\":\"string\",\"default\":\"prediction#output\"},\"outputLabel\":{\"ty" +
+            "pe\":\"string\"},\"outputMulti\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties" +
+            "\":{\"label\":{\"type\":\"string\"},\"score\":{\"type\":\"number\",\"format\":\"double\"}}}},\"out" +
+            "putValue\":{\"type\":\"number\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\"}}},\"Tr" +
+            "aining\":{\"id\":\"Training\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"k" +
+            "ind\":{\"type\":\"string\",\"default\":\"prediction#training\"},\"modelInfo\":{\"type\":\"obje" +
+            "ct\",\"properties\":{\"classificationAccuracy\":{\"type\":\"number\",\"format\":\"double\"},\"" +
+            "meanSquaredError\":{\"type\":\"number\",\"format\":\"double\"},\"modelType\":{\"type\":\"strin" +
+            "g\"}}},\"selfLink\":{\"type\":\"string\"},\"trainingStatus\":{\"type\":\"string\"}}},\"Update\"" +
+            ":{\"id\":\"Update\",\"type\":\"object\",\"properties\":{\"classLabel\":{\"type\":\"string\",\"des" +
+            "cription\":\"The true class label of this instance\"},\"csvInstance\":{\"type\":\"array\"" +
+            ",\"description\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}}}}}" +
+            ",\"methods\":{\"predict\":{\"id\":\"prediction.predict\",\"path\":\"training/{data}/predict" +
+            "\",\"httpMethod\":\"POST\",\"description\":\"Submit data and request a prediction\",\"para" +
+            "meters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket%2Fmydata resource in Go" +
+            "ogle Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"req" +
+            "uest\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/prediction\"]}},\"resources\":{\"hostedmodels\":{\"methods\":{\"predict\":" +
+            "{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{hostedModelName}/p" +
+            "redict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and request an output ag" +
+            "ainst a hosted model\",\"parameters\":{\"hostedModelName\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The name of a hosted model\",\"required\":true,\"location\":\"path\"}},\"parameter" +
+            "Order\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}},\"training\":{\"metho" +
+            "ds\":{\"delete\":{\"id\":\"prediction.training.delete\",\"path\":\"training/{data}\",\"httpM" +
+            "ethod\":\"DELETE\",\"description\":\"Delete a trained model\",\"parameters\":{\"data\":{\"ty" +
+            "pe\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.goo" +
+            "gleapis.com/auth/prediction\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"tra" +
+            "ining/{data}\",\"httpMethod\":\"GET\",\"description\":\"Check training status of your mo" +
+            "del\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resour" +
+            "ce in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"dat" +
+            "a\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/pr" +
+            "ediction\"]},\"insert\":{\"id\":\"prediction.training.insert\",\"path\":\"training\",\"httpM" +
+            "ethod\":\"POST\",\"description\":\"Begin training your model\",\"parameters\":{\"data\":{\"t" +
+            "ype\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"locati" +
+            "on\":\"query\"}},\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googlea" +
+            "pis.com/auth/prediction\"]},\"update\":{\"id\":\"prediction.training.update\",\"path\":\"t" +
+            "raining/{data}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained mode" +
+            "l\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resource" +
+            " in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"" +
+            "],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/prediction\"]}}}}}";
         
         private const string Version = "v1.2";
         
@@ -417,13 +420,13 @@ namespace Google.Apis.Prediction.v1_2 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.hostedmodels = new HostedmodelsResource(this);
-            this.training = new TrainingResource(this);
+            this._hostedmodels = new HostedmodelsResource(this);
+            this._training = new TrainingResource(this);
         }
         
         public PredictionService() : 
@@ -431,22 +434,22 @@ namespace Google.Apis.Prediction.v1_2 {
         }
         
         public PredictionService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PredictionService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PredictionService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -467,6 +470,10 @@ namespace Google.Apis.Prediction.v1_2 {
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         public enum Scopes {
+            
+            /// <summary>View your data in Google Cloud Storage</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/devstorage.read_only")]
+            DevstorageRead_only,
             
             /// <summary>Manage your data in the Google Prediction API</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/prediction")]
@@ -492,41 +499,41 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string hostedModelName;
+            private string _hostedModelName;
             
-            private Google.Apis.Prediction.v1_2.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_2.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Input body, string hostedModelName) : 
                     base(service) {
                 this.Body = body;
-                this.hostedModelName = hostedModelName;
+                this._hostedModelName = hostedModelName;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -534,10 +541,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -545,17 +552,17 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("hostedModelName")]
             public virtual string HostedModelName {
                 get {
-                    return this.hostedModelName;
+                    return this._hostedModelName;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_2.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -612,38 +619,38 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
                     base(service) {
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -651,10 +658,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -662,7 +669,7 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
@@ -681,38 +688,38 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
                     base(service) {
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -720,10 +727,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -731,7 +738,7 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
@@ -750,15 +757,15 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
-            private Google.Apis.Prediction.v1_2.Data.Training bodyValue;
+            private Google.Apis.Prediction.v1_2.Data.Training _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Training body) : 
                     base(service) {
@@ -769,21 +776,21 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -791,10 +798,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -802,20 +809,20 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
                 set {
-                    this.data = value;
+                    this._data = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_2.Data.Training Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -838,41 +845,41 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
-            private Google.Apis.Prediction.v1_2.Data.Update bodyValue;
+            private Google.Apis.Prediction.v1_2.Data.Update _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Update body, string data) : 
                     base(service) {
                 this.Body = body;
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -880,10 +887,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -891,17 +898,17 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_2.Data.Update Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -927,9 +934,9 @@ namespace Google.Apis.Prediction.v1_2 {
         
         private const string Resource = "";
         
-        private HostedmodelsResource hostedmodels;
+        private HostedmodelsResource _hostedmodels;
         
-        private TrainingResource training;
+        private TrainingResource _training;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -939,13 +946,13 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public virtual HostedmodelsResource Hostedmodels {
             get {
-                return this.hostedmodels;
+                return this._hostedmodels;
             }
         }
         
         public virtual TrainingResource Training {
             get {
-                return this.training;
+                return this._training;
             }
         }
         
@@ -957,41 +964,41 @@ namespace Google.Apis.Prediction.v1_2 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_2.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
-            private Google.Apis.Prediction.v1_2.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_2.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_2.Data.Input body, string data) : 
                     base(service) {
                 this.Body = body;
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -999,10 +1006,10 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1010,17 +1017,17 @@ namespace Google.Apis.Prediction.v1_2 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_2.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             

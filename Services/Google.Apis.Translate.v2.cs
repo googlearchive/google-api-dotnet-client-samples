@@ -16,62 +16,62 @@ namespace Google.Apis.Translate.v2.Data {
     
     public class DetectionsListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<DetectionsResource> detections;
+        private System.Collections.Generic.IList<DetectionsResource> _detections;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>A detections contains detection results of several text</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("detections")]
         public virtual System.Collections.Generic.IList<DetectionsResource> Detections {
             get {
-                return this.detections;
+                return this._detections;
             }
             set {
-                this.detections = value;
+                this._detections = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     /// <summary>An array of languages which we detect for the given text The most likely language list first.</summary>
-    public class DetectionsResource : List<DetectionsResource.Entry> {
+    public class DetectionsResource : System.Collections.Generic.List<DetectionsResource.Entry> {
         
         public class Entry {
             
-            private System.Nullable<double> confidence;
+            private System.Nullable<double> _confidence;
             
-            private System.Nullable<bool> isReliable;
+            private System.Nullable<bool> _isReliable;
             
-            private string language;
+            private string _language;
             
             /// <summary>The confidence of the detection resul of this language.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("confidence")]
             public virtual System.Nullable<double> Confidence {
                 get {
-                    return this.confidence;
+                    return this._confidence;
                 }
                 set {
-                    this.confidence = value;
+                    this._confidence = value;
                 }
             }
             
@@ -79,10 +79,10 @@ namespace Google.Apis.Translate.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("isReliable")]
             public virtual System.Nullable<bool> IsReliable {
                 get {
-                    return this.isReliable;
+                    return this._isReliable;
                 }
                 set {
-                    this.isReliable = value;
+                    this._isReliable = value;
                 }
             }
             
@@ -90,10 +90,10 @@ namespace Google.Apis.Translate.v2.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("language")]
             public virtual string Language {
                 get {
-                    return this.language;
+                    return this._language;
                 }
                 set {
-                    this.language = value;
+                    this._language = value;
                 }
             }
         }
@@ -101,57 +101,57 @@ namespace Google.Apis.Translate.v2.Data {
     
     public class LanguagesListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<LanguagesResource> languages;
+        private System.Collections.Generic.IList<LanguagesResource> _languages;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of source/target languages supported by the translation API. If target parameter is unspecified, the list is sorted by the ASCII code point order of the language code. If target parameter is specified, the list is sorted by the collation order of the language name in the target language.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("languages")]
         public virtual System.Collections.Generic.IList<LanguagesResource> Languages {
             get {
-                return this.languages;
+                return this._languages;
             }
             set {
-                this.languages = value;
+                this._languages = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class LanguagesResource {
         
-        private string language;
+        private string _language;
         
-        private string name;
+        private string _name;
         
         /// <summary>The language code.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("language")]
         public virtual string Language {
             get {
-                return this.language;
+                return this._language;
             }
             set {
-                this.language = value;
+                this._language = value;
             }
         }
         
@@ -159,67 +159,67 @@ namespace Google.Apis.Translate.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
     }
     
     public class TranslationsListResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<TranslationsResource> translations;
+        private System.Collections.Generic.IList<TranslationsResource> _translations;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Translations contains list of translation results of given text</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("translations")]
         public virtual System.Collections.Generic.IList<TranslationsResource> Translations {
             get {
-                return this.translations;
+                return this._translations;
             }
             set {
-                this.translations = value;
+                this._translations = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class TranslationsResource {
         
-        private string detectedSourceLanguage;
+        private string _detectedSourceLanguage;
         
-        private string translatedText;
+        private string _translatedText;
         
         /// <summary>Detected source language if source parameter is unspecified.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("detectedSourceLanguage")]
         public virtual string DetectedSourceLanguage {
             get {
-                return this.detectedSourceLanguage;
+                return this._detectedSourceLanguage;
             }
             set {
-                this.detectedSourceLanguage = value;
+                this._detectedSourceLanguage = value;
             }
         }
         
@@ -227,10 +227,10 @@ namespace Google.Apis.Translate.v2.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("translatedText")]
         public virtual string TranslatedText {
             get {
-                return this.translatedText;
+                return this._translatedText;
             }
             set {
-                this.translatedText = value;
+                this._translatedText = value;
             }
         }
     }
@@ -256,68 +256,69 @@ namespace Google.Apis.Translate.v2 {
             "ww.google.com/images/icons/product/translate-32.png\"},\"documentationLink\":\"http:" +
             "//code.google.com/apis/language/translate/v2/using_rest.html\",\"protocol\":\"rest\"," +
             "\"baseUrl\":\"https://www.googleapis.com/language/translate/\",\"basePath\":\"/language" +
-            "/translate/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for" +
-            " the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses " +
-            "with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"st" +
-            "ring\",\"description\":\"Selector specifying which fields to include in a partial re" +
-            "sponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your" +
-            " API key identifies your project and provides you with API access, quota, and re" +
-            "ports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oau" +
-            "th_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"" +
-            ",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns resp" +
-            "onse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"q" +
-            "uotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes fo" +
-            "r server-side applications. Can be any arbitrary string assigned to a user, but " +
-            "should not exceed 40 characters. Overrides userIp if both are provided.\",\"locati" +
-            "on\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site whe" +
-            "re the request originates. Use this if you want to enforce per-user limits.\",\"lo" +
-            "cation\":\"query\"}},\"features\":[\"dataWrapper\"],\"schemas\":{\"DetectionsListResponse\"" +
-            ":{\"id\":\"DetectionsListResponse\",\"type\":\"object\",\"properties\":{\"detections\":{\"typ" +
-            "e\":\"array\",\"description\":\"A detections contains detection results of several tex" +
-            "t\",\"items\":{\"$ref\":\"DetectionsResource\"}}}},\"DetectionsResource\":{\"id\":\"Detectio" +
-            "nsResource\",\"type\":\"array\",\"description\":\"An array of languages which we detect " +
-            "for the given text The most likely language list first.\",\"items\":{\"type\":\"object" +
-            "\",\"properties\":{\"confidence\":{\"type\":\"number\",\"description\":\"The confidence of t" +
-            "he detection resul of this language.\",\"format\":\"float\"},\"isReliable\":{\"type\":\"bo" +
-            "olean\",\"description\":\"A boolean to indicate is the language detection result rel" +
-            "iable.\"},\"language\":{\"type\":\"string\",\"description\":\"The language we detect\"}}}}," +
-            "\"LanguagesListResponse\":{\"id\":\"LanguagesListResponse\",\"type\":\"object\",\"propertie" +
-            "s\":{\"languages\":{\"type\":\"array\",\"description\":\"List of source/target languages s" +
-            "upported by the translation API. If target parameter is unspecified, the list is" +
-            " sorted by the ASCII code point order of the language code. If target parameter " +
-            "is specified, the list is sorted by the collation order of the language name in " +
-            "the target language.\",\"items\":{\"$ref\":\"LanguagesResource\"}}}},\"LanguagesResource" +
-            "\":{\"id\":\"LanguagesResource\",\"type\":\"object\",\"properties\":{\"language\":{\"type\":\"st" +
-            "ring\",\"description\":\"The language code.\"},\"name\":{\"type\":\"string\",\"description\":" +
-            "\"The localized name of the language if target parameter is given.\"}}},\"Translati" +
-            "onsListResponse\":{\"id\":\"TranslationsListResponse\",\"type\":\"object\",\"properties\":{" +
-            "\"translations\":{\"type\":\"array\",\"description\":\"Translations contains list of tran" +
-            "slation results of given text\",\"items\":{\"$ref\":\"TranslationsResource\"}}}},\"Trans" +
-            "lationsResource\":{\"id\":\"TranslationsResource\",\"type\":\"object\",\"properties\":{\"det" +
-            "ectedSourceLanguage\":{\"type\":\"string\",\"description\":\"Detected source language if" +
-            " source parameter is unspecified.\"},\"translatedText\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The translation.\"}}}},\"resources\":{\"detections\":{\"methods\":{\"list\":{\"id\":\"l" +
-            "anguage.detections.list\",\"path\":\"v2/detect\",\"httpMethod\":\"GET\",\"description\":\"De" +
-            "tect the language of text.\",\"parameters\":{\"q\":{\"type\":\"string\",\"description\":\"Th" +
-            "e text to detect\",\"required\":true,\"repeated\":true,\"location\":\"query\"}},\"paramete" +
-            "rOrder\":[\"q\"],\"response\":{\"$ref\":\"DetectionsListResponse\"}}}},\"languages\":{\"meth" +
-            "ods\":{\"list\":{\"id\":\"language.languages.list\",\"path\":\"v2/languages\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"List the source/target languages supported by the API\",\"par" +
-            "ameters\":{\"target\":{\"type\":\"string\",\"description\":\"the language and collation in" +
-            " which the localized results should be returned\",\"location\":\"query\"}},\"response\"" +
-            ":{\"$ref\":\"LanguagesListResponse\"}}}},\"translations\":{\"methods\":{\"list\":{\"id\":\"la" +
-            "nguage.translations.list\",\"path\":\"v2\",\"httpMethod\":\"GET\",\"description\":\"Returns " +
-            "text translations from one language to another.\",\"parameters\":{\"cid\":{\"type\":\"st" +
-            "ring\",\"description\":\"The customization id for translate\",\"repeated\":true,\"locati" +
-            "on\":\"query\"},\"format\":{\"type\":\"string\",\"description\":\"The format of the text\",\"e" +
-            "num\":[\"html\",\"text\"],\"enumDescriptions\":[\"Specifies the input is in HTML\",\"Speci" +
-            "fies the input is in plain textual format\"],\"location\":\"query\"},\"q\":{\"type\":\"str" +
-            "ing\",\"description\":\"The text to translate\",\"required\":true,\"repeated\":true,\"loca" +
-            "tion\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"The source language of t" +
-            "he text\",\"location\":\"query\"},\"target\":{\"type\":\"string\",\"description\":\"The target" +
-            " language into which the text should be translated\",\"required\":true,\"location\":\"" +
-            "query\"}},\"parameterOrder\":[\"q\",\"target\"],\"response\":{\"$ref\":\"TranslationsListRes" +
-            "ponse\"}}}}}}";
+            "/translate/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"language/tra" +
+            "nslate/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":" +
+            "\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptio" +
+            "ns\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fie" +
+            "lds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to include" +
+            " in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description" +
+            "\":\"API key. Your API key identifies your project and provides you with API acces" +
+            "s, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locatio" +
+            "n\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for th" +
+            "e current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Returns response with indentations and line breaks.\",\"default\":\"true\",\"locat" +
+            "ion\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for q" +
+            "uota purposes for server-side applications. Can be any arbitrary string assigned" +
+            " to a user, but should not exceed 40 characters. Overrides userIp if both are pr" +
+            "ovided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address" +
+            " of the site where the request originates. Use this if you want to enforce per-u" +
+            "ser limits.\",\"location\":\"query\"}},\"features\":[\"dataWrapper\"],\"schemas\":{\"Detecti" +
+            "onsListResponse\":{\"id\":\"DetectionsListResponse\",\"type\":\"object\",\"properties\":{\"d" +
+            "etections\":{\"type\":\"array\",\"description\":\"A detections contains detection result" +
+            "s of several text\",\"items\":{\"$ref\":\"DetectionsResource\"}}}},\"DetectionsResource\"" +
+            ":{\"id\":\"DetectionsResource\",\"type\":\"array\",\"description\":\"An array of languages " +
+            "which we detect for the given text The most likely language list first.\",\"items\"" +
+            ":{\"type\":\"object\",\"properties\":{\"confidence\":{\"type\":\"number\",\"description\":\"The" +
+            " confidence of the detection resul of this language.\",\"format\":\"float\"},\"isRelia" +
+            "ble\":{\"type\":\"boolean\",\"description\":\"A boolean to indicate is the language dete" +
+            "ction result reliable.\"},\"language\":{\"type\":\"string\",\"description\":\"The language" +
+            " we detect\"}}}},\"LanguagesListResponse\":{\"id\":\"LanguagesListResponse\",\"type\":\"ob" +
+            "ject\",\"properties\":{\"languages\":{\"type\":\"array\",\"description\":\"List of source/ta" +
+            "rget languages supported by the translation API. If target parameter is unspecif" +
+            "ied, the list is sorted by the ASCII code point order of the language code. If t" +
+            "arget parameter is specified, the list is sorted by the collation order of the l" +
+            "anguage name in the target language.\",\"items\":{\"$ref\":\"LanguagesResource\"}}}},\"L" +
+            "anguagesResource\":{\"id\":\"LanguagesResource\",\"type\":\"object\",\"properties\":{\"langu" +
+            "age\":{\"type\":\"string\",\"description\":\"The language code.\"},\"name\":{\"type\":\"string" +
+            "\",\"description\":\"The localized name of the language if target parameter is given" +
+            ".\"}}},\"TranslationsListResponse\":{\"id\":\"TranslationsListResponse\",\"type\":\"object" +
+            "\",\"properties\":{\"translations\":{\"type\":\"array\",\"description\":\"Translations conta" +
+            "ins list of translation results of given text\",\"items\":{\"$ref\":\"TranslationsReso" +
+            "urce\"}}}},\"TranslationsResource\":{\"id\":\"TranslationsResource\",\"type\":\"object\",\"p" +
+            "roperties\":{\"detectedSourceLanguage\":{\"type\":\"string\",\"description\":\"Detected so" +
+            "urce language if source parameter is unspecified.\"},\"translatedText\":{\"type\":\"st" +
+            "ring\",\"description\":\"The translation.\"}}}},\"resources\":{\"detections\":{\"methods\":" +
+            "{\"list\":{\"id\":\"language.detections.list\",\"path\":\"v2/detect\",\"httpMethod\":\"GET\",\"" +
+            "description\":\"Detect the language of text.\",\"parameters\":{\"q\":{\"type\":\"string\",\"" +
+            "description\":\"The text to detect\",\"required\":true,\"repeated\":true,\"location\":\"qu" +
+            "ery\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"DetectionsListResponse\"}}}},\"l" +
+            "anguages\":{\"methods\":{\"list\":{\"id\":\"language.languages.list\",\"path\":\"v2/language" +
+            "s\",\"httpMethod\":\"GET\",\"description\":\"List the source/target languages supported " +
+            "by the API\",\"parameters\":{\"target\":{\"type\":\"string\",\"description\":\"the language " +
+            "and collation in which the localized results should be returned\",\"location\":\"que" +
+            "ry\"}},\"response\":{\"$ref\":\"LanguagesListResponse\"}}}},\"translations\":{\"methods\":{" +
+            "\"list\":{\"id\":\"language.translations.list\",\"path\":\"v2\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"Returns text translations from one language to another.\",\"parameters\":{\"" +
+            "cid\":{\"type\":\"string\",\"description\":\"The customization id for translate\",\"repeat" +
+            "ed\":true,\"location\":\"query\"},\"format\":{\"type\":\"string\",\"description\":\"The format" +
+            " of the text\",\"enum\":[\"html\",\"text\"],\"enumDescriptions\":[\"Specifies the input is" +
+            " in HTML\",\"Specifies the input is in plain textual format\"],\"location\":\"query\"}," +
+            "\"q\":{\"type\":\"string\",\"description\":\"The text to translate\",\"required\":true,\"repe" +
+            "ated\":true,\"location\":\"query\"},\"source\":{\"type\":\"string\",\"description\":\"The sour" +
+            "ce language of the text\",\"location\":\"query\"},\"target\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The target language into which the text should be translated\",\"required\":t" +
+            "rue,\"location\":\"query\"}},\"parameterOrder\":[\"q\",\"target\"],\"response\":{\"$ref\":\"Tra" +
+            "nslationsListResponse\"}}}}}}";
         
         private const string Version = "v2";
         
@@ -327,14 +328,14 @@ namespace Google.Apis.Translate.v2 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected TranslateService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.detections = new DetectionsResource(this);
-            this.languages = new LanguagesResource(this);
-            this.translations = new TranslationsResource(this);
+            this._detections = new DetectionsResource(this);
+            this._languages = new LanguagesResource(this);
+            this._translations = new TranslationsResource(this);
         }
         
         public TranslateService() : 
@@ -342,22 +343,22 @@ namespace Google.Apis.Translate.v2 {
         }
         
         public TranslateService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TranslateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(TranslateService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TranslateService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(TranslateService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -395,38 +396,38 @@ namespace Google.Apis.Translate.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.DetectionsListResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Util.Repeatable<string> q;
+            private Google.Apis.Util.Repeatable<string> _q;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> q) : 
                     base(service) {
-                this.q = q;
+                this._q = q;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -434,10 +435,10 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -445,7 +446,7 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual Google.Apis.Util.Repeatable<string> Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
             }
             
@@ -480,13 +481,13 @@ namespace Google.Apis.Translate.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string target;
+            private string _target;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -496,21 +497,21 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -518,10 +519,10 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -529,10 +530,10 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("target")]
             public virtual string Target {
                 get {
-                    return this.target;
+                    return this._target;
                 }
                 set {
-                    this.target = value;
+                    this._target = value;
                 }
             }
             
@@ -582,47 +583,47 @@ namespace Google.Apis.Translate.v2 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.TranslationsListResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Util.Repeatable<string> cid;
+            private Google.Apis.Util.Repeatable<string> _cid;
             
-            private Format? format;
+            private System.Nullable<Format> _format;
             
-            private Google.Apis.Util.Repeatable<string> q;
+            private Google.Apis.Util.Repeatable<string> _q;
             
-            private string source;
+            private string _source;
             
-            private string target;
+            private string _target;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> q, string target) : 
                     base(service) {
-                this.q = q;
-                this.target = target;
+                this._q = q;
+                this._target = target;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -630,10 +631,10 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -641,21 +642,21 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("cid")]
             public virtual Google.Apis.Util.Repeatable<string> Cid {
                 get {
-                    return this.cid;
+                    return this._cid;
                 }
                 set {
-                    this.cid = value;
+                    this._cid = value;
                 }
             }
             
             /// <summary>The format of the text</summary>
             [Google.Apis.Util.RequestParameterAttribute("format")]
-            public virtual Format? Format {
+            public virtual System.Nullable<Format> Format {
                 get {
-                    return this.format;
+                    return this._format;
                 }
                 set {
-                    this.format = value;
+                    this._format = value;
                 }
             }
             
@@ -663,7 +664,7 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual Google.Apis.Util.Repeatable<string> Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
             }
             
@@ -671,10 +672,10 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("source")]
             public virtual string Source {
                 get {
-                    return this.source;
+                    return this._source;
                 }
                 set {
-                    this.source = value;
+                    this._source = value;
                 }
             }
             
@@ -682,7 +683,7 @@ namespace Google.Apis.Translate.v2 {
             [Google.Apis.Util.RequestParameterAttribute("target")]
             public virtual string Target {
                 get {
-                    return this.target;
+                    return this._target;
                 }
             }
             
@@ -704,11 +705,11 @@ namespace Google.Apis.Translate.v2 {
         
         private const string Resource = "";
         
-        private DetectionsResource detections;
+        private DetectionsResource _detections;
         
-        private LanguagesResource languages;
+        private LanguagesResource _languages;
         
-        private TranslationsResource translations;
+        private TranslationsResource _translations;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -718,19 +719,19 @@ namespace Google.Apis.Translate.v2 {
         
         public virtual DetectionsResource Detections {
             get {
-                return this.detections;
+                return this._detections;
             }
         }
         
         public virtual LanguagesResource Languages {
             get {
-                return this.languages;
+                return this._languages;
             }
         }
         
         public virtual TranslationsResource Translations {
             get {
-                return this.translations;
+                return this._translations;
             }
         }
     }

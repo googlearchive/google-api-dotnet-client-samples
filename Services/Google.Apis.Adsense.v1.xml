@@ -214,8 +214,8 @@
         </member>
         <member name="M:Google.Apis.Adsense.v1.ReportsResource.Generate(System.String,System.String)">
             <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
-            <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
-            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2} - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+            <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
         </member>
         <member name="P:Google.Apis.Adsense.v1.ReportsResource.GenerateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

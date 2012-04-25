@@ -1,0 +1,782 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Gan.v1beta1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Advertiser">
+            <summary>An AdvertiserResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Category">
+            <summary>Category that this advertiser belongs to. A valid list of categories can be found here: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&amp;answer=107581</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.CommissionDuration">
+            <summary>The longest possible length of a commission (how long the cookies on the customer&apos;s browser last before they expire).</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.ContactEmail">
+            <summary>Email that this advertiser would like publishers to contact them with.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.ContactPhone">
+            <summary>Phone that this advertiser would like publishers to contact them with.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Description">
+            <summary>Description of the website the advertiser advertises from.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.EpcNinetyDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.EpcSevenDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Id">
+            <summary>The ID of this advertiser.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Item">
+            <summary>An AdvertiserResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.JoinDate">
+            <summary>Date that this advertiser was approved as a Google Affiliate Network advertiser.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Kind">
+            <summary>The kind for one entity. The kind for an advertiser.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.LogoUrl">
+            <summary>URL to the logo this advertiser uses on the Google Affiliate Network.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Name">
+            <summary>The name of this advertiser.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.PayoutRank">
+            <summary>A rank based on commissions paid to publishers over the past 90 days. A number between 1 and 4 where 4 means the top quartile (most money paid) and 1 means the bottom quartile (least money paid).</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.ProductFeedsEnabled">
+            <summary>Allows advertisers to submit product listings to Google Product Search.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.SiteUrl">
+            <summary>URL of the website this advertiser advertises from.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Status">
+            <summary>The status of the requesting publisher&apos;s relationship this advertiser.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertisers.Items">
+            <summary>The advertiser list.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertisers.Kind">
+            <summary>The kind for a page of advertisers.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertisers.NextPageToken">
+            <summary>The &apos;pageToken&apos; to pass to the next request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.CcOffer">
+            <summary>A credit card offer. There are many possible result fields. We provide two different views of the data, or &quot;projections.&quot; The &quot;full&quot; projection includes every result field. And the &quot;summary&quot; projection, which is the default, includes a smaller subset of the fields. The fields included in the summary projection are marked as such in their descriptions.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AdditionalCardBenefits">
+            <summary>More marketing copy about the card&apos;s benefits. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AdditionalCardHolderFee">
+            <summary>Any extra fees levied on card holders.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AgeMinimum">
+            <summary>The youngest a recipient of this card may be.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AgeMinimumDetails">
+            <summary>Text describing the details of the age minimum restriction.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AnnualFee">
+            <summary>The ongoing annual fee, in dollars.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AnnualFeeDisplay">
+            <summary>Text describing the annual fee, including any difference for the first year. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AnnualRewardMaximum">
+            <summary>The largest number of units you may accumulate in a year.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ApprovedCategories">
+            <summary>Possible categories for this card, eg &quot;Low Interest&quot; or &quot;Good.&quot; A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AprDisplay">
+            <summary>Text describing the purchase APR. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BalanceTransferTerms">
+            <summary>Text describing the terms for balance transfers. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BonusRewards">
+            <summary>For cards with rewards programs, extra circumstances whereby additional rewards may be granted.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CarRentalInsurance">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CardBenefits">
+            <summary>A list of what the issuer thinks are the most important benefits of the card. Usually summarizes the rewards program, if there is one. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CardName">
+            <summary>The issuer&apos;s name for the card, including any trademark or service mark designators. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CardType">
+            <summary>What kind of credit card this is, for example secured or unsecured.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CashAdvanceTerms">
+            <summary>Text describing the terms for cash advances. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CreditLimitMax">
+            <summary>The high end for credit limits the issuer imposes on recipients of this card.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CreditLimitMin">
+            <summary>The low end for credit limits the issuer imposes on recipients of this card.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.CreditRatingDisplay">
+            <summary>Text describing the credit ratings required for recipients of this card, for example &quot;Excellent/Good.&quot; A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.DefaultFees">
+            <summary>Fees for defaulting on your payments.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.Disclaimer">
+            <summary>A notice that, if present, is referenced via an asterisk by many of the other summary fields. If this field is present, it will always start with an asterisk (&quot;*&quot;), and must be prominently displayed with the offer. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.EmergencyInsurance">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ExistingCustomerOnly">
+            <summary>Whether this card is only available to existing customers of the issuer.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ExtendedWarranty">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.FirstYearAnnualFee">
+            <summary>The annual fee for the first year, if different from the ongoing fee. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.FlightAccidentInsurance">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ForeignCurrencyTransactionFee">
+            <summary>Fee for each transaction involving a foreign currency.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.FraudLiability">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.GracePeriodDisplay">
+            <summary>Text describing the grace period before finance charges apply. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ImageUrl">
+            <summary>The link to the image of the card that is shown on Connect Commerce. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.InitialSetupAndProcessingFee">
+            <summary>Fee for setting up the card.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.IntroBalanceTransferTerms">
+            <summary>Text describing the terms for introductory period balance transfers. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.IntroCashAdvanceTerms">
+            <summary>Text describing the terms for introductory period cash advances. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.IntroPurchaseTerms">
+            <summary>Text describing the terms for introductory period purchases. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.Issuer">
+            <summary>Name of card issuer. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.IssuerId">
+            <summary>The Google Affiliate Network ID of the advertiser making this offer.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.IssuerWebsite">
+            <summary>The generic link to the issuer&apos;s site.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.Kind">
+            <summary>The kind for one credit card offer. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.LandingPageUrl">
+            <summary>The link to the issuer&apos;s page for this card. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.LatePaymentFee">
+            <summary>Text describing how much a late payment will cost, eg &quot;up to $35.&quot; A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.LuggageInsurance">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.MaxPurchaseRate">
+            <summary>The highest interest rate the issuer charges on this card. Expressed as an absolute number, not as a percentage.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.MinPurchaseRate">
+            <summary>The lowest interest rate the issuer charges on this card. Expressed as an absolute number, not as a percentage.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.MinimumFinanceCharge">
+            <summary>Text describing how much missing the grace period will cost.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.Network">
+            <summary>Which network (eg Visa) the card belongs to. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.OfferId">
+            <summary>This offer&apos;s ID. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.OffersImmediateCashReward">
+            <summary>Whether a cash reward program lets you get cash back sooner than end of year or other longish period.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.OverLimitFee">
+            <summary>Fee for exceeding the card&apos;s charge limit.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ProhibitedCategories">
+            <summary>Categories in which the issuer does not wish the card to be displayed. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.PurchaseRateAdditionalDetails">
+            <summary>Text describing any additional details for the purchase rate. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.PurchaseRateType">
+            <summary>Fixed or variable.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.ReturnedPaymentFee">
+            <summary>Text describing the fee for a payment that doesn&apos;t clear. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardPartner">
+            <summary>The company that redeems the rewards, if different from the issuer.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardUnit">
+            <summary>For cards with rewards programs, the unit of reward. For example, miles, cash back, points.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.Rewards">
+            <summary>For cards with rewards programs, detailed rules about how the program works.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsExpire">
+            <summary>Whether accumulated rewards ever expire.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsHaveBlackoutDates">
+            <summary>For airline miles rewards, tells whether blackout dates apply to the miles.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.StatementCopyFee">
+            <summary>Fee for requesting a copy of your statement.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.TrackingUrl">
+            <summary>The link to ping to register a click on this offer. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.TravelInsurance">
+            <summary>If you get coverage when you use the card for the given activity, this field describes it.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.VariableRatesLastUpdated">
+            <summary>When variable rates were last updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.VariableRatesUpdateFrequency">
+            <summary>How often variable rates are updated.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BonusRewardsData.Amount">
+            <summary>How many units of reward will be granted.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BonusRewardsData.Details">
+            <summary>The circumstances under which this rule applies, for example, booking a flight via Orbitz.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.DefaultFeesData.Category">
+            <summary>The type of charge, for example Purchases.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.DefaultFeesData.MaxRate">
+            <summary>The highest rate the issuer may charge for defaulting on debt in this category. Expressed as an absolute number, not as a percentage.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.DefaultFeesData.MinRate">
+            <summary>The lowest rate the issuer may charge for defaulting on debt in this category. Expressed as an absolute number, not as a percentage.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.DefaultFeesData.RateType">
+            <summary>Fixed or variable.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.AdditionalDetails">
+            <summary>Other limits, for example, if this rule only applies during an introductory period.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.Amount">
+            <summary>The number of units rewarded per purchase dollar.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.Category">
+            <summary>The kind of purchases covered by this rule.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.ExpirationMonths">
+            <summary>How long rewards granted by this rule last.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.MaxRewardTier">
+            <summary>The maximum purchase amount in the given category for this rule to apply.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.RewardsData.MinRewardTier">
+            <summary>The minimum purchase amount in the given category before this rule applies.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffers.Items">
+            <summary>The credit card offers.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffers.Kind">
+            <summary>The kind for a page of credit card offers.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Event">
+            <summary>An EventResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.AdvertiserId">
+            <summary>The ID of advertiser for this event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.AdvertiserName">
+            <summary>The name of the advertiser for this event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ChargeId">
+            <summary>The charge ID for this event. Only returned for charge events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ChargeType">
+            <summary>Charge type of the event (other|slotting_fee|monthly_minimum|tier_bonus|debit|credit). Only returned for charge events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.CommissionableSales">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.Earnings">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.EventDate">
+            <summary>The date-time this event was initiated as a RFC 3339 date-time value.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.Kind">
+            <summary>The kind for one event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.MemberId">
+            <summary>The ID of the member attached to this event. Only returned for conversion events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ModifyDate">
+            <summary>The date-time this event was last modified as a RFC 3339 date-time value.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.NetworkFee">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.OrderId">
+            <summary>The order ID for this event. Only returned for conversion events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.Products">
+            <summary>Products associated with the event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.PublisherFee">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.PublisherId">
+            <summary>The ID of the publisher for this event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.PublisherName">
+            <summary>The name of the publisher for this event.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.Status">
+            <summary>Status of the event (active|canceled). Only returned for charge and conversion events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.Type">
+            <summary>Type of the event (action|transaction|charge).</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.CategoryId">
+            <summary>Id of the category this product belongs to.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.CategoryName">
+            <summary>Name of the category this product belongs to.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.Earnings">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.NetworkFee">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.PublisherFee">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.Quantity">
+            <summary>Quantity of this product bought/exchanged.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.Sku">
+            <summary>Sku of this product.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.SkuName">
+            <summary>Sku name of this product.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Event.ProductsData.UnitPrice">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Events.Items">
+            <summary>The event list.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Events.Kind">
+            <summary>The kind for a page of events.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Events.NextPageToken">
+            <summary>The &apos;pageToken&apos; to pass to the next request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Money">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Money.Amount">
+            <summary>The amount of money.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Money.CurrencyCode">
+            <summary>The 3-letter code of the currency in question.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Publisher">
+            <summary>A PublisherResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Classification">
+            <summary>Classification that this publisher belongs to. See this link for all publisher classifications: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&amp;answer=107625&amp;ctx=cb&amp;src=cb&amp;cbid=-k5fihzthfaik&amp;cbrank=4</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.EpcNinetyDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.EpcSevenDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Id">
+            <summary>The ID of this publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Item">
+            <summary>A PublisherResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.JoinDate">
+            <summary>Date that this publisher was approved as a Google Affiliate Network publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Kind">
+            <summary>The kind for one publisher. The kind for a publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Name">
+            <summary>The name of this publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.PayoutRank">
+            <summary>A rank based on commissions paid to this publisher over the past 90 days. A number between 1 and 4 where 4 means the top quartile (most money paid) and 1 means the bottom quartile (least money paid).</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Sites">
+            <summary>Websites that this publisher uses to advertise.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Status">
+            <summary>The status of the requesting advertiser&apos;s relationship with this publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publishers.Items">
+            <summary>The entity list.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publishers.Kind">
+            <summary>The kind for a page of entities.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Publishers.NextPageToken">
+            <summary>The &apos;pageToken&apos; to pass to the next request to get the next page, if there are more to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.GanService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.AdvertisersResource.Get(Google.Apis.Gan.v1beta1.AdvertisersResource.Role,System.String)">
+            <summary>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only publishers can lookup advertisers. Advertisers can request information about themselves by omitting the advertiserId query parameter.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.AdvertisersResource.List(Google.Apis.Gan.v1beta1.AdvertisersResource.Role,System.String)">
+            <summary>Retrieves data about all advertisers that the requesting advertiser/publisher has access to.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.AdvertisersResource.Role">
+            <summary>The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.Role.Advertisers">
+            <summary>The requester is requesting as an advertiser.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.Role.Publishers">
+            <summary>The requester is requesting as a publisher.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus">
+            <summary>Filters out all advertisers for which do not have the given relationship status with the requesting publisher.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Approved">
+            <summary>An advertiser that has approved your application.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Available">
+            <summary>An advertiser program that&apos;s accepting new publishers.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Deactivated">
+            <summary>Deactivated means either the advertiser has removed you from their program, or it could also mean that you chose to remove yourself from the advertiser&apos;s program.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Declined">
+            <summary>An advertiser that did not approve your application.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.AdvertisersResource.RelationshipStatus.Pending">
+            <summary>An advertiser program that you&apos;ve already applied to, but they haven&apos;t yet decided to approve or decline your application.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.AdvertiserId">
+            <summary>The ID of the advertiser to look up. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.AdvertiserCategory" -->
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MaxResults">
+            <summary>Max number of items to return in this page. Optional. Defaults to 20.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MinNinetyDayEpc">
+            <summary>Filters out all advertisers that have a ninety day EPC average lower than the given value (inclusive). Min value: 0.0. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MinPayoutRank">
+            <summary>A value between 1 and 4, where 1 represents the quartile of advertisers with the lowest ranks and 4 represents the quartile of advertisers with the highest ranks. Filters out all advertisers with a lower rank than the given quartile. For example if a 2 was given only advertisers with a payout rank of 25 or higher would be included. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MinSevenDayEpc">
+            <summary>Filters out all advertisers that have a seven day EPC average lower than the given value (inclusive). Min value: 0.0. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.PageToken">
+            <summary>The value of 'nextPageToken' from the previous page. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.RelationshipStatus">
+            <summary>Filters out all advertisers for which do not have the given relationship status with the requesting publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.CcOffersResource.List(System.String)">
+            <summary>Retrieves credit card offers for the given publisher.</summary>
+            <param name="publisher">Required - The ID of the publisher in question.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.CcOffersResource.Projection">
+            <summary>The set of fields to return.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.CcOffersResource.Projection.Full">
+            <summary>Include all offer fields</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.CcOffersResource.Projection.Summary">
+            <summary>Include only the basic fields needed to display an offer. This is the default.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Advertiser">
+            <summary>The advertiser ID of a card issuer whose offers to include. Optional, may be repeated.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Projection">
+            <summary>The set of fields to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Publisher">
+            <summary>The ID of the publisher in question.</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.EventsResource.List(Google.Apis.Gan.v1beta1.EventsResource.Role,System.String)">
+            <summary>Retrieves event data for a given advertiser/publisher.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.EventsResource.ChargeType">
+            <summary>Filters out all charge events that are not of the given charge type. Valid values: &apos;other&apos;, &apos;slotting_fee&apos;, &apos;monthly_minimum&apos;, &apos;tier_bonus&apos;, &apos;credit&apos;, &apos;debit&apos;. Optional.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Credit">
+            <summary>A credit increases the publisher&apos;s payout amount and decreases the advertiser&apos;s invoice amount.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Debit">
+            <summary>A debit reduces the publisher&apos;s payout and increases the advertiser&apos;s invoice amount.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Monthly_minimum">
+            <summary>A payment made to Google by an advertiser as a minimum monthly network fee.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Other">
+            <summary>Catch all. Default if unset</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Slotting_fee">
+            <summary>A one time payment made from an advertiser to a publisher.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.ChargeType.Tier_bonus">
+            <summary>A payment from an advertiser to a publisher for the publisher maintaining a high tier level</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.EventsResource.Role">
+            <summary>The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Role.Advertisers">
+            <summary>The requester is requesting as an advertiser.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Role.Publishers">
+            <summary>The requester is requesting as a publisher.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.EventsResource.Status">
+            <summary>Filters out all events that do not have the given status. Valid values: &apos;active&apos;, &apos;canceled&apos;. Optional.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Status.Active">
+            <summary>Event is currently active.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Status.Canceled">
+            <summary>Event is currently canceled.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.EventsResource.Type">
+            <summary>Filters out all events that are not of the given type. Valid values: &apos;action&apos;, &apos;transaction&apos;, &apos;charge&apos;. Optional.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Type.Action">
+            <summary>The completion of an application, sign-up, or other process. For example, an action occurs if a user clicks an ad for a credit card and completes an application for that card.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Type.Charge">
+            <summary>A charge event is typically a payment between an advertiser, publisher or Google.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.EventsResource.Type.Transaction">
+            <summary>A conversion event, typically an e-commerce transaction. Some advertisers use a transaction to record other types of events, such as magazine subscriptions.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.AdvertiserId">
+            <summary>Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the given advertiser IDs. Only used when under publishers role. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.ChargeType">
+            <summary>Filters out all charge events that are not of the given charge type. Valid values: 'other', 'slotting_fee', 'monthly_minimum', 'tier_bonus', 'credit', 'debit'. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.EventDateMax">
+            <summary>Filters out all events later than given date. Optional. Defaults to 24 hours after eventMin.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.EventDateMin">
+            <summary>Filters out all events earlier than given date. Optional. Defaults to 24 hours from current date/time.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.LinkId">
+            <summary>Caret(^) delimited list of link IDs. Filters out all events that do not reference one of the given link IDs. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.MaxResults">
+            <summary>Max number of offers to return in this page. Optional. Defaults to 20.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.MemberId">
+            <summary>Caret(^) delimited list of member IDs. Filters out all events that do not reference one of the given member IDs. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.ModifyDateMax">
+            <summary>Filters out all events modified later than given date. Optional. Defaults to 24 hours after modifyDateMin, if modifyDateMin is explicitly set.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.ModifyDateMin">
+            <summary>Filters out all events modified earlier than given date. Optional. Defaults to 24 hours before the current modifyDateMax, if modifyDateMax is explicitly set.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.OrderId">
+            <summary>Caret(^) delimited list of order IDs. Filters out all events that do not reference one of the given order IDs. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.PageToken">
+            <summary>The value of 'nextPageToken' from the previous page. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.ProductCategory">
+            <summary>Caret(^) delimited list of product categories. Filters out all events that do not reference a product in one of the given product categories. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.PublisherId">
+            <summary>Caret(^) delimited list of publisher IDs. Filters out all events that do not reference one of the given publishers IDs. Only used when under advertiser role. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Sku">
+            <summary>Caret(^) delimited list of SKUs. Filters out all events that do not reference one of the given SKU. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Status">
+            <summary>Filters out all events that do not have the given status. Valid values: 'active', 'canceled'. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Type">
+            <summary>Filters out all events that are not of the given type. Valid values: 'action', 'transaction', 'charge'. Optional.</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.PublishersResource.Get(Google.Apis.Gan.v1beta1.PublishersResource.Role,System.String)">
+            <summary>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only advertisers can look up publishers. Publishers can request information about themselves by omitting the publisherId query parameter.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.PublishersResource.List(Google.Apis.Gan.v1beta1.PublishersResource.Role,System.String)">
+            <summary>Retrieves data about all publishers that the requesting advertiser/publisher has access to.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.PublishersResource.Role">
+            <summary>The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.Role.Advertisers">
+            <summary>The requester is requesting as an advertiser.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.Role.Publishers">
+            <summary>The requester is requesting as a publisher.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus">
+            <summary>Filters out all publishers for which do not have the given relationship status with the requesting publisher.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Approved">
+            <summary>Publishers you&apos;ve approved to your program.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Available">
+            <summary>Publishers available for you to recruit.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Deactivated">
+            <summary>A publisher that you terminated from your program. Publishers also have the ability to remove themselves from your program.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Declined">
+            <summary>A publisher that you did not approve to your program.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.PublishersResource.RelationshipStatus.Pending">
+            <summary>Publishers that have applied to your program. We recommend reviewing and deciding on pending publishers on a weekly basis.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PublisherId">
+            <summary>The ID of the publisher to look up. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MaxResults">
+            <summary>Max number of items to return in this page. Optional. Defaults to 20.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MinNinetyDayEpc">
+            <summary>Filters out all publishers that have a ninety day EPC average lower than the given value (inclusive). Min value: 0.0. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MinPayoutRank">
+            <summary>A value between 1 and 4, where 1 represents the quartile of publishers with the lowest ranks and 4 represents the quartile of publishers with the highest ranks. Filters out all publishers with a lower rank than the given quartile. For example if a 2 was given only publishers with a payout rank of 25 or higher would be included. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MinSevenDayEpc">
+            <summary>Filters out all publishers that have a seven day EPC average lower than the given value (inclusive). Min value 0.0. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.PageToken">
+            <summary>The value of 'nextPageToken' from the previous page. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.PublisherCategory">
+            <summary>Caret(^) delimted list of publisher categories. Valid categories: (unclassified|community_and_content|shopping_and_promotion|loyalty_and_rewards|network|search_specialist|comparison_shopping|email). Filters out all publishers not in one of the given advertiser categories. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.RelationshipStatus">
+            <summary>Filters out all publishers for which do not have the given relationship status with the requesting publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+    </members>
+</doc>

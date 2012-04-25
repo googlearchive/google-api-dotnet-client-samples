@@ -16,41 +16,41 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class ModeratorTopicsResourcePartial {
         
-        private ModeratorTopicsResourcePartial.IdData id;
+        private ModeratorTopicsResourcePartial.IdData _id;
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual ModeratorTopicsResourcePartial.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string topicId;
+            private string _topicId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
                 set {
-                    this.topicId = value;
+                    this._topicId = value;
                 }
             }
         }
@@ -58,177 +58,177 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class ModeratorVotesResourcePartial {
         
-        private string flag;
+        private string _flag;
         
-        private string vote;
+        private string _vote;
         
         [Newtonsoft.Json.JsonPropertyAttribute("flag")]
         public virtual string Flag {
             get {
-                return this.flag;
+                return this._flag;
             }
             set {
-                this.flag = value;
+                this._flag = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("vote")]
         public virtual string Vote {
             get {
-                return this.vote;
+                return this._vote;
             }
             set {
-                this.vote = value;
+                this._vote = value;
             }
         }
     }
     
     public class Profile : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Profile.AttributionData attribution;
+        private Profile.AttributionData _attribution;
         
-        private Profile.IdData id;
+        private Profile.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("attribution")]
         public virtual Profile.AttributionData Attribution {
             get {
-                return this.attribution;
+                return this._attribution;
             }
             set {
-                this.attribution = value;
+                this._attribution = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Profile.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class AttributionData {
             
-            private string avatarUrl;
+            private string _avatarUrl;
             
-            private string displayName;
+            private string _displayName;
             
-            private AttributionData.GeoData geo;
+            private AttributionData.GeoData _geo;
             
-            private string location;
+            private string _location;
             
             [Newtonsoft.Json.JsonPropertyAttribute("avatarUrl")]
             public virtual string AvatarUrl {
                 get {
-                    return this.avatarUrl;
+                    return this._avatarUrl;
                 }
                 set {
-                    this.avatarUrl = value;
+                    this._avatarUrl = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("geo")]
             public virtual AttributionData.GeoData Geo {
                 get {
-                    return this.geo;
+                    return this._geo;
                 }
                 set {
-                    this.geo = value;
+                    this._geo = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("location")]
             public virtual string Location {
                 get {
-                    return this.location;
+                    return this._location;
                 }
                 set {
-                    this.location = value;
+                    this._location = value;
                 }
             }
             
             public class GeoData {
                 
-                private System.Nullable<double> latitude;
+                private System.Nullable<double> _latitude;
                 
-                private string location;
+                private string _location;
                 
-                private System.Nullable<double> longitude;
+                private System.Nullable<double> _longitude;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
                 public virtual System.Nullable<double> Latitude {
                     get {
-                        return this.latitude;
+                        return this._latitude;
                     }
                     set {
-                        this.latitude = value;
+                        this._latitude = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("location")]
                 public virtual string Location {
                     get {
-                        return this.location;
+                        return this._location;
                     }
                     set {
-                        this.location = value;
+                        this._location = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
                 public virtual System.Nullable<double> Longitude {
                     get {
-                        return this.longitude;
+                        return this._longitude;
                     }
                     set {
-                        this.longitude = value;
+                        this._longitude = value;
                     }
                 }
             }
@@ -236,15 +236,15 @@ namespace Google.Apis.Moderator.v1.Data {
         
         public class IdData {
             
-            private string user;
+            private string _user;
             
             [Newtonsoft.Json.JsonPropertyAttribute("user")]
             public virtual string User {
                 get {
-                    return this.user;
+                    return this._user;
                 }
                 set {
-                    this.user = value;
+                    this._user = value;
                 }
             }
         }
@@ -252,339 +252,339 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class Series : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Nullable<bool> anonymousSubmissionAllowed;
+        private System.Nullable<bool> _anonymousSubmissionAllowed;
         
-        private Series.CountersData counters;
+        private Series.CountersData _counters;
         
-        private string description;
+        private string _description;
         
-        private Series.IdData id;
+        private Series.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private System.Nullable<long> numTopics;
+        private System.Nullable<long> _numTopics;
         
-        private Series.RulesData rules;
+        private Series.RulesData _rules;
         
-        private System.Nullable<bool> unauthSubmissionAllowed;
+        private System.Nullable<bool> _unauthSubmissionAllowed;
         
-        private System.Nullable<bool> unauthVotingAllowed;
+        private System.Nullable<bool> _unauthVotingAllowed;
         
-        private System.Nullable<bool> videoSubmissionAllowed;
+        private System.Nullable<bool> _videoSubmissionAllowed;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("anonymousSubmissionAllowed")]
         public virtual System.Nullable<bool> AnonymousSubmissionAllowed {
             get {
-                return this.anonymousSubmissionAllowed;
+                return this._anonymousSubmissionAllowed;
             }
             set {
-                this.anonymousSubmissionAllowed = value;
+                this._anonymousSubmissionAllowed = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("counters")]
         public virtual Series.CountersData Counters {
             get {
-                return this.counters;
+                return this._counters;
             }
             set {
-                this.counters = value;
+                this._counters = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Series.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("numTopics")]
         public virtual System.Nullable<long> NumTopics {
             get {
-                return this.numTopics;
+                return this._numTopics;
             }
             set {
-                this.numTopics = value;
+                this._numTopics = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("rules")]
         public virtual Series.RulesData Rules {
             get {
-                return this.rules;
+                return this._rules;
             }
             set {
-                this.rules = value;
+                this._rules = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("unauthSubmissionAllowed")]
         public virtual System.Nullable<bool> UnauthSubmissionAllowed {
             get {
-                return this.unauthSubmissionAllowed;
+                return this._unauthSubmissionAllowed;
             }
             set {
-                this.unauthSubmissionAllowed = value;
+                this._unauthSubmissionAllowed = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("unauthVotingAllowed")]
         public virtual System.Nullable<bool> UnauthVotingAllowed {
             get {
-                return this.unauthVotingAllowed;
+                return this._unauthVotingAllowed;
             }
             set {
-                this.unauthVotingAllowed = value;
+                this._unauthVotingAllowed = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissionAllowed")]
         public virtual System.Nullable<bool> VideoSubmissionAllowed {
             get {
-                return this.videoSubmissionAllowed;
+                return this._videoSubmissionAllowed;
             }
             set {
-                this.videoSubmissionAllowed = value;
+                this._videoSubmissionAllowed = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class CountersData {
             
-            private System.Nullable<long> anonymousSubmissions;
+            private System.Nullable<long> _anonymousSubmissions;
             
-            private System.Nullable<long> minusVotes;
+            private System.Nullable<long> _minusVotes;
             
-            private System.Nullable<long> noneVotes;
+            private System.Nullable<long> _noneVotes;
             
-            private System.Nullable<long> plusVotes;
+            private System.Nullable<long> _plusVotes;
             
-            private System.Nullable<long> submissions;
+            private System.Nullable<long> _submissions;
             
-            private System.Nullable<long> users;
+            private System.Nullable<long> _users;
             
-            private System.Nullable<long> videoSubmissions;
+            private System.Nullable<long> _videoSubmissions;
             
             [Newtonsoft.Json.JsonPropertyAttribute("anonymousSubmissions")]
             public virtual System.Nullable<long> AnonymousSubmissions {
                 get {
-                    return this.anonymousSubmissions;
+                    return this._anonymousSubmissions;
                 }
                 set {
-                    this.anonymousSubmissions = value;
+                    this._anonymousSubmissions = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
             public virtual System.Nullable<long> MinusVotes {
                 get {
-                    return this.minusVotes;
+                    return this._minusVotes;
                 }
                 set {
-                    this.minusVotes = value;
+                    this._minusVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
             public virtual System.Nullable<long> NoneVotes {
                 get {
-                    return this.noneVotes;
+                    return this._noneVotes;
                 }
                 set {
-                    this.noneVotes = value;
+                    this._noneVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
             public virtual System.Nullable<long> PlusVotes {
                 get {
-                    return this.plusVotes;
+                    return this._plusVotes;
                 }
                 set {
-                    this.plusVotes = value;
+                    this._plusVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
             public virtual System.Nullable<long> Submissions {
                 get {
-                    return this.submissions;
+                    return this._submissions;
                 }
                 set {
-                    this.submissions = value;
+                    this._submissions = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("users")]
             public virtual System.Nullable<long> Users {
                 get {
-                    return this.users;
+                    return this._users;
                 }
                 set {
-                    this.users = value;
+                    this._users = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissions")]
             public virtual System.Nullable<long> VideoSubmissions {
                 get {
-                    return this.videoSubmissions;
+                    return this._videoSubmissions;
                 }
                 set {
-                    this.videoSubmissions = value;
+                    this._videoSubmissions = value;
                 }
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
         }
         
         public class RulesData {
             
-            private RulesData.SubmissionsData submissions;
+            private RulesData.SubmissionsData _submissions;
             
-            private RulesData.VotesData votes;
+            private RulesData.VotesData _votes;
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
             public virtual RulesData.SubmissionsData Submissions {
                 get {
-                    return this.submissions;
+                    return this._submissions;
                 }
                 set {
-                    this.submissions = value;
+                    this._submissions = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("votes")]
             public virtual RulesData.VotesData Votes {
                 get {
-                    return this.votes;
+                    return this._votes;
                 }
                 set {
-                    this.votes = value;
+                    this._votes = value;
                 }
             }
             
             public class SubmissionsData {
                 
-                private string close;
+                private string _close;
                 
-                private string open;
+                private string _open;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("close")]
                 public virtual string Close {
                     get {
-                        return this.close;
+                        return this._close;
                     }
                     set {
-                        this.close = value;
+                        this._close = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("open")]
                 public virtual string Open {
                     get {
-                        return this.open;
+                        return this._open;
                     }
                     set {
-                        this.open = value;
+                        this._open = value;
                     }
                 }
             }
             
             public class VotesData {
                 
-                private string close;
+                private string _close;
                 
-                private string open;
+                private string _open;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("close")]
                 public virtual string Close {
                     get {
-                        return this.close;
+                        return this._close;
                     }
                     set {
-                        this.close = value;
+                        this._close = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("open")]
                 public virtual string Open {
                     get {
-                        return this.open;
+                        return this._open;
                     }
                     set {
-                        this.open = value;
+                        this._open = value;
                     }
                 }
             }
@@ -593,429 +593,429 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class SeriesList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Series> items;
+        private System.Collections.Generic.IList<Series> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Series> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Submission : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string attachmentUrl;
+        private string _attachmentUrl;
         
-        private Submission.AttributionData attribution;
+        private Submission.AttributionData _attribution;
         
-        private string author;
+        private string _author;
         
-        private Submission.CountersData counters;
+        private Submission.CountersData _counters;
         
-        private string created;
+        private string _created;
         
-        private Submission.GeoData geo;
+        private Submission.GeoData _geo;
         
-        private Submission.IdData id;
+        private Submission.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private Submission.ParentSubmissionIdData parentSubmissionId;
+        private Submission.ParentSubmissionIdData _parentSubmissionId;
         
-        private string text;
+        private string _text;
         
-        private System.Collections.Generic.IList<ModeratorTopicsResourcePartial> topics;
+        private System.Collections.Generic.IList<ModeratorTopicsResourcePartial> _topics;
         
-        private System.Collections.Generic.IList<Submission.TranslationsData> translations;
+        private System.Collections.Generic.IList<Submission.TranslationsData> _translations;
         
-        private ModeratorVotesResourcePartial vote;
+        private ModeratorVotesResourcePartial _vote;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("attachmentUrl")]
         public virtual string AttachmentUrl {
             get {
-                return this.attachmentUrl;
+                return this._attachmentUrl;
             }
             set {
-                this.attachmentUrl = value;
+                this._attachmentUrl = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("attribution")]
         public virtual Submission.AttributionData Attribution {
             get {
-                return this.attribution;
+                return this._attribution;
             }
             set {
-                this.attribution = value;
+                this._attribution = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("author")]
         public virtual string Author {
             get {
-                return this.author;
+                return this._author;
             }
             set {
-                this.author = value;
+                this._author = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("counters")]
         public virtual Submission.CountersData Counters {
             get {
-                return this.counters;
+                return this._counters;
             }
             set {
-                this.counters = value;
+                this._counters = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("geo")]
         public virtual Submission.GeoData Geo {
             get {
-                return this.geo;
+                return this._geo;
             }
             set {
-                this.geo = value;
+                this._geo = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Submission.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("parentSubmissionId")]
         public virtual Submission.ParentSubmissionIdData ParentSubmissionId {
             get {
-                return this.parentSubmissionId;
+                return this._parentSubmissionId;
             }
             set {
-                this.parentSubmissionId = value;
+                this._parentSubmissionId = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("text")]
         public virtual string Text {
             get {
-                return this.text;
+                return this._text;
             }
             set {
-                this.text = value;
+                this._text = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("topics")]
         public virtual System.Collections.Generic.IList<ModeratorTopicsResourcePartial> Topics {
             get {
-                return this.topics;
+                return this._topics;
             }
             set {
-                this.topics = value;
+                this._topics = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("translations")]
         public virtual System.Collections.Generic.IList<Submission.TranslationsData> Translations {
             get {
-                return this.translations;
+                return this._translations;
             }
             set {
-                this.translations = value;
+                this._translations = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("vote")]
         public virtual ModeratorVotesResourcePartial Vote {
             get {
-                return this.vote;
+                return this._vote;
             }
             set {
-                this.vote = value;
+                this._vote = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class AttributionData {
             
-            private string avatarUrl;
+            private string _avatarUrl;
             
-            private string displayName;
+            private string _displayName;
             
-            private string location;
+            private string _location;
             
             [Newtonsoft.Json.JsonPropertyAttribute("avatarUrl")]
             public virtual string AvatarUrl {
                 get {
-                    return this.avatarUrl;
+                    return this._avatarUrl;
                 }
                 set {
-                    this.avatarUrl = value;
+                    this._avatarUrl = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("location")]
             public virtual string Location {
                 get {
-                    return this.location;
+                    return this._location;
                 }
                 set {
-                    this.location = value;
+                    this._location = value;
                 }
             }
         }
         
         public class CountersData {
             
-            private System.Nullable<long> minusVotes;
+            private System.Nullable<long> _minusVotes;
             
-            private System.Nullable<long> noneVotes;
+            private System.Nullable<long> _noneVotes;
             
-            private System.Nullable<long> plusVotes;
+            private System.Nullable<long> _plusVotes;
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
             public virtual System.Nullable<long> MinusVotes {
                 get {
-                    return this.minusVotes;
+                    return this._minusVotes;
                 }
                 set {
-                    this.minusVotes = value;
+                    this._minusVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
             public virtual System.Nullable<long> NoneVotes {
                 get {
-                    return this.noneVotes;
+                    return this._noneVotes;
                 }
                 set {
-                    this.noneVotes = value;
+                    this._noneVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
             public virtual System.Nullable<long> PlusVotes {
                 get {
-                    return this.plusVotes;
+                    return this._plusVotes;
                 }
                 set {
-                    this.plusVotes = value;
+                    this._plusVotes = value;
                 }
             }
         }
         
         public class GeoData {
             
-            private System.Nullable<double> latitude;
+            private System.Nullable<double> _latitude;
             
-            private string location;
+            private string _location;
             
-            private System.Nullable<double> longitude;
+            private System.Nullable<double> _longitude;
             
             [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
             public virtual System.Nullable<double> Latitude {
                 get {
-                    return this.latitude;
+                    return this._latitude;
                 }
                 set {
-                    this.latitude = value;
+                    this._latitude = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("location")]
             public virtual string Location {
                 get {
-                    return this.location;
+                    return this._location;
                 }
                 set {
-                    this.location = value;
+                    this._location = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
             public virtual System.Nullable<double> Longitude {
                 get {
-                    return this.longitude;
+                    return this._longitude;
                 }
                 set {
-                    this.longitude = value;
+                    this._longitude = value;
                 }
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string submissionId;
+            private string _submissionId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissionId")]
             public virtual string SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
                 set {
-                    this.submissionId = value;
+                    this._submissionId = value;
                 }
             }
         }
         
         public class ParentSubmissionIdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string submissionId;
+            private string _submissionId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissionId")]
             public virtual string SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
                 set {
-                    this.submissionId = value;
+                    this._submissionId = value;
                 }
             }
         }
         
         public class TranslationsData {
             
-            private string lang;
+            private string _lang;
             
-            private string text;
+            private string _text;
             
             [Newtonsoft.Json.JsonPropertyAttribute("lang")]
             public virtual string Lang {
                 get {
-                    return this.lang;
+                    return this._lang;
                 }
                 set {
-                    this.lang = value;
+                    this._lang = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("text")]
             public virtual string Text {
                 get {
-                    return this.text;
+                    return this._text;
                 }
                 set {
-                    this.text = value;
+                    this._text = value;
                 }
             }
         }
@@ -1023,150 +1023,150 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class SubmissionList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Submission> items;
+        private System.Collections.Generic.IList<Submission> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Submission> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Tag : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Tag.IdData id;
+        private Tag.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private string text;
+        private string _text;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Tag.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("text")]
         public virtual string Text {
             get {
-                return this.text;
+                return this._text;
             }
             set {
-                this.text = value;
+                this._text = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string submissionId;
+            private string _submissionId;
             
-            private string tagId;
+            private string _tagId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissionId")]
             public virtual string SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
                 set {
-                    this.submissionId = value;
+                    this._submissionId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("tagId")]
             public virtual string TagId {
                 get {
-                    return this.tagId;
+                    return this._tagId;
                 }
                 set {
-                    this.tagId = value;
+                    this._tagId = value;
                 }
             }
         }
@@ -1174,353 +1174,353 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class TagList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Tag> items;
+        private System.Collections.Generic.IList<Tag> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Tag> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Topic : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Topic.CountersData counters;
+        private Topic.CountersData _counters;
         
-        private string description;
+        private string _description;
         
-        private Submission featuredSubmission;
+        private Submission _featuredSubmission;
         
-        private Topic.IdData id;
+        private Topic.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private string name;
+        private string _name;
         
-        private string presenter;
+        private string _presenter;
         
-        private Topic.RulesData rules;
+        private Topic.RulesData _rules;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("counters")]
         public virtual Topic.CountersData Counters {
             get {
-                return this.counters;
+                return this._counters;
             }
             set {
-                this.counters = value;
+                this._counters = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("featuredSubmission")]
         public virtual Submission FeaturedSubmission {
             get {
-                return this.featuredSubmission;
+                return this._featuredSubmission;
             }
             set {
-                this.featuredSubmission = value;
+                this._featuredSubmission = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Topic.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("presenter")]
         public virtual string Presenter {
             get {
-                return this.presenter;
+                return this._presenter;
             }
             set {
-                this.presenter = value;
+                this._presenter = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("rules")]
         public virtual Topic.RulesData Rules {
             get {
-                return this.rules;
+                return this._rules;
             }
             set {
-                this.rules = value;
+                this._rules = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class CountersData {
             
-            private System.Nullable<long> minusVotes;
+            private System.Nullable<long> _minusVotes;
             
-            private System.Nullable<long> noneVotes;
+            private System.Nullable<long> _noneVotes;
             
-            private System.Nullable<long> plusVotes;
+            private System.Nullable<long> _plusVotes;
             
-            private System.Nullable<long> submissions;
+            private System.Nullable<long> _submissions;
             
-            private System.Nullable<long> users;
+            private System.Nullable<long> _users;
             
-            private System.Nullable<long> videoSubmissions;
+            private System.Nullable<long> _videoSubmissions;
             
             [Newtonsoft.Json.JsonPropertyAttribute("minusVotes")]
             public virtual System.Nullable<long> MinusVotes {
                 get {
-                    return this.minusVotes;
+                    return this._minusVotes;
                 }
                 set {
-                    this.minusVotes = value;
+                    this._minusVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("noneVotes")]
             public virtual System.Nullable<long> NoneVotes {
                 get {
-                    return this.noneVotes;
+                    return this._noneVotes;
                 }
                 set {
-                    this.noneVotes = value;
+                    this._noneVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("plusVotes")]
             public virtual System.Nullable<long> PlusVotes {
                 get {
-                    return this.plusVotes;
+                    return this._plusVotes;
                 }
                 set {
-                    this.plusVotes = value;
+                    this._plusVotes = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
             public virtual System.Nullable<long> Submissions {
                 get {
-                    return this.submissions;
+                    return this._submissions;
                 }
                 set {
-                    this.submissions = value;
+                    this._submissions = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("users")]
             public virtual System.Nullable<long> Users {
                 get {
-                    return this.users;
+                    return this._users;
                 }
                 set {
-                    this.users = value;
+                    this._users = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("videoSubmissions")]
             public virtual System.Nullable<long> VideoSubmissions {
                 get {
-                    return this.videoSubmissions;
+                    return this._videoSubmissions;
                 }
                 set {
-                    this.videoSubmissions = value;
+                    this._videoSubmissions = value;
                 }
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string topicId;
+            private string _topicId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("topicId")]
             public virtual string TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
                 set {
-                    this.topicId = value;
+                    this._topicId = value;
                 }
             }
         }
         
         public class RulesData {
             
-            private RulesData.SubmissionsData submissions;
+            private RulesData.SubmissionsData _submissions;
             
-            private RulesData.VotesData votes;
+            private RulesData.VotesData _votes;
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissions")]
             public virtual RulesData.SubmissionsData Submissions {
                 get {
-                    return this.submissions;
+                    return this._submissions;
                 }
                 set {
-                    this.submissions = value;
+                    this._submissions = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("votes")]
             public virtual RulesData.VotesData Votes {
                 get {
-                    return this.votes;
+                    return this._votes;
                 }
                 set {
-                    this.votes = value;
+                    this._votes = value;
                 }
             }
             
             public class SubmissionsData {
                 
-                private string close;
+                private string _close;
                 
-                private string open;
+                private string _open;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("close")]
                 public virtual string Close {
                     get {
-                        return this.close;
+                        return this._close;
                     }
                     set {
-                        this.close = value;
+                        this._close = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("open")]
                 public virtual string Open {
                     get {
-                        return this.open;
+                        return this._open;
                     }
                     set {
-                        this.open = value;
+                        this._open = value;
                     }
                 }
             }
             
             public class VotesData {
                 
-                private string close;
+                private string _close;
                 
-                private string open;
+                private string _open;
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("close")]
                 public virtual string Close {
                     get {
-                        return this.close;
+                        return this._close;
                     }
                     set {
-                        this.close = value;
+                        this._close = value;
                     }
                 }
                 
                 [Newtonsoft.Json.JsonPropertyAttribute("open")]
                 public virtual string Open {
                     get {
-                        return this.open;
+                        return this._open;
                     }
                     set {
-                        this.open = value;
+                        this._open = value;
                     }
                 }
             }
@@ -1529,150 +1529,150 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class TopicList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Topic> items;
+        private System.Collections.Generic.IList<Topic> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Topic> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class Vote : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string flag;
+        private string _flag;
         
-        private Vote.IdData id;
+        private Vote.IdData _id;
         
-        private string kind;
+        private string _kind;
         
-        private string vote;
+        private string _vote;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("flag")]
         public virtual string Flag {
             get {
-                return this.flag;
+                return this._flag;
             }
             set {
-                this.flag = value;
+                this._flag = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual Vote.IdData Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("vote")]
         public virtual string VoteValue {
             get {
-                return this.vote;
+                return this._vote;
             }
             set {
-                this.vote = value;
+                this._vote = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class IdData {
             
-            private string seriesId;
+            private string _seriesId;
             
-            private string submissionId;
+            private string _submissionId;
             
             [Newtonsoft.Json.JsonPropertyAttribute("seriesId")]
             public virtual string SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
                 set {
-                    this.seriesId = value;
+                    this._seriesId = value;
                 }
             }
             
             [Newtonsoft.Json.JsonPropertyAttribute("submissionId")]
             public virtual string SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
                 set {
-                    this.submissionId = value;
+                    this._submissionId = value;
                 }
             }
         }
@@ -1680,50 +1680,50 @@ namespace Google.Apis.Moderator.v1.Data {
     
     public class VoteList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Vote> items;
+        private System.Collections.Generic.IList<Vote> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Vote> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -1748,363 +1748,364 @@ namespace Google.Apis.Moderator.v1 {
             "product/moderator-32.png\",\"x32\":\"http://www.google.com/images/icons/product/sear" +
             "ch-32.gif\"},\"documentationLink\":\"http://code.google.com/apis/moderator/v1/using_" +
             "rest.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/moderator/v1/" +
-            "\",\"basePath\":\"/moderator/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\"" +
-            ":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescripti" +
-            "ons\":[\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fi" +
-            "elds\":{\"type\":\"string\",\"description\":\"Selector specifying which fields to includ" +
-            "e in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"API key. Your API key identifies your project and provides you with API acce" +
-            "ss, quota, and reports. Required unless you provide an OAuth 2.0 token.\",\"locati" +
-            "on\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for t" +
-            "he current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"descripti" +
-            "on\":\"Returns response with indentations and line breaks.\",\"default\":\"false\",\"loc" +
-            "ation\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for" +
-            " quota purposes for server-side applications. Can be any arbitrary string assign" +
-            "ed to a user, but should not exceed 40 characters. Overrides userIp if both are " +
-            "provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP addre" +
-            "ss of the site where the request originates. Use this if you want to enforce per" +
-            "-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.goo" +
-            "gleapis.com/auth/moderator\":{\"description\":\"Manage your activity in Google Moder" +
-            "ator\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"ModeratorTopicsResourcePartial\"" +
-            ":{\"id\":\"ModeratorTopicsResourcePartial\",\"type\":\"object\",\"properties\":{\"id\":{\"typ" +
-            "e\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"topicId" +
-            "\":{\"type\":\"string\",\"format\":\"int64\"}}}}},\"ModeratorVotesResourcePartial\":{\"id\":\"" +
-            "ModeratorVotesResourcePartial\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"str" +
-            "ing\"},\"vote\":{\"type\":\"string\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"object\",\"prop" +
-            "erties\":{\"attribution\":{\"type\":\"object\",\"properties\":{\"avatarUrl\":{\"type\":\"strin" +
-            "g\"},\"displayName\":{\"type\":\"string\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitu" +
-            "de\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\"" +
-            ":{\"type\":\"number\",\"format\":\"double\"}}},\"location\":{\"type\":\"string\"}}},\"id\":{\"typ" +
-            "e\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"string\",\"de" +
-            "fault\":\"moderator#profile\"}}},\"Series\":{\"id\":\"Series\",\"type\":\"object\",\"propertie" +
-            "s\":{\"anonymousSubmissionAllowed\":{\"type\":\"boolean\"},\"counters\":{\"type\":\"object\"," +
-            "\"properties\":{\"anonymousSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"minusV" +
-            "otes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer\",\"format\"" +
-            ":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"submissions\":{\"type\":" +
-            "\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"integer\",\"format\":\"int32\"},\"videoSu" +
-            "bmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"description\":{\"type\":\"string\"}" +
-            ",\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64" +
-            "\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#series\"},\"name\":{\"type\":\"strin" +
-            "g\"},\"numTopics\":{\"type\":\"integer\",\"format\":\"int32\"},\"rules\":{\"type\":\"object\",\"pr" +
-            "operties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\"" +
-            ",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"votes\":{\"type\"" +
-            ":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"typ" +
-            "e\":\"string\",\"format\":\"uint64\"}}}}},\"unauthSubmissionAllowed\":{\"type\":\"boolean\"}," +
-            "\"unauthVotingAllowed\":{\"type\":\"boolean\"},\"videoSubmissionAllowed\":{\"type\":\"boole" +
-            "an\"}}},\"SeriesList\":{\"id\":\"SeriesList\",\"type\":\"object\",\"properties\":{\"items\":{\"t" +
-            "ype\":\"array\",\"items\":{\"$ref\":\"Series\"}},\"kind\":{\"type\":\"string\",\"default\":\"moder" +
-            "ator#seriesList\"}}},\"Submission\":{\"id\":\"Submission\",\"type\":\"object\",\"properties\"" +
-            ":{\"attachmentUrl\":{\"type\":\"string\"},\"attribution\":{\"type\":\"object\",\"properties\":" +
-            "{\"avatarUrl\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"location\":{\"type" +
-            "\":\"string\"}}},\"author\":{\"type\":\"string\"},\"counters\":{\"type\":\"object\",\"properties" +
-            "\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer" +
-            "\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"created\":" +
-            "{\"type\":\"string\",\"format\":\"uint64\"},\"geo\":{\"type\":\"object\",\"properties\":{\"latitu" +
-            "de\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"longitude\"" +
-            ":{\"type\":\"number\",\"format\":\"double\"}}},\"id\":{\"type\":\"object\",\"properties\":{\"seri" +
-            "esId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format" +
-            "\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#submission\"},\"parentSu" +
-            "bmissionId\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":" +
-            "\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"text\":{\"type\":\"str" +
-            "ing\"},\"topics\":{\"type\":\"array\",\"items\":{\"$ref\":\"ModeratorTopicsResourcePartial\"}" +
-            "},\"translations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"lang\":{" +
-            "\"type\":\"string\"},\"text\":{\"type\":\"string\"}}}},\"vote\":{\"$ref\":\"ModeratorVotesResou" +
-            "rcePartial\"}}},\"SubmissionList\":{\"id\":\"SubmissionList\",\"type\":\"object\",\"properti" +
-            "es\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Submission\"}},\"kind\":{\"type\":\"stri" +
-            "ng\",\"default\":\"moderator#submissionList\"}}},\"Tag\":{\"id\":\"Tag\",\"type\":\"object\",\"p" +
-            "roperties\":{\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"for" +
-            "mat\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"},\"tagId\":{\"type\":" +
-            "\"string\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#tag\"},\"text\":{\"type\":\"s" +
-            "tring\"}}},\"TagList\":{\"id\":\"TagList\",\"type\":\"object\",\"properties\":{\"items\":{\"type" +
-            "\":\"array\",\"items\":{\"$ref\":\"Tag\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#t" +
-            "agList\"}}},\"Topic\":{\"id\":\"Topic\",\"type\":\"object\",\"properties\":{\"counters\":{\"type" +
-            "\":\"object\",\"properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneV" +
-            "otes\":{\"type\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\"" +
-            ":\"int32\"},\"submissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"int" +
-            "eger\",\"format\":\"int32\"},\"videoSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}}" +
-            ",\"description\":{\"type\":\"string\"},\"featuredSubmission\":{\"$ref\":\"Submission\"},\"id\"" +
-            ":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"t" +
-            "opicId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"" +
-            "moderator#topic\"},\"name\":{\"type\":\"string\"},\"presenter\":{\"type\":\"string\"},\"rules\"" +
-            ":{\"type\":\"object\",\"properties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"cl" +
-            "ose\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint6" +
-            "4\"}}},\"votes\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"" +
-            "uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}}}}}},\"TopicList\":{\"id\":\"Top" +
-            "icList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"T" +
-            "opic\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#topicList\"}}},\"Vote\":{\"id\":" +
-            "\"Vote\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"string\"},\"id\":{\"type\":\"obje" +
-            "ct\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{" +
-            "\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator" +
-            "#vote\"},\"vote\":{\"type\":\"string\"}}},\"VoteList\":{\"id\":\"VoteList\",\"type\":\"object\",\"" +
-            "properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Vote\"}},\"kind\":{\"type\":\"st" +
-            "ring\",\"default\":\"moderator#voteList\"}}}},\"resources\":{\"featured\":{\"resources\":{\"" +
-            "series\":{\"methods\":{\"list\":{\"id\":\"moderator.featured.series.list\",\"path\":\"series" +
-            "/featured\",\"httpMethod\":\"GET\",\"description\":\"Lists the featured series.\",\"respon" +
-            "se\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]" +
-            "}}}}},\"global\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.global" +
-            ".series.list\",\"path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Searches the pub" +
-            "lic series and returns the search results.\",\"parameters\":{\"max-results\":{\"type\":" +
-            "\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\"" +
-            ",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"locatio" +
-            "n\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first re" +
-            "sult to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"response\":{\"$ref\"" +
-            ":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}}}},\"my\":" +
-            "{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.my.series.list\",\"path" +
-            "\":\"series/@me/mine\",\"httpMethod\":\"GET\",\"description\":\"Lists all series created b" +
-            "y the authenticated user.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/moderator\"]}}}}},\"myrecent\":{\"resources\":{\"series\":{\"meth" +
-            "ods\":{\"list\":{\"id\":\"moderator.myrecent.series.list\",\"path\":\"series/@me/recent\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Lists the series the authenticated user has vis" +
-            "ited.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/moderator\"]}}}}},\"profiles\":{\"methods\":{\"get\":{\"id\":\"moderator.profiles.get\"," +
-            "\"path\":\"profiles/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the profile info" +
-            "rmation for the authenticated user.\",\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.profiles.pat" +
-            "ch\",\"path\":\"profiles/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the profil" +
-            "e information for the authenticated user. This method supports patch semantics.\"" +
-            ",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$ref\":\"Profile\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.profiles.update\",\"" +
-            "path\":\"profiles/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the profile infor" +
-            "mation for the authenticated user.\",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$r" +
-            "ef\":\"Profile\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"respon" +
-            "ses\":{\"methods\":{\"insert\":{\"id\":\"moderator.responses.insert\",\"path\":\"series/{ser" +
-            "iesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Inserts a response for the specified submission in the sp" +
-            "ecified topic within the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Set to true to mark the new submission as anonymous.\",\"lo" +
-            "cation\":\"query\"},\"parentSubmissionId\":{\"type\":\"integer\",\"description\":\"The decim" +
-            "al ID of the parent Submission within the Series.\",\"required\":true,\"format\":\"uin" +
-            "t32\",\"location\":\"path\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal " +
-            "ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId" +
-            "\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within the Series" +
-            ".\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"s" +
-            "tring\",\"description\":\"User identifier for unauthenticated usage mode\",\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"seriesId\",\"topicId\",\"parentSubmissionId\"],\"request" +
-            "\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"Submission\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.responses.list\",\"path\":" +
-            "\"series/{seriesId}/submissions/{submissionId}/responses\",\"httpMethod\":\"GET\",\"des" +
-            "cription\":\"Lists or searches the responses for the specified submission within t" +
-            "he specified series and returns the search results.\",\"parameters\":{\"author\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Restricts the results to submissions by a specific a" +
-            "uthor.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"" +
-            "Specifies whether to restrict to submissions that have videos attached.\",\"locati" +
-            "on\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number of re" +
-            "sults to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"de" +
-            "scription\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"loc" +
-            "ation\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\",\"location\":\"q" +
-            "uery\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result " +
-            "to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"},\"submissionId\":{\"type\":\"" +
-            "integer\",\"description\":\"The decimal ID of the Submission within the Series.\",\"re" +
-            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"," +
-            "\"submissionId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/moderator\"]}}},\"series\":{\"methods\":{\"get\":{\"id\":\"moderator.serie" +
-            "s.get\",\"path\":\"series/{seriesId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the " +
-            "specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The" +
-            " decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.series.insert\",\"p" +
-            "ath\":\"series\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new series.\",\"request" +
-            "\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.series.list\",\"path\":\"series\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Searches the series and returns the search resul" +
-            "ts.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum number" +
-            " of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"strin" +
-            "g\",\"description\":\"Search query.\",\"location\":\"query\"},\"start-index\":{\"type\":\"inte" +
-            "ger\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32" +
-            "\",\"location\":\"query\"}},\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.series.patch\",\"path\":\"s" +
-            "eries/{seriesId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the specified seri" +
-            "es. This method supports patch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"int" +
-            "eger\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"ui" +
-            "nt32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Serie" +
-            "s\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapis.com/auth/mode" +
-            "rator\"]},\"update\":{\"id\":\"moderator.series.update\",\"path\":\"series/{seriesId}\",\"ht" +
-            "tpMethod\":\"PUT\",\"description\":\"Updates the specified series.\",\"parameters\":{\"ser" +
-            "iesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required" +
-            "\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"requ" +
-            "est\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/moderator\"]}},\"resources\":{\"responses\":{\"methods\":{\"list\":{\"id\":\"" +
-            "moderator.series.responses.list\",\"path\":\"series/{seriesId}/responses\",\"httpMetho" +
-            "d\":\"GET\",\"description\":\"Searches the responses for the specified series and retu" +
-            "rns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"description\":\"" +
-            "Restricts the results to submissions by a specific author.\",\"location\":\"query\"}," +
-            "\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whether to restric" +
-            "t to submissions that have videos attached.\",\"location\":\"query\"},\"max-results\":{" +
-            "\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format\":\"" +
-            "uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"" +
-            "location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of" +
-            " the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type" +
-            "\":\"string\",\"description\":\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\"" +
-            ":\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"" +
-            "uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"S" +
-            "eriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"submissio" +
-            "ns\":{\"methods\":{\"list\":{\"id\":\"moderator.series.submissions.list\",\"path\":\"series/" +
-            "{seriesId}/submissions\",\"httpMethod\":\"GET\",\"description\":\"Searches the submissio" +
-            "ns for the specified series and returns the search results.\",\"parameters\":{\"auth" +
-            "or\":{\"type\":\"string\",\"description\":\"Restricts the results to submissions by a sp" +
-            "ecific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Specifies whether to restrict to submissions that have videos attached.\"" +
-            ",\"location\":\"query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies w" +
-            "hether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{\"type\":\"s" +
-            "tring\",\"description\":\"The language code for the language the client prefers resu" +
-            "ls in.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maxim" +
-            "um number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"typ" +
-            "e\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\"" +
-            ":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format" +
-            "\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order." +
+            "\",\"basePath\":\"/moderator/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePa" +
+            "th\":\"moderator/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"de" +
+            "scription\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enu" +
+            "mDescriptions\":[\"Responses with Content-Type of application/json\"],\"location\":\"q" +
+            "uery\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields" +
+            " to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"" +
+            "description\":\"API key. Your API key identifies your project and provides you wit" +
+            "h API access, quota, and reports. Required unless you provide an OAuth 2.0 token" +
+            ".\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 t" +
+            "oken for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\"," +
+            "\"description\":\"Returns response with indentations and line breaks.\",\"default\":\"f" +
+            "alse\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available " +
+            "to use for quota purposes for server-side applications. Can be any arbitrary str" +
+            "ing assigned to a user, but should not exceed 40 characters. Overrides userIp if" +
+            " both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\"" +
+            ":\"IP address of the site where the request originates. Use this if you want to e" +
+            "nforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https" +
+            "://www.googleapis.com/auth/moderator\":{\"description\":\"Manage your activity in Go" +
+            "ogle Moderator\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"ModeratorTopicsResour" +
+            "cePartial\":{\"id\":\"ModeratorTopicsResourcePartial\",\"type\":\"object\",\"properties\":{" +
+            "\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"" +
+            "},\"topicId\":{\"type\":\"string\",\"format\":\"int64\"}}}}},\"ModeratorVotesResourcePartia" +
+            "l\":{\"id\":\"ModeratorVotesResourcePartial\",\"type\":\"object\",\"properties\":{\"flag\":{\"" +
+            "type\":\"string\"},\"vote\":{\"type\":\"string\"}}},\"Profile\":{\"id\":\"Profile\",\"type\":\"obj" +
+            "ect\",\"properties\":{\"attribution\":{\"type\":\"object\",\"properties\":{\"avatarUrl\":{\"ty" +
+            "pe\":\"string\"},\"displayName\":{\"type\":\"string\"},\"geo\":{\"type\":\"object\",\"properties" +
+            "\":{\"latitude\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"" +
+            "longitude\":{\"type\":\"number\",\"format\":\"double\"}}},\"location\":{\"type\":\"string\"}}}," +
+            "\"id\":{\"type\":\"object\",\"properties\":{\"user\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"s" +
+            "tring\",\"default\":\"moderator#profile\"}}},\"Series\":{\"id\":\"Series\",\"type\":\"object\"," +
+            "\"properties\":{\"anonymousSubmissionAllowed\":{\"type\":\"boolean\"},\"counters\":{\"type\"" +
+            ":\"object\",\"properties\":{\"anonymousSubmissions\":{\"type\":\"integer\",\"format\":\"int32" +
+            "\"},\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type\":\"integer" +
+            "\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"submissions" +
+            "\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"type\":\"integer\",\"format\":\"int32\"" +
+            "},\"videoSubmissions\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"description\":{\"type\"" +
+            ":\"string\"},\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"form" +
+            "at\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#series\"},\"name\":{\"ty" +
+            "pe\":\"string\"},\"numTopics\":{\"type\":\"integer\",\"format\":\"int32\"},\"rules\":{\"type\":\"o" +
+            "bject\",\"properties\":{\"submissions\":{\"type\":\"object\",\"properties\":{\"close\":{\"type" +
+            "\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}},\"vote" +
+            "s\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"o" +
+            "pen\":{\"type\":\"string\",\"format\":\"uint64\"}}}}},\"unauthSubmissionAllowed\":{\"type\":\"" +
+            "boolean\"},\"unauthVotingAllowed\":{\"type\":\"boolean\"},\"videoSubmissionAllowed\":{\"ty" +
+            "pe\":\"boolean\"}}},\"SeriesList\":{\"id\":\"SeriesList\",\"type\":\"object\",\"properties\":{\"" +
+            "items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Series\"}},\"kind\":{\"type\":\"string\",\"defau" +
+            "lt\":\"moderator#seriesList\"}}},\"Submission\":{\"id\":\"Submission\",\"type\":\"object\",\"p" +
+            "roperties\":{\"attachmentUrl\":{\"type\":\"string\"},\"attribution\":{\"type\":\"object\",\"pr" +
+            "operties\":{\"avatarUrl\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"locati" +
+            "on\":{\"type\":\"string\"}}},\"author\":{\"type\":\"string\"},\"counters\":{\"type\":\"object\",\"" +
+            "properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"noneVotes\":{\"type" +
+            "\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer\",\"format\":\"int32\"}}}," +
+            "\"created\":{\"type\":\"string\",\"format\":\"uint64\"},\"geo\":{\"type\":\"object\",\"properties" +
+            "\":{\"latitude\":{\"type\":\"number\",\"format\":\"double\"},\"location\":{\"type\":\"string\"},\"" +
+            "longitude\":{\"type\":\"number\",\"format\":\"double\"}}},\"id\":{\"type\":\"object\",\"properti" +
+            "es\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"strin" +
+            "g\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#submission\"}" +
+            ",\"parentSubmissionId\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\"" +
+            ",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"text\":{\"" +
+            "type\":\"string\"},\"topics\":{\"type\":\"array\",\"items\":{\"$ref\":\"ModeratorTopicsResourc" +
+            "ePartial\"}},\"translations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\"" +
+            ":{\"lang\":{\"type\":\"string\"},\"text\":{\"type\":\"string\"}}}},\"vote\":{\"$ref\":\"Moderator" +
+            "VotesResourcePartial\"}}},\"SubmissionList\":{\"id\":\"SubmissionList\",\"type\":\"object\"" +
+            ",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Submission\"}},\"kind\":{\"t" +
+            "ype\":\"string\",\"default\":\"moderator#submissionList\"}}},\"Tag\":{\"id\":\"Tag\",\"type\":\"" +
+            "object\",\"properties\":{\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"st" +
+            "ring\",\"format\":\"int64\"},\"submissionId\":{\"type\":\"string\",\"format\":\"int64\"},\"tagId" +
+            "\":{\"type\":\"string\"}}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#tag\"},\"text\":" +
+            "{\"type\":\"string\"}}},\"TagList\":{\"id\":\"TagList\",\"type\":\"object\",\"properties\":{\"ite" +
+            "ms\":{\"type\":\"array\",\"items\":{\"$ref\":\"Tag\"}},\"kind\":{\"type\":\"string\",\"default\":\"m" +
+            "oderator#tagList\"}}},\"Topic\":{\"id\":\"Topic\",\"type\":\"object\",\"properties\":{\"counte" +
+            "rs\":{\"type\":\"object\",\"properties\":{\"minusVotes\":{\"type\":\"integer\",\"format\":\"int3" +
+            "2\"},\"noneVotes\":{\"type\":\"integer\",\"format\":\"int32\"},\"plusVotes\":{\"type\":\"integer" +
+            "\",\"format\":\"int32\"},\"submissions\":{\"type\":\"integer\",\"format\":\"int32\"},\"users\":{\"" +
+            "type\":\"integer\",\"format\":\"int32\"},\"videoSubmissions\":{\"type\":\"integer\",\"format\":" +
+            "\"int32\"}}},\"description\":{\"type\":\"string\"},\"featuredSubmission\":{\"$ref\":\"Submiss" +
+            "ion\"},\"id\":{\"type\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"" +
+            "int64\"},\"topicId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"" +
+            "default\":\"moderator#topic\"},\"name\":{\"type\":\"string\"},\"presenter\":{\"type\":\"string" +
+            "\"},\"rules\":{\"type\":\"object\",\"properties\":{\"submissions\":{\"type\":\"object\",\"proper" +
+            "ties\":{\"close\":{\"type\":\"string\",\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"form" +
+            "at\":\"uint64\"}}},\"votes\":{\"type\":\"object\",\"properties\":{\"close\":{\"type\":\"string\"," +
+            "\"format\":\"uint64\"},\"open\":{\"type\":\"string\",\"format\":\"uint64\"}}}}}}},\"TopicList\":" +
+            "{\"id\":\"TopicList\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":" +
+            "{\"$ref\":\"Topic\"}},\"kind\":{\"type\":\"string\",\"default\":\"moderator#topicList\"}}},\"Vo" +
+            "te\":{\"id\":\"Vote\",\"type\":\"object\",\"properties\":{\"flag\":{\"type\":\"string\"},\"id\":{\"t" +
+            "ype\":\"object\",\"properties\":{\"seriesId\":{\"type\":\"string\",\"format\":\"int64\"},\"submi" +
+            "ssionId\":{\"type\":\"string\",\"format\":\"int64\"}}},\"kind\":{\"type\":\"string\",\"default\":" +
+            "\"moderator#vote\"},\"vote\":{\"type\":\"string\"}}},\"VoteList\":{\"id\":\"VoteList\",\"type\":" +
+            "\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Vote\"}},\"kind\":{" +
+            "\"type\":\"string\",\"default\":\"moderator#voteList\"}}}},\"resources\":{\"featured\":{\"res" +
+            "ources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.featured.series.list\",\"pat" +
+            "h\":\"series/featured\",\"httpMethod\":\"GET\",\"description\":\"Lists the featured series" +
+            ".\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/m" +
+            "oderator\"]}}}}},\"global\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"modera" +
+            "tor.global.series.list\",\"path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Search" +
+            "es the public series and returns the search results.\",\"parameters\":{\"max-results" +
+            "\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return.\",\"format" +
+            "\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query." +
             "\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of th" +
-            "e first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/moderator\"]}}}}},\"submissions\":{\"methods\":{\"get\":{\"id\":\"mo" +
-            "derator.submissions.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Returns the specified submission within the spe" +
-            "cified series.\",\"parameters\":{\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Sp" +
-            "ecifies whether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":{" +
-            "\"type\":\"string\",\"description\":\"The language code for the language the client pre" +
-            "fers resuls in.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":" +
-            "\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"pa" +
-            "th\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submi" +
-            "ssion within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"Submission\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator." +
-            "submissions.insert\",\"path\":\"series/{seriesId}/topics/{topicId}/submissions\",\"htt" +
-            "pMethod\":\"POST\",\"description\":\"Inserts a new submission in the specified topic w" +
-            "ithin the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Set to true to mark the new submission as anonymous.\",\"location\":\"query\"" +
-            "},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
-            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"d" +
-            "escription\":\"The decimal ID of the Topic within the Series.\",\"required\":true,\"fo" +
-            "rmat\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\":\"" +
-            "User identifier for unauthenticated usage mode\",\"location\":\"query\"}},\"parameterO" +
-            "rder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":" +
-            "\"Submission\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"tags\":{" +
-            "\"methods\":{\"delete\":{\"id\":\"moderator.tags.delete\",\"path\":\"series/{seriesId}/subm" +
-            "issions/{submissionId}/tags/{tagId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete" +
-            "s the specified tag from the specified submission within the specified series.\"," +
-            "\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the " +
-            "Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"t" +
-            "ype\":\"integer\",\"description\":\"The decimal ID of the Submission within the Series" +
-            ".\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"tagId\":{\"type\":\"string\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"" +
-            ",\"tagId\"],\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\"" +
-            ":\"moderator.tags.insert\",\"path\":\"series/{seriesId}/submissions/{submissionId}/ta" +
-            "gs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new tag for the specified submi" +
-            "ssion within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"" +
-            "description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"" +
-            "location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID" +
-            " of the Submission within the Series.\",\"required\":true,\"format\":\"uint32\",\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Tag" +
-            "\"},\"response\":{\"$ref\":\"Tag\"},\"scopes\":[\"https://www.googleapis.com/auth/moderato" +
-            "r\"]},\"list\":{\"id\":\"moderator.tags.list\",\"path\":\"series/{seriesId}/submissions/{s" +
-            "ubmissionId}/tags\",\"httpMethod\":\"GET\",\"description\":\"Lists all tags for the spec" +
-            "ified submission within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":" +
-            "\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\"" +
-            ":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The" +
-            " decimal ID of the Submission within the Series.\",\"required\":true,\"format\":\"uint" +
-            "32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":" +
-            "{\"$ref\":\"TagList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}},\"to" +
-            "pics\":{\"methods\":{\"get\":{\"id\":\"moderator.topics.get\",\"path\":\"series/{seriesId}/t" +
-            "opics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified topic f" +
-            "rom the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\"" +
-            ":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic " +
-            "within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"Topic\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.topics.insert\",\"" +
-            "path\":\"series/{seriesId}/topics\",\"httpMethod\":\"POST\",\"description\":\"Inserts a ne" +
-            "w topic into the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"" +
-            "description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"Topic\"},\"res" +
-            "ponse\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}," +
-            "\"list\":{\"id\":\"moderator.topics.list\",\"path\":\"series/{seriesId}/topics\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Searches the topics within the specified series and ret" +
-            "urns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query" +
-            "\"},\"mode\":{\"type\":\"string\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description" +
-            "\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\"" +
-            ":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"p" +
-            "ath\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the first result t" +
-            "o be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"serie" +
-            "sId\"],\"response\":{\"$ref\":\"TopicList\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/moderator\"]},\"update\":{\"id\":\"moderator.topics.update\",\"path\":\"series/{seriesId}" +
-            "/topics/{topicId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified topic" +
-            " within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"locat" +
-            "ion\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the To" +
-            "pic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Topic\"},\"response\":{\"$r" +
-            "ef\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}},\"resources" +
-            "\":{\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.topics.submissions.list\",\"p" +
-            "ath\":\"series/{seriesId}/topics/{topicId}/submissions\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Searches the submissions for the specified topic within the specified se" +
-            "ries and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"d" +
-            "escription\":\"Restricts the results to submissions by a specific author.\",\"locati" +
-            "on\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies wheth" +
-            "er to restrict to submissions that have videos attached.\",\"location\":\"query\"},\"i" +
-            "ncludeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies whether to include the c" +
-            "urrent user\'s vote\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query" +
-            "\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"serie" +
-            "sId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":" +
-            "true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":" +
-            "\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":" +
-            "\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query" +
-            "\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within" +
-            " the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/moderator\"]}}}}},\"votes\":{\"methods\":{\"get\":{\"id\":\"mo" +
-            "derator.votes.get\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@m" +
-            "e\",\"httpMethod\":\"GET\",\"description\":\"Returns the votes by the authenticated user" +
-            " for the specified submission within the specified series.\",\"parameters\":{\"serie" +
-            "sId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":" +
-            "true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"desc" +
-            "ription\":\"The decimal ID of the Submission within the Series.\",\"required\":true,\"" +
-            "format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"description\"" +
-            ":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"userId\":{" +
-            "\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"" +
-            "],\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderato" +
-            "r\"]},\"insert\":{\"id\":\"moderator.votes.insert\",\"path\":\"series/{seriesId}/submissio" +
-            "ns/{submissionId}/votes/@me\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new vo" +
-            "te by the authenticated user for the specified submission within the specified s" +
-            "eries.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID" +
-            " of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissio" +
-            "nId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within th" +
-            "e Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"" +
-            "type\":\"string\",\"description\":\"User identifier for unauthenticated usage mode\",\"l" +
-            "ocation\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref" +
-            "\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "moderator\"]},\"list\":{\"id\":\"moderator.votes.list\",\"path\":\"series/{seriesId}/votes" +
-            "/@me\",\"httpMethod\":\"GET\",\"description\":\"Lists the votes by the authenticated use" +
-            "r for the given series.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"" +
-            "},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
-            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"start-index\":{\"type\":\"integer" +
-            "\",\"description\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"VoteList\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderato" +
-            "r.votes.patch\",\"path\":\"series/{seriesId}/submissions/{submissionId}/votes/@me\",\"" +
-            "httpMethod\":\"PATCH\",\"description\":\"Updates the votes by the authenticated user f" +
-            "or the specified submission within the specified series. This method supports pa" +
-            "tch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The de" +
-            "cimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"s" +
-            "ubmissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission w" +
-            "ithin the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthT" +
-            "oken\":{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usage " +
-            "mode\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"parame" +
-            "terOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$re" +
-            "f\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"update\":{\"id" +
-            "\":\"moderator.votes.update\",\"path\":\"series/{seriesId}/submissions/{submissionId}/" +
-            "votes/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the votes by the authentica" +
-            "ted user for the specified submission within the specified series.\",\"parameters\"" +
-            ":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"re" +
-            "quired\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"intege" +
-            "r\",\"description\":\"The decimal ID of the Submission within the Series.\",\"required" +
+            "e first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"respons" +
+            "e\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}" +
+            "}}}},\"my\":{\"resources\":{\"series\":{\"methods\":{\"list\":{\"id\":\"moderator.my.series.l" +
+            "ist\",\"path\":\"series/@me/mine\",\"httpMethod\":\"GET\",\"description\":\"Lists all series" +
+            " created by the authenticated user.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/moderator\"]}}}}},\"myrecent\":{\"resources\":{\"seri" +
+            "es\":{\"methods\":{\"list\":{\"id\":\"moderator.myrecent.series.list\",\"path\":\"series/@me" +
+            "/recent\",\"httpMethod\":\"GET\",\"description\":\"Lists the series the authenticated us" +
+            "er has visited.\",\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googlea" +
+            "pis.com/auth/moderator\"]}}}}},\"profiles\":{\"methods\":{\"get\":{\"id\":\"moderator.prof" +
+            "iles.get\",\"path\":\"profiles/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the pr" +
+            "ofile information for the authenticated user.\",\"response\":{\"$ref\":\"Profile\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.pr" +
+            "ofiles.patch\",\"path\":\"profiles/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates " +
+            "the profile information for the authenticated user. This method supports patch s" +
+            "emantics.\",\"request\":{\"$ref\":\"Profile\"},\"response\":{\"$ref\":\"Profile\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.profiles" +
+            ".update\",\"path\":\"profiles/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the pro" +
+            "file information for the authenticated user.\",\"request\":{\"$ref\":\"Profile\"},\"resp" +
+            "onse\":{\"$ref\":\"Profile\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}" +
+            "}},\"responses\":{\"methods\":{\"insert\":{\"id\":\"moderator.responses.insert\",\"path\":\"s" +
+            "eries/{seriesId}/topics/{topicId}/submissions/{parentSubmissionId}/responses\",\"h" +
+            "ttpMethod\":\"POST\",\"description\":\"Inserts a response for the specified submission" +
+            " in the specified topic within the specified series.\",\"parameters\":{\"anonymous\":" +
+            "{\"type\":\"boolean\",\"description\":\"Set to true to mark the new submission as anony" +
+            "mous.\",\"location\":\"query\"},\"parentSubmissionId\":{\"type\":\"integer\",\"description\":" +
+            "\"The decimal ID of the parent Submission within the Series.\",\"required\":true,\"fo" +
+            "rmat\":\"uint32\",\"location\":\"path\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"Th" +
+            "e decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"" +
+            "},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Topic within " +
+            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":" +
+            "{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usage mode\"," +
+            "\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"topicId\",\"parentSubmissionId\"" +
+            "],\"request\":{\"$ref\":\"Submission\"},\"response\":{\"$ref\":\"Submission\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.responses.lis" +
+            "t\",\"path\":\"series/{seriesId}/submissions/{submissionId}/responses\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"Lists or searches the responses for the specified submissio" +
+            "n within the specified series and returns the search results.\",\"parameters\":{\"au" +
+            "thor\":{\"type\":\"string\",\"description\":\"Restricts the results to submissions by a " +
+            "specific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"Specifies whether to restrict to submissions that have videos attached" +
+            ".\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"description\":\"Maximum nu" +
+            "mber of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"s" +
+            "tring\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"int" +
+            "eger\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"ui" +
+            "nt32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"Sort order.\",\"lo" +
+            "cation\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the fir" +
+            "st result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"},\"submissionId\"" +
+            ":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within the Se" +
+            "ries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/moderator\"]}}},\"series\":{\"methods\":{\"get\":{\"id\":\"moder" +
+            "ator.series.get\",\"path\":\"series/{seriesId}\",\"httpMethod\":\"GET\",\"description\":\"Re" +
+            "turns the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"Series\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.series." +
+            "insert\",\"path\":\"series\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new series." +
+            "\",\"request\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/moderator\"]},\"list\":{\"id\":\"moderator.series.list\",\"path\":\"" +
+            "series\",\"httpMethod\":\"GET\",\"description\":\"Searches the series and returns the se" +
+            "arch results.\",\"parameters\":{\"max-results\":{\"type\":\"integer\",\"description\":\"Maxi" +
+            "mum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"start-index\":{\"t" +
+            "ype\":\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"forma" +
+            "t\":\"uint32\",\"location\":\"query\"}},\"response\":{\"$ref\":\"SeriesList\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\":\"moderator.series.patch\"" +
+            ",\"path\":\"series/{seriesId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the spec" +
+            "ified series. This method supports patch semantics.\",\"parameters\":{\"seriesId\":{\"" +
+            "type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"f" +
+            "ormat\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$r" +
+            "ef\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/moderator\"]},\"update\":{\"id\":\"moderator.series.update\",\"path\":\"series/{seri" +
+            "esId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the specified series.\",\"paramet" +
+            "ers\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\"" +
+            ",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"series" +
+            "Id\"],\"request\":{\"$ref\":\"Series\"},\"response\":{\"$ref\":\"Series\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/moderator\"]}},\"resources\":{\"responses\":{\"methods\":{\"lis" +
+            "t\":{\"id\":\"moderator.series.responses.list\",\"path\":\"series/{seriesId}/responses\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"Searches the responses for the specified serie" +
+            "s and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Restricts the results to submissions by a specific author.\",\"location\"" +
+            ":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Specifies whether " +
+            "to restrict to submissions that have videos attached.\",\"location\":\"query\"},\"max-" +
+            "results\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return.\"," +
+            "\"format\":\"uint32\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search" +
+            " query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The dec" +
+            "imal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"so" +
+            "rt\":{\"type\":\"string\",\"description\":\"Sort order.\",\"location\":\"query\"},\"start-inde" +
+            "x\":{\"type\":\"integer\",\"description\":\"Index of the first result to be retrieved.\"," +
+            "\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":" +
+            "{\"$ref\":\"SeriesList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}}," +
+            "\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.series.submissions.list\",\"path" +
+            "\":\"series/{seriesId}/submissions\",\"httpMethod\":\"GET\",\"description\":\"Searches the" +
+            " submissions for the specified series and returns the search results.\",\"paramete" +
+            "rs\":{\"author\":{\"type\":\"string\",\"description\":\"Restricts the results to submissio" +
+            "ns by a specific author.\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Specifies whether to restrict to submissions that have videos " +
+            "attached.\",\"location\":\"query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"S" +
+            "pecifies whether to include the current user\'s vote\",\"location\":\"query\"},\"lang\":" +
+            "{\"type\":\"string\",\"description\":\"The language code for the language the client pr" +
+            "efers resuls in.\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"location\":\"query\"}" +
+            ",\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"query\"},\"seriesI" +
+            "d\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":tr" +
+            "ue,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"description\":\"S" +
+            "ort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"description\":\"I" +
+            "ndex of the first result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}" +
+            "},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/moderator\"]}}}}},\"submissions\":{\"methods\":{\"get\"" +
+            ":{\"id\":\"moderator.submissions.get\",\"path\":\"series/{seriesId}/submissions/{submis" +
+            "sionId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specified submission with" +
+            "in the specified series.\",\"parameters\":{\"includeVotes\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Specifies whether to include the current user\'s vote\",\"location\":\"query\"" +
+            "},\"lang\":{\"type\":\"string\",\"description\":\"The language code for the language the " +
+            "client prefers resuls in.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"des" +
+            "cription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"loc" +
+            "ation\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of" +
+            " the Submission within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"response\":{\"$ref\":\"Submi" +
+            "ssion\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"" +
+            "moderator.submissions.insert\",\"path\":\"series/{seriesId}/topics/{topicId}/submiss" +
+            "ions\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new submission in the specifi" +
+            "ed topic within the specified series.\",\"parameters\":{\"anonymous\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Set to true to mark the new submission as anonymous.\",\"locatio" +
+            "n\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Se" +
+            "ries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"topicId\":{\"type\":\"i" +
+            "nteger\",\"description\":\"The decimal ID of the Topic within the Series.\",\"required" +
             "\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"desc" +
-            "ription\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"},\"u" +
-            "serId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submi" +
-            "ssionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/moderator\"]}}}}}";
+            "ription\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"}},\"" +
+            "parameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Submission\"},\"response" +
+            "\":{\"$ref\":\"Submission\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}" +
+            "},\"tags\":{\"methods\":{\"delete\":{\"id\":\"moderator.tags.delete\",\"path\":\"series/{seri" +
+            "esId}/submissions/{submissionId}/tags/{tagId}\",\"httpMethod\":\"DELETE\",\"descriptio" +
+            "n\":\"Deletes the specified tag from the specified submission within the specified" +
+            " series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal " +
+            "ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submiss" +
+            "ionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission within " +
+            "the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"tagId\":{\"type" +
+            "\":\"string\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"sub" +
+            "missionId\",\"tagId\"],\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"ins" +
+            "ert\":{\"id\":\"moderator.tags.insert\",\"path\":\"series/{seriesId}/submissions/{submis" +
+            "sionId}/tags\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new tag for the speci" +
+            "fied submission within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"" +
+            "integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":" +
+            "\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The " +
+            "decimal ID of the Submission within the Series.\",\"required\":true,\"format\":\"uint3" +
+            "2\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"" +
+            "$ref\":\"Tag\"},\"response\":{\"$ref\":\"Tag\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/moderator\"]},\"list\":{\"id\":\"moderator.tags.list\",\"path\":\"series/{seriesId}/subm" +
+            "issions/{submissionId}/tags\",\"httpMethod\":\"GET\",\"description\":\"Lists all tags fo" +
+            "r the specified submission within the specified series.\",\"parameters\":{\"seriesId" +
+            "\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"required\":tru" +
+            "e,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"integer\",\"descrip" +
+            "tion\":\"The decimal ID of the Submission within the Series.\",\"required\":true,\"for" +
+            "mat\":\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"" +
+            "response\":{\"$ref\":\"TagList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderato" +
+            "r\"]}}},\"topics\":{\"methods\":{\"get\":{\"id\":\"moderator.topics.get\",\"path\":\"series/{s" +
+            "eriesId}/topics/{topicId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the specifi" +
+            "ed topic from the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\"," +
+            "\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\"," +
+            "\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of " +
+            "the Topic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"Topic\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/moderator\"]},\"insert\":{\"id\":\"moderator.topics" +
+            ".insert\",\"path\":\"series/{seriesId}/topics\",\"httpMethod\":\"POST\",\"description\":\"In" +
+            "serts a new topic into the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"" +
+            "integer\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":" +
+            "\"uint32\",\"location\":\"path\"}},\"parameterOrder\":[\"seriesId\"],\"request\":{\"$ref\":\"To" +
+            "pic\"},\"response\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/mod" +
+            "erator\"]},\"list\":{\"id\":\"moderator.topics.list\",\"path\":\"series/{seriesId}/topics\"" +
+            ",\"httpMethod\":\"GET\",\"description\":\"Searches the topics within the specified seri" +
+            "es and returns the search results.\",\"parameters\":{\"max-results\":{\"type\":\"integer" +
+            "\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"locati" +
+            "on\":\"query\"},\"mode\":{\"type\":\"string\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"d" +
+            "escription\":\"Search query.\",\"location\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"lo" +
+            "cation\":\"path\"},\"start-index\":{\"type\":\"integer\",\"description\":\"Index of the firs" +
+            "t result to be retrieved.\",\"format\":\"uint32\",\"location\":\"query\"}},\"parameterOrde" +
+            "r\":[\"seriesId\"],\"response\":{\"$ref\":\"TopicList\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/moderator\"]},\"update\":{\"id\":\"moderator.topics.update\",\"path\":\"series/" +
+            "{seriesId}/topics/{topicId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates the speci" +
+            "fied topic within the specified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integ" +
+            "er\",\"description\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint" +
+            "32\",\"location\":\"path\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID" +
+            " of the Topic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"seriesId\",\"topicId\"],\"request\":{\"$ref\":\"Topic\"},\"resp" +
+            "onse\":{\"$ref\":\"Topic\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]}}," +
+            "\"resources\":{\"submissions\":{\"methods\":{\"list\":{\"id\":\"moderator.topics.submission" +
+            "s.list\",\"path\":\"series/{seriesId}/topics/{topicId}/submissions\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Searches the submissions for the specified topic within the sp" +
+            "ecified series and returns the search results.\",\"parameters\":{\"author\":{\"type\":\"" +
+            "string\",\"description\":\"Restricts the results to submissions by a specific author" +
+            ".\",\"location\":\"query\"},\"hasAttachedVideo\":{\"type\":\"boolean\",\"description\":\"Speci" +
+            "fies whether to restrict to submissions that have videos attached.\",\"location\":\"" +
+            "query\"},\"includeVotes\":{\"type\":\"boolean\",\"description\":\"Specifies whether to inc" +
+            "lude the current user\'s vote\",\"location\":\"query\"},\"max-results\":{\"type\":\"integer" +
+            "\",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"locati" +
+            "on\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Search query.\",\"location\":\"quer" +
+            "y\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"" +
+            "required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"sort\":{\"type\":\"string\",\"des" +
+            "cription\":\"Sort order.\",\"location\":\"query\"},\"start-index\":{\"type\":\"integer\",\"des" +
+            "cription\":\"Index of the first result to be retrieved.\",\"format\":\"uint32\",\"locati" +
+            "on\":\"query\"},\"topicId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the To" +
+            "pic within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"seriesId\",\"topicId\"],\"response\":{\"$ref\":\"SubmissionList\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/moderator\"]}}}}},\"votes\":{\"methods\":{\"get\"" +
+            ":{\"id\":\"moderator.votes.get\",\"path\":\"series/{seriesId}/submissions/{submissionId" +
+            "}/votes/@me\",\"httpMethod\":\"GET\",\"description\":\"Returns the votes by the authenti" +
+            "cated user for the specified submission within the specified series.\",\"parameter" +
+            "s\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Series.\",\"" +
+            "required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"type\":\"inte" +
+            "ger\",\"description\":\"The decimal ID of the Submission within the Series.\",\"requir" +
+            "ed\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"string\",\"de" +
+            "scription\":\"User identifier for unauthenticated usage mode\",\"location\":\"query\"}," +
+            "\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"sub" +
+            "missionId\"],\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/moderator\"]},\"insert\":{\"id\":\"moderator.votes.insert\",\"path\":\"series/{seriesId}" +
+            "/submissions/{submissionId}/votes/@me\",\"httpMethod\":\"POST\",\"description\":\"Insert" +
+            "s a new vote by the authenticated user for the specified submission within the s" +
+            "pecified series.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The " +
+            "decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"}," +
+            "\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Submission" +
+            " within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unaut" +
+            "hToken\":{\"type\":\"string\",\"description\":\"User identifier for unauthenticated usag" +
+            "e mode\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"reque" +
+            "st\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/moderator\"]},\"list\":{\"id\":\"moderator.votes.list\",\"path\":\"series/{serie" +
+            "sId}/votes/@me\",\"httpMethod\":\"GET\",\"description\":\"Lists the votes by the authent" +
+            "icated user for the given series.\",\"parameters\":{\"max-results\":{\"type\":\"integer\"" +
+            ",\"description\":\"Maximum number of results to return.\",\"format\":\"uint32\",\"locatio" +
+            "n\":\"query\"},\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Se" +
+            "ries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"start-index\":{\"type" +
+            "\":\"integer\",\"description\":\"Index of the first result to be retrieved.\",\"format\":" +
+            "\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"seriesId\"],\"response\":{\"$ref\":\"" +
+            "VoteList\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"patch\":{\"id\"" +
+            ":\"moderator.votes.patch\",\"path\":\"series/{seriesId}/submissions/{submissionId}/vo" +
+            "tes/@me\",\"httpMethod\":\"PATCH\",\"description\":\"Updates the votes by the authentica" +
+            "ted user for the specified submission within the specified series. This method s" +
+            "upports patch semantics.\",\"parameters\":{\"seriesId\":{\"type\":\"integer\",\"descriptio" +
+            "n\":\"The decimal ID of the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":" +
+            "\"path\"},\"submissionId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Su" +
+            "bmission within the Series.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"" +
+            "},\"unauthToken\":{\"type\":\"string\",\"description\":\"User identifier for unauthentica" +
+            "ted usage mode\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"seriesId\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"respo" +
+            "nse\":{\"$ref\":\"Vote\"},\"scopes\":[\"https://www.googleapis.com/auth/moderator\"]},\"up" +
+            "date\":{\"id\":\"moderator.votes.update\",\"path\":\"series/{seriesId}/submissions/{subm" +
+            "issionId}/votes/@me\",\"httpMethod\":\"PUT\",\"description\":\"Updates the votes by the " +
+            "authenticated user for the specified submission within the specified series.\",\"p" +
+            "arameters\":{\"seriesId\":{\"type\":\"integer\",\"description\":\"The decimal ID of the Se" +
+            "ries.\",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"submissionId\":{\"typ" +
+            "e\":\"integer\",\"description\":\"The decimal ID of the Submission within the Series.\"" +
+            ",\"required\":true,\"format\":\"uint32\",\"location\":\"path\"},\"unauthToken\":{\"type\":\"str" +
+            "ing\",\"description\":\"User identifier for unauthenticated usage mode\",\"location\":\"" +
+            "query\"},\"userId\":{\"type\":\"string\",\"location\":\"query\"}},\"parameterOrder\":[\"series" +
+            "Id\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/moderator\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -2114,22 +2115,22 @@ namespace Google.Apis.Moderator.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected ModeratorService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.featured = new FeaturedResource(this);
-            this.global = new GlobalResource(this);
-            this.my = new MyResource(this);
-            this.myrecent = new MyrecentResource(this);
-            this.profiles = new ProfilesResource(this);
-            this.responses = new ResponsesResource(this);
-            this.series = new SeriesResource(this);
-            this.submissions = new SubmissionsResource(this);
-            this.tags = new TagsResource(this);
-            this.topics = new TopicsResource(this);
-            this.votes = new VotesResource(this);
+            this._featured = new FeaturedResource(this);
+            this._global = new GlobalResource(this);
+            this._my = new MyResource(this);
+            this._myrecent = new MyrecentResource(this);
+            this._profiles = new ProfilesResource(this);
+            this._responses = new ResponsesResource(this);
+            this._series = new SeriesResource(this);
+            this._submissions = new SubmissionsResource(this);
+            this._tags = new TagsResource(this);
+            this._topics = new TopicsResource(this);
+            this._votes = new VotesResource(this);
         }
         
         public ModeratorService() : 
@@ -2137,22 +2138,22 @@ namespace Google.Apis.Moderator.v1 {
         }
         
         public ModeratorService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ModeratorService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(ModeratorService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ModeratorService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(ModeratorService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -2186,16 +2187,16 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "featured";
         
-        private SeriesResource series;
+        private SeriesResource _series;
         
         public FeaturedResource(ModeratorService service) {
             this.service = service;
-            this.series = new SeriesResource(service);
+            this._series = new SeriesResource(service);
         }
         
         public virtual SeriesResource Series {
             get {
-                return this.series;
+                return this._series;
             }
         }
         
@@ -2216,11 +2217,11 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -2230,21 +2231,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2252,10 +2253,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -2280,16 +2281,16 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "global";
         
-        private SeriesResource series;
+        private SeriesResource _series;
         
         public GlobalResource(ModeratorService service) {
             this.service = service;
-            this.series = new SeriesResource(service);
+            this._series = new SeriesResource(service);
         }
         
         public virtual SeriesResource Series {
             get {
-                return this.series;
+                return this._series;
             }
         }
         
@@ -2310,17 +2311,17 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string q;
+                private string _q;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -2330,21 +2331,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2352,21 +2353,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -2374,21 +2375,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("q")]
                 public virtual string Q {
                     get {
-                        return this.q;
+                        return this._q;
                     }
                     set {
-                        this.q = value;
+                        this._q = value;
                     }
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -2413,16 +2414,16 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "my";
         
-        private SeriesResource series;
+        private SeriesResource _series;
         
         public MyResource(ModeratorService service) {
             this.service = service;
-            this.series = new SeriesResource(service);
+            this._series = new SeriesResource(service);
         }
         
         public virtual SeriesResource Series {
             get {
-                return this.series;
+                return this._series;
             }
         }
         
@@ -2443,11 +2444,11 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -2457,21 +2458,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2479,10 +2480,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -2507,16 +2508,16 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "myrecent";
         
-        private SeriesResource series;
+        private SeriesResource _series;
         
         public MyrecentResource(ModeratorService service) {
             this.service = service;
-            this.series = new SeriesResource(service);
+            this._series = new SeriesResource(service);
         }
         
         public virtual SeriesResource Series {
             get {
-                return this.series;
+                return this._series;
             }
         }
         
@@ -2537,11 +2538,11 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                         base(service) {
@@ -2551,21 +2552,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -2573,10 +2574,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -2622,11 +2623,11 @@ namespace Google.Apis.Moderator.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -2636,21 +2637,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2658,10 +2659,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2680,13 +2681,13 @@ namespace Google.Apis.Moderator.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Moderator.v1.Data.Profile bodyValue;
+            private Google.Apis.Moderator.v1.Data.Profile _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Profile body) : 
                     base(service) {
@@ -2697,21 +2698,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2719,20 +2720,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Profile Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2755,13 +2756,13 @@ namespace Google.Apis.Moderator.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Moderator.v1.Data.Profile bodyValue;
+            private Google.Apis.Moderator.v1.Data.Profile _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Profile body) : 
                     base(service) {
@@ -2772,21 +2773,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2794,20 +2795,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Profile Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2856,51 +2857,51 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Boolean? anonymous;
+            private System.Nullable<bool> _anonymous;
             
-            private long parentSubmissionId;
+            private long _parentSubmissionId;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long topicId;
+            private long _topicId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private Google.Apis.Moderator.v1.Data.Submission bodyValue;
+            private Google.Apis.Moderator.v1.Data.Submission _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId, long parentSubmissionId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.topicId = topicId;
-                this.parentSubmissionId = parentSubmissionId;
+                this._seriesId = seriesId;
+                this._topicId = topicId;
+                this._parentSubmissionId = parentSubmissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2908,21 +2909,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
             [Google.Apis.Util.RequestParameterAttribute("anonymous")]
-            public virtual System.Boolean? Anonymous {
+            public virtual System.Nullable<bool> Anonymous {
                 get {
-                    return this.anonymous;
+                    return this._anonymous;
                 }
                 set {
-                    this.anonymous = value;
+                    this._anonymous = value;
                 }
             }
             
@@ -2930,7 +2931,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("parentSubmissionId")]
             public virtual long ParentSubmissionId {
                 get {
-                    return this.parentSubmissionId;
+                    return this._parentSubmissionId;
                 }
             }
             
@@ -2938,7 +2939,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -2946,7 +2947,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual long TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -2954,20 +2955,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Submission Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -2990,53 +2991,53 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string author;
+            private string _author;
             
-            private System.Boolean? hasAttachedVideo;
+            private System.Nullable<bool> _hasAttachedVideo;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string q;
+            private string _q;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private string sort;
+            private string _sort;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
-            private long submissionId;
+            private long _submissionId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3044,10 +3045,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3055,32 +3056,32 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("author")]
             public virtual string Author {
                 get {
-                    return this.author;
+                    return this._author;
                 }
                 set {
-                    this.author = value;
+                    this._author = value;
                 }
             }
             
             /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
             [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
-            public virtual System.Boolean? HasAttachedVideo {
+            public virtual System.Nullable<bool> HasAttachedVideo {
                 get {
-                    return this.hasAttachedVideo;
+                    return this._hasAttachedVideo;
                 }
                 set {
-                    this.hasAttachedVideo = value;
+                    this._hasAttachedVideo = value;
                 }
             }
             
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3088,10 +3089,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
                 set {
-                    this.q = value;
+                    this._q = value;
                 }
             }
             
@@ -3099,7 +3100,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -3107,21 +3108,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("sort")]
             public virtual string Sort {
                 get {
-                    return this.sort;
+                    return this._sort;
                 }
                 set {
-                    this.sort = value;
+                    this._sort = value;
                 }
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("start-index")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -3129,7 +3130,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -3153,25 +3154,25 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "series";
         
-        private ResponsesResource responses;
+        private ResponsesResource _responses;
         
-        private SubmissionsResource submissions;
+        private SubmissionsResource _submissions;
         
         public SeriesResource(ModeratorService service) {
             this.service = service;
-            this.responses = new ResponsesResource(service);
-            this.submissions = new SubmissionsResource(service);
+            this._responses = new ResponsesResource(service);
+            this._submissions = new SubmissionsResource(service);
         }
         
         public virtual ResponsesResource Responses {
             get {
-                return this.responses;
+                return this._responses;
             }
         }
         
         public virtual SubmissionsResource Submissions {
             get {
-                return this.submissions;
+                return this._submissions;
             }
         }
         
@@ -3221,50 +3222,50 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string author;
+                private string _author;
                 
-                private System.Boolean? hasAttachedVideo;
+                private System.Nullable<bool> _hasAttachedVideo;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string q;
+                private string _q;
                 
-                private long seriesId;
+                private long _seriesId;
                 
-                private string sort;
+                private string _sort;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
-                    this.seriesId = seriesId;
+                    this._seriesId = seriesId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3272,10 +3273,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -3283,32 +3284,32 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("author")]
                 public virtual string Author {
                     get {
-                        return this.author;
+                        return this._author;
                     }
                     set {
-                        this.author = value;
+                        this._author = value;
                     }
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
-                public virtual System.Boolean? HasAttachedVideo {
+                public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
-                        return this.hasAttachedVideo;
+                        return this._hasAttachedVideo;
                     }
                     set {
-                        this.hasAttachedVideo = value;
+                        this._hasAttachedVideo = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -3316,10 +3317,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("q")]
                 public virtual string Q {
                     get {
-                        return this.q;
+                        return this._q;
                     }
                     set {
-                        this.q = value;
+                        this._q = value;
                     }
                 }
                 
@@ -3327,7 +3328,7 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("seriesId")]
                 public virtual long SeriesId {
                     get {
-                        return this.seriesId;
+                        return this._seriesId;
                     }
                 }
                 
@@ -3335,21 +3336,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("sort")]
                 public virtual string Sort {
                     get {
-                        return this.sort;
+                        return this._sort;
                     }
                     set {
-                        this.sort = value;
+                        this._sort = value;
                     }
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3385,54 +3386,54 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string author;
+                private string _author;
                 
-                private System.Boolean? hasAttachedVideo;
+                private System.Nullable<bool> _hasAttachedVideo;
                 
-                private System.Boolean? includeVotes;
+                private System.Nullable<bool> _includeVotes;
                 
-                private string lang;
+                private string _lang;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string q;
+                private string _q;
                 
-                private long seriesId;
+                private long _seriesId;
                 
-                private string sort;
+                private string _sort;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                         base(service) {
-                    this.seriesId = seriesId;
+                    this._seriesId = seriesId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -3440,10 +3441,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -3451,32 +3452,32 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("author")]
                 public virtual string Author {
                     get {
-                        return this.author;
+                        return this._author;
                     }
                     set {
-                        this.author = value;
+                        this._author = value;
                     }
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
-                public virtual System.Boolean? HasAttachedVideo {
+                public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
-                        return this.hasAttachedVideo;
+                        return this._hasAttachedVideo;
                     }
                     set {
-                        this.hasAttachedVideo = value;
+                        this._hasAttachedVideo = value;
                     }
                 }
                 
                 /// <summary>Specifies whether to include the current user's vote</summary>
                 [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
-                public virtual System.Boolean? IncludeVotes {
+                public virtual System.Nullable<bool> IncludeVotes {
                     get {
-                        return this.includeVotes;
+                        return this._includeVotes;
                     }
                     set {
-                        this.includeVotes = value;
+                        this._includeVotes = value;
                     }
                 }
                 
@@ -3484,21 +3485,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("lang")]
                 public virtual string Lang {
                     get {
-                        return this.lang;
+                        return this._lang;
                     }
                     set {
-                        this.lang = value;
+                        this._lang = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -3506,10 +3507,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("q")]
                 public virtual string Q {
                     get {
-                        return this.q;
+                        return this._q;
                     }
                     set {
-                        this.q = value;
+                        this._q = value;
                     }
                 }
                 
@@ -3517,7 +3518,7 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("seriesId")]
                 public virtual long SeriesId {
                     get {
-                        return this.seriesId;
+                        return this._seriesId;
                     }
                 }
                 
@@ -3525,21 +3526,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("sort")]
                 public virtual string Sort {
                     get {
-                        return this.sort;
+                        return this._sort;
                     }
                     set {
-                        this.sort = value;
+                        this._sort = value;
                     }
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -3559,38 +3560,38 @@ namespace Google.Apis.Moderator.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3598,10 +3599,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3609,7 +3610,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -3628,13 +3629,13 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Moderator.v1.Data.Series bodyValue;
+            private Google.Apis.Moderator.v1.Data.Series _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Series body) : 
                     base(service) {
@@ -3645,21 +3646,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3667,20 +3668,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Series Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3703,17 +3704,17 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string q;
+            private string _q;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -3723,21 +3724,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3745,21 +3746,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -3767,21 +3768,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
                 set {
-                    this.q = value;
+                    this._q = value;
                 }
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("start-index")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -3800,41 +3801,41 @@ namespace Google.Apis.Moderator.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private Google.Apis.Moderator.v1.Data.Series bodyValue;
+            private Google.Apis.Moderator.v1.Data.Series _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Series body, long seriesId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3842,10 +3843,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3853,17 +3854,17 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Series Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3886,41 +3887,41 @@ namespace Google.Apis.Moderator.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private Google.Apis.Moderator.v1.Data.Series bodyValue;
+            private Google.Apis.Moderator.v1.Data.Series _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Series body, long seriesId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3928,10 +3929,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3939,17 +3940,17 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Series Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3997,45 +3998,45 @@ namespace Google.Apis.Moderator.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Boolean? includeVotes;
+            private System.Nullable<bool> _includeVotes;
             
-            private string lang;
+            private string _lang;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4043,21 +4044,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Specifies whether to include the current user's vote</summary>
             [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
-            public virtual System.Boolean? IncludeVotes {
+            public virtual System.Nullable<bool> IncludeVotes {
                 get {
-                    return this.includeVotes;
+                    return this._includeVotes;
                 }
                 set {
-                    this.includeVotes = value;
+                    this._includeVotes = value;
                 }
             }
             
@@ -4065,10 +4066,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("lang")]
             public virtual string Lang {
                 get {
-                    return this.lang;
+                    return this._lang;
                 }
                 set {
-                    this.lang = value;
+                    this._lang = value;
                 }
             }
             
@@ -4076,7 +4077,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4084,7 +4085,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -4103,48 +4104,48 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Boolean? anonymous;
+            private System.Nullable<bool> _anonymous;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long topicId;
+            private long _topicId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private Google.Apis.Moderator.v1.Data.Submission bodyValue;
+            private Google.Apis.Moderator.v1.Data.Submission _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Submission body, long seriesId, long topicId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.topicId = topicId;
+                this._seriesId = seriesId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4152,21 +4153,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
             [Google.Apis.Util.RequestParameterAttribute("anonymous")]
-            public virtual System.Boolean? Anonymous {
+            public virtual System.Nullable<bool> Anonymous {
                 get {
-                    return this.anonymous;
+                    return this._anonymous;
                 }
                 set {
-                    this.anonymous = value;
+                    this._anonymous = value;
                 }
             }
             
@@ -4174,7 +4175,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4182,7 +4183,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual long TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -4190,20 +4191,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Submission Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4259,44 +4260,44 @@ namespace Google.Apis.Moderator.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private string tagId;
+            private string _tagId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId, string tagId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
-                this.tagId = tagId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
+                this._tagId = tagId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4304,10 +4305,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4315,7 +4316,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4323,14 +4324,14 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("tagId")]
             public virtual string TagId {
                 get {
-                    return this.tagId;
+                    return this._tagId;
                 }
             }
             
@@ -4349,44 +4350,44 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Tag> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private Google.Apis.Moderator.v1.Data.Tag bodyValue;
+            private Google.Apis.Moderator.v1.Data.Tag _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Tag body, long seriesId, long submissionId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4394,10 +4395,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4405,7 +4406,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4413,17 +4414,17 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Tag Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4446,41 +4447,41 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TagList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4488,10 +4489,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4499,7 +4500,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4507,7 +4508,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -4531,16 +4532,16 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "topics";
         
-        private SubmissionsResource submissions;
+        private SubmissionsResource _submissions;
         
         public TopicsResource(ModeratorService service) {
             this.service = service;
-            this.submissions = new SubmissionsResource(service);
+            this._submissions = new SubmissionsResource(service);
         }
         
         public virtual SubmissionsResource Submissions {
             get {
-                return this.submissions;
+                return this._submissions;
             }
         }
         
@@ -4589,55 +4590,55 @@ namespace Google.Apis.Moderator.v1 {
             
             public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
-                private string oauth_token;
+                private string _oauth_token;
                 
-                private System.Boolean? prettyPrint;
+                private System.Nullable<bool> _prettyPrint;
                 
-                private string quotaUser;
+                private string _quotaUser;
                 
-                private string author;
+                private string _author;
                 
-                private System.Boolean? hasAttachedVideo;
+                private System.Nullable<bool> _hasAttachedVideo;
                 
-                private System.Boolean? includeVotes;
+                private System.Nullable<bool> _includeVotes;
                 
-                private System.Int64? maxResults;
+                private System.Nullable<long> _maxResults;
                 
-                private string q;
+                private string _q;
                 
-                private long seriesId;
+                private long _seriesId;
                 
-                private string sort;
+                private string _sort;
                 
-                private System.Int64? startIndex;
+                private System.Nullable<long> _startIndex;
                 
-                private long topicId;
+                private long _topicId;
                 
                 public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long topicId) : 
                         base(service) {
-                    this.seriesId = seriesId;
-                    this.topicId = topicId;
+                    this._seriesId = seriesId;
+                    this._topicId = topicId;
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                 public virtual string Oauth_token {
                     get {
-                        return this.oauth_token;
+                        return this._oauth_token;
                     }
                     set {
-                        this.oauth_token = value;
+                        this._oauth_token = value;
                     }
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                public virtual System.Boolean? PrettyPrint {
+                public virtual System.Nullable<bool> PrettyPrint {
                     get {
-                        return this.prettyPrint;
+                        return this._prettyPrint;
                     }
                     set {
-                        this.prettyPrint = value;
+                        this._prettyPrint = value;
                     }
                 }
                 
@@ -4645,10 +4646,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                 public virtual string QuotaUser {
                     get {
-                        return this.quotaUser;
+                        return this._quotaUser;
                     }
                     set {
-                        this.quotaUser = value;
+                        this._quotaUser = value;
                     }
                 }
                 
@@ -4656,43 +4657,43 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("author")]
                 public virtual string Author {
                     get {
-                        return this.author;
+                        return this._author;
                     }
                     set {
-                        this.author = value;
+                        this._author = value;
                     }
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
-                public virtual System.Boolean? HasAttachedVideo {
+                public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
-                        return this.hasAttachedVideo;
+                        return this._hasAttachedVideo;
                     }
                     set {
-                        this.hasAttachedVideo = value;
+                        this._hasAttachedVideo = value;
                     }
                 }
                 
                 /// <summary>Specifies whether to include the current user's vote</summary>
                 [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
-                public virtual System.Boolean? IncludeVotes {
+                public virtual System.Nullable<bool> IncludeVotes {
                     get {
-                        return this.includeVotes;
+                        return this._includeVotes;
                     }
                     set {
-                        this.includeVotes = value;
+                        this._includeVotes = value;
                     }
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("max-results")]
-                public virtual System.Int64? MaxResults {
+                public virtual System.Nullable<long> MaxResults {
                     get {
-                        return this.maxResults;
+                        return this._maxResults;
                     }
                     set {
-                        this.maxResults = value;
+                        this._maxResults = value;
                     }
                 }
                 
@@ -4700,10 +4701,10 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("q")]
                 public virtual string Q {
                     get {
-                        return this.q;
+                        return this._q;
                     }
                     set {
-                        this.q = value;
+                        this._q = value;
                     }
                 }
                 
@@ -4711,7 +4712,7 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("seriesId")]
                 public virtual long SeriesId {
                     get {
-                        return this.seriesId;
+                        return this._seriesId;
                     }
                 }
                 
@@ -4719,21 +4720,21 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("sort")]
                 public virtual string Sort {
                     get {
-                        return this.sort;
+                        return this._sort;
                     }
                     set {
-                        this.sort = value;
+                        this._sort = value;
                     }
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
                 [Google.Apis.Util.RequestParameterAttribute("start-index")]
-                public virtual System.Int64? StartIndex {
+                public virtual System.Nullable<long> StartIndex {
                     get {
-                        return this.startIndex;
+                        return this._startIndex;
                     }
                     set {
-                        this.startIndex = value;
+                        this._startIndex = value;
                     }
                 }
                 
@@ -4741,7 +4742,7 @@ namespace Google.Apis.Moderator.v1 {
                 [Google.Apis.Util.RequestParameterAttribute("topicId")]
                 public virtual long TopicId {
                     get {
-                        return this.topicId;
+                        return this._topicId;
                     }
                 }
                 
@@ -4761,41 +4762,41 @@ namespace Google.Apis.Moderator.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long topicId;
+            private long _topicId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long topicId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.topicId = topicId;
+                this._seriesId = seriesId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4803,10 +4804,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4814,7 +4815,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -4822,7 +4823,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual long TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
@@ -4841,41 +4842,41 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private Google.Apis.Moderator.v1.Data.Topic bodyValue;
+            private Google.Apis.Moderator.v1.Data.Topic _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Topic body, long seriesId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4883,10 +4884,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4894,17 +4895,17 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Topic Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4927,46 +4928,46 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TopicList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string mode;
+            private string _mode;
             
-            private string q;
+            private string _q;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4974,31 +4975,31 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("mode")]
             public virtual string Mode {
                 get {
-                    return this.mode;
+                    return this._mode;
                 }
                 set {
-                    this.mode = value;
+                    this._mode = value;
                 }
             }
             
@@ -5006,10 +5007,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
                 set {
-                    this.q = value;
+                    this._q = value;
                 }
             }
             
@@ -5017,18 +5018,18 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("start-index")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -5047,44 +5048,44 @@ namespace Google.Apis.Moderator.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long topicId;
+            private long _topicId;
             
-            private Google.Apis.Moderator.v1.Data.Topic bodyValue;
+            private Google.Apis.Moderator.v1.Data.Topic _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Topic body, long seriesId, long topicId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.topicId = topicId;
+                this._seriesId = seriesId;
+                this._topicId = topicId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5092,10 +5093,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5103,7 +5104,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -5111,17 +5112,17 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("topicId")]
             public virtual long TopicId {
                 get {
-                    return this.topicId;
+                    return this._topicId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Topic Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5189,45 +5190,45 @@ namespace Google.Apis.Moderator.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private string userId;
+            private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId, long submissionId) : 
                     base(service) {
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5235,10 +5236,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5246,7 +5247,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -5254,7 +5255,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -5262,20 +5263,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
                 set {
-                    this.userId = value;
+                    this._userId = value;
                 }
             }
             
@@ -5294,46 +5295,46 @@ namespace Google.Apis.Moderator.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private Google.Apis.Moderator.v1.Data.Vote bodyValue;
+            private Google.Apis.Moderator.v1.Data.Vote _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5341,10 +5342,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5352,7 +5353,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -5360,7 +5361,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -5368,20 +5369,20 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Vote Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5404,42 +5405,42 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.VoteList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private System.Int64? startIndex;
+            private System.Nullable<long> _startIndex;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, long seriesId) : 
                     base(service) {
-                this.seriesId = seriesId;
+                this._seriesId = seriesId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5447,21 +5448,21 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Maximum number of results to return.</summary>
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -5469,18 +5470,18 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
             [Google.Apis.Util.RequestParameterAttribute("start-index")]
-            public virtual System.Int64? StartIndex {
+            public virtual System.Nullable<long> StartIndex {
                 get {
-                    return this.startIndex;
+                    return this._startIndex;
                 }
                 set {
-                    this.startIndex = value;
+                    this._startIndex = value;
                 }
             }
             
@@ -5499,48 +5500,48 @@ namespace Google.Apis.Moderator.v1 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private string userId;
+            private string _userId;
             
-            private Google.Apis.Moderator.v1.Data.Vote bodyValue;
+            private Google.Apis.Moderator.v1.Data.Vote _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5548,10 +5549,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5559,7 +5560,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -5567,7 +5568,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -5575,30 +5576,30 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
                 set {
-                    this.userId = value;
+                    this._userId = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Vote Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5621,48 +5622,48 @@ namespace Google.Apis.Moderator.v1 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private long seriesId;
+            private long _seriesId;
             
-            private long submissionId;
+            private long _submissionId;
             
-            private string unauthToken;
+            private string _unauthToken;
             
-            private string userId;
+            private string _userId;
             
-            private Google.Apis.Moderator.v1.Data.Vote bodyValue;
+            private Google.Apis.Moderator.v1.Data.Vote _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Moderator.v1.Data.Vote body, long seriesId, long submissionId) : 
                     base(service) {
                 this.Body = body;
-                this.seriesId = seriesId;
-                this.submissionId = submissionId;
+                this._seriesId = seriesId;
+                this._submissionId = submissionId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5670,10 +5671,10 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5681,7 +5682,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("seriesId")]
             public virtual long SeriesId {
                 get {
-                    return this.seriesId;
+                    return this._seriesId;
                 }
             }
             
@@ -5689,7 +5690,7 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("submissionId")]
             public virtual long SubmissionId {
                 get {
-                    return this.submissionId;
+                    return this._submissionId;
                 }
             }
             
@@ -5697,30 +5698,30 @@ namespace Google.Apis.Moderator.v1 {
             [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
             public virtual string UnauthToken {
                 get {
-                    return this.unauthToken;
+                    return this._unauthToken;
                 }
                 set {
-                    this.unauthToken = value;
+                    this._unauthToken = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("userId")]
             public virtual string UserId {
                 get {
-                    return this.userId;
+                    return this._userId;
                 }
                 set {
-                    this.userId = value;
+                    this._userId = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Moderator.v1.Data.Vote Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5746,27 +5747,27 @@ namespace Google.Apis.Moderator.v1 {
         
         private const string Resource = "";
         
-        private FeaturedResource featured;
+        private FeaturedResource _featured;
         
-        private GlobalResource global;
+        private GlobalResource _global;
         
-        private MyResource my;
+        private MyResource _my;
         
-        private MyrecentResource myrecent;
+        private MyrecentResource _myrecent;
         
-        private ProfilesResource profiles;
+        private ProfilesResource _profiles;
         
-        private ResponsesResource responses;
+        private ResponsesResource _responses;
         
-        private SeriesResource series;
+        private SeriesResource _series;
         
-        private SubmissionsResource submissions;
+        private SubmissionsResource _submissions;
         
-        private TagsResource tags;
+        private TagsResource _tags;
         
-        private TopicsResource topics;
+        private TopicsResource _topics;
         
-        private VotesResource votes;
+        private VotesResource _votes;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -5776,67 +5777,67 @@ namespace Google.Apis.Moderator.v1 {
         
         public virtual FeaturedResource Featured {
             get {
-                return this.featured;
+                return this._featured;
             }
         }
         
         public virtual GlobalResource Global {
             get {
-                return this.global;
+                return this._global;
             }
         }
         
         public virtual MyResource My {
             get {
-                return this.my;
+                return this._my;
             }
         }
         
         public virtual MyrecentResource Myrecent {
             get {
-                return this.myrecent;
+                return this._myrecent;
             }
         }
         
         public virtual ProfilesResource Profiles {
             get {
-                return this.profiles;
+                return this._profiles;
             }
         }
         
         public virtual ResponsesResource Responses {
             get {
-                return this.responses;
+                return this._responses;
             }
         }
         
         public virtual SeriesResource Series {
             get {
-                return this.series;
+                return this._series;
             }
         }
         
         public virtual SubmissionsResource Submissions {
             get {
-                return this.submissions;
+                return this._submissions;
             }
         }
         
         public virtual TagsResource Tags {
             get {
-                return this.tags;
+                return this._tags;
             }
         }
         
         public virtual TopicsResource Topics {
             get {
-                return this.topics;
+                return this._topics;
             }
         }
         
         public virtual VotesResource Votes {
             get {
-                return this.votes;
+                return this._votes;
             }
         }
     }

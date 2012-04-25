@@ -16,24 +16,24 @@ namespace Google.Apis.Calendar.v3.Data {
     
     public class Acl : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<AclRule> items;
+        private System.Collections.Generic.IList<AclRule> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the collection.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -41,10 +41,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<AclRule> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -52,10 +52,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -63,46 +63,46 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class AclRule : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string role;
+        private string _role;
         
-        private AclRule.ScopeData scope;
+        private AclRule.ScopeData _scope;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -110,10 +110,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -121,10 +121,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -137,10 +137,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("role")]
         public virtual string Role {
             get {
-                return this.role;
+                return this._role;
             }
             set {
-                this.role = value;
+                this._role = value;
             }
         }
         
@@ -148,29 +148,29 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("scope")]
         public virtual AclRule.ScopeData Scope {
             get {
-                return this.scope;
+                return this._scope;
             }
             set {
-                this.scope = value;
+                this._scope = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         /// <summary>The scope of the rule.</summary>
         public class ScopeData {
             
-            private string type;
+            private string _type;
             
-            private string value;
+            private string _value;
             
             /// <summary>The type of the scope. Possible values are:  
             ///- &quot;default&quot; - The public scope. This is the default value. 
@@ -180,10 +180,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
             
@@ -191,10 +191,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("value")]
             public virtual string Value {
                 get {
-                    return this.value;
+                    return this._value;
                 }
                 set {
-                    this.value = value;
+                    this._value = value;
                 }
             }
         }
@@ -202,30 +202,30 @@ namespace Google.Apis.Calendar.v3.Data {
     
     public class Calendar : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string description;
+        private string _description;
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string location;
+        private string _location;
         
-        private string summary;
+        private string _summary;
         
-        private string timeZone;
+        private string _timeZone;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>Description of the calendar. Optional.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -233,10 +233,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -244,10 +244,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -255,10 +255,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -266,10 +266,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("location")]
         public virtual string Location {
             get {
-                return this.location;
+                return this._location;
             }
             set {
-                this.location = value;
+                this._location = value;
             }
         }
         
@@ -277,10 +277,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("summary")]
         public virtual string Summary {
             get {
-                return this.summary;
+                return this._summary;
             }
             set {
-                this.summary = value;
+                this._summary = value;
             }
         }
         
@@ -288,44 +288,44 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeZone")]
         public virtual string TimeZone {
             get {
-                return this.timeZone;
+                return this._timeZone;
             }
             set {
-                this.timeZone = value;
+                this._timeZone = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class CalendarList : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<CalendarListEntry> items;
+        private System.Collections.Generic.IList<CalendarListEntry> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the collection.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -333,10 +333,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<CalendarListEntry> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -344,10 +344,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -355,53 +355,53 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class CalendarListEntry : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string accessRole;
+        private string _accessRole;
         
-        private string colorId;
+        private string _colorId;
         
-        private System.Collections.Generic.IList<EventReminder> defaultReminders;
+        private System.Collections.Generic.IList<EventReminder> _defaultReminders;
         
-        private string description;
+        private string _description;
         
-        private string etag;
+        private string _etag;
         
-        private System.Nullable<bool> hidden;
+        private System.Nullable<bool> _hidden;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string location;
+        private string _location;
         
-        private System.Nullable<bool> selected;
+        private System.Nullable<bool> _selected;
         
-        private string summary;
+        private string _summary;
         
-        private string summaryOverride;
+        private string _summaryOverride;
         
-        private string timeZone;
+        private string _timeZone;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>The effective access role that the authenticated user has on the calendar. Read-only. Possible values are:  
         ///- &quot;freeBusyReader&quot; - Provides read access to free/busy information. 
@@ -411,10 +411,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("accessRole")]
         public virtual string AccessRole {
             get {
-                return this.accessRole;
+                return this._accessRole;
             }
             set {
-                this.accessRole = value;
+                this._accessRole = value;
             }
         }
         
@@ -422,10 +422,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("colorId")]
         public virtual string ColorId {
             get {
-                return this.colorId;
+                return this._colorId;
             }
             set {
-                this.colorId = value;
+                this._colorId = value;
             }
         }
         
@@ -433,10 +433,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("defaultReminders")]
         public virtual System.Collections.Generic.IList<EventReminder> DefaultReminders {
             get {
-                return this.defaultReminders;
+                return this._defaultReminders;
             }
             set {
-                this.defaultReminders = value;
+                this._defaultReminders = value;
             }
         }
         
@@ -444,10 +444,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -455,10 +455,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -466,10 +466,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("hidden")]
         public virtual System.Nullable<bool> Hidden {
             get {
-                return this.hidden;
+                return this._hidden;
             }
             set {
-                this.hidden = value;
+                this._hidden = value;
             }
         }
         
@@ -477,10 +477,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -488,10 +488,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -499,10 +499,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("location")]
         public virtual string Location {
             get {
-                return this.location;
+                return this._location;
             }
             set {
-                this.location = value;
+                this._location = value;
             }
         }
         
@@ -510,10 +510,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selected")]
         public virtual System.Nullable<bool> Selected {
             get {
-                return this.selected;
+                return this._selected;
             }
             set {
-                this.selected = value;
+                this._selected = value;
             }
         }
         
@@ -521,10 +521,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("summary")]
         public virtual string Summary {
             get {
-                return this.summary;
+                return this._summary;
             }
             set {
-                this.summary = value;
+                this._summary = value;
             }
         }
         
@@ -532,10 +532,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("summaryOverride")]
         public virtual string SummaryOverride {
             get {
-                return this.summaryOverride;
+                return this._summaryOverride;
             }
             set {
-                this.summaryOverride = value;
+                this._summaryOverride = value;
             }
         }
         
@@ -543,38 +543,38 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeZone")]
         public virtual string TimeZone {
             get {
-                return this.timeZone;
+                return this._timeZone;
             }
             set {
-                this.timeZone = value;
+                this._timeZone = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class ColorDefinition {
         
-        private string background;
+        private string _background;
         
-        private string foreground;
+        private string _foreground;
         
         /// <summary>The background color associated with this color definition.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("background")]
         public virtual string Background {
             get {
-                return this.background;
+                return this._background;
             }
             set {
-                this.background = value;
+                this._background = value;
             }
         }
         
@@ -582,36 +582,36 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("foreground")]
         public virtual string Foreground {
             get {
-                return this.foreground;
+                return this._foreground;
             }
             set {
-                this.foreground = value;
+                this._foreground = value;
             }
         }
     }
     
     public class Colors : Google.Apis.Requests.IDirectResponseSchema {
         
-        private Colors.CalendarData calendar;
+        private Colors.CalendarData _calendar;
         
-        private Colors.EventData eventValue;
+        private Colors.EventData _event;
         
-        private string kind;
+        private string _kind;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Palette of calendar colors, mapping from the color ID to its definition. An &apos;calendarListEntry&apos; resource refers to one of these color IDs in its &apos;color&apos; field. Read-only.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("calendar")]
         public virtual Colors.CalendarData Calendar {
             get {
-                return this.calendar;
+                return this._calendar;
             }
             set {
-                this.calendar = value;
+                this._calendar = value;
             }
         }
         
@@ -619,10 +619,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("event")]
         public virtual Colors.EventData Event {
             get {
-                return this.eventValue;
+                return this._event;
             }
             set {
-                this.eventValue = value;
+                this._event = value;
             }
         }
         
@@ -630,10 +630,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -641,29 +641,29 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
@@ -678,18 +678,18 @@ namespace Google.Apis.Calendar.v3.Data {
     
     public class Error {
         
-        private string domain;
+        private string _domain;
         
-        private string reason;
+        private string _reason;
         
         /// <summary>Domain, or broad category, of the error.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("domain")]
         public virtual string Domain {
             get {
-                return this.domain;
+                return this._domain;
             }
             set {
-                this.domain = value;
+                this._domain = value;
             }
         }
         
@@ -701,90 +701,90 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("reason")]
         public virtual string Reason {
             get {
-                return this.reason;
+                return this._reason;
             }
             set {
-                this.reason = value;
+                this._reason = value;
             }
         }
     }
     
     public class Event : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Nullable<bool> anyoneCanAddSelf;
+        private System.Nullable<bool> _anyoneCanAddSelf;
         
-        private System.Collections.Generic.IList<EventAttendee> attendees;
+        private System.Collections.Generic.IList<EventAttendee> _attendees;
         
-        private System.Nullable<bool> attendeesOmitted;
+        private System.Nullable<bool> _attendeesOmitted;
         
-        private string colorId;
+        private string _colorId;
         
-        private string created;
+        private string _created;
         
-        private Event.CreatorData creator;
+        private Event.CreatorData _creator;
         
-        private string description;
+        private string _description;
         
-        private EventDateTime end;
+        private EventDateTime _end;
         
-        private string etag;
+        private string _etag;
         
-        private Event.ExtendedPropertiesData extendedProperties;
+        private Event.ExtendedPropertiesData _extendedProperties;
         
-        private Event.GadgetData gadget;
+        private Event.GadgetData _gadget;
         
-        private System.Nullable<bool> guestsCanInviteOthers;
+        private System.Nullable<bool> _guestsCanInviteOthers;
         
-        private System.Nullable<bool> guestsCanModify;
+        private System.Nullable<bool> _guestsCanModify;
         
-        private System.Nullable<bool> guestsCanSeeOtherGuests;
+        private System.Nullable<bool> _guestsCanSeeOtherGuests;
         
-        private string htmlLink;
+        private string _htmlLink;
         
-        private string iCalUID;
+        private string _iCalUID;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string location;
+        private string _location;
         
-        private Event.OrganizerData organizer;
+        private Event.OrganizerData _organizer;
         
-        private EventDateTime originalStartTime;
+        private EventDateTime _originalStartTime;
         
-        private System.Nullable<bool> privateCopy;
+        private System.Nullable<bool> _privateCopy;
         
-        private System.Collections.Generic.IList<string> recurrence;
+        private System.Collections.Generic.IList<string> _recurrence;
         
-        private string recurringEventId;
+        private string _recurringEventId;
         
-        private Event.RemindersData reminders;
+        private Event.RemindersData _reminders;
         
-        private System.Nullable<long> sequence;
+        private System.Nullable<long> _sequence;
         
-        private EventDateTime start;
+        private EventDateTime _start;
         
-        private string status;
+        private string _status;
         
-        private string summary;
+        private string _summary;
         
-        private string transparency;
+        private string _transparency;
         
-        private string updated;
+        private string _updated;
         
-        private string visibility;
+        private string _visibility;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>Whether anyone can invite themselves to the event. Optional. The default is False.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("anyoneCanAddSelf")]
         public virtual System.Nullable<bool> AnyoneCanAddSelf {
             get {
-                return this.anyoneCanAddSelf;
+                return this._anyoneCanAddSelf;
             }
             set {
-                this.anyoneCanAddSelf = value;
+                this._anyoneCanAddSelf = value;
             }
         }
         
@@ -792,10 +792,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("attendees")]
         public virtual System.Collections.Generic.IList<EventAttendee> Attendees {
             get {
-                return this.attendees;
+                return this._attendees;
             }
             set {
-                this.attendees = value;
+                this._attendees = value;
             }
         }
         
@@ -803,10 +803,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("attendeesOmitted")]
         public virtual System.Nullable<bool> AttendeesOmitted {
             get {
-                return this.attendeesOmitted;
+                return this._attendeesOmitted;
             }
             set {
-                this.attendeesOmitted = value;
+                this._attendeesOmitted = value;
             }
         }
         
@@ -814,10 +814,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("colorId")]
         public virtual string ColorId {
             get {
-                return this.colorId;
+                return this._colorId;
             }
             set {
-                this.colorId = value;
+                this._colorId = value;
             }
         }
         
@@ -825,10 +825,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("created")]
         public virtual string Created {
             get {
-                return this.created;
+                return this._created;
             }
             set {
-                this.created = value;
+                this._created = value;
             }
         }
         
@@ -836,10 +836,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("creator")]
         public virtual Event.CreatorData Creator {
             get {
-                return this.creator;
+                return this._creator;
             }
             set {
-                this.creator = value;
+                this._creator = value;
             }
         }
         
@@ -847,20 +847,20 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("end")]
         public virtual EventDateTime End {
             get {
-                return this.end;
+                return this._end;
             }
             set {
-                this.end = value;
+                this._end = value;
             }
         }
         
@@ -868,10 +868,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -879,10 +879,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("extendedProperties")]
         public virtual Event.ExtendedPropertiesData ExtendedProperties {
             get {
-                return this.extendedProperties;
+                return this._extendedProperties;
             }
             set {
-                this.extendedProperties = value;
+                this._extendedProperties = value;
             }
         }
         
@@ -890,10 +890,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("gadget")]
         public virtual Event.GadgetData Gadget {
             get {
-                return this.gadget;
+                return this._gadget;
             }
             set {
-                this.gadget = value;
+                this._gadget = value;
             }
         }
         
@@ -901,10 +901,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("guestsCanInviteOthers")]
         public virtual System.Nullable<bool> GuestsCanInviteOthers {
             get {
-                return this.guestsCanInviteOthers;
+                return this._guestsCanInviteOthers;
             }
             set {
-                this.guestsCanInviteOthers = value;
+                this._guestsCanInviteOthers = value;
             }
         }
         
@@ -912,10 +912,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("guestsCanModify")]
         public virtual System.Nullable<bool> GuestsCanModify {
             get {
-                return this.guestsCanModify;
+                return this._guestsCanModify;
             }
             set {
-                this.guestsCanModify = value;
+                this._guestsCanModify = value;
             }
         }
         
@@ -923,10 +923,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("guestsCanSeeOtherGuests")]
         public virtual System.Nullable<bool> GuestsCanSeeOtherGuests {
             get {
-                return this.guestsCanSeeOtherGuests;
+                return this._guestsCanSeeOtherGuests;
             }
             set {
-                this.guestsCanSeeOtherGuests = value;
+                this._guestsCanSeeOtherGuests = value;
             }
         }
         
@@ -934,10 +934,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("htmlLink")]
         public virtual string HtmlLink {
             get {
-                return this.htmlLink;
+                return this._htmlLink;
             }
             set {
-                this.htmlLink = value;
+                this._htmlLink = value;
             }
         }
         
@@ -945,10 +945,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("iCalUID")]
         public virtual string ICalUID {
             get {
-                return this.iCalUID;
+                return this._iCalUID;
             }
             set {
-                this.iCalUID = value;
+                this._iCalUID = value;
             }
         }
         
@@ -956,10 +956,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -967,10 +967,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -978,10 +978,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("location")]
         public virtual string Location {
             get {
-                return this.location;
+                return this._location;
             }
             set {
-                this.location = value;
+                this._location = value;
             }
         }
         
@@ -989,20 +989,20 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("organizer")]
         public virtual Event.OrganizerData Organizer {
             get {
-                return this.organizer;
+                return this._organizer;
             }
             set {
-                this.organizer = value;
+                this._organizer = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("originalStartTime")]
         public virtual EventDateTime OriginalStartTime {
             get {
-                return this.originalStartTime;
+                return this._originalStartTime;
             }
             set {
-                this.originalStartTime = value;
+                this._originalStartTime = value;
             }
         }
         
@@ -1010,10 +1010,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("privateCopy")]
         public virtual System.Nullable<bool> PrivateCopy {
             get {
-                return this.privateCopy;
+                return this._privateCopy;
             }
             set {
-                this.privateCopy = value;
+                this._privateCopy = value;
             }
         }
         
@@ -1021,10 +1021,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("recurrence")]
         public virtual System.Collections.Generic.IList<string> Recurrence {
             get {
-                return this.recurrence;
+                return this._recurrence;
             }
             set {
-                this.recurrence = value;
+                this._recurrence = value;
             }
         }
         
@@ -1032,10 +1032,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("recurringEventId")]
         public virtual string RecurringEventId {
             get {
-                return this.recurringEventId;
+                return this._recurringEventId;
             }
             set {
-                this.recurringEventId = value;
+                this._recurringEventId = value;
             }
         }
         
@@ -1043,10 +1043,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("reminders")]
         public virtual Event.RemindersData Reminders {
             get {
-                return this.reminders;
+                return this._reminders;
             }
             set {
-                this.reminders = value;
+                this._reminders = value;
             }
         }
         
@@ -1054,20 +1054,20 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("sequence")]
         public virtual System.Nullable<long> Sequence {
             get {
-                return this.sequence;
+                return this._sequence;
             }
             set {
-                this.sequence = value;
+                this._sequence = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("start")]
         public virtual EventDateTime Start {
             get {
-                return this.start;
+                return this._start;
             }
             set {
-                this.start = value;
+                this._start = value;
             }
         }
         
@@ -1078,10 +1078,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("status")]
         public virtual string Status {
             get {
-                return this.status;
+                return this._status;
             }
             set {
-                this.status = value;
+                this._status = value;
             }
         }
         
@@ -1089,10 +1089,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("summary")]
         public virtual string Summary {
             get {
-                return this.summary;
+                return this._summary;
             }
             set {
-                this.summary = value;
+                this._summary = value;
             }
         }
         
@@ -1102,10 +1102,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("transparency")]
         public virtual string Transparency {
             get {
-                return this.transparency;
+                return this._transparency;
             }
             set {
-                this.transparency = value;
+                this._transparency = value;
             }
         }
         
@@ -1113,10 +1113,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
@@ -1128,38 +1128,38 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("visibility")]
         public virtual string Visibility {
             get {
-                return this.visibility;
+                return this._visibility;
             }
             set {
-                this.visibility = value;
+                this._visibility = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         /// <summary>The creator of the event. Read-only.</summary>
         public class CreatorData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string email;
+            private string _email;
             
             /// <summary>The creator&apos;s name, if available.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -1167,10 +1167,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("email")]
             public virtual string Email {
                 get {
-                    return this.email;
+                    return this._email;
                 }
                 set {
-                    this.email = value;
+                    this._email = value;
                 }
             }
         }
@@ -1178,18 +1178,18 @@ namespace Google.Apis.Calendar.v3.Data {
         /// <summary>Extended properties of the event.</summary>
         public class ExtendedPropertiesData {
             
-            private ExtendedPropertiesData.PrivateData privateValue;
+            private ExtendedPropertiesData.PrivateData _private;
             
-            private ExtendedPropertiesData.SharedData shared;
+            private ExtendedPropertiesData.SharedData _shared;
             
             /// <summary>Properties that are private to the copy of the event that appears on this calendar.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("private")]
             public virtual ExtendedPropertiesData.PrivateData Private {
                 get {
-                    return this.privateValue;
+                    return this._private;
                 }
                 set {
-                    this.privateValue = value;
+                    this._private = value;
                 }
             }
             
@@ -1197,10 +1197,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("shared")]
             public virtual ExtendedPropertiesData.SharedData Shared {
                 get {
-                    return this.shared;
+                    return this._shared;
                 }
                 set {
-                    this.shared = value;
+                    this._shared = value;
                 }
             }
             
@@ -1216,21 +1216,21 @@ namespace Google.Apis.Calendar.v3.Data {
         /// <summary>A gadget that extends this event.</summary>
         public class GadgetData {
             
-            private string display;
+            private string _display;
             
-            private System.Nullable<long> height;
+            private System.Nullable<long> _height;
             
-            private string iconLink;
+            private string _iconLink;
             
-            private string link;
+            private string _link;
             
-            private GadgetData.PreferencesData preferences;
+            private GadgetData.PreferencesData _preferences;
             
-            private string title;
+            private string _title;
             
-            private string type;
+            private string _type;
             
-            private System.Nullable<long> width;
+            private System.Nullable<long> _width;
             
             /// <summary>The gadget&apos;s display mode. Optional. Possible values are:  
             ///- &quot;icon&quot; - The gadget displays next to the event&apos;s title in the calendar view. 
@@ -1238,10 +1238,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("display")]
             public virtual string Display {
                 get {
-                    return this.display;
+                    return this._display;
                 }
                 set {
-                    this.display = value;
+                    this._display = value;
                 }
             }
             
@@ -1249,10 +1249,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("height")]
             public virtual System.Nullable<long> Height {
                 get {
-                    return this.height;
+                    return this._height;
                 }
                 set {
-                    this.height = value;
+                    this._height = value;
                 }
             }
             
@@ -1260,10 +1260,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("iconLink")]
             public virtual string IconLink {
                 get {
-                    return this.iconLink;
+                    return this._iconLink;
                 }
                 set {
-                    this.iconLink = value;
+                    this._iconLink = value;
                 }
             }
             
@@ -1271,10 +1271,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("link")]
             public virtual string Link {
                 get {
-                    return this.link;
+                    return this._link;
                 }
                 set {
-                    this.link = value;
+                    this._link = value;
                 }
             }
             
@@ -1282,10 +1282,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("preferences")]
             public virtual GadgetData.PreferencesData Preferences {
                 get {
-                    return this.preferences;
+                    return this._preferences;
                 }
                 set {
-                    this.preferences = value;
+                    this._preferences = value;
                 }
             }
             
@@ -1293,10 +1293,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("title")]
             public virtual string Title {
                 get {
-                    return this.title;
+                    return this._title;
                 }
                 set {
-                    this.title = value;
+                    this._title = value;
                 }
             }
             
@@ -1304,10 +1304,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("type")]
             public virtual string Type {
                 get {
-                    return this.type;
+                    return this._type;
                 }
                 set {
-                    this.type = value;
+                    this._type = value;
                 }
             }
             
@@ -1315,10 +1315,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("width")]
             public virtual System.Nullable<long> Width {
                 get {
-                    return this.width;
+                    return this._width;
                 }
                 set {
-                    this.width = value;
+                    this._width = value;
                 }
             }
             
@@ -1330,18 +1330,18 @@ namespace Google.Apis.Calendar.v3.Data {
         /// <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True. To change the organizer, use the &quot;move&quot; operation. Read-only, except when importing an event.</summary>
         public class OrganizerData {
             
-            private string displayName;
+            private string _displayName;
             
-            private string email;
+            private string _email;
             
             /// <summary>The organizer&apos;s name, if available.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
             public virtual string DisplayName {
                 get {
-                    return this.displayName;
+                    return this._displayName;
                 }
                 set {
-                    this.displayName = value;
+                    this._displayName = value;
                 }
             }
             
@@ -1349,10 +1349,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("email")]
             public virtual string Email {
                 get {
-                    return this.email;
+                    return this._email;
                 }
                 set {
-                    this.email = value;
+                    this._email = value;
                 }
             }
         }
@@ -1360,18 +1360,18 @@ namespace Google.Apis.Calendar.v3.Data {
         /// <summary>Information about the event&apos;s reminders for the authenticated user.</summary>
         public class RemindersData {
             
-            private System.Collections.Generic.IList<EventReminder> overrides;
+            private System.Collections.Generic.IList<EventReminder> _overrides;
             
-            private System.Nullable<bool> useDefault;
+            private System.Nullable<bool> _useDefault;
             
             /// <summary>If the event doesn&apos;t use the default reminders, this lists the reminders specific to the event, or, if not set, indicates that no reminders are set for this event.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("overrides")]
             public virtual System.Collections.Generic.IList<EventReminder> Overrides {
                 get {
-                    return this.overrides;
+                    return this._overrides;
                 }
                 set {
-                    this.overrides = value;
+                    this._overrides = value;
                 }
             }
             
@@ -1379,10 +1379,10 @@ namespace Google.Apis.Calendar.v3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("useDefault")]
             public virtual System.Nullable<bool> UseDefault {
                 get {
-                    return this.useDefault;
+                    return this._useDefault;
                 }
                 set {
-                    this.useDefault = value;
+                    this._useDefault = value;
                 }
             }
         }
@@ -1390,32 +1390,32 @@ namespace Google.Apis.Calendar.v3.Data {
     
     public class EventAttendee {
         
-        private System.Nullable<long> additionalGuests;
+        private System.Nullable<long> _additionalGuests;
         
-        private string comment;
+        private string _comment;
         
-        private string displayName;
+        private string _displayName;
         
-        private string email;
+        private string _email;
         
-        private System.Nullable<bool> optional;
+        private System.Nullable<bool> _optional;
         
-        private System.Nullable<bool> organizer;
+        private System.Nullable<bool> _organizer;
         
-        private System.Nullable<bool> resource;
+        private System.Nullable<bool> _resource;
         
-        private string responseStatus;
+        private string _responseStatus;
         
-        private System.Nullable<bool> self;
+        private System.Nullable<bool> _self;
         
         /// <summary>Number of additional guests. Optional. The default is 0.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("additionalGuests")]
         public virtual System.Nullable<long> AdditionalGuests {
             get {
-                return this.additionalGuests;
+                return this._additionalGuests;
             }
             set {
-                this.additionalGuests = value;
+                this._additionalGuests = value;
             }
         }
         
@@ -1423,10 +1423,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("comment")]
         public virtual string Comment {
             get {
-                return this.comment;
+                return this._comment;
             }
             set {
-                this.comment = value;
+                this._comment = value;
             }
         }
         
@@ -1434,10 +1434,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
         public virtual string DisplayName {
             get {
-                return this.displayName;
+                return this._displayName;
             }
             set {
-                this.displayName = value;
+                this._displayName = value;
             }
         }
         
@@ -1445,10 +1445,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("email")]
         public virtual string Email {
             get {
-                return this.email;
+                return this._email;
             }
             set {
-                this.email = value;
+                this._email = value;
             }
         }
         
@@ -1456,10 +1456,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("optional")]
         public virtual System.Nullable<bool> Optional {
             get {
-                return this.optional;
+                return this._optional;
             }
             set {
-                this.optional = value;
+                this._optional = value;
             }
         }
         
@@ -1467,10 +1467,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("organizer")]
         public virtual System.Nullable<bool> Organizer {
             get {
-                return this.organizer;
+                return this._organizer;
             }
             set {
-                this.organizer = value;
+                this._organizer = value;
             }
         }
         
@@ -1478,10 +1478,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("resource")]
         public virtual System.Nullable<bool> Resource {
             get {
-                return this.resource;
+                return this._resource;
             }
             set {
-                this.resource = value;
+                this._resource = value;
             }
         }
         
@@ -1493,10 +1493,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("responseStatus")]
         public virtual string ResponseStatus {
             get {
-                return this.responseStatus;
+                return this._responseStatus;
             }
             set {
-                this.responseStatus = value;
+                this._responseStatus = value;
             }
         }
         
@@ -1504,30 +1504,30 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("self")]
         public virtual System.Nullable<bool> Self {
             get {
-                return this.self;
+                return this._self;
             }
             set {
-                this.self = value;
+                this._self = value;
             }
         }
     }
     
     public class EventDateTime {
         
-        private string date;
+        private string _date;
         
-        private string dateTime;
+        private string _dateTime;
         
-        private string timeZone;
+        private string _timeZone;
         
         /// <summary>The date, in the format &quot;yyyy-mm-dd&quot;, if this is an all-day event.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("date")]
         public virtual string Date {
             get {
-                return this.date;
+                return this._date;
             }
             set {
-                this.date = value;
+                this._date = value;
             }
         }
         
@@ -1535,10 +1535,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("dateTime")]
         public virtual string DateTime {
             get {
-                return this.dateTime;
+                return this._dateTime;
             }
             set {
-                this.dateTime = value;
+                this._dateTime = value;
             }
         }
         
@@ -1546,19 +1546,19 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeZone")]
         public virtual string TimeZone {
             get {
-                return this.timeZone;
+                return this._timeZone;
             }
             set {
-                this.timeZone = value;
+                this._timeZone = value;
             }
         }
     }
     
     public class EventReminder {
         
-        private string method;
+        private string _method;
         
-        private System.Nullable<long> minutes;
+        private System.Nullable<long> _minutes;
         
         /// <summary>The method used by this reminder. Possible values are:  
         ///- &quot;email&quot; - Reminders are sent via email. 
@@ -1567,10 +1567,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("method")]
         public virtual string Method {
             get {
-                return this.method;
+                return this._method;
             }
             set {
-                this.method = value;
+                this._method = value;
             }
         }
         
@@ -1578,37 +1578,37 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("minutes")]
         public virtual System.Nullable<long> Minutes {
             get {
-                return this.minutes;
+                return this._minutes;
             }
             set {
-                this.minutes = value;
+                this._minutes = value;
             }
         }
     }
     
     public class Events : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string accessRole;
+        private string _accessRole;
         
-        private System.Collections.Generic.IList<EventReminder> defaultReminders;
+        private System.Collections.Generic.IList<EventReminder> _defaultReminders;
         
-        private string description;
+        private string _description;
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<Event> items;
+        private System.Collections.Generic.IList<Event> _items;
         
-        private string kind;
+        private string _kind;
         
-        private string nextPageToken;
+        private string _nextPageToken;
         
-        private string summary;
+        private string _summary;
         
-        private string timeZone;
+        private string _timeZone;
         
-        private string updated;
+        private string _updated;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>The user&apos;s access role for this calendar. Read-only. Possible values are:  
         ///- &quot;none&quot; - The user has no access. 
@@ -1619,10 +1619,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("accessRole")]
         public virtual string AccessRole {
             get {
-                return this.accessRole;
+                return this._accessRole;
             }
             set {
-                this.accessRole = value;
+                this._accessRole = value;
             }
         }
         
@@ -1630,10 +1630,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("defaultReminders")]
         public virtual System.Collections.Generic.IList<EventReminder> DefaultReminders {
             get {
-                return this.defaultReminders;
+                return this._defaultReminders;
             }
             set {
-                this.defaultReminders = value;
+                this._defaultReminders = value;
             }
         }
         
@@ -1641,10 +1641,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
-                return this.description;
+                return this._description;
             }
             set {
-                this.description = value;
+                this._description = value;
             }
         }
         
@@ -1652,10 +1652,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -1663,10 +1663,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Event> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1674,10 +1674,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1685,10 +1685,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
         public virtual string NextPageToken {
             get {
-                return this.nextPageToken;
+                return this._nextPageToken;
             }
             set {
-                this.nextPageToken = value;
+                this._nextPageToken = value;
             }
         }
         
@@ -1696,10 +1696,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("summary")]
         public virtual string Summary {
             get {
-                return this.summary;
+                return this._summary;
             }
             set {
-                this.summary = value;
+                this._summary = value;
             }
         }
         
@@ -1707,10 +1707,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeZone")]
         public virtual string TimeZone {
             get {
-                return this.timeZone;
+                return this._timeZone;
             }
             set {
-                this.timeZone = value;
+                this._timeZone = value;
             }
         }
         
@@ -1718,38 +1718,38 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("updated")]
         public virtual string Updated {
             get {
-                return this.updated;
+                return this._updated;
             }
             set {
-                this.updated = value;
+                this._updated = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class FreeBusyCalendar {
         
-        private System.Collections.Generic.IList<TimePeriod> busy;
+        private System.Collections.Generic.IList<TimePeriod> _busy;
         
-        private System.Collections.Generic.IList<Error> errors;
+        private System.Collections.Generic.IList<Error> _errors;
         
         /// <summary>List of time ranges during which this calendar should be regarded as busy.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("busy")]
         public virtual System.Collections.Generic.IList<TimePeriod> Busy {
             get {
-                return this.busy;
+                return this._busy;
             }
             set {
-                this.busy = value;
+                this._busy = value;
             }
         }
         
@@ -1757,28 +1757,28 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("errors")]
         public virtual System.Collections.Generic.IList<Error> Errors {
             get {
-                return this.errors;
+                return this._errors;
             }
             set {
-                this.errors = value;
+                this._errors = value;
             }
         }
     }
     
     public class FreeBusyGroup {
         
-        private System.Collections.Generic.IList<string> calendars;
+        private System.Collections.Generic.IList<string> _calendars;
         
-        private System.Collections.Generic.IList<Error> errors;
+        private System.Collections.Generic.IList<Error> _errors;
         
         /// <summary>List of calendars&apos; identifiers within a group.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("calendars")]
         public virtual System.Collections.Generic.IList<string> Calendars {
             get {
-                return this.calendars;
+                return this._calendars;
             }
             set {
-                this.calendars = value;
+                this._calendars = value;
             }
         }
         
@@ -1786,36 +1786,36 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("errors")]
         public virtual System.Collections.Generic.IList<Error> Errors {
             get {
-                return this.errors;
+                return this._errors;
             }
             set {
-                this.errors = value;
+                this._errors = value;
             }
         }
     }
     
     public class FreeBusyRequest {
         
-        private System.Nullable<long> calendarExpansionMax;
+        private System.Nullable<long> _calendarExpansionMax;
         
-        private System.Nullable<long> groupExpansionMax;
+        private System.Nullable<long> _groupExpansionMax;
         
-        private System.Collections.Generic.IList<FreeBusyRequestItem> items;
+        private System.Collections.Generic.IList<FreeBusyRequestItem> _items;
         
-        private string timeMax;
+        private string _timeMax;
         
-        private string timeMin;
+        private string _timeMin;
         
-        private string timeZone;
+        private string _timeZone;
         
         /// <summary>Maximal number of calendars for which FreeBusy information is to be provided. Optional.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("calendarExpansionMax")]
         public virtual System.Nullable<long> CalendarExpansionMax {
             get {
-                return this.calendarExpansionMax;
+                return this._calendarExpansionMax;
             }
             set {
-                this.calendarExpansionMax = value;
+                this._calendarExpansionMax = value;
             }
         }
         
@@ -1823,10 +1823,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("groupExpansionMax")]
         public virtual System.Nullable<long> GroupExpansionMax {
             get {
-                return this.groupExpansionMax;
+                return this._groupExpansionMax;
             }
             set {
-                this.groupExpansionMax = value;
+                this._groupExpansionMax = value;
             }
         }
         
@@ -1834,10 +1834,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<FreeBusyRequestItem> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -1845,10 +1845,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeMax")]
         public virtual string TimeMax {
             get {
-                return this.timeMax;
+                return this._timeMax;
             }
             set {
-                this.timeMax = value;
+                this._timeMax = value;
             }
         }
         
@@ -1856,10 +1856,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeMin")]
         public virtual string TimeMin {
             get {
-                return this.timeMin;
+                return this._timeMin;
             }
             set {
-                this.timeMin = value;
+                this._timeMin = value;
             }
         }
         
@@ -1867,54 +1867,54 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeZone")]
         public virtual string TimeZone {
             get {
-                return this.timeZone;
+                return this._timeZone;
             }
             set {
-                this.timeZone = value;
+                this._timeZone = value;
             }
         }
     }
     
     public class FreeBusyRequestItem {
         
-        private string id;
+        private string _id;
         
         /// <summary>The identifier of a calendar or a group.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
     }
     
     public class FreeBusyResponse : Google.Apis.Requests.IDirectResponseSchema {
         
-        private FreeBusyResponse.CalendarsData calendars;
+        private FreeBusyResponse.CalendarsData _calendars;
         
-        private FreeBusyResponse.GroupsData groups;
+        private FreeBusyResponse.GroupsData _groups;
         
-        private string kind;
+        private string _kind;
         
-        private string timeMax;
+        private string _timeMax;
         
-        private string timeMin;
+        private string _timeMin;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>List of free/busy information for calendars.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("calendars")]
         public virtual FreeBusyResponse.CalendarsData Calendars {
             get {
-                return this.calendars;
+                return this._calendars;
             }
             set {
-                this.calendars = value;
+                this._calendars = value;
             }
         }
         
@@ -1922,10 +1922,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("groups")]
         public virtual FreeBusyResponse.GroupsData Groups {
             get {
-                return this.groups;
+                return this._groups;
             }
             set {
-                this.groups = value;
+                this._groups = value;
             }
         }
         
@@ -1933,10 +1933,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -1944,10 +1944,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeMax")]
         public virtual string TimeMax {
             get {
-                return this.timeMax;
+                return this._timeMax;
             }
             set {
-                this.timeMax = value;
+                this._timeMax = value;
             }
         }
         
@@ -1955,29 +1955,29 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timeMin")]
         public virtual string TimeMin {
             get {
-                return this.timeMin;
+                return this._timeMin;
             }
             set {
-                this.timeMin = value;
+                this._timeMin = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
@@ -1992,24 +1992,24 @@ namespace Google.Apis.Calendar.v3.Data {
     
     public class Setting : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string value;
+        private string _value;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>ETag of the resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -2017,10 +2017,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -2028,10 +2028,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -2039,42 +2039,42 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("value")]
         public virtual string Value {
             get {
-                return this.value;
+                return this._value;
             }
             set {
-                this.value = value;
+                this._value = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class Settings : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string etag;
+        private string _etag;
         
-        private System.Collections.Generic.IList<Setting> items;
+        private System.Collections.Generic.IList<Setting> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
         /// <summary>Etag of the collection.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
         public virtual string ETag {
             get {
-                return this.etag;
+                return this._etag;
             }
             set {
-                this.etag = value;
+                this._etag = value;
             }
         }
         
@@ -2082,10 +2082,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Setting> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
@@ -2093,38 +2093,38 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
     }
     
     public class TimePeriod {
         
-        private string end;
+        private string _end;
         
-        private string start;
+        private string _start;
         
         /// <summary>The (exclusive) end of the time period.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("end")]
         public virtual string End {
             get {
-                return this.end;
+                return this._end;
             }
             set {
-                this.end = value;
+                this._end = value;
             }
         }
         
@@ -2132,10 +2132,10 @@ namespace Google.Apis.Calendar.v3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("start")]
         public virtual string Start {
             get {
-                return this.start;
+                return this._start;
             }
             set {
-                this.start = value;
+                this._start = value;
             }
         }
     }
@@ -2155,566 +2155,578 @@ namespace Google.Apis.Calendar.v3 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"calendar:v3\",\"n" +
-            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120227\",\"title\":\"Calendar API\",\"des" +
+            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120416\",\"title\":\"Calendar API\",\"des" +
             "cription\":\"Lets you manipulate events and other calendar data.\",\"icons\":{\"x16\":\"" +
             "http://www.google.com/images/icons/product/calendar-16.png\",\"x32\":\"http://www.go" +
             "ogle.com/images/icons/product/calendar-32.png\"},\"documentationLink\":\"http://code" +
             ".google.com/apis/calendar/v3/using.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://ww" +
-            "w.googleapis.com/calendar/v3/\",\"basePath\":\"/calendar/v3/\",\"parameters\":{\"alt\":{\"" +
-            "type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"e" +
-            "num\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/js" +
-            "on\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector speci" +
-            "fying which fields to include in a partial response.\",\"location\":\"query\"},\"key\":" +
-            "{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project an" +
-            "d provides you with API access, quota, and reports. Required unless you provide " +
-            "an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":" +
-            "{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line bre" +
-            "aks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Available to use for quota purposes for server-side applications. Can be " +
-            "any arbitrary string assigned to a user, but should not exceed 40 characters. Ov" +
-            "errides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"stri" +
-            "ng\",\"description\":\"IP address of the site where the request originates. Use this" +
-            " if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":" +
-            "{\"scopes\":{\"https://www.googleapis.com/auth/calendar\":{\"description\":\"Manage you" +
-            "r calendars\"},\"https://www.googleapis.com/auth/calendar.readonly\":{\"description\"" +
-            ":\"View your calendars\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"propert" +
-            "ies\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"},\"items\":{" +
-            "\"type\":\"array\",\"description\":\"List of rules on the access control list.\",\"items\"" +
-            ":{\"$ref\":\"AclRule\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the collecti" +
-            "on (\\\"calendar#acl\\\").\",\"default\":\"calendar#acl\"},\"nextPageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"Token used to access the next page of this result. Omitted if " +
-            "no further results are available.\"}}},\"AclRule\":{\"id\":\"AclRule\",\"type\":\"object\"," +
-            "\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"id" +
-            "\":{\"type\":\"string\",\"description\":\"Identifier of the ACL rule.\"},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"Type of the resource (\\\"calendar#aclRule\\\").\",\"default\":\"" +
-            "calendar#aclRule\"},\"role\":{\"type\":\"string\",\"description\":\"The role assigned to t" +
-            "he scope. Possible values are:  \\n- \\\"none\\\" - Provides no access. \\n- \\\"freeBus" +
-            "yReader\\\" - Provides read access to free/busy information. \\n- \\\"reader\\\" - Prov" +
-            "ides read access to the calendar. Private events will appear to users with reade" +
-            "r access, but event details will be hidden. \\n- \\\"writer\\\" - Provides read and w" +
-            "rite access to the calendar. Private events will appear to users with writer acc" +
-            "ess, and event details will be visible. \\n- \\\"owner\\\" - Provides ownership of th" +
-            "e calendar. This role has all of the permissions of the writer role with the add" +
-            "itional ability to see and manipulate ACLs.\"},\"scope\":{\"type\":\"object\",\"descript" +
-            "ion\":\"The scope of the rule.\",\"properties\":{\"type\":{\"type\":\"string\",\"description" +
-            "\":\"The type of the scope. Possible values are:  \\n- \\\"default\\\" - The public sco" +
-            "pe. This is the default value. \\n- \\\"user\\\" - Limits the scope to a single user." +
-            " \\n- \\\"group\\\" - Limits the scope to a group. \\n- \\\"domain\\\" - Limits the scope " +
-            "to a domain.  Note: The permissions granted to the \\\"default\\\", or public, scope" +
-            " apply to any user, authenticated or not.\"},\"value\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The email address of a user or group, or the name of a domain, depending on " +
-            "the scope type. Omitted for type \\\"default\\\".\"}}}}},\"Calendar\":{\"id\":\"Calendar\"," +
-            "\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"Desc" +
-            "ription of the calendar. Optional.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag" +
-            " of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the calen" +
-            "dar.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#c" +
-            "alendar\\\").\",\"default\":\"calendar#calendar\"},\"location\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Geographic location of the calendar as free-form text. Optional.\"},\"summa" +
-            "ry\":{\"type\":\"string\",\"description\":\"Title of the calendar.\"},\"timeZone\":{\"type\":" +
-            "\"string\",\"description\":\"The time zone of the calendar. Optional.\"}}},\"CalendarLi" +
-            "st\":{\"id\":\"CalendarList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"" +
-            "description\":\"ETag of the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"C" +
-            "alendars that are present on the user\'s calendar list.\",\"items\":{\"$ref\":\"Calenda" +
-            "rListEntry\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the collection (\\\"c" +
-            "alendar#calendarList\\\").\",\"default\":\"calendar#calendarList\"},\"nextPageToken\":{\"t" +
-            "ype\":\"string\",\"description\":\"Token used to access the next page of this result.\"" +
-            "}}},\"CalendarListEntry\":{\"id\":\"CalendarListEntry\",\"type\":\"object\",\"properties\":{" +
-            "\"accessRole\":{\"type\":\"string\",\"description\":\"The effective access role that the " +
-            "authenticated user has on the calendar. Read-only. Possible values are:  \\n- \\\"f" +
-            "reeBusyReader\\\" - Provides read access to free/busy information. \\n- \\\"reader\\\" " +
-            "- Provides read access to the calendar. Private events will appear to users with" +
-            " reader access, but event details will be hidden. \\n- \\\"writer\\\" - Provides read" +
-            " and write access to the calendar. Private events will appear to users with writ" +
-            "er access, and event details will be visible. \\n- \\\"owner\\\" - Provides ownership" +
-            " of the calendar. This role has all of the permissions of the writer role with t" +
-            "he additional ability to see and manipulate ACLs.\"},\"colorId\":{\"type\":\"string\",\"" +
-            "description\":\"The color of the calendar. This is an ID referring to an entry in " +
-            "the \\\"calendar\\\" section of the colors definition (see the \\\"colors\\\" endpoint)." +
-            " Optional.\"},\"defaultReminders\":{\"type\":\"array\",\"description\":\"The default remin" +
-            "ders that the authenticated user has for this calendar.\",\"items\":{\"$ref\":\"EventR" +
-            "eminder\"}},\"description\":{\"type\":\"string\",\"description\":\"Description of the cale" +
-            "ndar. Optional. Read-only.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the " +
-            "resource.\"},\"hidden\":{\"type\":\"boolean\",\"description\":\"Whether the calendar has b" +
-            "een hidden from the list. Optional. The default is False.\"},\"id\":{\"type\":\"string" +
-            "\",\"description\":\"Identifier of the calendar.\"},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Type of the resource (\\\"calendar#calendarListEntry\\\").\",\"default\":\"calenda" +
-            "r#calendarListEntry\"},\"location\":{\"type\":\"string\",\"description\":\"Geographic loca" +
-            "tion of the calendar as free-form text. Optional. Read-only.\"},\"selected\":{\"type" +
-            "\":\"boolean\",\"description\":\"Whether the calendar content shows up in the calendar" +
-            " UI. Optional. The default is False.\"},\"summary\":{\"type\":\"string\",\"description\":" +
-            "\"Title of the calendar. Read-only.\"},\"summaryOverride\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The summary that the authenticated user has set for this calendar. Option" +
-            "al.\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The time zone of the calendar. " +
-            "Optional. Read-only.\"}}},\"ColorDefinition\":{\"id\":\"ColorDefinition\",\"type\":\"objec" +
-            "t\",\"properties\":{\"background\":{\"type\":\"string\",\"description\":\"The background col" +
-            "or associated with this color definition.\"},\"foreground\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The foreground color that can be used to write on top of a background w" +
-            "ith \'background\' color.\"}}},\"Colors\":{\"id\":\"Colors\",\"type\":\"object\",\"properties\"" +
-            ":{\"calendar\":{\"type\":\"object\",\"description\":\"Palette of calendar colors, mapping" +
-            " from the color ID to its definition. An \'calendarListEntry\' resource refers to " +
-            "one of these color IDs in its \'color\' field. Read-only.\",\"additionalProperties\":" +
-            "{\"$ref\":\"ColorDefinition\",\"description\":\"A calendar color defintion.\"}},\"event\":" +
-            "{\"type\":\"object\",\"description\":\"Palette of event colors, mapping from the color " +
-            "ID to its definition. An \'event\' resource may refer to one of these color IDs in" +
-            " its \'color\' field. Read-only.\",\"additionalProperties\":{\"$ref\":\"ColorDefinition\"" +
-            ",\"description\":\"An event color definition.\"}},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Type of the resource (\\\"calendar#colors\\\").\",\"default\":\"calendar#colors\"},\"" +
-            "updated\":{\"type\":\"string\",\"description\":\"Last modification time of the color pal" +
-            "ette (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"}}},\"Error\":{\"id" +
-            "\":\"Error\",\"type\":\"object\",\"properties\":{\"domain\":{\"type\":\"string\",\"description\":" +
-            "\"Domain, or broad category, of the error.\"},\"reason\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Specific reason for the error. Some of the possible values are:  \\n- \\\"grou" +
-            "pTooBig\\\" - The group of users requested is too large for a single query. \\n- \\\"" +
-            "tooManyCalendarsRequested\\\" - The number of calendars requested is too large for" +
-            " a single query. \\n- \\\"notFound\\\" - The requested resource was not found. \\n- \\\"" +
-            "internalError\\\" - The API service has encountered an internal error.  Additional" +
-            " error types may be added in the future, so clients should gracefully handle add" +
-            "itional error statuses not included in this list.\"}}},\"Event\":{\"id\":\"Event\",\"typ" +
-            "e\":\"object\",\"properties\":{\"anyoneCanAddSelf\":{\"type\":\"boolean\",\"description\":\"Wh" +
-            "ether anyone can invite themselves to the event. Optional. The default is False." +
-            "\"},\"attendees\":{\"type\":\"array\",\"description\":\"The attendees of the event.\",\"item" +
-            "s\":{\"$ref\":\"EventAttendee\"}},\"attendeesOmitted\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether attendees have been omitted from the event\'s representation. When retri" +
-            "eving an event, this is due to a restriction specified by the \'maxAttendee\' quer" +
-            "y parameter. When updating an event, this can be used to only update the partici" +
-            "pant\'s response. Optional. The default is False.\"},\"colorId\":{\"type\":\"string\",\"d" +
-            "escription\":\"The color of the event. This is an ID referring to an entry in the " +
-            "\\\"event\\\" section of the colors definition (see the \\\"colors\\\" endpoint). Option" +
-            "al.\"},\"created\":{\"type\":\"string\",\"description\":\"Creation time of the event (as a" +
-            " RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"creator\":{\"type\":\"objec" +
-            "t\",\"description\":\"The creator of the event. Read-only.\",\"properties\":{\"displayNa" +
-            "me\":{\"type\":\"string\",\"description\":\"The creator\'s name, if available.\"},\"email\":" +
-            "{\"type\":\"string\",\"description\":\"The creator\'s email address, if available.\"}}},\"" +
-            "description\":{\"type\":\"string\",\"description\":\"Description of the event. Optional." +
-            "\"},\"end\":{\"$ref\":\"EventDateTime\",\"description\":\"The (exclusive) end time of the " +
-            "event. For a recurring event, this is the end time of the first instance.\"},\"eta" +
-            "g\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"extendedProperties\":" +
-            "{\"type\":\"object\",\"description\":\"Extended properties of the event.\",\"properties\":" +
-            "{\"private\":{\"type\":\"object\",\"description\":\"Properties that are private to the co" +
-            "py of the event that appears on this calendar.\",\"additionalProperties\":{\"type\":\"" +
-            "string\",\"description\":\"The name of the private property and the corresponding va" +
-            "lue.\"}},\"shared\":{\"type\":\"object\",\"description\":\"Properties that are shared betw" +
-            "een copies of the event on other attendees\' calendars.\",\"additionalProperties\":{" +
-            "\"type\":\"string\",\"description\":\"The name of the shared property and the correspon" +
-            "ding value.\"}}}},\"gadget\":{\"type\":\"object\",\"description\":\"A gadget that extends " +
-            "this event.\",\"properties\":{\"display\":{\"type\":\"string\",\"description\":\"The gadget\'" +
-            "s display mode. Optional. Possible values are:  \\n- \\\"icon\\\" - The gadget displa" +
-            "ys next to the event\'s title in the calendar view. \\n- \\\"chip\\\" - The gadget dis" +
-            "plays when the event is clicked.\"},\"height\":{\"type\":\"integer\",\"description\":\"The" +
-            " gadget\'s height in pixels. Optional.\",\"format\":\"int32\"},\"iconLink\":{\"type\":\"str" +
-            "ing\",\"description\":\"The gadget\'s icon URL.\"},\"link\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The gadget\'s URL.\"},\"preferences\":{\"type\":\"object\",\"description\":\"Preference" +
-            "s.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The preference name a" +
-            "nd corresponding value.\"}},\"title\":{\"type\":\"string\",\"description\":\"The gadget\'s " +
-            "title.\"},\"type\":{\"type\":\"string\",\"description\":\"The gadget\'s type.\"},\"width\":{\"t" +
-            "ype\":\"integer\",\"description\":\"The gadget\'s width in pixels. Optional.\",\"format\":" +
-            "\"int32\"}}},\"guestsCanInviteOthers\":{\"type\":\"boolean\",\"description\":\"Whether atte" +
-            "ndees other than the organizer can invite others to the event. Optional. The def" +
-            "ault is False.\"},\"guestsCanModify\":{\"type\":\"boolean\",\"description\":\"Whether atte" +
-            "ndees other than the organizer can modify the event. Optional. The default is Fa" +
-            "lse.\"},\"guestsCanSeeOtherGuests\":{\"type\":\"boolean\",\"description\":\"Whether attend" +
-            "ees other than the organizer can see who the event\'s attendees are. Optional. Th" +
-            "e default is False.\"},\"htmlLink\":{\"type\":\"string\",\"description\":\"An absolute lin" +
-            "k to this event in the Google Calendar Web UI. Read-only.\"},\"iCalUID\":{\"type\":\"s" +
-            "tring\",\"description\":\"Event ID in the iCalendar format.\"},\"id\":{\"type\":\"string\"," +
-            "\"description\":\"Identifier of the event.\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"Type of the resource (\\\"calendar#event\\\").\",\"default\":\"calendar#event\"},\"locati" +
-            "on\":{\"type\":\"string\",\"description\":\"Geographic location of the event as free-for" +
-            "m text. Optional.\"},\"organizer\":{\"type\":\"object\",\"description\":\"The organizer of" +
-            " the event. If the organizer is also an attendee, this is indicated with a separ" +
-            "ate entry in \'attendees\' with the \'organizer\' field set to True. To change the o" +
-            "rganizer, use the \\\"move\\\" operation. Read-only, except when importing an event." +
-            "\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The organizer\'s na" +
-            "me, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The organizer\'s emai" +
-            "l address, if available.\"}}},\"originalStartTime\":{\"$ref\":\"EventDateTime\",\"descri" +
-            "ption\":\"For an instance of a recurring event, this is the time at which this eve" +
-            "nt would start according to the recurrence data in the recurring event identifie" +
-            "d by recurringEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\",\"description" +
-            "\":\"Whether this is a private event copy where changes are not shared with other " +
-            "copies on other calendars. Optional. Immutable.\"},\"recurrence\":{\"type\":\"array\",\"" +
-            "description\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring even" +
-            "t. This field is omitted for single events or instances of recurring events.\",\"i" +
-            "tems\":{\"type\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"description\":\"For " +
-            "an instance of a recurring event, this is the event ID of the recurring event it" +
-            "self. Immutable.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Information about" +
-            " the event\'s reminders for the authenticated user.\",\"properties\":{\"overrides\":{\"" +
-            "type\":\"array\",\"description\":\"If the event doesn\'t use the default reminders, thi" +
-            "s lists the reminders specific to the event, or, if not set, indicates that no r" +
-            "eminders are set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}},\"useDefault\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether the default reminders of the calendar " +
-            "apply to the event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":\"Sequence num" +
-            "ber as per iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDateTime\",\"descri" +
-            "ption\":\"The (inclusive) start time of the event. For a recurring event, this is " +
-            "the start time of the first instance.\"},\"status\":{\"type\":\"string\",\"description\":" +
-            "\"Status of the event. Optional. Possible values are:  \\n- \\\"confirmed\\\" - The ev" +
-            "ent is confirmed. This is the default status. \\n- \\\"tentative\\\" - The event is t" +
-            "entatively confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"},\"summary\":{\"" +
-            "type\":\"string\",\"description\":\"Title of the event.\"},\"transparency\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Whether the event blocks time on the calendar. Optional. Poss" +
-            "ible values are:  \\n- \\\"opaque\\\" - The event blocks time on the calendar. This i" +
-            "s the default value. \\n- \\\"transparent\\\" - The event does not block time on the " +
-            "calendar.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of " +
-            "the event (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"visibili" +
-            "ty\":{\"type\":\"string\",\"description\":\"Visibility of the event. Optional. Possible " +
-            "values are:  \\n- \\\"default\\\" - Uses the default visibility for events on the cal" +
-            "endar. This is the default value. \\n- \\\"public\\\" - The event is public and event" +
-            " details are visible to all readers of the calendar. \\n- \\\"private\\\" - The event" +
-            " is private and only event attendees may view event details. \\n- \\\"confidential\\" +
-            "\" - The event is private. This value is provided for compatibility reasons.\"}}}," +
-            "\"EventAttendee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":{\"additionalG" +
-            "uests\":{\"type\":\"integer\",\"description\":\"Number of additional guests. Optional. T" +
-            "he default is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"description\":\"Th" +
-            "e attendee\'s response comment. Optional.\"},\"displayName\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The attendee\'s name, if available. Optional.\"},\"email\":{\"type\":\"string\"" +
-            ",\"description\":\"The attendee\'s email address, if available. This field must be p" +
-            "resent when adding an attendee.\"},\"optional\":{\"type\":\"boolean\",\"description\":\"Wh" +
-            "ether this is an optional attendee. Optional. The default is False.\"},\"organizer" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is the organizer of the " +
-            "event. Read-only. The default is False.\"},\"resource\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Whether the attendee is a resource. Read-only. The default is False.\"},\"re" +
-            "sponseStatus\":{\"type\":\"string\",\"description\":\"The attendee\'s response status. Po" +
-            "ssible values are:  \\n- \\\"needsAction\\\" - The attendee has not responded to the " +
-            "invitation. \\n- \\\"declined\\\" - The attendee has declined the invitation. \\n- \\\"t" +
-            "entative\\\" - The attendee has tentatively accepted the invitation. \\n- \\\"accepte" +
-            "d\\\" - The attendee has accepted the invitation.\"},\"self\":{\"type\":\"boolean\",\"desc" +
-            "ription\":\"Whether this entry represents the calendar on which this copy of the e" +
-            "vent appears. Read-only. The default is False.\"}}},\"EventDateTime\":{\"id\":\"EventD" +
-            "ateTime\",\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"Th" +
-            "e date, in the format \\\"yyyy-mm-dd\\\", if this is an all-day event.\",\"format\":\"da" +
-            "te\"},\"dateTime\":{\"type\":\"string\",\"description\":\"The time, as a combined date-tim" +
-            "e value (formatted according to RFC 3339). A time zone offset is required unless" +
-            " a time zone is explicitly specified in \'timeZone\'.\",\"format\":\"date-time\"},\"time" +
-            "Zone\":{\"type\":\"string\",\"description\":\"The name of the time zone in which the tim" +
-            "e is specified (e.g. \\\"Europe/Zurich\\\"). Optional. The default is the time zone " +
-            "of the calendar.\"}}},\"EventReminder\":{\"id\":\"EventReminder\",\"type\":\"object\",\"prop" +
-            "erties\":{\"method\":{\"type\":\"string\",\"description\":\"The method used by this remind" +
-            "er. Possible values are:  \\n- \\\"email\\\" - Reminders are sent via email. \\n- \\\"sm" +
-            "s\\\" - Reminders are sent via SMS. \\n- \\\"popup\\\" - Reminders are sent via a UI po" +
-            "pup.\"},\"minutes\":{\"type\":\"integer\",\"description\":\"Number of minutes before the s" +
-            "tart of the event when the reminder should trigger.\",\"format\":\"int32\"}}},\"Events" +
-            "\":{\"id\":\"Events\",\"type\":\"object\",\"properties\":{\"accessRole\":{\"type\":\"string\",\"de" +
-            "scription\":\"The user\'s access role for this calendar. Read-only. Possible values" +
-            " are:  \\n- \\\"none\\\" - The user has no access. \\n- \\\"freeBusyReader\\\" - The user " +
-            "has read access to free/busy information. \\n- \\\"reader\\\" - The user has read acc" +
-            "ess to the calendar. Private events will appear to users with reader access, but" +
-            " event details will be hidden. \\n- \\\"writer\\\" - The user has read and write acce" +
-            "ss to the calendar. Private events will appear to users with writer access, and " +
-            "event details will be visible. \\n- \\\"owner\\\" - The user has ownership of the cal" +
-            "endar. This role has all of the permissions of the writer role with the addition" +
-            "al ability to see and manipulate ACLs.\"},\"defaultReminders\":{\"type\":\"array\",\"des" +
-            "cription\":\"The default reminders on the calendar for the authenticated user. The" +
-            "se reminders apply to all events on this calendar that do not explicitly overrid" +
-            "e them (i.e. do not have \'reminders.useDefault\' set to \'true\').\",\"items\":{\"$ref\"" +
-            ":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"description\":\"Description of " +
-            "the calendar. Read-only.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the co" +
-            "llection.\"},\"items\":{\"type\":\"array\",\"description\":\"List of events on the calenda" +
-            "r.\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the" +
-            " collection (\\\"calendar#events\\\").\",\"default\":\"calendar#events\"},\"nextPageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Token used to access the next page of this resu" +
-            "lt. Omitted if no further results are available.\"},\"summary\":{\"type\":\"string\",\"d" +
-            "escription\":\"Title of the calendar. Read-only.\"},\"timeZone\":{\"type\":\"string\",\"de" +
-            "scription\":\"The time zone of the calendar. Read-only.\"},\"updated\":{\"type\":\"strin" +
-            "g\",\"description\":\"Last modification time of the calendar (as a RFC 3339 timestam" +
-            "p). Read-only.\",\"format\":\"date-time\"}}},\"FreeBusyCalendar\":{\"id\":\"FreeBusyCalend" +
-            "ar\",\"type\":\"object\",\"properties\":{\"busy\":{\"type\":\"array\",\"description\":\"List of " +
-            "time ranges during which this calendar should be regarded as busy.\",\"items\":{\"$r" +
-            "ef\":\"TimePeriod\"}},\"errors\":{\"type\":\"array\",\"description\":\"Optional error(s) (if" +
-            " computation for the calendar failed).\",\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyGro" +
-            "up\":{\"id\":\"FreeBusyGroup\",\"type\":\"object\",\"properties\":{\"calendars\":{\"type\":\"arr" +
-            "ay\",\"description\":\"List of calendars\' identifiers within a group.\",\"items\":{\"typ" +
-            "e\":\"string\"}},\"errors\":{\"type\":\"array\",\"description\":\"Optional error(s) (if comp" +
-            "utation for the group failed).\",\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyRequest\":{\"" +
-            "id\":\"FreeBusyRequest\",\"type\":\"object\",\"properties\":{\"calendarExpansionMax\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Maximal number of calendars for which FreeBusy infor" +
-            "mation is to be provided. Optional.\",\"format\":\"int32\"},\"groupExpansionMax\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Maximal number of calendar identifiers to be provide" +
-            "d for a single group. Optional. An error will be returned for a group with more " +
-            "members than this value.\",\"format\":\"int32\"},\"items\":{\"type\":\"array\",\"description" +
-            "\":\"List of calendars and/or groups to query.\",\"items\":{\"$ref\":\"FreeBusyRequestIt" +
-            "em\"}},\"timeMax\":{\"type\":\"string\",\"description\":\"The end of the interval for the " +
-            "query.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string\",\"description\":\"The star" +
-            "t of the interval for the query.\",\"format\":\"date-time\"},\"timeZone\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Time zone used in the response. Optional. The default is UTC." +
-            "\"}}},\"FreeBusyRequestItem\":{\"id\":\"FreeBusyRequestItem\",\"type\":\"object\",\"properti" +
-            "es\":{\"id\":{\"type\":\"string\",\"description\":\"The identifier of a calendar or a grou" +
-            "p.\"}}},\"FreeBusyResponse\":{\"id\":\"FreeBusyResponse\",\"type\":\"object\",\"properties\":" +
-            "{\"calendars\":{\"type\":\"object\",\"description\":\"List of free/busy information for c" +
-            "alendars.\",\"additionalProperties\":{\"$ref\":\"FreeBusyCalendar\",\"description\":\"Free" +
-            "/busy expansions for a single calendar.\"}},\"groups\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"Expansion of groups.\",\"additionalProperties\":{\"$ref\":\"FreeBusyGroup\",\"descri" +
-            "ption\":\"List of calendars that are members of this group.\"}},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"Type of the resource (\\\"calendar#freeBusy\\\").\",\"default\":\"ca" +
-            "lendar#freeBusy\"},\"timeMax\":{\"type\":\"string\",\"description\":\"The end of the inter" +
-            "val.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string\",\"description\":\"The start " +
-            "of the interval.\",\"format\":\"date-time\"}}},\"Setting\":{\"id\":\"Setting\",\"type\":\"obje" +
-            "ct\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"}" +
-            ",\"id\":{\"type\":\"string\",\"description\":\"Name of the user setting.\"},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"Type of the resource (\\\"calendar#setting\\\").\",\"default\"" +
-            ":\"calendar#setting\"},\"value\":{\"type\":\"string\",\"description\":\"Value of the user s" +
-            "etting. The format of the value depends on the ID of the setting.\"}}},\"Settings\"" +
-            ":{\"id\":\"Settings\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Etag of the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"List of " +
-            "user settings.\",\"items\":{\"$ref\":\"Setting\"}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Type of the collection (\\\"calendar#settings\\\").\",\"default\":\"calendar#settings" +
-            "\"}}},\"TimePeriod\":{\"id\":\"TimePeriod\",\"type\":\"object\",\"properties\":{\"end\":{\"type\"" +
-            ":\"string\",\"description\":\"The (exclusive) end of the time period.\",\"format\":\"date" +
-            "-time\"},\"start\":{\"type\":\"string\",\"description\":\"The (inclusive) start of the tim" +
-            "e period.\",\"format\":\"date-time\"}}}},\"resources\":{\"acl\":{\"methods\":{\"delete\":{\"id" +
-            "\":\"calendar.acl.delete\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod" +
-            "\":\"DELETE\",\"description\":\"Deletes an access control rule.\",\"parameters\":{\"calend" +
-            "arId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"loc" +
-            "ation\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.acl.get\"" +
-            ",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Returns an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"de" +
-            "scription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"" +
-            "type\":\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"response\":{\"$ref\":\"AclRule\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/" +
-            "auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.acl.insert\",\"path\":\"calendars" +
-            "/{calendarId}/acl\",\"httpMethod\":\"POST\",\"description\":\"Creates an access control " +
-            "rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar ident" +
-            "ifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"req" +
-            "uest\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.acl.list\",\"path\":\"calendars" +
-            "/{calendarId}/acl\",\"httpMethod\":\"GET\",\"description\":\"Returns the rules in the ac" +
-            "cess control list for the calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\"" +
-            ",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"Acl\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"" +
-            "patch\":{\"id\":\"calendar.acl.patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"" +
-            "httpMethod\":\"PATCH\",\"description\":\"Updates an access control rule. This method s" +
-            "upports patch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"" +
-            "string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}}" +
-            ",\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response" +
-            "\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"upd" +
-            "ate\":{\"id\":\"calendar.acl.update\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"h" +
-            "ttpMethod\":\"PUT\",\"description\":\"Updates an access control rule.\",\"parameters\":{\"" +
-            "calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifie" +
-            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"]" +
-            ",\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/calendar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"" +
-            "calendar.calendarList.delete\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpM" +
-            "ethod\":\"DELETE\",\"description\":\"Deletes an entry on the user\'s calendar list.\",\"p" +
-            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get" +
-            "\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Returns an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type" +
-            "\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/aut" +
-            "h/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"use" +
-            "rs/me/calendarList\",\"httpMethod\":\"POST\",\"description\":\"Adds an entry to the user" +
-            "\'s calendar list.\",\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"Ca" +
-            "lendarListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":" +
-            "{\"id\":\"calendar.calendarList.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Returns entries on the user\'s calendar list.\",\"parameters\":{" +
-            "\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of entries returned" +
-            " on one result page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query" +
-            "\"},\"minAccessRole\":{\"type\":\"string\",\"description\":\"The minimum access role for t" +
-            "he user in the returned entires. Optional. The default is no restriction.\",\"enum" +
-            "\":[\"freeBusyReader\",\"owner\",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can" +
-            " read free/busy information.\",\"The user can read and modify events and access co" +
-            "ntrol lists.\",\"The user can read events that are not private.\",\"The user can rea" +
-            "d and modify events.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Token specifying which result page to return. Optional.\",\"location\":\"quer" +
-            "y\"},\"showHidden\":{\"type\":\"boolean\",\"description\":\"Whether to show hidden entries" +
-            ". Optional. The default is False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Cale" +
-            "ndarList\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.goo" +
-            "gleapis.com/auth/calendar.readonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch" +
-            "\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\"" +
-            ":\"Updates an entry on the user\'s calendar list. This method supports patch seman" +
-            "tics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar ident" +
-            "ifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"req" +
-            "uest\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calen" +
-            "darList.update\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"" +
-            "description\":\"Updates an entry on the user\'s calendar list.\",\"parameters\":{\"cale" +
-            "ndarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarLis" +
-            "tEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/calendar\"]}}},\"calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calend" +
-            "ars.clear\",\"path\":\"calendars/{calendarId}/clear\",\"httpMethod\":\"POST\",\"descriptio" +
-            "n\":\"Clears a primary calendar. This operation deletes all data associated with t" +
-            "he primary calendar of an account and cannot be undone.\",\"parameters\":{\"calendar" +
+            "w.googleapis.com/calendar/v3/\",\"basePath\":\"/calendar/v3/\",\"rootUrl\":\"https://www" +
+            ".googleapis.com/\",\"servicePath\":\"calendar/v3/\",\"batchPath\":\"batch\",\"parameters\":" +
+            "{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":" +
+            "\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of appli" +
+            "cation/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selec" +
+            "tor specifying which fields to include in a partial response.\",\"location\":\"query" +
+            "\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your p" +
+            "roject and provides you with API access, quota, and reports. Required unless you" +
+            " provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\"" +
+            ",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"pret" +
+            "tyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and" +
+            " line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\"" +
+            ",\"description\":\"Available to use for quota purposes for server-side applications" +
+            ". Can be any arbitrary string assigned to a user, but should not exceed 40 chara" +
+            "cters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"ty" +
+            "pe\":\"string\",\"description\":\"IP address of the site where the request originates." +
+            " Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{" +
+            "\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/calendar\":{\"description\":\"M" +
+            "anage your calendars\"},\"https://www.googleapis.com/auth/calendar.readonly\":{\"des" +
+            "cription\":\"View your calendars\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\"" +
+            ",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"}," +
+            "\"items\":{\"type\":\"array\",\"description\":\"List of rules on the access control list." +
+            "\",\"items\":{\"$ref\":\"AclRule\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the" +
+            " collection (\\\"calendar#acl\\\").\",\"default\":\"calendar#acl\"},\"nextPageToken\":{\"typ" +
+            "e\":\"string\",\"description\":\"Token used to access the next page of this result. Om" +
+            "itted if no further results are available.\"}}},\"AclRule\":{\"id\":\"AclRule\",\"type\":" +
+            "\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resour" +
+            "ce.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the ACL rule.\",\"annotat" +
+            "ions\":{\"required\":[\"calendar.acl.update\"]}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"Type of the resource (\\\"calendar#aclRule\\\").\",\"default\":\"calendar#aclRule\"},\"" +
+            "role\":{\"type\":\"string\",\"description\":\"The role assigned to the scope. Possible v" +
+            "alues are:  \\n- \\\"none\\\" - Provides no access. \\n- \\\"freeBusyReader\\\" - Provides" +
+            " read access to free/busy information. \\n- \\\"reader\\\" - Provides read access to " +
+            "the calendar. Private events will appear to users with reader access, but event " +
+            "details will be hidden. \\n- \\\"writer\\\" - Provides read and write access to the c" +
+            "alendar. Private events will appear to users with writer access, and event detai" +
+            "ls will be visible. \\n- \\\"owner\\\" - Provides ownership of the calendar. This rol" +
+            "e has all of the permissions of the writer role with the additional ability to s" +
+            "ee and manipulate ACLs.\",\"annotations\":{\"required\":[\"calendar.acl.insert\"]}},\"sc" +
+            "ope\":{\"type\":\"object\",\"description\":\"The scope of the rule.\",\"properties\":{\"type" +
+            "\":{\"type\":\"string\",\"description\":\"The type of the scope. Possible values are:  \\" +
+            "n- \\\"default\\\" - The public scope. This is the default value. \\n- \\\"user\\\" - Lim" +
+            "its the scope to a single user. \\n- \\\"group\\\" - Limits the scope to a group. \\n-" +
+            " \\\"domain\\\" - Limits the scope to a domain.  Note: The permissions granted to th" +
+            "e \\\"default\\\", or public, scope apply to any user, authenticated or not.\",\"annot" +
+            "ations\":{\"required\":[\"calendar.acl.insert\"]}},\"value\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The email address of a user or group, or the name of a domain, depending o" +
+            "n the scope type. Omitted for type \\\"default\\\".\"}},\"annotations\":{\"required\":[\"c" +
+            "alendar.acl.insert\"]}}}},\"Calendar\":{\"id\":\"Calendar\",\"type\":\"object\",\"properties" +
+            "\":{\"description\":{\"type\":\"string\",\"description\":\"Description of the calendar. Op" +
+            "tional.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"id\":{\"" +
+            "type\":\"string\",\"description\":\"Identifier of the calendar.\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Type of the resource (\\\"calendar#calendar\\\").\",\"default\":\"cal" +
+            "endar#calendar\"},\"location\":{\"type\":\"string\",\"description\":\"Geographic location " +
+            "of the calendar as free-form text. Optional.\"},\"summary\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Title of the calendar.\",\"annotations\":{\"required\":[\"calendar.calendars." +
+            "insert\"]}},\"timeZone\":{\"type\":\"string\",\"description\":\"The time zone of the calen" +
+            "dar. Optional.\"}}},\"CalendarList\":{\"id\":\"CalendarList\",\"type\":\"object\",\"properti" +
+            "es\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"},\"items\":{\"" +
+            "type\":\"array\",\"description\":\"Calendars that are present on the user\'s calendar l" +
+            "ist.\",\"items\":{\"$ref\":\"CalendarListEntry\"}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"Type of the collection (\\\"calendar#calendarList\\\").\",\"default\":\"calendar#cale" +
+            "ndarList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access " +
+            "the next page of this result.\"}}},\"CalendarListEntry\":{\"id\":\"CalendarListEntry\"," +
+            "\"type\":\"object\",\"properties\":{\"accessRole\":{\"type\":\"string\",\"description\":\"The e" +
+            "ffective access role that the authenticated user has on the calendar. Read-only." +
+            " Possible values are:  \\n- \\\"freeBusyReader\\\" - Provides read access to free/bus" +
+            "y information. \\n- \\\"reader\\\" - Provides read access to the calendar. Private ev" +
+            "ents will appear to users with reader access, but event details will be hidden. " +
+            "\\n- \\\"writer\\\" - Provides read and write access to the calendar. Private events " +
+            "will appear to users with writer access, and event details will be visible. \\n- " +
+            "\\\"owner\\\" - Provides ownership of the calendar. This role has all of the permiss" +
+            "ions of the writer role with the additional ability to see and manipulate ACLs.\"" +
+            "},\"colorId\":{\"type\":\"string\",\"description\":\"The color of the calendar. This is a" +
+            "n ID referring to an entry in the \\\"calendar\\\" section of the colors definition " +
+            "(see the \\\"colors\\\" endpoint). Optional.\"},\"defaultReminders\":{\"type\":\"array\",\"d" +
+            "escription\":\"The default reminders that the authenticated user has for this cale" +
+            "ndar.\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Description of the calendar. Optional. Read-only.\"},\"etag\":{\"type\":\"strin" +
+            "g\",\"description\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Whether the calendar has been hidden from the list. Optional. The default is" +
+            " False.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the calendar.\",\"ann" +
+            "otations\":{\"required\":[\"calendar.calendarList.insert\",\"calendar.calendarList.upd" +
+            "ate\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#" +
+            "calendarListEntry\\\").\",\"default\":\"calendar#calendarListEntry\"},\"location\":{\"type" +
+            "\":\"string\",\"description\":\"Geographic location of the calendar as free-form text." +
+            " Optional. Read-only.\"},\"selected\":{\"type\":\"boolean\",\"description\":\"Whether the " +
+            "calendar content shows up in the calendar UI. Optional. The default is False.\"}," +
+            "\"summary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"s" +
+            "ummaryOverride\":{\"type\":\"string\",\"description\":\"The summary that the authenticat" +
+            "ed user has set for this calendar. Optional.\"},\"timeZone\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The time zone of the calendar. Optional. Read-only.\"}}},\"ColorDefiniti" +
+            "on\":{\"id\":\"ColorDefinition\",\"type\":\"object\",\"properties\":{\"background\":{\"type\":\"" +
+            "string\",\"description\":\"The background color associated with this color definitio" +
+            "n.\"},\"foreground\":{\"type\":\"string\",\"description\":\"The foreground color that can " +
+            "be used to write on top of a background with \'background\' color.\"}}},\"Colors\":{\"" +
+            "id\":\"Colors\",\"type\":\"object\",\"properties\":{\"calendar\":{\"type\":\"object\",\"descript" +
+            "ion\":\"Palette of calendar colors, mapping from the color ID to its definition. A" +
+            "n \'calendarListEntry\' resource refers to one of these color IDs in its \'color\' f" +
+            "ield. Read-only.\",\"additionalProperties\":{\"$ref\":\"ColorDefinition\",\"description\"" +
+            ":\"A calendar color defintion.\"}},\"event\":{\"type\":\"object\",\"description\":\"Palette" +
+            " of event colors, mapping from the color ID to its definition. An \'event\' resour" +
+            "ce may refer to one of these color IDs in its \'color\' field. Read-only.\",\"additi" +
+            "onalProperties\":{\"$ref\":\"ColorDefinition\",\"description\":\"An event color definiti" +
+            "on.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#c" +
+            "olors\\\").\",\"default\":\"calendar#colors\"},\"updated\":{\"type\":\"string\",\"description\"" +
+            ":\"Last modification time of the color palette (as a RFC 3339 timestamp). Read-on" +
+            "ly.\",\"format\":\"date-time\"}}},\"Error\":{\"id\":\"Error\",\"type\":\"object\",\"properties\":" +
+            "{\"domain\":{\"type\":\"string\",\"description\":\"Domain, or broad category, of the erro" +
+            "r.\"},\"reason\":{\"type\":\"string\",\"description\":\"Specific reason for the error. Som" +
+            "e of the possible values are:  \\n- \\\"groupTooBig\\\" - The group of users requeste" +
+            "d is too large for a single query. \\n- \\\"tooManyCalendarsRequested\\\" - The numbe" +
+            "r of calendars requested is too large for a single query. \\n- \\\"notFound\\\" - The" +
+            " requested resource was not found. \\n- \\\"internalError\\\" - The API service has e" +
+            "ncountered an internal error.  Additional error types may be added in the future" +
+            ", so clients should gracefully handle additional error statuses not included in " +
+            "this list.\"}}},\"Event\":{\"id\":\"Event\",\"type\":\"object\",\"properties\":{\"anyoneCanAdd" +
+            "Self\":{\"type\":\"boolean\",\"description\":\"Whether anyone can invite themselves to t" +
+            "he event. Optional. The default is False.\"},\"attendees\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"The attendees of the event.\",\"items\":{\"$ref\":\"EventAttendee\"}},\"attendees" +
+            "Omitted\":{\"type\":\"boolean\",\"description\":\"Whether attendees have been omitted fr" +
+            "om the event\'s representation. When retrieving an event, this is due to a restri" +
+            "ction specified by the \'maxAttendee\' query parameter. When updating an event, th" +
+            "is can be used to only update the participant\'s response. Optional. The default " +
+            "is False.\"},\"colorId\":{\"type\":\"string\",\"description\":\"The color of the event. Th" +
+            "is is an ID referring to an entry in the \\\"event\\\" section of the colors definit" +
+            "ion (see the \\\"colors\\\" endpoint). Optional.\"},\"created\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Creation time of the event (as a RFC 3339 timestamp). Read-only.\",\"form" +
+            "at\":\"date-time\"},\"creator\":{\"type\":\"object\",\"description\":\"The creator of the ev" +
+            "ent. Read-only.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The" +
+            " creator\'s name, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The cre" +
+            "ator\'s email address, if available.\"}}},\"description\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Description of the event. Optional.\"},\"end\":{\"$ref\":\"EventDateTime\",\"descr" +
+            "iption\":\"The (exclusive) end time of the event. For a recurring event, this is t" +
+            "he end time of the first instance.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag" +
+            " of the resource.\"},\"extendedProperties\":{\"type\":\"object\",\"description\":\"Extende" +
+            "d properties of the event.\",\"properties\":{\"private\":{\"type\":\"object\",\"descriptio" +
+            "n\":\"Properties that are private to the copy of the event that appears on this ca" +
+            "lendar.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name of the " +
+            "private property and the corresponding value.\"}},\"shared\":{\"type\":\"object\",\"desc" +
+            "ription\":\"Properties that are shared between copies of the event on other attend" +
+            "ees\' calendars.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name" +
+            " of the shared property and the corresponding value.\"}}}},\"gadget\":{\"type\":\"obje" +
+            "ct\",\"description\":\"A gadget that extends this event.\",\"properties\":{\"display\":{\"" +
+            "type\":\"string\",\"description\":\"The gadget\'s display mode. Optional. Possible valu" +
+            "es are:  \\n- \\\"icon\\\" - The gadget displays next to the event\'s title in the cal" +
+            "endar view. \\n- \\\"chip\\\" - The gadget displays when the event is clicked.\"},\"hei" +
+            "ght\":{\"type\":\"integer\",\"description\":\"The gadget\'s height in pixels. Optional.\"," +
+            "\"format\":\"int32\"},\"iconLink\":{\"type\":\"string\",\"description\":\"The gadget\'s icon U" +
+            "RL.\"},\"link\":{\"type\":\"string\",\"description\":\"The gadget\'s URL.\"},\"preferences\":{" +
+            "\"type\":\"object\",\"description\":\"Preferences.\",\"additionalProperties\":{\"type\":\"str" +
+            "ing\",\"description\":\"The preference name and corresponding value.\"}},\"title\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The gadget\'s title.\"},\"type\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The gadget\'s type.\"},\"width\":{\"type\":\"integer\",\"description\":\"The gadge" +
+            "t\'s width in pixels. Optional.\",\"format\":\"int32\"}}},\"guestsCanInviteOthers\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether attendees other than the organizer can invi" +
+            "te others to the event. Optional. The default is False.\"},\"guestsCanModify\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether attendees other than the organizer can modi" +
+            "fy the event. Optional. The default is False.\"},\"guestsCanSeeOtherGuests\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether attendees other than the organizer can see wh" +
+            "o the event\'s attendees are. Optional. The default is False.\"},\"htmlLink\":{\"type" +
+            "\":\"string\",\"description\":\"An absolute link to this event in the Google Calendar " +
+            "Web UI. Read-only.\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"Event ID in the i" +
+            "Calendar format.\",\"annotations\":{\"required\":[\"calendar.events.import\"]}},\"id\":{\"" +
+            "type\":\"string\",\"description\":\"Identifier of the event.\",\"annotations\":{\"required" +
+            "\":[\"calendar.events.update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type of th" +
+            "e resource (\\\"calendar#event\\\").\",\"default\":\"calendar#event\"},\"location\":{\"type\"" +
+            ":\"string\",\"description\":\"Geographic location of the event as free-form text. Opt" +
+            "ional.\"},\"organizer\":{\"type\":\"object\",\"description\":\"The organizer of the event." +
+            " If the organizer is also an attendee, this is indicated with a separate entry i" +
+            "n \'attendees\' with the \'organizer\' field set to True. To change the organizer, u" +
+            "se the \\\"move\\\" operation. Read-only, except when importing an event.\",\"properti" +
+            "es\":{\"displayName\":{\"type\":\"string\",\"description\":\"The organizer\'s name, if avai" +
+            "lable.\"},\"email\":{\"type\":\"string\",\"description\":\"The organizer\'s email address, " +
+            "if available.\"}}},\"originalStartTime\":{\"$ref\":\"EventDateTime\",\"description\":\"For" +
+            " an instance of a recurring event, this is the time at which this event would st" +
+            "art according to the recurrence data in the recurring event identified by recurr" +
+            "ingEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "this is a private event copy where changes are not shared with other copies on o" +
+            "ther calendars. Optional. Immutable.\"},\"recurrence\":{\"type\":\"array\",\"description" +
+            "\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This fie" +
+            "ld is omitted for single events or instances of recurring events.\",\"items\":{\"typ" +
+            "e\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"description\":\"For an instance" +
+            " of a recurring event, this is the event ID of the recurring event itself. Immut" +
+            "able.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Information about the event\'" +
+            "s reminders for the authenticated user.\",\"properties\":{\"overrides\":{\"type\":\"arra" +
+            "y\",\"description\":\"If the event doesn\'t use the default reminders, this lists the" +
+            " reminders specific to the event, or, if not set, indicates that no reminders ar" +
+            "e set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}},\"useDefault\":{\"type\":\"b" +
+            "oolean\",\"description\":\"Whether the default reminders of the calendar apply to th" +
+            "e event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":\"Sequence number as per " +
+            "iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDateTime\",\"description\":\"The" +
+            " (inclusive) start time of the event. For a recurring event, this is the start t" +
+            "ime of the first instance.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of " +
+            "the event. Optional. Possible values are:  \\n- \\\"confirmed\\\" - The event is conf" +
+            "irmed. This is the default status. \\n- \\\"tentative\\\" - The event is tentatively " +
+            "confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"},\"summary\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Title of the event.\"},\"transparency\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Whether the event blocks time on the calendar. Optional. Possible values" +
+            " are:  \\n- \\\"opaque\\\" - The event blocks time on the calendar. This is the defau" +
+            "lt value. \\n- \\\"transparent\\\" - The event does not block time on the calendar.\"}" +
+            ",\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the event (" +
+            "as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"visibility\":{\"type\"" +
+            ":\"string\",\"description\":\"Visibility of the event. Optional. Possible values are:" +
+            "  \\n- \\\"default\\\" - Uses the default visibility for events on the calendar. This" +
+            " is the default value. \\n- \\\"public\\\" - The event is public and event details ar" +
+            "e visible to all readers of the calendar. \\n- \\\"private\\\" - The event is private" +
+            " and only event attendees may view event details. \\n- \\\"confidential\\\" - The eve" +
+            "nt is private. This value is provided for compatibility reasons.\"}}},\"EventAtten" +
+            "dee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":{\"additionalGuests\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"Number of additional guests. Optional. The default " +
+            "is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"description\":\"The attendee\'" +
+            "s response comment. Optional.\"},\"displayName\":{\"type\":\"string\",\"description\":\"Th" +
+            "e attendee\'s name, if available. Optional.\"},\"email\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The attendee\'s email address, if available. This field must be present when" +
+            " adding an attendee.\",\"annotations\":{\"required\":[\"calendar.events.import\",\"calen" +
+            "dar.events.insert\",\"calendar.events.update\"]}},\"optional\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Whether this is an optional attendee. Optional. The default is False." +
+            "\"},\"organizer\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is the orga" +
+            "nizer of the event. Read-only. The default is False.\"},\"resource\":{\"type\":\"boole" +
+            "an\",\"description\":\"Whether the attendee is a resource. Read-only. The default is" +
+            " False.\"},\"responseStatus\":{\"type\":\"string\",\"description\":\"The attendee\'s respon" +
+            "se status. Possible values are:  \\n- \\\"needsAction\\\" - The attendee has not resp" +
+            "onded to the invitation. \\n- \\\"declined\\\" - The attendee has declined the invita" +
+            "tion. \\n- \\\"tentative\\\" - The attendee has tentatively accepted the invitation. " +
+            "\\n- \\\"accepted\\\" - The attendee has accepted the invitation.\"},\"self\":{\"type\":\"b" +
+            "oolean\",\"description\":\"Whether this entry represents the calendar on which this " +
+            "copy of the event appears. Read-only. The default is False.\"}}},\"EventDateTime\":" +
+            "{\"id\":\"EventDateTime\",\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"des" +
+            "cription\":\"The date, in the format \\\"yyyy-mm-dd\\\", if this is an all-day event.\"" +
+            ",\"format\":\"date\"},\"dateTime\":{\"type\":\"string\",\"description\":\"The time, as a comb" +
+            "ined date-time value (formatted according to RFC 3339). A time zone offset is re" +
+            "quired unless a time zone is explicitly specified in \'timeZone\'.\",\"format\":\"date" +
+            "-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The name of the time zone in " +
+            "which the time is specified (e.g. \\\"Europe/Zurich\\\"). Optional. The default is t" +
+            "he time zone of the calendar.\"}}},\"EventReminder\":{\"id\":\"EventReminder\",\"type\":\"" +
+            "object\",\"properties\":{\"method\":{\"type\":\"string\",\"description\":\"The method used b" +
+            "y this reminder. Possible values are:  \\n- \\\"email\\\" - Reminders are sent via em" +
+            "ail. \\n- \\\"sms\\\" - Reminders are sent via SMS. \\n- \\\"popup\\\" - Reminders are sen" +
+            "t via a UI popup.\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\",\"ca" +
+            "lendar.calendarList.update\",\"calendar.events.import\",\"calendar.events.insert\",\"c" +
+            "alendar.events.update\"]}},\"minutes\":{\"type\":\"integer\",\"description\":\"Number of m" +
+            "inutes before the start of the event when the reminder should trigger.\",\"format\"" +
+            ":\"int32\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\",\"calendar.cal" +
+            "endarList.update\",\"calendar.events.import\",\"calendar.events.insert\",\"calendar.ev" +
+            "ents.update\"]}}}},\"Events\":{\"id\":\"Events\",\"type\":\"object\",\"properties\":{\"accessR" +
+            "ole\":{\"type\":\"string\",\"description\":\"The user\'s access role for this calendar. R" +
+            "ead-only. Possible values are:  \\n- \\\"none\\\" - The user has no access. \\n- \\\"fre" +
+            "eBusyReader\\\" - The user has read access to free/busy information. \\n- \\\"reader\\" +
+            "\" - The user has read access to the calendar. Private events will appear to user" +
+            "s with reader access, but event details will be hidden. \\n- \\\"writer\\\" - The use" +
+            "r has read and write access to the calendar. Private events will appear to users" +
+            " with writer access, and event details will be visible. \\n- \\\"owner\\\" - The user" +
+            " has ownership of the calendar. This role has all of the permissions of the writ" +
+            "er role with the additional ability to see and manipulate ACLs.\"},\"defaultRemind" +
+            "ers\":{\"type\":\"array\",\"description\":\"The default reminders on the calendar for th" +
+            "e authenticated user. These reminders apply to all events on this calendar that " +
+            "do not explicitly override them (i.e. do not have \'reminders.useDefault\' set to " +
+            "\'true\').\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Description of the calendar. Read-only.\"},\"etag\":{\"type\":\"string\",\"des" +
+            "cription\":\"ETag of the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"List" +
+            " of events on the calendar.\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"Type of the collection (\\\"calendar#events\\\").\",\"default\":\"calendar" +
+            "#events\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access t" +
+            "he next page of this result. Omitted if no further results are available.\"},\"sum" +
+            "mary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"timeZ" +
+            "one\":{\"type\":\"string\",\"description\":\"The time zone of the calendar. Read-only.\"}" +
+            ",\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the calenda" +
+            "r (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"}}},\"FreeBusyCalend" +
+            "ar\":{\"id\":\"FreeBusyCalendar\",\"type\":\"object\",\"properties\":{\"busy\":{\"type\":\"array" +
+            "\",\"description\":\"List of time ranges during which this calendar should be regard" +
+            "ed as busy.\",\"items\":{\"$ref\":\"TimePeriod\"}},\"errors\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"Optional error(s) (if computation for the calendar failed).\",\"items\":{\"$ref\"" +
+            ":\"Error\"}}}},\"FreeBusyGroup\":{\"id\":\"FreeBusyGroup\",\"type\":\"object\",\"properties\":" +
+            "{\"calendars\":{\"type\":\"array\",\"description\":\"List of calendars\' identifiers withi" +
+            "n a group.\",\"items\":{\"type\":\"string\"}},\"errors\":{\"type\":\"array\",\"description\":\"O" +
+            "ptional error(s) (if computation for the group failed).\",\"items\":{\"$ref\":\"Error\"" +
+            "}}}},\"FreeBusyRequest\":{\"id\":\"FreeBusyRequest\",\"type\":\"object\",\"properties\":{\"ca" +
+            "lendarExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calendars" +
+            " for which FreeBusy information is to be provided. Optional.\",\"format\":\"int32\"}," +
+            "\"groupExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calendar " +
+            "identifiers to be provided for a single group. Optional. An error will be return" +
+            "ed for a group with more members than this value.\",\"format\":\"int32\"},\"items\":{\"t" +
+            "ype\":\"array\",\"description\":\"List of calendars and/or groups to query.\",\"items\":{" +
+            "\"$ref\":\"FreeBusyRequestItem\"}},\"timeMax\":{\"type\":\"string\",\"description\":\"The end" +
+            " of the interval for the query.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string" +
+            "\",\"description\":\"The start of the interval for the query.\",\"format\":\"date-time\"}" +
+            ",\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Opti" +
+            "onal. The default is UTC.\"}}},\"FreeBusyRequestItem\":{\"id\":\"FreeBusyRequestItem\"," +
+            "\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifie" +
+            "r of a calendar or a group.\"}}},\"FreeBusyResponse\":{\"id\":\"FreeBusyResponse\",\"typ" +
+            "e\":\"object\",\"properties\":{\"calendars\":{\"type\":\"object\",\"description\":\"List of fr" +
+            "ee/busy information for calendars.\",\"additionalProperties\":{\"$ref\":\"FreeBusyCale" +
+            "ndar\",\"description\":\"Free/busy expansions for a single calendar.\"}},\"groups\":{\"t" +
+            "ype\":\"object\",\"description\":\"Expansion of groups.\",\"additionalProperties\":{\"$ref" +
+            "\":\"FreeBusyGroup\",\"description\":\"List of calendars that are members of this grou" +
+            "p.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#fr" +
+            "eeBusy\\\").\",\"default\":\"calendar#freeBusy\"},\"timeMax\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The end of the interval.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string\"," +
+            "\"description\":\"The start of the interval.\",\"format\":\"date-time\"}}},\"Setting\":{\"i" +
+            "d\":\"Setting\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\"" +
+            ":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the user " +
+            "setting.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calend" +
+            "ar#setting\\\").\",\"default\":\"calendar#setting\"},\"value\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Value of the user setting. The format of the value depends on the ID of th" +
+            "e setting.\"}}},\"Settings\":{\"id\":\"Settings\",\"type\":\"object\",\"properties\":{\"etag\":" +
+            "{\"type\":\"string\",\"description\":\"Etag of the collection.\"},\"items\":{\"type\":\"array" +
+            "\",\"description\":\"List of user settings.\",\"items\":{\"$ref\":\"Setting\"}},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Type of the collection (\\\"calendar#settings\\\").\",\"de" +
+            "fault\":\"calendar#settings\"}}},\"TimePeriod\":{\"id\":\"TimePeriod\",\"type\":\"object\",\"p" +
+            "roperties\":{\"end\":{\"type\":\"string\",\"description\":\"The (exclusive) end of the tim" +
+            "e period.\",\"format\":\"date-time\"},\"start\":{\"type\":\"string\",\"description\":\"The (in" +
+            "clusive) start of the time period.\",\"format\":\"date-time\"}}}},\"resources\":{\"acl\":" +
+            "{\"methods\":{\"delete\":{\"id\":\"calendar.acl.delete\",\"path\":\"calendars/{calendarId}/" +
+            "acl/{ruleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes an access control rul" +
+            "e.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifi" +
+            "er.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":" +
+            "\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ca" +
+            "lendarId\",\"ruleId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"get\"" +
+            ":{\"id\":\"calendar.acl.get\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Returns an access control rule.\",\"parameters\":{\"calenda" +
+            "rId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"respo" +
+            "nse\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"ht" +
+            "tps://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.acl." +
+            "insert\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"POST\",\"description\":\"C" +
+            "reates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"des" +
+            "cription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"calendarId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.ac" +
+            "l.list\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"GET\",\"description\":\"Re" +
+            "turns the rules in the access control list for the calendar.\",\"parameters\":{\"cal" +
+            "endarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"Acl\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.acl." +
+            "patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PATCH\",\"descri" +
+            "ption\":\"Updates an access control rule. This method supports patch semantics.\",\"" +
+            "parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"," +
+            "\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL " +
+            "rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calenda" +
+            "rId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.acl.up" +
+            "date\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PUT\",\"descripti" +
+            "on\":\"Updates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string" +
+            "\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleI" +
+            "d\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule" +
+            "\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/cale" +
+            "ndar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"calendar.calendarList.delet" +
+            "e\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"DELETE\",\"descriptio" +
+            "n\":\"Deletes an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"" +
+            "type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get\",\"path\":\"users/me/calendar" +
+            "List/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an entry on the use" +
+            "r\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"C" +
+            "alendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cale" +
+            "ndarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"ins" +
+            "ert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"users/me/calendarList\",\"httpMe" +
+            "thod\":\"POST\",\"description\":\"Adds an entry to the user\'s calendar list.\",\"request" +
+            "\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.calendarLis" +
+            "t.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"GET\",\"description\":\"Returns" +
+            " entries on the user\'s calendar list.\",\"parameters\":{\"maxResults\":{\"type\":\"integ" +
+            "er\",\"description\":\"Maximum number of entries returned on one result page. Option" +
+            "al.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"minAccessRole\":{\"type\":" +
+            "\"string\",\"description\":\"The minimum access role for the user in the returned ent" +
+            "ires. Optional. The default is no restriction.\",\"enum\":[\"freeBusyReader\",\"owner\"" +
+            ",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can read free/busy information" +
+            ".\",\"The user can read and modify events and access control lists.\",\"The user can" +
+            " read events that are not private.\",\"The user can read and modify events.\"],\"loc" +
+            "ation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying whi" +
+            "ch result page to return. Optional.\",\"location\":\"query\"},\"showHidden\":{\"type\":\"b" +
+            "oolean\",\"description\":\"Whether to show hidden entries. Optional. The default is " +
+            "False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"CalendarList\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.r" +
+            "eadonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch\",\"path\":\"users/me/calendar" +
+            "List/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an entry on the u" +
+            "ser\'s calendar list. This method supports patch semantics.\",\"parameters\":{\"calen" +
+            "darId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarList" +
+            "Entry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendarList.update\",\"path\":\"use" +
+            "rs/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an en" +
+            "try on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"d" +
+            "escription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\"" +
+            ":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"" +
+            "calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calendars.clear\",\"path\":\"calendar" +
+            "s/{calendarId}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears a primary calend" +
+            "ar. This operation deletes all data associated with the primary calendar of an a" +
+            "ccount and cannot be undone.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"delet" +
+            "e\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendars/{calendarId}\",\"httpMethod" +
+            "\":\"DELETE\",\"description\":\"Deletes a secondary calendar.\",\"parameters\":{\"calendar" +
             "Id\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locat" +
             "ion\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis." +
-            "com/auth/calendar\"]},\"delete\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendar" +
-            "s/{calendarId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a secondary calenda" +
-            "r.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifi" +
-            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars." +
-            "get\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns m" +
-            "etadata for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"calendarId\"],\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"insert\"" +
-            ":{\"id\":\"calendar.calendars.insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"descr" +
-            "iption\":\"Creates a secondary calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\"" +
-            ":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"pat" +
-            "ch\":{\"id\":\"calendar.calendars.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod" +
-            "\":\"PATCH\",\"description\":\"Updates metadata for a calendar. This method supports p" +
-            "atch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Cale" +
-            "ndar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calenda" +
-            "rId\"],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendars.upd" +
-            "ate\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates m" +
-            "etadata for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"calendarId\"],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{" +
-            "\"id\":\"calendar.colors.get\",\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
-            "urns the color definitions for calendars and events.\",\"response\":{\"$ref\":\"Colors" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis." +
-            "com/auth/calendar.readonly\"]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.ev" +
-            "ents.delete\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELE" +
-            "TE\",\"description\":\"Deletes an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string" +
-            "\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"event" +
-            "Id\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"location" +
-            "\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send n" +
-            "otifications about the deletion of the event. Optional. The default is False.\",\"" +
-            "location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"c" +
-            "alendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Return" +
-            "s an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar" +
-            " identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":" +
-            "{\"type\":\"integer\",\"description\":\"The maximum number of attendees to include in t" +
-            "he response. If there are more than the specified number of attendees, only the " +
-            "participant is returned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"q" +
-            "uery\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response" +
-            ". Optional. The default is the time zone of the calendar.\",\"location\":\"query\"}}," +
-            "\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/cale" +
-            "ndar.readonly\"]},\"import\":{\"id\":\"calendar.events.import\",\"path\":\"calendars/{cale" +
-            "ndarId}/events/import\",\"httpMethod\":\"POST\",\"description\":\"Imports an event.\",\"pa" +
-            "rameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$r" +
-            "ef\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/calendar\"]},\"insert\":{\"id\":\"calendar.events.insert\",\"path\":\"calendars/{calen" +
-            "darId}/events\",\"httpMethod\":\"POST\",\"description\":\"Creates an event.\",\"parameters" +
-            "\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Wh" +
-            "ether to send notifications about the creation of the new event. Optional. The d" +
-            "efault is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"request\"" +
-            ":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/calendar\"]},\"instances\":{\"id\":\"calendar.events.instances\",\"path\":\"calen" +
-            "dars/{calendarId}/events/{eventId}/instances\",\"httpMethod\":\"GET\",\"description\":\"" +
-            "Returns instances of the specified recurring event.\",\"parameters\":{\"calendarId\":" +
-            "{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\"" +
-            ":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Recurring event identifier.\"," +
-            "\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description" +
-            "\":\"The maximum number of attendees to include in the response. If there are more" +
-            " than the specified number of attendees, only the participant is returned. Optio" +
-            "nal.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"i" +
-            "nteger\",\"description\":\"Maximum number of events returned on one result page. Opt" +
-            "ional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"typ" +
-            "e\":\"string\",\"description\":\"The original start time of the instance in the result" +
-            ". Optional.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Tok" +
-            "en specifying which result page to return. Optional.\",\"location\":\"query\"},\"showD" +
-            "eleted\":{\"type\":\"boolean\",\"description\":\"Whether to include deleted events (with" +
-            " \'eventStatus\' equals \'cancelled\') in the result. Optional. The default is False" +
-            ".\",\"location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used" +
-            " in the response. Optional. The default is the time zone of the calendar.\",\"loca" +
-            "tion\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Ev" +
-            "ents\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googlea" +
-            "pis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"ca" +
-            "lendars/{calendarId}/events\",\"httpMethod\":\"GET\",\"description\":\"Returns events on" +
-            " the specified calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":" +
-            "\"string\",\"description\":\"Specifies iCalendar UID (iCalUID) of events to be includ" +
-            "ed in the response. Optional.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integ" +
-            "er\",\"description\":\"The maximum number of attendees to include in the response. I" +
-            "f there are more than the specified number of attendees, only the participant is" +
-            " returned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxRes" +
-            "ults\":{\"type\":\"integer\",\"description\":\"Maximum number of events returned on one " +
-            "result page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orde" +
-            "rBy\":{\"type\":\"string\",\"description\":\"The order of the events returned in the res" +
-            "ult. Optional. The default is an unspecified, stable order.\",\"enum\":[\"startTime\"" +
-            ",\"updated\"],\"enumDescriptions\":[\"Order by the start date/time (ascending). This " +
-            "is only available when querying single events (i.e. the parameter \\\"singleEvents" +
-            "\\\" is True)\",\"Order by last modification time (ascending).\"],\"location\":\"query\"}" +
-            ",\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying which result page " +
-            "to return. Optional.\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Fr" +
-            "ee text search terms to find events that match these terms in any field, except " +
-            "for extended properties. Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to include deleted events (with \'eventStatus\' equ" +
-            "als \'cancelled\') in the result. Optional. The default is False.\",\"location\":\"que" +
-            "ry\"},\"showHiddenInvitations\":{\"type\":\"boolean\",\"description\":\"Whether to include" +
-            " hidden invitations in the result. Optional. The default is False.\",\"location\":\"" +
-            "query\"},\"singleEvents\":{\"type\":\"boolean\",\"description\":\"Whether to expand recurr" +
-            "ing events into instances and only return single one-off events and instances of" +
-            " recurring events, but not the underlying recurring events themselves. Optional." +
-            " The default is False.\",\"location\":\"query\"},\"timeMax\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Upper bound (exclusive) for an event\'s start time to filter by. Optional. " +
-            "The default is not to filter by start time.\",\"location\":\"query\"},\"timeMin\":{\"typ" +
-            "e\":\"string\",\"description\":\"Lower bound (inclusive) for an event\'s end time to fi" +
-            "lter by. Optional. The default is not to filter by end time.\",\"location\":\"query\"" +
-            "},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Opt" +
-            "ional. The default is the time zone of the calendar.\",\"location\":\"query\"},\"updat" +
-            "edMin\":{\"type\":\"string\",\"description\":\"Lower bound for an event\'s last modificat" +
-            "ion time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to" +
-            " filter by last modification time.\",\"location\":\"query\"}},\"parameterOrder\":[\"cale" +
-            "ndarId\"],\"response\":{\"$ref\":\"Events\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"move\":{\"id\":\"c" +
-            "alendar.events.move\",\"path\":\"calendars/{calendarId}/events/{eventId}/move\",\"http" +
-            "Method\":\"POST\",\"description\":\"Moves an event to another calendar, i.e. changes a" +
-            "n event\'s organizer.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":" +
-            "\"Calendar identifier of the source calendar where the event currently is on.\",\"r" +
-            "equired\":true,\"location\":\"path\"},\"destination\":{\"type\":\"string\",\"description\":\"C" +
-            "alendar identifier of the target calendar where the event is to be moved to.\",\"r" +
-            "equired\":true,\"location\":\"query\"},\"eventId\":{\"type\":\"string\",\"description\":\"Even" +
-            "t identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to send notifications about the change of the eve" +
-            "nt\'s organizer. Optional. The default is False.\",\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"calendarId\",\"eventId\",\"destination\"],\"response\":{\"$ref\":\"Event\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.events." +
-            "patch\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PATCH\",\"de" +
-            "scription\":\"Updates an event. This method supports patch semantics.\",\"parameters" +
-            "\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\"" +
-            ":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identif" +
-            "ier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"" +
-            "description\":\"Whether to send notifications about the event update (e.g. attende" +
-            "e\'s responses, title changes, etc.). Optional. The default is False.\",\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"}," +
-            "\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"" +
-            "]},\"quickAdd\":{\"id\":\"calendar.events.quickAdd\",\"path\":\"calendars/{calendarId}/ev" +
-            "ents/quickAdd\",\"httpMethod\":\"POST\",\"description\":\"Creates an event based on a si" +
-            "mple text string.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Ca" +
-            "lendar identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Whether to send notifications about the creation of " +
-            "the event. Optional. The default is False.\",\"location\":\"query\"},\"text\":{\"type\":\"" +
-            "string\",\"description\":\"The text describing the event to be created.\",\"required\":" +
-            "true,\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"text\"],\"response\":{\"$r" +
-            "ef\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"i" +
-            "d\":\"calendar.events.update\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"ht" +
-            "tpMethod\":\"PUT\",\"description\":\"Updates an event.\",\"parameters\":{\"calendarId\":{\"t" +
+            "com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars.get\",\"path\":\"calendars/{cal" +
+            "endarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata for a calendar.\",\"p" +
+            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"" +
+            "$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://" +
+            "www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.calendars." +
+            "insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"description\":\"Creates a secondar" +
+            "y calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.calenda" +
+            "rs.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Up" +
+            "dates metadata for a calendar. This method supports patch semantics.\",\"parameter" +
+            "s\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required" +
+            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Ca" +
+            "lendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/calendar\"]},\"update\":{\"id\":\"calendar.calendars.update\",\"path\":\"calendars/{cal" +
+            "endarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates metadata for a calendar.\",\"p" +
+            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$" +
+            "ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{\"id\":\"calendar.colors.get\"," +
+            "\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Returns the color definitions " +
+            "for calendars and events.\",\"response\":{\"$ref\":\"Colors\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"" +
+            "]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.events.delete\",\"path\":\"calend" +
+            "ars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes " +
+            "an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar i" +
+            "dentifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotification" +
+            "s\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications about the dele" +
+            "tion of the event. Optional. The default is False.\",\"location\":\"query\"}},\"parame" +
+            "terOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https://www.googleapis.com/auth/ca" +
+            "lendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"calendars/{calendarId}/event" +
+            "s/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an event.\",\"parameters\":{" +
+            "\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tr" +
+            "ue,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier" +
+            ".\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"The maximum number of attendees to include in the response. If there are m" +
+            "ore than the specified number of attendees, only the participant is returned. Op" +
+            "tional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"timeZone\":{\"type\":\"" +
+            "string\",\"description\":\"Time zone used in the response. Optional. The default is " +
+            "the time zone of the calendar.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendar" +
+            "Id\",\"eventId\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"import\":{" +
+            "\"id\":\"calendar.events.import\",\"path\":\"calendars/{calendarId}/events/import\",\"htt" +
+            "pMethod\":\"POST\",\"description\":\"Imports an event.\",\"parameters\":{\"calendarId\":{\"t" +
             "ype\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Wheth" +
-            "er to send notifications about the event update (e.g. attendee\'s responses, titl" +
-            "e changes, etc.). Optional. The default is False.\",\"location\":\"query\"}},\"paramet" +
-            "erOrder\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":" +
-            "\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"m" +
-            "ethods\":{\"query\":{\"id\":\"calendar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Returns free/busy information for a set of calendars.\",\"re" +
-            "quest\":{\"$ref\":\"FreeBusyRequest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/c" +
-            "alendar.readonly\"]}}},\"settings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\"" +
-            ",\"path\":\"users/me/settings/{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns " +
-            "a single user setting.\",\"parameters\":{\"setting\":{\"type\":\"string\",\"description\":\"" +
-            "Name of the user setting.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"setting\"],\"response\":{\"$ref\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id" +
-            "\":\"calendar.settings.list\",\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Returns all user settings for the authenticated user.\",\"response\":{\"$ref" +
-            "\":\"Settings\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www." +
-            "googleapis.com/auth/calendar.readonly\"]}}}}}";
+            "ath\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$" +
+            "ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"insert\":{\"" +
+            "id\":\"calendar.events.insert\",\"path\":\"calendars/{calendarId}/events\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Creates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"s" +
+            "endNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications" +
+            " about the creation of the new event. Optional. The default is False.\",\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response" +
+            "\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"insta" +
+            "nces\":{\"id\":\"calendar.events.instances\",\"path\":\"calendars/{calendarId}/events/{e" +
+            "ventId}/instances\",\"httpMethod\":\"GET\",\"description\":\"Returns instances of the sp" +
+            "ecified recurring event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":" +
+            "\"string\",\"description\":\"Recurring event identifier.\",\"required\":true,\"location\":" +
+            "\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The maximum number of at" +
+            "tendees to include in the response. If there are more than the specified number " +
+            "of attendees, only the participant is returned. Optional.\",\"format\":\"int32\",\"min" +
+            "imum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maxi" +
+            "mum number of events returned on one result page. Optional.\",\"format\":\"int32\",\"m" +
+            "inimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"type\":\"string\",\"description\":\"" +
+            "The original start time of the instance in the result. Optional.\",\"location\":\"qu" +
+            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying which result " +
+            "page to return. Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"" +
+            "description\":\"Whether to include deleted events (with \'eventStatus\' equals \'canc" +
+            "elled\') in the result. Optional. The default is False.\",\"location\":\"query\"},\"tim" +
+            "eZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Optional." +
+            " The default is the time zone of the calendar.\",\"location\":\"query\"}},\"parameterO" +
+            "rder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Events\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.reado" +
+            "nly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"calendars/{calendarId}/events" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Returns events on the specified calendar.\",\"" +
+            "parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"," +
+            "\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"Spe" +
+            "cifies iCalendar UID (iCalUID) of events to be included in the response. Optiona" +
+            "l.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The maxi" +
+            "mum number of attendees to include in the response. If there are more than the s" +
+            "pecified number of attendees, only the participant is returned. Optional.\",\"form" +
+            "at\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
+            "scription\":\"Maximum number of events returned on one result page. Optional.\",\"fo" +
+            "rmat\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The order of the events returned in the result. Optional. The default " +
+            "is an unspecified, stable order.\",\"enum\":[\"startTime\",\"updated\"],\"enumDescriptio" +
+            "ns\":[\"Order by the start date/time (ascending). This is only available when quer" +
+            "ying single events (i.e. the parameter \\\"singleEvents\\\" is True)\",\"Order by last" +
+            " modification time (ascending).\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"strin" +
+            "g\",\"description\":\"Token specifying which result page to return. Optional.\",\"loca" +
+            "tion\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Free text search terms to fin" +
+            "d events that match these terms in any field, except for extended properties. Op" +
+            "tional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her to include deleted events (with \'eventStatus\' equals \'cancelled\') in the res" +
+            "ult. Optional. The default is False.\",\"location\":\"query\"},\"showHiddenInvitations" +
+            "\":{\"type\":\"boolean\",\"description\":\"Whether to include hidden invitations in the " +
+            "result. Optional. The default is False.\",\"location\":\"query\"},\"singleEvents\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether to expand recurring events into instances a" +
+            "nd only return single one-off events and instances of recurring events, but not " +
+            "the underlying recurring events themselves. Optional. The default is False.\",\"lo" +
+            "cation\":\"query\"},\"timeMax\":{\"type\":\"string\",\"description\":\"Upper bound (exclusiv" +
+            "e) for an event\'s start time to filter by. Optional. The default is not to filte" +
+            "r by start time.\",\"location\":\"query\"},\"timeMin\":{\"type\":\"string\",\"description\":\"" +
+            "Lower bound (inclusive) for an event\'s end time to filter by. Optional. The defa" +
+            "ult is not to filter by end time.\",\"location\":\"query\"},\"timeZone\":{\"type\":\"strin" +
+            "g\",\"description\":\"Time zone used in the response. Optional. The default is the t" +
+            "ime zone of the calendar.\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"de" +
+            "scription\":\"Lower bound for an event\'s last modification time (as a RFC 3339 tim" +
+            "estamp) to filter by. Optional. The default is not to filter by last modificatio" +
+            "n time.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\"" +
+            ":\"Events\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.goo" +
+            "gleapis.com/auth/calendar.readonly\"]},\"move\":{\"id\":\"calendar.events.move\",\"path\"" +
+            ":\"calendars/{calendarId}/events/{eventId}/move\",\"httpMethod\":\"POST\",\"description" +
+            "\":\"Moves an event to another calendar, i.e. changes an event\'s organizer.\",\"para" +
+            "meters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier of the" +
+            " source calendar where the event currently is on.\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"destination\":{\"type\":\"string\",\"description\":\"Calendar identifier of the t" +
+            "arget calendar where the event is to be moved to.\",\"required\":true,\"location\":\"q" +
+            "uery\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her to send notifications about the change of the event\'s organizer. Optional. T" +
+            "he default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"event" +
+            "Id\",\"destination\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.events.patch\",\"path\":\"calendars/{c" +
+            "alendarId}/events/{eventId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an even" +
+            "t. This method supports patch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"e" +
+            "ventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to se" +
+            "nd notifications about the event update (e.g. attendee\'s responses, title change" +
+            "s, etc.). Optional. The default is False.\",\"location\":\"query\"}},\"parameterOrder\"" +
+            ":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"quickAdd\":{\"id\":\"calend" +
+            "ar.events.quickAdd\",\"path\":\"calendars/{calendarId}/events/quickAdd\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Creates an event based on a simple text string.\",\"paramet" +
+            "ers\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requir" +
+            "ed\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":" +
+            "\"Whether to send notifications about the creation of the event. Optional. The de" +
+            "fault is False.\",\"location\":\"query\"},\"text\":{\"type\":\"string\",\"description\":\"The " +
+            "text describing the event to be created.\",\"required\":true,\"location\":\"query\"}},\"" +
+            "parameterOrder\":[\"calendarId\",\"text\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.events.update\"" +
+            ",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PUT\",\"descriptio" +
+            "n\":\"Updates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\"" +
+            ":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"send" +
+            "Notifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications ab" +
+            "out the event update (e.g. attendee\'s responses, title changes, etc.). Optional." +
+            " The default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eve" +
+            "ntId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https:/" +
+            "/www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"methods\":{\"query\":{\"id\":\"cal" +
+            "endar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":\"POST\",\"description\":\"Retur" +
+            "ns free/busy information for a set of calendars.\",\"request\":{\"$ref\":\"FreeBusyReq" +
+            "uest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes\":[\"https://www.googleapis." +
+            "com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]}}},\"sett" +
+            "ings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\",\"path\":\"users/me/settings/" +
+            "{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns a single user setting.\",\"pa" +
+            "rameters\":{\"setting\":{\"type\":\"string\",\"description\":\"Name of the user setting.\"," +
+            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"setting\"],\"response\":{\"$r" +
+            "ef\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www" +
+            ".googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.settings.list\"," +
+            "\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"description\":\"Returns all user se" +
+            "ttings for the authenticated user.\",\"response\":{\"$ref\":\"Settings\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calenda" +
+            "r.readonly\"]}}}}}";
         
         private const string Version = "v3";
         
@@ -2724,18 +2736,18 @@ namespace Google.Apis.Calendar.v3 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected CalendarService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.acl = new AclResource(this);
-            this.calendarList = new CalendarListResource(this);
-            this.calendars = new CalendarsResource(this);
-            this.colors = new ColorsResource(this);
-            this.events = new EventsResource(this);
-            this.freebusy = new FreebusyResource(this);
-            this.settings = new SettingsResource(this);
+            this._acl = new AclResource(this);
+            this._calendarList = new CalendarListResource(this);
+            this._calendars = new CalendarsResource(this);
+            this._colors = new ColorsResource(this);
+            this._events = new EventsResource(this);
+            this._freebusy = new FreebusyResource(this);
+            this._settings = new SettingsResource(this);
         }
         
         public CalendarService() : 
@@ -2743,22 +2755,22 @@ namespace Google.Apis.Calendar.v3 {
         }
         
         public CalendarService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CalendarService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(CalendarService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CalendarService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(CalendarService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -2842,41 +2854,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string ruleId;
+            private string _ruleId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string ruleId) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.ruleId = ruleId;
+                this._calendarId = calendarId;
+                this._ruleId = ruleId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2884,10 +2896,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2895,7 +2907,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -2903,7 +2915,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("ruleId")]
             public virtual string RuleId {
                 get {
-                    return this.ruleId;
+                    return this._ruleId;
                 }
             }
             
@@ -2922,41 +2934,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string ruleId;
+            private string _ruleId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string ruleId) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.ruleId = ruleId;
+                this._calendarId = calendarId;
+                this._ruleId = ruleId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -2964,10 +2976,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -2975,7 +2987,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -2983,7 +2995,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("ruleId")]
             public virtual string RuleId {
                 get {
-                    return this.ruleId;
+                    return this._ruleId;
                 }
             }
             
@@ -3002,41 +3014,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.AclRule bodyValue;
+            private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3044,10 +3056,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3055,17 +3067,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.AclRule Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3088,38 +3100,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Acl> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3127,10 +3139,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3138,7 +3150,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -3157,44 +3169,44 @@ namespace Google.Apis.Calendar.v3 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string ruleId;
+            private string _ruleId;
             
-            private Google.Apis.Calendar.v3.Data.AclRule bodyValue;
+            private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
-                this.ruleId = ruleId;
+                this._calendarId = calendarId;
+                this._ruleId = ruleId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3202,10 +3214,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3213,7 +3225,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -3221,17 +3233,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("ruleId")]
             public virtual string RuleId {
                 get {
-                    return this.ruleId;
+                    return this._ruleId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.AclRule Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3254,44 +3266,44 @@ namespace Google.Apis.Calendar.v3 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string ruleId;
+            private string _ruleId;
             
-            private Google.Apis.Calendar.v3.Data.AclRule bodyValue;
+            private Google.Apis.Calendar.v3.Data.AclRule _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.AclRule body, string calendarId, string ruleId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
-                this.ruleId = ruleId;
+                this._calendarId = calendarId;
+                this._ruleId = ruleId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3299,10 +3311,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3310,7 +3322,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -3318,17 +3330,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("ruleId")]
             public virtual string RuleId {
                 get {
-                    return this.ruleId;
+                    return this._ruleId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.AclRule Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3417,38 +3429,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3456,10 +3468,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3467,7 +3479,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -3486,38 +3498,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3525,10 +3537,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3536,7 +3548,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -3555,13 +3567,13 @@ namespace Google.Apis.Calendar.v3 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Calendar.v3.Data.CalendarListEntry bodyValue;
+            private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.CalendarListEntry body) : 
                     base(service) {
@@ -3572,21 +3584,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3594,20 +3606,20 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.CalendarListEntry Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3630,19 +3642,19 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarList> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private MinAccessRole? minAccessRole;
+            private System.Nullable<MinAccessRole> _minAccessRole;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private System.Boolean? showHidden;
+            private System.Nullable<bool> _showHidden;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -3652,21 +3664,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3674,32 +3686,32 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Maximum number of entries returned on one result page. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>The minimum access role for the user in the returned entires. Optional. The default is no restriction.</summary>
             [Google.Apis.Util.RequestParameterAttribute("minAccessRole")]
-            public virtual MinAccessRole? MinAccessRole {
+            public virtual System.Nullable<MinAccessRole> MinAccessRole {
                 get {
-                    return this.minAccessRole;
+                    return this._minAccessRole;
                 }
                 set {
-                    this.minAccessRole = value;
+                    this._minAccessRole = value;
                 }
             }
             
@@ -3707,21 +3719,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             /// <summary>Whether to show hidden entries. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showHidden")]
-            public virtual System.Boolean? ShowHidden {
+            public virtual System.Nullable<bool> ShowHidden {
                 get {
-                    return this.showHidden;
+                    return this._showHidden;
                 }
                 set {
-                    this.showHidden = value;
+                    this._showHidden = value;
                 }
             }
             
@@ -3740,41 +3752,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.CalendarListEntry bodyValue;
+            private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3782,10 +3794,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3793,17 +3805,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.CalendarListEntry Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3826,41 +3838,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.CalendarListEntry bodyValue;
+            private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.CalendarListEntry body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3868,10 +3880,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -3879,17 +3891,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.CalendarListEntry Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -3958,38 +3970,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public ClearRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -3997,10 +4009,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4008,7 +4020,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -4027,38 +4039,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4066,10 +4078,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4077,7 +4089,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -4096,38 +4108,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4135,10 +4147,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4146,7 +4158,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -4165,13 +4177,13 @@ namespace Google.Apis.Calendar.v3 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Calendar.v3.Data.Calendar bodyValue;
+            private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Calendar body) : 
                     base(service) {
@@ -4182,21 +4194,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4204,20 +4216,20 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Calendar Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4240,41 +4252,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.Calendar bodyValue;
+            private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4282,10 +4294,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4293,17 +4305,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Calendar Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4326,41 +4338,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.Calendar bodyValue;
+            private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Calendar body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4368,10 +4380,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4379,17 +4391,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Calendar Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4428,11 +4440,11 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Colors> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -4442,21 +4454,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4464,10 +4476,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4578,43 +4590,43 @@ namespace Google.Apis.Calendar.v3 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string eventId) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.eventId = eventId;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4622,10 +4634,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4633,7 +4645,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -4641,18 +4653,18 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>Whether to send notifications about the deletion of the event. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
@@ -4671,45 +4683,45 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Int64? maxAttendees;
+            private System.Nullable<long> _maxAttendees;
             
-            private string timeZone;
+            private string _timeZone;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string eventId) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.eventId = eventId;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4717,10 +4729,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4728,7 +4740,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -4736,18 +4748,18 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
-            public virtual System.Int64? MaxAttendees {
+            public virtual System.Nullable<long> MaxAttendees {
                 get {
-                    return this.maxAttendees;
+                    return this._maxAttendees;
                 }
                 set {
-                    this.maxAttendees = value;
+                    this._maxAttendees = value;
                 }
             }
             
@@ -4755,10 +4767,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("timeZone")]
             public virtual string TimeZone {
                 get {
-                    return this.timeZone;
+                    return this._timeZone;
                 }
                 set {
-                    this.timeZone = value;
+                    this._timeZone = value;
                 }
             }
             
@@ -4777,41 +4789,41 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ImportRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private Google.Apis.Calendar.v3.Data.Event bodyValue;
+            private Google.Apis.Calendar.v3.Data.Event _Body;
             
             public ImportRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4819,10 +4831,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4830,17 +4842,17 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Event Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4863,43 +4875,43 @@ namespace Google.Apis.Calendar.v3 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
-            private Google.Apis.Calendar.v3.Data.Event bodyValue;
+            private Google.Apis.Calendar.v3.Data.Event _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Event body, string calendarId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -4907,10 +4919,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -4918,28 +4930,28 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Whether to send notifications about the creation of the new event. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Event Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -4962,53 +4974,53 @@ namespace Google.Apis.Calendar.v3 {
         
         public class InstancesRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Int64? maxAttendees;
+            private System.Nullable<long> _maxAttendees;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private string originalStart;
+            private string _originalStart;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private System.Boolean? showDeleted;
+            private System.Nullable<bool> _showDeleted;
             
-            private string timeZone;
+            private string _timeZone;
             
             public InstancesRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string eventId) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.eventId = eventId;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5016,10 +5028,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5027,7 +5039,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -5035,29 +5047,29 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
-            public virtual System.Int64? MaxAttendees {
+            public virtual System.Nullable<long> MaxAttendees {
                 get {
-                    return this.maxAttendees;
+                    return this._maxAttendees;
                 }
                 set {
-                    this.maxAttendees = value;
+                    this._maxAttendees = value;
                 }
             }
             
             /// <summary>Maximum number of events returned on one result page. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -5065,10 +5077,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("originalStart")]
             public virtual string OriginalStart {
                 get {
-                    return this.originalStart;
+                    return this._originalStart;
                 }
                 set {
-                    this.originalStart = value;
+                    this._originalStart = value;
                 }
             }
             
@@ -5076,21 +5088,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
             /// <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
-            public virtual System.Boolean? ShowDeleted {
+            public virtual System.Nullable<bool> ShowDeleted {
                 get {
-                    return this.showDeleted;
+                    return this._showDeleted;
                 }
                 set {
-                    this.showDeleted = value;
+                    this._showDeleted = value;
                 }
             }
             
@@ -5098,10 +5110,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("timeZone")]
             public virtual string TimeZone {
                 get {
-                    return this.timeZone;
+                    return this._timeZone;
                 }
                 set {
-                    this.timeZone = value;
+                    this._timeZone = value;
                 }
             }
             
@@ -5120,64 +5132,64 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string iCalUID;
+            private string _iCalUID;
             
-            private System.Int64? maxAttendees;
+            private System.Nullable<long> _maxAttendees;
             
-            private System.Int64? maxResults;
+            private System.Nullable<long> _maxResults;
             
-            private OrderBy? orderBy;
+            private System.Nullable<OrderBy> _orderBy;
             
-            private string pageToken;
+            private string _pageToken;
             
-            private string q;
+            private string _q;
             
-            private System.Boolean? showDeleted;
+            private System.Nullable<bool> _showDeleted;
             
-            private System.Boolean? showHiddenInvitations;
+            private System.Nullable<bool> _showHiddenInvitations;
             
-            private System.Boolean? singleEvents;
+            private System.Nullable<bool> _singleEvents;
             
-            private string timeMax;
+            private string _timeMax;
             
-            private string timeMin;
+            private string _timeMin;
             
-            private string timeZone;
+            private string _timeZone;
             
-            private string updatedMin;
+            private string _updatedMin;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
                     base(service) {
-                this.calendarId = calendarId;
+                this._calendarId = calendarId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5185,10 +5197,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5196,7 +5208,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -5204,43 +5216,43 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("iCalUID")]
             public virtual string ICalUID {
                 get {
-                    return this.iCalUID;
+                    return this._iCalUID;
                 }
                 set {
-                    this.iCalUID = value;
+                    this._iCalUID = value;
                 }
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
-            public virtual System.Int64? MaxAttendees {
+            public virtual System.Nullable<long> MaxAttendees {
                 get {
-                    return this.maxAttendees;
+                    return this._maxAttendees;
                 }
                 set {
-                    this.maxAttendees = value;
+                    this._maxAttendees = value;
                 }
             }
             
             /// <summary>Maximum number of events returned on one result page. Optional.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxResults")]
-            public virtual System.Int64? MaxResults {
+            public virtual System.Nullable<long> MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
             /// <summary>The order of the events returned in the result. Optional. The default is an unspecified, stable order.</summary>
             [Google.Apis.Util.RequestParameterAttribute("orderBy")]
-            public virtual OrderBy? OrderBy {
+            public virtual System.Nullable<OrderBy> OrderBy {
                 get {
-                    return this.orderBy;
+                    return this._orderBy;
                 }
                 set {
-                    this.orderBy = value;
+                    this._orderBy = value;
                 }
             }
             
@@ -5248,10 +5260,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("pageToken")]
             public virtual string PageToken {
                 get {
-                    return this.pageToken;
+                    return this._pageToken;
                 }
                 set {
-                    this.pageToken = value;
+                    this._pageToken = value;
                 }
             }
             
@@ -5259,43 +5271,43 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("q")]
             public virtual string Q {
                 get {
-                    return this.q;
+                    return this._q;
                 }
                 set {
-                    this.q = value;
+                    this._q = value;
                 }
             }
             
             /// <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
-            public virtual System.Boolean? ShowDeleted {
+            public virtual System.Nullable<bool> ShowDeleted {
                 get {
-                    return this.showDeleted;
+                    return this._showDeleted;
                 }
                 set {
-                    this.showDeleted = value;
+                    this._showDeleted = value;
                 }
             }
             
             /// <summary>Whether to include hidden invitations in the result. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("showHiddenInvitations")]
-            public virtual System.Boolean? ShowHiddenInvitations {
+            public virtual System.Nullable<bool> ShowHiddenInvitations {
                 get {
-                    return this.showHiddenInvitations;
+                    return this._showHiddenInvitations;
                 }
                 set {
-                    this.showHiddenInvitations = value;
+                    this._showHiddenInvitations = value;
                 }
             }
             
             /// <summary>Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("singleEvents")]
-            public virtual System.Boolean? SingleEvents {
+            public virtual System.Nullable<bool> SingleEvents {
                 get {
-                    return this.singleEvents;
+                    return this._singleEvents;
                 }
                 set {
-                    this.singleEvents = value;
+                    this._singleEvents = value;
                 }
             }
             
@@ -5303,10 +5315,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("timeMax")]
             public virtual string TimeMax {
                 get {
-                    return this.timeMax;
+                    return this._timeMax;
                 }
                 set {
-                    this.timeMax = value;
+                    this._timeMax = value;
                 }
             }
             
@@ -5314,10 +5326,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("timeMin")]
             public virtual string TimeMin {
                 get {
-                    return this.timeMin;
+                    return this._timeMin;
                 }
                 set {
-                    this.timeMin = value;
+                    this._timeMin = value;
                 }
             }
             
@@ -5325,10 +5337,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("timeZone")]
             public virtual string TimeZone {
                 get {
-                    return this.timeZone;
+                    return this._timeZone;
                 }
                 set {
-                    this.timeZone = value;
+                    this._timeZone = value;
                 }
             }
             
@@ -5336,10 +5348,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
             public virtual string UpdatedMin {
                 get {
-                    return this.updatedMin;
+                    return this._updatedMin;
                 }
                 set {
-                    this.updatedMin = value;
+                    this._updatedMin = value;
                 }
             }
             
@@ -5358,46 +5370,46 @@ namespace Google.Apis.Calendar.v3 {
         
         public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string destination;
+            private string _destination;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
             public MoveRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string eventId, string destination) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.eventId = eventId;
-                this.destination = destination;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
+                this._destination = destination;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5405,10 +5417,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5416,7 +5428,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -5424,7 +5436,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("destination")]
             public virtual string Destination {
                 get {
-                    return this.destination;
+                    return this._destination;
                 }
             }
             
@@ -5432,18 +5444,18 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>Whether to send notifications about the change of the event's organizer. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
@@ -5462,46 +5474,46 @@ namespace Google.Apis.Calendar.v3 {
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
-            private Google.Apis.Calendar.v3.Data.Event bodyValue;
+            private Google.Apis.Calendar.v3.Data.Event _Body;
             
             public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
-                this.eventId = eventId;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5509,10 +5521,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5520,7 +5532,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -5528,28 +5540,28 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Event Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5572,43 +5584,43 @@ namespace Google.Apis.Calendar.v3 {
         
         public class QuickAddRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
-            private string text;
+            private string _text;
             
             public QuickAddRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId, string text) : 
                     base(service) {
-                this.calendarId = calendarId;
-                this.text = text;
+                this._calendarId = calendarId;
+                this._text = text;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5616,10 +5628,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5627,18 +5639,18 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
             /// <summary>Whether to send notifications about the creation of the event. Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
@@ -5646,7 +5658,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("text")]
             public virtual string Text {
                 get {
-                    return this.text;
+                    return this._text;
                 }
             }
             
@@ -5665,46 +5677,46 @@ namespace Google.Apis.Calendar.v3 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string calendarId;
+            private string _calendarId;
             
-            private string eventId;
+            private string _eventId;
             
-            private System.Boolean? sendNotifications;
+            private System.Nullable<bool> _sendNotifications;
             
-            private Google.Apis.Calendar.v3.Data.Event bodyValue;
+            private Google.Apis.Calendar.v3.Data.Event _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Event body, string calendarId, string eventId) : 
                     base(service) {
                 this.Body = body;
-                this.calendarId = calendarId;
-                this.eventId = eventId;
+                this._calendarId = calendarId;
+                this._eventId = eventId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5712,10 +5724,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5723,7 +5735,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("calendarId")]
             public virtual string CalendarId {
                 get {
-                    return this.calendarId;
+                    return this._calendarId;
                 }
             }
             
@@ -5731,28 +5743,28 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("eventId")]
             public virtual string EventId {
                 get {
-                    return this.eventId;
+                    return this._eventId;
                 }
             }
             
             /// <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>
             [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
-            public virtual System.Boolean? SendNotifications {
+            public virtual System.Nullable<bool> SendNotifications {
                 get {
-                    return this.sendNotifications;
+                    return this._sendNotifications;
                 }
                 set {
-                    this.sendNotifications = value;
+                    this._sendNotifications = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.Event Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5791,13 +5803,13 @@ namespace Google.Apis.Calendar.v3 {
         
         public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.FreeBusyResponse> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Calendar.v3.Data.FreeBusyRequest bodyValue;
+            private Google.Apis.Calendar.v3.Data.FreeBusyRequest _Body;
             
             public QueryRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.FreeBusyRequest body) : 
                     base(service) {
@@ -5808,21 +5820,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5830,20 +5842,20 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Calendar.v3.Data.FreeBusyRequest Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -5888,38 +5900,38 @@ namespace Google.Apis.Calendar.v3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Setting> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string setting;
+            private string _setting;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string setting) : 
                     base(service) {
-                this.setting = setting;
+                this._setting = setting;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5927,10 +5939,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -5938,7 +5950,7 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("setting")]
             public virtual string Setting {
                 get {
-                    return this.setting;
+                    return this._setting;
                 }
             }
             
@@ -5957,11 +5969,11 @@ namespace Google.Apis.Calendar.v3 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Settings> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -5971,21 +5983,21 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -5993,10 +6005,10 @@ namespace Google.Apis.Calendar.v3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -6018,19 +6030,19 @@ namespace Google.Apis.Calendar.v3 {
         
         private const string Resource = "";
         
-        private AclResource acl;
+        private AclResource _acl;
         
-        private CalendarListResource calendarList;
+        private CalendarListResource _calendarList;
         
-        private CalendarsResource calendars;
+        private CalendarsResource _calendars;
         
-        private ColorsResource colors;
+        private ColorsResource _colors;
         
-        private EventsResource events;
+        private EventsResource _events;
         
-        private FreebusyResource freebusy;
+        private FreebusyResource _freebusy;
         
-        private SettingsResource settings;
+        private SettingsResource _settings;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -6040,43 +6052,43 @@ namespace Google.Apis.Calendar.v3 {
         
         public virtual AclResource Acl {
             get {
-                return this.acl;
+                return this._acl;
             }
         }
         
         public virtual CalendarListResource CalendarList {
             get {
-                return this.calendarList;
+                return this._calendarList;
             }
         }
         
         public virtual CalendarsResource Calendars {
             get {
-                return this.calendars;
+                return this._calendars;
             }
         }
         
         public virtual ColorsResource Colors {
             get {
-                return this.colors;
+                return this._colors;
             }
         }
         
         public virtual EventsResource Events {
             get {
-                return this.events;
+                return this._events;
             }
         }
         
         public virtual FreebusyResource Freebusy {
             get {
-                return this.freebusy;
+                return this._freebusy;
             }
         }
         
         public virtual SettingsResource Settings {
             get {
-                return this.settings;
+                return this._settings;
             }
         }
     }

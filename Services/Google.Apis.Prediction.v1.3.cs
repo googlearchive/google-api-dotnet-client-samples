@@ -16,32 +16,32 @@ namespace Google.Apis.Prediction.v1_3.Data {
     
     public class Input {
         
-        private Input.InputData input;
+        private Input.InputData _input;
         
         /// <summary>Input to the model for a prediction</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("input")]
         public virtual Input.InputData InputValue {
             get {
-                return this.input;
+                return this._input;
             }
             set {
-                this.input = value;
+                this._input = value;
             }
         }
         
         /// <summary>Input to the model for a prediction</summary>
         public class InputData {
             
-            private System.Collections.Generic.IList<string> csvInstance;
+            private System.Collections.Generic.IList<string> _csvInstance;
             
             /// <summary>A list of input features, these can be strings or doubles.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
             public virtual System.Collections.Generic.IList<string> CsvInstance {
                 get {
-                    return this.csvInstance;
+                    return this._csvInstance;
                 }
                 set {
-                    this.csvInstance = value;
+                    this._csvInstance = value;
                 }
             }
         }
@@ -49,30 +49,30 @@ namespace Google.Apis.Prediction.v1_3.Data {
     
     public class Output : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private string outputLabel;
+        private string _outputLabel;
         
-        private System.Collections.Generic.IList<Output.OutputMultiData> outputMulti;
+        private System.Collections.Generic.IList<Output.OutputMultiData> _outputMulti;
         
-        private System.Nullable<double> outputValue;
+        private System.Nullable<double> _outputValue;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The unique name for the predictive model.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -80,10 +80,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -91,10 +91,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputLabel")]
         public virtual string OutputLabel {
             get {
-                return this.outputLabel;
+                return this._outputLabel;
             }
             set {
-                this.outputLabel = value;
+                this._outputLabel = value;
             }
         }
         
@@ -102,10 +102,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputMulti")]
         public virtual System.Collections.Generic.IList<Output.OutputMultiData> OutputMulti {
             get {
-                return this.outputMulti;
+                return this._outputMulti;
             }
             set {
-                this.outputMulti = value;
+                this._outputMulti = value;
             }
         }
         
@@ -113,10 +113,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("outputValue")]
         public virtual System.Nullable<double> OutputValue {
             get {
-                return this.outputValue;
+                return this._outputValue;
             }
             set {
-                this.outputValue = value;
+                this._outputValue = value;
             }
         }
         
@@ -124,46 +124,46 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         public class OutputMultiData {
             
-            private string label;
+            private string _label;
             
-            private System.Nullable<double> score;
+            private System.Nullable<double> _score;
             
             /// <summary>The class label.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("label")]
             public virtual string Label {
                 get {
-                    return this.label;
+                    return this._label;
                 }
                 set {
-                    this.label = value;
+                    this._label = value;
                 }
             }
             
@@ -171,10 +171,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("score")]
             public virtual System.Nullable<double> Score {
                 get {
-                    return this.score;
+                    return this._score;
                 }
                 set {
-                    this.score = value;
+                    this._score = value;
                 }
             }
         }
@@ -182,30 +182,30 @@ namespace Google.Apis.Prediction.v1_3.Data {
     
     public class Training : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string id;
+        private string _id;
         
-        private string kind;
+        private string _kind;
         
-        private Training.ModelInfoData modelInfo;
+        private Training.ModelInfoData _modelInfo;
         
-        private string selfLink;
+        private string _selfLink;
         
-        private string trainingStatus;
+        private string _trainingStatus;
         
-        private System.Collections.Generic.IList<Training.UtilityData> utility;
+        private System.Collections.Generic.IList<Training.UtilityData> _utility;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The unique name for the predictive model.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
@@ -213,10 +213,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -224,10 +224,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("modelInfo")]
         public virtual Training.ModelInfoData ModelInfo {
             get {
-                return this.modelInfo;
+                return this._modelInfo;
             }
             set {
-                this.modelInfo = value;
+                this._modelInfo = value;
             }
         }
         
@@ -235,10 +235,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
-                return this.selfLink;
+                return this._selfLink;
             }
             set {
-                this.selfLink = value;
+                this._selfLink = value;
             }
         }
         
@@ -246,10 +246,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("trainingStatus")]
         public virtual string TrainingStatus {
             get {
-                return this.trainingStatus;
+                return this._trainingStatus;
             }
             set {
-                this.trainingStatus = value;
+                this._trainingStatus = value;
             }
         }
         
@@ -257,59 +257,59 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("utility")]
         public virtual System.Collections.Generic.IList<Training.UtilityData> Utility {
             get {
-                return this.utility;
+                return this._utility;
             }
             set {
-                this.utility = value;
+                this._utility = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
         
         /// <summary>Model metadata.</summary>
         public class ModelInfoData {
             
-            private System.Nullable<double> classWeightedAccuracy;
+            private System.Nullable<double> _classWeightedAccuracy;
             
-            private System.Nullable<double> classificationAccuracy;
+            private System.Nullable<double> _classificationAccuracy;
             
-            private ModelInfoData.ConfusionMatrixData confusionMatrix;
+            private ModelInfoData.ConfusionMatrixData _confusionMatrix;
             
-            private ModelInfoData.ConfusionMatrixRowTotalsData confusionMatrixRowTotals;
+            private ModelInfoData.ConfusionMatrixRowTotalsData _confusionMatrixRowTotals;
             
-            private System.Nullable<double> meanSquaredError;
+            private System.Nullable<double> _meanSquaredError;
             
-            private string modelType;
+            private string _modelType;
             
-            private string numberClasses;
+            private string _numberClasses;
             
-            private string numberInstances;
+            private string _numberInstances;
             
             /// <summary>Estimated accuracy of model taking utility weights into account [Categorical models only].</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("classWeightedAccuracy")]
             public virtual System.Nullable<double> ClassWeightedAccuracy {
                 get {
-                    return this.classWeightedAccuracy;
+                    return this._classWeightedAccuracy;
                 }
                 set {
-                    this.classWeightedAccuracy = value;
+                    this._classWeightedAccuracy = value;
                 }
             }
             
@@ -317,10 +317,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("classificationAccuracy")]
             public virtual System.Nullable<double> ClassificationAccuracy {
                 get {
-                    return this.classificationAccuracy;
+                    return this._classificationAccuracy;
                 }
                 set {
-                    this.classificationAccuracy = value;
+                    this._classificationAccuracy = value;
                 }
             }
             
@@ -328,10 +328,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("confusionMatrix")]
             public virtual ModelInfoData.ConfusionMatrixData ConfusionMatrix {
                 get {
-                    return this.confusionMatrix;
+                    return this._confusionMatrix;
                 }
                 set {
-                    this.confusionMatrix = value;
+                    this._confusionMatrix = value;
                 }
             }
             
@@ -339,10 +339,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("confusionMatrixRowTotals")]
             public virtual ModelInfoData.ConfusionMatrixRowTotalsData ConfusionMatrixRowTotals {
                 get {
-                    return this.confusionMatrixRowTotals;
+                    return this._confusionMatrixRowTotals;
                 }
                 set {
-                    this.confusionMatrixRowTotals = value;
+                    this._confusionMatrixRowTotals = value;
                 }
             }
             
@@ -350,10 +350,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("meanSquaredError")]
             public virtual System.Nullable<double> MeanSquaredError {
                 get {
-                    return this.meanSquaredError;
+                    return this._meanSquaredError;
                 }
                 set {
-                    this.meanSquaredError = value;
+                    this._meanSquaredError = value;
                 }
             }
             
@@ -361,10 +361,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("modelType")]
             public virtual string ModelType {
                 get {
-                    return this.modelType;
+                    return this._modelType;
                 }
                 set {
-                    this.modelType = value;
+                    this._modelType = value;
                 }
             }
             
@@ -372,10 +372,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberClasses")]
             public virtual string NumberClasses {
                 get {
-                    return this.numberClasses;
+                    return this._numberClasses;
                 }
                 set {
-                    this.numberClasses = value;
+                    this._numberClasses = value;
                 }
             }
             
@@ -383,10 +383,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
             [Newtonsoft.Json.JsonPropertyAttribute("numberInstances")]
             public virtual string NumberInstances {
                 get {
-                    return this.numberInstances;
+                    return this._numberInstances;
                 }
                 set {
-                    this.numberInstances = value;
+                    this._numberInstances = value;
                 }
             }
             
@@ -410,18 +410,18 @@ namespace Google.Apis.Prediction.v1_3.Data {
     
     public class Update {
         
-        private string classLabel;
+        private string _classLabel;
         
-        private System.Collections.Generic.IList<string> csvInstance;
+        private System.Collections.Generic.IList<string> _csvInstance;
         
         /// <summary>The true class label of this instance</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("classLabel")]
         public virtual string ClassLabel {
             get {
-                return this.classLabel;
+                return this._classLabel;
             }
             set {
-                this.classLabel = value;
+                this._classLabel = value;
             }
         }
         
@@ -429,10 +429,10 @@ namespace Google.Apis.Prediction.v1_3.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("csvInstance")]
         public virtual System.Collections.Generic.IList<string> CsvInstance {
             get {
-                return this.csvInstance;
+                return this._csvInstance;
             }
             set {
-                this.csvInstance = value;
+                this._csvInstance = value;
             }
         }
     }
@@ -452,113 +452,116 @@ namespace Google.Apis.Prediction.v1_3 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.3" +
-            "\",\"name\":\"prediction\",\"version\":\"v1.3\",\"revision\":\"20120227\",\"title\":\"Prediction" +
+            "\",\"name\":\"prediction\",\"version\":\"v1.3\",\"revision\":\"20120423\",\"title\":\"Prediction" +
             " API\",\"description\":\"Lets you access a cloud hosted machine learning service tha" +
             "t makes it easy to build smart apps\",\"icons\":{\"x16\":\"http://www.google.com/image" +
             "s/icons/feature/predictionapi-16.png\",\"x32\":\"http://www.google.com/images/icons/" +
             "feature/predictionapi-32.png\"},\"documentationLink\":\"http://code.google.com/apis/" +
             "predict/docs/developer-guide.html\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.goog" +
-            "leapis.com/prediction/v1.3/\",\"basePath\":\"/prediction/v1.3/\",\"parameters\":{\"alt\":" +
-            "{\"type\":\"string\",\"description\":\"Data format for the response.\",\"default\":\"json\"," +
-            "\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of application/" +
-            "json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector spe" +
-            "cifying which fields to include in a partial response.\",\"location\":\"query\"},\"key" +
-            "\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies your project " +
-            "and provides you with API access, quota, and reports. Required unless you provid" +
-            "e an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"descr" +
-            "iption\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint" +
-            "\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations and line b" +
-            "reaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Available to use for quota purposes for server-side applications. Can b" +
-            "e any arbitrary string assigned to a user, but should not exceed 40 characters. " +
-            "Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"st" +
-            "ring\",\"description\":\"IP address of the site where the request originates. Use th" +
-            "is if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2" +
-            "\":{\"scopes\":{\"https://www.googleapis.com/auth/prediction\":{\"description\":\"Manage" +
-            " your data in the Google Prediction API\"}}}},\"schemas\":{\"Input\":{\"id\":\"Input\",\"t" +
-            "ype\":\"object\",\"properties\":{\"input\":{\"type\":\"object\",\"description\":\"Input to the" +
-            " model for a prediction\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"A list of input features, these can be strings or doubles.\",\"items\":{\"type\":" +
-            "\"any\"}}}}}},\"Output\":{\"id\":\"Output\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"" +
-            "string\",\"description\":\"The unique name for the predictive model.\"},\"kind\":{\"type" +
-            "\":\"string\",\"description\":\"What kind of resource this is.\",\"default\":\"prediction#" +
-            "output\"},\"outputLabel\":{\"type\":\"string\",\"description\":\"The most likely class [Ca" +
-            "tegorical models only].\"},\"outputMulti\":{\"type\":\"array\",\"description\":\"A list of" +
-            " classes with their estimated probabilities [Categorical models only].\",\"items\":" +
-            "{\"type\":\"object\",\"properties\":{\"label\":{\"type\":\"string\",\"description\":\"The class" +
-            " label.\"},\"score\":{\"type\":\"number\",\"description\":\"The probability of the class.\"" +
-            ",\"format\":\"double\"}}}},\"outputValue\":{\"type\":\"number\",\"description\":\"The estimat" +
-            "ed regression value [Regression models only].\",\"format\":\"double\"},\"selfLink\":{\"t" +
-            "ype\":\"string\",\"description\":\"A URL to re-request this resource.\"}}},\"Training\":{" +
-            "\"id\":\"Training\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description" +
-            "\":\"The unique name for the predictive model.\"},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"What kind of resource this is.\",\"default\":\"prediction#training\"},\"modelInf" +
-            "o\":{\"type\":\"object\",\"description\":\"Model metadata.\",\"properties\":{\"classWeighted" +
-            "Accuracy\":{\"type\":\"number\",\"description\":\"Estimated accuracy of model taking uti" +
-            "lity weights into account [Categorical models only].\",\"format\":\"double\"},\"classi" +
-            "ficationAccuracy\":{\"type\":\"number\",\"description\":\"A number between 0.0 and 1.0, " +
-            "where 1.0 is 100% accurate. This is an estimate, based on the amount and quality" +
-            " of the training data, of the estimated prediction accuracy. You can use this is" +
-            " a guide to decide whether the results are accurate enough for your needs. This " +
-            "estimate will be more reliable if your real input data is similar to your traini" +
-            "ng data [Categorical models only].\",\"format\":\"double\"},\"confusionMatrix\":{\"type\"" +
-            ":\"object\",\"description\":\"An output confusion matrix. This shows an estimate for " +
-            "how this model will do in predictions. This is first indexed by the true class l" +
-            "abel. For each true class label, this provides a pair {predicted_label, count}, " +
-            "where count is the estimated number of times the model will predict the predicte" +
-            "d label given the true label. Will not output if more then 100 classes [Categori" +
-            "cal models only].\",\"additionalProperties\":{\"type\":\"object\",\"description\":\"The tr" +
-            "ue class label.\",\"additionalProperties\":{\"type\":\"number\",\"description\":\"The pair" +
-            " {predicted_label, count}.\",\"format\":\"double\"}}},\"confusionMatrixRowTotals\":{\"ty" +
-            "pe\":\"object\",\"description\":\"A list of the confusion matrix row totals\",\"addition" +
-            "alProperties\":{\"type\":\"number\",\"description\":\"The true class associated with how" +
-            " many instances it had\",\"format\":\"double\"}},\"meanSquaredError\":{\"type\":\"number\"," +
-            "\"description\":\"An estimated mean squared error. The can be used to measure the q" +
-            "uality of the predicted model [Regression models only].\",\"format\":\"double\"},\"mod" +
-            "elType\":{\"type\":\"string\",\"description\":\"Type of predictive model (CLASSIFICATION" +
-            " or REGRESSION)\"},\"numberClasses\":{\"type\":\"string\",\"description\":\"Number of clas" +
-            "ses in the trained model [Categorical models only].\",\"format\":\"int64\"},\"numberIn" +
-            "stances\":{\"type\":\"string\",\"description\":\"Number of valid data instances used in " +
-            "the trained model.\",\"format\":\"int64\"}}},\"selfLink\":{\"type\":\"string\",\"description" +
-            "\":\"A URL to re-request this resource.\"},\"trainingStatus\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The current status of the training job. This can be one of following: R" +
-            "UNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"utility\":{\"type\":\"array\",\"" +
-            "description\":\"A class weighting function, which allows the importance weights fo" +
-            "r classes to be specified [Categorical models only].\",\"items\":{\"type\":\"object\",\"" +
-            "description\":\"Class label (string).\",\"additionalProperties\":{\"type\":\"number\",\"fo" +
-            "rmat\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":\"object\",\"properties\":{\"class" +
-            "Label\":{\"type\":\"string\",\"description\":\"The true class label of this instance\"},\"" +
-            "csvInstance\":{\"type\":\"array\",\"description\":\"The input features for this instance" +
-            "\",\"items\":{\"type\":\"any\"}}}}},\"resources\":{\"hostedmodels\":{\"methods\":{\"predict\":{" +
-            "\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{hostedModelName}/pr" +
-            "edict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and request an output aga" +
-            "inst a hosted model\",\"parameters\":{\"hostedModelName\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The name of a hosted model\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}},\"training\":{\"method" +
-            "s\":{\"delete\":{\"id\":\"prediction.training.delete\",\"path\":\"training/{data}\",\"httpMe" +
-            "thod\":\"DELETE\",\"description\":\"Delete a trained model\",\"parameters\":{\"data\":{\"typ" +
-            "e\":\"string\",\"description\":\"mybucket/mydata resource in Google Storage\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/prediction\"]},\"get\":{\"id\":\"prediction.training.get\",\"path\":\"trai" +
-            "ning/{data}\",\"httpMethod\":\"GET\",\"description\":\"Check training status of your mod" +
-            "el\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resourc" +
-            "e in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"data" +
-            "\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/pre" +
-            "diction\"]},\"insert\":{\"id\":\"prediction.training.insert\",\"path\":\"training\",\"httpMe" +
-            "thod\":\"POST\",\"description\":\"Begin training your model\",\"request\":{\"$ref\":\"Traini" +
-            "ng\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/p" +
-            "rediction\"]},\"predict\":{\"id\":\"prediction.training.predict\",\"path\":\"training/{dat" +
-            "a}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit data and request a predict" +
-            "ion\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydata resour" +
-            "ce in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"dat" +
-            "a\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"prediction.training.update\"" +
-            ",\"path\":\"training/{data}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a tr" +
-            "ained model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket/mydat" +
-            "a resource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"data\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
+            "leapis.com/prediction/v1.3/\",\"basePath\":\"/prediction/v1.3/\",\"rootUrl\":\"https://w" +
+            "ww.googleapis.com/\",\"servicePath\":\"prediction/v1.3/\",\"batchPath\":\"batch\",\"parame" +
+            "ters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"def" +
+            "ault\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type of" +
+            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
+            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
+            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
+            "your project and provides you with API access, quota, and reports. Required unle" +
+            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
+            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
+            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
+            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
+            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
+            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
+            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
+            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
+            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"a" +
+            "uth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/devstorage.read_only\"" +
+            ":{\"description\":\"View your data in Google Cloud Storage\"},\"https://www.googleapi" +
+            "s.com/auth/prediction\":{\"description\":\"Manage your data in the Google Prediction" +
+            " API\"}}}},\"schemas\":{\"Input\":{\"id\":\"Input\",\"type\":\"object\",\"properties\":{\"input\"" +
+            ":{\"type\":\"object\",\"description\":\"Input to the model for a prediction\",\"propertie" +
+            "s\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"A list of input features, these" +
+            " can be strings or doubles.\",\"items\":{\"type\":\"any\"}}}}}},\"Output\":{\"id\":\"Output\"" +
+            ",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The unique n" +
+            "ame for the predictive model.\"},\"kind\":{\"type\":\"string\",\"description\":\"What kind" +
+            " of resource this is.\",\"default\":\"prediction#output\"},\"outputLabel\":{\"type\":\"str" +
+            "ing\",\"description\":\"The most likely class [Categorical models only].\"},\"outputMu" +
+            "lti\":{\"type\":\"array\",\"description\":\"A list of classes with their estimated proba" +
+            "bilities [Categorical models only].\",\"items\":{\"type\":\"object\",\"properties\":{\"lab" +
+            "el\":{\"type\":\"string\",\"description\":\"The class label.\"},\"score\":{\"type\":\"number\"," +
+            "\"description\":\"The probability of the class.\",\"format\":\"double\"}}}},\"outputValue" +
+            "\":{\"type\":\"number\",\"description\":\"The estimated regression value [Regression mod" +
+            "els only].\",\"format\":\"double\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL " +
+            "to re-request this resource.\"}}},\"Training\":{\"id\":\"Training\",\"type\":\"object\",\"pr" +
+            "operties\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predicti" +
+            "ve model.\"},\"kind\":{\"type\":\"string\",\"description\":\"What kind of resource this is" +
+            ".\",\"default\":\"prediction#training\"},\"modelInfo\":{\"type\":\"object\",\"description\":\"" +
+            "Model metadata.\",\"properties\":{\"classWeightedAccuracy\":{\"type\":\"number\",\"descrip" +
+            "tion\":\"Estimated accuracy of model taking utility weights into account [Categori" +
+            "cal models only].\",\"format\":\"double\"},\"classificationAccuracy\":{\"type\":\"number\"," +
+            "\"description\":\"A number between 0.0 and 1.0, where 1.0 is 100% accurate. This is" +
+            " an estimate, based on the amount and quality of the training data, of the estim" +
+            "ated prediction accuracy. You can use this is a guide to decide whether the resu" +
+            "lts are accurate enough for your needs. This estimate will be more reliable if y" +
+            "our real input data is similar to your training data [Categorical models only].\"" +
+            ",\"format\":\"double\"},\"confusionMatrix\":{\"type\":\"object\",\"description\":\"An output " +
+            "confusion matrix. This shows an estimate for how this model will do in predictio" +
+            "ns. This is first indexed by the true class label. For each true class label, th" +
+            "is provides a pair {predicted_label, count}, where count is the estimated number" +
+            " of times the model will predict the predicted label given the true label. Will " +
+            "not output if more then 100 classes [Categorical models only].\",\"additionalPrope" +
+            "rties\":{\"type\":\"object\",\"description\":\"The true class label.\",\"additionalPropert" +
+            "ies\":{\"type\":\"number\",\"description\":\"The pair {predicted_label, count}.\",\"format" +
+            "\":\"double\"}}},\"confusionMatrixRowTotals\":{\"type\":\"object\",\"description\":\"A list " +
+            "of the confusion matrix row totals\",\"additionalProperties\":{\"type\":\"number\",\"des" +
+            "cription\":\"The true class associated with how many instances it had\",\"format\":\"d" +
+            "ouble\"}},\"meanSquaredError\":{\"type\":\"number\",\"description\":\"An estimated mean sq" +
+            "uared error. The can be used to measure the quality of the predicted model [Regr" +
+            "ession models only].\",\"format\":\"double\"},\"modelType\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Type of predictive model (CLASSIFICATION or REGRESSION)\"},\"numberClasses\":{" +
+            "\"type\":\"string\",\"description\":\"Number of classes in the trained model [Categoric" +
+            "al models only].\",\"format\":\"int64\"},\"numberInstances\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Number of valid data instances used in the trained model.\",\"format\":\"int64" +
+            "\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this resourc" +
+            "e.\"},\"trainingStatus\":{\"type\":\"string\",\"description\":\"The current status of the " +
+            "training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAININ" +
+            "G JOB NOT FOUND\"},\"utility\":{\"type\":\"array\",\"description\":\"A class weighting fun" +
+            "ction, which allows the importance weights for classes to be specified [Categori" +
+            "cal models only].\",\"items\":{\"type\":\"object\",\"description\":\"Class label (string)." +
+            "\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":" +
+            "\"Update\",\"type\":\"object\",\"properties\":{\"classLabel\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The true class label of this instance\"},\"csvInstance\":{\"type\":\"array\",\"descr" +
+            "iption\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}}}}},\"resou" +
+            "rces\":{\"hostedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predi" +
+            "ct\",\"path\":\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"descrip" +
+            "tion\":\"Submit input and request an output against a hosted model\",\"parameters\":{" +
+            "\"hostedModelName\":{\"type\":\"string\",\"description\":\"The name of a hosted model\",\"r" +
+            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\"" +
+            ":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/prediction\"]}}},\"training\":{\"methods\":{\"delete\":{\"id\":\"prediction.trai" +
+            "ning.delete\",\"path\":\"training/{data}\",\"httpMethod\":\"DELETE\",\"description\":\"Delet" +
+            "e a trained model\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"mybucket" +
+            "/mydata resource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"data\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"get\"" +
+            ":{\"id\":\"prediction.training.get\",\"path\":\"training/{data}\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Check training status of your model\",\"parameters\":{\"data\":{\"type\":\"s" +
+            "tring\",\"description\":\"mybucket/mydata resource in Google Storage\",\"required\":tru" +
+            "e,\"location\":\"path\"}},\"parameterOrder\":[\"data\"],\"response\":{\"$ref\":\"Training\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\":\"predicti" +
+            "on.training.insert\",\"path\":\"training\",\"httpMethod\":\"POST\",\"description\":\"Begin t" +
+            "raining your model\",\"request\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.g" +
+            "oogleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"prediction.training.predict\",\"" +
+            "path\":\"training/{data}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit data a" +
+            "nd request a prediction\",\"parameters\":{\"data\":{\"type\":\"string\",\"description\":\"my" +
+            "bucket/mydata resource in Google Storage\",\"required\":true,\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"data\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"predict" +
+            "ion.training.update\",\"path\":\"training/{data}\",\"httpMethod\":\"PUT\",\"description\":\"" +
+            "Add new data to a trained model\",\"parameters\":{\"data\":{\"type\":\"string\",\"descript" +
+            "ion\":\"mybucket/mydata resource in Google Storage\",\"required\":true,\"location\":\"pa" +
+            "th\"}},\"parameterOrder\":[\"data\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"$ref\":\"" +
+            "Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
         
         private const string Version = "v1.3";
         
@@ -568,13 +571,13 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.hostedmodels = new HostedmodelsResource(this);
-            this.training = new TrainingResource(this);
+            this._hostedmodels = new HostedmodelsResource(this);
+            this._training = new TrainingResource(this);
         }
         
         public PredictionService() : 
@@ -582,22 +585,22 @@ namespace Google.Apis.Prediction.v1_3 {
         }
         
         public PredictionService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(PredictionService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PredictionService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -618,6 +621,10 @@ namespace Google.Apis.Prediction.v1_3 {
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         public enum Scopes {
+            
+            /// <summary>View your data in Google Cloud Storage</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/devstorage.read_only")]
+            DevstorageRead_only,
             
             /// <summary>Manage your data in the Google Prediction API</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/prediction")]
@@ -643,41 +650,41 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string hostedModelName;
+            private string _hostedModelName;
             
-            private Google.Apis.Prediction.v1_3.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_3.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Input body, string hostedModelName) : 
                     base(service) {
                 this.Body = body;
-                this.hostedModelName = hostedModelName;
+                this._hostedModelName = hostedModelName;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -685,10 +692,10 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -696,17 +703,17 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("hostedModelName")]
             public virtual string HostedModelName {
                 get {
-                    return this.hostedModelName;
+                    return this._hostedModelName;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_3.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -769,38 +776,38 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
                     base(service) {
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -808,10 +815,10 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -819,7 +826,7 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
@@ -838,38 +845,38 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string data) : 
                     base(service) {
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -877,10 +884,10 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -888,7 +895,7 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
@@ -907,13 +914,13 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Prediction.v1_3.Data.Training bodyValue;
+            private Google.Apis.Prediction.v1_3.Data.Training _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Training body) : 
                     base(service) {
@@ -924,21 +931,21 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -946,20 +953,20 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_3.Data.Training Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -982,41 +989,41 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Output> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
-            private Google.Apis.Prediction.v1_3.Data.Input bodyValue;
+            private Google.Apis.Prediction.v1_3.Data.Input _Body;
             
             public PredictRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Input body, string data) : 
                     base(service) {
                 this.Body = body;
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1024,10 +1031,10 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1035,17 +1042,17 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_3.Data.Input Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1068,41 +1075,41 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_3.Data.Training> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string data;
+            private string _data;
             
-            private Google.Apis.Prediction.v1_3.Data.Update bodyValue;
+            private Google.Apis.Prediction.v1_3.Data.Update _Body;
             
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Prediction.v1_3.Data.Update body, string data) : 
                     base(service) {
                 this.Body = body;
-                this.data = data;
+                this._data = data;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1110,10 +1117,10 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1121,17 +1128,17 @@ namespace Google.Apis.Prediction.v1_3 {
             [Google.Apis.Util.RequestParameterAttribute("data")]
             public virtual string Data {
                 get {
-                    return this.data;
+                    return this._data;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Prediction.v1_3.Data.Update Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1157,9 +1164,9 @@ namespace Google.Apis.Prediction.v1_3 {
         
         private const string Resource = "";
         
-        private HostedmodelsResource hostedmodels;
+        private HostedmodelsResource _hostedmodels;
         
-        private TrainingResource training;
+        private TrainingResource _training;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1169,13 +1176,13 @@ namespace Google.Apis.Prediction.v1_3 {
         
         public virtual HostedmodelsResource Hostedmodels {
             get {
-                return this.hostedmodels;
+                return this._hostedmodels;
             }
         }
         
         public virtual TrainingResource Training {
             get {
-                return this.training;
+                return this._training;
             }
         }
     }

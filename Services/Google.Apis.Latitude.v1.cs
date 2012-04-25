@@ -17,38 +17,38 @@ namespace Google.Apis.Latitude.v1.Data {
     /// <summary>A Location resource identifies a user&apos;s position at a particular time. It may include metadata about the user&apos;s position, such as a venue if the location was recorded at the time of a check-in.</summary>
     public class LatitudeCurrentlocationResourceJson : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string accuracy;
+        private string _accuracy;
         
-        private string activityId;
+        private string _activityId;
         
-        private string altitude;
+        private string _altitude;
         
-        private string altitudeAccuracy;
+        private string _altitudeAccuracy;
         
-        private string heading;
+        private string _heading;
         
-        private string kind;
+        private string _kind;
         
-        private string latitude;
+        private string _latitude;
         
-        private string longitude;
+        private string _longitude;
         
-        private string speed;
+        private string _speed;
         
-        private string timestampMs;
+        private string _timestampMs;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Accuracy of the latitude and longitude coordinates, in non-negative meters. Optional.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accuracy")]
         public virtual string Accuracy {
             get {
-                return this.accuracy;
+                return this._accuracy;
             }
             set {
-                this.accuracy = value;
+                this._accuracy = value;
             }
         }
         
@@ -56,10 +56,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("activityId")]
         public virtual string ActivityId {
             get {
-                return this.activityId;
+                return this._activityId;
             }
             set {
-                this.activityId = value;
+                this._activityId = value;
             }
         }
         
@@ -67,10 +67,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("altitude")]
         public virtual string Altitude {
             get {
-                return this.altitude;
+                return this._altitude;
             }
             set {
-                this.altitude = value;
+                this._altitude = value;
             }
         }
         
@@ -78,10 +78,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("altitudeAccuracy")]
         public virtual string AltitudeAccuracy {
             get {
-                return this.altitudeAccuracy;
+                return this._altitudeAccuracy;
             }
             set {
-                this.altitudeAccuracy = value;
+                this._altitudeAccuracy = value;
             }
         }
         
@@ -89,10 +89,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("heading")]
         public virtual string Heading {
             get {
-                return this.heading;
+                return this._heading;
             }
             set {
-                this.heading = value;
+                this._heading = value;
             }
         }
         
@@ -100,10 +100,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -111,10 +111,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
         public virtual string Latitude {
             get {
-                return this.latitude;
+                return this._latitude;
             }
             set {
-                this.latitude = value;
+                this._latitude = value;
             }
         }
         
@@ -122,10 +122,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
         public virtual string Longitude {
             get {
-                return this.longitude;
+                return this._longitude;
             }
             set {
-                this.longitude = value;
+                this._longitude = value;
             }
         }
         
@@ -133,10 +133,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("speed")]
         public virtual string Speed {
             get {
-                return this.speed;
+                return this._speed;
             }
             set {
-                this.speed = value;
+                this._speed = value;
             }
         }
         
@@ -144,29 +144,29 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timestampMs")]
         public virtual string TimestampMs {
             get {
-                return this.timestampMs;
+                return this._timestampMs;
             }
             set {
-                this.timestampMs = value;
+                this._timestampMs = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -174,38 +174,38 @@ namespace Google.Apis.Latitude.v1.Data {
     /// <summary>A Location resource identifies a user&apos;s position at a particular time. It may include metadata about the user&apos;s position, such as a venue if the location was recorded at the time of a check-in.</summary>
     public class Location : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string accuracy;
+        private string _accuracy;
         
-        private string activityId;
+        private string _activityId;
         
-        private string altitude;
+        private string _altitude;
         
-        private string altitudeAccuracy;
+        private string _altitudeAccuracy;
         
-        private string heading;
+        private string _heading;
         
-        private string kind;
+        private string _kind;
         
-        private string latitude;
+        private string _latitude;
         
-        private string longitude;
+        private string _longitude;
         
-        private string speed;
+        private string _speed;
         
-        private string timestampMs;
+        private string _timestampMs;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>Accuracy of the latitude and longitude coordinates, in non-negative meters. Optional.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("accuracy")]
         public virtual string Accuracy {
             get {
-                return this.accuracy;
+                return this._accuracy;
             }
             set {
-                this.accuracy = value;
+                this._accuracy = value;
             }
         }
         
@@ -213,10 +213,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("activityId")]
         public virtual string ActivityId {
             get {
-                return this.activityId;
+                return this._activityId;
             }
             set {
-                this.activityId = value;
+                this._activityId = value;
             }
         }
         
@@ -224,10 +224,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("altitude")]
         public virtual string Altitude {
             get {
-                return this.altitude;
+                return this._altitude;
             }
             set {
-                this.altitude = value;
+                this._altitude = value;
             }
         }
         
@@ -235,10 +235,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("altitudeAccuracy")]
         public virtual string AltitudeAccuracy {
             get {
-                return this.altitudeAccuracy;
+                return this._altitudeAccuracy;
             }
             set {
-                this.altitudeAccuracy = value;
+                this._altitudeAccuracy = value;
             }
         }
         
@@ -246,10 +246,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("heading")]
         public virtual string Heading {
             get {
-                return this.heading;
+                return this._heading;
             }
             set {
-                this.heading = value;
+                this._heading = value;
             }
         }
         
@@ -257,10 +257,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
@@ -268,10 +268,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("latitude")]
         public virtual string Latitude {
             get {
-                return this.latitude;
+                return this._latitude;
             }
             set {
-                this.latitude = value;
+                this._latitude = value;
             }
         }
         
@@ -279,10 +279,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("longitude")]
         public virtual string Longitude {
             get {
-                return this.longitude;
+                return this._longitude;
             }
             set {
-                this.longitude = value;
+                this._longitude = value;
             }
         }
         
@@ -290,10 +290,10 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("speed")]
         public virtual string Speed {
             get {
-                return this.speed;
+                return this._speed;
             }
             set {
-                this.speed = value;
+                this._speed = value;
             }
         }
         
@@ -301,79 +301,79 @@ namespace Google.Apis.Latitude.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("timestampMs")]
         public virtual string TimestampMs {
             get {
-                return this.timestampMs;
+                return this._timestampMs;
             }
             set {
-                this.timestampMs = value;
+                this._timestampMs = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
     
     public class LocationFeed : Google.Apis.Requests.IDirectResponseSchema {
         
-        private System.Collections.Generic.IList<Location> items;
+        private System.Collections.Generic.IList<Location> _items;
         
-        private string kind;
+        private string _kind;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("items")]
         public virtual System.Collections.Generic.IList<Location> Items {
             get {
-                return this.items;
+                return this._items;
             }
             set {
-                this.items = value;
+                this._items = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
-                return this.kind;
+                return this._kind;
             }
             set {
-                this.kind = value;
+                this._kind = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -399,97 +399,98 @@ namespace Google.Apis.Latitude.v1 {
             "/search-16.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"" +
             "},\"documentationLink\":\"http://code.google.com/apis/latitude/v1/using_rest.html\"," +
             "\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/latitude/v1/\",\"basePath\"" +
-            ":\"/latitude/v1/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format" +
-            " for the response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[" +
-            "\"Responses with Content-Type of application/atom+xml\",\"Responses with Content-Ty" +
-            "pe of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Selector specifying which fields to include in a partial response.\",\"locat" +
-            "ion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identi" +
-            "fies your project and provides you with API access, quota, and reports. Required" +
-            " unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"typ" +
-            "e\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"qu" +
-            "ery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inden" +
-            "tations and line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaUser\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Available to use for quota purposes for server-side " +
-            "applications. Can be any arbitrary string assigned to a user, but should not exc" +
-            "eed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"" +
-            "userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request" +
-            " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
-            "\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/latitude.all.be" +
-            "st\":{\"description\":\"Manage your best-available location and location history\"},\"" +
-            "https://www.googleapis.com/auth/latitude.all.city\":{\"description\":\"Manage your c" +
-            "ity-level location and location history\"},\"https://www.googleapis.com/auth/latit" +
-            "ude.current.best\":{\"description\":\"Manage your best-available location\"},\"https:/" +
-            "/www.googleapis.com/auth/latitude.current.city\":{\"description\":\"Manage your city" +
-            "-level location\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"LatitudeCurrentlocat" +
-            "ionResourceJson\":{\"$ref\":\"Location\"},\"Location\":{\"id\":\"Location\",\"type\":\"object\"" +
-            ",\"description\":\"A Location resource identifies a user\'s position at a particular" +
-            " time. It may include metadata about the user\'s position, such as a venue if the" +
-            " location was recorded at the time of a check-in.\",\"properties\":{\"accuracy\":{\"ty" +
-            "pe\":\"any\",\"description\":\"Accuracy of the latitude and longitude coordinates, in " +
-            "non-negative meters. Optional.\"},\"activityId\":{\"type\":\"any\",\"description\":\"Uniqu" +
-            "e ID of the Buzz message that corresponds to the check-in associated with this l" +
-            "ocation. Available only for check-in locations. Optional.\"},\"altitude\":{\"type\":\"" +
-            "any\",\"description\":\"Altitude of the location, in meters. Optional.\"},\"altitudeAc" +
-            "curacy\":{\"type\":\"any\",\"description\":\"Accuracy of the altitude value, in meters. " +
-            "Optional.\"},\"heading\":{\"type\":\"any\",\"description\":\"Direction of travel of the us" +
-            "er when this location was recorded. In degrees, clockwise relative to true north" +
-            ". Optional.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of this item.\",\"defaul" +
-            "t\":\"latitude#location\"},\"latitude\":{\"type\":\"any\",\"description\":\"Latitude of the " +
-            "location, in decimal degrees.\"},\"longitude\":{\"type\":\"any\",\"description\":\"Longitu" +
-            "de of the location, in decimal degrees.\"},\"speed\":{\"type\":\"any\",\"description\":\"G" +
-            "round speed of the user at the time this location was recorded, in meters per se" +
-            "cond. Non-negative. Optional.\"},\"timestampMs\":{\"type\":\"any\",\"description\":\"Times" +
-            "tamp of the Location Resource, in milliseconds since the epoch (UTC). This is al" +
-            "so the Location Resource\'s unique id.\"}}},\"LocationFeed\":{\"id\":\"LocationFeed\",\"t" +
-            "ype\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Location\"}}" +
-            ",\"kind\":{\"type\":\"string\",\"default\":\"latitude#locationFeed\"}}}},\"resources\":{\"cur" +
-            "rentLocation\":{\"methods\":{\"delete\":{\"id\":\"latitude.currentLocation.delete\",\"path" +
-            "\":\"currentLocation\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the authenticat" +
-            "ed user\'s current location.\",\"scopes\":[\"https://www.googleapis.com/auth/latitude" +
-            ".all.best\",\"https://www.googleapis.com/auth/latitude.all.city\",\"https://www.goog" +
-            "leapis.com/auth/latitude.current.best\",\"https://www.googleapis.com/auth/latitude" +
-            ".current.city\"]},\"get\":{\"id\":\"latitude.currentLocation.get\",\"path\":\"currentLocat" +
-            "ion\",\"httpMethod\":\"GET\",\"description\":\"Returns the authenticated user\'s current " +
-            "location.\",\"parameters\":{\"granularity\":{\"type\":\"string\",\"description\":\"Granulari" +
-            "ty of the requested location.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Latitude" +
-            "CurrentlocationResourceJson\"},\"scopes\":[\"https://www.googleapis.com/auth/latitud" +
-            "e.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\",\"https://www.goo" +
-            "gleapis.com/auth/latitude.current.best\",\"https://www.googleapis.com/auth/latitud" +
-            "e.current.city\"]},\"insert\":{\"id\":\"latitude.currentLocation.insert\",\"path\":\"curre" +
-            "ntLocation\",\"httpMethod\":\"POST\",\"description\":\"Updates or creates the user\'s cur" +
-            "rent location.\",\"request\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"},\"respon" +
-            "se\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/latitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.c" +
-            "ity\",\"https://www.googleapis.com/auth/latitude.current.best\",\"https://www.google" +
-            "apis.com/auth/latitude.current.city\"]}}},\"location\":{\"methods\":{\"delete\":{\"id\":\"" +
-            "latitude.location.delete\",\"path\":\"location/{locationId}\",\"httpMethod\":\"DELETE\",\"" +
-            "description\":\"Deletes a location from the user\'s location history.\",\"parameters\"" +
-            ":{\"locationId\":{\"type\":\"string\",\"description\":\"Timestamp of the location to dele" +
-            "te (ms since epoch).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"loc" +
-            "ationId\"],\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"https:/" +
-            "/www.googleapis.com/auth/latitude.all.city\"]},\"get\":{\"id\":\"latitude.location.get" +
-            "\",\"path\":\"location/{locationId}\",\"httpMethod\":\"GET\",\"description\":\"Reads a locat" +
-            "ion from the user\'s location history.\",\"parameters\":{\"granularity\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Granularity of the location to return.\",\"location\":\"query\"},\"" +
-            "locationId\":{\"type\":\"string\",\"description\":\"Timestamp of the location to read (m" +
-            "s since epoch).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"location" +
-            "Id\"],\"response\":{\"$ref\":\"Location\"},\"scopes\":[\"https://www.googleapis.com/auth/l" +
-            "atitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\"]},\"insert\"" +
-            ":{\"id\":\"latitude.location.insert\",\"path\":\"location\",\"httpMethod\":\"POST\",\"descrip" +
-            "tion\":\"Inserts or updates a location in the user\'s location history.\",\"request\":" +
-            "{\"$ref\":\"Location\"},\"response\":{\"$ref\":\"Location\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/latitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.c" +
-            "ity\"]},\"list\":{\"id\":\"latitude.location.list\",\"path\":\"location\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Lists the user\'s location history.\",\"parameters\":{\"granularity\"" +
-            ":{\"type\":\"string\",\"description\":\"Granularity of the requested locations.\",\"locat" +
-            "ion\":\"query\"},\"max-results\":{\"type\":\"string\",\"description\":\"Maximum number of lo" +
-            "cations to return.\",\"location\":\"query\"},\"max-time\":{\"type\":\"string\",\"description" +
-            "\":\"Maximum timestamp of locations to return (ms since epoch).\",\"location\":\"query" +
-            "\"},\"min-time\":{\"type\":\"string\",\"description\":\"Minimum timestamp of locations to " +
-            "return (ms since epoch).\",\"location\":\"query\"}},\"response\":{\"$ref\":\"LocationFeed\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"https://www.goo" +
-            "gleapis.com/auth/latitude.all.city\"]}}}}}";
+            ":\"/latitude/v1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"latitude" +
+            "/v1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Da" +
+            "ta format for the response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescri" +
+            "ptions\":[\"Responses with Content-Type of application/atom+xml\",\"Responses with C" +
+            "ontent-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\"," +
+            "\"description\":\"Selector specifying which fields to include in a partial response" +
+            ".\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API k" +
+            "ey identifies your project and provides you with API access, quota, and reports." +
+            " Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_tok" +
+            "en\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"loca" +
+            "tion\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response w" +
+            "ith indentations and line breaks.\",\"default\":\"false\",\"location\":\"query\"},\"quotaU" +
+            "ser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for ser" +
+            "ver-side applications. Can be any arbitrary string assigned to a user, but shoul" +
+            "d not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"" +
+            "query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where th" +
+            "e request originates. Use this if you want to enforce per-user limits.\",\"locatio" +
+            "n\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/latitu" +
+            "de.all.best\":{\"description\":\"Manage your best-available location and location hi" +
+            "story\"},\"https://www.googleapis.com/auth/latitude.all.city\":{\"description\":\"Mana" +
+            "ge your city-level location and location history\"},\"https://www.googleapis.com/a" +
+            "uth/latitude.current.best\":{\"description\":\"Manage your best-available location\"}" +
+            ",\"https://www.googleapis.com/auth/latitude.current.city\":{\"description\":\"Manage " +
+            "your city-level location\"}}}},\"features\":[\"dataWrapper\"],\"schemas\":{\"LatitudeCur" +
+            "rentlocationResourceJson\":{\"$ref\":\"Location\"},\"Location\":{\"id\":\"Location\",\"type\"" +
+            ":\"object\",\"description\":\"A Location resource identifies a user\'s position at a p" +
+            "articular time. It may include metadata about the user\'s position, such as a ven" +
+            "ue if the location was recorded at the time of a check-in.\",\"properties\":{\"accur" +
+            "acy\":{\"type\":\"any\",\"description\":\"Accuracy of the latitude and longitude coordin" +
+            "ates, in non-negative meters. Optional.\"},\"activityId\":{\"type\":\"any\",\"descriptio" +
+            "n\":\"Unique ID of the Buzz message that corresponds to the check-in associated wi" +
+            "th this location. Available only for check-in locations. Optional.\"},\"altitude\":" +
+            "{\"type\":\"any\",\"description\":\"Altitude of the location, in meters. Optional.\"},\"a" +
+            "ltitudeAccuracy\":{\"type\":\"any\",\"description\":\"Accuracy of the altitude value, in" +
+            " meters. Optional.\"},\"heading\":{\"type\":\"any\",\"description\":\"Direction of travel " +
+            "of the user when this location was recorded. In degrees, clockwise relative to t" +
+            "rue north. Optional.\"},\"kind\":{\"type\":\"string\",\"description\":\"Kind of this item." +
+            "\",\"default\":\"latitude#location\"},\"latitude\":{\"type\":\"any\",\"description\":\"Latitud" +
+            "e of the location, in decimal degrees.\"},\"longitude\":{\"type\":\"any\",\"description\"" +
+            ":\"Longitude of the location, in decimal degrees.\"},\"speed\":{\"type\":\"any\",\"descri" +
+            "ption\":\"Ground speed of the user at the time this location was recorded, in mete" +
+            "rs per second. Non-negative. Optional.\"},\"timestampMs\":{\"type\":\"any\",\"descriptio" +
+            "n\":\"Timestamp of the Location Resource, in milliseconds since the epoch (UTC). T" +
+            "his is also the Location Resource\'s unique id.\"}}},\"LocationFeed\":{\"id\":\"Locatio" +
+            "nFeed\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"$ref\":\"Lo" +
+            "cation\"}},\"kind\":{\"type\":\"string\",\"default\":\"latitude#locationFeed\"}}}},\"resourc" +
+            "es\":{\"currentLocation\":{\"methods\":{\"delete\":{\"id\":\"latitude.currentLocation.dele" +
+            "te\",\"path\":\"currentLocation\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the au" +
+            "thenticated user\'s current location.\",\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/latitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\",\"https:/" +
+            "/www.googleapis.com/auth/latitude.current.best\",\"https://www.googleapis.com/auth" +
+            "/latitude.current.city\"]},\"get\":{\"id\":\"latitude.currentLocation.get\",\"path\":\"cur" +
+            "rentLocation\",\"httpMethod\":\"GET\",\"description\":\"Returns the authenticated user\'s" +
+            " current location.\",\"parameters\":{\"granularity\":{\"type\":\"string\",\"description\":\"" +
+            "Granularity of the requested location.\",\"location\":\"query\"}},\"response\":{\"$ref\":" +
+            "\"LatitudeCurrentlocationResourceJson\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/latitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\",\"https:" +
+            "//www.googleapis.com/auth/latitude.current.best\",\"https://www.googleapis.com/aut" +
+            "h/latitude.current.city\"]},\"insert\":{\"id\":\"latitude.currentLocation.insert\",\"pat" +
+            "h\":\"currentLocation\",\"httpMethod\":\"POST\",\"description\":\"Updates or creates the u" +
+            "ser\'s current location.\",\"request\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"" +
+            "},\"response\":{\"$ref\":\"LatitudeCurrentlocationResourceJson\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/latitude.all.best\",\"https://www.googleapis.com/auth/latit" +
+            "ude.all.city\",\"https://www.googleapis.com/auth/latitude.current.best\",\"https://w" +
+            "ww.googleapis.com/auth/latitude.current.city\"]}}},\"location\":{\"methods\":{\"delete" +
+            "\":{\"id\":\"latitude.location.delete\",\"path\":\"location/{locationId}\",\"httpMethod\":\"" +
+            "DELETE\",\"description\":\"Deletes a location from the user\'s location history.\",\"pa" +
+            "rameters\":{\"locationId\":{\"type\":\"string\",\"description\":\"Timestamp of the locatio" +
+            "n to delete (ms since epoch).\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"locationId\"],\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\"" +
+            ",\"https://www.googleapis.com/auth/latitude.all.city\"]},\"get\":{\"id\":\"latitude.loc" +
+            "ation.get\",\"path\":\"location/{locationId}\",\"httpMethod\":\"GET\",\"description\":\"Read" +
+            "s a location from the user\'s location history.\",\"parameters\":{\"granularity\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Granularity of the location to return.\",\"location\":\"" +
+            "query\"},\"locationId\":{\"type\":\"string\",\"description\":\"Timestamp of the location t" +
+            "o read (ms since epoch).\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"locationId\"],\"response\":{\"$ref\":\"Location\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/latitude.all.best\",\"https://www.googleapis.com/auth/latitude.all.city\"]}" +
+            ",\"insert\":{\"id\":\"latitude.location.insert\",\"path\":\"location\",\"httpMethod\":\"POST\"" +
+            ",\"description\":\"Inserts or updates a location in the user\'s location history.\",\"" +
+            "request\":{\"$ref\":\"Location\"},\"response\":{\"$ref\":\"Location\"},\"scopes\":[\"https://w" +
+            "ww.googleapis.com/auth/latitude.all.best\",\"https://www.googleapis.com/auth/latit" +
+            "ude.all.city\"]},\"list\":{\"id\":\"latitude.location.list\",\"path\":\"location\",\"httpMet" +
+            "hod\":\"GET\",\"description\":\"Lists the user\'s location history.\",\"parameters\":{\"gra" +
+            "nularity\":{\"type\":\"string\",\"description\":\"Granularity of the requested locations" +
+            ".\",\"location\":\"query\"},\"max-results\":{\"type\":\"string\",\"description\":\"Maximum num" +
+            "ber of locations to return.\",\"location\":\"query\"},\"max-time\":{\"type\":\"string\",\"de" +
+            "scription\":\"Maximum timestamp of locations to return (ms since epoch).\",\"locatio" +
+            "n\":\"query\"},\"min-time\":{\"type\":\"string\",\"description\":\"Minimum timestamp of loca" +
+            "tions to return (ms since epoch).\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Loca" +
+            "tionFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"https:" +
+            "//www.googleapis.com/auth/latitude.all.city\"]}}}}}";
         
         private const string Version = "v1";
         
@@ -499,13 +500,13 @@ namespace Google.Apis.Latitude.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected LatitudeService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.currentLocation = new CurrentLocationResource(this);
-            this.location = new LocationResource(this);
+            this._currentLocation = new CurrentLocationResource(this);
+            this._location = new LocationResource(this);
         }
         
         public LatitudeService() : 
@@ -513,22 +514,22 @@ namespace Google.Apis.Latitude.v1 {
         }
         
         public LatitudeService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(LatitudeService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(LatitudeService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -595,11 +596,11 @@ namespace Google.Apis.Latitude.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -609,21 +610,21 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -631,10 +632,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -653,13 +654,13 @@ namespace Google.Apis.Latitude.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string granularity;
+            private string _granularity;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -669,21 +670,21 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -691,10 +692,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -702,10 +703,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("granularity")]
             public virtual string Granularity {
                 get {
-                    return this.granularity;
+                    return this._granularity;
                 }
                 set {
-                    this.granularity = value;
+                    this._granularity = value;
                 }
             }
             
@@ -724,13 +725,13 @@ namespace Google.Apis.Latitude.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson bodyValue;
+            private Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson body) : 
                     base(service) {
@@ -741,21 +742,21 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -763,20 +764,20 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -832,38 +833,38 @@ namespace Google.Apis.Latitude.v1 {
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string locationId;
+            private string _locationId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string locationId) : 
                     base(service) {
-                this.locationId = locationId;
+                this._locationId = locationId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -871,10 +872,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -882,7 +883,7 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locationId")]
             public virtual string LocationId {
                 get {
-                    return this.locationId;
+                    return this._locationId;
                 }
             }
             
@@ -901,40 +902,40 @@ namespace Google.Apis.Latitude.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string granularity;
+            private string _granularity;
             
-            private string locationId;
+            private string _locationId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string locationId) : 
                     base(service) {
-                this.locationId = locationId;
+                this._locationId = locationId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -942,10 +943,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -953,10 +954,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("granularity")]
             public virtual string Granularity {
                 get {
-                    return this.granularity;
+                    return this._granularity;
                 }
                 set {
-                    this.granularity = value;
+                    this._granularity = value;
                 }
             }
             
@@ -964,7 +965,7 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("locationId")]
             public virtual string LocationId {
                 get {
-                    return this.locationId;
+                    return this._locationId;
                 }
             }
             
@@ -983,13 +984,13 @@ namespace Google.Apis.Latitude.v1 {
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Google.Apis.Latitude.v1.Data.Location bodyValue;
+            private Google.Apis.Latitude.v1.Data.Location _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Latitude.v1.Data.Location body) : 
                     base(service) {
@@ -1000,21 +1001,21 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1022,20 +1023,20 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Gets/Sets the Body of this Request.</summary>
             public virtual Google.Apis.Latitude.v1.Data.Location Body {
                 get {
-                    return this.bodyValue;
+                    return this._Body;
                 }
                 set {
-                    this.bodyValue = value;
+                    this._Body = value;
                 }
             }
             
@@ -1058,19 +1059,19 @@ namespace Google.Apis.Latitude.v1 {
         
         public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LocationFeed> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string granularity;
+            private string _granularity;
             
-            private string maxResults;
+            private string _maxResults;
             
-            private string maxTime;
+            private string _maxTime;
             
-            private string minTime;
+            private string _minTime;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -1080,21 +1081,21 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -1102,10 +1103,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -1113,10 +1114,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("granularity")]
             public virtual string Granularity {
                 get {
-                    return this.granularity;
+                    return this._granularity;
                 }
                 set {
-                    this.granularity = value;
+                    this._granularity = value;
                 }
             }
             
@@ -1124,10 +1125,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("max-results")]
             public virtual string MaxResults {
                 get {
-                    return this.maxResults;
+                    return this._maxResults;
                 }
                 set {
-                    this.maxResults = value;
+                    this._maxResults = value;
                 }
             }
             
@@ -1135,10 +1136,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("max-time")]
             public virtual string MaxTime {
                 get {
-                    return this.maxTime;
+                    return this._maxTime;
                 }
                 set {
-                    this.maxTime = value;
+                    this._maxTime = value;
                 }
             }
             
@@ -1146,10 +1147,10 @@ namespace Google.Apis.Latitude.v1 {
             [Google.Apis.Util.RequestParameterAttribute("min-time")]
             public virtual string MinTime {
                 get {
-                    return this.minTime;
+                    return this._minTime;
                 }
                 set {
-                    this.minTime = value;
+                    this._minTime = value;
                 }
             }
             
@@ -1171,9 +1172,9 @@ namespace Google.Apis.Latitude.v1 {
         
         private const string Resource = "";
         
-        private CurrentLocationResource currentLocation;
+        private CurrentLocationResource _currentLocation;
         
-        private LocationResource location;
+        private LocationResource _location;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -1183,13 +1184,13 @@ namespace Google.Apis.Latitude.v1 {
         
         public virtual CurrentLocationResource CurrentLocation {
             get {
-                return this.currentLocation;
+                return this._currentLocation;
             }
         }
         
         public virtual LocationResource Location {
             get {
-                return this.location;
+                return this._location;
             }
         }
     }

@@ -16,39 +16,39 @@ namespace Google.Apis.Freebase.v1_sandbox.Data {
     
     public class ContentserviceGet : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string result;
+        private string _result;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         /// <summary>The text requested.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("result")]
         public virtual string Result {
             get {
-                return this.result;
+                return this._result;
             }
             set {
-                this.result = value;
+                this._result = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -68,75 +68,76 @@ namespace Google.Apis.Freebase.v1_sandbox {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1-san" +
-            "dbox\",\"name\":\"freebase\",\"version\":\"v1-sandbox\",\"revision\":\"20111102\",\"title\":\"Fr" +
+            "dbox\",\"name\":\"freebase\",\"version\":\"v1-sandbox\",\"revision\":\"20120227\",\"title\":\"Fr" +
             "eebase API\",\"description\":\"Lets you access the Freebase repository of open data." +
             "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/freebase-16.png\",\"x" +
             "32\":\"http://www.google.com/images/icons/product/freebase-32.png\"},\"documentation" +
-            "Link\":\"http://wiki.freebase.com/wiki/New_Freebase_API\",\"protocol\":\"rest\",\"baseUr" +
-            "l\":\"https://www.googleapis.com/freebase/v1-sandbox/\",\"basePath\":\"/freebase/v1-sa" +
-            "ndbox/\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the " +
-            "response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with " +
-            "Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\"" +
-            ",\"description\":\"Selector specifying which fields to include in a partial respons" +
-            "e.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API " +
-            "key identifies your project and provides you with API access, quota, and reports" +
-            ". Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_to" +
-            "ken\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"loc" +
-            "ation\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response " +
-            "with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaU" +
-            "ser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for ser" +
-            "ver-side applications. Can be any arbitrary string assigned to a user, but shoul" +
-            "d not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"" +
-            "query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where th" +
-            "e request originates. Use this if you want to enforce per-user limits.\",\"locatio" +
-            "n\":\"query\"}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The text requested." +
-            "\"}}}},\"methods\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Returns the scaled/cropped image attached to a freebase n" +
-            "ode.\",\"parameters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the image a" +
-            "ssociated with this secondary id if no image is associated with the primary id.\"" +
-            ",\"default\":\"/freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"},\"id\"" +
-            ":{\"type\":\"string\",\"description\":\"Freebase entity or content id, mid, or guid.\",\"" +
-            "required\":true,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integer\"," +
-            "\"description\":\"Maximum height in pixels for resulting image.\",\"format\":\"uint32\"," +
-            "\"maximum\":\"4096\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"description\":" +
-            "\"Maximum width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096" +
-            "\",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scal" +
-            "e or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"]" +
-            ",\"enumDescriptions\":[\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(be" +
-            "ndrees)\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolean s" +
-            "pecifying whether the resulting image should be padded up to the requested dimen" +
-            "sions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"]},\"mqlread" +
-            "\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\":\"Pe" +
-            "rforms MQL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"description\":\"" +
-            "Run the query as it would\'ve been run at the specified point in time.\",\"location" +
-            "\":\"query\"},\"callback\":{\"type\":\"string\",\"description\":\"JS method name for JSONP c" +
-            "allbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Show the costs or not.\",\"default\":\"false\",\"location" +
-            "\":\"query\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"location\":" +
-            "\"query\"},\"dateline\":{\"type\":\"string\",\"description\":\"The dateline that you get in" +
-            " a mqlwrite response to ensure consistent results.\",\"location\":\"query\"},\"html_es" +
-            "cape\":{\"type\":\"boolean\",\"description\":\"Whether or not to escape entities.\",\"defa" +
-            "ult\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"How ma" +
-            "ny spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10\",\"l" +
-            "ocation\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the res" +
-            "ults - an id of a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query\"},\"" +
-            "query\":{\"type\":\"string\",\"description\":\"An envelope containing a single MQL query" +
-            ".\",\"required\":true,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\",\"de" +
-            "scription\":\"How MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum\":[\"" +
-            "hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an error.\",\"Just return the" +
-            " first encountered object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"]}},\"" +
-            "resources\":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*" +
-            "}\",\"httpMethod\":\"GET\",\"description\":\"Returns blob attached to node at specified " +
-            "id as HTML\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing tr" +
-            "ansformation.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions" +
-            "\":[\"Return valid, sanitized html.\",\"Return plain text - strip html tags.\",\"Retur" +
-            "n the entire content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The id of the item that you want data about\",\"required\":true,\"repeated\":t" +
-            "rue,\"location\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max numb" +
-            "er of characters to return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"l" +
-            "ocation\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet" +
-            "\"}}}}}}";
+            "Link\":\"http://wiki.freebase.com/wiki/API\",\"protocol\":\"rest\",\"baseUrl\":\"https://w" +
+            "ww.googleapis.com/freebase/v1-sandbox/\",\"basePath\":\"/freebase/v1-sandbox/\",\"root" +
+            "Url\":\"https://www.googleapis.com/\",\"servicePath\":\"freebase/v1-sandbox/\",\"batchPa" +
+            "th\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for " +
+            "the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses w" +
+            "ith Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"str" +
+            "ing\",\"description\":\"Selector specifying which fields to include in a partial res" +
+            "ponse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your " +
+            "API key identifies your project and provides you with API access, quota, and rep" +
+            "orts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oaut" +
+            "h_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\"," +
+            "\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respo" +
+            "nse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"qu" +
+            "otaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for" +
+            " server-side applications. Can be any arbitrary string assigned to a user, but s" +
+            "hould not exceed 40 characters. Overrides userIp if both are provided.\",\"locatio" +
+            "n\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site wher" +
+            "e the request originates. Use this if you want to enforce per-user limits.\",\"loc" +
+            "ation\":\"query\"}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\"" +
+            ":\"object\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The text reques" +
+            "ted.\"}}}},\"methods\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMe" +
+            "thod\":\"GET\",\"description\":\"Returns the scaled/cropped image attached to a freeba" +
+            "se node.\",\"parameters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the ima" +
+            "ge associated with this secondary id if no image is associated with the primary " +
+            "id.\",\"default\":\"/freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"}," +
+            "\"id\":{\"type\":\"string\",\"description\":\"Freebase entity or content id, mid, or guid" +
+            ".\",\"required\":true,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integ" +
+            "er\",\"description\":\"Maximum height in pixels for resulting image.\",\"format\":\"uint" +
+            "32\",\"maximum\":\"4096\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"Maximum width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"" +
+            "4096\",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to " +
+            "scale or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"f" +
+            "it\"],\"enumDescriptions\":[\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\",\"TOD" +
+            "O(bendrees)\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boole" +
+            "an specifying whether the resulting image should be padded up to the requested d" +
+            "imensions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"]},\"mql" +
+            "read\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GET\",\"description\"" +
+            ":\"Performs MQL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Run the query as it would\'ve been run at the specified point in time.\",\"loca" +
+            "tion\":\"query\"},\"callback\":{\"type\":\"string\",\"description\":\"JS method name for JSO" +
+            "NP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"},\"cost\":" +
+            "{\"type\":\"boolean\",\"description\":\"Show the costs or not.\",\"default\":\"false\",\"loca" +
+            "tion\":\"query\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql cursor.\",\"locati" +
+            "on\":\"query\"},\"dateline\":{\"type\":\"string\",\"description\":\"The dateline that you ge" +
+            "t in a mqlwrite response to ensure consistent results.\",\"location\":\"query\"},\"htm" +
+            "l_escape\":{\"type\":\"boolean\",\"description\":\"Whether or not to escape entities.\",\"" +
+            "default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"description\":\"Ho" +
+            "w many spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint32\",\"maximum\":\"10" +
+            "\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The language of the" +
+            " results - an id of a /type/lang object.\",\"default\":\"/lang/en\",\"location\":\"query" +
+            "\"},\"query\":{\"type\":\"string\",\"description\":\"An envelope containing a single MQL q" +
+            "uery.\",\"required\":true,\"location\":\"query\"},\"uniqueness_failure\":{\"type\":\"string\"" +
+            ",\"description\":\"How MQL responds to uniqueness failures.\",\"default\":\"hard\",\"enum" +
+            "\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an error.\",\"Just return" +
+            " the first encountered object.\"],\"location\":\"query\"}},\"parameterOrder\":[\"query\"]" +
+            "}},\"resources\":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{" +
+            "/id*}\",\"httpMethod\":\"GET\",\"description\":\"Returns blob attached to node at specif" +
+            "ied id as HTML\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizin" +
+            "g transformation.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescript" +
+            "ions\":[\"Return valid, sanitized html.\",\"Return plain text - strip html tags.\",\"R" +
+            "eturn the entire content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"des" +
+            "cription\":\"The id of the item that you want data about\",\"required\":true,\"repeate" +
+            "d\":true,\"location\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max " +
+            "number of characters to return. Valid only for \'plain\' format.\",\"format\":\"uint32" +
+            "\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Contentservic" +
+            "eGet\"}}}}}}";
         
         private const string Version = "v1-sandbox";
         
@@ -146,12 +147,12 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected FreebaseService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.text = new TextResource(this);
+            this._text = new TextResource(this);
         }
         
         public FreebaseService() : 
@@ -159,22 +160,22 @@ namespace Google.Apis.Freebase.v1_sandbox {
         }
         
         public FreebaseService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(FreebaseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(FreebaseService.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(FreebaseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(FreebaseService.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -229,42 +230,42 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1_sandbox.Data.ContentserviceGet> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private Format? format;
+            private System.Nullable<Format> _format;
             
-            private Google.Apis.Util.Repeatable<string> id;
+            private Google.Apis.Util.Repeatable<string> _id;
             
-            private System.Int64? maxlength;
+            private System.Nullable<long> _maxlength;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -272,21 +273,21 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             /// <summary>Sanitizing transformation.</summary>
             [Google.Apis.Util.RequestParameterAttribute("format")]
-            public virtual Format? Format {
+            public virtual System.Nullable<Format> Format {
                 get {
-                    return this.format;
+                    return this._format;
                 }
                 set {
-                    this.format = value;
+                    this._format = value;
                 }
             }
             
@@ -294,18 +295,18 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual Google.Apis.Util.Repeatable<string> Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>The max number of characters to return. Valid only for 'plain' format.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxlength")]
-            public virtual System.Int64? Maxlength {
+            public virtual System.Nullable<long> Maxlength {
                 get {
-                    return this.maxlength;
+                    return this._maxlength;
                 }
                 set {
-                    this.maxlength = value;
+                    this._maxlength = value;
                 }
             }
             
@@ -327,7 +328,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         private const string Resource = "";
         
-        private TextResource text;
+        private TextResource _text;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -337,7 +338,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         public virtual TextResource Text {
             get {
-                return this.text;
+                return this._text;
             }
         }
         
@@ -389,48 +390,48 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         public class ImageRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string fallbackid;
+            private string _fallbackid;
             
-            private Google.Apis.Util.Repeatable<string> id;
+            private Google.Apis.Util.Repeatable<string> _id;
             
-            private System.Int64? maxheight;
+            private System.Nullable<long> _maxheight;
             
-            private System.Int64? maxwidth;
+            private System.Nullable<long> _maxwidth;
             
-            private Mode? mode;
+            private System.Nullable<Mode> _mode;
             
-            private System.Boolean? pad;
+            private System.Nullable<bool> _pad;
             
             public ImageRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> id) : 
                     base(service) {
-                this.id = id;
+                this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -438,10 +439,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -449,10 +450,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("fallbackid")]
             public virtual string Fallbackid {
                 get {
-                    return this.fallbackid;
+                    return this._fallbackid;
                 }
                 set {
-                    this.fallbackid = value;
+                    this._fallbackid = value;
                 }
             }
             
@@ -460,51 +461,51 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("id")]
             public virtual Google.Apis.Util.Repeatable<string> Id {
                 get {
-                    return this.id;
+                    return this._id;
                 }
             }
             
             /// <summary>Maximum height in pixels for resulting image.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxheight")]
-            public virtual System.Int64? Maxheight {
+            public virtual System.Nullable<long> Maxheight {
                 get {
-                    return this.maxheight;
+                    return this._maxheight;
                 }
                 set {
-                    this.maxheight = value;
+                    this._maxheight = value;
                 }
             }
             
             /// <summary>Maximum width in pixels for resulting image.</summary>
             [Google.Apis.Util.RequestParameterAttribute("maxwidth")]
-            public virtual System.Int64? Maxwidth {
+            public virtual System.Nullable<long> Maxwidth {
                 get {
-                    return this.maxwidth;
+                    return this._maxwidth;
                 }
                 set {
-                    this.maxwidth = value;
+                    this._maxwidth = value;
                 }
             }
             
             /// <summary>Method used to scale or crop image.</summary>
             [Google.Apis.Util.RequestParameterAttribute("mode")]
-            public virtual Mode? Mode {
+            public virtual System.Nullable<Mode> Mode {
                 get {
-                    return this.mode;
+                    return this._mode;
                 }
                 set {
-                    this.mode = value;
+                    this._mode = value;
                 }
             }
             
             /// <summary>A boolean specifying whether the resulting image should be padded up to the requested dimensions.</summary>
             [Google.Apis.Util.RequestParameterAttribute("pad")]
-            public virtual System.Boolean? Pad {
+            public virtual System.Nullable<bool> Pad {
                 get {
-                    return this.pad;
+                    return this._pad;
                 }
                 set {
-                    this.pad = value;
+                    this._pad = value;
                 }
             }
             
@@ -523,56 +524,56 @@ namespace Google.Apis.Freebase.v1_sandbox {
         
         public class MqlreadRequest : Google.Apis.Requests.ServiceRequest<string> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string as_of_time;
+            private string _as_of_time;
             
-            private string callback;
+            private string _callback;
             
-            private System.Boolean? cost;
+            private System.Nullable<bool> _cost;
             
-            private string cursor;
+            private string _cursor;
             
-            private string dateline;
+            private string _dateline;
             
-            private System.Boolean? html_escape;
+            private System.Nullable<bool> _html_escape;
             
-            private System.Int64? indent;
+            private System.Nullable<long> _indent;
             
-            private string lang;
+            private string _lang;
             
-            private string query;
+            private string _query;
             
-            private Uniqueness_failure? uniqueness_failure;
+            private System.Nullable<Uniqueness_failure> _uniqueness_failure;
             
             public MqlreadRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
                     base(service) {
-                this.query = query;
+                this._query = query;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -580,10 +581,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -591,10 +592,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("as_of_time")]
             public virtual string As_of_time {
                 get {
-                    return this.as_of_time;
+                    return this._as_of_time;
                 }
                 set {
-                    this.as_of_time = value;
+                    this._as_of_time = value;
                 }
             }
             
@@ -602,21 +603,21 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("callback")]
             public virtual string Callback {
                 get {
-                    return this.callback;
+                    return this._callback;
                 }
                 set {
-                    this.callback = value;
+                    this._callback = value;
                 }
             }
             
             /// <summary>Show the costs or not.</summary>
             [Google.Apis.Util.RequestParameterAttribute("cost")]
-            public virtual System.Boolean? Cost {
+            public virtual System.Nullable<bool> Cost {
                 get {
-                    return this.cost;
+                    return this._cost;
                 }
                 set {
-                    this.cost = value;
+                    this._cost = value;
                 }
             }
             
@@ -624,10 +625,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("cursor")]
             public virtual string Cursor {
                 get {
-                    return this.cursor;
+                    return this._cursor;
                 }
                 set {
-                    this.cursor = value;
+                    this._cursor = value;
                 }
             }
             
@@ -635,32 +636,32 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("dateline")]
             public virtual string Dateline {
                 get {
-                    return this.dateline;
+                    return this._dateline;
                 }
                 set {
-                    this.dateline = value;
+                    this._dateline = value;
                 }
             }
             
             /// <summary>Whether or not to escape entities.</summary>
             [Google.Apis.Util.RequestParameterAttribute("html_escape")]
-            public virtual System.Boolean? Html_escape {
+            public virtual System.Nullable<bool> Html_escape {
                 get {
-                    return this.html_escape;
+                    return this._html_escape;
                 }
                 set {
-                    this.html_escape = value;
+                    this._html_escape = value;
                 }
             }
             
             /// <summary>How many spaces to indent the json.</summary>
             [Google.Apis.Util.RequestParameterAttribute("indent")]
-            public virtual System.Int64? Indent {
+            public virtual System.Nullable<long> Indent {
                 get {
-                    return this.indent;
+                    return this._indent;
                 }
                 set {
-                    this.indent = value;
+                    this._indent = value;
                 }
             }
             
@@ -668,10 +669,10 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("lang")]
             public virtual string Lang {
                 get {
-                    return this.lang;
+                    return this._lang;
                 }
                 set {
-                    this.lang = value;
+                    this._lang = value;
                 }
             }
             
@@ -679,18 +680,18 @@ namespace Google.Apis.Freebase.v1_sandbox {
             [Google.Apis.Util.RequestParameterAttribute("query")]
             public virtual string Query {
                 get {
-                    return this.query;
+                    return this._query;
                 }
             }
             
             /// <summary>How MQL responds to uniqueness failures.</summary>
             [Google.Apis.Util.RequestParameterAttribute("uniqueness_failure")]
-            public virtual Uniqueness_failure? Uniqueness_failure {
+            public virtual System.Nullable<Uniqueness_failure> Uniqueness_failure {
                 get {
-                    return this.uniqueness_failure;
+                    return this._uniqueness_failure;
                 }
                 set {
-                    this.uniqueness_failure = value;
+                    this._uniqueness_failure = value;
                 }
             }
             

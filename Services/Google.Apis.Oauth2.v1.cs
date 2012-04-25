@@ -14,32 +14,176 @@ namespace Google.Apis.Oauth2.v1.Data {
     using System.Collections.Generic;
     
     
+    public class Oauth2IssueTokenResponse {
+        
+        private string _appId;
+        
+        private string _code;
+        
+        private Oauth2IssueTokenResponse.ConsentData _consent;
+        
+        private string _issueAdvice;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("appId")]
+        public virtual string AppId {
+            get {
+                return this._appId;
+            }
+            set {
+                this._appId = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("code")]
+        public virtual string Code {
+            get {
+                return this._code;
+            }
+            set {
+                this._code = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("consent")]
+        public virtual Oauth2IssueTokenResponse.ConsentData Consent {
+            get {
+                return this._consent;
+            }
+            set {
+                this._consent = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("issueAdvice")]
+        public virtual string IssueAdvice {
+            get {
+                return this._issueAdvice;
+            }
+            set {
+                this._issueAdvice = value;
+            }
+        }
+        
+        public class ConsentData {
+            
+            private ConsentData.OauthClientData _oauthClient;
+            
+            private System.Collections.Generic.IList<ConsentData.ScopesData> _scopes;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("oauthClient")]
+            public virtual ConsentData.OauthClientData OauthClient {
+                get {
+                    return this._oauthClient;
+                }
+                set {
+                    this._oauthClient = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("scopes")]
+            public virtual System.Collections.Generic.IList<ConsentData.ScopesData> Scopes {
+                get {
+                    return this._scopes;
+                }
+                set {
+                    this._scopes = value;
+                }
+            }
+            
+            public class OauthClientData {
+                
+                private string _developerEmail;
+                
+                private string _iconUri;
+                
+                private string _name;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("developerEmail")]
+                public virtual string DeveloperEmail {
+                    get {
+                        return this._developerEmail;
+                    }
+                    set {
+                        this._developerEmail = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("iconUri")]
+                public virtual string IconUri {
+                    get {
+                        return this._iconUri;
+                    }
+                    set {
+                        this._iconUri = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("name")]
+                public virtual string Name {
+                    get {
+                        return this._name;
+                    }
+                    set {
+                        this._name = value;
+                    }
+                }
+            }
+            
+            public class ScopesData {
+                
+                private string _description;
+                
+                private string _detail;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("description")]
+                public virtual string Description {
+                    get {
+                        return this._description;
+                    }
+                    set {
+                        this._description = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("detail")]
+                public virtual string Detail {
+                    get {
+                        return this._detail;
+                    }
+                    set {
+                        this._detail = value;
+                    }
+                }
+            }
+        }
+    }
+    
     public class Tokeninfo {
         
-        private string access_type;
+        private string _access_type;
         
-        private string audience;
+        private string _audience;
         
-        private string email;
+        private string _email;
         
-        private System.Nullable<long> expires_in;
+        private System.Nullable<long> _expires_in;
         
-        private string issued_to;
+        private string _issued_to;
         
-        private string scope;
+        private string _scope;
         
-        private string user_id;
+        private string _user_id;
         
-        private System.Nullable<bool> verified_email;
+        private System.Nullable<bool> _verified_email;
         
         /// <summary>The access type granted with this toke. It can be offline or online.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("access_type")]
         public virtual string Access_type {
             get {
-                return this.access_type;
+                return this._access_type;
             }
             set {
-                this.access_type = value;
+                this._access_type = value;
             }
         }
         
@@ -47,10 +191,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("audience")]
         public virtual string Audience {
             get {
-                return this.audience;
+                return this._audience;
             }
             set {
-                this.audience = value;
+                this._audience = value;
             }
         }
         
@@ -58,10 +202,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("email")]
         public virtual string Email {
             get {
-                return this.email;
+                return this._email;
             }
             set {
-                this.email = value;
+                this._email = value;
             }
         }
         
@@ -69,10 +213,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("expires_in")]
         public virtual System.Nullable<long> Expires_in {
             get {
-                return this.expires_in;
+                return this._expires_in;
             }
             set {
-                this.expires_in = value;
+                this._expires_in = value;
             }
         }
         
@@ -80,10 +224,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("issued_to")]
         public virtual string Issued_to {
             get {
-                return this.issued_to;
+                return this._issued_to;
             }
             set {
-                this.issued_to = value;
+                this._issued_to = value;
             }
         }
         
@@ -91,10 +235,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("scope")]
         public virtual string Scope {
             get {
-                return this.scope;
+                return this._scope;
             }
             set {
-                this.scope = value;
+                this._scope = value;
             }
         }
         
@@ -102,10 +246,10 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("user_id")]
         public virtual string User_id {
             get {
-                return this.user_id;
+                return this._user_id;
             }
             set {
-                this.user_id = value;
+                this._user_id = value;
             }
         }
         
@@ -113,180 +257,180 @@ namespace Google.Apis.Oauth2.v1.Data {
         [Newtonsoft.Json.JsonPropertyAttribute("verified_email")]
         public virtual System.Nullable<bool> Verified_email {
             get {
-                return this.verified_email;
+                return this._verified_email;
             }
             set {
-                this.verified_email = value;
+                this._verified_email = value;
             }
         }
     }
     
     public class Userinfo : Google.Apis.Requests.IDirectResponseSchema {
         
-        private string birthday;
+        private string _birthday;
         
-        private string email;
+        private string _email;
         
-        private string family_name;
+        private string _family_name;
         
-        private string gender;
+        private string _gender;
         
-        private string given_name;
+        private string _given_name;
         
-        private string id;
+        private string _id;
         
-        private string link;
+        private string _link;
         
-        private string locale;
+        private string _locale;
         
-        private string name;
+        private string _name;
         
-        private string picture;
+        private string _picture;
         
-        private string timezone;
+        private string _timezone;
         
-        private System.Nullable<bool> verified_email;
+        private System.Nullable<bool> _verified_email;
         
-        private Google.Apis.Requests.RequestError error;
+        private Google.Apis.Requests.RequestError _Error;
         
-        private string eTag;
+        private string _ETag;
         
         [Newtonsoft.Json.JsonPropertyAttribute("birthday")]
         public virtual string Birthday {
             get {
-                return this.birthday;
+                return this._birthday;
             }
             set {
-                this.birthday = value;
+                this._birthday = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("email")]
         public virtual string Email {
             get {
-                return this.email;
+                return this._email;
             }
             set {
-                this.email = value;
+                this._email = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("family_name")]
         public virtual string Family_name {
             get {
-                return this.family_name;
+                return this._family_name;
             }
             set {
-                this.family_name = value;
+                this._family_name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("gender")]
         public virtual string Gender {
             get {
-                return this.gender;
+                return this._gender;
             }
             set {
-                this.gender = value;
+                this._gender = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("given_name")]
         public virtual string Given_name {
             get {
-                return this.given_name;
+                return this._given_name;
             }
             set {
-                this.given_name = value;
+                this._given_name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
-                return this.id;
+                return this._id;
             }
             set {
-                this.id = value;
+                this._id = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("link")]
         public virtual string Link {
             get {
-                return this.link;
+                return this._link;
             }
             set {
-                this.link = value;
+                this._link = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("locale")]
         public virtual string Locale {
             get {
-                return this.locale;
+                return this._locale;
             }
             set {
-                this.locale = value;
+                this._locale = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
-                return this.name;
+                return this._name;
             }
             set {
-                this.name = value;
+                this._name = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("picture")]
         public virtual string Picture {
             get {
-                return this.picture;
+                return this._picture;
             }
             set {
-                this.picture = value;
+                this._picture = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("timezone")]
         public virtual string Timezone {
             get {
-                return this.timezone;
+                return this._timezone;
             }
             set {
-                this.timezone = value;
+                this._timezone = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("verified_email")]
         public virtual System.Nullable<bool> Verified_email {
             get {
-                return this.verified_email;
+                return this._verified_email;
             }
             set {
-                this.verified_email = value;
+                this._verified_email = value;
             }
         }
         
         [Newtonsoft.Json.JsonPropertyAttribute("error")]
         public virtual Google.Apis.Requests.RequestError Error {
             get {
-                return this.error;
+                return this._Error;
             }
             set {
-                this.error = value;
+                this._Error = value;
             }
         }
         
         public virtual string ETag {
             get {
-                return this.eTag;
+                return this._ETag;
             }
             set {
-                this.eTag = value;
+                this._ETag = value;
             }
         }
     }
@@ -306,50 +450,66 @@ namespace Google.Apis.Oauth2.v1 {
         private Google.Apis.Authentication.IAuthenticator authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"oauth2:v1\",\"nam" +
-            "e\":\"oauth2\",\"version\":\"v1\",\"revision\":\"20120227\",\"description\":\"OAuth2 API\",\"ico" +
+            "e\":\"oauth2\",\"version\":\"v1\",\"revision\":\"20120320\",\"description\":\"OAuth2 API\",\"ico" +
             "ns\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"htt" +
             "p://www.google.com/images/icons/product/search-32.gif\"},\"protocol\":\"rest\",\"baseU" +
-            "rl\":\"https://www.googleapis.com/\",\"basePath\":\"/\",\"parameters\":{\"alt\":{\"type\":\"st" +
-            "ring\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"js" +
-            "on\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"loc" +
-            "ation\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying whi" +
-            "ch fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"" +
-            "string\",\"description\":\"API key. Your API key identifies your project and provide" +
-            "s you with API access, quota, and reports. Required unless you provide an OAuth " +
-            "2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OA" +
-            "uth 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"" +
-            "boolean\",\"description\":\"Returns response with indentations and line breaks.\",\"de" +
-            "fault\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Av" +
-            "ailable to use for quota purposes for server-side applications. Can be any arbit" +
-            "rary string assigned to a user, but should not exceed 40 characters. Overrides u" +
-            "serIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"desc" +
-            "ription\":\"IP address of the site where the request originates. Use this if you w" +
-            "ant to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Tokeninfo\":{\"i" +
-            "d\":\"Tokeninfo\",\"type\":\"object\",\"properties\":{\"access_type\":{\"type\":\"string\",\"des" +
-            "cription\":\"The access type granted with this toke. It can be offline or online.\"" +
-            "},\"audience\":{\"type\":\"string\",\"description\":\"Who is the intended audience for th" +
-            "is token. In general the same as issued_to.\"},\"email\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The email address of the user. Present only if the email scope is present " +
-            "in the request.\"},\"expires_in\":{\"type\":\"integer\",\"description\":\"The expiry time " +
-            "of the token, as number of seconds left until expiry.\",\"format\":\"int32\"},\"issued" +
-            "_to\":{\"type\":\"string\",\"description\":\"To whom was the token issued to. In general" +
-            " the same as audience.\"},\"scope\":{\"type\":\"string\",\"description\":\"The space separ" +
-            "ated list of scopes granted to this token.\"},\"user_id\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The Gaia obfuscated user id.\"},\"verified_email\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Boolean flag which is true if the email address is verified. Present onl" +
-            "y if the email scope is present in the request.\"}}},\"Userinfo\":{\"id\":\"Userinfo\"," +
-            "\"type\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\"},\"email\":{\"type\":\"stri" +
-            "ng\"},\"family_name\":{\"type\":\"string\"},\"gender\":{\"type\":\"string\"},\"given_name\":{\"t" +
-            "ype\":\"string\"},\"id\":{\"type\":\"string\"},\"link\":{\"type\":\"string\"},\"locale\":{\"type\":" +
-            "\"string\"},\"name\":{\"type\":\"string\"},\"picture\":{\"type\":\"string\"},\"timezone\":{\"type" +
-            "\":\"string\"},\"verified_email\":{\"type\":\"boolean\"}}}},\"methods\":{\"tokeninfo\":{\"id\":" +
-            "\"oauth2.tokeninfo\",\"path\":\"oauth2/v1/tokeninfo\",\"httpMethod\":\"POST\",\"parameters\"" +
-            ":{\"access_token\":{\"type\":\"string\",\"location\":\"query\"},\"id_token\":{\"type\":\"string" +
-            "\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Tokeninfo\"}}},\"resources\":{\"userinfo\"" +
-            ":{\"methods\":{\"get\":{\"id\":\"oauth2.userinfo.get\",\"path\":\"oauth2/v1/userinfo\",\"http" +
-            "Method\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"}}},\"resources\":{\"v2\":{\"resources\":{\"" +
-            "me\":{\"methods\":{\"get\":{\"id\":\"oauth2.userinfo.v2.me.get\",\"path\":\"userinfo/v2/me\"," +
-            "\"httpMethod\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"}}}}}}}}}}";
+            "rl\":\"https://www.googleapis.com/\",\"basePath\":\"/\",\"rootUrl\":\"https://www.googleap" +
+            "is.com/\",\"servicePath\":\"/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json" +
+            "\"],\"enumDescriptions\":[\"Responses with Content-Type of application/json\"],\"locat" +
+            "ion\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which" +
+            " fields to include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"st" +
+            "ring\",\"description\":\"API key. Your API key identifies your project and provides " +
+            "you with API access, quota, and reports. Required unless you provide an OAuth 2." +
+            "0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAut" +
+            "h 2.0 token for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"bo" +
+            "olean\",\"description\":\"Returns response with indentations and line breaks.\",\"defa" +
+            "ult\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Avai" +
+            "lable to use for quota purposes for server-side applications. Can be any arbitra" +
+            "ry string assigned to a user, but should not exceed 40 characters. Overrides use" +
+            "rIp if both are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"descri" +
+            "ption\":\"IP address of the site where the request originates. Use this if you wan" +
+            "t to enforce per-user limits.\",\"location\":\"query\"}},\"schemas\":{\"Oauth2IssueToken" +
+            "Response\":{\"id\":\"Oauth2IssueTokenResponse\",\"type\":\"object\",\"properties\":{\"appId\"" +
+            ":{\"type\":\"string\"},\"code\":{\"type\":\"string\"},\"consent\":{\"type\":\"object\",\"properti" +
+            "es\":{\"oauthClient\":{\"type\":\"object\",\"properties\":{\"developerEmail\":{\"type\":\"stri" +
+            "ng\"},\"iconUri\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}},\"scopes\":{\"type\":\"ar" +
+            "ray\",\"items\":{\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\"},\"det" +
+            "ail\":{\"type\":\"string\"}}}}}},\"issueAdvice\":{\"type\":\"string\"}}},\"Tokeninfo\":{\"id\":" +
+            "\"Tokeninfo\",\"type\":\"object\",\"properties\":{\"access_type\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The access type granted with this toke. It can be offline or online.\"},\"" +
+            "audience\":{\"type\":\"string\",\"description\":\"Who is the intended audience for this " +
+            "token. In general the same as issued_to.\"},\"email\":{\"type\":\"string\",\"description" +
+            "\":\"The email address of the user. Present only if the email scope is present in " +
+            "the request.\"},\"expires_in\":{\"type\":\"integer\",\"description\":\"The expiry time of " +
+            "the token, as number of seconds left until expiry.\",\"format\":\"int32\"},\"issued_to" +
+            "\":{\"type\":\"string\",\"description\":\"To whom was the token issued to. In general th" +
+            "e same as audience.\"},\"scope\":{\"type\":\"string\",\"description\":\"The space separate" +
+            "d list of scopes granted to this token.\"},\"user_id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The Gaia obfuscated user id.\"},\"verified_email\":{\"type\":\"boolean\",\"descripti" +
+            "on\":\"Boolean flag which is true if the email address is verified. Present only i" +
+            "f the email scope is present in the request.\"}}},\"Userinfo\":{\"id\":\"Userinfo\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"birthday\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"" +
+            "},\"family_name\":{\"type\":\"string\"},\"gender\":{\"type\":\"string\"},\"given_name\":{\"type" +
+            "\":\"string\"},\"id\":{\"type\":\"string\"},\"link\":{\"type\":\"string\"},\"locale\":{\"type\":\"st" +
+            "ring\"},\"name\":{\"type\":\"string\"},\"picture\":{\"type\":\"string\"},\"timezone\":{\"type\":\"" +
+            "string\"},\"verified_email\":{\"type\":\"boolean\"}}}},\"methods\":{\"issueToken\":{\"id\":\"o" +
+            "auth2.issueToken\",\"path\":\"oauth2/v1/IssueToken\",\"httpMethod\":\"POST\",\"parameters\"" +
+            ":{\"android_device_id\":{\"type\":\"string\",\"location\":\"query\"},\"client_id\":{\"type\":\"" +
+            "string\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"location\":\"query\"},\"scope\":{\"" +
+            "type\":\"string\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Oauth2IssueTokenResponse" +
+            "\"}},\"issueTokenGet\":{\"id\":\"oauth2.issueTokenGet\",\"path\":\"oauth2/v1/IssueToken\",\"" +
+            "httpMethod\":\"GET\",\"parameters\":{\"android_device_id\":{\"type\":\"string\",\"location\":" +
+            "\"query\"},\"client_id\":{\"type\":\"string\",\"location\":\"query\"},\"hl\":{\"type\":\"string\"," +
+            "\"location\":\"query\"},\"scope\":{\"type\":\"string\",\"location\":\"query\"}},\"response\":{\"$" +
+            "ref\":\"Oauth2IssueTokenResponse\"}},\"tokeninfo\":{\"id\":\"oauth2.tokeninfo\",\"path\":\"o" +
+            "auth2/v1/tokeninfo\",\"httpMethod\":\"POST\",\"parameters\":{\"access_token\":{\"type\":\"st" +
+            "ring\",\"location\":\"query\"},\"id_token\":{\"type\":\"string\",\"location\":\"query\"}},\"resp" +
+            "onse\":{\"$ref\":\"Tokeninfo\"}}},\"resources\":{\"userinfo\":{\"methods\":{\"get\":{\"id\":\"oa" +
+            "uth2.userinfo.get\",\"path\":\"oauth2/v1/userinfo\",\"httpMethod\":\"GET\",\"response\":{\"$" +
+            "ref\":\"Userinfo\"}}},\"resources\":{\"v2\":{\"resources\":{\"me\":{\"methods\":{\"get\":{\"id\":" +
+            "\"oauth2.userinfo.v2.me.get\",\"path\":\"userinfo/v2/me\",\"httpMethod\":\"GET\",\"response" +
+            "\":{\"$ref\":\"Userinfo\"}}}}}}}}}}";
         
         private const string Version = "v1";
         
@@ -359,12 +519,12 @@ namespace Google.Apis.Oauth2.v1 {
         
         private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
-        private string key;
+        private string _Key;
         
         protected Oauth2Service(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
             this.genericService = genericService;
             this.authenticator = authenticator;
-            this.userinfo = new UserinfoResource(this);
+            this._userinfo = new UserinfoResource(this);
         }
         
         public Oauth2Service() : 
@@ -372,22 +532,22 @@ namespace Google.Apis.Oauth2.v1 {
         }
         
         public Oauth2Service(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(Oauth2Service.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameterV1_0(new System.Uri(Oauth2Service.BaseUri))), authenticator) {
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(Oauth2Service.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(Oauth2Service.BaseUri))), authenticator) {
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         public virtual string Key {
             get {
-                return this.key;
+                return this._Key;
             }
             set {
-                this.key = value;
+                this._Key = value;
             }
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
             Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
-            if (!string.IsNullOrEmpty(Key)) {
+            if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
             return request.WithAuthentication(authenticator);
@@ -413,16 +573,16 @@ namespace Google.Apis.Oauth2.v1 {
         
         private const string Resource = "userinfo";
         
-        private V2Resource v2;
+        private V2Resource _v2;
         
         public UserinfoResource(Oauth2Service service) {
             this.service = service;
-            this.v2 = new V2Resource(service);
+            this._v2 = new V2Resource(service);
         }
         
         public virtual V2Resource V2 {
             get {
-                return this.v2;
+                return this._v2;
             }
         }
         
@@ -436,16 +596,16 @@ namespace Google.Apis.Oauth2.v1 {
             
             private const string Resource = "userinfo.v2";
             
-            private MeResource me;
+            private MeResource _me;
             
             public V2Resource(Oauth2Service service) {
                 this.service = service;
-                this.me = new MeResource(service);
+                this._me = new MeResource(service);
             }
             
             public virtual MeResource Me {
                 get {
-                    return this.me;
+                    return this._me;
                 }
             }
             
@@ -465,11 +625,11 @@ namespace Google.Apis.Oauth2.v1 {
                 
                 public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v1.Data.Userinfo> {
                     
-                    private string oauth_token;
+                    private string _oauth_token;
                     
-                    private System.Boolean? prettyPrint;
+                    private System.Nullable<bool> _prettyPrint;
                     
-                    private string quotaUser;
+                    private string _quotaUser;
                     
                     public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                             base(service) {
@@ -479,21 +639,21 @@ namespace Google.Apis.Oauth2.v1 {
                     [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
                     public virtual string Oauth_token {
                         get {
-                            return this.oauth_token;
+                            return this._oauth_token;
                         }
                         set {
-                            this.oauth_token = value;
+                            this._oauth_token = value;
                         }
                     }
                     
                     /// <summary>Returns response with indentations and line breaks.</summary>
                     [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-                    public virtual System.Boolean? PrettyPrint {
+                    public virtual System.Nullable<bool> PrettyPrint {
                         get {
-                            return this.prettyPrint;
+                            return this._prettyPrint;
                         }
                         set {
-                            this.prettyPrint = value;
+                            this._prettyPrint = value;
                         }
                     }
                     
@@ -501,10 +661,10 @@ namespace Google.Apis.Oauth2.v1 {
                     [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
                     public virtual string QuotaUser {
                         get {
-                            return this.quotaUser;
+                            return this._quotaUser;
                         }
                         set {
-                            this.quotaUser = value;
+                            this._quotaUser = value;
                         }
                     }
                     
@@ -525,11 +685,11 @@ namespace Google.Apis.Oauth2.v1 {
         
         public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v1.Data.Userinfo> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -539,21 +699,21 @@ namespace Google.Apis.Oauth2.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -561,10 +721,10 @@ namespace Google.Apis.Oauth2.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
@@ -586,7 +746,7 @@ namespace Google.Apis.Oauth2.v1 {
         
         private const string Resource = "";
         
-        private UserinfoResource userinfo;
+        private UserinfoResource _userinfo;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -596,25 +756,245 @@ namespace Google.Apis.Oauth2.v1 {
         
         public virtual UserinfoResource Userinfo {
             get {
-                return this.userinfo;
+                return this._userinfo;
             }
+        }
+        
+        public virtual IssueTokenRequest IssueToken() {
+            return new IssueTokenRequest(service);
+        }
+        
+        public virtual IssueTokenGetRequest IssueTokenGet() {
+            return new IssueTokenGetRequest(service);
         }
         
         public virtual TokeninfoRequest Tokeninfo() {
             return new TokeninfoRequest(service);
         }
         
+        public class IssueTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v1.Data.Oauth2IssueTokenResponse> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _android_device_id;
+            
+            private string _client_id;
+            
+            private string _hl;
+            
+            private string _scope;
+            
+            public IssueTokenRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("android_device_id")]
+            public virtual string Android_device_id {
+                get {
+                    return this._android_device_id;
+                }
+                set {
+                    this._android_device_id = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("client_id")]
+            public virtual string Client_id {
+                get {
+                    return this._client_id;
+                }
+                set {
+                    this._client_id = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this._hl;
+                }
+                set {
+                    this._hl = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual string Scope {
+                get {
+                    return this._scope;
+                }
+                set {
+                    this._scope = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "issueToken";
+                }
+            }
+        }
+        
+        public class IssueTokenGetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v1.Data.Oauth2IssueTokenResponse> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _quotaUser;
+            
+            private string _android_device_id;
+            
+            private string _client_id;
+            
+            private string _hl;
+            
+            private string _scope;
+            
+            public IssueTokenGetRequest(Google.Apis.Discovery.IRequestProvider service) : 
+                    base(service) {
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            public virtual string QuotaUser {
+                get {
+                    return this._quotaUser;
+                }
+                set {
+                    this._quotaUser = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("android_device_id")]
+            public virtual string Android_device_id {
+                get {
+                    return this._android_device_id;
+                }
+                set {
+                    this._android_device_id = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("client_id")]
+            public virtual string Client_id {
+                get {
+                    return this._client_id;
+                }
+                set {
+                    this._client_id = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            public virtual string Hl {
+                get {
+                    return this._hl;
+                }
+                set {
+                    this._hl = value;
+                }
+            }
+            
+            [Google.Apis.Util.RequestParameterAttribute("scope")]
+            public virtual string Scope {
+                get {
+                    return this._scope;
+                }
+                set {
+                    this._scope = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "issueTokenGet";
+                }
+            }
+        }
+        
         public class TokeninfoRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v1.Data.Tokeninfo> {
             
-            private string oauth_token;
+            private string _oauth_token;
             
-            private System.Boolean? prettyPrint;
+            private System.Nullable<bool> _prettyPrint;
             
-            private string quotaUser;
+            private string _quotaUser;
             
-            private string access_token;
+            private string _access_token;
             
-            private string id_token;
+            private string _id_token;
             
             public TokeninfoRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -624,21 +1004,21 @@ namespace Google.Apis.Oauth2.v1 {
             [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
             public virtual string Oauth_token {
                 get {
-                    return this.oauth_token;
+                    return this._oauth_token;
                 }
                 set {
-                    this.oauth_token = value;
+                    this._oauth_token = value;
                 }
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
             [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
-            public virtual System.Boolean? PrettyPrint {
+            public virtual System.Nullable<bool> PrettyPrint {
                 get {
-                    return this.prettyPrint;
+                    return this._prettyPrint;
                 }
                 set {
-                    this.prettyPrint = value;
+                    this._prettyPrint = value;
                 }
             }
             
@@ -646,30 +1026,30 @@ namespace Google.Apis.Oauth2.v1 {
             [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
             public virtual string QuotaUser {
                 get {
-                    return this.quotaUser;
+                    return this._quotaUser;
                 }
                 set {
-                    this.quotaUser = value;
+                    this._quotaUser = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("access_token")]
             public virtual string Access_token {
                 get {
-                    return this.access_token;
+                    return this._access_token;
                 }
                 set {
-                    this.access_token = value;
+                    this._access_token = value;
                 }
             }
             
             [Google.Apis.Util.RequestParameterAttribute("id_token")]
             public virtual string Id_token {
                 get {
-                    return this.id_token;
+                    return this._id_token;
                 }
                 set {
-                    this.id_token = value;
+                    this._id_token = value;
                 }
             }
             
