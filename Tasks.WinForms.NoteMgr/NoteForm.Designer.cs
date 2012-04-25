@@ -42,7 +42,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "NoteForm";
-            this.ShowInTaskbar = false;
             this.Text = "NoteForm";
             this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.NoteForm_Deactivate);

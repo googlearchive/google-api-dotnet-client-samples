@@ -124,7 +124,7 @@ namespace TasksExample.WinForms.NoteMgr
                     NoteItem note = currentNote;
                     if (note.ClientSync())
                     {
-                        bool isNew = note.RelatedTask == null;
+                        bool isNew = String.IsNullOrEmpty(note.RelatedTask.Id);
                         requests.AddRange(GetSyncNoteRequest(note, previous, isNew));
                     }
                     previous = note; 
@@ -133,7 +133,9 @@ namespace TasksExample.WinForms.NoteMgr
                 // Add deletes.
                 foreach (NoteItem note in deletedNotes)
                 {
-                    requests.Add(() => Program.Service.Tasks.Delete(note.RelatedTask.Id, taskList.Id).Fetch());
+                    NoteItem noteb = note;
+                    if(note.RelatedTask != null && !String.IsNullOrEmpty(note.RelatedTask.Id))
+                        requests.Add(() => Program.Service.Tasks.Delete(taskList.Id, noteb.RelatedTask.Id).Fetch());
                 }
                 deletedNotes.Clear();
 
@@ -152,7 +154,7 @@ namespace TasksExample.WinForms.NoteMgr
                 yield return () => note.RelatedTask = tasks.Insert(note.RelatedTask, taskList.Id).Fetch();
                 yield return () =>
                                  {
-                                     var req = tasks.Move(note.RelatedTask.Id, taskList.Id);
+                                     var req = tasks.Move(taskList.Id, note.RelatedTask.Id);
                                      if (previousSaved != null)
                                      {
                                          req.Previous = previousSaved.RelatedTask.Id;
@@ -163,7 +165,11 @@ namespace TasksExample.WinForms.NoteMgr
             else
             {
                 yield return
-                    () => note.RelatedTask = tasks.Update(note.RelatedTask, note.RelatedTask.Id, taskList.Id).Fetch();
+                    () =>
+                        {
+                            var req = tasks.Update(note.RelatedTask, taskList.Id, note.RelatedTask.Id);
+                            note.RelatedTask = req.Fetch();
+                        };
             }
         }
 
