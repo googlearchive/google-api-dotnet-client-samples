@@ -503,9 +503,9 @@ namespace Google.Apis.Tasks.v1 {
     
     public partial class TasksService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"tasks:v1\",\"name" +
             "\":\"tasks\",\"version\":\"v1\",\"revision\":\"20111027\",\"title\":\"Tasks API\",\"description\"" +
@@ -697,29 +697,43 @@ namespace Google.Apis.Tasks.v1 {
             "f\":\"Task\"},\"response\":{\"$ref\":\"Task\"},\"scopes\":[\"https://www.googleapis.com/auth" +
             "/tasks\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "tasks";
-        
-        private const string BaseUri = "https://www.googleapis.com/tasks/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected TasksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._tasklists = new TasklistsResource(this);
-            this._tasks = new TasksResource(this);
+        protected TasksService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._tasklists = new TasklistsResource(this, _authenticator);
+            this._tasks = new TasksResource(this, _authenticator);
         }
         
         public TasksService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public TasksService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(TasksService.BaseUri))), authenticator) {
+        public TasksService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TasksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/tasks/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "tasks";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/tasks/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -733,24 +747,24 @@ namespace Google.Apis.Tasks.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -768,12 +782,15 @@ namespace Google.Apis.Tasks.v1 {
     
     public class TasklistsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private TasksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tasklists";
         
-        public TasklistsResource(TasksService service) {
+        public TasklistsResource(TasksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes the authenticated user&apos;s specified task list.</summary>
@@ -810,7 +827,7 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -826,7 +843,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -837,7 +854,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -848,7 +865,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -859,7 +876,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -879,7 +896,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -895,7 +912,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -906,7 +923,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -917,7 +934,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -928,7 +945,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -948,7 +965,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -964,7 +981,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -975,7 +992,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -986,7 +1003,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1023,7 +1040,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
             
             private string _oauth_token;
             
@@ -1040,7 +1057,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1051,7 +1068,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1062,7 +1079,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1073,7 +1090,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Maximum number of task lists returned on one page. Optional. The default is 100.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string MaxResults {
                 get {
                     return this._maxResults;
@@ -1084,7 +1101,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Token specifying the result page to return. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1107,7 +1124,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -1126,7 +1143,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1137,7 +1154,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1148,7 +1165,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1159,7 +1176,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1193,7 +1210,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -1212,7 +1229,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1223,7 +1240,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1234,7 +1251,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1245,7 +1262,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1282,12 +1299,15 @@ namespace Google.Apis.Tasks.v1 {
     
     public class TasksResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private TasksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tasks";
         
-        public TasksResource(TasksService service) {
+        public TasksResource(TasksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Clears all completed tasks from the specified task list. The affected tasks will be marked as &apos;hidden&apos; and no longer be returned by default when retrieving all tasks for a task list.</summary>
@@ -1343,7 +1363,7 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist, task);
         }
         
-        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class ClearRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1359,7 +1379,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1370,7 +1390,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1381,7 +1401,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1392,7 +1412,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1412,7 +1432,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1431,7 +1451,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1442,7 +1462,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1453,7 +1473,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1464,7 +1484,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -1472,7 +1492,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1492,7 +1512,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -1511,7 +1531,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1522,7 +1542,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1533,7 +1553,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1544,7 +1564,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -1552,7 +1572,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1572,7 +1592,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -1595,7 +1615,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1606,7 +1626,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1617,7 +1637,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1628,7 +1648,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("parent")]
+            [Google.Apis.Util.RequestParameterAttribute("parent", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Parent {
                 get {
                     return this._parent;
@@ -1639,7 +1659,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("previous")]
+            [Google.Apis.Util.RequestParameterAttribute("previous", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Previous {
                 get {
                     return this._previous;
@@ -1650,7 +1670,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1684,7 +1704,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
             
             private string _oauth_token;
             
@@ -1720,7 +1740,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1731,7 +1751,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1742,7 +1762,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1753,7 +1773,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("completedMax")]
+            [Google.Apis.Util.RequestParameterAttribute("completedMax", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CompletedMax {
                 get {
                     return this._completedMax;
@@ -1764,7 +1784,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Lower bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("completedMin")]
+            [Google.Apis.Util.RequestParameterAttribute("completedMin", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CompletedMin {
                 get {
                     return this._completedMin;
@@ -1775,7 +1795,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Upper bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("dueMax")]
+            [Google.Apis.Util.RequestParameterAttribute("dueMax", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string DueMax {
                 get {
                     return this._dueMax;
@@ -1786,7 +1806,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("dueMin")]
+            [Google.Apis.Util.RequestParameterAttribute("dueMin", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string DueMin {
                 get {
                     return this._dueMin;
@@ -1797,7 +1817,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Maximum number of task lists returned on one page. Optional. The default is 100.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string MaxResults {
                 get {
                     return this._maxResults;
@@ -1808,7 +1828,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Token specifying the result page to return. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1819,7 +1839,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Flag indicating whether completed tasks are returned in the result. Optional. The default is True.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showCompleted")]
+            [Google.Apis.Util.RequestParameterAttribute("showCompleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowCompleted {
                 get {
                     return this._showCompleted;
@@ -1830,7 +1850,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+            [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowDeleted {
                 get {
                     return this._showDeleted;
@@ -1841,7 +1861,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showHidden")]
+            [Google.Apis.Util.RequestParameterAttribute("showHidden", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowHidden {
                 get {
                     return this._showHidden;
@@ -1852,7 +1872,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1860,7 +1880,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+            [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UpdatedMin {
                 get {
                     return this._updatedMin;
@@ -1883,7 +1903,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class MoveRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -1906,7 +1926,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1917,7 +1937,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1928,7 +1948,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1939,7 +1959,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("parent")]
+            [Google.Apis.Util.RequestParameterAttribute("parent", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Parent {
                 get {
                     return this._parent;
@@ -1950,7 +1970,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("previous")]
+            [Google.Apis.Util.RequestParameterAttribute("previous", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Previous {
                 get {
                     return this._previous;
@@ -1961,7 +1981,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -1969,7 +1989,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -1989,7 +2009,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -2011,7 +2031,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2022,7 +2042,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2033,7 +2053,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2044,7 +2064,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -2052,7 +2072,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;
@@ -2086,7 +2106,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -2108,7 +2128,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2119,7 +2139,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2130,7 +2150,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2141,7 +2161,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -2149,7 +2169,7 @@ namespace Google.Apis.Tasks.v1 {
             }
             
             /// <summary>Task list identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("tasklist")]
+            [Google.Apis.Util.RequestParameterAttribute("tasklist", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Tasklist {
                 get {
                     return this._tasklist;

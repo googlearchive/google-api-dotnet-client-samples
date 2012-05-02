@@ -2150,12 +2150,12 @@ namespace Google.Apis.Calendar.v3 {
     
     public partial class CalendarService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"calendar:v3\",\"n" +
-            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120416\",\"title\":\"Calendar API\",\"des" +
+            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120423\",\"title\":\"Calendar API\",\"des" +
             "cription\":\"Lets you manipulate events and other calendar data.\",\"icons\":{\"x16\":\"" +
             "http://www.google.com/images/icons/product/calendar-16.png\",\"x32\":\"http://www.go" +
             "ogle.com/images/icons/product/calendar-32.png\"},\"documentationLink\":\"http://code" +
@@ -2187,575 +2187,587 @@ namespace Google.Apis.Calendar.v3 {
             "e\":\"string\",\"description\":\"Token used to access the next page of this result. Om" +
             "itted if no further results are available.\"}}},\"AclRule\":{\"id\":\"AclRule\",\"type\":" +
             "\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resour" +
-            "ce.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the ACL rule.\",\"annotat" +
-            "ions\":{\"required\":[\"calendar.acl.update\"]}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Type of the resource (\\\"calendar#aclRule\\\").\",\"default\":\"calendar#aclRule\"},\"" +
-            "role\":{\"type\":\"string\",\"description\":\"The role assigned to the scope. Possible v" +
-            "alues are:  \\n- \\\"none\\\" - Provides no access. \\n- \\\"freeBusyReader\\\" - Provides" +
-            " read access to free/busy information. \\n- \\\"reader\\\" - Provides read access to " +
-            "the calendar. Private events will appear to users with reader access, but event " +
-            "details will be hidden. \\n- \\\"writer\\\" - Provides read and write access to the c" +
-            "alendar. Private events will appear to users with writer access, and event detai" +
-            "ls will be visible. \\n- \\\"owner\\\" - Provides ownership of the calendar. This rol" +
-            "e has all of the permissions of the writer role with the additional ability to s" +
-            "ee and manipulate ACLs.\",\"annotations\":{\"required\":[\"calendar.acl.insert\"]}},\"sc" +
-            "ope\":{\"type\":\"object\",\"description\":\"The scope of the rule.\",\"properties\":{\"type" +
-            "\":{\"type\":\"string\",\"description\":\"The type of the scope. Possible values are:  \\" +
-            "n- \\\"default\\\" - The public scope. This is the default value. \\n- \\\"user\\\" - Lim" +
-            "its the scope to a single user. \\n- \\\"group\\\" - Limits the scope to a group. \\n-" +
-            " \\\"domain\\\" - Limits the scope to a domain.  Note: The permissions granted to th" +
-            "e \\\"default\\\", or public, scope apply to any user, authenticated or not.\",\"annot" +
-            "ations\":{\"required\":[\"calendar.acl.insert\"]}},\"value\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The email address of a user or group, or the name of a domain, depending o" +
-            "n the scope type. Omitted for type \\\"default\\\".\"}},\"annotations\":{\"required\":[\"c" +
-            "alendar.acl.insert\"]}}}},\"Calendar\":{\"id\":\"Calendar\",\"type\":\"object\",\"properties" +
-            "\":{\"description\":{\"type\":\"string\",\"description\":\"Description of the calendar. Op" +
-            "tional.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Identifier of the calendar.\"},\"kind\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Type of the resource (\\\"calendar#calendar\\\").\",\"default\":\"cal" +
-            "endar#calendar\"},\"location\":{\"type\":\"string\",\"description\":\"Geographic location " +
-            "of the calendar as free-form text. Optional.\"},\"summary\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Title of the calendar.\",\"annotations\":{\"required\":[\"calendar.calendars." +
-            "insert\"]}},\"timeZone\":{\"type\":\"string\",\"description\":\"The time zone of the calen" +
-            "dar. Optional.\"}}},\"CalendarList\":{\"id\":\"CalendarList\",\"type\":\"object\",\"properti" +
-            "es\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"},\"items\":{\"" +
-            "type\":\"array\",\"description\":\"Calendars that are present on the user\'s calendar l" +
-            "ist.\",\"items\":{\"$ref\":\"CalendarListEntry\"}},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"Type of the collection (\\\"calendar#calendarList\\\").\",\"default\":\"calendar#cale" +
-            "ndarList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access " +
-            "the next page of this result.\"}}},\"CalendarListEntry\":{\"id\":\"CalendarListEntry\"," +
-            "\"type\":\"object\",\"properties\":{\"accessRole\":{\"type\":\"string\",\"description\":\"The e" +
-            "ffective access role that the authenticated user has on the calendar. Read-only." +
-            " Possible values are:  \\n- \\\"freeBusyReader\\\" - Provides read access to free/bus" +
-            "y information. \\n- \\\"reader\\\" - Provides read access to the calendar. Private ev" +
+            "ce.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the ACL rule.\"},\"kind\":" +
+            "{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#aclRule\\\").\",\"d" +
+            "efault\":\"calendar#aclRule\"},\"role\":{\"type\":\"string\",\"description\":\"The role assi" +
+            "gned to the scope. Possible values are:  \\n- \\\"none\\\" - Provides no access. \\n- " +
+            "\\\"freeBusyReader\\\" - Provides read access to free/busy information. \\n- \\\"reader" +
+            "\\\" - Provides read access to the calendar. Private events will appear to users w" +
+            "ith reader access, but event details will be hidden. \\n- \\\"writer\\\" - Provides r" +
+            "ead and write access to the calendar. Private events will appear to users with w" +
+            "riter access, and event details will be visible. \\n- \\\"owner\\\" - Provides owners" +
+            "hip of the calendar. This role has all of the permissions of the writer role wit" +
+            "h the additional ability to see and manipulate ACLs.\",\"annotations\":{\"required\":" +
+            "[\"calendar.acl.insert\"]}},\"scope\":{\"type\":\"object\",\"description\":\"The scope of t" +
+            "he rule.\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"The type of the s" +
+            "cope. Possible values are:  \\n- \\\"default\\\" - The public scope. This is the defa" +
+            "ult value. \\n- \\\"user\\\" - Limits the scope to a single user. \\n- \\\"group\\\" - Lim" +
+            "its the scope to a group. \\n- \\\"domain\\\" - Limits the scope to a domain.  Note: " +
+            "The permissions granted to the \\\"default\\\", or public, scope apply to any user, " +
+            "authenticated or not.\",\"annotations\":{\"required\":[\"calendar.acl.insert\"]}},\"valu" +
+            "e\":{\"type\":\"string\",\"description\":\"The email address of a user or group, or the " +
+            "name of a domain, depending on the scope type. Omitted for type \\\"default\\\".\"}}," +
+            "\"annotations\":{\"required\":[\"calendar.acl.insert\"]}}}},\"Calendar\":{\"id\":\"Calendar" +
+            "\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"description\":\"De" +
+            "scription of the calendar. Optional.\"},\"etag\":{\"type\":\"string\",\"description\":\"ET" +
+            "ag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the cal" +
+            "endar.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar" +
+            "#calendar\\\").\",\"default\":\"calendar#calendar\"},\"location\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Geographic location of the calendar as free-form text. Optional.\"},\"sum" +
+            "mary\":{\"type\":\"string\",\"description\":\"Title of the calendar.\",\"annotations\":{\"re" +
+            "quired\":[\"calendar.calendars.insert\"]}},\"timeZone\":{\"type\":\"string\",\"description" +
+            "\":\"The time zone of the calendar. Optional.\"}}},\"CalendarList\":{\"id\":\"CalendarLi" +
+            "st\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of" +
+            " the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"Calendars that are pre" +
+            "sent on the user\'s calendar list.\",\"items\":{\"$ref\":\"CalendarListEntry\"}},\"kind\":" +
+            "{\"type\":\"string\",\"description\":\"Type of the collection (\\\"calendar#calendarList\\" +
+            "\").\",\"default\":\"calendar#calendarList\"},\"nextPageToken\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Token used to access the next page of this result.\"}}},\"CalendarListEntr" +
+            "y\":{\"id\":\"CalendarListEntry\",\"type\":\"object\",\"properties\":{\"accessRole\":{\"type\":" +
+            "\"string\",\"description\":\"The effective access role that the authenticated user ha" +
+            "s on the calendar. Read-only. Possible values are:  \\n- \\\"freeBusyReader\\\" - Pro" +
+            "vides read access to free/busy information. \\n- \\\"reader\\\" - Provides read acces" +
+            "s to the calendar. Private events will appear to users with reader access, but e" +
+            "vent details will be hidden. \\n- \\\"writer\\\" - Provides read and write access to " +
+            "the calendar. Private events will appear to users with writer access, and event " +
+            "details will be visible. \\n- \\\"owner\\\" - Provides ownership of the calendar. Thi" +
+            "s role has all of the permissions of the writer role with the additional ability" +
+            " to see and manipulate ACLs.\"},\"colorId\":{\"type\":\"string\",\"description\":\"The col" +
+            "or of the calendar. This is an ID referring to an entry in the \\\"calendar\\\" sect" +
+            "ion of the colors definition (see the \\\"colors\\\" endpoint). Optional.\"},\"default" +
+            "Reminders\":{\"type\":\"array\",\"description\":\"The default reminders that the authent" +
+            "icated user has for this calendar.\",\"items\":{\"$ref\":\"EventReminder\"}},\"descripti" +
+            "on\":{\"type\":\"string\",\"description\":\"Description of the calendar. Optional. Read-" +
+            "only.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"hidden\":" +
+            "{\"type\":\"boolean\",\"description\":\"Whether the calendar has been hidden from the l" +
+            "ist. Optional. The default is False.\"},\"id\":{\"type\":\"string\",\"description\":\"Iden" +
+            "tifier of the calendar.\",\"annotations\":{\"required\":[\"calendar.calendarList.inser" +
+            "t\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#ca" +
+            "lendarListEntry\\\").\",\"default\":\"calendar#calendarListEntry\"},\"location\":{\"type\":" +
+            "\"string\",\"description\":\"Geographic location of the calendar as free-form text. O" +
+            "ptional. Read-only.\"},\"selected\":{\"type\":\"boolean\",\"description\":\"Whether the ca" +
+            "lendar content shows up in the calendar UI. Optional. The default is False.\"},\"s" +
+            "ummary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"sum" +
+            "maryOverride\":{\"type\":\"string\",\"description\":\"The summary that the authenticated" +
+            " user has set for this calendar. Optional.\"},\"timeZone\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The time zone of the calendar. Optional. Read-only.\"}}},\"ColorDefinition" +
+            "\":{\"id\":\"ColorDefinition\",\"type\":\"object\",\"properties\":{\"background\":{\"type\":\"st" +
+            "ring\",\"description\":\"The background color associated with this color definition." +
+            "\"},\"foreground\":{\"type\":\"string\",\"description\":\"The foreground color that can be" +
+            " used to write on top of a background with \'background\' color.\"}}},\"Colors\":{\"id" +
+            "\":\"Colors\",\"type\":\"object\",\"properties\":{\"calendar\":{\"type\":\"object\",\"descriptio" +
+            "n\":\"Palette of calendar colors, mapping from the color ID to its definition. An " +
+            "\'calendarListEntry\' resource refers to one of these color IDs in its \'color\' fie" +
+            "ld. Read-only.\",\"additionalProperties\":{\"$ref\":\"ColorDefinition\",\"description\":\"" +
+            "A calendar color defintion.\"}},\"event\":{\"type\":\"object\",\"description\":\"Palette o" +
+            "f event colors, mapping from the color ID to its definition. An \'event\' resource" +
+            " may refer to one of these color IDs in its \'color\' field. Read-only.\",\"addition" +
+            "alProperties\":{\"$ref\":\"ColorDefinition\",\"description\":\"An event color definition" +
+            ".\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#col" +
+            "ors\\\").\",\"default\":\"calendar#colors\"},\"updated\":{\"type\":\"string\",\"description\":\"" +
+            "Last modification time of the color palette (as a RFC 3339 timestamp). Read-only" +
+            ".\",\"format\":\"date-time\"}}},\"Error\":{\"id\":\"Error\",\"type\":\"object\",\"properties\":{\"" +
+            "domain\":{\"type\":\"string\",\"description\":\"Domain, or broad category, of the error." +
+            "\"},\"reason\":{\"type\":\"string\",\"description\":\"Specific reason for the error. Some " +
+            "of the possible values are:  \\n- \\\"groupTooBig\\\" - The group of users requested " +
+            "is too large for a single query. \\n- \\\"tooManyCalendarsRequested\\\" - The number " +
+            "of calendars requested is too large for a single query. \\n- \\\"notFound\\\" - The r" +
+            "equested resource was not found. \\n- \\\"internalError\\\" - The API service has enc" +
+            "ountered an internal error.  Additional error types may be added in the future, " +
+            "so clients should gracefully handle additional error statuses not included in th" +
+            "is list.\"}}},\"Event\":{\"id\":\"Event\",\"type\":\"object\",\"properties\":{\"anyoneCanAddSe" +
+            "lf\":{\"type\":\"boolean\",\"description\":\"Whether anyone can invite themselves to the" +
+            " event. Optional. The default is False.\"},\"attendees\":{\"type\":\"array\",\"descripti" +
+            "on\":\"The attendees of the event.\",\"items\":{\"$ref\":\"EventAttendee\"}},\"attendeesOm" +
+            "itted\":{\"type\":\"boolean\",\"description\":\"Whether attendees have been omitted from" +
+            " the event\'s representation. When retrieving an event, this is due to a restrict" +
+            "ion specified by the \'maxAttendee\' query parameter. When updating an event, this" +
+            " can be used to only update the participant\'s response. Optional. The default is" +
+            " False.\"},\"colorId\":{\"type\":\"string\",\"description\":\"The color of the event. This" +
+            " is an ID referring to an entry in the \\\"event\\\" section of the colors definitio" +
+            "n (see the \\\"colors\\\" endpoint). Optional.\"},\"created\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Creation time of the event (as a RFC 3339 timestamp). Read-only.\",\"format" +
+            "\":\"date-time\"},\"creator\":{\"type\":\"object\",\"description\":\"The creator of the even" +
+            "t. Read-only.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The c" +
+            "reator\'s name, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The creat" +
+            "or\'s email address, if available.\"}}},\"description\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Description of the event. Optional.\"},\"end\":{\"$ref\":\"EventDateTime\",\"descrip" +
+            "tion\":\"The (exclusive) end time of the event. For a recurring event, this is the" +
+            " end time of the first instance.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag o" +
+            "f the resource.\"},\"extendedProperties\":{\"type\":\"object\",\"description\":\"Extended " +
+            "properties of the event.\",\"properties\":{\"private\":{\"type\":\"object\",\"description\"" +
+            ":\"Properties that are private to the copy of the event that appears on this cale" +
+            "ndar.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name of the pr" +
+            "ivate property and the corresponding value.\"}},\"shared\":{\"type\":\"object\",\"descri" +
+            "ption\":\"Properties that are shared between copies of the event on other attendee" +
+            "s\' calendars.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name o" +
+            "f the shared property and the corresponding value.\"}}}},\"gadget\":{\"type\":\"object" +
+            "\",\"description\":\"A gadget that extends this event.\",\"properties\":{\"display\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The gadget\'s display mode. Optional. Possible values" +
+            " are:  \\n- \\\"icon\\\" - The gadget displays next to the event\'s title in the calen" +
+            "dar view. \\n- \\\"chip\\\" - The gadget displays when the event is clicked.\"},\"heigh" +
+            "t\":{\"type\":\"integer\",\"description\":\"The gadget\'s height in pixels. Optional.\",\"f" +
+            "ormat\":\"int32\"},\"iconLink\":{\"type\":\"string\",\"description\":\"The gadget\'s icon URL" +
+            ".\"},\"link\":{\"type\":\"string\",\"description\":\"The gadget\'s URL.\"},\"preferences\":{\"t" +
+            "ype\":\"object\",\"description\":\"Preferences.\",\"additionalProperties\":{\"type\":\"strin" +
+            "g\",\"description\":\"The preference name and corresponding value.\"}},\"title\":{\"type" +
+            "\":\"string\",\"description\":\"The gadget\'s title.\"},\"type\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The gadget\'s type.\"},\"width\":{\"type\":\"integer\",\"description\":\"The gadget\'" +
+            "s width in pixels. Optional.\",\"format\":\"int32\"}}},\"guestsCanInviteOthers\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether attendees other than the organizer can invite" +
+            " others to the event. Optional. The default is False.\"},\"guestsCanModify\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether attendees other than the organizer can modify" +
+            " the event. Optional. The default is False.\"},\"guestsCanSeeOtherGuests\":{\"type\":" +
+            "\"boolean\",\"description\":\"Whether attendees other than the organizer can see who " +
+            "the event\'s attendees are. Optional. The default is False.\"},\"htmlLink\":{\"type\":" +
+            "\"string\",\"description\":\"An absolute link to this event in the Google Calendar We" +
+            "b UI. Read-only.\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"Event ID in the iCa" +
+            "lendar format.\",\"annotations\":{\"required\":[\"calendar.events.import\"]}},\"id\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Identifier of the event.\"},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"Type of the resource (\\\"calendar#event\\\").\",\"default\":\"calendar#ev" +
+            "ent\"},\"location\":{\"type\":\"string\",\"description\":\"Geographic location of the even" +
+            "t as free-form text. Optional.\"},\"organizer\":{\"type\":\"object\",\"description\":\"The" +
+            " organizer of the event. If the organizer is also an attendee, this is indicated" +
+            " with a separate entry in \'attendees\' with the \'organizer\' field set to True. To" +
+            " change the organizer, use the \\\"move\\\" operation. Read-only, except when import" +
+            "ing an event.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The o" +
+            "rganizer\'s name, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The org" +
+            "anizer\'s email address, if available.\"}}},\"originalStartTime\":{\"$ref\":\"EventDate" +
+            "Time\",\"description\":\"For an instance of a recurring event, this is the time at w" +
+            "hich this event would start according to the recurrence data in the recurring ev" +
+            "ent identified by recurringEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\"" +
+            ",\"description\":\"Whether this is a private event copy where changes are not share" +
+            "d with other copies on other calendars. Optional. Immutable.\"},\"recurrence\":{\"ty" +
+            "pe\":\"array\",\"description\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a r" +
+            "ecurring event. This field is omitted for single events or instances of recurrin" +
+            "g events.\",\"items\":{\"type\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"For an instance of a recurring event, this is the event ID of the recur" +
+            "ring event itself. Immutable.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Info" +
+            "rmation about the event\'s reminders for the authenticated user.\",\"properties\":{\"" +
+            "overrides\":{\"type\":\"array\",\"description\":\"If the event doesn\'t use the default r" +
+            "eminders, this lists the reminders specific to the event, or, if not set, indica" +
+            "tes that no reminders are set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}}" +
+            ",\"useDefault\":{\"type\":\"boolean\",\"description\":\"Whether the default reminders of " +
+            "the calendar apply to the event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":" +
+            "\"Sequence number as per iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDate" +
+            "Time\",\"description\":\"The (inclusive) start time of the event. For a recurring ev" +
+            "ent, this is the start time of the first instance.\"},\"status\":{\"type\":\"string\",\"" +
+            "description\":\"Status of the event. Optional. Possible values are:  \\n- \\\"confirm" +
+            "ed\\\" - The event is confirmed. This is the default status. \\n- \\\"tentative\\\" - T" +
+            "he event is tentatively confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"}" +
+            ",\"summary\":{\"type\":\"string\",\"description\":\"Title of the event.\"},\"transparency\":" +
+            "{\"type\":\"string\",\"description\":\"Whether the event blocks time on the calendar. O" +
+            "ptional. Possible values are:  \\n- \\\"opaque\\\" - The event blocks time on the cal" +
+            "endar. This is the default value. \\n- \\\"transparent\\\" - The event does not block" +
+            " time on the calendar.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modifica" +
+            "tion time of the event (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-tim" +
+            "e\"},\"visibility\":{\"type\":\"string\",\"description\":\"Visibility of the event. Option" +
+            "al. Possible values are:  \\n- \\\"default\\\" - Uses the default visibility for even" +
+            "ts on the calendar. This is the default value. \\n- \\\"public\\\" - The event is pub" +
+            "lic and event details are visible to all readers of the calendar. \\n- \\\"private\\" +
+            "\" - The event is private and only event attendees may view event details. \\n- \\\"" +
+            "confidential\\\" - The event is private. This value is provided for compatibility " +
+            "reasons.\"}}},\"EventAttendee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":" +
+            "{\"additionalGuests\":{\"type\":\"integer\",\"description\":\"Number of additional guests" +
+            ". Optional. The default is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"des" +
+            "cription\":\"The attendee\'s response comment. Optional.\"},\"displayName\":{\"type\":\"s" +
+            "tring\",\"description\":\"The attendee\'s name, if available. Optional.\"},\"email\":{\"t" +
+            "ype\":\"string\",\"description\":\"The attendee\'s email address, if available. This fi" +
+            "eld must be present when adding an attendee.\",\"annotations\":{\"required\":[\"calend" +
+            "ar.events.import\",\"calendar.events.insert\",\"calendar.events.update\"]}},\"optional" +
+            "\":{\"type\":\"boolean\",\"description\":\"Whether this is an optional attendee. Optiona" +
+            "l. The default is False.\"},\"organizer\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "the attendee is the organizer of the event. Read-only. The default is False.\"},\"" +
+            "resource\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is a resource. R" +
+            "ead-only. The default is False.\"},\"responseStatus\":{\"type\":\"string\",\"description" +
+            "\":\"The attendee\'s response status. Possible values are:  \\n- \\\"needsAction\\\" - T" +
+            "he attendee has not responded to the invitation. \\n- \\\"declined\\\" - The attendee" +
+            " has declined the invitation. \\n- \\\"tentative\\\" - The attendee has tentatively a" +
+            "ccepted the invitation. \\n- \\\"accepted\\\" - The attendee has accepted the invitat" +
+            "ion.\"},\"self\":{\"type\":\"boolean\",\"description\":\"Whether this entry represents the" +
+            " calendar on which this copy of the event appears. Read-only. The default is Fal" +
+            "se.\"}}},\"EventDateTime\":{\"id\":\"EventDateTime\",\"type\":\"object\",\"properties\":{\"dat" +
+            "e\":{\"type\":\"string\",\"description\":\"The date, in the format \\\"yyyy-mm-dd\\\", if th" +
+            "is is an all-day event.\",\"format\":\"date\"},\"dateTime\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The time, as a combined date-time value (formatted according to RFC 3339). " +
+            "A time zone offset is required unless a time zone is explicitly specified in \'ti" +
+            "meZone\'.\",\"format\":\"date-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The n" +
+            "ame of the time zone in which the time is specified (e.g. \\\"Europe/Zurich\\\"). Op" +
+            "tional. The default is the time zone of the calendar.\"}}},\"EventReminder\":{\"id\":" +
+            "\"EventReminder\",\"type\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The method used by this reminder. Possible values are:  \\n- \\\"email\\\" - R" +
+            "eminders are sent via email. \\n- \\\"sms\\\" - Reminders are sent via SMS. \\n- \\\"pop" +
+            "up\\\" - Reminders are sent via a UI popup.\",\"annotations\":{\"required\":[\"calendar." +
+            "calendarList.insert\",\"calendar.calendarList.update\",\"calendar.events.import\",\"ca" +
+            "lendar.events.insert\",\"calendar.events.update\"]}},\"minutes\":{\"type\":\"integer\",\"d" +
+            "escription\":\"Number of minutes before the start of the event when the reminder s" +
+            "hould trigger.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"calendar.calendarLi" +
+            "st.insert\",\"calendar.calendarList.update\",\"calendar.events.import\",\"calendar.eve" +
+            "nts.insert\",\"calendar.events.update\"]}}}},\"Events\":{\"id\":\"Events\",\"type\":\"object" +
+            "\",\"properties\":{\"accessRole\":{\"type\":\"string\",\"description\":\"The user\'s access r" +
+            "ole for this calendar. Read-only. Possible values are:  \\n- \\\"none\\\" - The user " +
+            "has no access. \\n- \\\"freeBusyReader\\\" - The user has read access to free/busy in" +
+            "formation. \\n- \\\"reader\\\" - The user has read access to the calendar. Private ev" +
             "ents will appear to users with reader access, but event details will be hidden. " +
-            "\\n- \\\"writer\\\" - Provides read and write access to the calendar. Private events " +
-            "will appear to users with writer access, and event details will be visible. \\n- " +
-            "\\\"owner\\\" - Provides ownership of the calendar. This role has all of the permiss" +
-            "ions of the writer role with the additional ability to see and manipulate ACLs.\"" +
-            "},\"colorId\":{\"type\":\"string\",\"description\":\"The color of the calendar. This is a" +
-            "n ID referring to an entry in the \\\"calendar\\\" section of the colors definition " +
-            "(see the \\\"colors\\\" endpoint). Optional.\"},\"defaultReminders\":{\"type\":\"array\",\"d" +
-            "escription\":\"The default reminders that the authenticated user has for this cale" +
-            "ndar.\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Description of the calendar. Optional. Read-only.\"},\"etag\":{\"type\":\"strin" +
-            "g\",\"description\":\"ETag of the resource.\"},\"hidden\":{\"type\":\"boolean\",\"descriptio" +
-            "n\":\"Whether the calendar has been hidden from the list. Optional. The default is" +
-            " False.\"},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the calendar.\",\"ann" +
-            "otations\":{\"required\":[\"calendar.calendarList.insert\",\"calendar.calendarList.upd" +
-            "ate\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#" +
-            "calendarListEntry\\\").\",\"default\":\"calendar#calendarListEntry\"},\"location\":{\"type" +
-            "\":\"string\",\"description\":\"Geographic location of the calendar as free-form text." +
-            " Optional. Read-only.\"},\"selected\":{\"type\":\"boolean\",\"description\":\"Whether the " +
-            "calendar content shows up in the calendar UI. Optional. The default is False.\"}," +
-            "\"summary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"s" +
-            "ummaryOverride\":{\"type\":\"string\",\"description\":\"The summary that the authenticat" +
-            "ed user has set for this calendar. Optional.\"},\"timeZone\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The time zone of the calendar. Optional. Read-only.\"}}},\"ColorDefiniti" +
-            "on\":{\"id\":\"ColorDefinition\",\"type\":\"object\",\"properties\":{\"background\":{\"type\":\"" +
-            "string\",\"description\":\"The background color associated with this color definitio" +
-            "n.\"},\"foreground\":{\"type\":\"string\",\"description\":\"The foreground color that can " +
-            "be used to write on top of a background with \'background\' color.\"}}},\"Colors\":{\"" +
-            "id\":\"Colors\",\"type\":\"object\",\"properties\":{\"calendar\":{\"type\":\"object\",\"descript" +
-            "ion\":\"Palette of calendar colors, mapping from the color ID to its definition. A" +
-            "n \'calendarListEntry\' resource refers to one of these color IDs in its \'color\' f" +
-            "ield. Read-only.\",\"additionalProperties\":{\"$ref\":\"ColorDefinition\",\"description\"" +
-            ":\"A calendar color defintion.\"}},\"event\":{\"type\":\"object\",\"description\":\"Palette" +
-            " of event colors, mapping from the color ID to its definition. An \'event\' resour" +
-            "ce may refer to one of these color IDs in its \'color\' field. Read-only.\",\"additi" +
-            "onalProperties\":{\"$ref\":\"ColorDefinition\",\"description\":\"An event color definiti" +
-            "on.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#c" +
-            "olors\\\").\",\"default\":\"calendar#colors\"},\"updated\":{\"type\":\"string\",\"description\"" +
-            ":\"Last modification time of the color palette (as a RFC 3339 timestamp). Read-on" +
-            "ly.\",\"format\":\"date-time\"}}},\"Error\":{\"id\":\"Error\",\"type\":\"object\",\"properties\":" +
-            "{\"domain\":{\"type\":\"string\",\"description\":\"Domain, or broad category, of the erro" +
-            "r.\"},\"reason\":{\"type\":\"string\",\"description\":\"Specific reason for the error. Som" +
-            "e of the possible values are:  \\n- \\\"groupTooBig\\\" - The group of users requeste" +
-            "d is too large for a single query. \\n- \\\"tooManyCalendarsRequested\\\" - The numbe" +
-            "r of calendars requested is too large for a single query. \\n- \\\"notFound\\\" - The" +
-            " requested resource was not found. \\n- \\\"internalError\\\" - The API service has e" +
-            "ncountered an internal error.  Additional error types may be added in the future" +
-            ", so clients should gracefully handle additional error statuses not included in " +
-            "this list.\"}}},\"Event\":{\"id\":\"Event\",\"type\":\"object\",\"properties\":{\"anyoneCanAdd" +
-            "Self\":{\"type\":\"boolean\",\"description\":\"Whether anyone can invite themselves to t" +
-            "he event. Optional. The default is False.\"},\"attendees\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"The attendees of the event.\",\"items\":{\"$ref\":\"EventAttendee\"}},\"attendees" +
-            "Omitted\":{\"type\":\"boolean\",\"description\":\"Whether attendees have been omitted fr" +
-            "om the event\'s representation. When retrieving an event, this is due to a restri" +
-            "ction specified by the \'maxAttendee\' query parameter. When updating an event, th" +
-            "is can be used to only update the participant\'s response. Optional. The default " +
-            "is False.\"},\"colorId\":{\"type\":\"string\",\"description\":\"The color of the event. Th" +
-            "is is an ID referring to an entry in the \\\"event\\\" section of the colors definit" +
-            "ion (see the \\\"colors\\\" endpoint). Optional.\"},\"created\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Creation time of the event (as a RFC 3339 timestamp). Read-only.\",\"form" +
-            "at\":\"date-time\"},\"creator\":{\"type\":\"object\",\"description\":\"The creator of the ev" +
-            "ent. Read-only.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The" +
-            " creator\'s name, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The cre" +
-            "ator\'s email address, if available.\"}}},\"description\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Description of the event. Optional.\"},\"end\":{\"$ref\":\"EventDateTime\",\"descr" +
-            "iption\":\"The (exclusive) end time of the event. For a recurring event, this is t" +
-            "he end time of the first instance.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag" +
-            " of the resource.\"},\"extendedProperties\":{\"type\":\"object\",\"description\":\"Extende" +
-            "d properties of the event.\",\"properties\":{\"private\":{\"type\":\"object\",\"descriptio" +
-            "n\":\"Properties that are private to the copy of the event that appears on this ca" +
-            "lendar.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name of the " +
-            "private property and the corresponding value.\"}},\"shared\":{\"type\":\"object\",\"desc" +
-            "ription\":\"Properties that are shared between copies of the event on other attend" +
-            "ees\' calendars.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The name" +
-            " of the shared property and the corresponding value.\"}}}},\"gadget\":{\"type\":\"obje" +
-            "ct\",\"description\":\"A gadget that extends this event.\",\"properties\":{\"display\":{\"" +
-            "type\":\"string\",\"description\":\"The gadget\'s display mode. Optional. Possible valu" +
-            "es are:  \\n- \\\"icon\\\" - The gadget displays next to the event\'s title in the cal" +
-            "endar view. \\n- \\\"chip\\\" - The gadget displays when the event is clicked.\"},\"hei" +
-            "ght\":{\"type\":\"integer\",\"description\":\"The gadget\'s height in pixels. Optional.\"," +
-            "\"format\":\"int32\"},\"iconLink\":{\"type\":\"string\",\"description\":\"The gadget\'s icon U" +
-            "RL.\"},\"link\":{\"type\":\"string\",\"description\":\"The gadget\'s URL.\"},\"preferences\":{" +
-            "\"type\":\"object\",\"description\":\"Preferences.\",\"additionalProperties\":{\"type\":\"str" +
-            "ing\",\"description\":\"The preference name and corresponding value.\"}},\"title\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The gadget\'s title.\"},\"type\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The gadget\'s type.\"},\"width\":{\"type\":\"integer\",\"description\":\"The gadge" +
-            "t\'s width in pixels. Optional.\",\"format\":\"int32\"}}},\"guestsCanInviteOthers\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether attendees other than the organizer can invi" +
-            "te others to the event. Optional. The default is False.\"},\"guestsCanModify\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether attendees other than the organizer can modi" +
-            "fy the event. Optional. The default is False.\"},\"guestsCanSeeOtherGuests\":{\"type" +
-            "\":\"boolean\",\"description\":\"Whether attendees other than the organizer can see wh" +
-            "o the event\'s attendees are. Optional. The default is False.\"},\"htmlLink\":{\"type" +
-            "\":\"string\",\"description\":\"An absolute link to this event in the Google Calendar " +
-            "Web UI. Read-only.\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"Event ID in the i" +
-            "Calendar format.\",\"annotations\":{\"required\":[\"calendar.events.import\"]}},\"id\":{\"" +
-            "type\":\"string\",\"description\":\"Identifier of the event.\",\"annotations\":{\"required" +
-            "\":[\"calendar.events.update\"]}},\"kind\":{\"type\":\"string\",\"description\":\"Type of th" +
-            "e resource (\\\"calendar#event\\\").\",\"default\":\"calendar#event\"},\"location\":{\"type\"" +
-            ":\"string\",\"description\":\"Geographic location of the event as free-form text. Opt" +
-            "ional.\"},\"organizer\":{\"type\":\"object\",\"description\":\"The organizer of the event." +
-            " If the organizer is also an attendee, this is indicated with a separate entry i" +
-            "n \'attendees\' with the \'organizer\' field set to True. To change the organizer, u" +
-            "se the \\\"move\\\" operation. Read-only, except when importing an event.\",\"properti" +
-            "es\":{\"displayName\":{\"type\":\"string\",\"description\":\"The organizer\'s name, if avai" +
-            "lable.\"},\"email\":{\"type\":\"string\",\"description\":\"The organizer\'s email address, " +
-            "if available.\"}}},\"originalStartTime\":{\"$ref\":\"EventDateTime\",\"description\":\"For" +
-            " an instance of a recurring event, this is the time at which this event would st" +
-            "art according to the recurrence data in the recurring event identified by recurr" +
-            "ingEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\",\"description\":\"Whether " +
-            "this is a private event copy where changes are not shared with other copies on o" +
-            "ther calendars. Optional. Immutable.\"},\"recurrence\":{\"type\":\"array\",\"description" +
-            "\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This fie" +
-            "ld is omitted for single events or instances of recurring events.\",\"items\":{\"typ" +
-            "e\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"description\":\"For an instance" +
-            " of a recurring event, this is the event ID of the recurring event itself. Immut" +
-            "able.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Information about the event\'" +
-            "s reminders for the authenticated user.\",\"properties\":{\"overrides\":{\"type\":\"arra" +
-            "y\",\"description\":\"If the event doesn\'t use the default reminders, this lists the" +
-            " reminders specific to the event, or, if not set, indicates that no reminders ar" +
-            "e set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}},\"useDefault\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether the default reminders of the calendar apply to th" +
-            "e event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":\"Sequence number as per " +
-            "iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDateTime\",\"description\":\"The" +
-            " (inclusive) start time of the event. For a recurring event, this is the start t" +
-            "ime of the first instance.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of " +
-            "the event. Optional. Possible values are:  \\n- \\\"confirmed\\\" - The event is conf" +
-            "irmed. This is the default status. \\n- \\\"tentative\\\" - The event is tentatively " +
-            "confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"},\"summary\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Title of the event.\"},\"transparency\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Whether the event blocks time on the calendar. Optional. Possible values" +
-            " are:  \\n- \\\"opaque\\\" - The event blocks time on the calendar. This is the defau" +
-            "lt value. \\n- \\\"transparent\\\" - The event does not block time on the calendar.\"}" +
-            ",\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the event (" +
-            "as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"visibility\":{\"type\"" +
-            ":\"string\",\"description\":\"Visibility of the event. Optional. Possible values are:" +
-            "  \\n- \\\"default\\\" - Uses the default visibility for events on the calendar. This" +
-            " is the default value. \\n- \\\"public\\\" - The event is public and event details ar" +
-            "e visible to all readers of the calendar. \\n- \\\"private\\\" - The event is private" +
-            " and only event attendees may view event details. \\n- \\\"confidential\\\" - The eve" +
-            "nt is private. This value is provided for compatibility reasons.\"}}},\"EventAtten" +
-            "dee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":{\"additionalGuests\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Number of additional guests. Optional. The default " +
-            "is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"description\":\"The attendee\'" +
-            "s response comment. Optional.\"},\"displayName\":{\"type\":\"string\",\"description\":\"Th" +
-            "e attendee\'s name, if available. Optional.\"},\"email\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The attendee\'s email address, if available. This field must be present when" +
-            " adding an attendee.\",\"annotations\":{\"required\":[\"calendar.events.import\",\"calen" +
-            "dar.events.insert\",\"calendar.events.update\"]}},\"optional\":{\"type\":\"boolean\",\"des" +
-            "cription\":\"Whether this is an optional attendee. Optional. The default is False." +
-            "\"},\"organizer\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is the orga" +
-            "nizer of the event. Read-only. The default is False.\"},\"resource\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether the attendee is a resource. Read-only. The default is" +
-            " False.\"},\"responseStatus\":{\"type\":\"string\",\"description\":\"The attendee\'s respon" +
-            "se status. Possible values are:  \\n- \\\"needsAction\\\" - The attendee has not resp" +
-            "onded to the invitation. \\n- \\\"declined\\\" - The attendee has declined the invita" +
-            "tion. \\n- \\\"tentative\\\" - The attendee has tentatively accepted the invitation. " +
-            "\\n- \\\"accepted\\\" - The attendee has accepted the invitation.\"},\"self\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether this entry represents the calendar on which this " +
-            "copy of the event appears. Read-only. The default is False.\"}}},\"EventDateTime\":" +
-            "{\"id\":\"EventDateTime\",\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"des" +
-            "cription\":\"The date, in the format \\\"yyyy-mm-dd\\\", if this is an all-day event.\"" +
-            ",\"format\":\"date\"},\"dateTime\":{\"type\":\"string\",\"description\":\"The time, as a comb" +
-            "ined date-time value (formatted according to RFC 3339). A time zone offset is re" +
-            "quired unless a time zone is explicitly specified in \'timeZone\'.\",\"format\":\"date" +
-            "-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The name of the time zone in " +
-            "which the time is specified (e.g. \\\"Europe/Zurich\\\"). Optional. The default is t" +
-            "he time zone of the calendar.\"}}},\"EventReminder\":{\"id\":\"EventReminder\",\"type\":\"" +
-            "object\",\"properties\":{\"method\":{\"type\":\"string\",\"description\":\"The method used b" +
-            "y this reminder. Possible values are:  \\n- \\\"email\\\" - Reminders are sent via em" +
-            "ail. \\n- \\\"sms\\\" - Reminders are sent via SMS. \\n- \\\"popup\\\" - Reminders are sen" +
-            "t via a UI popup.\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\",\"ca" +
-            "lendar.calendarList.update\",\"calendar.events.import\",\"calendar.events.insert\",\"c" +
-            "alendar.events.update\"]}},\"minutes\":{\"type\":\"integer\",\"description\":\"Number of m" +
-            "inutes before the start of the event when the reminder should trigger.\",\"format\"" +
-            ":\"int32\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\",\"calendar.cal" +
-            "endarList.update\",\"calendar.events.import\",\"calendar.events.insert\",\"calendar.ev" +
-            "ents.update\"]}}}},\"Events\":{\"id\":\"Events\",\"type\":\"object\",\"properties\":{\"accessR" +
-            "ole\":{\"type\":\"string\",\"description\":\"The user\'s access role for this calendar. R" +
-            "ead-only. Possible values are:  \\n- \\\"none\\\" - The user has no access. \\n- \\\"fre" +
-            "eBusyReader\\\" - The user has read access to free/busy information. \\n- \\\"reader\\" +
-            "\" - The user has read access to the calendar. Private events will appear to user" +
-            "s with reader access, but event details will be hidden. \\n- \\\"writer\\\" - The use" +
-            "r has read and write access to the calendar. Private events will appear to users" +
-            " with writer access, and event details will be visible. \\n- \\\"owner\\\" - The user" +
-            " has ownership of the calendar. This role has all of the permissions of the writ" +
-            "er role with the additional ability to see and manipulate ACLs.\"},\"defaultRemind" +
-            "ers\":{\"type\":\"array\",\"description\":\"The default reminders on the calendar for th" +
-            "e authenticated user. These reminders apply to all events on this calendar that " +
-            "do not explicitly override them (i.e. do not have \'reminders.useDefault\' set to " +
-            "\'true\').\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Description of the calendar. Read-only.\"},\"etag\":{\"type\":\"string\",\"des" +
-            "cription\":\"ETag of the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"List" +
-            " of events on the calendar.\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Type of the collection (\\\"calendar#events\\\").\",\"default\":\"calendar" +
-            "#events\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to access t" +
-            "he next page of this result. Omitted if no further results are available.\"},\"sum" +
-            "mary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"timeZ" +
-            "one\":{\"type\":\"string\",\"description\":\"The time zone of the calendar. Read-only.\"}" +
-            ",\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the calenda" +
-            "r (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"}}},\"FreeBusyCalend" +
-            "ar\":{\"id\":\"FreeBusyCalendar\",\"type\":\"object\",\"properties\":{\"busy\":{\"type\":\"array" +
-            "\",\"description\":\"List of time ranges during which this calendar should be regard" +
-            "ed as busy.\",\"items\":{\"$ref\":\"TimePeriod\"}},\"errors\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"Optional error(s) (if computation for the calendar failed).\",\"items\":{\"$ref\"" +
-            ":\"Error\"}}}},\"FreeBusyGroup\":{\"id\":\"FreeBusyGroup\",\"type\":\"object\",\"properties\":" +
-            "{\"calendars\":{\"type\":\"array\",\"description\":\"List of calendars\' identifiers withi" +
-            "n a group.\",\"items\":{\"type\":\"string\"}},\"errors\":{\"type\":\"array\",\"description\":\"O" +
-            "ptional error(s) (if computation for the group failed).\",\"items\":{\"$ref\":\"Error\"" +
-            "}}}},\"FreeBusyRequest\":{\"id\":\"FreeBusyRequest\",\"type\":\"object\",\"properties\":{\"ca" +
-            "lendarExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calendars" +
-            " for which FreeBusy information is to be provided. Optional.\",\"format\":\"int32\"}," +
-            "\"groupExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calendar " +
-            "identifiers to be provided for a single group. Optional. An error will be return" +
-            "ed for a group with more members than this value.\",\"format\":\"int32\"},\"items\":{\"t" +
-            "ype\":\"array\",\"description\":\"List of calendars and/or groups to query.\",\"items\":{" +
-            "\"$ref\":\"FreeBusyRequestItem\"}},\"timeMax\":{\"type\":\"string\",\"description\":\"The end" +
-            " of the interval for the query.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string" +
-            "\",\"description\":\"The start of the interval for the query.\",\"format\":\"date-time\"}" +
-            ",\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Opti" +
-            "onal. The default is UTC.\"}}},\"FreeBusyRequestItem\":{\"id\":\"FreeBusyRequestItem\"," +
-            "\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identifie" +
-            "r of a calendar or a group.\"}}},\"FreeBusyResponse\":{\"id\":\"FreeBusyResponse\",\"typ" +
-            "e\":\"object\",\"properties\":{\"calendars\":{\"type\":\"object\",\"description\":\"List of fr" +
-            "ee/busy information for calendars.\",\"additionalProperties\":{\"$ref\":\"FreeBusyCale" +
-            "ndar\",\"description\":\"Free/busy expansions for a single calendar.\"}},\"groups\":{\"t" +
-            "ype\":\"object\",\"description\":\"Expansion of groups.\",\"additionalProperties\":{\"$ref" +
-            "\":\"FreeBusyGroup\",\"description\":\"List of calendars that are members of this grou" +
-            "p.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#fr" +
-            "eeBusy\\\").\",\"default\":\"calendar#freeBusy\"},\"timeMax\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The end of the interval.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"string\"," +
-            "\"description\":\"The start of the interval.\",\"format\":\"date-time\"}}},\"Setting\":{\"i" +
-            "d\":\"Setting\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\"" +
-            ":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the user " +
-            "setting.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calend" +
-            "ar#setting\\\").\",\"default\":\"calendar#setting\"},\"value\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Value of the user setting. The format of the value depends on the ID of th" +
-            "e setting.\"}}},\"Settings\":{\"id\":\"Settings\",\"type\":\"object\",\"properties\":{\"etag\":" +
-            "{\"type\":\"string\",\"description\":\"Etag of the collection.\"},\"items\":{\"type\":\"array" +
-            "\",\"description\":\"List of user settings.\",\"items\":{\"$ref\":\"Setting\"}},\"kind\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the collection (\\\"calendar#settings\\\").\",\"de" +
-            "fault\":\"calendar#settings\"}}},\"TimePeriod\":{\"id\":\"TimePeriod\",\"type\":\"object\",\"p" +
-            "roperties\":{\"end\":{\"type\":\"string\",\"description\":\"The (exclusive) end of the tim" +
-            "e period.\",\"format\":\"date-time\"},\"start\":{\"type\":\"string\",\"description\":\"The (in" +
-            "clusive) start of the time period.\",\"format\":\"date-time\"}}}},\"resources\":{\"acl\":" +
-            "{\"methods\":{\"delete\":{\"id\":\"calendar.acl.delete\",\"path\":\"calendars/{calendarId}/" +
-            "acl/{ruleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes an access control rul" +
-            "e.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifi" +
-            "er.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":" +
-            "\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ca" +
-            "lendarId\",\"ruleId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"get\"" +
-            ":{\"id\":\"calendar.acl.get\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Returns an access control rule.\",\"parameters\":{\"calenda" +
-            "rId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"respo" +
-            "nse\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"ht" +
-            "tps://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.acl." +
-            "insert\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"POST\",\"description\":\"C" +
-            "reates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"des" +
-            "cription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"calendarId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"}," +
-            "\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.ac" +
-            "l.list\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"GET\",\"description\":\"Re" +
-            "turns the rules in the access control list for the calendar.\",\"parameters\":{\"cal" +
+            "\\n- \\\"writer\\\" - The user has read and write access to the calendar. Private eve" +
+            "nts will appear to users with writer access, and event details will be visible. " +
+            "\\n- \\\"owner\\\" - The user has ownership of the calendar. This role has all of the" +
+            " permissions of the writer role with the additional ability to see and manipulat" +
+            "e ACLs.\"},\"defaultReminders\":{\"type\":\"array\",\"description\":\"The default reminder" +
+            "s on the calendar for the authenticated user. These reminders apply to all event" +
+            "s on this calendar that do not explicitly override them (i.e. do not have \'remin" +
+            "ders.useDefault\' set to \'true\').\",\"items\":{\"$ref\":\"EventReminder\"}},\"description" +
+            "\":{\"type\":\"string\",\"description\":\"Description of the calendar. Read-only.\"},\"eta" +
+            "g\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"},\"items\":{\"type\":\"ar" +
+            "ray\",\"description\":\"List of events on the calendar.\",\"items\":{\"$ref\":\"Event\"}},\"" +
+            "kind\":{\"type\":\"string\",\"description\":\"Type of the collection (\\\"calendar#events\\" +
+            "\").\",\"default\":\"calendar#events\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
+            ":\"Token used to access the next page of this result. Omitted if no further resul" +
+            "ts are available.\"},\"summary\":{\"type\":\"string\",\"description\":\"Title of the calen" +
+            "dar. Read-only.\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The time zone of th" +
+            "e calendar. Read-only.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modifica" +
+            "tion time of the calendar (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-" +
+            "time\"}}},\"FreeBusyCalendar\":{\"id\":\"FreeBusyCalendar\",\"type\":\"object\",\"properties" +
+            "\":{\"busy\":{\"type\":\"array\",\"description\":\"List of time ranges during which this c" +
+            "alendar should be regarded as busy.\",\"items\":{\"$ref\":\"TimePeriod\"}},\"errors\":{\"t" +
+            "ype\":\"array\",\"description\":\"Optional error(s) (if computation for the calendar f" +
+            "ailed).\",\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyGroup\":{\"id\":\"FreeBusyGroup\",\"type" +
+            "\":\"object\",\"properties\":{\"calendars\":{\"type\":\"array\",\"description\":\"List of cale" +
+            "ndars\' identifiers within a group.\",\"items\":{\"type\":\"string\"}},\"errors\":{\"type\":" +
+            "\"array\",\"description\":\"Optional error(s) (if computation for the group failed).\"" +
+            ",\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyRequest\":{\"id\":\"FreeBusyRequest\",\"type\":\"o" +
+            "bject\",\"properties\":{\"calendarExpansionMax\":{\"type\":\"integer\",\"description\":\"Max" +
+            "imal number of calendars for which FreeBusy information is to be provided. Optio" +
+            "nal.\",\"format\":\"int32\"},\"groupExpansionMax\":{\"type\":\"integer\",\"description\":\"Max" +
+            "imal number of calendar identifiers to be provided for a single group. Optional." +
+            " An error will be returned for a group with more members than this value.\",\"form" +
+            "at\":\"int32\"},\"items\":{\"type\":\"array\",\"description\":\"List of calendars and/or gro" +
+            "ups to query.\",\"items\":{\"$ref\":\"FreeBusyRequestItem\"}},\"timeMax\":{\"type\":\"string" +
+            "\",\"description\":\"The end of the interval for the query.\",\"format\":\"date-time\"},\"" +
+            "timeMin\":{\"type\":\"string\",\"description\":\"The start of the interval for the query" +
+            ".\",\"format\":\"date-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone us" +
+            "ed in the response. Optional. The default is UTC.\"}}},\"FreeBusyRequestItem\":{\"id" +
+            "\":\"FreeBusyRequestItem\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"des" +
+            "cription\":\"The identifier of a calendar or a group.\"}}},\"FreeBusyResponse\":{\"id\"" +
+            ":\"FreeBusyResponse\",\"type\":\"object\",\"properties\":{\"calendars\":{\"type\":\"object\",\"" +
+            "description\":\"List of free/busy information for calendars.\",\"additionalPropertie" +
+            "s\":{\"$ref\":\"FreeBusyCalendar\",\"description\":\"Free/busy expansions for a single c" +
+            "alendar.\"}},\"groups\":{\"type\":\"object\",\"description\":\"Expansion of groups.\",\"addi" +
+            "tionalProperties\":{\"$ref\":\"FreeBusyGroup\",\"description\":\"List of calendars that " +
+            "are members of this group.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the" +
+            " resource (\\\"calendar#freeBusy\\\").\",\"default\":\"calendar#freeBusy\"},\"timeMax\":{\"t" +
+            "ype\":\"string\",\"description\":\"The end of the interval.\",\"format\":\"date-time\"},\"ti" +
+            "meMin\":{\"type\":\"string\",\"description\":\"The start of the interval.\",\"format\":\"dat" +
+            "e-time\"}}},\"Setting\":{\"id\":\"Setting\",\"type\":\"object\",\"properties\":{\"etag\":{\"type" +
+            "\":\"string\",\"description\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Name of the user setting.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type o" +
+            "f the resource (\\\"calendar#setting\\\").\",\"default\":\"calendar#setting\"},\"value\":{\"" +
+            "type\":\"string\",\"description\":\"Value of the user setting. The format of the value" +
+            " depends on the ID of the setting.\"}}},\"Settings\":{\"id\":\"Settings\",\"type\":\"objec" +
+            "t\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"Etag of the collection.\"" +
+            "},\"items\":{\"type\":\"array\",\"description\":\"List of user settings.\",\"items\":{\"$ref\"" +
+            ":\"Setting\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the collection (\\\"ca" +
+            "lendar#settings\\\").\",\"default\":\"calendar#settings\"}}},\"TimePeriod\":{\"id\":\"TimePe" +
+            "riod\",\"type\":\"object\",\"properties\":{\"end\":{\"type\":\"string\",\"description\":\"The (e" +
+            "xclusive) end of the time period.\",\"format\":\"date-time\"},\"start\":{\"type\":\"string" +
+            "\",\"description\":\"The (inclusive) start of the time period.\",\"format\":\"date-time\"" +
+            "}}}},\"resources\":{\"acl\":{\"methods\":{\"delete\":{\"id\":\"calendar.acl.delete\",\"path\":" +
+            "\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delet" +
+            "es an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\"" +
+            ":\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/calendar\"]},\"get\":{\"id\":\"calendar.acl.get\",\"path\":\"calendars/{calendarId}" +
+            "/acl/{ruleId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an access control rule." +
+            "\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier" +
+            ".\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"A" +
+            "CL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cale" +
+            "ndarId\",\"ruleId\"],\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"inse" +
+            "rt\":{\"id\":\"calendar.acl.insert\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Creates an access control rule.\",\"parameters\":{\"calendarI" +
+            "d\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locati" +
+            "on\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"AclRule\"},\"respo" +
+            "nse\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"" +
+            "list\":{\"id\":\"calendar.acl.list\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\"" +
+            ":\"GET\",\"description\":\"Returns the rules in the access control list for the calen" +
+            "dar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identi" +
+            "fier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"resp" +
+            "onse\":{\"$ref\":\"Acl\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"pat" +
+            "ch\":{\"id\":\"calendar.acl.patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"htt" +
+            "pMethod\":\"PATCH\",\"description\":\"Updates an access control rule. This method supp" +
+            "orts patch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\"" +
+            ":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"str" +
+            "ing\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{" +
+            "\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"update" +
+            "\":{\"id\":\"calendar.acl.update\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"http" +
+            "Method\":\"PUT\",\"description\":\"Updates an access control rule.\",\"parameters\":{\"cal" +
             "endarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"Acl\"},\"sc" +
-            "opes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.acl." +
-            "patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PATCH\",\"descri" +
-            "ption\":\"Updates an access control rule. This method supports patch semantics.\",\"" +
-            "parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"," +
-            "\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL " +
-            "rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calenda" +
-            "rId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.acl.up" +
-            "date\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PUT\",\"descripti" +
-            "on\":\"Updates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string" +
-            "\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleI" +
-            "d\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule" +
-            "\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/cale" +
-            "ndar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"calendar.calendarList.delet" +
-            "e\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"DELETE\",\"descriptio" +
-            "n\":\"Deletes an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"" +
-            "type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"" +
-            "path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get\",\"path\":\"users/me/calendar" +
-            "List/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an entry on the use" +
-            "r\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"C" +
-            "alendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cale" +
-            "ndarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"ins" +
-            "ert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"users/me/calendarList\",\"httpMe" +
-            "thod\":\"POST\",\"description\":\"Adds an entry to the user\'s calendar list.\",\"request" +
-            "\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.calendarLis" +
-            "t.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"GET\",\"description\":\"Returns" +
-            " entries on the user\'s calendar list.\",\"parameters\":{\"maxResults\":{\"type\":\"integ" +
-            "er\",\"description\":\"Maximum number of entries returned on one result page. Option" +
-            "al.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"minAccessRole\":{\"type\":" +
-            "\"string\",\"description\":\"The minimum access role for the user in the returned ent" +
-            "ires. Optional. The default is no restriction.\",\"enum\":[\"freeBusyReader\",\"owner\"" +
-            ",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can read free/busy information" +
-            ".\",\"The user can read and modify events and access control lists.\",\"The user can" +
-            " read events that are not private.\",\"The user can read and modify events.\"],\"loc" +
-            "ation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying whi" +
-            "ch result page to return. Optional.\",\"location\":\"query\"},\"showHidden\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to show hidden entries. Optional. The default is " +
-            "False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"CalendarList\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.r" +
-            "eadonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch\",\"path\":\"users/me/calendar" +
-            "List/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an entry on the u" +
-            "ser\'s calendar list. This method supports patch semantics.\",\"parameters\":{\"calen" +
-            "darId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarList" +
-            "Entry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendarList.update\",\"path\":\"use" +
-            "rs/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an en" +
-            "try on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"d" +
-            "escription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\"" +
-            ":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"" +
-            "calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calendars.clear\",\"path\":\"calendar" +
-            "s/{calendarId}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears a primary calend" +
-            "ar. This operation deletes all data associated with the primary calendar of an a" +
-            "ccount and cannot be undone.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
-            "er\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"delet" +
-            "e\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendars/{calendarId}\",\"httpMethod" +
-            "\":\"DELETE\",\"description\":\"Deletes a secondary calendar.\",\"parameters\":{\"calendar" +
-            "Id\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis." +
-            "com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars.get\",\"path\":\"calendars/{cal" +
-            "endarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata for a calendar.\",\"p" +
-            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"" +
-            "$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://" +
-            "www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.calendars." +
-            "insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"description\":\"Creates a secondar" +
-            "y calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.calenda" +
-            "rs.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Up" +
-            "dates metadata for a calendar. This method supports patch semantics.\",\"parameter" +
-            "s\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required" +
-            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Ca" +
-            "lendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/calendar\"]},\"update\":{\"id\":\"calendar.calendars.update\",\"path\":\"calendars/{cal" +
-            "endarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates metadata for a calendar.\",\"p" +
-            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
-            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$" +
-            "ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{\"id\":\"calendar.colors.get\"," +
-            "\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Returns the color definitions " +
-            "for calendars and events.\",\"response\":{\"$ref\":\"Colors\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"" +
-            "]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.events.delete\",\"path\":\"calend" +
-            "ars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes " +
-            "an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar i" +
-            "dentifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotification" +
-            "s\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications about the dele" +
-            "tion of the event. Optional. The default is False.\",\"location\":\"query\"}},\"parame" +
-            "terOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https://www.googleapis.com/auth/ca" +
-            "lendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"calendars/{calendarId}/event" +
-            "s/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an event.\",\"parameters\":{" +
+            "location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\"" +
+            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"r" +
+            "equest\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/calendar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"cal" +
+            "endar.calendarList.delete\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMeth" +
+            "od\":\"DELETE\",\"description\":\"Deletes an entry on the user\'s calendar list.\",\"para" +
+            "meters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"req" +
+            "uired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get\",\"" +
+            "path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
+            "urns an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"" +
+            "string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/c" +
+            "alendar.readonly\"]},\"insert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"users/" +
+            "me/calendarList\",\"httpMethod\":\"POST\",\"description\":\"Adds an entry to the user\'s " +
+            "calendar list.\",\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"Calen" +
+            "darListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"i" +
+            "d\":\"calendar.calendarList.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"GET" +
+            "\",\"description\":\"Returns entries on the user\'s calendar list.\",\"parameters\":{\"ma" +
+            "xResults\":{\"type\":\"integer\",\"description\":\"Maximum number of entries returned on" +
+            " one result page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"}," +
+            "\"minAccessRole\":{\"type\":\"string\",\"description\":\"The minimum access role for the " +
+            "user in the returned entires. Optional. The default is no restriction.\",\"enum\":[" +
+            "\"freeBusyReader\",\"owner\",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can re" +
+            "ad free/busy information.\",\"The user can read and modify events and access contr" +
+            "ol lists.\",\"The user can read events that are not private.\",\"The user can read a" +
+            "nd modify events.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"Token specifying which result page to return. Optional.\",\"location\":\"query\"}" +
+            ",\"showHidden\":{\"type\":\"boolean\",\"description\":\"Whether to show hidden entries. O" +
+            "ptional. The default is False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Calenda" +
+            "rList\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.google" +
+            "apis.com/auth/calendar.readonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch\",\"" +
+            "path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"U" +
+            "pdates an entry on the user\'s calendar list. This method supports patch semantic" +
+            "s.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifi" +
+            "er.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"reques" +
+            "t\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendar" +
+            "List.update\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"des" +
+            "cription\":\"Updates an entry on the user\'s calendar list.\",\"parameters\":{\"calenda" +
+            "rId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarListEn" +
+            "try\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapis." +
+            "com/auth/calendar\"]}}},\"calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calendars" +
+            ".clear\",\"path\":\"calendars/{calendarId}/clear\",\"httpMethod\":\"POST\",\"description\":" +
+            "\"Clears a primary calendar. This operation deletes all data associated with the " +
+            "primary calendar of an account and cannot be undone.\",\"parameters\":{\"calendarId\"" +
+            ":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location" +
+            "\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/calendar\"]},\"delete\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendars/{" +
+            "calendarId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a secondary calendar.\"" +
+            ",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier." +
+            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars.get" +
+            "\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns meta" +
+            "data for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":" +
+            "\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ca" +
+            "lendarId\"],\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"" +
+            "id\":\"calendar.calendars.insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"descript" +
+            "ion\":\"Creates a secondary calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"" +
+            "$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\"" +
+            ":{\"id\":\"calendar.calendars.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"" +
+            "PATCH\",\"description\":\"Updates metadata for a calendar. This method supports patc" +
+            "h semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calenda" +
+            "r identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId" +
+            "\"],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https" +
+            "://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendars.update" +
+            "\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates meta" +
+            "data for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":" +
+            "\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ca" +
+            "lendarId\"],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{\"id" +
+            "\":\"calendar.colors.get\",\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Return" +
+            "s the color definitions for calendars and events.\",\"response\":{\"$ref\":\"Colors\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com" +
+            "/auth/calendar.readonly\"]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.event" +
+            "s.delete\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELETE\"" +
+            ",\"description\":\"Deletes an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"" +
+            "description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\"" +
+            ":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"location\":\"" +
+            "path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send noti" +
+            "fications about the deletion of the event. Optional. The default is False.\",\"loc" +
+            "ation\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"cale" +
+            "ndars/{calendarId}/events/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Returns a" +
+            "n event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar id" +
+            "entifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"t" +
+            "ype\":\"integer\",\"description\":\"The maximum number of attendees to include in the " +
+            "response. If there are more than the specified number of attendees, only the par" +
+            "ticipant is returned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"quer" +
+            "y\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. O" +
+            "ptional. The default is the time zone of the calendar.\",\"location\":\"query\"}},\"pa" +
+            "rameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calenda" +
+            "r.readonly\"]},\"import\":{\"id\":\"calendar.events.import\",\"path\":\"calendars/{calenda" +
+            "rId}/events/import\",\"httpMethod\":\"POST\",\"description\":\"Imports an event.\",\"param" +
+            "eters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requ" +
+            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\"" +
+            ":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/calendar\"]},\"insert\":{\"id\":\"calendar.events.insert\",\"path\":\"calendars/{calendar" +
+            "Id}/events\",\"httpMethod\":\"POST\",\"description\":\"Creates an event.\",\"parameters\":{" +
+            "\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tr" +
+            "ue,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Wheth" +
+            "er to send notifications about the creation of the new event. Optional. The defa" +
+            "ult is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"" +
+            "$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/calendar\"]},\"instances\":{\"id\":\"calendar.events.instances\",\"path\":\"calendar" +
+            "s/{calendarId}/events/{eventId}/instances\",\"httpMethod\":\"GET\",\"description\":\"Ret" +
+            "urns instances of the specified recurring event.\",\"parameters\":{\"calendarId\":{\"t" +
+            "ype\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"eventId\":{\"type\":\"string\",\"description\":\"Recurring event identifier.\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"" +
+            "The maximum number of attendees to include in the response. If there are more th" +
+            "an the specified number of attendees, only the participant is returned. Optional" +
+            ".\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"inte" +
+            "ger\",\"description\":\"Maximum number of events returned on one result page. Option" +
+            "al.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"type\":" +
+            "\"string\",\"description\":\"The original start time of the instance in the result. O" +
+            "ptional.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token " +
+            "specifying which result page to return. Optional.\",\"location\":\"query\"},\"showDele" +
+            "ted\":{\"type\":\"boolean\",\"description\":\"Whether to include deleted events (with \'e" +
+            "ventStatus\' equals \'cancelled\') in the result. Optional. The default is False.\"," +
+            "\"location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in" +
+            " the response. Optional. The default is the time zone of the calendar.\",\"locatio" +
+            "n\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Event" +
+            "s\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis" +
+            ".com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"calen" +
+            "dars/{calendarId}/events\",\"httpMethod\":\"GET\",\"description\":\"Returns events on th" +
+            "e specified calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\"" +
+            ":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":\"st" +
+            "ring\",\"description\":\"Specifies iCalendar UID (iCalUID) of events to be included " +
+            "in the response. Optional.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integer\"" +
+            ",\"description\":\"The maximum number of attendees to include in the response. If t" +
+            "here are more than the specified number of attendees, only the participant is re" +
+            "turned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResult" +
+            "s\":{\"type\":\"integer\",\"description\":\"Maximum number of events returned on one res" +
+            "ult page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy" +
+            "\":{\"type\":\"string\",\"description\":\"The order of the events returned in the result" +
+            ". Optional. The default is an unspecified, stable order.\",\"enum\":[\"startTime\",\"u" +
+            "pdated\"],\"enumDescriptions\":[\"Order by the start date/time (ascending). This is " +
+            "only available when querying single events (i.e. the parameter \\\"singleEvents\\\" " +
+            "is True)\",\"Order by last modification time (ascending).\"],\"location\":\"query\"},\"p" +
+            "ageToken\":{\"type\":\"string\",\"description\":\"Token specifying which result page to " +
+            "return. Optional.\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Free " +
+            "text search terms to find events that match these terms in any field, except for" +
+            " extended properties. Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Whether to include deleted events (with \'eventStatus\' equals" +
+            " \'cancelled\') in the result. Optional. The default is False.\",\"location\":\"query\"" +
+            "},\"showHiddenInvitations\":{\"type\":\"boolean\",\"description\":\"Whether to include hi" +
+            "dden invitations in the result. Optional. The default is False.\",\"location\":\"que" +
+            "ry\"},\"singleEvents\":{\"type\":\"boolean\",\"description\":\"Whether to expand recurring" +
+            " events into instances and only return single one-off events and instances of re" +
+            "curring events, but not the underlying recurring events themselves. Optional. Th" +
+            "e default is False.\",\"location\":\"query\"},\"timeMax\":{\"type\":\"string\",\"description" +
+            "\":\"Upper bound (exclusive) for an event\'s start time to filter by. Optional. The" +
+            " default is not to filter by start time.\",\"location\":\"query\"},\"timeMin\":{\"type\":" +
+            "\"string\",\"description\":\"Lower bound (inclusive) for an event\'s end time to filte" +
+            "r by. Optional. The default is not to filter by end time.\",\"location\":\"query\"},\"" +
+            "timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Option" +
+            "al. The default is the time zone of the calendar.\",\"location\":\"query\"},\"updatedM" +
+            "in\":{\"type\":\"string\",\"description\":\"Lower bound for an event\'s last modification" +
+            " time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to fi" +
+            "lter by last modification time.\",\"location\":\"query\"}},\"parameterOrder\":[\"calenda" +
+            "rId\"],\"response\":{\"$ref\":\"Events\"},\"scopes\":[\"https://www.googleapis.com/auth/ca" +
+            "lendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"move\":{\"id\":\"cale" +
+            "ndar.events.move\",\"path\":\"calendars/{calendarId}/events/{eventId}/move\",\"httpMet" +
+            "hod\":\"POST\",\"description\":\"Moves an event to another calendar, i.e. changes an e" +
+            "vent\'s organizer.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Ca" +
+            "lendar identifier of the source calendar where the event currently is on.\",\"requ" +
+            "ired\":true,\"location\":\"path\"},\"destination\":{\"type\":\"string\",\"description\":\"Cale" +
+            "ndar identifier of the target calendar where the event is to be moved to.\",\"requ" +
+            "ired\":true,\"location\":\"query\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event i" +
+            "dentifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"bool" +
+            "ean\",\"description\":\"Whether to send notifications about the change of the event\'" +
+            "s organizer. Optional. The default is False.\",\"location\":\"query\"}},\"parameterOrd" +
+            "er\":[\"calendarId\",\"eventId\",\"destination\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.events.pat" +
+            "ch\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PATCH\",\"descr" +
+            "iption\":\"Updates an event. This method supports patch semantics.\",\"parameters\":{" +
             "\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tr" +
             "ue,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier" +
-            ".\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"descript" +
-            "ion\":\"The maximum number of attendees to include in the response. If there are m" +
-            "ore than the specified number of attendees, only the participant is returned. Op" +
-            "tional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"timeZone\":{\"type\":\"" +
-            "string\",\"description\":\"Time zone used in the response. Optional. The default is " +
-            "the time zone of the calendar.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendar" +
-            "Id\",\"eventId\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"import\":{" +
-            "\"id\":\"calendar.events.import\",\"path\":\"calendars/{calendarId}/events/import\",\"htt" +
-            "pMethod\":\"POST\",\"description\":\"Imports an event.\",\"parameters\":{\"calendarId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$" +
-            "ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"insert\":{\"" +
-            "id\":\"calendar.events.insert\",\"path\":\"calendars/{calendarId}/events\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Creates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"s" +
-            "endNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications" +
-            " about the creation of the new event. Optional. The default is False.\",\"location" +
-            "\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response" +
-            "\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"insta" +
-            "nces\":{\"id\":\"calendar.events.instances\",\"path\":\"calendars/{calendarId}/events/{e" +
-            "ventId}/instances\",\"httpMethod\":\"GET\",\"description\":\"Returns instances of the sp" +
-            "ecified recurring event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":" +
-            "\"string\",\"description\":\"Recurring event identifier.\",\"required\":true,\"location\":" +
-            "\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The maximum number of at" +
-            "tendees to include in the response. If there are more than the specified number " +
-            "of attendees, only the participant is returned. Optional.\",\"format\":\"int32\",\"min" +
-            "imum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maxi" +
-            "mum number of events returned on one result page. Optional.\",\"format\":\"int32\",\"m" +
-            "inimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"type\":\"string\",\"description\":\"" +
-            "The original start time of the instance in the result. Optional.\",\"location\":\"qu" +
-            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying which result " +
-            "page to return. Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"" +
-            "description\":\"Whether to include deleted events (with \'eventStatus\' equals \'canc" +
-            "elled\') in the result. Optional. The default is False.\",\"location\":\"query\"},\"tim" +
-            "eZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Optional." +
-            " The default is the time zone of the calendar.\",\"location\":\"query\"}},\"parameterO" +
-            "rder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Events\"},\"scopes\":[\"https://w" +
-            "ww.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.reado" +
-            "nly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"calendars/{calendarId}/events" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Returns events on the specified calendar.\",\"" +
-            "parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"," +
-            "\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"Spe" +
-            "cifies iCalendar UID (iCalUID) of events to be included in the response. Optiona" +
-            "l.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The maxi" +
-            "mum number of attendees to include in the response. If there are more than the s" +
-            "pecified number of attendees, only the participant is returned. Optional.\",\"form" +
-            "at\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Maximum number of events returned on one result page. Optional.\",\"fo" +
-            "rmat\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The order of the events returned in the result. Optional. The default " +
-            "is an unspecified, stable order.\",\"enum\":[\"startTime\",\"updated\"],\"enumDescriptio" +
-            "ns\":[\"Order by the start date/time (ascending). This is only available when quer" +
-            "ying single events (i.e. the parameter \\\"singleEvents\\\" is True)\",\"Order by last" +
-            " modification time (ascending).\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"strin" +
-            "g\",\"description\":\"Token specifying which result page to return. Optional.\",\"loca" +
-            "tion\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Free text search terms to fin" +
-            "d events that match these terms in any field, except for extended properties. Op" +
-            "tional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"description\":\"Whet" +
-            "her to include deleted events (with \'eventStatus\' equals \'cancelled\') in the res" +
-            "ult. Optional. The default is False.\",\"location\":\"query\"},\"showHiddenInvitations" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether to include hidden invitations in the " +
-            "result. Optional. The default is False.\",\"location\":\"query\"},\"singleEvents\":{\"ty" +
-            "pe\":\"boolean\",\"description\":\"Whether to expand recurring events into instances a" +
-            "nd only return single one-off events and instances of recurring events, but not " +
-            "the underlying recurring events themselves. Optional. The default is False.\",\"lo" +
-            "cation\":\"query\"},\"timeMax\":{\"type\":\"string\",\"description\":\"Upper bound (exclusiv" +
-            "e) for an event\'s start time to filter by. Optional. The default is not to filte" +
-            "r by start time.\",\"location\":\"query\"},\"timeMin\":{\"type\":\"string\",\"description\":\"" +
-            "Lower bound (inclusive) for an event\'s end time to filter by. Optional. The defa" +
-            "ult is not to filter by end time.\",\"location\":\"query\"},\"timeZone\":{\"type\":\"strin" +
-            "g\",\"description\":\"Time zone used in the response. Optional. The default is the t" +
-            "ime zone of the calendar.\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"de" +
-            "scription\":\"Lower bound for an event\'s last modification time (as a RFC 3339 tim" +
-            "estamp) to filter by. Optional. The default is not to filter by last modificatio" +
-            "n time.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\"" +
-            ":\"Events\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.goo" +
-            "gleapis.com/auth/calendar.readonly\"]},\"move\":{\"id\":\"calendar.events.move\",\"path\"" +
-            ":\"calendars/{calendarId}/events/{eventId}/move\",\"httpMethod\":\"POST\",\"description" +
-            "\":\"Moves an event to another calendar, i.e. changes an event\'s organizer.\",\"para" +
-            "meters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier of the" +
-            " source calendar where the event currently is on.\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"destination\":{\"type\":\"string\",\"description\":\"Calendar identifier of the t" +
-            "arget calendar where the event is to be moved to.\",\"required\":true,\"location\":\"q" +
-            "uery\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whet" +
-            "her to send notifications about the change of the event\'s organizer. Optional. T" +
-            "he default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"event" +
-            "Id\",\"destination\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.events.patch\",\"path\":\"calendars/{c" +
-            "alendarId}/events/{eventId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an even" +
-            "t. This method supports patch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"e" +
-            "ventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to se" +
-            "nd notifications about the event update (e.g. attendee\'s responses, title change" +
-            "s, etc.). Optional. The default is False.\",\"location\":\"query\"}},\"parameterOrder\"" +
-            ":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"quickAdd\":{\"id\":\"calend" +
-            "ar.events.quickAdd\",\"path\":\"calendars/{calendarId}/events/quickAdd\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Creates an event based on a simple text string.\",\"paramet" +
-            "ers\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requir" +
-            "ed\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":" +
-            "\"Whether to send notifications about the creation of the event. Optional. The de" +
-            "fault is False.\",\"location\":\"query\"},\"text\":{\"type\":\"string\",\"description\":\"The " +
-            "text describing the event to be created.\",\"required\":true,\"location\":\"query\"}},\"" +
-            "parameterOrder\":[\"calendarId\",\"text\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.events.update\"" +
-            ",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PUT\",\"descriptio" +
-            "n\":\"Updates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\"" +
-            ":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"send" +
-            "Notifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications ab" +
-            "out the event update (e.g. attendee\'s responses, title changes, etc.). Optional." +
-            " The default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eve" +
-            "ntId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https:/" +
-            "/www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"methods\":{\"query\":{\"id\":\"cal" +
-            "endar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":\"POST\",\"description\":\"Retur" +
-            "ns free/busy information for a set of calendars.\",\"request\":{\"$ref\":\"FreeBusyReq" +
-            "uest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]}}},\"sett" +
-            "ings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\",\"path\":\"users/me/settings/" +
-            "{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns a single user setting.\",\"pa" +
-            "rameters\":{\"setting\":{\"type\":\"string\",\"description\":\"Name of the user setting.\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"setting\"],\"response\":{\"$r" +
-            "ef\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www" +
-            ".googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.settings.list\"," +
-            "\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"description\":\"Returns all user se" +
-            "ttings for the authenticated user.\",\"response\":{\"$ref\":\"Settings\"},\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calenda" +
-            "r.readonly\"]}}}}}";
+            ".\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Whether to send notifications about the event update (e.g. attendee\'s" +
+            " responses, title changes, etc.). Optional. The default is False.\",\"location\":\"q" +
+            "uery\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"re" +
+            "sponse\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}," +
+            "\"quickAdd\":{\"id\":\"calendar.events.quickAdd\",\"path\":\"calendars/{calendarId}/event" +
+            "s/quickAdd\",\"httpMethod\":\"POST\",\"description\":\"Creates an event based on a simpl" +
+            "e text string.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calen" +
+            "dar identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":" +
+            "\"boolean\",\"description\":\"Whether to send notifications about the creation of the" +
+            " event. Optional. The default is False.\",\"location\":\"query\"},\"text\":{\"type\":\"str" +
+            "ing\",\"description\":\"The text describing the event to be created.\",\"required\":tru" +
+            "e,\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"text\"],\"response\":{\"$ref\"" +
+            ":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":" +
+            "\"calendar.events.update\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpM" +
+            "ethod\":\"PUT\",\"description\":\"Updates an event.\",\"parameters\":{\"calendarId\":{\"type" +
+            "\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path" +
+            "\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true," +
+            "\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether " +
+            "to send notifications about the event update (e.g. attendee\'s responses, title c" +
+            "hanges, etc.). Optional. The default is False.\",\"location\":\"query\"}},\"parameterO" +
+            "rder\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Ev" +
+            "ent\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"meth" +
+            "ods\":{\"query\":{\"id\":\"calendar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":\"PO" +
+            "ST\",\"description\":\"Returns free/busy information for a set of calendars.\",\"reque" +
+            "st\":{\"$ref\":\"FreeBusyRequest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/cale" +
+            "ndar.readonly\"]}}},\"settings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\",\"p" +
+            "ath\":\"users/me/settings/{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns a s" +
+            "ingle user setting.\",\"parameters\":{\"setting\":{\"type\":\"string\",\"description\":\"Nam" +
+            "e of the user setting.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"s" +
+            "etting\"],\"response\":{\"$ref\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"" +
+            "calendar.settings.list\",\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"descripti" +
+            "on\":\"Returns all user settings for the authenticated user.\",\"response\":{\"$ref\":\"" +
+            "Settings\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.goo" +
+            "gleapis.com/auth/calendar.readonly\"]}}}}}";
         
-        private const string Version = "v3";
+        public const string Version = "v3";
         
-        private const string Name = "calendar";
-        
-        private const string BaseUri = "https://www.googleapis.com/calendar/v3/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected CalendarService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._acl = new AclResource(this);
-            this._calendarList = new CalendarListResource(this);
-            this._calendars = new CalendarsResource(this);
-            this._colors = new ColorsResource(this);
-            this._events = new EventsResource(this);
-            this._freebusy = new FreebusyResource(this);
-            this._settings = new SettingsResource(this);
+        protected CalendarService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._acl = new AclResource(this, _authenticator);
+            this._calendarList = new CalendarListResource(this, _authenticator);
+            this._calendars = new CalendarsResource(this, _authenticator);
+            this._colors = new ColorsResource(this, _authenticator);
+            this._events = new EventsResource(this, _authenticator);
+            this._freebusy = new FreebusyResource(this, _authenticator);
+            this._settings = new SettingsResource(this, _authenticator);
         }
         
         public CalendarService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public CalendarService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CalendarService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(CalendarService.BaseUri))), authenticator) {
+        public CalendarService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CalendarService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/calendar/v3/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "calendar";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/calendar/v3/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2769,24 +2781,24 @@ namespace Google.Apis.Calendar.v3 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2804,12 +2816,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class AclResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "acl";
         
-        public AclResource(CalendarService service) {
+        public AclResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes an access control rule.</summary>
@@ -2852,7 +2867,7 @@ namespace Google.Apis.Calendar.v3 {
             return new UpdateRequest(service, body, calendarId, ruleId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -2871,7 +2886,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2882,7 +2897,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2893,7 +2908,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2904,7 +2919,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -2912,7 +2927,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>ACL rule identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("ruleId")]
+            [Google.Apis.Util.RequestParameterAttribute("ruleId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string RuleId {
                 get {
                     return this._ruleId;
@@ -2932,7 +2947,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -2951,7 +2966,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2962,7 +2977,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2973,7 +2988,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2984,7 +2999,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -2992,7 +3007,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>ACL rule identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("ruleId")]
+            [Google.Apis.Util.RequestParameterAttribute("ruleId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string RuleId {
                 get {
                     return this._ruleId;
@@ -3012,7 +3027,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3031,7 +3046,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3042,7 +3057,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3053,7 +3068,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3064,7 +3079,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3098,7 +3113,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Acl> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Acl> {
             
             private string _oauth_token;
             
@@ -3114,7 +3129,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3125,7 +3140,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3136,7 +3151,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3147,7 +3162,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3167,7 +3182,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3189,7 +3204,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3200,7 +3215,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3211,7 +3226,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3222,7 +3237,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3230,7 +3245,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>ACL rule identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("ruleId")]
+            [Google.Apis.Util.RequestParameterAttribute("ruleId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string RuleId {
                 get {
                     return this._ruleId;
@@ -3264,7 +3279,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3286,7 +3301,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3297,7 +3312,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3308,7 +3323,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3319,7 +3334,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3327,7 +3342,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>ACL rule identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("ruleId")]
+            [Google.Apis.Util.RequestParameterAttribute("ruleId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string RuleId {
                 get {
                     return this._ruleId;
@@ -3364,12 +3379,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class CalendarListResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "calendarList";
         
-        public CalendarListResource(CalendarService service) {
+        public CalendarListResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes an entry on the user&apos;s calendar list.</summary>
@@ -3427,7 +3445,7 @@ namespace Google.Apis.Calendar.v3 {
             Writer,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -3443,7 +3461,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3454,7 +3472,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3465,7 +3483,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3476,7 +3494,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3496,7 +3514,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3512,7 +3530,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3523,7 +3541,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3534,7 +3552,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3545,7 +3563,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3565,7 +3583,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3581,7 +3599,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3592,7 +3610,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3603,7 +3621,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3640,7 +3658,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarList> {
             
             private string _oauth_token;
             
@@ -3661,7 +3679,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3672,7 +3690,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3683,7 +3701,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3694,7 +3712,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Maximum number of entries returned on one result page. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3705,7 +3723,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The minimum access role for the user in the returned entires. Optional. The default is no restriction.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("minAccessRole")]
+            [Google.Apis.Util.RequestParameterAttribute("minAccessRole", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<MinAccessRole> MinAccessRole {
                 get {
                     return this._minAccessRole;
@@ -3716,7 +3734,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Token specifying which result page to return. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3727,7 +3745,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to show hidden entries. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showHidden")]
+            [Google.Apis.Util.RequestParameterAttribute("showHidden", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowHidden {
                 get {
                     return this._showHidden;
@@ -3750,7 +3768,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3769,7 +3787,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3780,7 +3798,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3791,7 +3809,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3802,7 +3820,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3836,7 +3854,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3855,7 +3873,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3866,7 +3884,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3877,7 +3895,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3888,7 +3906,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -3925,12 +3943,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class CalendarsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "calendars";
         
-        public CalendarsResource(CalendarService service) {
+        public CalendarsResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Clears a primary calendar. This operation deletes all data associated with the primary calendar of an account and cannot be undone.</summary>
@@ -3968,7 +3989,7 @@ namespace Google.Apis.Calendar.v3 {
             return new UpdateRequest(service, body, calendarId);
         }
         
-        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class ClearRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -3984,7 +4005,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3995,7 +4016,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4006,7 +4027,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4017,7 +4038,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4037,7 +4058,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4053,7 +4074,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4064,7 +4085,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4075,7 +4096,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4086,7 +4107,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4106,7 +4127,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4122,7 +4143,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4133,7 +4154,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4144,7 +4165,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4155,7 +4176,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4175,7 +4196,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4191,7 +4212,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4202,7 +4223,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4213,7 +4234,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4250,7 +4271,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4269,7 +4290,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4280,7 +4301,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4291,7 +4312,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4302,7 +4323,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4336,7 +4357,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4355,7 +4376,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4366,7 +4387,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4377,7 +4398,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4388,7 +4409,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4425,12 +4446,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class ColorsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "colors";
         
-        public ColorsResource(CalendarService service) {
+        public ColorsResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns the color definitions for calendars and events.</summary>
@@ -4438,7 +4462,7 @@ namespace Google.Apis.Calendar.v3 {
             return new GetRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Colors> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Colors> {
             
             private string _oauth_token;
             
@@ -4451,7 +4475,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4462,7 +4486,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4473,7 +4497,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4499,12 +4523,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class EventsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "events";
         
-        public EventsResource(CalendarService service) {
+        public EventsResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes an event.</summary>
@@ -4588,7 +4615,7 @@ namespace Google.Apis.Calendar.v3 {
             Updated,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4609,7 +4636,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4620,7 +4647,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4631,7 +4658,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4642,7 +4669,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4650,7 +4677,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -4658,7 +4685,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the deletion of the event. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -4681,7 +4708,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4704,7 +4731,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4715,7 +4742,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4726,7 +4753,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4737,7 +4764,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4745,7 +4772,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -4753,7 +4780,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
+            [Google.Apis.Util.RequestParameterAttribute("maxAttendees", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxAttendees {
                 get {
                     return this._maxAttendees;
@@ -4764,7 +4791,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Time zone used in the response. Optional. The default is the time zone of the calendar.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("timeZone")]
+            [Google.Apis.Util.RequestParameterAttribute("timeZone", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string TimeZone {
                 get {
                     return this._timeZone;
@@ -4787,7 +4814,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ImportRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class ImportRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4806,7 +4833,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4817,7 +4844,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4828,7 +4855,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4839,7 +4866,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4873,7 +4900,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4894,7 +4921,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4905,7 +4932,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4916,7 +4943,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4927,7 +4954,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -4935,7 +4962,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the creation of the new event. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -4972,7 +4999,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InstancesRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
+        public class InstancesRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
             private string _oauth_token;
             
@@ -5003,7 +5030,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5014,7 +5041,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5025,7 +5052,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5036,7 +5063,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5044,7 +5071,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Recurring event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -5052,7 +5079,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
+            [Google.Apis.Util.RequestParameterAttribute("maxAttendees", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxAttendees {
                 get {
                     return this._maxAttendees;
@@ -5063,7 +5090,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Maximum number of events returned on one result page. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5074,7 +5101,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The original start time of the instance in the result. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("originalStart")]
+            [Google.Apis.Util.RequestParameterAttribute("originalStart", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OriginalStart {
                 get {
                     return this._originalStart;
@@ -5085,7 +5112,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Token specifying which result page to return. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -5096,7 +5123,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+            [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowDeleted {
                 get {
                     return this._showDeleted;
@@ -5107,7 +5134,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Time zone used in the response. Optional. The default is the time zone of the calendar.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("timeZone")]
+            [Google.Apis.Util.RequestParameterAttribute("timeZone", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string TimeZone {
                 get {
                     return this._timeZone;
@@ -5130,7 +5157,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
             private string _oauth_token;
             
@@ -5172,7 +5199,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5183,7 +5210,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5194,7 +5221,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5205,7 +5232,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5213,7 +5240,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Specifies iCalendar UID (iCalUID) of events to be included in the response. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("iCalUID")]
+            [Google.Apis.Util.RequestParameterAttribute("iCalUID", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ICalUID {
                 get {
                     return this._iCalUID;
@@ -5224,7 +5251,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxAttendees")]
+            [Google.Apis.Util.RequestParameterAttribute("maxAttendees", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxAttendees {
                 get {
                     return this._maxAttendees;
@@ -5235,7 +5262,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Maximum number of events returned on one result page. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5246,7 +5273,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The order of the events returned in the result. Optional. The default is an unspecified, stable order.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<OrderBy> OrderBy {
                 get {
                     return this._orderBy;
@@ -5257,7 +5284,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Token specifying which result page to return. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -5268,7 +5295,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Free text search terms to find events that match these terms in any field, except for extended properties. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -5279,7 +5306,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+            [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowDeleted {
                 get {
                     return this._showDeleted;
@@ -5290,7 +5317,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to include hidden invitations in the result. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showHiddenInvitations")]
+            [Google.Apis.Util.RequestParameterAttribute("showHiddenInvitations", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowHiddenInvitations {
                 get {
                     return this._showHiddenInvitations;
@@ -5301,7 +5328,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to expand recurring events into instances and only return single one-off events and instances of recurring events, but not the underlying recurring events themselves. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("singleEvents")]
+            [Google.Apis.Util.RequestParameterAttribute("singleEvents", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SingleEvents {
                 get {
                     return this._singleEvents;
@@ -5312,7 +5339,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Upper bound (exclusive) for an event's start time to filter by. Optional. The default is not to filter by start time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("timeMax")]
+            [Google.Apis.Util.RequestParameterAttribute("timeMax", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string TimeMax {
                 get {
                     return this._timeMax;
@@ -5323,7 +5350,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Lower bound (inclusive) for an event's end time to filter by. Optional. The default is not to filter by end time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("timeMin")]
+            [Google.Apis.Util.RequestParameterAttribute("timeMin", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string TimeMin {
                 get {
                     return this._timeMin;
@@ -5334,7 +5361,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Time zone used in the response. Optional. The default is the time zone of the calendar.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("timeZone")]
+            [Google.Apis.Util.RequestParameterAttribute("timeZone", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string TimeZone {
                 get {
                     return this._timeZone;
@@ -5345,7 +5372,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Lower bound for an event's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+            [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UpdatedMin {
                 get {
                     return this._updatedMin;
@@ -5368,7 +5395,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class MoveRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5392,7 +5419,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5403,7 +5430,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5414,7 +5441,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5425,7 +5452,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier of the source calendar where the event currently is on.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5433,7 +5460,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier of the target calendar where the event is to be moved to.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("destination")]
+            [Google.Apis.Util.RequestParameterAttribute("destination", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Destination {
                 get {
                     return this._destination;
@@ -5441,7 +5468,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -5449,7 +5476,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the change of the event's organizer. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -5472,7 +5499,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5496,7 +5523,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5507,7 +5534,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5518,7 +5545,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5529,7 +5556,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5537,7 +5564,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -5545,7 +5572,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -5582,7 +5609,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class QuickAddRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class QuickAddRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5603,7 +5630,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5614,7 +5641,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5625,7 +5652,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5636,7 +5663,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5644,7 +5671,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the creation of the event. Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -5655,7 +5682,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>The text describing the event to be created.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("text")]
+            [Google.Apis.Util.RequestParameterAttribute("text", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Text {
                 get {
                     return this._text;
@@ -5675,7 +5702,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5699,7 +5726,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5710,7 +5737,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5721,7 +5748,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5732,7 +5759,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Calendar identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("calendarId")]
+            [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
                 get {
                     return this._calendarId;
@@ -5740,7 +5767,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Event identifier.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventId")]
+            [Google.Apis.Util.RequestParameterAttribute("eventId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string EventId {
                 get {
                     return this._eventId;
@@ -5748,7 +5775,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Whether to send notifications about the event update (e.g. attendee's responses, title changes, etc.). Optional. The default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sendNotifications")]
+            [Google.Apis.Util.RequestParameterAttribute("sendNotifications", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SendNotifications {
                 get {
                     return this._sendNotifications;
@@ -5788,12 +5815,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class FreebusyResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "freebusy";
         
-        public FreebusyResource(CalendarService service) {
+        public FreebusyResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns free/busy information for a set of calendars.</summary>
@@ -5801,7 +5831,7 @@ namespace Google.Apis.Calendar.v3 {
             return new QueryRequest(service, body);
         }
         
-        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.FreeBusyResponse> {
+        public class QueryRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.FreeBusyResponse> {
             
             private string _oauth_token;
             
@@ -5817,7 +5847,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5828,7 +5858,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5839,7 +5869,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5879,12 +5909,15 @@ namespace Google.Apis.Calendar.v3 {
     
     public class SettingsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CalendarService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "settings";
         
-        public SettingsResource(CalendarService service) {
+        public SettingsResource(CalendarService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns a single user setting.</summary>
@@ -5898,7 +5931,7 @@ namespace Google.Apis.Calendar.v3 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Setting> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Setting> {
             
             private string _oauth_token;
             
@@ -5914,7 +5947,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5925,7 +5958,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5936,7 +5969,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5947,7 +5980,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Name of the user setting.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("setting")]
+            [Google.Apis.Util.RequestParameterAttribute("setting", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Setting {
                 get {
                     return this._setting;
@@ -5967,7 +6000,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Settings> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Settings> {
             
             private string _oauth_token;
             
@@ -5980,7 +6013,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5991,7 +6024,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6002,7 +6035,7 @@ namespace Google.Apis.Calendar.v3 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;

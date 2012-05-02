@@ -388,9 +388,9 @@ namespace Google.Apis.Latitude.v1 {
     
     public partial class LatitudeService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"latitude:v1\",\"n" +
             "ame\":\"latitude\",\"version\":\"v1\",\"revision\":\"19700115\",\"title\":\"Google Latitude AP" +
@@ -492,29 +492,43 @@ namespace Google.Apis.Latitude.v1 {
             "tionFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/latitude.all.best\",\"https:" +
             "//www.googleapis.com/auth/latitude.all.city\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "latitude";
-        
-        private const string BaseUri = "https://www.googleapis.com/latitude/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected LatitudeService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._currentLocation = new CurrentLocationResource(this);
-            this._location = new LocationResource(this);
+        protected LatitudeService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._currentLocation = new CurrentLocationResource(this, _authenticator);
+            this._location = new LocationResource(this, _authenticator);
         }
         
         public LatitudeService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public LatitudeService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(LatitudeService.BaseUri))), authenticator) {
+        public LatitudeService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(LatitudeService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/latitude/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "latitude";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/latitude/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -528,24 +542,24 @@ namespace Google.Apis.Latitude.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -571,12 +585,15 @@ namespace Google.Apis.Latitude.v1 {
     
     public class CurrentLocationResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private LatitudeService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "currentLocation";
         
-        public CurrentLocationResource(LatitudeService service) {
+        public CurrentLocationResource(LatitudeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes the authenticated user&apos;s current location.</summary>
@@ -594,7 +611,7 @@ namespace Google.Apis.Latitude.v1 {
             return new InsertRequest(service, body);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -607,7 +624,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -618,7 +635,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -629,7 +646,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -652,7 +669,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
             private string _oauth_token;
             
@@ -667,7 +684,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -678,7 +695,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -689,7 +706,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -700,7 +717,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Granularity of the requested location.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            [Google.Apis.Util.RequestParameterAttribute("granularity", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Granularity {
                 get {
                     return this._granularity;
@@ -723,7 +740,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
             private string _oauth_token;
             
@@ -739,7 +756,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -750,7 +767,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -761,7 +778,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -801,12 +818,15 @@ namespace Google.Apis.Latitude.v1 {
     
     public class LocationResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private LatitudeService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "location";
         
-        public LocationResource(LatitudeService service) {
+        public LocationResource(LatitudeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes a location from the user&apos;s location history.</summary>
@@ -831,7 +851,7 @@ namespace Google.Apis.Latitude.v1 {
             return new ListRequest(service);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -847,7 +867,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -858,7 +878,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -869,7 +889,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -880,7 +900,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Timestamp of the location to delete (ms since epoch).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locationId")]
+            [Google.Apis.Util.RequestParameterAttribute("locationId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string LocationId {
                 get {
                     return this._locationId;
@@ -900,7 +920,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
             private string _oauth_token;
             
@@ -918,7 +938,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -929,7 +949,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -940,7 +960,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -951,7 +971,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Granularity of the location to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            [Google.Apis.Util.RequestParameterAttribute("granularity", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Granularity {
                 get {
                     return this._granularity;
@@ -962,7 +982,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Timestamp of the location to read (ms since epoch).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locationId")]
+            [Google.Apis.Util.RequestParameterAttribute("locationId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string LocationId {
                 get {
                     return this._locationId;
@@ -982,7 +1002,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
             private string _oauth_token;
             
@@ -998,7 +1018,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1009,7 +1029,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1020,7 +1040,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1057,7 +1077,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LocationFeed> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LocationFeed> {
             
             private string _oauth_token;
             
@@ -1078,7 +1098,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1089,7 +1109,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1100,7 +1120,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1111,7 +1131,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Granularity of the requested locations.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("granularity")]
+            [Google.Apis.Util.RequestParameterAttribute("granularity", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Granularity {
                 get {
                     return this._granularity;
@@ -1122,7 +1142,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Maximum number of locations to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string MaxResults {
                 get {
                     return this._maxResults;
@@ -1133,7 +1153,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Maximum timestamp of locations to return (ms since epoch).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-time")]
+            [Google.Apis.Util.RequestParameterAttribute("max-time", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string MaxTime {
                 get {
                     return this._maxTime;
@@ -1144,7 +1164,7 @@ namespace Google.Apis.Latitude.v1 {
             }
             
             /// <summary>Minimum timestamp of locations to return (ms since epoch).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("min-time")]
+            [Google.Apis.Util.RequestParameterAttribute("min-time", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string MinTime {
                 get {
                     return this._minTime;

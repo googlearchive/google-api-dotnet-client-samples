@@ -2123,12 +2123,12 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public partial class BigqueryService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"bigquery:v2beta" +
-            "1\",\"name\":\"bigquery\",\"version\":\"v2beta1\",\"revision\":\"20120416\",\"title\":\"BigQuery" +
+            "1\",\"name\":\"bigquery\",\"version\":\"v2beta1\",\"revision\":\"20120424\",\"title\":\"BigQuery" +
             " API\",\"description\":\"A data platform for customers to create, manage, share and " +
             "query data.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-1" +
             "6.gif\",\"x32\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"docume" +
@@ -2459,32 +2459,46 @@ namespace Google.Apis.Bigquery.v2beta1 {
             "nse\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}}}" +
             "";
         
-        private const string Version = "v2beta1";
+        public const string Version = "v2beta1";
         
-        private const string Name = "bigquery";
-        
-        private const string BaseUri = "https://www.googleapis.com/bigquery/v2beta1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected BigqueryService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._datasets = new DatasetsResource(this);
-            this._jobs = new JobsResource(this);
-            this._projects = new ProjectsResource(this);
-            this._tabledata = new TabledataResource(this);
-            this._tables = new TablesResource(this);
+        protected BigqueryService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._datasets = new DatasetsResource(this, _authenticator);
+            this._jobs = new JobsResource(this, _authenticator);
+            this._projects = new ProjectsResource(this, _authenticator);
+            this._tabledata = new TabledataResource(this, _authenticator);
+            this._tables = new TablesResource(this, _authenticator);
         }
         
         public BigqueryService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public BigqueryService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BigqueryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BigqueryService.BaseUri))), authenticator) {
+        public BigqueryService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BigqueryService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/bigquery/v2beta1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "bigquery";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/bigquery/v2beta1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2498,24 +2512,24 @@ namespace Google.Apis.Bigquery.v2beta1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2529,12 +2543,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public class DatasetsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BigqueryService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "datasets";
         
-        public DatasetsResource(BigqueryService service) {
+        public DatasetsResource(BigqueryService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes the dataset specified by datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.</summary>
@@ -2577,7 +2594,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             return new UpdateRequest(service, body, projectId, datasetId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -2598,7 +2615,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2609,7 +2626,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2620,7 +2637,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2631,7 +2648,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Dataset identifier of dataset being deleted.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
@@ -2639,7 +2656,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>[Optional] If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("deleteContents")]
+            [Google.Apis.Util.RequestParameterAttribute("deleteContents", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> DeleteContents {
                 get {
                     return this._deleteContents;
@@ -2650,7 +2667,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier of dataset being deleted.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -2670,7 +2687,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -2689,7 +2706,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2700,7 +2717,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2711,7 +2728,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2722,7 +2739,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Dataset identifier of the dataset requested.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
@@ -2730,7 +2747,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier containing dataset requested.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -2750,7 +2767,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -2769,7 +2786,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2780,7 +2797,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2791,7 +2808,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2802,7 +2819,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier that will contain dataset being created.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -2836,7 +2853,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.DatasetList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.DatasetList> {
             
             private string _oauth_token;
             
@@ -2856,7 +2873,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2867,7 +2884,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2878,7 +2895,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2889,7 +2906,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>[Optional] The maximum number of rows to return. If not specified, it will return up to the maximum amount of data that will fit in a reply.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -2900,7 +2917,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>[Optional] A page token used when requesting a specific page in a set of paged results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -2911,7 +2928,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier containing datasets to be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -2931,7 +2948,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -2953,7 +2970,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2964,7 +2981,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2975,7 +2992,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2986,7 +3003,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Dataset identifier containing dataset being updated.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
@@ -2994,7 +3011,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier containing dataset being updated.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3028,7 +3045,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -3050,7 +3067,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3061,7 +3078,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3072,7 +3089,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3083,7 +3100,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Dataset identifier containing dataset being updated.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
@@ -3091,7 +3108,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Project identifier containing dataset being updated.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3128,12 +3145,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public class JobsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BigqueryService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "jobs";
         
-        public JobsResource(BigqueryService service) {
+        public JobsResource(BigqueryService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <param name="projectId">Required</param>
@@ -3193,7 +3213,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             Running,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Job> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Job> {
             
             private string _oauth_token;
             
@@ -3212,7 +3232,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3223,7 +3243,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3234,7 +3254,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3244,14 +3264,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("jobId")]
+            [Google.Apis.Util.RequestParameterAttribute("jobId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string JobId {
                 get {
                     return this._jobId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3271,7 +3291,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Job> {
+        public class InsertRequest : global::Google.Apis.Upload.ResumableUpload<Google.Apis.Bigquery.v2beta1.Data.Job> {
             
             private string _oauth_token;
             
@@ -3281,16 +3301,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
             
             private string _projectId;
             
-            private Google.Apis.Bigquery.v2beta1.Data.Job _Body;
-            
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2beta1.Data.Job body, string projectId) : 
-                    base(service) {
+                    base(service.BaseUri, "projects/{projectId}/jobs", "POST") {
                 this.Body = body;
                 this._projectId = projectId;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3301,7 +3319,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3312,7 +3330,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3322,41 +3340,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
-            
-            /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Google.Apis.Bigquery.v2beta1.Data.Job Body {
-                get {
-                    return this._Body;
-                }
-                set {
-                    this._Body = value;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "jobs";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "insert";
-                }
-            }
-            
-            protected override object GetBody() {
-                return this.Body;
-            }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobList> {
             
             private string _oauth_token;
             
@@ -3384,7 +3376,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3395,7 +3387,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3406,7 +3398,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3417,7 +3409,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Whether to display jobs owned by all users in the project</summary>
-            [Google.Apis.Util.RequestParameterAttribute("allUsers")]
+            [Google.Apis.Util.RequestParameterAttribute("allUsers", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> AllUsers {
                 get {
                     return this._allUsers;
@@ -3428,7 +3420,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>maximum number of results to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3438,7 +3430,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3448,7 +3440,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3456,7 +3448,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            [Google.Apis.Util.RequestParameterAttribute("projection", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Projection> Projection {
                 get {
                     return this._projection;
@@ -3467,7 +3459,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>start index for paginated results</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -3478,7 +3470,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>filter for job state</summary>
-            [Google.Apis.Util.RequestParameterAttribute("stateFilter")]
+            [Google.Apis.Util.RequestParameterAttribute("stateFilter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<StateFilter> StateFilter {
                 get {
                     return this._stateFilter;
@@ -3501,7 +3493,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.QueryResults> {
+        public class QueryRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.QueryResults> {
             
             private string _oauth_token;
             
@@ -3520,7 +3512,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3531,7 +3523,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3542,7 +3534,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3553,7 +3545,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>project name billed for the query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3587,7 +3579,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class StopRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobStopResponse> {
+        public class StopRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.JobStopResponse> {
             
             private string _oauth_token;
             
@@ -3606,7 +3598,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3617,7 +3609,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3628,7 +3620,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3638,14 +3630,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("jobId")]
+            [Google.Apis.Util.RequestParameterAttribute("jobId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string JobId {
                 get {
                     return this._jobId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -3668,19 +3660,22 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public class ProjectsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BigqueryService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "projects";
         
-        public ProjectsResource(BigqueryService service) {
+        public ProjectsResource(BigqueryService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         public virtual ListRequest List() {
             return new ListRequest(service);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.ProjectList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.ProjectList> {
             
             private string _oauth_token;
             
@@ -3697,7 +3692,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3708,7 +3703,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3719,7 +3714,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3729,7 +3724,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3739,7 +3734,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3765,12 +3760,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public class TabledataResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BigqueryService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tabledata";
         
-        public TabledataResource(BigqueryService service) {
+        public TabledataResource(BigqueryService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <param name="projectId">Required</param>
@@ -3780,7 +3778,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             return new ListRequest(service, projectId, datasetId, tableId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableDataList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableDataList> {
             
             private string _oauth_token;
             
@@ -3806,7 +3804,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3817,7 +3815,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3828,7 +3826,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3838,14 +3836,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3855,14 +3853,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartIndex {
                 get {
                     return this._startIndex;
@@ -3872,7 +3870,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tableId")]
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
                     return this._tableId;
@@ -3895,12 +3893,15 @@ namespace Google.Apis.Bigquery.v2beta1 {
     
     public class TablesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BigqueryService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tables";
         
-        public TablesResource(BigqueryService service) {
+        public TablesResource(BigqueryService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <param name="projectId">Required</param>
@@ -3943,7 +3944,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             return new UpdateRequest(service, body, projectId, datasetId, tableId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -3965,7 +3966,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3976,7 +3977,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3987,7 +3988,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3997,21 +3998,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tableId")]
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
                     return this._tableId;
@@ -4031,7 +4032,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
             private string _oauth_token;
             
@@ -4053,7 +4054,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4064,7 +4065,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4075,7 +4076,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4085,21 +4086,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tableId")]
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
                     return this._tableId;
@@ -4119,7 +4120,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
             private string _oauth_token;
             
@@ -4141,7 +4142,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4152,7 +4153,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4163,7 +4164,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4173,14 +4174,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -4214,7 +4215,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.TableList> {
             
             private string _oauth_token;
             
@@ -4237,7 +4238,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4248,7 +4249,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4259,7 +4260,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4269,14 +4270,14 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -4286,7 +4287,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -4296,7 +4297,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
@@ -4316,7 +4317,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
             private string _oauth_token;
             
@@ -4341,7 +4342,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4352,7 +4353,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4363,7 +4364,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4373,21 +4374,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tableId")]
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
                     return this._tableId;
@@ -4421,7 +4422,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2beta1.Data.Table> {
             
             private string _oauth_token;
             
@@ -4446,7 +4447,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4457,7 +4458,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4468,7 +4469,7 @@ namespace Google.Apis.Bigquery.v2beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4478,21 +4479,21 @@ namespace Google.Apis.Bigquery.v2beta1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("datasetId")]
+            [Google.Apis.Util.RequestParameterAttribute("datasetId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string DatasetId {
                 get {
                     return this._datasetId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("projectId")]
+            [Google.Apis.Util.RequestParameterAttribute("projectId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProjectId {
                 get {
                     return this._projectId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tableId")]
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
                     return this._tableId;

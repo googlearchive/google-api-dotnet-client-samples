@@ -38,7 +38,7 @@
             <summary>Date that this advertiser was approved as a Google Affiliate Network advertiser.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Kind">
-            <summary>The kind for one entity. The kind for an advertiser.</summary>
+            <summary>The kind for an advertiser.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.LogoUrl">
             <summary>URL to the logo this advertiser uses on the Google Affiliate Network.</summary>
@@ -96,6 +96,9 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.AprDisplay">
             <summary>Text describing the purchase APR. A summary field.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BalanceComputationMethod">
+            <summary>Text describing how the balance is computed. A summary field.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.CcOffer.BalanceTransferTerms">
             <summary>Text describing the terms for balance transfers. A summary field.</summary>
@@ -422,7 +425,7 @@
             <summary>Date that this publisher was approved as a Google Affiliate Network publisher.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Kind">
-            <summary>The kind for one publisher. The kind for a publisher.</summary>
+            <summary>The kind for a publisher.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Publisher.Name">
             <summary>The name of this publisher.</summary>

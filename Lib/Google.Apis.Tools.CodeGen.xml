@@ -128,6 +128,41 @@
             Generates the GetBody override, which will return a reference to the Body property.
             </summary>
         </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BaseRequestConstructorDecorator">
+            <summary>
+            Base class supporting UploadConstructorDecorator and RequestConstructorDecorator.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BaseRequestConstructorDecorator.AddBodyParameter(System.CodeDom.CodeConstructor,Google.Apis.Discovery.IMethod)">
+            <summary>
+            Adds the body parameter and statement to the constructor if it is required.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.BaseRequestConstructorDecorator.AddRequestParameters(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.CodeDom.CodeConstructor,System.Boolean)">
+            <summary>
+            Adds all required parameters and assign statements of this request to the specified constructor.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator">
+            <summary>
+            Generates the standard constructors of an upload request.
+             1. A constructor taking the service and mandatory parameters and initalizing the base class
+                with the baseUri, path and HTTP method for this upload request.
+            Example:
+            <c>public InsertRequest(BaseService service, int requiredParameter, ..) : base(service.BaseUri, "path", "POST") {..}</c>
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+            <summary>
+            Creates a new request constructor decorator.
+            </summary>
+            <remarks>Will create the constructor with all required properties.</remarks>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator.CreateRequiredConstructor(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.Boolean)">
+            <summary>
+            Creates the constructor for this request class which only takes required arguments.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator">
             <summary>
             Adds a method to the resource class for each method defined in the resource json. 
@@ -231,16 +266,6 @@
             Creates the constructor for this request class which only takes required arguments.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.AddBodyParameter(System.CodeDom.CodeConstructor,Google.Apis.Discovery.IMethod)">
-            <summary>
-            Adds the body parameter and statement to the constructor if it is required.
-            </summary>
-        </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.AddRequestParameters(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IMethod,System.CodeDom.CodeConstructor,System.Boolean)">
-            <summary>
-            Adds all required parameters and assign statements of this request to the specified constructor.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.RequestConstructorDecorator.CreateOptionalConstructor">
             <summary>
             Defines whether this decorator should also add a constructor containing optional and mandatory parameters.
@@ -268,7 +293,7 @@
             A decorator which adds the ServiceRequest inheritance to the class
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider,System.Type)">
             <summary>
             Creates a new ServiceRequestInheritanceDecorator, which uses the specified type provider.
             </summary>
@@ -467,11 +492,21 @@
             </summary>
             <remarks>{0} represents the name of the method for which this request is intended.</remarks>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.#ctor(System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator})">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.#ctor(System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator},System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator},System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator})">
             <summary>
-            Constructs a new instance of the request class generator, and uses the specified decorator list
+            Constructs a new instance of the request class generator, and uses the specified decorator lists
             to decorate the generated request classes.
             </summary>
+            <param name="commonDecorators">Decorators used on all request classes (method and upload).</param>
+            <param name="requestDecorators">Decorators used on method requests only.</param>
+            <param name="mediaUploadDecorators">Decorators used on media upload requests only.</param>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.#ctor(System.Collections.Generic.IEnumerable{Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.IRequestDecorator})">
+            <summary>
+            Constructs a new instance of the request class generator, and uses the specified decorator lists
+            to decorate the generated request classes.
+            </summary>
+            <param name="commonDecorators">Decorators used on all request classes (method and upload).</param>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GenerateRequestClasses(System.CodeDom.CodeTypeDeclaration,Google.Apis.Discovery.IResource)">
             <summary>
@@ -863,9 +898,14 @@
             or another Decorator that provides adds the same field.
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardServiceFieldResourceDecorator.CreateServiceField">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardServiceFieldResourceDecorator.CreateServiceField(System.String)">
             <summary>
             Adds <code>private BuzzService service;</code> to the resource class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardServiceFieldResourceDecorator.CreateAuthenticatorField">
+            <summary>
+            Adds <code>private Google.Apis.Authentication.IAuthenticator authenticator;</code> to the resource class.
             </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.StandardServiceFieldResourceDecorator.CreateFakeServiceField">
@@ -881,6 +921,12 @@
                 private Google.Apis.Authentication.IAuthenticator authenticator;
             </code>
             </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ServiceDecorator.StandardServiceFieldServiceDecorator.AddAuthenticatorProperty(System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Add a IAuthenticator property "Authenticator" to the service.
+            </summary>
+            <param name="serviceClass">The service class to decorate.</param>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Generator.ImplementationDetailsGenerator">
             <summary>
@@ -962,9 +1008,24 @@
             {1}: Version
             </summary>
         </member>
+        <member name="F:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.DataNamespaceExtension">
+            <summary>
+            The nested namespace where data classes are generated.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareCommonRequestDecorators(System.String,Google.Apis.Discovery.IService)">
+            <summary>
+            List of all request class decorators
+            </summary>
+        </member>
         <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareRequestDecorators(System.String,Google.Apis.Discovery.IService)">
             <summary>
             List of all request class decorators
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.GetSchemaAwareUploadDecorators(System.String,Google.Apis.Discovery.IService)">
+            <summary>
+            List of all upload class decorators
             </summary>
         </member>
         <member name="F:Google.Apis.Tools.CodeGen.GoogleServiceGenerator.SchemaAwareServiceDecorators">
@@ -1012,6 +1073,11 @@
             Generates a class for one Resource. This uses the passed in decorators to do the work.
             </summary>
             <seealso cref="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.IResourceDecorator"/>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.AuthenticatorName">
+            <summary>
+            Name of the IAuthenticator field of the resource class.
+            </summary>
         </member>
         <member name="M:Google.Apis.Tools.CodeGen.Generator.ResourceClassGenerator.CreateClass">
             <summary>

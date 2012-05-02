@@ -1199,9 +1199,9 @@ namespace Google.Apis.Customsearch.v1 {
     
     public partial class CustomsearchService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"customsearch:v1" +
             "\",\"name\":\"customsearch\",\"version\":\"v1\",\"revision\":\"20120214\",\"title\":\"CustomSear" +
@@ -1363,28 +1363,42 @@ namespace Google.Apis.Customsearch.v1 {
             "at\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Sea" +
             "rch\"}}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "customsearch";
-        
-        private const string BaseUri = "https://www.googleapis.com/customsearch/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected CustomsearchService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._cse = new CseResource(this);
+        protected CustomsearchService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._cse = new CseResource(this, _authenticator);
         }
         
         public CustomsearchService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public CustomsearchService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(CustomsearchService.BaseUri))), authenticator) {
+        public CustomsearchService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(CustomsearchService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/customsearch/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "customsearch";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/customsearch/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -1398,35 +1412,38 @@ namespace Google.Apis.Customsearch.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
     }
     
     public class CseResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private CustomsearchService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "cse";
         
-        public CseResource(CustomsearchService service) {
+        public CseResource(CustomsearchService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns metadata about the search performed, metadata about the custom search engine used for the search, and the search results.</summary>
@@ -1752,7 +1769,7 @@ namespace Google.Apis.Customsearch.v1 {
             I,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
             
             private string _oauth_token;
             
@@ -1830,7 +1847,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1841,7 +1858,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1852,7 +1869,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1863,7 +1880,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Turns off the translation between zh-CN and zh-TW.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("c2coff")]
+            [Google.Apis.Util.RequestParameterAttribute("c2coff", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string C2coff {
                 get {
                     return this._c2coff;
@@ -1874,7 +1891,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Country restrict(s).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cr")]
+            [Google.Apis.Util.RequestParameterAttribute("cr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cr {
                 get {
                     return this._cr;
@@ -1885,7 +1902,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The URL of a linked custom search engine</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cref")]
+            [Google.Apis.Util.RequestParameterAttribute("cref", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cref {
                 get {
                     return this._cref;
@@ -1896,7 +1913,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The custom search engine ID to scope this search query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cx")]
+            [Google.Apis.Util.RequestParameterAttribute("cx", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cx {
                 get {
                     return this._cx;
@@ -1907,7 +1924,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Specifies all search results are from a time period</summary>
-            [Google.Apis.Util.RequestParameterAttribute("dateRestrict")]
+            [Google.Apis.Util.RequestParameterAttribute("dateRestrict", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string DateRestrict {
                 get {
                     return this._dateRestrict;
@@ -1918,7 +1935,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Identifies a phrase that all documents in the search results must contain</summary>
-            [Google.Apis.Util.RequestParameterAttribute("exactTerms")]
+            [Google.Apis.Util.RequestParameterAttribute("exactTerms", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ExactTerms {
                 get {
                     return this._exactTerms;
@@ -1929,7 +1946,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Identifies a word or phrase that should not appear in any documents in the search results</summary>
-            [Google.Apis.Util.RequestParameterAttribute("excludeTerms")]
+            [Google.Apis.Util.RequestParameterAttribute("excludeTerms", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ExcludeTerms {
                 get {
                     return this._excludeTerms;
@@ -1940,7 +1957,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns images of a specified type. Some of the allowed values are: bmp, gif, png, jpg, svg, pdf, ...</summary>
-            [Google.Apis.Util.RequestParameterAttribute("fileType")]
+            [Google.Apis.Util.RequestParameterAttribute("fileType", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string FileType {
                 get {
                     return this._fileType;
@@ -1951,7 +1968,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Controls turning on or off the duplicate content filter.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("filter")]
+            [Google.Apis.Util.RequestParameterAttribute("filter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Filter> Filter {
                 get {
                     return this._filter;
@@ -1962,7 +1979,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Geolocation of end user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("gl")]
+            [Google.Apis.Util.RequestParameterAttribute("gl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Gl {
                 get {
                     return this._gl;
@@ -1973,7 +1990,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The local Google domain to use to perform the search.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("googlehost")]
+            [Google.Apis.Util.RequestParameterAttribute("googlehost", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Googlehost {
                 get {
                     return this._googlehost;
@@ -1984,7 +2001,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Creates a range in form as_nlo value..as_nhi value and attempts to append it to query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("highRange")]
+            [Google.Apis.Util.RequestParameterAttribute("highRange", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string HighRange {
                 get {
                     return this._highRange;
@@ -1995,7 +2012,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Sets the user interface language.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -2006,7 +2023,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Appends the extra query terms to the query.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hq")]
+            [Google.Apis.Util.RequestParameterAttribute("hq", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hq {
                 get {
                     return this._hq;
@@ -2017,7 +2034,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns black and white, grayscale, or color images: mono, gray, and color.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("imgColorType")]
+            [Google.Apis.Util.RequestParameterAttribute("imgColorType", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<ImgColorType> ImgColorType {
                 get {
                     return this._imgColorType;
@@ -2028,7 +2045,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns images of a specific dominant color: yellow, green, teal, blue, purple, pink, white, gray, black and brown.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("imgDominantColor")]
+            [Google.Apis.Util.RequestParameterAttribute("imgDominantColor", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<ImgDominantColor> ImgDominantColor {
                 get {
                     return this._imgDominantColor;
@@ -2039,7 +2056,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns images of a specified size, where size can be one of: icon, small, medium, large, xlarge, xxlarge, and huge.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("imgSize")]
+            [Google.Apis.Util.RequestParameterAttribute("imgSize", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<ImgSize> ImgSize {
                 get {
                     return this._imgSize;
@@ -2050,7 +2067,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Returns images of a type, which can be one of: clipart, face, lineart, news, and photo.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("imgType")]
+            [Google.Apis.Util.RequestParameterAttribute("imgType", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<ImgType> ImgType {
                 get {
                     return this._imgType;
@@ -2061,7 +2078,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Specifies that all search results should contain a link to a particular URL</summary>
-            [Google.Apis.Util.RequestParameterAttribute("linkSite")]
+            [Google.Apis.Util.RequestParameterAttribute("linkSite", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string LinkSite {
                 get {
                     return this._linkSite;
@@ -2072,7 +2089,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Creates a range in form as_nlo value..as_nhi value and attempts to append it to query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("lowRange")]
+            [Google.Apis.Util.RequestParameterAttribute("lowRange", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string LowRange {
                 get {
                     return this._lowRange;
@@ -2083,7 +2100,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The language restriction for the search results</summary>
-            [Google.Apis.Util.RequestParameterAttribute("lr")]
+            [Google.Apis.Util.RequestParameterAttribute("lr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Lr> Lr {
                 get {
                     return this._lr;
@@ -2094,7 +2111,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Number of search results to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("num")]
+            [Google.Apis.Util.RequestParameterAttribute("num", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Num {
                 get {
                     return this._num;
@@ -2105,7 +2122,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orTerms")]
+            [Google.Apis.Util.RequestParameterAttribute("orTerms", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string OrTerms {
                 get {
                     return this._orTerms;
@@ -2116,7 +2133,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -2124,7 +2141,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Specifies that all search results should be pages that are related to the specified URL</summary>
-            [Google.Apis.Util.RequestParameterAttribute("relatedSite")]
+            [Google.Apis.Util.RequestParameterAttribute("relatedSite", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string RelatedSite {
                 get {
                     return this._relatedSite;
@@ -2135,7 +2152,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Filters based on licensing. Supported values include: cc_publicdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived and combinations of these.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("rights")]
+            [Google.Apis.Util.RequestParameterAttribute("rights", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Rights {
                 get {
                     return this._rights;
@@ -2146,7 +2163,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Search safety level</summary>
-            [Google.Apis.Util.RequestParameterAttribute("safe")]
+            [Google.Apis.Util.RequestParameterAttribute("safe", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Safe> Safe {
                 get {
                     return this._safe;
@@ -2157,7 +2174,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Specifies the search type: image.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("searchType")]
+            [Google.Apis.Util.RequestParameterAttribute("searchType", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<SearchType> SearchType {
                 get {
                     return this._searchType;
@@ -2168,7 +2185,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Specifies all search results should be pages from a given site</summary>
-            [Google.Apis.Util.RequestParameterAttribute("siteSearch")]
+            [Google.Apis.Util.RequestParameterAttribute("siteSearch", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string SiteSearch {
                 get {
                     return this._siteSearch;
@@ -2179,7 +2196,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>Controls whether to include or exclude results from the site named in the as_sitesearch parameter</summary>
-            [Google.Apis.Util.RequestParameterAttribute("siteSearchFilter")]
+            [Google.Apis.Util.RequestParameterAttribute("siteSearchFilter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<SiteSearchFilter> SiteSearchFilter {
                 get {
                     return this._siteSearchFilter;
@@ -2190,7 +2207,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The sort expression to apply to the results</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sort")]
+            [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Sort {
                 get {
                     return this._sort;
@@ -2201,7 +2218,7 @@ namespace Google.Apis.Customsearch.v1 {
             }
             
             /// <summary>The index of the first result to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("start")]
+            [Google.Apis.Util.RequestParameterAttribute("start", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Start {
                 get {
                     return this._start;

@@ -353,9 +353,9 @@ namespace Google.Apis.Audit.v1 {
     
     public partial class AuditService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"audit:v1\",\"name" +
             "\":\"audit\",\"version\":\"v1\",\"revision\":\"20111110\",\"title\":\"Enterprise Audit API\",\"d" +
@@ -435,28 +435,42 @@ namespace Google.Apis.Audit.v1 {
             "\"Return events which occured at or after this time.\",\"location\":\"query\"}},\"param" +
             "eterOrder\":[\"customerId\",\"applicationId\"],\"response\":{\"$ref\":\"Activities\"}}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "audit";
-        
-        private const string BaseUri = "https://www.googleapis.com/apps/reporting/audit/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected AuditService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._activities = new ActivitiesResource(this);
+        protected AuditService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._activities = new ActivitiesResource(this, _authenticator);
         }
         
         public AuditService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public AuditService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AuditService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AuditService.BaseUri))), authenticator) {
+        public AuditService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AuditService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/apps/reporting/audit/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "audit";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/apps/reporting/audit/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -470,35 +484,38 @@ namespace Google.Apis.Audit.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
     }
     
     public class ActivitiesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AuditService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(AuditService service) {
+        public ActivitiesResource(AuditService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves a list of activities for a specific customer and application.</summary>
@@ -521,7 +538,7 @@ namespace Google.Apis.Audit.v1 {
             Customer,
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
             
             private string _oauth_token;
             
@@ -560,7 +577,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -571,7 +588,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -582,7 +599,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -593,7 +610,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Application ID of the application which interacted on behalf of the user while performing the event.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("actorApplicationId")]
+            [Google.Apis.Util.RequestParameterAttribute("actorApplicationId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ActorApplicationId {
                 get {
                     return this._actorApplicationId;
@@ -604,7 +621,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Email address of the user who performed the action.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("actorEmail")]
+            [Google.Apis.Util.RequestParameterAttribute("actorEmail", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ActorEmail {
                 get {
                     return this._actorEmail;
@@ -615,7 +632,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>IP Address of host where the event was performed. Supports both IPv4 and IPv6 addresses.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("actorIpAddress")]
+            [Google.Apis.Util.RequestParameterAttribute("actorIpAddress", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ActorIpAddress {
                 get {
                     return this._actorIpAddress;
@@ -626,7 +643,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Application ID of the application on which the event was performed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("applicationId")]
+            [Google.Apis.Util.RequestParameterAttribute("applicationId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ApplicationId {
                 get {
                     return this._applicationId;
@@ -634,7 +651,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Type of the caller.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("caller")]
+            [Google.Apis.Util.RequestParameterAttribute("caller", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Caller> Caller {
                 get {
                     return this._caller;
@@ -645,7 +662,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Next page URL.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("continuationToken")]
+            [Google.Apis.Util.RequestParameterAttribute("continuationToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ContinuationToken {
                 get {
                     return this._continuationToken;
@@ -656,7 +673,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Represents the customer who is the owner of target object on which action was performed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("customerId")]
+            [Google.Apis.Util.RequestParameterAttribute("customerId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CustomerId {
                 get {
                     return this._customerId;
@@ -664,7 +681,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Return events which occured at or before this time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("endTime")]
+            [Google.Apis.Util.RequestParameterAttribute("endTime", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string EndTime {
                 get {
                     return this._endTime;
@@ -675,7 +692,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Name of the event being queried.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("eventName")]
+            [Google.Apis.Util.RequestParameterAttribute("eventName", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string EventName {
                 get {
                     return this._eventName;
@@ -686,7 +703,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Number of activity records to be shown in each page.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -697,7 +714,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Event parameters in the form [parameter1 name]:[parameter1 value],[parameter2 name]:[parameter2 value],...</summary>
-            [Google.Apis.Util.RequestParameterAttribute("parameters")]
+            [Google.Apis.Util.RequestParameterAttribute("parameters", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Parameters {
                 get {
                     return this._parameters;
@@ -708,7 +725,7 @@ namespace Google.Apis.Audit.v1 {
             }
             
             /// <summary>Return events which occured at or after this time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startTime")]
+            [Google.Apis.Util.RequestParameterAttribute("startTime", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartTime {
                 get {
                     return this._startTime;

@@ -1738,9 +1738,9 @@ namespace Google.Apis.Moderator.v1 {
     
     public partial class ModeratorService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"moderator:v1\",\"" +
             "name\":\"moderator\",\"version\":\"v1\",\"revision\":\"19700115\",\"title\":\"Moderator API\",\"" +
@@ -2107,38 +2107,52 @@ namespace Google.Apis.Moderator.v1 {
             "Id\",\"submissionId\"],\"request\":{\"$ref\":\"Vote\"},\"response\":{\"$ref\":\"Vote\"},\"scopes" +
             "\":[\"https://www.googleapis.com/auth/moderator\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "moderator";
-        
-        private const string BaseUri = "https://www.googleapis.com/moderator/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected ModeratorService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._featured = new FeaturedResource(this);
-            this._global = new GlobalResource(this);
-            this._my = new MyResource(this);
-            this._myrecent = new MyrecentResource(this);
-            this._profiles = new ProfilesResource(this);
-            this._responses = new ResponsesResource(this);
-            this._series = new SeriesResource(this);
-            this._submissions = new SubmissionsResource(this);
-            this._tags = new TagsResource(this);
-            this._topics = new TopicsResource(this);
-            this._votes = new VotesResource(this);
+        protected ModeratorService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._featured = new FeaturedResource(this, _authenticator);
+            this._global = new GlobalResource(this, _authenticator);
+            this._my = new MyResource(this, _authenticator);
+            this._myrecent = new MyrecentResource(this, _authenticator);
+            this._profiles = new ProfilesResource(this, _authenticator);
+            this._responses = new ResponsesResource(this, _authenticator);
+            this._series = new SeriesResource(this, _authenticator);
+            this._submissions = new SubmissionsResource(this, _authenticator);
+            this._tags = new TagsResource(this, _authenticator);
+            this._topics = new TopicsResource(this, _authenticator);
+            this._votes = new VotesResource(this, _authenticator);
         }
         
         public ModeratorService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public ModeratorService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ModeratorService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(ModeratorService.BaseUri))), authenticator) {
+        public ModeratorService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ModeratorService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/moderator/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "moderator";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/moderator/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2152,24 +2166,24 @@ namespace Google.Apis.Moderator.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2183,15 +2197,18 @@ namespace Google.Apis.Moderator.v1 {
     
     public class FeaturedResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "featured";
         
         private SeriesResource _series;
         
-        public FeaturedResource(ModeratorService service) {
+        public FeaturedResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._series = new SeriesResource(service);
+            this._authenticator = _authenticator;
+            this._series = new SeriesResource(service, _authenticator);
         }
         
         public virtual SeriesResource Series {
@@ -2202,12 +2219,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SeriesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "featured.series";
             
-            public SeriesResource(ModeratorService service) {
+            public SeriesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Lists the featured series.</summary>
@@ -2215,7 +2235,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2228,7 +2248,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -2239,7 +2259,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -2250,7 +2270,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -2277,15 +2297,18 @@ namespace Google.Apis.Moderator.v1 {
     
     public class GlobalResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "global";
         
         private SeriesResource _series;
         
-        public GlobalResource(ModeratorService service) {
+        public GlobalResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._series = new SeriesResource(service);
+            this._authenticator = _authenticator;
+            this._series = new SeriesResource(service, _authenticator);
         }
         
         public virtual SeriesResource Series {
@@ -2296,12 +2319,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SeriesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "global.series";
             
-            public SeriesResource(ModeratorService service) {
+            public SeriesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Searches the public series and returns the search results.</summary>
@@ -2309,7 +2335,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2328,7 +2354,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -2339,7 +2365,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -2350,7 +2376,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -2361,7 +2387,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -2372,7 +2398,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Search query.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("q")]
+                [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Q {
                     get {
                         return this._q;
@@ -2383,7 +2409,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> StartIndex {
                     get {
                         return this._startIndex;
@@ -2410,15 +2436,18 @@ namespace Google.Apis.Moderator.v1 {
     
     public class MyResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "my";
         
         private SeriesResource _series;
         
-        public MyResource(ModeratorService service) {
+        public MyResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._series = new SeriesResource(service);
+            this._authenticator = _authenticator;
+            this._series = new SeriesResource(service, _authenticator);
         }
         
         public virtual SeriesResource Series {
@@ -2429,12 +2458,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SeriesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "my.series";
             
-            public SeriesResource(ModeratorService service) {
+            public SeriesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Lists all series created by the authenticated user.</summary>
@@ -2442,7 +2474,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2455,7 +2487,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -2466,7 +2498,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -2477,7 +2509,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -2504,15 +2536,18 @@ namespace Google.Apis.Moderator.v1 {
     
     public class MyrecentResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "myrecent";
         
         private SeriesResource _series;
         
-        public MyrecentResource(ModeratorService service) {
+        public MyrecentResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._series = new SeriesResource(service);
+            this._authenticator = _authenticator;
+            this._series = new SeriesResource(service, _authenticator);
         }
         
         public virtual SeriesResource Series {
@@ -2523,12 +2558,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SeriesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "myrecent.series";
             
-            public SeriesResource(ModeratorService service) {
+            public SeriesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Lists the series the authenticated user has visited.</summary>
@@ -2536,7 +2574,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2549,7 +2587,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -2560,7 +2598,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -2571,7 +2609,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -2598,12 +2636,15 @@ namespace Google.Apis.Moderator.v1 {
     
     public class ProfilesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "profiles";
         
-        public ProfilesResource(ModeratorService service) {
+        public ProfilesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns the profile information for the authenticated user.</summary>
@@ -2621,7 +2662,7 @@ namespace Google.Apis.Moderator.v1 {
             return new UpdateRequest(service, body);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2634,7 +2675,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2645,7 +2686,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2656,7 +2697,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2679,7 +2720,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2695,7 +2736,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2706,7 +2747,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2717,7 +2758,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2754,7 +2795,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2770,7 +2811,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2781,7 +2822,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2792,7 +2833,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2832,12 +2873,15 @@ namespace Google.Apis.Moderator.v1 {
     
     public class ResponsesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "responses";
         
-        public ResponsesResource(ModeratorService service) {
+        public ResponsesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Inserts a response for the specified submission in the specified topic within the specified series.</summary>
@@ -2855,7 +2899,7 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId, submissionId);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -2884,7 +2928,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2895,7 +2939,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2906,7 +2950,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2917,7 +2961,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("anonymous")]
+            [Google.Apis.Util.RequestParameterAttribute("anonymous", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Anonymous {
                 get {
                     return this._anonymous;
@@ -2928,7 +2972,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the parent Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("parentSubmissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("parentSubmissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long ParentSubmissionId {
                 get {
                     return this._parentSubmissionId;
@@ -2936,7 +2980,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -2944,7 +2988,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Topic within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long TopicId {
                 get {
                     return this._topicId;
@@ -2952,7 +2996,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -2989,7 +3033,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
             
             private string _oauth_token;
             
@@ -3020,7 +3064,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3031,7 +3075,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3042,7 +3086,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3053,7 +3097,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Restricts the results to submissions by a specific author.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("author")]
+            [Google.Apis.Util.RequestParameterAttribute("author", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Author {
                 get {
                     return this._author;
@@ -3064,7 +3108,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
+            [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> HasAttachedVideo {
                 get {
                     return this._hasAttachedVideo;
@@ -3075,7 +3119,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Maximum number of results to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3086,7 +3130,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Search query.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -3097,7 +3141,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -3105,7 +3149,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Sort order.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sort")]
+            [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Sort {
                 get {
                     return this._sort;
@@ -3116,7 +3160,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("start-index")]
+            [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -3127,7 +3171,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -3150,7 +3194,9 @@ namespace Google.Apis.Moderator.v1 {
     
     public class SeriesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "series";
         
@@ -3158,10 +3204,11 @@ namespace Google.Apis.Moderator.v1 {
         
         private SubmissionsResource _submissions;
         
-        public SeriesResource(ModeratorService service) {
+        public SeriesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._responses = new ResponsesResource(service);
-            this._submissions = new SubmissionsResource(service);
+            this._authenticator = _authenticator;
+            this._responses = new ResponsesResource(service, _authenticator);
+            this._submissions = new SubmissionsResource(service, _authenticator);
         }
         
         public virtual ResponsesResource Responses {
@@ -3206,12 +3253,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class ResponsesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "series.responses";
             
-            public ResponsesResource(ModeratorService service) {
+            public ResponsesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Searches the responses for the specified series and returns the search results.</summary>
@@ -3220,7 +3270,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -3248,7 +3298,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -3259,7 +3309,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -3270,7 +3320,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -3281,7 +3331,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("author")]
+                [Google.Apis.Util.RequestParameterAttribute("author", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Author {
                     get {
                         return this._author;
@@ -3292,7 +3342,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
+                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
                         return this._hasAttachedVideo;
@@ -3303,7 +3353,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -3314,7 +3364,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Search query.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("q")]
+                [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Q {
                     get {
                         return this._q;
@@ -3325,7 +3375,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>The decimal ID of the Series.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+                [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual long SeriesId {
                     get {
                         return this._seriesId;
@@ -3333,7 +3383,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Sort order.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("sort")]
+                [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Sort {
                     get {
                         return this._sort;
@@ -3344,7 +3394,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> StartIndex {
                     get {
                         return this._startIndex;
@@ -3370,12 +3420,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SubmissionsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "series.submissions";
             
-            public SubmissionsResource(ModeratorService service) {
+            public SubmissionsResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Searches the submissions for the specified series and returns the search results.</summary>
@@ -3384,7 +3437,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
                 private string _oauth_token;
                 
@@ -3416,7 +3469,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -3427,7 +3480,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -3438,7 +3491,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -3449,7 +3502,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("author")]
+                [Google.Apis.Util.RequestParameterAttribute("author", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Author {
                     get {
                         return this._author;
@@ -3460,7 +3513,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
+                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
                         return this._hasAttachedVideo;
@@ -3471,7 +3524,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Specifies whether to include the current user's vote</summary>
-                [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
+                [Google.Apis.Util.RequestParameterAttribute("includeVotes", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> IncludeVotes {
                     get {
                         return this._includeVotes;
@@ -3482,7 +3535,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>The language code for the language the client prefers resuls in.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("lang")]
+                [Google.Apis.Util.RequestParameterAttribute("lang", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Lang {
                     get {
                         return this._lang;
@@ -3493,7 +3546,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -3504,7 +3557,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Search query.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("q")]
+                [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Q {
                     get {
                         return this._q;
@@ -3515,7 +3568,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>The decimal ID of the Series.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+                [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual long SeriesId {
                     get {
                         return this._seriesId;
@@ -3523,7 +3576,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Sort order.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("sort")]
+                [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Sort {
                     get {
                         return this._sort;
@@ -3534,7 +3587,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> StartIndex {
                     get {
                         return this._startIndex;
@@ -3558,7 +3611,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3574,7 +3627,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3585,7 +3638,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3596,7 +3649,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3607,7 +3660,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -3627,7 +3680,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3643,7 +3696,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3654,7 +3707,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3665,7 +3718,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3702,7 +3755,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
             
             private string _oauth_token;
             
@@ -3721,7 +3774,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3732,7 +3785,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3743,7 +3796,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3754,7 +3807,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Maximum number of results to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3765,7 +3818,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Search query.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -3776,7 +3829,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("start-index")]
+            [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -3799,7 +3852,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3818,7 +3871,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3829,7 +3882,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3840,7 +3893,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3851,7 +3904,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -3885,7 +3938,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3904,7 +3957,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3915,7 +3968,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3926,7 +3979,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3937,7 +3990,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -3974,12 +4027,15 @@ namespace Google.Apis.Moderator.v1 {
     
     public class SubmissionsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "submissions";
         
-        public SubmissionsResource(ModeratorService service) {
+        public SubmissionsResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns the specified submission within the specified series.</summary>
@@ -3996,7 +4052,7 @@ namespace Google.Apis.Moderator.v1 {
             return new InsertRequest(service, body, seriesId, topicId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -4019,7 +4075,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4030,7 +4086,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4041,7 +4097,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4052,7 +4108,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Specifies whether to include the current user's vote</summary>
-            [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
+            [Google.Apis.Util.RequestParameterAttribute("includeVotes", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> IncludeVotes {
                 get {
                     return this._includeVotes;
@@ -4063,7 +4119,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The language code for the language the client prefers resuls in.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("lang")]
+            [Google.Apis.Util.RequestParameterAttribute("lang", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Lang {
                 get {
                     return this._lang;
@@ -4074,7 +4130,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4082,7 +4138,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -4102,7 +4158,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -4128,7 +4184,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4139,7 +4195,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4150,7 +4206,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4161,7 +4217,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Set to true to mark the new submission as anonymous.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("anonymous")]
+            [Google.Apis.Util.RequestParameterAttribute("anonymous", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Anonymous {
                 get {
                     return this._anonymous;
@@ -4172,7 +4228,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4180,7 +4236,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Topic within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long TopicId {
                 get {
                     return this._topicId;
@@ -4188,7 +4244,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -4228,12 +4284,15 @@ namespace Google.Apis.Moderator.v1 {
     
     public class TagsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tags";
         
-        public TagsResource(ModeratorService service) {
+        public TagsResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes the specified tag from the specified submission within the specified series.</summary>
@@ -4258,7 +4317,7 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId, submissionId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4280,7 +4339,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4291,7 +4350,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4302,7 +4361,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4313,7 +4372,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4321,14 +4380,14 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("tagId")]
+            [Google.Apis.Util.RequestParameterAttribute("tagId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TagId {
                 get {
                     return this._tagId;
@@ -4348,7 +4407,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Tag> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Tag> {
             
             private string _oauth_token;
             
@@ -4370,7 +4429,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4381,7 +4440,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4392,7 +4451,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4403,7 +4462,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4411,7 +4470,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -4445,7 +4504,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TagList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TagList> {
             
             private string _oauth_token;
             
@@ -4464,7 +4523,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4475,7 +4534,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4486,7 +4545,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4497,7 +4556,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4505,7 +4564,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -4528,15 +4587,18 @@ namespace Google.Apis.Moderator.v1 {
     
     public class TopicsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "topics";
         
         private SubmissionsResource _submissions;
         
-        public TopicsResource(ModeratorService service) {
+        public TopicsResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._submissions = new SubmissionsResource(service);
+            this._authenticator = _authenticator;
+            this._submissions = new SubmissionsResource(service, _authenticator);
         }
         
         public virtual SubmissionsResource Submissions {
@@ -4573,12 +4635,15 @@ namespace Google.Apis.Moderator.v1 {
         
         public class SubmissionsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private ModeratorService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "topics.submissions";
             
-            public SubmissionsResource(ModeratorService service) {
+            public SubmissionsResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Searches the submissions for the specified topic within the specified series and returns the search results.</summary>
@@ -4588,7 +4653,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId, topicId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
                 private string _oauth_token;
                 
@@ -4621,7 +4686,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -4632,7 +4697,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -4643,7 +4708,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -4654,7 +4719,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Restricts the results to submissions by a specific author.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("author")]
+                [Google.Apis.Util.RequestParameterAttribute("author", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Author {
                     get {
                         return this._author;
@@ -4665,7 +4730,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Specifies whether to restrict to submissions that have videos attached.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo")]
+                [Google.Apis.Util.RequestParameterAttribute("hasAttachedVideo", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> HasAttachedVideo {
                     get {
                         return this._hasAttachedVideo;
@@ -4676,7 +4741,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Specifies whether to include the current user's vote</summary>
-                [Google.Apis.Util.RequestParameterAttribute("includeVotes")]
+                [Google.Apis.Util.RequestParameterAttribute("includeVotes", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> IncludeVotes {
                     get {
                         return this._includeVotes;
@@ -4687,7 +4752,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("max-results")]
+                [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -4698,7 +4763,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Search query.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("q")]
+                [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Q {
                     get {
                         return this._q;
@@ -4709,7 +4774,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>The decimal ID of the Series.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+                [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual long SeriesId {
                     get {
                         return this._seriesId;
@@ -4717,7 +4782,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Sort order.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("sort")]
+                [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Sort {
                     get {
                         return this._sort;
@@ -4728,7 +4793,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>Index of the first result to be retrieved.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("start-index")]
+                [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> StartIndex {
                     get {
                         return this._startIndex;
@@ -4739,7 +4804,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
                 
                 /// <summary>The decimal ID of the Topic within the Series.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("topicId")]
+                [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual long TopicId {
                     get {
                         return this._topicId;
@@ -4760,7 +4825,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -4779,7 +4844,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4790,7 +4855,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4801,7 +4866,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4812,7 +4877,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4820,7 +4885,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Topic within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long TopicId {
                 get {
                     return this._topicId;
@@ -4840,7 +4905,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -4859,7 +4924,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4870,7 +4935,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4881,7 +4946,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4892,7 +4957,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -4926,7 +4991,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TopicList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TopicList> {
             
             private string _oauth_token;
             
@@ -4950,7 +5015,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4961,7 +5026,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4972,7 +5037,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4983,7 +5048,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Maximum number of results to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -4993,7 +5058,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("mode")]
+            [Google.Apis.Util.RequestParameterAttribute("mode", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Mode {
                 get {
                     return this._mode;
@@ -5004,7 +5069,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Search query.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -5015,7 +5080,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5023,7 +5088,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("start-index")]
+            [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -5046,7 +5111,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -5068,7 +5133,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5079,7 +5144,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5090,7 +5155,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5101,7 +5166,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5109,7 +5174,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Topic within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long TopicId {
                 get {
                     return this._topicId;
@@ -5146,12 +5211,15 @@ namespace Google.Apis.Moderator.v1 {
     
     public class VotesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ModeratorService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "votes";
         
-        public VotesResource(ModeratorService service) {
+        public VotesResource(ModeratorService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns the votes by the authenticated user for the specified submission within the specified series.</summary>
@@ -5188,7 +5256,7 @@ namespace Google.Apis.Moderator.v1 {
             return new UpdateRequest(service, body, seriesId, submissionId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5211,7 +5279,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5222,7 +5290,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5233,7 +5301,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5244,7 +5312,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5252,7 +5320,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -5260,7 +5328,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -5270,7 +5338,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5293,7 +5361,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5317,7 +5385,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5328,7 +5396,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5339,7 +5407,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5350,7 +5418,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5358,7 +5426,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -5366,7 +5434,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -5403,7 +5471,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.VoteList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.VoteList> {
             
             private string _oauth_token;
             
@@ -5423,7 +5491,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5434,7 +5502,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5445,7 +5513,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5456,7 +5524,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Maximum number of results to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("max-results")]
+            [Google.Apis.Util.RequestParameterAttribute("max-results", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5467,7 +5535,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5475,7 +5543,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Index of the first result to be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("start-index")]
+            [Google.Apis.Util.RequestParameterAttribute("start-index", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -5498,7 +5566,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5524,7 +5592,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5535,7 +5603,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5546,7 +5614,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5557,7 +5625,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5565,7 +5633,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -5573,7 +5641,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -5583,7 +5651,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5620,7 +5688,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5646,7 +5714,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5657,7 +5725,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5668,7 +5736,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5679,7 +5747,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("seriesId")]
+            [Google.Apis.Util.RequestParameterAttribute("seriesId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SeriesId {
                 get {
                     return this._seriesId;
@@ -5687,7 +5755,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>The decimal ID of the Submission within the Series.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("submissionId")]
+            [Google.Apis.Util.RequestParameterAttribute("submissionId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long SubmissionId {
                 get {
                     return this._submissionId;
@@ -5695,7 +5763,7 @@ namespace Google.Apis.Moderator.v1 {
             }
             
             /// <summary>User identifier for unauthenticated usage mode</summary>
-            [Google.Apis.Util.RequestParameterAttribute("unauthToken")]
+            [Google.Apis.Util.RequestParameterAttribute("unauthToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UnauthToken {
                 get {
                     return this._unauthToken;
@@ -5705,7 +5773,7 @@ namespace Google.Apis.Moderator.v1 {
                 }
             }
             
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UserId {
                 get {
                     return this._userId;

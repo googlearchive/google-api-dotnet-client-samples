@@ -443,9 +443,9 @@ namespace Google.Apis.Drive.v1 {
     
     public partial class DriveService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v1\",\"name" +
             "\":\"drive\",\"version\":\"v1\",\"revision\":\"20120424\",\"title\":\"Drive API\",\"description\"" +
@@ -566,28 +566,42 @@ namespace Google.Apis.Drive.v1 {
             "art\":true,\"path\":\"/upload/drive/v1/files/{id}\"},\"resumable\":{\"multipart\":true,\"p" +
             "ath\":\"/resumable/upload/drive/v1/files/{id}\"}}}}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "drive";
-        
-        private const string BaseUri = "https://www.googleapis.com/drive/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected DriveService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._files = new FilesResource(this);
+        protected DriveService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._files = new FilesResource(this, _authenticator);
         }
         
         public DriveService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public DriveService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(DriveService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(DriveService.BaseUri))), authenticator) {
+        public DriveService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(DriveService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/drive/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "drive";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/drive/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -601,24 +615,24 @@ namespace Google.Apis.Drive.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -632,12 +646,15 @@ namespace Google.Apis.Drive.v1 {
     
     public class FilesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private DriveService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "files";
         
-        public FilesResource(DriveService service) {
+        public FilesResource(DriveService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets a file&apos;s metadata by id.</summary>
@@ -676,7 +693,7 @@ namespace Google.Apis.Drive.v1 {
             FULL,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
             
             private string _oauth_token;
             
@@ -696,7 +713,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -707,7 +724,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -718,7 +735,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -729,7 +746,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>The id for the file in question.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -737,7 +754,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Restrict information returned for simplicity and optimization.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            [Google.Apis.Util.RequestParameterAttribute("projection", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Projection> Projection {
                 get {
                     return this._projection;
@@ -748,7 +765,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Whether to update the view date after successfully retrieving the file.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate")]
+            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> UpdateViewedDate {
                 get {
                     return this._updateViewedDate;
@@ -771,7 +788,7 @@ namespace Google.Apis.Drive.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
+        public class InsertRequest : global::Google.Apis.Upload.ResumableUpload<Google.Apis.Drive.v1.Data.File> {
             
             private string _oauth_token;
             
@@ -779,15 +796,13 @@ namespace Google.Apis.Drive.v1 {
             
             private string _quotaUser;
             
-            private Google.Apis.Drive.v1.Data.File _Body;
-            
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v1.Data.File body) : 
-                    base(service) {
+                    base(service.BaseUri, "files", "POST") {
                 this.Body = body;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -798,7 +813,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -809,7 +824,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -818,35 +833,9 @@ namespace Google.Apis.Drive.v1 {
                     this._quotaUser = value;
                 }
             }
-            
-            /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Google.Apis.Drive.v1.Data.File Body {
-                get {
-                    return this._Body;
-                }
-                set {
-                    this._Body = value;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "files";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "insert";
-                }
-            }
-            
-            protected override object GetBody() {
-                return this.Body;
-            }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
             
             private string _oauth_token;
             
@@ -871,7 +860,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -882,7 +871,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -893,7 +882,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -904,7 +893,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>The id for the file in question.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -912,7 +901,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision will be replaced.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("newRevision")]
+            [Google.Apis.Util.RequestParameterAttribute("newRevision", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> NewRevision {
                 get {
                     return this._newRevision;
@@ -923,7 +912,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Controls updating the modified date of the file. If true, the modified date will be updated to the current time, regardless of whether other changes are being made. If false, the modified date will only be updated to the current time if other changes are also being made (changing the title, for example).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updateModifiedDate")]
+            [Google.Apis.Util.RequestParameterAttribute("updateModifiedDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> UpdateModifiedDate {
                 get {
                     return this._updateModifiedDate;
@@ -934,7 +923,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Whether to update the view date after successfully updating the file.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate")]
+            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> UpdateViewedDate {
                 get {
                     return this._updateViewedDate;
@@ -971,7 +960,7 @@ namespace Google.Apis.Drive.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
+        public class UpdateRequest : global::Google.Apis.Upload.ResumableUpload<Google.Apis.Drive.v1.Data.File> {
             
             private string _oauth_token;
             
@@ -987,16 +976,14 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _updateViewedDate;
             
-            private Google.Apis.Drive.v1.Data.File _Body;
-            
             public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v1.Data.File body, string id) : 
-                    base(service) {
+                    base(service.BaseUri, "files/{id}", "PUT") {
                 this.Body = body;
                 this._id = id;
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1007,7 +994,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1018,7 +1005,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1029,7 +1016,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>The id for the file in question.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1037,7 +1024,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Whether a blob upload should create a new revision. If not set or false, the blob data in the current head revision will be replaced.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("newRevision")]
+            [Google.Apis.Util.RequestParameterAttribute("newRevision", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> NewRevision {
                 get {
                     return this._newRevision;
@@ -1048,7 +1035,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Controls updating the modified date of the file. If true, the modified date will be updated to the current time, regardless of whether other changes are being made. If false, the modified date will only be updated to the current time if other changes are also being made (changing the title, for example).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updateModifiedDate")]
+            [Google.Apis.Util.RequestParameterAttribute("updateModifiedDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> UpdateModifiedDate {
                 get {
                     return this._updateModifiedDate;
@@ -1059,7 +1046,7 @@ namespace Google.Apis.Drive.v1 {
             }
             
             /// <summary>Whether to update the view date after successfully updating the file.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate")]
+            [Google.Apis.Util.RequestParameterAttribute("updateViewedDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> UpdateViewedDate {
                 get {
                     return this._updateViewedDate;
@@ -1067,32 +1054,6 @@ namespace Google.Apis.Drive.v1 {
                 set {
                     this._updateViewedDate = value;
                 }
-            }
-            
-            /// <summary>Gets/Sets the Body of this Request.</summary>
-            public virtual Google.Apis.Drive.v1.Data.File Body {
-                get {
-                    return this._Body;
-                }
-                set {
-                    this._Body = value;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "files";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "update";
-                }
-            }
-            
-            protected override object GetBody() {
-                return this.Body;
             }
         }
     }

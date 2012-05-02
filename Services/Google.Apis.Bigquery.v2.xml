@@ -589,9 +589,6 @@
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertRequest.ProjectId">
             <summary>Project ID of the project that will be billed for the job</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertRequest.Body">
-            <summary>Gets/Sets the Body of this Request.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>

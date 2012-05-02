@@ -63,9 +63,9 @@ namespace Google.Apis.Freebase.v1_sandbox {
     
     public partial class FreebaseService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1-san" +
             "dbox\",\"name\":\"freebase\",\"version\":\"v1-sandbox\",\"revision\":\"20120227\",\"title\":\"Fr" +
@@ -139,28 +139,42 @@ namespace Google.Apis.Freebase.v1_sandbox {
             "\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Contentservic" +
             "eGet\"}}}}}}";
         
-        private const string Version = "v1-sandbox";
+        public const string Version = "v1-sandbox";
         
-        private const string Name = "freebase";
-        
-        private const string BaseUri = "https://www.googleapis.com/freebase/v1-sandbox/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected FreebaseService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._text = new TextResource(this);
+        protected FreebaseService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._text = new TextResource(this, _authenticator);
         }
         
         public FreebaseService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public FreebaseService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(FreebaseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(FreebaseService.BaseUri))), authenticator) {
+        public FreebaseService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(FreebaseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/freebase/v1-sandbox/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "freebase";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/freebase/v1-sandbox/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -174,35 +188,38 @@ namespace Google.Apis.Freebase.v1_sandbox {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
     }
     
     public class TextResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private FreebaseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "text";
         
-        public TextResource(FreebaseService service) {
+        public TextResource(FreebaseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns blob attached to node at specified id as HTML</summary>
@@ -228,7 +245,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             Raw,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1_sandbox.Data.ContentserviceGet> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1_sandbox.Data.ContentserviceGet> {
             
             private string _oauth_token;
             
@@ -248,7 +265,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -259,7 +276,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -270,7 +287,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -281,7 +298,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Sanitizing transformation.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("format")]
+            [Google.Apis.Util.RequestParameterAttribute("format", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Format> Format {
                 get {
                     return this._format;
@@ -292,7 +309,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>The id of the item that you want data about</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual Google.Apis.Util.Repeatable<string> Id {
                 get {
                     return this._id;
@@ -300,7 +317,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>The max number of characters to return. Valid only for 'plain' format.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxlength")]
+            [Google.Apis.Util.RequestParameterAttribute("maxlength", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Maxlength {
                 get {
                     return this._maxlength;
@@ -388,7 +405,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             Soft,
         }
         
-        public class ImageRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class ImageRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -414,7 +431,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -425,7 +442,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -436,7 +453,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -447,7 +464,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Use the image associated with this secondary id if no image is associated with the primary id.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("fallbackid")]
+            [Google.Apis.Util.RequestParameterAttribute("fallbackid", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Fallbackid {
                 get {
                     return this._fallbackid;
@@ -458,7 +475,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Freebase entity or content id, mid, or guid.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual Google.Apis.Util.Repeatable<string> Id {
                 get {
                     return this._id;
@@ -466,7 +483,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Maximum height in pixels for resulting image.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxheight")]
+            [Google.Apis.Util.RequestParameterAttribute("maxheight", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Maxheight {
                 get {
                     return this._maxheight;
@@ -477,7 +494,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Maximum width in pixels for resulting image.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxwidth")]
+            [Google.Apis.Util.RequestParameterAttribute("maxwidth", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Maxwidth {
                 get {
                     return this._maxwidth;
@@ -488,7 +505,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Method used to scale or crop image.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("mode")]
+            [Google.Apis.Util.RequestParameterAttribute("mode", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Mode> Mode {
                 get {
                     return this._mode;
@@ -499,7 +516,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>A boolean specifying whether the resulting image should be padded up to the requested dimensions.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pad")]
+            [Google.Apis.Util.RequestParameterAttribute("pad", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Pad {
                 get {
                     return this._pad;
@@ -522,7 +539,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
         }
         
-        public class MqlreadRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class MqlreadRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -556,7 +573,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -567,7 +584,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -578,7 +595,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -589,7 +606,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Run the query as it would've been run at the specified point in time.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("as_of_time")]
+            [Google.Apis.Util.RequestParameterAttribute("as_of_time", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string As_of_time {
                 get {
                     return this._as_of_time;
@@ -600,7 +617,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>JS method name for JSONP callbacks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("callback")]
+            [Google.Apis.Util.RequestParameterAttribute("callback", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Callback {
                 get {
                     return this._callback;
@@ -611,7 +628,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Show the costs or not.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cost")]
+            [Google.Apis.Util.RequestParameterAttribute("cost", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Cost {
                 get {
                     return this._cost;
@@ -622,7 +639,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>The mql cursor.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cursor")]
+            [Google.Apis.Util.RequestParameterAttribute("cursor", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cursor {
                 get {
                     return this._cursor;
@@ -633,7 +650,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("dateline")]
+            [Google.Apis.Util.RequestParameterAttribute("dateline", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Dateline {
                 get {
                     return this._dateline;
@@ -644,7 +661,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>Whether or not to escape entities.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("html_escape")]
+            [Google.Apis.Util.RequestParameterAttribute("html_escape", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Html_escape {
                 get {
                     return this._html_escape;
@@ -655,7 +672,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>How many spaces to indent the json.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("indent")]
+            [Google.Apis.Util.RequestParameterAttribute("indent", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> Indent {
                 get {
                     return this._indent;
@@ -666,7 +683,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>The language of the results - an id of a /type/lang object.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("lang")]
+            [Google.Apis.Util.RequestParameterAttribute("lang", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Lang {
                 get {
                     return this._lang;
@@ -677,7 +694,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>An envelope containing a single MQL query.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("query")]
+            [Google.Apis.Util.RequestParameterAttribute("query", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Query {
                 get {
                     return this._query;
@@ -685,7 +702,7 @@ namespace Google.Apis.Freebase.v1_sandbox {
             }
             
             /// <summary>How MQL responds to uniqueness failures.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("uniqueness_failure")]
+            [Google.Apis.Util.RequestParameterAttribute("uniqueness_failure", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Uniqueness_failure> Uniqueness_failure {
                 get {
                     return this._uniqueness_failure;

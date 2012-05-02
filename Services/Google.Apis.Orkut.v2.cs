@@ -3229,9 +3229,9 @@ namespace Google.Apis.Orkut.v2 {
     
     public partial class OrkutService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"orkut:v2\",\"name" +
             "\":\"orkut\",\"version\":\"v2\",\"revision\":\"20120223\",\"title\":\"Orkut API\",\"description\"" +
@@ -3901,43 +3901,57 @@ namespace Google.Apis.Orkut.v2 {
             "T\",\"description\":\"Creates a new scrap.\",\"request\":{\"$ref\":\"Activity\"},\"response\"" +
             ":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/orkut\"]}}}}}";
         
-        private const string Version = "v2";
+        public const string Version = "v2";
         
-        private const string Name = "orkut";
-        
-        private const string BaseUri = "https://www.googleapis.com/orkut/v2/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected OrkutService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._acl = new AclResource(this);
-            this._activities = new ActivitiesResource(this);
-            this._activityVisibility = new ActivityVisibilityResource(this);
-            this._badges = new BadgesResource(this);
-            this._comments = new CommentsResource(this);
-            this._communities = new CommunitiesResource(this);
-            this._communityFollow = new CommunityFollowResource(this);
-            this._communityMembers = new CommunityMembersResource(this);
-            this._communityMessages = new CommunityMessagesResource(this);
-            this._communityPollComments = new CommunityPollCommentsResource(this);
-            this._communityPollVotes = new CommunityPollVotesResource(this);
-            this._communityPolls = new CommunityPollsResource(this);
-            this._communityRelated = new CommunityRelatedResource(this);
-            this._communityTopics = new CommunityTopicsResource(this);
-            this._counters = new CountersResource(this);
-            this._scraps = new ScrapsResource(this);
+        protected OrkutService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._acl = new AclResource(this, _authenticator);
+            this._activities = new ActivitiesResource(this, _authenticator);
+            this._activityVisibility = new ActivityVisibilityResource(this, _authenticator);
+            this._badges = new BadgesResource(this, _authenticator);
+            this._comments = new CommentsResource(this, _authenticator);
+            this._communities = new CommunitiesResource(this, _authenticator);
+            this._communityFollow = new CommunityFollowResource(this, _authenticator);
+            this._communityMembers = new CommunityMembersResource(this, _authenticator);
+            this._communityMessages = new CommunityMessagesResource(this, _authenticator);
+            this._communityPollComments = new CommunityPollCommentsResource(this, _authenticator);
+            this._communityPollVotes = new CommunityPollVotesResource(this, _authenticator);
+            this._communityPolls = new CommunityPollsResource(this, _authenticator);
+            this._communityRelated = new CommunityRelatedResource(this, _authenticator);
+            this._communityTopics = new CommunityTopicsResource(this, _authenticator);
+            this._counters = new CountersResource(this, _authenticator);
+            this._scraps = new ScrapsResource(this, _authenticator);
         }
         
         public OrkutService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public OrkutService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(OrkutService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(OrkutService.BaseUri))), authenticator) {
+        public OrkutService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(OrkutService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/orkut/v2/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "orkut";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/orkut/v2/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -3951,24 +3965,24 @@ namespace Google.Apis.Orkut.v2 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -3986,12 +4000,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class AclResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "acl";
         
-        public AclResource(OrkutService service) {
+        public AclResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Excludes an element from the ACL of the activity.</summary>
@@ -4001,7 +4018,7 @@ namespace Google.Apis.Orkut.v2 {
             return new DeleteRequest(service, activityId, userId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4020,7 +4037,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4031,7 +4048,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4042,7 +4059,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4053,7 +4070,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the activity.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -4061,7 +4078,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user to be removed from the activity.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4084,12 +4101,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class ActivitiesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(OrkutService service) {
+        public ActivitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes an existing activity, if the access controls allow it.</summary>
@@ -4122,7 +4142,7 @@ namespace Google.Apis.Orkut.v2 {
             Stream,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4138,7 +4158,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4149,7 +4169,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4160,7 +4180,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4171,7 +4191,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the activity to remove.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -4191,7 +4211,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
             
             private string _oauth_token;
             
@@ -4216,7 +4236,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4227,7 +4247,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4238,7 +4258,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4249,7 +4269,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The collection of activities to list.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("collection")]
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
             public virtual Collection Collection {
                 get {
                     return this._collection;
@@ -4257,7 +4277,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -4268,7 +4288,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of activities to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -4279,7 +4299,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -4290,7 +4310,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the user whose activities will be listed. Can be me to refer to the viewer (i.e. the authenticated user).</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4313,12 +4333,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class ActivityVisibilityResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "activityVisibility";
         
-        public ActivityVisibilityResource(OrkutService service) {
+        public ActivityVisibilityResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets the visibility of an existing activity.</summary>
@@ -4339,7 +4362,7 @@ namespace Google.Apis.Orkut.v2 {
             return new UpdateRequest(service, body, activityId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4355,7 +4378,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4366,7 +4389,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4377,7 +4400,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4388,7 +4411,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the activity to get the visibility.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -4408,7 +4431,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4427,7 +4450,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4438,7 +4461,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4449,7 +4472,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4460,7 +4483,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the activity.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -4494,7 +4517,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4513,7 +4536,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4524,7 +4547,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4535,7 +4558,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4546,7 +4569,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the activity.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -4583,12 +4606,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class BadgesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "badges";
         
-        public BadgesResource(OrkutService service) {
+        public BadgesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves a badge from a user.</summary>
@@ -4604,7 +4630,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
             
             private string _oauth_token;
             
@@ -4623,7 +4649,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4634,7 +4660,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4645,7 +4671,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4656,7 +4682,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the badge that will be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("badgeId")]
+            [Google.Apis.Util.RequestParameterAttribute("badgeId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BadgeId {
                 get {
                     return this._badgeId;
@@ -4664,7 +4690,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the user whose badges will be listed. Can be me to refer to caller.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4684,7 +4710,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
             
             private string _oauth_token;
             
@@ -4700,7 +4726,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4711,7 +4737,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4722,7 +4748,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4733,7 +4759,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The id of the user whose badges will be listed. Can be me to refer to caller.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4756,12 +4782,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommentsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(OrkutService service) {
+        public CommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Deletes an existing comment.</summary>
@@ -4801,7 +4830,7 @@ namespace Google.Apis.Orkut.v2 {
             Descending,
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4817,7 +4846,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4828,7 +4857,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4839,7 +4868,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4850,7 +4879,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the comment to remove.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CommentId {
                 get {
                     return this._commentId;
@@ -4870,7 +4899,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -4888,7 +4917,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4899,7 +4928,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4910,7 +4939,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4921,7 +4950,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the comment to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CommentId {
                 get {
                     return this._commentId;
@@ -4929,7 +4958,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -4952,7 +4981,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -4971,7 +5000,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4982,7 +5011,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4993,7 +5022,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5004,7 +5033,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the activity to contain the new comment.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -5038,7 +5067,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
             
             private string _oauth_token;
             
@@ -5062,7 +5091,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5073,7 +5102,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5084,7 +5113,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5095,7 +5124,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the activity containing the comments.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -5103,7 +5132,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -5114,7 +5143,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of activities to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5125,7 +5154,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Sort search results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<OrderBy> OrderBy {
                 get {
                     return this._orderBy;
@@ -5136,7 +5165,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -5162,12 +5191,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunitiesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communities";
         
-        public CommunitiesResource(OrkutService service) {
+        public CommunitiesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves the basic information (aka. profile) of a community.</summary>
@@ -5195,7 +5227,7 @@ namespace Google.Apis.Orkut.v2 {
             Ranked,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
             
             private string _oauth_token;
             
@@ -5213,7 +5245,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5224,7 +5256,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5235,7 +5267,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5246,7 +5278,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5254,7 +5286,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -5277,7 +5309,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
             private string _oauth_token;
             
@@ -5299,7 +5331,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5310,7 +5342,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5321,7 +5353,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5332,7 +5364,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -5343,7 +5375,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of communities to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5354,7 +5386,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>How to order the communities by.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<OrderBy> OrderBy {
                 get {
                     return this._orderBy;
@@ -5365,7 +5397,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the user whose communities will be listed. Can be me to refer to caller.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5388,12 +5420,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityFollowResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityFollow";
         
-        public CommunityFollowResource(OrkutService service) {
+        public CommunityFollowResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Removes a user from the followers of a community.</summary>
@@ -5410,7 +5445,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, communityId, userId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -5429,7 +5464,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5440,7 +5475,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5451,7 +5486,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5462,7 +5497,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the community.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5470,7 +5505,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5490,7 +5525,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5509,7 +5544,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5520,7 +5555,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5531,7 +5566,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5542,7 +5577,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the community.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5550,7 +5585,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5573,12 +5608,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityMembersResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityMembers";
         
-        public CommunityMembersResource(OrkutService service) {
+        public CommunityMembersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Makes the user leave a community.</summary>
@@ -5608,7 +5646,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -5627,7 +5665,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5638,7 +5676,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5649,7 +5687,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5660,7 +5698,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the community.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5668,7 +5706,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5688,7 +5726,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5709,7 +5747,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5720,7 +5758,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5731,7 +5769,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5742,7 +5780,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the community.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5750,7 +5788,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -5761,7 +5799,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5781,7 +5819,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5800,7 +5838,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5811,7 +5849,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5822,7 +5860,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5833,7 +5871,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the community.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5841,7 +5879,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>ID of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -5861,7 +5899,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
             
             private string _oauth_token;
             
@@ -5885,7 +5923,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5896,7 +5934,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5907,7 +5945,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5918,7 +5956,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose members will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -5926,7 +5964,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Whether to list only community members who are friends of the user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("friendsOnly")]
+            [Google.Apis.Util.RequestParameterAttribute("friendsOnly", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FriendsOnly {
                 get {
                     return this._friendsOnly;
@@ -5937,7 +5975,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -5948,7 +5986,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of members to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5959,7 +5997,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -5985,12 +6023,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityMessagesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityMessages";
         
-        public CommunityMessagesResource(OrkutService service) {
+        public CommunityMessagesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Moves a message of the community to the trash folder.</summary>
@@ -6015,7 +6056,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, topicId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -6037,7 +6078,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6048,7 +6089,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6059,7 +6100,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6070,7 +6111,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose message will be moved to the trash folder.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6078,7 +6119,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the message to be moved to the trash folder.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("messageId")]
+            [Google.Apis.Util.RequestParameterAttribute("messageId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string MessageId {
                 get {
                     return this._messageId;
@@ -6086,7 +6127,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the topic whose message will be moved to the trash folder.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TopicId {
                 get {
                     return this._topicId;
@@ -6106,7 +6147,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
             
             private string _oauth_token;
             
@@ -6128,7 +6169,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6139,7 +6180,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6150,7 +6191,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6161,7 +6202,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community the message should be added to.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6169,7 +6210,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the topic the message should be added to.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TopicId {
                 get {
                     return this._topicId;
@@ -6203,7 +6244,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
             
             private string _oauth_token;
             
@@ -6228,7 +6269,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6239,7 +6280,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6250,7 +6291,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6261,7 +6302,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community which messages will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6269,7 +6310,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -6280,7 +6321,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of messages to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -6291,7 +6332,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -6302,7 +6343,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the topic which messages will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TopicId {
                 get {
                     return this._topicId;
@@ -6325,12 +6366,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityPollCommentsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityPollComments";
         
-        public CommunityPollCommentsResource(OrkutService service) {
+        public CommunityPollCommentsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Adds a comment on a community poll.</summary>
@@ -6347,7 +6391,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, pollId);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
             
             private string _oauth_token;
             
@@ -6369,7 +6413,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6380,7 +6424,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6391,7 +6435,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6402,7 +6446,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose poll is being commented.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6410,7 +6454,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the poll being commented.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pollId")]
+            [Google.Apis.Util.RequestParameterAttribute("pollId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PollId {
                 get {
                     return this._pollId;
@@ -6444,7 +6488,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
             
             private string _oauth_token;
             
@@ -6469,7 +6513,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6480,7 +6524,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6491,7 +6535,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6502,7 +6546,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose poll is having its comments listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6510,7 +6554,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -6521,7 +6565,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of comments to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -6532,7 +6576,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -6543,7 +6587,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose polls will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pollId")]
+            [Google.Apis.Util.RequestParameterAttribute("pollId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PollId {
                 get {
                     return this._pollId;
@@ -6566,12 +6610,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityPollVotesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityPollVotes";
         
-        public CommunityPollVotesResource(OrkutService service) {
+        public CommunityPollVotesResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Votes on a community poll.</summary>
@@ -6581,7 +6628,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body, communityId, pollId);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
             
             private string _oauth_token;
             
@@ -6603,7 +6650,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6614,7 +6661,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6625,7 +6672,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6636,7 +6683,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose poll is being voted.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6644,7 +6691,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the poll being voted.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pollId")]
+            [Google.Apis.Util.RequestParameterAttribute("pollId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PollId {
                 get {
                     return this._pollId;
@@ -6681,12 +6728,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityPollsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityPolls";
         
-        public CommunityPollsResource(OrkutService service) {
+        public CommunityPollsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves one specific poll of a community.</summary>
@@ -6702,7 +6752,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
             
             private string _oauth_token;
             
@@ -6723,7 +6773,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6734,7 +6784,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6745,7 +6795,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6756,7 +6806,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community for whose poll will be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6764,7 +6814,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -6775,7 +6825,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the poll to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pollId")]
+            [Google.Apis.Util.RequestParameterAttribute("pollId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PollId {
                 get {
                     return this._pollId;
@@ -6795,7 +6845,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
             
             private string _oauth_token;
             
@@ -6817,7 +6867,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6828,7 +6878,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6839,7 +6889,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6850,7 +6900,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community which polls will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6858,7 +6908,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -6869,7 +6919,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of polls to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -6880,7 +6930,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -6906,12 +6956,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityRelatedResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityRelated";
         
-        public CommunityRelatedResource(OrkutService service) {
+        public CommunityRelatedResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves the communities related to another one.</summary>
@@ -6920,7 +6973,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
             private string _oauth_token;
             
@@ -6938,7 +6991,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6949,7 +7002,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6960,7 +7013,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6971,7 +7024,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose related communities will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -6979,7 +7032,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -7005,12 +7058,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CommunityTopicsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "communityTopics";
         
-        public CommunityTopicsResource(OrkutService service) {
+        public CommunityTopicsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Moves a topic of the community to the trash folder.</summary>
@@ -7039,7 +7095,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -7058,7 +7114,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7069,7 +7125,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7080,7 +7136,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -7091,7 +7147,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose topic will be moved to the trash folder.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -7099,7 +7155,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the topic to be moved to the trash folder.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TopicId {
                 get {
                     return this._topicId;
@@ -7119,7 +7175,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
             private string _oauth_token;
             
@@ -7140,7 +7196,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7151,7 +7207,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7162,7 +7218,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -7173,7 +7229,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community whose topic will be retrieved.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -7181,7 +7237,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -7192,7 +7248,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the topic to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("topicId")]
+            [Google.Apis.Util.RequestParameterAttribute("topicId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TopicId {
                 get {
                     return this._topicId;
@@ -7212,7 +7268,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
             private string _oauth_token;
             
@@ -7233,7 +7289,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7244,7 +7300,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7255,7 +7311,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -7266,7 +7322,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community the topic should be added to.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -7274,7 +7330,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Whether this topic is a shout.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("isShout")]
+            [Google.Apis.Util.RequestParameterAttribute("isShout", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> IsShout {
                 get {
                     return this._isShout;
@@ -7311,7 +7367,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
             
             private string _oauth_token;
             
@@ -7333,7 +7389,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7344,7 +7400,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7355,7 +7411,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -7366,7 +7422,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the community which topics will be listed.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("communityId")]
+            [Google.Apis.Util.RequestParameterAttribute("communityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long CommunityId {
                 get {
                     return this._communityId;
@@ -7374,7 +7430,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Specifies the interface language (host language) of your user interface.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hl")]
+            [Google.Apis.Util.RequestParameterAttribute("hl", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Hl {
                 get {
                     return this._hl;
@@ -7385,7 +7441,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The maximum number of topics to include in the response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -7396,7 +7452,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>A continuation token that allows pagination.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -7422,12 +7478,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class CountersResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "counters";
         
-        public CountersResource(OrkutService service) {
+        public CountersResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Retrieves the counters of a user.</summary>
@@ -7436,7 +7495,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
             
             private string _oauth_token;
             
@@ -7452,7 +7511,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7463,7 +7522,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7474,7 +7533,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -7485,7 +7544,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>The ID of the user whose counters will be listed. Can be me to refer to caller.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -7508,12 +7567,15 @@ namespace Google.Apis.Orkut.v2 {
     
     public class ScrapsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private OrkutService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "scraps";
         
-        public ScrapsResource(OrkutService service) {
+        public ScrapsResource(OrkutService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Creates a new scrap.</summary>
@@ -7521,7 +7583,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body);
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
             
             private string _oauth_token;
             
@@ -7537,7 +7599,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7548,7 +7610,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7559,7 +7621,7 @@ namespace Google.Apis.Orkut.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;

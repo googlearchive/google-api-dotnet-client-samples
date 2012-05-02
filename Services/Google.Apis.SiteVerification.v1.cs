@@ -269,9 +269,9 @@ namespace Google.Apis.SiteVerification.v1 {
     
     public partial class SiteVerificationService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"siteVerificatio" +
             "n:v1\",\"name\":\"siteVerification\",\"version\":\"v1\",\"revision\":\"20111216\",\"title\":\"Go" +
@@ -373,28 +373,42 @@ namespace Google.Apis.SiteVerification.v1 {
             "rceResource\"},\"response\":{\"$ref\":\"SiteVerificationWebResourceResource\"},\"scopes\"" +
             ":[\"https://www.googleapis.com/auth/siteverification\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "siteVerification";
-        
-        private const string BaseUri = "https://www.googleapis.com/siteVerification/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected SiteVerificationService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._webResource = new WebResourceResource(this);
+        protected SiteVerificationService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._webResource = new WebResourceResource(this, _authenticator);
         }
         
         public SiteVerificationService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public SiteVerificationService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(SiteVerificationService.BaseUri))), authenticator) {
+        public SiteVerificationService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(SiteVerificationService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/siteVerification/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "siteVerification";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/siteVerification/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -408,24 +422,24 @@ namespace Google.Apis.SiteVerification.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -443,12 +457,15 @@ namespace Google.Apis.SiteVerification.v1 {
     
     public class WebResourceResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private SiteVerificationService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "webResource";
         
-        public WebResourceResource(SiteVerificationService service) {
+        public WebResourceResource(SiteVerificationService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Relinquish ownership of a website or domain.</summary>
@@ -491,7 +508,7 @@ namespace Google.Apis.SiteVerification.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -507,7 +524,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -518,7 +535,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -529,7 +546,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -540,7 +557,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>The id of a verified site or domain.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -560,7 +577,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -576,7 +593,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -587,7 +604,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -598,7 +615,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -609,7 +626,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>The id of a verified site or domain.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -629,7 +646,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class GetTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
+        public class GetTokenRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
             
             private string _oauth_token;
             
@@ -645,7 +662,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -656,7 +673,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -667,7 +684,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -704,7 +721,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -723,7 +740,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -734,7 +751,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -745,7 +762,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -756,7 +773,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>The method to use for verifying a site or domain.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("verificationMethod")]
+            [Google.Apis.Util.RequestParameterAttribute("verificationMethod", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string VerificationMethod {
                 get {
                     return this._verificationMethod;
@@ -790,7 +807,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
             
             private string _oauth_token;
             
@@ -803,7 +820,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -814,7 +831,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -825,7 +842,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -848,7 +865,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -867,7 +884,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -878,7 +895,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -889,7 +906,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -900,7 +917,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>The id of a verified site or domain.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -934,7 +951,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -953,7 +970,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -964,7 +981,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -975,7 +992,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -986,7 +1003,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
             
             /// <summary>The id of a verified site or domain.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;

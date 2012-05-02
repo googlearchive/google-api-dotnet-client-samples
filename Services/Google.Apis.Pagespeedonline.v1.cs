@@ -694,9 +694,9 @@ namespace Google.Apis.Pagespeedonline.v1 {
     
     public partial class PagespeedonlineService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"pagespeedonline" +
             ":v1\",\"name\":\"pagespeedonline\",\"version\":\"v1\",\"revision\":\"20120214\",\"title\":\"Page" +
@@ -830,28 +830,42 @@ namespace Google.Apis.Pagespeedonline.v1 {
             "rn\":\"http(s)?://.*\",\"location\":\"query\"}},\"parameterOrder\":[\"url\"],\"response\":{\"$" +
             "ref\":\"Result\"}}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "pagespeedonline";
-        
-        private const string BaseUri = "https://www.googleapis.com/pagespeedonline/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected PagespeedonlineService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._pagespeedapi = new PagespeedapiResource(this);
+        protected PagespeedonlineService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._pagespeedapi = new PagespeedapiResource(this, _authenticator);
         }
         
         public PagespeedonlineService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public PagespeedonlineService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PagespeedonlineService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PagespeedonlineService.BaseUri))), authenticator) {
+        public PagespeedonlineService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PagespeedonlineService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/pagespeedonline/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "pagespeedonline";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/pagespeedonline/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -865,35 +879,38 @@ namespace Google.Apis.Pagespeedonline.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
     }
     
     public class PagespeedapiResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PagespeedonlineService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "pagespeedapi";
         
-        public PagespeedapiResource(PagespeedonlineService service) {
+        public PagespeedapiResource(PagespeedonlineService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Runs Page Speed analysis on the page at the specified URL, and returns a Page Speed score, a list of suggestions to make that page faster, and other information.</summary>
@@ -915,7 +932,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             Mobile,
         }
         
-        public class RunpagespeedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
+        public class RunpagespeedRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
             
             private string _oauth_token;
             
@@ -937,7 +954,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -948,7 +965,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -959,7 +976,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -970,7 +987,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>The locale used to localize formatted results</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locale")]
+            [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Locale {
                 get {
                     return this._locale;
@@ -981,7 +998,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>A Page Speed rule to run; if none are given, all rules are run</summary>
-            [Google.Apis.Util.RequestParameterAttribute("rule")]
+            [Google.Apis.Util.RequestParameterAttribute("rule", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> Rule {
                 get {
                     return this._rule;
@@ -992,7 +1009,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>The analysis strategy to use</summary>
-            [Google.Apis.Util.RequestParameterAttribute("strategy")]
+            [Google.Apis.Util.RequestParameterAttribute("strategy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Strategy> Strategy {
                 get {
                     return this._strategy;
@@ -1003,7 +1020,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             }
             
             /// <summary>The URL to fetch and analyze</summary>
-            [Google.Apis.Util.RequestParameterAttribute("url")]
+            [Google.Apis.Util.RequestParameterAttribute("url", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Url {
                 get {
                     return this._url;

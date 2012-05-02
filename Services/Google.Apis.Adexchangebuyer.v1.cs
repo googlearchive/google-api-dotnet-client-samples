@@ -651,9 +651,9 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     
     public partial class AdexchangebuyerService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adexchangebuyer" +
             ":v1\",\"name\":\"adexchangebuyer\",\"version\":\"v1\",\"revision\":\"20120227\",\"title\":\"Ad E" +
@@ -789,30 +789,44 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             "direct deals.\",\"response\":{\"$ref\":\"DirectDealsList\"},\"scopes\":[\"https://www.goog" +
             "leapis.com/auth/adexchange.buyer\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "adexchangebuyer";
-        
-        private const string BaseUri = "https://www.googleapis.com/adexchangebuyer/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected AdexchangebuyerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._accounts = new AccountsResource(this);
-            this._creatives = new CreativesResource(this);
-            this._directDeals = new DirectDealsResource(this);
+        protected AdexchangebuyerService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._accounts = new AccountsResource(this, _authenticator);
+            this._creatives = new CreativesResource(this, _authenticator);
+            this._directDeals = new DirectDealsResource(this, _authenticator);
         }
         
         public AdexchangebuyerService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public AdexchangebuyerService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdexchangebuyerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AdexchangebuyerService.BaseUri))), authenticator) {
+        public AdexchangebuyerService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdexchangebuyerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/adexchangebuyer/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "adexchangebuyer";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/adexchangebuyer/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -826,24 +840,24 @@ namespace Google.Apis.Adexchangebuyer.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -857,12 +871,15 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     
     public class AccountsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdexchangebuyerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "accounts";
         
-        public AccountsResource(AdexchangebuyerService service) {
+        public AccountsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets one account by ID.</summary>
@@ -888,7 +905,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -904,7 +921,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -915,7 +932,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -926,7 +943,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -937,7 +954,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The account id</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long Id {
                 get {
                     return this._id;
@@ -957,7 +974,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
             
             private string _oauth_token;
             
@@ -970,7 +987,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -981,7 +998,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -992,7 +1009,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1015,7 +1032,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -1034,7 +1051,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1045,7 +1062,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1056,7 +1073,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1067,7 +1084,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The account id</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long Id {
                 get {
                     return this._id;
@@ -1101,7 +1118,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -1120,7 +1137,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1131,7 +1148,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1142,7 +1159,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1153,7 +1170,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The account id</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long Id {
                 get {
                     return this._id;
@@ -1190,12 +1207,15 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     
     public class CreativesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdexchangebuyerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "creatives";
         
-        public CreativesResource(AdexchangebuyerService service) {
+        public CreativesResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets the status for a single creative.</summary>
@@ -1211,7 +1231,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new InsertRequest(service, body);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
             
             private string _oauth_token;
             
@@ -1233,7 +1253,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1244,7 +1264,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1255,7 +1275,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1266,7 +1286,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The id for the account that will serve this creative.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("accountId")]
+            [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long AccountId {
                 get {
                     return this._accountId;
@@ -1274,7 +1294,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The adgroup this creative belongs to.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("adgroupId")]
+            [Google.Apis.Util.RequestParameterAttribute("adgroupId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string AdgroupId {
                 get {
                     return this._adgroupId;
@@ -1282,7 +1302,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The buyer-specific id for this creative.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("buyerCreativeId")]
+            [Google.Apis.Util.RequestParameterAttribute("buyerCreativeId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BuyerCreativeId {
                 get {
                     return this._buyerCreativeId;
@@ -1302,7 +1322,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
             
             private string _oauth_token;
             
@@ -1318,7 +1338,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1329,7 +1349,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1340,7 +1360,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1380,12 +1400,15 @@ namespace Google.Apis.Adexchangebuyer.v1 {
     
     public class DirectDealsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdexchangebuyerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "directDeals";
         
-        public DirectDealsResource(AdexchangebuyerService service) {
+        public DirectDealsResource(AdexchangebuyerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets one direct deal by ID.</summary>
@@ -1399,7 +1422,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
             
             private string _oauth_token;
             
@@ -1415,7 +1438,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1426,7 +1449,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1437,7 +1460,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1448,7 +1471,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>The direct deal id</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1468,7 +1491,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
             
             private string _oauth_token;
             
@@ -1481,7 +1504,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1492,7 +1515,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1503,7 +1526,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;

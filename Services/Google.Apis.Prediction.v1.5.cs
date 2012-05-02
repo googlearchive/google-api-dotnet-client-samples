@@ -1018,9 +1018,9 @@ namespace Google.Apis.Prediction.v1_5 {
     
     public partial class PredictionService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"prediction:v1.5" +
             "\",\"name\":\"prediction\",\"version\":\"v1.5\",\"revision\":\"20120423\",\"title\":\"Prediction" +
@@ -1196,29 +1196,43 @@ namespace Google.Apis.Prediction.v1_5 {
             "e\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}" +
             "}}}";
         
-        private const string Version = "v1.5";
+        public const string Version = "v1.5";
         
-        private const string Name = "prediction";
-        
-        private const string BaseUri = "https://www.googleapis.com/prediction/v1.5/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected PredictionService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._hostedmodels = new HostedmodelsResource(this);
-            this._trainedmodels = new TrainedmodelsResource(this);
+        protected PredictionService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._hostedmodels = new HostedmodelsResource(this, _authenticator);
+            this._trainedmodels = new TrainedmodelsResource(this, _authenticator);
         }
         
         public PredictionService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public PredictionService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PredictionService.BaseUri))), authenticator) {
+        public PredictionService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PredictionService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/prediction/v1.5/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "prediction";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/prediction/v1.5/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -1232,24 +1246,24 @@ namespace Google.Apis.Prediction.v1_5 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1267,12 +1281,15 @@ namespace Google.Apis.Prediction.v1_5 {
     
     public class HostedmodelsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PredictionService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "hostedmodels";
         
-        public HostedmodelsResource(PredictionService service) {
+        public HostedmodelsResource(PredictionService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Submit input and request an output against a hosted model.</summary>
@@ -1281,7 +1298,7 @@ namespace Google.Apis.Prediction.v1_5 {
             return new PredictRequest(service, body, hostedModelName);
         }
         
-        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
+        public class PredictRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
             private string _oauth_token;
             
@@ -1300,7 +1317,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1311,7 +1328,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1322,7 +1339,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1333,7 +1350,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The name of a hosted model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("hostedModelName")]
+            [Google.Apis.Util.RequestParameterAttribute("hostedModelName", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string HostedModelName {
                 get {
                     return this._hostedModelName;
@@ -1370,12 +1387,15 @@ namespace Google.Apis.Prediction.v1_5 {
     
     public class TrainedmodelsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PredictionService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "trainedmodels";
         
-        public TrainedmodelsResource(PredictionService service) {
+        public TrainedmodelsResource(PredictionService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get analysis of the model and the data the model was trained on.</summary>
@@ -1418,7 +1438,7 @@ namespace Google.Apis.Prediction.v1_5 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class AnalyzeRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Analyze> {
+        public class AnalyzeRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Analyze> {
             
             private string _oauth_token;
             
@@ -1434,7 +1454,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1445,7 +1465,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1456,7 +1476,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1467,7 +1487,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The unique name for the predictive model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1487,7 +1507,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1503,7 +1523,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1514,7 +1534,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1525,7 +1545,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1536,7 +1556,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The unique name for the predictive model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1556,7 +1576,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             
@@ -1572,7 +1592,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1583,7 +1603,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1594,7 +1614,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1605,7 +1625,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The unique name for the predictive model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1625,7 +1645,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             
@@ -1641,7 +1661,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1652,7 +1672,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1663,7 +1683,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1700,7 +1720,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.List> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.List> {
             
             private string _oauth_token;
             
@@ -1717,7 +1737,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1728,7 +1748,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1739,7 +1759,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1750,7 +1770,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Maximum number of results to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1761,7 +1781,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Pagination token</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1784,7 +1804,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
+        public class PredictRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
             private string _oauth_token;
             
@@ -1803,7 +1823,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1814,7 +1834,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1825,7 +1845,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1836,7 +1856,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The unique name for the predictive model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;
@@ -1870,7 +1890,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             
@@ -1889,7 +1909,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1900,7 +1920,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1911,7 +1931,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1922,7 +1942,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
             
             /// <summary>The unique name for the predictive model.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id")]
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Id {
                 get {
                     return this._id;

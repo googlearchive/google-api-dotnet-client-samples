@@ -1587,9 +1587,9 @@ namespace Google.Apis.Blogger.v2 {
     
     public partial class BloggerService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"blogger:v2\",\"na" +
             "me\":\"blogger\",\"version\":\"v2\",\"revision\":\"20111216\",\"title\":\"Blogger API\",\"descri" +
@@ -1804,32 +1804,46 @@ namespace Google.Apis.Blogger.v2 {
             "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{" +
             "\"$ref\":\"BlogList\"},\"scopes\":[\"https://www.googleapis.com/auth/blogger\"]}}}}}}}";
         
-        private const string Version = "v2";
+        public const string Version = "v2";
         
-        private const string Name = "blogger";
-        
-        private const string BaseUri = "https://www.googleapis.com/blogger/v2/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected BloggerService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._blogs = new BlogsResource(this);
-            this._comments = new CommentsResource(this);
-            this._pages = new PagesResource(this);
-            this._posts = new PostsResource(this);
-            this._users = new UsersResource(this);
+        protected BloggerService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._blogs = new BlogsResource(this, _authenticator);
+            this._comments = new CommentsResource(this, _authenticator);
+            this._pages = new PagesResource(this, _authenticator);
+            this._posts = new PostsResource(this, _authenticator);
+            this._users = new UsersResource(this, _authenticator);
         }
         
         public BloggerService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public BloggerService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BloggerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BloggerService.BaseUri))), authenticator) {
+        public BloggerService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BloggerService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/blogger/v2/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "blogger";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/blogger/v2/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -1843,24 +1857,24 @@ namespace Google.Apis.Blogger.v2 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -1874,12 +1888,15 @@ namespace Google.Apis.Blogger.v2 {
     
     public class BlogsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BloggerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "blogs";
         
-        public BlogsResource(BloggerService service) {
+        public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets one blog by id.</summary>
@@ -1888,7 +1905,7 @@ namespace Google.Apis.Blogger.v2 {
             return new GetRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
             
             private string _oauth_token;
             
@@ -1904,7 +1921,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1915,7 +1932,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1926,7 +1943,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1937,7 +1954,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>The ID of the blog to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -1960,12 +1977,15 @@ namespace Google.Apis.Blogger.v2 {
     
     public class CommentsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BloggerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(BloggerService service) {
+        public CommentsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets one comment by id.</summary>
@@ -1983,7 +2003,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId, postId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -2005,7 +2025,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2016,7 +2036,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2027,7 +2047,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2038,7 +2058,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog to containing the comment.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2046,7 +2066,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>The ID of the comment to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CommentId {
                 get {
                     return this._commentId;
@@ -2054,7 +2074,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the post to fetch posts from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            [Google.Apis.Util.RequestParameterAttribute("postId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PostId {
                 get {
                     return this._postId;
@@ -2074,7 +2094,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
             
             private string _oauth_token;
             
@@ -2101,7 +2121,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2112,7 +2132,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2123,7 +2143,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2134,7 +2154,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog to fetch comments from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2142,7 +2162,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Whether the body content of the comments is included.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
+            [Google.Apis.Util.RequestParameterAttribute("fetchBodies", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FetchBodies {
                 get {
                     return this._fetchBodies;
@@ -2153,7 +2173,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Maximum number of comments to include in the result.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -2164,7 +2184,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Continuation token if request is paged.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -2175,7 +2195,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the post to fetch posts from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            [Google.Apis.Util.RequestParameterAttribute("postId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PostId {
                 get {
                     return this._postId;
@@ -2183,7 +2203,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Earliest date of comment to fetch.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startDate")]
+            [Google.Apis.Util.RequestParameterAttribute("startDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartDate {
                 get {
                     return this._startDate;
@@ -2209,12 +2229,15 @@ namespace Google.Apis.Blogger.v2 {
     
     public class PagesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BloggerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "pages";
         
-        public PagesResource(BloggerService service) {
+        public PagesResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets one blog page by id.</summary>
@@ -2230,7 +2253,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
             
             private string _oauth_token;
             
@@ -2249,7 +2272,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2260,7 +2283,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2271,7 +2294,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2282,7 +2305,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog containing the page.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2290,7 +2313,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>The ID of the page to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageId")]
+            [Google.Apis.Util.RequestParameterAttribute("pageId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PageId {
                 get {
                     return this._pageId;
@@ -2310,7 +2333,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
             
             private string _oauth_token;
             
@@ -2328,7 +2351,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2339,7 +2362,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2350,7 +2373,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2361,7 +2384,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog to fetch pages from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2369,7 +2392,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Whether to retrieve the Page bodies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
+            [Google.Apis.Util.RequestParameterAttribute("fetchBodies", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FetchBodies {
                 get {
                     return this._fetchBodies;
@@ -2395,12 +2418,15 @@ namespace Google.Apis.Blogger.v2 {
     
     public class PostsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BloggerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "posts";
         
-        public PostsResource(BloggerService service) {
+        public PostsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get a post by id.</summary>
@@ -2416,7 +2442,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
             
             private string _oauth_token;
             
@@ -2435,7 +2461,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2446,7 +2472,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2457,7 +2483,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2468,7 +2494,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog to fetch the post from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2476,7 +2502,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>The ID of the post</summary>
-            [Google.Apis.Util.RequestParameterAttribute("postId")]
+            [Google.Apis.Util.RequestParameterAttribute("postId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string PostId {
                 get {
                     return this._postId;
@@ -2496,7 +2522,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
             
             private string _oauth_token;
             
@@ -2520,7 +2546,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2531,7 +2557,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2542,7 +2568,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2553,7 +2579,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>ID of the blog to fetch posts from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("blogId")]
+            [Google.Apis.Util.RequestParameterAttribute("blogId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string BlogId {
                 get {
                     return this._blogId;
@@ -2561,7 +2587,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Whether the body content of posts is included.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("fetchBodies")]
+            [Google.Apis.Util.RequestParameterAttribute("fetchBodies", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FetchBodies {
                 get {
                     return this._fetchBodies;
@@ -2572,7 +2598,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Maximum number of posts to fetch.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -2583,7 +2609,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Continuation token if the request is paged.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -2594,7 +2620,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Earliest post date to fetch.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startDate")]
+            [Google.Apis.Util.RequestParameterAttribute("startDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartDate {
                 get {
                     return this._startDate;
@@ -2620,15 +2646,18 @@ namespace Google.Apis.Blogger.v2 {
     
     public class UsersResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BloggerService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "users";
         
         private BlogsResource _blogs;
         
-        public UsersResource(BloggerService service) {
+        public UsersResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._blogs = new BlogsResource(service);
+            this._authenticator = _authenticator;
+            this._blogs = new BlogsResource(service, _authenticator);
         }
         
         public virtual BlogsResource Blogs {
@@ -2645,12 +2674,15 @@ namespace Google.Apis.Blogger.v2 {
         
         public class BlogsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BloggerService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "users.blogs";
             
-            public BlogsResource(BloggerService service) {
+            public BlogsResource(BloggerService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Retrieves a list of blogs, possibly filtered.</summary>
@@ -2659,7 +2691,7 @@ namespace Google.Apis.Blogger.v2 {
                 return new ListRequest(service, userId);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
                 
                 private string _oauth_token;
                 
@@ -2675,7 +2707,7 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -2686,7 +2718,7 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -2697,7 +2729,7 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -2708,7 +2740,7 @@ namespace Google.Apis.Blogger.v2 {
                 }
                 
                 /// <summary>ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("userId")]
+                [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string UserId {
                     get {
                         return this._userId;
@@ -2729,7 +2761,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
             
             private string _oauth_token;
             
@@ -2745,7 +2777,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2756,7 +2788,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2767,7 +2799,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2778,7 +2810,7 @@ namespace Google.Apis.Blogger.v2 {
             }
             
             /// <summary>The ID of the user to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;

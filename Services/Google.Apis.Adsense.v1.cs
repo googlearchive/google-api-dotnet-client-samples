@@ -676,12 +676,12 @@ namespace Google.Apis.Adsense.v1 {
     
     public partial class AdsenseService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adsense:v1\",\"na" +
-            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120320\",\"title\":\"AdSense Management A" +
+            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120423\",\"title\":\"AdSense Management A" +
             "PI\",\"description\":\"Gives AdSense publishers access to their inventory and the ab" +
             "ility to generate reports\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/pr" +
             "oduct/adsense-16.png\",\"x32\":\"http://www.google.com/images/icons/product/adsense-" +
@@ -871,32 +871,46 @@ namespace Google.Apis.Adsense.v1 {
             "UrlChannels\"},\"scopes\":[\"https://www.googleapis.com/auth/adsense\",\"https://www.g" +
             "oogleapis.com/auth/adsense.readonly\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "adsense";
-        
-        private const string BaseUri = "https://www.googleapis.com/adsense/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected AdsenseService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._adclients = new AdclientsResource(this);
-            this._adunits = new AdunitsResource(this);
-            this._customchannels = new CustomchannelsResource(this);
-            this._reports = new ReportsResource(this);
-            this._urlchannels = new UrlchannelsResource(this);
+        protected AdsenseService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._adclients = new AdclientsResource(this, _authenticator);
+            this._adunits = new AdunitsResource(this, _authenticator);
+            this._customchannels = new CustomchannelsResource(this, _authenticator);
+            this._reports = new ReportsResource(this, _authenticator);
+            this._urlchannels = new UrlchannelsResource(this, _authenticator);
         }
         
         public AdsenseService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public AdsenseService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdsenseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(AdsenseService.BaseUri))), authenticator) {
+        public AdsenseService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(AdsenseService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/adsense/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "adsense";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/adsense/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -910,24 +924,24 @@ namespace Google.Apis.Adsense.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -945,12 +959,15 @@ namespace Google.Apis.Adsense.v1 {
     
     public class AdclientsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdsenseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "adclients";
         
-        public AdclientsResource(AdsenseService service) {
+        public AdclientsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>List all ad clients in this AdSense account.</summary>
@@ -958,7 +975,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdClients> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdClients> {
             
             private string _oauth_token;
             
@@ -975,7 +992,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -986,7 +1003,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -997,7 +1014,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1008,7 +1025,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1019,7 +1036,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1045,12 +1062,15 @@ namespace Google.Apis.Adsense.v1 {
     
     public class AdunitsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdsenseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "adunits";
         
-        public AdunitsResource(AdsenseService service) {
+        public AdunitsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>List all ad units in the specified ad client for this AdSense account.</summary>
@@ -1059,7 +1079,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdUnits> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdUnits> {
             
             private string _oauth_token;
             
@@ -1081,7 +1101,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1092,7 +1112,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1103,7 +1123,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1114,7 +1134,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Ad client for which to list ad units.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("adClientId")]
+            [Google.Apis.Util.RequestParameterAttribute("adClientId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string AdClientId {
                 get {
                     return this._adClientId;
@@ -1122,7 +1142,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Whether to include inactive ad units. Default: true.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("includeInactive")]
+            [Google.Apis.Util.RequestParameterAttribute("includeInactive", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> IncludeInactive {
                 get {
                     return this._includeInactive;
@@ -1133,7 +1153,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The maximum number of ad units to include in the response, used for paging.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1144,7 +1164,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1170,12 +1190,15 @@ namespace Google.Apis.Adsense.v1 {
     
     public class CustomchannelsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdsenseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "customchannels";
         
-        public CustomchannelsResource(AdsenseService service) {
+        public CustomchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>List all custom channels in the specified ad client for this AdSense account.</summary>
@@ -1184,7 +1207,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.CustomChannels> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.CustomChannels> {
             
             private string _oauth_token;
             
@@ -1204,7 +1227,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1215,7 +1238,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1226,7 +1249,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1237,7 +1260,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Ad client for which to list custom channels.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("adClientId")]
+            [Google.Apis.Util.RequestParameterAttribute("adClientId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string AdClientId {
                 get {
                     return this._adClientId;
@@ -1245,7 +1268,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The maximum number of custom channels to include in the response, used for paging.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1256,7 +1279,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -1282,12 +1305,15 @@ namespace Google.Apis.Adsense.v1 {
     
     public class ReportsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdsenseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "reports";
         
-        public ReportsResource(AdsenseService service) {
+        public ReportsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
@@ -1297,7 +1323,7 @@ namespace Google.Apis.Adsense.v1 {
             return new GenerateRequest(service, startDate, endDate);
         }
         
-        public class GenerateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse> {
+        public class GenerateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse> {
             
             private string _oauth_token;
             
@@ -1332,7 +1358,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1343,7 +1369,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1354,7 +1380,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1365,7 +1391,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Optional currency to use when reporting on monetary metrics. Defaults to the account's currency if not set.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("currency")]
+            [Google.Apis.Util.RequestParameterAttribute("currency", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Currency {
                 get {
                     return this._currency;
@@ -1376,7 +1402,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Dimensions to base the report on.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("dimension")]
+            [Google.Apis.Util.RequestParameterAttribute("dimension", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> Dimension {
                 get {
                     return this._dimension;
@@ -1387,7 +1413,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>End of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("endDate")]
+            [Google.Apis.Util.RequestParameterAttribute("endDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string EndDate {
                 get {
                     return this._endDate;
@@ -1395,7 +1421,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Filters to be run on the report.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("filter")]
+            [Google.Apis.Util.RequestParameterAttribute("filter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> Filter {
                 get {
                     return this._filter;
@@ -1406,7 +1432,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locale")]
+            [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Locale {
                 get {
                     return this._locale;
@@ -1417,7 +1443,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The maximum number of rows of report data to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1428,7 +1454,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Numeric columns to include in the report.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("metric")]
+            [Google.Apis.Util.RequestParameterAttribute("metric", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> Metric {
                 get {
                     return this._metric;
@@ -1439,7 +1465,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sort")]
+            [Google.Apis.Util.RequestParameterAttribute("sort", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> Sort {
                 get {
                     return this._sort;
@@ -1450,7 +1476,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Start of the date range to report on in "YYYY-MM-DD" format, inclusive.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startDate")]
+            [Google.Apis.Util.RequestParameterAttribute("startDate", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string StartDate {
                 get {
                     return this._startDate;
@@ -1458,7 +1484,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Index of the first row of report data to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -1484,12 +1510,15 @@ namespace Google.Apis.Adsense.v1 {
     
     public class UrlchannelsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private AdsenseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "urlchannels";
         
-        public UrlchannelsResource(AdsenseService service) {
+        public UrlchannelsResource(AdsenseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>List all URL channels in the specified ad client for this AdSense account.</summary>
@@ -1498,7 +1527,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.UrlChannels> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.UrlChannels> {
             
             private string _oauth_token;
             
@@ -1518,7 +1547,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1529,7 +1558,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1540,7 +1569,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1551,7 +1580,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>Ad client for which to list URL channels.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("adClientId")]
+            [Google.Apis.Util.RequestParameterAttribute("adClientId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string AdClientId {
                 get {
                     return this._adClientId;
@@ -1559,7 +1588,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>The maximum number of URL channels to include in the response, used for paging.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -1570,7 +1599,7 @@ namespace Google.Apis.Adsense.v1 {
             }
             
             /// <summary>A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;

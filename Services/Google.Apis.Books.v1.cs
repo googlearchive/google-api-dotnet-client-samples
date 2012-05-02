@@ -3638,9 +3638,9 @@ namespace Google.Apis.Books.v1 {
     
     public partial class BooksService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"books:v1\",\"name" +
             "\":\"books\",\"version\":\"v1\",\"revision\":\"20120423\",\"title\":\"Books API\",\"description\"" +
@@ -4368,32 +4368,46 @@ namespace Google.Apis.Books.v1 {
             "0\",\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Volumes\"},\"sc" +
             "opes\":[\"https://www.googleapis.com/auth/books\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "books";
-        
-        private const string BaseUri = "https://www.googleapis.com/books/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected BooksService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._bookshelves = new BookshelvesResource(this);
-            this._layers = new LayersResource(this);
-            this._myconfig = new MyconfigResource(this);
-            this._mylibrary = new MylibraryResource(this);
-            this._volumes = new VolumesResource(this);
+        protected BooksService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._bookshelves = new BookshelvesResource(this, _authenticator);
+            this._layers = new LayersResource(this, _authenticator);
+            this._myconfig = new MyconfigResource(this, _authenticator);
+            this._mylibrary = new MylibraryResource(this, _authenticator);
+            this._volumes = new VolumesResource(this, _authenticator);
         }
         
         public BooksService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public BooksService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(BooksService.BaseUri))), authenticator) {
+        public BooksService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(BooksService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/books/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "books";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/books/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -4407,24 +4421,24 @@ namespace Google.Apis.Books.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -4438,15 +4452,18 @@ namespace Google.Apis.Books.v1 {
     
     public class BookshelvesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BooksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "bookshelves";
         
         private VolumesResource _volumes;
         
-        public BookshelvesResource(BooksService service) {
+        public BookshelvesResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._volumes = new VolumesResource(service);
+            this._authenticator = _authenticator;
+            this._volumes = new VolumesResource(service, _authenticator);
         }
         
         public virtual VolumesResource Volumes {
@@ -4470,12 +4487,15 @@ namespace Google.Apis.Books.v1 {
         
         public class VolumesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "bookshelves.volumes";
             
-            public VolumesResource(BooksService service) {
+            public VolumesResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Retrieves volumes in a specific bookshelf for the specified user.</summary>
@@ -4485,7 +4505,7 @@ namespace Google.Apis.Books.v1 {
                 return new ListRequest(service, userId, shelf);
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
                 
                 private string _oauth_token;
                 
@@ -4512,7 +4532,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -4523,7 +4543,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -4534,7 +4554,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -4545,7 +4565,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
-                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -4556,7 +4576,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf to retrieve volumes.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -4564,7 +4584,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
+                [Google.Apis.Util.RequestParameterAttribute("showPreorders", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> ShowPreorders {
                     get {
                         return this._showPreorders;
@@ -4575,7 +4595,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -4586,7 +4606,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Index of the first element to return (starts at 0)</summary>
-                [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+                [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> StartIndex {
                     get {
                         return this._startIndex;
@@ -4597,7 +4617,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of user for whom to retrieve bookshelf volumes.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("userId")]
+                [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string UserId {
                     get {
                         return this._userId;
@@ -4618,7 +4638,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
             
             private string _oauth_token;
             
@@ -4639,7 +4659,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4650,7 +4670,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4661,7 +4681,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4672,7 +4692,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ID of bookshelf to retrieve.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("shelf")]
+            [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Shelf {
                 get {
                     return this._shelf;
@@ -4680,7 +4700,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -4691,7 +4711,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ID of user for whom to retrieve bookshelves.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4711,7 +4731,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
             
             private string _oauth_token;
             
@@ -4729,7 +4749,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -4740,7 +4760,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -4751,7 +4771,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -4762,7 +4782,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -4773,7 +4793,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ID of user for whom to retrieve bookshelves.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -4796,7 +4816,9 @@ namespace Google.Apis.Books.v1 {
     
     public class LayersResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BooksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "layers";
         
@@ -4804,10 +4826,11 @@ namespace Google.Apis.Books.v1 {
         
         private VolumeAnnotationsResource _volumeAnnotations;
         
-        public LayersResource(BooksService service) {
+        public LayersResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._annotationData = new AnnotationDataResource(service);
-            this._volumeAnnotations = new VolumeAnnotationsResource(service);
+            this._authenticator = _authenticator;
+            this._annotationData = new AnnotationDataResource(service, _authenticator);
+            this._volumeAnnotations = new VolumeAnnotationsResource(service, _authenticator);
         }
         
         public virtual AnnotationDataResource AnnotationData {
@@ -4836,12 +4859,15 @@ namespace Google.Apis.Books.v1 {
         
         public class AnnotationDataResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "layers.annotationData";
             
-            public AnnotationDataResource(BooksService service) {
+            public AnnotationDataResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Gets the annotation data.</summary>
@@ -4860,7 +4886,7 @@ namespace Google.Apis.Books.v1 {
                 return new ListRequest(service, volumeId, layerId, contentVersion);
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationdata> {
+            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationdata> {
                 
                 private string _oauth_token;
                 
@@ -4890,7 +4916,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -4901,7 +4927,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -4912,7 +4938,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -4923,7 +4949,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID of the annotation data to retrieve.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationDataId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationDataId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string AnnotationDataId {
                     get {
                         return this._annotationDataId;
@@ -4931,7 +4957,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The requested pixel height for any images. If height is provided width must also be provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("h")]
+                [Google.Apis.Util.RequestParameterAttribute("h", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> H {
                     get {
                         return this._h;
@@ -4942,7 +4968,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the layer to get the annotations.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                [Google.Apis.Util.RequestParameterAttribute("layerId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string LayerId {
                     get {
                         return this._layerId;
@@ -4950,7 +4976,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Locale {
                     get {
                         return this._locale;
@@ -4961,7 +4987,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -4972,7 +4998,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The volume to retrieve annotations for.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -4980,7 +5006,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The requested pixel width for any images. If width is provided height must also be provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("w")]
+                [Google.Apis.Util.RequestParameterAttribute("w", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> W {
                     get {
                         return this._w;
@@ -5003,7 +5029,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationsdata> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotationsdata> {
                 
                 private string _oauth_token;
                 
@@ -5043,7 +5069,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -5054,7 +5080,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -5065,7 +5091,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -5076,7 +5102,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationDataId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationDataId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual Google.Apis.Util.Repeatable<string> AnnotationDataId {
                     get {
                         return this._annotationDataId;
@@ -5087,7 +5113,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The content version for the requested volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string ContentVersion {
                     get {
                         return this._contentVersion;
@@ -5095,7 +5121,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The requested pixel height for any images. If height is provided width must also be provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("h")]
+                [Google.Apis.Util.RequestParameterAttribute("h", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> H {
                     get {
                         return this._h;
@@ -5106,7 +5132,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the layer to get the annotation data.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                [Google.Apis.Util.RequestParameterAttribute("layerId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string LayerId {
                     get {
                         return this._layerId;
@@ -5114,7 +5140,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Locale {
                     get {
                         return this._locale;
@@ -5125,7 +5151,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
-                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -5136,7 +5162,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The value of the nextToken from the previous page.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+                [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string PageToken {
                     get {
                         return this._pageToken;
@@ -5147,7 +5173,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -5158,7 +5184,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMax", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMax {
                     get {
                         return this._updatedMax;
@@ -5169,7 +5195,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMin {
                     get {
                         return this._updatedMin;
@@ -5180,7 +5206,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The volume to retrieve annotation data for.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -5188,7 +5214,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The requested pixel width for any images. If width is provided height must also be provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("w")]
+                [Google.Apis.Util.RequestParameterAttribute("w", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> W {
                     get {
                         return this._w;
@@ -5214,12 +5240,15 @@ namespace Google.Apis.Books.v1 {
         
         public class VolumeAnnotationsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "layers.volumeAnnotations";
             
-            public VolumeAnnotationsResource(BooksService service) {
+            public VolumeAnnotationsResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Gets the volume annotation.</summary>
@@ -5238,7 +5267,7 @@ namespace Google.Apis.Books.v1 {
                 return new ListRequest(service, volumeId, layerId, contentVersion);
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotation> {
+            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotation> {
                 
                 private string _oauth_token;
                 
@@ -5264,7 +5293,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -5275,7 +5304,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -5286,7 +5315,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -5297,7 +5326,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID of the volume annotation to retrieve.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string AnnotationId {
                     get {
                         return this._annotationId;
@@ -5305,7 +5334,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the layer to get the annotations.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                [Google.Apis.Util.RequestParameterAttribute("layerId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string LayerId {
                     get {
                         return this._layerId;
@@ -5313,7 +5342,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Locale {
                     get {
                         return this._locale;
@@ -5324,7 +5353,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -5335,7 +5364,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The volume to retrieve annotations for.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -5355,7 +5384,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotations> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumeannotations> {
                 
                 private string _oauth_token;
                 
@@ -5399,7 +5428,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -5410,7 +5439,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -5421,7 +5450,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -5432,7 +5461,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The content version for the requested volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string ContentVersion {
                     get {
                         return this._contentVersion;
@@ -5440,7 +5469,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The end offset to end retrieving data from.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("endOffset")]
+                [Google.Apis.Util.RequestParameterAttribute("endOffset", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string EndOffset {
                     get {
                         return this._endOffset;
@@ -5451,7 +5480,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The end position to end retrieving data from.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("endPosition")]
+                [Google.Apis.Util.RequestParameterAttribute("endPosition", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string EndPosition {
                     get {
                         return this._endPosition;
@@ -5462,7 +5491,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the layer to get the annotations.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                [Google.Apis.Util.RequestParameterAttribute("layerId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string LayerId {
                     get {
                         return this._layerId;
@@ -5470,7 +5499,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("locale")]
+                [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Locale {
                     get {
                         return this._locale;
@@ -5481,7 +5510,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
-                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -5492,7 +5521,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The value of the nextToken from the previous page.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+                [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string PageToken {
                     get {
                         return this._pageToken;
@@ -5503,7 +5532,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+                [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> ShowDeleted {
                     get {
                         return this._showDeleted;
@@ -5514,7 +5543,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -5525,7 +5554,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The start offset to start retrieving data from.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("startOffset")]
+                [Google.Apis.Util.RequestParameterAttribute("startOffset", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string StartOffset {
                     get {
                         return this._startOffset;
@@ -5536,7 +5565,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The start position to start retrieving data from.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("startPosition")]
+                [Google.Apis.Util.RequestParameterAttribute("startPosition", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string StartPosition {
                     get {
                         return this._startPosition;
@@ -5547,7 +5576,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMax", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMax {
                     get {
                         return this._updatedMax;
@@ -5558,7 +5587,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMin {
                     get {
                         return this._updatedMin;
@@ -5569,7 +5598,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The volume to retrieve annotations for.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -5590,7 +5619,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummary> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummary> {
             
             private string _oauth_token;
             
@@ -5608,7 +5637,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5619,7 +5648,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5630,7 +5659,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5641,7 +5670,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -5652,7 +5681,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The ID for the layer to get the summary for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("summaryId")]
+            [Google.Apis.Util.RequestParameterAttribute("summaryId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string SummaryId {
                 get {
                     return this._summaryId;
@@ -5672,7 +5701,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummaries> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Layersummaries> {
             
             private string _oauth_token;
             
@@ -5696,7 +5725,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5707,7 +5736,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5718,7 +5747,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5729,7 +5758,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The content version for the requested volume.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+            [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string ContentVersion {
                 get {
                     return this._contentVersion;
@@ -5740,7 +5769,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Maximum number of results to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -5751,7 +5780,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The value of the nextToken from the previous page.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -5762,7 +5791,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -5773,7 +5802,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The volume to retrieve layers for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+            [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string VolumeId {
                 get {
                     return this._volumeId;
@@ -5796,12 +5825,15 @@ namespace Google.Apis.Books.v1 {
     
     public class MyconfigResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BooksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "myconfig";
         
-        public MyconfigResource(BooksService service) {
+        public MyconfigResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Release downloaded content access restriction.</summary>
@@ -5828,7 +5860,7 @@ namespace Google.Apis.Books.v1 {
             return new SyncVolumeLicensesRequest(service, source, nonce, cpksver);
         }
         
-        public class ReleaseDownloadAccessRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.DownloadAccesses> {
+        public class ReleaseDownloadAccessRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.DownloadAccesses> {
             
             private string _oauth_token;
             
@@ -5851,7 +5883,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5862,7 +5894,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5873,7 +5905,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5884,7 +5916,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The device/version ID from which to release the restriction.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cpksver")]
+            [Google.Apis.Util.RequestParameterAttribute("cpksver", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cpksver {
                 get {
                     return this._cpksver;
@@ -5892,7 +5924,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locale")]
+            [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Locale {
                 get {
                     return this._locale;
@@ -5903,7 +5935,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -5914,7 +5946,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The volume(s) to release restrictions for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("volumeIds")]
+            [Google.Apis.Util.RequestParameterAttribute("volumeIds", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> VolumeIds {
                 get {
                     return this._volumeIds;
@@ -5934,7 +5966,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class RequestAccessRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.RequestAccess> {
+        public class RequestAccessRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.RequestAccess> {
             
             private string _oauth_token;
             
@@ -5961,7 +5993,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -5972,7 +6004,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -5983,7 +6015,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -5994,7 +6026,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The device/version ID from which to request the restrictions.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cpksver")]
+            [Google.Apis.Util.RequestParameterAttribute("cpksver", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cpksver {
                 get {
                     return this._cpksver;
@@ -6002,7 +6034,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locale")]
+            [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Locale {
                 get {
                     return this._locale;
@@ -6013,7 +6045,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The client nonce value.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("nonce")]
+            [Google.Apis.Util.RequestParameterAttribute("nonce", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Nonce {
                 get {
                     return this._nonce;
@@ -6021,7 +6053,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -6029,7 +6061,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The volume to request concurrent/download restrictions for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+            [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string VolumeId {
                 get {
                     return this._volumeId;
@@ -6049,7 +6081,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class SyncVolumeLicensesRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
+        public class SyncVolumeLicensesRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
             
             private string _oauth_token;
             
@@ -6077,7 +6109,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -6088,7 +6120,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -6099,7 +6131,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -6110,7 +6142,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The device/version ID from which to release the restriction.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("cpksver")]
+            [Google.Apis.Util.RequestParameterAttribute("cpksver", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Cpksver {
                 get {
                     return this._cpksver;
@@ -6118,7 +6150,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ISO-639-1, ISO-3166-1 codes for message localization, i.e. en_US.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("locale")]
+            [Google.Apis.Util.RequestParameterAttribute("locale", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Locale {
                 get {
                     return this._locale;
@@ -6129,7 +6161,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The client nonce value.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("nonce")]
+            [Google.Apis.Util.RequestParameterAttribute("nonce", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Nonce {
                 get {
                     return this._nonce;
@@ -6137,7 +6169,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
+            [Google.Apis.Util.RequestParameterAttribute("showPreorders", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowPreorders {
                 get {
                     return this._showPreorders;
@@ -6148,7 +6180,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -6156,7 +6188,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>The volume(s) to request download restrictions for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("volumeIds")]
+            [Google.Apis.Util.RequestParameterAttribute("volumeIds", Google.Apis.Util.RequestParameterType.Query)]
             public virtual Google.Apis.Util.Repeatable<string> VolumeIds {
                 get {
                     return this._volumeIds;
@@ -6182,7 +6214,9 @@ namespace Google.Apis.Books.v1 {
     
     public class MylibraryResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BooksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "mylibrary";
         
@@ -6192,11 +6226,12 @@ namespace Google.Apis.Books.v1 {
         
         private ReadingpositionsResource _readingpositions;
         
-        public MylibraryResource(BooksService service) {
+        public MylibraryResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
-            this._annotations = new AnnotationsResource(service);
-            this._bookshelves = new BookshelvesResource(service);
-            this._readingpositions = new ReadingpositionsResource(service);
+            this._authenticator = _authenticator;
+            this._annotations = new AnnotationsResource(service, _authenticator);
+            this._bookshelves = new BookshelvesResource(service, _authenticator);
+            this._readingpositions = new ReadingpositionsResource(service, _authenticator);
         }
         
         public virtual AnnotationsResource Annotations {
@@ -6219,12 +6254,15 @@ namespace Google.Apis.Books.v1 {
         
         public class AnnotationsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "mylibrary.annotations";
             
-            public AnnotationsResource(BooksService service) {
+            public AnnotationsResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Deletes an annotation.</summary>
@@ -6255,7 +6293,7 @@ namespace Google.Apis.Books.v1 {
                 return new UpdateRequest(service, body, annotationId);
             }
             
-            public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -6273,7 +6311,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -6284,7 +6322,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -6295,7 +6333,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -6306,7 +6344,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the annotation to delete.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string AnnotationId {
                     get {
                         return this._annotationId;
@@ -6314,7 +6352,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -6337,7 +6375,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
+            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
                 private string _oauth_token;
                 
@@ -6355,7 +6393,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -6366,7 +6404,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -6377,7 +6415,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -6388,7 +6426,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the annotation to retrieve.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string AnnotationId {
                     get {
                         return this._annotationId;
@@ -6396,7 +6434,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -6419,7 +6457,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
+            public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
                 private string _oauth_token;
                 
@@ -6437,7 +6475,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -6448,7 +6486,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -6459,7 +6497,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -6470,7 +6508,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -6507,7 +6545,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotations> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotations> {
                 
                 private string _oauth_token;
                 
@@ -6540,7 +6578,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -6551,7 +6589,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -6562,7 +6600,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -6573,7 +6611,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The content version for the requested volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string ContentVersion {
                     get {
                         return this._contentVersion;
@@ -6584,7 +6622,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The layer ID to limit annotation by.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("layerId")]
+                [Google.Apis.Util.RequestParameterAttribute("layerId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string LayerId {
                     get {
                         return this._layerId;
@@ -6595,7 +6633,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Maximum number of results to return</summary>
-                [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<long> MaxResults {
                     get {
                         return this._maxResults;
@@ -6606,7 +6644,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The page ID(s) for the volume that is being queried.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("pageIds")]
+                [Google.Apis.Util.RequestParameterAttribute("pageIds", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual Google.Apis.Util.Repeatable<string> PageIds {
                     get {
                         return this._pageIds;
@@ -6617,7 +6655,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The value of the nextToken from the previous page.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+                [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string PageToken {
                     get {
                         return this._pageToken;
@@ -6628,7 +6666,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Set to true to return deleted annotations. updatedMin must be in the request to use this. Defaults to false.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("showDeleted")]
+                [Google.Apis.Util.RequestParameterAttribute("showDeleted", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> ShowDeleted {
                     get {
                         return this._showDeleted;
@@ -6639,7 +6677,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -6650,7 +6688,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated prior to this timestamp (exclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMax")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMax", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMax {
                     get {
                         return this._updatedMax;
@@ -6661,7 +6699,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 timestamp to restrict to items updated since this timestamp (inclusive).</summary>
-                [Google.Apis.Util.RequestParameterAttribute("updatedMin")]
+                [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string UpdatedMin {
                     get {
                         return this._updatedMin;
@@ -6672,7 +6710,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The volume to restrict annotations to.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -6695,7 +6733,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
+            public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Annotation> {
                 
                 private string _oauth_token;
                 
@@ -6716,7 +6754,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -6727,7 +6765,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -6738,7 +6776,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -6749,7 +6787,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>The ID for the annotation to update.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("annotationId")]
+                [Google.Apis.Util.RequestParameterAttribute("annotationId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string AnnotationId {
                     get {
                         return this._annotationId;
@@ -6757,7 +6795,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -6797,15 +6835,18 @@ namespace Google.Apis.Books.v1 {
         
         public class BookshelvesResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "mylibrary.bookshelves";
             
             private VolumesResource _volumes;
             
-            public BookshelvesResource(BooksService service) {
+            public BookshelvesResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
-                this._volumes = new VolumesResource(service);
+                this._authenticator = _authenticator;
+                this._volumes = new VolumesResource(service, _authenticator);
             }
             
             public virtual VolumesResource Volumes {
@@ -6855,12 +6896,15 @@ namespace Google.Apis.Books.v1 {
             
             public class VolumesResource {
                 
-                private Google.Apis.Discovery.IRequestProvider service;
+                private BooksService service;
+                
+                private Google.Apis.Authentication.IAuthenticator _authenticator;
                 
                 private const string Resource = "mylibrary.bookshelves.volumes";
                 
-                public VolumesResource(BooksService service) {
+                public VolumesResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                     this.service = service;
+                    this._authenticator = _authenticator;
                 }
                 
                 /// <summary>Gets volume information for volumes on a bookshelf.</summary>
@@ -6882,7 +6926,7 @@ namespace Google.Apis.Books.v1 {
                     Lite,
                 }
                 
-                public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
+                public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
                     
                     private string _oauth_token;
                     
@@ -6910,7 +6954,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>OAuth 2.0 token for the current user.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                    [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual string Oauth_token {
                         get {
                             return this._oauth_token;
@@ -6921,7 +6965,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Returns response with indentations and line breaks.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                    [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual System.Nullable<bool> PrettyPrint {
                         get {
                             return this._prettyPrint;
@@ -6932,7 +6976,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                    [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual string QuotaUser {
                         get {
                             return this._quotaUser;
@@ -6943,7 +6987,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Maximum number of results to return</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+                    [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual System.Nullable<long> MaxResults {
                         get {
                             return this._maxResults;
@@ -6954,7 +6998,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Restrict information returned to a set of selected fields.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("projection")]
+                    [Google.Apis.Util.RequestParameterAttribute("projection", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual System.Nullable<Projection> Projection {
                         get {
                             return this._projection;
@@ -6965,7 +7009,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Full-text search query string in this bookshelf.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("q")]
+                    [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual string Q {
                         get {
                             return this._q;
@@ -6976,7 +7020,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>The bookshelf ID or name retrieve volumes for.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                    [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                     public virtual string Shelf {
                         get {
                             return this._shelf;
@@ -6984,7 +7028,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Set to true to show pre-ordered books. Defaults to false.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
+                    [Google.Apis.Util.RequestParameterAttribute("showPreorders", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual System.Nullable<bool> ShowPreorders {
                         get {
                             return this._showPreorders;
@@ -6995,7 +7039,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>String to identify the originator of this request.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("source")]
+                    [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual string Source {
                         get {
                             return this._source;
@@ -7006,7 +7050,7 @@ namespace Google.Apis.Books.v1 {
                     }
                     
                     /// <summary>Index of the first element to return (starts at 0)</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+                    [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
                     public virtual System.Nullable<long> StartIndex {
                         get {
                             return this._startIndex;
@@ -7030,7 +7074,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class AddVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class AddVolumeRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -7051,7 +7095,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7062,7 +7106,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7073,7 +7117,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7084,7 +7128,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf to which to add a volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -7092,7 +7136,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7103,7 +7147,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of volume to add.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -7123,7 +7167,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class ClearVolumesRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class ClearVolumesRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -7141,7 +7185,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7152,7 +7196,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7163,7 +7207,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7174,7 +7218,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf from which to remove a volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -7182,7 +7226,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7205,7 +7249,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
+            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelf> {
                 
                 private string _oauth_token;
                 
@@ -7223,7 +7267,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7234,7 +7278,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7245,7 +7289,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7256,7 +7300,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf to retrieve.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -7264,7 +7308,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7287,7 +7331,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
+            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Bookshelves> {
                 
                 private string _oauth_token;
                 
@@ -7302,7 +7346,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7313,7 +7357,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7324,7 +7368,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7335,7 +7379,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7358,7 +7402,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class MoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class MoveVolumeRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -7382,7 +7426,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7393,7 +7437,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7404,7 +7448,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7415,7 +7459,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf with the volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -7423,7 +7467,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7434,7 +7478,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of volume to move.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -7442,7 +7486,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on.)</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumePosition")]
+                [Google.Apis.Util.RequestParameterAttribute("volumePosition", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual long VolumePosition {
                     get {
                         return this._volumePosition;
@@ -7462,7 +7506,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class RemoveVolumeRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class RemoveVolumeRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -7483,7 +7527,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7494,7 +7538,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7505,7 +7549,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7516,7 +7560,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of bookshelf from which to remove a volume.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("shelf")]
+                [Google.Apis.Util.RequestParameterAttribute("shelf", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string Shelf {
                     get {
                         return this._shelf;
@@ -7524,7 +7568,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7535,7 +7579,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of volume to remove.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -7558,12 +7602,15 @@ namespace Google.Apis.Books.v1 {
         
         public class ReadingpositionsResource {
             
-            private Google.Apis.Discovery.IRequestProvider service;
+            private BooksService service;
+            
+            private Google.Apis.Authentication.IAuthenticator _authenticator;
             
             private const string Resource = "mylibrary.readingpositions";
             
-            public ReadingpositionsResource(BooksService service) {
+            public ReadingpositionsResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
                 this.service = service;
+                this._authenticator = _authenticator;
             }
             
             /// <summary>Retrieves my reading position information for a volume.</summary>
@@ -7609,7 +7656,7 @@ namespace Google.Apis.Books.v1 {
                 Search,
             }
             
-            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.ReadingPosition> {
+            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.ReadingPosition> {
                 
                 private string _oauth_token;
                 
@@ -7629,7 +7676,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7640,7 +7687,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7651,7 +7698,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7662,7 +7709,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Volume content version for which this reading position is requested.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string ContentVersion {
                     get {
                         return this._contentVersion;
@@ -7673,7 +7720,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7684,7 +7731,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of volume for which to retrieve a reading position.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -7704,7 +7751,7 @@ namespace Google.Apis.Books.v1 {
                 }
             }
             
-            public class SetPositionRequest : Google.Apis.Requests.ServiceRequest<string> {
+            public class SetPositionRequest : global::Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -7732,7 +7779,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>OAuth 2.0 token for the current user.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+                [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Oauth_token {
                     get {
                         return this._oauth_token;
@@ -7743,7 +7790,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Returns response with indentations and line breaks.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+                [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<bool> PrettyPrint {
                     get {
                         return this._prettyPrint;
@@ -7754,7 +7801,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+                [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string QuotaUser {
                     get {
                         return this._quotaUser;
@@ -7765,7 +7812,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Action that caused this reading position to be set.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("action")]
+                [Google.Apis.Util.RequestParameterAttribute("action", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual System.Nullable<Action> Action {
                     get {
                         return this._action;
@@ -7776,7 +7823,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Volume content version for which this reading position applies.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("contentVersion")]
+                [Google.Apis.Util.RequestParameterAttribute("contentVersion", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string ContentVersion {
                     get {
                         return this._contentVersion;
@@ -7787,7 +7834,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>Position string for the new volume reading position.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("position")]
+                [Google.Apis.Util.RequestParameterAttribute("position", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Position {
                     get {
                         return this._position;
@@ -7795,7 +7842,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>String to identify the originator of this request.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("source")]
+                [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Source {
                     get {
                         return this._source;
@@ -7806,7 +7853,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>RFC 3339 UTC format timestamp associated with this reading position.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("timestamp")]
+                [Google.Apis.Util.RequestParameterAttribute("timestamp", Google.Apis.Util.RequestParameterType.Query)]
                 public virtual string Timestamp {
                     get {
                         return this._timestamp;
@@ -7814,7 +7861,7 @@ namespace Google.Apis.Books.v1 {
                 }
                 
                 /// <summary>ID of volume for which to update the reading position.</summary>
-                [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+                [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
                 public virtual string VolumeId {
                     get {
                         return this._volumeId;
@@ -7838,12 +7885,15 @@ namespace Google.Apis.Books.v1 {
     
     public class VolumesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private BooksService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "volumes";
         
-        public VolumesResource(BooksService service) {
+        public VolumesResource(BooksService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Gets volume information for a single volume.</summary>
@@ -7948,7 +7998,7 @@ namespace Google.Apis.Books.v1 {
             Magazines,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volume> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volume> {
             
             private string _oauth_token;
             
@@ -7970,7 +8020,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -7981,7 +8031,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -7992,7 +8042,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -8003,7 +8053,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Brand results for partner ID.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("partner")]
+            [Google.Apis.Util.RequestParameterAttribute("partner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Partner {
                 get {
                     return this._partner;
@@ -8014,7 +8064,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            [Google.Apis.Util.RequestParameterAttribute("projection", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Projection> Projection {
                 get {
                     return this._projection;
@@ -8025,7 +8075,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -8036,7 +8086,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>ID of volume to retrieve.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("volumeId")]
+            [Google.Apis.Util.RequestParameterAttribute("volumeId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string VolumeId {
                 get {
                     return this._volumeId;
@@ -8056,7 +8106,7 @@ namespace Google.Apis.Books.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Books.v1.Data.Volumes> {
             
             private string _oauth_token;
             
@@ -8096,7 +8146,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -8107,7 +8157,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -8118,7 +8168,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -8129,7 +8179,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict to volumes by download availability.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("download")]
+            [Google.Apis.Util.RequestParameterAttribute("download", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Download> Download {
                 get {
                     return this._download;
@@ -8140,7 +8190,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Filter search results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("filter")]
+            [Google.Apis.Util.RequestParameterAttribute("filter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Filter> Filter {
                 get {
                     return this._filter;
@@ -8151,7 +8201,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict results to books with this language code.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("langRestrict")]
+            [Google.Apis.Util.RequestParameterAttribute("langRestrict", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string LangRestrict {
                 get {
                     return this._langRestrict;
@@ -8162,7 +8212,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict search to this user's library.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("libraryRestrict")]
+            [Google.Apis.Util.RequestParameterAttribute("libraryRestrict", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<LibraryRestrict> LibraryRestrict {
                 get {
                     return this._libraryRestrict;
@@ -8173,7 +8223,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Maximum number of results to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -8184,7 +8234,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Sort search results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<OrderBy> OrderBy {
                 get {
                     return this._orderBy;
@@ -8195,7 +8245,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict and brand results for partner ID.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("partner")]
+            [Google.Apis.Util.RequestParameterAttribute("partner", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Partner {
                 get {
                     return this._partner;
@@ -8206,7 +8256,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict to books or magazines.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("printType")]
+            [Google.Apis.Util.RequestParameterAttribute("printType", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<PrintType> PrintType {
                 get {
                     return this._printType;
@@ -8217,7 +8267,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Restrict information returned to a set of selected fields.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("projection")]
+            [Google.Apis.Util.RequestParameterAttribute("projection", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Projection> Projection {
                 get {
                     return this._projection;
@@ -8228,7 +8278,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Full-text search query string.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -8236,7 +8286,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Set to true to show books available for preorder. Defaults to false.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("showPreorders")]
+            [Google.Apis.Util.RequestParameterAttribute("showPreorders", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ShowPreorders {
                 get {
                     return this._showPreorders;
@@ -8247,7 +8297,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>String to identify the originator of this request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -8258,7 +8308,7 @@ namespace Google.Apis.Books.v1 {
             }
             
             /// <summary>Index of the first result to return (starts at 0)</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;

@@ -1912,9 +1912,9 @@ namespace Google.Apis.Shopping.v1 {
     
     public partial class ShoppingService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"shopping:v1\",\"n" +
             "ame\":\"shopping\",\"version\":\"v1\",\"revision\":\"20120418\",\"title\":\"Search API for Sho" +
@@ -2206,28 +2206,42 @@ namespace Google.Apis.Shopping.v1 {
             "\"],\"response\":{\"$ref\":\"Products\"},\"scopes\":[\"https://www.googleapis.com/auth/sho" +
             "ppingapi\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "shopping";
-        
-        private const string BaseUri = "https://www.googleapis.com/shopping/search/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected ShoppingService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._products = new ProductsResource(this);
+        protected ShoppingService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._products = new ProductsResource(this, _authenticator);
         }
         
         public ShoppingService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public ShoppingService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ShoppingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(ShoppingService.BaseUri))), authenticator) {
+        public ShoppingService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(ShoppingService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/shopping/search/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "shopping";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/shopping/search/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2241,24 +2255,24 @@ namespace Google.Apis.Shopping.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2272,12 +2286,15 @@ namespace Google.Apis.Shopping.v1 {
     
     public class ProductsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private ShoppingService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "products";
         
-        public ProductsResource(ShoppingService service) {
+        public ProductsResource(ShoppingService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Returns a single product</summary>
@@ -2295,7 +2312,7 @@ namespace Google.Apis.Shopping.v1 {
             return new ListRequest(service, source);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Product> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Product> {
             
             private string _oauth_token;
             
@@ -2346,7 +2363,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2357,7 +2374,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2368,7 +2385,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2379,7 +2396,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Merchant center account id</summary>
-            [Google.Apis.Util.RequestParameterAttribute("accountId")]
+            [Google.Apis.Util.RequestParameterAttribute("accountId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual long AccountId {
                 get {
                     return this._accountId;
@@ -2387,7 +2404,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Comma separated list of attributes to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("attributeFilter")]
+            [Google.Apis.Util.RequestParameterAttribute("attributeFilter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string AttributeFilter {
                 get {
                     return this._attributeFilter;
@@ -2398,7 +2415,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return category information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoriesEnabled {
                 get {
                     return this._categoriesEnabled;
@@ -2409,7 +2426,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Category specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.include")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.include", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CategoriesInclude {
                 get {
                     return this._categoriesInclude;
@@ -2420,7 +2437,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoriesUseGcsConfig {
                 get {
                     return this._categoriesUseGcsConfig;
@@ -2431,7 +2448,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Location used to determine tax and shipping</summary>
-            [Google.Apis.Util.RequestParameterAttribute("location")]
+            [Google.Apis.Util.RequestParameterAttribute("location", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Location {
                 get {
                     return this._location;
@@ -2442,7 +2459,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return +1 button code</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PlusOneEnabled {
                 get {
                     return this._plusOneEnabled;
@@ -2453,7 +2470,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>+1 button rendering specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.options")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.options", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PlusOneOptions {
                 get {
                     return this._plusOneOptions;
@@ -2464,7 +2481,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PlusOneUseGcsConfig {
                 get {
                     return this._plusOneUseGcsConfig;
@@ -2475,7 +2492,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Id of product</summary>
-            [Google.Apis.Util.RequestParameterAttribute("productId")]
+            [Google.Apis.Util.RequestParameterAttribute("productId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProductId {
                 get {
                     return this._productId;
@@ -2483,7 +2500,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Type of productId</summary>
-            [Google.Apis.Util.RequestParameterAttribute("productIdType")]
+            [Google.Apis.Util.RequestParameterAttribute("productIdType", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ProductIdType {
                 get {
                     return this._productIdType;
@@ -2491,7 +2508,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return recommendation information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("recommendations.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RecommendationsEnabled {
                 get {
                     return this._recommendationsEnabled;
@@ -2502,7 +2519,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Recommendation specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("recommendations.include")]
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.include", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string RecommendationsInclude {
                 get {
                     return this._recommendationsInclude;
@@ -2513,7 +2530,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("recommendations.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("recommendations.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RecommendationsUseGcsConfig {
                 get {
                     return this._recommendationsUseGcsConfig;
@@ -2524,7 +2541,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Query source</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -2532,7 +2549,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Merchant taxonomy</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taxonomy")]
+            [Google.Apis.Util.RequestParameterAttribute("taxonomy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Taxonomy {
                 get {
                     return this._taxonomy;
@@ -2543,7 +2560,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Thumbnail specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("thumbnails")]
+            [Google.Apis.Util.RequestParameterAttribute("thumbnails", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Thumbnails {
                 get {
                     return this._thumbnails;
@@ -2566,7 +2583,7 @@ namespace Google.Apis.Shopping.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Products> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Products> {
             
             private string _oauth_token;
             
@@ -2666,7 +2683,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2677,7 +2694,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2688,7 +2705,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2699,7 +2716,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Comma separated list of attributes to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("attributeFilter")]
+            [Google.Apis.Util.RequestParameterAttribute("attributeFilter", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string AttributeFilter {
                 get {
                     return this._attributeFilter;
@@ -2710,7 +2727,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Comma separated list of availabilities (outOfStock, limited, inStock, backOrder, preOrder, onDisplayToOrder) to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("availability")]
+            [Google.Apis.Util.RequestParameterAttribute("availability", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Availability {
                 get {
                     return this._availability;
@@ -2721,7 +2738,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Boosting specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("boostBy")]
+            [Google.Apis.Util.RequestParameterAttribute("boostBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string BoostBy {
                 get {
                     return this._boostBy;
@@ -2732,7 +2749,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return category information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoriesEnabled {
                 get {
                     return this._categoriesEnabled;
@@ -2743,7 +2760,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Category specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.include")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.include", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CategoriesInclude {
                 get {
                     return this._categoriesInclude;
@@ -2754,7 +2771,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("categories.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoriesUseGcsConfig {
                 get {
                     return this._categoriesUseGcsConfig;
@@ -2765,7 +2782,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Category for which to retrieve recommendations</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.category")]
+            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.category", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CategoryRecommendationsCategory {
                 get {
                     return this._categoryRecommendationsCategory;
@@ -2776,7 +2793,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return category recommendation information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoryRecommendationsEnabled {
                 get {
                     return this._categoryRecommendationsEnabled;
@@ -2787,7 +2804,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Category recommendation specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.include")]
+            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.include", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CategoryRecommendationsInclude {
                 get {
                     return this._categoryRecommendationsInclude;
@@ -2798,7 +2815,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("categoryRecommendations.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> CategoryRecommendationsUseGcsConfig {
                 get {
                     return this._categoryRecommendationsUseGcsConfig;
@@ -2809,7 +2826,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Channels specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("channels")]
+            [Google.Apis.Util.RequestParameterAttribute("channels", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Channels {
                 get {
                     return this._channels;
@@ -2820,7 +2837,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to add a click tracking parameter to offer URLs</summary>
-            [Google.Apis.Util.RequestParameterAttribute("clickTracking")]
+            [Google.Apis.Util.RequestParameterAttribute("clickTracking", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> ClickTracking {
                 get {
                     return this._clickTracking;
@@ -2831,7 +2848,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Country restriction (ISO 3166)</summary>
-            [Google.Apis.Util.RequestParameterAttribute("country")]
+            [Google.Apis.Util.RequestParameterAttribute("country", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Country {
                 get {
                     return this._country;
@@ -2842,7 +2859,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Crowding specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("crowdBy")]
+            [Google.Apis.Util.RequestParameterAttribute("crowdBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string CrowdBy {
                 get {
                     return this._crowdBy;
@@ -2853,7 +2870,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Currency restriction (ISO 4217)</summary>
-            [Google.Apis.Util.RequestParameterAttribute("currency")]
+            [Google.Apis.Util.RequestParameterAttribute("currency", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Currency {
                 get {
                     return this._currency;
@@ -2864,7 +2881,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Facets to discover</summary>
-            [Google.Apis.Util.RequestParameterAttribute("facets.discover")]
+            [Google.Apis.Util.RequestParameterAttribute("facets.discover", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string FacetsDiscover {
                 get {
                     return this._facetsDiscover;
@@ -2875,7 +2892,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return facet information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("facets.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("facets.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FacetsEnabled {
                 get {
                     return this._facetsEnabled;
@@ -2886,7 +2903,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Facets to include (applies when useGcsConfig == false)</summary>
-            [Google.Apis.Util.RequestParameterAttribute("facets.include")]
+            [Google.Apis.Util.RequestParameterAttribute("facets.include", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string FacetsInclude {
                 get {
                     return this._facetsInclude;
@@ -2897,7 +2914,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return facet information as configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("facets.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("facets.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> FacetsUseGcsConfig {
                 get {
                     return this._facetsUseGcsConfig;
@@ -2908,7 +2925,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Language restriction (BCP 47)</summary>
-            [Google.Apis.Util.RequestParameterAttribute("language")]
+            [Google.Apis.Util.RequestParameterAttribute("language", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Language {
                 get {
                     return this._language;
@@ -2919,7 +2936,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Location used to determine tax and shipping</summary>
-            [Google.Apis.Util.RequestParameterAttribute("location")]
+            [Google.Apis.Util.RequestParameterAttribute("location", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Location {
                 get {
                     return this._location;
@@ -2930,7 +2947,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Maximum number of results to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -2941,7 +2958,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Maximum number of variant results to return per result</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxVariants")]
+            [Google.Apis.Util.RequestParameterAttribute("maxVariants", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxVariants {
                 get {
                     return this._maxVariants;
@@ -2952,7 +2969,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return +1 button code</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PlusOneEnabled {
                 get {
                     return this._plusOneEnabled;
@@ -2963,7 +2980,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>+1 button rendering specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.options")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.options", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PlusOneOptions {
                 get {
                     return this._plusOneOptions;
@@ -2974,7 +2991,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to use +1 button styles configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("plusOne.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PlusOneUseGcsConfig {
                 get {
                     return this._plusOneUseGcsConfig;
@@ -2985,7 +3002,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return promotion information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("promotions.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("promotions.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PromotionsEnabled {
                 get {
                     return this._promotionsEnabled;
@@ -2996,7 +3013,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return promotion information as configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("promotions.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("promotions.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PromotionsUseGcsConfig {
                 get {
                     return this._promotionsUseGcsConfig;
@@ -3007,7 +3024,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Search query</summary>
-            [Google.Apis.Util.RequestParameterAttribute("q")]
+            [Google.Apis.Util.RequestParameterAttribute("q", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Q {
                 get {
                     return this._q;
@@ -3018,7 +3035,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Ranking specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("rankBy")]
+            [Google.Apis.Util.RequestParameterAttribute("rankBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string RankBy {
                 get {
                     return this._rankBy;
@@ -3029,7 +3046,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return redirect information</summary>
-            [Google.Apis.Util.RequestParameterAttribute("redirects.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("redirects.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RedirectsEnabled {
                 get {
                     return this._redirectsEnabled;
@@ -3040,7 +3057,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return redirect information as configured in the GCS account</summary>
-            [Google.Apis.Util.RequestParameterAttribute("redirects.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("redirects.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RedirectsUseGcsConfig {
                 get {
                     return this._redirectsUseGcsConfig;
@@ -3051,7 +3068,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return related queries</summary>
-            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RelatedQueriesEnabled {
                 get {
                     return this._relatedQueriesEnabled;
@@ -3062,7 +3079,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("relatedQueries.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> RelatedQueriesUseGcsConfig {
                 get {
                     return this._relatedQueriesUseGcsConfig;
@@ -3073,7 +3090,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Restriction specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("restrictBy")]
+            [Google.Apis.Util.RequestParameterAttribute("restrictBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string RestrictBy {
                 get {
                     return this._restrictBy;
@@ -3084,7 +3101,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether safe search is enabled. Default: true</summary>
-            [Google.Apis.Util.RequestParameterAttribute("safe")]
+            [Google.Apis.Util.RequestParameterAttribute("safe", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Safe {
                 get {
                     return this._safe;
@@ -3095,7 +3112,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Query source</summary>
-            [Google.Apis.Util.RequestParameterAttribute("source")]
+            [Google.Apis.Util.RequestParameterAttribute("source", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Source {
                 get {
                     return this._source;
@@ -3103,7 +3120,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Whether to return spelling suggestions</summary>
-            [Google.Apis.Util.RequestParameterAttribute("spelling.enabled")]
+            [Google.Apis.Util.RequestParameterAttribute("spelling.enabled", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SpellingEnabled {
                 get {
                     return this._spellingEnabled;
@@ -3114,7 +3131,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>This parameter is currently ignored</summary>
-            [Google.Apis.Util.RequestParameterAttribute("spelling.useGcsConfig")]
+            [Google.Apis.Util.RequestParameterAttribute("spelling.useGcsConfig", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> SpellingUseGcsConfig {
                 get {
                     return this._spellingUseGcsConfig;
@@ -3125,7 +3142,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Index (1-based) of first product to return</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startIndex")]
+            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> StartIndex {
                 get {
                     return this._startIndex;
@@ -3136,7 +3153,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Taxonomy name</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taxonomy")]
+            [Google.Apis.Util.RequestParameterAttribute("taxonomy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Taxonomy {
                 get {
                     return this._taxonomy;
@@ -3147,7 +3164,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>Image thumbnails specification</summary>
-            [Google.Apis.Util.RequestParameterAttribute("thumbnails")]
+            [Google.Apis.Util.RequestParameterAttribute("thumbnails", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Thumbnails {
                 get {
                     return this._thumbnails;
@@ -3158,7 +3175,7 @@ namespace Google.Apis.Shopping.v1 {
             }
             
             /// <summary>One of CommerceSearchUseCase, ShoppingApiUseCase</summary>
-            [Google.Apis.Util.RequestParameterAttribute("useCase")]
+            [Google.Apis.Util.RequestParameterAttribute("useCase", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string UseCase {
                 get {
                     return this._useCase;

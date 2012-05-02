@@ -422,9 +422,9 @@ namespace Google.Apis.Taskqueue.v1beta1 {
     
     public partial class TaskqueueService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"taskqueue:v1bet" +
             "a1\",\"name\":\"taskqueue\",\"version\":\"v1beta1\",\"revision\":\"20120113\",\"title\":\"TaskQu" +
@@ -539,29 +539,43 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             "https://www.googleapis.com/auth/taskqueue\",\"https://www.googleapis.com/auth/task" +
             "queue.consumer\"]}}}}}";
         
-        private const string Version = "v1beta1";
+        public const string Version = "v1beta1";
         
-        private const string Name = "taskqueue";
-        
-        private const string BaseUri = "https://www.googleapis.com/taskqueue/v1beta1/projects/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected TaskqueueService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._taskqueues = new TaskqueuesResource(this);
-            this._tasks = new TasksResource(this);
+        protected TaskqueueService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._taskqueues = new TaskqueuesResource(this, _authenticator);
+            this._tasks = new TasksResource(this, _authenticator);
         }
         
         public TaskqueueService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public TaskqueueService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(TaskqueueService.BaseUri))), authenticator) {
+        public TaskqueueService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(TaskqueueService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/taskqueue/v1beta1/projects/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "taskqueue";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/taskqueue/v1beta1/projects/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -575,24 +589,24 @@ namespace Google.Apis.Taskqueue.v1beta1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -610,12 +624,15 @@ namespace Google.Apis.Taskqueue.v1beta1 {
     
     public class TaskqueuesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private TaskqueueService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "taskqueues";
         
-        public TaskqueuesResource(TaskqueueService service) {
+        public TaskqueuesResource(TaskqueueService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get detailed information about a TaskQueue.</summary>
@@ -625,7 +642,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             return new GetRequest(service, project, taskqueue);
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.TaskQueue> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.TaskQueue> {
             
             private string _oauth_token;
             
@@ -646,7 +663,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -657,7 +674,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -668,7 +685,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -679,7 +696,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Whether to get stats. Optional.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("getStats")]
+            [Google.Apis.Util.RequestParameterAttribute("getStats", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> GetStats {
                 get {
                     return this._getStats;
@@ -690,7 +707,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The project under which the queue lies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("project")]
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Project {
                 get {
                     return this._project;
@@ -698,7 +715,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The id of the taskqueue to get the properties of.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Taskqueue {
                 get {
                     return this._taskqueue;
@@ -721,12 +738,15 @@ namespace Google.Apis.Taskqueue.v1beta1 {
     
     public class TasksResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private TaskqueueService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "tasks";
         
-        public TasksResource(TaskqueueService service) {
+        public TasksResource(TaskqueueService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Delete a task from a TaskQueue.</summary>
@@ -761,7 +781,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             return new ListRequest(service, project, taskqueue);
         }
         
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -783,7 +803,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -794,7 +814,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -805,7 +825,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -816,7 +836,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The project under which the queue lies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("project")]
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Project {
                 get {
                     return this._project;
@@ -824,7 +844,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The id of the task to delete.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -832,7 +852,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The taskqueue to delete a task from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Taskqueue {
                 get {
                     return this._taskqueue;
@@ -852,7 +872,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Task> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Task> {
             
             private string _oauth_token;
             
@@ -874,7 +894,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -885,7 +905,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -896,7 +916,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -907,7 +927,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The project under which the queue lies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("project")]
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Project {
                 get {
                     return this._project;
@@ -915,7 +935,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The task to get properties of.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("task")]
+            [Google.Apis.Util.RequestParameterAttribute("task", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Task {
                 get {
                     return this._task;
@@ -923,7 +943,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The taskqueue in which the task belongs.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Taskqueue {
                 get {
                     return this._taskqueue;
@@ -943,7 +963,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class LeaseRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks> {
+        public class LeaseRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks> {
             
             private string _oauth_token;
             
@@ -968,7 +988,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -979,7 +999,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -990,7 +1010,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1001,7 +1021,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The lease in seconds.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("leaseSecs")]
+            [Google.Apis.Util.RequestParameterAttribute("leaseSecs", Google.Apis.Util.RequestParameterType.Query)]
             public virtual long LeaseSecs {
                 get {
                     return this._leaseSecs;
@@ -1009,7 +1029,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The number of tasks to lease.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("numTasks")]
+            [Google.Apis.Util.RequestParameterAttribute("numTasks", Google.Apis.Util.RequestParameterType.Query)]
             public virtual long NumTasks {
                 get {
                     return this._numTasks;
@@ -1017,7 +1037,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The project under which the queue lies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("project")]
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Project {
                 get {
                     return this._project;
@@ -1025,7 +1045,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The taskqueue to lease a task from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Taskqueue {
                 get {
                     return this._taskqueue;
@@ -1045,7 +1065,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks2> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks2> {
             
             private string _oauth_token;
             
@@ -1064,7 +1084,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -1075,7 +1095,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -1086,7 +1106,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -1097,7 +1117,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The project under which the queue lies.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("project")]
+            [Google.Apis.Util.RequestParameterAttribute("project", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Project {
                 get {
                     return this._project;
@@ -1105,7 +1125,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
             
             /// <summary>The id of the taskqueue to list tasks from.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("taskqueue")]
+            [Google.Apis.Util.RequestParameterAttribute("taskqueue", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string Taskqueue {
                 get {
                     return this._taskqueue;

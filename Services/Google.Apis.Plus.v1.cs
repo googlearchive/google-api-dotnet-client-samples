@@ -2328,9 +2328,9 @@ namespace Google.Apis.Plus.v1 {
     
     public partial class PlusService : Google.Apis.Discovery.IRequestProvider {
         
-        private Google.Apis.Discovery.IService genericService;
+        private Google.Apis.Discovery.IService _service;
         
-        private Google.Apis.Authentication.IAuthenticator authenticator;
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1\",\"name\"" +
             ":\"plus\",\"version\":\"v1\",\"revision\":\"20120416\",\"title\":\"Google+ API\",\"description\"" +
@@ -2709,30 +2709,44 @@ namespace Google.Apis.Plus.v1 {
             "rameterOrder\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www." +
             "googleapis.com/auth/plus.me\"]}}}}}";
         
-        private const string Version = "v1";
+        public const string Version = "v1";
         
-        private const string Name = "plus";
-        
-        private const string BaseUri = "https://www.googleapis.com/plus/v1/";
-        
-        private const Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
+        public static Google.Apis.Discovery.DiscoveryVersion DiscoveryVersionUsed = Google.Apis.Discovery.DiscoveryVersion.Version_1_0;
         
         private string _Key;
         
-        protected PlusService(Google.Apis.Discovery.IService genericService, Google.Apis.Authentication.IAuthenticator authenticator) {
-            this.genericService = genericService;
-            this.authenticator = authenticator;
-            this._activities = new ActivitiesResource(this);
-            this._comments = new CommentsResource(this);
-            this._people = new PeopleResource(this);
+        protected PlusService(Google.Apis.Discovery.IService _service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this._service = _service;
+            this._authenticator = _authenticator;
+            this._activities = new ActivitiesResource(this, _authenticator);
+            this._comments = new CommentsResource(this, _authenticator);
+            this._people = new PeopleResource(this, _authenticator);
         }
         
         public PlusService() : 
                 this(Google.Apis.Authentication.NullAuthenticator.Instance) {
         }
         
-        public PlusService(Google.Apis.Authentication.IAuthenticator authenticator) : 
-                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri(PlusService.BaseUri))), authenticator) {
+        public PlusService(Google.Apis.Authentication.IAuthenticator _authenticator) : 
+                this(new Google.Apis.Discovery.DiscoveryService(new Google.Apis.Discovery.StringDiscoveryDevice(DiscoveryDocument)).GetService(PlusService.DiscoveryVersionUsed, new Google.Apis.Discovery.FactoryParameters(new System.Uri("https://www.googleapis.com/plus/v1/"))), _authenticator) {
+        }
+        
+        public Google.Apis.Authentication.IAuthenticator Authenticator {
+            get {
+                return this._authenticator;
+            }
+        }
+        
+        public virtual string Name {
+            get {
+                return "plus";
+            }
+        }
+        
+        public virtual string BaseUri {
+            get {
+                return "https://www.googleapis.com/plus/v1/";
+            }
         }
         
         /// <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -2746,24 +2760,24 @@ namespace Google.Apis.Plus.v1 {
         }
         
         public virtual Google.Apis.Requests.IRequest CreateRequest(string resource, string method) {
-            Google.Apis.Requests.IRequest request = this.genericService.CreateRequest(resource, method);
+            Google.Apis.Requests.IRequest request = this._service.CreateRequest(resource, method);
             if ((string.IsNullOrEmpty(Key) == false)) {
                 request = request.WithKey(this.Key);
             }
-            return request.WithAuthentication(authenticator);
+            return request.WithAuthentication(_authenticator);
         }
         
         public virtual void RegisterSerializer(Google.Apis.ISerializer serializer) {
-            genericService.Serializer = serializer;
+            _service.Serializer = serializer;
         }
         
         public virtual string SerializeObject(object obj) {
-            return genericService.SerializeRequest(obj);
+            return _service.SerializeRequest(obj);
         }
         
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
-            return genericService.DeserializeResponse<T>(response);
+            return _service.DeserializeResponse<T>(response);
         }
         
         /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
@@ -2781,12 +2795,15 @@ namespace Google.Apis.Plus.v1 {
     
     public class ActivitiesResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PlusService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "activities";
         
-        public ActivitiesResource(PlusService service) {
+        public ActivitiesResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get an activity.</summary>
@@ -2839,7 +2856,7 @@ namespace Google.Apis.Plus.v1 {
             Recent,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
             
             private string _oauth_token;
             
@@ -2857,7 +2874,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2868,7 +2885,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2879,7 +2896,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2890,7 +2907,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the activity to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -2898,7 +2915,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Alt> Alt {
                 get {
                     return this._alt;
@@ -2921,7 +2938,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
             private string _oauth_token;
             
@@ -2946,7 +2963,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -2957,7 +2974,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -2968,7 +2985,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -2979,7 +2996,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Alt> Alt {
                 get {
                     return this._alt;
@@ -2990,7 +3007,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The collection of activities to list.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("collection")]
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
             public virtual Collection Collection {
                 get {
                     return this._collection;
@@ -2998,7 +3015,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3009,7 +3026,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3020,7 +3037,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the user to get activities for. The special value "me" can be used to indicate the authenticated user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -3040,7 +3057,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class SearchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
             private string _oauth_token;
             
@@ -3064,7 +3081,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3075,7 +3092,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3086,7 +3103,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3097,7 +3114,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("language")]
+            [Google.Apis.Util.RequestParameterAttribute("language", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Language {
                 get {
                     return this._language;
@@ -3108,7 +3125,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3119,7 +3136,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specifies how to order search results.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("orderBy")]
+            [Google.Apis.Util.RequestParameterAttribute("orderBy", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<OrderBy> OrderBy {
                 get {
                     return this._orderBy;
@@ -3130,7 +3147,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token may be of any length.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3141,7 +3158,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Full-text search query string.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("query")]
+            [Google.Apis.Util.RequestParameterAttribute("query", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Query {
                 get {
                     return this._query;
@@ -3164,12 +3181,15 @@ namespace Google.Apis.Plus.v1 {
     
     public class CommentsResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PlusService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "comments";
         
-        public CommentsResource(PlusService service) {
+        public CommentsResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get a comment.</summary>
@@ -3206,7 +3226,7 @@ namespace Google.Apis.Plus.v1 {
             Descending,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
             
             private string _oauth_token;
             
@@ -3222,7 +3242,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3233,7 +3253,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3244,7 +3264,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3255,7 +3275,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the comment to get.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("commentId")]
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CommentId {
                 get {
                     return this._commentId;
@@ -3275,7 +3295,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
+        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
             
             private string _oauth_token;
             
@@ -3299,7 +3319,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3310,7 +3330,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3321,7 +3341,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3332,7 +3352,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the activity to get comments for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -3340,7 +3360,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt")]
+            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<Alt> Alt {
                 get {
                     return this._alt;
@@ -3351,7 +3371,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The maximum number of comments to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3362,7 +3382,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3373,7 +3393,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The order in which to sort the list of comments.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("sortOrder")]
+            [Google.Apis.Util.RequestParameterAttribute("sortOrder", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<SortOrder> SortOrder {
                 get {
                     return this._sortOrder;
@@ -3399,12 +3419,15 @@ namespace Google.Apis.Plus.v1 {
     
     public class PeopleResource {
         
-        private Google.Apis.Discovery.IRequestProvider service;
+        private PlusService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string Resource = "people";
         
-        public PeopleResource(PlusService service) {
+        public PeopleResource(PlusService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
+            this._authenticator = _authenticator;
         }
         
         /// <summary>Get a person&apos;s profile.</summary>
@@ -3439,7 +3462,7 @@ namespace Google.Apis.Plus.v1 {
             Resharers,
         }
         
-        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
+        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
             
             private string _oauth_token;
             
@@ -3455,7 +3478,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3466,7 +3489,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3477,7 +3500,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3488,7 +3511,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the person to get the profile for. The special value "me" can be used to indicate the authenticated user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("userId")]
+            [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
                 get {
                     return this._userId;
@@ -3508,7 +3531,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListByActivityRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class ListByActivityRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
             private string _oauth_token;
             
@@ -3531,7 +3554,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3542,7 +3565,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3553,7 +3576,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3564,7 +3587,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The ID of the activity to get the list of people for.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("activityId")]
+            [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
@@ -3572,7 +3595,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The collection of people to list.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("collection")]
+            [Google.Apis.Util.RequestParameterAttribute("collection", Google.Apis.Util.RequestParameterType.Path)]
             public virtual Collection Collection {
                 get {
                     return this._collection;
@@ -3580,7 +3603,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3591,7 +3614,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3614,7 +3637,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class SearchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
             private string _oauth_token;
             
@@ -3636,7 +3659,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token")]
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Oauth_token {
                 get {
                     return this._oauth_token;
@@ -3647,7 +3670,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint")]
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> PrettyPrint {
                 get {
                     return this._prettyPrint;
@@ -3658,7 +3681,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser")]
+            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string QuotaUser {
                 get {
                     return this._quotaUser;
@@ -3669,7 +3692,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("language")]
+            [Google.Apis.Util.RequestParameterAttribute("language", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Language {
                 get {
                     return this._language;
@@ -3680,7 +3703,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("maxResults")]
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<long> MaxResults {
                 get {
                     return this._maxResults;
@@ -3691,7 +3714,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token may be of any length.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("pageToken")]
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string PageToken {
                 get {
                     return this._pageToken;
@@ -3702,7 +3725,7 @@ namespace Google.Apis.Plus.v1 {
             }
             
             /// <summary>Full-text search query string.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("query")]
+            [Google.Apis.Util.RequestParameterAttribute("query", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Query {
                 get {
                     return this._query;
