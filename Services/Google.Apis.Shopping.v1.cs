@@ -2312,7 +2312,7 @@ namespace Google.Apis.Shopping.v1 {
             return new ListRequest(service, source);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Product> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Product> {
             
             private string _oauth_token;
             
@@ -2583,7 +2583,7 @@ namespace Google.Apis.Shopping.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Products> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Shopping.v1.Data.Products> {
             
             private string _oauth_token;
             

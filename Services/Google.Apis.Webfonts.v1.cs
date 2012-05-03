@@ -286,7 +286,7 @@ namespace Google.Apis.Webfonts.v1 {
             Trending,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Webfonts.v1.Data.WebfontList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Webfonts.v1.Data.WebfontList> {
             
             private string _oauth_token;
             

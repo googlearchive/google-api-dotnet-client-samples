@@ -385,7 +385,7 @@
             See: http://code.google.com/apis/gdata/docs/resumable_upload.html for
             information on the protocol.
             </remarks>
-            <typeparam name="T">
+            <typeparam name="TRequest">
             The type of the body of this request. Generally this should be the metadata related 
             to the content to be uploaded. Must be serializable to/from JSON.
             </typeparam>
@@ -495,6 +495,12 @@
             The unique upload location for this upload, returned in the Location header
             </returns>
         </member>
+        <member name="M:Google.Apis.Upload.ResumableUpload`1.ProcessResponse(System.Net.WebResponse)">
+            <summary>
+            Process a response from the upload initialization call.
+            </summary>
+            <param name="webResponse">The web response from the initialization method call.</param>
+        </member>
         <member name="M:Google.Apis.Upload.ResumableUpload`1.SendChunk(System.IO.Stream,System.Uri,System.Int64)">
             <summary>
             Upload a chunk of the data to the server.
@@ -563,16 +569,16 @@
             of the <see cref="F:Google.Apis.Upload.ResumableUpload`1.MinimumChunkSize"/> specified 
             </remarks>
         </member>
+        <member name="E:Google.Apis.Upload.ResumableUpload`1.ProgressChanged">
+            <summary>
+            Event called whenever the progress of the upload changes.
+            </summary>
+        </member>
         <member name="P:Google.Apis.Upload.ResumableUpload`1.Progress">
             <summary>
             Current state of progress of the upload.
             </summary>
             <seealso cref="E:Google.Apis.Upload.ResumableUpload`1.ProgressChanged"/>
-        </member>
-        <member name="E:Google.Apis.Upload.ResumableUpload`1.ProgressChanged">
-            <summary>
-            Event called whenever the progress of the upload changes.
-            </summary>
         </member>
         <member name="T:Google.Apis.Upload.ResumableUpload`1.ResumableUploadProgress">
             <summary>
@@ -592,6 +598,51 @@
             </summary>
             <param name="exception">An exception that occurred during the upload.</param>
             <param name="bytesSent">The number of bytes sent before this exception occurred.</param>
+        </member>
+        <member name="T:Google.Apis.Upload.ResumableUpload`2">
+            <summary>
+            Media upload which uses Google's resumable media upload protocol to upload data.
+            The version with two types contains both a request object and a response object.
+            </summary>
+            <remarks>
+            See: http://code.google.com/apis/gdata/docs/resumable_upload.html for
+            information on the protocol.
+            </remarks>
+            <typeparam name="TRequest">
+            The type of the body of this request. Generally this should be the metadata related 
+            to the content to be uploaded. Must be serializable to/from JSON.
+            </typeparam>
+            <typeparam name="TResponse">
+            The type of the response body.
+            </typeparam>
+        </member>
+        <member name="M:Google.Apis.Upload.ResumableUpload`2.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Create a resumable upload instance with the required parameters.
+            </summary>
+            <param name="baseUri">The baseUri of the service.</param>
+            <param name="path">The path for this media upload method.</param>
+            <param name="httpMethod">The HTTP method to start this upload.</param>
+        </member>
+        <member name="M:Google.Apis.Upload.ResumableUpload`2.ProcessResponse(System.Net.WebResponse)">
+            <summary>
+            Process the response body and generate a 
+            </summary>
+            <param name="webResponse"></param>
+        </member>
+        <member name="P:Google.Apis.Upload.ResumableUpload`2.ResponseBody">
+            <summary>
+            The response body.
+            </summary>
+            <remarks>
+            This property will be set during upload. The <see cref="E:Google.Apis.Upload.ResumableUpload`2.ResponseReceived"/> event
+            is triggered when this has been set.
+            </remarks>
+        </member>
+        <member name="E:Google.Apis.Upload.ResumableUpload`2.ResponseReceived">
+            <summary>
+            Event called when the response metadata is processed.
+            </summary>
         </member>
         <member name="T:Google.Apis.Util.LazyResult`1">
             <summary>
@@ -1185,6 +1236,11 @@
         <member name="T:Google.Apis.Json.NewtonsoftJsonSerializer">
             <summary>
             Class for serialization and deserialization of Json documents using the Newtonsoft Library
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Json.NewtonsoftJsonSerializer.Instance">
+            <summary>
+            A singleton instance of the Newtonsoft Json Serializer
             </summary>
         </member>
         <member name="T:Google.Apis.Requests.IDirectResponseSchema">

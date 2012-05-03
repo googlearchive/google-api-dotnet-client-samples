@@ -411,7 +411,7 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service, q);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.DetectionsListResponse> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.DetectionsListResponse> {
             
             private string _oauth_token;
             
@@ -499,7 +499,7 @@ namespace Google.Apis.Translate.v2 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.LanguagesListResponse> {
             
             private string _oauth_token;
             
@@ -604,7 +604,7 @@ namespace Google.Apis.Translate.v2 {
             Text,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.TranslationsListResponse> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Translate.v2.Data.TranslationsListResponse> {
             
             private string _oauth_token;
             

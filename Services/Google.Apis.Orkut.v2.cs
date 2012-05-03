@@ -4018,7 +4018,7 @@ namespace Google.Apis.Orkut.v2 {
             return new DeleteRequest(service, activityId, userId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4142,7 +4142,7 @@ namespace Google.Apis.Orkut.v2 {
             Stream,
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4211,7 +4211,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.ActivityList> {
             
             private string _oauth_token;
             
@@ -4362,7 +4362,7 @@ namespace Google.Apis.Orkut.v2 {
             return new UpdateRequest(service, body, activityId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4431,7 +4431,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4517,7 +4517,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Visibility> {
             
             private string _oauth_token;
             
@@ -4630,7 +4630,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Badge> {
             
             private string _oauth_token;
             
@@ -4710,7 +4710,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.BadgeList> {
             
             private string _oauth_token;
             
@@ -4830,7 +4830,7 @@ namespace Google.Apis.Orkut.v2 {
             Descending,
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4899,7 +4899,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -4981,7 +4981,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -5067,7 +5067,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommentList> {
             
             private string _oauth_token;
             
@@ -5227,7 +5227,7 @@ namespace Google.Apis.Orkut.v2 {
             Ranked,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Community> {
             
             private string _oauth_token;
             
@@ -5309,7 +5309,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
             private string _oauth_token;
             
@@ -5445,7 +5445,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, communityId, userId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -5525,7 +5525,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5646,7 +5646,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -5726,7 +5726,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5819,7 +5819,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembers> {
             
             private string _oauth_token;
             
@@ -5899,7 +5899,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMembersList> {
             
             private string _oauth_token;
             
@@ -6056,7 +6056,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, topicId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -6147,7 +6147,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessage> {
             
             private string _oauth_token;
             
@@ -6244,7 +6244,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityMessageList> {
             
             private string _oauth_token;
             
@@ -6391,7 +6391,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId, pollId);
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollComment> {
             
             private string _oauth_token;
             
@@ -6488,7 +6488,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollCommentList> {
             
             private string _oauth_token;
             
@@ -6628,7 +6628,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body, communityId, pollId);
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollVote> {
             
             private string _oauth_token;
             
@@ -6752,7 +6752,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPoll> {
             
             private string _oauth_token;
             
@@ -6845,7 +6845,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityPollList> {
             
             private string _oauth_token;
             
@@ -6973,7 +6973,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityList> {
             
             private string _oauth_token;
             
@@ -7095,7 +7095,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, communityId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -7175,7 +7175,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
             private string _oauth_token;
             
@@ -7268,7 +7268,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopic> {
             
             private string _oauth_token;
             
@@ -7367,7 +7367,7 @@ namespace Google.Apis.Orkut.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.CommunityTopicList> {
             
             private string _oauth_token;
             
@@ -7495,7 +7495,7 @@ namespace Google.Apis.Orkut.v2 {
             return new ListRequest(service, userId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Counters> {
             
             private string _oauth_token;
             
@@ -7583,7 +7583,7 @@ namespace Google.Apis.Orkut.v2 {
             return new InsertRequest(service, body);
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Orkut.v2.Data.Activity> {
             
             private string _oauth_token;
             

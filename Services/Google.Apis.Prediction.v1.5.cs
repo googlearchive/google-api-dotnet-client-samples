@@ -1298,7 +1298,7 @@ namespace Google.Apis.Prediction.v1_5 {
             return new PredictRequest(service, body, hostedModelName);
         }
         
-        public class PredictRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
+        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
             private string _oauth_token;
             
@@ -1438,7 +1438,7 @@ namespace Google.Apis.Prediction.v1_5 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class AnalyzeRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Analyze> {
+        public class AnalyzeRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Analyze> {
             
             private string _oauth_token;
             
@@ -1507,7 +1507,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1576,7 +1576,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             
@@ -1645,7 +1645,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             
@@ -1720,7 +1720,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.List> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.List> {
             
             private string _oauth_token;
             
@@ -1804,7 +1804,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class PredictRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
+        public class PredictRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Output> {
             
             private string _oauth_token;
             
@@ -1890,7 +1890,7 @@ namespace Google.Apis.Prediction.v1_5 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Prediction.v1_5.Data.Training> {
             
             private string _oauth_token;
             

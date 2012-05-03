@@ -2194,7 +2194,7 @@ namespace Google.Apis.Bigquery.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"bigquery:v2\",\"n" +
-            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20120424\",\"title\":\"BigQuery API\",\"des" +
+            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20120423\",\"title\":\"BigQuery API\",\"des" +
             "cription\":\"A data platform for customers to create, manage, share and query data" +
             ".\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x3" +
             "2\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLin" +
@@ -2838,7 +2838,7 @@ namespace Google.Apis.Bigquery.v2 {
             return new UpdateRequest(service, body, projectId, datasetId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -2931,7 +2931,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -3011,7 +3011,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -3097,7 +3097,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.DatasetList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.DatasetList> {
             
             private string _oauth_token;
             
@@ -3192,7 +3192,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -3289,7 +3289,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset> {
             
             private string _oauth_token;
             
@@ -3462,7 +3462,7 @@ namespace Google.Apis.Bigquery.v2 {
             Running,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Job> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Job> {
             
             private string _oauth_token;
             
@@ -3542,7 +3542,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class GetQueryResultsRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse> {
+        public class GetQueryResultsRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.GetQueryResultsResponse> {
             
             private string _oauth_token;
             
@@ -3661,7 +3661,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Upload.ResumableUpload<Google.Apis.Bigquery.v2.Data.Job> {
+        public class InsertRequest : Google.Apis.Upload.ResumableUpload<Google.Apis.Bigquery.v2.Data.Job, Google.Apis.Bigquery.v2.Data.Job> {
             
             private string _oauth_token;
             
@@ -3672,8 +3672,9 @@ namespace Google.Apis.Bigquery.v2 {
             private string _projectId;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Bigquery.v2.Data.Job body, string projectId) : 
-                    base(service.BaseUri, "projects/{projectId}/jobs", "POST") {
+                    base(service.BaseUri, "/upload/bigquery/v2/projects/{projectId}/jobs", "POST") {
                 this.Body = body;
+                this.Authenticator = service.Authenticator;
                 this._projectId = projectId;
             }
             
@@ -3719,7 +3720,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.JobList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.JobList> {
             
             private string _oauth_token;
             
@@ -3853,7 +3854,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class QueryRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.QueryResponse> {
+        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.QueryResponse> {
             
             private string _oauth_token;
             
@@ -3958,7 +3959,7 @@ namespace Google.Apis.Bigquery.v2 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.ProjectList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.ProjectList> {
             
             private string _oauth_token;
             
@@ -4064,7 +4065,7 @@ namespace Google.Apis.Bigquery.v2 {
             return new ListRequest(service, projectId, datasetId, tableId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.TableDataList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.TableDataList> {
             
             private string _oauth_token;
             
@@ -4241,7 +4242,7 @@ namespace Google.Apis.Bigquery.v2 {
             return new UpdateRequest(service, body, projectId, datasetId, tableId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4332,7 +4333,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
             
             private string _oauth_token;
             
@@ -4423,7 +4424,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
             
             private string _oauth_token;
             
@@ -4520,7 +4521,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.TableList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.TableList> {
             
             private string _oauth_token;
             
@@ -4626,7 +4627,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
             
             private string _oauth_token;
             
@@ -4734,7 +4735,7 @@ namespace Google.Apis.Bigquery.v2 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Bigquery.v2.Data.Table> {
             
             private string _oauth_token;
             

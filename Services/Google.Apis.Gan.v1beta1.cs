@@ -2642,7 +2642,7 @@ namespace Google.Apis.Gan.v1beta1 {
             Pending,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Advertiser> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Advertiser> {
             
             private string _oauth_token;
             
@@ -2735,7 +2735,7 @@ namespace Google.Apis.Gan.v1beta1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Advertisers> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Advertisers> {
             
             private string _oauth_token;
             
@@ -2939,7 +2939,7 @@ namespace Google.Apis.Gan.v1beta1 {
             Summary,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.CcOffers> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.CcOffers> {
             
             private string _oauth_token;
             
@@ -3127,7 +3127,7 @@ namespace Google.Apis.Gan.v1beta1 {
             Transaction,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Events> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Events> {
             
             private string _oauth_token;
             
@@ -3481,7 +3481,7 @@ namespace Google.Apis.Gan.v1beta1 {
             Pending,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Publisher> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Publisher> {
             
             private string _oauth_token;
             
@@ -3574,7 +3574,7 @@ namespace Google.Apis.Gan.v1beta1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Publishers> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Gan.v1beta1.Data.Publishers> {
             
             private string _oauth_token;
             

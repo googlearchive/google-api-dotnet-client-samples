@@ -1586,7 +1586,7 @@ namespace Google.Apis.Discovery.v1 {
             Labs,
         }
         
-        public class GetRestRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.RestDescription> {
+        public class GetRestRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.RestDescription> {
             
             private string _oauth_token;
             
@@ -1666,7 +1666,7 @@ namespace Google.Apis.Discovery.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.DirectoryList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Discovery.v1.Data.DirectoryList> {
             
             private string _oauth_token;
             

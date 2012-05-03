@@ -642,7 +642,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             return new GetRequest(service, project, taskqueue);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.TaskQueue> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.TaskQueue> {
             
             private string _oauth_token;
             
@@ -781,7 +781,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             return new ListRequest(service, project, taskqueue);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -872,7 +872,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Task> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Task> {
             
             private string _oauth_token;
             
@@ -963,7 +963,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class LeaseRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks> {
+        public class LeaseRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks> {
             
             private string _oauth_token;
             
@@ -1065,7 +1065,7 @@ namespace Google.Apis.Taskqueue.v1beta1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks2> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Taskqueue.v1beta1.Data.Tasks2> {
             
             private string _oauth_token;
             

@@ -2867,7 +2867,7 @@ namespace Google.Apis.Calendar.v3 {
             return new UpdateRequest(service, body, calendarId, ruleId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -2947,7 +2947,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3027,7 +3027,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3113,7 +3113,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Acl> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Acl> {
             
             private string _oauth_token;
             
@@ -3182,7 +3182,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3279,7 +3279,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.AclRule> {
             
             private string _oauth_token;
             
@@ -3445,7 +3445,7 @@ namespace Google.Apis.Calendar.v3 {
             Writer,
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -3514,7 +3514,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3583,7 +3583,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3658,7 +3658,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarList> {
             
             private string _oauth_token;
             
@@ -3768,7 +3768,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3854,7 +3854,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.CalendarListEntry> {
             
             private string _oauth_token;
             
@@ -3989,7 +3989,7 @@ namespace Google.Apis.Calendar.v3 {
             return new UpdateRequest(service, body, calendarId);
         }
         
-        public class ClearRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4058,7 +4058,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4127,7 +4127,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4196,7 +4196,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4271,7 +4271,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4357,7 +4357,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Calendar> {
             
             private string _oauth_token;
             
@@ -4462,7 +4462,7 @@ namespace Google.Apis.Calendar.v3 {
             return new GetRequest(service);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Colors> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Colors> {
             
             private string _oauth_token;
             
@@ -4615,7 +4615,7 @@ namespace Google.Apis.Calendar.v3 {
             Updated,
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4708,7 +4708,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4814,7 +4814,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ImportRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class ImportRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4900,7 +4900,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -4999,7 +4999,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class InstancesRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
+        public class InstancesRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
             private string _oauth_token;
             
@@ -5157,7 +5157,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Events> {
             
             private string _oauth_token;
             
@@ -5395,7 +5395,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class MoveRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5499,7 +5499,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5609,7 +5609,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class QuickAddRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class QuickAddRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5702,7 +5702,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Event> {
             
             private string _oauth_token;
             
@@ -5831,7 +5831,7 @@ namespace Google.Apis.Calendar.v3 {
             return new QueryRequest(service, body);
         }
         
-        public class QueryRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.FreeBusyResponse> {
+        public class QueryRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.FreeBusyResponse> {
             
             private string _oauth_token;
             
@@ -5931,7 +5931,7 @@ namespace Google.Apis.Calendar.v3 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Setting> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Setting> {
             
             private string _oauth_token;
             
@@ -6000,7 +6000,7 @@ namespace Google.Apis.Calendar.v3 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Settings> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Calendar.v3.Data.Settings> {
             
             private string _oauth_token;
             

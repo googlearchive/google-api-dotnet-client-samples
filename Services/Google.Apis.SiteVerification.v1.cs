@@ -508,7 +508,7 @@ namespace Google.Apis.SiteVerification.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -577,7 +577,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -646,7 +646,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class GetTokenRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
+        public class GetTokenRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceGettokenResponse> {
             
             private string _oauth_token;
             
@@ -721,7 +721,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -807,7 +807,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceListResponse> {
             
             private string _oauth_token;
             
@@ -865,7 +865,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             
@@ -951,7 +951,7 @@ namespace Google.Apis.SiteVerification.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.SiteVerification.v1.Data.SiteVerificationWebResourceResource> {
             
             private string _oauth_token;
             

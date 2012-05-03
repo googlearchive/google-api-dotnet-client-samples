@@ -557,7 +557,7 @@ namespace Google.Apis.Groupssettings.v1 {
             return new UpdateRequest(service, body, groupUniqueId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
             private string _oauth_token;
             
@@ -626,7 +626,7 @@ namespace Google.Apis.Groupssettings.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
             private string _oauth_token;
             
@@ -712,7 +712,7 @@ namespace Google.Apis.Groupssettings.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Groupssettings.v1.Data.Groups> {
             
             private string _oauth_token;
             

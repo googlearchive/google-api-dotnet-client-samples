@@ -1905,7 +1905,7 @@ namespace Google.Apis.Blogger.v2 {
             return new GetRequest(service, blogId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Blog> {
             
             private string _oauth_token;
             
@@ -2003,7 +2003,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId, postId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Comment> {
             
             private string _oauth_token;
             
@@ -2094,7 +2094,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.CommentList> {
             
             private string _oauth_token;
             
@@ -2253,7 +2253,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Page> {
             
             private string _oauth_token;
             
@@ -2333,7 +2333,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PageList> {
             
             private string _oauth_token;
             
@@ -2442,7 +2442,7 @@ namespace Google.Apis.Blogger.v2 {
             return new ListRequest(service, blogId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.Post> {
             
             private string _oauth_token;
             
@@ -2522,7 +2522,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.PostList> {
             
             private string _oauth_token;
             
@@ -2691,7 +2691,7 @@ namespace Google.Apis.Blogger.v2 {
                 return new ListRequest(service, userId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.BlogList> {
                 
                 private string _oauth_token;
                 
@@ -2761,7 +2761,7 @@ namespace Google.Apis.Blogger.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Blogger.v2.Data.User> {
             
             private string _oauth_token;
             

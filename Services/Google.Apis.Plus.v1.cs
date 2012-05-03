@@ -2856,7 +2856,7 @@ namespace Google.Apis.Plus.v1 {
             Recent,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Activity> {
             
             private string _oauth_token;
             
@@ -2938,7 +2938,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
             private string _oauth_token;
             
@@ -3057,7 +3057,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class SearchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
+        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.ActivityFeed> {
             
             private string _oauth_token;
             
@@ -3226,7 +3226,7 @@ namespace Google.Apis.Plus.v1 {
             Descending,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Comment> {
             
             private string _oauth_token;
             
@@ -3295,7 +3295,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.CommentFeed> {
             
             private string _oauth_token;
             
@@ -3462,7 +3462,7 @@ namespace Google.Apis.Plus.v1 {
             Resharers,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.Person> {
             
             private string _oauth_token;
             
@@ -3531,7 +3531,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class ListByActivityRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class ListByActivityRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
             private string _oauth_token;
             
@@ -3637,7 +3637,7 @@ namespace Google.Apis.Plus.v1 {
             }
         }
         
-        public class SearchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
+        public class SearchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Plus.v1.Data.PeopleFeed> {
             
             private string _oauth_token;
             

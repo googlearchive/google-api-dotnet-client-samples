@@ -487,7 +487,7 @@ namespace Google.Apis.Oauth2.v2 {
                     return new GetRequest(service);
                 }
                 
-                public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+                public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
                     
                     private string _oauth_token;
                     
@@ -547,7 +547,7 @@ namespace Google.Apis.Oauth2.v2 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Userinfo> {
             
             private string _oauth_token;
             
@@ -628,7 +628,7 @@ namespace Google.Apis.Oauth2.v2 {
             return new TokeninfoRequest(service);
         }
         
-        public class TokeninfoRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Tokeninfo> {
+        public class TokeninfoRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Oauth2.v2.Data.Tokeninfo> {
             
             private string _oauth_token;
             

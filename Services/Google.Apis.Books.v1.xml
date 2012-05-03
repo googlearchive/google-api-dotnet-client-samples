@@ -160,6 +160,9 @@
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.Viewport">
             <summary>The viewport for showing this location. This is a latitude, longitude rectangle.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.Zoom">
+            <summary>The Zoom level to use for the map. Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) to 21+ (down to individual buildings). See: https://developers.google.com/maps/documentation/staticmaps/#Zoomlevels</summary>
+        </member>
         <member name="T:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.ViewportData">
             <summary>The viewport for showing this location. This is a latitude, longitude rectangle.</summary>
         </member>
@@ -792,19 +795,21 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.UserId">
             <summary>ID of user for whom to retrieve bookshelves.</summary>
         </member>
-        <member name="M:Google.Apis.Books.v1.LayersResource.Get(System.String)">
+        <member name="M:Google.Apis.Books.v1.LayersResource.Get(System.String,System.String)">
             <summary>Gets the layer summary for a volume.</summary>
+            <param name="volumeId">Required - The volume to retrieve layers for.</param>
             <param name="summaryId">Required - The ID for the layer to get the summary for.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.LayersResource.List(System.String)">
             <summary>List the layer summaries for a volume.</summary>
             <param name="volumeId">Required - The volume to retrieve layers for.</param>
         </member>
-        <member name="M:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.Get(System.String,System.String,System.String)">
+        <member name="M:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.Get(System.String,System.String,System.String,System.String)">
             <summary>Gets the annotation data.</summary>
             <param name="volumeId">Required - The volume to retrieve annotations for.</param>
             <param name="layerId">Required - The ID for the layer to get the annotations.</param>
             <param name="annotationDataId">Required - The ID of the annotation data to retrieve.</param>
+            <param name="contentVersion">Required - The content version for the volume you are trying to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.List(System.String,System.String,System.String)">
             <summary>Gets the annotation data for a volume and layer.</summary>
@@ -823,6 +828,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.AnnotationDataId">
             <summary>The ID of the annotation data to retrieve.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.ContentVersion">
+            <summary>The content version for the volume you are trying to retrieve.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.H">
             <summary>The requested pixel height for any images. If height is provided width must also be provided.</summary>
@@ -983,11 +991,17 @@
         <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.ContentVersion">
+            <summary>The content version for the requested volume.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.SummaryId">
             <summary>The ID for the layer to get the summary for.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.VolumeId">
+            <summary>The volume to retrieve layers for.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1272,6 +1286,9 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
         </member>
@@ -1547,6 +1564,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Country">
+            <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Partner">
             <summary>Brand results for partner ID.</summary>

@@ -1769,7 +1769,7 @@ namespace Google.Apis.Customsearch.v1 {
             I,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Customsearch.v1.Data.Search> {
             
             private string _oauth_token;
             

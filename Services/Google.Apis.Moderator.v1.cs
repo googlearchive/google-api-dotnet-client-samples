@@ -2235,7 +2235,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2335,7 +2335,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2474,7 +2474,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2574,7 +2574,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -2662,7 +2662,7 @@ namespace Google.Apis.Moderator.v1 {
             return new UpdateRequest(service, body);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2720,7 +2720,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2795,7 +2795,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Profile> {
             
             private string _oauth_token;
             
@@ -2899,7 +2899,7 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId, submissionId);
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -3033,7 +3033,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
             
             private string _oauth_token;
             
@@ -3270,7 +3270,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
                 
                 private string _oauth_token;
                 
@@ -3437,7 +3437,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
                 private string _oauth_token;
                 
@@ -3611,7 +3611,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3680,7 +3680,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3755,7 +3755,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SeriesList> {
             
             private string _oauth_token;
             
@@ -3852,7 +3852,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -3938,7 +3938,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Series> {
             
             private string _oauth_token;
             
@@ -4052,7 +4052,7 @@ namespace Google.Apis.Moderator.v1 {
             return new InsertRequest(service, body, seriesId, topicId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -4158,7 +4158,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Submission> {
             
             private string _oauth_token;
             
@@ -4317,7 +4317,7 @@ namespace Google.Apis.Moderator.v1 {
             return new ListRequest(service, seriesId, submissionId);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -4407,7 +4407,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Tag> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Tag> {
             
             private string _oauth_token;
             
@@ -4504,7 +4504,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TagList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TagList> {
             
             private string _oauth_token;
             
@@ -4653,7 +4653,7 @@ namespace Google.Apis.Moderator.v1 {
                 return new ListRequest(service, seriesId, topicId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.SubmissionList> {
                 
                 private string _oauth_token;
                 
@@ -4825,7 +4825,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -4905,7 +4905,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -4991,7 +4991,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TopicList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.TopicList> {
             
             private string _oauth_token;
             
@@ -5111,7 +5111,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Topic> {
             
             private string _oauth_token;
             
@@ -5256,7 +5256,7 @@ namespace Google.Apis.Moderator.v1 {
             return new UpdateRequest(service, body, seriesId, submissionId);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5361,7 +5361,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5471,7 +5471,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.VoteList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.VoteList> {
             
             private string _oauth_token;
             
@@ -5566,7 +5566,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             
@@ -5688,7 +5688,7 @@ namespace Google.Apis.Moderator.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Moderator.v1.Data.Vote> {
             
             private string _oauth_token;
             

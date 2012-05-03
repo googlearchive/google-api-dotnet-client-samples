@@ -253,7 +253,7 @@ namespace Google.Apis.Analytics.v2_4 {
             return new GetRequest(service, ids, startDate, endDate, metrics);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -510,7 +510,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -616,7 +616,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId, webPropertyId, profileId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -754,7 +754,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId, webPropertyId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -879,7 +879,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 
@@ -983,7 +983,7 @@ namespace Google.Apis.Analytics.v2_4 {
                 return new ListRequest(service, accountId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<string> {
                 
                 private string _oauth_token;
                 

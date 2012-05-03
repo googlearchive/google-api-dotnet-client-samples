@@ -932,7 +932,7 @@ namespace Google.Apis.Pagespeedonline.v1 {
             Mobile,
         }
         
-        public class RunpagespeedRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
+        public class RunpagespeedRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Pagespeedonline.v1.Data.Result> {
             
             private string _oauth_token;
             

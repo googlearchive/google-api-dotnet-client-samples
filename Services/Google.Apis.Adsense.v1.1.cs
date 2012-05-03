@@ -1534,7 +1534,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 return new ListRequest(service, accountId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdClients> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdClients> {
                 
                 private string _oauth_token;
                 
@@ -1688,7 +1688,7 @@ namespace Google.Apis.Adsense.v1_1 {
                     return new ListRequest(service, accountId, adClientId, adUnitId);
                 }
                 
-                public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
+                public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
                     
                     private string _oauth_token;
                     
@@ -1806,7 +1806,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 }
             }
             
-            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnit> {
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnit> {
                 
                 private string _oauth_token;
                 
@@ -1897,7 +1897,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 }
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
                 
                 private string _oauth_token;
                 
@@ -2075,7 +2075,7 @@ namespace Google.Apis.Adsense.v1_1 {
                     return new ListRequest(service, accountId, adClientId, customChannelId);
                 }
                 
-                public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
+                public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
                     
                     private string _oauth_token;
                     
@@ -2206,7 +2206,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 }
             }
             
-            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannel> {
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannel> {
                 
                 private string _oauth_token;
                 
@@ -2297,7 +2297,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 }
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
                 
                 private string _oauth_token;
                 
@@ -2425,7 +2425,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 return new GenerateRequest(service, accountId, startDate, endDate);
             }
             
-            public class GenerateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse> {
+            public class GenerateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse> {
                 
                 private string _oauth_token;
                 
@@ -2641,7 +2641,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 return new ListRequest(service, accountId, adClientId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.UrlChannels> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.UrlChannels> {
                 
                 private string _oauth_token;
                 
@@ -2748,7 +2748,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.Account> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.Account> {
             
             private string _oauth_token;
             
@@ -2830,7 +2830,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.Accounts> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.Accounts> {
             
             private string _oauth_token;
             
@@ -2933,7 +2933,7 @@ namespace Google.Apis.Adsense.v1_1 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdClients> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdClients> {
             
             private string _oauth_token;
             
@@ -3073,7 +3073,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 return new ListRequest(service, adClientId, adUnitId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
                 
                 private string _oauth_token;
                 
@@ -3180,7 +3180,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnit> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnit> {
             
             private string _oauth_token;
             
@@ -3260,7 +3260,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
             
             private string _oauth_token;
             
@@ -3424,7 +3424,7 @@ namespace Google.Apis.Adsense.v1_1 {
                 return new ListRequest(service, adClientId, customChannelId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdUnits> {
                 
                 private string _oauth_token;
                 
@@ -3544,7 +3544,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannel> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannel> {
             
             private string _oauth_token;
             
@@ -3624,7 +3624,7 @@ namespace Google.Apis.Adsense.v1_1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.CustomChannels> {
             
             private string _oauth_token;
             
@@ -3740,7 +3740,7 @@ namespace Google.Apis.Adsense.v1_1 {
             return new GenerateRequest(service, startDate, endDate);
         }
         
-        public class GenerateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse> {
+        public class GenerateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.AdsenseReportsGenerateResponse> {
             
             private string _oauth_token;
             
@@ -3957,7 +3957,7 @@ namespace Google.Apis.Adsense.v1_1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.UrlChannels> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1_1.Data.UrlChannels> {
             
             private string _oauth_token;
             

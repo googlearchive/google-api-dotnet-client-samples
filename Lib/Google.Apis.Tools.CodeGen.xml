@@ -143,6 +143,12 @@
             Adds all required parameters and assign statements of this request to the specified constructor.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator" -->
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
+            <summary>
+            Creates a new ResumableUploadInheritanceDecorator, which uses the specified type provider.
+            </summary>
+        </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator">
             <summary>
             Generates the standard constructors of an upload request.
@@ -162,6 +168,12 @@
             <summary>
             Creates the constructor for this request class which only takes required arguments.
             </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator.AddAuthorizationAssignment(System.CodeDom.CodeConstructor)">
+            <summary>
+            Adds this.Authenticator = service.Authenticator to <paramref name="constructor"/>
+            </summary>
+            <param name="constructor">The resumable upload constructor.</param>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator">
             <summary>
@@ -293,7 +305,7 @@
             A decorator which adds the ServiceRequest inheritance to the class
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider,System.Type)">
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ServiceRequestInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
             <summary>
             Creates a new ServiceRequestInheritanceDecorator, which uses the specified type provider.
             </summary>

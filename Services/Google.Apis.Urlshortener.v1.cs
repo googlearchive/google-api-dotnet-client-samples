@@ -622,7 +622,7 @@ namespace Google.Apis.Urlshortener.v1 {
             FULL,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
             
             private string _oauth_token;
             
@@ -704,7 +704,7 @@ namespace Google.Apis.Urlshortener.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.Url> {
             
             private string _oauth_token;
             
@@ -779,7 +779,7 @@ namespace Google.Apis.Urlshortener.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.UrlHistory> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Urlshortener.v1.Data.UrlHistory> {
             
             private string _oauth_token;
             

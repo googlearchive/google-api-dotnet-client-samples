@@ -538,7 +538,7 @@ namespace Google.Apis.Audit.v1 {
             Customer,
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Audit.v1.Data.Activities> {
             
             private string _oauth_token;
             

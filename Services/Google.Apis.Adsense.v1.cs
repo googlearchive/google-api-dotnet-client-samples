@@ -975,7 +975,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdClients> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdClients> {
             
             private string _oauth_token;
             
@@ -1079,7 +1079,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdUnits> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdUnits> {
             
             private string _oauth_token;
             
@@ -1207,7 +1207,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.CustomChannels> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.CustomChannels> {
             
             private string _oauth_token;
             
@@ -1323,7 +1323,7 @@ namespace Google.Apis.Adsense.v1 {
             return new GenerateRequest(service, startDate, endDate);
         }
         
-        public class GenerateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse> {
+        public class GenerateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.AdsenseReportsGenerateResponse> {
             
             private string _oauth_token;
             
@@ -1527,7 +1527,7 @@ namespace Google.Apis.Adsense.v1 {
             return new ListRequest(service, adClientId);
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.UrlChannels> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adsense.v1.Data.UrlChannels> {
             
             private string _oauth_token;
             

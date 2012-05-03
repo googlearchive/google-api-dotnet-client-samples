@@ -11,7 +11,7 @@
             <summary>A short description of the file</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.Data.File.DownloadUrl">
-            <summary>Short term download URL for the file This will only be populated on files with content stored in Drive.</summary>
+            <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.Data.File.ETag">
             <summary>ETag of the file.</summary>

@@ -827,7 +827,7 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -896,7 +896,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -965,7 +965,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -1040,7 +1040,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskLists> {
             
             private string _oauth_token;
             
@@ -1124,7 +1124,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -1210,7 +1210,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.TaskList> {
             
             private string _oauth_token;
             
@@ -1363,7 +1363,7 @@ namespace Google.Apis.Tasks.v1 {
             return new UpdateRequest(service, body, tasklist, task);
         }
         
-        public class ClearRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class ClearRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1432,7 +1432,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -1512,7 +1512,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -1592,7 +1592,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -1704,7 +1704,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Tasks> {
             
             private string _oauth_token;
             
@@ -1903,7 +1903,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class MoveRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class MoveRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -2009,7 +2009,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             
@@ -2106,7 +2106,7 @@ namespace Google.Apis.Tasks.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Tasks.v1.Data.Task> {
             
             private string _oauth_token;
             

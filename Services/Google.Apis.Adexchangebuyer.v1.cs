@@ -905,7 +905,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new UpdateRequest(service, body, id);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -974,7 +974,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.AccountsList> {
             
             private string _oauth_token;
             
@@ -1032,7 +1032,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class PatchRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -1118,7 +1118,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class UpdateRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Account> {
             
             private string _oauth_token;
             
@@ -1231,7 +1231,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new InsertRequest(service, body);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
             
             private string _oauth_token;
             
@@ -1322,7 +1322,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.Creative> {
             
             private string _oauth_token;
             
@@ -1422,7 +1422,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             return new ListRequest(service);
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDeal> {
             
             private string _oauth_token;
             
@@ -1491,7 +1491,7 @@ namespace Google.Apis.Adexchangebuyer.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList> {
             
             private string _oauth_token;
             

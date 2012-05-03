@@ -2873,7 +2873,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new GetRequest(service, ids, startDate, endDate, metrics);
             }
             
-            public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.GaData> {
+            public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.GaData> {
                 
                 private string _oauth_token;
                 
@@ -3131,7 +3131,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Accounts> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Accounts> {
                 
                 private string _oauth_token;
                 
@@ -3237,7 +3237,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId, webPropertyId, profileId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Goals> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Goals> {
                 
                 private string _oauth_token;
                 
@@ -3375,7 +3375,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId, webPropertyId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Profiles> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Profiles> {
                 
                 private string _oauth_token;
                 
@@ -3500,7 +3500,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Segments> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Segments> {
                 
                 private string _oauth_token;
                 
@@ -3604,7 +3604,7 @@ namespace Google.Apis.Analytics.v3 {
                 return new ListRequest(service, accountId);
             }
             
-            public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Webproperties> {
+            public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Analytics.v3.Data.Webproperties> {
                 
                 private string _oauth_token;
                 

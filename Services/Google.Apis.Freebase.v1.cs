@@ -244,7 +244,7 @@ namespace Google.Apis.Freebase.v1 {
             Raw,
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1.Data.ContentserviceGet> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1.Data.ContentserviceGet> {
             
             private string _oauth_token;
             
@@ -404,7 +404,7 @@ namespace Google.Apis.Freebase.v1 {
             Soft,
         }
         
-        public class ImageRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class ImageRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -538,7 +538,7 @@ namespace Google.Apis.Freebase.v1 {
             }
         }
         
-        public class MqlreadRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class MqlreadRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             

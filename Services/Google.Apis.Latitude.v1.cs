@@ -611,7 +611,7 @@ namespace Google.Apis.Latitude.v1 {
             return new InsertRequest(service, body);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -669,7 +669,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
             private string _oauth_token;
             
@@ -740,7 +740,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson> {
             
             private string _oauth_token;
             
@@ -851,7 +851,7 @@ namespace Google.Apis.Latitude.v1 {
             return new ListRequest(service);
         }
         
-        public class DeleteRequest : global::Google.Apis.Requests.ServiceRequest<string> {
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
             
             private string _oauth_token;
             
@@ -920,7 +920,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class GetRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
             private string _oauth_token;
             
@@ -1002,7 +1002,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class InsertRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.Location> {
             
             private string _oauth_token;
             
@@ -1077,7 +1077,7 @@ namespace Google.Apis.Latitude.v1 {
             }
         }
         
-        public class ListRequest : global::Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LocationFeed> {
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Latitude.v1.Data.LocationFeed> {
             
             private string _oauth_token;
             
