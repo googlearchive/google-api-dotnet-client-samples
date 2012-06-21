@@ -143,10 +143,21 @@
             Adds all required parameters and assign statements of this request to the specified constructor.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator" -->
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator">
+            <summary>
+            A decorator which adds the ResumableUpload inheritance to the class
+            Adds : <see cref="T:Google.Apis.Upload.ResumableUpload`1"/> for types with no response body.
+            Adds : <see cref="T:Google.Apis.Upload.ResumableUpload`2"/> for types with response body.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator.#ctor(Google.Apis.Tools.CodeGen.Decorator.IObjectTypeProvider)">
             <summary>
             Creates a new ResumableUploadInheritanceDecorator, which uses the specified type provider.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.ResumableUploadInheritanceDecorator.DecorateClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration)">
+            <summary>
+            Adds code to the class "requestClass" based on the specified "request" method.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestDecorator.UploadConstructorDecorator">
@@ -210,6 +221,22 @@
         <member name="P:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.AddOptionalParameters">
             <summary>
             Defines whether optional parameters are added to the request methods or not.
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.MethodType">
+            <summary>
+            Enum used to communicate to code which version of the helper methods to generate
+            on a particular method call. 
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.MethodType.Request">
+            <summary>
+            Generate a standard ServiceRequest helper method.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.MethodType.Media">
+            <summary>
+            Generate a MediaUpload ServiceReqeuest helper method.
             </summary>
         </member>
         <member name="T:Google.Apis.Tools.CodeGen.Decorator.ResourceDecorator.RequestMethodResourceDecorator.ResourceGenerator">
@@ -530,7 +557,12 @@
             Generates a request class for the specified method
             </summary>
         </member>
-        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GetProposedName(Google.Apis.Discovery.IMethod)">
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GenerateMediaUploadClass(Google.Apis.Discovery.IResource,Google.Apis.Discovery.IMethod,System.CodeDom.CodeTypeDeclaration,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Generates a request class for the specified method
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Tools.CodeGen.Generator.RequestClassGenerator.GetProposedName(Google.Apis.Discovery.IMethod,System.String)">
             <summary>
             Returns the proposed name for a request class for the specified method.
             Does not check for used names.

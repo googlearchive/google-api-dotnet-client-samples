@@ -264,6 +264,9 @@
         <member name="P:Google.Apis.Calendar.v3.Data.Event.CreatorData.Email">
             <summary>The creator&apos;s email address, if available.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.CreatorData.Self">
+            <summary>Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.</summary>
+        </member>
         <member name="T:Google.Apis.Calendar.v3.Data.Event.ExtendedPropertiesData">
             <summary>Extended properties of the event.</summary>
         </member>
@@ -319,6 +322,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.Email">
             <summary>The organizer&apos;s email address, if available.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.Self">
+            <summary>Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.</summary>
         </member>
         <member name="T:Google.Apis.Calendar.v3.Data.Event.RemindersData">
             <summary>Information about the event&apos;s reminders for the authenticated user.</summary>

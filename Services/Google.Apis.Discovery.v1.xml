@@ -256,6 +256,15 @@
         <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.Scopes">
             <summary>OAuth 2.0 scopes applicable to this method.</summary>
         </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.SupportsMediaDownload">
+            <summary>Whether this method supports media downloads.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.SupportsMediaUpload">
+            <summary>Whether this method supports media uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Discovery.v1.Data.RestMethod.SupportsSubscription">
+            <summary>Whether this method supports subscriptions.</summary>
+        </member>
         <member name="T:Google.Apis.Discovery.v1.Data.RestMethod.MediaUploadData">
             <summary>Media upload parameters.</summary>
         </member>

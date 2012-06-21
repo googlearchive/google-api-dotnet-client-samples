@@ -7,6 +7,9 @@
         <member name="T:Google.Apis.Gan.v1beta1.Data.Advertiser">
             <summary>An AdvertiserResource.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.AllowPublisherCreatedLinks">
+            <summary>True if the advertiser allows publisher created links, otherwise false.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Category">
             <summary>Category that this advertiser belongs to. A valid list of categories can be found here: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&amp;answer=107581</summary>
         </member>
@@ -394,6 +397,66 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Events.NextPageToken">
             <summary>The &apos;pageToken&apos; to pass to the next request to get the next page, if there are more to retrieve.</summary>
         </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Link">
+            <summary>A LinkResource.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.AdvertiserId">
+            <summary>The advertiser id for the advertiser who owns this link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Authorship">
+            <summary>Authorship</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Availability">
+            <summary>Availability.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.CreateDate">
+            <summary>Date that this link was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.CreativeType">
+            <summary>Creative Type.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Description">
+            <summary>Description.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.DestinationUrl">
+            <summary>The destination URL for the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Duration">
+            <summary>Duration</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.EndDate">
+            <summary>Date that this link becomes inactive.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Id">
+            <summary>The ID of this link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.ImageAltText">
+            <summary>image alt text.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.IsActive">
+            <summary>Flag for if this link is active.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Kind">
+            <summary>The kind for one entity.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Name">
+            <summary>The logical name for this link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.PromotionType">
+            <summary>Promotion Type</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.StartDate">
+            <summary>Date that this link becomes active.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Links.Items">
+            <summary>The links.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Links.Kind">
+            <summary>The kind for a page of links.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Links.NextPageToken">
+            <summary>The next page token.</summary>
+        </member>
         <member name="T:Google.Apis.Gan.v1beta1.Data.Money">
             <summary>An ApiMoneyProto.</summary>
         </member>
@@ -450,6 +513,15 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.GanService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.GanService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.GanService.Scopes.Gan">
+            <summary>Manage your GAN data</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.GanService.Scopes.GanReadonly">
+            <summary>View your GAN data</summary>
         </member>
         <member name="M:Google.Apis.Gan.v1beta1.AdvertisersResource.Get(Google.Apis.Gan.v1beta1.AdvertisersResource.Role,System.String)">
             <summary>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only publishers can lookup advertisers. Advertisers can request information about themselves by omitting the advertiserId query parameter.</summary>
@@ -548,10 +620,10 @@
             <summary>The set of fields to return.</summary>
         </member>
         <member name="F:Google.Apis.Gan.v1beta1.CcOffersResource.Projection.Full">
-            <summary>Include all offer fields</summary>
+            <summary>Include all offer fields. This is the default.</summary>
         </member>
         <member name="F:Google.Apis.Gan.v1beta1.CcOffersResource.Projection.Summary">
-            <summary>Include only the basic fields needed to display an offer. This is the default.</summary>
+            <summary>Include only the basic fields needed to display an offer.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -689,6 +761,130 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.Type">
             <summary>Filters out all events that are not of the given type. Valid values: 'action', 'transaction', 'charge'. Optional.</summary>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.LinksResource.Get(Google.Apis.Gan.v1beta1.LinksResource.Role,System.String,System.String)">
+            <summary>Retrieves data about a single link if the requesting advertiser/publisher has access to it. Advertisers can look up their own links. Publishers can look up visible links or links belonging to advertisers they are in a relationship with.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+            <param name="linkId">Required - The ID of the link to look up.</param>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.LinksResource.Insert(Google.Apis.Gan.v1beta1.Data.Link,Google.Apis.Gan.v1beta1.LinksResource.Role,System.String)">
+            <summary>Inserts a new link.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="M:Google.Apis.Gan.v1beta1.LinksResource.List(Google.Apis.Gan.v1beta1.LinksResource.Role,System.String)">
+            <summary>Retrieves all links that match the query parameters.</summary>
+            <param name="role">Required - Must be one of the following values [advertisers, publishers] - The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</param>
+            <param name="roleId">Required - The ID of the requesting advertiser or publisher.</param>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.Role">
+            <summary>The role of the requester. Valid values: &apos;advertisers&apos; or &apos;publishers&apos;.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.LinksResource.Role.Advertisers">
+            <summary>The requester is requesting as an advertiser.</summary>
+        </member>
+        <member name="F:Google.Apis.Gan.v1beta1.LinksResource.Role.Publishers">
+            <summary>The requester is requesting as a publisher.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.AdvertiserCategory">
+            <summary>The advertiser&apos;s primary vertical.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.Authorship">
+            <summary>The role of the author of the link.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.LinkType">
+            <summary>The type of the link.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.PromotionType">
+            <summary>The promotion type.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.RelationshipStatus">
+            <summary>The status of the relationship.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.LinkId">
+            <summary>The ID of the link to look up.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserCategory">
+            <summary>The advertiser's primary vertical.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserId">
+            <summary>Limits the resulting links to the ones belonging to the listed advertisers.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AssetSize">
+            <summary>The size of the given asset.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Authorship">
+            <summary>The role of the author of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.LinkType">
+            <summary>The type of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.MaxResults">
+            <summary>Max number of items to return in this page. Optional. Defaults to 20.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PageToken">
+            <summary>The value of 'nextPageToken' from the previous page. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PromotionType">
+            <summary>The promotion type.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.RelationshipStatus">
+            <summary>The status of the relationship.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Role">
+            <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.RoleId">
+            <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.StartDateMax">
+            <summary>The end of the start date range.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.StartDateMin">
+            <summary>The beginning of the start date range.</summary>
         </member>
         <member name="M:Google.Apis.Gan.v1beta1.PublishersResource.Get(Google.Apis.Gan.v1beta1.PublishersResource.Role,System.String)">
             <summary>Retrieves data about a single advertiser if that the requesting advertiser/publisher has access to it. Only advertisers can look up publishers. Publishers can request information about themselves by omitting the publisherId query parameter.</summary>

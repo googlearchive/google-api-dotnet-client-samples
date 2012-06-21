@@ -46,9 +46,6 @@
         <member name="P:Google.Apis.Plus.v1.Data.Activity.PlaceName">
             <summary>Name of the place where this activity occurred.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.Data.Activity.Placeholder">
-            <summary>True if this activity is a placeholder.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.Provider">
             <summary>The service provider that initially published this activity.</summary>
         </member>
@@ -753,7 +750,7 @@
         </member>
         <member name="M:Google.Apis.Plus.v1.PeopleResource.Search(System.String)">
             <summary>Search all public profiles.</summary>
-            <param name="query">Required - Full-text search query string.</param>
+            <param name="query">Required - Specify a query string for full text search of public text in all profiles.</param>
         </member>
         <member name="T:Google.Apis.Plus.v1.PeopleResource.Collection">
             <summary>The collection of people to list.</summary>
@@ -816,7 +813,7 @@
             <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token may be of any length.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Query">
-            <summary>Full-text search query string.</summary>
+            <summary>Specify a query string for full text search of public text in all profiles.</summary>
         </member>
     </members>
 </doc>

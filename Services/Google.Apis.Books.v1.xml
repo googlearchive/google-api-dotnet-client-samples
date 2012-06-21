@@ -841,6 +841,9 @@
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.Locale">
             <summary>The locale information for the data. ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.Scale">
+            <summary>The requested scale for the image.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
@@ -879,6 +882,9 @@
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.PageToken">
             <summary>The value of the nextToken from the previous page.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.Scale">
+            <summary>The requested scale for the image.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
@@ -1492,6 +1498,73 @@
         <member name="M:Google.Apis.Books.v1.VolumesResource.List(System.String)">
             <summary>Performs a book search.</summary>
             <param name="q">Required - Full-text search query string.</param>
+        </member>
+        <member name="M:Google.Apis.Books.v1.VolumesResource.AssociatedResource.List(System.String)">
+            <summary>Return a list of associated books.</summary>
+            <param name="volumeId">Required - ID of the source volume.</param>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association">
+            <summary>Association type.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association.Complementary">
+            <summary>Books that are complementary for additional reading.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter">
+            <summary>Filter search results.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Ebooks">
+            <summary>All Google eBooks.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.FreeEbooks">
+            <summary>Google eBook with full volume text viewability.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Full">
+            <summary>Public can view entire volume text.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.PaidEbooks">
+            <summary>Google eBook with a price.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Partial">
+            <summary>Public able to see parts of text.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection.Full">
+            <summary>Includes all volume data.</summary>
+        </member>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection.Lite">
+            <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Association">
+            <summary>Association type.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Filter">
+            <summary>Filter search results.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Projection">
+            <summary>Restrict information returned to a set of selected fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Source">
+            <summary>String to identify the originator of this request.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.StartIndex">
+            <summary>Index of the first result to return (starts at 0)</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.VolumeId">
+            <summary>ID of the source volume.</summary>
         </member>
         <member name="T:Google.Apis.Books.v1.VolumesResource.Projection">
             <summary>Restrict information returned to a set of selected fields.</summary>

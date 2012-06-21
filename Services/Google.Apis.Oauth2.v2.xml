@@ -5,7 +5,7 @@
     </assembly>
     <members>
         <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Access_type">
-            <summary>The access type granted with this toke. It can be offline or online.</summary>
+            <summary>The access type granted with this token. It can be offline or online.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Audience">
             <summary>Who is the intended audience for this token. In general the same as issued_to.</summary>
@@ -28,8 +28,53 @@
         <member name="P:Google.Apis.Oauth2.v2.Data.Tokeninfo.Verified_email">
             <summary>Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request.</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Birthday">
+            <summary>The user&apos;s birthday. The year is not present.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Email">
+            <summary>The user&apos;s email address.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Family_name">
+            <summary>The user&apos;s last name.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Gender">
+            <summary>The user&apos;s gender.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Given_name">
+            <summary>The user&apos;s first name.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Id">
+            <summary>The focus obfuscated gaia id of the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Link">
+            <summary>URL of the profile page.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Locale">
+            <summary>The user&apos;s default locale.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Name">
+            <summary>The user&apos;s full name.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Picture">
+            <summary>URL of the user&apos;s picture image.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Timezone">
+            <summary>The user&apos;s default timezone.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v2.Data.Userinfo.Verified_email">
+            <summary>Boolean flag which is true if the email address is verified.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Oauth2.v2.Oauth2Service.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Oauth2.v2.Oauth2Service.Scopes.UserinfoEmail">
+            <summary>View your email address</summary>
+        </member>
+        <member name="F:Google.Apis.Oauth2.v2.Oauth2Service.Scopes.UserinfoProfile">
+            <summary>View basic information about your account</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

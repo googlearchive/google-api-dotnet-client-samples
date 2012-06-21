@@ -97,6 +97,15 @@
         <member name="M:Google.Apis.Latitude.v1.CurrentLocationResource.Insert(Google.Apis.Latitude.v1.Data.LatitudeCurrentlocationResourceJson)">
             <summary>Updates or creates the user&apos;s current location.</summary>
         </member>
+        <member name="T:Google.Apis.Latitude.v1.CurrentLocationResource.Granularity">
+            <summary>Granularity of the requested location.</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.CurrentLocationResource.Granularity.Best">
+            <summary>Request best available granularity.</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.CurrentLocationResource.Granularity.City">
+            <summary>Request city-level granularty.</summary>
+        </member>
         <member name="P:Google.Apis.Latitude.v1.CurrentLocationResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
@@ -143,6 +152,15 @@
         </member>
         <member name="M:Google.Apis.Latitude.v1.LocationResource.List">
             <summary>Lists the user&apos;s location history.</summary>
+        </member>
+        <member name="T:Google.Apis.Latitude.v1.LocationResource.Granularity">
+            <summary>Granularity of the location to return.</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LocationResource.Granularity.Best">
+            <summary>Request best available granularity.</summary>
+        </member>
+        <member name="F:Google.Apis.Latitude.v1.LocationResource.Granularity.City">
+            <summary>Request city-level granularty.</summary>
         </member>
         <member name="P:Google.Apis.Latitude.v1.LocationResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

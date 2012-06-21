@@ -425,7 +425,7 @@
             <summary>ID of the post to fetch posts from.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v2.CommentsResource.ListRequest.StartDate">
-            <summary>Earliest date of comment to fetch.</summary>
+            <summary>Earliest date of comment to fetch, a date-time with RFC 3339 formatting.</summary>
         </member>
         <member name="M:Google.Apis.Blogger.v2.PagesResource.Get(System.String,System.String)">
             <summary>Gets one blog page by id.</summary>
@@ -512,7 +512,7 @@
             <summary>Continuation token if the request is paged.</summary>
         </member>
         <member name="P:Google.Apis.Blogger.v2.PostsResource.ListRequest.StartDate">
-            <summary>Earliest post date to fetch.</summary>
+            <summary>Earliest post date to fetch, a date-time with RFC 3339 formatting.</summary>
         </member>
         <member name="M:Google.Apis.Blogger.v2.UsersResource.Get(System.String)">
             <summary>Gets one user by id.</summary>

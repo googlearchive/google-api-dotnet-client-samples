@@ -19,9 +19,6 @@
         <member name="P:Google.Apis.Shopping.v1.Data.Product.RequestId">
             <summary>Unique identifier for this request.</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.Data.Product.SelfLink">
-            <summary>Self link of product.</summary>
-        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.Categories">
             <summary>List of categories.</summary>
         </member>
@@ -135,9 +132,6 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.PromotionsData.ImageLink">
             <summary>Link to promotion image (omitted if type is not standard).</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.Data.Products.PromotionsData.Link">
-            <summary>Link to promotion without scheme. DEPRECATED. WILL BE REMOVED SOON. USE destLink.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.PromotionsData.Name">
             <summary>Name of promotion (omitted if type is not standard).</summary>
@@ -316,6 +310,9 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.QueryMatched">
             <summary>Whether this product matched the user query. Only set for the variant offers (if any) attached to a product offer.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Score">
+            <summary>Google Internal</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.Title">
             <summary>Title of product.</summary>
         </member>
@@ -388,8 +385,26 @@
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.DistanceUnit">
             <summary>Distance unit of product inventory.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.InstallmentMonths">
+            <summary>Number of months for installment price.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.InstallmentPrice">
+            <summary>Installment price of product inventory.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.OriginalPrice">
+            <summary>Original price of product inventory. Only returned for products that are on sale.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Price">
             <summary>Price of product inventory.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.SaleEndDate">
+            <summary>Sale end date.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.SalePrice">
+            <summary>Sale price of product inventory.</summary>
+        </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.SaleStartDate">
+            <summary>Sale start date.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.Data.ShoppingModelProductJsonV1.InventoriesData.Shipping">
             <summary>Shipping cost of product inventory.</summary>
@@ -456,8 +471,8 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneEnabled">
             <summary>Whether to return +1 button code</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneOptions">
-            <summary>+1 button rendering specification</summary>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneStyles">
+            <summary>+1 button rendering styles</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PlusOneUseGcsConfig">
             <summary>Whether to use +1 button styles configured in the GCS account</summary>
@@ -567,8 +582,8 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneEnabled">
             <summary>Whether to return +1 button code</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneOptions">
-            <summary>+1 button rendering specification</summary>
+        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneStyles">
+            <summary>+1 button rendering styles</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PlusOneUseGcsConfig">
             <summary>Whether to use +1 button styles configured in the GCS account</summary>
