@@ -7,6 +7,9 @@
         <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Family">
             <summary>The name of the font.</summary>
         </member>
+        <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Kind">
+            <summary>This kind represents a webfont object in the webfonts service.</summary>
+        </member>
         <member name="P:Google.Apis.Webfonts.v1.Data.Webfont.Subsets">
             <summary>The scripts supported by the font.</summary>
         </member>
@@ -17,7 +20,7 @@
             <summary>The list of fonts currently served by the Google Fonts API.</summary>
         </member>
         <member name="P:Google.Apis.Webfonts.v1.Data.WebfontList.Kind">
-            <summary>The object kind.</summary>
+            <summary>This kind represents a list of webfont objects in the webfonts service.</summary>
         </member>
         <member name="P:Google.Apis.Webfonts.v1.WebfontsService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>

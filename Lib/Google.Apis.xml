@@ -453,6 +453,11 @@
             The uploadType parameter value for resumable uploads.
             </summary>
         </member>
+        <member name="F:Google.Apis.Upload.ResumableUpload`1.ZeroByteContentRangeHeader">
+            <summary>
+            Content-Range header value for the body upload of zero length files.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Upload.ResumableUpload`1.#ctor(System.String,System.String,System.String,System.IO.Stream,System.String)">
             <summary>
             Create a resumable upload instance with the required parameters.
@@ -1829,7 +1834,7 @@
             Fetches the discovery document from a Webserver using HttpWebRequest.
             </summary>
             <returns>
-            A <see cref="T:System.String"/>
+            A <see cref="!:System.Stream"/>
             </returns>
         </member>
         <member name="P:Google.Apis.Discovery.WebDiscoveryDevice.DiscoveryUri">

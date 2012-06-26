@@ -35,6 +35,7 @@ namespace Google.Apis.Webfonts.v1.Data {
             }
         }
         
+        /// <summary>This kind represents a webfont object in the webfonts service.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -89,7 +90,7 @@ namespace Google.Apis.Webfonts.v1.Data {
             }
         }
         
-        /// <summary>The object kind.</summary>
+        /// <summary>This kind represents a list of webfont objects in the webfonts service.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -135,7 +136,7 @@ namespace Google.Apis.Webfonts.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"webfonts:v1\",\"n" +
-            "ame\":\"webfonts\",\"version\":\"v1\",\"revision\":\"20111110\",\"title\":\"Google Web Fonts D" +
+            "ame\":\"webfonts\",\"version\":\"v1\",\"revision\":\"20120614\",\"title\":\"Google Web Fonts D" +
             "eveloper API\",\"description\":\"The Google Web Fonts Developer API.\",\"icons\":{\"x16\"" +
             ":\"http://www.google.com/images/icons/feature/font_api-16.png\",\"x32\":\"http://www." +
             "google.com/images/icons/feature/font_api-32.gif\"},\"documentationLink\":\"http://co" +
@@ -159,19 +160,21 @@ namespace Google.Apis.Webfonts.v1 {
             " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
             "\"}},\"schemas\":{\"Webfont\":{\"id\":\"Webfont\",\"type\":\"object\",\"properties\":{\"family\":" +
             "{\"type\":\"any\",\"description\":\"The name of the font.\"},\"kind\":{\"type\":\"string\",\"de" +
-            "fault\":\"webfonts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts su" +
-            "pported by the font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available var" +
-            "iants for the font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"prope" +
-            "rties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of fonts currently serve" +
-            "d by the Google Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"The object kind.\",\"default\":\"webfonts#webfontList\"}}}},\"resources" +
-            "\":{\"webfonts\":{\"methods\":{\"list\":{\"id\":\"webfonts.webfonts.list\",\"path\":\"webfonts" +
-            "\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the list of fonts currently served" +
-            " by the Google Web Fonts Developer API\",\"parameters\":{\"sort\":{\"type\":\"string\",\"d" +
-            "escription\":\"Enables sorting of the list\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"s" +
-            "tyle\",\"trending\"],\"enumDescriptions\":[\"Sort alphabetically\",\"Sort by date added\"" +
-            ",\"Sort by popularity\",\"Sort by number of styles\",\"Sort by trending\"],\"location\":" +
-            "\"query\"}},\"response\":{\"$ref\":\"WebfontList\"}}}}}}";
+            "scription\":\"This kind represents a webfont object in the webfonts service.\",\"def" +
+            "ault\":\"webfonts#webfont\"},\"subsets\":{\"type\":\"any\",\"description\":\"The scripts sup" +
+            "ported by the font.\"},\"variants\":{\"type\":\"any\",\"description\":\"The available vari" +
+            "ants for the font.\"}}},\"WebfontList\":{\"id\":\"WebfontList\",\"type\":\"object\",\"proper" +
+            "ties\":{\"items\":{\"type\":\"array\",\"description\":\"The list of fonts currently served" +
+            " by the Google Fonts API.\",\"items\":{\"$ref\":\"Webfont\"}},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"This kind represents a list of webfont objects in the webfonts ser" +
+            "vice.\",\"default\":\"webfonts#webfontList\"}}}},\"resources\":{\"webfonts\":{\"methods\":{" +
+            "\"list\":{\"id\":\"webfonts.webfonts.list\",\"path\":\"webfonts\",\"httpMethod\":\"GET\",\"desc" +
+            "ription\":\"Retrieves the list of fonts currently served by the Google Web Fonts D" +
+            "eveloper API\",\"parameters\":{\"sort\":{\"type\":\"string\",\"description\":\"Enables sorti" +
+            "ng of the list\",\"enum\":[\"alpha\",\"date\",\"popularity\",\"style\",\"trending\"],\"enumDes" +
+            "criptions\":[\"Sort alphabetically\",\"Sort by date added\",\"Sort by popularity\",\"Sor" +
+            "t by number of styles\",\"Sort by trending\"],\"location\":\"query\"}},\"response\":{\"$re" +
+            "f\":\"WebfontList\"}}}}}}";
         
         public const string Version = "v1";
         

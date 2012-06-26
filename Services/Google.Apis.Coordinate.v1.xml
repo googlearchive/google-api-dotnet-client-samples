@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Coordinate.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Coordinate.v1.Data.Job">
+            <summary>A job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Job.Id">
+            <summary>Job id.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Job.JobChange">
+            <summary>List of job changes since it was created. The first change corresponds to the state of the job when it was created.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Job.Kind">
+            <summary>Identifies this object as a job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Job.State">
+            <summary>Current state of a job.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.JobChange">
+            <summary>Change to a job. For example assigning the job to a different worker.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobChange.Kind">
+            <summary>Identifies this object as a job change.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobChange.State">
+            <summary>Current state of a job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobChange.Timestamp">
+            <summary>Time at which this change was applied.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.JobListResponse">
+            <summary>Response from a List Jobs request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobListResponse.Items">
+            <summary>Jobs in the collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobListResponse.Kind">
+            <summary>Identifies this object as a list of jobs.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobListResponse.NextPageToken">
+            <summary>A token to provide to get the next page of results.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.JobState">
+            <summary>Current state of a job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Assignee">
+            <summary>Email address of the assignee.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.CustomerName">
+            <summary>Customer name.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.CustomerPhoneNumber">
+            <summary>Customer phone number.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Kind">
+            <summary>Identifies this object as a job state.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Location">
+            <summary>Location of a job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Note">
+            <summary>Note added to the job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Progress">
+            <summary>Job progress.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Title">
+            <summary>Job title.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.Location">
+            <summary>Location of a job.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Location.AddressLine">
+            <summary>Address.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Location.Kind">
+            <summary>Identifies this object as a location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Location.Lat">
+            <summary>Latitude.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.Location.Lng">
+            <summary>Longitude.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CoordinateService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.JobsResource.Get(System.String,System.String)">
+            <summary>Retrieves a job, including all the changes made to the job.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.JobsResource.Insert(Google.Apis.Coordinate.v1.Data.Job,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Inserts a new job. Only the state field of the job should be set.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="address">Required - Job address as newline (Unix) separated string</param>
+            <param name="lat">Required - The latitude coordinate of this job&apos;s location.</param>
+            <param name="lng">Required - The longitude coordinate of this job&apos;s location.</param>
+            <param name="title">Required - Job title</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.JobsResource.List(System.String)">
+            <summary>Retrieves jobs created or modified since the given timestamp.</summary>
+            <param name="teamId">Required - Team ID</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.JobsResource.Patch(Google.Apis.Coordinate.v1.Data.Job,System.String,System.String)">
+            <summary>Updates a job. Fields that are set in the job state will be updated. This method supports patch semantics.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.JobsResource.Update(Google.Apis.Coordinate.v1.Data.Job,System.String,System.String)">
+            <summary>Updates a job. Fields that are set in the job state will be updated.</summary>
+            <param name="teamId">Required - Team ID</param>
+            <param name="jobId">Required - Job number</param>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.JobsResource.Progress">
+            <summary>Job progress</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.COMPLETED">
+            <summary>Completed</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.IN_PROGRESS">
+            <summary>In progress</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.NOT_ACCEPTED">
+            <summary>Not accepted</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.NOT_STARTED">
+            <summary>Not started</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.JobsResource.Progress.OBSOLETE">
+            <summary>Obsolete</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Address">
+            <summary>Job address as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Assignee">
+            <summary>Assignee email address</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.CustomerName">
+            <summary>Customer name</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.CustomerPhoneNumber">
+            <summary>Customer phone number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Lat">
+            <summary>The latitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Lng">
+            <summary>The longitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Note">
+            <summary>Job note as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Title">
+            <summary>Job title</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return in one page.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.MinModifiedTimestampMs">
+            <summary>Minimum time a job was modified in milliseconds since epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.PageToken">
+            <summary>Continuation token</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Address">
+            <summary>Job address as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Assignee">
+            <summary>Assignee email address</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.CustomerName">
+            <summary>Customer name</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.CustomerPhoneNumber">
+            <summary>Customer phone number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Lat">
+            <summary>The latitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Lng">
+            <summary>The longitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Note">
+            <summary>Job note as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Progress">
+            <summary>Job progress</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Title">
+            <summary>Job title</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Address">
+            <summary>Job address as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Assignee">
+            <summary>Assignee email address</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.CustomerName">
+            <summary>Customer name</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.CustomerPhoneNumber">
+            <summary>Customer phone number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.JobId">
+            <summary>Job number</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Lat">
+            <summary>The latitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Lng">
+            <summary>The longitude coordinate of this job's location.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Note">
+            <summary>Job note as newline (Unix) separated string</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Progress">
+            <summary>Job progress</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.TeamId">
+            <summary>Team ID</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Title">
+            <summary>Job title</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>
