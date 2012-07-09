@@ -104,40 +104,43 @@ namespace Google.Apis.Freebase.v1sandbox {
             "Maximum width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096\"" +
             ",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scale" +
             " or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"]," +
-            "\"enumDescriptions\":[\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(bendrees)\",\"TODO(ben" +
-            "drees)\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolean sp" +
-            "ecifying whether the resulting image should be padded up to the requested dimens" +
-            "ions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"supportsM" +
-            "ediaDownload\":true},\"mqlread\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMet" +
-            "hod\":\"GET\",\"description\":\"Performs MQL Queries.\",\"parameters\":{\"as_of_time\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Run the query as it would\'ve been run at the specifi" +
-            "ed point in time.\",\"location\":\"query\"},\"callback\":{\"type\":\"string\",\"description\"" +
-            ":\"JS method name for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"lo" +
-            "cation\":\"query\"},\"cost\":{\"type\":\"boolean\",\"description\":\"Show the costs or not.\"" +
-            ",\"default\":\"false\",\"location\":\"query\"},\"cursor\":{\"type\":\"string\",\"description\":\"" +
-            "The mql cursor.\",\"location\":\"query\"},\"dateline\":{\"type\":\"string\",\"description\":\"" +
-            "The dateline that you get in a mqlwrite response to ensure consistent results.\"," +
-            "\"location\":\"query\"},\"html_escape\":{\"type\":\"boolean\",\"description\":\"Whether or no" +
-            "t to escape entities.\",\"default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"in" +
-            "teger\",\"description\":\"How many spaces to indent the json.\",\"default\":\"0\",\"format" +
-            "\":\"uint32\",\"maximum\":\"10\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The language of the results - an id of a /type/lang object.\",\"default\":\"/la" +
-            "ng/en\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An envelope c" +
-            "ontaining a single MQL query.\",\"required\":true,\"location\":\"query\"},\"uniqueness_f" +
-            "ailure\":{\"type\":\"string\",\"description\":\"How MQL responds to uniqueness failures." +
-            "\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw" +
-            " an error.\",\"Just return the first encountered object.\"],\"location\":\"query\"}},\"p" +
-            "arameterOrder\":[\"query\"],\"supportsMediaDownload\":true}},\"resources\":{\"text\":{\"me" +
-            "thods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\":\"GET\",\"" +
-            "description\":\"Returns blob attached to node at specified id as HTML\",\"parameters" +
-            "\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\",\"default" +
-            "\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return valid, sanit" +
-            "ized html.\",\"Return plain text - strip html tags.\",\"Return the entire content as" +
-            "-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id of the it" +
-            "em that you want data about\",\"required\":true,\"repeated\":true,\"location\":\"path\"}," +
-            "\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of characters to ret" +
-            "urn. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query\"}},\"par" +
-            "ameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}}}}";
+            "\"enumDescriptions\":[\"Fill rectangle completely with image, relax constraint on o" +
+            "ne dimension if necessary.\",\"Fill rectangle with image, crop image to maintain r" +
+            "ectangle dimensions.\",\"Fill rectangle with image, center horizontally, crop left" +
+            " and right.\",\"Fit image inside rectangle, leave empty space in one dimension if " +
+            "necessary.\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolea" +
+            "n specifying whether the resulting image should be padded up to the requested di" +
+            "mensions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"suppo" +
+            "rtsMediaDownload\":true},\"mqlread\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Performs MQL Queries.\",\"parameters\":{\"as_of_time\":" +
+            "{\"type\":\"string\",\"description\":\"Run the query as it would\'ve been run at the spe" +
+            "cified point in time.\",\"location\":\"query\"},\"callback\":{\"type\":\"string\",\"descript" +
+            "ion\":\"JS method name for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\"" +
+            ",\"location\":\"query\"},\"cost\":{\"type\":\"boolean\",\"description\":\"Show the costs or n" +
+            "ot.\",\"default\":\"false\",\"location\":\"query\"},\"cursor\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The mql cursor.\",\"location\":\"query\"},\"dateline\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The dateline that you get in a mqlwrite response to ensure consistent result" +
+            "s.\",\"location\":\"query\"},\"html_escape\":{\"type\":\"boolean\",\"description\":\"Whether o" +
+            "r not to escape entities.\",\"default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\"" +
+            ":\"integer\",\"description\":\"How many spaces to indent the json.\",\"default\":\"0\",\"fo" +
+            "rmat\":\"uint32\",\"maximum\":\"10\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The language of the results - an id of a /type/lang object.\",\"default\":" +
+            "\"/lang/en\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An envelo" +
+            "pe containing a single MQL query.\",\"required\":true,\"location\":\"query\"},\"uniquene" +
+            "ss_failure\":{\"type\":\"string\",\"description\":\"How MQL responds to uniqueness failu" +
+            "res.\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - t" +
+            "hrow an error.\",\"Just return the first encountered object.\"],\"location\":\"query\"}" +
+            "},\"parameterOrder\":[\"query\"],\"supportsMediaDownload\":true}},\"resources\":{\"text\":" +
+            "{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Returns blob attached to node at specified id as HTML\",\"parame" +
+            "ters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\",\"def" +
+            "ault\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return valid, s" +
+            "anitized html.\",\"Return plain text - strip html tags.\",\"Return the entire conten" +
+            "t as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id of th" +
+            "e item that you want data about\",\"required\":true,\"repeated\":true,\"location\":\"pat" +
+            "h\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of characters to" +
+            " return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query\"}}," +
+            "\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}}}}";
         
         public const string Version = "v1sandbox";
         
@@ -375,19 +378,19 @@ namespace Google.Apis.Freebase.v1sandbox {
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Mode {
             
-            /// <summary>TODO(bendrees)</summary>
+            /// <summary>Fill rectangle completely with image, relax constraint on one dimension if necessary.</summary>
             [Google.Apis.Util.StringValueAttribute("fill")]
             Fill,
             
-            /// <summary>TODO(bendrees)</summary>
+            /// <summary>Fill rectangle with image, crop image to maintain rectangle dimensions.</summary>
             [Google.Apis.Util.StringValueAttribute("fillcrop")]
             Fillcrop,
             
-            /// <summary>TODO(bendrees)</summary>
+            /// <summary>Fill rectangle with image, center horizontally, crop left and right.</summary>
             [Google.Apis.Util.StringValueAttribute("fillcropmid")]
             Fillcropmid,
             
-            /// <summary>TODO(bendrees)</summary>
+            /// <summary>Fit image inside rectangle, leave empty space in one dimension if necessary.</summary>
             [Google.Apis.Util.StringValueAttribute("fit")]
             Fit,
         }

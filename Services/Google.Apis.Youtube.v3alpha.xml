@@ -19,8 +19,17 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Kind">
             <summary>The type of this API resource.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Snippet">
+            <summary>JSON template for the snippet part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Statistics">
+            <summary>JSON template for the statistics part of a channel.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelContentDetails">
             <summary>JSON template for the content details part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelContentDetails.PrivacyStatus">
+            <summary>Privacy status of the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelContentDetails.Uploads">
             <summary>The unique id of the channel.</summary>
@@ -36,6 +45,36 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse.Kind">
             <summary>The type of this API response.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet">
+            <summary>JSON template for the snippet part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.Description">
+            <summary>Description of the channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.Thumbnails">
+            <summary>Channel thumbnails.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.Title">
+            <summary>Title of the channel.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.ThumbnailsData">
+            <summary>Channel thumbnails.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics">
+            <summary>JSON template for the statistics part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics.CommentCount">
+            <summary>Number of comments for this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics.SubscriberCount">
+            <summary>Number of subscribers to this channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics.VideoCount">
+            <summary>Number of videos in the channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics.ViewCount">
+            <summary>Number of times the channel has been viewed.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PageInfo">
             <summary>JSON template for a page info.</summary>
@@ -211,17 +250,8 @@
         <member name="T:Google.Apis.Youtube.v3alpha.Data.Thumbnail">
             <summary>JSON template for a thumbnail.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.Thumbnail.Height">
-            <summary>The height of the thumbnail.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.Thumbnail.Name">
-            <summary>The name of the thumbnail.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Thumbnail.Url">
-            <summary>The url for the thumbnail.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.Thumbnail.Width">
-            <summary>The width of the thumbnail.</summary>
+            <summary>The URL for the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.Video">
             <summary>JSON template for a YouTube Video.</summary>
@@ -237,6 +267,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Video.Kind">
             <summary>The type of this API resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.Video.Player">
+            <summary>JSON template for the player part of a video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Video.Snippet">
             <summary>JSON template for the snippet part of a video.</summary>
@@ -268,6 +301,12 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoListResponse.Videos">
             <summary>List of videos matching the request criteria.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoPlayer">
+            <summary>JSON template for the player part of a video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoPlayer.Embed">
+            <summary>Iframe embed for the video.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoSnippet">
             <summary>JSON template for the snippet part of a video.</summary>
         </member>
@@ -288,6 +327,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.Title">
             <summary>Title of the video.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.ThumbnailsData">
+            <summary>Video thumbnails.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoStatistics">
             <summary>JSON template for the statistics part of a video.</summary>
@@ -326,7 +368,7 @@
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3alpha.ChannelsResource.List(System.String)">
-            <summary>Browse the YouTube channel collection.</summary>
+            <summary>Browse the YouTube channel collection. Either the &apos;id&apos; or &apos;mine&apos; parameter must be set.</summary>
             <param name="part">Required - Parts of the channel resource to be returned.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Oauth_token">
@@ -337,6 +379,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Id">
+            <summary>YouTube IDs of the channels to be returned.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Mine">
             <summary>Flag indicating only return the channel ids of the authenticated user.</summary>

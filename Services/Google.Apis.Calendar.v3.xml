@@ -213,6 +213,9 @@
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Location">
             <summary>Geographic location of the event as free-form text. Optional.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.Locked">
+            <summary>Whether this is a locked event copy where no changes can be made to the main event fields &quot;summary&quot;, &quot;description&quot;, &quot;location&quot;, &quot;start&quot;, &quot;end&quot; or &quot;recurrence&quot;. The default is False. Read-Only.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Organizer">
             <summary>The organizer of the event. If the organizer is also an attendee, this is indicated with a separate entry in &apos;attendees&apos; with the &apos;organizer&apos; field set to True. To change the organizer, use the &quot;move&quot; operation. Read-only, except when importing an event.</summary>
         </member>
@@ -263,6 +266,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.CreatorData.Email">
             <summary>The creator&apos;s email address, if available.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.CreatorData.Id">
+            <summary>The creator&apos;s Profile ID, if available.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.CreatorData.Self">
             <summary>Whether the creator corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.</summary>
@@ -323,6 +329,9 @@
         <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.Email">
             <summary>The organizer&apos;s email address, if available.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.Id">
+            <summary>The organizer&apos;s Profile ID, if available.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.OrganizerData.Self">
             <summary>Whether the organizer corresponds to the calendar on which this copy of the event appears. Read-only. The default is False.</summary>
         </member>
@@ -346,6 +355,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.EventAttendee.Email">
             <summary>The attendee&apos;s email address, if available. This field must be present when adding an attendee.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.EventAttendee.Id">
+            <summary>The attendee&apos;s Profile ID, if available.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.EventAttendee.Optional">
             <summary>Whether this is an optional attendee. Optional. The default is False.</summary>
@@ -954,6 +966,9 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.AlwaysIncludeEmail">
+            <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -1008,6 +1023,9 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.AlwaysIncludeEmail">
+            <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -1040,6 +1058,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.AlwaysIncludeEmail">
+            <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -1113,6 +1134,9 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.AlwaysIncludeEmail">
+            <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -1151,6 +1175,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.AlwaysIncludeEmail">
+            <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.CalendarId">
             <summary>Calendar identifier.</summary>

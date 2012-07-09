@@ -512,16 +512,16 @@
             <summary>The middle name of this person.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.OrganizationsData.Department">
-            <summary>The department within the organization.</summary>
+            <summary>The department within the organization. Deprecated.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.OrganizationsData.Description">
-            <summary>A short description of the person&apos;s role in this organization.</summary>
+            <summary>A short description of the person&apos;s role in this organization. Deprecated.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.OrganizationsData.EndDate">
             <summary>The date the person left this organization.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.OrganizationsData.Location">
-            <summary>The location of this organization.</summary>
+            <summary>The location of this organization. Deprecated.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Person.OrganizationsData.Name">
             <summary>The name of the organization.</summary>

@@ -19,6 +19,9 @@
         <member name="P:Google.Apis.Shopping.v1.Data.Product.RequestId">
             <summary>Unique identifier for this request.</summary>
         </member>
+        <member name="P:Google.Apis.Shopping.v1.Data.Product.SelfLink">
+            <summary>Self link of product when generated for a search request. Self link of product when generated for a lookup request.</summary>
+        </member>
         <member name="P:Google.Apis.Shopping.v1.Data.Products.Categories">
             <summary>List of categories.</summary>
         </member>

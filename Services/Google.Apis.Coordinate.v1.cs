@@ -381,129 +381,129 @@ namespace Google.Apis.Coordinate.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\"," +
-            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20120622\",\"title\":\"Google Coordin" +
-            "ate API\",\"description\":\"Lets you view and manage jobs in a Coordinate team.\",\"ic" +
-            "ons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"ht" +
-            "tp://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"ht" +
-            "tps://developers.google.com/coordinate/\",\"protocol\":\"rest\",\"baseUrl\":\"https://ww" +
-            "w.googleapis.com/coordinate/v1/teams/\",\"basePath\":\"/coordinate/v1/teams/\",\"rootU" +
-            "rl\":\"https://www.googleapis.com/\",\"servicePath\":\"coordinate/v1/teams/\",\"batchPat" +
-            "h\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for t" +
-            "he response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses wi" +
-            "th Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Selector specifying which fields to include in a partial resp" +
-            "onse.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your A" +
-            "PI key identifies your project and provides you with API access, quota, and repo" +
-            "rts. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth" +
-            "_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"" +
-            "location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns respon" +
-            "se with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quo" +
-            "taUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes for " +
-            "server-side applications. Can be any arbitrary string assigned to a user, but sh" +
-            "ould not exceed 40 characters. Overrides userIp if both are provided.\",\"location" +
-            "\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where" +
-            " the request originates. Use this if you want to enforce per-user limits.\",\"loca" +
-            "tion\":\"query\"}},\"schemas\":{\"Job\":{\"id\":\"Job\",\"type\":\"object\",\"description\":\"A jo" +
-            "b.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Job id.\",\"format\":\"uint64" +
-            "\"},\"jobChange\":{\"type\":\"array\",\"description\":\"List of job changes since it was c" +
-            "reated. The first change corresponds to the state of the job when it was created" +
-            ".\",\"items\":{\"$ref\":\"JobChange\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifi" +
-            "es this object as a job.\",\"default\":\"coordinate#job\"},\"state\":{\"$ref\":\"JobState\"" +
-            ",\"description\":\"Current job state.\"}}},\"JobChange\":{\"id\":\"JobChange\",\"type\":\"obj" +
-            "ect\",\"description\":\"Change to a job. For example assigning the job to a differen" +
-            "t worker.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies this " +
-            "object as a job change.\",\"default\":\"coordinate#jobChange\"},\"state\":{\"$ref\":\"JobS" +
-            "tate\",\"description\":\"Change applied to the job. Only the fields that were change" +
-            "d are set.\"},\"timestamp\":{\"type\":\"string\",\"description\":\"Time at which this chan" +
-            "ge was applied.\",\"format\":\"uint64\"}}},\"JobListResponse\":{\"id\":\"JobListResponse\"," +
-            "\"type\":\"object\",\"description\":\"Response from a List Jobs request.\",\"properties\":" +
-            "{\"items\":{\"type\":\"array\",\"description\":\"Jobs in the collection.\",\"items\":{\"$ref\"" +
-            ":\"Job\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a list" +
-            " of jobs.\",\"default\":\"coordinate#jobList\"},\"nextPageToken\":{\"type\":\"string\",\"des" +
-            "cription\":\"A token to provide to get the next page of results.\"}}},\"JobState\":{\"" +
-            "id\":\"JobState\",\"type\":\"object\",\"description\":\"Current state of a job.\",\"properti" +
-            "es\":{\"assignee\":{\"type\":\"string\",\"description\":\"Email address of the assignee.\"}" +
-            ",\"customerName\":{\"type\":\"string\",\"description\":\"Customer name.\"},\"customerPhoneN" +
-            "umber\":{\"type\":\"string\",\"description\":\"Customer phone number.\"},\"kind\":{\"type\":\"" +
-            "string\",\"description\":\"Identifies this object as a job state.\",\"default\":\"coordi" +
-            "nate#jobState\"},\"location\":{\"$ref\":\"Location\",\"description\":\"Job location.\"},\"no" +
-            "te\":{\"type\":\"array\",\"description\":\"Note added to the job.\",\"items\":{\"type\":\"stri" +
-            "ng\"}},\"progress\":{\"type\":\"string\",\"description\":\"Job progress.\"},\"title\":{\"type\"" +
-            ":\"string\",\"description\":\"Job title.\"}}},\"Location\":{\"id\":\"Location\",\"type\":\"obje" +
-            "ct\",\"description\":\"Location of a job.\",\"properties\":{\"addressLine\":{\"type\":\"arra" +
-            "y\",\"description\":\"Address.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"Identifies this object as a location.\",\"default\":\"coordinate#locat" +
-            "ion\"},\"lat\":{\"type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double\"},\"lng\":" +
-            "{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"}}}},\"resources\":{\"" +
-            "jobs\":{\"methods\":{\"get\":{\"id\":\"coordinate.jobs.get\",\"path\":\"{teamId}/jobs/{jobId" +
-            "}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a job, including all the changes " +
-            "made to the job.\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job numb" +
-            "er\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"teamId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"teamId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"}},\"insert\":{\"id\":\"coordinate.jobs.in" +
-            "sert\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new jo" +
-            "b. Only the state field of the job should be set.\",\"parameters\":{\"address\":{\"typ" +
-            "e\":\"string\",\"description\":\"Job address as newline (Unix) separated string\",\"requ" +
-            "ired\":true,\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assign" +
-            "ee email address\",\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"" +
-            "description\":\"Customer phone number\",\"location\":\"query\"},\"lat\":{\"type\":\"number\"," +
-            "\"description\":\"The latitude coordinate of this job\'s location.\",\"required\":true," +
-            "\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The " +
-            "longitude coordinate of this job\'s location.\",\"required\":true,\"format\":\"double\"," +
-            "\"location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (" +
-            "Unix) separated string\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Job title\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"team" +
-            "Id\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"" +
-            "Job\"}},\"list\":{\"id\":\"coordinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Retrieves jobs created or modified since the given timestamp" +
-            ".\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of" +
-            " results to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"minModif" +
-            "iedTimestampMs\":{\"type\":\"string\",\"description\":\"Minimum time a job was modified " +
-            "in milliseconds since epoch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageToken\":" +
-            "{\"type\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"teamId\"" +
-            ":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"teamId\"],\"response\":{\"$ref\":\"JobListResponse\"}},\"patch\":{\"id\":\"" +
-            "coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PATCH\",\"desc" +
-            "ription\":\"Updates a job. Fields that are set in the job state will be updated. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"address\":{\"type\":\"string\",\"" +
-            "description\":\"Job address as newline (Unix) separated string\",\"location\":\"query\"" +
-            "},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"location\":" +
-            "\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"location" +
-            "\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone " +
-            "number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job number\"," +
-            "\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\",\"des" +
-            "cription\":\"The latitude coordinate of this job\'s location.\",\"format\":\"double\",\"l" +
-            "ocation\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coordinate" +
-            " of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"" +
-            "string\",\"description\":\"Job note as newline (Unix) separated string\",\"location\":\"" +
-            "query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"COMPLE" +
-            "TED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptions\":[" +
-            "\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"location\":\"q" +
-            "uery\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"locati" +
-            "on\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"query" +
-            "\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$r" +
-            "ef\":\"Job\"}},\"update\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{teamId}/jobs/{jobId" +
-            "}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a job. Fields that are set in the j" +
-            "ob state will be updated.\",\"parameters\":{\"address\":{\"type\":\"string\",\"description" +
-            "\":\"Job address as newline (Unix) separated string\",\"location\":\"query\"},\"assignee" +
-            "\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"location\":\"query\"},\"c" +
-            "ustomerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"query\"}," +
-            "\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number\",\"lo" +
-            "cation\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"required\":" +
-            "true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\",\"description\":\"" +
-            "The latitude coordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"q" +
-            "uery\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coordinate of this jo" +
-            "b\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"de" +
-            "scription\":\"Job note as newline (Unix) separated string\",\"location\":\"query\"},\"pr" +
-            "ogress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"COMPLETED\",\"IN_PR" +
-            "OGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptions\":[\"Completed\"" +
-            ",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"location\":\"query\"},\"tea" +
-            "mId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}" +
-            ",\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"query\"}},\"parame" +
-            "terOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"}}" +
-            "}}}}";
+            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20120622\",\"title\":\"Google Maps Co" +
+            "ordinate API\",\"description\":\"Lets you view and manage jobs in a Coordinate team." +
+            "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32" +
+            "\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink" +
+            "\":\"https://developers.google.com/coordinate/\",\"protocol\":\"rest\",\"baseUrl\":\"https" +
+            "://www.googleapis.com/coordinate/v1/teams/\",\"basePath\":\"/coordinate/v1/teams/\",\"" +
+            "rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"coordinate/v1/teams/\",\"bat" +
+            "chPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format " +
+            "for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Respons" +
+            "es with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":" +
+            "\"string\",\"description\":\"Selector specifying which fields to include in a partial" +
+            " response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Y" +
+            "our API key identifies your project and provides you with API access, quota, and" +
+            " reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"" +
+            "oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the current use" +
+            "r.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns r" +
+            "esponse with indentations and line breaks.\",\"default\":\"true\",\"location\":\"query\"}" +
+            ",\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota purposes" +
+            " for server-side applications. Can be any arbitrary string assigned to a user, b" +
+            "ut should not exceed 40 characters. Overrides userIp if both are provided.\",\"loc" +
+            "ation\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site " +
+            "where the request originates. Use this if you want to enforce per-user limits.\"," +
+            "\"location\":\"query\"}},\"schemas\":{\"Job\":{\"id\":\"Job\",\"type\":\"object\",\"description\":" +
+            "\"A job.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Job id.\",\"format\":\"u" +
+            "int64\"},\"jobChange\":{\"type\":\"array\",\"description\":\"List of job changes since it " +
+            "was created. The first change corresponds to the state of the job when it was cr" +
+            "eated.\",\"items\":{\"$ref\":\"JobChange\"}},\"kind\":{\"type\":\"string\",\"description\":\"Ide" +
+            "ntifies this object as a job.\",\"default\":\"coordinate#job\"},\"state\":{\"$ref\":\"JobS" +
+            "tate\",\"description\":\"Current job state.\"}}},\"JobChange\":{\"id\":\"JobChange\",\"type\"" +
+            ":\"object\",\"description\":\"Change to a job. For example assigning the job to a dif" +
+            "ferent worker.\",\"properties\":{\"kind\":{\"type\":\"string\",\"description\":\"Identifies " +
+            "this object as a job change.\",\"default\":\"coordinate#jobChange\"},\"state\":{\"$ref\":" +
+            "\"JobState\",\"description\":\"Change applied to the job. Only the fields that were c" +
+            "hanged are set.\"},\"timestamp\":{\"type\":\"string\",\"description\":\"Time at which this" +
+            " change was applied.\",\"format\":\"uint64\"}}},\"JobListResponse\":{\"id\":\"JobListRespo" +
+            "nse\",\"type\":\"object\",\"description\":\"Response from a List Jobs request.\",\"propert" +
+            "ies\":{\"items\":{\"type\":\"array\",\"description\":\"Jobs in the collection.\",\"items\":{\"" +
+            "$ref\":\"Job\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this object as a" +
+            " list of jobs.\",\"default\":\"coordinate#jobList\"},\"nextPageToken\":{\"type\":\"string\"" +
+            ",\"description\":\"A token to provide to get the next page of results.\"}}},\"JobStat" +
+            "e\":{\"id\":\"JobState\",\"type\":\"object\",\"description\":\"Current state of a job.\",\"pro" +
+            "perties\":{\"assignee\":{\"type\":\"string\",\"description\":\"Email address of the assign" +
+            "ee.\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name.\"},\"customerP" +
+            "honeNumber\":{\"type\":\"string\",\"description\":\"Customer phone number.\"},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Identifies this object as a job state.\",\"default\":\"c" +
+            "oordinate#jobState\"},\"location\":{\"$ref\":\"Location\",\"description\":\"Job location.\"" +
+            "},\"note\":{\"type\":\"array\",\"description\":\"Note added to the job.\",\"items\":{\"type\":" +
+            "\"string\"}},\"progress\":{\"type\":\"string\",\"description\":\"Job progress.\"},\"title\":{\"" +
+            "type\":\"string\",\"description\":\"Job title.\"}}},\"Location\":{\"id\":\"Location\",\"type\":" +
+            "\"object\",\"description\":\"Location of a job.\",\"properties\":{\"addressLine\":{\"type\":" +
+            "\"array\",\"description\":\"Address.\",\"items\":{\"type\":\"string\"}},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Identifies this object as a location.\",\"default\":\"coordinate#" +
+            "location\"},\"lat\":{\"type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double\"},\"" +
+            "lng\":{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"}}}},\"resource" +
+            "s\":{\"jobs\":{\"methods\":{\"get\":{\"id\":\"coordinate.jobs.get\",\"path\":\"{teamId}/jobs/{" +
+            "jobId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a job, including all the cha" +
+            "nges made to the job.\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job" +
+            " number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"teamId\":{\"type\":\"" +
+            "string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"teamId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"}},\"insert\":{\"id\":\"coordinate.jo" +
+            "bs.insert\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a n" +
+            "ew job. Only the state field of the job should be set.\",\"parameters\":{\"address\":" +
+            "{\"type\":\"string\",\"description\":\"Job address as newline (Unix) separated string\"," +
+            "\"required\":true,\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"A" +
+            "ssignee email address\",\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Customer phone number\",\"location\":\"query\"},\"lat\":{\"type\":\"num" +
+            "ber\",\"description\":\"The latitude coordinate of this job\'s location.\",\"required\":" +
+            "true,\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":" +
+            "\"The longitude coordinate of this job\'s location.\",\"required\":true,\"format\":\"dou" +
+            "ble\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newl" +
+            "ine (Unix) separated string\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"" +
+            "description\":\"Job title\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[" +
+            "\"teamId\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$r" +
+            "ef\":\"Job\"}},\"list\":{\"id\":\"coordinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Retrieves jobs created or modified since the given time" +
+            "stamp.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
+            "er of results to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"min" +
+            "ModifiedTimestampMs\":{\"type\":\"string\",\"description\":\"Minimum time a job was modi" +
+            "fied in milliseconds since epoch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageTo" +
+            "ken\":{\"type\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"te" +
+            "amId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"teamId\"],\"response\":{\"$ref\":\"JobListResponse\"}},\"patch\":{\"" +
+            "id\":\"coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PATCH\"," +
+            "\"description\":\"Updates a job. Fields that are set in the job state will be updat" +
+            "ed. This method supports patch semantics.\",\"parameters\":{\"address\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Job address as newline (Unix) separated string\",\"location\":\"q" +
+            "uery\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"locat" +
+            "ion\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"loc" +
+            "ation\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer p" +
+            "hone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job num" +
+            "ber\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\"" +
+            ",\"description\":\"The latitude coordinate of this job\'s location.\",\"format\":\"doubl" +
+            "e\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coord" +
+            "inate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Job note as newline (Unix) separated string\",\"locati" +
+            "on\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"C" +
+            "OMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptio" +
+            "ns\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"locatio" +
+            "n\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\"" +
+            ":{\"$ref\":\"Job\"}},\"update\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{teamId}/jobs/{" +
+            "jobId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a job. Fields that are set in " +
+            "the job state will be updated.\",\"parameters\":{\"address\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Job address as newline (Unix) separated string\",\"location\":\"query\"},\"ass" +
+            "ignee\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"location\":\"query" +
+            "\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"que" +
+            "ry\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number" +
+            "\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job number\",\"requi" +
+            "red\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\",\"descripti" +
+            "on\":\"The latitude coordinate of this job\'s location.\",\"format\":\"double\",\"locatio" +
+            "n\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coordinate of th" +
+            "is job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string" +
+            "\",\"description\":\"Job note as newline (Unix) separated string\",\"location\":\"query\"" +
+            "},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"COMPLETED\",\"" +
+            "IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptions\":[\"Compl" +
+            "eted\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"location\":\"query\"}" +
+            ",\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"p" +
+            "ath\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"query\"}},\"p" +
+            "arameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"J" +
+            "ob\"}}}}}}";
         
         public const string Version = "v1";
         

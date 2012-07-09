@@ -941,7 +941,7 @@ namespace Google.Apis.Adsense.v1_1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adsense:v1.1\",\"" +
-            "name\":\"adsense\",\"version\":\"v1.1\",\"revision\":\"20120607\",\"title\":\"AdSense Manageme" +
+            "name\":\"adsense\",\"version\":\"v1.1\",\"revision\":\"20120625\",\"title\":\"AdSense Manageme" +
             "nt API\",\"description\":\"Gives AdSense publishers access to their inventory and th" +
             "e ability to generate reports\",\"icons\":{\"x16\":\"http://www.google.com/images/icon" +
             "s/product/adsense-16.png\",\"x32\":\"http://www.google.com/images/icons/product/adse" +

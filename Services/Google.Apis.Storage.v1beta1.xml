@@ -1,0 +1,848 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Storage.v1beta1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Bucket">
+            <summary>A bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Acl">
+            <summary>Access controls on the bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.DefaultObjectAcl">
+            <summary>Default access controls to apply to new objects when no ACL is provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Id">
+            <summary>The name of the bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Kind">
+            <summary>The kind of item this is. For buckets, this is always storage#bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Location">
+            <summary>The location of the bucket. Object data for objects in the bucket resides in physical storage in this location. Can be US or EU. Defaults to US.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Owner">
+            <summary>The owner of the bucket. This will always be the project team&apos;s owner group.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.ProjectId">
+            <summary>The project the bucket belongs to.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.SelfLink">
+            <summary>The URI of this bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.TimeCreated">
+            <summary>Creation time of the bucket in RFC 3339 format.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.Website">
+            <summary>The bucket&apos;s website configuration.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Bucket.OwnerData">
+            <summary>The owner of the bucket. This will always be the project team&apos;s owner group.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.OwnerData.Entity">
+            <summary>The entity, in the form group-groupId.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.OwnerData.EntityId">
+            <summary>The ID for the entity.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Bucket.WebsiteData">
+            <summary>The bucket&apos;s website configuration.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.WebsiteData.MainPageSuffix">
+            <summary>Behaves as the bucket&apos;s directory index where missing objects are treated as potential directories.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Bucket.WebsiteData.NotFoundPage">
+            <summary>The custom object to return when a requested resource is not found.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.BucketAccessControl">
+            <summary>An access-control entry.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Bucket">
+            <summary>The name of the bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Domain">
+            <summary>The domain associated with the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Email">
+            <summary>The email address associated with the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Entity">
+             <summary>The entity holding the permission, in one of the following forms: 
+            - user-userId 
+            - user-email 
+            - group-groupId 
+            - group-email 
+            - allUsers 
+            - allAuthenticatedUsers</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.EntityId">
+            <summary>The ID for the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Id">
+            <summary>The ID of the access-control entry.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Kind">
+            <summary>The kind of item this is. For bucket access control entries, this is always storage#bucketAccessControl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.Role">
+            <summary>The access permission for the entity. Can be READER, WRITER, or OWNER.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControl.SelfLink">
+            <summary>The link to this access-control entry.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.BucketAccessControls">
+            <summary>An access-control list.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControls.Items">
+            <summary>The list of items.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.BucketAccessControls.Kind">
+            <summary>The kind of item this is. For lists of bucket access control entries, this is always storage#bucketAccessControls.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Buckets">
+            <summary>A list of buckets.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Buckets.Items">
+            <summary>The list of items.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Buckets.Kind">
+            <summary>The kind of item this is. For lists of buckets, this is always storage#buckets.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Buckets.NextPageToken">
+            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Object">
+            <summary>An object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Acl">
+            <summary>Access controls on the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Bucket">
+            <summary>The bucket containing this object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.CacheControl">
+            <summary>Cache-Control directive for the object data.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.ContentDisposition">
+            <summary>Content-Disposition of the object data.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.ContentEncoding">
+            <summary>Content-Encoding of the object data.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Id">
+            <summary>The ID of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Kind">
+            <summary>The kind of item this is. For objects, this is always storage#object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Media">
+            <summary>Object media data. Provided on your behalf when uploading raw media or multipart/related with an auxiliary media part.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Metadata">
+            <summary>User-provided metadata, in key/value pairs.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Name">
+            <summary>The name of this object. Required if not specified by URL parameter.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Owner">
+            <summary>The owner of the object. This will always be the uploader of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.SelfLink">
+            <summary>The link to this object.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Object.MediaData">
+            <summary>Object media data. Provided on your behalf when uploading raw media or multipart/related with an auxiliary media part.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.Algorithm">
+            <summary>Hash algorithm used. Currently only MD5 is supported. Required if a hash is provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.ContentType">
+            <summary>Content-Type of the object data.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.Data">
+            <summary>URL-safe Base64-encoded data. This property can be used to insert objects under 64KB in size, and will only be returned in response to the get method for objects so created. When this resource is returned in response to the list method, this property is omitted.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.Hash">
+            <summary>Hash of the data. Required if a hash algorithm is provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.Length">
+            <summary>Content-Length of the data in bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.Link">
+            <summary>Media download link.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.MediaData.TimeCreated">
+            <summary>Creation time of the data in RFC 3339 format.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Object.MetadataData">
+            <summary>User-provided metadata, in key/value pairs.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Object.OwnerData">
+            <summary>The owner of the object. This will always be the uploader of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.OwnerData.Entity">
+            <summary>The entity, in the form user-userId.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.OwnerData.EntityId">
+            <summary>The ID for the entity.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl">
+            <summary>An access-control entry.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Bucket">
+            <summary>The name of the bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Domain">
+            <summary>The domain associated with the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Email">
+            <summary>The email address associated with the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Entity">
+             <summary>The entity holding the permission, in one of the following forms: 
+            - user-userId 
+            - user-email 
+            - group-groupId 
+            - group-email 
+            - allUsers 
+            - allAuthenticatedUsers</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.EntityId">
+            <summary>The ID for the entity, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Id">
+            <summary>The ID of the access-control entry.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Kind">
+            <summary>The kind of item this is. For object access control entries, this is always storage#objectAccessControl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Object">
+            <summary>The name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.Role">
+            <summary>The access permission for the entity. Can be READER or OWNER.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControl.SelfLink">
+            <summary>The link to this access-control entry.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.ObjectAccessControls">
+            <summary>An access-control list.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControls.Items">
+            <summary>The list of items.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.ObjectAccessControls.Kind">
+            <summary>The kind of item this is. For lists of object access control entries, this is always storage#objectAccessControls.</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.Data.Objects">
+            <summary>A list of objects.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Objects.Items">
+            <summary>The list of items.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Objects.Kind">
+            <summary>The kind of item this is. For lists of objects, this is always storage#objects.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Objects.NextPageToken">
+            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Objects.Prefixes">
+            <summary>The list of prefixes of objects matching-but-not-listed up to and including the requested delimiter.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.StorageService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.StorageService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.StorageService.Scopes.DevstorageFull_control">
+            <summary>Manage your data and permissions in Google Cloud Storage</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.StorageService.Scopes.DevstorageRead_only">
+            <summary>View your data in Google Cloud Storage</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.StorageService.Scopes.DevstorageRead_write">
+            <summary>Manage your data in Google Cloud Storage</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.Delete(System.String,System.String)">
+            <summary>Deletes the ACL entry for the specified entity on the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.Get(System.String,System.String)">
+            <summary>Returns the ACL entry for the specified entity on the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.Insert(Google.Apis.Storage.v1beta1.Data.BucketAccessControl,System.String)">
+            <summary>Creates a new ACL entry on the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.List(System.String)">
+            <summary>Retrieves ACL entries on the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.Patch(Google.Apis.Storage.v1beta1.Data.BucketAccessControl,System.String,System.String)">
+            <summary>Updates an ACL entry on the specified bucket. This method supports patch semantics.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.Update(Google.Apis.Storage.v1beta1.Data.BucketAccessControl,System.String,System.String)">
+            <summary>Updates an ACL entry on the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.Delete(System.String)">
+            <summary>Deletes an empty bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.Get(System.String)">
+            <summary>Returns metadata for the specified bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.Insert(Google.Apis.Storage.v1beta1.Data.Bucket)">
+            <summary>Creates a new bucket.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.List(System.String)">
+            <summary>Retrieves a list of buckets for a given project.</summary>
+            <param name="projectId">Required - A valid API project identifier.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.Patch(Google.Apis.Storage.v1beta1.Data.Bucket,System.String)">
+            <summary>Updates a bucket. This method supports patch semantics.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.BucketsResource.Update(Google.Apis.Storage.v1beta1.Data.Bucket,System.String)">
+            <summary>Updates a bucket.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.BucketsResource.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.BucketsResource.Projection.Full">
+            <summary>Include all properties.</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.BucketsResource.Projection.No_acl">
+            <summary>Omit acl and defaultObjectAcl properties.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.MaxResults">
+            <summary>Maximum number of buckets to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.PageToken">
+            <summary>A previously-returned page token representing part of the larger set of results to view.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.ProjectId">
+            <summary>A valid API project identifier.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Projection">
+            <summary>Set of properties to return. Defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Projection">
+            <summary>Set of properties to return. Defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.Delete(System.String,System.String,System.String)">
+            <summary>Deletes the ACL entry for the specified entity on the specified object.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.Get(System.String,System.String,System.String)">
+            <summary>Returns the ACL entry for the specified entity on the specified object.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.Insert(Google.Apis.Storage.v1beta1.Data.ObjectAccessControl,System.String,System.String)">
+            <summary>Creates a new ACL entry on the specified object.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.List(System.String,System.String)">
+            <summary>Retrieves ACL entries on the specified object.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.Patch(Google.Apis.Storage.v1beta1.Data.ObjectAccessControl,System.String,System.String,System.String)">
+            <summary>Updates an ACL entry on the specified object. This method supports patch semantics.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.Update(Google.Apis.Storage.v1beta1.Data.ObjectAccessControl,System.String,System.String,System.String)">
+            <summary>Updates an ACL entry on the specified object.</summary>
+            <param name="bucket">Required - Name of a bucket.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+            <param name="entity">Required - The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</param>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Bucket">
+            <summary>Name of a bucket.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Entity">
+            <summary>The entity holding the permission. Can be user-userId, group-groupId, allUsers, or allAuthenticatedUsers.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Delete(System.String,System.String)">
+            <summary>Deletes data blobs and associated metadata.</summary>
+            <param name="bucket">Required - Name of the bucket in which the object resides.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Get(System.String,System.String)">
+            <summary>Retrieves objects or their associated metadata.</summary>
+            <param name="bucket">Required - Name of the bucket in which the object resides.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Insert(Google.Apis.Storage.v1beta1.Data.Object,System.String)">
+            <summary>Stores new data blobs and associated metadata.</summary>
+            <param name="bucket">Required - Name of the bucket in which to store the new object. Overrides the provided object metadata&apos;s bucket value, if any.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Insert(Google.Apis.Storage.v1beta1.Data.Object,System.String,System.IO.Stream,System.String)">
+            <summary>Stores new data blobs and associated metadata.</summary>
+            <param name="bucket">Required - Name of the bucket in which to store the new object. Overrides the provided object metadata&apos;s bucket value, if any.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.List(System.String)">
+            <summary>Retrieves a list of objects matching the criteria.</summary>
+            <param name="bucket">Required - Name of the bucket in which to look for objects.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Patch(Google.Apis.Storage.v1beta1.Data.Object,System.String,System.String)">
+            <summary>Updates a data blob&apos;s associated metadata. This method supports patch semantics.</summary>
+            <param name="bucket">Required - Name of the bucket in which the object resides.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="M:Google.Apis.Storage.v1beta1.ObjectsResource.Update(Google.Apis.Storage.v1beta1.Data.Object,System.String,System.String)">
+            <summary>Updates a data blob&apos;s associated metadata.</summary>
+            <param name="bucket">Required - Name of the bucket in which the object resides.</param>
+            <param name="objectValue">object - Required - Name of the object.</param>
+        </member>
+        <member name="T:Google.Apis.Storage.v1beta1.ObjectsResource.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.ObjectsResource.Projection.Full">
+            <summary>Include all properties.</summary>
+        </member>
+        <member name="F:Google.Apis.Storage.v1beta1.ObjectsResource.Projection.No_acl">
+            <summary>Omit the acl property.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Bucket">
+            <summary>Name of the bucket in which the object resides.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Bucket">
+            <summary>Name of the bucket in which the object resides.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Bucket">
+            <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Name">
+            <summary>Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl, unless the object resource specifies the acl property, when it defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Bucket">
+            <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Name">
+            <summary>Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Projection">
+            <summary>Set of properties to return. Defaults to no_acl, unless the object resource specifies the acl property, when it defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Bucket">
+            <summary>Name of the bucket in which to look for objects.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Delimiter">
+            <summary>Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.MaxResults">
+            <summary>Maximum number of items plus prefixes to return. As duplicate prefixes are omitted, fewer total results may be returned than requested.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.PageToken">
+            <summary>A previously-returned page token representing part of the larger set of results to view.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Prefix">
+            <summary>Filter results to objects whose names begin with this prefix.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Projection">
+            <summary>Set of properties to return. Defaults to no_acl.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Bucket">
+            <summary>Name of the bucket in which the object resides.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Projection">
+            <summary>Set of properties to return. Defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Bucket">
+            <summary>Name of the bucket in which the object resides.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Object">
+            <summary>Name of the object.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Projection">
+            <summary>Set of properties to return. Defaults to full.</summary>
+        </member>
+        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

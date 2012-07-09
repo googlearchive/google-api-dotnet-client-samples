@@ -727,6 +727,8 @@ namespace Google.Apis.Calendar.v3.Data {
         
         private EventDateTime _end;
         
+        private System.Nullable<bool> _endTimeUnspecified;
+        
         private string _etag;
         
         private Event.ExtendedPropertiesData _extendedProperties;
@@ -748,6 +750,8 @@ namespace Google.Apis.Calendar.v3.Data {
         private string _kind;
         
         private string _location;
+        
+        private System.Nullable<bool> _locked;
         
         private Event.OrganizerData _organizer;
         
@@ -861,6 +865,16 @@ namespace Google.Apis.Calendar.v3.Data {
             }
             set {
                 this._end = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("endTimeUnspecified")]
+        public virtual System.Nullable<bool> EndTimeUnspecified {
+            get {
+                return this._endTimeUnspecified;
+            }
+            set {
+                this._endTimeUnspecified = value;
             }
         }
         
@@ -982,6 +996,17 @@ namespace Google.Apis.Calendar.v3.Data {
             }
             set {
                 this._location = value;
+            }
+        }
+        
+        /// <summary>Whether this is a locked event copy where no changes can be made to the main event fields &quot;summary&quot;, &quot;description&quot;, &quot;location&quot;, &quot;start&quot;, &quot;end&quot; or &quot;recurrence&quot;. The default is False. Read-Only.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("locked")]
+        public virtual System.Nullable<bool> Locked {
+            get {
+                return this._locked;
+            }
+            set {
+                this._locked = value;
             }
         }
         
@@ -1178,6 +1203,7 @@ namespace Google.Apis.Calendar.v3.Data {
                 }
             }
             
+            /// <summary>The creator&apos;s Profile ID, if available.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
@@ -1385,6 +1411,7 @@ namespace Google.Apis.Calendar.v3.Data {
                 }
             }
             
+            /// <summary>The organizer&apos;s Profile ID, if available.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("id")]
             public virtual string Id {
                 get {
@@ -1504,6 +1531,7 @@ namespace Google.Apis.Calendar.v3.Data {
             }
         }
         
+        /// <summary>The attendee&apos;s Profile ID, if available.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("id")]
         public virtual string Id {
             get {
@@ -2352,447 +2380,481 @@ namespace Google.Apis.Calendar.v3 {
             "\":\"date-time\"},\"creator\":{\"type\":\"object\",\"description\":\"The creator of the even" +
             "t. Read-only.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The c" +
             "reator\'s name, if available.\"},\"email\":{\"type\":\"string\",\"description\":\"The creat" +
-            "or\'s email address, if available.\"},\"id\":{\"type\":\"string\"},\"self\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether the creator corresponds to the calendar on which this" +
-            " copy of the event appears. Read-only. The default is False.\"}}},\"description\":{" +
-            "\"type\":\"string\",\"description\":\"Description of the event. Optional.\"},\"end\":{\"$re" +
-            "f\":\"EventDateTime\",\"description\":\"The (exclusive) end time of the event. For a r" +
-            "ecurring event, this is the end time of the first instance.\"},\"etag\":{\"type\":\"st" +
-            "ring\",\"description\":\"ETag of the resource.\"},\"extendedProperties\":{\"type\":\"objec" +
-            "t\",\"description\":\"Extended properties of the event.\",\"properties\":{\"private\":{\"t" +
-            "ype\":\"object\",\"description\":\"Properties that are private to the copy of the even" +
-            "t that appears on this calendar.\",\"additionalProperties\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The name of the private property and the corresponding value.\"}},\"share" +
-            "d\":{\"type\":\"object\",\"description\":\"Properties that are shared between copies of " +
-            "the event on other attendees\' calendars.\",\"additionalProperties\":{\"type\":\"string" +
-            "\",\"description\":\"The name of the shared property and the corresponding value.\"}}" +
-            "}},\"gadget\":{\"type\":\"object\",\"description\":\"A gadget that extends this event.\",\"" +
-            "properties\":{\"display\":{\"type\":\"string\",\"description\":\"The gadget\'s display mode" +
-            ". Optional. Possible values are:  \\n- \\\"icon\\\" - The gadget displays next to the" +
-            " event\'s title in the calendar view. \\n- \\\"chip\\\" - The gadget displays when the" +
-            " event is clicked.\"},\"height\":{\"type\":\"integer\",\"description\":\"The gadget\'s heig" +
-            "ht in pixels. Optional.\",\"format\":\"int32\"},\"iconLink\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The gadget\'s icon URL.\"},\"link\":{\"type\":\"string\",\"description\":\"The gadget" +
-            "\'s URL.\"},\"preferences\":{\"type\":\"object\",\"description\":\"Preferences.\",\"additiona" +
-            "lProperties\":{\"type\":\"string\",\"description\":\"The preference name and correspondi" +
-            "ng value.\"}},\"title\":{\"type\":\"string\",\"description\":\"The gadget\'s title.\"},\"type" +
-            "\":{\"type\":\"string\",\"description\":\"The gadget\'s type.\"},\"width\":{\"type\":\"integer\"" +
-            ",\"description\":\"The gadget\'s width in pixels. Optional.\",\"format\":\"int32\"}}},\"gu" +
-            "estsCanInviteOthers\":{\"type\":\"boolean\",\"description\":\"Whether attendees other th" +
-            "an the organizer can invite others to the event. Optional. The default is False." +
-            "\"},\"guestsCanModify\":{\"type\":\"boolean\",\"description\":\"Whether attendees other th" +
-            "an the organizer can modify the event. Optional. The default is False.\"},\"guests" +
-            "CanSeeOtherGuests\":{\"type\":\"boolean\",\"description\":\"Whether attendees other than" +
-            " the organizer can see who the event\'s attendees are. Optional. The default is F" +
-            "alse.\"},\"htmlLink\":{\"type\":\"string\",\"description\":\"An absolute link to this even" +
-            "t in the Google Calendar Web UI. Read-only.\"},\"iCalUID\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Event ID in the iCalendar format.\",\"annotations\":{\"required\":[\"calendar." +
-            "events.import\"]}},\"id\":{\"type\":\"string\",\"description\":\"Identifier of the event.\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar#event\\" +
-            "\").\",\"default\":\"calendar#event\"},\"location\":{\"type\":\"string\",\"description\":\"Geog" +
-            "raphic location of the event as free-form text. Optional.\"},\"organizer\":{\"type\":" +
-            "\"object\",\"description\":\"The organizer of the event. If the organizer is also an " +
-            "attendee, this is indicated with a separate entry in \'attendees\' with the \'organ" +
-            "izer\' field set to True. To change the organizer, use the \\\"move\\\" operation. Re" +
-            "ad-only, except when importing an event.\",\"properties\":{\"displayName\":{\"type\":\"s" +
-            "tring\",\"description\":\"The organizer\'s name, if available.\"},\"email\":{\"type\":\"str" +
-            "ing\",\"description\":\"The organizer\'s email address, if available.\"},\"id\":{\"type\":" +
-            "\"string\"},\"self\":{\"type\":\"boolean\",\"description\":\"Whether the organizer correspo" +
-            "nds to the calendar on which this copy of the event appears. Read-only. The defa" +
-            "ult is False.\"}}},\"originalStartTime\":{\"$ref\":\"EventDateTime\",\"description\":\"For" +
-            " an instance of a recurring event, this is the time at which this event would st" +
-            "art according to the recurrence data in the recurring event identified by recurr" +
-            "ingEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\",\"description\":\"Whether " +
-            "this is a private event copy where changes are not shared with other copies on o" +
-            "ther calendars. Optional. Immutable.\"},\"recurrence\":{\"type\":\"array\",\"description" +
-            "\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This fie" +
-            "ld is omitted for single events or instances of recurring events.\",\"items\":{\"typ" +
-            "e\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"description\":\"For an instance" +
-            " of a recurring event, this is the event ID of the recurring event itself. Immut" +
-            "able.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Information about the event\'" +
-            "s reminders for the authenticated user.\",\"properties\":{\"overrides\":{\"type\":\"arra" +
-            "y\",\"description\":\"If the event doesn\'t use the default reminders, this lists the" +
-            " reminders specific to the event, or, if not set, indicates that no reminders ar" +
-            "e set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}},\"useDefault\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether the default reminders of the calendar apply to th" +
-            "e event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":\"Sequence number as per " +
-            "iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDateTime\",\"description\":\"The" +
-            " (inclusive) start time of the event. For a recurring event, this is the start t" +
-            "ime of the first instance.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of " +
-            "the event. Optional. Possible values are:  \\n- \\\"confirmed\\\" - The event is conf" +
-            "irmed. This is the default status. \\n- \\\"tentative\\\" - The event is tentatively " +
-            "confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"},\"summary\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Title of the event.\"},\"transparency\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Whether the event blocks time on the calendar. Optional. Possible values" +
-            " are:  \\n- \\\"opaque\\\" - The event blocks time on the calendar. This is the defau" +
-            "lt value. \\n- \\\"transparent\\\" - The event does not block time on the calendar.\"}" +
-            ",\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the event (" +
-            "as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"visibility\":{\"type\"" +
-            ":\"string\",\"description\":\"Visibility of the event. Optional. Possible values are:" +
-            "  \\n- \\\"default\\\" - Uses the default visibility for events on the calendar. This" +
-            " is the default value. \\n- \\\"public\\\" - The event is public and event details ar" +
-            "e visible to all readers of the calendar. \\n- \\\"private\\\" - The event is private" +
-            " and only event attendees may view event details. \\n- \\\"confidential\\\" - The eve" +
-            "nt is private. This value is provided for compatibility reasons.\"}}},\"EventAtten" +
-            "dee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":{\"additionalGuests\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"Number of additional guests. Optional. The default " +
-            "is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"description\":\"The attendee\'" +
-            "s response comment. Optional.\"},\"displayName\":{\"type\":\"string\",\"description\":\"Th" +
-            "e attendee\'s name, if available. Optional.\"},\"email\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The attendee\'s email address, if available. This field must be present when" +
-            " adding an attendee.\",\"annotations\":{\"required\":[\"calendar.events.import\",\"calen" +
-            "dar.events.insert\",\"calendar.events.update\"]}},\"id\":{\"type\":\"string\"},\"optional\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether this is an optional attendee. Optional" +
-            ". The default is False.\"},\"organizer\":{\"type\":\"boolean\",\"description\":\"Whether t" +
-            "he attendee is the organizer of the event. Read-only. The default is False.\"},\"r" +
-            "esource\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is a resource. Re" +
-            "ad-only. The default is False.\"},\"responseStatus\":{\"type\":\"string\",\"description\"" +
-            ":\"The attendee\'s response status. Possible values are:  \\n- \\\"needsAction\\\" - Th" +
-            "e attendee has not responded to the invitation. \\n- \\\"declined\\\" - The attendee " +
-            "has declined the invitation. \\n- \\\"tentative\\\" - The attendee has tentatively ac" +
-            "cepted the invitation. \\n- \\\"accepted\\\" - The attendee has accepted the invitati" +
-            "on.\"},\"self\":{\"type\":\"boolean\",\"description\":\"Whether this entry represents the " +
-            "calendar on which this copy of the event appears. Read-only. The default is Fals" +
-            "e.\"}}},\"EventDateTime\":{\"id\":\"EventDateTime\",\"type\":\"object\",\"properties\":{\"date" +
-            "\":{\"type\":\"string\",\"description\":\"The date, in the format \\\"yyyy-mm-dd\\\", if thi" +
-            "s is an all-day event.\",\"format\":\"date\"},\"dateTime\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The time, as a combined date-time value (formatted according to RFC 3339). A" +
-            " time zone offset is required unless a time zone is explicitly specified in \'tim" +
-            "eZone\'.\",\"format\":\"date-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The na" +
-            "me of the time zone in which the time is specified (e.g. \\\"Europe/Zurich\\\"). Opt" +
-            "ional. The default is the time zone of the calendar.\"}}},\"EventReminder\":{\"id\":\"" +
-            "EventReminder\",\"type\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The method used by this reminder. Possible values are:  \\n- \\\"email\\\" - Re" +
-            "minders are sent via email. \\n- \\\"sms\\\" - Reminders are sent via SMS. \\n- \\\"popu" +
-            "p\\\" - Reminders are sent via a UI popup.\",\"annotations\":{\"required\":[\"calendar.c" +
-            "alendarList.insert\",\"calendar.calendarList.update\",\"calendar.events.import\",\"cal" +
-            "endar.events.insert\",\"calendar.events.update\"]}},\"minutes\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Number of minutes before the start of the event when the reminder sh" +
-            "ould trigger.\",\"format\":\"int32\",\"annotations\":{\"required\":[\"calendar.calendarLis" +
-            "t.insert\",\"calendar.calendarList.update\",\"calendar.events.import\",\"calendar.even" +
-            "ts.insert\",\"calendar.events.update\"]}}}},\"Events\":{\"id\":\"Events\",\"type\":\"object\"" +
-            ",\"properties\":{\"accessRole\":{\"type\":\"string\",\"description\":\"The user\'s access ro" +
-            "le for this calendar. Read-only. Possible values are:  \\n- \\\"none\\\" - The user h" +
-            "as no access. \\n- \\\"freeBusyReader\\\" - The user has read access to free/busy inf" +
-            "ormation. \\n- \\\"reader\\\" - The user has read access to the calendar. Private eve" +
-            "nts will appear to users with reader access, but event details will be hidden. \\" +
-            "n- \\\"writer\\\" - The user has read and write access to the calendar. Private even" +
-            "ts will appear to users with writer access, and event details will be visible. \\" +
-            "n- \\\"owner\\\" - The user has ownership of the calendar. This role has all of the " +
-            "permissions of the writer role with the additional ability to see and manipulate" +
-            " ACLs.\"},\"defaultReminders\":{\"type\":\"array\",\"description\":\"The default reminders" +
-            " on the calendar for the authenticated user. These reminders apply to all events" +
-            " on this calendar that do not explicitly override them (i.e. do not have \'remind" +
-            "ers.useDefault\' set to \'true\').\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\"" +
-            ":{\"type\":\"string\",\"description\":\"Description of the calendar. Read-only.\"},\"etag" +
-            "\":{\"type\":\"string\",\"description\":\"ETag of the collection.\"},\"items\":{\"type\":\"arr" +
-            "ay\",\"description\":\"List of events on the calendar.\",\"items\":{\"$ref\":\"Event\"}},\"k" +
-            "ind\":{\"type\":\"string\",\"description\":\"Type of the collection (\\\"calendar#events\\\"" +
-            ").\",\"default\":\"calendar#events\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"Token used to access the next page of this result. Omitted if no further result" +
-            "s are available.\"},\"summary\":{\"type\":\"string\",\"description\":\"Title of the calend" +
-            "ar. Read-only.\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The time zone of the" +
-            " calendar. Read-only.\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modificat" +
-            "ion time of the calendar (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-t" +
-            "ime\"}}},\"FreeBusyCalendar\":{\"id\":\"FreeBusyCalendar\",\"type\":\"object\",\"properties\"" +
-            ":{\"busy\":{\"type\":\"array\",\"description\":\"List of time ranges during which this ca" +
-            "lendar should be regarded as busy.\",\"items\":{\"$ref\":\"TimePeriod\"}},\"errors\":{\"ty" +
-            "pe\":\"array\",\"description\":\"Optional error(s) (if computation for the calendar fa" +
-            "iled).\",\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyGroup\":{\"id\":\"FreeBusyGroup\",\"type\"" +
-            ":\"object\",\"properties\":{\"calendars\":{\"type\":\"array\",\"description\":\"List of calen" +
-            "dars\' identifiers within a group.\",\"items\":{\"type\":\"string\"}},\"errors\":{\"type\":\"" +
-            "array\",\"description\":\"Optional error(s) (if computation for the group failed).\"," +
-            "\"items\":{\"$ref\":\"Error\"}}}},\"FreeBusyRequest\":{\"id\":\"FreeBusyRequest\",\"type\":\"ob" +
-            "ject\",\"properties\":{\"calendarExpansionMax\":{\"type\":\"integer\",\"description\":\"Maxi" +
-            "mal number of calendars for which FreeBusy information is to be provided. Option" +
-            "al.\",\"format\":\"int32\"},\"groupExpansionMax\":{\"type\":\"integer\",\"description\":\"Maxi" +
-            "mal number of calendar identifiers to be provided for a single group. Optional. " +
-            "An error will be returned for a group with more members than this value.\",\"forma" +
-            "t\":\"int32\"},\"items\":{\"type\":\"array\",\"description\":\"List of calendars and/or grou" +
-            "ps to query.\",\"items\":{\"$ref\":\"FreeBusyRequestItem\"}},\"timeMax\":{\"type\":\"string\"" +
-            ",\"description\":\"The end of the interval for the query.\",\"format\":\"date-time\"},\"t" +
-            "imeMin\":{\"type\":\"string\",\"description\":\"The start of the interval for the query." +
-            "\",\"format\":\"date-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone use" +
-            "d in the response. Optional. The default is UTC.\"}}},\"FreeBusyRequestItem\":{\"id\"" +
-            ":\"FreeBusyRequestItem\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The identifier of a calendar or a group.\"}}},\"FreeBusyResponse\":{\"id\":" +
-            "\"FreeBusyResponse\",\"type\":\"object\",\"properties\":{\"calendars\":{\"type\":\"object\",\"d" +
-            "escription\":\"List of free/busy information for calendars.\",\"additionalProperties" +
-            "\":{\"$ref\":\"FreeBusyCalendar\",\"description\":\"Free/busy expansions for a single ca" +
-            "lendar.\"}},\"groups\":{\"type\":\"object\",\"description\":\"Expansion of groups.\",\"addit" +
-            "ionalProperties\":{\"$ref\":\"FreeBusyGroup\",\"description\":\"List of calendars that a" +
-            "re members of this group.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the " +
-            "resource (\\\"calendar#freeBusy\\\").\",\"default\":\"calendar#freeBusy\"},\"timeMax\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The end of the interval.\",\"format\":\"date-time\"},\"tim" +
-            "eMin\":{\"type\":\"string\",\"description\":\"The start of the interval.\",\"format\":\"date" +
-            "-time\"}}},\"Setting\":{\"id\":\"Setting\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\"" +
-            ":\"string\",\"description\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Name of the user setting.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of" +
-            " the resource (\\\"calendar#setting\\\").\",\"default\":\"calendar#setting\"},\"value\":{\"t" +
-            "ype\":\"string\",\"description\":\"Value of the user setting. The format of the value " +
-            "depends on the ID of the setting.\"}}},\"Settings\":{\"id\":\"Settings\",\"type\":\"object" +
-            "\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"Etag of the collection.\"}" +
-            ",\"items\":{\"type\":\"array\",\"description\":\"List of user settings.\",\"items\":{\"$ref\":" +
-            "\"Setting\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the collection (\\\"cal" +
-            "endar#settings\\\").\",\"default\":\"calendar#settings\"}}},\"TimePeriod\":{\"id\":\"TimePer" +
-            "iod\",\"type\":\"object\",\"properties\":{\"end\":{\"type\":\"string\",\"description\":\"The (ex" +
-            "clusive) end of the time period.\",\"format\":\"date-time\"},\"start\":{\"type\":\"string\"" +
-            ",\"description\":\"The (inclusive) start of the time period.\",\"format\":\"date-time\"}" +
-            "}}},\"resources\":{\"acl\":{\"methods\":{\"delete\":{\"id\":\"calendar.acl.delete\",\"path\":\"" +
-            "calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delete" +
-            "s an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":" +
-            "\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/calendar\"]},\"get\":{\"id\":\"calendar.acl.get\",\"path\":\"calendars/{calendarId}/" +
-            "acl/{ruleId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an access control rule.\"" +
-            ",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier." +
-            "\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"AC" +
-            "L rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calen" +
-            "darId\",\"ruleId\"],\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"inser" +
-            "t\":{\"id\":\"calendar.acl.insert\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Creates an access control rule.\",\"parameters\":{\"calendarId" +
-            "\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"AclRule\"},\"respon" +
-            "se\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"l" +
-            "ist\":{\"id\":\"calendar.acl.list\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Returns the rules in the access control list for the calend" +
-            "ar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identif" +
-            "ier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"respo" +
-            "nse\":{\"$ref\":\"Acl\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patc" +
-            "h\":{\"id\":\"calendar.acl.patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"http" +
-            "Method\":\"PATCH\",\"description\":\"Updates an access control rule. This method suppo" +
-            "rts patch semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":" +
-            "\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"" +
-            "$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\"" +
-            ":{\"id\":\"calendar.acl.update\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpM" +
-            "ethod\":\"PUT\",\"description\":\"Updates an access control rule.\",\"parameters\":{\"cale" +
+            "or\'s email address, if available.\"},\"id\":{\"type\":\"string\",\"description\":\"The cre" +
+            "ator\'s Profile ID, if available.\"},\"self\":{\"type\":\"boolean\",\"description\":\"Wheth" +
+            "er the creator corresponds to the calendar on which this copy of the event appea" +
+            "rs. Read-only. The default is False.\"}}},\"description\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Description of the event. Optional.\"},\"end\":{\"$ref\":\"EventDateTime\",\"desc" +
+            "ription\":\"The (exclusive) end time of the event. For a recurring event, this is " +
+            "the end time of the first instance.\"},\"endTimeUnspecified\":{\"type\":\"boolean\"},\"e" +
+            "tag\":{\"type\":\"string\",\"description\":\"ETag of the resource.\"},\"extendedProperties" +
+            "\":{\"type\":\"object\",\"description\":\"Extended properties of the event.\",\"properties" +
+            "\":{\"private\":{\"type\":\"object\",\"description\":\"Properties that are private to the " +
+            "copy of the event that appears on this calendar.\",\"additionalProperties\":{\"type\"" +
+            ":\"string\",\"description\":\"The name of the private property and the corresponding " +
+            "value.\"}},\"shared\":{\"type\":\"object\",\"description\":\"Properties that are shared be" +
+            "tween copies of the event on other attendees\' calendars.\",\"additionalProperties\"" +
+            ":{\"type\":\"string\",\"description\":\"The name of the shared property and the corresp" +
+            "onding value.\"}}}},\"gadget\":{\"type\":\"object\",\"description\":\"A gadget that extend" +
+            "s this event.\",\"properties\":{\"display\":{\"type\":\"string\",\"description\":\"The gadge" +
+            "t\'s display mode. Optional. Possible values are:  \\n- \\\"icon\\\" - The gadget disp" +
+            "lays next to the event\'s title in the calendar view. \\n- \\\"chip\\\" - The gadget d" +
+            "isplays when the event is clicked.\"},\"height\":{\"type\":\"integer\",\"description\":\"T" +
+            "he gadget\'s height in pixels. Optional.\",\"format\":\"int32\"},\"iconLink\":{\"type\":\"s" +
+            "tring\",\"description\":\"The gadget\'s icon URL.\"},\"link\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The gadget\'s URL.\"},\"preferences\":{\"type\":\"object\",\"description\":\"Preferen" +
+            "ces.\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"The preference name" +
+            " and corresponding value.\"}},\"title\":{\"type\":\"string\",\"description\":\"The gadget\'" +
+            "s title.\"},\"type\":{\"type\":\"string\",\"description\":\"The gadget\'s type.\"},\"width\":{" +
+            "\"type\":\"integer\",\"description\":\"The gadget\'s width in pixels. Optional.\",\"format" +
+            "\":\"int32\"}}},\"guestsCanInviteOthers\":{\"type\":\"boolean\",\"description\":\"Whether at" +
+            "tendees other than the organizer can invite others to the event. Optional. The d" +
+            "efault is False.\"},\"guestsCanModify\":{\"type\":\"boolean\",\"description\":\"Whether at" +
+            "tendees other than the organizer can modify the event. Optional. The default is " +
+            "False.\"},\"guestsCanSeeOtherGuests\":{\"type\":\"boolean\",\"description\":\"Whether atte" +
+            "ndees other than the organizer can see who the event\'s attendees are. Optional. " +
+            "The default is False.\"},\"htmlLink\":{\"type\":\"string\",\"description\":\"An absolute l" +
+            "ink to this event in the Google Calendar Web UI. Read-only.\"},\"iCalUID\":{\"type\":" +
+            "\"string\",\"description\":\"Event ID in the iCalendar format.\",\"annotations\":{\"requi" +
+            "red\":[\"calendar.events.import\"]}},\"id\":{\"type\":\"string\",\"description\":\"Identifie" +
+            "r of the event.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\" +
+            "\"calendar#event\\\").\",\"default\":\"calendar#event\"},\"location\":{\"type\":\"string\",\"de" +
+            "scription\":\"Geographic location of the event as free-form text. Optional.\"},\"loc" +
+            "ked\":{\"type\":\"boolean\",\"description\":\"Whether this is a locked event copy where " +
+            "no changes can be made to the main event fields \\\"summary\\\", \\\"description\\\", \\\"" +
+            "location\\\", \\\"start\\\", \\\"end\\\" or \\\"recurrence\\\". The default is False. Read-Onl" +
+            "y.\"},\"organizer\":{\"type\":\"object\",\"description\":\"The organizer of the event. If " +
+            "the organizer is also an attendee, this is indicated with a separate entry in \'a" +
+            "ttendees\' with the \'organizer\' field set to True. To change the organizer, use t" +
+            "he \\\"move\\\" operation. Read-only, except when importing an event.\",\"properties\":" +
+            "{\"displayName\":{\"type\":\"string\",\"description\":\"The organizer\'s name, if availabl" +
+            "e.\"},\"email\":{\"type\":\"string\",\"description\":\"The organizer\'s email address, if a" +
+            "vailable.\"},\"id\":{\"type\":\"string\",\"description\":\"The organizer\'s Profile ID, if " +
+            "available.\"},\"self\":{\"type\":\"boolean\",\"description\":\"Whether the organizer corre" +
+            "sponds to the calendar on which this copy of the event appears. Read-only. The d" +
+            "efault is False.\"}}},\"originalStartTime\":{\"$ref\":\"EventDateTime\",\"description\":\"" +
+            "For an instance of a recurring event, this is the time at which this event would" +
+            " start according to the recurrence data in the recurring event identified by rec" +
+            "urringEventId. Immutable.\"},\"privateCopy\":{\"type\":\"boolean\",\"description\":\"Wheth" +
+            "er this is a private event copy where changes are not shared with other copies o" +
+            "n other calendars. Optional. Immutable.\"},\"recurrence\":{\"type\":\"array\",\"descript" +
+            "ion\":\"List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event. This " +
+            "field is omitted for single events or instances of recurring events.\",\"items\":{\"" +
+            "type\":\"string\"}},\"recurringEventId\":{\"type\":\"string\",\"description\":\"For an insta" +
+            "nce of a recurring event, this is the event ID of the recurring event itself. Im" +
+            "mutable.\"},\"reminders\":{\"type\":\"object\",\"description\":\"Information about the eve" +
+            "nt\'s reminders for the authenticated user.\",\"properties\":{\"overrides\":{\"type\":\"a" +
+            "rray\",\"description\":\"If the event doesn\'t use the default reminders, this lists " +
+            "the reminders specific to the event, or, if not set, indicates that no reminders" +
+            " are set for this event.\",\"items\":{\"$ref\":\"EventReminder\"}},\"useDefault\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Whether the default reminders of the calendar apply to" +
+            " the event.\"}}},\"sequence\":{\"type\":\"integer\",\"description\":\"Sequence number as p" +
+            "er iCalendar.\",\"format\":\"int32\"},\"start\":{\"$ref\":\"EventDateTime\",\"description\":\"" +
+            "The (inclusive) start time of the event. For a recurring event, this is the star" +
+            "t time of the first instance.\"},\"status\":{\"type\":\"string\",\"description\":\"Status " +
+            "of the event. Optional. Possible values are:  \\n- \\\"confirmed\\\" - The event is c" +
+            "onfirmed. This is the default status. \\n- \\\"tentative\\\" - The event is tentative" +
+            "ly confirmed. \\n- \\\"cancelled\\\" - The event is cancelled.\"},\"summary\":{\"type\":\"s" +
+            "tring\",\"description\":\"Title of the event.\"},\"transparency\":{\"type\":\"string\",\"des" +
+            "cription\":\"Whether the event blocks time on the calendar. Optional. Possible val" +
+            "ues are:  \\n- \\\"opaque\\\" - The event blocks time on the calendar. This is the de" +
+            "fault value. \\n- \\\"transparent\\\" - The event does not block time on the calendar" +
+            ".\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the even" +
+            "t (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"},\"visibility\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Visibility of the event. Optional. Possible values a" +
+            "re:  \\n- \\\"default\\\" - Uses the default visibility for events on the calendar. T" +
+            "his is the default value. \\n- \\\"public\\\" - The event is public and event details" +
+            " are visible to all readers of the calendar. \\n- \\\"private\\\" - The event is priv" +
+            "ate and only event attendees may view event details. \\n- \\\"confidential\\\" - The " +
+            "event is private. This value is provided for compatibility reasons.\"}}},\"EventAt" +
+            "tendee\":{\"id\":\"EventAttendee\",\"type\":\"object\",\"properties\":{\"additionalGuests\":{" +
+            "\"type\":\"integer\",\"description\":\"Number of additional guests. Optional. The defau" +
+            "lt is 0.\",\"format\":\"int32\"},\"comment\":{\"type\":\"string\",\"description\":\"The attend" +
+            "ee\'s response comment. Optional.\"},\"displayName\":{\"type\":\"string\",\"description\":" +
+            "\"The attendee\'s name, if available. Optional.\"},\"email\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The attendee\'s email address, if available. This field must be present w" +
+            "hen adding an attendee.\",\"annotations\":{\"required\":[\"calendar.events.import\",\"ca" +
+            "lendar.events.insert\",\"calendar.events.update\"]}},\"id\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The attendee\'s Profile ID, if available.\"},\"optional\":{\"type\":\"boolean\",\"" +
+            "description\":\"Whether this is an optional attendee. Optional. The default is Fal" +
+            "se.\"},\"organizer\":{\"type\":\"boolean\",\"description\":\"Whether the attendee is the o" +
+            "rganizer of the event. Read-only. The default is False.\"},\"resource\":{\"type\":\"bo" +
+            "olean\",\"description\":\"Whether the attendee is a resource. Read-only. The default" +
+            " is False.\"},\"responseStatus\":{\"type\":\"string\",\"description\":\"The attendee\'s res" +
+            "ponse status. Possible values are:  \\n- \\\"needsAction\\\" - The attendee has not r" +
+            "esponded to the invitation. \\n- \\\"declined\\\" - The attendee has declined the inv" +
+            "itation. \\n- \\\"tentative\\\" - The attendee has tentatively accepted the invitatio" +
+            "n. \\n- \\\"accepted\\\" - The attendee has accepted the invitation.\"},\"self\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Whether this entry represents the calendar on which th" +
+            "is copy of the event appears. Read-only. The default is False.\"}}},\"EventDateTim" +
+            "e\":{\"id\":\"EventDateTime\",\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"" +
+            "description\":\"The date, in the format \\\"yyyy-mm-dd\\\", if this is an all-day even" +
+            "t.\",\"format\":\"date\"},\"dateTime\":{\"type\":\"string\",\"description\":\"The time, as a c" +
+            "ombined date-time value (formatted according to RFC 3339). A time zone offset is" +
+            " required unless a time zone is explicitly specified in \'timeZone\'.\",\"format\":\"d" +
+            "ate-time\"},\"timeZone\":{\"type\":\"string\",\"description\":\"The name of the time zone " +
+            "in which the time is specified (e.g. \\\"Europe/Zurich\\\"). Optional. The default i" +
+            "s the time zone of the calendar.\"}}},\"EventReminder\":{\"id\":\"EventReminder\",\"type" +
+            "\":\"object\",\"properties\":{\"method\":{\"type\":\"string\",\"description\":\"The method use" +
+            "d by this reminder. Possible values are:  \\n- \\\"email\\\" - Reminders are sent via" +
+            " email. \\n- \\\"sms\\\" - Reminders are sent via SMS. \\n- \\\"popup\\\" - Reminders are " +
+            "sent via a UI popup.\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\"," +
+            "\"calendar.calendarList.update\",\"calendar.events.import\",\"calendar.events.insert\"" +
+            ",\"calendar.events.update\"]}},\"minutes\":{\"type\":\"integer\",\"description\":\"Number o" +
+            "f minutes before the start of the event when the reminder should trigger.\",\"form" +
+            "at\":\"int32\",\"annotations\":{\"required\":[\"calendar.calendarList.insert\",\"calendar." +
+            "calendarList.update\",\"calendar.events.import\",\"calendar.events.insert\",\"calendar" +
+            ".events.update\"]}}}},\"Events\":{\"id\":\"Events\",\"type\":\"object\",\"properties\":{\"acce" +
+            "ssRole\":{\"type\":\"string\",\"description\":\"The user\'s access role for this calendar" +
+            ". Read-only. Possible values are:  \\n- \\\"none\\\" - The user has no access. \\n- \\\"" +
+            "freeBusyReader\\\" - The user has read access to free/busy information. \\n- \\\"read" +
+            "er\\\" - The user has read access to the calendar. Private events will appear to u" +
+            "sers with reader access, but event details will be hidden. \\n- \\\"writer\\\" - The " +
+            "user has read and write access to the calendar. Private events will appear to us" +
+            "ers with writer access, and event details will be visible. \\n- \\\"owner\\\" - The u" +
+            "ser has ownership of the calendar. This role has all of the permissions of the w" +
+            "riter role with the additional ability to see and manipulate ACLs.\"},\"defaultRem" +
+            "inders\":{\"type\":\"array\",\"description\":\"The default reminders on the calendar for" +
+            " the authenticated user. These reminders apply to all events on this calendar th" +
+            "at do not explicitly override them (i.e. do not have \'reminders.useDefault\' set " +
+            "to \'true\').\",\"items\":{\"$ref\":\"EventReminder\"}},\"description\":{\"type\":\"string\",\"d" +
+            "escription\":\"Description of the calendar. Read-only.\"},\"etag\":{\"type\":\"string\",\"" +
+            "description\":\"ETag of the collection.\"},\"items\":{\"type\":\"array\",\"description\":\"L" +
+            "ist of events on the calendar.\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string" +
+            "\",\"description\":\"Type of the collection (\\\"calendar#events\\\").\",\"default\":\"calen" +
+            "dar#events\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token used to acces" +
+            "s the next page of this result. Omitted if no further results are available.\"},\"" +
+            "summary\":{\"type\":\"string\",\"description\":\"Title of the calendar. Read-only.\"},\"ti" +
+            "meZone\":{\"type\":\"string\",\"description\":\"The time zone of the calendar. Read-only" +
+            ".\"},\"updated\":{\"type\":\"string\",\"description\":\"Last modification time of the cale" +
+            "ndar (as a RFC 3339 timestamp). Read-only.\",\"format\":\"date-time\"}}},\"FreeBusyCal" +
+            "endar\":{\"id\":\"FreeBusyCalendar\",\"type\":\"object\",\"properties\":{\"busy\":{\"type\":\"ar" +
+            "ray\",\"description\":\"List of time ranges during which this calendar should be reg" +
+            "arded as busy.\",\"items\":{\"$ref\":\"TimePeriod\"}},\"errors\":{\"type\":\"array\",\"descrip" +
+            "tion\":\"Optional error(s) (if computation for the calendar failed).\",\"items\":{\"$r" +
+            "ef\":\"Error\"}}}},\"FreeBusyGroup\":{\"id\":\"FreeBusyGroup\",\"type\":\"object\",\"propertie" +
+            "s\":{\"calendars\":{\"type\":\"array\",\"description\":\"List of calendars\' identifiers wi" +
+            "thin a group.\",\"items\":{\"type\":\"string\"}},\"errors\":{\"type\":\"array\",\"description\"" +
+            ":\"Optional error(s) (if computation for the group failed).\",\"items\":{\"$ref\":\"Err" +
+            "or\"}}}},\"FreeBusyRequest\":{\"id\":\"FreeBusyRequest\",\"type\":\"object\",\"properties\":{" +
+            "\"calendarExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calend" +
+            "ars for which FreeBusy information is to be provided. Optional.\",\"format\":\"int32" +
+            "\"},\"groupExpansionMax\":{\"type\":\"integer\",\"description\":\"Maximal number of calend" +
+            "ar identifiers to be provided for a single group. Optional. An error will be ret" +
+            "urned for a group with more members than this value.\",\"format\":\"int32\"},\"items\":" +
+            "{\"type\":\"array\",\"description\":\"List of calendars and/or groups to query.\",\"items" +
+            "\":{\"$ref\":\"FreeBusyRequestItem\"}},\"timeMax\":{\"type\":\"string\",\"description\":\"The " +
+            "end of the interval for the query.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"str" +
+            "ing\",\"description\":\"The start of the interval for the query.\",\"format\":\"date-tim" +
+            "e\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. O" +
+            "ptional. The default is UTC.\"}}},\"FreeBusyRequestItem\":{\"id\":\"FreeBusyRequestIte" +
+            "m\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The identi" +
+            "fier of a calendar or a group.\"}}},\"FreeBusyResponse\":{\"id\":\"FreeBusyResponse\",\"" +
+            "type\":\"object\",\"properties\":{\"calendars\":{\"type\":\"object\",\"description\":\"List of" +
+            " free/busy information for calendars.\",\"additionalProperties\":{\"$ref\":\"FreeBusyC" +
+            "alendar\",\"description\":\"Free/busy expansions for a single calendar.\"}},\"groups\":" +
+            "{\"type\":\"object\",\"description\":\"Expansion of groups.\",\"additionalProperties\":{\"$" +
+            "ref\":\"FreeBusyGroup\",\"description\":\"List of calendars that are members of this g" +
+            "roup.\"}},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"calendar" +
+            "#freeBusy\\\").\",\"default\":\"calendar#freeBusy\"},\"timeMax\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The end of the interval.\",\"format\":\"date-time\"},\"timeMin\":{\"type\":\"strin" +
+            "g\",\"description\":\"The start of the interval.\",\"format\":\"date-time\"}}},\"Setting\":" +
+            "{\"id\":\"Setting\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descripti" +
+            "on\":\"ETag of the resource.\"},\"id\":{\"type\":\"string\",\"description\":\"Name of the us" +
+            "er setting.\"},\"kind\":{\"type\":\"string\",\"description\":\"Type of the resource (\\\"cal" +
+            "endar#setting\\\").\",\"default\":\"calendar#setting\"},\"value\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Value of the user setting. The format of the value depends on the ID of" +
+            " the setting.\"}}},\"Settings\":{\"id\":\"Settings\",\"type\":\"object\",\"properties\":{\"eta" +
+            "g\":{\"type\":\"string\",\"description\":\"Etag of the collection.\"},\"items\":{\"type\":\"ar" +
+            "ray\",\"description\":\"List of user settings.\",\"items\":{\"$ref\":\"Setting\"}},\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"Type of the collection (\\\"calendar#settings\\\").\"," +
+            "\"default\":\"calendar#settings\"}}},\"TimePeriod\":{\"id\":\"TimePeriod\",\"type\":\"object\"" +
+            ",\"properties\":{\"end\":{\"type\":\"string\",\"description\":\"The (exclusive) end of the " +
+            "time period.\",\"format\":\"date-time\"},\"start\":{\"type\":\"string\",\"description\":\"The " +
+            "(inclusive) start of the time period.\",\"format\":\"date-time\"}}}},\"resources\":{\"ac" +
+            "l\":{\"methods\":{\"delete\":{\"id\":\"calendar.acl.delete\",\"path\":\"calendars/{calendarI" +
+            "d}/acl/{ruleId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes an access control " +
+            "rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar ident" +
+            "ifier.\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"ACL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"calendarId\",\"ruleId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"g" +
+            "et\":{\"id\":\"calendar.acl.get\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpM" +
+            "ethod\":\"GET\",\"description\":\"Returns an access control rule.\",\"parameters\":{\"cale" +
             "ndarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"l" +
             "ocation\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\"," +
             "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"re" +
-            "quest\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/calendar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"cale" +
-            "ndar.calendarList.delete\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMetho" +
-            "d\":\"DELETE\",\"description\":\"Deletes an entry on the user\'s calendar list.\",\"param" +
-            "eters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requ" +
-            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get\",\"p" +
-            "ath\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Retu" +
-            "rns an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"s" +
-            "tring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}}," +
-            "\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/ca" +
-            "lendar.readonly\"]},\"insert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"users/m" +
-            "e/calendarList\",\"httpMethod\":\"POST\",\"description\":\"Adds an entry to the user\'s c" +
-            "alendar list.\",\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"Calend" +
-            "arListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id" +
-            "\":\"calendar.calendarList.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"GET\"" +
-            ",\"description\":\"Returns entries on the user\'s calendar list.\",\"parameters\":{\"max" +
-            "Results\":{\"type\":\"integer\",\"description\":\"Maximum number of entries returned on " +
-            "one result page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"" +
-            "minAccessRole\":{\"type\":\"string\",\"description\":\"The minimum access role for the u" +
-            "ser in the returned entires. Optional. The default is no restriction.\",\"enum\":[\"" +
-            "freeBusyReader\",\"owner\",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can rea" +
-            "d free/busy information.\",\"The user can read and modify events and access contro" +
-            "l lists.\",\"The user can read events that are not private.\",\"The user can read an" +
-            "d modify events.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description" +
-            "\":\"Token specifying which result page to return. Optional.\",\"location\":\"query\"}," +
-            "\"showHidden\":{\"type\":\"boolean\",\"description\":\"Whether to show hidden entries. Op" +
-            "tional. The default is False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Calendar" +
-            "List\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googlea" +
-            "pis.com/auth/calendar.readonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch\",\"p" +
-            "ath\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Up" +
-            "dates an entry on the user\'s calendar list. This method supports patch semantics" +
-            ".\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifie" +
-            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request" +
-            "\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendarL" +
-            "ist.update\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"desc" +
-            "ription\":\"Updates an entry on the user\'s calendar list.\",\"parameters\":{\"calendar" +
-            "Id\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarListEnt" +
-            "ry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/calendar\"]}}},\"calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calendars." +
-            "clear\",\"path\":\"calendars/{calendarId}/clear\",\"httpMethod\":\"POST\",\"description\":\"" +
-            "Clears a primary calendar. This operation deletes all data associated with the p" +
-            "rimary calendar of an account and cannot be undone.\",\"parameters\":{\"calendarId\":" +
-            "{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/calendar\"]},\"delete\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendars/{c" +
-            "alendarId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a secondary calendar.\"," +
-            "\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars.get\"" +
-            ",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns metad" +
-            "ata for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"" +
-            "Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cal" +
-            "endarId\"],\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"i" +
-            "d\":\"calendar.calendars.insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"descripti" +
-            "on\":\"Creates a secondary calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$" +
-            "ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":" +
-            "{\"id\":\"calendar.calendars.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"P" +
-            "ATCH\",\"description\":\"Updates metadata for a calendar. This method supports patch" +
-            " semantics.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar" +
-            " identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"" +
-            "],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendars.update\"" +
-            ",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates metad" +
-            "ata for a calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"" +
-            "Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cal" +
-            "endarId\"],\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{\"id\"" +
-            ":\"calendar.colors.get\",\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Returns" +
-            " the color definitions for calendars and events.\",\"response\":{\"$ref\":\"Colors\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/" +
-            "auth/calendar.readonly\"]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.events" +
-            ".delete\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELETE\"," +
-            "\"description\":\"Deletes an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"d" +
+            "sponse\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"," +
+            "\"https://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.a" +
+            "cl.insert\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"POST\",\"description\"" +
+            ":\"Creates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"" +
+            "description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar" +
+            ".acl.list\",\"path\":\"calendars/{calendarId}/acl\",\"httpMethod\":\"GET\",\"description\":" +
+            "\"Returns the rules in the access control list for the calendar.\",\"parameters\":{\"" +
+            "calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tru" +
+            "e,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"Acl\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.a" +
+            "cl.patch\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PATCH\",\"des" +
+            "cription\":\"Updates an access control rule. This method supports patch semantics." +
+            "\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier" +
+            ".\",\"required\":true,\"location\":\"path\"},\"ruleId\":{\"type\":\"string\",\"description\":\"A" +
+            "CL rule identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"cale" +
+            "ndarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclRule\"},\"response\":{\"$ref\":\"AclRule\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.acl" +
+            ".update\",\"path\":\"calendars/{calendarId}/acl/{ruleId}\",\"httpMethod\":\"PUT\",\"descri" +
+            "ption\":\"Updates an access control rule.\",\"parameters\":{\"calendarId\":{\"type\":\"str" +
+            "ing\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"ru" +
+            "leId\":{\"type\":\"string\",\"description\":\"ACL rule identifier.\",\"required\":true,\"loc" +
+            "ation\":\"path\"}},\"parameterOrder\":[\"calendarId\",\"ruleId\"],\"request\":{\"$ref\":\"AclR" +
+            "ule\"},\"response\":{\"$ref\":\"AclRule\"},\"scopes\":[\"https://www.googleapis.com/auth/c" +
+            "alendar\"]}}},\"calendarList\":{\"methods\":{\"delete\":{\"id\":\"calendar.calendarList.de" +
+            "lete\",\"path\":\"users/me/calendarList/{calendarId}\",\"httpMethod\":\"DELETE\",\"descrip" +
+            "tion\":\"Deletes an entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\"" +
+            ":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location" +
+            "\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendarList.get\",\"path\":\"users/me/calen" +
+            "darList/{calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an entry on the " +
+            "user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\"" +
+            ":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"c" +
+            "alendarId\"],\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googl" +
+            "eapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]},\"" +
+            "insert\":{\"id\":\"calendar.calendarList.insert\",\"path\":\"users/me/calendarList\",\"htt" +
+            "pMethod\":\"POST\",\"description\":\"Adds an entry to the user\'s calendar list.\",\"requ" +
+            "est\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/calendar\"]},\"list\":{\"id\":\"calendar.calendar" +
+            "List.list\",\"path\":\"users/me/calendarList\",\"httpMethod\":\"GET\",\"description\":\"Retu" +
+            "rns entries on the user\'s calendar list.\",\"parameters\":{\"maxResults\":{\"type\":\"in" +
+            "teger\",\"description\":\"Maximum number of entries returned on one result page. Opt" +
+            "ional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"minAccessRole\":{\"typ" +
+            "e\":\"string\",\"description\":\"The minimum access role for the user in the returned " +
+            "entires. Optional. The default is no restriction.\",\"enum\":[\"freeBusyReader\",\"own" +
+            "er\",\"reader\",\"writer\"],\"enumDescriptions\":[\"The user can read free/busy informat" +
+            "ion.\",\"The user can read and modify events and access control lists.\",\"The user " +
+            "can read events that are not private.\",\"The user can read and modify events.\"],\"" +
+            "location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token specifying " +
+            "which result page to return. Optional.\",\"location\":\"query\"},\"showHidden\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Whether to show hidden entries. Optional. The default " +
+            "is False.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"CalendarList\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calenda" +
+            "r.readonly\"]},\"patch\":{\"id\":\"calendar.calendarList.patch\",\"path\":\"users/me/calen" +
+            "darList/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an entry on th" +
+            "e user\'s calendar list. This method supports patch semantics.\",\"parameters\":{\"ca" +
+            "lendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarL" +
+            "istEntry\"},\"response\":{\"$ref\":\"CalendarListEntry\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendarList.update\",\"path\":\"" +
+            "users/me/calendarList/{calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an" +
+            " entry on the user\'s calendar list.\",\"parameters\":{\"calendarId\":{\"type\":\"string\"" +
+            ",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"calendarId\"],\"request\":{\"$ref\":\"CalendarListEntry\"},\"response\":{\"$r" +
+            "ef\":\"CalendarListEntry\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]}}" +
+            "},\"calendars\":{\"methods\":{\"clear\":{\"id\":\"calendar.calendars.clear\",\"path\":\"calen" +
+            "dars/{calendarId}/clear\",\"httpMethod\":\"POST\",\"description\":\"Clears a primary cal" +
+            "endar. This operation deletes all data associated with the primary calendar of a" +
+            "n account and cannot be undone.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
+            "Order\":[\"calendarId\"],\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"de" +
+            "lete\":{\"id\":\"calendar.calendars.delete\",\"path\":\"calendars/{calendarId}\",\"httpMet" +
+            "hod\":\"DELETE\",\"description\":\"Deletes a secondary calendar.\",\"parameters\":{\"calen" +
+            "darId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.calendars.get\",\"path\":\"calendars/{" +
+            "calendarId}\",\"httpMethod\":\"GET\",\"description\":\"Returns metadata for a calendar.\"" +
+            ",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier." +
+            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"response\"" +
+            ":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https" +
+            "://www.googleapis.com/auth/calendar.readonly\"]},\"insert\":{\"id\":\"calendar.calenda" +
+            "rs.insert\",\"path\":\"calendars\",\"httpMethod\":\"POST\",\"description\":\"Creates a secon" +
+            "dary calendar.\",\"request\":{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.cale" +
+            "ndars.patch\",\"path\":\"calendars/{calendarId}\",\"httpMethod\":\"PATCH\",\"description\":" +
+            "\"Updates metadata for a calendar. This method supports patch semantics.\",\"parame" +
+            "ters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":" +
+            "\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/calendar\"]},\"update\":{\"id\":\"calendar.calendars.update\",\"path\":\"calendars/{" +
+            "calendarId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates metadata for a calendar.\"" +
+            ",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier." +
+            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":" +
+            "{\"$ref\":\"Calendar\"},\"response\":{\"$ref\":\"Calendar\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/calendar\"]}}},\"colors\":{\"methods\":{\"get\":{\"id\":\"calendar.colors.ge" +
+            "t\",\"path\":\"colors\",\"httpMethod\":\"GET\",\"description\":\"Returns the color definitio" +
+            "ns for calendars and events.\",\"response\":{\"$ref\":\"Colors\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readon" +
+            "ly\"]}}},\"events\":{\"methods\":{\"delete\":{\"id\":\"calendar.events.delete\",\"path\":\"cal" +
+            "endars/{calendarId}/events/{eventId}\",\"httpMethod\":\"DELETE\",\"description\":\"Delet" +
+            "es an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calenda" +
+            "r identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotificat" +
+            "ions\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications about the d" +
+            "eletion of the event. Optional. The default is False.\",\"location\":\"query\"}},\"par" +
+            "ameterOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/calendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"calendars/{calendarId}/ev" +
+            "ents/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an event.\",\"parameters" +
+            "\":{\"alwaysIncludeEmail\":{\"type\":\"boolean\",\"description\":\"Whether to always inclu" +
+            "de a value in the \\\"email\\\" field for the organizer, creator and attendees, even" +
+            " if no real email is available (i.e. a generated, non-working value will be prov" +
+            "ided). The use of this option is discouraged and should only be used by clients " +
+            "which cannot handle the absence of an email address value in the mentioned place" +
+            "s. Optional. The default is False.\",\"location\":\"query\"},\"calendarId\":{\"type\":\"st" +
+            "ring\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"e" +
+            "ventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The maximum number" +
+            " of attendees to include in the response. If there are more than the specified n" +
+            "umber of attendees, only the participant is returned. Optional.\",\"format\":\"int32" +
+            "\",\"minimum\":\"1\",\"location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"T" +
+            "ime zone used in the response. Optional. The default is the time zone of the cal" +
+            "endar.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response" +
+            "\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https:/" +
+            "/www.googleapis.com/auth/calendar.readonly\"]},\"import\":{\"id\":\"calendar.events.im" +
+            "port\",\"path\":\"calendars/{calendarId}/events/import\",\"httpMethod\":\"POST\",\"descrip" +
+            "tion\":\"Imports an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
+            "[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/calendar\"]},\"insert\":{\"id\":\"calendar.events.ins" +
+            "ert\",\"path\":\"calendars/{calendarId}/events\",\"httpMethod\":\"POST\",\"description\":\"C" +
+            "reates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Cal" +
+            "endar identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether to send notifications about the creation of t" +
+            "he new event. Optional. The default is False.\",\"location\":\"query\"}},\"parameterOr" +
+            "der\":[\"calendarId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/calendar\"]},\"instances\":{\"id\":\"calendar.ev" +
+            "ents.instances\",\"path\":\"calendars/{calendarId}/events/{eventId}/instances\",\"http" +
+            "Method\":\"GET\",\"description\":\"Returns instances of the specified recurring event." +
+            "\",\"parameters\":{\"alwaysIncludeEmail\":{\"type\":\"boolean\",\"description\":\"Whether to" +
+            " always include a value in the \\\"email\\\" field for the organizer, creator and at" +
+            "tendees, even if no real email is available (i.e. a generated, non-working value" +
+            " will be provided). The use of this option is discouraged and should only be use" +
+            "d by clients which cannot handle the absence of an email address value in the me" +
+            "ntioned places. Optional. The default is False.\",\"location\":\"query\"},\"calendarId" +
+            "\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"locatio" +
+            "n\":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Recurring event identifier." +
+            "\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"The maximum number of attendees to include in the response. If there are mo" +
+            "re than the specified number of attendees, only the participant is returned. Opt" +
+            "ional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":" +
+            "\"integer\",\"description\":\"Maximum number of events returned on one result page. O" +
+            "ptional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"t" +
+            "ype\":\"string\",\"description\":\"The original start time of the instance in the resu" +
+            "lt. Optional.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"T" +
+            "oken specifying which result page to return. Optional.\",\"location\":\"query\"},\"sho" +
+            "wDeleted\":{\"type\":\"boolean\",\"description\":\"Whether to include deleted events (wi" +
+            "th \'eventStatus\' equals \'cancelled\') in the result. Optional. The default is Fal" +
+            "se.\",\"location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone us" +
+            "ed in the response. Optional. The default is the time zone of the calendar.\",\"lo" +
+            "cation\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"" +
+            "Events\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googl" +
+            "eapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"" +
+            "calendars/{calendarId}/events\",\"httpMethod\":\"GET\",\"description\":\"Returns events " +
+            "on the specified calendar.\",\"parameters\":{\"alwaysIncludeEmail\":{\"type\":\"boolean\"" +
+            ",\"description\":\"Whether to always include a value in the \\\"email\\\" field for the" +
+            " organizer, creator and attendees, even if no real email is available (i.e. a ge" +
+            "nerated, non-working value will be provided). The use of this option is discoura" +
+            "ged and should only be used by clients which cannot handle the absence of an ema" +
+            "il address value in the mentioned places. Optional. The default is False.\",\"loca" +
+            "tion\":\"query\"},\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier." +
+            "\",\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":\"string\",\"description\":\"S" +
+            "pecifies iCalendar UID (iCalUID) of events to be included in the response. Optio" +
+            "nal.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"The ma" +
+            "ximum number of attendees to include in the response. If there are more than the" +
+            " specified number of attendees, only the participant is returned. Optional.\",\"fo" +
+            "rmat\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"" +
+            "description\":\"Maximum number of events returned on one result page. Optional.\",\"" +
+            "format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"de" +
+            "scription\":\"The order of the events returned in the result. Optional. The defaul" +
+            "t is an unspecified, stable order.\",\"enum\":[\"startTime\",\"updated\"],\"enumDescript" +
+            "ions\":[\"Order by the start date/time (ascending). This is only available when qu" +
+            "erying single events (i.e. the parameter \\\"singleEvents\\\" is True)\",\"Order by la" +
+            "st modification time (ascending).\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"str" +
+            "ing\",\"description\":\"Token specifying which result page to return. Optional.\",\"lo" +
+            "cation\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Free text search terms to f" +
+            "ind events that match these terms in any field, except for extended properties. " +
+            "Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boolean\",\"description\":\"Wh" +
+            "ether to include deleted events (with \'eventStatus\' equals \'cancelled\') in the r" +
+            "esult. Optional. The default is False.\",\"location\":\"query\"},\"showHiddenInvitatio" +
+            "ns\":{\"type\":\"boolean\",\"description\":\"Whether to include hidden invitations in th" +
+            "e result. Optional. The default is False.\",\"location\":\"query\"},\"singleEvents\":{\"" +
+            "type\":\"boolean\",\"description\":\"Whether to expand recurring events into instances" +
+            " and only return single one-off events and instances of recurring events, but no" +
+            "t the underlying recurring events themselves. Optional. The default is False.\",\"" +
+            "location\":\"query\"},\"timeMax\":{\"type\":\"string\",\"description\":\"Upper bound (exclus" +
+            "ive) for an event\'s start time to filter by. Optional. The default is not to fil" +
+            "ter by start time.\",\"format\":\"date-time\",\"location\":\"query\"},\"timeMin\":{\"type\":\"" +
+            "string\",\"description\":\"Lower bound (inclusive) for an event\'s end time to filter" +
+            " by. Optional. The default is not to filter by end time.\",\"format\":\"date-time\",\"" +
+            "location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in " +
+            "the response. Optional. The default is the time zone of the calendar.\",\"location" +
+            "\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Lower bound for an event" +
+            "\'s last modification time (as a RFC 3339 timestamp) to filter by. Optional. The " +
+            "default is not to filter by last modification time.\",\"format\":\"date-time\",\"locat" +
+            "ion\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{\"$ref\":\"Events\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/aut" +
+            "h/calendar.readonly\"]},\"move\":{\"id\":\"calendar.events.move\",\"path\":\"calendars/{ca" +
+            "lendarId}/events/{eventId}/move\",\"httpMethod\":\"POST\",\"description\":\"Moves an eve" +
+            "nt to another calendar, i.e. changes an event\'s organizer.\",\"parameters\":{\"calen" +
+            "darId\":{\"type\":\"string\",\"description\":\"Calendar identifier of the source calenda" +
+            "r where the event currently is on.\",\"required\":true,\"location\":\"path\"},\"destinat" +
+            "ion\":{\"type\":\"string\",\"description\":\"Calendar identifier of the target calendar " +
+            "where the event is to be moved to.\",\"required\":true,\"location\":\"query\"},\"eventId" +
+            "\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"location\":" +
+            "\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send not" +
+            "ifications about the change of the event\'s organizer. Optional. The default is F" +
+            "alse.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\",\"destinatio" +
+            "n\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calen" +
+            "dar\"]},\"patch\":{\"id\":\"calendar.events.patch\",\"path\":\"calendars/{calendarId}/even" +
+            "ts/{eventId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an event. This method " +
+            "supports patch semantics.\",\"parameters\":{\"alwaysIncludeEmail\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether to always include a value in the \\\"email\\\" field for the " +
+            "organizer, creator and attendees, even if no real email is available (i.e. a gen" +
+            "erated, non-working value will be provided). The use of this option is discourag" +
+            "ed and should only be used by clients which cannot handle the absence of an emai" +
+            "l address value in the mentioned places. Optional. The default is False.\",\"locat" +
+            "ion\":\"query\"},\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\"" +
+            ",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"description\":\"Ev" +
+            "ent identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":" +
+            "\"boolean\",\"description\":\"Whether to send notifications about the event update (e" +
+            ".g. attendee\'s responses, title changes, etc.). Optional. The default is False.\"" +
+            ",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref" +
+            "\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/aut" +
+            "h/calendar\"]},\"quickAdd\":{\"id\":\"calendar.events.quickAdd\",\"path\":\"calendars/{cal" +
+            "endarId}/events/quickAdd\",\"httpMethod\":\"POST\",\"description\":\"Creates an event ba" +
+            "sed on a simple text string.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"sendNotificat" +
+            "ions\":{\"type\":\"boolean\",\"description\":\"Whether to send notifications about the c" +
+            "reation of the event. Optional. The default is False.\",\"location\":\"query\"},\"text" +
+            "\":{\"type\":\"string\",\"description\":\"The text describing the event to be created.\"," +
+            "\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"text\"],\"res" +
+            "ponse\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"" +
+            "update\":{\"id\":\"calendar.events.update\",\"path\":\"calendars/{calendarId}/events/{ev" +
+            "entId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an event.\",\"parameters\":{\"alwa" +
+            "ysIncludeEmail\":{\"type\":\"boolean\",\"description\":\"Whether to always include a val" +
+            "ue in the \\\"email\\\" field for the organizer, creator and attendees, even if no r" +
+            "eal email is available (i.e. a generated, non-working value will be provided). T" +
+            "he use of this option is discouraged and should only be used by clients which ca" +
+            "nnot handle the absence of an email address value in the mentioned places. Optio" +
+            "nal. The default is False.\",\"location\":\"query\"},\"calendarId\":{\"type\":\"string\",\"d" +
             "escription\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":" +
             "{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"location\":\"p" +
             "ath\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notif" +
-            "ications about the deletion of the event. Optional. The default is False.\",\"loca" +
-            "tion\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/calendar\"]},\"get\":{\"id\":\"calendar.events.get\",\"path\":\"calen" +
-            "dars/{calendarId}/events/{eventId}\",\"httpMethod\":\"GET\",\"description\":\"Returns an" +
-            " event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar ide" +
-            "ntifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Event identifier.\",\"required\":true,\"location\":\"path\"},\"maxAttendees\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The maximum number of attendees to include in the r" +
-            "esponse. If there are more than the specified number of attendees, only the part" +
-            "icipant is returned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query" +
-            "\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in the response. Op" +
-            "tional. The default is the time zone of the calendar.\",\"location\":\"query\"}},\"par" +
-            "ameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar" +
-            ".readonly\"]},\"import\":{\"id\":\"calendar.events.import\",\"path\":\"calendars/{calendar" +
-            "Id}/events/import\",\"httpMethod\":\"POST\",\"description\":\"Imports an event.\",\"parame" +
-            "ters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$ref\":" +
-            "\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
-            "calendar\"]},\"insert\":{\"id\":\"calendar.events.insert\",\"path\":\"calendars/{calendarI" +
-            "d}/events\",\"httpMethod\":\"POST\",\"description\":\"Creates an event.\",\"parameters\":{\"" +
-            "calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whethe" +
-            "r to send notifications about the creation of the new event. Optional. The defau" +
-            "lt is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"request\":{\"$" +
-            "ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/calendar\"]},\"instances\":{\"id\":\"calendar.events.instances\",\"path\":\"calendars" +
-            "/{calendarId}/events/{eventId}/instances\",\"httpMethod\":\"GET\",\"description\":\"Retu" +
-            "rns instances of the specified recurring event.\",\"parameters\":{\"calendarId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"pa" +
-            "th\"},\"eventId\":{\"type\":\"string\",\"description\":\"Recurring event identifier.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"maxAttendees\":{\"type\":\"integer\",\"description\":\"T" +
-            "he maximum number of attendees to include in the response. If there are more tha" +
-            "n the specified number of attendees, only the participant is returned. Optional." +
-            "\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integ" +
-            "er\",\"description\":\"Maximum number of events returned on one result page. Optiona" +
-            "l.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"originalStart\":{\"type\":\"" +
-            "string\",\"description\":\"The original start time of the instance in the result. Op" +
-            "tional.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token s" +
-            "pecifying which result page to return. Optional.\",\"location\":\"query\"},\"showDelet" +
-            "ed\":{\"type\":\"boolean\",\"description\":\"Whether to include deleted events (with \'ev" +
-            "entStatus\' equals \'cancelled\') in the result. Optional. The default is False.\",\"" +
-            "location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description\":\"Time zone used in " +
-            "the response. Optional. The default is the time zone of the calendar.\",\"location" +
-            "\":\"query\"}},\"parameterOrder\":[\"calendarId\",\"eventId\"],\"response\":{\"$ref\":\"Events" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis." +
-            "com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.events.list\",\"path\":\"calend" +
-            "ars/{calendarId}/events\",\"httpMethod\":\"GET\",\"description\":\"Returns events on the" +
-            " specified calendar.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":" +
-            "\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"iCalUID\":{\"type\":\"str" +
-            "ing\",\"description\":\"Specifies iCalendar UID (iCalUID) of events to be included i" +
-            "n the response. Optional.\",\"location\":\"query\"},\"maxAttendees\":{\"type\":\"integer\"," +
-            "\"description\":\"The maximum number of attendees to include in the response. If th" +
-            "ere are more than the specified number of attendees, only the participant is ret" +
-            "urned. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"maxResults" +
-            "\":{\"type\":\"integer\",\"description\":\"Maximum number of events returned on one resu" +
-            "lt page. Optional.\",\"format\":\"int32\",\"minimum\":\"1\",\"location\":\"query\"},\"orderBy\"" +
-            ":{\"type\":\"string\",\"description\":\"The order of the events returned in the result." +
-            " Optional. The default is an unspecified, stable order.\",\"enum\":[\"startTime\",\"up" +
-            "dated\"],\"enumDescriptions\":[\"Order by the start date/time (ascending). This is o" +
-            "nly available when querying single events (i.e. the parameter \\\"singleEvents\\\" i" +
-            "s True)\",\"Order by last modification time (ascending).\"],\"location\":\"query\"},\"pa" +
-            "geToken\":{\"type\":\"string\",\"description\":\"Token specifying which result page to r" +
-            "eturn. Optional.\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Free t" +
-            "ext search terms to find events that match these terms in any field, except for " +
-            "extended properties. Optional.\",\"location\":\"query\"},\"showDeleted\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether to include deleted events (with \'eventStatus\' equals " +
-            "\'cancelled\') in the result. Optional. The default is False.\",\"location\":\"query\"}" +
-            ",\"showHiddenInvitations\":{\"type\":\"boolean\",\"description\":\"Whether to include hid" +
-            "den invitations in the result. Optional. The default is False.\",\"location\":\"quer" +
-            "y\"},\"singleEvents\":{\"type\":\"boolean\",\"description\":\"Whether to expand recurring " +
-            "events into instances and only return single one-off events and instances of rec" +
-            "urring events, but not the underlying recurring events themselves. Optional. The" +
-            " default is False.\",\"location\":\"query\"},\"timeMax\":{\"type\":\"string\",\"description\"" +
-            ":\"Upper bound (exclusive) for an event\'s start time to filter by. Optional. The " +
-            "default is not to filter by start time.\",\"format\":\"date-time\",\"location\":\"query\"" +
-            "},\"timeMin\":{\"type\":\"string\",\"description\":\"Lower bound (inclusive) for an event" +
-            "\'s end time to filter by. Optional. The default is not to filter by end time.\",\"" +
-            "format\":\"date-time\",\"location\":\"query\"},\"timeZone\":{\"type\":\"string\",\"description" +
-            "\":\"Time zone used in the response. Optional. The default is the time zone of the" +
-            " calendar.\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Low" +
-            "er bound for an event\'s last modification time (as a RFC 3339 timestamp) to filt" +
-            "er by. Optional. The default is not to filter by last modification time.\",\"forma" +
-            "t\":\"date-time\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"],\"response\":{" +
-            "\"$ref\":\"Events\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https://w" +
-            "ww.googleapis.com/auth/calendar.readonly\"]},\"move\":{\"id\":\"calendar.events.move\"," +
-            "\"path\":\"calendars/{calendarId}/events/{eventId}/move\",\"httpMethod\":\"POST\",\"descr" +
-            "iption\":\"Moves an event to another calendar, i.e. changes an event\'s organizer.\"" +
-            ",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier " +
-            "of the source calendar where the event currently is on.\",\"required\":true,\"locati" +
-            "on\":\"path\"},\"destination\":{\"type\":\"string\",\"description\":\"Calendar identifier of" +
-            " the target calendar where the event is to be moved to.\",\"required\":true,\"locati" +
-            "on\":\"query\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"requi" +
-            "red\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\"" +
-            ":\"Whether to send notifications about the change of the event\'s organizer. Optio" +
-            "nal. The default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId\"," +
-            "\"eventId\",\"destination\"],\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/calendar\"]},\"patch\":{\"id\":\"calendar.events.patch\",\"path\":\"calend" +
-            "ars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a" +
-            "n event. This method supports patch semantics.\",\"parameters\":{\"calendarId\":{\"typ" +
-            "e\":\"string\",\"description\":\"Calendar identifier.\",\"required\":true,\"location\":\"pat" +
-            "h\"},\"eventId\":{\"type\":\"string\",\"description\":\"Event identifier.\",\"required\":true" +
-            ",\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether" +
-            " to send notifications about the event update (e.g. attendee\'s responses, title " +
-            "changes, etc.). Optional. The default is False.\",\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"calendarId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"E" +
-            "vent\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\"]},\"quickAdd\":{\"id\":\"" +
-            "calendar.events.quickAdd\",\"path\":\"calendars/{calendarId}/events/quickAdd\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Creates an event based on a simple text string.\",\"p" +
-            "arameters\":{\"calendarId\":{\"type\":\"string\",\"description\":\"Calendar identifier.\",\"" +
-            "required\":true,\"location\":\"path\"},\"sendNotifications\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether to send notifications about the creation of the event. Optional. " +
-            "The default is False.\",\"location\":\"query\"},\"text\":{\"type\":\"string\",\"description\"" +
-            ":\"The text describing the event to be created.\",\"required\":true,\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"calendarId\",\"text\"],\"response\":{\"$ref\":\"Event\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/calendar\"]},\"update\":{\"id\":\"calendar.events.u" +
-            "pdate\",\"path\":\"calendars/{calendarId}/events/{eventId}\",\"httpMethod\":\"PUT\",\"desc" +
-            "ription\":\"Updates an event.\",\"parameters\":{\"calendarId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Calendar identifier.\",\"required\":true,\"location\":\"path\"},\"eventId\":{\"typ" +
-            "e\":\"string\",\"description\":\"Event identifier.\",\"required\":true,\"location\":\"path\"}" +
-            ",\"sendNotifications\":{\"type\":\"boolean\",\"description\":\"Whether to send notificati" +
-            "ons about the event update (e.g. attendee\'s responses, title changes, etc.). Opt" +
-            "ional. The default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calendarId" +
-            "\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes\":[\"h" +
-            "ttps://www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"methods\":{\"query\":{\"id" +
-            "\":\"calendar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":\"POST\",\"description\":" +
-            "\"Returns free/busy information for a set of calendars.\",\"request\":{\"$ref\":\"FreeB" +
-            "usyRequest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly\"]}}}" +
-            ",\"settings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\",\"path\":\"users/me/set" +
-            "tings/{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns a single user setting" +
-            ".\",\"parameters\":{\"setting\":{\"type\":\"string\",\"description\":\"Name of the user sett" +
-            "ing.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"setting\"],\"response" +
-            "\":{\"$ref\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"https" +
-            "://www.googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.settings." +
-            "list\",\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"description\":\"Returns all u" +
-            "ser settings for the authenticated user.\",\"response\":{\"$ref\":\"Settings\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/c" +
-            "alendar.readonly\"]}}}}}";
+            "ications about the event update (e.g. attendee\'s responses, title changes, etc.)" +
+            ". Optional. The default is False.\",\"location\":\"query\"}},\"parameterOrder\":[\"calen" +
+            "darId\",\"eventId\"],\"request\":{\"$ref\":\"Event\"},\"response\":{\"$ref\":\"Event\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/calendar\"]}}},\"freebusy\":{\"methods\":{\"query\"" +
+            ":{\"id\":\"calendar.freebusy.query\",\"path\":\"freeBusy\",\"httpMethod\":\"POST\",\"descript" +
+            "ion\":\"Returns free/busy information for a set of calendars.\",\"request\":{\"$ref\":\"" +
+            "FreeBusyRequest\"},\"response\":{\"$ref\":\"FreeBusyResponse\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/calendar\",\"https://www.googleapis.com/auth/calendar.readonly" +
+            "\"]}}},\"settings\":{\"methods\":{\"get\":{\"id\":\"calendar.settings.get\",\"path\":\"users/m" +
+            "e/settings/{setting}\",\"httpMethod\":\"GET\",\"description\":\"Returns a single user se" +
+            "tting.\",\"parameters\":{\"setting\":{\"type\":\"string\",\"description\":\"Name of the user" +
+            " setting.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"setting\"],\"res" +
+            "ponse\":{\"$ref\":\"Setting\"},\"scopes\":[\"https://www.googleapis.com/auth/calendar\",\"" +
+            "https://www.googleapis.com/auth/calendar.readonly\"]},\"list\":{\"id\":\"calendar.sett" +
+            "ings.list\",\"path\":\"users/me/settings\",\"httpMethod\":\"GET\",\"description\":\"Returns " +
+            "all user settings for the authenticated user.\",\"response\":{\"$ref\":\"Settings\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/calendar\",\"https://www.googleapis.com/a" +
+            "uth/calendar.readonly\"]}}}}}";
         
         public const string Version = "v3";
         
@@ -4784,6 +4846,8 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _quotaUser;
             
+            private System.Nullable<bool> _alwaysIncludeEmail;
+            
             private string _calendarId;
             
             private string _eventId;
@@ -4828,6 +4892,17 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alwaysIncludeEmail", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> AlwaysIncludeEmail {
+                get {
+                    return this._alwaysIncludeEmail;
+                }
+                set {
+                    this._alwaysIncludeEmail = value;
                 }
             }
             
@@ -5075,6 +5150,8 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _quotaUser;
             
+            private System.Nullable<bool> _alwaysIncludeEmail;
+            
             private string _calendarId;
             
             private string _eventId;
@@ -5127,6 +5204,17 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alwaysIncludeEmail", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> AlwaysIncludeEmail {
+                get {
+                    return this._alwaysIncludeEmail;
+                }
+                set {
+                    this._alwaysIncludeEmail = value;
                 }
             }
             
@@ -5233,6 +5321,8 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _quotaUser;
             
+            private System.Nullable<bool> _alwaysIncludeEmail;
+            
             private string _calendarId;
             
             private string _iCalUID;
@@ -5296,6 +5386,17 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alwaysIncludeEmail", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> AlwaysIncludeEmail {
+                get {
+                    return this._alwaysIncludeEmail;
+                }
+                set {
+                    this._alwaysIncludeEmail = value;
                 }
             }
             
@@ -5575,6 +5676,8 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _quotaUser;
             
+            private System.Nullable<bool> _alwaysIncludeEmail;
+            
             private string _calendarId;
             
             private string _eventId;
@@ -5620,6 +5723,17 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alwaysIncludeEmail", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> AlwaysIncludeEmail {
+                get {
+                    return this._alwaysIncludeEmail;
+                }
+                set {
+                    this._alwaysIncludeEmail = value;
                 }
             }
             
@@ -5778,6 +5892,8 @@ namespace Google.Apis.Calendar.v3 {
             
             private string _quotaUser;
             
+            private System.Nullable<bool> _alwaysIncludeEmail;
+            
             private string _calendarId;
             
             private string _eventId;
@@ -5823,6 +5939,17 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._quotaUser = value;
+                }
+            }
+            
+            /// <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("alwaysIncludeEmail", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> AlwaysIncludeEmail {
+                get {
+                    return this._alwaysIncludeEmail;
+                }
+                set {
+                    this._alwaysIncludeEmail = value;
                 }
             }
             

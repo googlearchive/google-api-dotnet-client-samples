@@ -318,7 +318,7 @@ namespace Google.Apis.Oauth2.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"oauth2:v2\",\"nam" +
-            "e\":\"oauth2\",\"version\":\"v2\",\"revision\":\"20120523\",\"description\":\"OAuth2 API\",\"ico" +
+            "e\":\"oauth2\",\"version\":\"v2\",\"revision\":\"20120614\",\"description\":\"OAuth2 API\",\"ico" +
             "ns\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"htt" +
             "p://www.google.com/images/icons/product/search-32.gif\"},\"protocol\":\"rest\",\"baseU" +
             "rl\":\"https://www.googleapis.com/\",\"basePath\":\"/\",\"rootUrl\":\"https://www.googleap" +

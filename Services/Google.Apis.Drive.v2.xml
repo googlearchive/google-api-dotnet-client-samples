@@ -1,0 +1,1434 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Drive.v2</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Drive.v2.Data.About">
+            <summary>An item with user information and settings.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfo">
+            <summary>Additional ACL role info.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.DomainSharingPolicy">
+            <summary>The domain sharing policy for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ExportFormats">
+            <summary>The allowable export formats.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.Features">
+            <summary>List of additional features enabled on this account.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ImportFormats">
+            <summary>The allowable import formats.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.IsCurrentAppInstalled">
+            <summary>A boolean indicating whether the authenticated app is installed by the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.Kind">
+            <summary>This is always drive#about.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.LargestChangeId">
+            <summary>The largest change id.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.MaxUploadSizes">
+            <summary>List of max upload sizes for each file type.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.Name">
+            <summary>The name of the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.PermissionId">
+            <summary>The current user&apos;s ID as visible in the permissions collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesTotal">
+            <summary>The total number of quota bytes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsed">
+            <summary>The number of quota bytes used.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsedInTrash">
+            <summary>The number of quota bytes used by trashed items.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.RemainingChangeIds">
+            <summary>The number of remaining change ids.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.RootFolderId">
+            <summary>The id of the root folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.SelfLink">
+            <summary>A link back to this item.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSets">
+            <summary>The role sets for this role info item.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.Type">
+            <summary>The content type for this ACL role info item.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSetsData.AdditionalRoles">
+            <summary>The list of additional roles for this role set.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSetsData.PrimaryRole">
+            <summary>The primary role for this role set.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ExportFormatsData.Source">
+            <summary>The content type to convert from.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ExportFormatsData.Targets">
+            <summary>The possible content types to convert to.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.FeaturesData.FeatureName">
+            <summary>The name of the feature.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.FeaturesData.FeatureRate">
+            <summary>The request limit rate for this feature, in queries per second.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ImportFormatsData.Source">
+            <summary>The imported file&apos;s content type to convert from.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.ImportFormatsData.Targets">
+            <summary>The possible content types to convert to.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.MaxUploadSizesData.Size">
+            <summary>The max upload size for this type.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.MaxUploadSizesData.Type">
+            <summary>The file type.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.App">
+            <summary>Information about a third-party application which the user has installed or given access to Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Authorized">
+            <summary>Whether the app is authorized to access data on the user&apos;s Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Icons">
+            <summary>The various icons for the app.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Id">
+            <summary>The ID of the app.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Installed">
+            <summary>Whether the app is installed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Kind">
+            <summary>This is always drive#app.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.Name">
+            <summary>The name of the app.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.ObjectType">
+            <summary>The name of the type of object this app creates.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.PrimaryFileExtensions">
+            <summary>The list of primary file extensions.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.PrimaryMimeTypes">
+            <summary>The list of primary mime types.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.ProductUrl">
+            <summary>The product URL.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.SecondaryFileExtensions">
+            <summary>The list of secondary file extensions.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.SecondaryMimeTypes">
+            <summary>The list of secondary mime types.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.SupportsCreate">
+            <summary>Whether this app supports creating new objects.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.SupportsImport">
+            <summary>Whether this app supports importing Google Docs.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.IconsData.Category">
+             <summary>Category of the icon. Allowed values are:  
+            - application - icon for the application 
+            - document - icon for a file associated with the app 
+            - documentShared - icon for a shared file associated with the app</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.IconsData.IconUrl">
+            <summary>URL for the icon.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.IconsData.Size">
+            <summary>Size of the icon. Represented as the maximum of the width and height.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.AppList">
+            <summary>A list of third-party applications which the user has installed or given access to Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.AppList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.AppList.Items">
+            <summary>The actual list of apps.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.AppList.Kind">
+            <summary>This is always drive#appList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.AppList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Change">
+            <summary>Representation of a change to a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.Deleted">
+            <summary>Whether the file has been deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.File">
+            <summary>The metadata for a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.FileId">
+            <summary>The ID of the file associated with this change.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.Id">
+            <summary>The ID of the change.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.Kind">
+            <summary>This is always drive#change.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Change.SelfLink">
+            <summary>A link back to this change.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.ChangeList">
+            <summary>A list of changes for a user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.Items">
+            <summary>The actual list of changes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.Kind">
+            <summary>This is always drive#changeList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.LargestChangeId">
+            <summary>The current largest change ID.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.NextLink">
+            <summary>A link to the next page of changes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.NextPageToken">
+            <summary>The page token for the next page of changes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChangeList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.ChildList">
+            <summary>A list of children of a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.Items">
+            <summary>The actual list of children.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.Kind">
+            <summary>This is always drive#childList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.NextLink">
+            <summary>A link to the next page of children.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.NextPageToken">
+            <summary>The page token for the next page of children.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.ChildReference">
+            <summary>A reference to a file&apos;s child.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildReference.ChildLink">
+            <summary>A link to the child.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildReference.Id">
+            <summary>The ID of the child.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildReference.Kind">
+            <summary>This is always drive#childReference.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ChildReference.SelfLink">
+            <summary>A link back to this reference.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File">
+            <summary>The metadata for a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.AlternateLink">
+            <summary>A link for opening the file in a browser.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.CreatedDate">
+            <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Description">
+            <summary>A short description of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.DownloadUrl">
+            <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Editable">
+            <summary>Whether the file can be edited by the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.EmbedLink">
+            <summary>A link for embedding the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ETag">
+            <summary>ETag of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ExportLinks">
+            <summary>Links for exporting Google Docs to specific formats.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.FileExtension">
+            <summary>The file extension used when downloading this file. This field is read only. To set the extension, include it on title when creating the file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.FileSize">
+            <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Id">
+            <summary>The id of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.IndexableText">
+            <summary>Indexable text attributes for the file (can only be written)</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Kind">
+            <summary>The type of file. This is always drive#file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Labels">
+            <summary>A group of labels for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LastModifyingUserName">
+            <summary>Name of the last user to modify this file. This will only be populated if a user has edited this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LastViewedByMeDate">
+            <summary>Last time this file was viewed by the user (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Md5Checksum">
+            <summary>An MD5 checksum for the content of this file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.MimeType">
+            <summary>The MIME type of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ModifiedByMeDate">
+            <summary>Last time this file was modified by the user (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ModifiedDate">
+            <summary>Last time this file was modified by anyone (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.OriginalFilename">
+            <summary>The filename when uploading this file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.OwnerNames">
+            <summary>Name(s) of the owner(s) of this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Parents">
+             <summary>Collection of parent folders which contain this file.
+            On insert, setting this field will put the file in all of the provided folders. If no folders are provided, the file will be placed in the default root folder. On update, this field is ignored.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.PermissionsLink">
+            <summary>A link to the permissions collection.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.QuotaBytesUsed">
+            <summary>The number of quota bytes used by this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.SelfLink">
+            <summary>A link back to this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.SharedWithMeDate">
+            <summary>Time at which this file was shared with the user (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ThumbnailLink">
+            <summary>A link to the file&apos;s thumbnail.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Title">
+            <summary>The title of this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.UserPermission">
+            <summary>A single permission for a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.WritersCanShare">
+            <summary>Whether writers can share the document with other users.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.ExportLinksData">
+            <summary>Links for exporting Google Docs to specific formats.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.IndexableTextData">
+            <summary>Indexable text attributes for the file (can only be written)</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.IndexableTextData.Text">
+            <summary>The text to be indexed for this file</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.LabelsData">
+            <summary>A group of labels for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Hidden">
+            <summary>Whether this file is hidden from the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Restricted">
+            <summary>Whether viewers are prevented from downloading this file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Starred">
+            <summary>Whether this file is starred by the user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Trashed">
+            <summary>Whether this file has been trashed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Viewed">
+            <summary>Whether this file has been viewed by this user.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.FileList">
+            <summary>A list of files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.Items">
+            <summary>The actual list of files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.Kind">
+            <summary>This is always drive#fileList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.NextLink">
+            <summary>A link to the next page of files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.NextPageToken">
+            <summary>The page token for the next page of files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.FileList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.ParentList">
+            <summary>A list of a file&apos;s parents.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentList.Items">
+            <summary>The actual list of parents.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentList.Kind">
+            <summary>This is always drive#parentList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.ParentReference">
+            <summary>A reference to a file&apos;s parent.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentReference.Id">
+            <summary>The ID of the parent.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentReference.IsRoot">
+            <summary>Whether or not the parent is the root folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentReference.Kind">
+            <summary>This is always drive#parentReference.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentReference.ParentLink">
+            <summary>A link to the parent.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.ParentReference.SelfLink">
+            <summary>A link back to this reference.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Permission">
+            <summary>A single permission for a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.AdditionalRoles">
+            <summary>Additional roles for this user. Only commenter is currently allowed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.AuthKey">
+            <summary>The authkey parameter required for this permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.ETag">
+            <summary>The ETag of the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Id">
+            <summary>The ID of the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Kind">
+            <summary>This is always drive#permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Name">
+            <summary>The name for this permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.PhotoLink">
+            <summary>A link to the profile photo, if available.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Role">
+             <summary>The primary role for this user. Allowed values are:  
+            - owner 
+            - reader 
+            - writer</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.SelfLink">
+            <summary>A link back to this permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Type">
+             <summary>The account type. Allowed values are:  
+            - user 
+            - group 
+            - domain 
+            - anyone</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.Value">
+            <summary>The email address or domain name for the entity. This is not populated in responses.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Permission.WithLink">
+            <summary>Whether the link is required for this permission.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.PermissionList">
+            <summary>A list of permissions associated with a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PermissionList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PermissionList.Items">
+            <summary>The actual list of permissions.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PermissionList.Kind">
+            <summary>This is always drive#permissionList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.PermissionList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Revision">
+            <summary>A single revision of a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.DownloadUrl">
+            <summary>Short term download URL for the file. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.ETag">
+            <summary>The ETag of the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.ExportLinks">
+            <summary>Links for exporting Google Docs to specific formats.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.FileSize">
+            <summary>The size of the revision in bytes. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.Id">
+            <summary>The ID of the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.Kind">
+            <summary>This is always drive#revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.LastModifyingUserName">
+            <summary>Name of the last user to modify this revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.Md5Checksum">
+            <summary>An MD5 checksum for the content of this revision. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.MimeType">
+            <summary>The MIME type of the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.ModifiedDate">
+            <summary>Last time this revision was modified (formatted RFC 3339 timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.OriginalFilename">
+            <summary>The original filename when this revision was created. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.Pinned">
+            <summary>Whether this revision is pinned to prevent automatic purging. This will only be populated on files with content stored in Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishAuto">
+            <summary>Whether subsequent revisions will be automatically republished.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.Published">
+            <summary>Whether this revision is published. This is only populated for Google Docs.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishedLink">
+            <summary>A link to the published revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishedOutsideDomain">
+            <summary>Whether this revision is published outside the domain.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Revision.SelfLink">
+            <summary>A link back to this revision.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Revision.ExportLinksData">
+            <summary>Links for exporting Google Docs to specific formats.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.RevisionList">
+            <summary>A list of revisions of a file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.RevisionList.ETag">
+            <summary>The ETag of the list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.RevisionList.Items">
+            <summary>The actual list of revisions.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.RevisionList.Kind">
+            <summary>This is always drive#revisionList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.RevisionList.SelfLink">
+            <summary>A link back to this list.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.DriveService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.DriveService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.Drive">
+            <summary>View and manage the files and documents in your Google Drive</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveAppsReadonly">
+            <summary>New service: https://www.googleapis.com/auth/drive.apps.readonly</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveFile">
+            <summary>View and manage Google Drive files that you have opened or created with this app</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveMetadataReadonly">
+            <summary>View metadata for files and documents in your Google Drive</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveReadonly">
+            <summary>View the files and documents in your Google Drive</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.AboutResource.Get">
+            <summary>Gets the information about the current user along with Drive API settings</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.IncludeSubscribed">
+            <summary>Whether to include subscribed items when calculating the number of remaining change IDs</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.MaxChangeIdCount">
+            <summary>Maximum number of remaining change IDs to count</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.StartChangeId">
+            <summary>Change ID to start counting from when calculating number of remaining change IDs</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.AppsResource.List">
+            <summary>Lists a user&apos;s apps.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChangesResource.Get(System.String)">
+            <summary>Gets a specific change.</summary>
+            <param name="changeId">Required - The ID of the change.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChangesResource.List">
+            <summary>Lists the changes for a user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.ChangeId">
+            <summary>The ID of the change.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.IncludeDeleted">
+            <summary>Whether to include deleted items.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.IncludeSubscribed">
+            <summary>Whether to include subscribed items.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.MaxResults">
+            <summary>Maximum number of changes to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.PageToken">
+            <summary>Page token for changes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.StartChangeId">
+            <summary>Change ID to start listing changes from.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChildrenResource.Delete(System.String,System.String)">
+            <summary>Removes a child from a folder.</summary>
+            <param name="folderId">Required - The ID of the folder.</param>
+            <param name="childId">Required - The ID of the child.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChildrenResource.Get(System.String,System.String)">
+            <summary>Gets a specific child reference.</summary>
+            <param name="folderId">Required - The ID of the folder.</param>
+            <param name="childId">Required - The ID of the child.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChildrenResource.Insert(Google.Apis.Drive.v2.Data.ChildReference,System.String)">
+            <summary>Inserts a file into a folder.</summary>
+            <param name="folderId">Required - The ID of the folder.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ChildrenResource.List(System.String)">
+            <summary>Lists a folder&apos;s children.</summary>
+            <param name="folderId">Required - The ID of the folder.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.ChildId">
+            <summary>The ID of the child.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.FolderId">
+            <summary>The ID of the folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.ChildId">
+            <summary>The ID of the child.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.FolderId">
+            <summary>The ID of the folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.FolderId">
+            <summary>The ID of the folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.FolderId">
+            <summary>The ID of the folder.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.MaxResults">
+            <summary>Maximum number of children to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.PageToken">
+            <summary>Page token for children.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Q">
+            <summary>Query string for searching children.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Copy(Google.Apis.Drive.v2.Data.File,System.String)">
+            <summary>Creates a copy of the specified file.</summary>
+            <param name="fileId">Required - The ID of the file to copy.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Delete(System.String)">
+            <summary>Permanently deletes a file by ID. Skips the trash.</summary>
+            <param name="fileId">Required - The ID of the file to delete.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Get(System.String)">
+            <summary>Gets a file&apos;s metadata by ID.</summary>
+            <param name="fileId">Required - The ID for the file in question.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Insert(Google.Apis.Drive.v2.Data.File)">
+            <summary>Insert a new file.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Insert(Google.Apis.Drive.v2.Data.File,System.IO.Stream,System.String)">
+            <summary>Insert a new file.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.List">
+            <summary>Lists the user&apos;s files.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Patch(Google.Apis.Drive.v2.Data.File,System.String)">
+            <summary>Updates file metadata and/or content. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID of the file to update.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Touch(System.String)">
+            <summary>Set the file&apos;s updated time to the current server time.</summary>
+            <param name="fileId">Required - The ID of the file to update.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Trash(System.String)">
+            <summary>Moves a file to the trash.</summary>
+            <param name="fileId">Required - The ID of the file to trash.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Untrash(System.String)">
+            <summary>Restores a file from the trash.</summary>
+            <param name="fileId">Required - The ID of the file to untrash.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Update(Google.Apis.Drive.v2.Data.File,System.String)">
+            <summary>Updates file metadata and/or content</summary>
+            <param name="fileId">Required - The ID of the file to update.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.FilesResource.Update(Google.Apis.Drive.v2.Data.File,System.String,System.IO.Stream,System.String)">
+            <summary>Updates file metadata and/or content</summary>
+            <param name="fileId">Required - The ID of the file to update.</param>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.FilesResource.Projection">
+            <summary>Restrict information returned for simplicity and optimization.</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.FilesResource.Projection.BASIC">
+            <summary>Includes only the basic metadata fields</summary>
+        </member>
+        <member name="F:Google.Apis.Drive.v2.FilesResource.Projection.FULL">
+            <summary>Includes all metadata fields</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.FileId">
+            <summary>The ID of the file to copy.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.FileId">
+            <summary>The ID of the file to delete.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.FileId">
+            <summary>The ID for the file in question.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Projection">
+            <summary>Restrict information returned for simplicity and optimization.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully retrieving the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Pinned">
+            <summary>Whether to pin the head revision of the uploaded file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Pinned">
+            <summary>Whether to pin the head revision of the uploaded file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.MaxResults">
+            <summary>Maximum number of files to return.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.PageToken">
+            <summary>Page token for files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Projection">
+            <summary>Restrict information returned for simplicity and optimization.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Q">
+            <summary>Query string for searching files.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.FileId">
+            <summary>The ID of the file to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.NewRevision">
+            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Pinned">
+            <summary>Whether to pin the new revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.SetModifiedDate">
+            <summary>Whether to set the modified date with the supplied modified date.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.FileId">
+            <summary>The ID of the file to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.FileId">
+            <summary>The ID of the file to trash.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.FileId">
+            <summary>The ID of the file to untrash.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.FileId">
+            <summary>The ID of the file to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.NewRevision">
+            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Pinned">
+            <summary>Whether to pin the new revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.SetModifiedDate">
+            <summary>Whether to set the modified date with the supplied modified date.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Convert">
+            <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.FileId">
+            <summary>The ID of the file to update.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.NewRevision">
+            <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Ocr">
+            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.OcrLanguage">
+            <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Pinned">
+            <summary>Whether to pin the new revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.SetModifiedDate">
+            <summary>Whether to set the modified date with the supplied modified date.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.SourceLanguage">
+            <summary>The language of the original file to be translated.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.TargetLanguage">
+            <summary>Target language to translate the file to. If no sourceLanguage is provided, the API will attempt to detect the language.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.TimedTextLanguage">
+            <summary>The language of the timed text.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.TimedTextTrackName">
+            <summary>The timed text track name.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.UpdateViewedDate">
+            <summary>Whether to update the view date after successfully updating the file.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ParentsResource.Delete(System.String,System.String)">
+            <summary>Removes a parent from a file.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="parentId">Required - The ID of the parent.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ParentsResource.Get(System.String,System.String)">
+            <summary>Gets a specific parent reference.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="parentId">Required - The ID of the parent.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ParentsResource.Insert(Google.Apis.Drive.v2.Data.ParentReference,System.String)">
+            <summary>Adds a parent folder for a file.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.ParentsResource.List(System.String)">
+            <summary>Lists a file&apos;s parents.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.ParentId">
+            <summary>The ID of the parent.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.ParentId">
+            <summary>The ID of the parent.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.Delete(System.String,System.String)">
+            <summary>Deletes a permission from a file.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="permissionId">Required - The ID for the permission.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.Get(System.String,System.String)">
+            <summary>Gets a permission by ID.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="permissionId">Required - The ID for the permission.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.Insert(Google.Apis.Drive.v2.Data.Permission,System.String)">
+            <summary>Inserts a permission for a file.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.List(System.String)">
+            <summary>Lists a file&apos;s permissions.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.Patch(Google.Apis.Drive.v2.Data.Permission,System.String,System.String)">
+            <summary>Updates a permission. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="permissionId">Required - The ID for the permission.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.PermissionsResource.Update(Google.Apis.Drive.v2.Data.Permission,System.String,System.String)">
+            <summary>Updates a permission.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="permissionId">Required - The ID for the permission.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.PermissionId">
+            <summary>The ID for the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.PermissionId">
+            <summary>The ID for the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.SendNotificationEmails">
+            <summary>Whether to send notification emails.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.PermissionId">
+            <summary>The ID for the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.PermissionId">
+            <summary>The ID for the permission.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RevisionsResource.Delete(System.String,System.String)">
+            <summary>Removes a revision.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="revisionId">Required - The ID of the revision.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RevisionsResource.Get(System.String,System.String)">
+            <summary>Gets a specific revision.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="revisionId">Required - The ID of the revision.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RevisionsResource.List(System.String)">
+            <summary>Lists a file&apos;s revisions.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RevisionsResource.Patch(Google.Apis.Drive.v2.Data.Revision,System.String,System.String)">
+            <summary>Updates a revision. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="revisionId">Required - The ID for the revision.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RevisionsResource.Update(Google.Apis.Drive.v2.Data.Revision,System.String,System.String)">
+            <summary>Updates a revision.</summary>
+            <param name="fileId">Required - The ID for the file.</param>
+            <param name="revisionId">Required - The ID for the revision.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.RevisionId">
+            <summary>The ID of the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.RevisionId">
+            <summary>The ID of the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.RevisionId">
+            <summary>The ID for the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.FileId">
+            <summary>The ID for the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.RevisionId">
+            <summary>The ID for the revision.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

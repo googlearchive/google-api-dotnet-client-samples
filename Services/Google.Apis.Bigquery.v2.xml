@@ -146,6 +146,12 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.MaxBadRecords">
             <summary>[Optional] Maximum number of bad records that should be ignored before the entire job is aborted and no updates are performed.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInline">
+            <summary>[Experimental] Inline schema. For CSV schemas, specify as &quot;Field1:Type1[,Field2:Type2]*&quot;. For example, &quot;foo:STRING, bar:INTEGER, baz:FLOAT&quot;</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInlineFormat">
+            <summary>[Experimental] Format of inlineSchema field.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SkipLeadingRows">
             <summary>[Optional] Number of rows of initial data to skip in the data being imported.</summary>
         </member>
@@ -307,6 +313,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.TableDataList.Kind">
             <summary>The resource type of the response.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.TableDataList.PageToken">
+            <summary>A token used for paging results. Providing this token instead of the startRow parameter can help you retrieve stable results when an underlying table is changing.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.TableDataList.Rows">
             <summary>Rows of results.</summary>
@@ -700,6 +709,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.PageToken">
+            <summary>Page token, returned by a previous call, identifying the result set</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.ProjectId">
             <summary>Project ID of the table to read</summary>
