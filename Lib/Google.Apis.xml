@@ -1297,11 +1297,6 @@
             a direct response to a request.
             </summary>
         </member>
-        <member name="P:Google.Apis.Requests.IDirectResponseSchema.Error">
-            <summary>
-            All errors the server returned along with the request. 'null' when the request succeeded.
-            </summary>
-        </member>
         <member name="P:Google.Apis.Requests.IDirectResponseSchema.ETag">
             <summary>
             The e-tag of this response.

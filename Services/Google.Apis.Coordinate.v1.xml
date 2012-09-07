@@ -4,6 +4,57 @@
         <name>Google.Apis.Coordinate.v1</name>
     </assembly>
     <members>
+        <member name="T:Google.Apis.Coordinate.v1.Data.CustomField">
+            <summary>Custom field.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomField.CustomFieldId">
+            <summary>Custom field id.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomField.Kind">
+            <summary>Identifies this object as a custom field.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomField.Value">
+            <summary>Custom field value.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.CustomFieldDef">
+            <summary>Custom field definition.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.Enabled">
+            <summary>Whether the field is enabled.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.Id">
+            <summary>Custom field id.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.Kind">
+            <summary>Identifies this object as a custom field definition.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.Name">
+            <summary>Custom field name.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.RequiredForCheckout">
+            <summary>Whether the field is required for checkout.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDef.Type">
+            <summary>Custom field type.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.CustomFieldDefListResponse">
+            <summary>Collection of custom field definitions for a team.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDefListResponse.Items">
+            <summary>Collection of custom field definitions in a team.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFieldDefListResponse.Kind">
+            <summary>Identifies this object as a collection of custom field definitions in a team.</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.Data.CustomFields">
+            <summary>Collection of custom fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFields.CustomField">
+            <summary>Collection of custom fields.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.CustomFields.Kind">
+            <summary>Identifies this object as a collection of custom fields.</summary>
+        </member>
         <member name="T:Google.Apis.Coordinate.v1.Data.Job">
             <summary>A job.</summary>
         </member>
@@ -49,6 +100,9 @@
         <member name="P:Google.Apis.Coordinate.v1.Data.JobState.Assignee">
             <summary>Email address of the assignee.</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.Data.JobState.CustomFields">
+            <summary>Collection of custom fields.</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.Data.JobState.CustomerName">
             <summary>Customer name.</summary>
         </member>
@@ -87,6 +141,31 @@
         </member>
         <member name="P:Google.Apis.Coordinate.v1.CoordinateService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Coordinate.v1.CoordinateService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.CoordinateService.Scopes.Coordinate">
+            <summary>View and manage your Google Maps Coordinate jobs</summary>
+        </member>
+        <member name="F:Google.Apis.Coordinate.v1.CoordinateService.Scopes.CoordinateReadonly">
+            <summary>View your Google Coordinate jobs</summary>
+        </member>
+        <member name="M:Google.Apis.Coordinate.v1.CustomFieldDefResource.List(System.String)">
+            <summary>Retrieves a list of custom field definitions for a team.</summary>
+            <param name="teamId">Required - Team ID</param>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.TeamId">
+            <summary>Team ID</summary>
         </member>
         <member name="M:Google.Apis.Coordinate.v1.JobsResource.Get(System.String,System.String)">
             <summary>Retrieves a job, including all the changes made to the job.</summary>
@@ -163,6 +242,9 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Assignee">
             <summary>Assignee email address</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.CustomField">
+            <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.CustomerName">
             <summary>Customer name</summary>
         </member>
@@ -223,6 +305,9 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Assignee">
             <summary>Assignee email address</summary>
         </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.CustomField">
+            <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>
+        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.CustomerName">
             <summary>Customer name</summary>
         </member>
@@ -267,6 +352,9 @@
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Assignee">
             <summary>Assignee email address</summary>
+        </member>
+        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.CustomField">
+            <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.CustomerName">
             <summary>Customer name</summary>

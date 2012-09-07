@@ -136,6 +136,9 @@
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.CommonData.SnippetUrl">
             <summary>The URL for information for this location. Ex: wikipedia link.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.CommonData.Title">
+            <summary>The display title and localized canonical name to use when searching for this entity on Google search.</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.Boundary">
             <summary>The boundary of the location as a set of loops containing pairs of latitude, longitude coordinates.</summary>
         </member>
@@ -153,9 +156,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.MapType">
             <summary>The type of map that should be used for this location. EX: HYBRID, ROADMAP, SATELLITE, TERRAIN</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.Resolution">
-            <summary>The resolution of the location. Ex: POI_LEVEL</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.GeoData.Viewport">
             <summary>The viewport for showing this location. This is a latitude, longitude rectangle.</summary>
@@ -1506,35 +1506,11 @@
         <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association">
             <summary>Association type.</summary>
         </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association.Complementary">
-            <summary>Books that are complementary for additional reading.</summary>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association.EndOfSample">
+            <summary>Recommendations for display end-of-sample.</summary>
         </member>
-        <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter">
-            <summary>Filter search results.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Ebooks">
-            <summary>All Google eBooks.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.FreeEbooks">
-            <summary>Google eBook with full volume text viewability.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Full">
-            <summary>Public can view entire volume text.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.PaidEbooks">
-            <summary>Google eBook with a price.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Filter.Partial">
-            <summary>Public able to see parts of text.</summary>
-        </member>
-        <member name="T:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection">
-            <summary>Restrict information returned to a set of selected fields.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection.Full">
-            <summary>Includes all volume data.</summary>
-        </member>
-        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Projection.Lite">
-            <summary>Includes a subset of fields in volumeInfo and accessInfo.</summary>
+        <member name="F:Google.Apis.Books.v1.VolumesResource.AssociatedResource.Association.EndOfVolume">
+            <summary>Recommendations for display end-of-volume.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1548,20 +1524,11 @@
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Association">
             <summary>Association type.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Filter">
-            <summary>Filter search results.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.MaxResults">
-            <summary>Maximum number of results to return.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Projection">
-            <summary>Restrict information returned to a set of selected fields.</summary>
+        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Locale">
+            <summary>ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.StartIndex">
-            <summary>Index of the first result to return (starts at 0)</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.VolumeId">
             <summary>ID of the source volume.</summary>

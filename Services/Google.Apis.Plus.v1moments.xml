@@ -98,10 +98,10 @@
             <summary>The name of this scope.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Performers">
-            <summary>The main performer or performers of the eventâ€”for example, a presenter, musician, or actor.</summary>
+            <summary>The main performer or performers of the event-for example, a presenter, musician, or actor.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.PlayerType">
-            <summary>Player type requiredâ€”for example, Flash or Silverlight.</summary>
+            <summary>Player type required-for example, Flash or Silverlight.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.PostOfficeBoxNumber">
             <summary>Post office box number.</summary>
@@ -111,9 +111,6 @@
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.RatingValue">
             <summary>Rating value.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.ReviewRating">
-            <summary>Review rating.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.StartDate">
             <summary>The start date and time of the event (in ISO 8601 date format).</summary>
@@ -134,7 +131,7 @@
             <summary>The item type.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Url">
-            <summary>A url for this scope.</summary>
+            <summary>A URL for the item upon which the action was performed.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.Width">
             <summary>The width of the media object.</summary>
@@ -142,23 +139,17 @@
         <member name="P:Google.Apis.Plus.v1moments.Data.ItemScope.WorstRating">
             <summary>Worst possible rating value.</summary>
         </member>
+        <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Id">
+            <summary>The frame ID.</summary>
+        </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Kind">
             <summary>Identifies this resource as a moment.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.StartDate">
-            <summary>Timestamp of the action (when it occured) in RFC3339 format.</summary>
+            <summary>Time stamp of when the action occurred in RFC3339 format.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Type">
-            <summary>The schema.org activity type</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1moments.Data.Moment.Verb">
-            <summary>The action the user performed</summary>
-        </member>
-        <member name="T:Google.Apis.Plus.v1moments.Data.Moment.VerbData">
-            <summary>The action the user performed</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1moments.Data.Moment.VerbData.Url">
-            <summary>Url name of the verb</summary>
+            <summary>The schema.org activity type.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.PlusService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
@@ -166,12 +157,15 @@
         <member name="T:Google.Apis.Plus.v1moments.PlusService.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
+        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMe">
+            <summary>Know who you are on Google</summary>
+        </member>
         <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsWrite">
-            <summary>View and manage user activity information in Google+</summary>
+            <summary>Send your activity to your private Google+ history</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1moments.MomentsResource.Insert(Google.Apis.Plus.v1moments.Data.Moment,System.String,Google.Apis.Plus.v1moments.MomentsResource.Collection)">
             <summary>Record a user activity (e.g Bill watched a video on Youtube)</summary>
-            <param name="userId">Required - Must match pattern me - The ID of the user to get activities for. The special value &quot;me&quot; can be used to indicate the authenticated user.</param>
+            <param name="userId">Required - The ID of the user to record activities for. The only valid values are &quot;me&quot; and the ID of the authenticated user.</param>
             <param name="collection">Required - Must be one of the following values [vault] - The collection to which to write moments.</param>
         </member>
         <member name="T:Google.Apis.Plus.v1moments.MomentsResource.Collection">
@@ -196,7 +190,7 @@
             <summary>Return the moment as written. Should be used only for debugging.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.UserId">
-            <summary>The ID of the user to get activities for. The special value "me" can be used to indicate the authenticated user.</summary>
+            <summary>The ID of the user to record activities for. The only valid values are "me" and the ID of the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1moments.MomentsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

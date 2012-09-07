@@ -14,7 +14,7 @@
             <summary>The eTag of the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Id">
-            <summary>The unique id of the channel.</summary>
+            <summary>The unique ID of the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Kind">
             <summary>The type of this API resource.</summary>
@@ -32,19 +32,22 @@
             <summary>Privacy status of the channel.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelContentDetails.Uploads">
-            <summary>The unique id of the channel.</summary>
+            <summary>The ID of the playlist containing the uploads of this channel.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse">
             <summary>JSON template for a ChannelService.List() response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse.Channels">
-            <summary>List of channels matching the request criteria.</summary>
+            <summary>Map of channels matching the request criteria, keyed by channel id.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse.ETag">
             <summary>The eTag of the response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse.Kind">
             <summary>The type of this API response.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelListResponse.ChannelsData">
+            <summary>Map of channels matching the request criteria, keyed by channel id.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet">
             <summary>JSON template for the snippet part of a channel.</summary>
@@ -106,6 +109,9 @@
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItem">
             <summary>JSON template for a YouTube Playlist item.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItem.ContentDetails">
+            <summary>JSON template for the content details part of a playlist item.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItem.ETag">
             <summary>The eTag of the playlist item.</summary>
         </member>
@@ -118,6 +124,21 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItem.Snippet">
             <summary>JSON template for the snippet part of a playlist item.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItemContentDetails">
+            <summary>JSON template for the content details part of a playlist item.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemContentDetails.EndAt">
+            <summary>The time video playback ends.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemContentDetails.Note">
+            <summary>The user-generated note for this item.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemContentDetails.StartAt">
+            <summary>The time video playback begins.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemContentDetails.VideoId">
+            <summary>ID of the video.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItemListResponse">
             <summary>JSON template for a PlaylistItemService.List() response.</summary>
         </member>
@@ -128,31 +149,31 @@
             <summary>The type of this API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemListResponse.PlaylistItems">
-            <summary>List of playlists matching the request criteria.</summary>
+            <summary>Map of playlist items matching the request criteria, keyed by id.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItemListResponse.PlaylistItemsData">
+            <summary>Map of playlist items matching the request criteria, keyed by id.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet">
             <summary>JSON template for the snippet part of a playlist item.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Author">
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.ChannelId">
             <summary>Author of the playlist item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Description">
             <summary>Description of the playlist item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.PlaylistId">
-            <summary>The playlist in which this playlist item is contained.</summary>
+            <summary>The playlist the item is part of.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Position">
-            <summary>The position of the playlist item within the playlist.</summary>
+            <summary>The position of the item within the playlist.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.PublishedAt">
+            <summary>The date and time the playlist item was created.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.ResourceId">
             <summary>JSON template for a resource id.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.TimePublished">
-            <summary>The time the playlist item was created.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.TimeUpdated">
-            <summary>The time the playlist item was updated.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Title">
             <summary>Title of the playlist item.</summary>
@@ -167,22 +188,25 @@
             <summary>The type of this API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistListResponse.Playlists">
-            <summary>List of playlists matching the request criteria.</summary>
+            <summary>Map of playlists matching the request criteria, keyed by id.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistListResponse.PlaylistsData">
+            <summary>Map of playlists matching the request criteria, keyed by id.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet">
             <summary>JSON template for the snippet part of a playlist.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Author">
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.ChannelId">
             <summary>Author of the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Description">
             <summary>Description of the playlist.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.PublishedAt">
+            <summary>The date and time the playlist was created.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Tags">
             <summary>Textual tags associated with the playlist.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.TimeCreated">
-            <summary>The time the playlist was created.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Title">
             <summary>Title of the playlist.</summary>
@@ -191,16 +215,16 @@
             <summary>JSON template for a resource id.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ResourceId.ChannelId">
-            <summary>Only set if type == CHANNEL.</summary>
+            <summary>ID of the referred channel. Present only when type is &quot;CHANNEL&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ResourceId.Kind">
+            <summary>The kind of the referred resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ResourceId.PlaylistId">
-            <summary>Only set if type == PLAYLIST.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.ResourceId.Type">
-            <summary>Type of the resource.</summary>
+            <summary>ID of the referred playlist. Present only when type is &quot;PLAYLIST&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ResourceId.VideoId">
-            <summary>Only set if type == VIDEO.</summary>
+            <summary>ID of the referred video. Present only when type is &quot;VIDEO&quot;.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.SearchListResponse">
             <summary>JSON template for a SearchService.List() response.</summary>
@@ -221,7 +245,7 @@
             <summary>JSON template for a YouTube Search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResult.ETag">
-            <summary>The eTag of the search.</summary>
+            <summary>The eTag of the search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResult.Id">
             <summary>JSON template for a resource id.</summary>
@@ -235,14 +259,14 @@
         <member name="T:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet">
             <summary>JSON template for the snippet part of a search result.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Author">
-            <summary>Author of the resource.</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.ChannelId">
+            <summary>Author of the found resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Description">
             <summary>Description of the search result.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.TimeCreated">
-            <summary>The time the resource was created at (milliseconds since epoch).</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.PublishedAt">
+            <summary>The date and time the found resource was created.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Title">
             <summary>Title of the search result.</summary>
@@ -299,12 +323,15 @@
             <summary>The type of this API response.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoListResponse.Videos">
-            <summary>List of videos matching the request criteria.</summary>
+            <summary>Map of videos matching the request criteria, keyed by video id.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoListResponse.VideosData">
+            <summary>Map of videos matching the request criteria, keyed by video id.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoPlayer">
             <summary>JSON template for the player part of a video.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoPlayer.Embed">
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoPlayer.EmbedHtml">
             <summary>Iframe embed for the video.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoSnippet">
@@ -314,10 +341,13 @@
             <summary>Video category the video belongs to.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.ChannelId">
-            <summary>Channel the video was uploaded to.</summary>
+            <summary>Channel the video was uploaded into.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.Description">
             <summary>Description of the video.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.PublishedAt">
+            <summary>Date time the video was uploaded.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.Tags">
             <summary>Textual tags associated with the video.</summary>
@@ -367,6 +397,18 @@
         <member name="P:Google.Apis.Youtube.v3alpha.YoutubeService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.Youtube">
+            <summary>Manage your YouTube account</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.YoutubeReadonly">
+            <summary>View your YouTube account</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.Youtubepartner">
+            <summary>View and manage your assets and associated content on YouTube</summary>
+        </member>
         <member name="M:Google.Apis.Youtube.v3alpha.ChannelsResource.List(System.String)">
             <summary>Browse the YouTube channel collection. Either the &apos;id&apos; or &apos;mine&apos; parameter must be set.</summary>
             <param name="part">Required - Parts of the channel resource to be returned.</param>
@@ -380,6 +422,9 @@
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Id">
             <summary>YouTube IDs of the channels to be returned.</summary>
         </member>
@@ -389,32 +434,35 @@
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Part">
             <summary>Parts of the channel resource to be returned.</summary>
         </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.List(System.String)">
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.List(System.String)">
             <summary>Browse the YouTube playlist collection.</summary>
             <param name="part">Required - Parts of the playlist resource to be returned.</param>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.Oauth_token">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.PrettyPrint">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.QuotaUser">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.Id">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.Id">
             <summary>YouTube IDs of the playlists to be returned.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.MaxResults">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.Part">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.Part">
             <summary>Parts of the playlist resource to be returned.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.PlaylistId">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.PlaylistId">
             <summary>Retrieves playlist items from the given playlist id.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistitemsResource.ListRequest.StartIndex">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.StartIndex">
             <summary>Index of the first element to return (starts at 0)</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3alpha.PlaylistsResource.List(System.String,System.String)">
@@ -430,6 +478,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Id">
             <summary>YouTube IDs of the playlists to be returned.</summary>
@@ -504,6 +555,9 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.Id">
             <summary>YouTube IDs of the videos to be returned.</summary>

@@ -76,6 +76,15 @@
         <member name="P:Google.Apis.Fusiontables.v1.Data.Geometry.Type">
             <summary>Type: A collection of geometries.</summary>
         </member>
+        <member name="T:Google.Apis.Fusiontables.v1.Data.Import">
+            <summary>Represents an import request.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.Data.Import.Kind">
+            <summary>Type name: a template for an import request.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.Data.Import.NumRowsReceived">
+            <summary>The number of rows received from the import request.</summary>
+        </member>
         <member name="T:Google.Apis.Fusiontables.v1.Data.Line">
             <summary>Represents a line geometry.</summary>
         </member>
@@ -271,6 +280,9 @@
         <member name="P:Google.Apis.Fusiontables.v1.Data.Table.Name">
             <summary>Name assigned to a table.</summary>
         </member>
+        <member name="P:Google.Apis.Fusiontables.v1.Data.Table.Sql">
+            <summary>Optional sql that encodes the table definition for derived tables.</summary>
+        </member>
         <member name="P:Google.Apis.Fusiontables.v1.Data.Table.TableId">
             <summary>Encrypted unique alphanumeric identifier for the table.</summary>
         </member>
@@ -327,6 +339,15 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.FusiontablesService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Fusiontables.v1.FusiontablesService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Fusiontables.v1.FusiontablesService.Scopes.Fusiontables">
+            <summary>Manage your Fusion Tables</summary>
+        </member>
+        <member name="F:Google.Apis.Fusiontables.v1.FusiontablesService.Scopes.FusiontablesReadonly">
+            <summary>View your Fusion Tables</summary>
         </member>
         <member name="M:Google.Apis.Fusiontables.v1.ColumnResource.Delete(System.String,System.String)">
             <summary>Deletes the column.</summary>
@@ -455,9 +476,53 @@
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="M:Google.Apis.Fusiontables.v1.ImportResource.Insert(System.String)">
+            <summary>Import more rows into a table.</summary>
+            <param name="tableId">Required - The table into which new rows are being imported.</param>
+        </member>
+        <member name="M:Google.Apis.Fusiontables.v1.ImportResource.Insert(System.String,System.IO.Stream,System.String)">
+            <summary>Import more rows into a table.</summary>
+            <param name="tableId">Required - The table into which new rows are being imported.</param>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Delimiter">
+            <summary>The delimiter used to separate cell values. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Encoding">
+            <summary>The encoding of the content. Default is UTF-8.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.TableId">
+            <summary>The table into which new rows are being imported.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Delimiter">
+            <summary>The delimiter used to separate cell values. Default is ','.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Encoding">
+            <summary>The encoding of the content. Default is UTF-8.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.TableId">
+            <summary>The table into which new rows are being imported.</summary>
+        </member>
         <member name="M:Google.Apis.Fusiontables.v1.QueryResource.Sql(System.String)">
-            <summary>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE statement.</summary>
-            <param name="sql">Required - An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE statement.</param>
+            <summary>Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIBE/CREATE statement.</summary>
+            <param name="sqlValue">sql - Required - An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE/CREATE statement.</param>
         </member>
         <member name="M:Google.Apis.Fusiontables.v1.QueryResource.SqlGet(System.String)">
             <summary>Executes an SQL SELECT/SHOW/DESCRIBE statement.</summary>
@@ -476,7 +541,7 @@
             <summary>Should column names be included (in the first row)?. Default is true.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlRequest.Sql">
-            <summary>An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE statement.</summary>
+            <summary>An SQL SELECT/SHOW/DESCRIBE/INSERT/UPDATE/DELETE/CREATE statement.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlRequest.Typed">
             <summary>Should typed values be returned in the (JSON) response -- numbers for numeric values and parsed geometries for KML values? Default is true.</summary>

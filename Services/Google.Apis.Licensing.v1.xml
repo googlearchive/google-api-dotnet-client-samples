@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Licensing.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Licensing.v1.Data.LicenseAssignment">
+            <summary>Template for LiscenseAssignment Resource</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.Etags">
+            <summary>ETag of the resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.Kind">
+            <summary>Identifies the resource as a LicenseAssignment.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.ProductId">
+            <summary>Name of the product.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.SelfLink">
+            <summary>Link to this page.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.SkuId">
+            <summary>Name of the sku of the product.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignment.UserId">
+            <summary>Email id of the user.</summary>
+        </member>
+        <member name="T:Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert">
+            <summary>Template for LicenseAssignment Insert request</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert.UserId">
+            <summary>Email id of the user</summary>
+        </member>
+        <member name="T:Google.Apis.Licensing.v1.Data.LicenseAssignmentList">
+            <summary>LicesnseAssignment List for a given product/sku for a customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentList.ETag">
+            <summary>ETag of the resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentList.Items">
+            <summary>The LicenseAssignments in this page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentList.Kind">
+            <summary>Identifies the resource as a collection of LicenseAssignments.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.Data.LicenseAssignmentList.NextPageToken">
+            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicensingService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Delete(System.String,System.String,System.String)">
+            <summary>Revoke License.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku</param>
+            <param name="userId">Required - email id or unique Id of the user</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Get(System.String,System.String,System.String)">
+            <summary>Get license assignment of a particular product and sku for a user</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku</param>
+            <param name="userId">Required - email id or unique Id of the user</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Insert(Google.Apis.Licensing.v1.Data.LicenseAssignmentInsert,System.String,System.String)">
+            <summary>Assign License.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProduct(System.String,System.String)">
+            <summary>List license assignments for given product of the customer.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="customerId">Required - CustomerId represents the customer for whom licenseassignments are queried</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSku(System.String,System.String,System.String)">
+            <summary>List license assignments for given product and sku of the customer.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku</param>
+            <param name="customerId">Required - CustomerId represents the customer for whom licenseassignments are queried</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Patch(Google.Apis.Licensing.v1.Data.LicenseAssignment,System.String,System.String,System.String)">
+            <summary>Assign License. This method supports patch semantics.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku for which license would be revoked</param>
+            <param name="userId">Required - email id or unique Id of the user</param>
+        </member>
+        <member name="M:Google.Apis.Licensing.v1.LicenseAssignmentsResource.Update(Google.Apis.Licensing.v1.Data.LicenseAssignment,System.String,System.String,System.String)">
+            <summary>Assign License.</summary>
+            <param name="productId">Required - Name for product</param>
+            <param name="skuId">Required - Name for sku for which license would be revoked</param>
+            <param name="userId">Required - email id or unique Id of the user</param>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.SkuId">
+            <summary>Name for sku</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.UserId">
+            <summary>email id or unique Id of the user</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.SkuId">
+            <summary>Name for sku</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.UserId">
+            <summary>email id or unique Id of the user</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.SkuId">
+            <summary>Name for sku</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.CustomerId">
+            <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.MaxResults">
+            <summary>Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.PageToken">
+            <summary>Token to fetch the next page.Optional. By default server will return first page</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.CustomerId">
+            <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.MaxResults">
+            <summary>Maximum number of campaigns to return at one time. Must be positive. Optional. Default value is 100.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.PageToken">
+            <summary>Token to fetch the next page.Optional. By default server will return first page</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.SkuId">
+            <summary>Name for sku</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.SkuId">
+            <summary>Name for sku for which license would be revoked</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.UserId">
+            <summary>email id or unique Id of the user</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.ProductId">
+            <summary>Name for product</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.SkuId">
+            <summary>Name for sku for which license would be revoked</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.UserId">
+            <summary>email id or unique Id of the user</summary>
+        </member>
+        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

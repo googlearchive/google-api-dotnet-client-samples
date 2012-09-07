@@ -139,13 +139,13 @@
             <param name="id">Required - The id for the file in question.</param>
         </member>
         <member name="T:Google.Apis.Drive.v1.FilesResource.Projection">
-            <summary>Restrict information returned for simplicity and optimization.</summary>
+            <summary>This parameter is deprecated and has no function.</summary>
         </member>
         <member name="F:Google.Apis.Drive.v1.FilesResource.Projection.BASIC">
-            <summary>Includes only the basic metadata fields</summary>
+            <summary>Deprecated</summary>
         </member>
         <member name="F:Google.Apis.Drive.v1.FilesResource.Projection.FULL">
-            <summary>Includes all metadata fields</summary>
+            <summary>Deprecated</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -160,7 +160,7 @@
             <summary>The id for the file in question.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Projection">
-            <summary>Restrict information returned for simplicity and optimization.</summary>
+            <summary>This parameter is deprecated and has no function.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.UpdateViewedDate">
             <summary>Whether to update the view date after successfully retrieving the file.</summary>

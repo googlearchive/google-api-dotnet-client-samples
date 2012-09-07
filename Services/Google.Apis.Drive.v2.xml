@@ -8,7 +8,7 @@
             <summary>An item with user information and settings.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfo">
-            <summary>Additional ACL role info.</summary>
+            <summary>Information about supported additional roles per file type. The most specific type takes precedence.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.DomainSharingPolicy">
             <summary>The domain sharing policy for the current user.</summary>
@@ -35,7 +35,7 @@
             <summary>The largest change id.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.MaxUploadSizes">
-            <summary>List of max upload sizes for each file type.</summary>
+            <summary>List of max upload sizes for each file type. The most specific type takes precedence.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.Name">
             <summary>The name of the current user.</summary>
@@ -62,16 +62,16 @@
             <summary>A link back to this item.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSets">
-            <summary>The role sets for this role info item.</summary>
+            <summary>The supported additional roles per primary role.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.Type">
-            <summary>The content type for this ACL role info item.</summary>
+            <summary>The content type that this additional role info applies to.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSetsData.AdditionalRoles">
-            <summary>The list of additional roles for this role set.</summary>
+            <summary>The supported additional roles with the primary role.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSetsData.PrimaryRole">
-            <summary>The primary role for this role set.</summary>
+            <summary>A primary permission role.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.ExportFormatsData.Source">
             <summary>The content type to convert from.</summary>
@@ -119,7 +119,7 @@
             <summary>The name of the app.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.ObjectType">
-            <summary>The name of the type of object this app creates.</summary>
+            <summary>The type of object this app creates (e.g. Chart). If empty, the app name should be used instead.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.PrimaryFileExtensions">
             <summary>The list of primary file extensions.</summary>
@@ -141,6 +141,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.SupportsImport">
             <summary>Whether this app supports importing Google Docs.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.App.UseByDefault">
+            <summary>Whether the app is selected as the default handler for the types it supports.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.App.IconsData.Category">
              <summary>Category of the icon. Allowed values are:  
@@ -254,7 +257,7 @@
             <summary>The metadata for a file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.AlternateLink">
-            <summary>A link for opening the file in a browser.</summary>
+            <summary>A link for opening the file in using a relevant Google editor or viewer.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.CreatedDate">
             <summary>Create time for this file (formatted ISO8601 timestamp).</summary>
@@ -274,17 +277,23 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.ETag">
             <summary>ETag of the file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ExplicitlyTrashed">
+            <summary>Whether this file has been explicitly trashed, as opposed to recursively trashed. This will only be populated if the file is trashed.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ExportLinks">
             <summary>Links for exporting Google Docs to specific formats.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.FileExtension">
-            <summary>The file extension used when downloading this file. This field is read only. To set the extension, include it on title when creating the file. This will only be populated on files with content stored in Drive.</summary>
+            <summary>The file extension used when downloading this file. This field is set from the title when inserting or uploading new content. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.FileSize">
             <summary>The size of the file in bytes. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Id">
             <summary>The id of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadata">
+            <summary>Metadata about image media. This will only be present for image types, and its contents will depend on what can be parsed from the image content.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.IndexableText">
             <summary>Indexable text attributes for the file (can only be written)</summary>
@@ -305,26 +314,23 @@
             <summary>An MD5 checksum for the content of this file. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.MimeType">
-            <summary>The MIME type of the file.</summary>
+            <summary>The MIME type of the file. This is only mutable on update when uploading new content. This field can be left blank, and the mimetype will be determined from the uploaded content&apos;s MIME type.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ModifiedByMeDate">
-            <summary>Last time this file was modified by the user (formatted RFC 3339 timestamp).</summary>
+            <summary>Last time this file was modified by the user (formatted RFC 3339 timestamp). Note that setting modifiedDate will also update the modifiedByMe date for the user which set the date.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ModifiedDate">
-            <summary>Last time this file was modified by anyone (formatted RFC 3339 timestamp).</summary>
+            <summary>Last time this file was modified by anyone (formatted RFC 3339 timestamp). This is only mutable on update when the setModifiedDate parameter is set.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.OriginalFilename">
-            <summary>The filename when uploading this file. This will only be populated on files with content stored in Drive.</summary>
+            <summary>The original filename if the file was uploaded manually, or the original title if the file was inserted through the API. Note that renames of the title will not change the original filename. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.OwnerNames">
             <summary>Name(s) of the owner(s) of this file.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.Parents">
              <summary>Collection of parent folders which contain this file.
-            On insert, setting this field will put the file in all of the provided folders. If no folders are provided, the file will be placed in the default root folder. On update, this field is ignored.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.Data.File.PermissionsLink">
-            <summary>A link to the permissions collection.</summary>
+            Setting this field will put the file in all of the provided folders. On insert, if no folders are provided, the file will be placed in the default root folder.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.QuotaBytesUsed">
             <summary>The number of quota bytes used by this file.</summary>
@@ -344,11 +350,41 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.UserPermission">
             <summary>A single permission for a file.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.WebContentLink">
+            <summary>A link for downloading the content of the file in a browser using cookie based authentication. In cases where the content is shared publicly, the content can be downloaded without any credentials.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.WritersCanShare">
             <summary>Whether writers can share the document with other users.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.File.ExportLinksData">
             <summary>Links for exporting Google Docs to specific formats.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData">
+            <summary>Metadata about image media. This will only be present for image types, and its contents will depend on what can be parsed from the image content.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Height">
+            <summary>The height of the image in pixels.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Location">
+            <summary>Geographic location information stored in the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Rotation">
+            <summary>The rotation in clockwise degrees from the image&apos;s original orientation.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Width">
+            <summary>The width of the image in pixels.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.LocationData">
+            <summary>Geographic location information stored in the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.LocationData.Altitude">
+            <summary>The altitude stored in the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.LocationData.Latitude">
+            <summary>The latitude stored in the image.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.LocationData.Longitude">
+            <summary>The longitude stored in the image.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.File.IndexableTextData">
             <summary>Indexable text attributes for the file (can only be written)</summary>
@@ -526,19 +562,19 @@
             <summary>The original filename when this revision was created. This will only be populated on files with content stored in Drive.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.Pinned">
-            <summary>Whether this revision is pinned to prevent automatic purging. This will only be populated on files with content stored in Drive.</summary>
+            <summary>Whether this revision is pinned to prevent automatic purging. This will only be populated and can only be modified on files with content stored in Drive which are not Google Docs. Revisions can also be pinned when they are created through the drive.files.insert/update/copy by using the pinned query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishAuto">
-            <summary>Whether subsequent revisions will be automatically republished.</summary>
+            <summary>Whether subsequent revisions will be automatically republished. This is only populated and can only be modified for Google Docs.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.Published">
-            <summary>Whether this revision is published. This is only populated for Google Docs.</summary>
+            <summary>Whether this revision is published. This is only populated and can only be modified for Google Docs.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishedLink">
             <summary>A link to the published revision.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.PublishedOutsideDomain">
-            <summary>Whether this revision is published outside the domain.</summary>
+            <summary>Whether this revision is published outside the domain. This is only populated and can only be modified for Google Docs.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.Revision.SelfLink">
             <summary>A link back to this revision.</summary>
@@ -571,7 +607,7 @@
             <summary>View and manage the files and documents in your Google Drive</summary>
         </member>
         <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveAppsReadonly">
-            <summary>New service: https://www.googleapis.com/auth/drive.apps.readonly</summary>
+            <summary>View your Google Drive apps</summary>
         </member>
         <member name="F:Google.Apis.Drive.v2.DriveService.Scopes.DriveFile">
             <summary>View and manage Google Drive files that you have opened or created with this app</summary>
@@ -603,8 +639,24 @@
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.StartChangeId">
             <summary>Change ID to start counting from when calculating number of remaining change IDs</summary>
         </member>
+        <member name="M:Google.Apis.Drive.v2.AppsResource.Get(System.String)">
+            <summary>Gets a specific app.</summary>
+            <param name="appId">Required - The ID of the app.</param>
+        </member>
         <member name="M:Google.Apis.Drive.v2.AppsResource.List">
             <summary>Lists a user&apos;s apps.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.AppId">
+            <summary>The ID of the app.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -788,13 +840,13 @@
             <param name="fileId">Required - The ID of the file to update.</param>
         </member>
         <member name="T:Google.Apis.Drive.v2.FilesResource.Projection">
-            <summary>Restrict information returned for simplicity and optimization.</summary>
+            <summary>This parameter is deprecated and has no function.</summary>
         </member>
         <member name="F:Google.Apis.Drive.v2.FilesResource.Projection.BASIC">
-            <summary>Includes only the basic metadata fields</summary>
+            <summary>Deprecated</summary>
         </member>
         <member name="F:Google.Apis.Drive.v2.FilesResource.Projection.FULL">
-            <summary>Includes all metadata fields</summary>
+            <summary>Deprecated</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -816,6 +868,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Pinned">
+            <summary>Whether to pin the head revision of the new copy.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.SourceLanguage">
             <summary>The language of the original file to be translated.</summary>
@@ -857,7 +912,7 @@
             <summary>The ID for the file in question.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.Projection">
-            <summary>Restrict information returned for simplicity and optimization.</summary>
+            <summary>This parameter is deprecated and has no function.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.UpdateViewedDate">
             <summary>Whether to update the view date after successfully retrieving the file.</summary>
@@ -947,7 +1002,7 @@
             <summary>Page token for files.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Projection">
-            <summary>Restrict information returned for simplicity and optimization.</summary>
+            <summary>This parameter is deprecated and has no function.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.Q">
             <summary>Query string for searching files.</summary>

@@ -130,6 +130,9 @@
         <member name="P:Google.Apis.Storage.v1beta1.Data.Object.ContentEncoding">
             <summary>Content-Encoding of the object data.</summary>
         </member>
+        <member name="P:Google.Apis.Storage.v1beta1.Data.Object.ContentLanguage">
+            <summary>Content-Language of the object data.</summary>
+        </member>
         <member name="P:Google.Apis.Storage.v1beta1.Data.Object.Id">
             <summary>The ID of the object.</summary>
         </member>

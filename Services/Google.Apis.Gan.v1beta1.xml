@@ -22,6 +22,9 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.ContactPhone">
             <summary>Phone that this advertiser would like publishers to contact them with.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.DefaultLinkId">
+            <summary>The default link id for this advertiser.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Description">
             <summary>Description of the website the advertiser advertises from.</summary>
         </member>
@@ -409,11 +412,11 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Availability">
             <summary>Availability.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.ClickTrackingUrl">
+            <summary>Tracking url for clicks.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.CreateDate">
             <summary>Date that this link was created.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.CreativeType">
-            <summary>Creative Type.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Description">
             <summary>Description.</summary>
@@ -433,11 +436,17 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.ImageAltText">
             <summary>image alt text.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.ImpressionTrackingUrl">
+            <summary>Tracking url for impressions.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.IsActive">
             <summary>Flag for if this link is active.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Kind">
             <summary>The kind for one entity.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.LinkType">
+            <summary>The link type.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Name">
             <summary>The logical name for this link.</summary>

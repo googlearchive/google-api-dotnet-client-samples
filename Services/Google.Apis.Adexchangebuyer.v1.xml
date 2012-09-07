@@ -4,6 +4,9 @@
         <name>Google.Apis.Adexchangebuyer.v1</name>
     </assembly>
     <members>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.Account">
+            <summary>Configuration data for an Ad Exchange buyer account.</summary>
+        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.Account.BidderLocation">
             <summary>Your bidder locations that have distinct URLs.</summary>
         </member>
@@ -28,11 +31,17 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.Account.BidderLocationData.Url">
             <summary>The URL to which the Ad Exchange will send bid requests.</summary>
         </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.AccountsList">
+            <summary>An account feed lists Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single buyer account.</summary>
+        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.AccountsList.Items">
             <summary>A list of accounts.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.AccountsList.Kind">
             <summary>Resource type.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.Creative">
+            <summary>A creative and its classification data.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.Creative.HTMLSnippet">
             <summary>The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set.</summary>
@@ -85,11 +94,20 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.Creative.Width">
             <summary>Ad width.</summary>
         </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.CreativesList">
+            <summary>The creatives feed lists the active creatives for the Ad Exchange buyer accounts that the user has access to. Each entry in the feed corresponds to a single creative.</summary>
+        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.CreativesList.Items">
             <summary>A list of creatives.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.CreativesList.Kind">
             <summary>Resource type.</summary>
+        </member>
+        <member name="P:Google.Apis.Adexchangebuyer.v1.Data.CreativesList.NextPageToken">
+            <summary>Continuation token used to page through creatives. To retrieve the next page of results, set the next request&apos;s &quot;pageToken&quot; value to this.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.DirectDeal">
+            <summary>The configuration data for an Ad Exchange direct deal.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.DirectDeal.AccountId">
             <summary>The account id of the buyer this deal is for.</summary>
@@ -117,6 +135,9 @@
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.DirectDeal.StartTime">
             <summary>Start time for when this deal becomes active. If not set then this deal is active immediately upon creation. In seconds since the epoch.</summary>
+        </member>
+        <member name="T:Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList">
+            <summary>A direct deals feed lists Direct Deals the Ad Exchange buyer account has access to. This includes direct deals set up for the buyer account as well as its merged stream seats.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1.Data.DirectDealsList.DirectDeals">
             <summary>A list of direct deals relevant for your account.</summary>

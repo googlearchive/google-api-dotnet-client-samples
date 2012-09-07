@@ -106,5 +106,269 @@
             to allow multiple AuthorizationStates/users.
             </remarks>
         </member>
+        <member name="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowHeader">
+            <summary>
+            Assertion flow header used to generate the assertion flow message header.
+            </summary>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowHeader.Algorithm">
+            <summary>
+            Gets or sets the encryption algorithm used by the assertion flow message.
+            </summary>
+            <value>
+            The alg.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowHeader.Type">
+            <summary>
+            Gets or sets the type of the claim.
+            </summary>
+            <value>
+            The typ.
+            </value>
+        </member>
+        <member name="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.GoogleAssertionFlowHeader">
+            <summary>
+            Google assertion flow header holding Google supported values.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.GoogleAssertionFlowHeader.GoogleSigningAlgorithm">
+            <summary>
+            The google signing algorithm, currently RSA-SHA256
+            <see cref="!:https://developers.google.com/accounts/docs/OAuth2ServiceAccount#formingheader"/>.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.GoogleAssertionFlowHeader.GoogleAssertionType">
+            <summary>
+            The type of the google assertion, currently JSON Web Token
+            <see cref="!:https://developers.google.com/accounts/docs/OAuth2ServiceAccount#formingheader"/>
+            </summary>
+        </member>
+        <member name="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim">
+            <summary>
+            Assertion flow claim used to generate the assertion flow message claim.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.#ctor">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim"/> class.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.#ctor(DotNetOpenAuth.OAuth2.AuthorizationServerDescription)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim"/> class.
+            </summary>
+            <param name="authorizationServer">
+            Authorization server description.
+            </param>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.Issuer">
+            <summary>
+            Gets or sets the assertion flow issuer (e.g client ID).
+            </summary>
+            <value>
+            The issuer.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.Principal">
+            <summary>
+            Gets or sets the service account user (for domain-wide delegation).
+            </summary>
+            <value>
+            The service account user.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.Scope">
+            <summary>
+            Gets or sets the scope.
+            </summary>
+            <value>
+            The scope.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.Audience">
+            <summary>
+            Gets or sets the token endpoint.
+            </summary>
+            <value>
+            The audience.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.ExpiresAt">
+            <summary>
+            Gets or sets the expected expiration of the token to retrieve.
+            </summary>
+            <value>
+            The expiration UTC timestamp.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClaim.IssuedAt">
+            <summary>
+            Gets or sets the UTC timestamp at which this claim has been built.
+            </summary>
+            <value>
+            The issued UTC timestamp.
+            </value>
+        </member>
+        <member name="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage">
+            <summary>
+            Assertion flow message to be sent to the token endpoint.
+            </summary>
+        </member>
+        <member name="F:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage.GoogleAssertionType">
+            <summary>
+            Google supported assertion type 
+            <see cref="!:https://developers.google.com/accounts/docs/OAuth2ServiceAccount#makingrequest"/>.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage.#ctor(DotNetOpenAuth.OAuth2.AuthorizationServerDescription)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage"/> class.
+            </summary>
+            <param name="authorizationServer">
+            Authorization server description.
+            </param>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage.GrantType">
+            <summary>
+            Gets or sets the type of the grant (defaults to "assertion").
+            </summary>
+            <value>
+            The type of the grant.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage.AssertionType">
+            <summary>
+            Gets or sets the type of the assertion (defaults to "http://oauth.net/grant_type/jwt/1.0/bearer").
+            </summary>
+            <value>
+            The type of the assertion.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowMessage.Assertion">
+            <summary>
+            Gets or sets the assertion message.
+            </summary>
+            <value>
+            The assertion.
+            </value>
+        </member>
+        <member name="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient">
+            <summary>
+            The OAuth2 client for use by applications using Service Accounts or other implementation of the OAuth 2.0
+            Assertion Flow.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.#ctor(DotNetOpenAuth.OAuth2.AuthorizationServerDescription,System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient"/> class.
+            </summary>
+            <param name="authorizationServer">
+            Authorization server description.
+            </param>
+            <param name="certificate">
+            Certificate to use to sign the assertion flow messages.
+            </param>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.GetState(Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient)">
+            <summary>
+            Helper method to retrieve the Authorization State from the 
+            <see cref="!:Google.Apis.Authentication.OAuth2.OAuth2Authenticator"/> class.
+            </summary>
+            <returns>
+            The authorization state.
+            </returns>
+            <param name="provider">
+            The provider to use to retrieve the authorization state.
+            </param>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.RefreshToken(DotNetOpenAuth.OAuth2.IAuthorizationState,System.Nullable{System.TimeSpan})">
+            <summary>
+            Request a new access token using the OAuth 2.0 assertion flow.
+            </summary>
+            <returns>
+            Whether or not a new access token has been successfully retrieved.
+            </returns>
+            <param name='authorization'>
+            Object containing the current authorization state.
+            </param>
+            <param name='skipIfUsefulLifeExceeds'>
+            If set to <c>true</c> skip if useful life exceeds.
+            </param>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.GenerateMessage">
+            <summary>
+            Generates the assertion flow message to be sent to the token endpoint.
+            </summary>
+            <returns>
+            The assertion flow message.
+            </returns>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.UnpaddedUrlSafeBase64Encode(System.String)">
+            <summary>
+            Encode the provided UTF8 string into an URL safe base64 string.
+            </summary>
+            <returns>
+            The URL safe base64 string.
+            </returns>
+            <param name='value'>
+            String to encode.
+            </param>
+        </member>
+        <member name="M:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.UnpaddedUrlSafeBase64Encode(System.Byte[])">
+            <summary>
+            Encode the byte array into an URL safe base64 string.
+            </summary>
+            <returns>
+            The URL safe base64 string.
+            </returns>
+            <param name='bytes'>
+            Bytes to encode.
+            </param>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.ServiceAccountId">
+            <summary>
+            Gets or sets the service account identifier.
+            </summary>
+            <value>
+            The service account identifier.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.ServiceAccountUser">
+            <summary>
+            Gets or sets the service account user (used for domain-wide delegation).
+            </summary>
+            <value>
+            The service account user.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.Scope">
+            <summary>
+            Gets or sets the scope to get access for.
+            </summary>
+            <value>
+            The scope.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.Certificate">
+            <summary>
+            Gets the certificate used to sign the assertion.
+            </summary>
+            <value>
+            The certificate.
+            </value>
+        </member>
+        <member name="P:Google.Apis.Authentication.OAuth2.DotNetOpenAuth.AssertionFlowClient.Header">
+            <summary>
+            Gets or sets the JWT claim's header (defaults to Google's supported values).
+            </summary>
+            <value>
+            The header.
+            </value>
+        </member>
     </members>
 </doc>

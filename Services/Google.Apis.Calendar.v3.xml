@@ -89,6 +89,9 @@
             - &quot;writer&quot; - Provides read and write access to the calendar. Private events will appear to users with writer access, and event details will be visible. 
             - &quot;owner&quot; - Provides ownership of the calendar. This role has all of the permissions of the writer role with the additional ability to see and manipulate ACLs.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.BackgroundColor">
+            <summary>The main color of the calendar in the format &apos;#0088aa&apos;. This property supersedes the index-based colorId property. Optional.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.ColorId">
             <summary>The color of the calendar. This is an ID referring to an entry in the &quot;calendar&quot; section of the colors definition (see the &quot;colors&quot; endpoint). Optional.</summary>
         </member>
@@ -100,6 +103,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.ETag">
             <summary>ETag of the resource.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.ForegroundColor">
+            <summary>The foreground color of the calendar in the format &apos;#ffffff&apos;. This property supersedes the index-based colorId property. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.CalendarListEntry.Hidden">
             <summary>Whether the calendar has been hidden from the list. Optional. The default is False.</summary>
@@ -166,7 +172,7 @@
             <summary>The attendees of the event.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.AttendeesOmitted">
-            <summary>Whether attendees have been omitted from the event&apos;s representation. When retrieving an event, this is due to a restriction specified by the &apos;maxAttendee&apos; query parameter. When updating an event, this can be used to only update the participant&apos;s response. Optional. The default is False.</summary>
+            <summary>Whether attendees may have been omitted from the event&apos;s representation. When retrieving an event, this may be due to a restriction specified by the &apos;maxAttendee&apos; query parameter. When updating an event, this can be used to only update the participant&apos;s response. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.ColorId">
             <summary>The color of the event. This is an ID referring to an entry in the &quot;event&quot; section of the colors definition (see the &quot;colors&quot; endpoint). Optional.</summary>
@@ -179,6 +185,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.Description">
             <summary>Description of the event. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.EndTimeUnspecified">
+            <summary>Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.ETag">
             <summary>ETag of the resource.</summary>
@@ -197,6 +206,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.GuestsCanSeeOtherGuests">
             <summary>Whether attendees other than the organizer can see who the event&apos;s attendees are. Optional. The default is False.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.Data.Event.HangoutLink">
+            <summary>An absolute link to the Google+ hangout associated with this event. Read-only.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.Data.Event.HtmlLink">
             <summary>An absolute link to this event in the Google Calendar Web UI. Read-only.</summary>
@@ -715,6 +727,9 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.QuotaUser">
             <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.ColorRgbFormat">
+            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -751,6 +766,9 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
+        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.ColorRgbFormat">
+            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
+        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -765,6 +783,9 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.CalendarId">
             <summary>Calendar identifier.</summary>
+        </member>
+        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.ColorRgbFormat">
+            <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -1084,7 +1105,7 @@
             <summary>Free text search terms to find events that match these terms in any field, except for extended properties. Optional.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.ShowDeleted">
-            <summary>Whether to include deleted events (with 'eventStatus' equals 'cancelled') in the result. Optional. The default is False.</summary>
+            <summary>Whether to include deleted single events (with 'status' equals 'cancelled') in the result. Cancelled instances of recurring events will still be included if 'singleEvents' is False. Optional. The default is False.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.ShowHiddenInvitations">
             <summary>Whether to include hidden invitations in the result. Optional. The default is False.</summary>

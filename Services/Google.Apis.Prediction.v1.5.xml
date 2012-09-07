@@ -175,6 +175,9 @@
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.ModelInfo">
             <summary>Model metadata.</summary>
         </member>
+        <member name="P:Google.Apis.Prediction.v1_5.Data.Training.ModelType">
+            <summary>Type of predictive model (classification or regression)</summary>
+        </member>
         <member name="P:Google.Apis.Prediction.v1_5.Data.Training.SelfLink">
             <summary>A URL to re-request this resource.</summary>
         </member>
