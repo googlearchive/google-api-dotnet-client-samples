@@ -22,9 +22,6 @@
         <member name="P:Google.Apis.Moderator.v1.FeaturedResource.SeriesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.FeaturedResource.SeriesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="M:Google.Apis.Moderator.v1.GlobalResource.SeriesResource.List">
             <summary>Searches the public series and returns the search results.</summary>
         </member>
@@ -33,9 +30,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.GlobalResource.SeriesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.GlobalResource.SeriesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.GlobalResource.SeriesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return.</summary>
@@ -55,9 +49,6 @@
         <member name="P:Google.Apis.Moderator.v1.MyResource.SeriesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.MyResource.SeriesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="M:Google.Apis.Moderator.v1.MyrecentResource.SeriesResource.List">
             <summary>Lists the series the authenticated user has visited.</summary>
         </member>
@@ -66,9 +57,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.MyrecentResource.SeriesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.MyrecentResource.SeriesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="M:Google.Apis.Moderator.v1.ProfilesResource.Get">
             <summary>Returns the profile information for the authenticated user.</summary>
@@ -85,17 +73,11 @@
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.ProfilesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.ProfilesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -105,9 +87,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.ProfilesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.ProfilesResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -128,9 +107,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.ResponsesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.ResponsesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.ResponsesResource.InsertRequest.Anonymous">
             <summary>Set to true to mark the new submission as anonymous.</summary>
@@ -155,9 +131,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.ResponsesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.ResponsesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.ResponsesResource.ListRequest.Author">
             <summary>Restricts the results to submissions by a specific author.</summary>
@@ -211,9 +184,6 @@
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.ResponsesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.ResponsesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.ResponsesResource.ListRequest.Author">
             <summary>Restricts the results to submissions by a specific author.</summary>
         </member>
@@ -244,9 +214,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.SubmissionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.SubmissionsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.SubmissionsResource.ListRequest.Author">
             <summary>Restricts the results to submissions by a specific author.</summary>
@@ -281,9 +248,6 @@
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.GetRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -293,9 +257,6 @@
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -304,9 +265,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return.</summary>
@@ -323,9 +281,6 @@
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.PatchRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -337,9 +292,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.SeriesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.SeriesResource.UpdateRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -363,9 +315,6 @@
         <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.GetRequest.IncludeVotes">
             <summary>Specifies whether to include the current user's vote</summary>
         </member>
@@ -383,9 +332,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.SubmissionsResource.InsertRequest.Anonymous">
             <summary>Set to true to mark the new submission as anonymous.</summary>
@@ -424,9 +370,6 @@
         <member name="P:Google.Apis.Moderator.v1.TagsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.TagsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.TagsResource.DeleteRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -438,9 +381,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.TagsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.TagsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.TagsResource.InsertRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -456,9 +396,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.TagsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.TagsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.TagsResource.ListRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -495,9 +432,6 @@
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.SubmissionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.TopicsResource.SubmissionsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.SubmissionsResource.ListRequest.Author">
             <summary>Restricts the results to submissions by a specific author.</summary>
         </member>
@@ -531,9 +465,6 @@
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.TopicsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.GetRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -546,9 +477,6 @@
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.TopicsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.InsertRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -560,9 +488,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.TopicsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return.</summary>
@@ -581,9 +506,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.TopicsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.TopicsResource.UpdateRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -624,9 +546,6 @@
         <member name="P:Google.Apis.Moderator.v1.VotesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.VotesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.GetRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
         </member>
@@ -641,9 +560,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.VotesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.InsertRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -663,9 +579,6 @@
         <member name="P:Google.Apis.Moderator.v1.VotesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Moderator.v1.VotesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return.</summary>
         </member>
@@ -680,9 +593,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.VotesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.PatchRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>
@@ -701,9 +611,6 @@
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Moderator.v1.VotesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Moderator.v1.VotesResource.UpdateRequest.SeriesId">
             <summary>The decimal ID of the Series.</summary>

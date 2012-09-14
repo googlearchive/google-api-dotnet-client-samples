@@ -439,7 +439,7 @@ namespace Google.Apis.Drive.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v1\",\"name" +
-            "\":\"drive\",\"version\":\"v1\",\"revision\":\"20120904\",\"title\":\"Drive API\",\"description\"" +
+            "\":\"drive\",\"version\":\"v1\",\"revision\":\"20120723\",\"title\":\"Drive API\",\"description\"" +
             ":\"The API to interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/" +
             "doclist/images/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/im" +
             "ages/drive_icon_32.png\"},\"documentationLink\":\"https://developers.google.com/driv" +
@@ -702,8 +702,6 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _id;
             
             private System.Nullable<Projection> _projection;
@@ -734,17 +732,6 @@ namespace Google.Apis.Drive.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -797,8 +784,6 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private Google.Apis.Drive.v1.Data.File _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v1.Data.File body) : 
@@ -825,17 +810,6 @@ namespace Google.Apis.Drive.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -872,8 +846,6 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             public InsertMediaUpload(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v1.Data.File body, System.IO.Stream stream, string contentType) : 
                     base(service.BaseUri, "/upload/drive/v1/files", "POST", stream, contentType) {
                 this.Body = body;
@@ -901,17 +873,6 @@ namespace Google.Apis.Drive.v1 {
                     this._prettyPrint = value;
                 }
             }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
         }
         
         public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v1.Data.File> {
@@ -919,8 +880,6 @@ namespace Google.Apis.Drive.v1 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             private string _id;
             
@@ -957,17 +916,6 @@ namespace Google.Apis.Drive.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1045,8 +993,6 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _id;
             
             private System.Nullable<bool> _newRevision;
@@ -1082,17 +1028,6 @@ namespace Google.Apis.Drive.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1170,8 +1105,6 @@ namespace Google.Apis.Drive.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _id;
             
             private System.Nullable<bool> _newRevision;
@@ -1206,17 +1139,6 @@ namespace Google.Apis.Drive.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

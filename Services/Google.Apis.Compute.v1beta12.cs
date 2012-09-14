@@ -4045,8 +4045,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _disk;
             
             private string _project;
@@ -4076,17 +4074,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4125,8 +4112,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _disk;
             
             private string _project;
@@ -4156,17 +4141,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4205,8 +4179,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Disk _Body;
@@ -4236,17 +4208,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4291,8 +4252,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -4325,17 +4284,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4453,8 +4401,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _firewall;
             
             private string _project;
@@ -4484,17 +4430,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4533,8 +4468,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _firewall;
             
             private string _project;
@@ -4564,17 +4497,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4613,8 +4535,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Firewall _Body;
@@ -4644,17 +4564,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4699,8 +4608,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -4733,17 +4640,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4807,8 +4703,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _firewall;
             
             private string _project;
@@ -4841,17 +4735,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4904,8 +4787,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _firewall;
             
             private string _project;
@@ -4938,17 +4819,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5041,8 +4911,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _image;
             
             private string _project;
@@ -5072,17 +4940,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5121,8 +4978,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _image;
             
             private string _project;
@@ -5152,17 +5007,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5201,8 +5045,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Image _Body;
@@ -5232,17 +5074,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5287,8 +5118,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -5321,17 +5150,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5452,8 +5270,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _instance;
             
             private string _network_interface;
@@ -5489,17 +5305,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5560,8 +5365,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _instance;
             
             private string _project;
@@ -5591,17 +5394,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5640,8 +5432,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _access_config;
             
             private string _instance;
@@ -5677,17 +5467,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5742,8 +5521,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _instance;
             
             private string _project;
@@ -5773,17 +5550,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5822,8 +5588,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Instance _Body;
@@ -5853,17 +5617,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5908,8 +5661,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -5942,17 +5693,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6043,8 +5783,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _kernel;
             
             private string _project;
@@ -6074,17 +5812,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6123,8 +5850,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -6157,17 +5882,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6258,8 +5972,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _machineType;
             
             private string _project;
@@ -6289,17 +6001,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6338,8 +6039,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -6372,17 +6071,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6486,8 +6174,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _network;
             
             private string _project;
@@ -6517,17 +6203,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6566,8 +6241,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _network;
             
             private string _project;
@@ -6597,17 +6270,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6646,8 +6308,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Network _Body;
@@ -6677,17 +6337,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6732,8 +6381,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -6766,17 +6413,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6874,8 +6510,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _operation;
             
             private string _project;
@@ -6905,17 +6539,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6954,8 +6577,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _operation;
             
             private string _project;
@@ -6985,17 +6606,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7034,8 +6644,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -7068,17 +6676,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7168,8 +6765,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string project) : 
@@ -7196,17 +6791,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7237,8 +6821,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Metadata _Body;
@@ -7268,17 +6850,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7363,8 +6934,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private string _snapshot;
@@ -7394,17 +6963,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7443,8 +7001,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private string _snapshot;
@@ -7474,17 +7030,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7523,8 +7068,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private Google.Apis.Compute.v1beta12.Data.Snapshot _Body;
@@ -7554,17 +7097,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7609,8 +7141,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -7643,17 +7173,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7744,8 +7263,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _project;
             
             private string _zone;
@@ -7775,17 +7292,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -7824,8 +7330,6 @@ namespace Google.Apis.Compute.v1beta12 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _filter;
             
             private System.Nullable<long> _maxResults;
@@ -7858,17 +7362,6 @@ namespace Google.Apis.Compute.v1beta12 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

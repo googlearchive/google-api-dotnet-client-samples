@@ -82,26 +82,17 @@
         <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Oauth2.v2.Oauth2Service.TokeninfoRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.V2Resource.MeResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Oauth2.v2.UserinfoResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
     </members>
 </doc>

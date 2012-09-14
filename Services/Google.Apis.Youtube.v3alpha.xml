@@ -406,6 +406,9 @@
         <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.YoutubeReadonly">
             <summary>View your YouTube account</summary>
         </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.YoutubeUpload">
+            <summary>Manage your YouTube videos</summary>
+        </member>
         <member name="F:Google.Apis.Youtube.v3alpha.YoutubeService.Scopes.Youtubepartner">
             <summary>View and manage your assets and associated content on YouTube</summary>
         </member>
@@ -418,9 +421,6 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.ContentOwnerId">
             <summary>The authenticated user acts on behalf of this content owner.</summary>
@@ -444,9 +444,6 @@
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.ContentOwnerId">
             <summary>The authenticated user acts on behalf of this content owner.</summary>
         </member>
@@ -465,9 +462,8 @@
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.StartIndex">
             <summary>Index of the first element to return (starts at 0)</summary>
         </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistsResource.List(System.String,System.String)">
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistsResource.List(System.String)">
             <summary>Browse the YouTube playlist collection.</summary>
-            <param name="id">Required - YouTube IDs of the playlists to be returned.</param>
             <param name="part">Required - Parts of the playlist resource to be returned.</param>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Oauth_token">
@@ -476,20 +472,27 @@
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.ContentOwnerId">
             <summary>The authenticated user acts on behalf of this content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Id">
-            <summary>YouTube IDs of the playlists to be returned.</summary>
+            <summary>Comma-separated YouTube IDs of the playlists to be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Mine">
+            <summary>Flag indicating only return the playlists of the authenticated user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Part">
             <summary>Parts of the playlist resource to be returned.</summary>
         </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.SearchResource.List">
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.StartIndex">
+            <summary>Index of the first element to return (starts at 0)</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.SearchResource.List(System.String)">
             <summary>Universal search for youtube.</summary>
+            <param name="q">Required - Query to search in Youtube.</param>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.Order">
             <summary>Sort order.</summary>
@@ -506,6 +509,18 @@
         <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.Order.View_count">
             <summary>Sort according to the view count.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.Published">
+            <summary>Only search for resources uploaded at a specific pediod</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.Published.Any">
+            <summary>No filter on the release date</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.Published.ThisWeek">
+            <summary>Videos uploaded this month</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.Published.Today">
+            <summary>Videos uploaded today</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.Type">
             <summary>Type of resource to search.</summary>
         </member>
@@ -518,14 +533,74 @@
         <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.Type.Video">
             <summary>Search for videos.</summary>
         </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.VideoCaption">
+            <summary>Add a filter on the the presence of captions on the videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoCaption.Any">
+            <summary>No filter on the captions.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoCaption.ClosedCaption">
+            <summary>Videos with closed captions.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoCaption.None">
+            <summary>Videos without captions.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.VideoDefinition">
+            <summary>Add a filter for the definition of the videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDefinition.Any">
+            <summary>No filter on the definition.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDefinition.High">
+            <summary>Videos in high definition.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDefinition.Standard">
+            <summary>Videos in standard definition.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.VideoDimension">
+            <summary>Add a filter for the number of dimensions in the videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDimension.D">
+            <summary>Videos in two dimensions.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDimension.DValue">
+            <summary>Videos in three dimensions.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDimension.Any">
+            <summary>No filter on the dimension.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.VideoDuration">
+            <summary>Add a filter on the duration of the videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDuration.Any">
+            <summary>No filter on the duration.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDuration.Long">
+            <summary>Videos with a duration longer than 20 minutes.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDuration.Medium">
+            <summary>Videos with a duration between 4 and 20 minutes.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoDuration.Short">
+            <summary>Videos with a duration under 4 minutes.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.VideoLicense">
+            <summary>Add a filter on the licensing of the videos.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoLicense.Any">
+            <summary>No filter on the license.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoLicense.CreativeCommon">
+            <summary>Videos under the Creative Common license.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SearchResource.VideoLicense.Youtube">
+            <summary>Videos under the YouTube license.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.MaxResults">
             <summary>Maximum number of search results to return per page.</summary>
@@ -533,28 +608,64 @@
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Order">
             <summary>Sort order.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Published">
+            <summary>Only search for resources uploaded at a specific pediod</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Q">
             <summary>Query to search in Youtube.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.StartIndex">
-            <summary>Index of the first search result to return.</summary>
+            <summary>Index of the first element to return (starts at 0)</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Type">
             <summary>Type of resource to search.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoCaption">
+            <summary>Add a filter on the the presence of captions on the videos.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoDefinition">
+            <summary>Add a filter for the definition of the videos.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoDimension">
+            <summary>Add a filter for the number of dimensions in the videos.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoDuration">
+            <summary>Add a filter on the duration of the videos.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoLicense">
+            <summary>Add a filter on the licensing of the videos.</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.VideosResource.Insert(Google.Apis.Youtube.v3alpha.Data.Video)">
+            <summary>Upload a video to YouTube.</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.VideosResource.Insert(Google.Apis.Youtube.v3alpha.Data.Video,System.IO.Stream,System.String)">
+            <summary>Upload a video to YouTube.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3alpha.VideosResource.List(System.String,System.String)">
             <summary>Browse the YouTube video collection.</summary>
             <param name="id">Required - YouTube IDs of the videos to be returned.</param>
             <param name="part">Required - Parts of the video resource to be returned.</param>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.InsertMediaUpload.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.InsertMediaUpload.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.VideosResource.ListRequest.ContentOwnerId">
             <summary>The authenticated user acts on behalf of this content owner.</summary>

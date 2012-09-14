@@ -2932,8 +2932,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private string _ruleId;
@@ -2963,17 +2961,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3012,8 +2999,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private string _ruleId;
@@ -3043,17 +3028,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3092,8 +3066,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private Google.Apis.Calendar.v3.Data.AclRule _Body;
@@ -3123,17 +3095,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3178,8 +3139,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -3209,17 +3168,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>Calendar identifier.</summary>
             [Google.Apis.Util.RequestParameterAttribute("calendarId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CalendarId {
@@ -3246,8 +3194,6 @@ namespace Google.Apis.Calendar.v3 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             private string _calendarId;
             
@@ -3281,17 +3227,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3344,8 +3279,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private string _ruleId;
@@ -3378,17 +3311,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3510,8 +3432,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -3538,17 +3458,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3579,8 +3488,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -3607,17 +3514,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3648,8 +3544,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _colorRgbFormat;
             
             private Google.Apis.Calendar.v3.Data.CalendarListEntry _Body;
@@ -3678,17 +3572,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3736,8 +3619,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<long> _maxResults;
             
             private System.Nullable<MinAccessRole> _minAccessRole;
@@ -3769,17 +3650,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3846,8 +3716,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private System.Nullable<bool> _colorRgbFormat;
@@ -3879,17 +3747,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3945,8 +3802,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private System.Nullable<bool> _colorRgbFormat;
@@ -3978,17 +3833,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4093,8 +3937,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public ClearRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -4121,17 +3963,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4162,8 +3993,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -4190,17 +4019,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4231,8 +4049,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string calendarId) : 
@@ -4259,17 +4075,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4300,8 +4105,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.Calendar body) : 
@@ -4328,17 +4131,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4375,8 +4167,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
@@ -4406,17 +4196,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4461,8 +4240,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private Google.Apis.Calendar.v3.Data.Calendar _Body;
@@ -4492,17 +4269,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4566,8 +4332,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
             }
@@ -4591,17 +4355,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4719,8 +4472,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private string _eventId;
@@ -4752,17 +4503,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4812,8 +4552,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _alwaysIncludeEmail;
             
             private string _calendarId;
@@ -4849,17 +4587,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -4931,8 +4658,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private Google.Apis.Calendar.v3.Data.Event _Body;
@@ -4962,17 +4687,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5017,8 +4731,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private System.Nullable<bool> _sendNotifications;
@@ -5050,17 +4762,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5116,8 +4817,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _alwaysIncludeEmail;
             
             private string _calendarId;
@@ -5161,17 +4860,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5287,8 +4975,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _alwaysIncludeEmail;
             
             private string _calendarId;
@@ -5343,17 +5029,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5538,8 +5213,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private string _destination;
@@ -5574,17 +5247,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5642,8 +5304,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _alwaysIncludeEmail;
             
             private string _calendarId;
@@ -5680,17 +5340,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5765,8 +5414,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _calendarId;
             
             private System.Nullable<bool> _sendNotifications;
@@ -5798,17 +5445,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -5858,8 +5494,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<bool> _alwaysIncludeEmail;
             
             private string _calendarId;
@@ -5896,17 +5530,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6000,8 +5623,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private Google.Apis.Calendar.v3.Data.FreeBusyRequest _Body;
             
             public QueryRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Calendar.v3.Data.FreeBusyRequest body) : 
@@ -6028,17 +5649,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6100,8 +5710,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _setting;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string setting) : 
@@ -6128,17 +5736,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -6169,8 +5766,6 @@ namespace Google.Apis.Calendar.v3 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
             }
@@ -6194,17 +5789,6 @@ namespace Google.Apis.Calendar.v3 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

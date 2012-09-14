@@ -102,9 +102,6 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TaskqueuesResource.GetRequest.GetStats">
             <summary>Whether to get stats. Optional.</summary>
         </member>
@@ -163,9 +160,6 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.DeleteRequest.Project">
             <summary>The project under which the queue lies.</summary>
         </member>
@@ -180,9 +174,6 @@
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.GetRequest.Project">
             <summary>The project under which the queue lies.</summary>
@@ -199,9 +190,6 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.InsertRequest.Project">
             <summary>The project under which the queue lies</summary>
         </member>
@@ -216,9 +204,6 @@
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.LeaseRequest.GroupByTag">
             <summary>When true, all returned tasks will have the same tag</summary>
@@ -244,9 +229,6 @@
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.ListRequest.Project">
             <summary>The project under which the queue lies.</summary>
         </member>
@@ -258,9 +240,6 @@
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.PatchRequest.NewLeaseSeconds">
             <summary>The new lease in seconds.</summary>
@@ -276,9 +255,6 @@
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Taskqueue.v1beta2.TasksResource.UpdateRequest.NewLeaseSeconds">
             <summary>The new lease in seconds.</summary>

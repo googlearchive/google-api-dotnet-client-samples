@@ -1339,175 +1339,175 @@ namespace Google.Apis.Discovery.v1 {
             "ailable, the resource and method details for each API\",\"icons\":{\"x16\":\"http://ww" +
             "w.google.com/images/icons/feature/filing_cabinet_search-g16.png\",\"x32\":\"http://w" +
             "ww.google.com/images/icons/feature/filing_cabinet_search-g32.png\"},\"documentatio" +
-            "nLink\":\"http://code.google.com/apis/discovery\",\"protocol\":\"rest\",\"baseUrl\":\"http" +
-            "s://www.googleapis.com/discovery/v1/\",\"basePath\":\"/discovery/v1/\",\"rootUrl\":\"htt" +
-            "ps://www.googleapis.com/\",\"servicePath\":\"discovery/v1/\",\"batchPath\":\"batch\",\"par" +
-            "ameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response.\",\"" +
-            "default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-Type" +
-            " of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Selector specifying which fields to include in a partial response.\",\"locatio" +
-            "n\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifi" +
-            "es your project and provides you with API access, quota, and reports. Required u" +
-            "nless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\"" +
-            ":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"quer" +
-            "y\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indenta" +
-            "tions and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\"" +
-            ":\"string\",\"description\":\"Available to use for quota purposes for server-side app" +
-            "lications. Can be any arbitrary string assigned to a user, but should not exceed" +
-            " 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"use" +
-            "rIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request or" +
-            "iginates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}}" +
-            ",\"schemas\":{\"DirectoryList\":{\"id\":\"DirectoryList\",\"type\":\"object\",\"properties\":{" +
-            "\"discoveryVersion\":{\"type\":\"string\",\"description\":\"Indicate the version of the D" +
-            "iscovery API used to generate this doc.\",\"default\":\"v1\"},\"items\":{\"type\":\"array\"" +
-            ",\"description\":\"The individual directory entries. One entry per api/version pair" +
-            ".\",\"items\":{\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The description of this API.\"},\"discoveryLink\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"A link to the discovery document.\"},\"discoveryRestUrl\":{\"type\":\"string\",\"" +
-            "description\":\"The url for the discovery REST document.\"},\"documentationLink\":{\"t" +
-            "ype\":\"string\",\"description\":\"A link to human readable documentation for the API." +
-            "\"},\"icons\":{\"type\":\"object\",\"description\":\"Links to 16x16 and 32x32 icons repres" +
-            "enting the API.\",\"properties\":{\"x16\":{\"type\":\"string\",\"description\":\"The url of " +
-            "the 16x16 icon.\"},\"x32\":{\"type\":\"string\",\"description\":\"The url of the 32x32 ico" +
-            "n.\"}}},\"id\":{\"type\":\"string\",\"description\":\"The id of this API.\"},\"kind\":{\"type\"" +
-            ":\"string\",\"description\":\"The kind for this response.\",\"default\":\"discovery#direc" +
-            "toryItem\"},\"labels\":{\"type\":\"array\",\"description\":\"Labels for the status of this" +
-            " API, such as labs or deprecated.\",\"items\":{\"type\":\"string\"}},\"name\":{\"type\":\"st" +
-            "ring\",\"description\":\"The name of the API.\"},\"preferred\":{\"type\":\"boolean\",\"descr" +
-            "iption\":\"True if this version is the preferred version to use.\"},\"title\":{\"type\"" +
-            ":\"string\",\"description\":\"The title of this API.\"},\"version\":{\"type\":\"string\",\"de" +
-            "scription\":\"The version of the API.\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"" +
-            "The kind for this response.\",\"default\":\"discovery#directoryList\"}}},\"JsonSchema\"" +
-            ":{\"id\":\"JsonSchema\",\"type\":\"object\",\"properties\":{\"$ref\":{\"type\":\"string\",\"descr" +
-            "iption\":\"A reference to another schema. The value of this property is the \\\"id\\\"" +
-            " of another schema.\"},\"additionalProperties\":{\"$ref\":\"JsonSchema\",\"description\":" +
-            "\"If this is a schema for an object, this property is the schema for any addition" +
-            "al properties with dynamic keys on this object.\"},\"annotations\":{\"type\":\"object\"" +
-            ",\"description\":\"Additional information about this property.\",\"properties\":{\"requ" +
-            "ired\":{\"type\":\"array\",\"description\":\"A list of methods for which this property i" +
-            "s required on requests.\",\"items\":{\"type\":\"string\"}}}},\"default\":{\"type\":\"string\"" +
-            ",\"description\":\"The default value of this property (if one exists).\"},\"descripti" +
-            "on\":{\"type\":\"string\",\"description\":\"A description of this object.\"},\"enum\":{\"typ" +
-            "e\":\"array\",\"description\":\"Values this parameter may take (if it is an enum).\",\"i" +
-            "tems\":{\"type\":\"string\"}},\"enumDescriptions\":{\"type\":\"array\",\"description\":\"The d" +
-            "escriptions for the enums. Each position maps to the corresponding value in the " +
-            "\\\"enum\\\" array.\",\"items\":{\"type\":\"string\"}},\"format\":{\"type\":\"string\",\"descripti" +
-            "on\":\"An additional regular expression or key that helps constrain the value. For" +
-            " more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5" +
-            ".23\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for this schema.\"}," +
-            "\"items\":{\"$ref\":\"JsonSchema\",\"description\":\"If this is a schema for an array, th" +
-            "is property is the schema for each element in the array.\"},\"location\":{\"type\":\"s" +
-            "tring\",\"description\":\"Whether this parameter goes in the query or the path for R" +
-            "EST requests.\"},\"maximum\":{\"type\":\"string\",\"description\":\"The maximum value of t" +
-            "his parameter.\"},\"minimum\":{\"type\":\"string\",\"description\":\"The minimum value of " +
-            "this parameter.\"},\"pattern\":{\"type\":\"string\",\"description\":\"The regular expressi" +
-            "on this parameter must conform to. Uses Java 6 regex format: http://docs.oracle." +
-            "com/javase/6/docs/api/java/util/regex/Pattern.html\"},\"properties\":{\"type\":\"objec" +
-            "t\",\"description\":\"If this is a schema for an object, list the schema for each pr" +
-            "operty of this object.\",\"additionalProperties\":{\"$ref\":\"JsonSchema\",\"description" +
-            "\":\"A single property of this object. The value is itself a JSON Schema object de" +
-            "scribing this property.\"}},\"repeated\":{\"type\":\"boolean\",\"description\":\"Whether t" +
-            "his parameter may appear multiple times.\"},\"required\":{\"type\":\"boolean\",\"descrip" +
-            "tion\":\"Whether the parameter is required.\"},\"type\":{\"type\":\"string\",\"description" +
-            "\":\"The value type for this schema. A list of values can be found here: http://to" +
-            "ols.ietf.org/html/draft-zyp-json-schema-03#section-5.1\"}}},\"RestDescription\":{\"i" +
-            "d\":\"RestDescription\",\"type\":\"object\",\"properties\":{\"auth\":{\"type\":\"object\",\"desc" +
-            "ription\":\"Authentication information.\",\"properties\":{\"oauth2\":{\"type\":\"object\",\"" +
-            "description\":\"OAuth 2.0 authentication information.\",\"properties\":{\"scopes\":{\"ty" +
-            "pe\":\"object\",\"description\":\"Available OAuth 2.0 scopes.\",\"additionalProperties\":" +
-            "{\"type\":\"object\",\"description\":\"The scope value.\",\"properties\":{\"description\":{\"" +
-            "type\":\"string\",\"description\":\"Description of scope.\"}}}}}}}},\"basePath\":{\"type\":" +
-            "\"string\",\"description\":\"[DEPRECATED] The base path for REST requests.\"},\"baseUrl" +
-            "\":{\"type\":\"string\",\"description\":\"[DEPRECATED] The base URL for REST requests.\"}" +
-            ",\"batchPath\":{\"type\":\"string\",\"description\":\"The path for REST batch requests.\"," +
-            "\"default\":\"batch\"},\"canonicalName\":{\"type\":\"string\",\"description\":\"Indicates how" +
-            " the API name should be capitalized and split into various parts. Useful for gen" +
-            "erating pretty class names.\"},\"description\":{\"type\":\"string\",\"description\":\"The " +
-            "description of this API.\"},\"discoveryVersion\":{\"type\":\"string\",\"description\":\"In" +
-            "dicate the version of the Discovery API used to generate this doc.\",\"default\":\"v" +
-            "1\"},\"documentationLink\":{\"type\":\"string\",\"description\":\"A link to human readable" +
-            " documentation for the API.\"},\"features\":{\"type\":\"array\",\"description\":\"A list o" +
-            "f supported features for this API.\",\"items\":{\"type\":\"string\"}},\"icons\":{\"type\":\"" +
-            "object\",\"description\":\"Links to 16x16 and 32x32 icons representing the API.\",\"pr" +
-            "operties\":{\"x16\":{\"type\":\"string\",\"description\":\"The url of the 16x16 icon.\"},\"x" +
-            "32\":{\"type\":\"string\",\"description\":\"The url of the 32x32 icon.\"}}},\"id\":{\"type\":" +
-            "\"string\",\"description\":\"The id of this API.\"},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The kind for this response.\",\"default\":\"discovery#restDescription\"},\"labels" +
-            "\":{\"type\":\"array\",\"description\":\"Labels for the status of this API, such as labs" +
-            " or deprecated.\",\"items\":{\"type\":\"string\"}},\"methods\":{\"type\":\"object\",\"descript" +
-            "ion\":\"API-level methods for this API.\",\"additionalProperties\":{\"$ref\":\"RestMetho" +
-            "d\",\"description\":\"An individual method description.\"}},\"name\":{\"type\":\"string\",\"" +
-            "description\":\"The name of this API.\"},\"parameters\":{\"type\":\"object\",\"description" +
-            "\":\"Common parameters that apply across all apis.\",\"additionalProperties\":{\"$ref\"" +
-            ":\"JsonSchema\",\"description\":\"Description of a single parameter.\"}},\"protocol\":{\"" +
-            "type\":\"string\",\"description\":\"The protocol described by this document.\",\"default" +
-            "\":\"rest\"},\"resources\":{\"type\":\"object\",\"description\":\"The resources in this API." +
-            "\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"description\":\"An individual res" +
-            "ource description. Contains methods and sub-resources related to this resource.\"" +
-            "}},\"revision\":{\"type\":\"string\",\"description\":\"The version of this API.\"},\"rootUr" +
-            "l\":{\"type\":\"string\",\"description\":\"The root url under which all API services liv" +
-            "e.\"},\"schemas\":{\"type\":\"object\",\"description\":\"The schemas for this API.\",\"addit" +
-            "ionalProperties\":{\"$ref\":\"JsonSchema\",\"description\":\"An individual schema descri" +
-            "ption.\"}},\"servicePath\":{\"type\":\"string\",\"description\":\"The base path for all RE" +
-            "ST requests.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this API.\"}," +
-            "\"version\":{\"type\":\"string\",\"description\":\"The version of this API.\"}}},\"RestMeth" +
-            "od\":{\"id\":\"RestMethod\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Description of this method.\"},\"httpMethod\":{\"type\":\"string\",\"" +
-            "description\":\"HTTP method used by this method.\"},\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A unique ID for this method. This property can be used to match methods be" +
-            "tween different versions of Discovery.\"},\"mediaUpload\":{\"type\":\"object\",\"descrip" +
-            "tion\":\"Media upload parameters.\",\"properties\":{\"accept\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"MIME Media Ranges for acceptable media uploads to this method.\",\"items\":{" +
-            "\"type\":\"string\"}},\"maxSize\":{\"type\":\"string\",\"description\":\"Maximum size of a me" +
-            "dia upload, such as \\\"1MB\\\", \\\"2GB\\\" or \\\"3TB\\\".\"},\"protocols\":{\"type\":\"object\"," +
-            "\"description\":\"Supported upload protocols.\",\"properties\":{\"resumable\":{\"type\":\"o" +
-            "bject\",\"description\":\"Supports the Resumable Media Upload protocol.\",\"properties" +
-            "\":{\"multipart\":{\"type\":\"boolean\",\"description\":\"True if this endpoint supports u" +
-            "ploading multipart media.\",\"default\":\"true\"},\"path\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The URI path to be used for upload. Should be used in conjunction with the b" +
-            "asePath property at the api-level.\"}}},\"simple\":{\"type\":\"object\",\"description\":\"" +
-            "Supports uploading as a single HTTP request.\",\"properties\":{\"multipart\":{\"type\":" +
-            "\"boolean\",\"description\":\"True if this endpoint supports upload multipart media.\"" +
-            ",\"default\":\"true\"},\"path\":{\"type\":\"string\",\"description\":\"The URI path to be use" +
-            "d for upload. Should be used in conjunction with the basePath property at the ap" +
-            "i-level.\"}}}}}}},\"parameterOrder\":{\"type\":\"array\",\"description\":\"Ordered list of" +
-            " required parameters, serves as a hint to clients on how to structure their meth" +
-            "od signatures. The array is ordered such that the \\\"most-significant\\\" parameter" +
-            " appears first.\",\"items\":{\"type\":\"string\"}},\"parameters\":{\"type\":\"object\",\"descr" +
-            "iption\":\"Details for all parameters in this method.\",\"additionalProperties\":{\"$r" +
-            "ef\":\"JsonSchema\",\"description\":\"Details for a single parameter in this method.\"}" +
-            "},\"path\":{\"type\":\"string\",\"description\":\"The URI path of this REST method. Shoul" +
-            "d be used in conjunction with the basePath property at the api-level.\"},\"request" +
-            "\":{\"type\":\"object\",\"description\":\"The schema for the request.\",\"properties\":{\"$r" +
-            "ef\":{\"type\":\"string\",\"description\":\"Schema ID for the request schema.\"}}},\"respo" +
-            "nse\":{\"type\":\"object\",\"description\":\"The schema for the response.\",\"properties\":" +
-            "{\"$ref\":{\"type\":\"string\",\"description\":\"Schema ID for the response schema.\"}}},\"" +
-            "scopes\":{\"type\":\"array\",\"description\":\"OAuth 2.0 scopes applicable to this metho" +
-            "d.\",\"items\":{\"type\":\"any\"}},\"supportsMediaDownload\":{\"type\":\"boolean\",\"descripti" +
-            "on\":\"Whether this method supports media downloads.\"},\"supportsMediaUpload\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Whether this method supports media uploads.\"},\"suppo" +
-            "rtsSubscription\":{\"type\":\"boolean\",\"description\":\"Whether this method supports s" +
-            "ubscriptions.\"}}},\"RestResource\":{\"id\":\"RestResource\",\"type\":\"object\",\"propertie" +
-            "s\":{\"methods\":{\"type\":\"object\",\"description\":\"Methods on this resource.\",\"additi" +
-            "onalProperties\":{\"$ref\":\"RestMethod\",\"description\":\"Description for any methods " +
-            "on this resource.\"}},\"resources\":{\"type\":\"object\",\"description\":\"Sub-resources o" +
-            "n this resource.\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"description\":\"D" +
-            "escription for any sub-resources on this resource.\"}}}}},\"resources\":{\"apis\":{\"m" +
-            "ethods\":{\"getRest\":{\"id\":\"discovery.apis.getRest\",\"path\":\"apis/{api}/{version}/r" +
-            "est\",\"httpMethod\":\"GET\",\"description\":\"Retrieve the description of a particular " +
-            "version of an api.\",\"parameters\":{\"api\":{\"type\":\"string\",\"description\":\"The name" +
-            " of the API.\",\"required\":true,\"location\":\"path\"},\"version\":{\"type\":\"string\",\"des" +
-            "cription\":\"The version of the API.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"api\",\"version\"],\"response\":{\"$ref\":\"RestDescription\"}},\"list\":{\"id\":\"" +
-            "discovery.apis.list\",\"path\":\"apis\",\"httpMethod\":\"GET\",\"description\":\"Retrieve th" +
-            "e list of APIs supported at this endpoint.\",\"parameters\":{\"label\":{\"type\":\"strin" +
-            "g\",\"description\":\"Only include APIs with a matching label, such as \'graduated\' o" +
-            "r \'labs\'.\",\"enum\":[\"deprecated\",\"graduated\",\"labs\"],\"enumDescriptions\":[\"APIs th" +
-            "at have been deprecated.\",\"Supported APIs that have graduated from labs.\",\"APIs " +
-            "that are experimental\"],\"location\":\"query\"},\"name\":{\"type\":\"string\",\"description" +
-            "\":\"Only include APIs with the given name.\",\"location\":\"query\"},\"preferred\":{\"typ" +
-            "e\":\"boolean\",\"description\":\"Return only the preferred version of an API.\",\"defau" +
-            "lt\":\"false\",\"location\":\"query\"}},\"response\":{\"$ref\":\"DirectoryList\"}}}}}}";
+            "nLink\":\"https://developers.google.com/discovery/\",\"protocol\":\"rest\",\"baseUrl\":\"h" +
+            "ttps://www.googleapis.com/discovery/v1/\",\"basePath\":\"/discovery/v1/\",\"rootUrl\":\"" +
+            "https://www.googleapis.com/\",\"servicePath\":\"discovery/v1/\",\"batchPath\":\"batch\",\"" +
+            "parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for the response." +
+            "\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Responses with Content-T" +
+            "ype of application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Selector specifying which fields to include in a partial response.\",\"loca" +
+            "tion\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key ident" +
+            "ifies your project and provides you with API access, quota, and reports. Require" +
+            "d unless you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"ty" +
+            "pe\":\"string\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"q" +
+            "uery\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with inde" +
+            "ntations and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Available to use for quota purposes for server-side " +
+            "applications. Can be any arbitrary string assigned to a user, but should not exc" +
+            "eed 40 characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"" +
+            "userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the request" +
+            " originates. Use this if you want to enforce per-user limits.\",\"location\":\"query" +
+            "\"}},\"schemas\":{\"DirectoryList\":{\"id\":\"DirectoryList\",\"type\":\"object\",\"properties" +
+            "\":{\"discoveryVersion\":{\"type\":\"string\",\"description\":\"Indicate the version of th" +
+            "e Discovery API used to generate this doc.\",\"default\":\"v1\"},\"items\":{\"type\":\"arr" +
+            "ay\",\"description\":\"The individual directory entries. One entry per api/version p" +
+            "air.\",\"items\":{\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"string\",\"des" +
+            "cription\":\"The description of this API.\"},\"discoveryLink\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A link to the discovery document.\"},\"discoveryRestUrl\":{\"type\":\"string" +
+            "\",\"description\":\"The url for the discovery REST document.\"},\"documentationLink\":" +
+            "{\"type\":\"string\",\"description\":\"A link to human readable documentation for the A" +
+            "PI.\"},\"icons\":{\"type\":\"object\",\"description\":\"Links to 16x16 and 32x32 icons rep" +
+            "resenting the API.\",\"properties\":{\"x16\":{\"type\":\"string\",\"description\":\"The url " +
+            "of the 16x16 icon.\"},\"x32\":{\"type\":\"string\",\"description\":\"The url of the 32x32 " +
+            "icon.\"}}},\"id\":{\"type\":\"string\",\"description\":\"The id of this API.\"},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The kind for this response.\",\"default\":\"discovery#di" +
+            "rectoryItem\"},\"labels\":{\"type\":\"array\",\"description\":\"Labels for the status of t" +
+            "his API, such as labs or deprecated.\",\"items\":{\"type\":\"string\"}},\"name\":{\"type\":" +
+            "\"string\",\"description\":\"The name of the API.\"},\"preferred\":{\"type\":\"boolean\",\"de" +
+            "scription\":\"True if this version is the preferred version to use.\"},\"title\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The title of this API.\"},\"version\":{\"type\":\"string\"," +
+            "\"description\":\"The version of the API.\"}}}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"The kind for this response.\",\"default\":\"discovery#directoryList\"}}},\"JsonSche" +
+            "ma\":{\"id\":\"JsonSchema\",\"type\":\"object\",\"properties\":{\"$ref\":{\"type\":\"string\",\"de" +
+            "scription\":\"A reference to another schema. The value of this property is the \\\"i" +
+            "d\\\" of another schema.\"},\"additionalProperties\":{\"$ref\":\"JsonSchema\",\"descriptio" +
+            "n\":\"If this is a schema for an object, this property is the schema for any addit" +
+            "ional properties with dynamic keys on this object.\"},\"annotations\":{\"type\":\"obje" +
+            "ct\",\"description\":\"Additional information about this property.\",\"properties\":{\"r" +
+            "equired\":{\"type\":\"array\",\"description\":\"A list of methods for which this propert" +
+            "y is required on requests.\",\"items\":{\"type\":\"string\"}}}},\"default\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The default value of this property (if one exists).\"},\"descri" +
+            "ption\":{\"type\":\"string\",\"description\":\"A description of this object.\"},\"enum\":{\"" +
+            "type\":\"array\",\"description\":\"Values this parameter may take (if it is an enum).\"" +
+            ",\"items\":{\"type\":\"string\"}},\"enumDescriptions\":{\"type\":\"array\",\"description\":\"Th" +
+            "e descriptions for the enums. Each position maps to the corresponding value in t" +
+            "he \\\"enum\\\" array.\",\"items\":{\"type\":\"string\"}},\"format\":{\"type\":\"string\",\"descri" +
+            "ption\":\"An additional regular expression or key that helps constrain the value. " +
+            "For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#sectio" +
+            "n-5.23\"},\"id\":{\"type\":\"string\",\"description\":\"Unique identifier for this schema." +
+            "\"},\"items\":{\"$ref\":\"JsonSchema\",\"description\":\"If this is a schema for an array," +
+            " this property is the schema for each element in the array.\"},\"location\":{\"type\"" +
+            ":\"string\",\"description\":\"Whether this parameter goes in the query or the path fo" +
+            "r REST requests.\"},\"maximum\":{\"type\":\"string\",\"description\":\"The maximum value o" +
+            "f this parameter.\"},\"minimum\":{\"type\":\"string\",\"description\":\"The minimum value " +
+            "of this parameter.\"},\"pattern\":{\"type\":\"string\",\"description\":\"The regular expre" +
+            "ssion this parameter must conform to. Uses Java 6 regex format: http://docs.orac" +
+            "le.com/javase/6/docs/api/java/util/regex/Pattern.html\"},\"properties\":{\"type\":\"ob" +
+            "ject\",\"description\":\"If this is a schema for an object, list the schema for each" +
+            " property of this object.\",\"additionalProperties\":{\"$ref\":\"JsonSchema\",\"descript" +
+            "ion\":\"A single property of this object. The value is itself a JSON Schema object" +
+            " describing this property.\"}},\"repeated\":{\"type\":\"boolean\",\"description\":\"Whethe" +
+            "r this parameter may appear multiple times.\"},\"required\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"Whether the parameter is required.\"},\"type\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The value type for this schema. A list of values can be found here: http:/" +
+            "/tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1\"}}},\"RestDescription\":" +
+            "{\"id\":\"RestDescription\",\"type\":\"object\",\"properties\":{\"auth\":{\"type\":\"object\",\"d" +
+            "escription\":\"Authentication information.\",\"properties\":{\"oauth2\":{\"type\":\"object" +
+            "\",\"description\":\"OAuth 2.0 authentication information.\",\"properties\":{\"scopes\":{" +
+            "\"type\":\"object\",\"description\":\"Available OAuth 2.0 scopes.\",\"additionalPropertie" +
+            "s\":{\"type\":\"object\",\"description\":\"The scope value.\",\"properties\":{\"description\"" +
+            ":{\"type\":\"string\",\"description\":\"Description of scope.\"}}}}}}}},\"basePath\":{\"typ" +
+            "e\":\"string\",\"description\":\"[DEPRECATED] The base path for REST requests.\"},\"base" +
+            "Url\":{\"type\":\"string\",\"description\":\"[DEPRECATED] The base URL for REST requests" +
+            ".\"},\"batchPath\":{\"type\":\"string\",\"description\":\"The path for REST batch requests" +
+            ".\",\"default\":\"batch\"},\"canonicalName\":{\"type\":\"string\",\"description\":\"Indicates " +
+            "how the API name should be capitalized and split into various parts. Useful for " +
+            "generating pretty class names.\"},\"description\":{\"type\":\"string\",\"description\":\"T" +
+            "he description of this API.\"},\"discoveryVersion\":{\"type\":\"string\",\"description\":" +
+            "\"Indicate the version of the Discovery API used to generate this doc.\",\"default\"" +
+            ":\"v1\"},\"documentationLink\":{\"type\":\"string\",\"description\":\"A link to human reada" +
+            "ble documentation for the API.\"},\"features\":{\"type\":\"array\",\"description\":\"A lis" +
+            "t of supported features for this API.\",\"items\":{\"type\":\"string\"}},\"icons\":{\"type" +
+            "\":\"object\",\"description\":\"Links to 16x16 and 32x32 icons representing the API.\"," +
+            "\"properties\":{\"x16\":{\"type\":\"string\",\"description\":\"The url of the 16x16 icon.\"}" +
+            ",\"x32\":{\"type\":\"string\",\"description\":\"The url of the 32x32 icon.\"}}},\"id\":{\"typ" +
+            "e\":\"string\",\"description\":\"The id of this API.\"},\"kind\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The kind for this response.\",\"default\":\"discovery#restDescription\"},\"lab" +
+            "els\":{\"type\":\"array\",\"description\":\"Labels for the status of this API, such as l" +
+            "abs or deprecated.\",\"items\":{\"type\":\"string\"}},\"methods\":{\"type\":\"object\",\"descr" +
+            "iption\":\"API-level methods for this API.\",\"additionalProperties\":{\"$ref\":\"RestMe" +
+            "thod\",\"description\":\"An individual method description.\"}},\"name\":{\"type\":\"string" +
+            "\",\"description\":\"The name of this API.\"},\"parameters\":{\"type\":\"object\",\"descript" +
+            "ion\":\"Common parameters that apply across all apis.\",\"additionalProperties\":{\"$r" +
+            "ef\":\"JsonSchema\",\"description\":\"Description of a single parameter.\"}},\"protocol\"" +
+            ":{\"type\":\"string\",\"description\":\"The protocol described by this document.\",\"defa" +
+            "ult\":\"rest\"},\"resources\":{\"type\":\"object\",\"description\":\"The resources in this A" +
+            "PI.\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"description\":\"An individual " +
+            "resource description. Contains methods and sub-resources related to this resourc" +
+            "e.\"}},\"revision\":{\"type\":\"string\",\"description\":\"The version of this API.\"},\"roo" +
+            "tUrl\":{\"type\":\"string\",\"description\":\"The root url under which all API services " +
+            "live.\"},\"schemas\":{\"type\":\"object\",\"description\":\"The schemas for this API.\",\"ad" +
+            "ditionalProperties\":{\"$ref\":\"JsonSchema\",\"description\":\"An individual schema des" +
+            "cription.\"}},\"servicePath\":{\"type\":\"string\",\"description\":\"The base path for all" +
+            " REST requests.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this API." +
+            "\"},\"version\":{\"type\":\"string\",\"description\":\"The version of this API.\"}}},\"RestM" +
+            "ethod\":{\"id\":\"RestMethod\",\"type\":\"object\",\"properties\":{\"description\":{\"type\":\"s" +
+            "tring\",\"description\":\"Description of this method.\"},\"httpMethod\":{\"type\":\"string" +
+            "\",\"description\":\"HTTP method used by this method.\"},\"id\":{\"type\":\"string\",\"descr" +
+            "iption\":\"A unique ID for this method. This property can be used to match methods" +
+            " between different versions of Discovery.\"},\"mediaUpload\":{\"type\":\"object\",\"desc" +
+            "ription\":\"Media upload parameters.\",\"properties\":{\"accept\":{\"type\":\"array\",\"desc" +
+            "ription\":\"MIME Media Ranges for acceptable media uploads to this method.\",\"items" +
+            "\":{\"type\":\"string\"}},\"maxSize\":{\"type\":\"string\",\"description\":\"Maximum size of a" +
+            " media upload, such as \\\"1MB\\\", \\\"2GB\\\" or \\\"3TB\\\".\"},\"protocols\":{\"type\":\"objec" +
+            "t\",\"description\":\"Supported upload protocols.\",\"properties\":{\"resumable\":{\"type\"" +
+            ":\"object\",\"description\":\"Supports the Resumable Media Upload protocol.\",\"propert" +
+            "ies\":{\"multipart\":{\"type\":\"boolean\",\"description\":\"True if this endpoint support" +
+            "s uploading multipart media.\",\"default\":\"true\"},\"path\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The URI path to be used for upload. Should be used in conjunction with th" +
+            "e basePath property at the api-level.\"}}},\"simple\":{\"type\":\"object\",\"description" +
+            "\":\"Supports uploading as a single HTTP request.\",\"properties\":{\"multipart\":{\"typ" +
+            "e\":\"boolean\",\"description\":\"True if this endpoint supports upload multipart medi" +
+            "a.\",\"default\":\"true\"},\"path\":{\"type\":\"string\",\"description\":\"The URI path to be " +
+            "used for upload. Should be used in conjunction with the basePath property at the" +
+            " api-level.\"}}}}}}},\"parameterOrder\":{\"type\":\"array\",\"description\":\"Ordered list" +
+            " of required parameters, serves as a hint to clients on how to structure their m" +
+            "ethod signatures. The array is ordered such that the \\\"most-significant\\\" parame" +
+            "ter appears first.\",\"items\":{\"type\":\"string\"}},\"parameters\":{\"type\":\"object\",\"de" +
+            "scription\":\"Details for all parameters in this method.\",\"additionalProperties\":{" +
+            "\"$ref\":\"JsonSchema\",\"description\":\"Details for a single parameter in this method" +
+            ".\"}},\"path\":{\"type\":\"string\",\"description\":\"The URI path of this REST method. Sh" +
+            "ould be used in conjunction with the basePath property at the api-level.\"},\"requ" +
+            "est\":{\"type\":\"object\",\"description\":\"The schema for the request.\",\"properties\":{" +
+            "\"$ref\":{\"type\":\"string\",\"description\":\"Schema ID for the request schema.\"}}},\"re" +
+            "sponse\":{\"type\":\"object\",\"description\":\"The schema for the response.\",\"propertie" +
+            "s\":{\"$ref\":{\"type\":\"string\",\"description\":\"Schema ID for the response schema.\"}}" +
+            "},\"scopes\":{\"type\":\"array\",\"description\":\"OAuth 2.0 scopes applicable to this me" +
+            "thod.\",\"items\":{\"type\":\"any\"}},\"supportsMediaDownload\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Whether this method supports media downloads.\"},\"supportsMediaUpload\":{\"" +
+            "type\":\"boolean\",\"description\":\"Whether this method supports media uploads.\"},\"su" +
+            "pportsSubscription\":{\"type\":\"boolean\",\"description\":\"Whether this method support" +
+            "s subscriptions.\"}}},\"RestResource\":{\"id\":\"RestResource\",\"type\":\"object\",\"proper" +
+            "ties\":{\"methods\":{\"type\":\"object\",\"description\":\"Methods on this resource.\",\"add" +
+            "itionalProperties\":{\"$ref\":\"RestMethod\",\"description\":\"Description for any metho" +
+            "ds on this resource.\"}},\"resources\":{\"type\":\"object\",\"description\":\"Sub-resource" +
+            "s on this resource.\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"description\"" +
+            ":\"Description for any sub-resources on this resource.\"}}}}},\"resources\":{\"apis\":" +
+            "{\"methods\":{\"getRest\":{\"id\":\"discovery.apis.getRest\",\"path\":\"apis/{api}/{version" +
+            "}/rest\",\"httpMethod\":\"GET\",\"description\":\"Retrieve the description of a particul" +
+            "ar version of an api.\",\"parameters\":{\"api\":{\"type\":\"string\",\"description\":\"The n" +
+            "ame of the API.\",\"required\":true,\"location\":\"path\"},\"version\":{\"type\":\"string\",\"" +
+            "description\":\"The version of the API.\",\"required\":true,\"location\":\"path\"}},\"para" +
+            "meterOrder\":[\"api\",\"version\"],\"response\":{\"$ref\":\"RestDescription\"}},\"list\":{\"id" +
+            "\":\"discovery.apis.list\",\"path\":\"apis\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
+            " the list of APIs supported at this endpoint.\",\"parameters\":{\"label\":{\"type\":\"st" +
+            "ring\",\"description\":\"Only include APIs with a matching label, such as \'graduated" +
+            "\' or \'labs\'.\",\"enum\":[\"deprecated\",\"graduated\",\"labs\"],\"enumDescriptions\":[\"APIs" +
+            " that have been deprecated.\",\"Supported APIs that have graduated from labs.\",\"AP" +
+            "Is that are experimental\"],\"location\":\"query\"},\"name\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Only include APIs with the given name.\",\"location\":\"query\"},\"preferred\":{\"" +
+            "type\":\"boolean\",\"description\":\"Return only the preferred version of an API.\",\"de" +
+            "fault\":\"false\",\"location\":\"query\"}},\"response\":{\"$ref\":\"DirectoryList\"}}}}}}";
         
         public const string Version = "v1";
         
@@ -1627,8 +1627,6 @@ namespace Google.Apis.Discovery.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _api;
             
             private string _version;
@@ -1658,17 +1656,6 @@ namespace Google.Apis.Discovery.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1707,8 +1694,6 @@ namespace Google.Apis.Discovery.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<Label> _label;
             
             private string _name;
@@ -1738,17 +1723,6 @@ namespace Google.Apis.Discovery.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

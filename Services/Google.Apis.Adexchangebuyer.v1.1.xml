@@ -179,9 +179,6 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.GetRequest.Id">
             <summary>The account id</summary>
         </member>
@@ -191,17 +188,11 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.PatchRequest.Id">
             <summary>The account id</summary>
@@ -214,9 +205,6 @@
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.AccountsResource.UpdateRequest.Id">
             <summary>The account id</summary>
@@ -253,9 +241,6 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.GetRequest.AccountId">
             <summary>The id for the account that will serve this creative.</summary>
         </member>
@@ -268,9 +253,6 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -279,9 +261,6 @@
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.CreativesResource.ListRequest.MaxResults">
             <summary>Maximum number of entries returned on one result page. If not set, the default is 100. Optional.</summary>
@@ -305,9 +284,6 @@
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.DirectDealsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.DirectDealsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.DirectDealsResource.GetRequest.Id">
             <summary>The direct deal id</summary>
         </member>
@@ -316,9 +292,6 @@
         </member>
         <member name="P:Google.Apis.Adexchangebuyer.v1_1.DirectDealsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adexchangebuyer.v1_1.DirectDealsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
     </members>
 </doc>

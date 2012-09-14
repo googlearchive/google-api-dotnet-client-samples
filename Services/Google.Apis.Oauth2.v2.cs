@@ -518,8 +518,6 @@ namespace Google.Apis.Oauth2.v2 {
                     
                     private System.Nullable<bool> _prettyPrint;
                     
-                    private string _quotaUser;
-                    
                     public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                             base(service) {
                     }
@@ -546,17 +544,6 @@ namespace Google.Apis.Oauth2.v2 {
                         }
                     }
                     
-                    /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-                    [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-                    public virtual string QuotaUser {
-                        get {
-                            return this._quotaUser;
-                        }
-                        set {
-                            this._quotaUser = value;
-                        }
-                    }
-                    
                     protected override string ResourcePath {
                         get {
                             return "userinfo.v2.me";
@@ -577,8 +564,6 @@ namespace Google.Apis.Oauth2.v2 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -603,17 +588,6 @@ namespace Google.Apis.Oauth2.v2 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -659,8 +633,6 @@ namespace Google.Apis.Oauth2.v2 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _access_token;
             
             private string _id_token;
@@ -688,17 +660,6 @@ namespace Google.Apis.Oauth2.v2 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

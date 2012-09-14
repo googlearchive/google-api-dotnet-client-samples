@@ -32,9 +32,6 @@
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Prediction.v1_2.PredictionService.PredictRequest.Data">
             <summary>mybucket%2Fmydata resource in Google Storage</summary>
         </member>
@@ -50,9 +47,6 @@
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.HostedmodelsResource.PredictRequest.HostedModelName">
             <summary>The name of a hosted model</summary>
@@ -81,9 +75,6 @@
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.DeleteRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
@@ -93,9 +84,6 @@
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.GetRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
         </member>
@@ -104,9 +92,6 @@
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.InsertRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>
@@ -119,9 +104,6 @@
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Prediction.v1_2.TrainingResource.UpdateRequest.Data">
             <summary>mybucket/mydata resource in Google Storage</summary>

@@ -456,9 +456,6 @@
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.GetRequest.AccountId">
             <summary>Merchant center account id</summary>
         </member>
@@ -515,9 +512,6 @@
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Shopping.v1.ProductsResource.ListRequest.AttributeFilter">
             <summary>Comma separated list of attributes to return</summary>

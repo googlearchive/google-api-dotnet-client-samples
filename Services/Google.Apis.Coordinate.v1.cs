@@ -566,7 +566,7 @@ namespace Google.Apis.Coordinate.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\"," +
-            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20120801\",\"title\":\"Google Maps Co" +
+            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20120912\",\"title\":\"Google Maps Co" +
             "ordinate API\",\"description\":\"Lets you view and manage jobs in a Coordinate team." +
             "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32" +
             "\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink" +
@@ -663,76 +663,77 @@ namespace Google.Apis.Coordinate.v1 {
             "}/jobs\",\"httpMethod\":\"POST\",\"description\":\"Inserts a new job. Only the state fie" +
             "ld of the job should be set.\",\"parameters\":{\"address\":{\"type\":\"string\",\"descript" +
             "ion\":\"Job address as newline (Unix) separated string\",\"required\":true,\"location\"" +
-            ":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"lo" +
-            "cation\":\"query\"},\"customField\":{\"type\":\"string\",\"description\":\"Map from custom f" +
-            "ield id (from /team//custom_fields) to the field value. For example \'123=Alice\'\"" +
-            ",\"repeated\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"d" +
-            "escription\":\"Customer phone number\",\"location\":\"query\"},\"lat\":{\"type\":\"number\",\"" +
-            "description\":\"The latitude coordinate of this job\'s location.\",\"required\":true,\"" +
-            "format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The l" +
-            "ongitude coordinate of this job\'s location.\",\"required\":true,\"format\":\"double\",\"" +
-            "location\":\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (U" +
-            "nix) separated string\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Job title\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"teamI" +
-            "d\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"J" +
-            "ob\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]},\"list\":{\"id\":\"coor" +
-            "dinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMethod\":\"GET\",\"description\":\"Retri" +
-            "eves jobs created or modified since the given timestamp.\",\"parameters\":{\"maxResu" +
-            "lts\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return in one" +
-            " page.\",\"format\":\"uint32\",\"location\":\"query\"},\"minModifiedTimestampMs\":{\"type\":\"" +
-            "string\",\"description\":\"Minimum time a job was modified in milliseconds since epo" +
-            "ch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Continuation token\",\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Team ID\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"teamId\"]" +
-            ",\"response\":{\"$ref\":\"JobListResponse\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/coordinate\",\"https://www.googleapis.com/auth/coordinate.readonly\"]},\"patch\":{\"" +
-            "id\":\"coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PATCH\"," +
-            "\"description\":\"Updates a job. Fields that are set in the job state will be updat" +
-            "ed. This method supports patch semantics.\",\"parameters\":{\"address\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Job address as newline (Unix) separated string\",\"location\":\"q" +
-            "uery\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"locat" +
-            "ion\":\"query\"},\"customField\":{\"type\":\"string\",\"description\":\"Map from custom fiel" +
-            "d id (from /team//custom_fields) to the field value. For example \'123=Alice\'\",\"r" +
-            "epeated\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":" +
-            "\"Customer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Customer phone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"d" +
-            "escription\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"l" +
-            "at\":{\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'s locati" +
-            "on.\",\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":" +
-            "\"The longitude coordinate of this job\'s location.\",\"format\":\"double\",\"location\":" +
-            "\"query\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separ" +
-            "ated string\",\"location\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job " +
-            "progress\",\"enum\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLE" +
-            "TE\"],\"enumDescriptions\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\"," +
-            "\"Obsolete\"],\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID" +
-            "\",\"required\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job" +
-            " title\",\"location\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$re" +
-            "f\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/c" +
-            "oordinate\"]},\"update\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{teamId}/jobs/{jobI" +
-            "d}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a job. Fields that are set in the " +
-            "job state will be updated.\",\"parameters\":{\"address\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Job address as newline (Unix) separated string\",\"location\":\"query\"},\"assigne" +
-            "e\":{\"type\":\"string\",\"description\":\"Assignee email address\",\"location\":\"query\"},\"" +
-            "customField\":{\"type\":\"string\",\"description\":\"Map from custom field id (from /tea" +
-            "m//custom_fields) to the field value. For example \'123=Alice\'\",\"repeated\":true,\"" +
-            "location\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\"" +
-            ",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Custo" +
-            "mer phone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Jo" +
-            "b number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"nu" +
-            "mber\",\"description\":\"The latitude coordinate of this job\'s location.\",\"format\":\"" +
-            "double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude " +
-            "coordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\"" +
-            ":{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separated string\",\"l" +
-            "ocation\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum" +
-            "\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescr" +
-            "iptions\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"lo" +
-            "cation\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"resp" +
-            "onse\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]}}}}" +
-            "}";
+            ":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"Assignee email address, or " +
+            "empty string to unassign.\",\"location\":\"query\"},\"customField\":{\"type\":\"string\",\"d" +
+            "escription\":\"Map from custom field id (from /team//custom_fields) to the field v" +
+            "alue. For example \'123=Alice\'\",\"repeated\":true,\"location\":\"query\"},\"customerName" +
+            "\":{\"type\":\"string\",\"description\":\"Customer name\",\"location\":\"query\"},\"customerPh" +
+            "oneNumber\":{\"type\":\"string\",\"description\":\"Customer phone number\",\"location\":\"qu" +
+            "ery\"},\"lat\":{\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'" +
+            "s location.\",\"required\":true,\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\"" +
+            ":\"number\",\"description\":\"The longitude coordinate of this job\'s location.\",\"requ" +
+            "ired\":true,\"format\":\"double\",\"location\":\"query\"},\"note\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Job note as newline (Unix) separated string\",\"location\":\"query\"},\"teamId" +
+            "\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"},\"t" +
+            "itle\":{\"type\":\"string\",\"description\":\"Job title\",\"required\":true,\"location\":\"que" +
+            "ry\"}},\"parameterOrder\":[\"teamId\",\"address\",\"lat\",\"lng\",\"title\"],\"request\":{\"$ref" +
+            "\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/co" +
+            "ordinate\"]},\"list\":{\"id\":\"coordinate.jobs.list\",\"path\":\"{teamId}/jobs\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Retrieves jobs created or modified since the given time" +
+            "stamp.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
+            "er of results to return in one page.\",\"format\":\"uint32\",\"location\":\"query\"},\"min" +
+            "ModifiedTimestampMs\":{\"type\":\"string\",\"description\":\"Minimum time a job was modi" +
+            "fied in milliseconds since epoch.\",\"format\":\"uint64\",\"location\":\"query\"},\"pageTo" +
+            "ken\":{\"type\":\"string\",\"description\":\"Continuation token\",\"location\":\"query\"},\"te" +
+            "amId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"teamId\"],\"response\":{\"$ref\":\"JobListResponse\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/coordinate\",\"https://www.googleapis.com/auth/coo" +
+            "rdinate.readonly\"]},\"patch\":{\"id\":\"coordinate.jobs.patch\",\"path\":\"{teamId}/jobs/" +
+            "{jobId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a job. Fields that are set " +
+            "in the job state will be updated. This method supports patch semantics.\",\"parame" +
+            "ters\":{\"address\":{\"type\":\"string\",\"description\":\"Job address as newline (Unix) s" +
+            "eparated string\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\",\"description\":\"" +
+            "Assignee email address, or empty string to unassign.\",\"location\":\"query\"},\"custo" +
+            "mField\":{\"type\":\"string\",\"description\":\"Map from custom field id (from /team//cu" +
+            "stom_fields) to the field value. For example \'123=Alice\'\",\"repeated\":true,\"locat" +
+            "ion\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Customer name\",\"loc" +
+            "ation\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"description\":\"Customer p" +
+            "hone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"description\":\"Job num" +
+            "ber\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{\"type\":\"number\"" +
+            ",\"description\":\"The latitude coordinate of this job\'s location.\",\"format\":\"doubl" +
+            "e\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The longitude coord" +
+            "inate of this job\'s location.\",\"format\":\"double\",\"location\":\"query\"},\"note\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Job note as newline (Unix) separated string\",\"locati" +
+            "on\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progress\",\"enum\":[\"C" +
+            "OMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"],\"enumDescriptio" +
+            "ns\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obsolete\"],\"locatio" +
+            "n\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job title\",\"location\":\"" +
+            "query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"Job\"},\"response\"" +
+            ":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordinate\"]},\"update" +
+            "\":{\"id\":\"coordinate.jobs.update\",\"path\":\"{teamId}/jobs/{jobId}\",\"httpMethod\":\"PU" +
+            "T\",\"description\":\"Updates a job. Fields that are set in the job state will be up" +
+            "dated.\",\"parameters\":{\"address\":{\"type\":\"string\",\"description\":\"Job address as n" +
+            "ewline (Unix) separated string\",\"location\":\"query\"},\"assignee\":{\"type\":\"string\"," +
+            "\"description\":\"Assignee email address, or empty string to unassign.\",\"location\":" +
+            "\"query\"},\"customField\":{\"type\":\"string\",\"description\":\"Map from custom field id " +
+            "(from /team//custom_fields) to the field value. For example \'123=Alice\'\",\"repeat" +
+            "ed\":true,\"location\":\"query\"},\"customerName\":{\"type\":\"string\",\"description\":\"Cust" +
+            "omer name\",\"location\":\"query\"},\"customerPhoneNumber\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Customer phone number\",\"location\":\"query\"},\"jobId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Job number\",\"required\":true,\"format\":\"uint64\",\"location\":\"path\"},\"lat\":{" +
+            "\"type\":\"number\",\"description\":\"The latitude coordinate of this job\'s location.\"," +
+            "\"format\":\"double\",\"location\":\"query\"},\"lng\":{\"type\":\"number\",\"description\":\"The " +
+            "longitude coordinate of this job\'s location.\",\"format\":\"double\",\"location\":\"quer" +
+            "y\"},\"note\":{\"type\":\"string\",\"description\":\"Job note as newline (Unix) separated " +
+            "string\",\"location\":\"query\"},\"progress\":{\"type\":\"string\",\"description\":\"Job progr" +
+            "ess\",\"enum\":[\"COMPLETED\",\"IN_PROGRESS\",\"NOT_ACCEPTED\",\"NOT_STARTED\",\"OBSOLETE\"]," +
+            "\"enumDescriptions\":[\"Completed\",\"In progress\",\"Not accepted\",\"Not started\",\"Obso" +
+            "lete\"],\"location\":\"query\"},\"teamId\":{\"type\":\"string\",\"description\":\"Team ID\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"title\":{\"type\":\"string\",\"description\":\"Job titl" +
+            "e\",\"location\":\"query\"}},\"parameterOrder\":[\"teamId\",\"jobId\"],\"request\":{\"$ref\":\"J" +
+            "ob\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.com/auth/coordi" +
+            "nate\"]}}}}}";
         
         public const string Version = "v1";
         
@@ -842,8 +843,6 @@ namespace Google.Apis.Coordinate.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _teamId;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service, string teamId) : 
@@ -870,17 +869,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -987,8 +975,6 @@ namespace Google.Apis.Coordinate.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _jobId;
             
             private string _teamId;
@@ -1018,17 +1004,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1066,8 +1041,6 @@ namespace Google.Apis.Coordinate.v1 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             private string _address;
             
@@ -1123,17 +1096,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>Job address as newline (Unix) separated string</summary>
             [Google.Apis.Util.RequestParameterAttribute("address", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Address {
@@ -1142,7 +1104,7 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Assignee email address</summary>
+            /// <summary>Assignee email address, or empty string to unassign.</summary>
             [Google.Apis.Util.RequestParameterAttribute("assignee", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Assignee {
                 get {
@@ -1262,8 +1224,6 @@ namespace Google.Apis.Coordinate.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<long> _maxResults;
             
             private string _minModifiedTimestampMs;
@@ -1296,17 +1256,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1370,8 +1319,6 @@ namespace Google.Apis.Coordinate.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _address;
             
             private string _assignee;
@@ -1427,17 +1374,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>Job address as newline (Unix) separated string</summary>
             [Google.Apis.Util.RequestParameterAttribute("address", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Address {
@@ -1449,7 +1385,7 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Assignee email address</summary>
+            /// <summary>Assignee email address, or empty string to unassign.</summary>
             [Google.Apis.Util.RequestParameterAttribute("assignee", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Assignee {
                 get {
@@ -1597,8 +1533,6 @@ namespace Google.Apis.Coordinate.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _address;
             
             private string _assignee;
@@ -1654,17 +1588,6 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>Job address as newline (Unix) separated string</summary>
             [Google.Apis.Util.RequestParameterAttribute("address", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Address {
@@ -1676,7 +1599,7 @@ namespace Google.Apis.Coordinate.v1 {
                 }
             }
             
-            /// <summary>Assignee email address</summary>
+            /// <summary>Assignee email address, or empty string to unassign.</summary>
             [Google.Apis.Util.RequestParameterAttribute("assignee", Google.Apis.Util.RequestParameterType.Query)]
             public virtual string Assignee {
                 get {

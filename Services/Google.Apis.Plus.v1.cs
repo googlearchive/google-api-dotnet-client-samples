@@ -2523,106 +2523,99 @@ namespace Google.Apis.Plus.v1 {
             ".\"}}}},\"resources\":{\"activities\":{\"methods\":{\"get\":{\"id\":\"plus.activities.get\",\"" +
             "path\":\"activities/{activityId}\",\"httpMethod\":\"GET\",\"description\":\"Get an activit" +
             "y.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the act" +
-            "ivity to get.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Specifies an alternative representation type.\",\"default\":\"json\",\"enum\":[" +
-            "\"json\"],\"enumDescriptions\":[\"Use JSON format\"],\"location\":\"query\"}},\"parameterOr" +
-            "der\":[\"activityId\"],\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.google" +
-            "apis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.activities.list\",\"path\":\"people/{use" +
-            "rId}/activities/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List all of the " +
-            "activities in the specified collection for a particular user.\",\"parameters\":{\"al" +
-            "t\":{\"type\":\"string\",\"description\":\"Specifies an alternative representation type." +
-            "\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"Use JSON format\"],\"locat" +
-            "ion\":\"query\"},\"collection\":{\"type\":\"string\",\"description\":\"The collection of act" +
-            "ivities to list.\",\"required\":true,\"enum\":[\"public\"],\"enumDescriptions\":[\"All pub" +
-            "lic activities created by the specified user.\"],\"location\":\"path\"},\"maxResults\":" +
-            "{\"type\":\"integer\",\"description\":\"The maximum number of activities to include in " +
-            "the response, used for paging. For any response, the actual number returned may " +
-            "be less than the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimu" +
-            "m\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The continuation token, used to page through large result sets. To get th" +
-            "e next page of results, set this parameter to the value of \\\"nextPageToken\\\" fro" +
-            "m the previous response.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The ID of the user to get activities for. The special value \\\"me\\\" can be" +
-            " used to indicate the authenticated user.\",\"required\":true,\"pattern\":\"me|[0-9]+\"" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"response\":{\"$ref\"" +
-            ":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"search\":" +
-            "{\"id\":\"plus.activities.search\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"descripti" +
-            "on\":\"Search public activities.\",\"parameters\":{\"language\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Specify the preferred language to search with. See search language code" +
-            "s for available values.\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"" +
-            "integer\",\"description\":\"The maximum number of activities to include in the respo" +
-            "nse, used for paging. For any response, the actual number returned may be less t" +
-            "han the specified maxResults.\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"m" +
-            "aximum\":\"20\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"description\":\"Speci" +
-            "fies how to order search results.\",\"default\":\"recent\",\"enum\":[\"best\",\"recent\"],\"" +
-            "enumDescriptions\":[\"Sort activities by relevance to the user, most relevant firs" +
-            "t.\",\"Sort activities by published date, most recent first.\"],\"location\":\"query\"}" +
-            ",\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to pag" +
-            "e through large result sets. To get the next page of results, set this parameter" +
-            " to the value of \\\"nextPageToken\\\" from the previous response. This token may be" +
-            " of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"Ful" +
-            "l-text search query string.\",\"required\":true,\"location\":\"query\"}},\"parameterOrde" +
-            "r\":[\"query\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/plus.me\"]}}},\"comments\":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"" +
-            "path\":\"comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Get a comment.\",\"" +
-            "parameters\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment t" +
-            "o get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"resp" +
-            "onse\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"" +
-            "list\":{\"id\":\"plus.comments.list\",\"path\":\"activities/{activityId}/comments\",\"http" +
-            "Method\":\"GET\",\"description\":\"List all of the comments for an activity.\",\"paramet" +
-            "ers\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to get" +
-            " comments for.\",\"required\":true,\"location\":\"path\"},\"alt\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Specifies an alternative representation type.\",\"default\":\"json\",\"enum\":" +
-            "[\"json\"],\"enumDescriptions\":[\"Use JSON format\"],\"location\":\"query\"},\"maxResults\"" +
-            ":{\"type\":\"integer\",\"description\":\"The maximum number of comments to include in t" +
-            "he response, used for paging. For any response, the actual number returned may b" +
-            "e less than the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum" +
-            "\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The continuation token, used to page through large result sets. To get the" +
-            " next page of results, set this parameter to the value of \\\"nextPageToken\\\" from" +
-            " the previous response.\",\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The order in which to sort the list of comments.\",\"default\":\"ascending\"" +
-            ",\"enum\":[\"ascending\",\"descending\"],\"enumDescriptions\":[\"Sort oldest comments fir" +
-            "st.\",\"Sort newest comments first.\"],\"location\":\"query\"}},\"parameterOrder\":[\"acti" +
-            "vityId\"],\"response\":{\"$ref\":\"CommentFeed\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/plus.me\"]}}},\"people\":{\"methods\":{\"get\":{\"id\":\"plus.people.get\",\"path\":\"pe" +
-            "ople/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Get a person\'s profile.\",\"param" +
-            "eters\":{\"userId\":{\"type\":\"string\",\"description\":\"The ID of the person to get the" +
-            " profile for. The special value \\\"me\\\" can be used to indicate the authenticated" +
-            " user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"userId\"],\"response\":{\"$ref\":\"Person\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/plus.me\",\"https://www.googleapis.com/auth/userinfo.email\"]},\"listByActivit" +
-            "y\":{\"id\":\"plus.people.listByActivity\",\"path\":\"activities/{activityId}/people/{co" +
-            "llection}\",\"httpMethod\":\"GET\",\"description\":\"List all of the people in the speci" +
-            "fied collection for a particular activity.\",\"parameters\":{\"activityId\":{\"type\":\"" +
-            "string\",\"description\":\"The ID of the activity to get the list of people for.\",\"r" +
-            "equired\":true,\"location\":\"path\"},\"collection\":{\"type\":\"string\",\"description\":\"Th" +
-            "e collection of people to list.\",\"required\":true,\"enum\":[\"plusoners\",\"resharers\"" +
-            "],\"enumDescriptions\":[\"List all people who have +1\'d this activity.\",\"List all p" +
-            "eople who have reshared this activity.\"],\"location\":\"path\"},\"maxResults\":{\"type\"" +
-            ":\"integer\",\"description\":\"The maximum number of people to include in the respons" +
-            "e, used for paging. For any response, the actual number returned may be less tha" +
-            "n the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"max" +
-            "imum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The " +
-            "continuation token, used to page through large result sets. To get the next page" +
-            " of results, set this parameter to the value of \\\"nextPageToken\\\" from the previ" +
-            "ous response.\",\"location\":\"query\"}},\"parameterOrder\":[\"activityId\",\"collection\"]" +
-            ",\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plu" +
-            "s.me\"]},\"search\":{\"id\":\"plus.people.search\",\"path\":\"people\",\"httpMethod\":\"GET\",\"" +
-            "description\":\"Search all public profiles.\",\"parameters\":{\"language\":{\"type\":\"str" +
-            "ing\",\"description\":\"Specify the preferred language to search with. See search la" +
-            "nguage codes for available values.\",\"default\":\"\",\"location\":\"query\"},\"maxResults" +
-            "\":{\"type\":\"integer\",\"description\":\"The maximum number of people to include in th" +
-            "e response, used for paging. For any response, the actual number returned may be" +
-            " less than the specified maxResults.\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\"" +
-            ":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The continuation token, used to page through large result sets. To get the n" +
-            "ext page of results, set this parameter to the value of \\\"nextPageToken\\\" from t" +
-            "he previous response. This token may be of any length.\",\"location\":\"query\"},\"que" +
-            "ry\":{\"type\":\"string\",\"description\":\"Specify a query string for full text search " +
-            "of public text in all profiles.\",\"required\":true,\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/plus.me\"]}}}}}";
+            "ivity to get.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"activityId" +
+            "\"],\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/plu" +
+            "s.me\"]},\"list\":{\"id\":\"plus.activities.list\",\"path\":\"people/{userId}/activities/{" +
+            "collection}\",\"httpMethod\":\"GET\",\"description\":\"List all of the activities in the" +
+            " specified collection for a particular user.\",\"parameters\":{\"collection\":{\"type\"" +
+            ":\"string\",\"description\":\"The collection of activities to list.\",\"required\":true," +
+            "\"enum\":[\"public\"],\"enumDescriptions\":[\"All public activities created by the spec" +
+            "ified user.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"T" +
+            "he maximum number of activities to include in the response, used for paging. For" +
+            " any response, the actual number returned may be less than the specified maxResu" +
+            "lts.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":" +
+            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, use" +
+            "d to page through large result sets. To get the next page of results, set this p" +
+            "arameter to the value of \\\"nextPageToken\\\" from the previous response.\",\"locatio" +
+            "n\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to get a" +
+            "ctivities for. The special value \\\"me\\\" can be used to indicate the authenticate" +
+            "d user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"userId\",\"collection\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.activities.search\",\"pa" +
+            "th\":\"activities\",\"httpMethod\":\"GET\",\"description\":\"Search public activities.\",\"p" +
+            "arameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the preferred lan" +
+            "guage to search with. See search language codes for available values.\",\"default\"" +
+            ":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximu" +
+            "m number of activities to include in the response, used for paging. For any resp" +
+            "onse, the actual number returned may be less than the specified maxResults.\",\"de" +
+            "fault\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"" +
+            "orderBy\":{\"type\":\"string\",\"description\":\"Specifies how to order search results.\"" +
+            ",\"default\":\"recent\",\"enum\":[\"best\",\"recent\"],\"enumDescriptions\":[\"Sort activitie" +
+            "s by relevance to the user, most relevant first.\",\"Sort activities by published " +
+            "date, most recent first.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"des" +
+            "cription\":\"The continuation token, used to page through large result sets. To ge" +
+            "t the next page of results, set this parameter to the value of \\\"nextPageToken\\\"" +
+            " from the previous response. This token may be of any length.\",\"location\":\"query" +
+            "\"},\"query\":{\"type\":\"string\",\"description\":\"Full-text search query string.\",\"requ" +
+            "ired\":true,\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"A" +
+            "ctivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"comments\"" +
+            ":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"path\":\"comments/{commentId}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Get a comment.\",\"parameters\":{\"commentId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comments.list\",\"" +
+            "path\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"List " +
+            "all of the comments for an activity.\",\"parameters\":{\"activityId\":{\"type\":\"string" +
+            "\",\"description\":\"The ID of the activity to get comments for.\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum numbe" +
+            "r of comments to include in the response, used for paging. For any response, the" +
+            " actual number returned may be less than the specified maxResults.\",\"default\":\"2" +
+            "0\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToke" +
+            "n\":{\"type\":\"string\",\"description\":\"The continuation token, used to page through " +
+            "large result sets. To get the next page of results, set this parameter to the va" +
+            "lue of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"query\"},\"sortO" +
+            "rder\":{\"type\":\"string\",\"description\":\"The order in which to sort the list of com" +
+            "ments.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"descending\"],\"enumDescription" +
+            "s\":[\"Sort oldest comments first.\",\"Sort newest comments first.\"],\"location\":\"que" +
+            "ry\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentFeed\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"people\":{\"methods\":{\"get\":{\"id\"" +
+            ":\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Ge" +
+            "t a person\'s profile.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"Th" +
+            "e ID of the person to get the profile for. The special value \\\"me\\\" can be used " +
+            "to indicate the authenticated user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Person\"},\"scopes\"" +
+            ":[\"https://www.googleapis.com/auth/plus.me\",\"https://www.googleapis.com/auth/use" +
+            "rinfo.email\"]},\"listByActivity\":{\"id\":\"plus.people.listByActivity\",\"path\":\"activ" +
+            "ities/{activityId}/people/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List a" +
+            "ll of the people in the specified collection for a particular activity.\",\"parame" +
+            "ters\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to ge" +
+            "t the list of people for.\",\"required\":true,\"location\":\"path\"},\"collection\":{\"typ" +
+            "e\":\"string\",\"description\":\"The collection of people to list.\",\"required\":true,\"e" +
+            "num\":[\"plusoners\",\"resharers\"],\"enumDescriptions\":[\"List all people who have +1\'" +
+            "d this activity.\",\"List all people who have reshared this activity.\"],\"location\"" +
+            ":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of peo" +
+            "ple to include in the response, used for paging. For any response, the actual nu" +
+            "mber returned may be less than the specified maxResults.\",\"default\":\"20\",\"format" +
+            "\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"The continuation token, used to page through large resu" +
+            "lt sets. To get the next page of results, set this parameter to the value of \\\"n" +
+            "extPageToken\\\" from the previous response.\",\"location\":\"query\"}},\"parameterOrder" +
+            "\":[\"activityId\",\"collection\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https:" +
+            "//www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.people.search\",\"path\":" +
+            "\"people\",\"httpMethod\":\"GET\",\"description\":\"Search all public profiles.\",\"paramet" +
+            "ers\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the preferred language " +
+            "to search with. See search language codes for available values.\",\"default\":\"\",\"l" +
+            "ocation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum numb" +
+            "er of people to include in the response, used for paging. For any response, the " +
+            "actual number returned may be less than the specified maxResults.\",\"default\":\"10" +
+            "\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"pageToken\"" +
+            ":{\"type\":\"string\",\"description\":\"The continuation token, used to page through la" +
+            "rge result sets. To get the next page of results, set this parameter to the valu" +
+            "e of \\\"nextPageToken\\\" from the previous response. This token may be of any leng" +
+            "th.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"Specify a query" +
+            " string for full text search of public text in all profiles.\",\"required\":true,\"l" +
+            "ocation\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}}}}";
         
         public const string Version = "v1";
         
@@ -2740,15 +2733,6 @@ namespace Google.Apis.Plus.v1 {
             return new SearchRequest(service, query);
         }
         
-        /// <summary>Specifies an alternative representation type.</summary>
-        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
-        public enum Alt {
-            
-            /// <summary>Use JSON format</summary>
-            [Google.Apis.Util.StringValueAttribute("json")]
-            Json,
-        }
-        
         /// <summary>The collection of activities to list.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum Collection {
@@ -2777,11 +2761,7 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _activityId;
-            
-            private System.Nullable<Alt> _alt;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string activityId) : 
                     base(service) {
@@ -2810,33 +2790,11 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>The ID of the activity to get.</summary>
             [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
-                }
-            }
-            
-            /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<Alt> Alt {
-                get {
-                    return this._alt;
-                }
-                set {
-                    this._alt = value;
                 }
             }
             
@@ -2858,10 +2816,6 @@ namespace Google.Apis.Plus.v1 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
-            
-            private System.Nullable<Alt> _alt;
             
             private Collection _collection;
             
@@ -2896,28 +2850,6 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
-            /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<Alt> Alt {
-                get {
-                    return this._alt;
-                }
-                set {
-                    this._alt = value;
                 }
             }
             
@@ -2978,8 +2910,6 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _language;
             
             private System.Nullable<long> _maxResults;
@@ -3014,17 +2944,6 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3119,15 +3038,6 @@ namespace Google.Apis.Plus.v1 {
             return new ListRequest(service, activityId);
         }
         
-        /// <summary>Specifies an alternative representation type.</summary>
-        [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
-        public enum Alt {
-            
-            /// <summary>Use JSON format</summary>
-            [Google.Apis.Util.StringValueAttribute("json")]
-            Json,
-        }
-        
         /// <summary>The order in which to sort the list of comments.</summary>
         [System.ComponentModel.TypeConverterAttribute(typeof(Google.Apis.Util.EnumStringValueTypeConverter))]
         public enum SortOrder {
@@ -3146,8 +3056,6 @@ namespace Google.Apis.Plus.v1 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             private string _commentId;
             
@@ -3178,17 +3086,6 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>The ID of the comment to get.</summary>
             [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string CommentId {
@@ -3216,11 +3113,7 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _activityId;
-            
-            private System.Nullable<Alt> _alt;
             
             private System.Nullable<long> _maxResults;
             
@@ -3255,33 +3148,11 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>The ID of the activity to get comments for.</summary>
             [Google.Apis.Util.RequestParameterAttribute("activityId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string ActivityId {
                 get {
                     return this._activityId;
-                }
-            }
-            
-            /// <summary>Specifies an alternative representation type.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("alt", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<Alt> Alt {
-                get {
-                    return this._alt;
-                }
-                set {
-                    this._alt = value;
                 }
             }
             
@@ -3383,8 +3254,6 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _userId;
             
             public GetRequest(Google.Apis.Discovery.IRequestProvider service, string userId) : 
@@ -3414,17 +3283,6 @@ namespace Google.Apis.Plus.v1 {
                 }
             }
             
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
-                }
-            }
-            
             /// <summary>The ID of the person to get the profile for. The special value "me" can be used to indicate the authenticated user.</summary>
             [Google.Apis.Util.RequestParameterAttribute("userId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string UserId {
@@ -3451,8 +3309,6 @@ namespace Google.Apis.Plus.v1 {
             private string _oauth_token;
             
             private System.Nullable<bool> _prettyPrint;
-            
-            private string _quotaUser;
             
             private string _activityId;
             
@@ -3487,17 +3343,6 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -3558,8 +3403,6 @@ namespace Google.Apis.Plus.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _language;
             
             private System.Nullable<long> _maxResults;
@@ -3592,17 +3435,6 @@ namespace Google.Apis.Plus.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

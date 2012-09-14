@@ -1135,6 +1135,13 @@
             IP address of the site where the request originates. Use this if you want to enforce per-user limits.
             </summary>
         </member>
+        <member name="P:Google.Apis.Requests.ServiceRequest`1.QuotaUser">
+            <summary>
+            Available to use for quota purposes for server-side applications.
+            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            Overrides UserIp if both are provided.
+            </summary>
+        </member>
         <member name="P:Google.Apis.Requests.ServiceRequest`1.ResourcePath">
             <summary>
             Name of the Resource to which the method belongs.
@@ -1958,6 +1965,13 @@
             IP address of the site where the request originates. Use this if you want to enforce per-user limits.
             </summary>
         </member>
+        <member name="M:Google.Apis.Requests.IRequest.WithQuotaUser(System.String)">
+            <summary>
+            Available to use for quota purposes for server-side applications.
+            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            Overrides UserIp if both are provided.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Requests.IRequest.WithBody(System.String)">
             <summary>
             Adds a body to this request (POST, PUT, ..).
@@ -2132,6 +2146,13 @@
         <member name="M:Google.Apis.Requests.Request.WithUserIp(System.String)">
             <summary>
             IP address of the site where the request originates. Use this if you want to enforce per-user limits.
+            </summary>
+        </member>
+        <member name="M:Google.Apis.Requests.Request.WithQuotaUser(System.String)">
+            <summary>
+            Available to use for quota purposes for server-side applications.
+            Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+            Overrides UserIp if both are provided.
             </summary>
         </member>
         <member name="M:Google.Apis.Requests.Request.BuildRequest">

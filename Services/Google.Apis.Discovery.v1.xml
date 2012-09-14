@@ -363,9 +363,6 @@
         <member name="P:Google.Apis.Discovery.v1.ApisResource.GetRestRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Discovery.v1.ApisResource.GetRestRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Discovery.v1.ApisResource.GetRestRequest.Api">
             <summary>The name of the API.</summary>
         </member>
@@ -377,9 +374,6 @@
         </member>
         <member name="P:Google.Apis.Discovery.v1.ApisResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Discovery.v1.ApisResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Discovery.v1.ApisResource.ListRequest.Label">
             <summary>Only include APIs with a matching label, such as 'graduated' or 'labs'.</summary>

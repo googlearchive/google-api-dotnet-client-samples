@@ -629,9 +629,6 @@
         <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.AclResource.DeleteRequest.ActivityId">
             <summary>ID of the activity.</summary>
         </member>
@@ -665,9 +662,6 @@
         <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.DeleteRequest.ActivityId">
             <summary>ID of the activity to remove.</summary>
         </member>
@@ -676,9 +670,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivitiesResource.ListRequest.Collection">
             <summary>The collection of activities to list.</summary>
@@ -713,9 +704,6 @@
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.GetRequest.ActivityId">
             <summary>ID of the activity to get the visibility.</summary>
         </member>
@@ -724,9 +712,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.PatchRequest.ActivityId">
             <summary>ID of the activity.</summary>
@@ -739,9 +724,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.ActivityVisibilityResource.UpdateRequest.ActivityId">
             <summary>ID of the activity.</summary>
@@ -764,9 +746,6 @@
         <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.BadgesResource.GetRequest.BadgeId">
             <summary>The ID of the badge that will be retrieved.</summary>
         </member>
@@ -778,9 +757,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.BadgesResource.ListRequest.UserId">
             <summary>The id of the user whose badges will be listed. Can be me to refer to caller.</summary>
@@ -816,9 +792,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.DeleteRequest.CommentId">
             <summary>ID of the comment to remove.</summary>
         </member>
@@ -827,9 +800,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.GetRequest.CommentId">
             <summary>ID of the comment to get.</summary>
@@ -843,9 +813,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.InsertRequest.ActivityId">
             <summary>The ID of the activity to contain the new comment.</summary>
         </member>
@@ -857,9 +824,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommentsResource.ListRequest.ActivityId">
             <summary>The ID of the activity containing the comments.</summary>
@@ -899,9 +863,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.GetRequest.CommunityId">
             <summary>The ID of the community to get.</summary>
         </member>
@@ -913,9 +874,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunitiesResource.ListRequest.Hl">
             <summary>Specifies the interface language (host language) of your user interface.</summary>
@@ -945,9 +903,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.DeleteRequest.CommunityId">
             <summary>ID of the community.</summary>
         </member>
@@ -959,9 +914,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityFollowResource.InsertRequest.CommunityId">
             <summary>ID of the community.</summary>
@@ -994,9 +946,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.DeleteRequest.CommunityId">
             <summary>ID of the community.</summary>
         </member>
@@ -1008,9 +957,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.GetRequest.CommunityId">
             <summary>ID of the community.</summary>
@@ -1027,9 +973,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.InsertRequest.CommunityId">
             <summary>ID of the community.</summary>
         </member>
@@ -1041,9 +984,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMembersResource.ListRequest.CommunityId">
             <summary>The ID of the community whose members will be listed.</summary>
@@ -1082,9 +1022,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.DeleteRequest.CommunityId">
             <summary>The ID of the community whose message will be moved to the trash folder.</summary>
         </member>
@@ -1100,9 +1037,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.InsertRequest.CommunityId">
             <summary>The ID of the community the message should be added to.</summary>
         </member>
@@ -1117,9 +1051,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityMessagesResource.ListRequest.CommunityId">
             <summary>The ID of the community which messages will be listed.</summary>
@@ -1152,9 +1083,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.InsertRequest.CommunityId">
             <summary>The ID of the community whose poll is being commented.</summary>
         </member>
@@ -1169,9 +1097,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollCommentsResource.ListRequest.CommunityId">
             <summary>The ID of the community whose poll is having its comments listed.</summary>
@@ -1199,9 +1124,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollVotesResource.InsertRequest.CommunityId">
             <summary>The ID of the community whose poll is being voted.</summary>
         </member>
@@ -1226,9 +1148,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.GetRequest.CommunityId">
             <summary>The ID of the community for whose poll will be retrieved.</summary>
         </member>
@@ -1243,9 +1162,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityPollsResource.ListRequest.CommunityId">
             <summary>The ID of the community which polls will be listed.</summary>
@@ -1268,9 +1184,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityRelatedResource.ListRequest.CommunityId">
             <summary>The ID of the community whose related communities will be listed.</summary>
@@ -1302,9 +1215,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.DeleteRequest.CommunityId">
             <summary>The ID of the community whose topic will be moved to the trash folder.</summary>
         </member>
@@ -1316,9 +1226,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.GetRequest.CommunityId">
             <summary>The ID of the community whose topic will be retrieved.</summary>
@@ -1335,9 +1242,6 @@
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.InsertRequest.CommunityId">
             <summary>The ID of the community the topic should be added to.</summary>
         </member>
@@ -1352,9 +1256,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.CommunityTopicsResource.ListRequest.CommunityId">
             <summary>The ID of the community which topics will be listed.</summary>
@@ -1378,9 +1279,6 @@
         <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Orkut.v2.CountersResource.ListRequest.UserId">
             <summary>The ID of the user whose counters will be listed. Can be me to refer to caller.</summary>
         </member>
@@ -1392,9 +1290,6 @@
         </member>
         <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Orkut.v2.ScrapsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

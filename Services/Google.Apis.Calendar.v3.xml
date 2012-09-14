@@ -570,9 +570,6 @@
         <member name="P:Google.Apis.Calendar.v3.AclResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.DeleteRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -584,9 +581,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.GetRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -600,9 +594,6 @@
         <member name="P:Google.Apis.Calendar.v3.AclResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.InsertRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -615,9 +606,6 @@
         <member name="P:Google.Apis.Calendar.v3.AclResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.ListRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -626,9 +614,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.PatchRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -644,9 +629,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.AclResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.AclResource.UpdateRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -700,9 +682,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.DeleteRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -712,9 +691,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.GetRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -723,9 +699,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.InsertRequest.ColorRgbFormat">
             <summary>Whether to use the 'frontendColor' and 'backgroundColor' fields to write the calendar colors (RGB). If this feature is used, the index-based 'color' field will be set to the best matching option automatically. Optional. The default is False.</summary>
@@ -738,9 +711,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.ListRequest.MaxResults">
             <summary>Maximum number of entries returned on one result page. Optional.</summary>
@@ -760,9 +730,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.PatchRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -777,9 +744,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarListResource.UpdateRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -819,9 +783,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.ClearRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.ClearRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.ClearRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -830,9 +791,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.DeleteRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -843,9 +801,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.GetRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -855,9 +810,6 @@
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -866,9 +818,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.PatchRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -881,9 +830,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.CalendarsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.CalendarsResource.UpdateRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -899,9 +845,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.ColorsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.ColorsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="M:Google.Apis.Calendar.v3.EventsResource.Delete(System.String,System.String)">
             <summary>Deletes an event.</summary>
@@ -966,9 +909,6 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.DeleteRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -983,9 +923,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.GetRequest.AlwaysIncludeEmail">
             <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
@@ -1008,9 +945,6 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ImportRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ImportRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ImportRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -1022,9 +956,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InsertRequest.CalendarId">
             <summary>Calendar identifier.</summary>
@@ -1040,9 +971,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.InstancesRequest.AlwaysIncludeEmail">
             <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
@@ -1076,9 +1004,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.ListRequest.AlwaysIncludeEmail">
             <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
@@ -1131,9 +1056,6 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.MoveRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.MoveRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.MoveRequest.CalendarId">
             <summary>Calendar identifier of the source calendar where the event currently is on.</summary>
         </member>
@@ -1151,9 +1073,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.PatchRequest.AlwaysIncludeEmail">
             <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
@@ -1176,9 +1095,6 @@
         <member name="P:Google.Apis.Calendar.v3.EventsResource.QuickAddRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.QuickAddRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.QuickAddRequest.CalendarId">
             <summary>Calendar identifier.</summary>
         </member>
@@ -1193,9 +1109,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Calendar.v3.EventsResource.UpdateRequest.AlwaysIncludeEmail">
             <summary>Whether to always include a value in the "email" field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.</summary>
@@ -1221,9 +1134,6 @@
         <member name="P:Google.Apis.Calendar.v3.FreebusyResource.QueryRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.FreebusyResource.QueryRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.FreebusyResource.QueryRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -1240,9 +1150,6 @@
         <member name="P:Google.Apis.Calendar.v3.SettingsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Calendar.v3.SettingsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Calendar.v3.SettingsResource.GetRequest.Setting">
             <summary>Name of the user setting.</summary>
         </member>
@@ -1251,9 +1158,6 @@
         </member>
         <member name="P:Google.Apis.Calendar.v3.SettingsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Calendar.v3.SettingsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
     </members>
 </doc>

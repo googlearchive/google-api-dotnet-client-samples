@@ -116,6 +116,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.Job.SelfLink">
             <summary>[Output-only] A URL that can be used to access this resource again.</summary>
         </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationExtract.DestinationFormat">
+            <summary>[Experimental] Optional and defaults to CSV. Format with which files should be exported. To export to CSV, specify &quot;CSV&quot;. Tables with nested or repeated fields cannot be exported as CSV. To export to newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationExtract.DestinationUri">
             <summary>[Required] The fully-qualified Google Cloud Storage URI where the extracted table should be written.</summary>
         </member>
@@ -160,6 +163,9 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SkipLeadingRows">
             <summary>[Optional] Number of rows of initial data to skip in the data being imported.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceFormat">
+            <summary>[Experimental] Optional and defaults to CSV. Format of source files. For CSV uploads, specify &quot;CSV&quot;. For imports of datastore backups, specify &quot;DATASTORE_BACKUP&quot;. For imports of newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceUris">
             <summary>[Required] Source URIs describing Google Cloud Storage locations of data to load.</summary>
@@ -438,9 +444,6 @@
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.DeleteRequest.DatasetId">
             <summary>Dataset ID of dataset being deleted</summary>
         </member>
@@ -456,9 +459,6 @@
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.GetRequest.DatasetId">
             <summary>Dataset ID of the requested dataset</summary>
         </member>
@@ -471,9 +471,6 @@
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.InsertRequest.ProjectId">
             <summary>Project ID of the new dataset</summary>
         </member>
@@ -485,9 +482,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.ListRequest.MaxResults">
             <summary>The maximum number of results to return</summary>
@@ -504,9 +498,6 @@
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.PatchRequest.DatasetId">
             <summary>Dataset ID of the dataset being updated</summary>
         </member>
@@ -521,9 +512,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.DatasetId">
             <summary>Dataset ID of the dataset being updated</summary>
@@ -587,9 +575,6 @@
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetRequest.JobId">
             <summary>Job ID of the requested job</summary>
         </member>
@@ -601,9 +586,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.GetQueryResultsRequest.JobId">
             <summary>Job ID of the query job</summary>
@@ -626,9 +608,6 @@
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertRequest.ProjectId">
             <summary>Project ID of the project that will be billed for the job</summary>
         </member>
@@ -641,9 +620,6 @@
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload.ProjectId">
             <summary>Project ID of the project that will be billed for the job</summary>
         </member>
@@ -652,9 +628,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.ListRequest.AllUsers">
             <summary>Whether to display jobs owned by all users in the project. Default false</summary>
@@ -680,9 +653,6 @@
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.QueryRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.JobsResource.QueryRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.JobsResource.QueryRequest.ProjectId">
             <summary>Project ID of the project billed for the query</summary>
         </member>
@@ -697,9 +667,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.ProjectsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.ProjectsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.ProjectsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
@@ -718,9 +685,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TabledataResource.ListRequest.DatasetId">
             <summary>Dataset ID of the table to read</summary>
@@ -780,9 +744,6 @@
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.DeleteRequest.DatasetId">
             <summary>Dataset ID of the table to delete</summary>
         </member>
@@ -797,9 +758,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.GetRequest.DatasetId">
             <summary>Dataset ID of the requested table</summary>
@@ -816,9 +774,6 @@
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.InsertRequest.DatasetId">
             <summary>Dataset ID of the new table</summary>
         </member>
@@ -833,9 +788,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.ListRequest.DatasetId">
             <summary>Dataset ID of the tables to list</summary>
@@ -855,9 +807,6 @@
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.PatchRequest.DatasetId">
             <summary>Dataset ID of the table to update</summary>
         </member>
@@ -875,9 +824,6 @@
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.TablesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.TablesResource.UpdateRequest.DatasetId">
             <summary>Dataset ID of the table to update</summary>

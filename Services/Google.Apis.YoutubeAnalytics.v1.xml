@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.YoutubeAnalytics.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable">
+            <summary>Contains a single result table. The table is returned as an array of rows that contain the values for the cells of the table. Depending on the metric or dimension, the cell can contain a string (video ID, country code) or a number (number of views or number of likes).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.ColumnHeaders">
+            <summary>Contains information about the columns returned in the &quot;rows&quot; fields. The order of the elements matches the order of the corresponding columns in &quot;rows&quot; field.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.Kind">
+            <summary>Identifier used to mark the structure as a result table.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.Rows">
+            <summary>Contains all rows of the result table. Each row contains an array with the values for the columns. The order matches the order of the column information provided in the &quot;columnHeaders&quot; field. If no data is available for the given query, the &quot;rows&quot; element will be omitted from the response. The response for a query with the day dimension will not contain rows for the most recent days.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.ColumnHeadersData.ColumnType">
+            <summary>The type of the column (DIMENSION, METRIC).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.ColumnHeadersData.DataType">
+            <summary>Type of the data in the column (STRING, INTEGER, FLOAT).</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.Data.ResultTable.ColumnHeadersData.Name">
+            <summary>The name of the dimension or metric.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.YoutubeAnalytics.v1.YoutubeAnalyticsService.Scopes.YtAnalyticsReadonly">
+            <summary>View YouTube Analytics reports for your YouTube content</summary>
+        </member>
+        <member name="M:Google.Apis.YoutubeAnalytics.v1.ReportsResource.Query(System.String,System.String,System.String,System.String)">
+            <summary>Retrieve your YouTube Analytics reports.</summary>
+            <param name="ids">Required - Must match pattern [a-zA-Z]+==[a-zA-Z0-9_+-]+ - Unique channel or content owner ID for retrieving YouTube Analytics data. Either channel==C or contentOwner==O where &apos;C&apos; is the encrypted channel ID and &apos;O&apos; is the content owner name.</param>
+            <param name="startDate">start-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - Start date for fetching YouTube Analytics data. All requests should specify a start date formatted as YYYY-MM-DD.</param>
+            <param name="endDate">end-date - Required - Must match pattern [0-9]{4}-[0-9]{2}-[0-9]{2} - End date for fetching YouTube Analytics data. All requests should specify an end date formatted as YYYY-MM-DD.</param>
+            <param name="metrics">Required - Must match pattern [0-9a-zA-Z,]+ - A comma-separated list of YouTube Analytics metrics. E.g., &apos;views&apos; or &apos;likes,dislikes&apos;</param>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Dimensions">
+            <summary>A comma-separated list of YouTube Analytics dimensions. E.g., 'video', or 'ageGroup,gender'.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.EndDate">
+            <summary>End date for fetching YouTube Analytics data. All requests should specify an end date formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Filters">
+            <summary>A list of dimension filters to be applied to YouTube Analytics data. Multiple filters can be joined together with the ';' character. The returned result table will satisfy both filters. E.g., video==dMH0bHeiRNg;country==IT will restrict the returned stats to the given video and the country Italy.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Ids">
+            <summary>Unique channel or content owner ID for retrieving YouTube Analytics data. Either channel==C or contentOwner==O where 'C' is the encrypted channel ID and 'O' is the content owner name.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.MaxResults">
+            <summary>The maximum number of rows to include in the response.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Metrics">
+            <summary>A comma-separated list of YouTube Analytics metrics. E.g., 'views' or 'likes,dislikes'</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.Sort">
+            <summary>A comma-separated list of dimensions or metrics that determine the sort order for YouTube Analytics data. By default the sort order is ascending, '-' prefix causes descending sort order.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.StartDate">
+            <summary>Start date for fetching YouTube Analytics data. All requests should specify a start date formatted as YYYY-MM-DD.</summary>
+        </member>
+        <member name="P:Google.Apis.YoutubeAnalytics.v1.ReportsResource.QueryRequest.StartIndex">
+            <summary>An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter (one-based, inclusive).</summary>
+        </member>
+    </members>
+</doc>

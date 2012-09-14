@@ -161,9 +161,6 @@
         <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.CustomFieldDefResource.ListRequest.TeamId">
             <summary>Team ID</summary>
         </member>
@@ -218,9 +215,6 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.GetRequest.JobId">
             <summary>Job number</summary>
         </member>
@@ -233,14 +227,11 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.Assignee">
-            <summary>Assignee email address</summary>
+            <summary>Assignee email address, or empty string to unassign.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.InsertRequest.CustomField">
             <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>
@@ -275,9 +266,6 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return in one page.</summary>
         </member>
@@ -296,14 +284,11 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.Assignee">
-            <summary>Assignee email address</summary>
+            <summary>Assignee email address, or empty string to unassign.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.PatchRequest.CustomField">
             <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>
@@ -344,14 +329,11 @@
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Address">
             <summary>Job address as newline (Unix) separated string</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.Assignee">
-            <summary>Assignee email address</summary>
+            <summary>Assignee email address, or empty string to unassign.</summary>
         </member>
         <member name="P:Google.Apis.Coordinate.v1.JobsResource.UpdateRequest.CustomField">
             <summary>Map from custom field id (from /team//custom_fields) to the field value. For example '123=Alice'</summary>

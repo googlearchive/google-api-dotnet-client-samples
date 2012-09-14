@@ -627,9 +627,6 @@
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.AboutResource.GetRequest.IncludeSubscribed">
             <summary>Whether to include subscribed items when calculating the number of remaining change IDs</summary>
         </member>
@@ -652,9 +649,6 @@
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.GetRequest.AppId">
             <summary>The ID of the app.</summary>
         </member>
@@ -663,9 +657,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.AppsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.ChangesResource.Get(System.String)">
             <summary>Gets a specific change.</summary>
@@ -680,9 +671,6 @@
         <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.GetRequest.ChangeId">
             <summary>The ID of the change.</summary>
         </member>
@@ -691,9 +679,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChangesResource.ListRequest.IncludeDeleted">
             <summary>Whether to include deleted items.</summary>
@@ -734,9 +719,6 @@
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.DeleteRequest.ChildId">
             <summary>The ID of the child.</summary>
         </member>
@@ -748,9 +730,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.GetRequest.ChildId">
             <summary>The ID of the child.</summary>
@@ -764,9 +743,6 @@
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.InsertRequest.FolderId">
             <summary>The ID of the folder.</summary>
         </member>
@@ -778,9 +754,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.FolderId">
             <summary>The ID of the folder.</summary>
@@ -854,9 +827,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
         </member>
@@ -893,9 +863,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.DeleteRequest.FileId">
             <summary>The ID of the file to delete.</summary>
         </member>
@@ -904,9 +871,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.GetRequest.FileId">
             <summary>The ID for the file in question.</summary>
@@ -922,9 +886,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -959,9 +920,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
         </member>
@@ -992,9 +950,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.ListRequest.MaxResults">
             <summary>Maximum number of files to return.</summary>
         </member>
@@ -1012,9 +967,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1061,9 +1013,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TouchRequest.FileId">
             <summary>The ID of the file to update.</summary>
         </member>
@@ -1072,9 +1021,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.TrashRequest.FileId">
             <summary>The ID of the file to trash.</summary>
@@ -1085,9 +1031,6 @@
         <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UntrashRequest.FileId">
             <summary>The ID of the file to untrash.</summary>
         </member>
@@ -1096,9 +1039,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1144,9 +1084,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Convert">
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
@@ -1208,9 +1145,6 @@
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.DeleteRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
@@ -1222,9 +1156,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1238,9 +1169,6 @@
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.InsertRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
@@ -1252,9 +1180,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.ParentsResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1293,9 +1218,6 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.DeleteRequest.FileId">
             <summary>The ID for the file.</summary>
         </member>
@@ -1308,9 +1230,6 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.GetRequest.FileId">
             <summary>The ID for the file.</summary>
         </member>
@@ -1322,9 +1241,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.InsertRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1341,9 +1257,6 @@
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.ListRequest.FileId">
             <summary>The ID for the file.</summary>
         </member>
@@ -1352,9 +1265,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.PatchRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1370,9 +1280,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1413,9 +1320,6 @@
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.DeleteRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
@@ -1427,9 +1331,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.GetRequest.FileId">
             <summary>The ID of the file.</summary>
@@ -1443,9 +1344,6 @@
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.ListRequest.FileId">
             <summary>The ID of the file.</summary>
         </member>
@@ -1454,9 +1352,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.PatchRequest.FileId">
             <summary>The ID for the file.</summary>
@@ -1472,9 +1367,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.RevisionsResource.UpdateRequest.FileId">
             <summary>The ID for the file.</summary>

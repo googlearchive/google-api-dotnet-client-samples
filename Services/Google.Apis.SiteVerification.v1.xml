@@ -90,9 +90,6 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.DeleteRequest.Id">
             <summary>The id of a verified site or domain.</summary>
         </member>
@@ -101,9 +98,6 @@
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetRequest.Id">
             <summary>The id of a verified site or domain.</summary>
@@ -114,9 +108,6 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.GetTokenRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -125,9 +116,6 @@
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.InsertRequest.VerificationMethod">
             <summary>The method to use for verifying a site or domain.</summary>
@@ -141,17 +129,11 @@
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.PatchRequest.Id">
             <summary>The id of a verified site or domain.</summary>
@@ -164,9 +146,6 @@
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.SiteVerification.v1.WebResourceResource.UpdateRequest.Id">
             <summary>The id of a verified site or domain.</summary>

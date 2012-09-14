@@ -383,9 +383,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.DeleteRequest.ColumnId">
             <summary>Name or identifier for the column being deleted.</summary>
         </member>
@@ -397,9 +394,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.GetRequest.ColumnId">
             <summary>Name or identifier for the column that is being requested.</summary>
@@ -413,9 +407,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.InsertRequest.TableId">
             <summary>Table for which a new column is being added.</summary>
         </member>
@@ -427,9 +418,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.ListRequest.MaxResults">
             <summary>Maximum number of columns to return. Optional. Default is 5.</summary>
@@ -446,9 +434,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.PatchRequest.ColumnId">
             <summary>Name or identifier for the column that is being updated.</summary>
         </member>
@@ -463,9 +448,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ColumnResource.UpdateRequest.ColumnId">
             <summary>Name or identifier for the column that is being updated.</summary>
@@ -490,9 +472,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Delimiter">
             <summary>The delimiter used to separate cell values. Default is ','.</summary>
         </member>
@@ -507,9 +486,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Delimiter">
             <summary>The delimiter used to separate cell values. Default is ','.</summary>
@@ -534,9 +510,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlRequest.Hdrs">
             <summary>Should column names be included (in the first row)?. Default is true.</summary>
         </member>
@@ -551,9 +524,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlGetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlGetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.QueryResource.SqlGetRequest.Hdrs">
             <summary>Should column names be included (in the first row)?. Default is true.</summary>
@@ -598,9 +568,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.DeleteRequest.StyleId">
             <summary>Identifier (within a table) for the style being deleted</summary>
         </member>
@@ -612,9 +579,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.GetRequest.StyleId">
             <summary>Identifier (integer) for a specific style in a table</summary>
@@ -628,9 +592,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.InsertRequest.TableId">
             <summary>Table for which a new style is being added</summary>
         </member>
@@ -642,9 +603,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.ListRequest.MaxResults">
             <summary>Maximum number of styles to return. Optional. Default is 5.</summary>
@@ -661,9 +619,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.PatchRequest.StyleId">
             <summary>Identifier (within a table) for the style being updated.</summary>
         </member>
@@ -678,9 +633,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.StyleResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.UpdateRequest.StyleId">
             <summary>Identifier (within a table) for the style being updated.</summary>
@@ -719,9 +671,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.DeleteRequest.TableId">
             <summary>Id of the table that is being deleted.</summary>
         </member>
@@ -730,9 +679,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.GetRequest.TableId">
             <summary>Identifier(ID) for the table being requested.</summary>
@@ -743,9 +689,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -754,9 +697,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.ListRequest.MaxResults">
             <summary>Maximum number of styles to return. Optional. Default is 5.</summary>
@@ -769,9 +709,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.PatchRequest.ReplaceViewDefinition">
             <summary>Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.</summary>
@@ -787,9 +724,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TableResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.UpdateRequest.ReplaceViewDefinition">
             <summary>Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.</summary>
@@ -834,9 +768,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.DeleteRequest.TableId">
             <summary>Table from which the template is being deleted</summary>
         </member>
@@ -848,9 +779,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.GetRequest.TableId">
             <summary>Table to which the template belongs</summary>
@@ -864,9 +792,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.InsertRequest.TableId">
             <summary>Table for which a new template is being created</summary>
         </member>
@@ -878,9 +803,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.ListRequest.MaxResults">
             <summary>Maximum number of templates to return. Optional. Default is 5.</summary>
@@ -897,9 +819,6 @@
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.PatchRequest.TableId">
             <summary>Table to which the updated template belongs</summary>
         </member>
@@ -914,9 +833,6 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TemplateResource.UpdateRequest.TableId">
             <summary>Table to which the updated template belongs</summary>

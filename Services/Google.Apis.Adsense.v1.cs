@@ -621,7 +621,7 @@ namespace Google.Apis.Adsense.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"adsense:v1\",\"na" +
-            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120822\",\"title\":\"AdSense Management A" +
+            "me\":\"adsense\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"AdSense Management A" +
             "PI\",\"description\":\"Gives AdSense publishers access to their inventory and the ab" +
             "ility to generate reports\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/pr" +
             "oduct/adsense-16.png\",\"x32\":\"http://www.google.com/images/icons/product/adsense-" +
@@ -921,8 +921,6 @@ namespace Google.Apis.Adsense.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private System.Nullable<long> _maxResults;
             
             private string _pageToken;
@@ -950,17 +948,6 @@ namespace Google.Apis.Adsense.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1025,8 +1012,6 @@ namespace Google.Apis.Adsense.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _adClientId;
             
             private System.Nullable<bool> _includeInactive;
@@ -1059,17 +1044,6 @@ namespace Google.Apis.Adsense.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1153,8 +1127,6 @@ namespace Google.Apis.Adsense.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _adClientId;
             
             private System.Nullable<long> _maxResults;
@@ -1185,17 +1157,6 @@ namespace Google.Apis.Adsense.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1269,8 +1230,6 @@ namespace Google.Apis.Adsense.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _currency;
             
             private Google.Apis.Util.Repeatable<string> _dimension;
@@ -1316,17 +1275,6 @@ namespace Google.Apis.Adsense.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -1473,8 +1421,6 @@ namespace Google.Apis.Adsense.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _adClientId;
             
             private System.Nullable<long> _maxResults;
@@ -1505,17 +1451,6 @@ namespace Google.Apis.Adsense.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

@@ -124,6 +124,21 @@
         <member name="P:Google.Apis.Books.v1.Data.BooksAnnotationsRange.StartPosition">
             <summary>The starting position for the range.</summary>
         </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksLayerDictData.CommonData.Title">
+            <summary>The display title and localized canonical name to use when searching for this entity on Google search.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksLayerDictData.DictData.Source">
+            <summary>The source, url and attribution for this dictionary data.</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.Data.BooksLayerDictData.DictData.SourceData">
+            <summary>The source, url and attribution for this dictionary data.</summary>
+        </member>
+        <member name="P:Google.Apis.Books.v1.Data.BooksLayerDictData.DictData.WordsData.Source">
+            <summary>The words with different meanings but not related words, e.g. &quot;go&quot; (game) and &quot;go&quot; (verb).</summary>
+        </member>
+        <member name="T:Google.Apis.Books.v1.Data.BooksLayerDictData.DictData.WordsData.SourceData">
+            <summary>The words with different meanings but not related words, e.g. &quot;go&quot; (game) and &quot;go&quot; (verb).</summary>
+        </member>
         <member name="P:Google.Apis.Books.v1.Data.BooksLayerGeoData.CommonData.Lang">
             <summary>The language of the information url and description.</summary>
         </member>
@@ -741,9 +756,6 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.VolumesResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
         </member>
@@ -768,9 +780,6 @@
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.GetRequest.Shelf">
             <summary>ID of bookshelf to retrieve.</summary>
         </member>
@@ -785,9 +794,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
@@ -823,9 +829,6 @@
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.GetRequest.AnnotationDataId">
             <summary>The ID of the annotation data to retrieve.</summary>
         </member>
@@ -858,9 +861,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.AnnotationDataResource.ListRequest.AnnotationDataId">
             <summary>The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.</summary>
@@ -919,9 +919,6 @@
         <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.GetRequest.AnnotationId">
             <summary>The ID of the volume annotation to retrieve.</summary>
         </member>
@@ -942,9 +939,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.VolumeAnnotationsResource.ListRequest.ContentVersion">
             <summary>The content version for the requested volume.</summary>
@@ -994,9 +988,6 @@
         <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.GetRequest.ContentVersion">
             <summary>The content version for the requested volume.</summary>
         </member>
@@ -1014,9 +1005,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.LayersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.LayersResource.ListRequest.ContentVersion">
             <summary>The content version for the requested volume.</summary>
@@ -1057,9 +1045,6 @@
         <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MyconfigResource.ReleaseDownloadAccessRequest.Cpksver">
             <summary>The device/version ID from which to release the restriction.</summary>
         </member>
@@ -1077,9 +1062,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MyconfigResource.RequestAccessRequest.Cpksver">
             <summary>The device/version ID from which to request the restrictions.</summary>
@@ -1101,9 +1083,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MyconfigResource.SyncVolumeLicensesRequest.Cpksver">
             <summary>The device/version ID from which to release the restriction.</summary>
@@ -1147,9 +1126,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.DeleteRequest.AnnotationId">
             <summary>The ID for the annotation to delete.</summary>
         </member>
@@ -1161,9 +1137,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.GetRequest.AnnotationId">
             <summary>The ID for the annotation to retrieve.</summary>
@@ -1177,9 +1150,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.InsertRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
@@ -1191,9 +1161,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.ListRequest.ContentVersion">
             <summary>The content version for the requested volume.</summary>
@@ -1230,9 +1197,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.AnnotationsResource.UpdateRequest.AnnotationId">
             <summary>The ID for the annotation to update.</summary>
@@ -1289,9 +1253,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.VolumesResource.ListRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -1322,9 +1283,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.AddVolumeRequest.Shelf">
             <summary>ID of bookshelf to which to add a volume.</summary>
         </member>
@@ -1340,9 +1298,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ClearVolumesRequest.Shelf">
             <summary>ID of bookshelf from which to remove a volume.</summary>
         </member>
@@ -1354,9 +1309,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.GetRequest.Shelf">
             <summary>ID of bookshelf to retrieve.</summary>
@@ -1370,9 +1322,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.ListRequest.Source">
             <summary>String to identify the originator of this request.</summary>
         </member>
@@ -1381,9 +1330,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.MoveVolumeRequest.Shelf">
             <summary>ID of bookshelf with the volume.</summary>
@@ -1402,9 +1348,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.BookshelvesResource.RemoveVolumeRequest.Shelf">
             <summary>ID of bookshelf from which to remove a volume.</summary>
@@ -1452,9 +1395,6 @@
         <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.GetRequest.ContentVersion">
             <summary>Volume content version for which this reading position is requested.</summary>
         </member>
@@ -1469,9 +1409,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.MylibraryResource.ReadingpositionsResource.SetPositionRequest.Action">
             <summary>Action that caused this reading position to be set.</summary>
@@ -1517,9 +1454,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.AssociatedResource.ListRequest.Association">
             <summary>Association type.</summary>
@@ -1602,9 +1536,6 @@
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.GetRequest.Country">
             <summary>ISO-3166-1 code to override the IP-based location.</summary>
         </member>
@@ -1625,9 +1556,6 @@
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Books.v1.VolumesResource.ListRequest.Download">
             <summary>Restrict to volumes by download availability.</summary>

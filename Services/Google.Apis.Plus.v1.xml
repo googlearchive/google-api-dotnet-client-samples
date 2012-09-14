@@ -596,12 +596,6 @@
             <summary>Search public activities.</summary>
             <param name="query">Required - Full-text search query string.</param>
         </member>
-        <member name="T:Google.Apis.Plus.v1.ActivitiesResource.Alt">
-            <summary>Specifies an alternative representation type.</summary>
-        </member>
-        <member name="F:Google.Apis.Plus.v1.ActivitiesResource.Alt.Json">
-            <summary>Use JSON format</summary>
-        </member>
         <member name="T:Google.Apis.Plus.v1.ActivitiesResource.Collection">
             <summary>The collection of activities to list.</summary>
         </member>
@@ -623,26 +617,14 @@
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.ActivityId">
             <summary>The ID of the activity to get.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.GetRequest.Alt">
-            <summary>Specifies an alternative representation type.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Alt">
-            <summary>Specifies an alternative representation type.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.Collection">
             <summary>The collection of activities to list.</summary>
@@ -661,9 +643,6 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Language">
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
@@ -688,12 +667,6 @@
             <summary>List all of the comments for an activity.</summary>
             <param name="activityId">Required - The ID of the activity to get comments for.</param>
         </member>
-        <member name="T:Google.Apis.Plus.v1.CommentsResource.Alt">
-            <summary>Specifies an alternative representation type.</summary>
-        </member>
-        <member name="F:Google.Apis.Plus.v1.CommentsResource.Alt.Json">
-            <summary>Use JSON format</summary>
-        </member>
         <member name="T:Google.Apis.Plus.v1.CommentsResource.SortOrder">
             <summary>The order in which to sort the list of comments.</summary>
         </member>
@@ -709,9 +682,6 @@
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.GetRequest.CommentId">
             <summary>The ID of the comment to get.</summary>
         </member>
@@ -721,14 +691,8 @@
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.ActivityId">
             <summary>The ID of the activity to get comments for.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.Alt">
-            <summary>Specifies an alternative representation type.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.MaxResults">
             <summary>The maximum number of comments to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
@@ -767,9 +731,6 @@
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.GetRequest.UserId">
             <summary>The ID of the person to get the profile for. The special value "me" can be used to indicate the authenticated user.</summary>
         </member>
@@ -778,9 +739,6 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.ActivityId">
             <summary>The ID of the activity to get the list of people for.</summary>
@@ -799,9 +757,6 @@
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Language">
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>

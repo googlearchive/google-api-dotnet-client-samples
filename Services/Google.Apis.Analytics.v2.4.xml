@@ -29,9 +29,6 @@
         <member name="P:Google.Apis.Analytics.v2_4.DataResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v2_4.DataResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v2_4.DataResource.GetRequest.Dimensions">
             <summary>A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.</summary>
         </member>
@@ -71,9 +68,6 @@
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of accounts to include in this response.</summary>
         </member>
@@ -91,9 +85,6 @@
         </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.GoalsResource.ListRequest.AccountId">
             <summary>Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
@@ -121,9 +112,6 @@
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.ProfilesResource.ListRequest.AccountId">
             <summary>Account ID for the profiles to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
         </member>
@@ -145,9 +133,6 @@
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.SegmentsResource.ListRequest.MaxResults">
             <summary>The maximum number of advanced segments to include in this response.</summary>
         </member>
@@ -163,9 +148,6 @@
         </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v2_4.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
             <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>

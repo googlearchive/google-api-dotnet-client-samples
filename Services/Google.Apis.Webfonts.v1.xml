@@ -52,9 +52,6 @@
         <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Webfonts.v1.WebfontsResource.ListRequest.Sort">
             <summary>Enables sorting of the list</summary>
         </member>

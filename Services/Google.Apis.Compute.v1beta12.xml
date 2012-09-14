@@ -692,9 +692,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.DisksResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.DeleteRequest.Disk">
             <summary>Name of the persistent disk resource to delete.</summary>
         </member>
@@ -706,9 +703,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.DisksResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.GetRequest.Disk">
             <summary>Name of the persistent disk resource to return.</summary>
@@ -722,9 +716,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.DisksResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -736,9 +727,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.DisksResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -786,9 +774,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.DeleteRequest.Firewall">
             <summary>Name of the firewall resource to delete.</summary>
         </member>
@@ -800,9 +785,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.GetRequest.Firewall">
             <summary>Name of the firewall resource to return.</summary>
@@ -816,9 +798,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -830,9 +809,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -852,9 +828,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.PatchRequest.Firewall">
             <summary>Name of the firewall resource to update.</summary>
         </member>
@@ -869,9 +842,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.UpdateRequest.Firewall">
             <summary>Name of the firewall resource to update.</summary>
@@ -906,9 +876,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.DeleteRequest.Image">
             <summary>Name of the image resource to delete.</summary>
         </member>
@@ -920,9 +887,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.GetRequest.Image">
             <summary>Name of the image resource to return.</summary>
@@ -936,9 +900,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -950,9 +911,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1003,9 +961,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.AddAccessConfigRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.AddAccessConfigRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.AddAccessConfigRequest.Instance">
             <summary>Instance name.</summary>
         </member>
@@ -1024,9 +979,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteRequest.Instance">
             <summary>Name of the instance resource to delete.</summary>
         </member>
@@ -1038,9 +990,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteAccessConfigRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteAccessConfigRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.DeleteAccessConfigRequest.Access_config">
             <summary>Access config name.</summary>
@@ -1060,9 +1009,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.GetRequest.Instance">
             <summary>Name of the instance resource to return.</summary>
         </member>
@@ -1075,9 +1021,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -1089,9 +1032,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1120,9 +1060,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.GetRequest.Kernel">
             <summary>Name of the kernel resource to return.</summary>
         </member>
@@ -1134,9 +1071,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1165,9 +1099,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.GetRequest.MachineType">
             <summary>Name of the machine type resource to return.</summary>
         </member>
@@ -1179,9 +1110,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1219,9 +1147,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.DeleteRequest.Network">
             <summary>Name of the network resource to delete.</summary>
         </member>
@@ -1233,9 +1158,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.GetRequest.Network">
             <summary>Name of the network resource to return.</summary>
@@ -1249,9 +1171,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -1263,9 +1182,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1299,9 +1215,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.DeleteRequest.Operation">
             <summary>Name of the operation resource to delete.</summary>
         </member>
@@ -1314,9 +1227,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.GetRequest.Operation">
             <summary>Name of the operation resource to return.</summary>
         </member>
@@ -1328,9 +1238,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1358,9 +1265,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.GetRequest.Project">
             <summary>Name of the project resource to retrieve.</summary>
         </member>
@@ -1369,9 +1273,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.SetCommonInstanceMetadataRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.SetCommonInstanceMetadataRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.SetCommonInstanceMetadataRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1403,9 +1304,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.DeleteRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -1417,9 +1315,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
@@ -1433,9 +1328,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.InsertRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -1447,9 +1339,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>
@@ -1478,9 +1367,6 @@
         <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.GetRequest.Project">
             <summary>Name of the project scoping this request.</summary>
         </member>
@@ -1492,9 +1378,6 @@
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.ListRequest.Filter">
             <summary>Optional. Filter expression for filtering listed resources.</summary>

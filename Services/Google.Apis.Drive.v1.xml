@@ -153,9 +153,6 @@
         <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.GetRequest.Id">
             <summary>The id for the file in question.</summary>
         </member>
@@ -171,9 +168,6 @@
         <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -183,17 +177,11 @@
         <member name="P:Google.Apis.Drive.v1.FilesResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.InsertMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.PatchRequest.Id">
             <summary>The id for the file in question.</summary>
@@ -216,9 +204,6 @@
         <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateRequest.Id">
             <summary>The id for the file in question.</summary>
         </member>
@@ -239,9 +224,6 @@
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v1.FilesResource.UpdateMediaUpload.Id">
             <summary>The id for the file in question.</summary>

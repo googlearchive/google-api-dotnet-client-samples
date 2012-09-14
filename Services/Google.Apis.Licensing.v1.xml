@@ -95,9 +95,6 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.DeleteRequest.ProductId">
             <summary>Name for product</summary>
         </member>
@@ -112,9 +109,6 @@
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.GetRequest.ProductId">
             <summary>Name for product</summary>
@@ -131,9 +125,6 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.InsertRequest.ProductId">
             <summary>Name for product</summary>
         </member>
@@ -148,9 +139,6 @@
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductRequest.CustomerId">
             <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
@@ -169,9 +157,6 @@
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.ListForProductAndSkuRequest.CustomerId">
             <summary>CustomerId represents the customer for whom licenseassignments are queried</summary>
@@ -194,9 +179,6 @@
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.PatchRequest.ProductId">
             <summary>Name for product</summary>
         </member>
@@ -214,9 +196,6 @@
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Licensing.v1.LicenseAssignmentsResource.UpdateRequest.ProductId">
             <summary>Name for product</summary>

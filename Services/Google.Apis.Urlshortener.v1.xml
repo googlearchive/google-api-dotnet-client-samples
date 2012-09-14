@@ -104,9 +104,6 @@
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.GetRequest.Projection">
             <summary>Additional information to return.</summary>
         </member>
@@ -119,9 +116,6 @@
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.InsertRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
@@ -130,9 +124,6 @@
         </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Urlshortener.v1.UrlResource.ListRequest.Projection">
             <summary>Additional information to return.</summary>

@@ -112,9 +112,6 @@
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.GetRequest.GroupUniqueId">
             <summary>The resource ID</summary>
         </member>
@@ -123,9 +120,6 @@
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.PatchRequest.GroupUniqueId">
             <summary>The resource ID</summary>
@@ -138,9 +132,6 @@
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Groupssettings.v1.GroupsResource.UpdateRequest.GroupUniqueId">
             <summary>The resource ID</summary>

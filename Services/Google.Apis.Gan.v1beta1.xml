@@ -575,9 +575,6 @@
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.GetRequest.AdvertiserId">
             <summary>The ID of the advertiser to look up. Optional.</summary>
         </member>
@@ -592,9 +589,6 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <!-- Badly formed XML comment ignored for member "P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.AdvertiserCategory" -->
         <member name="P:Google.Apis.Gan.v1beta1.AdvertisersResource.ListRequest.MaxResults">
@@ -639,9 +633,6 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.CcOffersResource.ListRequest.Advertiser">
             <summary>The advertiser ID of a card issuer whose offers to include. Optional, may be repeated.</summary>
@@ -713,9 +704,6 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.EventsResource.ListRequest.AdvertiserId">
             <summary>Caret(^) delimited list of advertiser IDs. Filters out all events that do not reference one of the given advertiser IDs. Only used when under publishers role. Optional.</summary>
@@ -817,9 +805,6 @@
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.GetRequest.LinkId">
             <summary>The ID of the link to look up.</summary>
         </member>
@@ -835,9 +820,6 @@
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.InsertRequest.Role">
             <summary>The role of the requester. Valid values: 'advertisers' or 'publishers'.</summary>
         </member>
@@ -852,9 +834,6 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserCategory">
             <summary>The advertiser's primary vertical.</summary>
@@ -938,9 +917,6 @@
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.GetRequest.PublisherId">
             <summary>The ID of the publisher to look up. Optional.</summary>
         </member>
@@ -955,9 +931,6 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.PublishersResource.ListRequest.MaxResults">
             <summary>Max number of items to return in this page. Optional. Defaults to 20.</summary>

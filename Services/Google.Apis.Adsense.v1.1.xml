@@ -206,9 +206,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdclientsResource.ListRequest.AccountId">
             <summary>Account for which to list ad clients.</summary>
         </member>
@@ -241,9 +238,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.CustomchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
         </member>
@@ -265,9 +259,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.GetRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
         </member>
@@ -282,9 +273,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.AdunitsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -324,9 +312,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.AdunitsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
         </member>
@@ -351,9 +336,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.GetRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
         </member>
@@ -368,9 +350,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.CustomchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
@@ -395,9 +374,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ReportsResource.GenerateRequest.AccountId">
             <summary>Account upon which to report.</summary>
@@ -443,9 +419,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.UrlchannelsResource.ListRequest.AccountId">
             <summary>Account to which the ad client belongs.</summary>
         </member>
@@ -464,9 +437,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.GetRequest.AccountId">
             <summary>Account to get information about.</summary>
         </member>
@@ -478,9 +448,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of accounts to include in the response, used for paging.</summary>
@@ -496,9 +463,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdclientsResource.ListRequest.MaxResults">
             <summary>The maximum number of ad clients to include in the response, used for paging.</summary>
@@ -526,9 +490,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.CustomchannelsResource.ListRequest.AdClientId">
             <summary>Ad client which contains the ad unit.</summary>
         </member>
@@ -547,9 +508,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.GetRequest.AdClientId">
             <summary>Ad client for which to get the ad unit.</summary>
         </member>
@@ -561,9 +519,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.AdunitsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list ad units.</summary>
@@ -597,9 +552,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.AdunitsResource.ListRequest.AdClientId">
             <summary>Ad client which contains the custom channel.</summary>
         </member>
@@ -621,9 +573,6 @@
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.GetRequest.AdClientId">
             <summary>Ad client which contains the custom channel.</summary>
         </member>
@@ -635,9 +584,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.CustomchannelsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list custom channels.</summary>
@@ -658,9 +604,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.ReportsResource.GenerateRequest.AccountId">
             <summary>Accounts upon which to report.</summary>
@@ -704,9 +647,6 @@
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Adsense.v1_1.UrlchannelsResource.ListRequest.AdClientId">
             <summary>Ad client for which to list URL channels.</summary>

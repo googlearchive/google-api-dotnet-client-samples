@@ -302,9 +302,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -316,9 +313,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -332,9 +326,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.InsertRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -347,9 +338,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.ListRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -358,9 +346,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -376,9 +361,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketAccessControlsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -427,9 +409,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -438,9 +417,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -454,9 +430,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.InsertRequest.Projection">
             <summary>Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.</summary>
         </member>
@@ -468,9 +441,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.ListRequest.MaxResults">
             <summary>Maximum number of buckets to return.</summary>
@@ -490,9 +460,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -507,9 +474,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.BucketsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -560,9 +524,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.DeleteRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -577,9 +538,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.GetRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -596,9 +554,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.InsertRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -614,9 +569,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.ListRequest.Bucket">
             <summary>Name of a bucket.</summary>
         </member>
@@ -628,9 +580,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.PatchRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -649,9 +598,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectAccessControlsResource.UpdateRequest.Bucket">
             <summary>Name of a bucket.</summary>
@@ -712,9 +658,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.DeleteRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
         </member>
@@ -726,9 +669,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.GetRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
@@ -744,9 +684,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertRequest.Bucket">
             <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
@@ -766,9 +703,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.InsertMediaUpload.Bucket">
             <summary>Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.</summary>
         </member>
@@ -783,9 +717,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.ListRequest.Bucket">
             <summary>Name of the bucket in which to look for objects.</summary>
@@ -811,9 +742,6 @@
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.PatchRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>
         </member>
@@ -831,9 +759,6 @@
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Storage.v1beta1.ObjectsResource.UpdateRequest.Bucket">
             <summary>Name of the bucket in which the object resides.</summary>

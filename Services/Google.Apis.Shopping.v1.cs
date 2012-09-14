@@ -2009,7 +2009,7 @@ namespace Google.Apis.Shopping.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"shopping:v1\",\"n" +
-            "ame\":\"shopping\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"Search API For Sho" +
+            "ame\":\"shopping\",\"version\":\"v1\",\"revision\":\"20120904\",\"title\":\"Search API For Sho" +
             "pping\",\"description\":\"Lets you search over product data.\",\"icons\":{\"x16\":\"http:/" +
             "/www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com" +
             "/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://developers.go" +
@@ -2420,8 +2420,6 @@ namespace Google.Apis.Shopping.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private long _accountId;
             
             private string _attributeFilter;
@@ -2483,17 +2481,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             
@@ -2691,8 +2678,6 @@ namespace Google.Apis.Shopping.v1 {
             
             private System.Nullable<bool> _prettyPrint;
             
-            private string _quotaUser;
-            
             private string _attributeFilter;
             
             private string _availability;
@@ -2803,17 +2788,6 @@ namespace Google.Apis.Shopping.v1 {
                 }
                 set {
                     this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("quotaUser", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string QuotaUser {
-                get {
-                    return this._quotaUser;
-                }
-                set {
-                    this._quotaUser = value;
                 }
             }
             

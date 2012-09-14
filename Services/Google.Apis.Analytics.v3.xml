@@ -44,7 +44,7 @@
             <summary>A list of accounts.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Accounts.ItemsPerPage">
-            <summary>The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+            <summary>The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Accounts.Kind">
             <summary>Collection type.</summary>
@@ -314,7 +314,7 @@
             <summary>A list of goals.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Goals.ItemsPerPage">
-            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Goals.Kind">
             <summary>Collection type.</summary>
@@ -475,6 +475,9 @@
         <member name="P:Google.Apis.Analytics.v3.Data.Profile.DefaultPage">
             <summary>Default page for this profile.</summary>
         </member>
+        <member name="P:Google.Apis.Analytics.v3.Data.Profile.ECommerceTracking">
+            <summary>E-commerce tracking parameter for this profile.</summary>
+        </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Profile.ExcludeQueryParameters">
             <summary>The query parameters that are excluded from this profile.</summary>
         </member>
@@ -539,7 +542,7 @@
             <summary>A list of profiles.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Profiles.ItemsPerPage">
-            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Profiles.Kind">
             <summary>Collection type.</summary>
@@ -593,7 +596,7 @@
             <summary>A list of advanced segments.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Segments.ItemsPerPage">
-            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Segments.Kind">
             <summary>Collection type for advanced segments.</summary>
@@ -620,7 +623,7 @@
             <summary>A list of web properties.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.ItemsPerPage">
-            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
+            <summary>The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.Webproperties.Kind">
             <summary>Collection type.</summary>
@@ -719,9 +722,6 @@
         <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.GaResource.GetRequest.Dimensions">
             <summary>A comma-separated list of Analytics dimensions. E.g., 'ga:browser,ga:city'.</summary>
         </member>
@@ -765,9 +765,6 @@
         <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v3.DataResource.McfResource.GetRequest.Dimensions">
             <summary>A comma-separated list of Multi-Channel Funnels dimensions. E.g., 'mcf:source,mcf:medium'.</summary>
         </member>
@@ -804,9 +801,6 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.AccountsResource.ListRequest.MaxResults">
             <summary>The maximum number of accounts to include in this response.</summary>
         </member>
@@ -824,9 +818,6 @@
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.GoalsResource.ListRequest.AccountId">
             <summary>Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
@@ -854,9 +845,6 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.ProfilesResource.ListRequest.AccountId">
             <summary>Account ID for the profiles to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</summary>
         </member>
@@ -878,9 +866,6 @@
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
-        </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.SegmentsResource.ListRequest.MaxResults">
             <summary>The maximum number of advanced segments to include in this response.</summary>
         </member>
@@ -896,9 +881,6 @@
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.QuotaUser">
-            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.ManagementResource.WebpropertiesResource.ListRequest.AccountId">
             <summary>Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</summary>
