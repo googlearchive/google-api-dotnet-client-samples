@@ -478,6 +478,15 @@
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.Encoding">
             <summary>The encoding of the content. Default is UTF-8.</summary>
         </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.EndLine">
+            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.IsStrict">
+            <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.StartLine">
+            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+        </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertRequest.TableId">
             <summary>The table into which new rows are being imported.</summary>
         </member>
@@ -492,6 +501,15 @@
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.Encoding">
             <summary>The encoding of the content. Default is UTF-8.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.EndLine">
+            <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.IsStrict">
+            <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.StartLine">
+            <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.ImportResource.InsertMediaUpload.TableId">
             <summary>The table into which new rows are being imported.</summary>
@@ -643,9 +661,13 @@
         <member name="P:Google.Apis.Fusiontables.v1.StyleResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
+        <member name="M:Google.Apis.Fusiontables.v1.TableResource.Copy(System.String)">
+            <summary>Copies a table.</summary>
+            <param name="tableId">Required - ID of the table that is being copied.</param>
+        </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Delete(System.String)">
             <summary>Deletes a table.</summary>
-            <param name="tableId">Required - Id of the table that is being deleted.</param>
+            <param name="tableId">Required - ID of the table that is being deleted.</param>
         </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Get(System.String)">
             <summary>Retrieves a specific table by its id.</summary>
@@ -659,11 +681,20 @@
         </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Patch(Google.Apis.Fusiontables.v1.Data.Table,System.String)">
             <summary>Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated. This method supports patch semantics.</summary>
-            <param name="tableId">Required - Id of the table that is being updated.</param>
+            <param name="tableId">Required - ID of the table that is being updated.</param>
         </member>
         <member name="M:Google.Apis.Fusiontables.v1.TableResource.Update(Google.Apis.Fusiontables.v1.Data.Table,System.String)">
             <summary>Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated.</summary>
-            <param name="tableId">Required - Id of the table that is being updated.</param>
+            <param name="tableId">Required - ID of the table that is being updated.</param>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Fusiontables.v1.TableResource.CopyRequest.TableId">
+            <summary>ID of the table that is being copied.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -672,7 +703,7 @@
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.DeleteRequest.TableId">
-            <summary>Id of the table that is being deleted.</summary>
+            <summary>ID of the table that is being deleted.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -714,7 +745,7 @@
             <summary>Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.PatchRequest.TableId">
-            <summary>Id of the table that is being updated.</summary>
+            <summary>ID of the table that is being updated.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.PatchRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
@@ -729,7 +760,7 @@
             <summary>Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.UpdateRequest.TableId">
-            <summary>Id of the table that is being updated.</summary>
+            <summary>ID of the table that is being updated.</summary>
         </member>
         <member name="P:Google.Apis.Fusiontables.v1.TableResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>

@@ -1228,7 +1228,7 @@ namespace Google.Apis.Dfareporting.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"dfareporting:v1" +
-            "\",\"name\":\"dfareporting\",\"version\":\"v1\",\"revision\":\"20120519\",\"title\":\"DFA Report" +
+            "\",\"name\":\"dfareporting\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"DFA Report" +
             "ing API\",\"description\":\"Lets you create, run and download reports.\",\"icons\":{\"x1" +
             "6\":\"http://www.google.com/images/icons/product/doubleclick-16.gif\",\"x32\":\"http:/" +
             "/www.google.com/images/icons/product/doubleclick-32.gif\"},\"documentationLink\":\"h" +

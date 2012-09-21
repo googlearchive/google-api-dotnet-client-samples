@@ -25,6 +25,9 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.Statistics">
             <summary>JSON template for the statistics part of a channel.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.Channel.TopicDetails">
+            <summary>JSON template for the topic details part of a channel.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelContentDetails">
             <summary>JSON template for the content details part of a channel.</summary>
         </member>
@@ -78,6 +81,12 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelStatistics.ViewCount">
             <summary>Number of times the channel has been viewed.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelTopicDetails">
+            <summary>JSON template for the topic details part of a channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelTopicDetails.Topics">
+            <summary>List of topic ids for this channel *</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PageInfo">
             <summary>JSON template for a page info.</summary>
@@ -241,6 +250,9 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchListResponse.SearchResults">
             <summary>List of results matching the request criteria.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchListResponse.TokenPagination">
+            <summary>JSON template for token pagination.</summary>
+        </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.SearchResult">
             <summary>JSON template for a YouTube Search result.</summary>
         </member>
@@ -276,6 +288,15 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.Thumbnail.Url">
             <summary>The URL for the thumbnail.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.TokenPagination">
+            <summary>JSON template for token pagination.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.TokenPagination.NextPageToken">
+            <summary>Token to the next page.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.TokenPagination.PreviousPageToken">
+            <summary>Token to the previous page.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.Video">
             <summary>JSON template for a YouTube Video.</summary>
@@ -434,9 +455,37 @@
         <member name="P:Google.Apis.Youtube.v3alpha.ChannelsResource.ListRequest.Part">
             <summary>Parts of the channel resource to be returned.</summary>
         </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.Delete(System.String)">
+            <summary>Deletes playlist items by IDs.</summary>
+            <param name="id">Required - YouTube IDs of the playlist items to be deleted.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.Insert(Google.Apis.Youtube.v3alpha.Data.PlaylistItem)">
+            <summary>Insert a resource into a playlist.</summary>
+        </member>
         <member name="M:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.List(System.String)">
             <summary>Browse the YouTube playlist collection.</summary>
             <param name="part">Required - Parts of the playlist resource to be returned.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.Update(Google.Apis.Youtube.v3alpha.Data.PlaylistItem)">
+            <summary>Update a playlist item.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.DeleteRequest.Id">
+            <summary>YouTube IDs of the playlist items to be deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -448,7 +497,7 @@
             <summary>The authenticated user acts on behalf of this content owner.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.Id">
-            <summary>YouTube IDs of the playlists to be returned.</summary>
+            <summary>YouTube IDs of the playlist items to be returned.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.MaxResults">
             <summary>Maximum number of results to return</summary>
@@ -462,9 +511,31 @@
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.ListRequest.StartIndex">
             <summary>Index of the first element to return (starts at 0)</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistItemsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.PlaylistsResource.Delete(System.String)">
+            <summary>Deletes playlists by IDs.</summary>
+            <param name="id">Required - YouTube IDs of the playlists to be deleted.</param>
+        </member>
         <member name="M:Google.Apis.Youtube.v3alpha.PlaylistsResource.List(System.String)">
             <summary>Browse the YouTube playlist collection.</summary>
             <param name="part">Required - Parts of the playlist resource to be returned.</param>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.DeleteRequest.Id">
+            <summary>YouTube IDs of the playlists to be deleted.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.ListRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

@@ -439,7 +439,7 @@ namespace Google.Apis.Drive.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v1\",\"name" +
-            "\":\"drive\",\"version\":\"v1\",\"revision\":\"20120723\",\"title\":\"Drive API\",\"description\"" +
+            "\":\"drive\",\"version\":\"v1\",\"revision\":\"20120904\",\"title\":\"Drive API\",\"description\"" +
             ":\"The API to interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/" +
             "doclist/images/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/im" +
             "ages/drive_icon_32.png\"},\"documentationLink\":\"https://developers.google.com/driv" +

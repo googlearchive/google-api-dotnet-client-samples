@@ -1408,7 +1408,7 @@ namespace Google.Apis.Fusiontables.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"fusiontables:v1" +
-            "\",\"name\":\"fusiontables\",\"version\":\"v1\",\"revision\":\"20120806\",\"title\":\"Fusion Tab" +
+            "\",\"name\":\"fusiontables\",\"version\":\"v1\",\"revision\":\"20120831\",\"title\":\"Fusion Tab" +
             "les API\",\"description\":\"API for working with Fusion Tables data.\",\"icons\":{\"x16\"" +
             ":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.go" +
             "ogle.com/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://devel" +
@@ -1663,164 +1663,178 @@ namespace Google.Apis.Fusiontables.v1 {
             "ows into a table.\",\"parameters\":{\"delimiter\":{\"type\":\"string\",\"description\":\"The" +
             " delimiter used to separate cell values. Default is \',\'.\",\"location\":\"query\"},\"e" +
             "ncoding\":{\"type\":\"string\",\"description\":\"The encoding of the content. Default is" +
-            " UTF-8.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"The table" +
-            " into which new rows are being imported.\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Import\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/fusiontables\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"acc" +
-            "ept\":[\"application/octet-stream\"],\"maxSize\":\"100MB\",\"protocols\":{\"simple\":{\"mult" +
-            "ipart\":true,\"path\":\"/upload/fusiontables/v1/tables/{tableId}/import\"},\"resumable" +
-            "\":{\"multipart\":true,\"path\":\"/resumable/upload/fusiontables/v1/tables/{tableId}/i" +
-            "mport\"}}}}}},\"query\":{\"methods\":{\"sql\":{\"id\":\"fusiontables.query.sql\",\"path\":\"qu" +
-            "ery\",\"httpMethod\":\"POST\",\"description\":\"Executes an SQL SELECT/INSERT/UPDATE/DEL" +
-            "ETE/SHOW/DESCRIBE/CREATE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"des" +
-            "cription\":\"Should column names be included (in the first row)?. Default is true." +
-            "\",\"location\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/D" +
-            "ESCRIBE/INSERT/UPDATE/DELETE/CREATE statement.\",\"required\":true,\"location\":\"quer" +
-            "y\"},\"typed\":{\"type\":\"boolean\",\"description\":\"Should typed values be returned in " +
-            "the (JSON) response -- numbers for numeric values and parsed geometries for KML " +
-            "values? Default is true.\",\"location\":\"query\"}},\"parameterOrder\":[\"sql\"],\"respons" +
-            "e\":{\"$ref\":\"Sqlresponse\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontable" +
-            "s\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"sqlGet\":{\"id\":\"fus" +
-            "iontables.query.sqlGet\",\"path\":\"query\",\"httpMethod\":\"GET\",\"description\":\"Execute" +
-            "s an SQL SELECT/SHOW/DESCRIBE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\"" +
-            ",\"description\":\"Should column names be included (in the first row)?. Default is " +
-            "true.\",\"location\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/S" +
-            "HOW/DESCRIBE statement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"type\":\"bo" +
-            "olean\",\"description\":\"Should typed values be returned in the (JSON) response -- " +
-            "numbers for numeric values and parsed geometries for KML values? Default is true" +
-            ".\",\"location\":\"query\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlresponse" +
-            "\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googlea" +
-            "pis.com/auth/fusiontables.readonly\"]}}},\"style\":{\"methods\":{\"delete\":{\"id\":\"fusi" +
-            "ontables.style.delete\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"" +
-            "DELETE\",\"description\":\"Deletes a style.\",\"parameters\":{\"styleId\":{\"type\":\"intege" +
-            "r\",\"description\":\"Identifier (within a table) for the style being deleted\",\"requ" +
-            "ired\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Table from which the style is being deleted\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.style.get\",\"path\":\"tables/" +
-            "{tableId}/styles/{styleId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific st" +
-            "yle.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (integ" +
-            "er) for a specific style in a table\",\"required\":true,\"format\":\"int32\",\"location\"" +
-            ":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the requested " +
-            "style belongs\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"" +
-            "styleId\"],\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]}," +
-            "\"insert\":{\"id\":\"fusiontables.style.insert\",\"path\":\"tables/{tableId}/styles\",\"htt" +
-            "pMethod\":\"POST\",\"description\":\"Adds a new style for the table.\",\"parameters\":{\"t" +
-            "ableId\":{\"type\":\"string\",\"description\":\"Table for which a new style is being add" +
-            "ed\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{" +
-            "\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.style.list\",\"pat" +
-            "h\":\"tables/{tableId}/styles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list " +
-            "of styles.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum " +
-            "number of styles to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\"" +
-            ":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuatio" +
-            "n token specifying which result page to return. Optional.\",\"location\":\"query\"},\"" +
-            "tableId\":{\"type\":\"string\",\"description\":\"Table whose styles are being listed\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref" +
-            "\":\"StyleSettingList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"" +
-            "https://www.googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusionta" +
-            "bles.style.patch\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PATCH" +
-            "\",\"description\":\"Updates an existing style. This method supports patch semantics" +
-            ".\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a" +
-            " table) for the style being updated.\",\"required\":true,\"format\":\"int32\",\"location" +
-            "\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table whose style is being u" +
-            "pdated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleI" +
-            "d\"],\"request\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables" +
-            ".style.update\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PUT\",\"de" +
-            "scription\":\"Updates an existing style.\",\"parameters\":{\"styleId\":{\"type\":\"integer" +
-            "\",\"description\":\"Identifier (within a table) for the style being updated.\",\"requ" +
-            "ired\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Table whose style is being updated.\",\"required\":true,\"location\":\"path\"}" +
-            "},\"parameterOrder\":[\"tableId\",\"styleId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"resp" +
-            "onse\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiont" +
-            "ables\"]}}},\"table\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.table.delete\",\"path\"" +
-            ":\"tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a table.\",\"para" +
-            "meters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Id of the table that is being" +
-            " deleted.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables" +
-            ".table.get\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
-            "s a specific table by its id.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Identifier(ID) for the table being requested.\",\"required\":true,\"location\"" +
-            ":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"ht" +
+            " UTF-8.\",\"location\":\"query\"},\"endLine\":{\"type\":\"string\",\"description\":\"The index" +
+            " of the last line from which to start importing, exclusive. Thus, the number of " +
+            "imported lines is endLine - startLine. If this parameter is not provided, the fi" +
+            "le will be imported until the last line of the file. If endLine is negative, the" +
+            "n it is equivalent to N + endLine, where N is the number of lines in the file.\"," +
+            "\"format\":\"int64\",\"location\":\"query\"},\"isStrict\":{\"type\":\"boolean\",\"description\":" +
+            "\"Whether the CSV will be parsed strictly or not. Default is true.\",\"location\":\"q" +
+            "uery\"},\"startLine\":{\"type\":\"string\",\"description\":\"The index of the first line f" +
+            "rom which to start importing, inclusive. Default is 0.\",\"format\":\"int64\",\"locati" +
+            "on\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"The table into which new " +
+            "rows are being imported.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"tableId\"],\"response\":{\"$ref\":\"Import\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/fusiontables\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"applicati" +
+            "on/octet-stream\"],\"maxSize\":\"100MB\",\"protocols\":{\"simple\":{\"multipart\":true,\"pat" +
+            "h\":\"/upload/fusiontables/v1/tables/{tableId}/import\"},\"resumable\":{\"multipart\":t" +
+            "rue,\"path\":\"/resumable/upload/fusiontables/v1/tables/{tableId}/import\"}}}}}},\"qu" +
+            "ery\":{\"methods\":{\"sql\":{\"id\":\"fusiontables.query.sql\",\"path\":\"query\",\"httpMethod" +
+            "\":\"POST\",\"description\":\"Executes an SQL SELECT/INSERT/UPDATE/DELETE/SHOW/DESCRIB" +
+            "E/CREATE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"Shoul" +
+            "d column names be included (in the first row)?. Default is true.\",\"location\":\"qu" +
+            "ery\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE/INSERT/U" +
+            "PDATE/DELETE/CREATE statement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Should typed values be returned in the (JSON) respo" +
+            "nse -- numbers for numeric values and parsed geometries for KML values? Default " +
+            "is true.\",\"location\":\"query\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlr" +
+            "esponse\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www." +
+            "googleapis.com/auth/fusiontables.readonly\"]},\"sqlGet\":{\"id\":\"fusiontables.query." +
+            "sqlGet\",\"path\":\"query\",\"httpMethod\":\"GET\",\"description\":\"Executes an SQL SELECT/" +
+            "SHOW/DESCRIBE statement.\",\"parameters\":{\"hdrs\":{\"type\":\"boolean\",\"description\":\"" +
+            "Should column names be included (in the first row)?. Default is true.\",\"location" +
+            "\":\"query\"},\"sql\":{\"type\":\"string\",\"description\":\"An SQL SELECT/SHOW/DESCRIBE sta" +
+            "tement.\",\"required\":true,\"location\":\"query\"},\"typed\":{\"type\":\"boolean\",\"descript" +
+            "ion\":\"Should typed values be returned in the (JSON) response -- numbers for nume" +
+            "ric values and parsed geometries for KML values? Default is true.\",\"location\":\"q" +
+            "uery\"}},\"parameterOrder\":[\"sql\"],\"response\":{\"$ref\":\"Sqlresponse\"},\"scopes\":[\"ht" +
             "tps://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fus" +
-            "iontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.table.insert\",\"path\":\"tables\"" +
-            ",\"httpMethod\":\"POST\",\"description\":\"Creates a new table.\",\"request\":{\"$ref\":\"Tab" +
-            "le\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusi" +
-            "ontables\"]},\"list\":{\"id\":\"fusiontables.table.list\",\"path\":\"tables\",\"httpMethod\":" +
-            "\"GET\",\"description\":\"Retrieves a list of tables a user owns.\",\"parameters\":{\"max" +
-            "Results\":{\"type\":\"integer\",\"description\":\"Maximum number of styles to return. Op" +
-            "tional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"page" +
-            "Token\":{\"type\":\"string\",\"description\":\"Continuation token specifying which resul" +
-            "t page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"TableList\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleap" +
-            "is.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.table.patch\",\"p" +
-            "ath\":\"tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an existing " +
-            "table. Unless explicitly requested, only the name, description, and attribution " +
-            "will be updated. This method supports patch semantics.\",\"parameters\":{\"replaceVi" +
-            "ewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view definition also b" +
-            "e updated? The specified view definition replaces the existing one. Only a view " +
-            "can be updated with a new definition.\",\"location\":\"query\"},\"tableId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Id of the table that is being updated.\",\"required\":true,\"lo" +
-            "cation\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"respon" +
-            "se\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}," +
-            "\"update\":{\"id\":\"fusiontables.table.update\",\"path\":\"tables/{tableId}\",\"httpMethod" +
-            "\":\"PUT\",\"description\":\"Updates an existing table. Unless explicitly requested, o" +
-            "nly the name, description, and attribution will be updated.\",\"parameters\":{\"repl" +
-            "aceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view definition a" +
-            "lso be updated? The specified view definition replaces the existing one. Only a " +
-            "view can be updated with a new definition.\",\"location\":\"query\"},\"tableId\":{\"type" +
-            "\":\"string\",\"description\":\"Id of the table that is being updated.\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"r" +
-            "esponse\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontable" +
-            "s\"]}}},\"template\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.template.delete\",\"pat" +
-            "h\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"DELETE\",\"description\"" +
-            ":\"Deletes a template\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Ta" +
-            "ble from which the template is being deleted\",\"required\":true,\"location\":\"path\"}" +
-            ",\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template which" +
-            " is being deleted\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"tableId\",\"templateId\"],\"scopes\":[\"https://www.googleapis.com/auth/fus" +
-            "iontables\"]},\"get\":{\"id\":\"fusiontables.template.get\",\"path\":\"tables/{tableId}/te" +
-            "mplates/{templateId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a specific tem" +
-            "plate by its id\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table t" +
-            "o which the template belongs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"" +
-            "type\":\"integer\",\"description\":\"Identifier for the template that is being request" +
-            "ed\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tabl" +
-            "eId\",\"templateId\"],\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontables.readonl" +
-            "y\"]},\"insert\":{\"id\":\"fusiontables.template.insert\",\"path\":\"tables/{tableId}/temp" +
-            "lates\",\"httpMethod\":\"POST\",\"description\":\"Creates a new template for the table.\"" +
-            ",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table for which a new t" +
-            "emplate is being created\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"tableId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.te" +
-            "mplate.list\",\"path\":\"tables/{tableId}/templates\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Retrieves a list of templates.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\"," +
-            "\"description\":\"Maximum number of templates to return. Optional. Default is 5.\",\"" +
-            "format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\"," +
-            "\"description\":\"Continuation token specifying which results page to return. Optio" +
-            "nal.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Identifier f" +
-            "or the table whose templates are being requested\",\"required\":true,\"location\":\"pa" +
-            "th\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"TemplateList\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/" +
-            "fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.template.patch\",\"path\":\"tab" +
-            "les/{tableId}/templates/{templateId}\",\"httpMethod\":\"PATCH\",\"description\":\"Update" +
-            "s an existing template. This method supports patch semantics.\",\"parameters\":{\"ta" +
-            "bleId\":{\"type\":\"string\",\"description\":\"Table to which the updated template belon" +
-            "gs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"descripti" +
-            "on\":\"Identifier for the template that is being updated\",\"required\":true,\"format\"" +
-            ":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"request\"" +
-            ":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googl" +
-            "eapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.template.update\",\"pa" +
-            "th\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PUT\",\"description\":\"" +
-            "Updates an existing template\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Table to which the updated template belongs\",\"required\":true,\"location\":\"p" +
-            "ath\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template " +
-            "that is being updated\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"tableId\",\"templateId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{" +
-            "\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}}}" +
-            "}";
+            "iontables.readonly\"]}}},\"style\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.style.d" +
+            "elete\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"DELETE\",\"descrip" +
+            "tion\":\"Deletes a style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\"" +
+            ":\"Identifier (within a table) for the style being deleted\",\"required\":true,\"form" +
+            "at\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table f" +
+            "rom which the style is being deleted\",\"required\":true,\"location\":\"path\"}},\"param" +
+            "eterOrder\":[\"tableId\",\"styleId\"],\"scopes\":[\"https://www.googleapis.com/auth/fusi" +
+            "ontables\"]},\"get\":{\"id\":\"fusiontables.style.get\",\"path\":\"tables/{tableId}/styles" +
+            "/{styleId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific style.\",\"parameter" +
+            "s\":{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (integer) for a specif" +
+            "ic style in a table\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"tableI" +
+            "d\":{\"type\":\"string\",\"description\":\"Table to which the requested style belongs\",\"" +
+            "required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"respo" +
+            "nse\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusionta" +
+            "bles\",\"https://www.googleapis.com/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"" +
+            "fusiontables.style.insert\",\"path\":\"tables/{tableId}/styles\",\"httpMethod\":\"POST\"," +
+            "\"description\":\"Adds a new style for the table.\",\"parameters\":{\"tableId\":{\"type\":" +
+            "\"string\",\"description\":\"Table for which a new style is being added\",\"required\":t" +
+            "rue,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"StyleSet" +
+            "ting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.style.list\",\"path\":\"tables/{tabl" +
+            "eId}/styles\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a list of styles.\",\"par" +
+            "ameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of styles" +
+            " to return. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":" +
+            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token specifyi" +
+            "ng which result page to return. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\"" +
+            ":\"string\",\"description\":\"Table whose styles are being listed\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"StyleSettingL" +
+            "ist\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.goog" +
+            "leapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.style.patch" +
+            "\",\"path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PATCH\",\"description\":" +
+            "\"Updates an existing style. This method supports patch semantics.\",\"parameters\":" +
+            "{\"styleId\":{\"type\":\"integer\",\"description\":\"Identifier (within a table) for the " +
+            "style being updated.\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"},\"table" +
+            "Id\":{\"type\":\"string\",\"description\":\"Table whose style is being updated.\",\"requir" +
+            "ed\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"styleId\"],\"request\":{\"" +
+            "$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"StyleSetting\"},\"scopes\":[\"https://www." +
+            "googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.style.update\",\"" +
+            "path\":\"tables/{tableId}/styles/{styleId}\",\"httpMethod\":\"PUT\",\"description\":\"Upda" +
+            "tes an existing style.\",\"parameters\":{\"styleId\":{\"type\":\"integer\",\"description\":" +
+            "\"Identifier (within a table) for the style being updated.\",\"required\":true,\"form" +
+            "at\":\"int32\",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table w" +
+            "hose style is being updated.\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"tableId\",\"styleId\"],\"request\":{\"$ref\":\"StyleSetting\"},\"response\":{\"$ref\":\"S" +
+            "tyleSetting\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]}}},\"tabl" +
+            "e\":{\"methods\":{\"copy\":{\"id\":\"fusiontables.table.copy\",\"path\":\"tables/{tableId}/c" +
+            "opy\",\"httpMethod\":\"POST\",\"description\":\"Copies a table.\",\"parameters\":{\"tableId\"" +
+            ":{\"type\":\"string\",\"description\":\"ID of the table that is being copied.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Tab" +
+            "le\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googl" +
+            "eapis.com/auth/fusiontables.readonly\"]},\"delete\":{\"id\":\"fusiontables.table.delet" +
+            "e\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a tabl" +
+            "e.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"ID of the table that" +
+            " is being deleted.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"table" +
+            "Id\"],\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"get\":{\"id\":\"fus" +
+            "iontables.table.get\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"GET\",\"description\":" +
+            "\"Retrieves a specific table by its id.\",\"parameters\":{\"tableId\":{\"type\":\"string\"" +
+            ",\"description\":\"Identifier(ID) for the table being requested.\",\"required\":true,\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"Table\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com" +
+            "/auth/fusiontables.readonly\"]},\"insert\":{\"id\":\"fusiontables.table.insert\",\"path\"" +
+            ":\"tables\",\"httpMethod\":\"POST\",\"description\":\"Creates a new table.\",\"request\":{\"$" +
+            "ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/" +
+            "auth/fusiontables\"]},\"list\":{\"id\":\"fusiontables.table.list\",\"path\":\"tables\",\"htt" +
+            "pMethod\":\"GET\",\"description\":\"Retrieves a list of tables a user owns.\",\"paramete" +
+            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of styles to r" +
+            "eturn. Optional. Default is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"quer" +
+            "y\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Continuation token specifying wh" +
+            "ich result page to return. Optional.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"T" +
+            "ableList\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www" +
+            ".googleapis.com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.table." +
+            "patch\",\"path\":\"tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates an " +
+            "existing table. Unless explicitly requested, only the name, description, and att" +
+            "ribution will be updated. This method supports patch semantics.\",\"parameters\":{\"" +
+            "replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view definiti" +
+            "on also be updated? The specified view definition replaces the existing one. Onl" +
+            "y a view can be updated with a new definition.\",\"location\":\"query\"},\"tableId\":{\"" +
+            "type\":\"string\",\"description\":\"ID of the table that is being updated.\",\"required\"" +
+            ":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Table\"" +
+            "},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiont" +
+            "ables\"]},\"update\":{\"id\":\"fusiontables.table.update\",\"path\":\"tables/{tableId}\",\"h" +
+            "ttpMethod\":\"PUT\",\"description\":\"Updates an existing table. Unless explicitly req" +
+            "uested, only the name, description, and attribution will be updated.\",\"parameter" +
+            "s\":{\"replaceViewDefinition\":{\"type\":\"boolean\",\"description\":\"Should the view def" +
+            "inition also be updated? The specified view definition replaces the existing one" +
+            ". Only a view can be updated with a new definition.\",\"location\":\"query\"},\"tableI" +
+            "d\":{\"type\":\"string\",\"description\":\"ID of the table that is being updated.\",\"requ" +
+            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"request\":{\"$ref\":\"T" +
+            "able\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/fu" +
+            "siontables\"]}}},\"template\":{\"methods\":{\"delete\":{\"id\":\"fusiontables.template.del" +
+            "ete\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"DELETE\",\"des" +
+            "cription\":\"Deletes a template\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Table from which the template is being deleted\",\"required\":true,\"location" +
+            "\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the templ" +
+            "ate which is being deleted\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"tableId\",\"templateId\"],\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/fusiontables\"]},\"get\":{\"id\":\"fusiontables.template.get\",\"path\":\"tables/{ta" +
+            "bleId}/templates/{templateId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a spe" +
+            "cific template by its id\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\"" +
+            ":\"Table to which the template belongs\",\"required\":true,\"location\":\"path\"},\"templ" +
+            "ateId\":{\"type\":\"integer\",\"description\":\"Identifier for the template that is bein" +
+            "g requested\",\"required\":true,\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrde" +
+            "r\":[\"tableId\",\"templateId\"],\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/fusiontables\",\"https://www.googleapis.com/auth/fusiontable" +
+            "s.readonly\"]},\"insert\":{\"id\":\"fusiontables.template.insert\",\"path\":\"tables/{tabl" +
+            "eId}/templates\",\"httpMethod\":\"POST\",\"description\":\"Creates a new template for th" +
+            "e table.\",\"parameters\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table for whic" +
+            "h a new template is being created\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"tableId\"],\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/fusiontables\"]},\"list\":{\"id\":\"fusion" +
+            "tables.template.list\",\"path\":\"tables/{tableId}/templates\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Retrieves a list of templates.\",\"parameters\":{\"maxResults\":{\"type\":\"" +
+            "integer\",\"description\":\"Maximum number of templates to return. Optional. Default" +
+            " is 5.\",\"format\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":" +
+            "\"string\",\"description\":\"Continuation token specifying which results page to retu" +
+            "rn. Optional.\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\":\"Ide" +
+            "ntifier for the table whose templates are being requested\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"tableId\"],\"response\":{\"$ref\":\"TemplateList\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/fusiontables\",\"https://www.googleapis." +
+            "com/auth/fusiontables.readonly\"]},\"patch\":{\"id\":\"fusiontables.template.patch\",\"p" +
+            "ath\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PATCH\",\"description" +
+            "\":\"Updates an existing template. This method supports patch semantics.\",\"paramet" +
+            "ers\":{\"tableId\":{\"type\":\"string\",\"description\":\"Table to which the updated templ" +
+            "ate belongs\",\"required\":true,\"location\":\"path\"},\"templateId\":{\"type\":\"integer\",\"" +
+            "description\":\"Identifier for the template that is being updated\",\"required\":true" +
+            ",\"format\":\"int32\",\"location\":\"path\"}},\"parameterOrder\":[\"tableId\",\"templateId\"]," +
+            "\"request\":{\"$ref\":\"Template\"},\"response\":{\"$ref\":\"Template\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/fusiontables\"]},\"update\":{\"id\":\"fusiontables.template.up" +
+            "date\",\"path\":\"tables/{tableId}/templates/{templateId}\",\"httpMethod\":\"PUT\",\"descr" +
+            "iption\":\"Updates an existing template\",\"parameters\":{\"tableId\":{\"type\":\"string\"," +
+            "\"description\":\"Table to which the updated template belongs\",\"required\":true,\"loc" +
+            "ation\":\"path\"},\"templateId\":{\"type\":\"integer\",\"description\":\"Identifier for the " +
+            "template that is being updated\",\"required\":true,\"format\":\"int32\",\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"tableId\",\"templateId\"],\"request\":{\"$ref\":\"Template\"},\"re" +
+            "sponse\":{\"$ref\":\"Template\"},\"scopes\":[\"https://www.googleapis.com/auth/fusiontab" +
+            "les\"]}}}}}";
         
         public const string Version = "v1";
         
@@ -2455,6 +2469,12 @@ namespace Google.Apis.Fusiontables.v1 {
             
             private string _encoding;
             
+            private string _endLine;
+            
+            private System.Nullable<bool> _isStrict;
+            
+            private string _startLine;
+            
             private string _tableId;
             
             public InsertRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
@@ -2506,6 +2526,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
+            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string EndLine {
+                get {
+                    return this._endLine;
+                }
+                set {
+                    this._endLine = value;
+                }
+            }
+            
+            /// <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> IsStrict {
+                get {
+                    return this._isStrict;
+                }
+                set {
+                    this._isStrict = value;
+                }
+            }
+            
+            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string StartLine {
+                get {
+                    return this._startLine;
+                }
+                set {
+                    this._startLine = value;
+                }
+            }
+            
             /// <summary>The table into which new rows are being imported.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
@@ -2536,6 +2589,12 @@ namespace Google.Apis.Fusiontables.v1 {
             private string _delimiter;
             
             private string _encoding;
+            
+            private string _endLine;
+            
+            private System.Nullable<bool> _isStrict;
+            
+            private string _startLine;
             
             private string _tableId;
             
@@ -2586,6 +2645,39 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
                 set {
                     this._encoding = value;
+                }
+            }
+            
+            /// <summary>The index of the last line from which to start importing, exclusive. Thus, the number of imported lines is endLine - startLine. If this parameter is not provided, the file will be imported until the last line of the file. If endLine is negative, then it is equivalent to N + endLine, where N is the number of lines in the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("endLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string EndLine {
+                get {
+                    return this._endLine;
+                }
+                set {
+                    this._endLine = value;
+                }
+            }
+            
+            /// <summary>Whether the CSV will be parsed strictly or not. Default is true.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("isStrict", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> IsStrict {
+                get {
+                    return this._isStrict;
+                }
+                set {
+                    this._isStrict = value;
+                }
+            }
+            
+            /// <summary>The index of the first line from which to start importing, inclusive. Default is 0.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("startLine", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string StartLine {
+                get {
+                    return this._startLine;
+                }
+                set {
+                    this._startLine = value;
                 }
             }
             
@@ -3313,8 +3405,14 @@ namespace Google.Apis.Fusiontables.v1 {
             this._authenticator = _authenticator;
         }
         
+        /// <summary>Copies a table.</summary>
+        /// <param name="tableId">Required - ID of the table that is being copied.</param>
+        public virtual CopyRequest Copy(string tableId) {
+            return new CopyRequest(service, tableId);
+        }
+        
         /// <summary>Deletes a table.</summary>
-        /// <param name="tableId">Required - Id of the table that is being deleted.</param>
+        /// <param name="tableId">Required - ID of the table that is being deleted.</param>
         public virtual DeleteRequest Delete(string tableId) {
             return new DeleteRequest(service, tableId);
         }
@@ -3336,15 +3434,71 @@ namespace Google.Apis.Fusiontables.v1 {
         }
         
         /// <summary>Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated. This method supports patch semantics.</summary>
-        /// <param name="tableId">Required - Id of the table that is being updated.</param>
+        /// <param name="tableId">Required - ID of the table that is being updated.</param>
         public virtual PatchRequest Patch(Google.Apis.Fusiontables.v1.Data.Table body, string tableId) {
             return new PatchRequest(service, body, tableId);
         }
         
         /// <summary>Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated.</summary>
-        /// <param name="tableId">Required - Id of the table that is being updated.</param>
+        /// <param name="tableId">Required - ID of the table that is being updated.</param>
         public virtual UpdateRequest Update(Google.Apis.Fusiontables.v1.Data.Table body, string tableId) {
             return new UpdateRequest(service, body, tableId);
+        }
+        
+        public class CopyRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Fusiontables.v1.Data.Table> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _tableId;
+            
+            public CopyRequest(Google.Apis.Discovery.IRequestProvider service, string tableId) : 
+                    base(service) {
+                this._tableId = tableId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>ID of the table that is being copied.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string TableId {
+                get {
+                    return this._tableId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "table";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "copy";
+                }
+            }
         }
         
         public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
@@ -3382,7 +3536,7 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            /// <summary>Id of the table that is being deleted.</summary>
+            /// <summary>ID of the table that is being deleted.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
@@ -3643,7 +3797,7 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            /// <summary>Id of the table that is being updated.</summary>
+            /// <summary>ID of the table that is being updated.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {
@@ -3729,7 +3883,7 @@ namespace Google.Apis.Fusiontables.v1 {
                 }
             }
             
-            /// <summary>Id of the table that is being updated.</summary>
+            /// <summary>ID of the table that is being updated.</summary>
             [Google.Apis.Util.RequestParameterAttribute("tableId", Google.Apis.Util.RequestParameterType.Path)]
             public virtual string TableId {
                 get {

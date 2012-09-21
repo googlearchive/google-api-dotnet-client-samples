@@ -834,7 +834,7 @@
             <summary>The ID of the file to copy.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.CopyRequest.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
@@ -891,7 +891,7 @@
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertRequest.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
@@ -924,7 +924,7 @@
             <summary>Whether to convert this file to the corresponding Google Docs format.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.InsertMediaUpload.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
@@ -978,7 +978,7 @@
             <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.PatchRequest.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
@@ -1050,7 +1050,7 @@
             <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateRequest.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>
@@ -1095,7 +1095,7 @@
             <summary>Whether a blob upload should create a new revision. If false, the blob data in the current head revision will be replaced.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.Ocr">
-            <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.FilesResource.UpdateMediaUpload.OcrLanguage">
             <summary>If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes.</summary>

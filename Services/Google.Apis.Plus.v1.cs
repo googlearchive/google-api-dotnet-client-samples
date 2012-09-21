@@ -2248,7 +2248,7 @@ namespace Google.Apis.Plus.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1\",\"name\"" +
-            ":\"plus\",\"version\":\"v1\",\"revision\":\"20120806\",\"title\":\"Google+ API\",\"description\"" +
+            ":\"plus\",\"version\":\"v1\",\"revision\":\"20120712\",\"title\":\"Google+ API\",\"description\"" +
             ":\"The Google+ API enables developers to build on top of the Google+ platform.\",\"" +
             "icons\":{\"x16\":\"http://www.google.com/images/icons/product/gplus-16.png\",\"x32\":\"h" +
             "ttp://www.google.com/images/icons/product/gplus-32.png\"},\"documentationLink\":\"ht" +

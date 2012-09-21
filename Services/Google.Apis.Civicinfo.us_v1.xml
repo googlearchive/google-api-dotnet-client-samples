@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Civicinfo.us_v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion">
+            <summary>Describes information about a regional election administrative area.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.ElectionAdministrationBody">
+            <summary>Information about an election administrative body (e.g. County Board of Elections).</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.Local_jurisdiction">
+            <summary>Describes information about a regional election administrative area.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.Name">
+            <summary>The name of the jurisdiction.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrationRegion.Sources">
+            <summary>A list of sources for this area. If multiple sources are listed the data has been aggregated from those sources.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody">
+            <summary>Information about an election administrative body (e.g. County Board of Elections).</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.AbsenteeVotingInfoUrl">
+            <summary>A URL provided by this administrative body for information on absentee</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.BallotInfoUrl">
+            <summary>A URL provided by this administrative body to give contest information to</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.CorrespondenceAddress">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionInfoUrl">
+            <summary>A URL provided by this administrative body for looking up general election</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionOfficials">
+            <summary>The election officials for this election administrative body.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRegistrationConfirmationUrl">
+            <summary>A URL provided by this administrative body for confirming that the voter</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRegistrationUrl">
+            <summary>A URL provided by this administrative body for looking up how to register</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRulesUrl">
+            <summary>A URL provided by this administrative body describing election rules to</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.HoursOfOperation">
+            <summary>A description of the hours of operation for this administrative body.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.Name">
+            <summary>The name of this election administrative body.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.PhysicalAddress">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.Voter_services">
+            <summary>A description of the services this administrative body may provide.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.VotingLocationFinderUrl">
+            <summary>A URL provided by this administrative body for looking up where to vote.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Candidate">
+            <summary>Information about a candidate running for elected office.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.CandidateUrl">
+            <summary>The URL for the candidate&apos;s campaign web site.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.Channels">
+            <summary>A list of known (social) media channels for this candidate.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.Email">
+            <summary>The email address for the candidate&apos;s campaign.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.Name">
+            <summary>The candidate&apos;s name.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.OrderOnBallot">
+            <summary>The order the candidate appears on the ballot for this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.Party">
+            <summary>The full name of the party the candidate is a member of.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.Phone">
+            <summary>The voice phone number for the candidate&apos;s campaign office.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Candidate.PhotoUrl">
+            <summary>A URL for a photo of the candidate.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Channel">
+            <summary>A social media or web channel for a candidate.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Channel.Id">
+            <summary>The unique public identifier for the candidate&apos;s channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Channel.Type">
+            <summary>The type of channel. The following is a list of types of channels, but is not exhaustive. More channel types may be added at a later time. One of: GooglePlus, YouTube, Facebook, Twitter</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Contest">
+            <summary>Information about a contest that appears on a voter&apos;s ballot.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.BallotPlacement">
+            <summary>A number specifying the position of this contest on the voter&apos;s ballot.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Candidates">
+            <summary>The candidate choices for this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.District">
+            <summary>Describes the geographic scope of a contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.ElectorateSpecifications">
+            <summary>A description of any additional eligibility requirements for voting in this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Level">
+            <summary>The level of office for this contest. One of: federal, state, county, city, other</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.NumberElected">
+            <summary>The number of candidates that will be elected to office in this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.NumberVotingFor">
+            <summary>The number of candidates that a voter may vote for in this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Office">
+            <summary>The name of the office for this contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.PrimaryParty">
+            <summary>If this is a partisan election, the name of the party it is for.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Sources">
+            <summary>A list of sources for this contest. If multiple sources are listed, the data has been aggregated from those sources.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Special">
+            <summary>&quot;Yes&quot; or &quot;No&quot; depending on whether this a contest being held outside the normal election cycle.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Contest.Type">
+            <summary>The type of contest. Usually this will be General, Primary, or Run-off.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Election">
+            <summary>Information about the election that was queried.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Election.ElectionDay">
+            <summary>Day of the election in YYYY-MM-DD format.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Election.Id">
+            <summary>The unique ID of this election.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Election.Name">
+            <summary>A displayable name for the election.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial">
+            <summary>Information about individual election officials.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial.EmailAddress">
+            <summary>The email address of the election official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial.FaxNumber">
+            <summary>The fax number of the election official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial.Name">
+            <summary>The full name of the election official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial.OfficePhoneNumber">
+            <summary>The office phone number of the election official.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionOfficial.Title">
+            <summary>The title of the election official.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse">
+            <summary>The list of elections available for this version of the API.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse.Elections">
+            <summary>A list of available elections</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse.Kind">
+            <summary>The kind, fixed to &quot;civicinfo#electionsqueryresponse&quot;.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict">
+            <summary>Describes the geographic scope of a contest.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict.Id">
+            <summary>An identifier for this district, relative to its scope. For example, the 34th State Senate district would have id &quot;34&quot; and a scope of stateUpper.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict.Name">
+            <summary>The name of the district.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict.Scope">
+            <summary>The geographic scope of this district. If unspecified the district&apos;s geography is not known. One of: statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, cityWide, special</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.PollingLocation">
+            <summary>A location where a voter can vote. This may be an early vote site or an election day voting location.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Address">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.EndDate">
+            <summary>The last date that this early vote site may be used.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Name">
+            <summary>The name of the early vote site.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.PollingHours">
+            <summary>A description of when this polling location is open.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Sources">
+            <summary>A list of sources for this polling location. If multiple sources are listed the data has been aggregated from those sources.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.StartDate">
+            <summary>The first date that this early vote site may be used.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.VoterServices">
+            <summary>The services provided by this early vote site.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.City">
+            <summary>The city or town for the address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.Line1">
+            <summary>The street name and number of this address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.Line2">
+            <summary>The second line the address, if needed.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.Line3">
+            <summary>The third line of the address, if needed.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.LocationName">
+            <summary>The name of the location.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.State">
+            <summary>The US two letter state abbreviation of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType.Zip">
+            <summary>The US Postal Zip Code of the address.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.Source">
+            <summary>Contains information about the data source for the element containing it.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Source.Name">
+            <summary>The name of the data source.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.Source.Official">
+            <summary>Whether this data comes from an official government source.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest">
+            <summary>A request for information about a voter.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest.Address">
+            <summary>The registered address of the voter to look up.</summary>
+        </member>
+        <member name="T:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse">
+            <summary>The result of a voter info lookup query.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Contests">
+            <summary>Contests that will appear on the voter&apos;s ballot</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.EarlyVoteSites">
+            <summary>Locations where the voter is eligible to vote early, prior to election day</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Election">
+            <summary>Information about the election that was queried.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Kind">
+            <summary>The kind, fixed to &quot;civicinfo#voterinforesponse&quot;.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.NormalizedInput">
+            <summary>A simple representation of an address.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.PollingLocations">
+            <summary>Locations where the voter is eligible to vote on election day. For states with mail-in voting only, these locations will be nearby drop box locations. Drop box locations are free to the voter and may be used instead of placing the ballot in the mail.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.State">
+            <summary>Local Election Information for the state that the voter votes in. For the US, there will only be one element in this array.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Status">
+            <summary>The result of the request. One of: success, noStreetSegmentFound, addressUnparseable, noAddressParameter, multipleStreetSegmentsFound, electionOver, electionUnknown, internalLookupFailure</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.CivicinfoService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQuery">
+            <summary>List of available elections to query.</summary>
+        </member>
+        <member name="M:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQuery(Google.Apis.Civicinfo.us_v1.Data.VoterInfoRequest,System.String)">
+            <summary>Looks up information relevant to a voter based on the voter&apos;s registered address.</summary>
+            <param name="electionId">Required - The unique ID of the election to look up. A list of election IDs can be obtained at.https://www.googleapis.com/civicinfo/{version}/elections</param>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.ElectionQueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.ElectionId">
+            <summary>The unique ID of the election to look up. A list of election IDs can be obtained at.https://www.googleapis.com/civicinfo/{version}/elections</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.OfficialOnly">
+            <summary>If set to true, only data from official state sources will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.ElectionsResource.VoterInfoQueryRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+    </members>
+</doc>

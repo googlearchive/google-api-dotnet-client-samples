@@ -2438,7 +2438,7 @@ namespace Google.Apis.Drive.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v2\",\"name" +
-            "\":\"drive\",\"version\":\"v2\",\"revision\":\"20120723\",\"title\":\"Drive API\",\"description\"" +
+            "\":\"drive\",\"version\":\"v2\",\"revision\":\"20120904\",\"title\":\"Drive API\",\"description\"" +
             ":\"The API to interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/" +
             "doclist/images/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/im" +
             "ages/drive_icon_32.png\"},\"documentationLink\":\"https://developers.google.com/driv" +
@@ -2808,241 +2808,241 @@ namespace Google.Apis.Drive.v2 {
             "sponding Google Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"t" +
             "ype\":\"string\",\"description\":\"The ID of the file to copy.\",\"required\":true,\"locat" +
             "ion\":\"path\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR on .j" +
-            "pg, .png, or .gif uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLanguage\":" +
-            "{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language to use. Va" +
-            "lid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boolean\"," +
-            "\"description\":\"Whether to pin the head revision of the new copy.\",\"default\":\"fal" +
-            "se\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"The lan" +
-            "guage of the original file to be translated.\",\"location\":\"query\"},\"targetLanguag" +
-            "e\":{\"type\":\"string\",\"description\":\"Target language to translate the file to. If " +
-            "no sourceLanguage is provided, the API will attempt to detect the language.\",\"lo" +
-            "cation\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The languag" +
-            "e of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"string\"," +
-            "\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"parameterOrder\"" +
-            ":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]" +
-            "},\"delete\":{\"id\":\"drive.files.delete\",\"path\":\"files/{fileId}\",\"httpMethod\":\"DELE" +
-            "TE\",\"description\":\"Permanently deletes a file by ID. Skips the trash.\",\"paramete" +
-            "rs\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file to delete.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"g" +
-            "et\":{\"id\":\"drive.files.get\",\"path\":\"files/{fileId}\",\"httpMethod\":\"GET\",\"descript" +
-            "ion\":\"Gets a file\'s metadata by ID.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID for the file in question.\",\"required\":true,\"location\":\"path\"}" +
-            ",\"projection\":{\"type\":\"string\",\"description\":\"This parameter is deprecated and h" +
-            "as no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\",\"Depre" +
-            "cated\"],\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"" +
-            "Whether to update the view date after successfully retrieving the file.\",\"defaul" +
-            "t\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"" +
-            "File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis" +
-            ".com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\"," +
-            "\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.files.i" +
-            "nsert\",\"path\":\"files\",\"httpMethod\":\"POST\",\"description\":\"Insert a new file.\",\"pa" +
-            "rameters\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Whether to convert this fi" +
-            "le to the corresponding Google Docs format.\",\"default\":\"false\",\"location\":\"query" +
-            "\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR on .jpg, .png, " +
-            "or .gif uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLanguage\":{\"type\":\"s" +
-            "tring\",\"description\":\"If ocr is true, hints at the language to use. Valid values" +
-            " are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boolean\",\"descripti" +
-            "on\":\"Whether to pin the head revision of the uploaded file.\",\"default\":\"false\",\"" +
-            "location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"The language" +
-            " of the original file to be translated.\",\"location\":\"query\"},\"targetLanguage\":{\"" +
-            "type\":\"string\",\"description\":\"Target language to translate the file to. If no so" +
-            "urceLanguage is provided, the API will attempt to detect the language.\",\"locatio" +
-            "n\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The language of " +
-            "the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The timed text track name.\",\"location\":\"query\"}},\"request\":{\"$ref\":\"Fi" +
-            "le\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive" +
-            "\",\"https://www.googleapis.com/auth/drive.file\"],\"supportsMediaUpload\":true,\"medi" +
-            "aUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"multipart\":t" +
-            "rue,\"path\":\"/upload/drive/v2/files\"},\"resumable\":{\"multipart\":true,\"path\":\"/resu" +
-            "mable/upload/drive/v2/files\"}}}},\"list\":{\"id\":\"drive.files.list\",\"path\":\"files\"," +
-            "\"httpMethod\":\"GET\",\"description\":\"Lists the user\'s files.\",\"parameters\":{\"maxRes" +
-            "ults\":{\"type\":\"integer\",\"description\":\"Maximum number of files to return.\",\"defa" +
-            "ult\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"Page token for files.\",\"location\":\"query\"},\"projection" +
-            "\":{\"type\":\"string\",\"description\":\"This parameter is deprecated and has no functi" +
-            "on.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\",\"Deprecated\"],\"loc" +
-            "ation\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query string for searching f" +
-            "iles.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"FileList\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https" +
-            "://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/" +
-            "auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.files.patch\",\"path\":\"files/{fileId}\"" +
-            ",\"httpMethod\":\"PATCH\",\"description\":\"Updates file metadata and/or content. This " +
-            "method supports patch semantics.\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"des" +
-            "cription\":\"Whether to convert this file to the corresponding Google Docs format." +
-            "\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"description\":" +
-            "\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"newRevision\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create a new revi" +
-            "sion. If false, the blob data in the current head revision will be replaced.\",\"d" +
-            "efault\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whethe" +
-            "r to attempt OCR on .jpg, .png, or .gif uploads.\",\"default\":\"false\",\"location\":\"" +
-            "query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at t" +
-            "he language to use. Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinn" +
-            "ed\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new revision.\",\"default\"" +
-            ":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolean\",\"description\":\"" +
-            "Whether to set the modified date with the supplied modified date.\",\"default\":\"fa" +
-            "lse\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"The la" +
-            "nguage of the original file to be translated.\",\"location\":\"query\"},\"targetLangua" +
-            "ge\":{\"type\":\"string\",\"description\":\"Target language to translate the file to. If" +
-            " no sourceLanguage is provided, the API will attempt to detect the language.\",\"l" +
-            "ocation\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The langua" +
-            "ge of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"string\"" +
-            ",\"description\":\"The timed text track name.\",\"location\":\"query\"},\"updateViewedDat" +
-            "e\":{\"type\":\"boolean\",\"description\":\"Whether to update the view date after succes" +
-            "sfully updating the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder" +
-            "\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"" +
-            "]},\"touch\":{\"id\":\"drive.files.touch\",\"path\":\"files/{fileId}/touch\",\"httpMethod\":" +
-            "\"POST\",\"description\":\"Set the file\'s updated time to the current server time.\",\"" +
-            "parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file to upda" +
-            "te.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":" +
-            "{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.g" +
-            "oogleapis.com/auth/drive.file\"]},\"trash\":{\"id\":\"drive.files.trash\",\"path\":\"files" +
-            "/{fileId}/trash\",\"httpMethod\":\"POST\",\"description\":\"Moves a file to the trash.\"," +
-            "\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file to tra" +
-            "sh.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":" +
-            "{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.g" +
-            "oogleapis.com/auth/drive.file\"]},\"untrash\":{\"id\":\"drive.files.untrash\",\"path\":\"f" +
-            "iles/{fileId}/untrash\",\"httpMethod\":\"POST\",\"description\":\"Restores a file from t" +
-            "he trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the " +
-            "file to untrash.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"" +
-            "],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"" +
-            "https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.files.update" +
-            "\",\"path\":\"files/{fileId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates file metadat" +
-            "a and/or content\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Wheth" +
-            "er to convert this file to the corresponding Google Docs format.\",\"default\":\"fal" +
-            "se\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the f" +
-            "ile to update.\",\"required\":true,\"location\":\"path\"},\"newRevision\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Whether a blob upload should create a new revision. If false, " +
-            "the blob data in the current head revision will be replaced.\",\"default\":\"true\",\"" +
-            "location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR" +
-            " on .jpg, .png, or .gif uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLang" +
+            "pg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLang" +
             "uage\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language to u" +
             "se. Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Whether to pin the new revision.\",\"default\":\"false\",\"locati" +
-            "on\":\"query\"},\"setModifiedDate\":{\"type\":\"boolean\",\"description\":\"Whether to set t" +
-            "he modified date with the supplied modified date.\",\"default\":\"false\",\"location\":" +
-            "\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"The language of the or" +
-            "iginal file to be translated.\",\"location\":\"query\"},\"targetLanguage\":{\"type\":\"str" +
-            "ing\",\"description\":\"Target language to translate the file to. If no sourceLangua" +
-            "ge is provided, the API will attempt to detect the language.\",\"location\":\"query\"" +
-            "},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The language of the timed " +
-            "text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"string\",\"description\":\"" +
-            "The timed text track name.\",\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Whether to update the view date after successfully updating " +
-            "the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"re" +
-            "quest\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"],\"supportsMedia" +
-            "Upload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simp" +
-            "le\":{\"multipart\":true,\"path\":\"/upload/drive/v2/files/{fileId}\"},\"resumable\":{\"mu" +
-            "ltipart\":true,\"path\":\"/resumable/upload/drive/v2/files/{fileId}\"}}}}}},\"parents\"" +
-            ":{\"methods\":{\"delete\":{\"id\":\"drive.parents.delete\",\"path\":\"files/{fileId}/parent" +
-            "s/{parentId}\",\"httpMethod\":\"DELETE\",\"description\":\"Removes a parent from a file." +
-            "\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"r" +
-            "equired\":true,\"location\":\"path\"},\"parentId\":{\"type\":\"string\",\"description\":\"The " +
-            "ID of the parent.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId" +
-            "\",\"parentId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.goo" +
-            "gleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.parents.get\",\"path\":\"files/{fi" +
-            "leId}/parents/{parentId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific pare" +
-            "nt reference.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of " +
-            "the file.\",\"required\":true,\"location\":\"path\"},\"parentId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The ID of the parent.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"fileId\",\"parentId\"],\"response\":{\"$ref\":\"ParentReference\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"," +
-            "\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapi" +
-            "s.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.parents.insert\",\"path\":\"files" +
-            "/{fileId}/parents\",\"httpMethod\":\"POST\",\"description\":\"Adds a parent folder for a" +
-            " file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the fil" +
-            "e.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"request\":{\"" +
-            "$ref\":\"ParentReference\"},\"response\":{\"$ref\":\"ParentReference\"},\"scopes\":[\"https:" +
-            "//www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]}," +
-            "\"list\":{\"id\":\"drive.parents.list\",\"path\":\"files/{fileId}/parents\",\"httpMethod\":\"" +
-            "GET\",\"description\":\"Lists a file\'s parents.\",\"parameters\":{\"fileId\":{\"type\":\"str" +
-            "ing\",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"pa" +
-            "rameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"ParentList\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https:" +
-            "//www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/a" +
-            "uth/drive.readonly\"]}}},\"permissions\":{\"methods\":{\"delete\":{\"id\":\"drive.permissi" +
-            "ons.delete\",\"path\":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"DEL" +
-            "ETE\",\"description\":\"Deletes a permission from a file.\",\"parameters\":{\"fileId\":{\"" +
-            "type\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"location\":\"" +
-            "path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"The ID for the permission." +
-            "\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"]" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/a" +
-            "uth/drive.file\"]},\"get\":{\"id\":\"drive.permissions.get\",\"path\":\"files/{fileId}/per" +
-            "missions/{permissionId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a permission by " +
-            "ID.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file." +
-            "\",\"required\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"fileId\",\"permissionId\"],\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"https" +
-            "://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"" +
-            "https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapis" +
-            ".com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.permissions.insert\",\"path\":\"fi" +
-            "les/{fileId}/permissions\",\"httpMethod\":\"POST\",\"description\":\"Inserts a permissio" +
-            "n for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for" +
-            " the file.\",\"required\":true,\"location\":\"path\"},\"sendNotificationEmails\":{\"type\":" +
-            "\"boolean\",\"description\":\"Whether to send notification emails.\",\"default\":\"true\"," +
-            "\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"Permission\"}" +
-            ",\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"https://www.googleapis.com/auth/dri" +
-            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"list\":{\"id\":\"drive.permissio" +
-            "ns.list\",\"path\":\"files/{fileId}/permissions\",\"httpMethod\":\"GET\",\"description\":\"L" +
-            "ists a file\'s permissions.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description" +
-            "\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
-            "fileId\"],\"response\":{\"$ref\":\"PermissionList\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https://www.google" +
-            "apis.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/auth/drive.re" +
-            "adonly\"]},\"patch\":{\"id\":\"drive.permissions.patch\",\"path\":\"files/{fileId}/permiss" +
-            "ions/{permissionId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a permission. T" +
-            "his method supports patch semantics.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"permissio" +
-            "nId\":{\"type\":\"string\",\"description\":\"The ID for the permission.\",\"required\":true" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"],\"request\":{\"$ref" +
-            "\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\"" +
-            ":\"drive.permissions.update\",\"path\":\"files/{fileId}/permissions/{permissionId}\",\"" +
-            "httpMethod\":\"PUT\",\"description\":\"Updates a permission.\",\"parameters\":{\"fileId\":{" +
-            "\"type\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"location\":" +
-            "\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"The ID for the permission" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"" +
-            "],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"ht" +
+            "lean\",\"description\":\"Whether to pin the head revision of the new copy.\",\"default" +
+            "\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"T" +
+            "he language of the original file to be translated.\",\"location\":\"query\"},\"targetL" +
+            "anguage\":{\"type\":\"string\",\"description\":\"Target language to translate the file t" +
+            "o. If no sourceLanguage is provided, the API will attempt to detect the language" +
+            ".\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The l" +
+            "anguage of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"st" +
+            "ring\",\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"parameter" +
+            "Order\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive." +
+            "file\"]},\"delete\":{\"id\":\"drive.files.delete\",\"path\":\"files/{fileId}\",\"httpMethod\"" +
+            ":\"DELETE\",\"description\":\"Permanently deletes a file by ID. Skips the trash.\",\"pa" +
+            "rameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file to delete" +
+            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"scopes\":[\"ht" +
             "tps://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file" +
-            "\"]}}},\"revisions\":{\"methods\":{\"delete\":{\"id\":\"drive.revisions.delete\",\"path\":\"fi" +
-            "les/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"DELETE\",\"description\":\"Remove" +
-            "s a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of " +
-            "the file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The ID of the revision.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"fileId\",\"revisionId\"],\"scopes\":[\"https://www.googleapis.com/auth/driv" +
-            "e\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.revisions.g" +
-            "et\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"GET\",\"descripti" +
-            "on\":\"Gets a specific revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID of the revision.\",\"required\":true,\"location\":" +
-            "\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"response\":{\"$ref\":\"Revision\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/a" +
-            "uth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https" +
-            "://www.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id\":\"drive.revisions.list\"" +
-            ",\"path\":\"files/{fileId}/revisions\",\"httpMethod\":\"GET\",\"description\":\"Lists a fil" +
-            "e\'s revisions.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of" +
-            " the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"res" +
-            "ponse\":{\"$ref\":\"RevisionList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\"" +
-            ",\"https://www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/d" +
-            "rive.metadata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"patc" +
-            "h\":{\"id\":\"drive.revisions.patch\",\"path\":\"files/{fileId}/revisions/{revisionId}\"," +
-            "\"httpMethod\":\"PATCH\",\"description\":\"Updates a revision. This method supports pat" +
-            "ch semantics.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for" +
-            " the file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID for the revision.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Revision\"},\"response\":{\"$r" +
-            "ef\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.g" +
-            "oogleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.revisions.update\",\"path\":" +
-            "\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"PUT\",\"description\":\"Update" +
-            "s a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for" +
-            " the file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID for the revision.\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Revision\"},\"response\":{\"$r" +
-            "ef\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.g" +
-            "oogleapis.com/auth/drive.file\"]}}}}}";
+            "\"]},\"get\":{\"id\":\"drive.files.get\",\"path\":\"files/{fileId}\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Gets a file\'s metadata by ID.\",\"parameters\":{\"fileId\":{\"type\":\"strin" +
+            "g\",\"description\":\"The ID for the file in question.\",\"required\":true,\"location\":\"" +
+            "path\"},\"projection\":{\"type\":\"string\",\"description\":\"This parameter is deprecated" +
+            " and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\"," +
+            "\"Deprecated\"],\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\",\"descript" +
+            "ion\":\"Whether to update the view date after successfully retrieving the file.\",\"" +
+            "default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$" +
+            "ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.goog" +
+            "leapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.read" +
+            "only\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.f" +
+            "iles.insert\",\"path\":\"files\",\"httpMethod\":\"POST\",\"description\":\"Insert a new file" +
+            ".\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Whether to convert t" +
+            "his file to the corresponding Google Docs format.\",\"default\":\"false\",\"location\":" +
+            "\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR on .jpg, " +
+            ".png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLanguage" +
+            "\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language to use. " +
+            "Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boolean" +
+            "\",\"description\":\"Whether to pin the head revision of the uploaded file.\",\"defaul" +
+            "t\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"" +
+            "The language of the original file to be translated.\",\"location\":\"query\"},\"target" +
+            "Language\":{\"type\":\"string\",\"description\":\"Target language to translate the file " +
+            "to. If no sourceLanguage is provided, the API will attempt to detect the languag" +
+            "e.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The " +
+            "language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"s" +
+            "tring\",\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"request\"" +
+            ":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"],\"supportsMediaUpload" +
+            "\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"" +
+            "multipart\":true,\"path\":\"/upload/drive/v2/files\"},\"resumable\":{\"multipart\":true,\"" +
+            "path\":\"/resumable/upload/drive/v2/files\"}}}},\"list\":{\"id\":\"drive.files.list\",\"pa" +
+            "th\":\"files\",\"httpMethod\":\"GET\",\"description\":\"Lists the user\'s files.\",\"paramete" +
+            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of files to re" +
+            "turn.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageT" +
+            "oken\":{\"type\":\"string\",\"description\":\"Page token for files.\",\"location\":\"query\"}" +
+            ",\"projection\":{\"type\":\"string\",\"description\":\"This parameter is deprecated and h" +
+            "as no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\",\"Depre" +
+            "cated\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query string for" +
+            " searching files.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"FileList\"},\"scopes\":" +
+            "[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive." +
+            "file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.goo" +
+            "gleapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.files.patch\",\"path\":\"fil" +
+            "es/{fileId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates file metadata and/or co" +
+            "ntent. This method supports patch semantics.\",\"parameters\":{\"convert\":{\"type\":\"b" +
+            "oolean\",\"description\":\"Whether to convert this file to the corresponding Google " +
+            "Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"" +
+            "newRevision\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should creat" +
+            "e a new revision. If false, the blob data in the current head revision will be r" +
+            "eplaced.\",\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"descript" +
+            "ion\":\"Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"f" +
+            "alse\",\"location\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr i" +
+            "s true, hints at the language to use. Valid values are ISO 639-1 codes.\",\"locati" +
+            "on\":\"query\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new re" +
+            "vision.\",\"default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolea" +
+            "n\",\"description\":\"Whether to set the modified date with the supplied modified da" +
+            "te.\",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"de" +
+            "scription\":\"The language of the original file to be translated.\",\"location\":\"que" +
+            "ry\"},\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language to transla" +
+            "te the file to. If no sourceLanguage is provided, the API will attempt to detect" +
+            " the language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName" +
+            "\":{\"type\":\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"" +
+            "},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the view" +
+            " date after successfully updating the file.\",\"default\":\"true\",\"location\":\"query\"" +
+            "}},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"Fil" +
+            "e\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.co" +
+            "m/auth/drive.file\"]},\"touch\":{\"id\":\"drive.files.touch\",\"path\":\"files/{fileId}/to" +
+            "uch\",\"httpMethod\":\"POST\",\"description\":\"Set the file\'s updated time to the curre" +
+            "nt server time.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID o" +
+            "f the file to update.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fi" +
+            "leId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dri" +
+            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"trash\":{\"id\":\"drive.files.tr" +
+            "ash\",\"path\":\"files/{fileId}/trash\",\"httpMethod\":\"POST\",\"description\":\"Moves a fi" +
+            "le to the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID " +
+            "of the file to trash.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fi" +
+            "leId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dri" +
+            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"untrash\":{\"id\":\"drive.files." +
+            "untrash\",\"path\":\"files/{fileId}/untrash\",\"httpMethod\":\"POST\",\"description\":\"Rest" +
+            "ores a file from the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The ID of the file to untrash.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"fileId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"" +
+            "drive.files.update\",\"path\":\"files/{fileId}\",\"httpMethod\":\"PUT\",\"description\":\"Up" +
+            "dates file metadata and/or content\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"d" +
+            "escription\":\"Whether to convert this file to the corresponding Google Docs forma" +
+            "t.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"description" +
+            "\":\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"newRevisio" +
+            "n\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create a new re" +
+            "vision. If false, the blob data in the current head revision will be replaced.\"," +
+            "\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whet" +
+            "her to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"loc" +
+            "ation\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr is true, hi" +
+            "nts at the language to use. Valid values are ISO 639-1 codes.\",\"location\":\"query" +
+            "\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new revision.\",\"" +
+            "default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolean\",\"descri" +
+            "ption\":\"Whether to set the modified date with the supplied modified date.\",\"defa" +
+            "ult\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\"" +
+            ":\"The language of the original file to be translated.\",\"location\":\"query\"},\"targ" +
+            "etLanguage\":{\"type\":\"string\",\"description\":\"Target language to translate the fil" +
+            "e to. If no sourceLanguage is provided, the API will attempt to detect the langu" +
+            "age.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"Th" +
+            "e language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":" +
+            "\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"},\"updateV" +
+            "iewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the view date afte" +
+            "r successfully updating the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parame" +
+            "terOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scope" +
+            "s\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/dri" +
+            "ve.file\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"" +
+            "10GB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/drive/v2/files/{fi" +
+            "leId}\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/drive/v2/files/{" +
+            "fileId}\"}}}}}},\"parents\":{\"methods\":{\"delete\":{\"id\":\"drive.parents.delete\",\"path" +
+            "\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"DELETE\",\"description\":\"Remov" +
+            "es a parent from a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"parentId\":{\"type\":\"str" +
+            "ing\",\"description\":\"The ID of the parent.\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"fileId\",\"parentId\"],\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.parent" +
+            "s.get\",\"path\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"GET\",\"descriptio" +
+            "n\":\"Gets a specific parent reference.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"parentId\"" +
+            ":{\"type\":\"string\",\"description\":\"The ID of the parent.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"fileId\",\"parentId\"],\"response\":{\"$ref\":\"ParentRef" +
+            "erence\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleap" +
+            "is.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly" +
+            "\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.paren" +
+            "ts.insert\",\"path\":\"files/{fileId}/parents\",\"httpMethod\":\"POST\",\"description\":\"Ad" +
+            "ds a parent folder for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\"" +
+            ":[\"fileId\"],\"request\":{\"$ref\":\"ParentReference\"},\"response\":{\"$ref\":\"ParentRefer" +
+            "ence\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis" +
+            ".com/auth/drive.file\"]},\"list\":{\"id\":\"drive.parents.list\",\"path\":\"files/{fileId}" +
+            "/parents\",\"httpMethod\":\"GET\",\"description\":\"Lists a file\'s parents.\",\"parameters" +
+            "\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"required\":true" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"ParentList\"" +
+            "},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/" +
+            "auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"http" +
+            "s://www.googleapis.com/auth/drive.readonly\"]}}},\"permissions\":{\"methods\":{\"delet" +
+            "e\":{\"id\":\"drive.permissions.delete\",\"path\":\"files/{fileId}/permissions/{permissi" +
+            "onId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a permission from a file.\",\"" +
+            "parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"Th" +
+            "e ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
+            "\"fileId\",\"permissionId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"http" +
+            "s://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.permissions.get\",\"p" +
+            "ath\":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"GET\",\"description" +
+            "\":\"Gets a permission by ID.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"permissionId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The ID for the permission.\",\"required\":true,\"locatio" +
+            "n\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"],\"response\":{\"$ref\":\"Permi" +
+            "ssion\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapi" +
+            "s.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\"" +
+            ",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.permis" +
+            "sions.insert\",\"path\":\"files/{fileId}/permissions\",\"httpMethod\":\"POST\",\"descripti" +
+            "on\":\"Inserts a permission for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"sendNoti" +
+            "ficationEmails\":{\"type\":\"boolean\",\"description\":\"Whether to send notification em" +
+            "ails.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"reques" +
+            "t\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"list" +
+            "\":{\"id\":\"drive.permissions.list\",\"path\":\"files/{fileId}/permissions\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Lists a file\'s permissions.\",\"parameters\":{\"fileId\":{\"typ" +
+            "e\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"PermissionList\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.f" +
+            "ile\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.goog" +
+            "leapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.permissions.patch\",\"path\"" +
+            ":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"PATCH\",\"description\":" +
+            "\"Updates a permission. This method supports patch semantics.\",\"parameters\":{\"fil" +
+            "eId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"The ID for the perm" +
+            "ission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permiss" +
+            "ionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/driv" +
+            "e.file\"]},\"update\":{\"id\":\"drive.permissions.update\",\"path\":\"files/{fileId}/permi" +
+            "ssions/{permissionId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a permission.\"," +
+            "\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"re" +
+            "quired\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"T" +
+            "he ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
+            "[\"fileId\",\"permissionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Pe" +
+            "rmission\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.google" +
+            "apis.com/auth/drive.file\"]}}},\"revisions\":{\"methods\":{\"delete\":{\"id\":\"drive.revi" +
+            "sions.delete\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"DELET" +
+            "E\",\"description\":\"Removes a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"revisionI" +
+            "d\":{\"type\":\"string\",\"description\":\"The ID of the revision.\",\"required\":true,\"loc" +
+            "ation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"scopes\":[\"https://www." +
+            "googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":" +
+            "{\"id\":\"drive.revisions.get\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"http" +
+            "Method\":\"GET\",\"description\":\"Gets a specific revision.\",\"parameters\":{\"fileId\":{" +
+            "\"type\":\"string\",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"" +
+            "path\"},\"revisionId\":{\"type\":\"string\",\"description\":\"The ID of the revision.\",\"re" +
+            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"respo" +
+            "nse\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"http" +
+            "s://www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.m" +
+            "etadata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id" +
+            "\":\"drive.revisions.list\",\"path\":\"files/{fileId}/revisions\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"Lists a file\'s revisions.\",\"parameters\":{\"fileId\":{\"type\":\"string\"," +
+            "\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"fileId\"],\"response\":{\"$ref\":\"RevisionList\"},\"scopes\":[\"https://www.go" +
+            "ogleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https://w" +
+            "ww.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/auth" +
+            "/drive.readonly\"]},\"patch\":{\"id\":\"drive.revisions.patch\",\"path\":\"files/{fileId}/" +
+            "revisions/{revisionId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a revision. " +
+            "This method supports patch semantics.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"revision" +
+            "Id\":{\"type\":\"string\",\"description\":\"The ID for the revision.\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Re" +
+            "vision\"},\"response\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.r" +
+            "evisions.update\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"PU" +
+            "T\",\"description\":\"Updates a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
+            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"revision" +
+            "Id\":{\"type\":\"string\",\"description\":\"The ID for the revision.\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Re" +
+            "vision\"},\"response\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/au" +
+            "th/drive\",\"https://www.googleapis.com/auth/drive.file\"]}}}}}";
         
         public const string Version = "v2";
         
@@ -4075,7 +4075,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
@@ -4379,7 +4379,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
@@ -4544,7 +4544,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
@@ -4809,7 +4809,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
@@ -5193,7 +5193,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
@@ -5408,7 +5408,7 @@ namespace Google.Apis.Drive.v2 {
                 }
             }
             
-            /// <summary>Whether to attempt OCR on .jpg, .png, or .gif uploads.</summary>
+            /// <summary>Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.</summary>
             [Google.Apis.Util.RequestParameterAttribute("ocr", Google.Apis.Util.RequestParameterType.Query)]
             public virtual System.Nullable<bool> Ocr {
                 get {
