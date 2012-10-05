@@ -446,7 +446,7 @@
             <summary>A conversion path dimension value, containing a list of interactions with their attributes.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.McfData.RowsData.PrimitiveValue">
-            <summary>A primitive metric value. A primitive dimension value.</summary>
+            <summary>A primitive dimension value. A primitive metric value.</summary>
         </member>
         <member name="P:Google.Apis.Analytics.v3.Data.McfData.RowsData.ConversionPathValueData.InteractionType">
             <summary>Type of an interaction on conversion path. Such as CLICK, IMPRESSION etc.</summary>

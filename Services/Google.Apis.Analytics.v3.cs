@@ -1819,7 +1819,7 @@ namespace Google.Apis.Analytics.v3.Data {
                 }
             }
             
-            /// <summary>A primitive metric value. A primitive dimension value.</summary>
+            /// <summary>A primitive dimension value. A primitive metric value.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("primitiveValue")]
             public virtual string PrimitiveValue {
                 get {
@@ -3082,8 +3082,8 @@ namespace Google.Apis.Analytics.v3 {
             "es\":{\"interactionType\":{\"type\":\"string\",\"description\":\"Type of an interaction on" +
             " conversion path. Such as CLICK, IMPRESSION etc.\"},\"nodeValue\":{\"type\":\"string\"," +
             "\"description\":\"Node value of an interaction on conversion path. Such as source, " +
-            "medium etc.\"}}}},\"primitiveValue\":{\"type\":\"string\",\"description\":\"A primitive me" +
-            "tric value. A primitive dimension value.\"}}}}},\"selfLink\":{\"type\":\"string\",\"desc" +
+            "medium etc.\"}}}},\"primitiveValue\":{\"type\":\"string\",\"description\":\"A primitive di" +
+            "mension value. A primitive metric value.\"}}}}},\"selfLink\":{\"type\":\"string\",\"desc" +
             "ription\":\"Link to this page.\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"T" +
             "he total number of rows for the query, regardless of the number of rows in the r" +
             "esponse.\",\"format\":\"int32\"},\"totalsForAllResults\":{\"type\":\"object\",\"description\"" +

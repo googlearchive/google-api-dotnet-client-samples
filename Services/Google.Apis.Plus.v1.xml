@@ -169,7 +169,7 @@
             <summary>If the attachment is a video, the embeddable link.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.FullImage">
-            <summary>The full image url for photo attachments.</summary>
+            <summary>The full image URL for photo attachments.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.Id">
             <summary>The ID of the media object&apos;s resource.</summary>
@@ -196,7 +196,7 @@
             <summary>URL of the link.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.FullImageData">
-            <summary>The full image url for photo attachments.</summary>
+            <summary>The full image URL for photo attachments.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.AttachmentsData.FullImageData.Height">
             <summary>The height, in pixels, of the linked resource.</summary>
@@ -274,7 +274,7 @@
             <summary>Link to the next page of activities.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.NextPageToken">
-            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+            <summary>The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.ActivityFeed.SelfLink">
             <summary>Link to this activity resource.</summary>
@@ -338,10 +338,10 @@
             <summary>The URL of the actor&apos;s profile photo. To re-size the image and crop it to a square, append the query string ?sz=x, where x is the dimension in pixels of each side.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.InReplyToData.Id">
-            <summary>The id of the activity.</summary>
+            <summary>The ID of the activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Comment.InReplyToData.Url">
-            <summary>The url of the activity.</summary>
+            <summary>The URL of the activity.</summary>
         </member>
         <member name="T:Google.Apis.Plus.v1.Data.Comment.ObjectData">
             <summary>The object of this comment.</summary>
@@ -369,7 +369,7 @@
             <summary>Link to the next page of activities.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.NextPageToken">
-            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+            <summary>The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.CommentFeed.Title">
             <summary>The title of this collection of comments.</summary>
@@ -381,13 +381,13 @@
             <summary>ETag of this response for caching purposes.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.Items">
-            <summary>The people in this page of results. Each item will include the id, displayName, image, and url for the person. To retrieve additional profile data, see the people.get method.</summary>
+            <summary>The people in this page of results. Each item includes the id, displayName, image, and url for the person. To retrieve additional profile data, see the people.get method.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.Kind">
             <summary>Identifies this resource as a collection of people. Value: &quot;plus#peopleFeed&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.NextPageToken">
-            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+            <summary>The continuation token, which is used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.PeopleFeed.SelfLink">
             <summary>Link to this resource.</summary>
@@ -630,10 +630,10 @@
             <summary>The collection of activities to list.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.MaxResults">
-            <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
+            <summary>The maximum number of activities to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.PageToken">
-            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.ListRequest.UserId">
             <summary>The ID of the user to get activities for. The special value "me" can be used to indicate the authenticated user.</summary>
@@ -648,13 +648,13 @@
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.MaxResults">
-            <summary>The maximum number of activities to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
+            <summary>The maximum number of activities to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.OrderBy">
             <summary>Specifies how to order search results.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.PageToken">
-            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token may be of any length.</summary>
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token can be of any length.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.ActivitiesResource.SearchRequest.Query">
             <summary>Full-text search query string.</summary>
@@ -695,10 +695,10 @@
             <summary>The ID of the activity to get comments for.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.MaxResults">
-            <summary>The maximum number of comments to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
+            <summary>The maximum number of comments to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.PageToken">
-            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.CommentsResource.ListRequest.SortOrder">
             <summary>The order in which to sort the list of comments.</summary>
@@ -747,10 +747,10 @@
             <summary>The collection of people to list.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.MaxResults">
-            <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
+            <summary>The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.ListByActivityRequest.PageToken">
-            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -762,10 +762,10 @@
             <summary>Specify the preferred language to search with. See search language codes for available values.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.MaxResults">
-            <summary>The maximum number of people to include in the response, used for paging. For any response, the actual number returned may be less than the specified maxResults.</summary>
+            <summary>The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.PageToken">
-            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token may be of any length.</summary>
+            <summary>The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token can be of any length.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.PeopleResource.SearchRequest.Query">
             <summary>Specify a query string for full text search of public text in all profiles.</summary>

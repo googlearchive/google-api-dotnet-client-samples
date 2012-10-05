@@ -51,6 +51,8 @@ namespace Google.Apis.Gan.v1beta1.Data {
         
         private System.Nullable<bool> _productFeedsEnabled;
         
+        private System.Collections.Generic.IList<string> _redirectDomains;
+        
         private string _siteUrl;
         
         private string _status;
@@ -241,6 +243,17 @@ namespace Google.Apis.Gan.v1beta1.Data {
             }
             set {
                 this._productFeedsEnabled = value;
+            }
+        }
+        
+        /// <summary>List of redirect URLs for this advertiser</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("redirectDomains")]
+        public virtual System.Collections.Generic.IList<string> RedirectDomains {
+            get {
+                return this._redirectDomains;
+            }
+            set {
+                this._redirectDomains = value;
             }
         }
         
@@ -2326,537 +2339,539 @@ namespace Google.Apis.Gan.v1beta1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"gan:v1beta1\",\"n" +
-            "ame\":\"gan\",\"version\":\"v1beta1\",\"revision\":\"20120727\",\"title\":\"Google Affiliate N" +
+            "ame\":\"gan\",\"version\":\"v1beta1\",\"revision\":\"20120904\",\"title\":\"Google Affiliate N" +
             "etwork API\",\"description\":\"Lets you have programmatic access to your Google Affi" +
             "liate Network data.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/" +
             "affiliatenetwork-16.png\",\"x32\":\"http://www.google.com/images/icons/product/affil" +
-            "iatenetwork-32.png\"},\"documentationLink\":\"https://code.google.com/apis/gan/\",\"pr" +
-            "otocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/gan/v1beta1/\",\"basePath\":\"/" +
-            "gan/v1beta1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"gan/v1beta1" +
-            "/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data " +
-            "format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"" +
-            "Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{" +
-            "\"type\":\"string\",\"description\":\"Selector specifying which fields to include in a " +
-            "partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API" +
-            " key. Your API key identifies your project and provides you with API access, quo" +
-            "ta, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"qu" +
-            "ery\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curr" +
-            "ent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Re" +
-            "turns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"" +
-            "query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota p" +
-            "urposes for server-side applications. Can be any arbitrary string assigned to a " +
-            "user, but should not exceed 40 characters. Overrides userIp if both are provided" +
-            ".\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of th" +
-            "e site where the request originates. Use this if you want to enforce per-user li" +
-            "mits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis." +
-            "com/auth/gan\":{\"description\":\"Manage your GAN data\"},\"https://www.googleapis.com" +
-            "/auth/gan.readonly\":{\"description\":\"View your GAN data\"}}}},\"schemas\":{\"Advertis" +
-            "er\":{\"id\":\"Advertiser\",\"type\":\"object\",\"description\":\"An AdvertiserResource.\",\"p" +
-            "roperties\":{\"allowPublisherCreatedLinks\":{\"type\":\"boolean\",\"description\":\"True i" +
-            "f the advertiser allows publisher created links, otherwise false.\"},\"category\":{" +
-            "\"type\":\"string\",\"description\":\"Category that this advertiser belongs to. A valid" +
-            " list of categories can be found here: http://www.google.com/support/affiliatene" +
-            "twork/advertiser/bin/answer.py?hl=en&answer=107581\"},\"commissionDuration\":{\"type" +
-            "\":\"integer\",\"description\":\"The longest possible length of a commission (how long" +
-            " the cookies on the customer\'s browser last before they expire).\",\"format\":\"int3" +
-            "2\"},\"contactEmail\":{\"type\":\"string\",\"description\":\"Email that this advertiser wo" +
-            "uld like publishers to contact them with.\"},\"contactPhone\":{\"type\":\"string\",\"des" +
-            "cription\":\"Phone that this advertiser would like publishers to contact them with" +
-            ".\"},\"defaultLinkId\":{\"type\":\"string\",\"description\":\"The default link id for this" +
-            " advertiser.\",\"format\":\"int64\"},\"description\":{\"type\":\"string\",\"description\":\"De" +
-            "scription of the website the advertiser advertises from.\"},\"epcNinetyDayAverage\"" +
-            ":{\"$ref\":\"Money\",\"description\":\"The sum of fees paid to publishers divided by th" +
-            "e total number of clicks over the past three months. Values are multiplied by 10" +
-            "0 for display purposes.\"},\"epcSevenDayAverage\":{\"$ref\":\"Money\",\"description\":\"Th" +
-            "e sum of fees paid to publishers divided by the total number of clicks over the " +
-            "past seven days. Values are multiplied by 100 for display purposes.\"},\"id\":{\"typ" +
-            "e\":\"string\",\"description\":\"The ID of this advertiser.\",\"format\":\"int64\"},\"item\":" +
-            "{\"$ref\":\"Advertiser\",\"description\":\"The requested advertiser.\"},\"joinDate\":{\"typ" +
-            "e\":\"string\",\"description\":\"Date that this advertiser was approved as a Google Af" +
-            "filiate Network advertiser.\",\"format\":\"date-time\"},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The kind for an advertiser.\",\"default\":\"gan#advertiser\"},\"logoUrl\":{\"t" +
-            "ype\":\"string\",\"description\":\"URL to the logo this advertiser uses on the Google " +
-            "Affiliate Network.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this adv" +
-            "ertiser.\"},\"payoutRank\":{\"type\":\"string\",\"description\":\"A rank based on commissi" +
-            "ons paid to publishers over the past 90 days. A number between 1 and 4 where 4 m" +
-            "eans the top quartile (most money paid) and 1 means the bottom quartile (least m" +
-            "oney paid).\"},\"productFeedsEnabled\":{\"type\":\"boolean\",\"description\":\"Allows adve" +
-            "rtisers to submit product listings to Google Product Search.\"},\"siteUrl\":{\"type\"" +
-            ":\"string\",\"description\":\"URL of the website this advertiser advertises from.\"},\"" +
-            "status\":{\"type\":\"string\",\"description\":\"The status of the requesting publisher\'s" +
-            " relationship this advertiser.\"}}},\"Advertisers\":{\"id\":\"Advertisers\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The advertiser list.\"," +
-            "\"items\":{\"$ref\":\"Advertiser\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind f" +
-            "or a page of advertisers.\",\"default\":\"gan#advertisers\"},\"nextPageToken\":{\"type\":" +
-            "\"string\",\"description\":\"The \'pageToken\' to pass to the next request to get the n" +
-            "ext page, if there are more to retrieve.\"}}},\"CcOffer\":{\"id\":\"CcOffer\",\"type\":\"o" +
-            "bject\",\"description\":\"A credit card offer. There are many possible result fields" +
-            ". We provide two different views of the data, or \\\"projections.\\\" The \\\"full\\\" p" +
-            "rojection includes every result field. And the \\\"summary\\\" projection, which is " +
-            "the default, includes a smaller subset of the fields. The fields included in the" +
-            " summary projection are marked as such in their descriptions.\",\"properties\":{\"ad" +
-            "ditionalCardBenefits\":{\"type\":\"array\",\"description\":\"More marketing copy about t" +
-            "he card\'s benefits. A summary field.\",\"items\":{\"type\":\"string\"}},\"additionalCard" +
-            "HolderFee\":{\"type\":\"string\",\"description\":\"Any extra fees levied on card holders" +
-            ".\"},\"ageMinimum\":{\"type\":\"number\",\"description\":\"The youngest a recipient of thi" +
-            "s card may be.\",\"format\":\"double\"},\"ageMinimumDetails\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Text describing the details of the age minimum restriction.\"},\"annualFee\"" +
-            ":{\"type\":\"number\",\"description\":\"The ongoing annual fee, in dollars.\",\"format\":\"" +
-            "double\"},\"annualFeeDisplay\":{\"type\":\"string\",\"description\":\"Text describing the " +
-            "annual fee, including any difference for the first year. A summary field.\"},\"ann" +
-            "ualRewardMaximum\":{\"type\":\"number\",\"description\":\"The largest number of units yo" +
-            "u may accumulate in a year.\",\"format\":\"double\"},\"approvedCategories\":{\"type\":\"ar" +
-            "ray\",\"description\":\"Possible categories for this card, eg \\\"Low Interest\\\" or \\\"" +
-            "Good.\\\" A summary field.\",\"items\":{\"type\":\"string\"}},\"aprDisplay\":{\"type\":\"strin" +
-            "g\",\"description\":\"Text describing the purchase APR. A summary field.\"},\"balanceC" +
-            "omputationMethod\":{\"type\":\"string\",\"description\":\"Text describing how the balanc" +
-            "e is computed. A summary field.\"},\"balanceTransferTerms\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Text describing the terms for balance transfers. A summary field.\"},\"bo" +
-            "nusRewards\":{\"type\":\"array\",\"description\":\"For cards with rewards programs, extr" +
-            "a circumstances whereby additional rewards may be granted.\",\"items\":{\"type\":\"obj" +
-            "ect\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"How many units of re" +
-            "ward will be granted.\",\"format\":\"double\"},\"details\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The circumstances under which this rule applies, for example, booking a flig" +
-            "ht via Orbitz.\"}}}},\"carRentalInsurance\":{\"type\":\"string\",\"description\":\"If you " +
-            "get coverage when you use the card for the given activity, this field describes " +
-            "it.\"},\"cardBenefits\":{\"type\":\"array\",\"description\":\"A list of what the issuer th" +
-            "inks are the most important benefits of the card. Usually summarizes the rewards" +
-            " program, if there is one. A summary field.\",\"items\":{\"type\":\"string\"}},\"cardNam" +
-            "e\":{\"type\":\"string\",\"description\":\"The issuer\'s name for the card, including any" +
-            " trademark or service mark designators. A summary field.\"},\"cardType\":{\"type\":\"s" +
-            "tring\",\"description\":\"What kind of credit card this is, for example secured or u" +
-            "nsecured.\"},\"cashAdvanceTerms\":{\"type\":\"string\",\"description\":\"Text describing t" +
-            "he terms for cash advances. A summary field.\"},\"creditLimitMax\":{\"type\":\"number\"" +
-            ",\"description\":\"The high end for credit limits the issuer imposes on recipients " +
-            "of this card.\",\"format\":\"double\"},\"creditLimitMin\":{\"type\":\"number\",\"description" +
-            "\":\"The low end for credit limits the issuer imposes on recipients of this card.\"" +
-            ",\"format\":\"double\"},\"creditRatingDisplay\":{\"type\":\"string\",\"description\":\"Text d" +
-            "escribing the credit ratings required for recipients of this card, for example \\" +
-            "\"Excellent/Good.\\\" A summary field.\"},\"defaultFees\":{\"type\":\"array\",\"description" +
-            "\":\"Fees for defaulting on your payments.\",\"items\":{\"type\":\"object\",\"properties\":" +
-            "{\"category\":{\"type\":\"string\",\"description\":\"The type of charge, for example Purc" +
-            "hases.\"},\"maxRate\":{\"type\":\"number\",\"description\":\"The highest rate the issuer m" +
-            "ay charge for defaulting on debt in this category. Expressed as an absolute numb" +
-            "er, not as a percentage.\",\"format\":\"double\"},\"minRate\":{\"type\":\"number\",\"descrip" +
-            "tion\":\"The lowest rate the issuer may charge for defaulting on debt in this cate" +
-            "gory. Expressed as an absolute number, not as a percentage.\",\"format\":\"double\"}," +
-            "\"rateType\":{\"type\":\"string\",\"description\":\"Fixed or variable.\"}}}},\"disclaimer\":" +
-            "{\"type\":\"string\",\"description\":\"A notice that, if present, is referenced via an " +
-            "asterisk by many of the other summary fields. If this field is present, it will " +
-            "always start with an asterisk (\\\"*\\\"), and must be prominently displayed with th" +
-            "e offer. A summary field.\"},\"emergencyInsurance\":{\"type\":\"string\",\"description\":" +
-            "\"If you get coverage when you use the card for the given activity, this field de" +
-            "scribes it.\"},\"existingCustomerOnly\":{\"type\":\"boolean\",\"description\":\"Whether th" +
-            "is card is only available to existing customers of the issuer.\"},\"extendedWarran" +
-            "ty\":{\"type\":\"string\",\"description\":\"If you get coverage when you use the card fo" +
-            "r the given activity, this field describes it.\"},\"firstYearAnnualFee\":{\"type\":\"n" +
-            "umber\",\"description\":\"The annual fee for the first year, if different from the o" +
-            "ngoing fee. Optional.\",\"format\":\"double\"},\"flightAccidentInsurance\":{\"type\":\"str" +
-            "ing\",\"description\":\"If you get coverage when you use the card for the given acti" +
-            "vity, this field describes it.\"},\"foreignCurrencyTransactionFee\":{\"type\":\"string" +
-            "\",\"description\":\"Fee for each transaction involving a foreign currency.\"},\"fraud" +
-            "Liability\":{\"type\":\"string\",\"description\":\"If you get coverage when you use the " +
-            "card for the given activity, this field describes it.\"},\"gracePeriodDisplay\":{\"t" +
-            "ype\":\"string\",\"description\":\"Text describing the grace period before finance cha" +
-            "rges apply. A summary field.\"},\"imageUrl\":{\"type\":\"string\",\"description\":\"The li" +
-            "nk to the image of the card that is shown on Connect Commerce. A summary field.\"" +
-            "},\"initialSetupAndProcessingFee\":{\"type\":\"string\",\"description\":\"Fee for setting" +
-            " up the card.\"},\"introBalanceTransferTerms\":{\"type\":\"string\",\"description\":\"Text" +
-            " describing the terms for introductory period balance transfers. A summary field" +
-            ".\"},\"introCashAdvanceTerms\":{\"type\":\"string\",\"description\":\"Text describing the " +
-            "terms for introductory period cash advances. A summary field.\"},\"introPurchaseTe" +
-            "rms\":{\"type\":\"string\",\"description\":\"Text describing the terms for introductory " +
-            "period purchases. A summary field.\"},\"issuer\":{\"type\":\"string\",\"description\":\"Na" +
-            "me of card issuer. A summary field.\"},\"issuerId\":{\"type\":\"string\",\"description\":" +
-            "\"The Google Affiliate Network ID of the advertiser making this offer.\"},\"issuerW" +
-            "ebsite\":{\"type\":\"string\",\"description\":\"The generic link to the issuer\'s site.\"}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"The kind for one credit card offer. A su" +
-            "mmary field.\",\"default\":\"gan#ccOffer\"},\"landingPageUrl\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The link to the issuer\'s page for this card. A summary field.\"},\"latePay" +
-            "mentFee\":{\"type\":\"string\",\"description\":\"Text describing how much a late payment" +
-            " will cost, eg \\\"up to $35.\\\" A summary field.\"},\"luggageInsurance\":{\"type\":\"str" +
-            "ing\",\"description\":\"If you get coverage when you use the card for the given acti" +
-            "vity, this field describes it.\"},\"maxPurchaseRate\":{\"type\":\"number\",\"description" +
-            "\":\"The highest interest rate the issuer charges on this card. Expressed as an ab" +
-            "solute number, not as a percentage.\",\"format\":\"double\"},\"minPurchaseRate\":{\"type" +
-            "\":\"number\",\"description\":\"The lowest interest rate the issuer charges on this ca" +
-            "rd. Expressed as an absolute number, not as a percentage.\",\"format\":\"double\"},\"m" +
-            "inimumFinanceCharge\":{\"type\":\"string\",\"description\":\"Text describing how much mi" +
-            "ssing the grace period will cost.\"},\"network\":{\"type\":\"string\",\"description\":\"Wh" +
-            "ich network (eg Visa) the card belongs to. A summary field.\"},\"offerId\":{\"type\":" +
-            "\"string\",\"description\":\"This offer\'s ID. A summary field.\"},\"offersImmediateCash" +
-            "Reward\":{\"type\":\"boolean\",\"description\":\"Whether a cash reward program lets you " +
-            "get cash back sooner than end of year or other longish period.\"},\"overLimitFee\":" +
-            "{\"type\":\"string\",\"description\":\"Fee for exceeding the card\'s charge limit.\"},\"pr" +
-            "ohibitedCategories\":{\"type\":\"array\",\"description\":\"Categories in which the issue" +
-            "r does not wish the card to be displayed. A summary field.\",\"items\":{\"type\":\"str" +
-            "ing\"}},\"purchaseRateAdditionalDetails\":{\"type\":\"string\",\"description\":\"Text desc" +
-            "ribing any additional details for the purchase rate. A summary field.\"},\"purchas" +
-            "eRateType\":{\"type\":\"string\",\"description\":\"Fixed or variable.\"},\"returnedPayment" +
-            "Fee\":{\"type\":\"string\",\"description\":\"Text describing the fee for a payment that " +
-            "doesn\'t clear. A summary field.\"},\"rewardPartner\":{\"type\":\"string\",\"description\"" +
-            ":\"The company that redeems the rewards, if different from the issuer.\"},\"rewardU" +
-            "nit\":{\"type\":\"string\",\"description\":\"For cards with rewards programs, the unit o" +
-            "f reward. For example, miles, cash back, points.\"},\"rewards\":{\"type\":\"array\",\"de" +
-            "scription\":\"For cards with rewards programs, detailed rules about how the progra" +
-            "m works.\",\"items\":{\"type\":\"object\",\"properties\":{\"additionalDetails\":{\"type\":\"st" +
-            "ring\",\"description\":\"Other limits, for example, if this rule only applies during" +
-            " an introductory period.\"},\"amount\":{\"type\":\"number\",\"description\":\"The number o" +
-            "f units rewarded per purchase dollar.\",\"format\":\"double\"},\"category\":{\"type\":\"st" +
-            "ring\",\"description\":\"The kind of purchases covered by this rule.\"},\"expirationMo" +
-            "nths\":{\"type\":\"number\",\"description\":\"How long rewards granted by this rule last" +
-            ".\",\"format\":\"double\"},\"maxRewardTier\":{\"type\":\"number\",\"description\":\"The maximu" +
-            "m purchase amount in the given category for this rule to apply.\",\"format\":\"doubl" +
-            "e\"},\"minRewardTier\":{\"type\":\"number\",\"description\":\"The minimum purchase amount " +
-            "in the given category before this rule applies.\",\"format\":\"double\"}}}},\"rewardsE" +
-            "xpire\":{\"type\":\"boolean\",\"description\":\"Whether accumulated rewards ever expire." +
-            "\"},\"rewardsHaveBlackoutDates\":{\"type\":\"boolean\",\"description\":\"For airline miles" +
-            " rewards, tells whether blackout dates apply to the miles.\"},\"statementCopyFee\":" +
-            "{\"type\":\"string\",\"description\":\"Fee for requesting a copy of your statement.\"},\"" +
-            "trackingUrl\":{\"type\":\"string\",\"description\":\"The link to ping to register a clic" +
-            "k on this offer. A summary field.\"},\"travelInsurance\":{\"type\":\"string\",\"descript" +
-            "ion\":\"If you get coverage when you use the card for the given activity, this fie" +
-            "ld describes it.\"},\"variableRatesLastUpdated\":{\"type\":\"string\",\"description\":\"Wh" +
-            "en variable rates were last updated.\"},\"variableRatesUpdateFrequency\":{\"type\":\"s" +
-            "tring\",\"description\":\"How often variable rates are updated.\"}}},\"CcOffers\":{\"id\"" +
-            ":\"CcOffers\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":" +
-            "\"The credit card offers.\",\"items\":{\"$ref\":\"CcOffer\"}},\"kind\":{\"type\":\"string\",\"d" +
-            "escription\":\"The kind for a page of credit card offers.\",\"default\":\"gan#ccOffers" +
-            "\"}}},\"Event\":{\"id\":\"Event\",\"type\":\"object\",\"description\":\"An EventResource.\",\"pr" +
-            "operties\":{\"advertiserId\":{\"type\":\"string\",\"description\":\"The ID of advertiser f" +
-            "or this event.\",\"format\":\"int64\"},\"advertiserName\":{\"type\":\"string\",\"description" +
-            "\":\"The name of the advertiser for this event.\"},\"chargeId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The charge ID for this event. Only returned for charge events.\"},\"cha" +
-            "rgeType\":{\"type\":\"string\",\"description\":\"Charge type of the event (other|slottin" +
-            "g_fee|monthly_minimum|tier_bonus|debit|credit). Only returned for charge events." +
-            "\"},\"commissionableSales\":{\"$ref\":\"Money\",\"description\":\"Amount of money exchange" +
-            "d during the transaction. Only returned for charge and conversion events.\"},\"ear" +
-            "nings\":{\"$ref\":\"Money\",\"description\":\"Earnings by the publisher.\"},\"eventDate\":{" +
-            "\"type\":\"string\",\"description\":\"The date-time this event was initiated as a RFC 3" +
-            "339 date-time value.\",\"format\":\"date-time\"},\"kind\":{\"type\":\"string\",\"description" +
-            "\":\"The kind for one event.\",\"default\":\"gan#event\"},\"memberId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID of the member attached to this event. Only returned for con" +
-            "version events.\"},\"modifyDate\":{\"type\":\"string\",\"description\":\"The date-time thi" +
-            "s event was last modified as a RFC 3339 date-time value.\",\"format\":\"date-time\"}," +
-            "\"networkFee\":{\"$ref\":\"Money\",\"description\":\"Fee that the advertiser paid to the " +
-            "Google Affiliate Network.\"},\"orderId\":{\"type\":\"string\",\"description\":\"The order " +
-            "ID for this event. Only returned for conversion events.\"},\"products\":{\"type\":\"ar" +
-            "ray\",\"description\":\"Products associated with the event.\",\"items\":{\"type\":\"object" +
-            "\",\"properties\":{\"categoryId\":{\"type\":\"string\",\"description\":\"Id of the category " +
-            "this product belongs to.\"},\"categoryName\":{\"type\":\"string\",\"description\":\"Name o" +
-            "f the category this product belongs to.\"},\"earnings\":{\"$ref\":\"Money\",\"descriptio" +
-            "n\":\"Amount earned by the publisher on this product.\"},\"networkFee\":{\"$ref\":\"Mone" +
-            "y\",\"description\":\"Fee that the advertiser paid to the Google Affiliate Network f" +
-            "or this product.\"},\"publisherFee\":{\"$ref\":\"Money\",\"description\":\"Fee that the ad" +
-            "vertiser paid to the publisehr for this product.\"},\"quantity\":{\"type\":\"string\",\"" +
-            "description\":\"Quantity of this product bought/exchanged.\",\"format\":\"int64\"},\"sku" +
-            "\":{\"type\":\"string\",\"description\":\"Sku of this product.\"},\"skuName\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Sku name of this product.\"},\"unitPrice\":{\"$ref\":\"Money\",\"desc" +
-            "ription\":\"Price per unit of this product.\"}}}},\"publisherFee\":{\"$ref\":\"Money\",\"d" +
-            "escription\":\"Fee that the advertiser paid to the publisher.\"},\"publisherId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID of the publisher for this event.\",\"format\":\"i" +
-            "nt64\"},\"publisherName\":{\"type\":\"string\",\"description\":\"The name of the publisher" +
-            " for this event.\"},\"status\":{\"type\":\"string\",\"description\":\"Status of the event " +
-            "(active|canceled). Only returned for charge and conversion events.\"},\"type\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Type of the event (action|transaction|charge).\"}}},\"" +
-            "Events\":{\"id\":\"Events\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"de" +
-            "scription\":\"The event list.\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"The kind for a page of events.\",\"default\":\"gan#events\"},\"nextPageT" +
-            "oken\":{\"type\":\"string\",\"description\":\"The \'pageToken\' to pass to the next reques" +
-            "t to get the next page, if there are more to retrieve.\"}}},\"Link\":{\"id\":\"Link\",\"" +
-            "type\":\"object\",\"description\":\"A LinkResource.\",\"properties\":{\"advertiserId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The advertiser id for the advertiser who owns this l" +
-            "ink.\",\"format\":\"int64\"},\"authorship\":{\"type\":\"string\",\"description\":\"Authorship\"" +
-            "},\"availability\":{\"type\":\"string\",\"description\":\"Availability.\"},\"clickTrackingU" +
-            "rl\":{\"type\":\"string\",\"description\":\"Tracking url for clicks.\"},\"createDate\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Date that this link was created.\",\"format\":\"date-tim" +
-            "e\"},\"description\":{\"type\":\"string\",\"description\":\"Description.\"},\"destinationUrl" +
-            "\":{\"type\":\"string\",\"description\":\"The destination URL for the link.\"},\"duration\"" +
-            ":{\"type\":\"string\",\"description\":\"Duration\"},\"endDate\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Date that this link becomes inactive.\",\"format\":\"date-time\"},\"id\":{\"type\":" +
-            "\"string\",\"description\":\"The ID of this link.\",\"format\":\"int64\"},\"imageAltText\":{" +
-            "\"type\":\"string\",\"description\":\"image alt text.\"},\"impressionTrackingUrl\":{\"type\"" +
-            ":\"string\",\"description\":\"Tracking url for impressions.\"},\"isActive\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Flag for if this link is active.\"},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"The kind for one entity.\",\"default\":\"gan#link\"},\"linkType\":{\"type" +
-            "\":\"string\",\"description\":\"The link type.\"},\"name\":{\"type\":\"string\",\"description\"" +
-            ":\"The logical name for this link.\"},\"promotionType\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Promotion Type\"},\"startDate\":{\"type\":\"string\",\"description\":\"Date that this " +
-            "link becomes active.\",\"format\":\"date-time\"}}},\"Links\":{\"id\":\"Links\",\"type\":\"obje" +
-            "ct\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The links.\",\"items\":{\"$" +
-            "ref\":\"Link\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind for a page of link" +
-            "s.\",\"default\":\"gan#links\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The n" +
-            "ext page token.\"}}},\"Money\":{\"id\":\"Money\",\"type\":\"object\",\"description\":\"An ApiM" +
-            "oneyProto.\",\"properties\":{\"amount\":{\"type\":\"number\",\"description\":\"The amount of" +
-            " money.\",\"format\":\"double\"},\"currencyCode\":{\"type\":\"string\",\"description\":\"The 3" +
-            "-letter code of the currency in question.\"}}},\"Publisher\":{\"id\":\"Publisher\",\"typ" +
-            "e\":\"object\",\"description\":\"A PublisherResource.\",\"properties\":{\"classification\":" +
-            "{\"type\":\"string\",\"description\":\"Classification that this publisher belongs to. S" +
-            "ee this link for all publisher classifications: http://www.google.com/support/af" +
-            "filiatenetwork/advertiser/bin/answer.py?hl=en&answer=107625&ctx=cb&src=cb&cbid=-" +
-            "k5fihzthfaik&cbrank=4\"},\"epcNinetyDayAverage\":{\"$ref\":\"Money\",\"description\":\"The" +
-            " sum of fees paid to this publisher divided by the total number of clicks over t" +
-            "he past three months. Values are multiplied by 100 for display purposes.\"},\"epcS" +
-            "evenDayAverage\":{\"$ref\":\"Money\",\"description\":\"The sum of fees paid to this publ" +
-            "isher divided by the total number of clicks over the past seven days. Values are" +
-            " multiplied by 100 for display purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"" +
-            "The ID of this publisher.\",\"format\":\"int64\"},\"item\":{\"$ref\":\"Publisher\",\"descrip" +
-            "tion\":\"The requested publisher.\"},\"joinDate\":{\"type\":\"string\",\"description\":\"Dat" +
-            "e that this publisher was approved as a Google Affiliate Network publisher.\",\"fo" +
-            "rmat\":\"date-time\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind for a publish" +
-            "er.\",\"default\":\"gan#publisher\"},\"name\":{\"type\":\"string\",\"description\":\"The name " +
-            "of this publisher.\"},\"payoutRank\":{\"type\":\"string\",\"description\":\"A rank based o" +
-            "n commissions paid to this publisher over the past 90 days. A number between 1 a" +
-            "nd 4 where 4 means the top quartile (most money paid) and 1 means the bottom qua" +
-            "rtile (least money paid).\"},\"sites\":{\"type\":\"array\",\"description\":\"Websites that" +
-            " this publisher uses to advertise.\",\"items\":{\"type\":\"string\"}},\"status\":{\"type\":" +
-            "\"string\",\"description\":\"The status of the requesting advertiser\'s relationship w" +
-            "ith this publisher.\"}}},\"Publishers\":{\"id\":\"Publishers\",\"type\":\"object\",\"propert" +
-            "ies\":{\"items\":{\"type\":\"array\",\"description\":\"The entity list.\",\"items\":{\"$ref\":\"" +
-            "Publisher\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind for a page of entit" +
-            "ies.\",\"default\":\"gan#publishers\"},\"nextPageToken\":{\"type\":\"string\",\"description\"" +
-            ":\"The \'pageToken\' to pass to the next request to get the next page, if there are" +
-            " more to retrieve.\"}}}},\"resources\":{\"advertisers\":{\"methods\":{\"get\":{\"id\":\"gan." +
-            "advertisers.get\",\"path\":\"{role}/{roleId}/advertiser\",\"httpMethod\":\"GET\",\"descrip" +
-            "tion\":\"Retrieves data about a single advertiser if that the requesting advertise" +
-            "r/publisher has access to it. Only publishers can lookup advertisers. Advertiser" +
-            "s can request information about themselves by omitting the advertiserId query pa" +
-            "rameter.\",\"parameters\":{\"advertiserId\":{\"type\":\"string\",\"description\":\"The ID of" +
-            " the advertiser to look up. Optional.\",\"location\":\"query\"},\"role\":{\"type\":\"strin" +
-            "g\",\"description\":\"The role of the requester. Valid values: \'advertisers\' or \'pub" +
-            "lishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDescriptions" +
-            "\":[\"The requester is requesting as an advertiser.\",\"The requester is requesting " +
-            "as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":\"Th" +
-            "e ID of the requesting advertiser or publisher.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Advertiser\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan.re" +
-            "adonly\"]},\"list\":{\"id\":\"gan.advertisers.list\",\"path\":\"{role}/{roleId}/advertiser" +
-            "s\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data about all advertisers that t" +
-            "he requesting advertiser/publisher has access to.\",\"parameters\":{\"advertiserCate" +
-            "gory\":{\"type\":\"string\",\"description\":\"Caret(^) delimted list of advertiser categ" +
-            "ories. Valid categories are defined here: http://www.google.com/support/affiliat" +
-            "enetwork/advertiser/bin/answer.py?hl=en&answer=107581. Filters out all advertise" +
-            "rs not in one of the given advertiser categories. Optional.\",\"location\":\"query\"}" +
-            ",\"maxResults\":{\"type\":\"integer\",\"description\":\"Max number of items to return in " +
-            "this page. Optional. Defaults to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":" +
-            "\"100\",\"location\":\"query\"},\"minNinetyDayEpc\":{\"type\":\"number\",\"description\":\"Filt" +
-            "ers out all advertisers that have a ninety day EPC average lower than the given " +
-            "value (inclusive). Min value: 0.0. Optional.\",\"format\":\"double\",\"location\":\"quer" +
-            "y\"},\"minPayoutRank\":{\"type\":\"integer\",\"description\":\"A value between 1 and 4, wh" +
-            "ere 1 represents the quartile of advertisers with the lowest ranks and 4 represe" +
-            "nts the quartile of advertisers with the highest ranks. Filters out all advertis" +
-            "ers with a lower rank than the given quartile. For example if a 2 was given only" +
-            " advertisers with a payout rank of 25 or higher would be included. Optional.\",\"f" +
-            "ormat\":\"int32\",\"minimum\":\"1\",\"maximum\":\"4\",\"location\":\"query\"},\"minSevenDayEpc\":" +
-            "{\"type\":\"number\",\"description\":\"Filters out all advertisers that have a seven da" +
-            "y EPC average lower than the given value (inclusive). Min value: 0.0. Optional.\"" +
-            ",\"format\":\"double\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description" +
-            "\":\"The value of \'nextPageToken\' from the previous page. Optional.\",\"location\":\"q" +
-            "uery\"},\"relationshipStatus\":{\"type\":\"string\",\"description\":\"Filters out all adve" +
-            "rtisers for which do not have the given relationship status with the requesting " +
-            "publisher.\",\"enum\":[\"approved\",\"available\",\"deactivated\",\"declined\",\"pending\"],\"" +
-            "enumDescriptions\":[\"An advertiser that has approved your application.\",\"An adver" +
-            "tiser program that\'s accepting new publishers.\",\"Deactivated means either the ad" +
-            "vertiser has removed you from their program, or it could also mean that you chos" +
-            "e to remove yourself from the advertiser\'s program.\",\"An advertiser that did not" +
-            " approve your application.\",\"An advertiser program that you\'ve already applied t" +
-            "o, but they haven\'t yet decided to approve or decline your application.\"],\"locat" +
-            "ion\":\"query\"},\"role\":{\"type\":\"string\",\"description\":\"The role of the requester. " +
-            "Valid values: \'advertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertise" +
-            "rs\",\"publishers\"],\"enumDescriptions\":[\"The requester is requesting as an adverti" +
-            "ser.\",\"The requester is requesting as a publisher.\"],\"location\":\"path\"},\"roleId\"" +
-            ":{\"type\":\"string\",\"description\":\"The ID of the requesting advertiser or publishe" +
-            "r.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"resp" +
-            "onse\":{\"$ref\":\"Advertisers\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"ht" +
-            "tps://www.googleapis.com/auth/gan.readonly\"]}}},\"ccOffers\":{\"methods\":{\"list\":{\"" +
-            "id\":\"gan.ccOffers.list\",\"path\":\"publishers/{publisher}/ccOffers\",\"httpMethod\":\"G" +
-            "ET\",\"description\":\"Retrieves credit card offers for the given publisher.\",\"param" +
-            "eters\":{\"advertiser\":{\"type\":\"string\",\"description\":\"The advertiser ID of a card" +
-            " issuer whose offers to include. Optional, may be repeated.\",\"repeated\":true,\"lo" +
-            "cation\":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"The set of fields " +
-            "to return.\",\"enum\":[\"full\",\"summary\"],\"enumDescriptions\":[\"Include all offer fie" +
-            "lds. This is the default.\",\"Include only the basic fields needed to display an o" +
-            "ffer.\"],\"location\":\"query\"},\"publisher\":{\"type\":\"string\",\"description\":\"The ID o" +
-            "f the publisher in question.\",\"required\":true,\"location\":\"path\"}},\"parameterOrde" +
-            "r\":[\"publisher\"],\"response\":{\"$ref\":\"CcOffers\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]}}},\"events\":{\"me" +
-            "thods\":{\"list\":{\"id\":\"gan.events.list\",\"path\":\"{role}/{roleId}/events\",\"httpMeth" +
-            "od\":\"GET\",\"description\":\"Retrieves event data for a given advertiser/publisher.\"" +
-            ",\"parameters\":{\"advertiserId\":{\"type\":\"string\",\"description\":\"Caret(^) delimited" +
-            " list of advertiser IDs. Filters out all events that do not reference one of the" +
-            " given advertiser IDs. Only used when under publishers role. Optional.\",\"locatio" +
-            "n\":\"query\"},\"chargeType\":{\"type\":\"string\",\"description\":\"Filters out all charge " +
-            "events that are not of the given charge type. Valid values: \'other\', \'slotting_f" +
-            "ee\', \'monthly_minimum\', \'tier_bonus\', \'credit\', \'debit\'. Optional.\",\"enum\":[\"cre" +
-            "dit\",\"debit\",\"monthly_minimum\",\"other\",\"slotting_fee\",\"tier_bonus\"],\"enumDescrip" +
-            "tions\":[\"A credit increases the publisher\'s payout amount and decreases the adve" +
-            "rtiser\'s invoice amount.\",\"A debit reduces the publisher\'s payout and increases " +
-            "the advertiser\'s invoice amount.\",\"A payment made to Google by an advertiser as " +
-            "a minimum monthly network fee.\",\"Catch all. Default if unset\",\"A one time paymen" +
-            "t made from an advertiser to a publisher.\",\"A payment from an advertiser to a pu" +
-            "blisher for the publisher maintaining a high tier level\"],\"location\":\"query\"},\"e" +
-            "ventDateMax\":{\"type\":\"string\",\"description\":\"Filters out all events later than g" +
-            "iven date. Optional. Defaults to 24 hours after eventMin.\",\"location\":\"query\"},\"" +
-            "eventDateMin\":{\"type\":\"string\",\"description\":\"Filters out all events earlier tha" +
-            "n given date. Optional. Defaults to 24 hours from current date/time.\",\"location\"" +
-            ":\"query\"},\"linkId\":{\"type\":\"string\",\"description\":\"Caret(^) delimited list of li" +
-            "nk IDs. Filters out all events that do not reference one of the given link IDs. " +
-            "Optional.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Max" +
-            " number of offers to return in this page. Optional. Defaults to 20.\",\"format\":\"u" +
-            "int32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"memberId\":{\"type\":\"str" +
-            "ing\",\"description\":\"Caret(^) delimited list of member IDs. Filters out all event" +
-            "s that do not reference one of the given member IDs. Optional.\",\"location\":\"quer" +
-            "y\"},\"modifyDateMax\":{\"type\":\"string\",\"description\":\"Filters out all events modif" +
-            "ied later than given date. Optional. Defaults to 24 hours after modifyDateMin, i" +
-            "f modifyDateMin is explicitly set.\",\"location\":\"query\"},\"modifyDateMin\":{\"type\":" +
-            "\"string\",\"description\":\"Filters out all events modified earlier than given date." +
-            " Optional. Defaults to 24 hours before the current modifyDateMax, if modifyDateM" +
-            "ax is explicitly set.\",\"location\":\"query\"},\"orderId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Caret(^) delimited list of order IDs. Filters out all events that do not re" +
-            "ference one of the given order IDs. Optional.\",\"location\":\"query\"},\"pageToken\":{" +
-            "\"type\":\"string\",\"description\":\"The value of \'nextPageToken\' from the previous pa" +
-            "ge. Optional.\",\"location\":\"query\"},\"productCategory\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Caret(^) delimited list of product categories. Filters out all events that " +
-            "do not reference a product in one of the given product categories. Optional.\",\"l" +
-            "ocation\":\"query\"},\"publisherId\":{\"type\":\"string\",\"description\":\"Caret(^) delimit" +
-            "ed list of publisher IDs. Filters out all events that do not reference one of th" +
-            "e given publishers IDs. Only used when under advertiser role. Optional.\",\"locati" +
-            "on\":\"query\"},\"role\":{\"type\":\"string\",\"description\":\"The role of the requester. V" +
-            "alid values: \'advertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertiser" +
-            "s\",\"publishers\"],\"enumDescriptions\":[\"The requester is requesting as an advertis" +
-            "er.\",\"The requester is requesting as a publisher.\"],\"location\":\"path\"},\"roleId\":" +
-            "{\"type\":\"string\",\"description\":\"The ID of the requesting advertiser or publisher" +
-            ".\",\"required\":true,\"location\":\"path\"},\"sku\":{\"type\":\"string\",\"description\":\"Care" +
-            "t(^) delimited list of SKUs. Filters out all events that do not reference one of" +
-            " the given SKU. Optional.\",\"location\":\"query\"},\"status\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Filters out all events that do not have the given status. Valid values: " +
-            "\'active\', \'canceled\'. Optional.\",\"enum\":[\"active\",\"canceled\"],\"enumDescriptions\"" +
-            ":[\"Event is currently active.\",\"Event is currently canceled.\"],\"location\":\"query" +
-            "\"},\"type\":{\"type\":\"string\",\"description\":\"Filters out all events that are not of" +
-            " the given type. Valid values: \'action\', \'transaction\', \'charge\'. Optional.\",\"en" +
-            "um\":[\"action\",\"charge\",\"transaction\"],\"enumDescriptions\":[\"The completion of an " +
-            "application, sign-up, or other process. For example, an action occurs if a user " +
-            "clicks an ad for a credit card and completes an application for that card.\",\"A c" +
-            "harge event is typically a payment between an advertiser, publisher or Google.\"," +
-            "\"A conversion event, typically an e-commerce transaction. Some advertisers use a" +
-            " transaction to record other types of events, such as magazine subscriptions.\"]," +
-            "\"location\":\"query\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Even" +
-            "ts\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"https://www.googleapis.com" +
-            "/auth/gan.readonly\"]}}},\"links\":{\"methods\":{\"get\":{\"id\":\"gan.links.get\",\"path\":\"" +
-            "{role}/{roleId}/link/{linkId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data " +
-            "about a single link if the requesting advertiser/publisher has access to it. Adv" +
-            "ertisers can look up their own links. Publishers can look up visible links or li" +
-            "nks belonging to advertisers they are in a relationship with.\",\"parameters\":{\"li" +
-            "nkId\":{\"type\":\"string\",\"description\":\"The ID of the link to look up.\",\"required\"" +
-            ":true,\"format\":\"int64\",\"location\":\"path\"},\"role\":{\"type\":\"string\",\"description\":" +
-            "\"The role of the requester. Valid values: \'advertisers\' or \'publishers\'.\",\"requi" +
-            "red\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDescriptions\":[\"The requester" +
-            " is requesting as an advertiser.\",\"The requester is requesting as a publisher.\"]" +
-            ",\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":\"The ID of the reque" +
-            "sting advertiser or publisher.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"role\",\"roleId\",\"linkId\"],\"response\":{\"$ref\":\"Link\"},\"scopes\":[\"https://ww" +
-            "w.googleapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]},\"ins" +
-            "ert\":{\"id\":\"gan.links.insert\",\"path\":\"{role}/{roleId}/link\",\"httpMethod\":\"POST\"," +
-            "\"description\":\"Inserts a new link.\",\"parameters\":{\"role\":{\"type\":\"string\",\"descr" +
+            "iatenetwork-32.png\"},\"documentationLink\":\"https://developers.google.com/affiliat" +
+            "e-network/\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googleapis.com/gan/v1beta1/" +
+            "\",\"basePath\":\"/gan/v1beta1/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePat" +
+            "h\":\"gan/v1beta1/\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Data format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumD" +
+            "escriptions\":[\"Responses with Content-Type of application/json\"],\"location\":\"que" +
+            "ry\"},\"fields\":{\"type\":\"string\",\"description\":\"Selector specifying which fields t" +
+            "o include in a partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"de" +
+            "scription\":\"API key. Your API key identifies your project and provides you with " +
+            "API access, quota, and reports. Required unless you provide an OAuth 2.0 token.\"" +
+            ",\"location\":\"query\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 tok" +
+            "en for the current user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"d" +
+            "escription\":\"Returns response with indentations and line breaks.\",\"default\":\"tru" +
+            "e\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to " +
+            "use for quota purposes for server-side applications. Can be any arbitrary string" +
+            " assigned to a user, but should not exceed 40 characters. Overrides userIp if bo" +
+            "th are provided.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"I" +
+            "P address of the site where the request originates. Use this if you want to enfo" +
+            "rce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://" +
+            "www.googleapis.com/auth/gan\":{\"description\":\"Manage your GAN data\"},\"https://www" +
+            ".googleapis.com/auth/gan.readonly\":{\"description\":\"View your GAN data\"}}}},\"sche" +
+            "mas\":{\"Advertiser\":{\"id\":\"Advertiser\",\"type\":\"object\",\"description\":\"An Advertis" +
+            "erResource.\",\"properties\":{\"allowPublisherCreatedLinks\":{\"type\":\"boolean\",\"descr" +
+            "iption\":\"True if the advertiser allows publisher created links, otherwise false." +
+            "\"},\"category\":{\"type\":\"string\",\"description\":\"Category that this advertiser belo" +
+            "ngs to. A valid list of categories can be found here: http://www.google.com/supp" +
+            "ort/affiliatenetwork/advertiser/bin/answer.py?hl=en&answer=107581\"},\"commissionD" +
+            "uration\":{\"type\":\"integer\",\"description\":\"The longest possible length of a commi" +
+            "ssion (how long the cookies on the customer\'s browser last before they expire).\"" +
+            ",\"format\":\"int32\"},\"contactEmail\":{\"type\":\"string\",\"description\":\"Email that thi" +
+            "s advertiser would like publishers to contact them with.\"},\"contactPhone\":{\"type" +
+            "\":\"string\",\"description\":\"Phone that this advertiser would like publishers to co" +
+            "ntact them with.\"},\"defaultLinkId\":{\"type\":\"string\",\"description\":\"The default l" +
+            "ink id for this advertiser.\",\"format\":\"int64\"},\"description\":{\"type\":\"string\",\"d" +
+            "escription\":\"Description of the website the advertiser advertises from.\"},\"epcNi" +
+            "netyDayAverage\":{\"$ref\":\"Money\",\"description\":\"The sum of fees paid to publisher" +
+            "s divided by the total number of clicks over the past three months. Values are m" +
+            "ultiplied by 100 for display purposes.\"},\"epcSevenDayAverage\":{\"$ref\":\"Money\",\"d" +
+            "escription\":\"The sum of fees paid to publishers divided by the total number of c" +
+            "licks over the past seven days. Values are multiplied by 100 for display purpose" +
+            "s.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this advertiser.\",\"format\":\"" +
+            "int64\"},\"item\":{\"$ref\":\"Advertiser\",\"description\":\"The requested advertiser.\"},\"" +
+            "joinDate\":{\"type\":\"string\",\"description\":\"Date that this advertiser was approved" +
+            " as a Google Affiliate Network advertiser.\",\"format\":\"date-time\"},\"kind\":{\"type\"" +
+            ":\"string\",\"description\":\"The kind for an advertiser.\",\"default\":\"gan#advertiser\"" +
+            "},\"logoUrl\":{\"type\":\"string\",\"description\":\"URL to the logo this advertiser uses" +
+            " on the Google Affiliate Network.\"},\"name\":{\"type\":\"string\",\"description\":\"The n" +
+            "ame of this advertiser.\"},\"payoutRank\":{\"type\":\"string\",\"description\":\"A rank ba" +
+            "sed on commissions paid to publishers over the past 90 days. A number between 1 " +
+            "and 4 where 4 means the top quartile (most money paid) and 1 means the bottom qu" +
+            "artile (least money paid).\"},\"productFeedsEnabled\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Allows advertisers to submit product listings to Google Product Search.\"},\"r" +
+            "edirectDomains\":{\"type\":\"array\",\"description\":\"List of redirect URLs for this ad" +
+            "vertiser\",\"items\":{\"type\":\"string\"}},\"siteUrl\":{\"type\":\"string\",\"description\":\"U" +
+            "RL of the website this advertiser advertises from.\"},\"status\":{\"type\":\"string\",\"" +
+            "description\":\"The status of the requesting publisher\'s relationship this adverti" +
+            "ser.\"}}},\"Advertisers\":{\"id\":\"Advertisers\",\"type\":\"object\",\"properties\":{\"items\"" +
+            ":{\"type\":\"array\",\"description\":\"The advertiser list.\",\"items\":{\"$ref\":\"Advertise" +
+            "r\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind for a page of advertisers.\"" +
+            ",\"default\":\"gan#advertisers\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"Th" +
+            "e \'pageToken\' to pass to the next request to get the next page, if there are mor" +
+            "e to retrieve.\"}}},\"CcOffer\":{\"id\":\"CcOffer\",\"type\":\"object\",\"description\":\"A cr" +
+            "edit card offer. There are many possible result fields. We provide two different" +
+            " views of the data, or \\\"projections.\\\" The \\\"full\\\" projection includes every r" +
+            "esult field. And the \\\"summary\\\" projection, which is the default, includes a sm" +
+            "aller subset of the fields. The fields included in the summary projection are ma" +
+            "rked as such in their descriptions.\",\"properties\":{\"additionalCardBenefits\":{\"ty" +
+            "pe\":\"array\",\"description\":\"More marketing copy about the card\'s benefits. A summ" +
+            "ary field.\",\"items\":{\"type\":\"string\"}},\"additionalCardHolderFee\":{\"type\":\"string" +
+            "\",\"description\":\"Any extra fees levied on card holders.\"},\"ageMinimum\":{\"type\":\"" +
+            "number\",\"description\":\"The youngest a recipient of this card may be.\",\"format\":\"" +
+            "double\"},\"ageMinimumDetails\":{\"type\":\"string\",\"description\":\"Text describing the" +
+            " details of the age minimum restriction.\"},\"annualFee\":{\"type\":\"number\",\"descrip" +
+            "tion\":\"The ongoing annual fee, in dollars.\",\"format\":\"double\"},\"annualFeeDisplay" +
+            "\":{\"type\":\"string\",\"description\":\"Text describing the annual fee, including any " +
+            "difference for the first year. A summary field.\"},\"annualRewardMaximum\":{\"type\":" +
+            "\"number\",\"description\":\"The largest number of units you may accumulate in a year" +
+            ".\",\"format\":\"double\"},\"approvedCategories\":{\"type\":\"array\",\"description\":\"Possib" +
+            "le categories for this card, eg \\\"Low Interest\\\" or \\\"Good.\\\" A summary field.\"," +
+            "\"items\":{\"type\":\"string\"}},\"aprDisplay\":{\"type\":\"string\",\"description\":\"Text des" +
+            "cribing the purchase APR. A summary field.\"},\"balanceComputationMethod\":{\"type\":" +
+            "\"string\",\"description\":\"Text describing how the balance is computed. A summary f" +
+            "ield.\"},\"balanceTransferTerms\":{\"type\":\"string\",\"description\":\"Text describing t" +
+            "he terms for balance transfers. A summary field.\"},\"bonusRewards\":{\"type\":\"array" +
+            "\",\"description\":\"For cards with rewards programs, extra circumstances whereby ad" +
+            "ditional rewards may be granted.\",\"items\":{\"type\":\"object\",\"properties\":{\"amount" +
+            "\":{\"type\":\"number\",\"description\":\"How many units of reward will be granted.\",\"fo" +
+            "rmat\":\"double\"},\"details\":{\"type\":\"string\",\"description\":\"The circumstances unde" +
+            "r which this rule applies, for example, booking a flight via Orbitz.\"}}}},\"carRe" +
+            "ntalInsurance\":{\"type\":\"string\",\"description\":\"If you get coverage when you use " +
+            "the card for the given activity, this field describes it.\"},\"cardBenefits\":{\"typ" +
+            "e\":\"array\",\"description\":\"A list of what the issuer thinks are the most importan" +
+            "t benefits of the card. Usually summarizes the rewards program, if there is one." +
+            " A summary field.\",\"items\":{\"type\":\"string\"}},\"cardName\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The issuer\'s name for the card, including any trademark or service mark" +
+            " designators. A summary field.\"},\"cardType\":{\"type\":\"string\",\"description\":\"What" +
+            " kind of credit card this is, for example secured or unsecured.\"},\"cashAdvanceTe" +
+            "rms\":{\"type\":\"string\",\"description\":\"Text describing the terms for cash advances" +
+            ". A summary field.\"},\"creditLimitMax\":{\"type\":\"number\",\"description\":\"The high e" +
+            "nd for credit limits the issuer imposes on recipients of this card.\",\"format\":\"d" +
+            "ouble\"},\"creditLimitMin\":{\"type\":\"number\",\"description\":\"The low end for credit " +
+            "limits the issuer imposes on recipients of this card.\",\"format\":\"double\"},\"credi" +
+            "tRatingDisplay\":{\"type\":\"string\",\"description\":\"Text describing the credit ratin" +
+            "gs required for recipients of this card, for example \\\"Excellent/Good.\\\" A summa" +
+            "ry field.\"},\"defaultFees\":{\"type\":\"array\",\"description\":\"Fees for defaulting on " +
+            "your payments.\",\"items\":{\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"strin" +
+            "g\",\"description\":\"The type of charge, for example Purchases.\"},\"maxRate\":{\"type\"" +
+            ":\"number\",\"description\":\"The highest rate the issuer may charge for defaulting o" +
+            "n debt in this category. Expressed as an absolute number, not as a percentage.\"," +
+            "\"format\":\"double\"},\"minRate\":{\"type\":\"number\",\"description\":\"The lowest rate the" +
+            " issuer may charge for defaulting on debt in this category. Expressed as an abso" +
+            "lute number, not as a percentage.\",\"format\":\"double\"},\"rateType\":{\"type\":\"string" +
+            "\",\"description\":\"Fixed or variable.\"}}}},\"disclaimer\":{\"type\":\"string\",\"descript" +
+            "ion\":\"A notice that, if present, is referenced via an asterisk by many of the ot" +
+            "her summary fields. If this field is present, it will always start with an aster" +
+            "isk (\\\"*\\\"), and must be prominently displayed with the offer. A summary field.\"" +
+            "},\"emergencyInsurance\":{\"type\":\"string\",\"description\":\"If you get coverage when " +
+            "you use the card for the given activity, this field describes it.\"},\"existingCus" +
+            "tomerOnly\":{\"type\":\"boolean\",\"description\":\"Whether this card is only available " +
+            "to existing customers of the issuer.\"},\"extendedWarranty\":{\"type\":\"string\",\"desc" +
+            "ription\":\"If you get coverage when you use the card for the given activity, this" +
+            " field describes it.\"},\"firstYearAnnualFee\":{\"type\":\"number\",\"description\":\"The " +
+            "annual fee for the first year, if different from the ongoing fee. Optional.\",\"fo" +
+            "rmat\":\"double\"},\"flightAccidentInsurance\":{\"type\":\"string\",\"description\":\"If you" +
+            " get coverage when you use the card for the given activity, this field describes" +
+            " it.\"},\"foreignCurrencyTransactionFee\":{\"type\":\"string\",\"description\":\"Fee for e" +
+            "ach transaction involving a foreign currency.\"},\"fraudLiability\":{\"type\":\"string" +
+            "\",\"description\":\"If you get coverage when you use the card for the given activit" +
+            "y, this field describes it.\"},\"gracePeriodDisplay\":{\"type\":\"string\",\"description" +
+            "\":\"Text describing the grace period before finance charges apply. A summary fiel" +
+            "d.\"},\"imageUrl\":{\"type\":\"string\",\"description\":\"The link to the image of the car" +
+            "d that is shown on Connect Commerce. A summary field.\"},\"initialSetupAndProcessi" +
+            "ngFee\":{\"type\":\"string\",\"description\":\"Fee for setting up the card.\"},\"introBala" +
+            "nceTransferTerms\":{\"type\":\"string\",\"description\":\"Text describing the terms for " +
+            "introductory period balance transfers. A summary field.\"},\"introCashAdvanceTerms" +
+            "\":{\"type\":\"string\",\"description\":\"Text describing the terms for introductory per" +
+            "iod cash advances. A summary field.\"},\"introPurchaseTerms\":{\"type\":\"string\",\"des" +
+            "cription\":\"Text describing the terms for introductory period purchases. A summar" +
+            "y field.\"},\"issuer\":{\"type\":\"string\",\"description\":\"Name of card issuer. A summa" +
+            "ry field.\"},\"issuerId\":{\"type\":\"string\",\"description\":\"The Google Affiliate Netw" +
+            "ork ID of the advertiser making this offer.\"},\"issuerWebsite\":{\"type\":\"string\",\"" +
+            "description\":\"The generic link to the issuer\'s site.\"},\"kind\":{\"type\":\"string\",\"" +
+            "description\":\"The kind for one credit card offer. A summary field.\",\"default\":\"g" +
+            "an#ccOffer\"},\"landingPageUrl\":{\"type\":\"string\",\"description\":\"The link to the is" +
+            "suer\'s page for this card. A summary field.\"},\"latePaymentFee\":{\"type\":\"string\"," +
+            "\"description\":\"Text describing how much a late payment will cost, eg \\\"up to $35" +
+            ".\\\" A summary field.\"},\"luggageInsurance\":{\"type\":\"string\",\"description\":\"If you" +
+            " get coverage when you use the card for the given activity, this field describes" +
+            " it.\"},\"maxPurchaseRate\":{\"type\":\"number\",\"description\":\"The highest interest ra" +
+            "te the issuer charges on this card. Expressed as an absolute number, not as a pe" +
+            "rcentage.\",\"format\":\"double\"},\"minPurchaseRate\":{\"type\":\"number\",\"description\":\"" +
+            "The lowest interest rate the issuer charges on this card. Expressed as an absolu" +
+            "te number, not as a percentage.\",\"format\":\"double\"},\"minimumFinanceCharge\":{\"typ" +
+            "e\":\"string\",\"description\":\"Text describing how much missing the grace period wil" +
+            "l cost.\"},\"network\":{\"type\":\"string\",\"description\":\"Which network (eg Visa) the " +
+            "card belongs to. A summary field.\"},\"offerId\":{\"type\":\"string\",\"description\":\"Th" +
+            "is offer\'s ID. A summary field.\"},\"offersImmediateCashReward\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether a cash reward program lets you get cash back sooner than " +
+            "end of year or other longish period.\"},\"overLimitFee\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Fee for exceeding the card\'s charge limit.\"},\"prohibitedCategories\":{\"type" +
+            "\":\"array\",\"description\":\"Categories in which the issuer does not wish the card t" +
+            "o be displayed. A summary field.\",\"items\":{\"type\":\"string\"}},\"purchaseRateAdditi" +
+            "onalDetails\":{\"type\":\"string\",\"description\":\"Text describing any additional deta" +
+            "ils for the purchase rate. A summary field.\"},\"purchaseRateType\":{\"type\":\"string" +
+            "\",\"description\":\"Fixed or variable.\"},\"returnedPaymentFee\":{\"type\":\"string\",\"des" +
+            "cription\":\"Text describing the fee for a payment that doesn\'t clear. A summary f" +
+            "ield.\"},\"rewardPartner\":{\"type\":\"string\",\"description\":\"The company that redeems" +
+            " the rewards, if different from the issuer.\"},\"rewardUnit\":{\"type\":\"string\",\"des" +
+            "cription\":\"For cards with rewards programs, the unit of reward. For example, mil" +
+            "es, cash back, points.\"},\"rewards\":{\"type\":\"array\",\"description\":\"For cards with" +
+            " rewards programs, detailed rules about how the program works.\",\"items\":{\"type\":" +
+            "\"object\",\"properties\":{\"additionalDetails\":{\"type\":\"string\",\"description\":\"Other" +
+            " limits, for example, if this rule only applies during an introductory period.\"}" +
+            ",\"amount\":{\"type\":\"number\",\"description\":\"The number of units rewarded per purch" +
+            "ase dollar.\",\"format\":\"double\"},\"category\":{\"type\":\"string\",\"description\":\"The k" +
+            "ind of purchases covered by this rule.\"},\"expirationMonths\":{\"type\":\"number\",\"de" +
+            "scription\":\"How long rewards granted by this rule last.\",\"format\":\"double\"},\"max" +
+            "RewardTier\":{\"type\":\"number\",\"description\":\"The maximum purchase amount in the g" +
+            "iven category for this rule to apply.\",\"format\":\"double\"},\"minRewardTier\":{\"type" +
+            "\":\"number\",\"description\":\"The minimum purchase amount in the given category befo" +
+            "re this rule applies.\",\"format\":\"double\"}}}},\"rewardsExpire\":{\"type\":\"boolean\",\"" +
+            "description\":\"Whether accumulated rewards ever expire.\"},\"rewardsHaveBlackoutDat" +
+            "es\":{\"type\":\"boolean\",\"description\":\"For airline miles rewards, tells whether bl" +
+            "ackout dates apply to the miles.\"},\"statementCopyFee\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Fee for requesting a copy of your statement.\"},\"trackingUrl\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The link to ping to register a click on this offer. A summary" +
+            " field.\"},\"travelInsurance\":{\"type\":\"string\",\"description\":\"If you get coverage " +
+            "when you use the card for the given activity, this field describes it.\"},\"variab" +
+            "leRatesLastUpdated\":{\"type\":\"string\",\"description\":\"When variable rates were las" +
+            "t updated.\"},\"variableRatesUpdateFrequency\":{\"type\":\"string\",\"description\":\"How " +
+            "often variable rates are updated.\"}}},\"CcOffers\":{\"id\":\"CcOffers\",\"type\":\"object" +
+            "\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The credit card offers.\"," +
+            "\"items\":{\"$ref\":\"CcOffer\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind for " +
+            "a page of credit card offers.\",\"default\":\"gan#ccOffers\"}}},\"Event\":{\"id\":\"Event\"" +
+            ",\"type\":\"object\",\"description\":\"An EventResource.\",\"properties\":{\"advertiserId\":" +
+            "{\"type\":\"string\",\"description\":\"The ID of advertiser for this event.\",\"format\":\"" +
+            "int64\"},\"advertiserName\":{\"type\":\"string\",\"description\":\"The name of the adverti" +
+            "ser for this event.\"},\"chargeId\":{\"type\":\"string\",\"description\":\"The charge ID f" +
+            "or this event. Only returned for charge events.\"},\"chargeType\":{\"type\":\"string\"," +
+            "\"description\":\"Charge type of the event (other|slotting_fee|monthly_minimum|tier" +
+            "_bonus|debit|credit). Only returned for charge events.\"},\"commissionableSales\":{" +
+            "\"$ref\":\"Money\",\"description\":\"Amount of money exchanged during the transaction. " +
+            "Only returned for charge and conversion events.\"},\"earnings\":{\"$ref\":\"Money\",\"de" +
+            "scription\":\"Earnings by the publisher.\"},\"eventDate\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The date-time this event was initiated as a RFC 3339 date-time value.\",\"for" +
+            "mat\":\"date-time\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind for one event." +
+            "\",\"default\":\"gan#event\"},\"memberId\":{\"type\":\"string\",\"description\":\"The ID of th" +
+            "e member attached to this event. Only returned for conversion events.\"},\"modifyD" +
+            "ate\":{\"type\":\"string\",\"description\":\"The date-time this event was last modified " +
+            "as a RFC 3339 date-time value.\",\"format\":\"date-time\"},\"networkFee\":{\"$ref\":\"Mone" +
+            "y\",\"description\":\"Fee that the advertiser paid to the Google Affiliate Network.\"" +
+            "},\"orderId\":{\"type\":\"string\",\"description\":\"The order ID for this event. Only re" +
+            "turned for conversion events.\"},\"products\":{\"type\":\"array\",\"description\":\"Produc" +
+            "ts associated with the event.\",\"items\":{\"type\":\"object\",\"properties\":{\"categoryI" +
+            "d\":{\"type\":\"string\",\"description\":\"Id of the category this product belongs to.\"}" +
+            ",\"categoryName\":{\"type\":\"string\",\"description\":\"Name of the category this produc" +
+            "t belongs to.\"},\"earnings\":{\"$ref\":\"Money\",\"description\":\"Amount earned by the p" +
+            "ublisher on this product.\"},\"networkFee\":{\"$ref\":\"Money\",\"description\":\"Fee that" +
+            " the advertiser paid to the Google Affiliate Network for this product.\"},\"publis" +
+            "herFee\":{\"$ref\":\"Money\",\"description\":\"Fee that the advertiser paid to the publi" +
+            "sehr for this product.\"},\"quantity\":{\"type\":\"string\",\"description\":\"Quantity of " +
+            "this product bought/exchanged.\",\"format\":\"int64\"},\"sku\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Sku of this product.\"},\"skuName\":{\"type\":\"string\",\"description\":\"Sku nam" +
+            "e of this product.\"},\"unitPrice\":{\"$ref\":\"Money\",\"description\":\"Price per unit o" +
+            "f this product.\"}}}},\"publisherFee\":{\"$ref\":\"Money\",\"description\":\"Fee that the " +
+            "advertiser paid to the publisher.\"},\"publisherId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the publisher for this event.\",\"format\":\"int64\"},\"publisherName\":{\"t" +
+            "ype\":\"string\",\"description\":\"The name of the publisher for this event.\"},\"status" +
+            "\":{\"type\":\"string\",\"description\":\"Status of the event (active|canceled). Only re" +
+            "turned for charge and conversion events.\"},\"type\":{\"type\":\"string\",\"description\"" +
+            ":\"Type of the event (action|transaction|charge).\"}}},\"Events\":{\"id\":\"Events\",\"ty" +
+            "pe\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"The event list" +
+            ".\",\"items\":{\"$ref\":\"Event\"}},\"kind\":{\"type\":\"string\",\"description\":\"The kind for" +
+            " a page of events.\",\"default\":\"gan#events\"},\"nextPageToken\":{\"type\":\"string\",\"de" +
+            "scription\":\"The \'pageToken\' to pass to the next request to get the next page, if" +
+            " there are more to retrieve.\"}}},\"Link\":{\"id\":\"Link\",\"type\":\"object\",\"descriptio" +
+            "n\":\"A LinkResource.\",\"properties\":{\"advertiserId\":{\"type\":\"string\",\"description\"" +
+            ":\"The advertiser id for the advertiser who owns this link.\",\"format\":\"int64\"},\"a" +
+            "uthorship\":{\"type\":\"string\",\"description\":\"Authorship\"},\"availability\":{\"type\":\"" +
+            "string\",\"description\":\"Availability.\"},\"clickTrackingUrl\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Tracking url for clicks.\"},\"createDate\":{\"type\":\"string\",\"description\"" +
+            ":\"Date that this link was created.\",\"format\":\"date-time\"},\"description\":{\"type\":" +
+            "\"string\",\"description\":\"Description.\"},\"destinationUrl\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The destination URL for the link.\"},\"duration\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Duration\"},\"endDate\":{\"type\":\"string\",\"description\":\"Date that this link " +
+            "becomes inactive.\",\"format\":\"date-time\"},\"id\":{\"type\":\"string\",\"description\":\"Th" +
+            "e ID of this link.\",\"format\":\"int64\"},\"imageAltText\":{\"type\":\"string\",\"descripti" +
+            "on\":\"image alt text.\"},\"impressionTrackingUrl\":{\"type\":\"string\",\"description\":\"T" +
+            "racking url for impressions.\"},\"isActive\":{\"type\":\"boolean\",\"description\":\"Flag " +
+            "for if this link is active.\"},\"kind\":{\"type\":\"string\",\"description\":\"The kind fo" +
+            "r one entity.\",\"default\":\"gan#link\"},\"linkType\":{\"type\":\"string\",\"description\":\"" +
+            "The link type.\"},\"name\":{\"type\":\"string\",\"description\":\"The logical name for thi" +
+            "s link.\"},\"promotionType\":{\"type\":\"string\",\"description\":\"Promotion Type\"},\"star" +
+            "tDate\":{\"type\":\"string\",\"description\":\"Date that this link becomes active.\",\"for" +
+            "mat\":\"date-time\"}}},\"Links\":{\"id\":\"Links\",\"type\":\"object\",\"properties\":{\"items\":" +
+            "{\"type\":\"array\",\"description\":\"The links.\",\"items\":{\"$ref\":\"Link\"}},\"kind\":{\"typ" +
+            "e\":\"string\",\"description\":\"The kind for a page of links.\",\"default\":\"gan#links\"}" +
+            ",\"nextPageToken\":{\"type\":\"string\",\"description\":\"The next page token.\"}}},\"Money" +
+            "\":{\"id\":\"Money\",\"type\":\"object\",\"description\":\"An ApiMoneyProto.\",\"properties\":{" +
+            "\"amount\":{\"type\":\"number\",\"description\":\"The amount of money.\",\"format\":\"double\"" +
+            "},\"currencyCode\":{\"type\":\"string\",\"description\":\"The 3-letter code of the curren" +
+            "cy in question.\"}}},\"Publisher\":{\"id\":\"Publisher\",\"type\":\"object\",\"description\":" +
+            "\"A PublisherResource.\",\"properties\":{\"classification\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Classification that this publisher belongs to. See this link for all publi" +
+            "sher classifications: http://www.google.com/support/affiliatenetwork/advertiser/" +
+            "bin/answer.py?hl=en&answer=107625&ctx=cb&src=cb&cbid=-k5fihzthfaik&cbrank=4\"},\"e" +
+            "pcNinetyDayAverage\":{\"$ref\":\"Money\",\"description\":\"The sum of fees paid to this " +
+            "publisher divided by the total number of clicks over the past three months. Valu" +
+            "es are multiplied by 100 for display purposes.\"},\"epcSevenDayAverage\":{\"$ref\":\"M" +
+            "oney\",\"description\":\"The sum of fees paid to this publisher divided by the total" +
+            " number of clicks over the past seven days. Values are multiplied by 100 for dis" +
+            "play purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this publisher.\"" +
+            ",\"format\":\"int64\"},\"item\":{\"$ref\":\"Publisher\",\"description\":\"The requested publi" +
+            "sher.\"},\"joinDate\":{\"type\":\"string\",\"description\":\"Date that this publisher was " +
+            "approved as a Google Affiliate Network publisher.\",\"format\":\"date-time\"},\"kind\":" +
+            "{\"type\":\"string\",\"description\":\"The kind for a publisher.\",\"default\":\"gan#publis" +
+            "her\"},\"name\":{\"type\":\"string\",\"description\":\"The name of this publisher.\"},\"payo" +
+            "utRank\":{\"type\":\"string\",\"description\":\"A rank based on commissions paid to this" +
+            " publisher over the past 90 days. A number between 1 and 4 where 4 means the top" +
+            " quartile (most money paid) and 1 means the bottom quartile (least money paid).\"" +
+            "},\"sites\":{\"type\":\"array\",\"description\":\"Websites that this publisher uses to ad" +
+            "vertise.\",\"items\":{\"type\":\"string\"}},\"status\":{\"type\":\"string\",\"description\":\"Th" +
+            "e status of the requesting advertiser\'s relationship with this publisher.\"}}},\"P" +
+            "ublishers\":{\"id\":\"Publishers\",\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"arr" +
+            "ay\",\"description\":\"The entity list.\",\"items\":{\"$ref\":\"Publisher\"}},\"kind\":{\"type" +
+            "\":\"string\",\"description\":\"The kind for a page of entities.\",\"default\":\"gan#publi" +
+            "shers\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The \'pageToken\' to pass " +
+            "to the next request to get the next page, if there are more to retrieve.\"}}}},\"r" +
+            "esources\":{\"advertisers\":{\"methods\":{\"get\":{\"id\":\"gan.advertisers.get\",\"path\":\"{" +
+            "role}/{roleId}/advertiser\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data abou" +
+            "t a single advertiser if that the requesting advertiser/publisher has access to " +
+            "it. Only publishers can lookup advertisers. Advertisers can request information " +
+            "about themselves by omitting the advertiserId query parameter.\",\"parameters\":{\"a" +
+            "dvertiserId\":{\"type\":\"string\",\"description\":\"The ID of the advertiser to look up" +
+            ". Optional.\",\"location\":\"query\"},\"role\":{\"type\":\"string\",\"description\":\"The role" +
+            " of the requester. Valid values: \'advertisers\' or \'publishers\'.\",\"required\":true" +
+            ",\"enum\":[\"advertisers\",\"publishers\"],\"enumDescriptions\":[\"The requester is reque" +
+            "sting as an advertiser.\",\"The requester is requesting as a publisher.\"],\"locatio" +
+            "n\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":\"The ID of the requesting adv" +
+            "ertiser or publisher.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"ro" +
+            "le\",\"roleId\"],\"response\":{\"$ref\":\"Advertiser\"},\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]},\"list\":{\"id\":\"ga" +
+            "n.advertisers.list\",\"path\":\"{role}/{roleId}/advertisers\",\"httpMethod\":\"GET\",\"des" +
+            "cription\":\"Retrieves data about all advertisers that the requesting advertiser/p" +
+            "ublisher has access to.\",\"parameters\":{\"advertiserCategory\":{\"type\":\"string\",\"de" +
+            "scription\":\"Caret(^) delimted list of advertiser categories. Valid categories ar" +
+            "e defined here: http://www.google.com/support/affiliatenetwork/advertiser/bin/an" +
+            "swer.py?hl=en&answer=107581. Filters out all advertisers not in one of the given" +
+            " advertiser categories. Optional.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"int" +
+            "eger\",\"description\":\"Max number of items to return in this page. Optional. Defau" +
+            "lts to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"}," +
+            "\"minNinetyDayEpc\":{\"type\":\"number\",\"description\":\"Filters out all advertisers th" +
+            "at have a ninety day EPC average lower than the given value (inclusive). Min val" +
+            "ue: 0.0. Optional.\",\"format\":\"double\",\"location\":\"query\"},\"minPayoutRank\":{\"type" +
+            "\":\"integer\",\"description\":\"A value between 1 and 4, where 1 represents the quart" +
+            "ile of advertisers with the lowest ranks and 4 represents the quartile of advert" +
+            "isers with the highest ranks. Filters out all advertisers with a lower rank than" +
+            " the given quartile. For example if a 2 was given only advertisers with a payout" +
+            " rank of 25 or higher would be included. Optional.\",\"format\":\"int32\",\"minimum\":\"" +
+            "1\",\"maximum\":\"4\",\"location\":\"query\"},\"minSevenDayEpc\":{\"type\":\"number\",\"descript" +
+            "ion\":\"Filters out all advertisers that have a seven day EPC average lower than t" +
+            "he given value (inclusive). Min value: 0.0. Optional.\",\"format\":\"double\",\"locati" +
+            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of \'nextPageT" +
+            "oken\' from the previous page. Optional.\",\"location\":\"query\"},\"relationshipStatus" +
+            "\":{\"type\":\"string\",\"description\":\"Filters out all advertisers for which do not h" +
+            "ave the given relationship status with the requesting publisher.\",\"enum\":[\"appro" +
+            "ved\",\"available\",\"deactivated\",\"declined\",\"pending\"],\"enumDescriptions\":[\"An adv" +
+            "ertiser that has approved your application.\",\"An advertiser program that\'s accep" +
+            "ting new publishers.\",\"Deactivated means either the advertiser has removed you f" +
+            "rom their program, or it could also mean that you chose to remove yourself from " +
+            "the advertiser\'s program.\",\"An advertiser that did not approve your application." +
+            "\",\"An advertiser program that you\'ve already applied to, but they haven\'t yet de" +
+            "cided to approve or decline your application.\"],\"location\":\"query\"},\"role\":{\"typ" +
+            "e\":\"string\",\"description\":\"The role of the requester. Valid values: \'advertisers" +
+            "\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDes" +
+            "criptions\":[\"The requester is requesting as an advertiser.\",\"The requester is re" +
+            "questing as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The ID of the requesting advertiser or publisher.\",\"required\":true,\"locat" +
+            "ion\":\"path\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Advertisers" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"https://www.googleapis.com/a" +
+            "uth/gan.readonly\"]}}},\"ccOffers\":{\"methods\":{\"list\":{\"id\":\"gan.ccOffers.list\",\"p" +
+            "ath\":\"publishers/{publisher}/ccOffers\",\"httpMethod\":\"GET\",\"description\":\"Retriev" +
+            "es credit card offers for the given publisher.\",\"parameters\":{\"advertiser\":{\"typ" +
+            "e\":\"string\",\"description\":\"The advertiser ID of a card issuer whose offers to in" +
+            "clude. Optional, may be repeated.\",\"repeated\":true,\"location\":\"query\"},\"projecti" +
+            "on\":{\"type\":\"string\",\"description\":\"The set of fields to return.\",\"enum\":[\"full\"" +
+            ",\"summary\"],\"enumDescriptions\":[\"Include all offer fields. This is the default.\"" +
+            ",\"Include only the basic fields needed to display an offer.\"],\"location\":\"query\"" +
+            "},\"publisher\":{\"type\":\"string\",\"description\":\"The ID of the publisher in questio" +
+            "n.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"publisher\"],\"response" +
+            "\":{\"$ref\":\"CcOffers\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"https://w" +
+            "ww.googleapis.com/auth/gan.readonly\"]}}},\"events\":{\"methods\":{\"list\":{\"id\":\"gan." +
+            "events.list\",\"path\":\"{role}/{roleId}/events\",\"httpMethod\":\"GET\",\"description\":\"R" +
+            "etrieves event data for a given advertiser/publisher.\",\"parameters\":{\"advertiser" +
+            "Id\":{\"type\":\"string\",\"description\":\"Caret(^) delimited list of advertiser IDs. F" +
+            "ilters out all events that do not reference one of the given advertiser IDs. Onl" +
+            "y used when under publishers role. Optional.\",\"location\":\"query\"},\"chargeType\":{" +
+            "\"type\":\"string\",\"description\":\"Filters out all charge events that are not of the" +
+            " given charge type. Valid values: \'other\', \'slotting_fee\', \'monthly_minimum\', \'t" +
+            "ier_bonus\', \'credit\', \'debit\'. Optional.\",\"enum\":[\"credit\",\"debit\",\"monthly_mini" +
+            "mum\",\"other\",\"slotting_fee\",\"tier_bonus\"],\"enumDescriptions\":[\"A credit increase" +
+            "s the publisher\'s payout amount and decreases the advertiser\'s invoice amount.\"," +
+            "\"A debit reduces the publisher\'s payout and increases the advertiser\'s invoice a" +
+            "mount.\",\"A payment made to Google by an advertiser as a minimum monthly network " +
+            "fee.\",\"Catch all. Default if unset\",\"A one time payment made from an advertiser " +
+            "to a publisher.\",\"A payment from an advertiser to a publisher for the publisher " +
+            "maintaining a high tier level\"],\"location\":\"query\"},\"eventDateMax\":{\"type\":\"stri" +
+            "ng\",\"description\":\"Filters out all events later than given date. Optional. Defau" +
+            "lts to 24 hours after eventMin.\",\"location\":\"query\"},\"eventDateMin\":{\"type\":\"str" +
+            "ing\",\"description\":\"Filters out all events earlier than given date. Optional. De" +
+            "faults to 24 hours from current date/time.\",\"location\":\"query\"},\"linkId\":{\"type\"" +
+            ":\"string\",\"description\":\"Caret(^) delimited list of link IDs. Filters out all ev" +
+            "ents that do not reference one of the given link IDs. Optional.\",\"location\":\"que" +
+            "ry\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Max number of offers to retur" +
+            "n in this page. Optional. Defaults to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maxi" +
+            "mum\":\"100\",\"location\":\"query\"},\"memberId\":{\"type\":\"string\",\"description\":\"Caret(" +
+            "^) delimited list of member IDs. Filters out all events that do not reference on" +
+            "e of the given member IDs. Optional.\",\"location\":\"query\"},\"modifyDateMax\":{\"type" +
+            "\":\"string\",\"description\":\"Filters out all events modified later than given date." +
+            " Optional. Defaults to 24 hours after modifyDateMin, if modifyDateMin is explici" +
+            "tly set.\",\"location\":\"query\"},\"modifyDateMin\":{\"type\":\"string\",\"description\":\"Fi" +
+            "lters out all events modified earlier than given date. Optional. Defaults to 24 " +
+            "hours before the current modifyDateMax, if modifyDateMax is explicitly set.\",\"lo" +
+            "cation\":\"query\"},\"orderId\":{\"type\":\"string\",\"description\":\"Caret(^) delimited li" +
+            "st of order IDs. Filters out all events that do not reference one of the given o" +
+            "rder IDs. Optional.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The value of \'nextPageToken\' from the previous page. Optional.\",\"location\":" +
+            "\"query\"},\"productCategory\":{\"type\":\"string\",\"description\":\"Caret(^) delimited li" +
+            "st of product categories. Filters out all events that do not reference a product" +
+            " in one of the given product categories. Optional.\",\"location\":\"query\"},\"publish" +
+            "erId\":{\"type\":\"string\",\"description\":\"Caret(^) delimited list of publisher IDs. " +
+            "Filters out all events that do not reference one of the given publishers IDs. On" +
+            "ly used when under advertiser role. Optional.\",\"location\":\"query\"},\"role\":{\"type" +
+            "\":\"string\",\"description\":\"The role of the requester. Valid values: \'advertisers\'" +
+            " or \'publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDesc" +
+            "riptions\":[\"The requester is requesting as an advertiser.\",\"The requester is req" +
+            "uesting as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ID of the requesting advertiser or publisher.\",\"required\":true,\"locati" +
+            "on\":\"path\"},\"sku\":{\"type\":\"string\",\"description\":\"Caret(^) delimited list of SKU" +
+            "s. Filters out all events that do not reference one of the given SKU. Optional.\"" +
+            ",\"location\":\"query\"},\"status\":{\"type\":\"string\",\"description\":\"Filters out all ev" +
+            "ents that do not have the given status. Valid values: \'active\', \'canceled\'. Opti" +
+            "onal.\",\"enum\":[\"active\",\"canceled\"],\"enumDescriptions\":[\"Event is currently acti" +
+            "ve.\",\"Event is currently canceled.\"],\"location\":\"query\"},\"type\":{\"type\":\"string\"" +
+            ",\"description\":\"Filters out all events that are not of the given type. Valid val" +
+            "ues: \'action\', \'transaction\', \'charge\'. Optional.\",\"enum\":[\"action\",\"charge\",\"tr" +
+            "ansaction\"],\"enumDescriptions\":[\"The completion of an application, sign-up, or o" +
+            "ther process. For example, an action occurs if a user clicks an ad for a credit " +
+            "card and completes an application for that card.\",\"A charge event is typically a" +
+            " payment between an advertiser, publisher or Google.\",\"A conversion event, typic" +
+            "ally an e-commerce transaction. Some advertisers use a transaction to record oth" +
+            "er types of events, such as magazine subscriptions.\"],\"location\":\"query\"}},\"para" +
+            "meterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Events\"},\"scopes\":[\"https://ww" +
+            "w.googleapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]}}},\"l" +
+            "inks\":{\"methods\":{\"get\":{\"id\":\"gan.links.get\",\"path\":\"{role}/{roleId}/link/{link" +
+            "Id}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data about a single link if the" +
+            " requesting advertiser/publisher has access to it. Advertisers can look up their" +
+            " own links. Publishers can look up visible links or links belonging to advertise" +
+            "rs they are in a relationship with.\",\"parameters\":{\"linkId\":{\"type\":\"string\",\"de" +
+            "scription\":\"The ID of the link to look up.\",\"required\":true,\"format\":\"int64\",\"lo" +
+            "cation\":\"path\"},\"role\":{\"type\":\"string\",\"description\":\"The role of the requester" +
+            ". Valid values: \'advertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"adverti" +
+            "sers\",\"publishers\"],\"enumDescriptions\":[\"The requester is requesting as an adver" +
+            "tiser.\",\"The requester is requesting as a publisher.\"],\"location\":\"path\"},\"roleI" +
+            "d\":{\"type\":\"string\",\"description\":\"The ID of the requesting advertiser or publis" +
+            "her.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"role\",\"roleId\",\"lin" +
+            "kId\"],\"response\":{\"$ref\":\"Link\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\"" +
+            ",\"https://www.googleapis.com/auth/gan.readonly\"]},\"insert\":{\"id\":\"gan.links.inse" +
+            "rt\",\"path\":\"{role}/{roleId}/link\",\"httpMethod\":\"POST\",\"description\":\"Inserts a n" +
+            "ew link.\",\"parameters\":{\"role\":{\"type\":\"string\",\"description\":\"The role of the r" +
+            "equester. Valid values: \'advertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[" +
+            "\"advertisers\",\"publishers\"],\"enumDescriptions\":[\"The requester is requesting as " +
+            "an advertiser.\",\"The requester is requesting as a publisher.\"],\"location\":\"path\"" +
+            "},\"roleId\":{\"type\":\"string\",\"description\":\"The ID of the requesting advertiser o" +
+            "r publisher.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"role\",\"role" +
+            "Id\"],\"request\":{\"$ref\":\"Link\"},\"response\":{\"$ref\":\"Link\"},\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/gan\"]},\"list\":{\"id\":\"gan.links.list\",\"path\":\"{role}/{roleId" +
+            "}/links\",\"httpMethod\":\"GET\",\"description\":\"Retrieves all links that match the qu" +
+            "ery parameters.\",\"parameters\":{\"advertiserCategory\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The advertiser\'s primary vertical.\",\"enum\":[\"apparel_accessories\",\"appliance" +
+            "s_electronics\",\"auto_dealer\",\"automotive\",\"babies_kids\",\"blogs_personal_sites\",\"" +
+            "books_magazines\",\"computers\",\"dating\",\"department_stores\",\"education\",\"employmen" +
+            "t\",\"financial_credit_cards\",\"financial_other\",\"flowers_gifts\",\"grocery\",\"health_" +
+            "beauty\",\"home_garden\",\"hosting_domain\",\"internet_providers\",\"legal\",\"media_enter" +
+            "tainment\",\"medical\",\"movies_games\",\"music\",\"nonprofit\",\"office_supplies\",\"online" +
+            "_games\",\"outdoor\",\"pets\",\"real_estate\",\"restaurants\",\"sport_fitness\",\"telecom\",\"" +
+            "ticketing\",\"toys_hobbies\",\"travel\",\"utilities\",\"wholesale_relationship\",\"wine_sp" +
+            "irits\"],\"enumDescriptions\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"" +
+            "\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"repeated\":" +
+            "true,\"location\":\"query\"},\"advertiserId\":{\"type\":\"string\",\"description\":\"Limits t" +
+            "he resulting links to the ones belonging to the listed advertisers.\",\"format\":\"i" +
+            "nt64\",\"repeated\":true,\"location\":\"query\"},\"assetSize\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The size of the given asset.\",\"repeated\":true,\"location\":\"query\"},\"authors" +
+            "hip\":{\"type\":\"string\",\"description\":\"The role of the author of the link.\",\"enum\"" +
+            ":[\"advertiser\",\"publisher\"],\"enumDescriptions\":[\"\",\"\"],\"location\":\"query\"},\"link" +
+            "Type\":{\"type\":\"string\",\"description\":\"The type of the link.\",\"enum\":[\"banner\",\"t" +
+            "ext\"],\"enumDescriptions\":[\"\",\"\"],\"location\":\"query\"},\"maxResults\":{\"type\":\"integ" +
+            "er\",\"description\":\"Max number of items to return in this page. Optional. Default" +
+            "s to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"p" +
+            "ageToken\":{\"type\":\"string\",\"description\":\"The value of \'nextPageToken\' from the " +
+            "previous page. Optional.\",\"location\":\"query\"},\"promotionType\":{\"type\":\"string\",\"" +
+            "description\":\"The promotion type.\",\"enum\":[\"buy_get\",\"coupon\",\"free_gift\",\"free_" +
+            "gift_wrap\",\"free_shipping\",\"none\",\"ongoing\",\"percent_off\",\"price_cut\",\"product_p" +
+            "romotion\",\"sale\",\"sweepstakes\"],\"enumDescriptions\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"" +
+            "\",\"\",\"\"],\"repeated\":true,\"location\":\"query\"},\"relationshipStatus\":{\"type\":\"strin" +
+            "g\",\"description\":\"The status of the relationship.\",\"enum\":[\"approved\",\"available" +
+            "\"],\"enumDescriptions\":[\"\",\"\"],\"location\":\"query\"},\"role\":{\"type\":\"string\",\"descr" +
             "iption\":\"The role of the requester. Valid values: \'advertisers\' or \'publishers\'." +
             "\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDescriptions\":[\"The r" +
             "equester is requesting as an advertiser.\",\"The requester is requesting as a publ" +
             "isher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":\"The ID of t" +
-            "he requesting advertiser or publisher.\",\"required\":true,\"location\":\"path\"}},\"par" +
-            "ameterOrder\":[\"role\",\"roleId\"],\"request\":{\"$ref\":\"Link\"},\"response\":{\"$ref\":\"Lin" +
-            "k\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\"]},\"list\":{\"id\":\"gan.links.li" +
-            "st\",\"path\":\"{role}/{roleId}/links\",\"httpMethod\":\"GET\",\"description\":\"Retrieves a" +
-            "ll links that match the query parameters.\",\"parameters\":{\"advertiserCategory\":{\"" +
-            "type\":\"string\",\"description\":\"The advertiser\'s primary vertical.\",\"enum\":[\"appar" +
-            "el_accessories\",\"appliances_electronics\",\"auto_dealer\",\"automotive\",\"babies_kids" +
-            "\",\"blogs_personal_sites\",\"books_magazines\",\"computers\",\"dating\",\"department_stor" +
-            "es\",\"education\",\"employment\",\"financial_credit_cards\",\"financial_other\",\"flowers" +
-            "_gifts\",\"grocery\",\"health_beauty\",\"home_garden\",\"hosting_domain\",\"internet_provi" +
-            "ders\",\"legal\",\"media_entertainment\",\"medical\",\"movies_games\",\"music\",\"nonprofit\"" +
-            ",\"office_supplies\",\"online_games\",\"outdoor\",\"pets\",\"real_estate\",\"restaurants\",\"" +
-            "sport_fitness\",\"telecom\",\"ticketing\",\"toys_hobbies\",\"travel\",\"utilities\",\"wholes" +
-            "ale_relationship\",\"wine_spirits\"],\"enumDescriptions\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"" +
-            ",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"" +
-            "\",\"\",\"\",\"\",\"\"],\"repeated\":true,\"location\":\"query\"},\"advertiserId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Limits the resulting links to the ones belonging to the listed" +
-            " advertisers.\",\"format\":\"int64\",\"repeated\":true,\"location\":\"query\"},\"assetSize\":" +
-            "{\"type\":\"string\",\"description\":\"The size of the given asset.\",\"repeated\":true,\"l" +
-            "ocation\":\"query\"},\"authorship\":{\"type\":\"string\",\"description\":\"The role of the a" +
-            "uthor of the link.\",\"enum\":[\"advertiser\",\"publisher\"],\"enumDescriptions\":[\"\",\"\"]" +
-            ",\"location\":\"query\"},\"linkType\":{\"type\":\"string\",\"description\":\"The type of the " +
-            "link.\",\"enum\":[\"banner\",\"text\"],\"enumDescriptions\":[\"\",\"\"],\"location\":\"query\"},\"" +
-            "maxResults\":{\"type\":\"integer\",\"description\":\"Max number of items to return in th" +
-            "is page. Optional. Defaults to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"1" +
-            "00\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of" +
-            " \'nextPageToken\' from the previous page. Optional.\",\"location\":\"query\"},\"promoti" +
-            "onType\":{\"type\":\"string\",\"description\":\"The promotion type.\",\"enum\":[\"buy_get\",\"" +
-            "coupon\",\"free_gift\",\"free_gift_wrap\",\"free_shipping\",\"none\",\"ongoing\",\"percent_o" +
-            "ff\",\"price_cut\",\"product_promotion\",\"sale\",\"sweepstakes\"],\"enumDescriptions\":[\"\"" +
-            ",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"repeated\":true,\"location\":\"query\"},\"relation" +
-            "shipStatus\":{\"type\":\"string\",\"description\":\"The status of the relationship.\",\"en" +
-            "um\":[\"approved\",\"available\"],\"enumDescriptions\":[\"\",\"\"],\"location\":\"query\"},\"rol" +
-            "e\":{\"type\":\"string\",\"description\":\"The role of the requester. Valid values: \'adv" +
-            "ertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"]," +
-            "\"enumDescriptions\":[\"The requester is requesting as an advertiser.\",\"The request" +
-            "er is requesting as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\"," +
-            "\"description\":\"The ID of the requesting advertiser or publisher.\",\"required\":tru" +
-            "e,\"location\":\"path\"},\"startDateMax\":{\"type\":\"string\",\"description\":\"The end of t" +
-            "he start date range.\",\"location\":\"query\"},\"startDateMin\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The beginning of the start date range.\",\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Links\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]}}},\"publish" +
-            "ers\":{\"methods\":{\"get\":{\"id\":\"gan.publishers.get\",\"path\":\"{role}/{roleId}/publis" +
-            "her\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data about a single advertiser " +
-            "if that the requesting advertiser/publisher has access to it. Only advertisers c" +
-            "an look up publishers. Publishers can request information about themselves by om" +
-            "itting the publisherId query parameter.\",\"parameters\":{\"publisherId\":{\"type\":\"st" +
-            "ring\",\"description\":\"The ID of the publisher to look up. Optional.\",\"location\":\"" +
-            "query\"},\"role\":{\"type\":\"string\",\"description\":\"The role of the requester. Valid " +
-            "values: \'advertisers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"p" +
-            "ublishers\"],\"enumDescriptions\":[\"The requester is requesting as an advertiser.\"," +
-            "\"The requester is requesting as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The ID of the requesting advertiser or publisher.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":" +
-            "{\"$ref\":\"Publisher\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"https://ww" +
-            "w.googleapis.com/auth/gan.readonly\"]},\"list\":{\"id\":\"gan.publishers.list\",\"path\":" +
-            "\"{role}/{roleId}/publishers\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data ab" +
-            "out all publishers that the requesting advertiser/publisher has access to.\",\"par" +
-            "ameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Max number of items to r" +
-            "eturn in this page. Optional. Defaults to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"" +
-            "maximum\":\"100\",\"location\":\"query\"},\"minNinetyDayEpc\":{\"type\":\"number\",\"descripti" +
-            "on\":\"Filters out all publishers that have a ninety day EPC average lower than th" +
-            "e given value (inclusive). Min value: 0.0. Optional.\",\"format\":\"double\",\"locatio" +
-            "n\":\"query\"},\"minPayoutRank\":{\"type\":\"integer\",\"description\":\"A value between 1 a" +
-            "nd 4, where 1 represents the quartile of publishers with the lowest ranks and 4 " +
-            "represents the quartile of publishers with the highest ranks. Filters out all pu" +
-            "blishers with a lower rank than the given quartile. For example if a 2 was given" +
-            " only publishers with a payout rank of 25 or higher would be included. Optional." +
-            "\",\"format\":\"int32\",\"minimum\":\"1\",\"maximum\":\"4\",\"location\":\"query\"},\"minSevenDayE" +
-            "pc\":{\"type\":\"number\",\"description\":\"Filters out all publishers that have a seven" +
-            " day EPC average lower than the given value (inclusive). Min value 0.0. Optional" +
-            ".\",\"format\":\"double\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The value of \'nextPageToken\' from the previous page. Optional.\",\"location\":" +
-            "\"query\"},\"publisherCategory\":{\"type\":\"string\",\"description\":\"Caret(^) delimted l" +
-            "ist of publisher categories. Valid categories: (unclassified|community_and_conte" +
-            "nt|shopping_and_promotion|loyalty_and_rewards|network|search_specialist|comparis" +
-            "on_shopping|email). Filters out all publishers not in one of the given advertise" +
-            "r categories. Optional.\",\"location\":\"query\"},\"relationshipStatus\":{\"type\":\"strin" +
-            "g\",\"description\":\"Filters out all publishers for which do not have the given rel" +
-            "ationship status with the requesting publisher.\",\"enum\":[\"approved\",\"available\"," +
-            "\"deactivated\",\"declined\",\"pending\"],\"enumDescriptions\":[\"Publishers you\'ve appro" +
-            "ved to your program.\",\"Publishers available for you to recruit.\",\"A publisher th" +
-            "at you terminated from your program. Publishers also have the ability to remove " +
-            "themselves from your program.\",\"A publisher that you did not approve to your pro" +
-            "gram.\",\"Publishers that have applied to your program. We recommend reviewing and" +
-            " deciding on pending publishers on a weekly basis.\"],\"location\":\"query\"},\"role\":" +
-            "{\"type\":\"string\",\"description\":\"The role of the requester. Valid values: \'advert" +
-            "isers\' or \'publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"en" +
-            "umDescriptions\":[\"The requester is requesting as an advertiser.\",\"The requester " +
-            "is requesting as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID of the requesting advertiser or publisher.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Publis" +
-            "hers\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"https://www.googleapis.c" +
-            "om/auth/gan.readonly\"]}}}}}";
+            "he requesting advertiser or publisher.\",\"required\":true,\"location\":\"path\"},\"star" +
+            "tDateMax\":{\"type\":\"string\",\"description\":\"The end of the start date range.\",\"loc" +
+            "ation\":\"query\"},\"startDateMin\":{\"type\":\"string\",\"description\":\"The beginning of " +
+            "the start date range.\",\"location\":\"query\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"" +
+            "response\":{\"$ref\":\"Links\"},\"scopes\":[\"https://www.googleapis.com/auth/gan\",\"http" +
+            "s://www.googleapis.com/auth/gan.readonly\"]}}},\"publishers\":{\"methods\":{\"get\":{\"i" +
+            "d\":\"gan.publishers.get\",\"path\":\"{role}/{roleId}/publisher\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"Retrieves data about a single advertiser if that the requesting adv" +
+            "ertiser/publisher has access to it. Only advertisers can look up publishers. Pub" +
+            "lishers can request information about themselves by omitting the publisherId que" +
+            "ry parameter.\",\"parameters\":{\"publisherId\":{\"type\":\"string\",\"description\":\"The I" +
+            "D of the publisher to look up. Optional.\",\"location\":\"query\"},\"role\":{\"type\":\"st" +
+            "ring\",\"description\":\"The role of the requester. Valid values: \'advertisers\' or \'" +
+            "publishers\'.\",\"required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDescripti" +
+            "ons\":[\"The requester is requesting as an advertiser.\",\"The requester is requesti" +
+            "ng as a publisher.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID of the requesting advertiser or publisher.\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Publisher\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan." +
+            "readonly\"]},\"list\":{\"id\":\"gan.publishers.list\",\"path\":\"{role}/{roleId}/publisher" +
+            "s\",\"httpMethod\":\"GET\",\"description\":\"Retrieves data about all publishers that th" +
+            "e requesting advertiser/publisher has access to.\",\"parameters\":{\"maxResults\":{\"t" +
+            "ype\":\"integer\",\"description\":\"Max number of items to return in this page. Option" +
+            "al. Defaults to 20.\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":" +
+            "\"query\"},\"minNinetyDayEpc\":{\"type\":\"number\",\"description\":\"Filters out all publi" +
+            "shers that have a ninety day EPC average lower than the given value (inclusive)." +
+            " Min value: 0.0. Optional.\",\"format\":\"double\",\"location\":\"query\"},\"minPayoutRank" +
+            "\":{\"type\":\"integer\",\"description\":\"A value between 1 and 4, where 1 represents t" +
+            "he quartile of publishers with the lowest ranks and 4 represents the quartile of" +
+            " publishers with the highest ranks. Filters out all publishers with a lower rank" +
+            " than the given quartile. For example if a 2 was given only publishers with a pa" +
+            "yout rank of 25 or higher would be included. Optional.\",\"format\":\"int32\",\"minimu" +
+            "m\":\"1\",\"maximum\":\"4\",\"location\":\"query\"},\"minSevenDayEpc\":{\"type\":\"number\",\"desc" +
+            "ription\":\"Filters out all publishers that have a seven day EPC average lower tha" +
+            "n the given value (inclusive). Min value 0.0. Optional.\",\"format\":\"double\",\"loca" +
+            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The value of \'nextPag" +
+            "eToken\' from the previous page. Optional.\",\"location\":\"query\"},\"publisherCategor" +
+            "y\":{\"type\":\"string\",\"description\":\"Caret(^) delimted list of publisher categorie" +
+            "s. Valid categories: (unclassified|community_and_content|shopping_and_promotion|" +
+            "loyalty_and_rewards|network|search_specialist|comparison_shopping|email). Filter" +
+            "s out all publishers not in one of the given advertiser categories. Optional.\",\"" +
+            "location\":\"query\"},\"relationshipStatus\":{\"type\":\"string\",\"description\":\"Filters " +
+            "out all publishers for which do not have the given relationship status with the " +
+            "requesting publisher.\",\"enum\":[\"approved\",\"available\",\"deactivated\",\"declined\",\"" +
+            "pending\"],\"enumDescriptions\":[\"Publishers you\'ve approved to your program.\",\"Pub" +
+            "lishers available for you to recruit.\",\"A publisher that you terminated from you" +
+            "r program. Publishers also have the ability to remove themselves from your progr" +
+            "am.\",\"A publisher that you did not approve to your program.\",\"Publishers that ha" +
+            "ve applied to your program. We recommend reviewing and deciding on pending publi" +
+            "shers on a weekly basis.\"],\"location\":\"query\"},\"role\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The role of the requester. Valid values: \'advertisers\' or \'publishers\'.\",\"" +
+            "required\":true,\"enum\":[\"advertisers\",\"publishers\"],\"enumDescriptions\":[\"The requ" +
+            "ester is requesting as an advertiser.\",\"The requester is requesting as a publish" +
+            "er.\"],\"location\":\"path\"},\"roleId\":{\"type\":\"string\",\"description\":\"The ID of the " +
+            "requesting advertiser or publisher.\",\"required\":true,\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"role\",\"roleId\"],\"response\":{\"$ref\":\"Publishers\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/gan\",\"https://www.googleapis.com/auth/gan.readonly\"]}}}}" +
+            "}";
         
         public const string Version = "v1beta1";
         

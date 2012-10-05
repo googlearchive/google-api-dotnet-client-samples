@@ -1216,164 +1216,164 @@ namespace Google.Apis.Customsearch.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"customsearch:v1" +
-            "\",\"name\":\"customsearch\",\"version\":\"v1\",\"revision\":\"20120718\",\"title\":\"CustomSear" +
+            "\",\"name\":\"customsearch\",\"version\":\"v1\",\"revision\":\"20120904\",\"title\":\"CustomSear" +
             "ch API\",\"description\":\"Lets you search over a website or collection of websites\"" +
             ",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32\"" +
             ":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink\"" +
-            ":\"http://code.google.com/apis/customsearch/v1/using_rest.html\",\"protocol\":\"rest\"" +
-            ",\"baseUrl\":\"https://www.googleapis.com/customsearch/\",\"basePath\":\"/customsearch/" +
-            "\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"customsearch/\",\"batchPa" +
-            "th\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for " +
-            "the response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Resp" +
-            "onses with Content-Type of application/atom+xml\",\"Responses with Content-Type of" +
-            " application/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":" +
-            "\"Selector specifying which fields to include in a partial response.\",\"location\":" +
-            "\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies " +
-            "your project and provides you with API access, quota, and reports. Required unle" +
-            "ss you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"s" +
-            "tring\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"}" +
-            ",\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentatio" +
-            "ns and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"s" +
-            "tring\",\"description\":\"Available to use for quota purposes for server-side applic" +
-            "ations. Can be any arbitrary string assigned to a user, but should not exceed 40" +
-            " characters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp" +
-            "\":{\"type\":\"string\",\"description\":\"IP address of the site where the request origi" +
-            "nates. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"s" +
-            "chemas\":{\"Context\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type" +
-            "\":\"array\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor" +
-            "\":{\"type\":\"string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"P" +
-            "romotion\":{\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"a" +
-            "rray\",\"items\":{\"type\":\"object\",\"properties\":{\"htmlTitle\":{\"type\":\"string\"},\"link" +
-            "\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}}},\"displa" +
-            "yLink\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"image\":{\"type\":\"object\"," +
-            "\"properties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"type\":\"str" +
-            "ing\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"string\"},\"ti" +
-            "tle\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"properties\":{\"co" +
-            "unt\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\":{\"type\":\"" +
-            "string\"},\"cx\":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"string\"},\"disableCnTwTra" +
-            "nslation\":{\"type\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"excludeTerms\":{\"type" +
-            "\":\"string\"},\"fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\"" +
-            ":\"string\"},\"googleHost\":{\"type\":\"string\"},\"highRange\":{\"type\":\"string\"},\"hl\":{\"t" +
-            "ype\":\"string\"},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\":\"string\"},\"imgDomin" +
-            "antColor\":{\"type\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"imgType\":{\"type\":\"strin" +
-            "g\"},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"linkSite\":{\"" +
-            "type\":\"string\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"type\":\"string\"},\"output" +
-            "Encoding\":{\"type\":\"string\"},\"relatedSite\":{\"type\":\"string\"},\"rights\":{\"type\":\"st" +
-            "ring\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"searchType\":{\"t" +
-            "ype\":\"string\"},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFilter\":{\"type\":\"string" +
-            "\"},\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"int32\"},\"st" +
-            "artPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"},\"totalRes" +
-            "ults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"Result\",\"type\":\"objec" +
-            "t\",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"string\"},\"fi" +
-            "leFormat\":{\"type\":\"string\"},\"formattedUrl\":{\"type\":\"string\"},\"htmlFormattedUrl\":" +
-            "{\"type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"}," +
-            "\"image\":{\"type\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"integer\",\"format\":\"in" +
-            "t32\"},\"contextLink\":{\"type\":\"string\"},\"height\":{\"type\":\"integer\",\"format\":\"int32" +
-            "\"},\"thumbnailHeight\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnailLink\":{\"type\"" +
-            ":\"string\"},\"thumbnailWidth\":{\"type\":\"integer\",\"format\":\"int32\"},\"width\":{\"type\":" +
-            "\"integer\",\"format\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#re" +
-            "sult\"},\"labels\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"displayN" +
-            "ame\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"type\":\"string\"},\"mim" +
-            "e\":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"" +
-            "array\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}}},\"snippe" +
-            "t\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Search\",\"type\":" +
-            "\"object\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"array\",\"ite" +
-            "ms\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#search\"}," +
-            "\"promotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{\"type\":\"ob" +
-            "ject\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}},\"searchI" +
-            "nformation\":{\"type\":\"object\",\"properties\":{\"formattedSearchTime\":{\"type\":\"string" +
-            "\"},\"formattedTotalResults\":{\"type\":\"string\"},\"searchTime\":{\"type\":\"number\",\"form" +
-            "at\":\"double\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"spelling\":{\"t" +
-            "ype\":\"object\",\"properties\":{\"correctedQuery\":{\"type\":\"string\"},\"htmlCorrectedQue" +
-            "ry\":{\"type\":\"string\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template\":{\"type\":" +
-            "\"string\",\"default\":\"https://www.googleapis.com/customsearch/v1?q={searchTerms}&n" +
-            "um={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?" +
-            "}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2cof" +
-            "f={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearc" +
-            "hFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?" +
-            "}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestric" +
-            "t={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={search" +
-            "Type}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?" +
-            "}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json\"},\"" +
-            "type\":{\"type\":\"string\",\"default\":\"application/json\"}}}}}},\"resources\":{\"cse\":{\"m" +
-            "ethods\":{\"list\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\",\"descript" +
-            "ion\":\"Returns metadata about the search performed, metadata about the custom sea" +
-            "rch engine used for the search, and the search results.\",\"parameters\":{\"c2coff\":" +
-            "{\"type\":\"string\",\"description\":\"Turns off the translation between zh-CN and zh-T" +
-            "W.\",\"location\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":\"Country restrict(s)" +
-            ".\",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL of a linke" +
-            "d custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"description\":" +
-            "\"The custom search engine ID to scope this search query\",\"location\":\"query\"},\"da" +
-            "teRestrict\":{\"type\":\"string\",\"description\":\"Specifies all search results are fro" +
-            "m a time period\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"string\",\"description\"" +
-            ":\"Identifies a phrase that all documents in the search results must contain\",\"lo" +
-            "cation\":\"query\"},\"excludeTerms\":{\"type\":\"string\",\"description\":\"Identifies a wor" +
-            "d or phrase that should not appear in any documents in the search results\",\"loca" +
-            "tion\":\"query\"},\"fileType\":{\"type\":\"string\",\"description\":\"Returns images of a sp" +
-            "ecified type. Some of the allowed values are: bmp, gif, png, jpg, svg, pdf, ...\"" +
-            ",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls turning o" +
-            "n or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"Tu" +
-            "rns off duplicate content filter.\",\"Turns on duplicate content filter.\"],\"locati" +
-            "on\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end user.\",\"loc" +
-            "ation\":\"query\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local Google do" +
-            "main to use to perform the search.\",\"location\":\"query\"},\"highRange\":{\"type\":\"str" +
-            "ing\",\"description\":\"Creates a range in form as_nlo value..as_nhi value and attem" +
-            "pts to append it to query\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Sets the user interface language.\",\"location\":\"query\"},\"hq\":{\"type\":\"string\"" +
-            ",\"description\":\"Appends the extra query terms to the query.\",\"location\":\"query\"}" +
-            ",\"imgColorType\":{\"type\":\"string\",\"description\":\"Returns black and white, graysca" +
-            "le, or color images: mono, gray, and color.\",\"enum\":[\"color\",\"gray\",\"mono\"],\"enu" +
-            "mDescriptions\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"imgDominantColor\":{\"" +
-            "type\":\"string\",\"description\":\"Returns images of a specific dominant color: yello" +
-            "w, green, teal, blue, purple, pink, white, gray, black and brown.\",\"enum\":[\"blac" +
-            "k\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yellow\"],\"enumD" +
-            "escriptions\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"whit" +
-            "e\",\"yellow\"],\"location\":\"query\"},\"imgSize\":{\"type\":\"string\",\"description\":\"Retur" +
-            "ns images of a specified size, where size can be one of: icon, small, medium, la" +
-            "rge, xlarge, xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\"," +
-            "\"xlarge\",\"xxlarge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\",\"" +
-            "xlarge\",\"xxlarge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"string\",\"description\":" +
-            "\"Returns images of a type, which can be one of: clipart, face, lineart, news, an" +
-            "d photo.\",\"enum\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"enumDescriptions\":" +
-            "[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"location\":\"query\"},\"linkSite\":{\"typ" +
-            "e\":\"string\",\"description\":\"Specifies that all search results should contain a li" +
-            "nk to a particular URL\",\"location\":\"query\"},\"lowRange\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"Creates a range in form as_nlo value..as_nhi value and attempts to append" +
-            " it to query\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":\"The langu" +
-            "age restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"lang_ca\",\"l" +
-            "ang_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"lang_fi\",\"l" +
-            "ang_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"lang_ja\",\"l" +
-            "ang_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"lang_ro\",\"l" +
-            "ang_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\",\"lang_zh-" +
-            "TW\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danish\",\"German" +
-            "\",\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\",\"Hungaria" +
-            "n\",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Lithuanian\"," +
-            "\"Latvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russian\",\"Slovak" +
-            "\",\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Chinese (Tra" +
-            "ditional)\"],\"location\":\"query\"},\"num\":{\"type\":\"integer\",\"description\":\"Number of" +
-            " search results to return\",\"default\":\"10\",\"format\":\"uint32\",\"location\":\"query\"}," +
-            "\"orTerms\":{\"type\":\"string\",\"description\":\"Provides additional search terms to ch" +
-            "eck for in a document, where each document in the search results must contain at" +
-            " least one of the additional search terms\",\"location\":\"query\"},\"q\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"relatedSite\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Specifies that all search results should be pages th" +
-            "at are related to the specified URL\",\"location\":\"query\"},\"rights\":{\"type\":\"strin" +
-            "g\",\"description\":\"Filters based on licensing. Supported values include: cc_publi" +
-            "cdomain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived and combin" +
-            "ations of these.\",\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"description\":\"Sea" +
-            "rch safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enumDescriptio" +
-            "ns\":[\"Enables highest level of safe search filtering.\",\"Enables moderate safe se" +
-            "arch filtering.\",\"Disables safe search filtering.\"],\"location\":\"query\"},\"searchT" +
-            "ype\":{\"type\":\"string\",\"description\":\"Specifies the search type: image.\",\"enum\":[" +
-            "\"image\"],\"enumDescriptions\":[\"custom image search\"],\"location\":\"query\"},\"siteSea" +
-            "rch\":{\"type\":\"string\",\"description\":\"Specifies all search results should be page" +
-            "s from a given site\",\"location\":\"query\"},\"siteSearchFilter\":{\"type\":\"string\",\"de" +
-            "scription\":\"Controls whether to include or exclude results from the site named i" +
-            "n the as_sitesearch parameter\",\"enum\":[\"e\",\"i\"],\"enumDescriptions\":[\"exclude\",\"i" +
-            "nclude\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The sort exp" +
-            "ression to apply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"integer\",\"" +
-            "description\":\"The index of the first result to return\",\"format\":\"uint32\",\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}";
+            ":\"https://developers.google.com/custom-search/v1/using_rest\",\"protocol\":\"rest\",\"" +
+            "baseUrl\":\"https://www.googleapis.com/customsearch/\",\"basePath\":\"/customsearch/\"," +
+            "\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"customsearch/\",\"batchPath" +
+            "\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data format for th" +
+            "e response.\",\"default\":\"json\",\"enum\":[\"atom\",\"json\"],\"enumDescriptions\":[\"Respon" +
+            "ses with Content-Type of application/atom+xml\",\"Responses with Content-Type of a" +
+            "pplication/json\"],\"location\":\"query\"},\"fields\":{\"type\":\"string\",\"description\":\"S" +
+            "elector specifying which fields to include in a partial response.\",\"location\":\"q" +
+            "uery\"},\"key\":{\"type\":\"string\",\"description\":\"API key. Your API key identifies yo" +
+            "ur project and provides you with API access, quota, and reports. Required unless" +
+            " you provide an OAuth 2.0 token.\",\"location\":\"query\"},\"oauth_token\":{\"type\":\"str" +
+            "ing\",\"description\":\"OAuth 2.0 token for the current user.\",\"location\":\"query\"},\"" +
+            "prettyPrint\":{\"type\":\"boolean\",\"description\":\"Returns response with indentations" +
+            " and line breaks.\",\"default\":\"true\",\"location\":\"query\"},\"quotaUser\":{\"type\":\"str" +
+            "ing\",\"description\":\"Available to use for quota purposes for server-side applicat" +
+            "ions. Can be any arbitrary string assigned to a user, but should not exceed 40 c" +
+            "haracters. Overrides userIp if both are provided.\",\"location\":\"query\"},\"userIp\":" +
+            "{\"type\":\"string\",\"description\":\"IP address of the site where the request origina" +
+            "tes. Use this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"sch" +
+            "emas\":{\"Context\":{\"id\":\"Context\",\"type\":\"object\",\"properties\":{\"facets\":{\"type\":" +
+            "\"array\",\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"anchor\":" +
+            "{\"type\":\"string\"},\"label\":{\"type\":\"string\"}}}}},\"title\":{\"type\":\"string\"}}},\"Pro" +
+            "motion\":{\"id\":\"Promotion\",\"type\":\"object\",\"properties\":{\"bodyLines\":{\"type\":\"arr" +
+            "ay\",\"items\":{\"type\":\"object\",\"properties\":{\"htmlTitle\":{\"type\":\"string\"},\"link\":" +
+            "{\"type\":\"string\"},\"title\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}}}},\"displayL" +
+            "ink\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"image\":{\"type\":\"object\",\"p" +
+            "roperties\":{\"height\":{\"type\":\"integer\",\"format\":\"int32\"},\"source\":{\"type\":\"strin" +
+            "g\"},\"width\":{\"type\":\"integer\",\"format\":\"int32\"}}},\"link\":{\"type\":\"string\"},\"titl" +
+            "e\":{\"type\":\"string\"}}},\"Query\":{\"id\":\"Query\",\"type\":\"object\",\"properties\":{\"coun" +
+            "t\":{\"type\":\"integer\",\"format\":\"int32\"},\"cr\":{\"type\":\"string\"},\"cref\":{\"type\":\"st" +
+            "ring\"},\"cx\":{\"type\":\"string\"},\"dateRestrict\":{\"type\":\"string\"},\"disableCnTwTrans" +
+            "lation\":{\"type\":\"string\"},\"exactTerms\":{\"type\":\"string\"},\"excludeTerms\":{\"type\":" +
+            "\"string\"},\"fileType\":{\"type\":\"string\"},\"filter\":{\"type\":\"string\"},\"gl\":{\"type\":\"" +
+            "string\"},\"googleHost\":{\"type\":\"string\"},\"highRange\":{\"type\":\"string\"},\"hl\":{\"typ" +
+            "e\":\"string\"},\"hq\":{\"type\":\"string\"},\"imgColorType\":{\"type\":\"string\"},\"imgDominan" +
+            "tColor\":{\"type\":\"string\"},\"imgSize\":{\"type\":\"string\"},\"imgType\":{\"type\":\"string\"" +
+            "},\"inputEncoding\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"linkSite\":{\"ty" +
+            "pe\":\"string\"},\"lowRange\":{\"type\":\"string\"},\"orTerms\":{\"type\":\"string\"},\"outputEn" +
+            "coding\":{\"type\":\"string\"},\"relatedSite\":{\"type\":\"string\"},\"rights\":{\"type\":\"stri" +
+            "ng\"},\"safe\":{\"type\":\"string\"},\"searchTerms\":{\"type\":\"string\"},\"searchType\":{\"typ" +
+            "e\":\"string\"},\"siteSearch\":{\"type\":\"string\"},\"siteSearchFilter\":{\"type\":\"string\"}" +
+            ",\"sort\":{\"type\":\"string\"},\"startIndex\":{\"type\":\"integer\",\"format\":\"int32\"},\"star" +
+            "tPage\":{\"type\":\"integer\",\"format\":\"int32\"},\"title\":{\"type\":\"string\"},\"totalResul" +
+            "ts\":{\"type\":\"string\",\"format\":\"int64\"}}},\"Result\":{\"id\":\"Result\",\"type\":\"object\"" +
+            ",\"properties\":{\"cacheId\":{\"type\":\"string\"},\"displayLink\":{\"type\":\"string\"},\"file" +
+            "Format\":{\"type\":\"string\"},\"formattedUrl\":{\"type\":\"string\"},\"htmlFormattedUrl\":{\"" +
+            "type\":\"string\"},\"htmlSnippet\":{\"type\":\"string\"},\"htmlTitle\":{\"type\":\"string\"},\"i" +
+            "mage\":{\"type\":\"object\",\"properties\":{\"byteSize\":{\"type\":\"integer\",\"format\":\"int3" +
+            "2\"},\"contextLink\":{\"type\":\"string\"},\"height\":{\"type\":\"integer\",\"format\":\"int32\"}" +
+            ",\"thumbnailHeight\":{\"type\":\"integer\",\"format\":\"int32\"},\"thumbnailLink\":{\"type\":\"" +
+            "string\"},\"thumbnailWidth\":{\"type\":\"integer\",\"format\":\"int32\"},\"width\":{\"type\":\"i" +
+            "nteger\",\"format\":\"int32\"}}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#resu" +
+            "lt\"},\"labels\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"displayNam" +
+            "e\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}},\"link\":{\"type\":\"string\"},\"mime\"" +
+            ":{\"type\":\"string\"},\"pagemap\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"ar" +
+            "ray\",\"items\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"any\"}}}},\"snippet\"" +
+            ":{\"type\":\"string\"},\"title\":{\"type\":\"string\"}}},\"Search\":{\"id\":\"Search\",\"type\":\"o" +
+            "bject\",\"properties\":{\"context\":{\"$ref\":\"Context\"},\"items\":{\"type\":\"array\",\"items" +
+            "\":{\"$ref\":\"Result\"}},\"kind\":{\"type\":\"string\",\"default\":\"customsearch#search\"},\"p" +
+            "romotions\":{\"type\":\"array\",\"items\":{\"$ref\":\"Promotion\"}},\"queries\":{\"type\":\"obje" +
+            "ct\",\"additionalProperties\":{\"type\":\"array\",\"items\":{\"$ref\":\"Query\"}}},\"searchInf" +
+            "ormation\":{\"type\":\"object\",\"properties\":{\"formattedSearchTime\":{\"type\":\"string\"}" +
+            ",\"formattedTotalResults\":{\"type\":\"string\"},\"searchTime\":{\"type\":\"number\",\"format" +
+            "\":\"double\"},\"totalResults\":{\"type\":\"string\",\"format\":\"int64\"}}},\"spelling\":{\"typ" +
+            "e\":\"object\",\"properties\":{\"correctedQuery\":{\"type\":\"string\"},\"htmlCorrectedQuery" +
+            "\":{\"type\":\"string\"}}},\"url\":{\"type\":\"object\",\"properties\":{\"template\":{\"type\":\"s" +
+            "tring\",\"default\":\"https://www.googleapis.com/customsearch/v1?q={searchTerms}&num" +
+            "={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&" +
+            "sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff=" +
+            "{disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchF" +
+            "ilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&" +
+            "linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict=" +
+            "{dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchTy" +
+            "pe}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&" +
+            "imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json\"},\"ty" +
+            "pe\":{\"type\":\"string\",\"default\":\"application/json\"}}}}}},\"resources\":{\"cse\":{\"met" +
+            "hods\":{\"list\":{\"id\":\"search.cse.list\",\"path\":\"v1\",\"httpMethod\":\"GET\",\"descriptio" +
+            "n\":\"Returns metadata about the search performed, metadata about the custom searc" +
+            "h engine used for the search, and the search results.\",\"parameters\":{\"c2coff\":{\"" +
+            "type\":\"string\",\"description\":\"Turns off the translation between zh-CN and zh-TW." +
+            "\",\"location\":\"query\"},\"cr\":{\"type\":\"string\",\"description\":\"Country restrict(s).\"" +
+            ",\"location\":\"query\"},\"cref\":{\"type\":\"string\",\"description\":\"The URL of a linked " +
+            "custom search engine\",\"location\":\"query\"},\"cx\":{\"type\":\"string\",\"description\":\"T" +
+            "he custom search engine ID to scope this search query\",\"location\":\"query\"},\"date" +
+            "Restrict\":{\"type\":\"string\",\"description\":\"Specifies all search results are from " +
+            "a time period\",\"location\":\"query\"},\"exactTerms\":{\"type\":\"string\",\"description\":\"" +
+            "Identifies a phrase that all documents in the search results must contain\",\"loca" +
+            "tion\":\"query\"},\"excludeTerms\":{\"type\":\"string\",\"description\":\"Identifies a word " +
+            "or phrase that should not appear in any documents in the search results\",\"locati" +
+            "on\":\"query\"},\"fileType\":{\"type\":\"string\",\"description\":\"Returns images of a spec" +
+            "ified type. Some of the allowed values are: bmp, gif, png, jpg, svg, pdf, ...\",\"" +
+            "location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"Controls turning on " +
+            "or off the duplicate content filter.\",\"enum\":[\"0\",\"1\"],\"enumDescriptions\":[\"Turn" +
+            "s off duplicate content filter.\",\"Turns on duplicate content filter.\"],\"location" +
+            "\":\"query\"},\"gl\":{\"type\":\"string\",\"description\":\"Geolocation of end user.\",\"locat" +
+            "ion\":\"query\"},\"googlehost\":{\"type\":\"string\",\"description\":\"The local Google doma" +
+            "in to use to perform the search.\",\"location\":\"query\"},\"highRange\":{\"type\":\"strin" +
+            "g\",\"description\":\"Creates a range in form as_nlo value..as_nhi value and attempt" +
+            "s to append it to query\",\"location\":\"query\"},\"hl\":{\"type\":\"string\",\"description\"" +
+            ":\"Sets the user interface language.\",\"location\":\"query\"},\"hq\":{\"type\":\"string\",\"" +
+            "description\":\"Appends the extra query terms to the query.\",\"location\":\"query\"},\"" +
+            "imgColorType\":{\"type\":\"string\",\"description\":\"Returns black and white, grayscale" +
+            ", or color images: mono, gray, and color.\",\"enum\":[\"color\",\"gray\",\"mono\"],\"enumD" +
+            "escriptions\":[\"color\",\"gray\",\"mono\"],\"location\":\"query\"},\"imgDominantColor\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Returns images of a specific dominant color: yellow," +
+            " green, teal, blue, purple, pink, white, gray, black and brown.\",\"enum\":[\"black\"" +
+            ",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\",\"yellow\"],\"enumDes" +
+            "criptions\":[\"black\",\"blue\",\"brown\",\"gray\",\"green\",\"pink\",\"purple\",\"teal\",\"white\"" +
+            ",\"yellow\"],\"location\":\"query\"},\"imgSize\":{\"type\":\"string\",\"description\":\"Returns" +
+            " images of a specified size, where size can be one of: icon, small, medium, larg" +
+            "e, xlarge, xxlarge, and huge.\",\"enum\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\",\"x" +
+            "large\",\"xxlarge\"],\"enumDescriptions\":[\"huge\",\"icon\",\"large\",\"medium\",\"small\",\"xl" +
+            "arge\",\"xxlarge\"],\"location\":\"query\"},\"imgType\":{\"type\":\"string\",\"description\":\"R" +
+            "eturns images of a type, which can be one of: clipart, face, lineart, news, and " +
+            "photo.\",\"enum\":[\"clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"enumDescriptions\":[\"" +
+            "clipart\",\"face\",\"lineart\",\"news\",\"photo\"],\"location\":\"query\"},\"linkSite\":{\"type\"" +
+            ":\"string\",\"description\":\"Specifies that all search results should contain a link" +
+            " to a particular URL\",\"location\":\"query\"},\"lowRange\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Creates a range in form as_nlo value..as_nhi value and attempts to append i" +
+            "t to query\",\"location\":\"query\"},\"lr\":{\"type\":\"string\",\"description\":\"The languag" +
+            "e restriction for the search results\",\"enum\":[\"lang_ar\",\"lang_bg\",\"lang_ca\",\"lan" +
+            "g_cs\",\"lang_da\",\"lang_de\",\"lang_el\",\"lang_en\",\"lang_es\",\"lang_et\",\"lang_fi\",\"lan" +
+            "g_fr\",\"lang_hr\",\"lang_hu\",\"lang_id\",\"lang_is\",\"lang_it\",\"lang_iw\",\"lang_ja\",\"lan" +
+            "g_ko\",\"lang_lt\",\"lang_lv\",\"lang_nl\",\"lang_no\",\"lang_pl\",\"lang_pt\",\"lang_ro\",\"lan" +
+            "g_ru\",\"lang_sk\",\"lang_sl\",\"lang_sr\",\"lang_sv\",\"lang_tr\",\"lang_zh-CN\",\"lang_zh-TW" +
+            "\"],\"enumDescriptions\":[\"Arabic\",\"Bulgarian\",\"Catalan\",\"Czech\",\"Danish\",\"German\"," +
+            "\"Greek\",\"English\",\"Spanish\",\"Estonian\",\"Finnish\",\"French\",\"Croatian\",\"Hungarian\"" +
+            ",\"Indonesian\",\"Icelandic\",\"Italian\",\"Hebrew\",\"Japanese\",\"Korean\",\"Lithuanian\",\"L" +
+            "atvian\",\"Dutch\",\"Norwegian\",\"Polish\",\"Portuguese\",\"Romanian\",\"Russian\",\"Slovak\"," +
+            "\"Slovenian\",\"Serbian\",\"Swedish\",\"Turkish\",\"Chinese (Simplified)\",\"Chinese (Tradi" +
+            "tional)\"],\"location\":\"query\"},\"num\":{\"type\":\"integer\",\"description\":\"Number of s" +
+            "earch results to return\",\"default\":\"10\",\"format\":\"uint32\",\"location\":\"query\"},\"o" +
+            "rTerms\":{\"type\":\"string\",\"description\":\"Provides additional search terms to chec" +
+            "k for in a document, where each document in the search results must contain at l" +
+            "east one of the additional search terms\",\"location\":\"query\"},\"q\":{\"type\":\"string" +
+            "\",\"description\":\"Query\",\"required\":true,\"location\":\"query\"},\"relatedSite\":{\"type" +
+            "\":\"string\",\"description\":\"Specifies that all search results should be pages that" +
+            " are related to the specified URL\",\"location\":\"query\"},\"rights\":{\"type\":\"string\"" +
+            ",\"description\":\"Filters based on licensing. Supported values include: cc_publicd" +
+            "omain, cc_attribute, cc_sharealike, cc_noncommercial, cc_nonderived and combinat" +
+            "ions of these.\",\"location\":\"query\"},\"safe\":{\"type\":\"string\",\"description\":\"Searc" +
+            "h safety level\",\"default\":\"off\",\"enum\":[\"high\",\"medium\",\"off\"],\"enumDescriptions" +
+            "\":[\"Enables highest level of safe search filtering.\",\"Enables moderate safe sear" +
+            "ch filtering.\",\"Disables safe search filtering.\"],\"location\":\"query\"},\"searchTyp" +
+            "e\":{\"type\":\"string\",\"description\":\"Specifies the search type: image.\",\"enum\":[\"i" +
+            "mage\"],\"enumDescriptions\":[\"custom image search\"],\"location\":\"query\"},\"siteSearc" +
+            "h\":{\"type\":\"string\",\"description\":\"Specifies all search results should be pages " +
+            "from a given site\",\"location\":\"query\"},\"siteSearchFilter\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Controls whether to include or exclude results from the site named in " +
+            "the as_sitesearch parameter\",\"enum\":[\"e\",\"i\"],\"enumDescriptions\":[\"exclude\",\"inc" +
+            "lude\"],\"location\":\"query\"},\"sort\":{\"type\":\"string\",\"description\":\"The sort expre" +
+            "ssion to apply to the results\",\"location\":\"query\"},\"start\":{\"type\":\"integer\",\"de" +
+            "scription\":\"The index of the first result to return\",\"format\":\"uint32\",\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"q\"],\"response\":{\"$ref\":\"Search\"}}}}}}";
         
         public const string Version = "v1";
         

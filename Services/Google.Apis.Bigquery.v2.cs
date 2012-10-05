@@ -897,7 +897,7 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
-        /// <summary>[Optional] Quote character to use. Default is &apos;&quot;&apos;. Note that quoting is done on the raw, binary data before the encoding is applied.</summary>
+        /// <summary>[Optional] Quote character to use. Default is &apos;&quot;&apos;. Note that quoting is done on the raw, binary data before the encoding is applied. If no quoting is done, use am empty string.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("quote")]
         public virtual string Quote {
             get {
@@ -1323,6 +1323,10 @@ namespace Google.Apis.Bigquery.v2.Data {
         
         private string _endTime;
         
+        private JobStatistics3 _load;
+        
+        private JobStatistics2 _query;
+        
         private string _startTime;
         
         private string _totalBytesProcessed;
@@ -1338,6 +1342,26 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
+        [Newtonsoft.Json.JsonPropertyAttribute("load")]
+        public virtual JobStatistics3 Load {
+            get {
+                return this._load;
+            }
+            set {
+                this._load = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("query")]
+        public virtual JobStatistics2 Query {
+            get {
+                return this._query;
+            }
+            set {
+                this._query = value;
+            }
+        }
+        
         /// <summary>[Output-only] Start time of this job, in milliseconds since the epoch.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("startTime")]
         public virtual string StartTime {
@@ -1349,6 +1373,22 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
         }
         
+        /// <summary>[Output-only] [Deprecated] Use the bytes processed in the query statistics instead.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("totalBytesProcessed")]
+        public virtual string TotalBytesProcessed {
+            get {
+                return this._totalBytesProcessed;
+            }
+            set {
+                this._totalBytesProcessed = value;
+            }
+        }
+    }
+    
+    public class JobStatistics2 {
+        
+        private string _totalBytesProcessed;
+        
         /// <summary>[Output-only] Total bytes processed for this job.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("totalBytesProcessed")]
         public virtual string TotalBytesProcessed {
@@ -1357,6 +1397,61 @@ namespace Google.Apis.Bigquery.v2.Data {
             }
             set {
                 this._totalBytesProcessed = value;
+            }
+        }
+    }
+    
+    public class JobStatistics3 {
+        
+        private string _inputFileBytes;
+        
+        private string _inputFiles;
+        
+        private string _outputBytes;
+        
+        private string _outputRows;
+        
+        /// <summary>[Output-only] Number of bytes of source data in a joad job.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("inputFileBytes")]
+        public virtual string InputFileBytes {
+            get {
+                return this._inputFileBytes;
+            }
+            set {
+                this._inputFileBytes = value;
+            }
+        }
+        
+        /// <summary>[Output-only] Number of source files in a load job.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("inputFiles")]
+        public virtual string InputFiles {
+            get {
+                return this._inputFiles;
+            }
+            set {
+                this._inputFiles = value;
+            }
+        }
+        
+        /// <summary>[Output-only] Size of the loaded data in bytes. Note that while an import job is in the running state, this value may change.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("outputBytes")]
+        public virtual string OutputBytes {
+            get {
+                return this._outputBytes;
+            }
+            set {
+                this._outputBytes = value;
+            }
+        }
+        
+        /// <summary>[Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("outputRows")]
+        public virtual string OutputRows {
+            get {
+                return this._outputRows;
+            }
+            set {
+                this._outputRows = value;
             }
         }
     }
@@ -1880,6 +1975,22 @@ namespace Google.Apis.Bigquery.v2.Data {
         }
     }
     
+    /// <summary>Represents a single cell in the result set.</summary>
+    public class TableCell {
+        
+        private string _v;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("v")]
+        public virtual string V {
+            get {
+                return this._v;
+            }
+            set {
+                this._v = value;
+            }
+        }
+    }
+    
     public class TableDataList : Google.Apis.Requests.IDirectResponseSchema {
         
         private string _etag;
@@ -2167,34 +2278,18 @@ namespace Google.Apis.Bigquery.v2.Data {
         }
     }
     
+    /// <summary>Represents a single row in the result set, consisting of one or more fields.</summary>
     public class TableRow {
         
-        private System.Collections.Generic.IList<TableRow.FData> _f;
+        private System.Collections.Generic.IList<TableCell> _f;
         
-        /// <summary>Represents a single row in the result set, consisting of one or more fields.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("f")]
-        public virtual System.Collections.Generic.IList<TableRow.FData> F {
+        public virtual System.Collections.Generic.IList<TableCell> F {
             get {
                 return this._f;
             }
             set {
                 this._f = value;
-            }
-        }
-        
-        public class FData {
-            
-            private string _v;
-            
-            /// <summary>Contains the field value in this row, as a string.</summary>
-            [Newtonsoft.Json.JsonPropertyAttribute("v")]
-            public virtual string V {
-                get {
-                    return this._v;
-                }
-                set {
-                    this._v = value;
-                }
             }
         }
     }
@@ -2230,7 +2325,7 @@ namespace Google.Apis.Bigquery.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"bigquery:v2\",\"n" +
-            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20120831\",\"title\":\"BigQuery API\",\"des" +
+            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20120929\",\"title\":\"BigQuery API\",\"des" +
             "cription\":\"A data platform for customers to create, manage, share and query data" +
             ".\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x3" +
             "2\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLin" +
@@ -2408,374 +2503,389 @@ namespace Google.Apis.Bigquery.v2 {
             "fore the entire job is aborted and no updates are performed.\",\"format\":\"int32\"}," +
             "\"quote\":{\"type\":\"string\",\"description\":\"[Optional] Quote character to use. Defau" +
             "lt is \'\\\"\'. Note that quoting is done on the raw, binary data before the encodin" +
-            "g is applied.\"},\"schema\":{\"$ref\":\"TableSchema\",\"description\":\"[Optional] Schema " +
-            "of the table being written to.\"},\"schemaInline\":{\"type\":\"string\",\"description\":\"" +
-            "[Experimental] Inline schema. For CSV schemas, specify as \\\"Field1:Type1[,Field2" +
-            ":Type2]*\\\". For example, \\\"foo:STRING, bar:INTEGER, baz:FLOAT\\\"\"},\"schemaInlineF" +
-            "ormat\":{\"type\":\"string\",\"description\":\"[Experimental] Format of inlineSchema fie" +
-            "ld.\"},\"skipLeadingRows\":{\"type\":\"integer\",\"description\":\"[Optional] Number of ro" +
-            "ws of initial data to skip in the data being imported.\",\"format\":\"int32\"},\"sourc" +
-            "eFormat\":{\"type\":\"string\",\"description\":\"[Experimental] Optional and defaults to" +
-            " CSV. Format of source files. For CSV uploads, specify \\\"CSV\\\". For imports of d" +
-            "atastore backups, specify \\\"DATASTORE_BACKUP\\\". For imports of newline-delimited" +
-            " JSON, specify \\\"NEWLINE_DELIMITED_JSON\\\".\"},\"sourceUris\":{\"type\":\"array\",\"descr" +
-            "iption\":\"[Required] Source URIs describing Google Cloud Storage locations of dat" +
-            "a to load.\",\"items\":{\"type\":\"string\"}},\"writeDisposition\":{\"type\":\"string\",\"desc" +
-            "ription\":\"[Optional] Whether to overwrite an existing table (WRITE_TRUNCATE), ap" +
-            "pend to an existing table (WRITE_APPEND), or require that the the table is empty" +
-            " (WRITE_EMPTY). Default is WRITE_APPEND.\"}}},\"JobConfigurationProperties\":{\"id\":" +
-            "\"JobConfigurationProperties\",\"type\":\"object\",\"additionalProperties\":{\"type\":\"str" +
-            "ing\",\"description\":\"Key-value property pairs.\"}},\"JobConfigurationQuery\":{\"id\":\"" +
-            "JobConfigurationQuery\",\"type\":\"object\",\"properties\":{\"createDisposition\":{\"type\"" +
-            ":\"string\",\"description\":\"[Optional] Whether to create the table if it doesn\'t al" +
-            "ready exist (CREATE_IF_NEEDED) or to require the table already exist (CREATE_NEV" +
-            "ER). Default is CREATE_IF_NEEDED.\"},\"defaultDataset\":{\"$ref\":\"DatasetReference\"," +
-            "\"description\":\"[Optional] Specifies the default dataset to assume for unqualifie" +
-            "d table names in the query.\"},\"destinationTable\":{\"$ref\":\"TableReference\",\"descr" +
-            "iption\":\"[Optional] Describes the table where the query results should be stored" +
-            ". If not present, a new table will be created to store the results.\"},\"priority\"" +
-            ":{\"type\":\"string\",\"description\":\"[Optional] Specifies a priority for the query. " +
-            "Default is INTERACTIVE. Alternative is BATCH.\"},\"query\":{\"type\":\"string\",\"descri" +
-            "ption\":\"[Required] BigQuery SQL query to execute.\"},\"writeDisposition\":{\"type\":\"" +
-            "string\",\"description\":\"[Optional] Whether to overwrite an existing table (WRITE_" +
-            "TRUNCATE), append to an existing table (WRITE_APPEND), or require that the the t" +
-            "able is empty (WRITE_EMPTY). Default is WRITE_EMPTY.\"}}},\"JobConfigurationTableC" +
-            "opy\":{\"id\":\"JobConfigurationTableCopy\",\"type\":\"object\",\"properties\":{\"createDisp" +
-            "osition\":{\"type\":\"string\",\"description\":\"[Optional] Whether or not to create a n" +
-            "ew table, if none exists.\"},\"destinationTable\":{\"$ref\":\"TableReference\",\"descrip" +
-            "tion\":\"[Required] The destination table\"},\"sourceTable\":{\"$ref\":\"TableReference\"" +
-            ",\"description\":\"[Required] Source table to copy.\"},\"writeDisposition\":{\"type\":\"s" +
-            "tring\",\"description\":\"[Optional] Whether or not to append or require the table t" +
-            "o be empty.\"}}},\"JobList\":{\"id\":\"JobList\",\"type\":\"object\",\"properties\":{\"etag\":{" +
-            "\"type\":\"string\",\"description\":\"A hash of this page of results.\"},\"jobs\":{\"type\":" +
-            "\"array\",\"description\":\"List of jobs that were requested.\",\"items\":{\"type\":\"objec" +
-            "t\",\"properties\":{\"configuration\":{\"$ref\":\"JobConfiguration\",\"description\":\"[Full" +
-            "-projection-only] Specifies the job configuration.\"},\"errorResult\":{\"$ref\":\"Erro" +
-            "rProto\",\"description\":\"A result object that will be present only if the job has " +
-            "failed.\"},\"id\":{\"type\":\"string\",\"description\":\"Unique opaque ID of the job.\"},\"j" +
-            "obReference\":{\"$ref\":\"JobReference\",\"description\":\"Job reference uniquely identi" +
-            "fying the job.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\",\"def" +
-            "ault\":\"bigquery#job\"},\"state\":{\"type\":\"string\",\"description\":\"Running state of t" +
-            "he job. When the state is DONE, errorResult can be checked to determine whether " +
-            "the job succeeded or failed.\"},\"statistics\":{\"$ref\":\"JobStatistics\",\"description" +
-            "\":\"[Output-only] Information about the job, including starting time and ending t" +
-            "ime of the job.\"},\"status\":{\"$ref\":\"JobStatus\",\"description\":\"[Full-projection-o" +
-            "nly] Describes the state of the job.\"}}}},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"The resource type of the response.\",\"default\":\"bigquery#jobList\"},\"nextPageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"A token to request the next page of results.\"" +
-            "},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of jobs in this col" +
-            "lection.\",\"format\":\"int32\"}}},\"JobReference\":{\"id\":\"JobReference\",\"type\":\"object" +
-            "\",\"properties\":{\"jobId\":{\"type\":\"string\",\"description\":\"[Required] ID of the job" +
-            ".\",\"annotations\":{\"required\":[\"bigquery.jobs.getQueryResults\"]}},\"projectId\":{\"t" +
-            "ype\":\"string\",\"description\":\"[Required] Project ID being billed for the job.\",\"a" +
-            "nnotations\":{\"required\":[\"bigquery.jobs.getQueryResults\"]}}}},\"JobStatistics\":{\"" +
-            "id\":\"JobStatistics\",\"type\":\"object\",\"properties\":{\"endTime\":{\"type\":\"string\",\"de" +
-            "scription\":\"[Output-only] End time of this job, in milliseconds since the epoch." +
-            "\",\"format\":\"int64\"},\"startTime\":{\"type\":\"string\",\"description\":\"[Output-only] St" +
-            "art time of this job, in milliseconds since the epoch.\",\"format\":\"int64\"},\"total" +
-            "BytesProcessed\":{\"type\":\"string\",\"description\":\"[Output-only] Total bytes proces" +
-            "sed for this job.\",\"format\":\"int64\"}}},\"JobStatus\":{\"id\":\"JobStatus\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"errorResult\":{\"$ref\":\"ErrorProto\",\"description\":\"[Output-onl" +
-            "y] Final error result of the job. If present, indicates that the job has complet" +
-            "ed and was unsuccessful.\"},\"errors\":{\"type\":\"array\",\"description\":\"[Output-only]" +
-            " All errors encountered during the running of the job. Errors here do not necess" +
-            "arily mean that the job has completed or was unsuccessful.\",\"items\":{\"$ref\":\"Err" +
-            "orProto\"}},\"state\":{\"type\":\"string\",\"description\":\"[Output-only] Running state o" +
-            "f the job.\"}}},\"ProjectList\":{\"id\":\"ProjectList\",\"type\":\"object\",\"properties\":{\"" +
-            "etag\":{\"type\":\"string\",\"description\":\"A hash of the page of results\"},\"kind\":{\"t" +
-            "ype\":\"string\",\"description\":\"The type of list.\",\"default\":\"bigquery#projectList\"" +
-            "},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A token to request the next pa" +
-            "ge of results.\"},\"projects\":{\"type\":\"array\",\"description\":\"Projects to which you" +
-            " have at least READ access.\",\"items\":{\"type\":\"object\",\"properties\":{\"friendlyNam" +
-            "e\":{\"type\":\"string\",\"description\":\"A descriptive name for this project.\"},\"id\":{" +
-            "\"type\":\"string\",\"description\":\"An opaque ID of this project.\"},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"The resource type.\",\"default\":\"bigquery#project\"},\"project" +
-            "Reference\":{\"$ref\":\"ProjectReference\",\"description\":\"A unique reference to this " +
-            "project.\"}}}},\"totalItems\":{\"type\":\"integer\",\"description\":\"The total number of " +
-            "projects in the list.\",\"format\":\"int32\"}}},\"ProjectReference\":{\"id\":\"ProjectRefe" +
-            "rence\",\"type\":\"object\",\"properties\":{\"projectId\":{\"type\":\"string\",\"description\":" +
-            "\"[Required] ID of the project. Can be either the numeric ID or the assigned ID o" +
-            "f the project.\"}}},\"QueryRequest\":{\"id\":\"QueryRequest\",\"type\":\"object\",\"properti" +
-            "es\":{\"defaultDataset\":{\"$ref\":\"DatasetReference\",\"description\":\"[Optional] Speci" +
-            "fies the default datasetId and projectId to assume for any unqualified table nam" +
-            "es in the query. If not set, all table names in the query string must be fully-q" +
-            "ualified in the format projectId:datasetId.tableid.\"},\"dryRun\":{\"type\":\"boolean\"" +
-            ",\"description\":\"[Optional] If set, don\'t actually run the query. A valid query w" +
-            "ill return an empty response, while an invalid query will return the same error " +
-            "it would if it wasn\'t a dry run.\"},\"kind\":{\"type\":\"string\",\"description\":\"The re" +
-            "source type of the request.\",\"default\":\"bigquery#queryRequest\"},\"maxResults\":{\"t" +
-            "ype\":\"integer\",\"description\":\"[Optional] The maximum number of results to return" +
-            " per page of results. If the response list exceeds the maximum response size for" +
-            " a single response, you will have to page through the results. Default is to ret" +
-            "urn the maximum response size.\",\"format\":\"uint32\"},\"query\":{\"type\":\"string\",\"des" +
-            "cription\":\"[Required] A query string, following the BigQuery query syntax of the" +
-            " query to execute. Table names should be qualified by dataset name in the format" +
-            " projectId:datasetId.tableId unless you specify the defaultDataset value. If the" +
-            " table is in the same project as the job, you can omit the project ID. Example: " +
-            "SELECT f1 FROM myProjectId:myDatasetId.myTableId.\",\"annotations\":{\"required\":[\"b" +
-            "igquery.jobs.query\"]}},\"timeoutMs\":{\"type\":\"integer\",\"description\":\"[Optional] H" +
-            "ow long to wait for the query to complete, in milliseconds, before returning. De" +
-            "fault is to return immediately. If the timeout passes before the job completes, " +
-            "the request will fail with a TIMEOUT error.\",\"format\":\"uint32\"}}},\"QueryResponse" +
-            "\":{\"id\":\"QueryResponse\",\"type\":\"object\",\"properties\":{\"jobComplete\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Whether the query has completed or not. If rows or totalRow" +
-            "s are present, this will always be true. If this is false, totalRows will not be" +
-            " available.\"},\"jobReference\":{\"$ref\":\"JobReference\",\"description\":\"Reference to " +
-            "the Job that was created to run the query. This field will be present even if th" +
-            "e original request timed out, in which case GetQueryResults can be used to read " +
-            "the results once the query has completed. Since this API only returns the first " +
-            "page of results, subsequent pages can be fetched via the same mechanism (GetQuer" +
-            "yResults).\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\",\"default" +
-            "\":\"bigquery#queryResponse\"},\"rows\":{\"type\":\"array\",\"description\":\"An object with" +
-            " as many results as can be contained within the maximum permitted reply size. To" +
-            " get any additional rows, you can call GetQueryResults and specify the jobRefere" +
-            "nce returned above.\",\"items\":{\"$ref\":\"TableRow\"}},\"schema\":{\"$ref\":\"TableSchema\"" +
-            ",\"description\":\"The schema of the results. Present only when the query completes" +
-            " successfully.\"},\"totalRows\":{\"type\":\"string\",\"description\":\"The total number of" +
-            " rows in the complete query result set, which can be more than the number of row" +
-            "s in this single page of results.\",\"format\":\"uint64\"}}},\"Table\":{\"id\":\"Table\",\"t" +
-            "ype\":\"object\",\"properties\":{\"creationTime\":{\"type\":\"string\",\"description\":\"[Outp" +
-            "ut-only] The time when this table was created, in milliseconds since the epoch.\"" +
-            ",\"format\":\"int64\"},\"description\":{\"type\":\"string\",\"description\":\"[Optional] A us" +
-            "er-friendly description of this table.\"},\"etag\":{\"type\":\"string\",\"description\":\"" +
-            "[Output-only] A hash of this resource.\"},\"expirationTime\":{\"type\":\"string\",\"desc" +
-            "ription\":\"[Optional] The time when this table expires, in milliseconds since the" +
-            " epoch. If not present, the table will persist indefinitely. Expired tables will" +
-            " be deleted and their storage reclaimed.\",\"format\":\"int64\"},\"friendlyName\":{\"typ" +
-            "e\":\"string\",\"description\":\"[Optional] A descriptive name for this table.\"},\"id\":" +
-            "{\"type\":\"string\",\"description\":\"[Output-only] An opaque ID uniquely identifying " +
-            "the table.\"},\"kind\":{\"type\":\"string\",\"description\":\"[Output-only] The type of th" +
-            "e resource.\",\"default\":\"bigquery#table\"},\"lastModifiedTime\":{\"type\":\"string\",\"de" +
-            "scription\":\"[Output-only] The time when this table was last modified, in millise" +
-            "conds since the epoch.\",\"format\":\"int64\"},\"numBytes\":{\"type\":\"string\",\"descripti" +
-            "on\":\"[Output-only] The size of the table in bytes.\",\"format\":\"int64\"},\"numRows\":" +
-            "{\"type\":\"string\",\"description\":\"[Output-only] The number of rows of data in this" +
-            " table.\",\"format\":\"uint64\"},\"schema\":{\"$ref\":\"TableSchema\",\"description\":\"[Optio" +
-            "nal] Describes the schema of this table.\"},\"selfLink\":{\"type\":\"string\",\"descript" +
-            "ion\":\"[Output-only] A URL that can be used to access this resource again.\"},\"tab" +
-            "leReference\":{\"$ref\":\"TableReference\",\"description\":\"[Required] Reference descri" +
-            "bing the ID of this table.\"}}},\"TableDataList\":{\"id\":\"TableDataList\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"A hash of this page of" +
-            " results.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type of the resp" +
-            "onse.\",\"default\":\"bigquery#tableDataList\"},\"pageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"A token used for paging results. Providing this token instead of the star" +
-            "tRow parameter can help you retrieve stable results when an underlying table is " +
-            "changing.\"},\"rows\":{\"type\":\"array\",\"description\":\"Rows of results.\",\"items\":{\"$r" +
-            "ef\":\"TableRow\"}},\"totalRows\":{\"type\":\"string\",\"description\":\"The total number of" +
-            " rows in the complete table.\",\"format\":\"int64\"}}},\"TableFieldSchema\":{\"id\":\"Tabl" +
-            "eFieldSchema\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"array\",\"descriptio" +
-            "n\":\"[Optional] Describes nested fields when type is RECORD.\",\"items\":{\"$ref\":\"Ta" +
-            "bleFieldSchema\"}},\"mode\":{\"type\":\"string\",\"description\":\"[Optional] Mode of the " +
-            "field (whether or not it can be null. Default is NULLABLE.\"},\"name\":{\"type\":\"str" +
-            "ing\",\"description\":\"[Required] Name of the field.\"},\"type\":{\"type\":\"string\",\"des" +
-            "cription\":\"[Required] Data type of the field.\"}}},\"TableList\":{\"id\":\"TableList\"," +
-            "\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"A hash of t" +
-            "his page of results.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of list.\"" +
-            ",\"default\":\"bigquery#tableList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":" +
-            "\"A token to request the next page of results.\"},\"tables\":{\"type\":\"array\",\"descri" +
-            "ption\":\"Tables in the requested dataset.\",\"items\":{\"type\":\"object\",\"properties\":" +
-            "{\"friendlyName\":{\"type\":\"string\",\"description\":\"The user-friendly name for this " +
-            "table.\"},\"id\":{\"type\":\"string\",\"description\":\"An opaque ID of the table\"},\"kind\"" +
-            ":{\"type\":\"string\",\"description\":\"The resource type.\",\"default\":\"bigquery#table\"}" +
-            ",\"tableReference\":{\"$ref\":\"TableReference\",\"description\":\"A reference uniquely i" +
-            "dentifying the table.\"}}}},\"totalItems\":{\"type\":\"integer\",\"description\":\"The tot" +
-            "al number of tables in the dataset.\",\"format\":\"int32\"}}},\"TableReference\":{\"id\":" +
-            "\"TableReference\",\"type\":\"object\",\"properties\":{\"datasetId\":{\"type\":\"string\",\"des" +
-            "cription\":\"[Required] ID of the dataset containing the table.\",\"annotations\":{\"r" +
-            "equired\":[\"bigquery.tables.update\"]}},\"projectId\":{\"type\":\"string\",\"description\"" +
-            ":\"[Required] ID of the project billed for storage of the table.\",\"annotations\":{" +
-            "\"required\":[\"bigquery.tables.update\"]}},\"tableId\":{\"type\":\"string\",\"description\"" +
-            ":\"[Required] ID of the table.\",\"annotations\":{\"required\":[\"bigquery.tables.updat" +
-            "e\"]}}}},\"TableRow\":{\"id\":\"TableRow\",\"type\":\"object\",\"properties\":{\"f\":{\"type\":\"a" +
-            "rray\",\"description\":\"Represents a single row in the result set, consisting of on" +
-            "e or more fields.\",\"items\":{\"type\":\"object\",\"properties\":{\"v\":{\"type\":\"string\",\"" +
-            "description\":\"Contains the field value in this row, as a string.\"}}}}}},\"TableSc" +
-            "hema\":{\"id\":\"TableSchema\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"array\"" +
-            ",\"description\":\"Describes the fields in a table.\",\"items\":{\"$ref\":\"TableFieldSch" +
-            "ema\"}}}}},\"resources\":{\"datasets\":{\"methods\":{\"delete\":{\"id\":\"bigquery.datasets." +
-            "delete\",\"path\":\"projects/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"DELETE\"" +
-            ",\"description\":\"Deletes the dataset specified by datasetId value. Before you can" +
-            " delete a dataset, you must delete all its tables, either manually or by specify" +
-            "ing deleteContents. Immediately after deletion, you can create another dataset w" +
-            "ith the same name.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Da" +
-            "taset ID of dataset being deleted\",\"required\":true,\"location\":\"path\"},\"deleteCon" +
-            "tents\":{\"type\":\"boolean\",\"description\":\"If True, delete all the tables in the da" +
-            "taset. If False and the dataset contains tables, the request will fail. Default " +
-            "is False\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Projec" +
-            "t ID of the dataset being deleted\",\"required\":true,\"location\":\"path\"}},\"paramete" +
-            "rOrder\":[\"projectId\",\"datasetId\"],\"scopes\":[\"https://www.googleapis.com/auth/big" +
-            "query\"]},\"get\":{\"id\":\"bigquery.datasets.get\",\"path\":\"projects/{projectId}/datase" +
-            "ts/{datasetId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the dataset specified " +
-            "by datasetID.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset" +
-            " ID of the requested dataset\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Project ID of the requested dataset\",\"required\":tru" +
-            "e,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"response\":{\"$r" +
-            "ef\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert\":{" +
-            "\"id\":\"bigquery.datasets.insert\",\"path\":\"projects/{projectId}/datasets\",\"httpMeth" +
-            "od\":\"POST\",\"description\":\"Creates a new empty dataset.\",\"parameters\":{\"projectId" +
-            "\":{\"type\":\"string\",\"description\":\"Project ID of the new dataset\",\"required\":true" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"request\":{\"$ref\":\"Dataset\"}" +
-            ",\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigque" +
-            "ry\"]},\"list\":{\"id\":\"bigquery.datasets.list\",\"path\":\"projects/{projectId}/dataset" +
-            "s\",\"httpMethod\":\"GET\",\"description\":\"Lists all the datasets in the specified pro" +
-            "ject to which the caller has read access; however, a project owner can list (but" +
-            " not necessarily get) all datasets in his project.\",\"parameters\":{\"maxResults\":{" +
-            "\"type\":\"integer\",\"description\":\"The maximum number of results to return\",\"format" +
-            "\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page " +
-            "token, returned by a previous call, to request the next page of results\",\"locati" +
-            "on\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of the datas" +
-            "ets to be listed\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "Id\"],\"response\":{\"$ref\":\"DatasetList\"},\"scopes\":[\"https://www.googleapis.com/aut" +
-            "h/bigquery\"]},\"patch\":{\"id\":\"bigquery.datasets.patch\",\"path\":\"projects/{projectI" +
-            "d}/datasets/{datasetId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates information" +
-            " in an existing dataset, specified by datasetId. Properties not included in the " +
-            "submitted resource will not be changed. If you include the access property witho" +
-            "ut any values assigned, the request will fail as you must specify at least one o" +
-            "wner for a dataset. This method supports patch semantics.\",\"parameters\":{\"datase" +
-            "tId\":{\"type\":\"string\",\"description\":\"Dataset ID of the dataset being updated\",\"r" +
-            "equired\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"description\":\"Pro" +
-            "ject ID of the dataset being updated\",\"required\":true,\"location\":\"path\"}},\"param" +
-            "eterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Dataset\"},\"response\":{\"$" +
-            "ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"update\":" +
-            "{\"id\":\"bigquery.datasets.update\",\"path\":\"projects/{projectId}/datasets/{datasetI" +
-            "d}\",\"httpMethod\":\"PUT\",\"description\":\"Updates information in an existing dataset" +
-            ", specified by datasetId. Properties not included in the submitted resource will" +
-            " not be changed. If you include the access property without any values assigned," +
-            " the request will fail as you must specify at least one owner for a dataset.\",\"p" +
-            "arameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset ID of the datase" +
-            "t being updated\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\"" +
-            ",\"description\":\"Project ID of the dataset being updated\",\"required\":true,\"locati" +
-            "on\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Datas" +
-            "et\"},\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bi" +
-            "gquery\"]}}},\"jobs\":{\"methods\":{\"get\":{\"id\":\"bigquery.jobs.get\",\"path\":\"projects/" +
-            "{projectId}/jobs/{jobId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the specif" +
-            "ied job by ID.\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job ID of " +
-            "the requested job\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"strin" +
-            "g\",\"description\":\"Project ID of the requested job\",\"required\":true,\"location\":\"p" +
-            "ath\"}},\"parameterOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"},\"scopes\"" +
-            ":[\"https://www.googleapis.com/auth/bigquery\"]},\"getQueryResults\":{\"id\":\"bigquery" +
-            ".jobs.getQueryResults\",\"path\":\"projects/{projectId}/queries/{jobId}\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Retrieves the results of a query job.\",\"parameters\":{\"job" +
-            "Id\":{\"type\":\"string\",\"description\":\"Job ID of the query job\",\"required\":true,\"lo" +
-            "cation\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of " +
-            "results to read\",\"format\":\"uint32\",\"location\":\"query\"},\"projectId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Project ID of the query job\",\"required\":true,\"location\":\"path" +
-            "\"},\"startIndex\":{\"type\":\"string\",\"description\":\"Zero-based index of the starting" +
-            " row\",\"format\":\"uint64\",\"location\":\"query\"},\"timeoutMs\":{\"type\":\"integer\",\"descr" +
-            "iption\":\"How long to wait for the query to complete, in milliseconds, before ret" +
-            "urning. Default is to return immediately. If the timeout passes before the job c" +
-            "ompletes, the request will fail with a TIMEOUT error\",\"format\":\"uint32\",\"locatio" +
-            "n\":\"query\"}},\"parameterOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"GetQuery" +
-            "ResultsResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert" +
-            "\":{\"id\":\"bigquery.jobs.insert\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"" +
-            "POST\",\"description\":\"Starts a new asynchronous job.\",\"parameters\":{\"projectId\":{" +
-            "\"type\":\"string\",\"description\":\"Project ID of the project that will be billed for" +
-            " the job\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"re" +
-            "quest\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/bigquery\",\"https://www.googleapis.com/auth/devstorage.full_control\",\"" +
-            "https://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.co" +
-            "m/auth/devstorage.read_write\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept" +
-            "\":[\"application/octet-stream\"],\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/" +
-            "upload/bigquery/v2/projects/{projectId}/jobs\"},\"resumable\":{\"multipart\":true,\"pa" +
-            "th\":\"/resumable/upload/bigquery/v2/projects/{projectId}/jobs\"}}}},\"list\":{\"id\":\"" +
-            "bigquery.jobs.list\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"GET\",\"descr" +
-            "iption\":\"Lists all the Jobs in the specified project that were started by the us" +
-            "er.\",\"parameters\":{\"allUsers\":{\"type\":\"boolean\",\"description\":\"Whether to displa" +
-            "y jobs owned by all users in the project. Default false\",\"location\":\"query\"},\"ma" +
-            "xResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\"," +
-            "\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\"" +
-            ":\"Page token, returned by a previous call, to request the next page of results\"," +
-            "\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of th" +
-            "e jobs to list\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\"" +
-            ",\"description\":\"Restrict information returned to a set of selected fields\",\"enum" +
-            "\":[\"full\",\"minimal\"],\"enumDescriptions\":[\"Includes all job data\",\"Does not inclu" +
-            "de the job configuration\"],\"location\":\"query\"},\"stateFilter\":{\"type\":\"string\",\"d" +
-            "escription\":\"Filter for job state\",\"enum\":[\"done\",\"pending\",\"running\"],\"enumDesc" +
-            "riptions\":[\"Finished jobs\",\"Pending jobs\",\"Running jobs\"],\"repeated\":true,\"locat" +
-            "ion\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"response\":{\"$ref\":\"JobList\"},\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"query\":{\"id\":\"bigquery.jobs." +
-            "query\",\"path\":\"projects/{projectId}/queries\",\"httpMethod\":\"POST\",\"description\":\"" +
-            "Runs a BigQuery SQL query synchronously and returns query results if the query c" +
-            "ompletes within a specified timeout.\",\"parameters\":{\"projectId\":{\"type\":\"string\"" +
-            ",\"description\":\"Project ID of the project billed for the query\",\"required\":true," +
-            "\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"request\":{\"$ref\":\"QueryReque" +
-            "st\"},\"response\":{\"$ref\":\"QueryResponse\"},\"scopes\":[\"https://www.googleapis.com/a" +
-            "uth/bigquery\"]}}},\"projects\":{\"methods\":{\"list\":{\"id\":\"bigquery.projects.list\",\"" +
-            "path\":\"projects\",\"httpMethod\":\"GET\",\"description\":\"Lists the projects to which y" +
-            "ou have at least read access.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"des" +
-            "cription\":\"Maximum number of results to return\",\"format\":\"uint32\",\"location\":\"qu" +
-            "ery\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token, returned by a prev" +
-            "ious call, to request the next page of results\",\"location\":\"query\"}},\"response\":" +
-            "{\"$ref\":\"ProjectList\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}," +
-            "\"tabledata\":{\"methods\":{\"list\":{\"id\":\"bigquery.tabledata.list\",\"path\":\"projects/" +
-            "{projectId}/datasets/{datasetId}/tables/{tableId}/data\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Retrieves table data from a specified set of rows.\",\"parameters\":{\"dat" +
-            "asetId\":{\"type\":\"string\",\"description\":\"Dataset ID of the table to read\",\"requir" +
-            "ed\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximu" +
-            "m number of results to return\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Page token, returned by a previous call, identi" +
-            "fying the result set\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Project ID of the table to read\",\"required\":true,\"location\":\"path\"},\"start" +
-            "Index\":{\"type\":\"string\",\"description\":\"Zero-based index of the starting row to r" +
-            "ead\",\"format\":\"uint64\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Table ID of the table to read\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"projectId\",\"datasetId\",\"tableId\"],\"response\":{\"$ref\":\"TableDataList\"}" +
-            ",\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}},\"tables\":{\"methods\":{\"" +
-            "delete\":{\"id\":\"bigquery.tables.delete\",\"path\":\"projects/{projectId}/datasets/{da" +
-            "tasetId}/tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the tabl" +
-            "e specified by tableId from the dataset. If the table contains data, all the dat" +
-            "a will be deleted.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Da" +
-            "taset ID of the table to delete\",\"required\":true,\"location\":\"path\"},\"projectId\":" +
-            "{\"type\":\"string\",\"description\":\"Project ID of the table to delete\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table ID of the " +
-            "table to delete\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectI" +
-            "d\",\"datasetId\",\"tableId\"],\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}" +
-            ",\"get\":{\"id\":\"bigquery.tables.get\",\"path\":\"projects/{projectId}/datasets/{datase" +
-            "tId}/tables/{tableId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the specified tabl" +
-            "e resource by table ID. This method does not return the data in the table, it on" +
-            "ly returns the table resource, which describes the structure of this table.\",\"pa" +
-            "rameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset ID of the request" +
-            "ed table\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Project ID of the requested table\",\"required\":true,\"location\":\"path\"},\"" +
-            "tableId\":{\"type\":\"string\",\"description\":\"Table ID of the requested table\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"tableId" +
-            "\"],\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigque" +
-            "ry\"]},\"insert\":{\"id\":\"bigquery.tables.insert\",\"path\":\"projects/{projectId}/datas" +
-            "ets/{datasetId}/tables\",\"httpMethod\":\"POST\",\"description\":\"Creates a new, empty " +
-            "table in the dataset.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":" +
-            "\"Dataset ID of the new table\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"t" +
-            "ype\":\"string\",\"description\":\"Project ID of the new table\",\"required\":true,\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Tabl" +
-            "e\"},\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigqu" +
-            "ery\"]},\"list\":{\"id\":\"bigquery.tables.list\",\"path\":\"projects/{projectId}/datasets" +
-            "/{datasetId}/tables\",\"httpMethod\":\"GET\",\"description\":\"Lists all tables in the s" +
-            "pecified dataset.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dat" +
-            "aset ID of the tables to list\",\"required\":true,\"location\":\"path\"},\"maxResults\":{" +
-            "\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"u" +
-            "int32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page toke" +
-            "n, returned by a previous call, to request the next page of results\",\"location\":" +
-            "\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of the tables to" +
-            " list\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datase" +
-            "tId\"],\"response\":{\"$ref\":\"TableList\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/bigquery\"]},\"patch\":{\"id\":\"bigquery.tables.patch\",\"path\":\"projects/{projectId}/" +
-            "datasets/{datasetId}/tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updat" +
-            "es information in an existing table, specified by tableId. This method supports " +
-            "patch semantics.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Data" +
+            "g is applied. If no quoting is done, use am empty string.\"},\"schema\":{\"$ref\":\"Ta" +
+            "bleSchema\",\"description\":\"[Optional] Schema of the table being written to.\"},\"sc" +
+            "hemaInline\":{\"type\":\"string\",\"description\":\"[Experimental] Inline schema. For CS" +
+            "V schemas, specify as \\\"Field1:Type1[,Field2:Type2]*\\\". For example, \\\"foo:STRIN" +
+            "G, bar:INTEGER, baz:FLOAT\\\"\"},\"schemaInlineFormat\":{\"type\":\"string\",\"description" +
+            "\":\"[Experimental] Format of inlineSchema field.\"},\"skipLeadingRows\":{\"type\":\"int" +
+            "eger\",\"description\":\"[Optional] Number of rows of initial data to skip in the da" +
+            "ta being imported.\",\"format\":\"int32\"},\"sourceFormat\":{\"type\":\"string\",\"descripti" +
+            "on\":\"[Experimental] Optional and defaults to CSV. Format of source files. For CS" +
+            "V uploads, specify \\\"CSV\\\". For imports of datastore backups, specify \\\"DATASTOR" +
+            "E_BACKUP\\\". For imports of newline-delimited JSON, specify \\\"NEWLINE_DELIMITED_J" +
+            "SON\\\".\"},\"sourceUris\":{\"type\":\"array\",\"description\":\"[Required] Source URIs desc" +
+            "ribing Google Cloud Storage locations of data to load.\",\"items\":{\"type\":\"string\"" +
+            "}},\"writeDisposition\":{\"type\":\"string\",\"description\":\"[Optional] Whether to over" +
+            "write an existing table (WRITE_TRUNCATE), append to an existing table (WRITE_APP" +
+            "END), or require that the the table is empty (WRITE_EMPTY). Default is WRITE_APP" +
+            "END.\"}}},\"JobConfigurationProperties\":{\"id\":\"JobConfigurationProperties\",\"type\":" +
+            "\"object\",\"additionalProperties\":{\"type\":\"string\",\"description\":\"Key-value proper" +
+            "ty pairs.\"}},\"JobConfigurationQuery\":{\"id\":\"JobConfigurationQuery\",\"type\":\"objec" +
+            "t\",\"properties\":{\"createDisposition\":{\"type\":\"string\",\"description\":\"[Optional] " +
+            "Whether to create the table if it doesn\'t already exist (CREATE_IF_NEEDED) or to" +
+            " require the table already exist (CREATE_NEVER). Default is CREATE_IF_NEEDED.\"}," +
+            "\"defaultDataset\":{\"$ref\":\"DatasetReference\",\"description\":\"[Optional] Specifies " +
+            "the default dataset to assume for unqualified table names in the query.\"},\"desti" +
+            "nationTable\":{\"$ref\":\"TableReference\",\"description\":\"[Optional] Describes the ta" +
+            "ble where the query results should be stored. If not present, a new table will b" +
+            "e created to store the results.\"},\"priority\":{\"type\":\"string\",\"description\":\"[Op" +
+            "tional] Specifies a priority for the query. Default is INTERACTIVE. Alternative " +
+            "is BATCH.\"},\"query\":{\"type\":\"string\",\"description\":\"[Required] BigQuery SQL quer" +
+            "y to execute.\"},\"writeDisposition\":{\"type\":\"string\",\"description\":\"[Optional] Wh" +
+            "ether to overwrite an existing table (WRITE_TRUNCATE), append to an existing tab" +
+            "le (WRITE_APPEND), or require that the the table is empty (WRITE_EMPTY). Default" +
+            " is WRITE_EMPTY.\"}}},\"JobConfigurationTableCopy\":{\"id\":\"JobConfigurationTableCop" +
+            "y\",\"type\":\"object\",\"properties\":{\"createDisposition\":{\"type\":\"string\",\"descripti" +
+            "on\":\"[Optional] Whether or not to create a new table, if none exists.\"},\"destina" +
+            "tionTable\":{\"$ref\":\"TableReference\",\"description\":\"[Required] The destination ta" +
+            "ble\"},\"sourceTable\":{\"$ref\":\"TableReference\",\"description\":\"[Required] Source ta" +
+            "ble to copy.\"},\"writeDisposition\":{\"type\":\"string\",\"description\":\"[Optional] Whe" +
+            "ther or not to append or require the table to be empty.\"}}},\"JobList\":{\"id\":\"Job" +
+            "List\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"A has" +
+            "h of this page of results.\"},\"jobs\":{\"type\":\"array\",\"description\":\"List of jobs " +
+            "that were requested.\",\"items\":{\"type\":\"object\",\"properties\":{\"configuration\":{\"$" +
+            "ref\":\"JobConfiguration\",\"description\":\"[Full-projection-only] Specifies the job " +
+            "configuration.\"},\"errorResult\":{\"$ref\":\"ErrorProto\",\"description\":\"A result obje" +
+            "ct that will be present only if the job has failed.\"},\"id\":{\"type\":\"string\",\"des" +
+            "cription\":\"Unique opaque ID of the job.\"},\"jobReference\":{\"$ref\":\"JobReference\"," +
+            "\"description\":\"Job reference uniquely identifying the job.\"},\"kind\":{\"type\":\"str" +
+            "ing\",\"description\":\"The resource type.\",\"default\":\"bigquery#job\"},\"state\":{\"type" +
+            "\":\"string\",\"description\":\"Running state of the job. When the state is DONE, erro" +
+            "rResult can be checked to determine whether the job succeeded or failed.\"},\"stat" +
+            "istics\":{\"$ref\":\"JobStatistics\",\"description\":\"[Output-only] Information about t" +
+            "he job, including starting time and ending time of the job.\"},\"status\":{\"$ref\":\"" +
+            "JobStatus\",\"description\":\"[Full-projection-only] Describes the state of the job." +
+            "\"}}}},\"kind\":{\"type\":\"string\",\"description\":\"The resource type of the response.\"" +
+            ",\"default\":\"bigquery#jobList\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"A" +
+            " token to request the next page of results.\"},\"totalItems\":{\"type\":\"integer\",\"de" +
+            "scription\":\"Total number of jobs in this collection.\",\"format\":\"int32\"}}},\"JobRe" +
+            "ference\":{\"id\":\"JobReference\",\"type\":\"object\",\"properties\":{\"jobId\":{\"type\":\"str" +
+            "ing\",\"description\":\"[Required] ID of the job.\",\"annotations\":{\"required\":[\"bigqu" +
+            "ery.jobs.getQueryResults\"]}},\"projectId\":{\"type\":\"string\",\"description\":\"[Requir" +
+            "ed] Project ID being billed for the job.\",\"annotations\":{\"required\":[\"bigquery.j" +
+            "obs.getQueryResults\"]}}}},\"JobStatistics\":{\"id\":\"JobStatistics\",\"type\":\"object\"," +
+            "\"properties\":{\"endTime\":{\"type\":\"string\",\"description\":\"[Output-only] End time o" +
+            "f this job, in milliseconds since the epoch.\",\"format\":\"int64\"},\"load\":{\"$ref\":\"" +
+            "JobStatistics3\",\"description\":\"[Output-only] Statistics for a load job.\"},\"query" +
+            "\":{\"$ref\":\"JobStatistics2\",\"description\":\"[Output-only] Statistics for a query j" +
+            "ob.\"},\"startTime\":{\"type\":\"string\",\"description\":\"[Output-only] Start time of th" +
+            "is job, in milliseconds since the epoch.\",\"format\":\"int64\"},\"totalBytesProcessed" +
+            "\":{\"type\":\"string\",\"description\":\"[Output-only] [Deprecated] Use the bytes proce" +
+            "ssed in the query statistics instead.\",\"format\":\"int64\"}}},\"JobStatistics2\":{\"id" +
+            "\":\"JobStatistics2\",\"type\":\"object\",\"properties\":{\"totalBytesProcessed\":{\"type\":\"" +
+            "string\",\"description\":\"[Output-only] Total bytes processed for this job.\",\"forma" +
+            "t\":\"int64\"}}},\"JobStatistics3\":{\"id\":\"JobStatistics3\",\"type\":\"object\",\"propertie" +
+            "s\":{\"inputFileBytes\":{\"type\":\"string\",\"description\":\"[Output-only] Number of byt" +
+            "es of source data in a joad job.\",\"format\":\"int64\"},\"inputFiles\":{\"type\":\"string" +
+            "\",\"description\":\"[Output-only] Number of source files in a load job.\",\"format\":\"" +
+            "int64\"},\"outputBytes\":{\"type\":\"string\",\"description\":\"[Output-only] Size of the " +
+            "loaded data in bytes. Note that while an import job is in the running state, thi" +
+            "s value may change.\",\"format\":\"int64\"},\"outputRows\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"[Output-only] Number of rows imported in a load job. Note that while an impo" +
+            "rt job is in the running state, this value may change.\",\"format\":\"int64\"}}},\"Job" +
+            "Status\":{\"id\":\"JobStatus\",\"type\":\"object\",\"properties\":{\"errorResult\":{\"$ref\":\"E" +
+            "rrorProto\",\"description\":\"[Output-only] Final error result of the job. If presen" +
+            "t, indicates that the job has completed and was unsuccessful.\"},\"errors\":{\"type\"" +
+            ":\"array\",\"description\":\"[Output-only] All errors encountered during the running " +
+            "of the job. Errors here do not necessarily mean that the job has completed or wa" +
+            "s unsuccessful.\",\"items\":{\"$ref\":\"ErrorProto\"}},\"state\":{\"type\":\"string\",\"descri" +
+            "ption\":\"[Output-only] Running state of the job.\"}}},\"ProjectList\":{\"id\":\"Project" +
+            "List\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"A has" +
+            "h of the page of results\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of li" +
+            "st.\",\"default\":\"bigquery#projectList\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"A token to request the next page of results.\"},\"projects\":{\"type\":\"array\"" +
+            ",\"description\":\"Projects to which you have at least READ access.\",\"items\":{\"type" +
+            "\":\"object\",\"properties\":{\"friendlyName\":{\"type\":\"string\",\"description\":\"A descri" +
+            "ptive name for this project.\"},\"id\":{\"type\":\"string\",\"description\":\"An opaque ID" +
+            " of this project.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\",\"" +
+            "default\":\"bigquery#project\"},\"projectReference\":{\"$ref\":\"ProjectReference\",\"desc" +
+            "ription\":\"A unique reference to this project.\"}}}},\"totalItems\":{\"type\":\"integer" +
+            "\",\"description\":\"The total number of projects in the list.\",\"format\":\"int32\"}}}," +
+            "\"ProjectReference\":{\"id\":\"ProjectReference\",\"type\":\"object\",\"properties\":{\"proje" +
+            "ctId\":{\"type\":\"string\",\"description\":\"[Required] ID of the project. Can be eithe" +
+            "r the numeric ID or the assigned ID of the project.\"}}},\"QueryRequest\":{\"id\":\"Qu" +
+            "eryRequest\",\"type\":\"object\",\"properties\":{\"defaultDataset\":{\"$ref\":\"DatasetRefer" +
+            "ence\",\"description\":\"[Optional] Specifies the default datasetId and projectId to" +
+            " assume for any unqualified table names in the query. If not set, all table name" +
+            "s in the query string must be fully-qualified in the format projectId:datasetId." +
+            "tableid.\"},\"dryRun\":{\"type\":\"boolean\",\"description\":\"[Optional] If set, don\'t ac" +
+            "tually run the query. A valid query will return an empty response, while an inva" +
+            "lid query will return the same error it would if it wasn\'t a dry run.\"},\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"The resource type of the request.\",\"default\":\"big" +
+            "query#queryRequest\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"[Optional] Th" +
+            "e maximum number of results to return per page of results. If the response list " +
+            "exceeds the maximum response size for a single response, you will have to page t" +
+            "hrough the results. Default is to return the maximum response size.\",\"format\":\"u" +
+            "int32\"},\"query\":{\"type\":\"string\",\"description\":\"[Required] A query string, follo" +
+            "wing the BigQuery query syntax of the query to execute. Table names should be qu" +
+            "alified by dataset name in the format projectId:datasetId.tableId unless you spe" +
+            "cify the defaultDataset value. If the table is in the same project as the job, y" +
+            "ou can omit the project ID. Example: SELECT f1 FROM myProjectId:myDatasetId.myTa" +
+            "bleId.\",\"annotations\":{\"required\":[\"bigquery.jobs.query\"]}},\"timeoutMs\":{\"type\":" +
+            "\"integer\",\"description\":\"[Optional] How long to wait for the query to complete, " +
+            "in milliseconds, before returning. Default is to return immediately. If the time" +
+            "out passes before the job completes, the request will fail with a TIMEOUT error." +
+            "\",\"format\":\"uint32\"}}},\"QueryResponse\":{\"id\":\"QueryResponse\",\"type\":\"object\",\"pr" +
+            "operties\":{\"jobComplete\":{\"type\":\"boolean\",\"description\":\"Whether the query has " +
+            "completed or not. If rows or totalRows are present, this will always be true. If" +
+            " this is false, totalRows will not be available.\"},\"jobReference\":{\"$ref\":\"JobRe" +
+            "ference\",\"description\":\"Reference to the Job that was created to run the query. " +
+            "This field will be present even if the original request timed out, in which case" +
+            " GetQueryResults can be used to read the results once the query has completed. S" +
+            "ince this API only returns the first page of results, subsequent pages can be fe" +
+            "tched via the same mechanism (GetQueryResults).\"},\"kind\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The resource type.\",\"default\":\"bigquery#queryResponse\"},\"rows\":{\"type\":" +
+            "\"array\",\"description\":\"An object with as many results as can be contained within" +
+            " the maximum permitted reply size. To get any additional rows, you can call GetQ" +
+            "ueryResults and specify the jobReference returned above.\",\"items\":{\"$ref\":\"Table" +
+            "Row\"}},\"schema\":{\"$ref\":\"TableSchema\",\"description\":\"The schema of the results. " +
+            "Present only when the query completes successfully.\"},\"totalRows\":{\"type\":\"strin" +
+            "g\",\"description\":\"The total number of rows in the complete query result set, whi" +
+            "ch can be more than the number of rows in this single page of results.\",\"format\"" +
+            ":\"uint64\"}}},\"Table\":{\"id\":\"Table\",\"type\":\"object\",\"properties\":{\"creationTime\":" +
+            "{\"type\":\"string\",\"description\":\"[Output-only] The time when this table was creat" +
+            "ed, in milliseconds since the epoch.\",\"format\":\"int64\"},\"description\":{\"type\":\"s" +
+            "tring\",\"description\":\"[Optional] A user-friendly description of this table.\"},\"e" +
+            "tag\":{\"type\":\"string\",\"description\":\"[Output-only] A hash of this resource.\"},\"e" +
+            "xpirationTime\":{\"type\":\"string\",\"description\":\"[Optional] The time when this tab" +
+            "le expires, in milliseconds since the epoch. If not present, the table will pers" +
+            "ist indefinitely. Expired tables will be deleted and their storage reclaimed.\",\"" +
+            "format\":\"int64\"},\"friendlyName\":{\"type\":\"string\",\"description\":\"[Optional] A des" +
+            "criptive name for this table.\"},\"id\":{\"type\":\"string\",\"description\":\"[Output-onl" +
+            "y] An opaque ID uniquely identifying the table.\"},\"kind\":{\"type\":\"string\",\"descr" +
+            "iption\":\"[Output-only] The type of the resource.\",\"default\":\"bigquery#table\"},\"l" +
+            "astModifiedTime\":{\"type\":\"string\",\"description\":\"[Output-only] The time when thi" +
+            "s table was last modified, in milliseconds since the epoch.\",\"format\":\"int64\"},\"" +
+            "numBytes\":{\"type\":\"string\",\"description\":\"[Output-only] The size of the table in" +
+            " bytes.\",\"format\":\"int64\"},\"numRows\":{\"type\":\"string\",\"description\":\"[Output-onl" +
+            "y] The number of rows of data in this table.\",\"format\":\"uint64\"},\"schema\":{\"$ref" +
+            "\":\"TableSchema\",\"description\":\"[Optional] Describes the schema of this table.\"}," +
+            "\"selfLink\":{\"type\":\"string\",\"description\":\"[Output-only] A URL that can be used " +
+            "to access this resource again.\"},\"tableReference\":{\"$ref\":\"TableReference\",\"desc" +
+            "ription\":\"[Required] Reference describing the ID of this table.\"}}},\"TableCell\":" +
+            "{\"id\":\"TableCell\",\"type\":\"object\",\"description\":\"Represents a single cell in the" +
+            " result set.\",\"properties\":{\"v\":{\"type\":\"any\"}}},\"TableDataList\":{\"id\":\"TableDat" +
+            "aList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"A ha" +
+            "sh of this page of results.\"},\"kind\":{\"type\":\"string\",\"description\":\"The resourc" +
+            "e type of the response.\",\"default\":\"bigquery#tableDataList\"},\"pageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"A token used for paging results. Providing this token i" +
+            "nstead of the startRow parameter can help you retrieve stable results when an un" +
+            "derlying table is changing.\"},\"rows\":{\"type\":\"array\",\"description\":\"Rows of resu" +
+            "lts.\",\"items\":{\"$ref\":\"TableRow\"}},\"totalRows\":{\"type\":\"string\",\"description\":\"T" +
+            "he total number of rows in the complete table.\",\"format\":\"int64\"}}},\"TableFieldS" +
+            "chema\":{\"id\":\"TableFieldSchema\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"" +
+            "array\",\"description\":\"[Optional] Describes nested fields when type is RECORD.\",\"" +
+            "items\":{\"$ref\":\"TableFieldSchema\"}},\"mode\":{\"type\":\"string\",\"description\":\"[Opti" +
+            "onal] Mode of the field (whether or not it can be null. Default is NULLABLE.\"},\"" +
+            "name\":{\"type\":\"string\",\"description\":\"[Required] Name of the field.\"},\"type\":{\"t" +
+            "ype\":\"string\",\"description\":\"[Required] Data type of the field.\"}}},\"TableList\":" +
+            "{\"id\":\"TableList\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"A hash of this page of results.\"},\"kind\":{\"type\":\"string\",\"description\":\"" +
+            "The type of list.\",\"default\":\"bigquery#tableList\"},\"nextPageToken\":{\"type\":\"stri" +
+            "ng\",\"description\":\"A token to request the next page of results.\"},\"tables\":{\"typ" +
+            "e\":\"array\",\"description\":\"Tables in the requested dataset.\",\"items\":{\"type\":\"obj" +
+            "ect\",\"properties\":{\"friendlyName\":{\"type\":\"string\",\"description\":\"The user-frien" +
+            "dly name for this table.\"},\"id\":{\"type\":\"string\",\"description\":\"An opaque ID of " +
+            "the table\"},\"kind\":{\"type\":\"string\",\"description\":\"The resource type.\",\"default\"" +
+            ":\"bigquery#table\"},\"tableReference\":{\"$ref\":\"TableReference\",\"description\":\"A re" +
+            "ference uniquely identifying the table.\"}}}},\"totalItems\":{\"type\":\"integer\",\"des" +
+            "cription\":\"The total number of tables in the dataset.\",\"format\":\"int32\"}}},\"Tabl" +
+            "eReference\":{\"id\":\"TableReference\",\"type\":\"object\",\"properties\":{\"datasetId\":{\"t" +
+            "ype\":\"string\",\"description\":\"[Required] ID of the dataset containing the table.\"" +
+            ",\"annotations\":{\"required\":[\"bigquery.tables.update\"]}},\"projectId\":{\"type\":\"str" +
+            "ing\",\"description\":\"[Required] ID of the project billed for storage of the table" +
+            ".\",\"annotations\":{\"required\":[\"bigquery.tables.update\"]}},\"tableId\":{\"type\":\"str" +
+            "ing\",\"description\":\"[Required] ID of the table.\",\"annotations\":{\"required\":[\"big" +
+            "query.tables.update\"]}}}},\"TableRow\":{\"id\":\"TableRow\",\"type\":\"object\",\"descripti" +
+            "on\":\"Represents a single row in the result set, consisting of one or more fields" +
+            ".\",\"properties\":{\"f\":{\"type\":\"array\",\"items\":{\"$ref\":\"TableCell\"}}}},\"TableSchem" +
+            "a\":{\"id\":\"TableSchema\",\"type\":\"object\",\"properties\":{\"fields\":{\"type\":\"array\",\"d" +
+            "escription\":\"Describes the fields in a table.\",\"items\":{\"$ref\":\"TableFieldSchema" +
+            "\"}}}}},\"resources\":{\"datasets\":{\"methods\":{\"delete\":{\"id\":\"bigquery.datasets.del" +
+            "ete\",\"path\":\"projects/{projectId}/datasets/{datasetId}\",\"httpMethod\":\"DELETE\",\"d" +
+            "escription\":\"Deletes the dataset specified by datasetId value. Before you can de" +
+            "lete a dataset, you must delete all its tables, either manually or by specifying" +
+            " deleteContents. Immediately after deletion, you can create another dataset with" +
+            " the same name.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Datas" +
+            "et ID of dataset being deleted\",\"required\":true,\"location\":\"path\"},\"deleteConten" +
+            "ts\":{\"type\":\"boolean\",\"description\":\"If True, delete all the tables in the datas" +
+            "et. If False and the dataset contains tables, the request will fail. Default is " +
+            "False\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project I" +
+            "D of the dataset being deleted\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"projectId\",\"datasetId\"],\"scopes\":[\"https://www.googleapis.com/auth/bigque" +
+            "ry\"]},\"get\":{\"id\":\"bigquery.datasets.get\",\"path\":\"projects/{projectId}/datasets/" +
+            "{datasetId}\",\"httpMethod\":\"GET\",\"description\":\"Returns the dataset specified by " +
+            "datasetID.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset ID" +
+            " of the requested dataset\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type" +
+            "\":\"string\",\"description\":\"Project ID of the requested dataset\",\"required\":true,\"" +
+            "location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"response\":{\"$ref\"" +
+            ":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert\":{\"id" +
+            "\":\"bigquery.datasets.insert\",\"path\":\"projects/{projectId}/datasets\",\"httpMethod\"" +
+            ":\"POST\",\"description\":\"Creates a new empty dataset.\",\"parameters\":{\"projectId\":{" +
+            "\"type\":\"string\",\"description\":\"Project ID of the new dataset\",\"required\":true,\"l" +
+            "ocation\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"request\":{\"$ref\":\"Dataset\"},\"r" +
+            "esponse\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"" +
+            "]},\"list\":{\"id\":\"bigquery.datasets.list\",\"path\":\"projects/{projectId}/datasets\"," +
+            "\"httpMethod\":\"GET\",\"description\":\"Lists all the datasets in the specified projec" +
+            "t to which the caller has read access; however, a project owner can list (but no" +
+            "t necessarily get) all datasets in his project.\",\"parameters\":{\"maxResults\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"The maximum number of results to return\",\"format\":\"" +
+            "uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page tok" +
+            "en, returned by a previous call, to request the next page of results\",\"location\"" +
+            ":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of the datasets" +
+            " to be listed\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"" +
+            "],\"response\":{\"$ref\":\"DatasetList\"},\"scopes\":[\"https://www.googleapis.com/auth/b" +
+            "igquery\"]},\"patch\":{\"id\":\"bigquery.datasets.patch\",\"path\":\"projects/{projectId}/" +
+            "datasets/{datasetId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates information in" +
+            " an existing dataset, specified by datasetId. Properties not included in the sub" +
+            "mitted resource will not be changed. If you include the access property without " +
+            "any values assigned, the request will fail as you must specify at least one owne" +
+            "r for a dataset. This method supports patch semantics.\",\"parameters\":{\"datasetId" +
+            "\":{\"type\":\"string\",\"description\":\"Dataset ID of the dataset being updated\",\"requ" +
+            "ired\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"description\":\"Projec" +
+            "t ID of the dataset being updated\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Dataset\"},\"response\":{\"$ref" +
+            "\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"update\":{\"i" +
+            "d\":\"bigquery.datasets.update\",\"path\":\"projects/{projectId}/datasets/{datasetId}\"" +
+            ",\"httpMethod\":\"PUT\",\"description\":\"Updates information in an existing dataset, s" +
+            "pecified by datasetId. Properties not included in the submitted resource will no" +
+            "t be changed. If you include the access property without any values assigned, th" +
+            "e request will fail as you must specify at least one owner for a dataset.\",\"para" +
+            "meters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset ID of the dataset b" +
+            "eing updated\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"d" +
+            "escription\":\"Project ID of the dataset being updated\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Dataset\"" +
+            "},\"response\":{\"$ref\":\"Dataset\"},\"scopes\":[\"https://www.googleapis.com/auth/bigqu" +
+            "ery\"]}}},\"jobs\":{\"methods\":{\"get\":{\"id\":\"bigquery.jobs.get\",\"path\":\"projects/{pr" +
+            "ojectId}/jobs/{jobId}\",\"httpMethod\":\"GET\",\"description\":\"Retrieves the specified" +
+            " job by ID.\",\"parameters\":{\"jobId\":{\"type\":\"string\",\"description\":\"Job ID of the" +
+            " requested job\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\"," +
+            "\"description\":\"Project ID of the requested job\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"" +
+            "https://www.googleapis.com/auth/bigquery\"]},\"getQueryResults\":{\"id\":\"bigquery.jo" +
+            "bs.getQueryResults\",\"path\":\"projects/{projectId}/queries/{jobId}\",\"httpMethod\":\"" +
+            "GET\",\"description\":\"Retrieves the results of a query job.\",\"parameters\":{\"jobId\"" +
+            ":{\"type\":\"string\",\"description\":\"Job ID of the query job\",\"required\":true,\"locat" +
+            "ion\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of res" +
+            "ults to read\",\"format\":\"uint32\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\"" +
+            ",\"description\":\"Project ID of the query job\",\"required\":true,\"location\":\"path\"}," +
+            "\"startIndex\":{\"type\":\"string\",\"description\":\"Zero-based index of the starting ro" +
+            "w\",\"format\":\"uint64\",\"location\":\"query\"},\"timeoutMs\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"How long to wait for the query to complete, in milliseconds, before return" +
+            "ing. Default is to return immediately. If the timeout passes before the job comp" +
+            "letes, the request will fail with a TIMEOUT error\",\"format\":\"uint32\",\"location\":" +
+            "\"query\"}},\"parameterOrder\":[\"projectId\",\"jobId\"],\"response\":{\"$ref\":\"GetQueryRes" +
+            "ultsResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"insert\":{" +
+            "\"id\":\"bigquery.jobs.insert\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"POS" +
+            "T\",\"description\":\"Starts a new asynchronous job.\",\"parameters\":{\"projectId\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Project ID of the project that will be billed for th" +
+            "e job\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"reque" +
+            "st\":{\"$ref\":\"Job\"},\"response\":{\"$ref\":\"Job\"},\"scopes\":[\"https://www.googleapis.c" +
+            "om/auth/bigquery\",\"https://www.googleapis.com/auth/devstorage.full_control\",\"htt" +
+            "ps://www.googleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/a" +
+            "uth/devstorage.read_write\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[" +
+            "\"application/octet-stream\"],\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upl" +
+            "oad/bigquery/v2/projects/{projectId}/jobs\"},\"resumable\":{\"multipart\":true,\"path\"" +
+            ":\"/resumable/upload/bigquery/v2/projects/{projectId}/jobs\"}}}},\"list\":{\"id\":\"big" +
+            "query.jobs.list\",\"path\":\"projects/{projectId}/jobs\",\"httpMethod\":\"GET\",\"descript" +
+            "ion\":\"Lists all the Jobs in the specified project that were started by the user." +
+            "\",\"parameters\":{\"allUsers\":{\"type\":\"boolean\",\"description\":\"Whether to display j" +
+            "obs owned by all users in the project. Default false\",\"location\":\"query\"},\"maxRe" +
+            "sults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"fo" +
+            "rmat\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"P" +
+            "age token, returned by a previous call, to request the next page of results\",\"lo" +
+            "cation\":\"query\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of the j" +
+            "obs to list\",\"required\":true,\"location\":\"path\"},\"projection\":{\"type\":\"string\",\"d" +
+            "escription\":\"Restrict information returned to a set of selected fields\",\"enum\":[" +
+            "\"full\",\"minimal\"],\"enumDescriptions\":[\"Includes all job data\",\"Does not include " +
+            "the job configuration\"],\"location\":\"query\"},\"stateFilter\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Filter for job state\",\"enum\":[\"done\",\"pending\",\"running\"],\"enumDescrip" +
+            "tions\":[\"Finished jobs\",\"Pending jobs\",\"Running jobs\"],\"repeated\":true,\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"projectId\"],\"response\":{\"$ref\":\"JobList\"},\"scopes" +
+            "\":[\"https://www.googleapis.com/auth/bigquery\"]},\"query\":{\"id\":\"bigquery.jobs.que" +
+            "ry\",\"path\":\"projects/{projectId}/queries\",\"httpMethod\":\"POST\",\"description\":\"Run" +
+            "s a BigQuery SQL query synchronously and returns query results if the query comp" +
+            "letes within a specified timeout.\",\"parameters\":{\"projectId\":{\"type\":\"string\",\"d" +
+            "escription\":\"Project ID of the project billed for the query\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"projectId\"],\"request\":{\"$ref\":\"QueryRequest\"" +
+            "},\"response\":{\"$ref\":\"QueryResponse\"},\"scopes\":[\"https://www.googleapis.com/auth" +
+            "/bigquery\"]}}},\"projects\":{\"methods\":{\"list\":{\"id\":\"bigquery.projects.list\",\"pat" +
+            "h\":\"projects\",\"httpMethod\":\"GET\",\"description\":\"Lists the projects to which you " +
+            "have at least read access.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"descri" +
+            "ption\":\"Maximum number of results to return\",\"format\":\"uint32\",\"location\":\"query" +
+            "\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token, returned by a previou" +
+            "s call, to request the next page of results\",\"location\":\"query\"}},\"response\":{\"$" +
+            "ref\":\"ProjectList\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}},\"ta" +
+            "bledata\":{\"methods\":{\"list\":{\"id\":\"bigquery.tabledata.list\",\"path\":\"projects/{pr" +
+            "ojectId}/datasets/{datasetId}/tables/{tableId}/data\",\"httpMethod\":\"GET\",\"descrip" +
+            "tion\":\"Retrieves table data from a specified set of rows.\",\"parameters\":{\"datase" +
+            "tId\":{\"type\":\"string\",\"description\":\"Dataset ID of the table to read\",\"required\"" +
+            ":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum n" +
+            "umber of results to return\",\"format\":\"uint32\",\"location\":\"query\"},\"pageToken\":{\"" +
+            "type\":\"string\",\"description\":\"Page token, returned by a previous call, identifyi" +
+            "ng the result set\",\"location\":\"query\"},\"projectId\":{\"type\":\"string\",\"description" +
+            "\":\"Project ID of the table to read\",\"required\":true,\"location\":\"path\"},\"startInd" +
+            "ex\":{\"type\":\"string\",\"description\":\"Zero-based index of the starting row to read" +
+            "\",\"format\":\"uint64\",\"location\":\"query\"},\"tableId\":{\"type\":\"string\",\"description\"" +
+            ":\"Table ID of the table to read\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"projectId\",\"datasetId\",\"tableId\"],\"response\":{\"$ref\":\"TableDataList\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/bigquery\"]}}},\"tables\":{\"methods\":{\"del" +
+            "ete\":{\"id\":\"bigquery.tables.delete\",\"path\":\"projects/{projectId}/datasets/{datas" +
+            "etId}/tables/{tableId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes the table s" +
+            "pecified by tableId from the dataset. If the table contains data, all the data w" +
+            "ill be deleted.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Datas" +
+            "et ID of the table to delete\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"t" +
+            "ype\":\"string\",\"description\":\"Project ID of the table to delete\",\"required\":true," +
+            "\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table ID of the tab" +
+            "le to delete\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"," +
+            "\"datasetId\",\"tableId\"],\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"g" +
+            "et\":{\"id\":\"bigquery.tables.get\",\"path\":\"projects/{projectId}/datasets/{datasetId" +
+            "}/tables/{tableId}\",\"httpMethod\":\"GET\",\"description\":\"Gets the specified table r" +
+            "esource by table ID. This method does not return the data in the table, it only " +
+            "returns the table resource, which describes the structure of this table.\",\"param" +
+            "eters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset ID of the requested " +
+            "table\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Project ID of the requested table\",\"required\":true,\"location\":\"path\"},\"tab" +
+            "leId\":{\"type\":\"string\",\"description\":\"Table ID of the requested table\",\"required" +
+            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\",\"tableId\"]," +
+            "\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"" +
+            "]},\"insert\":{\"id\":\"bigquery.tables.insert\",\"path\":\"projects/{projectId}/datasets" +
+            "/{datasetId}/tables\",\"httpMethod\":\"POST\",\"description\":\"Creates a new, empty tab" +
+            "le in the dataset.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Da" +
+            "taset ID of the new table\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"type" +
+            "\":\"string\",\"description\":\"Project ID of the new table\",\"required\":true,\"location" +
+            "\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId\"],\"request\":{\"$ref\":\"Table\"}" +
+            ",\"response\":{\"$ref\":\"Table\"},\"scopes\":[\"https://www.googleapis.com/auth/bigquery" +
+            "\"]},\"list\":{\"id\":\"bigquery.tables.list\",\"path\":\"projects/{projectId}/datasets/{d" +
+            "atasetId}/tables\",\"httpMethod\":\"GET\",\"description\":\"Lists all tables in the spec" +
+            "ified dataset.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Datase" +
+            "t ID of the tables to list\",\"required\":true,\"location\":\"path\"},\"maxResults\":{\"ty" +
+            "pe\":\"integer\",\"description\":\"Maximum number of results to return\",\"format\":\"uint" +
+            "32\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token, " +
+            "returned by a previous call, to request the next page of results\",\"location\":\"qu" +
+            "ery\"},\"projectId\":{\"type\":\"string\",\"description\":\"Project ID of the tables to li" +
+            "st\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"datasetId" +
+            "\"],\"response\":{\"$ref\":\"TableList\"},\"scopes\":[\"https://www.googleapis.com/auth/bi" +
+            "gquery\"]},\"patch\":{\"id\":\"bigquery.tables.patch\",\"path\":\"projects/{projectId}/dat" +
+            "asets/{datasetId}/tables/{tableId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates " +
+            "information in an existing table, specified by tableId. This method supports pat" +
+            "ch semantics.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Dataset" +
+            " ID of the table to update\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"typ" +
+            "e\":\"string\",\"description\":\"Project ID of the table to update\",\"required\":true,\"l" +
+            "ocation\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table ID of the table" +
+            " to update\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\",\"d" +
+            "atasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"update\":{\"id\":\"bigquery.tabl" +
+            "es.update\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}\",\"" +
+            "httpMethod\":\"PUT\",\"description\":\"Updates information in an existing table, speci" +
+            "fied by tableId.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"Data" +
             "set ID of the table to update\",\"required\":true,\"location\":\"path\"},\"projectId\":{\"" +
             "type\":\"string\",\"description\":\"Project ID of the table to update\",\"required\":true" +
             ",\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table ID of the ta" +
             "ble to update\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"projectId\"" +
             ",\"datasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"},\"" +
-            "scopes\":[\"https://www.googleapis.com/auth/bigquery\"]},\"update\":{\"id\":\"bigquery.t" +
-            "ables.update\",\"path\":\"projects/{projectId}/datasets/{datasetId}/tables/{tableId}" +
-            "\",\"httpMethod\":\"PUT\",\"description\":\"Updates information in an existing table, sp" +
-            "ecified by tableId.\",\"parameters\":{\"datasetId\":{\"type\":\"string\",\"description\":\"D" +
-            "ataset ID of the table to update\",\"required\":true,\"location\":\"path\"},\"projectId\"" +
-            ":{\"type\":\"string\",\"description\":\"Project ID of the table to update\",\"required\":t" +
-            "rue,\"location\":\"path\"},\"tableId\":{\"type\":\"string\",\"description\":\"Table ID of the" +
-            " table to update\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"project" +
-            "Id\",\"datasetId\",\"tableId\"],\"request\":{\"$ref\":\"Table\"},\"response\":{\"$ref\":\"Table\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}}}";
+            "scopes\":[\"https://www.googleapis.com/auth/bigquery\"]}}}}}";
         
         public const string Version = "v2";
         

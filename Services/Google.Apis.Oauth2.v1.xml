@@ -13,6 +13,9 @@
         <member name="P:Google.Apis.Oauth2.v1.Data.Tokeninfo.Email">
             <summary>The email address of the user. Present only if the email scope is present in the request.</summary>
         </member>
+        <member name="P:Google.Apis.Oauth2.v1.Data.Tokeninfo.Email_verified">
+            <summary>Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request.</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.Data.Tokeninfo.Expires_in">
             <summary>The expiry time of the token, as number of seconds left until expiry.</summary>
         </member>
@@ -33,6 +36,9 @@
         </member>
         <member name="P:Google.Apis.Oauth2.v1.Data.Tokeninfo.User_id">
             <summary>The Gaia obfuscated user id.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Data.Tokeninfo.Verified_email">
+            <summary>Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request.</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.Data.Userinfo.Birthday">
             <summary>The user&apos;s birthday. The year is not present.</summary>
@@ -70,6 +76,9 @@
         <member name="P:Google.Apis.Oauth2.v1.Data.Userinfo.Verified_email">
             <summary>Boolean flag which is true if the email address is verified.</summary>
         </member>
+        <member name="M:Google.Apis.Oauth2.v1.Oauth2Service.Tokeninfo">
+            <summary>Get token info</summary>
+        </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
@@ -87,6 +96,18 @@
         </member>
         <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Access_token">
+            <summary>The oauth2 access token</summary>
+        </member>
+        <member name="P:Google.Apis.Oauth2.v1.Oauth2Service.TokeninfoRequest.Id_token">
+            <summary>The ID token</summary>
+        </member>
+        <member name="M:Google.Apis.Oauth2.v1.UserinfoResource.Get">
+            <summary>Get user info</summary>
+        </member>
+        <member name="M:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.Get">
+            <summary>Get user info</summary>
         </member>
         <member name="P:Google.Apis.Oauth2.v1.UserinfoResource.V2Resource.MeResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

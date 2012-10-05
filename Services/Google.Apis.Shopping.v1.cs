@@ -109,7 +109,7 @@ namespace Google.Apis.Shopping.v1.Data {
             }
         }
         
-        /// <summary>Self link of product when generated for a search request. Self link of product when generated for a lookup request.</summary>
+        /// <summary>Self link of product when generated for a lookup request. Self link of product when generated for a search request.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
         public virtual string SelfLink {
             get {
@@ -2043,8 +2043,8 @@ namespace Google.Apis.Shopping.v1 {
             "s\":{\"type\":\"array\",\"description\":\"Recommendations for product.\",\"items\":{\"$ref\":" +
             "\"ShoppingModelRecommendationsJsonV1\"}},\"requestId\":{\"type\":\"string\",\"description" +
             "\":\"Unique identifier for this request.\"},\"selfLink\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Self link of product when generated for a search request. Self link of produ" +
-            "ct when generated for a lookup request.\"}}},\"Products\":{\"id\":\"Products\",\"type\":\"" +
+            "n\":\"Self link of product when generated for a lookup request. Self link of produ" +
+            "ct when generated for a search request.\"}}},\"Products\":{\"id\":\"Products\",\"type\":\"" +
             "object\",\"properties\":{\"categories\":{\"type\":\"array\",\"description\":\"List of catego" +
             "ries.\",\"items\":{\"$ref\":\"ShoppingModelCategoryJsonV1\"}},\"categoryRecommendations\"" +
             ":{\"type\":\"array\",\"description\":\"Recommendations for category.\",\"items\":{\"$ref\":\"" +

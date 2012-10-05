@@ -306,64 +306,66 @@ namespace Google.Apis.Oauth2.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"oauth2:v2\",\"nam" +
-            "e\":\"oauth2\",\"version\":\"v2\",\"description\":\"OAuth2 API\",\"icons\":{\"x16\":\"http://www" +
-            ".google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.com/ima" +
-            "ges/icons/product/search-32.gif\"},\"protocol\":\"rest\",\"baseUrl\":\"https://www.googl" +
-            "eapis.com/\",\"basePath\":\"/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\"" +
-            ":\"\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data" +
-            " format for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[" +
-            "\"Responses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":" +
-            "{\"type\":\"string\",\"description\":\"Selector specifying which fields to include in a" +
-            " partial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"AP" +
-            "I key. Your API key identifies your project and provides you with API access, qu" +
-            "ota, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"q" +
-            "uery\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the cur" +
-            "rent user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"R" +
-            "eturns response with indentations and line breaks.\",\"default\":\"true\",\"location\":" +
-            "\"query\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota " +
-            "purposes for server-side applications. Can be any arbitrary string assigned to a" +
-            " user, but should not exceed 40 characters. Overrides userIp if both are provide" +
-            "d.\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of t" +
-            "he site where the request originates. Use this if you want to enforce per-user l" +
-            "imits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis" +
-            ".com/auth/userinfo.email\":{\"description\":\"View your email address\"},\"https://www" +
-            ".googleapis.com/auth/userinfo.profile\":{\"description\":\"View basic information ab" +
-            "out your account\"}}}},\"schemas\":{\"Tokeninfo\":{\"id\":\"Tokeninfo\",\"type\":\"object\",\"" +
-            "properties\":{\"access_type\":{\"type\":\"string\",\"description\":\"The access type grant" +
-            "ed with this token. It can be offline or online.\"},\"audience\":{\"type\":\"string\",\"" +
-            "description\":\"Who is the intended audience for this token. In general the same a" +
-            "s issued_to.\"},\"email\":{\"type\":\"string\",\"description\":\"The email address of the " +
-            "user. Present only if the email scope is present in the request.\"},\"expires_in\":" +
-            "{\"type\":\"integer\",\"description\":\"The expiry time of the token, as number of seco" +
-            "nds left until expiry.\",\"format\":\"int32\"},\"issued_to\":{\"type\":\"string\",\"descript" +
-            "ion\":\"To whom was the token issued to. In general the same as audience.\"},\"scope" +
-            "\":{\"type\":\"string\",\"description\":\"The space separated list of scopes granted to " +
-            "this token.\"},\"user_id\":{\"type\":\"string\",\"description\":\"The Gaia obfuscated user" +
-            " id.\"},\"verified_email\":{\"type\":\"boolean\",\"description\":\"Boolean flag which is t" +
-            "rue if the email address is verified. Present only if the email scope is present" +
-            " in the request.\"}}},\"Userinfo\":{\"id\":\"Userinfo\",\"type\":\"object\",\"properties\":{\"" +
-            "birthday\":{\"type\":\"string\",\"description\":\"The user\'s birthday. The year is not p" +
-            "resent.\"},\"email\":{\"type\":\"string\",\"description\":\"The user\'s email address.\"},\"f" +
-            "amily_name\":{\"type\":\"string\",\"description\":\"The user\'s last name.\"},\"gender\":{\"t" +
-            "ype\":\"string\",\"description\":\"The user\'s gender.\"},\"given_name\":{\"type\":\"string\"," +
-            "\"description\":\"The user\'s first name.\"},\"id\":{\"type\":\"string\",\"description\":\"The" +
-            " focus obfuscated gaia id of the user.\"},\"link\":{\"type\":\"string\",\"description\":\"" +
-            "URL of the profile page.\"},\"locale\":{\"type\":\"string\",\"description\":\"The user\'s d" +
-            "efault locale.\"},\"name\":{\"type\":\"string\",\"description\":\"The user\'s full name.\"}," +
-            "\"picture\":{\"type\":\"string\",\"description\":\"URL of the user\'s picture image.\"},\"ti" +
-            "mezone\":{\"type\":\"string\",\"description\":\"The user\'s default timezone.\"},\"verified" +
-            "_email\":{\"type\":\"boolean\",\"description\":\"Boolean flag which is true if the email" +
-            " address is verified.\"}}}},\"methods\":{\"tokeninfo\":{\"id\":\"oauth2.tokeninfo\",\"path" +
-            "\":\"oauth2/v2/tokeninfo\",\"httpMethod\":\"POST\",\"parameters\":{\"access_token\":{\"type\"" +
-            ":\"string\",\"location\":\"query\"},\"id_token\":{\"type\":\"string\",\"location\":\"query\"}},\"" +
-            "response\":{\"$ref\":\"Tokeninfo\"}}},\"resources\":{\"userinfo\":{\"methods\":{\"get\":{\"id\"" +
-            ":\"oauth2.userinfo.get\",\"path\":\"oauth2/v2/userinfo\",\"httpMethod\":\"GET\",\"response\"" +
-            ":{\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www.googleapis.com/auth/userinfo.email\"," +
-            "\"https://www.googleapis.com/auth/userinfo.profile\"]}},\"resources\":{\"v2\":{\"resour" +
-            "ces\":{\"me\":{\"methods\":{\"get\":{\"id\":\"oauth2.userinfo.v2.me.get\",\"path\":\"userinfo/" +
-            "v2/me\",\"httpMethod\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/userinfo.email\",\"https://www.googleapis.com/auth/userinfo.pr" +
-            "ofile\"]}}}}}}}}}";
+            "e\":\"oauth2\",\"version\":\"v2\",\"revision\":\"20120831\",\"title\":\"Google OAuth2 API\",\"de" +
+            "scription\":\"Lets you access OAuth2 protocol related APIs.\",\"icons\":{\"x16\":\"http:" +
+            "//www.google.com/images/icons/product/search-16.gif\",\"x32\":\"http://www.google.co" +
+            "m/images/icons/product/search-32.gif\"},\"documentationLink\":\"https://developers.g" +
+            "oogle.com/accounts/docs/OAuth2\",\"protocol\":\"rest\",\"baseUrl\":\"https://www.googlea" +
+            "pis.com/\",\"basePath\":\"/\",\"rootUrl\":\"https://www.googleapis.com/\",\"servicePath\":\"" +
+            "\",\"batchPath\":\"batch\",\"parameters\":{\"alt\":{\"type\":\"string\",\"description\":\"Data f" +
+            "ormat for the response.\",\"default\":\"json\",\"enum\":[\"json\"],\"enumDescriptions\":[\"R" +
+            "esponses with Content-Type of application/json\"],\"location\":\"query\"},\"fields\":{\"" +
+            "type\":\"string\",\"description\":\"Selector specifying which fields to include in a p" +
+            "artial response.\",\"location\":\"query\"},\"key\":{\"type\":\"string\",\"description\":\"API " +
+            "key. Your API key identifies your project and provides you with API access, quot" +
+            "a, and reports. Required unless you provide an OAuth 2.0 token.\",\"location\":\"que" +
+            "ry\"},\"oauth_token\":{\"type\":\"string\",\"description\":\"OAuth 2.0 token for the curre" +
+            "nt user.\",\"location\":\"query\"},\"prettyPrint\":{\"type\":\"boolean\",\"description\":\"Ret" +
+            "urns response with indentations and line breaks.\",\"default\":\"true\",\"location\":\"q" +
+            "uery\"},\"quotaUser\":{\"type\":\"string\",\"description\":\"Available to use for quota pu" +
+            "rposes for server-side applications. Can be any arbitrary string assigned to a u" +
+            "ser, but should not exceed 40 characters. Overrides userIp if both are provided." +
+            "\",\"location\":\"query\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the" +
+            " site where the request originates. Use this if you want to enforce per-user lim" +
+            "its.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.c" +
+            "om/auth/userinfo.email\":{\"description\":\"View your email address\"},\"https://www.g" +
+            "oogleapis.com/auth/userinfo.profile\":{\"description\":\"View basic information abou" +
+            "t your account\"}}}},\"schemas\":{\"Tokeninfo\":{\"id\":\"Tokeninfo\",\"type\":\"object\",\"pr" +
+            "operties\":{\"access_type\":{\"type\":\"string\",\"description\":\"The access type granted" +
+            " with this token. It can be offline or online.\"},\"audience\":{\"type\":\"string\",\"de" +
+            "scription\":\"Who is the intended audience for this token. In general the same as " +
+            "issued_to.\"},\"email\":{\"type\":\"string\",\"description\":\"The email address of the us" +
+            "er. Present only if the email scope is present in the request.\"},\"expires_in\":{\"" +
+            "type\":\"integer\",\"description\":\"The expiry time of the token, as number of second" +
+            "s left until expiry.\",\"format\":\"int32\"},\"issued_to\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"To whom was the token issued to. In general the same as audience.\"},\"scope\":" +
+            "{\"type\":\"string\",\"description\":\"The space separated list of scopes granted to th" +
+            "is token.\"},\"user_id\":{\"type\":\"string\",\"description\":\"The Gaia obfuscated user i" +
+            "d.\"},\"verified_email\":{\"type\":\"boolean\",\"description\":\"Boolean flag which is tru" +
+            "e if the email address is verified. Present only if the email scope is present i" +
+            "n the request.\"}}},\"Userinfo\":{\"id\":\"Userinfo\",\"type\":\"object\",\"properties\":{\"bi" +
+            "rthday\":{\"type\":\"string\",\"description\":\"The user\'s birthday. The year is not pre" +
+            "sent.\"},\"email\":{\"type\":\"string\",\"description\":\"The user\'s email address.\"},\"fam" +
+            "ily_name\":{\"type\":\"string\",\"description\":\"The user\'s last name.\"},\"gender\":{\"typ" +
+            "e\":\"string\",\"description\":\"The user\'s gender.\"},\"given_name\":{\"type\":\"string\",\"d" +
+            "escription\":\"The user\'s first name.\"},\"id\":{\"type\":\"string\",\"description\":\"The f" +
+            "ocus obfuscated gaia id of the user.\"},\"link\":{\"type\":\"string\",\"description\":\"UR" +
+            "L of the profile page.\"},\"locale\":{\"type\":\"string\",\"description\":\"The user\'s def" +
+            "ault locale.\"},\"name\":{\"type\":\"string\",\"description\":\"The user\'s full name.\"},\"p" +
+            "icture\":{\"type\":\"string\",\"description\":\"URL of the user\'s picture image.\"},\"time" +
+            "zone\":{\"type\":\"string\",\"description\":\"The user\'s default timezone.\"},\"verified_e" +
+            "mail\":{\"type\":\"boolean\",\"description\":\"Boolean flag which is true if the email a" +
+            "ddress is verified.\"}}}},\"methods\":{\"tokeninfo\":{\"id\":\"oauth2.tokeninfo\",\"path\":" +
+            "\"oauth2/v2/tokeninfo\",\"httpMethod\":\"POST\",\"parameters\":{\"access_token\":{\"type\":\"" +
+            "string\",\"location\":\"query\"},\"id_token\":{\"type\":\"string\",\"location\":\"query\"}},\"re" +
+            "sponse\":{\"$ref\":\"Tokeninfo\"}}},\"resources\":{\"userinfo\":{\"methods\":{\"get\":{\"id\":\"" +
+            "oauth2.userinfo.get\",\"path\":\"oauth2/v2/userinfo\",\"httpMethod\":\"GET\",\"response\":{" +
+            "\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www.googleapis.com/auth/userinfo.email\",\"h" +
+            "ttps://www.googleapis.com/auth/userinfo.profile\"]}},\"resources\":{\"v2\":{\"resource" +
+            "s\":{\"me\":{\"methods\":{\"get\":{\"id\":\"oauth2.userinfo.v2.me.get\",\"path\":\"userinfo/v2" +
+            "/me\",\"httpMethod\":\"GET\",\"response\":{\"$ref\":\"Userinfo\"},\"scopes\":[\"https://www.go" +
+            "ogleapis.com/auth/userinfo.email\",\"https://www.googleapis.com/auth/userinfo.prof" +
+            "ile\"]}}}}}}}}}";
         
         public const string Version = "v2";
         

@@ -58,6 +58,9 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.ProductFeedsEnabled">
             <summary>Allows advertisers to submit product listings to Google Product Search.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.RedirectDomains">
+            <summary>List of redirect URLs for this advertiser</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.SiteUrl">
             <summary>URL of the website this advertiser advertises from.</summary>
         </member>

@@ -153,7 +153,7 @@
             <summary>[Optional] Maximum number of bad records that should be ignored before the entire job is aborted and no updates are performed.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Quote">
-            <summary>[Optional] Quote character to use. Default is &apos;&quot;&apos;. Note that quoting is done on the raw, binary data before the encoding is applied.</summary>
+            <summary>[Optional] Quote character to use. Default is &apos;&quot;&apos;. Note that quoting is done on the raw, binary data before the encoding is applied. If no quoting is done, use am empty string.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInline">
             <summary>[Experimental] Inline schema. For CSV schemas, specify as &quot;Field1:Type1[,Field2:Type2]*&quot;. For example, &quot;foo:STRING, bar:INTEGER, baz:FLOAT&quot;</summary>
@@ -228,7 +228,22 @@
             <summary>[Output-only] Start time of this job, in milliseconds since the epoch.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics.TotalBytesProcessed">
+            <summary>[Output-only] [Deprecated] Use the bytes processed in the query statistics instead.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics2.TotalBytesProcessed">
             <summary>[Output-only] Total bytes processed for this job.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics3.InputFileBytes">
+            <summary>[Output-only] Number of bytes of source data in a joad job.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics3.InputFiles">
+            <summary>[Output-only] Number of source files in a load job.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics3.OutputBytes">
+            <summary>[Output-only] Size of the loaded data in bytes. Note that while an import job is in the running state, this value may change.</summary>
+        </member>
+        <member name="P:Google.Apis.Bigquery.v2.Data.JobStatistics3.OutputRows">
+            <summary>[Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.JobStatus.Errors">
             <summary>[Output-only] All errors encountered during the running of the job. Errors here do not necessarily mean that the job has completed or was unsuccessful.</summary>
@@ -323,6 +338,9 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.Table.SelfLink">
             <summary>[Output-only] A URL that can be used to access this resource again.</summary>
         </member>
+        <member name="T:Google.Apis.Bigquery.v2.Data.TableCell">
+            <summary>Represents a single cell in the result set.</summary>
+        </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.TableDataList.ETag">
             <summary>A hash of this page of results.</summary>
         </member>
@@ -383,11 +401,8 @@
         <member name="P:Google.Apis.Bigquery.v2.Data.TableReference.TableId">
             <summary>[Required] ID of the table.</summary>
         </member>
-        <member name="P:Google.Apis.Bigquery.v2.Data.TableRow.F">
+        <member name="T:Google.Apis.Bigquery.v2.Data.TableRow">
             <summary>Represents a single row in the result set, consisting of one or more fields.</summary>
-        </member>
-        <member name="P:Google.Apis.Bigquery.v2.Data.TableRow.FData.V">
-            <summary>Contains the field value in this row, as a string.</summary>
         </member>
         <member name="P:Google.Apis.Bigquery.v2.Data.TableSchema.Fields">
             <summary>Describes the fields in a table.</summary>

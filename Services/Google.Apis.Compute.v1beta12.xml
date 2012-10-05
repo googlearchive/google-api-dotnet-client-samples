@@ -68,7 +68,7 @@
             <summary>The &apos;id&apos; value of the snapshot used to create this disk. This value may be used to determine whether the disk was created from the current or a previous instance of a given disk snapshot.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.Disk.Status">
-            <summary>The status of disk creation.</summary>
+            <summary>The status of disk creation (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.Disk.Zone">
             <summary>URL for the zone where the persistent disk resides; provided by the client when the disk is created. A persistent disk must reside in the same zone as the instance to which it is attached.</summary>
@@ -83,7 +83,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.DiskList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.DiskList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -129,7 +129,7 @@
             Example inputs include: [&quot;22&quot;], [&quot;80,&quot;443&quot;] and [&quot;12345-12349&quot;].</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.FirewallList.Id">
-            <summary>Unique identifier for the resource; defined by the server.</summary>
+            <summary>Unique identifier for the resource; defined by the server (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.FirewallList.Items">
             <summary>The firewall resources.</summary>
@@ -138,10 +138,10 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.FirewallList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.FirewallList.SelfLink">
-            <summary>Server defined URL for this resource.</summary>
+            <summary>Server defined URL for this resource (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.Image.CreationTimestamp">
             <summary>Creation timestamp in RFC3339 text format (output only).</summary>
@@ -201,7 +201,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.ImageList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.ImageList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -261,7 +261,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.InstanceList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.InstanceList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -294,7 +294,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.KernelList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.KernelList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -315,7 +315,7 @@
             <summary>Count of CPUs exposed to the instance.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.MachineType.HostCpus">
-            <summary>Count of physical CPUs reserved on the virtual machine host.</summary>
+            <summary>Count of physical CPUs reserved on the virtual machine host. Deprecated.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.MachineType.Id">
             <summary>Unique identifier for the resource; defined by the server (output only).</summary>
@@ -354,7 +354,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.MachineTypeList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.MachineTypeList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -366,7 +366,7 @@
             <summary>Type of the resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.Metadata.ItemsData.Key">
-            <summary>Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project.</summary>
+            <summary>Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must be unique.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.Metadata.ItemsData.Value">
             <summary>Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 15000 bytes.</summary>
@@ -420,7 +420,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.NetworkList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.NetworkList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -507,7 +507,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.OperationList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.OperationList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -594,7 +594,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.SnapshotList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.SnapshotList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -648,7 +648,7 @@
             <summary>Type of resource.</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.ZoneList.NextPageToken">
-            <summary>A token used to continue a truncated list request.</summary>
+            <summary>A token used to continue a truncated list request (output only).</summary>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.Data.ZoneList.SelfLink">
             <summary>Server defined URL for this resource (output only).</summary>
@@ -670,21 +670,21 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.DisksResource.Delete(System.String,System.String)">
             <summary>Deletes the specified persistent disk resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="disk">Required - Name of the persistent disk resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="disk">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the persistent disk resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.DisksResource.Get(System.String,System.String)">
             <summary>Returns the specified persistent disk resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="disk">Required - Name of the persistent disk resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="disk">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the persistent disk resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.DisksResource.Insert(Google.Apis.Compute.v1beta12.Data.Disk,System.String)">
             <summary>Creates a persistent disk resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.DisksResource.List(System.String)">
             <summary>Retrieves the list of persistent disk resources contained within the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.DisksResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -742,31 +742,31 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.Delete(System.String,System.String)">
             <summary>Deletes the specified firewall resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="firewall">Required - Name of the firewall resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="firewall">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the firewall resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.Get(System.String,System.String)">
             <summary>Returns the specified firewall resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="firewall">Required - Name of the firewall resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="firewall">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the firewall resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.Insert(Google.Apis.Compute.v1beta12.Data.Firewall,System.String)">
             <summary>Creates a firewall resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.List(System.String)">
             <summary>Retrieves the list of firewall resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.Patch(Google.Apis.Compute.v1beta12.Data.Firewall,System.String,System.String)">
             <summary>Updates the specified firewall resource with the data included in the request. This method supports patch semantics.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="firewall">Required - Name of the firewall resource to update.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="firewall">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the firewall resource to update.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.FirewallsResource.Update(Google.Apis.Compute.v1beta12.Data.Firewall,System.String,System.String)">
             <summary>Updates the specified firewall resource with the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="firewall">Required - Name of the firewall resource to update.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="firewall">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the firewall resource to update.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.FirewallsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -854,21 +854,21 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ImagesResource.Delete(System.String,System.String)">
             <summary>Deletes the specified image resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="image">Required - Name of the image resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="image">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the image resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ImagesResource.Get(System.String,System.String)">
             <summary>Returns the specified image resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="image">Required - Name of the image resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="image">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the image resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ImagesResource.Insert(Google.Apis.Compute.v1beta12.Data.Image,System.String)">
             <summary>Creates an image resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ImagesResource.List(System.String)">
             <summary>Retrieves the list of image resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ImagesResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -926,34 +926,34 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.AddAccessConfig(Google.Apis.Compute.v1beta12.Data.AccessConfig,System.String,System.String,System.String)">
             <summary>Adds an access config to an instance&apos;s network interface.</summary>
-            <param name="project">Required - Project name.</param>
-            <param name="instance">Required - Instance name.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
             <param name="network_interface">Required - Network interface name.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.Delete(System.String,System.String)">
             <summary>Deletes the specified instance resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="instance">Required - Name of the instance resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the instance resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.DeleteAccessConfig(System.String,System.String,System.String,System.String)">
             <summary>Deletes an access config from an instance&apos;s network interface.</summary>
-            <param name="project">Required - Project name.</param>
-            <param name="instance">Required - Instance name.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Project name.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Instance name.</param>
             <param name="access_config">Required - Access config name.</param>
             <param name="network_interface">Required - Network interface name.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.Get(System.String,System.String)">
             <summary>Returns the specified instance resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="instance">Required - Name of the instance resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="instance">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the instance resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.Insert(Google.Apis.Compute.v1beta12.Data.Instance,System.String)">
             <summary>Creates an instance resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.InstancesResource.List(System.String)">
             <summary>Retrieves the list of instance resources contained within the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.InstancesResource.AddAccessConfigRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1047,12 +1047,12 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.KernelsResource.Get(System.String,System.String)">
             <summary>Returns the specified kernel resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="kernel">Required - Name of the kernel resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="kernel">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the kernel resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.KernelsResource.List(System.String)">
             <summary>Retrieves the list of kernel resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.KernelsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1086,12 +1086,12 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.MachineTypesResource.Get(System.String,System.String)">
             <summary>Returns the specified machine type resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="machineType">Required - Name of the machine type resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="machineType">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the machine type resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.MachineTypesResource.List(System.String)">
             <summary>Retrieves the list of machine type resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.MachineTypesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1125,21 +1125,21 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.NetworksResource.Delete(System.String,System.String)">
             <summary>Deletes the specified network resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="network">Required - Name of the network resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="network">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the network resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.NetworksResource.Get(System.String,System.String)">
             <summary>Returns the specified network resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="network">Required - Name of the network resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="network">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the network resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.NetworksResource.Insert(Google.Apis.Compute.v1beta12.Data.Network,System.String)">
             <summary>Creates a network resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.NetworksResource.List(System.String)">
             <summary>Retrieves the list of network resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.NetworksResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1197,17 +1197,17 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.OperationsResource.Delete(System.String,System.String)">
             <summary>Deletes the specified operation resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="operation">Required - Name of the operation resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="operation">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the operation resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.OperationsResource.Get(System.String,System.String)">
             <summary>Retrieves the specified operation resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="operation">Required - Name of the operation resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="operation">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the operation resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.OperationsResource.List(System.String)">
             <summary>Retrieves the list of operation resources contained within the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.OperationsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1253,11 +1253,11 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ProjectsResource.Get(System.String)">
             <summary>Returns the specified project resource.</summary>
-            <param name="project">Required - Name of the project resource to retrieve.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project resource to retrieve.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ProjectsResource.SetCommonInstanceMetadata(Google.Apis.Compute.v1beta12.Data.Metadata,System.String)">
             <summary>Sets metadata common to all instances within the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ProjectsResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1282,21 +1282,21 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.SnapshotsResource.Delete(System.String,System.String)">
             <summary>Deletes the specified persistent disk snapshot resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="snapshot">Required - Name of the persistent disk snapshot resource to delete.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="snapshot">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the persistent disk snapshot resource to delete.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.SnapshotsResource.Get(System.String,System.String)">
             <summary>Returns the specified persistent disk snapshot resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="snapshot">Required - Name of the persistent disk snapshot resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="snapshot">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the persistent disk snapshot resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.SnapshotsResource.Insert(Google.Apis.Compute.v1beta12.Data.Snapshot,System.String)">
             <summary>Creates a persistent disk snapshot resource in the specified project using the data included in the request.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.SnapshotsResource.List(System.String)">
             <summary>Retrieves the list of persistent disk snapshot resources contained within the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.SnapshotsResource.DeleteRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>
@@ -1354,12 +1354,12 @@
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ZonesResource.Get(System.String,System.String)">
             <summary>Returns the specified zone resource.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
-            <param name="zone">Required - Name of the zone resource to return.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
+            <param name="zone">Required - Must match pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])? - Name of the zone resource to return.</param>
         </member>
         <member name="M:Google.Apis.Compute.v1beta12.ZonesResource.List(System.String)">
             <summary>Retrieves the list of zone resources available to the specified project.</summary>
-            <param name="project">Required - Name of the project scoping this request.</param>
+            <param name="project">Required - Must match pattern (?:(?:[-a-z0-9]{1,63}\.)*(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?):)?(?:[0-9]{1,19}|(?:[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?)) - Name of the project scoping this request.</param>
         </member>
         <member name="P:Google.Apis.Compute.v1beta12.ZonesResource.GetRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

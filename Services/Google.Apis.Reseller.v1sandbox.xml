@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.Reseller.v1sandbox</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Address">
+            <summary>JSON template for address of a customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.AddressLine1">
+            <summary>Address line 1 of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.AddressLine2">
+            <summary>Address line 2 of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.AddressLine3">
+            <summary>Address line 3 of the address.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.ContactName">
+            <summary>Name of the contact person.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.CountryCode">
+            <summary>ISO 3166 country code.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.Kind">
+            <summary>Identifies the resource as a customer address.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.Locality">
+            <summary>Name of the locality. This is in accordance with - http://portablecontacts.net/draft-spec.html#address_element.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.OrganizationName">
+            <summary>Name of the organization.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.PostalCode">
+            <summary>The postal code. This is in accordance with - http://portablecontacts.net/draft-spec.html#address_element.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Address.Region">
+            <summary>Name of the region. This is in accordance with - http://portablecontacts.net/draft-spec.html#address_element.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest">
+            <summary>JSON template for the ChangePlan rpc request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest.Kind">
+            <summary>Identifies the resource as a subscription change plan request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest.PlanName">
+            <summary>Name of the plan to change to.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest.PurchaseOrderId">
+            <summary>Purchase order id for your order tracking purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest.Seats">
+            <summary>JSON template for subscription seats.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Customer">
+            <summary>JSON template for a customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.AlternateEmail">
+            <summary>The alternate email of the customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.CustomerDomain">
+            <summary>The domain name of the customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.CustomerId">
+            <summary>The id of the customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.Kind">
+            <summary>Identifies the resource as a customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.PhoneNumber">
+            <summary>The phone number of the customer.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Customer.PostalAddress">
+            <summary>JSON template for address of a customer.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.RenewalSettings">
+            <summary>JSON template for a subscription renewal settings.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.RenewalSettings.Kind">
+            <summary>Identifies the resource as a subscription renewal setting.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.RenewalSettings.RenewalType">
+            <summary>Subscription renewal type.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Seats">
+            <summary>JSON template for subscription seats.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Seats.Kind">
+            <summary>Identifies the resource as a subscription change plan request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Seats.MaximumNumberOfSeats">
+            <summary>Maximum number of seats that can be purchased. This needs to be provided only for a non-commitment plan. For a commitment plan it is decided by the contract.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Seats.NumberOfSeats">
+            <summary>Number of seats to purchase. This is applicable only for a commitment plan.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Subscription">
+            <summary>JSON template for a subscription.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.CreationTime">
+            <summary>Creation time of this subscription in milliseconds since Unix epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.CustomerId">
+            <summary>The id of the customer to whom the subscription belongs.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.Kind">
+            <summary>Identifies the resource as a Subscription.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.Plan">
+            <summary>Plan details of the subscription</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PurchaseOrderId">
+            <summary>Purchase order id for your order tracking purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.RenewalSettings">
+            <summary>JSON template for a subscription renewal settings.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.Seats">
+            <summary>JSON template for subscription seats.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.SkuId">
+            <summary>Name of the sku for which this subscription is purchased.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.SubscriptionId">
+            <summary>The id of the subscription.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.TrialSettings">
+            <summary>Trial Settings of the subscription.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData">
+            <summary>Plan details of the subscription</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.CommitmentInterval">
+            <summary>Interval of the commitment if it is a commitment plan.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.IsCommitmentPlan">
+            <summary>Whether the plan is a commitment plan or not.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.PlanName">
+            <summary>The plan name of this subscription&apos;s plan.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.CommitmentIntervalData">
+            <summary>Interval of the commitment if it is a commitment plan.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.CommitmentIntervalData.EndTime">
+            <summary>End time of the commitment interval in milliseconds since Unix epoch.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.PlanData.CommitmentIntervalData.StartTime">
+            <summary>Start time of the commitment interval in milliseconds since Unix epoch.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Subscription.TrialSettingsData">
+            <summary>Trial Settings of the subscription.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.TrialSettingsData.IsInTrial">
+            <summary>Whether the subscription is in trial.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscription.TrialSettingsData.TrialEndTime">
+            <summary>End time of the trial in milliseconds since Unix epoch.</summary>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.Data.Subscriptions">
+            <summary>JSON template for a subscription list.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscriptions.Kind">
+            <summary>Identifies the resource as a collection of subscriptions.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscriptions.NextPageToken">
+            <summary>The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.Data.Subscriptions.SubscriptionsValue">
+            <summary>The subscriptions in this page of results.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.ResellerService.Key">
+            <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.CustomersResource.Get(System.String)">
+            <summary>Gets a customer resource if one exists and is owned by the reseller.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.CustomersResource.Insert(Google.Apis.Reseller.v1sandbox.Data.Customer)">
+            <summary>Creates a customer resource if one does not already exist.</summary>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.CustomersResource.Patch(Google.Apis.Reseller.v1sandbox.Data.Customer,System.String)">
+            <summary>Update a customer resource if one it exists and is owned by the reseller. This method supports patch semantics.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.CustomersResource.Update(Google.Apis.Reseller.v1sandbox.Data.Customer,System.String)">
+            <summary>Update a customer resource if one it exists and is owned by the reseller.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.GetRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.InsertRequest.CustomerAuthToken">
+            <summary>An auth token needed for inserting a customer for which domain already exists. Can be generated at https://www.google.com/a/cpanel//TransferToken. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.PatchRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.UpdateRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.CustomersResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlan(Google.Apis.Reseller.v1sandbox.Data.ChangePlanRequest,System.String,System.String)">
+            <summary>Changes the plan of a subscription</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettings(Google.Apis.Reseller.v1sandbox.Data.RenewalSettings,System.String,System.String)">
+            <summary>Changes the renewal settings of a subscription</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeats(Google.Apis.Reseller.v1sandbox.Data.Seats,System.String,System.String)">
+            <summary>Changes the seats configuration of a subscription</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.Delete(System.String,System.String,Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeletionType)">
+            <summary>Cancels/Downgrades a subscription.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+            <param name="deletionType">Required - Must be one of the following values [cancel, downgrade, suspend] - Whether the subscription is to be fully cancelled or downgraded</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.Get(System.String,System.String)">
+            <summary>Gets a subscription of the customer.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.Insert(Google.Apis.Reseller.v1sandbox.Data.Subscription,System.String)">
+            <summary>Creates/Transfers a subscription for the customer.</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.List">
+            <summary>Lists subscriptions of a reseller, optionally filtered by a customer name prefix.</summary>
+        </member>
+        <member name="M:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.StartPaidService(System.String,System.String)">
+            <summary>Starts paid service of a trial subscription</summary>
+            <param name="customerId">Required - Id of the Customer</param>
+            <param name="subscriptionId">Required - Id of the subscription, which is unique for a customer</param>
+        </member>
+        <member name="T:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeletionType">
+            <summary>Whether the subscription is to be fully cancelled or downgraded</summary>
+        </member>
+        <member name="F:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeletionType.Cancel">
+            <summary>Cancels the subscription immediately</summary>
+        </member>
+        <member name="F:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeletionType.Downgrade">
+            <summary>Downgrades a Google Apps for Business subscription to Google Apps</summary>
+        </member>
+        <member name="F:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeletionType.Suspend">
+            <summary>Suspends the subscriptions for 4 days before cancelling it</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlanRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlanRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlanRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlanRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangePlanRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettingsRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettingsRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettingsRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettingsRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeRenewalSettingsRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeatsRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeatsRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeatsRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeatsRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ChangeSeatsRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeleteRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeleteRequest.DeletionType">
+            <summary>Whether the subscription is to be fully cancelled or downgraded</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.DeleteRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.GetRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.GetRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.InsertRequest.CustomerAuthToken">
+            <summary>An auth token needed for transferring a subscription. Can be generated at https://www.google.com/a/cpanel/customer-domain/TransferToken. Optional.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.InsertRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ListRequest.CustomerNamePrefix">
+            <summary>Prefix of the customer's domain name by which the subscriptions should be filtered. Optional</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ListRequest.MaxResults">
+            <summary>Maximum number of results to return</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.ListRequest.PageToken">
+            <summary>Token to specify next page in the list</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.StartPaidServiceRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.StartPaidServiceRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.StartPaidServiceRequest.CustomerId">
+            <summary>Id of the Customer</summary>
+        </member>
+        <member name="P:Google.Apis.Reseller.v1sandbox.SubscriptionsResource.StartPaidServiceRequest.SubscriptionId">
+            <summary>Id of the subscription, which is unique for a customer</summary>
+        </member>
+    </members>
+</doc>
