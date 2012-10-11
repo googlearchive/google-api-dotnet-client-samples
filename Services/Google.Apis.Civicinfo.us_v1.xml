@@ -23,28 +23,28 @@
             <summary>Information about an election administrative body (e.g. County Board of Elections).</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.AbsenteeVotingInfoUrl">
-            <summary>A URL provided by this administrative body for information on absentee</summary>
+            <summary>A URL provided by this administrative body for information on absentee voting.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.BallotInfoUrl">
-            <summary>A URL provided by this administrative body to give contest information to</summary>
+            <summary>A URL provided by this administrative body to give contest information to the voter.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.CorrespondenceAddress">
             <summary>A simple representation of an address.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionInfoUrl">
-            <summary>A URL provided by this administrative body for looking up general election</summary>
+            <summary>A URL provided by this administrative body for looking up general election information.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionOfficials">
             <summary>The election officials for this election administrative body.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRegistrationConfirmationUrl">
-            <summary>A URL provided by this administrative body for confirming that the voter</summary>
+            <summary>A URL provided by this administrative body for confirming that the voter is registered to vote.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRegistrationUrl">
-            <summary>A URL provided by this administrative body for looking up how to register</summary>
+            <summary>A URL provided by this administrative body for looking up how to register to vote.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.ElectionRulesUrl">
-            <summary>A URL provided by this administrative body describing election rules to</summary>
+            <summary>A URL provided by this administrative body describing election rules to the voter.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.AdministrativeBody.HoursOfOperation">
             <summary>A description of the hours of operation for this administrative body.</summary>
@@ -173,7 +173,7 @@
             <summary>A list of available elections</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.ElectionsQueryResponse.Kind">
-            <summary>The kind, fixed to &quot;civicinfo#electionsqueryresponse&quot;.</summary>
+            <summary>The kind, fixed to &quot;civicinfo#electionsQueryResponse&quot;.</summary>
         </member>
         <member name="T:Google.Apis.Civicinfo.us_v1.Data.ElectoralDistrict">
             <summary>Describes the geographic scope of a contest.</summary>
@@ -194,22 +194,25 @@
             <summary>A simple representation of an address.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.EndDate">
-            <summary>The last date that this early vote site may be used.</summary>
+            <summary>The last date that this early vote site may be used. This field is not populated for polling locations.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Name">
-            <summary>The name of the early vote site.</summary>
+            <summary>The name of the early vote site. This field is not populated for polling locations.</summary>
+        </member>
+        <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Notes">
+            <summary>Notes about this location (e.g. accessibility ramp or entrance to use)</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.PollingHours">
-            <summary>A description of when this polling location is open.</summary>
+            <summary>A description of when this location is open.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.Sources">
-            <summary>A list of sources for this polling location. If multiple sources are listed the data has been aggregated from those sources.</summary>
+            <summary>A list of sources for this location. If multiple sources are listed the data has been aggregated from those sources.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.StartDate">
-            <summary>The first date that this early vote site may be used.</summary>
+            <summary>The first date that this early vote site may be used. This field is not populated for polling locations.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.PollingLocation.VoterServices">
-            <summary>The services provided by this early vote site.</summary>
+            <summary>The services provided by this early vote site. This field is not populated for polling locations.</summary>
         </member>
         <member name="T:Google.Apis.Civicinfo.us_v1.Data.SimpleAddressType">
             <summary>A simple representation of an address.</summary>
@@ -263,7 +266,7 @@
             <summary>Information about the election that was queried.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.Kind">
-            <summary>The kind, fixed to &quot;civicinfo#voterinforesponse&quot;.</summary>
+            <summary>The kind, fixed to &quot;civicinfo#voterInfoResponse&quot;.</summary>
         </member>
         <member name="P:Google.Apis.Civicinfo.us_v1.Data.VoterInfoResponse.NormalizedInput">
             <summary>A simple representation of an address.</summary>

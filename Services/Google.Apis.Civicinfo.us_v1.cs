@@ -99,7 +99,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
         
         private string _votingLocationFinderUrl;
         
-        /// <summary>A URL provided by this administrative body for information on absentee</summary>
+        /// <summary>A URL provided by this administrative body for information on absentee voting.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("absenteeVotingInfoUrl")]
         public virtual string AbsenteeVotingInfoUrl {
             get {
@@ -110,7 +110,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A URL provided by this administrative body to give contest information to</summary>
+        /// <summary>A URL provided by this administrative body to give contest information to the voter.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("ballotInfoUrl")]
         public virtual string BallotInfoUrl {
             get {
@@ -132,7 +132,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A URL provided by this administrative body for looking up general election</summary>
+        /// <summary>A URL provided by this administrative body for looking up general election information.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("electionInfoUrl")]
         public virtual string ElectionInfoUrl {
             get {
@@ -154,7 +154,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A URL provided by this administrative body for confirming that the voter</summary>
+        /// <summary>A URL provided by this administrative body for confirming that the voter is registered to vote.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("electionRegistrationConfirmationUrl")]
         public virtual string ElectionRegistrationConfirmationUrl {
             get {
@@ -165,7 +165,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A URL provided by this administrative body for looking up how to register</summary>
+        /// <summary>A URL provided by this administrative body for looking up how to register to vote.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("electionRegistrationUrl")]
         public virtual string ElectionRegistrationUrl {
             get {
@@ -176,7 +176,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A URL provided by this administrative body describing election rules to</summary>
+        /// <summary>A URL provided by this administrative body describing election rules to the voter.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("electionRulesUrl")]
         public virtual string ElectionRulesUrl {
             get {
@@ -673,7 +673,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The kind, fixed to &quot;civicinfo#electionsqueryresponse&quot;.</summary>
+        /// <summary>The kind, fixed to &quot;civicinfo#electionsQueryResponse&quot;.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -746,6 +746,8 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
         
         private string _name;
         
+        private string _notes;
+        
         private string _pollingHours;
         
         private System.Collections.Generic.IList<Source> _sources;
@@ -765,7 +767,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The last date that this early vote site may be used.</summary>
+        /// <summary>The last date that this early vote site may be used. This field is not populated for polling locations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("endDate")]
         public virtual string EndDate {
             get {
@@ -776,7 +778,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The name of the early vote site.</summary>
+        /// <summary>The name of the early vote site. This field is not populated for polling locations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("name")]
         public virtual string Name {
             get {
@@ -787,7 +789,18 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A description of when this polling location is open.</summary>
+        /// <summary>Notes about this location (e.g. accessibility ramp or entrance to use)</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("notes")]
+        public virtual string Notes {
+            get {
+                return this._notes;
+            }
+            set {
+                this._notes = value;
+            }
+        }
+        
+        /// <summary>A description of when this location is open.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("pollingHours")]
         public virtual string PollingHours {
             get {
@@ -798,7 +811,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>A list of sources for this polling location. If multiple sources are listed the data has been aggregated from those sources.</summary>
+        /// <summary>A list of sources for this location. If multiple sources are listed the data has been aggregated from those sources.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("sources")]
         public virtual System.Collections.Generic.IList<Source> Sources {
             get {
@@ -809,7 +822,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The first date that this early vote site may be used.</summary>
+        /// <summary>The first date that this early vote site may be used. This field is not populated for polling locations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("startDate")]
         public virtual string StartDate {
             get {
@@ -820,7 +833,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The services provided by this early vote site.</summary>
+        /// <summary>The services provided by this early vote site. This field is not populated for polling locations.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("voterServices")]
         public virtual string VoterServices {
             get {
@@ -1028,7 +1041,7 @@ namespace Google.Apis.Civicinfo.us_v1.Data {
             }
         }
         
-        /// <summary>The kind, fixed to &quot;civicinfo#voterinforesponse&quot;.</summary>
+        /// <summary>The kind, fixed to &quot;civicinfo#voterInfoResponse&quot;.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("kind")]
         public virtual string Kind {
             get {
@@ -1143,148 +1156,153 @@ namespace Google.Apis.Civicinfo.us_v1 {
             "y\":{\"id\":\"AdministrativeBody\",\"type\":\"object\",\"description\":\"Information about a" +
             "n election administrative body (e.g. County Board of Elections).\",\"properties\":{" +
             "\"absenteeVotingInfoUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this a" +
-            "dministrative body for information on absentee\"},\"ballotInfoUrl\":{\"type\":\"string" +
-            "\",\"description\":\"A URL provided by this administrative body to give contest info" +
-            "rmation to\"},\"correspondenceAddress\":{\"$ref\":\"SimpleAddressType\",\"description\":\"" +
-            "The mailing address of this administrative body.\"},\"electionInfoUrl\":{\"type\":\"st" +
-            "ring\",\"description\":\"A URL provided by this administrative body for looking up g" +
-            "eneral election\"},\"electionOfficials\":{\"type\":\"array\",\"description\":\"The electio" +
-            "n officials for this election administrative body.\",\"items\":{\"$ref\":\"ElectionOff" +
-            "icial\"}},\"electionRegistrationConfirmationUrl\":{\"type\":\"string\",\"description\":\"A" +
-            " URL provided by this administrative body for confirming that the voter\"},\"elect" +
-            "ionRegistrationUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this admin" +
-            "istrative body for looking up how to register\"},\"electionRulesUrl\":{\"type\":\"stri" +
-            "ng\",\"description\":\"A URL provided by this administrative body describing electio" +
-            "n rules to\"},\"hoursOfOperation\":{\"type\":\"string\",\"description\":\"A description of" +
-            " the hours of operation for this administrative body.\"},\"name\":{\"type\":\"string\"," +
-            "\"description\":\"The name of this election administrative body.\"},\"physicalAddress" +
-            "\":{\"$ref\":\"SimpleAddressType\",\"description\":\"The physical address of this admini" +
-            "strative body.\"},\"voter_services\":{\"type\":\"array\",\"description\":\"A description o" +
-            "f the services this administrative body may provide.\",\"items\":{\"type\":\"string\"}}" +
-            ",\"votingLocationFinderUrl\":{\"type\":\"string\",\"description\":\"A URL provided by thi" +
-            "s administrative body for looking up where to vote.\"}}},\"Candidate\":{\"id\":\"Candi" +
-            "date\",\"type\":\"object\",\"description\":\"Information about a candidate running for e" +
-            "lected office.\",\"properties\":{\"candidateUrl\":{\"type\":\"string\",\"description\":\"The" +
-            " URL for the candidate\'s campaign web site.\"},\"channels\":{\"type\":\"array\",\"descri" +
-            "ption\":\"A list of known (social) media channels for this candidate.\",\"items\":{\"$" +
-            "ref\":\"Channel\"}},\"email\":{\"type\":\"string\",\"description\":\"The email address for t" +
-            "he candidate\'s campaign.\"},\"name\":{\"type\":\"string\",\"description\":\"The candidate\'" +
-            "s name.\"},\"orderOnBallot\":{\"type\":\"string\",\"description\":\"The order the candidat" +
-            "e appears on the ballot for this contest.\",\"format\":\"int64\"},\"party\":{\"type\":\"st" +
-            "ring\",\"description\":\"The full name of the party the candidate is a member of.\"}," +
-            "\"phone\":{\"type\":\"string\",\"description\":\"The voice phone number for the candidate" +
-            "\'s campaign office.\"},\"photoUrl\":{\"type\":\"string\",\"description\":\"A URL for a pho" +
-            "to of the candidate.\"}}},\"Channel\":{\"id\":\"Channel\",\"type\":\"object\",\"description\"" +
-            ":\"A social media or web channel for a candidate.\",\"properties\":{\"id\":{\"type\":\"st" +
-            "ring\",\"description\":\"The unique public identifier for the candidate\'s channel.\"}" +
-            ",\"type\":{\"type\":\"string\",\"description\":\"The type of channel. The following is a " +
-            "list of types of channels, but is not exhaustive. More channel types may be adde" +
-            "d at a later time. One of: GooglePlus, YouTube, Facebook, Twitter\"}}},\"Contest\":" +
-            "{\"id\":\"Contest\",\"type\":\"object\",\"description\":\"Information about a contest that " +
-            "appears on a voter\'s ballot.\",\"properties\":{\"ballotPlacement\":{\"type\":\"string\",\"" +
-            "description\":\"A number specifying the position of this contest on the voter\'s ba" +
-            "llot.\",\"format\":\"int64\"},\"candidates\":{\"type\":\"array\",\"description\":\"The candida" +
-            "te choices for this contest.\",\"items\":{\"$ref\":\"Candidate\"}},\"district\":{\"$ref\":\"" +
-            "ElectoralDistrict\",\"description\":\"Information about the electoral district that " +
-            "this contest is in.\"},\"electorateSpecifications\":{\"type\":\"string\",\"description\":" +
-            "\"A description of any additional eligibility requirements for voting in this con" +
-            "test.\"},\"level\":{\"type\":\"string\",\"description\":\"The level of office for this con" +
-            "test. One of: federal, state, county, city, other\"},\"numberElected\":{\"type\":\"str" +
-            "ing\",\"description\":\"The number of candidates that will be elected to office in t" +
-            "his contest.\",\"format\":\"int64\"},\"numberVotingFor\":{\"type\":\"string\",\"description\"" +
-            ":\"The number of candidates that a voter may vote for in this contest.\",\"format\":" +
-            "\"int64\"},\"office\":{\"type\":\"string\",\"description\":\"The name of the office for thi" +
-            "s contest.\"},\"primaryParty\":{\"type\":\"string\",\"description\":\"If this is a partisa" +
-            "n election, the name of the party it is for.\"},\"sources\":{\"type\":\"array\",\"descri" +
-            "ption\":\"A list of sources for this contest. If multiple sources are listed, the " +
-            "data has been aggregated from those sources.\",\"items\":{\"$ref\":\"Source\"}},\"specia" +
-            "l\":{\"type\":\"string\",\"description\":\"\\\"Yes\\\" or \\\"No\\\" depending on whether this a" +
-            " contest being held outside the normal election cycle.\"},\"type\":{\"type\":\"string\"" +
-            ",\"description\":\"The type of contest. Usually this will be General, Primary, or R" +
-            "un-off.\"}}},\"Election\":{\"id\":\"Election\",\"type\":\"object\",\"description\":\"Informati" +
-            "on about the election that was queried.\",\"properties\":{\"electionDay\":{\"type\":\"st" +
-            "ring\",\"description\":\"Day of the election in YYYY-MM-DD format.\"},\"id\":{\"type\":\"s" +
-            "tring\",\"description\":\"The unique ID of this election.\",\"format\":\"int64\"},\"name\":" +
-            "{\"type\":\"string\",\"description\":\"A displayable name for the election.\"}}},\"Electi" +
-            "onOfficial\":{\"id\":\"ElectionOfficial\",\"type\":\"object\",\"description\":\"Information " +
-            "about individual election officials.\",\"properties\":{\"emailAddress\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The email address of the election official.\"},\"faxNumber\":{\"t" +
-            "ype\":\"string\",\"description\":\"The fax number of the election official.\"},\"name\":{" +
-            "\"type\":\"string\",\"description\":\"The full name of the election official.\"},\"office" +
-            "PhoneNumber\":{\"type\":\"string\",\"description\":\"The office phone number of the elec" +
-            "tion official.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of the electi" +
-            "on official.\"}}},\"ElectionsQueryResponse\":{\"id\":\"ElectionsQueryResponse\",\"type\":" +
-            "\"object\",\"description\":\"The list of elections available for this version of the " +
-            "API.\",\"properties\":{\"elections\":{\"type\":\"array\",\"description\":\"A list of availab" +
-            "le elections\",\"items\":{\"$ref\":\"Election\"}},\"kind\":{\"type\":\"string\",\"description\"" +
-            ":\"The kind, fixed to \\\"civicinfo#electionsqueryresponse\\\".\",\"default\":\"civicinfo" +
-            "#electionsqueryresponse\"}}},\"ElectoralDistrict\":{\"id\":\"ElectoralDistrict\",\"type\"" +
-            ":\"object\",\"description\":\"Describes the geographic scope of a contest.\",\"properti" +
-            "es\":{\"id\":{\"type\":\"string\",\"description\":\"An identifier for this district, relat" +
-            "ive to its scope. For example, the 34th State Senate district would have id \\\"34" +
-            "\\\" and a scope of stateUpper.\"},\"name\":{\"type\":\"string\",\"description\":\"The name " +
-            "of the district.\"},\"scope\":{\"type\":\"string\",\"description\":\"The geographic scope " +
-            "of this district. If unspecified the district\'s geography is not known. One of: " +
-            "statewide, congressional, stateUpper, stateLower, countywide, judicial, schoolBo" +
-            "ard, cityWide, special\"}}},\"PollingLocation\":{\"id\":\"PollingLocation\",\"type\":\"obj" +
-            "ect\",\"description\":\"A location where a voter can vote. This may be an early vote" +
-            " site or an election day voting location.\",\"properties\":{\"address\":{\"$ref\":\"Simp" +
-            "leAddressType\",\"description\":\"The address of the polling location.\"},\"endDate\":{" +
-            "\"type\":\"string\",\"description\":\"The last date that this early vote site may be us" +
-            "ed.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the early vote site.\"}," +
-            "\"pollingHours\":{\"type\":\"string\",\"description\":\"A description of when this pollin" +
-            "g location is open.\"},\"sources\":{\"type\":\"array\",\"description\":\"A list of sources" +
-            " for this polling location. If multiple sources are listed the data has been agg" +
-            "regated from those sources.\",\"items\":{\"$ref\":\"Source\"}},\"startDate\":{\"type\":\"str" +
-            "ing\",\"description\":\"The first date that this early vote site may be used.\"},\"vot" +
-            "erServices\":{\"type\":\"string\",\"description\":\"The services provided by this early " +
-            "vote site.\"}}},\"SimpleAddressType\":{\"id\":\"SimpleAddressType\",\"type\":\"object\",\"de" +
-            "scription\":\"A simple representation of an address.\",\"properties\":{\"city\":{\"type\"" +
-            ":\"string\",\"description\":\"The city or town for the address.\"},\"line1\":{\"type\":\"st" +
-            "ring\",\"description\":\"The street name and number of this address.\"},\"line2\":{\"typ" +
-            "e\":\"string\",\"description\":\"The second line the address, if needed.\"},\"line3\":{\"t" +
-            "ype\":\"string\",\"description\":\"The third line of the address, if needed.\"},\"locati" +
-            "onName\":{\"type\":\"string\",\"description\":\"The name of the location.\"},\"state\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The US two letter state abbreviation of the address." +
-            "\"},\"zip\":{\"type\":\"string\",\"description\":\"The US Postal Zip Code of the address.\"" +
-            "}}},\"Source\":{\"id\":\"Source\",\"type\":\"object\",\"description\":\"Contains information " +
-            "about the data source for the element containing it.\",\"properties\":{\"name\":{\"typ" +
-            "e\":\"string\",\"description\":\"The name of the data source.\"},\"official\":{\"type\":\"bo" +
-            "olean\",\"description\":\"Whether this data comes from an official government source" +
-            ".\"}}},\"VoterInfoRequest\":{\"id\":\"VoterInfoRequest\",\"type\":\"object\",\"description\":" +
-            "\"A request for information about a voter.\",\"properties\":{\"address\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The registered address of the voter to look up.\"}}},\"VoterInf" +
-            "oResponse\":{\"id\":\"VoterInfoResponse\",\"type\":\"object\",\"description\":\"The result o" +
-            "f a voter info lookup query.\",\"properties\":{\"contests\":{\"type\":\"array\",\"descript" +
-            "ion\":\"Contests that will appear on the voter\'s ballot\",\"items\":{\"$ref\":\"Contest\"" +
-            "}},\"earlyVoteSites\":{\"type\":\"array\",\"description\":\"Locations where the voter is " +
-            "eligible to vote early, prior to election day\",\"items\":{\"$ref\":\"PollingLocation\"" +
-            "}},\"election\":{\"$ref\":\"Election\",\"description\":\"The election that was queried.\"}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"The kind, fixed to \\\"civicinfo#voterinfo" +
-            "response\\\".\",\"default\":\"civicinfo#voterinforesponse\"},\"normalizedInput\":{\"$ref\":" +
-            "\"SimpleAddressType\",\"description\":\"The normalized version of the requested addre" +
-            "ss\"},\"pollingLocations\":{\"type\":\"array\",\"description\":\"Locations where the voter" +
-            " is eligible to vote on election day. For states with mail-in voting only, these" +
-            " locations will be nearby drop box locations. Drop box locations are free to the" +
-            " voter and may be used instead of placing the ballot in the mail.\",\"items\":{\"$re" +
-            "f\":\"PollingLocation\"}},\"state\":{\"type\":\"array\",\"description\":\"Local Election Inf" +
-            "ormation for the state that the voter votes in. For the US, there will only be o" +
-            "ne element in this array.\",\"items\":{\"$ref\":\"AdministrationRegion\"}},\"status\":{\"t" +
-            "ype\":\"string\",\"description\":\"The result of the request. One of: success, noStree" +
-            "tSegmentFound, addressUnparseable, noAddressParameter, multipleStreetSegmentsFou" +
-            "nd, electionOver, electionUnknown, internalLookupFailure\"}}}},\"resources\":{\"elec" +
-            "tions\":{\"methods\":{\"electionQuery\":{\"id\":\"civicinfo.elections.electionQuery\",\"pa" +
-            "th\":\"elections\",\"httpMethod\":\"GET\",\"description\":\"List of available elections to" +
-            " query.\",\"response\":{\"$ref\":\"ElectionsQueryResponse\"}},\"voterInfoQuery\":{\"id\":\"c" +
-            "ivicinfo.elections.voterInfoQuery\",\"path\":\"voterinfo/{electionId}/lookup\",\"httpM" +
-            "ethod\":\"POST\",\"description\":\"Looks up information relevant to a voter based on t" +
-            "he voter\'s registered address.\",\"parameters\":{\"electionId\":{\"type\":\"string\",\"des" +
-            "cription\":\"The unique ID of the election to look up. A list of election IDs can " +
-            "be obtained at.https://www.googleapis.com/civicinfo/{version}/elections\",\"requir" +
-            "ed\":true,\"format\":\"int64\",\"location\":\"path\"},\"officialOnly\":{\"type\":\"boolean\",\"d" +
-            "escription\":\"If set to true, only data from official state sources will be retur" +
-            "ned.\",\"location\":\"query\"}},\"parameterOrder\":[\"electionId\"],\"request\":{\"$ref\":\"Vo" +
-            "terInfoRequest\"},\"response\":{\"$ref\":\"VoterInfoResponse\"}}}}}}";
+            "dministrative body for information on absentee voting.\"},\"ballotInfoUrl\":{\"type\"" +
+            ":\"string\",\"description\":\"A URL provided by this administrative body to give cont" +
+            "est information to the voter.\"},\"correspondenceAddress\":{\"$ref\":\"SimpleAddressTy" +
+            "pe\",\"description\":\"The mailing address of this administrative body.\"},\"electionI" +
+            "nfoUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this administrative bo" +
+            "dy for looking up general election information.\"},\"electionOfficials\":{\"type\":\"a" +
+            "rray\",\"description\":\"The election officials for this election administrative bod" +
+            "y.\",\"items\":{\"$ref\":\"ElectionOfficial\"}},\"electionRegistrationConfirmationUrl\":{" +
+            "\"type\":\"string\",\"description\":\"A URL provided by this administrative body for co" +
+            "nfirming that the voter is registered to vote.\"},\"electionRegistrationUrl\":{\"typ" +
+            "e\":\"string\",\"description\":\"A URL provided by this administrative body for lookin" +
+            "g up how to register to vote.\"},\"electionRulesUrl\":{\"type\":\"string\",\"description" +
+            "\":\"A URL provided by this administrative body describing election rules to the v" +
+            "oter.\"},\"hoursOfOperation\":{\"type\":\"string\",\"description\":\"A description of the " +
+            "hours of operation for this administrative body.\"},\"name\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The name of this election administrative body.\"},\"physicalAddress\":{\"$" +
+            "ref\":\"SimpleAddressType\",\"description\":\"The physical address of this administrat" +
+            "ive body.\"},\"voter_services\":{\"type\":\"array\",\"description\":\"A description of the" +
+            " services this administrative body may provide.\",\"items\":{\"type\":\"string\"}},\"vot" +
+            "ingLocationFinderUrl\":{\"type\":\"string\",\"description\":\"A URL provided by this adm" +
+            "inistrative body for looking up where to vote.\"}}},\"Candidate\":{\"id\":\"Candidate\"" +
+            ",\"type\":\"object\",\"description\":\"Information about a candidate running for electe" +
+            "d office.\",\"properties\":{\"candidateUrl\":{\"type\":\"string\",\"description\":\"The URL " +
+            "for the candidate\'s campaign web site.\"},\"channels\":{\"type\":\"array\",\"description" +
+            "\":\"A list of known (social) media channels for this candidate.\",\"items\":{\"$ref\":" +
+            "\"Channel\"}},\"email\":{\"type\":\"string\",\"description\":\"The email address for the ca" +
+            "ndidate\'s campaign.\"},\"name\":{\"type\":\"string\",\"description\":\"The candidate\'s nam" +
+            "e.\"},\"orderOnBallot\":{\"type\":\"string\",\"description\":\"The order the candidate app" +
+            "ears on the ballot for this contest.\",\"format\":\"int64\"},\"party\":{\"type\":\"string\"" +
+            ",\"description\":\"The full name of the party the candidate is a member of.\"},\"phon" +
+            "e\":{\"type\":\"string\",\"description\":\"The voice phone number for the candidate\'s ca" +
+            "mpaign office.\"},\"photoUrl\":{\"type\":\"string\",\"description\":\"A URL for a photo of" +
+            " the candidate.\"}}},\"Channel\":{\"id\":\"Channel\",\"type\":\"object\",\"description\":\"A s" +
+            "ocial media or web channel for a candidate.\",\"properties\":{\"id\":{\"type\":\"string\"" +
+            ",\"description\":\"The unique public identifier for the candidate\'s channel.\"},\"typ" +
+            "e\":{\"type\":\"string\",\"description\":\"The type of channel. The following is a list " +
+            "of types of channels, but is not exhaustive. More channel types may be added at " +
+            "a later time. One of: GooglePlus, YouTube, Facebook, Twitter\"}}},\"Contest\":{\"id\"" +
+            ":\"Contest\",\"type\":\"object\",\"description\":\"Information about a contest that appea" +
+            "rs on a voter\'s ballot.\",\"properties\":{\"ballotPlacement\":{\"type\":\"string\",\"descr" +
+            "iption\":\"A number specifying the position of this contest on the voter\'s ballot." +
+            "\",\"format\":\"int64\"},\"candidates\":{\"type\":\"array\",\"description\":\"The candidate ch" +
+            "oices for this contest.\",\"items\":{\"$ref\":\"Candidate\"}},\"district\":{\"$ref\":\"Elect" +
+            "oralDistrict\",\"description\":\"Information about the electoral district that this " +
+            "contest is in.\"},\"electorateSpecifications\":{\"type\":\"string\",\"description\":\"A de" +
+            "scription of any additional eligibility requirements for voting in this contest." +
+            "\"},\"level\":{\"type\":\"string\",\"description\":\"The level of office for this contest." +
+            " One of: federal, state, county, city, other\"},\"numberElected\":{\"type\":\"string\"," +
+            "\"description\":\"The number of candidates that will be elected to office in this c" +
+            "ontest.\",\"format\":\"int64\"},\"numberVotingFor\":{\"type\":\"string\",\"description\":\"The" +
+            " number of candidates that a voter may vote for in this contest.\",\"format\":\"int6" +
+            "4\"},\"office\":{\"type\":\"string\",\"description\":\"The name of the office for this con" +
+            "test.\"},\"primaryParty\":{\"type\":\"string\",\"description\":\"If this is a partisan ele" +
+            "ction, the name of the party it is for.\"},\"sources\":{\"type\":\"array\",\"description" +
+            "\":\"A list of sources for this contest. If multiple sources are listed, the data " +
+            "has been aggregated from those sources.\",\"items\":{\"$ref\":\"Source\"}},\"special\":{\"" +
+            "type\":\"string\",\"description\":\"\\\"Yes\\\" or \\\"No\\\" depending on whether this a cont" +
+            "est being held outside the normal election cycle.\"},\"type\":{\"type\":\"string\",\"des" +
+            "cription\":\"The type of contest. Usually this will be General, Primary, or Run-of" +
+            "f.\"}}},\"Election\":{\"id\":\"Election\",\"type\":\"object\",\"description\":\"Information ab" +
+            "out the election that was queried.\",\"properties\":{\"electionDay\":{\"type\":\"string\"" +
+            ",\"description\":\"Day of the election in YYYY-MM-DD format.\"},\"id\":{\"type\":\"string" +
+            "\",\"description\":\"The unique ID of this election.\",\"format\":\"int64\"},\"name\":{\"typ" +
+            "e\":\"string\",\"description\":\"A displayable name for the election.\"}}},\"ElectionOff" +
+            "icial\":{\"id\":\"ElectionOfficial\",\"type\":\"object\",\"description\":\"Information about" +
+            " individual election officials.\",\"properties\":{\"emailAddress\":{\"type\":\"string\",\"" +
+            "description\":\"The email address of the election official.\"},\"faxNumber\":{\"type\":" +
+            "\"string\",\"description\":\"The fax number of the election official.\"},\"name\":{\"type" +
+            "\":\"string\",\"description\":\"The full name of the election official.\"},\"officePhone" +
+            "Number\":{\"type\":\"string\",\"description\":\"The office phone number of the election " +
+            "official.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of the election of" +
+            "ficial.\"}}},\"ElectionsQueryResponse\":{\"id\":\"ElectionsQueryResponse\",\"type\":\"obje" +
+            "ct\",\"description\":\"The list of elections available for this version of the API.\"" +
+            ",\"properties\":{\"elections\":{\"type\":\"array\",\"description\":\"A list of available el" +
+            "ections\",\"items\":{\"$ref\":\"Election\"}},\"kind\":{\"type\":\"string\",\"description\":\"The" +
+            " kind, fixed to \\\"civicinfo#electionsQueryResponse\\\".\",\"default\":\"civicinfo#elec" +
+            "tionsQueryResponse\"}}},\"ElectoralDistrict\":{\"id\":\"ElectoralDistrict\",\"type\":\"obj" +
+            "ect\",\"description\":\"Describes the geographic scope of a contest.\",\"properties\":{" +
+            "\"id\":{\"type\":\"string\",\"description\":\"An identifier for this district, relative t" +
+            "o its scope. For example, the 34th State Senate district would have id \\\"34\\\" an" +
+            "d a scope of stateUpper.\"},\"name\":{\"type\":\"string\",\"description\":\"The name of th" +
+            "e district.\"},\"scope\":{\"type\":\"string\",\"description\":\"The geographic scope of th" +
+            "is district. If unspecified the district\'s geography is not known. One of: state" +
+            "wide, congressional, stateUpper, stateLower, countywide, judicial, schoolBoard, " +
+            "cityWide, special\"}}},\"PollingLocation\":{\"id\":\"PollingLocation\",\"type\":\"object\"," +
+            "\"description\":\"A location where a voter can vote. This may be an early vote site" +
+            " or an election day voting location.\",\"properties\":{\"address\":{\"$ref\":\"SimpleAdd" +
+            "ressType\",\"description\":\"The address of the location\"},\"endDate\":{\"type\":\"string" +
+            "\",\"description\":\"The last date that this early vote site may be used. This field" +
+            " is not populated for polling locations.\"},\"name\":{\"type\":\"string\",\"description\"" +
+            ":\"The name of the early vote site. This field is not populated for polling locat" +
+            "ions.\"},\"notes\":{\"type\":\"string\",\"description\":\"Notes about this location (e.g. " +
+            "accessibility ramp or entrance to use)\"},\"pollingHours\":{\"type\":\"string\",\"descri" +
+            "ption\":\"A description of when this location is open.\"},\"sources\":{\"type\":\"array\"" +
+            ",\"description\":\"A list of sources for this location. If multiple sources are lis" +
+            "ted the data has been aggregated from those sources.\",\"items\":{\"$ref\":\"Source\"}}" +
+            ",\"startDate\":{\"type\":\"string\",\"description\":\"The first date that this early vote" +
+            " site may be used. This field is not populated for polling locations.\"},\"voterSe" +
+            "rvices\":{\"type\":\"string\",\"description\":\"The services provided by this early vote" +
+            " site. This field is not populated for polling locations.\"}}},\"SimpleAddressType" +
+            "\":{\"id\":\"SimpleAddressType\",\"type\":\"object\",\"description\":\"A simple representati" +
+            "on of an address.\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"The city" +
+            " or town for the address.\"},\"line1\":{\"type\":\"string\",\"description\":\"The street n" +
+            "ame and number of this address.\"},\"line2\":{\"type\":\"string\",\"description\":\"The se" +
+            "cond line the address, if needed.\"},\"line3\":{\"type\":\"string\",\"description\":\"The " +
+            "third line of the address, if needed.\"},\"locationName\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The name of the location.\"},\"state\":{\"type\":\"string\",\"description\":\"The U" +
+            "S two letter state abbreviation of the address.\"},\"zip\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The US Postal Zip Code of the address.\"}}},\"Source\":{\"id\":\"Source\",\"type" +
+            "\":\"object\",\"description\":\"Contains information about the data source for the ele" +
+            "ment containing it.\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"The na" +
+            "me of the data source.\"},\"official\":{\"type\":\"boolean\",\"description\":\"Whether thi" +
+            "s data comes from an official government source.\"}}},\"VoterInfoRequest\":{\"id\":\"V" +
+            "oterInfoRequest\",\"type\":\"object\",\"description\":\"A request for information about " +
+            "a voter.\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The registered" +
+            " address of the voter to look up.\"}}},\"VoterInfoResponse\":{\"id\":\"VoterInfoRespon" +
+            "se\",\"type\":\"object\",\"description\":\"The result of a voter info lookup query.\",\"pr" +
+            "operties\":{\"contests\":{\"type\":\"array\",\"description\":\"Contests that will appear o" +
+            "n the voter\'s ballot\",\"items\":{\"$ref\":\"Contest\"}},\"earlyVoteSites\":{\"type\":\"arra" +
+            "y\",\"description\":\"Locations where the voter is eligible to vote early, prior to " +
+            "election day\",\"items\":{\"$ref\":\"PollingLocation\"}},\"election\":{\"$ref\":\"Election\"," +
+            "\"description\":\"The election that was queried.\"},\"kind\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The kind, fixed to \\\"civicinfo#voterInfoResponse\\\".\",\"default\":\"civicinfo" +
+            "#voterInfoResponse\"},\"normalizedInput\":{\"$ref\":\"SimpleAddressType\",\"description\"" +
+            ":\"The normalized version of the requested address\"},\"pollingLocations\":{\"type\":\"" +
+            "array\",\"description\":\"Locations where the voter is eligible to vote on election " +
+            "day. For states with mail-in voting only, these locations will be nearby drop bo" +
+            "x locations. Drop box locations are free to the voter and may be used instead of" +
+            " placing the ballot in the mail.\",\"items\":{\"$ref\":\"PollingLocation\"}},\"state\":{\"" +
+            "type\":\"array\",\"description\":\"Local Election Information for the state that the v" +
+            "oter votes in. For the US, there will only be one element in this array.\",\"items" +
+            "\":{\"$ref\":\"AdministrationRegion\"}},\"status\":{\"type\":\"string\",\"description\":\"The " +
+            "result of the request. One of: success, noStreetSegmentFound, addressUnparseable" +
+            ", noAddressParameter, multipleStreetSegmentsFound, electionOver, electionUnknown" +
+            ", internalLookupFailure\"}}}},\"resources\":{\"elections\":{\"methods\":{\"electionQuery" +
+            "\":{\"id\":\"civicinfo.elections.electionQuery\",\"path\":\"elections\",\"httpMethod\":\"GET" +
+            "\",\"description\":\"List of available elections to query.\",\"response\":{\"$ref\":\"Elec" +
+            "tionsQueryResponse\"}},\"voterInfoQuery\":{\"id\":\"civicinfo.elections.voterInfoQuery" +
+            "\",\"path\":\"voterinfo/{electionId}/lookup\",\"httpMethod\":\"POST\",\"description\":\"Look" +
+            "s up information relevant to a voter based on the voter\'s registered address.\",\"" +
+            "parameters\":{\"electionId\":{\"type\":\"string\",\"description\":\"The unique ID of the e" +
+            "lection to look up. A list of election IDs can be obtained at.https://www.google" +
+            "apis.com/civicinfo/{version}/elections\",\"required\":true,\"format\":\"int64\",\"locati" +
+            "on\":\"path\"},\"officialOnly\":{\"type\":\"boolean\",\"description\":\"If set to true, only" +
+            " data from official state sources will be returned.\",\"location\":\"query\"}},\"param" +
+            "eterOrder\":[\"electionId\"],\"request\":{\"$ref\":\"VoterInfoRequest\"},\"response\":{\"$re" +
+            "f\":\"VoterInfoResponse\"}}}}}}";
         
         public const string Version = "us_v1";
         

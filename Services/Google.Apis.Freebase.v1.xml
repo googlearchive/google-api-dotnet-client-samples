@@ -15,8 +15,18 @@
             <summary>Performs MQL Queries.</summary>
             <param name="query">Required - An envelope containing a single MQL query.</param>
         </member>
+        <member name="M:Google.Apis.Freebase.v1.FreebaseService.Mqlwrite(System.String)">
+            <summary>Performs MQL Write Operations.</summary>
+            <param name="query">Required - An MQL query with write directives.</param>
+        </member>
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
+        </member>
+        <member name="T:Google.Apis.Freebase.v1.FreebaseService.Scopes">
+            <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        </member>
+        <member name="F:Google.Apis.Freebase.v1.FreebaseService.Scopes.Freebase">
+            <summary>Sign in to Freebase with your account</summary>
         </member>
         <member name="T:Google.Apis.Freebase.v1.FreebaseService.Mode">
             <summary>Method used to scale or crop image.</summary>
@@ -102,6 +112,27 @@
         <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlreadRequest.Uniqueness_failure">
             <summary>How MQL responds to uniqueness failures.</summary>
         </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Callback">
+            <summary>JS method name for JSONP callbacks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Dateline">
+            <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Indent">
+            <summary>How many spaces to indent the json.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Query">
+            <summary>An MQL query with write directives.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.FreebaseService.MqlwriteRequest.Use_permission_of">
+            <summary>Use the same permission node of the object with the specified id.</summary>
+        </member>
         <member name="M:Google.Apis.Freebase.v1.TextResource.Get(Google.Apis.Util.Repeatable{System.String})">
             <summary>Returns blob attached to node at specified id as HTML</summary>
             <param name="id">Required - The id of the item that you want data about</param>
@@ -132,6 +163,34 @@
         </member>
         <member name="P:Google.Apis.Freebase.v1.TextResource.GetRequest.Maxlength">
             <summary>The max number of characters to return. Valid only for 'plain' format.</summary>
+        </member>
+        <member name="M:Google.Apis.Freebase.v1.TopicResource.Lookup(Google.Apis.Util.Repeatable{System.String})">
+            <summary>Get properties and meta-data about a topic.</summary>
+            <param name="id">Required - The id of the item that you want data about.</param>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Dateline">
+            <summary>Determines how up-to-date the data returned is. A unix epoch time, a guid or a 'now'</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Filter">
+            <summary>A frebase domain, type or property id, 'suggest', 'commons', or 'all'. Filter the results and returns only appropriate properties.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Id">
+            <summary>The id of the item that you want data about.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Lang">
+            <summary>The language you 'd like the content in - a freebase /type/lang language key.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Limit">
+            <summary>The maximum number of property values to return for each property.</summary>
+        </member>
+        <member name="P:Google.Apis.Freebase.v1.TopicResource.LookupRequest.Raw">
+            <summary>Do not apply any constraints, or get any names.</summary>
         </member>
     </members>
 </doc>

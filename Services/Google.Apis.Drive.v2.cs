@@ -45,6 +45,8 @@ namespace Google.Apis.Drive.v2.Data {
         
         private string _quotaBytesUsed;
         
+        private string _quotaBytesUsedAggregate;
+        
         private string _quotaBytesUsedInTrash;
         
         private string _remainingChangeIds;
@@ -52,6 +54,8 @@ namespace Google.Apis.Drive.v2.Data {
         private string _rootFolderId;
         
         private string _selfLink;
+        
+        private User _user;
         
         /// <summary>Information about supported additional roles per file type. The most specific type takes precedence.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("additionalRoleInfo")]
@@ -207,6 +211,17 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
+        /// <summary>The number of quota bytes used by all Google apps (Drive, Picasa, etc.).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("quotaBytesUsedAggregate")]
+        public virtual string QuotaBytesUsedAggregate {
+            get {
+                return this._quotaBytesUsedAggregate;
+            }
+            set {
+                this._quotaBytesUsedAggregate = value;
+            }
+        }
+        
         /// <summary>The number of quota bytes used by trashed items.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("quotaBytesUsedInTrash")]
         public virtual string QuotaBytesUsedInTrash {
@@ -248,6 +263,17 @@ namespace Google.Apis.Drive.v2.Data {
             }
             set {
                 this._selfLink = value;
+            }
+        }
+        
+        /// <summary>The JSON template for a user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("user")]
+        public virtual User User {
+            get {
+                return this._user;
+            }
+            set {
+                this._user = value;
             }
         }
         
@@ -1074,6 +1100,490 @@ namespace Google.Apis.Drive.v2.Data {
         }
     }
     
+    /// <summary>A JSON representation of a comment on a file in Google Drive.</summary>
+    public class Comment : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _anchor;
+        
+        private User _author;
+        
+        private string _commentId;
+        
+        private string _content;
+        
+        private Comment.ContextData _context;
+        
+        private string _createdDate;
+        
+        private System.Nullable<bool> _deleted;
+        
+        private string _fileId;
+        
+        private string _fileTitle;
+        
+        private string _htmlContent;
+        
+        private string _kind;
+        
+        private string _modifiedDate;
+        
+        private System.Collections.Generic.IList<CommentReply> _replies;
+        
+        private string _selfLink;
+        
+        private string _status;
+        
+        private string _ETag;
+        
+        /// <summary>A region of the document represented as a JSON string. See anchor documentation for details on how to define and interpret anchor properties.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("anchor")]
+        public virtual string Anchor {
+            get {
+                return this._anchor;
+            }
+            set {
+                this._anchor = value;
+            }
+        }
+        
+        /// <summary>The JSON template for a user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("author")]
+        public virtual User Author {
+            get {
+                return this._author;
+            }
+            set {
+                this._author = value;
+            }
+        }
+        
+        /// <summary>The ID of the comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("commentId")]
+        public virtual string CommentId {
+            get {
+                return this._commentId;
+            }
+            set {
+                this._commentId = value;
+            }
+        }
+        
+        /// <summary>The plain text content used to create this comment. This is not HTML safe and should only be used as a starting point to make edits to a comment&apos;s content.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("content")]
+        public virtual string Content {
+            get {
+                return this._content;
+            }
+            set {
+                this._content = value;
+            }
+        }
+        
+        /// <summary>The context of the file which is being commented on.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("context")]
+        public virtual Comment.ContextData Context {
+            get {
+                return this._context;
+            }
+            set {
+                this._context = value;
+            }
+        }
+        
+        /// <summary>The date when this comment was first created.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("createdDate")]
+        public virtual string CreatedDate {
+            get {
+                return this._createdDate;
+            }
+            set {
+                this._createdDate = value;
+            }
+        }
+        
+        /// <summary>Whether this comment has been deleted. If a comment has been deleted the content will be cleared and this will only represent a comment that once existed.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
+        public virtual System.Nullable<bool> Deleted {
+            get {
+                return this._deleted;
+            }
+            set {
+                this._deleted = value;
+            }
+        }
+        
+        /// <summary>The file which this comment is addressing.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileId")]
+        public virtual string FileId {
+            get {
+                return this._fileId;
+            }
+            set {
+                this._fileId = value;
+            }
+        }
+        
+        /// <summary>The title of the file which this comment is addressing.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("fileTitle")]
+        public virtual string FileTitle {
+            get {
+                return this._fileTitle;
+            }
+            set {
+                this._fileTitle = value;
+            }
+        }
+        
+        /// <summary>HTML formatted content for this comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("htmlContent")]
+        public virtual string HtmlContent {
+            get {
+                return this._htmlContent;
+            }
+            set {
+                this._htmlContent = value;
+            }
+        }
+        
+        /// <summary>This is always drive#comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The date when this comment or any of its replies were last modified.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("modifiedDate")]
+        public virtual string ModifiedDate {
+            get {
+                return this._modifiedDate;
+            }
+            set {
+                this._modifiedDate = value;
+            }
+        }
+        
+        /// <summary>Replies to this post.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("replies")]
+        public virtual System.Collections.Generic.IList<CommentReply> Replies {
+            get {
+                return this._replies;
+            }
+            set {
+                this._replies = value;
+            }
+        }
+        
+        /// <summary>A link back to this comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("selfLink")]
+        public virtual string SelfLink {
+            get {
+                return this._selfLink;
+            }
+            set {
+                this._selfLink = value;
+            }
+        }
+        
+        /// <summary>The status of this comment. Status can be changed by posting a reply to a comment with the desired status.  
+        ///- &quot;open&quot; - The comment is still open. 
+        ///- &quot;resolved&quot; - The comment has been resolved by one of its replies.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("status")]
+        public virtual string Status {
+            get {
+                return this._status;
+            }
+            set {
+                this._status = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+        
+        /// <summary>The context of the file which is being commented on.</summary>
+        public class ContextData {
+            
+            private string _type;
+            
+            private string _value;
+            
+            /// <summary>The MIME type of the context snippet.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("type")]
+            public virtual string Type {
+                get {
+                    return this._type;
+                }
+                set {
+                    this._type = value;
+                }
+            }
+            
+            /// <summary>Data representation of the segment of the file being commented on. In the case of a text file for example, this would be the actual text that the comment is about.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("value")]
+            public virtual string Value {
+                get {
+                    return this._value;
+                }
+                set {
+                    this._value = value;
+                }
+            }
+        }
+    }
+    
+    /// <summary>A JSON representation of a list of comments on a file in Google Drive.</summary>
+    public class CommentList : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<Comment> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private string _ETag;
+        
+        /// <summary>List of comments.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<Comment> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>This is always drive#commentList.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The token to use to request the next page of results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    /// <summary>A JSON representation of a reply to a comment on a file in Google Drive.</summary>
+    public class CommentReply : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private User _author;
+        
+        private string _content;
+        
+        private string _createdDate;
+        
+        private System.Nullable<bool> _deleted;
+        
+        private string _htmlContent;
+        
+        private string _kind;
+        
+        private string _modifiedDate;
+        
+        private string _replyId;
+        
+        private string _verb;
+        
+        private string _ETag;
+        
+        /// <summary>The JSON template for a user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("author")]
+        public virtual User Author {
+            get {
+                return this._author;
+            }
+            set {
+                this._author = value;
+            }
+        }
+        
+        /// <summary>The plain text content used to create this reply. This is not HTML safe and should only be used as a starting point to make edits to a reply&apos;s content. This field is required on inserts if no verb is specified (resolve/reopen).</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("content")]
+        public virtual string Content {
+            get {
+                return this._content;
+            }
+            set {
+                this._content = value;
+            }
+        }
+        
+        /// <summary>The date when this reply was first created.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("createdDate")]
+        public virtual string CreatedDate {
+            get {
+                return this._createdDate;
+            }
+            set {
+                this._createdDate = value;
+            }
+        }
+        
+        /// <summary>Whether this reply has been deleted. If a reply has been deleted the content will be cleared and this will only represent a reply that once existed.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("deleted")]
+        public virtual System.Nullable<bool> Deleted {
+            get {
+                return this._deleted;
+            }
+            set {
+                this._deleted = value;
+            }
+        }
+        
+        /// <summary>HTML formatted content for this reply.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("htmlContent")]
+        public virtual string HtmlContent {
+            get {
+                return this._htmlContent;
+            }
+            set {
+                this._htmlContent = value;
+            }
+        }
+        
+        /// <summary>This is always drive#commentReply.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The date when this reply was last modified.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("modifiedDate")]
+        public virtual string ModifiedDate {
+            get {
+                return this._modifiedDate;
+            }
+            set {
+                this._modifiedDate = value;
+            }
+        }
+        
+        /// <summary>The ID of the reply.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("replyId")]
+        public virtual string ReplyId {
+            get {
+                return this._replyId;
+            }
+            set {
+                this._replyId = value;
+            }
+        }
+        
+        /// <summary>The action this reply performed to the parent comment. When creating a new reply this is the action to be perform to the parent comment. Possible values are:  
+        ///- &quot;resolve&quot; - To resolve a comment. 
+        ///- &quot;reopen&quot; - To reopen (un-resolve) a comment.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("verb")]
+        public virtual string Verb {
+            get {
+                return this._verb;
+            }
+            set {
+                this._verb = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
+    /// <summary>A JSON representation of a list of replies to a comment on a file in Google Drive.</summary>
+    public class CommentReplyList : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private System.Collections.Generic.IList<CommentReply> _items;
+        
+        private string _kind;
+        
+        private string _nextPageToken;
+        
+        private string _ETag;
+        
+        /// <summary>List of reply.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("items")]
+        public virtual System.Collections.Generic.IList<CommentReply> Items {
+            get {
+                return this._items;
+            }
+            set {
+                this._items = value;
+            }
+        }
+        
+        /// <summary>This is always drive#commentReplyList.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The token to use to request the next page of results.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("nextPageToken")]
+        public virtual string NextPageToken {
+            get {
+                return this._nextPageToken;
+            }
+            set {
+                this._nextPageToken = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+    }
+    
     /// <summary>The metadata for a file.</summary>
     public class File : Google.Apis.Requests.IDirectResponseSchema {
         
@@ -1132,6 +1642,8 @@ namespace Google.Apis.Drive.v2.Data {
         private string _selfLink;
         
         private string _sharedWithMeDate;
+        
+        private File.ThumbnailData _thumbnail;
         
         private string _thumbnailLink;
         
@@ -1452,6 +1964,17 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
         
+        /// <summary>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by Google.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnail")]
+        public virtual File.ThumbnailData Thumbnail {
+            get {
+                return this._thumbnail;
+            }
+            set {
+                this._thumbnail = value;
+            }
+        }
+        
         /// <summary>A link to the file&apos;s thumbnail.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("thumbnailLink")]
         public virtual string ThumbnailLink {
@@ -1514,13 +2037,106 @@ namespace Google.Apis.Drive.v2.Data {
         /// <summary>Metadata about image media. This will only be present for image types, and its contents will depend on what can be parsed from the image content.</summary>
         public class ImageMediaMetadataData {
             
+            private System.Nullable<double> _aperture;
+            
+            private string _cameraMake;
+            
+            private string _cameraModel;
+            
+            private string _date;
+            
+            private System.Nullable<double> _exposureTime;
+            
+            private System.Nullable<bool> _flashUsed;
+            
+            private System.Nullable<double> _focalLength;
+            
             private System.Nullable<long> _height;
+            
+            private System.Nullable<long> _isoSpeed;
             
             private ImageMediaMetadataData.LocationData _location;
             
             private System.Nullable<long> _rotation;
             
             private System.Nullable<long> _width;
+            
+            /// <summary>The aperture used to create the photo (f-number).</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("aperture")]
+            public virtual System.Nullable<double> Aperture {
+                get {
+                    return this._aperture;
+                }
+                set {
+                    this._aperture = value;
+                }
+            }
+            
+            /// <summary>The make of the camera used to create the photo.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("cameraMake")]
+            public virtual string CameraMake {
+                get {
+                    return this._cameraMake;
+                }
+                set {
+                    this._cameraMake = value;
+                }
+            }
+            
+            /// <summary>The model of the camera used to create the photo.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("cameraModel")]
+            public virtual string CameraModel {
+                get {
+                    return this._cameraModel;
+                }
+                set {
+                    this._cameraModel = value;
+                }
+            }
+            
+            /// <summary>The date and time the photo was taken (EXIF format timestamp).</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("date")]
+            public virtual string Date {
+                get {
+                    return this._date;
+                }
+                set {
+                    this._date = value;
+                }
+            }
+            
+            /// <summary>The length of the exposure, in seconds.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("exposureTime")]
+            public virtual System.Nullable<double> ExposureTime {
+                get {
+                    return this._exposureTime;
+                }
+                set {
+                    this._exposureTime = value;
+                }
+            }
+            
+            /// <summary>Whether a flash was used to create the photo.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("flashUsed")]
+            public virtual System.Nullable<bool> FlashUsed {
+                get {
+                    return this._flashUsed;
+                }
+                set {
+                    this._flashUsed = value;
+                }
+            }
+            
+            /// <summary>The focal length used to create the photo, in millimeters.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("focalLength")]
+            public virtual System.Nullable<double> FocalLength {
+                get {
+                    return this._focalLength;
+                }
+                set {
+                    this._focalLength = value;
+                }
+            }
             
             /// <summary>The height of the image in pixels.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("height")]
@@ -1530,6 +2146,17 @@ namespace Google.Apis.Drive.v2.Data {
                 }
                 set {
                     this._height = value;
+                }
+            }
+            
+            /// <summary>The ISO speed used to create the photo.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("isoSpeed")]
+            public virtual System.Nullable<long> IsoSpeed {
+                get {
+                    return this._isoSpeed;
+                }
+                set {
+                    this._isoSpeed = value;
                 }
             }
             
@@ -1692,6 +2319,36 @@ namespace Google.Apis.Drive.v2.Data {
                 }
                 set {
                     this._viewed = value;
+                }
+            }
+        }
+        
+        /// <summary>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by Google.</summary>
+        public class ThumbnailData {
+            
+            private string _image;
+            
+            private string _mimeType;
+            
+            /// <summary>The URL-safe Base64 encoded bytes of the thumbnail image.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("image")]
+            public virtual string Image {
+                get {
+                    return this._image;
+                }
+                set {
+                    this._image = value;
+                }
+            }
+            
+            /// <summary>The MIME type of the thumbnail.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("mimeType")]
+            public virtual string MimeType {
+                get {
+                    return this._mimeType;
+                }
+                set {
+                    this._mimeType = value;
                 }
             }
         }
@@ -2422,6 +3079,79 @@ namespace Google.Apis.Drive.v2.Data {
             }
         }
     }
+    
+    /// <summary>The JSON template for a user.</summary>
+    public class User {
+        
+        private string _displayName;
+        
+        private System.Nullable<bool> _isAuthenticatedUser;
+        
+        private string _kind;
+        
+        private User.PictureData _picture;
+        
+        /// <summary>A plain text displayable name for this user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("displayName")]
+        public virtual string DisplayName {
+            get {
+                return this._displayName;
+            }
+            set {
+                this._displayName = value;
+            }
+        }
+        
+        /// <summary>Whether this user is the same as the authenticated user of which the request was made on behalf.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("isAuthenticatedUser")]
+        public virtual System.Nullable<bool> IsAuthenticatedUser {
+            get {
+                return this._isAuthenticatedUser;
+            }
+            set {
+                this._isAuthenticatedUser = value;
+            }
+        }
+        
+        /// <summary>This is always drive#user.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("kind")]
+        public virtual string Kind {
+            get {
+                return this._kind;
+            }
+            set {
+                this._kind = value;
+            }
+        }
+        
+        /// <summary>The user&apos;s profile picture.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("picture")]
+        public virtual User.PictureData Picture {
+            get {
+                return this._picture;
+            }
+            set {
+                this._picture = value;
+            }
+        }
+        
+        /// <summary>The user&apos;s profile picture.</summary>
+        public class PictureData {
+            
+            private string _url;
+            
+            /// <summary>A URL that points to a profile picture of this user.</summary>
+            [Newtonsoft.Json.JsonPropertyAttribute("url")]
+            public virtual string Url {
+                get {
+                    return this._url;
+                }
+                set {
+                    this._url = value;
+                }
+            }
+        }
+    }
 }
 namespace Google.Apis.Drive.v2 {
     using System;
@@ -2438,7 +3168,7 @@ namespace Google.Apis.Drive.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"drive:v2\",\"name" +
-            "\":\"drive\",\"version\":\"v2\",\"revision\":\"20120904\",\"title\":\"Drive API\",\"description\"" +
+            "\":\"drive\",\"version\":\"v2\",\"revision\":\"20121008\",\"title\":\"Drive API\",\"description\"" +
             ":\"The API to interact with Drive.\",\"icons\":{\"x16\":\"https://ssl.gstatic.com/docs/" +
             "doclist/images/drive_icon_16.png\",\"x32\":\"https://ssl.gstatic.com/docs/doclist/im" +
             "ages/drive_icon_32.png\"},\"documentationLink\":\"https://developers.google.com/driv" +
@@ -2504,545 +3234,730 @@ namespace Google.Apis.Drive.v2 {
             "nt user\'s ID as visible in the permissions collection.\"},\"quotaBytesTotal\":{\"typ" +
             "e\":\"string\",\"description\":\"The total number of quota bytes.\",\"format\":\"int64\"},\"" +
             "quotaBytesUsed\":{\"type\":\"string\",\"description\":\"The number of quota bytes used.\"" +
-            ",\"format\":\"int64\"},\"quotaBytesUsedInTrash\":{\"type\":\"string\",\"description\":\"The n" +
-            "umber of quota bytes used by trashed items.\",\"format\":\"int64\"},\"remainingChangeI" +
-            "ds\":{\"type\":\"string\",\"description\":\"The number of remaining change ids.\",\"format" +
-            "\":\"int64\"},\"rootFolderId\":{\"type\":\"string\",\"description\":\"The id of the root fol" +
-            "der.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this item.\"}}}," +
-            "\"App\":{\"id\":\"App\",\"type\":\"object\",\"description\":\"Information about a third-party" +
-            " application which the user has installed or given access to Google Drive.\",\"pro" +
-            "perties\":{\"authorized\":{\"type\":\"boolean\",\"description\":\"Whether the app is autho" +
-            "rized to access data on the user\'s Drive.\"},\"icons\":{\"type\":\"array\",\"description" +
-            "\":\"The various icons for the app.\",\"items\":{\"type\":\"object\",\"properties\":{\"categ" +
-            "ory\":{\"type\":\"string\",\"description\":\"Category of the icon. Allowed values are:  " +
-            "\\n- application - icon for the application \\n- document - icon for a file associ" +
-            "ated with the app \\n- documentShared - icon for a shared file associated with th" +
-            "e app\"},\"iconUrl\":{\"type\":\"string\",\"description\":\"URL for the icon.\"},\"size\":{\"t" +
-            "ype\":\"integer\",\"description\":\"Size of the icon. Represented as the maximum of th" +
-            "e width and height.\",\"format\":\"int32\"}}}},\"id\":{\"type\":\"string\",\"description\":\"T" +
-            "he ID of the app.\"},\"installed\":{\"type\":\"boolean\",\"description\":\"Whether the app" +
-            " is installed.\"},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#app" +
-            ".\",\"default\":\"drive#app\"},\"name\":{\"type\":\"string\",\"description\":\"The name of the" +
-            " app.\"},\"objectType\":{\"type\":\"string\",\"description\":\"The type of object this app" +
-            " creates (e.g. Chart). If empty, the app name should be used instead.\"},\"primary" +
-            "FileExtensions\":{\"type\":\"array\",\"description\":\"The list of primary file extensio" +
-            "ns.\",\"items\":{\"type\":\"string\"}},\"primaryMimeTypes\":{\"type\":\"array\",\"description\"" +
-            ":\"The list of primary mime types.\",\"items\":{\"type\":\"string\"}},\"productUrl\":{\"typ" +
-            "e\":\"string\",\"description\":\"The product URL.\"},\"secondaryFileExtensions\":{\"type\":" +
-            "\"array\",\"description\":\"The list of secondary file extensions.\",\"items\":{\"type\":\"" +
-            "string\"}},\"secondaryMimeTypes\":{\"type\":\"array\",\"description\":\"The list of second" +
-            "ary mime types.\",\"items\":{\"type\":\"string\"}},\"supportsCreate\":{\"type\":\"boolean\",\"" +
-            "description\":\"Whether this app supports creating new objects.\"},\"supportsImport\"" +
-            ":{\"type\":\"boolean\",\"description\":\"Whether this app supports importing Google Doc" +
-            "s.\"},\"useByDefault\":{\"type\":\"boolean\",\"description\":\"Whether the app is selected" +
-            " as the default handler for the types it supports.\"}}},\"AppList\":{\"id\":\"AppList\"" +
-            ",\"type\":\"object\",\"description\":\"A list of third-party applications which the use" +
-            "r has installed or given access to Google Drive.\",\"properties\":{\"etag\":{\"type\":\"" +
-            "string\",\"description\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"descript" +
-            "ion\":\"The actual list of apps.\",\"items\":{\"$ref\":\"App\"}},\"kind\":{\"type\":\"string\"," +
-            "\"description\":\"This is always drive#appList.\",\"default\":\"drive#appList\"},\"selfLi" +
-            "nk\":{\"type\":\"string\",\"description\":\"A link back to this list.\"}}},\"Change\":{\"id\"" +
-            ":\"Change\",\"type\":\"object\",\"description\":\"Representation of a change to a file.\"," +
-            "\"properties\":{\"deleted\":{\"type\":\"boolean\",\"description\":\"Whether the file has be" +
-            "en deleted.\"},\"file\":{\"$ref\":\"File\",\"description\":\"The updated state of the file" +
-            ". Present if the file has not been deleted.\"},\"fileId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The ID of the file associated with this change.\"},\"id\":{\"type\":\"string\",\"" +
-            "description\":\"The ID of the change.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"" +
-            "description\":\"This is always drive#change.\",\"default\":\"drive#change\"},\"selfLink\"" +
-            ":{\"type\":\"string\",\"description\":\"A link back to this change.\"}}},\"ChangeList\":{\"" +
-            "id\":\"ChangeList\",\"type\":\"object\",\"description\":\"A list of changes for a user.\",\"" +
-            "properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list.\"},\"ite" +
-            "ms\":{\"type\":\"array\",\"description\":\"The actual list of changes.\",\"items\":{\"$ref\":" +
-            "\"Change\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#changeLis" +
-            "t.\",\"default\":\"drive#changeList\"},\"largestChangeId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The current largest change ID.\",\"format\":\"int64\"},\"nextLink\":{\"type\":\"string" +
-            "\",\"description\":\"A link to the next page of changes.\"},\"nextPageToken\":{\"type\":\"" +
-            "string\",\"description\":\"The page token for the next page of changes.\"},\"selfLink\"" +
-            ":{\"type\":\"string\",\"description\":\"A link back to this list.\"}}},\"ChildList\":{\"id\"" +
-            ":\"ChildList\",\"type\":\"object\",\"description\":\"A list of children of a file.\",\"prop" +
-            "erties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list.\"},\"items\":" +
-            "{\"type\":\"array\",\"description\":\"The actual list of children.\",\"items\":{\"$ref\":\"Ch" +
-            "ildReference\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#chil" +
-            "dList.\",\"default\":\"drive#childList\"},\"nextLink\":{\"type\":\"string\",\"description\":\"" +
-            "A link to the next page of children.\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The page token for the next page of children.\"},\"selfLink\":{\"type\":\"strin" +
-            "g\",\"description\":\"A link back to this list.\"}}},\"ChildReference\":{\"id\":\"ChildRef" +
-            "erence\",\"type\":\"object\",\"description\":\"A reference to a file\'s child.\",\"properti" +
-            "es\":{\"childLink\":{\"type\":\"string\",\"description\":\"A link to the child.\"},\"id\":{\"t" +
-            "ype\":\"string\",\"description\":\"The ID of the child.\",\"annotations\":{\"required\":[\"d" +
-            "rive.children.insert\"]}},\"kind\":{\"type\":\"string\",\"description\":\"This is always d" +
-            "rive#childReference.\",\"default\":\"drive#childReference\"},\"selfLink\":{\"type\":\"stri" +
-            "ng\",\"description\":\"A link back to this reference.\"}}},\"File\":{\"id\":\"File\",\"type\"" +
-            ":\"object\",\"description\":\"The metadata for a file.\",\"properties\":{\"alternateLink\"" +
-            ":{\"type\":\"string\",\"description\":\"A link for opening the file in using a relevant" +
-            " Google editor or viewer.\"},\"createdDate\":{\"type\":\"string\",\"description\":\"Create" +
-            " time for this file (formatted ISO8601 timestamp).\",\"format\":\"date-time\"},\"descr" +
-            "iption\":{\"type\":\"string\",\"description\":\"A short description of the file.\"},\"down" +
-            "loadUrl\":{\"type\":\"string\",\"description\":\"Short term download URL for the file. T" +
-            "his will only be populated on files with content stored in Drive.\"},\"editable\":{" +
-            "\"type\":\"boolean\",\"description\":\"Whether the file can be edited by the current us" +
-            "er.\"},\"embedLink\":{\"type\":\"string\",\"description\":\"A link for embedding the file." +
-            "\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of the file.\"},\"explicitlyTrashed" +
-            "\":{\"type\":\"boolean\",\"description\":\"Whether this file has been explicitly trashed" +
-            ", as opposed to recursively trashed. This will only be populated if the file is " +
-            "trashed.\"},\"exportLinks\":{\"type\":\"object\",\"description\":\"Links for exporting Goo" +
-            "gle Docs to specific formats.\",\"additionalProperties\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A mapping from export format to URL\"}},\"fileExtension\":{\"type\":\"string\",\"d" +
-            "escription\":\"The file extension used when downloading this file. This field is s" +
-            "et from the title when inserting or uploading new content. This will only be pop" +
-            "ulated on files with content stored in Drive.\"},\"fileSize\":{\"type\":\"string\",\"des" +
-            "cription\":\"The size of the file in bytes. This will only be populated on files w" +
-            "ith content stored in Drive.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The id of the file.\"},\"imageMediaMetadata\":{\"type\":\"object\",\"description\":\"" +
-            "Metadata about image media. This will only be present for image types, and its c" +
-            "ontents will depend on what can be parsed from the image content.\",\"properties\":" +
-            "{\"height\":{\"type\":\"integer\",\"description\":\"The height of the image in pixels.\",\"" +
-            "format\":\"int32\"},\"location\":{\"type\":\"object\",\"description\":\"Geographic location " +
-            "information stored in the image.\",\"properties\":{\"altitude\":{\"type\":\"number\",\"des" +
-            "cription\":\"The altitude stored in the image.\",\"format\":\"double\"},\"latitude\":{\"ty" +
-            "pe\":\"number\",\"description\":\"The latitude stored in the image.\",\"format\":\"double\"" +
-            "},\"longitude\":{\"type\":\"number\",\"description\":\"The longitude stored in the image." +
-            "\",\"format\":\"double\"}}},\"rotation\":{\"type\":\"integer\",\"description\":\"The rotation " +
-            "in clockwise degrees from the image\'s original orientation.\",\"format\":\"int32\"},\"" +
-            "width\":{\"type\":\"integer\",\"description\":\"The width of the image in pixels.\",\"form" +
-            "at\":\"int32\"}}},\"indexableText\":{\"type\":\"object\",\"description\":\"Indexable text at" +
-            "tributes for the file (can only be written)\",\"properties\":{\"text\":{\"type\":\"strin" +
-            "g\",\"description\":\"The text to be indexed for this file\"}}},\"kind\":{\"type\":\"strin" +
-            "g\",\"description\":\"The type of file. This is always drive#file.\",\"default\":\"drive" +
-            "#file\"},\"labels\":{\"type\":\"object\",\"description\":\"A group of labels for the file." +
-            "\",\"properties\":{\"hidden\":{\"type\":\"boolean\",\"description\":\"Whether this file is h" +
-            "idden from the user.\"},\"restricted\":{\"type\":\"boolean\",\"description\":\"Whether vie" +
-            "wers are prevented from downloading this file.\"},\"starred\":{\"type\":\"boolean\",\"de" +
-            "scription\":\"Whether this file is starred by the user.\"},\"trashed\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether this file has been trashed.\"},\"viewed\":{\"type\":\"boole" +
-            "an\",\"description\":\"Whether this file has been viewed by this user.\"}}},\"lastModi" +
-            "fyingUserName\":{\"type\":\"string\",\"description\":\"Name of the last user to modify t" +
-            "his file. This will only be populated if a user has edited this file.\"},\"lastVie" +
-            "wedByMeDate\":{\"type\":\"string\",\"description\":\"Last time this file was viewed by t" +
-            "he user (formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"md5Checksum\":{\"t" +
-            "ype\":\"string\",\"description\":\"An MD5 checksum for the content of this file. This " +
-            "will only be populated on files with content stored in Drive.\"},\"mimeType\":{\"typ" +
-            "e\":\"string\",\"description\":\"The MIME type of the file. This is only mutable on up" +
-            "date when uploading new content. This field can be left blank, and the mimetype " +
-            "will be determined from the uploaded content\'s MIME type.\"},\"modifiedByMeDate\":{" +
-            "\"type\":\"string\",\"description\":\"Last time this file was modified by the user (for" +
-            "matted RFC 3339 timestamp). Note that setting modifiedDate will also update the " +
-            "modifiedByMe date for the user which set the date.\",\"format\":\"date-time\"},\"modif" +
-            "iedDate\":{\"type\":\"string\",\"description\":\"Last time this file was modified by any" +
-            "one (formatted RFC 3339 timestamp). This is only mutable on update when the setM" +
-            "odifiedDate parameter is set.\",\"format\":\"date-time\"},\"originalFilename\":{\"type\":" +
-            "\"string\",\"description\":\"The original filename if the file was uploaded manually," +
-            " or the original title if the file was inserted through the API. Note that renam" +
-            "es of the title will not change the original filename. This will only be populat" +
-            "ed on files with content stored in Drive.\"},\"ownerNames\":{\"type\":\"array\",\"descri" +
-            "ption\":\"Name(s) of the owner(s) of this file.\",\"items\":{\"type\":\"string\"}},\"paren" +
-            "ts\":{\"type\":\"array\",\"description\":\"Collection of parent folders which contain th" +
-            "is file.\\nSetting this field will put the file in all of the provided folders. O" +
-            "n insert, if no folders are provided, the file will be placed in the default roo" +
-            "t folder.\",\"items\":{\"$ref\":\"ParentReference\"}},\"quotaBytesUsed\":{\"type\":\"string\"" +
-            ",\"description\":\"The number of quota bytes used by this file.\",\"format\":\"int64\"}," +
-            "\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this file.\"},\"sharedWi" +
-            "thMeDate\":{\"type\":\"string\",\"description\":\"Time at which this file was shared wit" +
-            "h the user (formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"thumbnailLink" +
-            "\":{\"type\":\"string\",\"description\":\"A link to the file\'s thumbnail.\"},\"title\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The title of this file.\"},\"userPermission\":{\"$ref\":\"" +
-            "Permission\",\"description\":\"The permissions for the authenticated user on this fi" +
-            "le.\"},\"webContentLink\":{\"type\":\"string\",\"description\":\"A link for downloading th" +
-            "e content of the file in a browser using cookie based authentication. In cases w" +
-            "here the content is shared publicly, the content can be downloaded without any c" +
-            "redentials.\"},\"writersCanShare\":{\"type\":\"boolean\",\"description\":\"Whether writers" +
-            " can share the document with other users.\"}}},\"FileList\":{\"id\":\"FileList\",\"type\"" +
-            ":\"object\",\"description\":\"A list of files.\",\"properties\":{\"etag\":{\"type\":\"string\"" +
-            ",\"description\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"description\":\"T" +
-            "he actual list of files.\",\"items\":{\"$ref\":\"File\"}},\"kind\":{\"type\":\"string\",\"desc" +
-            "ription\":\"This is always drive#fileList.\",\"default\":\"drive#fileList\"},\"nextLink\"" +
-            ":{\"type\":\"string\",\"description\":\"A link to the next page of files.\"},\"nextPageTo" +
-            "ken\":{\"type\":\"string\",\"description\":\"The page token for the next page of files.\"" +
-            "},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this list.\"}}},\"Pare" +
-            "ntList\":{\"id\":\"ParentList\",\"type\":\"object\",\"description\":\"A list of a file\'s par" +
-            "ents.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list" +
-            ".\"},\"items\":{\"type\":\"array\",\"description\":\"The actual list of parents.\",\"items\":" +
-            "{\"$ref\":\"ParentReference\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is alway" +
-            "s drive#parentList.\",\"default\":\"drive#parentList\"},\"selfLink\":{\"type\":\"string\",\"" +
-            "description\":\"A link back to this list.\"}}},\"ParentReference\":{\"id\":\"ParentRefer" +
-            "ence\",\"type\":\"object\",\"description\":\"A reference to a file\'s parent.\",\"propertie" +
-            "s\":{\"id\":{\"type\":\"string\",\"description\":\"The ID of the parent.\",\"annotations\":{\"" +
-            "required\":[\"drive.parents.insert\"]}},\"isRoot\":{\"type\":\"boolean\",\"description\":\"W" +
-            "hether or not the parent is the root folder.\"},\"kind\":{\"type\":\"string\",\"descript" +
-            "ion\":\"This is always drive#parentReference.\",\"default\":\"drive#parentReference\"}," +
-            "\"parentLink\":{\"type\":\"string\",\"description\":\"A link to the parent.\"},\"selfLink\":" +
-            "{\"type\":\"string\",\"description\":\"A link back to this reference.\"}}},\"Permission\":" +
-            "{\"id\":\"Permission\",\"type\":\"object\",\"description\":\"A single permission for a file" +
-            ".\",\"properties\":{\"additionalRoles\":{\"type\":\"array\",\"description\":\"Additional rol" +
-            "es for this user. Only commenter is currently allowed.\",\"items\":{\"type\":\"string\"" +
-            "}},\"authKey\":{\"type\":\"string\",\"description\":\"The authkey parameter required for " +
-            "this permission.\"},\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the permis" +
-            "sion.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the permission.\"},\"kind\":" +
-            "{\"type\":\"string\",\"description\":\"This is always drive#permission.\",\"default\":\"dri" +
-            "ve#permission\"},\"name\":{\"type\":\"string\",\"description\":\"The name for this permiss" +
-            "ion.\"},\"photoLink\":{\"type\":\"string\",\"description\":\"A link to the profile photo, " +
-            "if available.\"},\"role\":{\"type\":\"string\",\"description\":\"The primary role for this" +
-            " user. Allowed values are:  \\n- owner \\n- reader \\n- writer\",\"annotations\":{\"req" +
-            "uired\":[\"drive.permissions.insert\"]}},\"selfLink\":{\"type\":\"string\",\"description\":" +
-            "\"A link back to this permission.\"},\"type\":{\"type\":\"string\",\"description\":\"The ac" +
-            "count type. Allowed values are:  \\n- user \\n- group \\n- domain \\n- anyone\",\"anno" +
-            "tations\":{\"required\":[\"drive.permissions.insert\"]}},\"value\":{\"type\":\"string\",\"de" +
-            "scription\":\"The email address or domain name for the entity. This is not populat" +
-            "ed in responses.\",\"annotations\":{\"required\":[\"drive.permissions.insert\"]}},\"with" +
-            "Link\":{\"type\":\"boolean\",\"description\":\"Whether the link is required for this per" +
-            "mission.\"}}},\"PermissionList\":{\"id\":\"PermissionList\",\"type\":\"object\",\"descriptio" +
-            "n\":\"A list of permissions associated with a file.\",\"properties\":{\"etag\":{\"type\":" +
-            "\"string\",\"description\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"The actual list of permissions.\",\"items\":{\"$ref\":\"Permission\"}},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"This is always drive#permissionList.\",\"default\":\"d" +
-            "rive#permissionList\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to " +
-            "this list.\"}}},\"Revision\":{\"id\":\"Revision\",\"type\":\"object\",\"description\":\"A sing" +
-            "le revision of a file.\",\"properties\":{\"downloadUrl\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Short term download URL for the file. This will only be populated on files w" +
-            "ith content stored in Drive.\"},\"etag\":{\"type\":\"string\",\"description\":\"The ETag o" +
-            "f the revision.\"},\"exportLinks\":{\"type\":\"object\",\"description\":\"Links for export" +
-            "ing Google Docs to specific formats.\",\"additionalProperties\":{\"type\":\"string\",\"d" +
-            "escription\":\"A mapping from export format to URL\"}},\"fileSize\":{\"type\":\"string\"," +
-            "\"description\":\"The size of the revision in bytes. This will only be populated on" +
-            " files with content stored in Drive.\",\"format\":\"int64\"},\"id\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID of the revision.\"},\"kind\":{\"type\":\"string\",\"description\":\"Th" +
-            "is is always drive#revision.\",\"default\":\"drive#revision\"},\"lastModifyingUserName" +
-            "\":{\"type\":\"string\",\"description\":\"Name of the last user to modify this revision." +
-            "\"},\"md5Checksum\":{\"type\":\"string\",\"description\":\"An MD5 checksum for the content" +
-            " of this revision. This will only be populated on files with content stored in D" +
-            "rive.\"},\"mimeType\":{\"type\":\"string\",\"description\":\"The MIME type of the revision" +
-            ".\"},\"modifiedDate\":{\"type\":\"string\",\"description\":\"Last time this revision was m" +
-            "odified (formatted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"originalFilename" +
-            "\":{\"type\":\"string\",\"description\":\"The original filename when this revision was c" +
-            "reated. This will only be populated on files with content stored in Drive.\"},\"pi" +
-            "nned\":{\"type\":\"boolean\",\"description\":\"Whether this revision is pinned to preven" +
-            "t automatic purging. This will only be populated and can only be modified on fil" +
-            "es with content stored in Drive which are not Google Docs. Revisions can also be" +
-            " pinned when they are created through the drive.files.insert/update/copy by usin" +
-            "g the pinned query parameter.\"},\"publishAuto\":{\"type\":\"boolean\",\"description\":\"W" +
-            "hether subsequent revisions will be automatically republished. This is only popu" +
-            "lated and can only be modified for Google Docs.\"},\"published\":{\"type\":\"boolean\"," +
-            "\"description\":\"Whether this revision is published. This is only populated and ca" +
-            "n only be modified for Google Docs.\"},\"publishedLink\":{\"type\":\"string\",\"descript" +
-            "ion\":\"A link to the published revision.\"},\"publishedOutsideDomain\":{\"type\":\"bool" +
-            "ean\",\"description\":\"Whether this revision is published outside the domain. This " +
-            "is only populated and can only be modified for Google Docs.\"},\"selfLink\":{\"type\"" +
-            ":\"string\",\"description\":\"A link back to this revision.\"}}},\"RevisionList\":{\"id\":" +
-            "\"RevisionList\",\"type\":\"object\",\"description\":\"A list of revisions of a file.\",\"p" +
-            "roperties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list.\"},\"item" +
-            "s\":{\"type\":\"array\",\"description\":\"The actual list of revisions.\",\"items\":{\"$ref\"" +
-            ":\"Revision\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#revisi" +
-            "onList.\",\"default\":\"drive#revisionList\"},\"selfLink\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"A link back to this list.\"}}}},\"resources\":{\"about\":{\"methods\":{\"get\":{\"id\":" +
-            "\"drive.about.get\",\"path\":\"about\",\"httpMethod\":\"GET\",\"description\":\"Gets the info" +
-            "rmation about the current user along with Drive API settings\",\"parameters\":{\"inc" +
-            "ludeSubscribed\":{\"type\":\"boolean\",\"description\":\"Whether to include subscribed i" +
-            "tems when calculating the number of remaining change IDs\",\"default\":\"true\",\"loca" +
-            "tion\":\"query\"},\"maxChangeIdCount\":{\"type\":\"string\",\"description\":\"Maximum number" +
-            " of remaining change IDs to count\",\"default\":\"1\",\"format\":\"int64\",\"location\":\"qu" +
-            "ery\"},\"startChangeId\":{\"type\":\"string\",\"description\":\"Change ID to start countin" +
-            "g from when calculating number of remaining change IDs\",\"format\":\"int64\",\"locati" +
-            "on\":\"query\"}},\"response\":{\"$ref\":\"About\"},\"scopes\":[\"https://www.googleapis.com/" +
-            "auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https://www.googleapis" +
-            ".com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/auth/drive.readon" +
-            "ly\"]}}},\"apps\":{\"methods\":{\"get\":{\"id\":\"drive.apps.get\",\"path\":\"apps/{appId}\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Gets a specific app.\",\"parameters\":{\"appId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID of the app.\",\"required\":true,\"location\":\"path" +
-            "\"}},\"parameterOrder\":[\"appId\"],\"response\":{\"$ref\":\"App\"},\"scopes\":[\"https://www." +
-            "googleapis.com/auth/drive.apps.readonly\"]},\"list\":{\"id\":\"drive.apps.list\",\"path\"" +
-            ":\"apps\",\"httpMethod\":\"GET\",\"description\":\"Lists a user\'s apps.\",\"response\":{\"$re" +
-            "f\":\"AppList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive.apps.readonly\"]}}" +
-            "},\"changes\":{\"methods\":{\"get\":{\"id\":\"drive.changes.get\",\"path\":\"changes/{changeI" +
-            "d}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific change.\",\"parameters\":{\"ch" +
-            "angeId\":{\"type\":\"string\",\"description\":\"The ID of the change.\",\"required\":true,\"" +
-            "location\":\"path\"}},\"parameterOrder\":[\"changeId\"],\"response\":{\"$ref\":\"Change\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth" +
-            "/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://" +
-            "www.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id\":\"drive.changes.list\",\"pat" +
-            "h\":\"changes\",\"httpMethod\":\"GET\",\"description\":\"Lists the changes for a user.\",\"p" +
-            "arameters\":{\"includeDeleted\":{\"type\":\"boolean\",\"description\":\"Whether to include" +
-            " deleted items.\",\"default\":\"true\",\"location\":\"query\"},\"includeSubscribed\":{\"type" +
-            "\":\"boolean\",\"description\":\"Whether to include subscribed items.\",\"default\":\"true" +
-            "\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of changes to return.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"locati" +
-            "on\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token for changes." +
-            "\",\"location\":\"query\"},\"startChangeId\":{\"type\":\"string\",\"description\":\"Change ID " +
-            "to start listing changes from.\",\"format\":\"int64\",\"location\":\"query\"}},\"response\"" +
-            ":{\"$ref\":\"ChangeList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https:" +
-            "//www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.met" +
-            "adata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]}}},\"children\":" +
-            "{\"methods\":{\"delete\":{\"id\":\"drive.children.delete\",\"path\":\"files/{folderId}/chil" +
-            "dren/{childId}\",\"httpMethod\":\"DELETE\",\"description\":\"Removes a child from a fold" +
-            "er.\",\"parameters\":{\"childId\":{\"type\":\"string\",\"description\":\"The ID of the child" +
-            ".\",\"required\":true,\"location\":\"path\"},\"folderId\":{\"type\":\"string\",\"description\":" +
-            "\"The ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"f" +
-            "olderId\",\"childId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://w" +
-            "ww.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.children.get\",\"path\":\"fi" +
-            "les/{folderId}/children/{childId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a spec" +
-            "ific child reference.\",\"parameters\":{\"childId\":{\"type\":\"string\",\"description\":\"T" +
-            "he ID of the child.\",\"required\":true,\"location\":\"path\"},\"folderId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"The ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"p" +
-            "arameterOrder\":[\"folderId\",\"childId\"],\"response\":{\"$ref\":\"ChildReference\"},\"scop" +
-            "es\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/dr" +
-            "ive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www" +
-            ".googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.children.insert\",\"p" +
-            "ath\":\"files/{folderId}/children\",\"httpMethod\":\"POST\",\"description\":\"Inserts a fi" +
-            "le into a folder.\",\"parameters\":{\"folderId\":{\"type\":\"string\",\"description\":\"The " +
-            "ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"folder" +
-            "Id\"],\"request\":{\"$ref\":\"ChildReference\"},\"response\":{\"$ref\":\"ChildReference\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth" +
-            "/drive.file\"]},\"list\":{\"id\":\"drive.children.list\",\"path\":\"files/{folderId}/child" +
-            "ren\",\"httpMethod\":\"GET\",\"description\":\"Lists a folder\'s children.\",\"parameters\":" +
-            "{\"folderId\":{\"type\":\"string\",\"description\":\"The ID of the folder.\",\"required\":tr" +
-            "ue,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum numb" +
-            "er of children to return.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"locat" +
-            "ion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token for childre" +
-            "n.\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query string for sea" +
-            "rching children.\",\"location\":\"query\"}},\"parameterOrder\":[\"folderId\"],\"response\":" +
-            "{\"$ref\":\"ChildList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://" +
-            "www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metad" +
-            "ata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]}}},\"files\":{\"met" +
-            "hods\":{\"copy\":{\"id\":\"drive.files.copy\",\"path\":\"files/{fileId}/copy\",\"httpMethod\"" +
-            ":\"POST\",\"description\":\"Creates a copy of the specified file.\",\"parameters\":{\"con" +
-            "vert\":{\"type\":\"boolean\",\"description\":\"Whether to convert this file to the corre" +
-            "sponding Google Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"t" +
-            "ype\":\"string\",\"description\":\"The ID of the file to copy.\",\"required\":true,\"locat" +
-            "ion\":\"path\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR on .j" +
-            "pg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLang" +
-            "uage\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language to u" +
-            "se. Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boo" +
-            "lean\",\"description\":\"Whether to pin the head revision of the new copy.\",\"default" +
-            "\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"T" +
-            "he language of the original file to be translated.\",\"location\":\"query\"},\"targetL" +
-            "anguage\":{\"type\":\"string\",\"description\":\"Target language to translate the file t" +
-            "o. If no sourceLanguage is provided, the API will attempt to detect the language" +
-            ".\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The l" +
-            "anguage of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"st" +
-            "ring\",\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"parameter" +
-            "Order\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive." +
-            "file\"]},\"delete\":{\"id\":\"drive.files.delete\",\"path\":\"files/{fileId}\",\"httpMethod\"" +
-            ":\"DELETE\",\"description\":\"Permanently deletes a file by ID. Skips the trash.\",\"pa" +
-            "rameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file to delete" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"scopes\":[\"ht" +
-            "tps://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file" +
-            "\"]},\"get\":{\"id\":\"drive.files.get\",\"path\":\"files/{fileId}\",\"httpMethod\":\"GET\",\"de" +
-            "scription\":\"Gets a file\'s metadata by ID.\",\"parameters\":{\"fileId\":{\"type\":\"strin" +
-            "g\",\"description\":\"The ID for the file in question.\",\"required\":true,\"location\":\"" +
-            "path\"},\"projection\":{\"type\":\"string\",\"description\":\"This parameter is deprecated" +
-            " and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\"," +
-            "\"Deprecated\"],\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Whether to update the view date after successfully retrieving the file.\",\"" +
-            "default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$" +
+            ",\"format\":\"int64\"},\"quotaBytesUsedAggregate\":{\"type\":\"string\",\"description\":\"The" +
+            " number of quota bytes used by all Google apps (Drive, Picasa, etc.).\",\"format\":" +
+            "\"int64\"},\"quotaBytesUsedInTrash\":{\"type\":\"string\",\"description\":\"The number of q" +
+            "uota bytes used by trashed items.\",\"format\":\"int64\"},\"remainingChangeIds\":{\"type" +
+            "\":\"string\",\"description\":\"The number of remaining change ids.\",\"format\":\"int64\"}" +
+            ",\"rootFolderId\":{\"type\":\"string\",\"description\":\"The id of the root folder.\"},\"se" +
+            "lfLink\":{\"type\":\"string\",\"description\":\"A link back to this item.\"},\"user\":{\"$re" +
+            "f\":\"User\",\"description\":\"The authenticated user.\"}}},\"App\":{\"id\":\"App\",\"type\":\"o" +
+            "bject\",\"description\":\"Information about a third-party application which the user" +
+            " has installed or given access to Google Drive.\",\"properties\":{\"authorized\":{\"ty" +
+            "pe\":\"boolean\",\"description\":\"Whether the app is authorized to access data on the" +
+            " user\'s Drive.\"},\"icons\":{\"type\":\"array\",\"description\":\"The various icons for th" +
+            "e app.\",\"items\":{\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Category of the icon. Allowed values are:  \\n- application - icon for " +
+            "the application \\n- document - icon for a file associated with the app \\n- docum" +
+            "entShared - icon for a shared file associated with the app\"},\"iconUrl\":{\"type\":\"" +
+            "string\",\"description\":\"URL for the icon.\"},\"size\":{\"type\":\"integer\",\"description" +
+            "\":\"Size of the icon. Represented as the maximum of the width and height.\",\"forma" +
+            "t\":\"int32\"}}}},\"id\":{\"type\":\"string\",\"description\":\"The ID of the app.\"},\"instal" +
+            "led\":{\"type\":\"boolean\",\"description\":\"Whether the app is installed.\"},\"kind\":{\"t" +
+            "ype\":\"string\",\"description\":\"This is always drive#app.\",\"default\":\"drive#app\"},\"" +
+            "name\":{\"type\":\"string\",\"description\":\"The name of the app.\"},\"objectType\":{\"type" +
+            "\":\"string\",\"description\":\"The type of object this app creates (e.g. Chart). If e" +
+            "mpty, the app name should be used instead.\"},\"primaryFileExtensions\":{\"type\":\"ar" +
+            "ray\",\"description\":\"The list of primary file extensions.\",\"items\":{\"type\":\"strin" +
+            "g\"}},\"primaryMimeTypes\":{\"type\":\"array\",\"description\":\"The list of primary mime " +
+            "types.\",\"items\":{\"type\":\"string\"}},\"productUrl\":{\"type\":\"string\",\"description\":\"" +
+            "The product URL.\"},\"secondaryFileExtensions\":{\"type\":\"array\",\"description\":\"The " +
+            "list of secondary file extensions.\",\"items\":{\"type\":\"string\"}},\"secondaryMimeTyp" +
+            "es\":{\"type\":\"array\",\"description\":\"The list of secondary mime types.\",\"items\":{\"" +
+            "type\":\"string\"}},\"supportsCreate\":{\"type\":\"boolean\",\"description\":\"Whether this " +
+            "app supports creating new objects.\"},\"supportsImport\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"Whether this app supports importing Google Docs.\"},\"useByDefault\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Whether the app is selected as the default handler for" +
+            " the types it supports.\"}}},\"AppList\":{\"id\":\"AppList\",\"type\":\"object\",\"descripti" +
+            "on\":\"A list of third-party applications which the user has installed or given ac" +
+            "cess to Google Drive.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The " +
+            "ETag of the list.\"},\"items\":{\"type\":\"array\",\"description\":\"The actual list of ap" +
+            "ps.\",\"items\":{\"$ref\":\"App\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is alwa" +
+            "ys drive#appList.\",\"default\":\"drive#appList\"},\"selfLink\":{\"type\":\"string\",\"descr" +
+            "iption\":\"A link back to this list.\"}}},\"Change\":{\"id\":\"Change\",\"type\":\"object\",\"" +
+            "description\":\"Representation of a change to a file.\",\"properties\":{\"deleted\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"Whether the file has been deleted.\"},\"file\":{\"$ref" +
+            "\":\"File\",\"description\":\"The updated state of the file. Present if the file has n" +
+            "ot been deleted.\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file a" +
+            "ssociated with this change.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the" +
+            " change.\",\"format\":\"int64\"},\"kind\":{\"type\":\"string\",\"description\":\"This is alway" +
+            "s drive#change.\",\"default\":\"drive#change\"},\"selfLink\":{\"type\":\"string\",\"descript" +
+            "ion\":\"A link back to this change.\"}}},\"ChangeList\":{\"id\":\"ChangeList\",\"type\":\"ob" +
+            "ject\",\"description\":\"A list of changes for a user.\",\"properties\":{\"etag\":{\"type\"" +
+            ":\"string\",\"description\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"descri" +
+            "ption\":\"The actual list of changes.\",\"items\":{\"$ref\":\"Change\"}},\"kind\":{\"type\":\"" +
+            "string\",\"description\":\"This is always drive#changeList.\",\"default\":\"drive#change" +
+            "List\"},\"largestChangeId\":{\"type\":\"string\",\"description\":\"The current largest cha" +
+            "nge ID.\",\"format\":\"int64\"},\"nextLink\":{\"type\":\"string\",\"description\":\"A link to " +
+            "the next page of changes.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The " +
+            "page token for the next page of changes.\"},\"selfLink\":{\"type\":\"string\",\"descript" +
+            "ion\":\"A link back to this list.\"}}},\"ChildList\":{\"id\":\"ChildList\",\"type\":\"object" +
+            "\",\"description\":\"A list of children of a file.\",\"properties\":{\"etag\":{\"type\":\"st" +
+            "ring\",\"description\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"descriptio" +
+            "n\":\"The actual list of children.\",\"items\":{\"$ref\":\"ChildReference\"}},\"kind\":{\"ty" +
+            "pe\":\"string\",\"description\":\"This is always drive#childList.\",\"default\":\"drive#ch" +
+            "ildList\"},\"nextLink\":{\"type\":\"string\",\"description\":\"A link to the next page of " +
+            "children.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The page token for t" +
+            "he next page of children.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link ba" +
+            "ck to this list.\"}}},\"ChildReference\":{\"id\":\"ChildReference\",\"type\":\"object\",\"de" +
+            "scription\":\"A reference to a file\'s child.\",\"properties\":{\"childLink\":{\"type\":\"s" +
+            "tring\",\"description\":\"A link to the child.\"},\"id\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the child.\",\"annotations\":{\"required\":[\"drive.children.insert\"]}},\"k" +
+            "ind\":{\"type\":\"string\",\"description\":\"This is always drive#childReference.\",\"defa" +
+            "ult\":\"drive#childReference\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link b" +
+            "ack to this reference.\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"descriptio" +
+            "n\":\"A JSON representation of a comment on a file in Google Drive.\",\"properties\":" +
+            "{\"anchor\":{\"type\":\"string\",\"description\":\"A region of the document represented a" +
+            "s a JSON string. See anchor documentation for details on how to define and inter" +
+            "pret anchor properties.\"},\"author\":{\"$ref\":\"User\",\"description\":\"The user who wr" +
+            "ote this comment.\"},\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the co" +
+            "mment.\"},\"content\":{\"type\":\"string\",\"description\":\"The plain text content used t" +
+            "o create this comment. This is not HTML safe and should only be used as a starti" +
+            "ng point to make edits to a comment\'s content.\",\"annotations\":{\"required\":[\"driv" +
+            "e.comments.insert\",\"drive.comments.update\"]}},\"context\":{\"type\":\"object\",\"descri" +
+            "ption\":\"The context of the file which is being commented on.\",\"properties\":{\"typ" +
+            "e\":{\"type\":\"string\",\"description\":\"The MIME type of the context snippet.\"},\"valu" +
+            "e\":{\"type\":\"string\",\"description\":\"Data representation of the segment of the fil" +
+            "e being commented on. In the case of a text file for example, this would be the " +
+            "actual text that the comment is about.\"}}},\"createdDate\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The date when this comment was first created.\",\"format\":\"date-time\"},\"d" +
+            "eleted\":{\"type\":\"boolean\",\"description\":\"Whether this comment has been deleted. " +
+            "If a comment has been deleted the content will be cleared and this will only rep" +
+            "resent a comment that once existed.\"},\"fileId\":{\"type\":\"string\",\"description\":\"T" +
+            "he file which this comment is addressing.\"},\"fileTitle\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The title of the file which this comment is addressing.\"},\"htmlContent\":" +
+            "{\"type\":\"string\",\"description\":\"HTML formatted content for this comment.\"},\"kind" +
+            "\":{\"type\":\"string\",\"description\":\"This is always drive#comment.\",\"default\":\"driv" +
+            "e#comment\"},\"modifiedDate\":{\"type\":\"string\",\"description\":\"The date when this co" +
+            "mment or any of its replies were last modified.\",\"format\":\"date-time\"},\"replies\"" +
+            ":{\"type\":\"array\",\"description\":\"Replies to this post.\",\"items\":{\"$ref\":\"CommentR" +
+            "eply\"}},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this comment.\"" +
+            "},\"status\":{\"type\":\"string\",\"description\":\"The status of this comment. Status ca" +
+            "n be changed by posting a reply to a comment with the desired status.  \\n- \\\"ope" +
+            "n\\\" - The comment is still open. \\n- \\\"resolved\\\" - The comment has been resolve" +
+            "d by one of its replies.\"}}},\"CommentList\":{\"id\":\"CommentList\",\"type\":\"object\",\"" +
+            "description\":\"A JSON representation of a list of comments on a file in Google Dr" +
+            "ive.\",\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of comments.\",\"i" +
+            "tems\":{\"$ref\":\"Comment\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always " +
+            "drive#commentList.\",\"default\":\"drive#commentList\"},\"nextPageToken\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The token to use to request the next page of results.\"}}},\"Co" +
+            "mmentReply\":{\"id\":\"CommentReply\",\"type\":\"object\",\"description\":\"A JSON represent" +
+            "ation of a reply to a comment on a file in Google Drive.\",\"properties\":{\"author\"" +
+            ":{\"$ref\":\"User\",\"description\":\"The user who wrote this reply.\"},\"content\":{\"type" +
+            "\":\"string\",\"description\":\"The plain text content used to create this reply. This" +
+            " is not HTML safe and should only be used as a starting point to make edits to a" +
+            " reply\'s content. This field is required on inserts if no verb is specified (res" +
+            "olve/reopen).\",\"annotations\":{\"required\":[\"drive.replies.update\"]}},\"createdDate" +
+            "\":{\"type\":\"string\",\"description\":\"The date when this reply was first created.\",\"" +
+            "format\":\"date-time\"},\"deleted\":{\"type\":\"boolean\",\"description\":\"Whether this rep" +
+            "ly has been deleted. If a reply has been deleted the content will be cleared and" +
+            " this will only represent a reply that once existed.\"},\"htmlContent\":{\"type\":\"st" +
+            "ring\",\"description\":\"HTML formatted content for this reply.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"This is always drive#commentReply.\",\"default\":\"drive#commen" +
+            "tReply\"},\"modifiedDate\":{\"type\":\"string\",\"description\":\"The date when this reply" +
+            " was last modified.\",\"format\":\"date-time\"},\"replyId\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The ID of the reply.\"},\"verb\":{\"type\":\"string\",\"description\":\"The action th" +
+            "is reply performed to the parent comment. When creating a new reply this is the " +
+            "action to be perform to the parent comment. Possible values are:  \\n- \\\"resolve\\" +
+            "\" - To resolve a comment. \\n- \\\"reopen\\\" - To reopen (un-resolve) a comment.\"}}}" +
+            ",\"CommentReplyList\":{\"id\":\"CommentReplyList\",\"type\":\"object\",\"description\":\"A JS" +
+            "ON representation of a list of replies to a comment on a file in Google Drive.\"," +
+            "\"properties\":{\"items\":{\"type\":\"array\",\"description\":\"List of reply.\",\"items\":{\"$" +
+            "ref\":\"CommentReply\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always driv" +
+            "e#commentReplyList.\",\"default\":\"drive#commentReplyList\"},\"nextPageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"The token to use to request the next page of results.\"}" +
+            "}},\"File\":{\"id\":\"File\",\"type\":\"object\",\"description\":\"The metadata for a file.\"," +
+            "\"properties\":{\"alternateLink\":{\"type\":\"string\",\"description\":\"A link for opening" +
+            " the file in using a relevant Google editor or viewer.\"},\"createdDate\":{\"type\":\"" +
+            "string\",\"description\":\"Create time for this file (formatted ISO8601 timestamp).\"" +
+            ",\"format\":\"date-time\"},\"description\":{\"type\":\"string\",\"description\":\"A short des" +
+            "cription of the file.\"},\"downloadUrl\":{\"type\":\"string\",\"description\":\"Short term" +
+            " download URL for the file. This will only be populated on files with content st" +
+            "ored in Drive.\"},\"editable\":{\"type\":\"boolean\",\"description\":\"Whether the file ca" +
+            "n be edited by the current user.\"},\"embedLink\":{\"type\":\"string\",\"description\":\"A" +
+            " link for embedding the file.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of t" +
+            "he file.\"},\"explicitlyTrashed\":{\"type\":\"boolean\",\"description\":\"Whether this fil" +
+            "e has been explicitly trashed, as opposed to recursively trashed. This will only" +
+            " be populated if the file is trashed.\"},\"exportLinks\":{\"type\":\"object\",\"descript" +
+            "ion\":\"Links for exporting Google Docs to specific formats.\",\"additionalPropertie" +
+            "s\":{\"type\":\"string\",\"description\":\"A mapping from export format to URL\"}},\"fileE" +
+            "xtension\":{\"type\":\"string\",\"description\":\"The file extension used when downloadi" +
+            "ng this file. This field is set from the title when inserting or uploading new c" +
+            "ontent. This will only be populated on files with content stored in Drive.\"},\"fi" +
+            "leSize\":{\"type\":\"string\",\"description\":\"The size of the file in bytes. This will" +
+            " only be populated on files with content stored in Drive.\",\"format\":\"int64\"},\"id" +
+            "\":{\"type\":\"string\",\"description\":\"The id of the file.\"},\"imageMediaMetadata\":{\"t" +
+            "ype\":\"object\",\"description\":\"Metadata about image media. This will only be prese" +
+            "nt for image types, and its contents will depend on what can be parsed from the " +
+            "image content.\",\"properties\":{\"aperture\":{\"type\":\"number\",\"description\":\"The ape" +
+            "rture used to create the photo (f-number).\",\"format\":\"float\"},\"cameraMake\":{\"typ" +
+            "e\":\"string\",\"description\":\"The make of the camera used to create the photo.\"},\"c" +
+            "ameraModel\":{\"type\":\"string\",\"description\":\"The model of the camera used to crea" +
+            "te the photo.\"},\"date\":{\"type\":\"string\",\"description\":\"The date and time the pho" +
+            "to was taken (EXIF format timestamp).\"},\"exposureTime\":{\"type\":\"number\",\"descrip" +
+            "tion\":\"The length of the exposure, in seconds.\",\"format\":\"float\"},\"flashUsed\":{\"" +
+            "type\":\"boolean\",\"description\":\"Whether a flash was used to create the photo.\"},\"" +
+            "focalLength\":{\"type\":\"number\",\"description\":\"The focal length used to create the" +
+            " photo, in millimeters.\",\"format\":\"float\"},\"height\":{\"type\":\"integer\",\"descripti" +
+            "on\":\"The height of the image in pixels.\",\"format\":\"int32\"},\"isoSpeed\":{\"type\":\"i" +
+            "nteger\",\"description\":\"The ISO speed used to create the photo.\",\"format\":\"int32\"" +
+            "},\"location\":{\"type\":\"object\",\"description\":\"Geographic location information sto" +
+            "red in the image.\",\"properties\":{\"altitude\":{\"type\":\"number\",\"description\":\"The " +
+            "altitude stored in the image.\",\"format\":\"double\"},\"latitude\":{\"type\":\"number\",\"d" +
+            "escription\":\"The latitude stored in the image.\",\"format\":\"double\"},\"longitude\":{" +
+            "\"type\":\"number\",\"description\":\"The longitude stored in the image.\",\"format\":\"dou" +
+            "ble\"}}},\"rotation\":{\"type\":\"integer\",\"description\":\"The rotation in clockwise de" +
+            "grees from the image\'s original orientation.\",\"format\":\"int32\"},\"width\":{\"type\":" +
+            "\"integer\",\"description\":\"The width of the image in pixels.\",\"format\":\"int32\"}}}," +
+            "\"indexableText\":{\"type\":\"object\",\"description\":\"Indexable text attributes for th" +
+            "e file (can only be written)\",\"properties\":{\"text\":{\"type\":\"string\",\"description" +
+            "\":\"The text to be indexed for this file\"}}},\"kind\":{\"type\":\"string\",\"description" +
+            "\":\"The type of file. This is always drive#file.\",\"default\":\"drive#file\"},\"labels" +
+            "\":{\"type\":\"object\",\"description\":\"A group of labels for the file.\",\"properties\":" +
+            "{\"hidden\":{\"type\":\"boolean\",\"description\":\"Whether this file is hidden from the " +
+            "user.\"},\"restricted\":{\"type\":\"boolean\",\"description\":\"Whether viewers are preven" +
+            "ted from downloading this file.\"},\"starred\":{\"type\":\"boolean\",\"description\":\"Whe" +
+            "ther this file is starred by the user.\"},\"trashed\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Whether this file has been trashed.\"},\"viewed\":{\"type\":\"boolean\",\"descriptio" +
+            "n\":\"Whether this file has been viewed by this user.\"}}},\"lastModifyingUserName\":" +
+            "{\"type\":\"string\",\"description\":\"Name of the last user to modify this file. This " +
+            "will only be populated if a user has edited this file.\"},\"lastViewedByMeDate\":{\"" +
+            "type\":\"string\",\"description\":\"Last time this file was viewed by the user (format" +
+            "ted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"md5Checksum\":{\"type\":\"string\",\"" +
+            "description\":\"An MD5 checksum for the content of this file. This will only be po" +
+            "pulated on files with content stored in Drive.\"},\"mimeType\":{\"type\":\"string\",\"de" +
+            "scription\":\"The MIME type of the file. This is only mutable on update when uploa" +
+            "ding new content. This field can be left blank, and the mimetype will be determi" +
+            "ned from the uploaded content\'s MIME type.\"},\"modifiedByMeDate\":{\"type\":\"string\"" +
+            ",\"description\":\"Last time this file was modified by the user (formatted RFC 3339" +
+            " timestamp). Note that setting modifiedDate will also update the modifiedByMe da" +
+            "te for the user which set the date.\",\"format\":\"date-time\"},\"modifiedDate\":{\"type" +
+            "\":\"string\",\"description\":\"Last time this file was modified by anyone (formatted " +
+            "RFC 3339 timestamp). This is only mutable on update when the setModifiedDate par" +
+            "ameter is set.\",\"format\":\"date-time\"},\"originalFilename\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The original filename if the file was uploaded manually, or the origina" +
+            "l title if the file was inserted through the API. Note that renames of the title" +
+            " will not change the original filename. This will only be populated on files wit" +
+            "h content stored in Drive.\"},\"ownerNames\":{\"type\":\"array\",\"description\":\"Name(s)" +
+            " of the owner(s) of this file.\",\"items\":{\"type\":\"string\"}},\"parents\":{\"type\":\"ar" +
+            "ray\",\"description\":\"Collection of parent folders which contain this file.\\nSetti" +
+            "ng this field will put the file in all of the provided folders. On insert, if no" +
+            " folders are provided, the file will be placed in the default root folder.\",\"ite" +
+            "ms\":{\"$ref\":\"ParentReference\"}},\"quotaBytesUsed\":{\"type\":\"string\",\"description\":" +
+            "\"The number of quota bytes used by this file.\",\"format\":\"int64\"},\"selfLink\":{\"ty" +
+            "pe\":\"string\",\"description\":\"A link back to this file.\"},\"sharedWithMeDate\":{\"typ" +
+            "e\":\"string\",\"description\":\"Time at which this file was shared with the user (for" +
+            "matted RFC 3339 timestamp).\",\"format\":\"date-time\"},\"thumbnail\":{\"type\":\"object\"," +
+            "\"description\":\"Thumbnail for the file. Only accepted on upload and for files tha" +
+            "t are not already thumbnailed by Google.\",\"properties\":{\"image\":{\"type\":\"string\"" +
+            ",\"description\":\"The URL-safe Base64 encoded bytes of the thumbnail image.\",\"form" +
+            "at\":\"byte\"},\"mimeType\":{\"type\":\"string\",\"description\":\"The MIME type of the thum" +
+            "bnail.\"}}},\"thumbnailLink\":{\"type\":\"string\",\"description\":\"A link to the file\'s " +
+            "thumbnail.\"},\"title\":{\"type\":\"string\",\"description\":\"The title of this file.\"},\"" +
+            "userPermission\":{\"$ref\":\"Permission\",\"description\":\"The permissions for the auth" +
+            "enticated user on this file.\"},\"webContentLink\":{\"type\":\"string\",\"description\":\"" +
+            "A link for downloading the content of the file in a browser using cookie based a" +
+            "uthentication. In cases where the content is shared publicly, the content can be" +
+            " downloaded without any credentials.\"},\"writersCanShare\":{\"type\":\"boolean\",\"desc" +
+            "ription\":\"Whether writers can share the document with other users.\"}}},\"FileList" +
+            "\":{\"id\":\"FileList\",\"type\":\"object\",\"description\":\"A list of files.\",\"properties\"" +
+            ":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list.\"},\"items\":{\"type\"" +
+            ":\"array\",\"description\":\"The actual list of files.\",\"items\":{\"$ref\":\"File\"}},\"kin" +
+            "d\":{\"type\":\"string\",\"description\":\"This is always drive#fileList.\",\"default\":\"dr" +
+            "ive#fileList\"},\"nextLink\":{\"type\":\"string\",\"description\":\"A link to the next pag" +
+            "e of files.\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The page token for" +
+            " the next page of files.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link bac" +
+            "k to this list.\"}}},\"ParentList\":{\"id\":\"ParentList\",\"type\":\"object\",\"description" +
+            "\":\"A list of a file\'s parents.\",\"properties\":{\"etag\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The ETag of the list.\"},\"items\":{\"type\":\"array\",\"description\":\"The actual l" +
+            "ist of parents.\",\"items\":{\"$ref\":\"ParentReference\"}},\"kind\":{\"type\":\"string\",\"de" +
+            "scription\":\"This is always drive#parentList.\",\"default\":\"drive#parentList\"},\"sel" +
+            "fLink\":{\"type\":\"string\",\"description\":\"A link back to this list.\"}}},\"ParentRefe" +
+            "rence\":{\"id\":\"ParentReference\",\"type\":\"object\",\"description\":\"A reference to a f" +
+            "ile\'s parent.\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The ID of the " +
+            "parent.\",\"annotations\":{\"required\":[\"drive.parents.insert\"]}},\"isRoot\":{\"type\":\"" +
+            "boolean\",\"description\":\"Whether or not the parent is the root folder.\"},\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"This is always drive#parentReference.\",\"default\":" +
+            "\"drive#parentReference\"},\"parentLink\":{\"type\":\"string\",\"description\":\"A link to " +
+            "the parent.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this ref" +
+            "erence.\"}}},\"Permission\":{\"id\":\"Permission\",\"type\":\"object\",\"description\":\"A sin" +
+            "gle permission for a file.\",\"properties\":{\"additionalRoles\":{\"type\":\"array\",\"des" +
+            "cription\":\"Additional roles for this user. Only commenter is currently allowed.\"" +
+            ",\"items\":{\"type\":\"string\"}},\"authKey\":{\"type\":\"string\",\"description\":\"The authke" +
+            "y parameter required for this permission.\"},\"etag\":{\"type\":\"string\",\"description" +
+            "\":\"The ETag of the permission.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of " +
+            "the permission.\"},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#pe" +
+            "rmission.\",\"default\":\"drive#permission\"},\"name\":{\"type\":\"string\",\"description\":\"" +
+            "The name for this permission.\"},\"photoLink\":{\"type\":\"string\",\"description\":\"A li" +
+            "nk to the profile photo, if available.\"},\"role\":{\"type\":\"string\",\"description\":\"" +
+            "The primary role for this user. Allowed values are:  \\n- owner \\n- reader \\n- wr" +
+            "iter\",\"annotations\":{\"required\":[\"drive.permissions.insert\"]}},\"selfLink\":{\"type" +
+            "\":\"string\",\"description\":\"A link back to this permission.\"},\"type\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The account type. Allowed values are:  \\n- user \\n- group \\n-" +
+            " domain \\n- anyone\",\"annotations\":{\"required\":[\"drive.permissions.insert\"]}},\"va" +
+            "lue\":{\"type\":\"string\",\"description\":\"The email address or domain name for the en" +
+            "tity. This is not populated in responses.\",\"annotations\":{\"required\":[\"drive.per" +
+            "missions.insert\"]}},\"withLink\":{\"type\":\"boolean\",\"description\":\"Whether the link" +
+            " is required for this permission.\"}}},\"PermissionList\":{\"id\":\"PermissionList\",\"t" +
+            "ype\":\"object\",\"description\":\"A list of permissions associated with a file.\",\"pro" +
+            "perties\":{\"etag\":{\"type\":\"string\",\"description\":\"The ETag of the list.\"},\"items\"" +
+            ":{\"type\":\"array\",\"description\":\"The actual list of permissions.\",\"items\":{\"$ref\"" +
+            ":\"Permission\"}},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#perm" +
+            "issionList.\",\"default\":\"drive#permissionList\"},\"selfLink\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A link back to this list.\"}}},\"Revision\":{\"id\":\"Revision\",\"type\":\"obje" +
+            "ct\",\"description\":\"A single revision of a file.\",\"properties\":{\"downloadUrl\":{\"t" +
+            "ype\":\"string\",\"description\":\"Short term download URL for the file. This will onl" +
+            "y be populated on files with content stored in Drive.\"},\"etag\":{\"type\":\"string\"," +
+            "\"description\":\"The ETag of the revision.\"},\"exportLinks\":{\"type\":\"object\",\"descr" +
+            "iption\":\"Links for exporting Google Docs to specific formats.\",\"additionalProper" +
+            "ties\":{\"type\":\"string\",\"description\":\"A mapping from export format to URL\"}},\"fi" +
+            "leSize\":{\"type\":\"string\",\"description\":\"The size of the revision in bytes. This " +
+            "will only be populated on files with content stored in Drive.\",\"format\":\"int64\"}" +
+            ",\"id\":{\"type\":\"string\",\"description\":\"The ID of the revision.\"},\"kind\":{\"type\":\"" +
+            "string\",\"description\":\"This is always drive#revision.\",\"default\":\"drive#revision" +
+            "\"},\"lastModifyingUserName\":{\"type\":\"string\",\"description\":\"Name of the last user" +
+            " to modify this revision.\"},\"md5Checksum\":{\"type\":\"string\",\"description\":\"An MD5" +
+            " checksum for the content of this revision. This will only be populated on files" +
+            " with content stored in Drive.\"},\"mimeType\":{\"type\":\"string\",\"description\":\"The " +
+            "MIME type of the revision.\"},\"modifiedDate\":{\"type\":\"string\",\"description\":\"Last" +
+            " time this revision was modified (formatted RFC 3339 timestamp).\",\"format\":\"date" +
+            "-time\"},\"originalFilename\":{\"type\":\"string\",\"description\":\"The original filename" +
+            " when this revision was created. This will only be populated on files with conte" +
+            "nt stored in Drive.\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether this rev" +
+            "ision is pinned to prevent automatic purging. This will only be populated and ca" +
+            "n only be modified on files with content stored in Drive which are not Google Do" +
+            "cs. Revisions can also be pinned when they are created through the drive.files.i" +
+            "nsert/update/copy by using the pinned query parameter.\"},\"publishAuto\":{\"type\":\"" +
+            "boolean\",\"description\":\"Whether subsequent revisions will be automatically repub" +
+            "lished. This is only populated and can only be modified for Google Docs.\"},\"publ" +
+            "ished\":{\"type\":\"boolean\",\"description\":\"Whether this revision is published. This" +
+            " is only populated and can only be modified for Google Docs.\"},\"publishedLink\":{" +
+            "\"type\":\"string\",\"description\":\"A link to the published revision.\"},\"publishedOut" +
+            "sideDomain\":{\"type\":\"boolean\",\"description\":\"Whether this revision is published " +
+            "outside the domain. This is only populated and can only be modified for Google D" +
+            "ocs.\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A link back to this revision.\"" +
+            "}}},\"RevisionList\":{\"id\":\"RevisionList\",\"type\":\"object\",\"description\":\"A list of" +
+            " revisions of a file.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The " +
+            "ETag of the list.\"},\"items\":{\"type\":\"array\",\"description\":\"The actual list of re" +
+            "visions.\",\"items\":{\"$ref\":\"Revision\"}},\"kind\":{\"type\":\"string\",\"description\":\"Th" +
+            "is is always drive#revisionList.\",\"default\":\"drive#revisionList\"},\"selfLink\":{\"t" +
+            "ype\":\"string\",\"description\":\"A link back to this list.\"}}},\"User\":{\"id\":\"User\",\"" +
+            "type\":\"object\",\"description\":\"The JSON template for a user.\",\"properties\":{\"disp" +
+            "layName\":{\"type\":\"string\",\"description\":\"A plain text displayable name for this " +
+            "user.\"},\"isAuthenticatedUser\":{\"type\":\"boolean\",\"description\":\"Whether this user" +
+            " is the same as the authenticated user of which the request was made on behalf.\"" +
+            "},\"kind\":{\"type\":\"string\",\"description\":\"This is always drive#user.\",\"default\":\"" +
+            "drive#user\"},\"picture\":{\"type\":\"object\",\"description\":\"The user\'s profile pictur" +
+            "e.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"A URL that points to a p" +
+            "rofile picture of this user.\"}}}}}},\"resources\":{\"about\":{\"methods\":{\"get\":{\"id\"" +
+            ":\"drive.about.get\",\"path\":\"about\",\"httpMethod\":\"GET\",\"description\":\"Gets the inf" +
+            "ormation about the current user along with Drive API settings\",\"parameters\":{\"in" +
+            "cludeSubscribed\":{\"type\":\"boolean\",\"description\":\"Whether to include subscribed " +
+            "items when calculating the number of remaining change IDs\",\"default\":\"true\",\"loc" +
+            "ation\":\"query\"},\"maxChangeIdCount\":{\"type\":\"string\",\"description\":\"Maximum numbe" +
+            "r of remaining change IDs to count\",\"default\":\"1\",\"format\":\"int64\",\"location\":\"q" +
+            "uery\"},\"startChangeId\":{\"type\":\"string\",\"description\":\"Change ID to start counti" +
+            "ng from when calculating number of remaining change IDs\",\"format\":\"int64\",\"locat" +
+            "ion\":\"query\"}},\"response\":{\"$ref\":\"About\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https://www.googleapi" +
+            "s.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/auth/drive.reado" +
+            "nly\"]}}},\"apps\":{\"methods\":{\"get\":{\"id\":\"drive.apps.get\",\"path\":\"apps/{appId}\",\"" +
+            "httpMethod\":\"GET\",\"description\":\"Gets a specific app.\",\"parameters\":{\"appId\":{\"t" +
+            "ype\":\"string\",\"description\":\"The ID of the app.\",\"required\":true,\"location\":\"pat" +
+            "h\"}},\"parameterOrder\":[\"appId\"],\"response\":{\"$ref\":\"App\"},\"scopes\":[\"https://www" +
+            ".googleapis.com/auth/drive.apps.readonly\"]},\"list\":{\"id\":\"drive.apps.list\",\"path" +
+            "\":\"apps\",\"httpMethod\":\"GET\",\"description\":\"Lists a user\'s apps.\",\"response\":{\"$r" +
+            "ef\":\"AppList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive.apps.readonly\"]}" +
+            "}},\"changes\":{\"methods\":{\"get\":{\"id\":\"drive.changes.get\",\"path\":\"changes/{change" +
+            "Id}\",\"httpMethod\":\"GET\",\"description\":\"Gets a specific change.\",\"parameters\":{\"c" +
+            "hangeId\":{\"type\":\"string\",\"description\":\"The ID of the change.\",\"required\":true," +
+            "\"location\":\"path\"}},\"parameterOrder\":[\"changeId\"],\"response\":{\"$ref\":\"Change\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/aut" +
+            "h/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https:/" +
+            "/www.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id\":\"drive.changes.list\",\"pa" +
+            "th\":\"changes\",\"httpMethod\":\"GET\",\"description\":\"Lists the changes for a user.\",\"" +
+            "parameters\":{\"includeDeleted\":{\"type\":\"boolean\",\"description\":\"Whether to includ" +
+            "e deleted items.\",\"default\":\"true\",\"location\":\"query\"},\"includeSubscribed\":{\"typ" +
+            "e\":\"boolean\",\"description\":\"Whether to include subscribed items.\",\"default\":\"tru" +
+            "e\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum num" +
+            "ber of changes to return.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"locat" +
+            "ion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token for changes" +
+            ".\",\"location\":\"query\"},\"startChangeId\":{\"type\":\"string\",\"description\":\"Change ID" +
+            " to start listing changes from.\",\"format\":\"int64\",\"location\":\"query\"}},\"response" +
+            "\":{\"$ref\":\"ChangeList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https" +
+            "://www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.me" +
+            "tadata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]}}},\"children\"" +
+            ":{\"methods\":{\"delete\":{\"id\":\"drive.children.delete\",\"path\":\"files/{folderId}/chi" +
+            "ldren/{childId}\",\"httpMethod\":\"DELETE\",\"description\":\"Removes a child from a fol" +
+            "der.\",\"parameters\":{\"childId\":{\"type\":\"string\",\"description\":\"The ID of the chil" +
+            "d.\",\"required\":true,\"location\":\"path\"},\"folderId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "folderId\",\"childId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://" +
+            "www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.children.get\",\"path\":\"f" +
+            "iles/{folderId}/children/{childId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a spe" +
+            "cific child reference.\",\"parameters\":{\"childId\":{\"type\":\"string\",\"description\":\"" +
+            "The ID of the child.\",\"required\":true,\"location\":\"path\"},\"folderId\":{\"type\":\"str" +
+            "ing\",\"description\":\"The ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"" +
+            "parameterOrder\":[\"folderId\",\"childId\"],\"response\":{\"$ref\":\"ChildReference\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/d" +
+            "rive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://ww" +
+            "w.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.children.insert\",\"" +
+            "path\":\"files/{folderId}/children\",\"httpMethod\":\"POST\",\"description\":\"Inserts a f" +
+            "ile into a folder.\",\"parameters\":{\"folderId\":{\"type\":\"string\",\"description\":\"The" +
+            " ID of the folder.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"folde" +
+            "rId\"],\"request\":{\"$ref\":\"ChildReference\"},\"response\":{\"$ref\":\"ChildReference\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/aut" +
+            "h/drive.file\"]},\"list\":{\"id\":\"drive.children.list\",\"path\":\"files/{folderId}/chil" +
+            "dren\",\"httpMethod\":\"GET\",\"description\":\"Lists a folder\'s children.\",\"parameters\"" +
+            ":{\"folderId\":{\"type\":\"string\",\"description\":\"The ID of the folder.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum num" +
+            "ber of children to return.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"loca" +
+            "tion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token for childr" +
+            "en.\",\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query string for se" +
+            "arching children.\",\"location\":\"query\"}},\"parameterOrder\":[\"folderId\"],\"response\"" +
+            ":{\"$ref\":\"ChildList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https:/" +
+            "/www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.meta" +
+            "data.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]}}},\"comments\":{" +
+            "\"methods\":{\"delete\":{\"id\":\"drive.comments.delete\",\"path\":\"files/{fileId}/comment" +
+            "s/{commentId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a comment.\",\"paramet" +
+            "ers\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"requi" +
+            "red\":true,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of " +
+            "the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"comme" +
+            "ntId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis" +
+            ".com/auth/drive.readonly\"]},\"get\":{\"id\":\"drive.comments.get\",\"path\":\"files/{file" +
+            "Id}/comments/{commentId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a comment by ID" +
+            ".\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comme" +
+            "nt.\",\"required\":true,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fil" +
+            "eId\",\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapi" +
+            "s.com/auth/drive\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"" +
+            "id\":\"drive.comments.insert\",\"path\":\"files/{fileId}/comments\",\"httpMethod\":\"POST\"" +
+            ",\"description\":\"Creates a new comment on the given file.\",\"parameters\":{\"fileId\"" +
+            ":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"" +
+            "$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www." +
+            "googleapis.com/auth/drive.readonly\"]},\"list\":{\"id\":\"drive.comments.list\",\"path\":" +
+            "\"files/{fileId}/comments\",\"httpMethod\":\"GET\",\"description\":\"Lists a file\'s comme" +
+            "nts.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file." +
+            "\",\"required\":true,\"location\":\"path\"},\"includeDeleted\":{\"type\":\"boolean\",\"descrip" +
+            "tion\":\"If set, all comments, including deleted comments (with content stripped) " +
+            "will be returned.\",\"default\":\"false\",\"location\":\"query\"},\"maxResults\":{\"type\":\"i" +
+            "nteger\",\"description\":\"The maximum number of discussions to include in the respo" +
+            "nse, used for paging.\",\"default\":\"20\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"" +
+            "100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continu" +
+            "ation token, used to page through large result sets. To get the next page of res" +
+            "ults, set this parameter to the value of \\\"nextPageToken\\\" from the previous res" +
+            "ponse.\",\"location\":\"query\"},\"updatedMin\":{\"type\":\"string\",\"description\":\"Only di" +
+            "scussions that were updated after this timestamp will be returned. Formatted as " +
+            "an RFC 3339 timestamp.\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"respon" +
+            "se\":{\"$ref\":\"CommentList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"ht" +
+            "tps://www.googleapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.comments.pa" +
+            "tch\",\"path\":\"files/{fileId}/comments/{commentId}\",\"httpMethod\":\"PATCH\",\"descript" +
+            "ion\":\"Updates an existing comment. This method supports patch semantics.\",\"param" +
+            "eters\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID o" +
+            "f the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"com" +
+            "mentId\"],\"request\":{\"$ref\":\"Comment\"},\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/drive\"]},\"update\":{\"id\":\"drive.comments.update\",\"" +
+            "path\":\"files/{fileId}/comments/{commentId}\",\"httpMethod\":\"PUT\",\"description\":\"Up" +
+            "dates an existing comment.\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ID of the comment.\",\"required\":true,\"location\":\"path\"},\"fileId\":{\"type" +
+            "\":\"string\",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"fileId\",\"commentId\"],\"request\":{\"$ref\":\"Comment\"},\"respons" +
+            "e\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\"]}}},\"fil" +
+            "es\":{\"methods\":{\"copy\":{\"id\":\"drive.files.copy\",\"path\":\"files/{fileId}/copy\",\"ht" +
+            "tpMethod\":\"POST\",\"description\":\"Creates a copy of the specified file.\",\"paramete" +
+            "rs\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Whether to convert this file to " +
+            "the corresponding Google Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fi" +
+            "leId\":{\"type\":\"string\",\"description\":\"The ID of the file to copy.\",\"required\":tr" +
+            "ue,\"location\":\"path\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt " +
+            "OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"}" +
+            ",\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the lang" +
+            "uage to use. Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"t" +
+            "ype\":\"boolean\",\"description\":\"Whether to pin the head revision of the new copy.\"" +
+            ",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The language of the original file to be translated.\",\"location\":\"query\"}" +
+            ",\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language to translate t" +
+            "he file to. If no sourceLanguage is provided, the API will attempt to detect the" +
+            " language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"" +
+            "type\":\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"" +
+            "parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/au" +
+            "th/drive.file\"]},\"delete\":{\"id\":\"drive.files.delete\",\"path\":\"files/{fileId}\",\"ht" +
+            "tpMethod\":\"DELETE\",\"description\":\"Permanently deletes a file by ID. Skips the tr" +
+            "ash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file " +
+            "to delete.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/d" +
+            "rive.file\"]},\"get\":{\"id\":\"drive.files.get\",\"path\":\"files/{fileId}\",\"httpMethod\":" +
+            "\"GET\",\"description\":\"Gets a file\'s metadata by ID.\",\"parameters\":{\"fileId\":{\"typ" +
+            "e\":\"string\",\"description\":\"The ID for the file in question.\",\"required\":true,\"lo" +
+            "cation\":\"path\"},\"projection\":{\"type\":\"string\",\"description\":\"This parameter is d" +
+            "eprecated and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Dep" +
+            "recated\",\"Deprecated\"],\"location\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether to update the view date after successfully retrieving the" +
+            " file.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"resp" +
+            "onse\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https:/" +
+            "/www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.meta" +
+            "data.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\"" +
+            ":\"drive.files.insert\",\"path\":\"files\",\"httpMethod\":\"POST\",\"description\":\"Insert a" +
+            " new file.\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Whether to " +
+            "convert this file to the corresponding Google Docs format.\",\"default\":\"false\",\"l" +
+            "ocation\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR " +
+            "on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"},\"oc" +
+            "rLanguage\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language" +
+            " to use. Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\"" +
+            ":\"boolean\",\"description\":\"Whether to pin the head revision of the uploaded file." +
+            "\",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"descr" +
+            "iption\":\"The language of the original file to be translated.\",\"location\":\"query\"" +
+            "},\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language to translate " +
+            "the file to. If no sourceLanguage is provided, the API will attempt to detect th" +
+            "e language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{" +
+            "\"type\":\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"}}," +
+            "\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.goog" +
+            "leapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"],\"supportsMe" +
+            "diaUpload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"s" +
+            "imple\":{\"multipart\":true,\"path\":\"/upload/drive/v2/files\"},\"resumable\":{\"multipar" +
+            "t\":true,\"path\":\"/resumable/upload/drive/v2/files\"}}}},\"list\":{\"id\":\"drive.files." +
+            "list\",\"path\":\"files\",\"httpMethod\":\"GET\",\"description\":\"Lists the user\'s files.\"," +
+            "\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of fi" +
+            "les to return.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query" +
+            "\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Page token for files.\",\"location\"" +
+            ":\"query\"},\"projection\":{\"type\":\"string\",\"description\":\"This parameter is depreca" +
+            "ted and has no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecate" +
+            "d\",\"Deprecated\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query s" +
+            "tring for searching files.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"FileList\"}," +
+            "\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/au" +
+            "th/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https:" +
+            "//www.googleapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.files.patch\",\"p" +
+            "ath\":\"files/{fileId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates file metadata " +
+            "and/or content. This method supports patch semantics.\",\"parameters\":{\"convert\":{" +
+            "\"type\":\"boolean\",\"description\":\"Whether to convert this file to the correspondin" +
+            "g Google Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"s" +
+            "tring\",\"description\":\"The ID of the file to update.\",\"required\":true,\"location\":" +
+            "\"path\"},\"newRevision\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload sho" +
+            "uld create a new revision. If false, the blob data in the current head revision " +
+            "will be replaced.\",\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\"," +
+            "\"description\":\"Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"de" +
+            "fault\":\"false\",\"location\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":" +
+            "\"If ocr is true, hints at the language to use. Valid values are ISO 639-1 codes." +
+            "\",\"location\":\"query\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin t" +
+            "he new revision.\",\"default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type" +
+            "\":\"boolean\",\"description\":\"Whether to set the modified date with the supplied mo" +
+            "dified date.\",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"st" +
+            "ring\",\"description\":\"The language of the original file to be translated.\",\"locat" +
+            "ion\":\"query\"},\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language t" +
+            "o translate the file to. If no sourceLanguage is provided, the API will attempt " +
+            "to detect the language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string" +
+            "\",\"description\":\"The language of the timed text.\",\"location\":\"query\"},\"timedText" +
+            "TrackName\":{\"type\":\"string\",\"description\":\"The timed text track name.\",\"location" +
+            "\":\"query\"},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update" +
+            " the view date after successfully updating the file.\",\"default\":\"true\",\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$" +
             "ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.goog" +
-            "leapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.read" +
-            "only\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.f" +
-            "iles.insert\",\"path\":\"files\",\"httpMethod\":\"POST\",\"description\":\"Insert a new file" +
-            ".\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"description\":\"Whether to convert t" +
-            "his file to the corresponding Google Docs format.\",\"default\":\"false\",\"location\":" +
-            "\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whether to attempt OCR on .jpg, " +
-            ".png, .gif, or .pdf uploads.\",\"default\":\"false\",\"location\":\"query\"},\"ocrLanguage" +
-            "\":{\"type\":\"string\",\"description\":\"If ocr is true, hints at the language to use. " +
-            "Valid values are ISO 639-1 codes.\",\"location\":\"query\"},\"pinned\":{\"type\":\"boolean" +
-            "\",\"description\":\"Whether to pin the head revision of the uploaded file.\",\"defaul" +
-            "t\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\":\"" +
-            "The language of the original file to be translated.\",\"location\":\"query\"},\"target" +
-            "Language\":{\"type\":\"string\",\"description\":\"Target language to translate the file " +
-            "to. If no sourceLanguage is provided, the API will attempt to detect the languag" +
-            "e.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"The " +
-            "language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":\"s" +
-            "tring\",\"description\":\"The timed text track name.\",\"location\":\"query\"}},\"request\"" +
-            ":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"],\"supportsMediaUpload" +
-            "\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"10GB\",\"protocols\":{\"simple\":{\"" +
-            "multipart\":true,\"path\":\"/upload/drive/v2/files\"},\"resumable\":{\"multipart\":true,\"" +
-            "path\":\"/resumable/upload/drive/v2/files\"}}}},\"list\":{\"id\":\"drive.files.list\",\"pa" +
-            "th\":\"files\",\"httpMethod\":\"GET\",\"description\":\"Lists the user\'s files.\",\"paramete" +
-            "rs\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of files to re" +
-            "turn.\",\"default\":\"100\",\"format\":\"int32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageT" +
-            "oken\":{\"type\":\"string\",\"description\":\"Page token for files.\",\"location\":\"query\"}" +
-            ",\"projection\":{\"type\":\"string\",\"description\":\"This parameter is deprecated and h" +
-            "as no function.\",\"enum\":[\"BASIC\",\"FULL\"],\"enumDescriptions\":[\"Deprecated\",\"Depre" +
-            "cated\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query string for" +
-            " searching files.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"FileList\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive." +
-            "file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.goo" +
-            "gleapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.files.patch\",\"path\":\"fil" +
-            "es/{fileId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates file metadata and/or co" +
-            "ntent. This method supports patch semantics.\",\"parameters\":{\"convert\":{\"type\":\"b" +
-            "oolean\",\"description\":\"Whether to convert this file to the corresponding Google " +
-            "Docs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"d" +
-            "escription\":\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"" +
-            "newRevision\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should creat" +
-            "e a new revision. If false, the blob data in the current head revision will be r" +
-            "eplaced.\",\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"descript" +
-            "ion\":\"Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"f" +
-            "alse\",\"location\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr i" +
-            "s true, hints at the language to use. Valid values are ISO 639-1 codes.\",\"locati" +
-            "on\":\"query\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new re" +
-            "vision.\",\"default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolea" +
-            "n\",\"description\":\"Whether to set the modified date with the supplied modified da" +
-            "te.\",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"de" +
-            "scription\":\"The language of the original file to be translated.\",\"location\":\"que" +
-            "ry\"},\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language to transla" +
-            "te the file to. If no sourceLanguage is provided, the API will attempt to detect" +
-            " the language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName" +
-            "\":{\"type\":\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"" +
-            "},\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the view" +
-            " date after successfully updating the file.\",\"default\":\"true\",\"location\":\"query\"" +
-            "}},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"Fil" +
-            "e\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.co" +
-            "m/auth/drive.file\"]},\"touch\":{\"id\":\"drive.files.touch\",\"path\":\"files/{fileId}/to" +
-            "uch\",\"httpMethod\":\"POST\",\"description\":\"Set the file\'s updated time to the curre" +
-            "nt server time.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID o" +
-            "f the file to update.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fi" +
-            "leId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dri" +
-            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"trash\":{\"id\":\"drive.files.tr" +
-            "ash\",\"path\":\"files/{fileId}/trash\",\"httpMethod\":\"POST\",\"description\":\"Moves a fi" +
-            "le to the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID " +
-            "of the file to trash.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fi" +
-            "leId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com/auth/dri" +
-            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"untrash\":{\"id\":\"drive.files." +
-            "untrash\",\"path\":\"files/{fileId}/untrash\",\"httpMethod\":\"POST\",\"description\":\"Rest" +
-            "ores a file from the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The ID of the file to untrash.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"fileId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"" +
-            "drive.files.update\",\"path\":\"files/{fileId}\",\"httpMethod\":\"PUT\",\"description\":\"Up" +
-            "dates file metadata and/or content\",\"parameters\":{\"convert\":{\"type\":\"boolean\",\"d" +
-            "escription\":\"Whether to convert this file to the corresponding Google Docs forma" +
-            "t.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"description" +
-            "\":\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"newRevisio" +
-            "n\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create a new re" +
-            "vision. If false, the blob data in the current head revision will be replaced.\"," +
-            "\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"description\":\"Whet" +
-            "her to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"false\",\"loc" +
-            "ation\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr is true, hi" +
-            "nts at the language to use. Valid values are ISO 639-1 codes.\",\"location\":\"query" +
-            "\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new revision.\",\"" +
-            "default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Whether to set the modified date with the supplied modified date.\",\"defa" +
-            "ult\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"description\"" +
-            ":\"The language of the original file to be translated.\",\"location\":\"query\"},\"targ" +
-            "etLanguage\":{\"type\":\"string\",\"description\":\"Target language to translate the fil" +
-            "e to. If no sourceLanguage is provided, the API will attempt to detect the langu" +
-            "age.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"description\":\"Th" +
-            "e language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\":{\"type\":" +
-            "\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"},\"updateV" +
-            "iewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the view date afte" +
-            "r successfully updating the file.\",\"default\":\"true\",\"location\":\"query\"}},\"parame" +
-            "terOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File\"},\"scope" +
-            "s\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/dri" +
-            "ve.file\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"maxSize\":\"" +
-            "10GB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/drive/v2/files/{fi" +
-            "leId}\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/drive/v2/files/{" +
-            "fileId}\"}}}}}},\"parents\":{\"methods\":{\"delete\":{\"id\":\"drive.parents.delete\",\"path" +
-            "\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"DELETE\",\"description\":\"Remov" +
-            "es a parent from a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":" +
-            "\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"parentId\":{\"type\":\"str" +
-            "ing\",\"description\":\"The ID of the parent.\",\"required\":true,\"location\":\"path\"}},\"" +
-            "parameterOrder\":[\"fileId\",\"parentId\"],\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.parent" +
-            "s.get\",\"path\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Gets a specific parent reference.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"parentId\"" +
-            ":{\"type\":\"string\",\"description\":\"The ID of the parent.\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"fileId\",\"parentId\"],\"response\":{\"$ref\":\"ParentRef" +
-            "erence\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleap" +
-            "is.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly" +
-            "\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.paren" +
-            "ts.insert\",\"path\":\"files/{fileId}/parents\",\"httpMethod\":\"POST\",\"description\":\"Ad" +
-            "ds a parent folder for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\"" +
-            ":[\"fileId\"],\"request\":{\"$ref\":\"ParentReference\"},\"response\":{\"$ref\":\"ParentRefer" +
-            "ence\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis" +
-            ".com/auth/drive.file\"]},\"list\":{\"id\":\"drive.parents.list\",\"path\":\"files/{fileId}" +
-            "/parents\",\"httpMethod\":\"GET\",\"description\":\"Lists a file\'s parents.\",\"parameters" +
-            "\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"required\":true" +
-            ",\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"ParentList\"" +
+            "leapis.com/auth/drive.file\"]},\"touch\":{\"id\":\"drive.files.touch\",\"path\":\"files/{f" +
+            "ileId}/touch\",\"httpMethod\":\"POST\",\"description\":\"Set the file\'s updated time to " +
+            "the current server time.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":" +
+            "\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"fileId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"trash\":{\"id\":\"drive" +
+            ".files.trash\",\"path\":\"files/{fileId}/trash\",\"httpMethod\":\"POST\",\"description\":\"M" +
+            "oves a file to the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the file to trash.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"fileId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"untrash\":{\"id\":\"dri" +
+            "ve.files.untrash\",\"path\":\"files/{fileId}/untrash\",\"httpMethod\":\"POST\",\"descripti" +
+            "on\":\"Restores a file from the trash.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID of the file to untrash.\",\"required\":true,\"location\":\"path\"}}" +
+            ",\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"File\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update" +
+            "\":{\"id\":\"drive.files.update\",\"path\":\"files/{fileId}\",\"httpMethod\":\"PUT\",\"descrip" +
+            "tion\":\"Updates file metadata and/or content\",\"parameters\":{\"convert\":{\"type\":\"bo" +
+            "olean\",\"description\":\"Whether to convert this file to the corresponding Google D" +
+            "ocs format.\",\"default\":\"false\",\"location\":\"query\"},\"fileId\":{\"type\":\"string\",\"de" +
+            "scription\":\"The ID of the file to update.\",\"required\":true,\"location\":\"path\"},\"n" +
+            "ewRevision\":{\"type\":\"boolean\",\"description\":\"Whether a blob upload should create" +
+            " a new revision. If false, the blob data in the current head revision will be re" +
+            "placed.\",\"default\":\"true\",\"location\":\"query\"},\"ocr\":{\"type\":\"boolean\",\"descripti" +
+            "on\":\"Whether to attempt OCR on .jpg, .png, .gif, or .pdf uploads.\",\"default\":\"fa" +
+            "lse\",\"location\":\"query\"},\"ocrLanguage\":{\"type\":\"string\",\"description\":\"If ocr is" +
+            " true, hints at the language to use. Valid values are ISO 639-1 codes.\",\"locatio" +
+            "n\":\"query\"},\"pinned\":{\"type\":\"boolean\",\"description\":\"Whether to pin the new rev" +
+            "ision.\",\"default\":\"false\",\"location\":\"query\"},\"setModifiedDate\":{\"type\":\"boolean" +
+            "\",\"description\":\"Whether to set the modified date with the supplied modified dat" +
+            "e.\",\"default\":\"false\",\"location\":\"query\"},\"sourceLanguage\":{\"type\":\"string\",\"des" +
+            "cription\":\"The language of the original file to be translated.\",\"location\":\"quer" +
+            "y\"},\"targetLanguage\":{\"type\":\"string\",\"description\":\"Target language to translat" +
+            "e the file to. If no sourceLanguage is provided, the API will attempt to detect " +
+            "the language.\",\"location\":\"query\"},\"timedTextLanguage\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The language of the timed text.\",\"location\":\"query\"},\"timedTextTrackName\"" +
+            ":{\"type\":\"string\",\"description\":\"The timed text track name.\",\"location\":\"query\"}" +
+            ",\"updateViewedDate\":{\"type\":\"boolean\",\"description\":\"Whether to update the view " +
+            "date after successfully updating the file.\",\"default\":\"true\",\"location\":\"query\"}" +
+            "},\"parameterOrder\":[\"fileId\"],\"request\":{\"$ref\":\"File\"},\"response\":{\"$ref\":\"File" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com" +
+            "/auth/drive.file\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"*/*\"],\"m" +
+            "axSize\":\"10GB\",\"protocols\":{\"simple\":{\"multipart\":true,\"path\":\"/upload/drive/v2/" +
+            "files/{fileId}\"},\"resumable\":{\"multipart\":true,\"path\":\"/resumable/upload/drive/v" +
+            "2/files/{fileId}\"}}}}}},\"parents\":{\"methods\":{\"delete\":{\"id\":\"drive.parents.dele" +
+            "te\",\"path\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"DELETE\",\"descriptio" +
+            "n\":\"Removes a parent from a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"parentId\":{\"t" +
+            "ype\":\"string\",\"description\":\"The ID of the parent.\",\"required\":true,\"location\":\"" +
+            "path\"}},\"parameterOrder\":[\"fileId\",\"parentId\"],\"scopes\":[\"https://www.googleapis" +
+            ".com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"dri" +
+            "ve.parents.get\",\"path\":\"files/{fileId}/parents/{parentId}\",\"httpMethod\":\"GET\",\"d" +
+            "escription\":\"Gets a specific parent reference.\",\"parameters\":{\"fileId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"" +
+            "parentId\":{\"type\":\"string\",\"description\":\"The ID of the parent.\",\"required\":true" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"parentId\"],\"response\":{\"$ref\":\"" +
+            "ParentReference\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www" +
+            ".googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata" +
+            ".readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"dr" +
+            "ive.parents.insert\",\"path\":\"files/{fileId}/parents\",\"httpMethod\":\"POST\",\"descrip" +
+            "tion\":\"Adds a parent folder for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\"" +
+            ",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"parame" +
+            "terOrder\":[\"fileId\"],\"request\":{\"$ref\":\"ParentReference\"},\"response\":{\"$ref\":\"Pa" +
+            "rentReference\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.g" +
+            "oogleapis.com/auth/drive.file\"]},\"list\":{\"id\":\"drive.parents.list\",\"path\":\"files" +
+            "/{fileId}/parents\",\"httpMethod\":\"GET\",\"description\":\"Lists a file\'s parents.\",\"p" +
+            "arameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"requi" +
+            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"Pa" +
+            "rentList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.google" +
+            "apis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readon" +
+            "ly\",\"https://www.googleapis.com/auth/drive.readonly\"]}}},\"permissions\":{\"methods" +
+            "\":{\"delete\":{\"id\":\"drive.permissions.delete\",\"path\":\"files/{fileId}/permissions/" +
+            "{permissionId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a permission from a" +
+            " file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the fi" +
+            "le.\",\"required\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"fileId\",\"permissionId\"],\"scopes\":[\"https://www.googleapis.com/auth/dri" +
+            "ve\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.permission" +
+            "s.get\",\"path\":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Gets a permission by ID.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"permissio" +
+            "nId\":{\"type\":\"string\",\"description\":\"The ID for the permission.\",\"required\":true" +
+            ",\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"],\"response\":{\"$re" +
+            "f\":\"Permission\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www." +
+            "googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata." +
+            "readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"dri" +
+            "ve.permissions.insert\",\"path\":\"files/{fileId}/permissions\",\"httpMethod\":\"POST\",\"" +
+            "description\":\"Inserts a permission for a file.\",\"parameters\":{\"fileId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"}," +
+            "\"sendNotificationEmails\":{\"type\":\"boolean\",\"description\":\"Whether to send notifi" +
+            "cation emails.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"" +
+            "],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"ht" +
+            "tps://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file" +
+            "\"]},\"list\":{\"id\":\"drive.permissions.list\",\"path\":\"files/{fileId}/permissions\",\"h" +
+            "ttpMethod\":\"GET\",\"description\":\"Lists a file\'s permissions.\",\"parameters\":{\"file" +
+            "Id\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"locat" +
+            "ion\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"PermissionList\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/aut" +
+            "h/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https:/" +
+            "/www.googleapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.permissions.patc" +
+            "h\",\"path\":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"PATCH\",\"desc" +
+            "ription\":\"Updates a permission. This method supports patch semantics.\",\"paramete" +
+            "rs\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"The ID for" +
+            " the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"" +
+            ",\"permissionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"" +
             "},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/" +
-            "auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"http" +
-            "s://www.googleapis.com/auth/drive.readonly\"]}}},\"permissions\":{\"methods\":{\"delet" +
-            "e\":{\"id\":\"drive.permissions.delete\",\"path\":\"files/{fileId}/permissions/{permissi" +
-            "onId}\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a permission from a file.\",\"" +
-            "parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"req" +
-            "uired\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"Th" +
-            "e ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[" +
-            "\"fileId\",\"permissionId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"http" +
-            "s://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.permissions.get\",\"p" +
-            "ath\":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"GET\",\"description" +
-            "\":\"Gets a permission by ID.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"permissionId\":{\"ty" +
-            "pe\":\"string\",\"description\":\"The ID for the permission.\",\"required\":true,\"locatio" +
-            "n\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permissionId\"],\"response\":{\"$ref\":\"Permi" +
-            "ssion\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapi" +
-            "s.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\"" +
-            ",\"https://www.googleapis.com/auth/drive.readonly\"]},\"insert\":{\"id\":\"drive.permis" +
-            "sions.insert\",\"path\":\"files/{fileId}/permissions\",\"httpMethod\":\"POST\",\"descripti" +
-            "on\":\"Inserts a permission for a file.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"sendNoti" +
-            "ficationEmails\":{\"type\":\"boolean\",\"description\":\"Whether to send notification em" +
-            "ails.\",\"default\":\"true\",\"location\":\"query\"}},\"parameterOrder\":[\"fileId\"],\"reques" +
-            "t\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"list" +
-            "\":{\"id\":\"drive.permissions.list\",\"path\":\"files/{fileId}/permissions\",\"httpMethod" +
-            "\":\"GET\",\"description\":\"Lists a file\'s permissions.\",\"parameters\":{\"fileId\":{\"typ" +
-            "e\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"fileId\"],\"response\":{\"$ref\":\"PermissionList\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.f" +
-            "ile\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://www.goog" +
-            "leapis.com/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.permissions.patch\",\"path\"" +
-            ":\"files/{fileId}/permissions/{permissionId}\",\"httpMethod\":\"PATCH\",\"description\":" +
-            "\"Updates a permission. This method supports patch semantics.\",\"parameters\":{\"fil" +
-            "eId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"required\":true,\"loca" +
-            "tion\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"The ID for the perm" +
-            "ission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"permiss" +
-            "ionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Permission\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/driv" +
-            "e.file\"]},\"update\":{\"id\":\"drive.permissions.update\",\"path\":\"files/{fileId}/permi" +
-            "ssions/{permissionId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a permission.\"," +
-            "\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the file.\",\"re" +
-            "quired\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"description\":\"T" +
-            "he ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":" +
-            "[\"fileId\",\"permissionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"$ref\":\"Pe" +
-            "rmission\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.google" +
-            "apis.com/auth/drive.file\"]}}},\"revisions\":{\"methods\":{\"delete\":{\"id\":\"drive.revi" +
-            "sions.delete\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"DELET" +
-            "E\",\"description\":\"Removes a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"revisionI" +
-            "d\":{\"type\":\"string\",\"description\":\"The ID of the revision.\",\"required\":true,\"loc" +
-            "ation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"scopes\":[\"https://www." +
-            "googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"get\":" +
-            "{\"id\":\"drive.revisions.get\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"http" +
-            "Method\":\"GET\",\"description\":\"Gets a specific revision.\",\"parameters\":{\"fileId\":{" +
-            "\"type\":\"string\",\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"" +
-            "path\"},\"revisionId\":{\"type\":\"string\",\"description\":\"The ID of the revision.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"respo" +
-            "nse\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"http" +
-            "s://www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive.m" +
-            "etadata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id" +
-            "\":\"drive.revisions.list\",\"path\":\"files/{fileId}/revisions\",\"httpMethod\":\"GET\",\"d" +
-            "escription\":\"Lists a file\'s revisions.\",\"parameters\":{\"fileId\":{\"type\":\"string\"," +
-            "\"description\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
-            "erOrder\":[\"fileId\"],\"response\":{\"$ref\":\"RevisionList\"},\"scopes\":[\"https://www.go" +
-            "ogleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.file\",\"https://w" +
-            "ww.googleapis.com/auth/drive.metadata.readonly\",\"https://www.googleapis.com/auth" +
-            "/drive.readonly\"]},\"patch\":{\"id\":\"drive.revisions.patch\",\"path\":\"files/{fileId}/" +
-            "revisions/{revisionId}\",\"httpMethod\":\"PATCH\",\"description\":\"Updates a revision. " +
-            "This method supports patch semantics.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"revision" +
-            "Id\":{\"type\":\"string\",\"description\":\"The ID for the revision.\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Re" +
-            "vision\"},\"response\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/drive\",\"https://www.googleapis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.r" +
-            "evisions.update\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"PU" +
-            "T\",\"description\":\"Updates a revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"" +
-            "description\":\"The ID for the file.\",\"required\":true,\"location\":\"path\"},\"revision" +
-            "Id\":{\"type\":\"string\",\"description\":\"The ID for the revision.\",\"required\":true,\"l" +
-            "ocation\":\"path\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Re" +
-            "vision\"},\"response\":{\"$ref\":\"Revision\"},\"scopes\":[\"https://www.googleapis.com/au" +
-            "th/drive\",\"https://www.googleapis.com/auth/drive.file\"]}}}}}";
+            "auth/drive.file\"]},\"update\":{\"id\":\"drive.permissions.update\",\"path\":\"files/{file" +
+            "Id}/permissions/{permissionId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a perm" +
+            "ission.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the f" +
+            "ile.\",\"required\":true,\"location\":\"path\"},\"permissionId\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The ID for the permission.\",\"required\":true,\"location\":\"path\"}},\"paramet" +
+            "erOrder\":[\"fileId\",\"permissionId\"],\"request\":{\"$ref\":\"Permission\"},\"response\":{\"" +
+            "$ref\":\"Permission\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://w" +
+            "ww.googleapis.com/auth/drive.file\"]}}},\"replies\":{\"methods\":{\"delete\":{\"id\":\"dri" +
+            "ve.replies.delete\",\"path\":\"files/{fileId}/comments/{commentId}/replies/{replyId}" +
+            "\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes a reply.\",\"parameters\":{\"commentI" +
+            "d\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"replyId\":{\"type\":\"string\",\"description\":\"The ID " +
+            "of the reply.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"c" +
+            "ommentId\",\"replyId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\"]},\"get\":{" +
+            "\"id\":\"drive.replies.get\",\"path\":\"files/{fileId}/comments/{commentId}/replies/{re" +
+            "plyId}\",\"httpMethod\":\"GET\",\"description\":\"Gets a reply.\",\"parameters\":{\"commentI" +
+            "d\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"required\":true,\"loca" +
+            "tion\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"replyId\":{\"type\":\"string\",\"description\":\"The ID " +
+            "of the reply.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\",\"c" +
+            "ommentId\",\"replyId\"],\"response\":{\"$ref\":\"CommentReply\"},\"scopes\":[\"https://www.g" +
+            "oogleapis.com/auth/drive\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"in" +
+            "sert\":{\"id\":\"drive.replies.insert\",\"path\":\"files/{fileId}/comments/{commentId}/r" +
+            "eplies\",\"httpMethod\":\"POST\",\"description\":\"Creates a new reply to the given comm" +
+            "ent.\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the co" +
+            "mment.\",\"required\":true,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The ID of the file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"" +
+            "fileId\",\"commentId\"],\"request\":{\"$ref\":\"CommentReply\"},\"response\":{\"$ref\":\"Comme" +
+            "ntReply\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\"]},\"list\":{\"id\":\"driv" +
+            "e.replies.list\",\"path\":\"files/{fileId}/comments/{commentId}/replies\",\"httpMethod" +
+            "\":\"GET\",\"description\":\"Lists all of the replies to a comment.\",\"parameters\":{\"co" +
+            "mmentId\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"required\":true" +
+            ",\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the file." +
+            "\",\"required\":true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description" +
+            "\":\"The maximum number of replies to include in the response, used for paging.\",\"" +
+            "default\":\"20\",\"format\":\"int32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"}" +
+            ",\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, used to pag" +
+            "e through large result sets. To get the next page of results, set this parameter" +
+            " to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"quer" +
+            "y\"}},\"parameterOrder\":[\"fileId\",\"commentId\"],\"response\":{\"$ref\":\"CommentReplyLis" +
+            "t\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.co" +
+            "m/auth/drive.readonly\"]},\"patch\":{\"id\":\"drive.replies.patch\",\"path\":\"files/{file" +
+            "Id}/comments/{commentId}/replies/{replyId}\",\"httpMethod\":\"PATCH\",\"description\":\"" +
+            "Updates an existing reply. This method supports patch semantics.\",\"parameters\":{" +
+            "\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"required\":t" +
+            "rue,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the fi" +
+            "le.\",\"required\":true,\"location\":\"path\"},\"replyId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the reply.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"f" +
+            "ileId\",\"commentId\",\"replyId\"],\"request\":{\"$ref\":\"CommentReply\"},\"response\":{\"$re" +
+            "f\":\"CommentReply\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\"]},\"update\":" +
+            "{\"id\":\"drive.replies.update\",\"path\":\"files/{fileId}/comments/{commentId}/replies" +
+            "/{replyId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates an existing reply.\",\"param" +
+            "eters\":{\"commentId\":{\"type\":\"string\",\"description\":\"The ID of the comment.\",\"req" +
+            "uired\":true,\"location\":\"path\"},\"fileId\":{\"type\":\"string\",\"description\":\"The ID o" +
+            "f the file.\",\"required\":true,\"location\":\"path\"},\"replyId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The ID of the reply.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
+            "der\":[\"fileId\",\"commentId\",\"replyId\"],\"request\":{\"$ref\":\"CommentReply\"},\"respons" +
+            "e\":{\"$ref\":\"CommentReply\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\"]}}}" +
+            ",\"revisions\":{\"methods\":{\"delete\":{\"id\":\"drive.revisions.delete\",\"path\":\"files/{" +
+            "fileId}/revisions/{revisionId}\",\"httpMethod\":\"DELETE\",\"description\":\"Removes a r" +
+            "evision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the f" +
+            "ile.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ID of the revision.\",\"required\":true,\"location\":\"path\"}},\"parameterOrd" +
+            "er\":[\"fileId\",\"revisionId\"],\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"h" +
+            "ttps://www.googleapis.com/auth/drive.file\"]},\"get\":{\"id\":\"drive.revisions.get\",\"" +
+            "path\":\"files/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"GET\",\"description\":\"" +
+            "Gets a specific revision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\"" +
+            ":\"The ID of the file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"" +
+            "string\",\"description\":\"The ID of the revision.\",\"required\":true,\"location\":\"path" +
+            "\"}},\"parameterOrder\":[\"fileId\",\"revisionId\"],\"response\":{\"$ref\":\"Revision\"},\"sco" +
+            "pes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.googleapis.com/auth/d" +
+            "rive.file\",\"https://www.googleapis.com/auth/drive.metadata.readonly\",\"https://ww" +
+            "w.googleapis.com/auth/drive.readonly\"]},\"list\":{\"id\":\"drive.revisions.list\",\"pat" +
+            "h\":\"files/{fileId}/revisions\",\"httpMethod\":\"GET\",\"description\":\"Lists a file\'s r" +
+            "evisions.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID of the " +
+            "file.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"fileId\"],\"response" +
+            "\":{\"$ref\":\"RevisionList\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"htt" +
+            "ps://www.googleapis.com/auth/drive.file\",\"https://www.googleapis.com/auth/drive." +
+            "metadata.readonly\",\"https://www.googleapis.com/auth/drive.readonly\"]},\"patch\":{\"" +
+            "id\":\"drive.revisions.patch\",\"path\":\"files/{fileId}/revisions/{revisionId}\",\"http" +
+            "Method\":\"PATCH\",\"description\":\"Updates a revision. This method supports patch se" +
+            "mantics.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the " +
+            "file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The ID for the revision.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Revision\"},\"response\":{\"$ref\":\"" +
+            "Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.google" +
+            "apis.com/auth/drive.file\"]},\"update\":{\"id\":\"drive.revisions.update\",\"path\":\"file" +
+            "s/{fileId}/revisions/{revisionId}\",\"httpMethod\":\"PUT\",\"description\":\"Updates a r" +
+            "evision.\",\"parameters\":{\"fileId\":{\"type\":\"string\",\"description\":\"The ID for the " +
+            "file.\",\"required\":true,\"location\":\"path\"},\"revisionId\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The ID for the revision.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
+            "rder\":[\"fileId\",\"revisionId\"],\"request\":{\"$ref\":\"Revision\"},\"response\":{\"$ref\":\"" +
+            "Revision\"},\"scopes\":[\"https://www.googleapis.com/auth/drive\",\"https://www.google" +
+            "apis.com/auth/drive.file\"]}}}}}";
         
         public const string Version = "v2";
         
@@ -3057,9 +3972,11 @@ namespace Google.Apis.Drive.v2 {
             this._apps = new AppsResource(this, _authenticator);
             this._changes = new ChangesResource(this, _authenticator);
             this._children = new ChildrenResource(this, _authenticator);
+            this._comments = new CommentsResource(this, _authenticator);
             this._files = new FilesResource(this, _authenticator);
             this._parents = new ParentsResource(this, _authenticator);
             this._permissions = new PermissionsResource(this, _authenticator);
+            this._replies = new RepliesResource(this, _authenticator);
             this._revisions = new RevisionsResource(this, _authenticator);
         }
         
@@ -3903,6 +4820,543 @@ namespace Google.Apis.Drive.v2 {
                 get {
                     return "list";
                 }
+            }
+        }
+    }
+    
+    public class CommentsResource {
+        
+        private DriveService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        
+        private const string Resource = "comments";
+        
+        public CommentsResource(DriveService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this.service = service;
+            this._authenticator = _authenticator;
+        }
+        
+        /// <summary>Deletes a comment.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual DeleteRequest Delete(string fileId, string commentId) {
+            return new DeleteRequest(service, fileId, commentId);
+        }
+        
+        /// <summary>Gets a comment by ID.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual GetRequest Get(string fileId, string commentId) {
+            return new GetRequest(service, fileId, commentId);
+        }
+        
+        /// <summary>Creates a new comment on the given file.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        public virtual InsertRequest Insert(Google.Apis.Drive.v2.Data.Comment body, string fileId) {
+            return new InsertRequest(service, body, fileId);
+        }
+        
+        /// <summary>Lists a file&apos;s comments.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        public virtual ListRequest List(string fileId) {
+            return new ListRequest(service, fileId);
+        }
+        
+        /// <summary>Updates an existing comment. This method supports patch semantics.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual PatchRequest Patch(Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) {
+            return new PatchRequest(service, body, fileId, commentId);
+        }
+        
+        /// <summary>Updates an existing comment.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual UpdateRequest Update(Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) {
+            return new UpdateRequest(service, body, fileId, commentId);
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string fileId, string commentId) : 
+                    base(service) {
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.Comment> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string fileId, string commentId) : 
+                    base(service) {
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.Comment> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _fileId;
+            
+            private Google.Apis.Drive.v2.Data.Comment _Body;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.Comment body, string fileId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.Comment Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentList> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _fileId;
+            
+            private System.Nullable<bool> _includeDeleted;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private string _pageToken;
+            
+            private string _updatedMin;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string fileId) : 
+                    base(service) {
+                this._fileId = fileId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>If set, all comments, including deleted comments (with content stripped) will be returned.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("includeDeleted", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> IncludeDeleted {
+                get {
+                    return this._includeDeleted;
+                }
+                set {
+                    this._includeDeleted = value;
+                }
+            }
+            
+            /// <summary>The maximum number of discussions to include in the response, used for paging.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            /// <summary>Only discussions that were updated after this timestamp will be returned. Formatted as an RFC 3339 timestamp.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("updatedMin", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string UpdatedMin {
+                get {
+                    return this._updatedMin;
+                }
+                set {
+                    this._updatedMin = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.Comment> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private Google.Apis.Drive.v2.Data.Comment _Body;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.Comment Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.Comment> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private Google.Apis.Drive.v2.Data.Comment _Body;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.Comment body, string fileId, string commentId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.Comment Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "comments";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
             }
         }
     }
@@ -6310,6 +7764,589 @@ namespace Google.Apis.Drive.v2 {
         }
     }
     
+    public class RepliesResource {
+        
+        private DriveService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        
+        private const string Resource = "replies";
+        
+        public RepliesResource(DriveService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this.service = service;
+            this._authenticator = _authenticator;
+        }
+        
+        /// <summary>Deletes a reply.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        /// <param name="replyId">Required - The ID of the reply.</param>
+        public virtual DeleteRequest Delete(string fileId, string commentId, string replyId) {
+            return new DeleteRequest(service, fileId, commentId, replyId);
+        }
+        
+        /// <summary>Gets a reply.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        /// <param name="replyId">Required - The ID of the reply.</param>
+        public virtual GetRequest Get(string fileId, string commentId, string replyId) {
+            return new GetRequest(service, fileId, commentId, replyId);
+        }
+        
+        /// <summary>Creates a new reply to the given comment.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual InsertRequest Insert(Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId) {
+            return new InsertRequest(service, body, fileId, commentId);
+        }
+        
+        /// <summary>Lists all of the replies to a comment.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        public virtual ListRequest List(string fileId, string commentId) {
+            return new ListRequest(service, fileId, commentId);
+        }
+        
+        /// <summary>Updates an existing reply. This method supports patch semantics.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        /// <param name="replyId">Required - The ID of the reply.</param>
+        public virtual PatchRequest Patch(Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) {
+            return new PatchRequest(service, body, fileId, commentId, replyId);
+        }
+        
+        /// <summary>Updates an existing reply.</summary>
+        /// <param name="fileId">Required - The ID of the file.</param>
+        /// <param name="commentId">Required - The ID of the comment.</param>
+        /// <param name="replyId">Required - The ID of the reply.</param>
+        public virtual UpdateRequest Update(Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) {
+            return new UpdateRequest(service, body, fileId, commentId, replyId);
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private string _replyId;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string fileId, string commentId, string replyId) : 
+                    base(service) {
+                this._fileId = fileId;
+                this._commentId = commentId;
+                this._replyId = replyId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>The ID of the reply.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("replyId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string ReplyId {
+                get {
+                    return this._replyId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
+        }
+        
+        public class GetRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentReply> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private string _replyId;
+            
+            public GetRequest(Google.Apis.Discovery.IRequestProvider service, string fileId, string commentId, string replyId) : 
+                    base(service) {
+                this._fileId = fileId;
+                this._commentId = commentId;
+                this._replyId = replyId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>The ID of the reply.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("replyId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string ReplyId {
+                get {
+                    return this._replyId;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "get";
+                }
+            }
+        }
+        
+        public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentReply> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private Google.Apis.Drive.v2.Data.CommentReply _Body;
+            
+            public InsertRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.CommentReply Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "insert";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class ListRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentReplyList> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private System.Nullable<long> _maxResults;
+            
+            private string _pageToken;
+            
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string fileId, string commentId) : 
+                    base(service) {
+                this._fileId = fileId;
+                this._commentId = commentId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>The maximum number of replies to include in the response, used for paging.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("maxResults", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> MaxResults {
+                get {
+                    return this._maxResults;
+                }
+                set {
+                    this._maxResults = value;
+                }
+            }
+            
+            /// <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
+                get {
+                    return this._pageToken;
+                }
+                set {
+                    this._pageToken = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "list";
+                }
+            }
+        }
+        
+        public class PatchRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentReply> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private string _replyId;
+            
+            private Google.Apis.Drive.v2.Data.CommentReply _Body;
+            
+            public PatchRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+                this._commentId = commentId;
+                this._replyId = replyId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>The ID of the reply.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("replyId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string ReplyId {
+                get {
+                    return this._replyId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.CommentReply Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "patch";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+        
+        public class UpdateRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Drive.v2.Data.CommentReply> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _commentId;
+            
+            private string _fileId;
+            
+            private string _replyId;
+            
+            private Google.Apis.Drive.v2.Data.CommentReply _Body;
+            
+            public UpdateRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Drive.v2.Data.CommentReply body, string fileId, string commentId, string replyId) : 
+                    base(service) {
+                this.Body = body;
+                this._fileId = fileId;
+                this._commentId = commentId;
+                this._replyId = replyId;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>The ID of the comment.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("commentId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string CommentId {
+                get {
+                    return this._commentId;
+                }
+            }
+            
+            /// <summary>The ID of the file.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("fileId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string FileId {
+                get {
+                    return this._fileId;
+                }
+            }
+            
+            /// <summary>The ID of the reply.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("replyId", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual string ReplyId {
+                get {
+                    return this._replyId;
+                }
+            }
+            
+            /// <summary>Gets/Sets the Body of this Request.</summary>
+            public virtual Google.Apis.Drive.v2.Data.CommentReply Body {
+                get {
+                    return this._Body;
+                }
+                set {
+                    this._Body = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "replies";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "update";
+                }
+            }
+            
+            protected override object GetBody() {
+                return this.Body;
+            }
+        }
+    }
+    
     public class RevisionsResource {
         
         private DriveService service;
@@ -6728,11 +8765,15 @@ namespace Google.Apis.Drive.v2 {
         
         private ChildrenResource _children;
         
+        private CommentsResource _comments;
+        
         private FilesResource _files;
         
         private ParentsResource _parents;
         
         private PermissionsResource _permissions;
+        
+        private RepliesResource _replies;
         
         private RevisionsResource _revisions;
         
@@ -6766,6 +8807,12 @@ namespace Google.Apis.Drive.v2 {
             }
         }
         
+        public virtual CommentsResource Comments {
+            get {
+                return this._comments;
+            }
+        }
+        
         public virtual FilesResource Files {
             get {
                 return this._files;
@@ -6781,6 +8828,12 @@ namespace Google.Apis.Drive.v2 {
         public virtual PermissionsResource Permissions {
             get {
                 return this._permissions;
+            }
+        }
+        
+        public virtual RepliesResource Replies {
+            get {
+                return this._replies;
             }
         }
         

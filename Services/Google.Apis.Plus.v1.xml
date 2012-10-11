@@ -113,7 +113,7 @@
             <summary>The media objects attached to this activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Content">
-            <summary>The HTML-formatted content, suitable for display. When creating or updating an activity, this value must be supplied as plain text in the request. If successful, the response will contain the HTML-formatted content. When updating an activity, use originalContent as the starting value, then assign the updated text to this property.</summary>
+            <summary>The HTML-formatted content, suitable for display. When creating or updating an activity, this value must be supplied as plain text in the request. If successful, the response contains the HTML-formatted content. When updating an activity, use originalContent as the starting value, then assign the updated text to this property.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Id">
             <summary>The ID of the object. When resharing an activity, this is the ID of the activity being reshared.</summary>

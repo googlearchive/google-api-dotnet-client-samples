@@ -534,7 +534,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _type;
         
-        /// <summary>Channel responsible for this activity.</summary>
+        /// <summary>Channel publishing the activity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -545,7 +545,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Description of the main resource.</summary>
+        /// <summary>Description of the activity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -567,7 +567,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Time when this activity was created.</summary>
+        /// <summary>Date and time the activity was published at.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -578,7 +578,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Thumbnails of the main resource.</summary>
+        /// <summary>Activity thumbnails.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
         public virtual ActivitySnippet.ThumbnailsData Thumbnails {
             get {
@@ -589,7 +589,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Title of the main resource.</summary>
+        /// <summary>Title of the activity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -600,7 +600,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Category of the activity activity.</summary>
+        /// <summary>Type of the activity.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("type")]
         public virtual string Type {
             get {
@@ -611,7 +611,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Thumbnails of the main resource.</summary>
+        /// <summary>Activity thumbnails.</summary>
         public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
@@ -720,7 +720,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _kind;
         
-        private GuideCategoryDetails _snippet;
+        private GuideCategorySnippet _snippet;
         
         /// <summary>The eTag of the guide category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
@@ -757,7 +757,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         /// <summary>JSON template for the details part of a guide category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
-        public virtual GuideCategoryDetails Snippet {
+        public virtual GuideCategorySnippet Snippet {
             get {
                 return this._snippet;
             }
@@ -912,11 +912,26 @@ namespace Google.Apis.Youtube.v3alpha.Data {
     /// <summary>JSON template for the snippet part of a channel.</summary>
     public class ChannelSnippet {
         
+        private string _channelId;
+        
         private string _description;
+        
+        private string _publishedAt;
         
         private ChannelSnippet.ThumbnailsData _thumbnails;
         
         private string _title;
+        
+        /// <summary>Id of the channel.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
         
         /// <summary>Description of the channel.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
@@ -926,6 +941,17 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
             set {
                 this._description = value;
+            }
+        }
+        
+        /// <summary>Date and time the channel was published at.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
+        public virtual string PublishedAt {
+            get {
+                return this._publishedAt;
+            }
+            set {
+                this._publishedAt = value;
             }
         }
         
@@ -1030,11 +1056,24 @@ namespace Google.Apis.Youtube.v3alpha.Data {
     }
     
     /// <summary>JSON template for the details part of a guide category.</summary>
-    public class GuideCategoryDetails {
+    public class GuideCategorySnippet {
+        
+        private string _channelId;
         
         private string _title;
         
-        /// <summary>The title of the cateogry (i18n).</summary>
+        /// <summary>Channel publishing the guide category.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
+        /// <summary>Title of the guide category.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -1051,8 +1090,6 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private System.Nullable<long> _resultPerPage;
         
-        private System.Nullable<long> _startIndex;
-        
         private System.Nullable<long> _totalResults;
         
         /// <summary>The number of results to display for each page.</summary>
@@ -1063,17 +1100,6 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
             set {
                 this._resultPerPage = value;
-            }
-        }
-        
-        /// <summary>The index position of the first result to display.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("startIndex")]
-        public virtual System.Nullable<long> StartIndex {
-            get {
-                return this._startIndex;
-            }
-            set {
-                this._startIndex = value;
             }
         }
         
@@ -1367,9 +1393,11 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private ResourceId _resourceId;
         
+        private PlaylistItemSnippet.ThumbnailsData _thumbnails;
+        
         private string _title;
         
-        /// <summary>Author of the playlist item.</summary>
+        /// <summary>Channel publishing the playlist item.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -1413,7 +1441,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>The date and time the playlist item was created.</summary>
+        /// <summary>Date and time the playlist item was published at.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -1435,6 +1463,17 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
+        /// <summary>Playlist item thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
+        public virtual PlaylistItemSnippet.ThumbnailsData Thumbnails {
+            get {
+                return this._thumbnails;
+            }
+            set {
+                this._thumbnails = value;
+            }
+        }
+        
         /// <summary>Title of the playlist item.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
@@ -1444,6 +1483,10 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             set {
                 this._title = value;
             }
+        }
+        
+        /// <summary>Playlist item thumbnails.</summary>
+        public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
     
@@ -1525,11 +1568,11 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _publishedAt;
         
-        private System.Collections.Generic.IList<string> _tags;
+        private PlaylistSnippet.ThumbnailsData _thumbnails;
         
         private string _title;
         
-        /// <summary>Author of the playlist.</summary>
+        /// <summary>Channel publishing the playlist.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -1551,7 +1594,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>The date and time the playlist was created.</summary>
+        /// <summary>Date and time the playlist was published at.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -1562,14 +1605,14 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Textual tags associated with the playlist.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("tags")]
-        public virtual System.Collections.Generic.IList<string> Tags {
+        /// <summary>Playlist thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
+        public virtual PlaylistSnippet.ThumbnailsData Thumbnails {
             get {
-                return this._tags;
+                return this._thumbnails;
             }
             set {
-                this._tags = value;
+                this._thumbnails = value;
             }
         }
         
@@ -1582,6 +1625,10 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             set {
                 this._title = value;
             }
+        }
+        
+        /// <summary>Playlist thumbnails.</summary>
+        public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
     
@@ -1792,9 +1839,11 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _publishedAt;
         
+        private SearchResultSnippet.ThumbnailsData _thumbnails;
+        
         private string _title;
         
-        /// <summary>Author of the found resource.</summary>
+        /// <summary>Channel publishing the found resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -1805,7 +1854,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Description of the search result.</summary>
+        /// <summary>Description of the found resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -1816,7 +1865,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>The date and time the found resource was created.</summary>
+        /// <summary>Date and time the found resource was published at.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -1827,7 +1876,18 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Title of the search result.</summary>
+        /// <summary>Thumbnails for the found resource.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
+        public virtual SearchResultSnippet.ThumbnailsData Thumbnails {
+            get {
+                return this._thumbnails;
+            }
+            set {
+                this._thumbnails = value;
+            }
+        }
+        
+        /// <summary>Title of the found resource.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -1836,6 +1896,10 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             set {
                 this._title = value;
             }
+        }
+        
+        /// <summary>Thumbnails for the found resource.</summary>
+        public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
     
@@ -1915,7 +1979,11 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _kind;
         
+        private PageInfo _pageInfo;
+        
         private System.Collections.Generic.IList<Subscription> _subscriptions;
+        
+        private TokenPagination _tokenPagination;
         
         /// <summary>The eTag of the response.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
@@ -1939,6 +2007,17 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
+        /// <summary>JSON template for a page info.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("pageInfo")]
+        public virtual PageInfo PageInfo {
+            get {
+                return this._pageInfo;
+            }
+            set {
+                this._pageInfo = value;
+            }
+        }
+        
         /// <summary>List of subscriptions matching the request criteria.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("subscriptions")]
         public virtual System.Collections.Generic.IList<Subscription> Subscriptions {
@@ -1947,6 +2026,17 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
             set {
                 this._subscriptions = value;
+            }
+        }
+        
+        /// <summary>JSON template for token pagination.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("tokenPagination")]
+        public virtual TokenPagination TokenPagination {
+            get {
+                return this._tokenPagination;
+            }
+            set {
+                this._tokenPagination = value;
             }
         }
     }
@@ -1958,13 +2048,15 @@ namespace Google.Apis.Youtube.v3alpha.Data {
         
         private string _description;
         
-        private ResourceId _resource;
+        private string _publishedAt;
         
-        private SubscriptionSnippet.ThumbnailData _thumbnail;
+        private ResourceId _resourceId;
+        
+        private SubscriptionSnippet.ThumbnailsData _thumbnails;
         
         private string _title;
         
-        /// <summary>The channel of the user subscriber to the resource.</summary>
+        /// <summary>Channel publishing the subscription.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -1975,7 +2067,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Details.</summary>
+        /// <summary>Description of the subscription.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("description")]
         public virtual string Description {
             get {
@@ -1986,29 +2078,40 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
+        /// <summary>Date and time the subscription was published at.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
+        public virtual string PublishedAt {
+            get {
+                return this._publishedAt;
+            }
+            set {
+                this._publishedAt = value;
+            }
+        }
+        
         /// <summary>JSON template for a resource id.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("resource")]
-        public virtual ResourceId Resource {
+        [Newtonsoft.Json.JsonPropertyAttribute("resourceId")]
+        public virtual ResourceId ResourceId {
             get {
-                return this._resource;
+                return this._resourceId;
             }
             set {
-                this._resource = value;
+                this._resourceId = value;
             }
         }
         
-        /// <summary>Thumbnail</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("thumbnail")]
-        public virtual SubscriptionSnippet.ThumbnailData Thumbnail {
+        /// <summary>Subscription thumbnails.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("thumbnails")]
+        public virtual SubscriptionSnippet.ThumbnailsData Thumbnails {
             get {
-                return this._thumbnail;
+                return this._thumbnails;
             }
             set {
-                this._thumbnail = value;
+                this._thumbnails = value;
             }
         }
         
-        /// <summary>Title.</summary>
+        /// <summary>Title of the subscription.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("title")]
         public virtual string Title {
             get {
@@ -2019,8 +2122,8 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Thumbnail</summary>
-        public class ThumbnailData : System.Collections.Generic.Dictionary<string, string> {
+        /// <summary>Subscription thumbnails.</summary>
+        public class ThumbnailsData : System.Collections.Generic.Dictionary<string, Thumbnail> {
         }
     }
     
@@ -2210,24 +2313,13 @@ namespace Google.Apis.Youtube.v3alpha.Data {
     /// <summary>JSON template for a YouTube Video Category.</summary>
     public class VideoCategory {
         
-        private VideoCategoryDetails _details;
-        
         private string _etag;
         
         private string _id;
         
         private string _kind;
         
-        /// <summary>JSON template for the details part of a video category.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("details")]
-        public virtual VideoCategoryDetails Details {
-            get {
-                return this._details;
-            }
-            set {
-                this._details = value;
-            }
-        }
+        private VideoCategorySnippet _snippet;
         
         /// <summary>The eTag of the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("etag")]
@@ -2261,21 +2353,15 @@ namespace Google.Apis.Youtube.v3alpha.Data {
                 this._kind = value;
             }
         }
-    }
-    
-    /// <summary>JSON template for the details part of a video category.</summary>
-    public class VideoCategoryDetails {
         
-        private string _title;
-        
-        /// <summary>Title of the category.</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("title")]
-        public virtual string Title {
+        /// <summary>JSON template for the snippet part of a video category.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("snippet")]
+        public virtual VideoCategorySnippet Snippet {
             get {
-                return this._title;
+                return this._snippet;
             }
             set {
-                this._title = value;
+                this._snippet = value;
             }
         }
     }
@@ -2319,6 +2405,36 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
             set {
                 this._videoCategories = value;
+            }
+        }
+    }
+    
+    /// <summary>JSON template for the snippet part of a video category.</summary>
+    public class VideoCategorySnippet {
+        
+        private string _channelId;
+        
+        private string _title;
+        
+        /// <summary>Channel publishing the video category.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
+        public virtual string ChannelId {
+            get {
+                return this._channelId;
+            }
+            set {
+                this._channelId = value;
+            }
+        }
+        
+        /// <summary>Title of the video category.</summary>
+        [Newtonsoft.Json.JsonPropertyAttribute("title")]
+        public virtual string Title {
+            get {
+                return this._title;
+            }
+            set {
+                this._title = value;
             }
         }
     }
@@ -2441,7 +2557,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Channel the video was uploaded into.</summary>
+        /// <summary>Channel publishing the video.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("channelId")]
         public virtual string ChannelId {
             get {
@@ -2463,7 +2579,7 @@ namespace Google.Apis.Youtube.v3alpha.Data {
             }
         }
         
-        /// <summary>Date time the video was uploaded.</summary>
+        /// <summary>Date and time the video was published at.</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("publishedAt")]
         public virtual string PublishedAt {
             get {
@@ -2653,7 +2769,7 @@ namespace Google.Apis.Youtube.v3alpha {
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"youtube:v3alpha" +
             "\",\"name\":\"youtube\",\"canonicalName\":\"YouTube\",\"version\":\"v3alpha\",\"revision\":\"201" +
-            "20827\",\"title\":\"YouTube API\",\"description\":\"Programmatic access to YouTube featu" +
+            "21008\",\"title\":\"YouTube API\",\"description\":\"Programmatic access to YouTube featu" +
             "res.\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/youtube-16.png\"" +
             ",\"x32\":\"http://www.google.com/images/icons/product/youtube-32.png\"},\"documentati" +
             "onLink\":\"https://developers.google.com/youtube\",\"labels\":[\"limited_availability\"" +
@@ -2731,433 +2847,448 @@ namespace Google.Apis.Youtube.v3alpha {
             "\"description\":\"Pagination information for the next and previous page.\"}}},\"Activ" +
             "itySnippet\":{\"id\":\"ActivitySnippet\",\"type\":\"object\",\"description\":\"JSON template" +
             " for the snippet part of a activity.\",\"properties\":{\"channelId\":{\"type\":\"string\"" +
-            ",\"description\":\"Channel responsible for this activity.\"},\"description\":{\"type\":\"" +
-            "string\",\"description\":\"Description of the main resource.\"},\"groupId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Id of the group that this activity is part of.\"},\"published" +
-            "At\":{\"type\":\"string\",\"description\":\"Time when this activity was created.\",\"forma" +
-            "t\":\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"Thumbnails of the m" +
-            "ain resource.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"The nam" +
-            "e of the thumbnail.\"}},\"title\":{\"type\":\"string\",\"description\":\"Title of the main" +
-            " resource.\"},\"type\":{\"type\":\"string\",\"description\":\"Category of the activity act" +
-            "ivity.\"}}},\"Channel\":{\"id\":\"Channel\",\"type\":\"object\",\"description\":\"JSON templat" +
-            "e for a YouTube Channel.\",\"properties\":{\"contentDetails\":{\"$ref\":\"ChannelContent" +
-            "Details\",\"description\":\"Information about the channel content: upload playlist i" +
-            "d, privacy status.\"},\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the chan" +
-            "nel.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID of the channel.\"},\"kin" +
-            "d\":{\"type\":\"string\",\"description\":\"The type of this API resource.\",\"default\":\"yo" +
-            "utube#channel\"},\"snippet\":{\"$ref\":\"ChannelSnippet\",\"description\":\"Basic details " +
-            "about the channel: title, description, and thumbnails.\"},\"statistics\":{\"$ref\":\"C" +
-            "hannelStatistics\",\"description\":\"Statistics about the channel: number of subscri" +
-            "bers, views, and comments.\"},\"topicDetails\":{\"$ref\":\"ChannelTopicDetails\",\"descr" +
-            "iption\":\"Information about channel topics\"}}},\"ChannelCategory\":{\"id\":\"ChannelCa" +
-            "tegory\",\"type\":\"object\",\"description\":\"JSON template for a YouTube guide categor" +
-            "y.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the guide c" +
-            "ategory.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique ID of the guide categ" +
-            "ory.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API resource.\",\"d" +
-            "efault\":\"youtube#channelCategory\"},\"snippet\":{\"$ref\":\"GuideCategoryDetails\",\"des" +
-            "cription\":\"Basic details about the category: title.\"}}},\"ChannelCategoryListResp" +
-            "onse\":{\"id\":\"ChannelCategoryListResponse\",\"type\":\"object\",\"description\":\"JSON te" +
-            "mplate for a GuideCategoryService.List() response.\",\"properties\":{\"channelCatego" +
-            "ries\":{\"type\":\"array\",\"description\":\"List of categories matching the request cri" +
-            "teria.\",\"items\":{\"$ref\":\"ChannelCategory\"}},\"etag\":{\"type\":\"string\",\"description" +
-            "\":\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type o" +
-            "f this API response.\",\"default\":\"youtube#channelCategoryListResponse\"}}},\"Channe" +
-            "lContentDetails\":{\"id\":\"ChannelContentDetails\",\"type\":\"object\",\"description\":\"JS" +
-            "ON template for the content details part of a channel.\",\"properties\":{\"privacySt" +
-            "atus\":{\"type\":\"string\",\"description\":\"Privacy status of the channel.\"},\"uploads\"" +
-            ":{\"type\":\"string\",\"description\":\"The ID of the playlist containing the uploads o" +
-            "f this channel.\"}}},\"ChannelListResponse\":{\"id\":\"ChannelListResponse\",\"type\":\"ob" +
-            "ject\",\"description\":\"JSON template for a ChannelService.List() response.\",\"prope" +
-            "rties\":{\"channels\":{\"type\":\"array\",\"description\":\"List of channels matching the " +
-            "request criteria.\",\"items\":{\"$ref\":\"Channel\"}},\"etag\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The typ" +
-            "e of this API response.\",\"default\":\"youtube#channelListResponse\"},\"pageInfo\":{\"$" +
-            "ref\":\"PageInfo\",\"description\":\"Paging information for the list result.\"},\"tokenP" +
-            "agination\":{\"$ref\":\"TokenPagination\",\"description\":\"Pagination information for t" +
-            "he next and previous page.\"}}},\"ChannelSnippet\":{\"id\":\"ChannelSnippet\",\"type\":\"o" +
-            "bject\",\"description\":\"JSON template for the snippet part of a channel.\",\"propert" +
-            "ies\":{\"description\":{\"type\":\"string\",\"description\":\"Description of the channel.\"" +
-            "},\"thumbnails\":{\"type\":\"object\",\"description\":\"Channel thumbnails.\",\"additionalP" +
-            "roperties\":{\"$ref\":\"Thumbnail\",\"description\":\"The name of the thumbnail.\"}},\"tit" +
-            "le\":{\"type\":\"string\",\"description\":\"Title of the channel.\"}}},\"ChannelStatistics" +
-            "\":{\"id\":\"ChannelStatistics\",\"type\":\"object\",\"description\":\"JSON template for the" +
-            " statistics part of a channel.\",\"properties\":{\"commentCount\":{\"type\":\"string\",\"d" +
-            "escription\":\"Number of comments for this channel.\",\"format\":\"uint64\"},\"subscribe" +
-            "rCount\":{\"type\":\"string\",\"description\":\"Number of subscribers to this channel.\"," +
-            "\"format\":\"uint64\"},\"videoCount\":{\"type\":\"string\",\"description\":\"Number of videos" +
-            " in the channel.\",\"format\":\"uint64\"},\"viewCount\":{\"type\":\"string\",\"description\":" +
-            "\"Number of times the channel has been viewed.\",\"format\":\"uint64\"}}},\"ChannelTopi" +
-            "cDetails\":{\"id\":\"ChannelTopicDetails\",\"type\":\"object\",\"description\":\"JSON templa" +
-            "te for the topic details part of a channel.\",\"properties\":{\"topics\":{\"type\":\"arr" +
-            "ay\",\"description\":\"List of topic ids for this channel *\",\"items\":{\"type\":\"string" +
-            "\"}}}},\"GuideCategoryDetails\":{\"id\":\"GuideCategoryDetails\",\"type\":\"object\",\"descr" +
-            "iption\":\"JSON template for the details part of a guide category.\",\"properties\":{" +
-            "\"title\":{\"type\":\"string\",\"description\":\"The title of the cateogry (i18n).\"}}},\"P" +
-            "ageInfo\":{\"id\":\"PageInfo\",\"type\":\"object\",\"description\":\"JSON template for a pag" +
-            "e info.\",\"properties\":{\"resultPerPage\":{\"type\":\"integer\",\"description\":\"The numb" +
-            "er of results to display for each page.\",\"format\":\"int32\"},\"startIndex\":{\"type\":" +
-            "\"integer\",\"description\":\"The index position of the first result to display.\",\"fo" +
-            "rmat\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number " +
-            "of results.\",\"format\":\"int32\"}}},\"Playlist\":{\"id\":\"Playlist\",\"type\":\"object\",\"de" +
-            "scription\":\"JSON template for a YouTube Playlist.\",\"properties\":{\"etag\":{\"type\":" +
-            "\"string\",\"description\":\"The eTag of the playlist.\"},\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The unique id of the playlist.\"},\"kind\":{\"type\":\"string\",\"description\":" +
-            "\"The type of this API resource.\",\"default\":\"youtube#playlist\"},\"snippet\":{\"$ref\"" +
-            ":\"PlaylistSnippet\",\"description\":\"Basic details about the playlist: title, descr" +
-            "iption, thumbnails.\"},\"status\":{\"$ref\":\"PlaylistStatus\",\"description\":\"Status of" +
-            " the playlist: only privacy_status for now.\"}}},\"PlaylistItem\":{\"id\":\"PlaylistIt" +
-            "em\",\"type\":\"object\",\"description\":\"JSON template for a YouTube Playlist item.\",\"" +
-            "properties\":{\"contentDetails\":{\"$ref\":\"PlaylistItemContentDetails\",\"description\"" +
-            ":\"Content details about the playlist item: start and end clipping time.\"},\"etag\"" +
-            ":{\"type\":\"string\",\"description\":\"The eTag of the playlist item.\"},\"id\":{\"type\":\"" +
-            "string\",\"description\":\"The unique id of the playlist item.\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"The type of this API resource.\",\"default\":\"youtube#playlistI" +
-            "tem\"},\"snippet\":{\"$ref\":\"PlaylistItemSnippet\",\"description\":\"Basic details about" +
-            " the playlist item: title, description, thumbnails.\"}}},\"PlaylistItemContentDeta" +
-            "ils\":{\"id\":\"PlaylistItemContentDetails\",\"type\":\"object\",\"description\":\"JSON temp" +
-            "late for the content details part of a playlist item.\",\"properties\":{\"endAt\":{\"t" +
-            "ype\":\"string\",\"description\":\"The time video playback ends.\"},\"note\":{\"type\":\"str" +
-            "ing\",\"description\":\"The user-generated note for this item.\"},\"startAt\":{\"type\":\"" +
-            "string\",\"description\":\"The time video playback begins.\"},\"videoId\":{\"type\":\"stri" +
-            "ng\",\"description\":\"ID of the video.\"}}},\"PlaylistItemListResponse\":{\"id\":\"Playli" +
-            "stItemListResponse\",\"type\":\"object\",\"description\":\"JSON template for a PlaylistI" +
-            "temService.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\"" +
-            ":\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of" +
-            " this API response.\",\"default\":\"youtube#playlistItemListResponse\"},\"pageInfo\":{\"" +
-            "$ref\":\"PageInfo\",\"description\":\"Paging information for the list result.\"},\"playl" +
-            "istItems\":{\"type\":\"array\",\"description\":\"List of playlist items matching the req" +
-            "uest criteria.\",\"items\":{\"$ref\":\"PlaylistItem\"}},\"tokenPagination\":{\"$ref\":\"Toke" +
-            "nPagination\",\"description\":\"Pagination information for the next and previous pag" +
-            "e.\"}}},\"PlaylistItemSnippet\":{\"id\":\"PlaylistItemSnippet\",\"type\":\"object\",\"descri" +
-            "ption\":\"JSON template for the snippet part of a playlist item.\",\"properties\":{\"c" +
-            "hannelId\":{\"type\":\"string\",\"description\":\"Author of the playlist item.\"},\"descri" +
-            "ption\":{\"type\":\"string\",\"description\":\"Description of the playlist item.\"},\"play" +
-            "listId\":{\"type\":\"string\",\"description\":\"The playlist the item is part of.\"},\"pos" +
-            "ition\":{\"type\":\"integer\",\"description\":\"The position of the item within the play" +
-            "list.\",\"format\":\"uint32\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"The date" +
-            " and time the playlist item was created.\",\"format\":\"date-time\"},\"resourceId\":{\"$" +
-            "ref\":\"ResourceId\",\"description\":\"The ID of the resource referenced by the playli" +
-            "st item.\"},\"title\":{\"type\":\"string\",\"description\":\"Title of the playlist item.\"}" +
-            "}},\"PlaylistListResponse\":{\"id\":\"PlaylistListResponse\",\"type\":\"object\",\"descript" +
-            "ion\":\"JSON template for a PlaylistService.List() response.\",\"properties\":{\"etag\"" +
-            ":{\"type\":\"string\",\"description\":\"The eTag of the response.\"},\"kind\":{\"type\":\"str" +
-            "ing\",\"description\":\"The type of this API response.\",\"default\":\"youtube#playlistL" +
-            "istResponse\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"Paging information fo" +
-            "r the list result.\"},\"playlists\":{\"type\":\"array\",\"description\":\"List of playlist" +
-            "s matching the request criteria.\",\"items\":{\"$ref\":\"Playlist\"}},\"tokenPagination\"" +
-            ":{\"$ref\":\"TokenPagination\",\"description\":\"Pagination information for the next an" +
-            "d previous page.\"}}},\"PlaylistSnippet\":{\"id\":\"PlaylistSnippet\",\"type\":\"object\",\"" +
-            "description\":\"JSON template for the snippet part of a playlist.\",\"properties\":{\"" +
-            "channelId\":{\"type\":\"string\",\"description\":\"Author of the playlist.\"},\"descriptio" +
-            "n\":{\"type\":\"string\",\"description\":\"Description of the playlist.\"},\"publishedAt\":" +
-            "{\"type\":\"string\",\"description\":\"The date and time the playlist was created.\",\"fo" +
-            "rmat\":\"date-time\"},\"tags\":{\"type\":\"array\",\"description\":\"Textual tags associated" +
-            " with the playlist.\",\"items\":{\"type\":\"string\"}},\"title\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Title of the playlist.\"}}},\"PlaylistStatus\":{\"id\":\"PlaylistStatus\",\"type" +
-            "\":\"object\",\"description\":\"JSON template for the status part of a playlist.\",\"pro" +
-            "perties\":{\"privacyStatus\":{\"type\":\"string\",\"description\":\"Privacy of the playlis" +
-            "t.\"}}},\"ResourceId\":{\"id\":\"ResourceId\",\"type\":\"object\",\"description\":\"JSON templ" +
-            "ate for a resource id.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\"" +
-            ":\"ID of the referred channel. Present only when type is \\\"CHANNEL\\\".\"},\"kind\":{\"" +
-            "type\":\"string\",\"description\":\"The kind of the referred resource.\"},\"playlistId\":" +
-            "{\"type\":\"string\",\"description\":\"ID of the referred playlist. Present only when t" +
-            "ype is \\\"PLAYLIST\\\".\"},\"videoId\":{\"type\":\"string\",\"description\":\"ID of the refer" +
-            "red video. Present only when type is \\\"VIDEO\\\".\"}}},\"SearchListResponse\":{\"id\":\"" +
-            "SearchListResponse\",\"type\":\"object\",\"description\":\"JSON template for a SearchSer" +
+            ",\"description\":\"Channel publishing the activity.\"},\"description\":{\"type\":\"string" +
+            "\",\"description\":\"Description of the activity.\"},\"groupId\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Id of the group that this activity is part of.\"},\"publishedAt\":{\"type\"" +
+            ":\"string\",\"description\":\"Date and time the activity was published at.\",\"format\":" +
+            "\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"Activity thumbnails.\"," +
+            "\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"A map of thumbnails by" +
+            " their name.\"}},\"title\":{\"type\":\"string\",\"description\":\"Title of the activity.\"}" +
+            ",\"type\":{\"type\":\"string\",\"description\":\"Type of the activity.\"}}},\"Channel\":{\"id" +
+            "\":\"Channel\",\"type\":\"object\",\"description\":\"JSON template for a YouTube Channel.\"" +
+            ",\"properties\":{\"contentDetails\":{\"$ref\":\"ChannelContentDetails\",\"description\":\"I" +
+            "nformation about the channel content: upload playlist id, privacy status.\"},\"eta" +
+            "g\":{\"type\":\"string\",\"description\":\"The eTag of the channel.\"},\"id\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The unique ID of the channel.\"},\"kind\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The type of this API resource.\",\"default\":\"youtube#channel\"},\"snippet\"" +
+            ":{\"$ref\":\"ChannelSnippet\",\"description\":\"Basic details about the channel: title," +
+            " description, and thumbnails.\"},\"statistics\":{\"$ref\":\"ChannelStatistics\",\"descri" +
+            "ption\":\"Statistics about the channel: number of subscribers, views, and comments" +
+            ".\"},\"topicDetails\":{\"$ref\":\"ChannelTopicDetails\",\"description\":\"Information abou" +
+            "t channel topics\"}}},\"ChannelCategory\":{\"id\":\"ChannelCategory\",\"type\":\"object\",\"" +
+            "description\":\"JSON template for a YouTube guide category.\",\"properties\":{\"etag\":" +
+            "{\"type\":\"string\",\"description\":\"The eTag of the guide category.\"},\"id\":{\"type\":\"" +
+            "string\",\"description\":\"The unique ID of the guide category.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"The type of this API resource.\",\"default\":\"youtube#channelC" +
+            "ategory\"},\"snippet\":{\"$ref\":\"GuideCategorySnippet\",\"description\":\"Basic details " +
+            "about the category: title.\"}}},\"ChannelCategoryListResponse\":{\"id\":\"ChannelCateg" +
+            "oryListResponse\",\"type\":\"object\",\"description\":\"JSON template for a GuideCategor" +
+            "yService.List() response.\",\"properties\":{\"channelCategories\":{\"type\":\"array\",\"de" +
+            "scription\":\"List of categories matching the request criteria.\",\"items\":{\"$ref\":\"" +
+            "ChannelCategory\"}},\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the respon" +
+            "se.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API response.\",\"de" +
+            "fault\":\"youtube#channelCategoryListResponse\"}}},\"ChannelContentDetails\":{\"id\":\"C" +
+            "hannelContentDetails\",\"type\":\"object\",\"description\":\"JSON template for the conte" +
+            "nt details part of a channel.\",\"properties\":{\"privacyStatus\":{\"type\":\"string\",\"d" +
+            "escription\":\"Privacy status of the channel.\"},\"uploads\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The ID of the playlist containing the uploads of this channel.\"}}},\"Chan" +
+            "nelListResponse\":{\"id\":\"ChannelListResponse\",\"type\":\"object\",\"description\":\"JSON" +
+            " template for a ChannelService.List() response.\",\"properties\":{\"channels\":{\"type" +
+            "\":\"array\",\"description\":\"List of channels matching the request criteria.\",\"items" +
+            "\":{\"$ref\":\"Channel\"}},\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the res" +
+            "ponse.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API response.\"," +
+            "\"default\":\"youtube#channelListResponse\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"descript" +
+            "ion\":\"Paging information for the list result.\"},\"tokenPagination\":{\"$ref\":\"Token" +
+            "Pagination\",\"description\":\"Pagination information for the next and previous page" +
+            ".\"}}},\"ChannelSnippet\":{\"id\":\"ChannelSnippet\",\"type\":\"object\",\"description\":\"JSO" +
+            "N template for the snippet part of a channel.\",\"properties\":{\"channelId\":{\"type\"" +
+            ":\"any\",\"description\":\"Id of the channel.\"},\"description\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Description of the channel.\"},\"publishedAt\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Date and time the channel was published at.\",\"format\":\"date-time\"},\"thumbna" +
+            "ils\":{\"type\":\"object\",\"description\":\"Channel thumbnails.\",\"additionalProperties\"" +
+            ":{\"$ref\":\"Thumbnail\",\"description\":\"A map of thumbnails by their name.\"}},\"title" +
+            "\":{\"type\":\"string\",\"description\":\"Title of the channel.\"}}},\"ChannelStatistics\":" +
+            "{\"id\":\"ChannelStatistics\",\"type\":\"object\",\"description\":\"JSON template for the s" +
+            "tatistics part of a channel.\",\"properties\":{\"commentCount\":{\"type\":\"string\",\"des" +
+            "cription\":\"Number of comments for this channel.\",\"format\":\"uint64\"},\"subscriberC" +
+            "ount\":{\"type\":\"string\",\"description\":\"Number of subscribers to this channel.\",\"f" +
+            "ormat\":\"uint64\"},\"videoCount\":{\"type\":\"string\",\"description\":\"Number of videos i" +
+            "n the channel.\",\"format\":\"uint64\"},\"viewCount\":{\"type\":\"string\",\"description\":\"N" +
+            "umber of times the channel has been viewed.\",\"format\":\"uint64\"}}},\"ChannelTopicD" +
+            "etails\":{\"id\":\"ChannelTopicDetails\",\"type\":\"object\",\"description\":\"JSON template" +
+            " for the topic details part of a channel.\",\"properties\":{\"topics\":{\"type\":\"array" +
+            "\",\"description\":\"List of topic ids for this channel *\",\"items\":{\"type\":\"string\"}" +
+            "}}},\"GuideCategorySnippet\":{\"id\":\"GuideCategorySnippet\",\"type\":\"object\",\"descrip" +
+            "tion\":\"JSON template for the details part of a guide category.\",\"properties\":{\"c" +
+            "hannelId\":{\"type\":\"string\",\"description\":\"Channel publishing the guide category." +
+            "\",\"default\":\"UCBR8-60-B28hp2BmDPdntcQ\"},\"title\":{\"type\":\"string\",\"description\":\"" +
+            "Title of the guide category.\"}}},\"PageInfo\":{\"id\":\"PageInfo\",\"type\":\"object\",\"de" +
+            "scription\":\"JSON template for a page info.\",\"properties\":{\"resultPerPage\":{\"type" +
+            "\":\"integer\",\"description\":\"The number of results to display for each page.\",\"for" +
+            "mat\":\"int32\"},\"totalResults\":{\"type\":\"integer\",\"description\":\"The total number o" +
+            "f results.\",\"format\":\"int32\"}}},\"Playlist\":{\"id\":\"Playlist\",\"type\":\"object\",\"des" +
+            "cription\":\"JSON template for a YouTube Playlist.\",\"properties\":{\"etag\":{\"type\":\"" +
+            "string\",\"description\":\"The eTag of the playlist.\"},\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The unique id of the playlist.\"},\"kind\":{\"type\":\"string\",\"description\":\"" +
+            "The type of this API resource.\",\"default\":\"youtube#playlist\"},\"snippet\":{\"$ref\":" +
+            "\"PlaylistSnippet\",\"description\":\"Basic details about the playlist: title, descri" +
+            "ption, thumbnails.\"},\"status\":{\"$ref\":\"PlaylistStatus\",\"description\":\"Status of " +
+            "the playlist: only privacy_status for now.\"}}},\"PlaylistItem\":{\"id\":\"PlaylistIte" +
+            "m\",\"type\":\"object\",\"description\":\"JSON template for a YouTube Playlist item.\",\"p" +
+            "roperties\":{\"contentDetails\":{\"$ref\":\"PlaylistItemContentDetails\",\"description\":" +
+            "\"Content details about the playlist item: start and end clipping time.\"},\"etag\":" +
+            "{\"type\":\"string\",\"description\":\"The eTag of the playlist item.\"},\"id\":{\"type\":\"s" +
+            "tring\",\"description\":\"The unique id of the playlist item.\"},\"kind\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The type of this API resource.\",\"default\":\"youtube#playlistIt" +
+            "em\"},\"snippet\":{\"$ref\":\"PlaylistItemSnippet\",\"description\":\"Basic details about " +
+            "the playlist item: title, description, thumbnails.\"}}},\"PlaylistItemContentDetai" +
+            "ls\":{\"id\":\"PlaylistItemContentDetails\",\"type\":\"object\",\"description\":\"JSON templ" +
+            "ate for the content details part of a playlist item.\",\"properties\":{\"endAt\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The time video playback ends.\"},\"note\":{\"type\":\"stri" +
+            "ng\",\"description\":\"The user-generated note for this item.\"},\"startAt\":{\"type\":\"s" +
+            "tring\",\"description\":\"The time video playback begins.\"},\"videoId\":{\"type\":\"strin" +
+            "g\",\"description\":\"ID of the video.\"}}},\"PlaylistItemListResponse\":{\"id\":\"Playlis" +
+            "tItemListResponse\",\"type\":\"object\",\"description\":\"JSON template for a PlaylistIt" +
+            "emService.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":" +
+            "\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of " +
+            "this API response.\",\"default\":\"youtube#playlistItemListResponse\"},\"pageInfo\":{\"$" +
+            "ref\":\"PageInfo\",\"description\":\"Paging information for the list result.\"},\"playli" +
+            "stItems\":{\"type\":\"array\",\"description\":\"List of playlist items matching the requ" +
+            "est criteria.\",\"items\":{\"$ref\":\"PlaylistItem\"}},\"tokenPagination\":{\"$ref\":\"Token" +
+            "Pagination\",\"description\":\"Pagination information for the next and previous page" +
+            ".\"}}},\"PlaylistItemSnippet\":{\"id\":\"PlaylistItemSnippet\",\"type\":\"object\",\"descrip" +
+            "tion\":\"JSON template for the snippet part of a playlist item.\",\"properties\":{\"ch" +
+            "annelId\":{\"type\":\"string\",\"description\":\"Channel publishing the playlist item.\"}" +
+            ",\"description\":{\"type\":\"string\",\"description\":\"Description of the playlist item." +
+            "\"},\"playlistId\":{\"type\":\"string\",\"description\":\"The playlist the item is part of" +
+            ".\"},\"position\":{\"type\":\"integer\",\"description\":\"The position of the item within " +
+            "the playlist.\",\"format\":\"uint32\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"" +
+            "Date and time the playlist item was published at.\",\"format\":\"date-time\"},\"resour" +
+            "ceId\":{\"$ref\":\"ResourceId\",\"description\":\"The ID of the resource referenced by t" +
+            "he playlist item.\"},\"thumbnails\":{\"type\":\"object\",\"description\":\"Playlist item t" +
+            "humbnails.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"description\":\"A map of t" +
+            "humbnails by their name.\"}},\"title\":{\"type\":\"string\",\"description\":\"Title of the" +
+            " playlist item.\"}}},\"PlaylistListResponse\":{\"id\":\"PlaylistListResponse\",\"type\":\"" +
+            "object\",\"description\":\"JSON template for a PlaylistService.List() response.\",\"pr" +
+            "operties\":{\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the response.\"},\"k" +
+            "ind\":{\"type\":\"string\",\"description\":\"The type of this API response.\",\"default\":\"" +
+            "youtube#playlistListResponse\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"Pagi" +
+            "ng information for the list result.\"},\"playlists\":{\"type\":\"array\",\"description\":" +
+            "\"List of playlists matching the request criteria.\",\"items\":{\"$ref\":\"Playlist\"}}," +
+            "\"tokenPagination\":{\"$ref\":\"TokenPagination\",\"description\":\"Pagination informatio" +
+            "n for the next and previous page.\"}}},\"PlaylistSnippet\":{\"id\":\"PlaylistSnippet\"," +
+            "\"type\":\"object\",\"description\":\"JSON template for the snippet part of a playlist." +
+            "\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"Channel publishing t" +
+            "he playlist.\"},\"description\":{\"type\":\"string\",\"description\":\"Description of the " +
+            "playlist.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"Date and time the play" +
+            "list was published at.\",\"format\":\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"des" +
+            "cription\":\"Playlist thumbnails.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"des" +
+            "cription\":\"A map of thumbnails by their name.\"}},\"title\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Title of the playlist.\"}}},\"PlaylistStatus\":{\"id\":\"PlaylistStatus\",\"typ" +
+            "e\":\"object\",\"description\":\"JSON template for the status part of a playlist.\",\"pr" +
+            "operties\":{\"privacyStatus\":{\"type\":\"string\",\"description\":\"Privacy of the playli" +
+            "st.\"}}},\"ResourceId\":{\"id\":\"ResourceId\",\"type\":\"object\",\"description\":\"JSON temp" +
+            "late for a resource id.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description" +
+            "\":\"ID of the referred channel. Present only when type is \\\"CHANNEL\\\".\"},\"kind\":{" +
+            "\"type\":\"string\",\"description\":\"The kind of the referred resource.\"},\"playlistId\"" +
+            ":{\"type\":\"string\",\"description\":\"ID of the referred playlist. Present only when " +
+            "type is \\\"PLAYLIST\\\".\"},\"videoId\":{\"type\":\"string\",\"description\":\"ID of the refe" +
+            "rred video. Present only when type is \\\"VIDEO\\\".\"}}},\"SearchListResponse\":{\"id\":" +
+            "\"SearchListResponse\",\"type\":\"object\",\"description\":\"JSON template for a SearchSe" +
+            "rvice.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The" +
+            " eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this" +
+            " API response.\",\"default\":\"youtube#searchListResponse\"},\"pageInfo\":{\"$ref\":\"Page" +
+            "Info\",\"description\":\"Paging information for the search result.\"},\"searchResults\"" +
+            ":{\"type\":\"array\",\"description\":\"List of results matching the request criteria.\"," +
+            "\"items\":{\"$ref\":\"SearchResult\"}},\"tokenPagination\":{\"$ref\":\"TokenPagination\",\"de" +
+            "scription\":\"Pagination information for the next and previous page.\"}}},\"SearchRe" +
+            "sult\":{\"id\":\"SearchResult\",\"type\":\"object\",\"description\":\"JSON template for a Yo" +
+            "uTube Search result.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The e" +
+            "Tag of the search result.\"},\"id\":{\"$ref\":\"ResourceId\",\"description\":\"The id of t" +
+            "he resource.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API resou" +
+            "rce.\",\"default\":\"youtube#searchResult\"},\"snippet\":{\"$ref\":\"SearchResultSnippet\"," +
+            "\"description\":\"Basic details about the search result: title, description, author" +
+            ".\"}}},\"SearchResultSnippet\":{\"id\":\"SearchResultSnippet\",\"type\":\"object\",\"descrip" +
+            "tion\":\"JSON template for the snippet part of a search result.\",\"properties\":{\"ch" +
+            "annelId\":{\"type\":\"string\",\"description\":\"Channel publishing the found resource.\"" +
+            "},\"description\":{\"type\":\"string\",\"description\":\"Description of the found resourc" +
+            "e.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"Date and time the found resou" +
+            "rce was published at.\",\"format\":\"date-time\"},\"thumbnails\":{\"type\":\"object\",\"desc" +
+            "ription\":\"Thumbnails for the found resource.\",\"additionalProperties\":{\"$ref\":\"Th" +
+            "umbnail\",\"description\":\"A map of thumbnails by their name.\"}},\"title\":{\"type\":\"s" +
+            "tring\",\"description\":\"Title of the found resource.\"}}},\"Subscription\":{\"id\":\"Sub" +
+            "scription\",\"type\":\"object\",\"description\":\"JSON template for a YouTube Subscripti" +
+            "on.\",\"properties\":{\"contentDetails\":{\"$ref\":\"SubscriptionStatistics\",\"descriptio" +
+            "n\":\"Basic statistics about the subscription\"},\"etag\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The eTag of the subscription.\"},\"id\":{\"type\":\"string\",\"description\":\"The un" +
+            "ique id of the subscription.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type o" +
+            "f this API resource.\",\"default\":\"youtube#subscription\"},\"snippet\":{\"$ref\":\"Subsc" +
+            "riptionSnippet\",\"description\":\"Basic details about the subscription\"}}},\"Subscri" +
+            "ptionListResponse\":{\"id\":\"SubscriptionListResponse\",\"type\":\"object\",\"description" +
+            "\":\"JSON template for a SubscriptionService.List() response.\",\"properties\":{\"etag" +
+            "\":{\"type\":\"string\",\"description\":\"The eTag of the response.\"},\"kind\":{\"type\":\"st" +
+            "ring\",\"description\":\"The type of this API response.\",\"default\":\"youtube#subscrip" +
+            "tionListResponse\"},\"pageInfo\":{\"$ref\":\"PageInfo\",\"description\":\"Paging informati" +
+            "on for the list result.\"},\"subscriptions\":{\"type\":\"array\",\"description\":\"List of" +
+            " subscriptions matching the request criteria.\",\"items\":{\"$ref\":\"Subscription\"}}," +
+            "\"tokenPagination\":{\"$ref\":\"TokenPagination\",\"description\":\"Pagination informatio" +
+            "n for the next and previous page.\"}}},\"SubscriptionSnippet\":{\"id\":\"SubscriptionS" +
+            "nippet\",\"type\":\"object\",\"description\":\"JSON template for the snippet part of a s" +
+            "ubscription.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"Channel " +
+            "publishing the subscription.\"},\"description\":{\"type\":\"string\",\"description\":\"Des" +
+            "cription of the subscription.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"Da" +
+            "te and time the subscription was published at.\",\"format\":\"date-time\"},\"resourceI" +
+            "d\":{\"$ref\":\"ResourceId\",\"description\":\"The resource subscribed to.\"},\"thumbnails" +
+            "\":{\"type\":\"object\",\"description\":\"Subscription thumbnails.\",\"additionalPropertie" +
+            "s\":{\"$ref\":\"Thumbnail\",\"description\":\"A map of thumbnails by their name.\"}},\"tit" +
+            "le\":{\"type\":\"string\",\"description\":\"Title of the subscription.\"}}},\"Subscription" +
+            "Statistics\":{\"id\":\"SubscriptionStatistics\",\"type\":\"object\",\"description\":\"JSON t" +
+            "emplate for the contect details part of a subscription.\",\"properties\":{\"countHin" +
+            "t\":{\"type\":\"integer\",\"format\":\"uint32\"},\"unreadCount\":{\"type\":\"integer\",\"format\"" +
+            ":\"uint32\"}}},\"Thumbnail\":{\"id\":\"Thumbnail\",\"type\":\"object\",\"description\":\"JSON t" +
+            "emplate for a thumbnail.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"Th" +
+            "e URL for the thumbnail.\"}}},\"TokenPagination\":{\"id\":\"TokenPagination\",\"type\":\"o" +
+            "bject\",\"description\":\"JSON template for token pagination.\",\"properties\":{\"nextPa" +
+            "geToken\":{\"type\":\"string\",\"description\":\"Token to the next page.\"},\"previousPage" +
+            "Token\":{\"type\":\"string\",\"description\":\"Token to the previous page.\"}}},\"Video\":{" +
+            "\"id\":\"Video\",\"type\":\"object\",\"description\":\"JSON template for a YouTube Video.\"," +
+            "\"properties\":{\"contentDetails\":{\"$ref\":\"VideoContentDetails\",\"description\":\"Info" +
+            "rmation about the video content, media file.\"},\"etag\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The eTag of the video.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique i" +
+            "d of the video.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API re" +
+            "source.\",\"default\":\"youtube#video\"},\"player\":{\"$ref\":\"VideoPlayer\",\"description\"" +
+            ":\"Information used to play the video.\"},\"snippet\":{\"$ref\":\"VideoSnippet\",\"descri" +
+            "ption\":\"Basic details about the video: title, description, thumbnails.\"},\"statis" +
+            "tics\":{\"$ref\":\"VideoStatistics\",\"description\":\"Statistics about the video: numbe" +
+            "r of views, ratings.\"},\"status\":{\"$ref\":\"VideoStatus\",\"description\":\"Status of t" +
+            "he video upload, privacy status.\"}}},\"VideoCategory\":{\"id\":\"VideoCategory\",\"type" +
+            "\":\"object\",\"description\":\"JSON template for a YouTube Video Category.\",\"properti" +
+            "es\":{\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the video.\"},\"id\":{\"type" +
+            "\":\"string\",\"description\":\"The unique id of the video category.\"},\"kind\":{\"type\":" +
+            "\"string\",\"description\":\"The type of this API resource.\",\"default\":\"youtube#video" +
+            "Category\"},\"snippet\":{\"$ref\":\"VideoCategorySnippet\",\"description\":\"Basic details" +
+            " about the video category.\"}}},\"VideoCategoryListResponse\":{\"id\":\"VideoCategoryL" +
+            "istResponse\",\"type\":\"object\",\"description\":\"JSON template for a VideoCategorySer" +
             "vice.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The " +
             "eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this " +
-            "API response.\",\"default\":\"youtube#searchListResponse\"},\"pageInfo\":{\"$ref\":\"PageI" +
-            "nfo\",\"description\":\"Paging information for the search result.\"},\"searchResults\":" +
-            "{\"type\":\"array\",\"description\":\"List of results matching the request criteria.\",\"" +
-            "items\":{\"$ref\":\"SearchResult\"}},\"tokenPagination\":{\"$ref\":\"TokenPagination\",\"des" +
-            "cription\":\"Pagination information for the next and previous page.\"}}},\"SearchRes" +
-            "ult\":{\"id\":\"SearchResult\",\"type\":\"object\",\"description\":\"JSON template for a You" +
-            "Tube Search result.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The eT" +
-            "ag of the search result.\"},\"id\":{\"$ref\":\"ResourceId\",\"description\":\"The id of th" +
-            "e resource.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API resour" +
-            "ce.\",\"default\":\"youtube#searchResult\"},\"snippet\":{\"$ref\":\"SearchResultSnippet\",\"" +
-            "description\":\"Basic details about the search result: title, description, author." +
-            "\"}}},\"SearchResultSnippet\":{\"id\":\"SearchResultSnippet\",\"type\":\"object\",\"descript" +
-            "ion\":\"JSON template for the snippet part of a search result.\",\"properties\":{\"cha" +
-            "nnelId\":{\"type\":\"string\",\"description\":\"Author of the found resource.\"},\"descrip" +
-            "tion\":{\"type\":\"string\",\"description\":\"Description of the search result.\"},\"publi" +
-            "shedAt\":{\"type\":\"string\",\"description\":\"The date and time the found resource was" +
-            " created.\",\"format\":\"date-time\"},\"title\":{\"type\":\"string\",\"description\":\"Title o" +
-            "f the search result.\"}}},\"Subscription\":{\"id\":\"Subscription\",\"type\":\"object\",\"de" +
-            "scription\":\"JSON template for a YouTube Subscription.\",\"properties\":{\"contentDet" +
-            "ails\":{\"$ref\":\"SubscriptionStatistics\",\"description\":\"Basic statistics about the" +
-            " subscription\"},\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the subscript" +
-            "ion.\"},\"id\":{\"type\":\"string\",\"description\":\"The unique id of the subscription.\"}" +
-            ",\"kind\":{\"type\":\"string\",\"description\":\"The type of this API resource.\",\"default" +
-            "\":\"youtube#subscription\"},\"snippet\":{\"$ref\":\"SubscriptionSnippet\",\"description\":" +
-            "\"Basic details about the subscription\"}}},\"SubscriptionListResponse\":{\"id\":\"Subs" +
-            "criptionListResponse\",\"type\":\"object\",\"description\":\"JSON template for a Subscri" +
-            "ptionService.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type " +
-            "of this API response.\",\"default\":\"youtube#subscriptionListResponse\"},\"subscripti" +
-            "ons\":{\"type\":\"array\",\"description\":\"List of subscriptions matching the request c" +
-            "riteria.\",\"items\":{\"$ref\":\"Subscription\"}}}},\"SubscriptionSnippet\":{\"id\":\"Subscr" +
-            "iptionSnippet\",\"type\":\"object\",\"description\":\"JSON template for the snippet part" +
-            " of a subscription.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\":\"T" +
-            "he channel of the user subscriber to the resource.\"},\"description\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Details.\"},\"resource\":{\"$ref\":\"ResourceId\",\"description\":\"The" +
-            " resource subscribed to.\"},\"thumbnail\":{\"type\":\"object\",\"description\":\"Thumbnail" +
-            "\",\"additionalProperties\":{\"type\":\"string\"}},\"title\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Title.\"}}},\"SubscriptionStatistics\":{\"id\":\"SubscriptionStatistics\",\"type\":\"o" +
-            "bject\",\"description\":\"JSON template for the contect details part of a subscripti" +
-            "on.\",\"properties\":{\"countHint\":{\"type\":\"integer\",\"format\":\"uint32\"},\"unreadCount" +
-            "\":{\"type\":\"integer\",\"format\":\"uint32\"}}},\"Thumbnail\":{\"id\":\"Thumbnail\",\"type\":\"o" +
-            "bject\",\"description\":\"JSON template for a thumbnail.\",\"properties\":{\"url\":{\"type" +
-            "\":\"string\",\"description\":\"The URL for the thumbnail.\"}}},\"TokenPagination\":{\"id\"" +
-            ":\"TokenPagination\",\"type\":\"object\",\"description\":\"JSON template for token pagina" +
-            "tion.\",\"properties\":{\"nextPageToken\":{\"type\":\"string\",\"description\":\"Token to th" +
-            "e next page.\"},\"previousPageToken\":{\"type\":\"string\",\"description\":\"Token to the " +
-            "previous page.\"}}},\"Video\":{\"id\":\"Video\",\"type\":\"object\",\"description\":\"JSON tem" +
-            "plate for a YouTube Video.\",\"properties\":{\"contentDetails\":{\"$ref\":\"VideoContent" +
-            "Details\",\"description\":\"Information about the video content, media file.\"},\"etag" +
-            "\":{\"type\":\"string\",\"description\":\"The eTag of the video.\"},\"id\":{\"type\":\"string\"" +
-            ",\"description\":\"The unique id of the video.\"},\"kind\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The type of this API resource.\",\"default\":\"youtube#video\"},\"player\":{\"$ref\"" +
-            ":\"VideoPlayer\",\"description\":\"Information used to play the video.\"},\"snippet\":{\"" +
-            "$ref\":\"VideoSnippet\",\"description\":\"Basic details about the video: title, descri" +
-            "ption, thumbnails.\"},\"statistics\":{\"$ref\":\"VideoStatistics\",\"description\":\"Stati" +
-            "stics about the video: number of views, ratings.\"},\"status\":{\"$ref\":\"VideoStatus" +
-            "\",\"description\":\"Status of the video upload, privacy status.\"}}},\"VideoCategory\"" +
-            ":{\"id\":\"VideoCategory\",\"type\":\"object\",\"description\":\"JSON template for a YouTub" +
-            "e Video Category.\",\"properties\":{\"details\":{\"$ref\":\"VideoCategoryDetails\",\"descr" +
-            "iption\":\"Basic details about the video category.\"},\"etag\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The eTag of the video.\"},\"id\":{\"type\":\"string\",\"description\":\"The uniq" +
-            "ue id of the video category.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type o" +
-            "f this API resource.\",\"default\":\"youtube#videoCategory\"}}},\"VideoCategoryDetails" +
-            "\":{\"id\":\"VideoCategoryDetails\",\"type\":\"object\",\"description\":\"JSON template for " +
-            "the details part of a video category.\",\"properties\":{\"title\":{\"type\":\"string\",\"d" +
-            "escription\":\"Title of the category.\"}}},\"VideoCategoryListResponse\":{\"id\":\"Video" +
-            "CategoryListResponse\",\"type\":\"object\",\"description\":\"JSON template for a VideoCa" +
-            "tegoryService.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The eTag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type" +
-            " of this API response.\",\"default\":\"youtube#videoCategoryListResponse\"},\"videoCat" +
-            "egories\":{\"type\":\"array\",\"description\":\"List of video categories matching the re" +
-            "quest criteria.\",\"items\":{\"$ref\":\"VideoCategory\"}}}},\"VideoContentDetails\":{\"id\"" +
-            ":\"VideoContentDetails\",\"type\":\"object\",\"description\":\"JSON template for the cont" +
-            "ent details part of a video.\",\"properties\":{\"aspectRatio\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The aspect ratio of the video.\"},\"duration\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Duration of the video.\"}}},\"VideoListResponse\":{\"id\":\"VideoListResponse\",\"" +
-            "type\":\"object\",\"description\":\"JSON template for a VideoService.List() response.\"" +
-            ",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The eTag of the response.\"" +
-            "},\"kind\":{\"type\":\"string\",\"description\":\"The type of this API response.\",\"defaul" +
-            "t\":\"youtube#videoListResponse\"},\"videos\":{\"type\":\"array\",\"description\":\"List of " +
-            "videos matching the request criteria.\",\"items\":{\"$ref\":\"Video\"}}}},\"VideoPlayer\"" +
-            ":{\"id\":\"VideoPlayer\",\"type\":\"object\",\"description\":\"JSON template for the player" +
-            " part of a video.\",\"properties\":{\"embedHtml\":{\"type\":\"string\",\"description\":\"Ifr" +
-            "ame embed for the video.\"}}},\"VideoSnippet\":{\"id\":\"VideoSnippet\",\"type\":\"object\"" +
-            ",\"description\":\"JSON template for the snippet part of a video.\",\"properties\":{\"c" +
-            "ategoryId\":{\"type\":\"any\",\"description\":\"Video category the video belongs to.\"},\"" +
-            "channelId\":{\"type\":\"string\",\"description\":\"Channel the video was uploaded into.\"" +
-            "},\"description\":{\"type\":\"string\",\"description\":\"Description of the video.\"},\"pub" +
-            "lishedAt\":{\"type\":\"string\",\"description\":\"Date time the video was uploaded.\",\"fo" +
-            "rmat\":\"date-time\"},\"tags\":{\"type\":\"array\",\"description\":\"Textual tags associated" +
-            " with the video.\",\"items\":{\"type\":\"string\"}},\"thumbnails\":{\"type\":\"object\",\"desc" +
-            "ription\":\"Video thumbnails.\",\"additionalProperties\":{\"$ref\":\"Thumbnail\",\"descrip" +
-            "tion\":\"The name of the thumbnail.\"}},\"title\":{\"type\":\"string\",\"description\":\"Tit" +
-            "le of the video.\"}}},\"VideoStatistics\":{\"id\":\"VideoStatistics\",\"type\":\"object\",\"" +
-            "description\":\"JSON template for the statistics part of a video.\",\"properties\":{\"" +
-            "commentCount\":{\"type\":\"string\",\"description\":\"Number of comments for this video." +
-            "\",\"format\":\"uint64\"},\"dislikeCount\":{\"type\":\"string\",\"description\":\"Number of ti" +
-            "mes the video was disliked.\",\"format\":\"uint64\"},\"favoriteCount\":{\"type\":\"string\"" +
-            ",\"description\":\"Number of times the video was added to a user\'s favorites list.\"" +
-            ",\"format\":\"uint64\"},\"likeCount\":{\"type\":\"string\",\"description\":\"Number of times " +
-            "the video was liked.\",\"format\":\"uint64\"},\"viewCount\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Number of times the video was viewed.\",\"format\":\"uint64\"}}},\"VideoStatus\":{" +
-            "\"id\":\"VideoStatus\",\"type\":\"object\",\"description\":\"JSON template for the status p" +
-            "art of a video.\",\"properties\":{\"failureReason\":{\"type\":\"string\",\"description\":\"P" +
-            "resent only if the uploadStatus indicates a failed upload.\"},\"privacyStatus\":{\"t" +
-            "ype\":\"string\",\"description\":\"Privacy of the video.\"},\"rejectionReason\":{\"type\":\"" +
-            "string\",\"description\":\"Present only if the uploadStatus indicates a rejected upl" +
-            "oad.\"},\"uploadStatus\":{\"type\":\"string\",\"description\":\"Status of the video upload" +
-            ".\"}}}},\"resources\":{\"activities\":{\"methods\":{\"insert\":{\"id\":\"youtube.activities." +
-            "insert\",\"path\":\"activities\",\"httpMethod\":\"POST\",\"description\":\"Post a channel bu" +
-            "lletin.\",\"request\":{\"$ref\":\"Activity\"},\"response\":{\"$ref\":\"Activity\"},\"scopes\":[" +
-            "\"https://www.googleapis.com/auth/youtube\"]},\"list\":{\"id\":\"youtube.activities.lis" +
-            "t\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"description\":\"Browse the YouTube chan" +
-            "nel activity collection.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"YouTube ID of the channel.\",\"location\":\"query\"},\"home\":{\"type\":\"string\",\"des" +
-            "cription\":\"Flag indicating to return user\'s homepage feed.\",\"location\":\"query\"}," +
-            "\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to retur" +
-            "n\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"quer" +
-            "y\"},\"mine\":{\"type\":\"string\",\"description\":\"Flag indicating to return user\'s acti" +
-            "vities.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token f" +
-            "or the page selection.\",\"location\":\"query\"},\"publishedAfter\":{\"type\":\"string\",\"d" +
-            "escription\":\"Only return activities published after given date (inclusive).\",\"fo" +
-            "rmat\":\"date-time\",\"location\":\"query\"},\"publishedBefore\":{\"type\":\"string\",\"descri" +
-            "ption\":\"Only return activities published before given date (exclusive).\",\"format" +
-            "\":\"date-time\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ActivityListResponse\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/au" +
-            "th/youtube.readonly\"]}}},\"channelCategories\":{\"methods\":{\"list\":{\"id\":\"youtube.c" +
-            "hannelCategories.list\",\"path\":\"channelCategories\",\"httpMethod\":\"GET\",\"descriptio" +
-            "n\":\"Browse the YouTube guide category collection.\",\"parameters\":{\"hl\":{\"type\":\"s" +
-            "tring\",\"description\":\"Language for the returned channelCategories.\",\"default\":\"e" +
-            "n-US\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"Comma-separated Y" +
-            "ouTube IDs of the channelCategories to be returned.\",\"location\":\"query\"},\"region" +
-            "Code\":{\"type\":\"string\",\"description\":\"Return the channelCategories in the given " +
-            "region code.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ChannelCategoryListRespon" +
-            "se\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis" +
-            ".com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]}}}" +
-            ",\"channels\":{\"methods\":{\"list\":{\"id\":\"youtube.channels.list\",\"path\":\"channels\",\"" +
-            "httpMethod\":\"GET\",\"description\":\"Browse the YouTube channel collection. Either t" +
-            "he \'id\' or \'mine\' parameter must be set.\",\"parameters\":{\"categoryId\":{\"type\":\"st" +
-            "ring\",\"description\":\"Filter to retrieve the channels within the given category I" +
-            "D.\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the " +
-            "channels to be returned.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Maximum number of results to return\",\"default\":\"5\",\"format\":\"uint32\"" +
-            ",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Filter to only channels owned by authenticated user.\",\"location\":\"query" +
-            "\"},\"mySubscribers\":{\"type\":\"string\",\"description\":\"Filter to channels that subsc" +
-            "ribed to the channel of the authenticated user.\",\"location\":\"query\"},\"pageToken\"" +
-            ":{\"type\":\"string\",\"description\":\"Token for the page selection.\",\"location\":\"quer" +
-            "y\"}},\"response\":{\"$ref\":\"ChannelListResponse\"},\"scopes\":[\"https://www.googleapis" +
-            ".com/auth/youtube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://w" +
-            "ww.googleapis.com/auth/youtubepartner\"]}}},\"playlistItems\":{\"methods\":{\"delete\":" +
-            "{\"id\":\"youtube.playlistItems.delete\",\"path\":\"playlistItems\",\"httpMethod\":\"DELETE" +
-            "\",\"description\":\"Deletes playlist items by IDs.\",\"parameters\":{\"id\":{\"type\":\"str" +
-            "ing\",\"description\":\"YouTube IDs of the playlist items to be deleted.\",\"required\"" +
-            ":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.google" +
-            "apis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"inser" +
-            "t\":{\"id\":\"youtube.playlistItems.insert\",\"path\":\"playlistItems\",\"httpMethod\":\"POS" +
-            "T\",\"description\":\"Insert a resource into a playlist.\",\"request\":{\"$ref\":\"Playlis" +
-            "tItem\"},\"response\":{\"$ref\":\"PlaylistItem\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"list\":{\"id\":\"" +
-            "youtube.playlistItems.list\",\"path\":\"playlistItems\",\"httpMethod\":\"GET\",\"descripti" +
-            "on\":\"Browse the YouTube playlist collection.\",\"parameters\":{\"id\":{\"type\":\"string" +
-            "\",\"description\":\"YouTube IDs of the playlist items to be returned.\",\"location\":\"" +
-            "query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results " +
-            "to return\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"locatio" +
-            "n\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token for the page selec" +
-            "tion.\",\"location\":\"query\"},\"playlistId\":{\"type\":\"string\",\"description\":\"Retrieve" +
-            "s playlist items from the given playlist id.\",\"location\":\"query\"}},\"response\":{\"" +
-            "$ref\":\"PlaylistItemListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/you" +
-            "tube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://www.googleapis" +
-            ".com/auth/youtubepartner\"]},\"update\":{\"id\":\"youtube.playlistItems.update\",\"path\"" +
-            ":\"playlistItems\",\"httpMethod\":\"PUT\",\"description\":\"Update a playlist item.\",\"req" +
-            "uest\":{\"$ref\":\"PlaylistItem\"},\"response\":{\"$ref\":\"PlaylistItem\"},\"scopes\":[\"http" +
-            "s://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepar" +
-            "tner\"]}}},\"playlists\":{\"methods\":{\"delete\":{\"id\":\"youtube.playlists.delete\",\"pat" +
-            "h\":\"playlists\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes playlists by IDs.\",\"" +
-            "parameters\":{\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the playlists t" +
-            "o be deleted.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"sco" +
-            "pes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth" +
-            "/youtubepartner\"]},\"insert\":{\"id\":\"youtube.playlists.insert\",\"path\":\"playlists\"," +
-            "\"httpMethod\":\"POST\",\"description\":\"Create a playlist.\",\"request\":{\"$ref\":\"Playli" +
-            "st\"},\"response\":{\"$ref\":\"Playlist\"},\"scopes\":[\"https://www.googleapis.com/auth/y" +
-            "outube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"list\":{\"id\":\"youtube" +
-            ".playlists.list\",\"path\":\"playlists\",\"httpMethod\":\"GET\",\"description\":\"Browse the" +
-            " YouTube playlist collection.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\"" +
-            ":\"Comma-separated YouTube IDs of the playlists to be returned.\",\"location\":\"quer" +
-            "y\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to r" +
-            "eturn\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"" +
-            "query\"},\"mine\":{\"type\":\"string\",\"description\":\"Flag indicating only return the p" +
-            "laylists of the authenticated user.\",\"location\":\"query\"},\"pageToken\":{\"type\":\"st" +
-            "ring\",\"description\":\"Token for the page selection.\",\"location\":\"query\"}},\"respon" +
-            "se\":{\"$ref\":\"PlaylistListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/y" +
-            "outube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://www.googleap" +
-            "is.com/auth/youtubepartner\"]},\"update\":{\"id\":\"youtube.playlists.update\",\"path\":\"" +
-            "playlists\",\"httpMethod\":\"PUT\",\"description\":\"Update a playlist.\",\"request\":{\"$re" +
-            "f\":\"Playlist\"},\"response\":{\"$ref\":\"Playlist\"},\"scopes\":[\"https://www.googleapis." +
-            "com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]}}},\"search\":" +
-            "{\"methods\":{\"list\":{\"id\":\"youtube.search.list\",\"path\":\"search\",\"httpMethod\":\"GET" +
-            "\",\"description\":\"Universal search for youtube.\",\"parameters\":{\"maxResults\":{\"typ" +
-            "e\":\"integer\",\"description\":\"Maximum number of search results to return per page." +
-            "\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query" +
-            "\"},\"order\":{\"type\":\"string\",\"description\":\"Sort order.\",\"default\":\"relevance\",\"e" +
-            "num\":[\"date\",\"rating\",\"relevance\",\"view_count\"],\"enumDescriptions\":[\"Sort accord" +
-            "ing to the date.\",\"Sort according to the rating.\",\"Sort according to the relevan" +
-            "ce.\",\"Sort according to the view count.\"],\"location\":\"query\"},\"pageToken\":{\"type" +
-            "\":\"string\",\"description\":\"Token for the page selection.\",\"location\":\"query\"},\"pu" +
-            "blished\":{\"type\":\"string\",\"description\":\"Only search for resources uploaded at a" +
-            " specific pediod\",\"enum\":[\"any\",\"thisWeek\",\"today\"],\"enumDescriptions\":[\"No filt" +
-            "er on the release date\",\"Videos uploaded this month\",\"Videos uploaded today\"],\"l" +
-            "ocation\":\"query\"},\"q\":{\"type\":\"string\",\"description\":\"Query to search in Youtube" +
-            ".\",\"required\":true,\"location\":\"query\"},\"topicId\":{\"type\":\"string\",\"description\":" +
-            "\"Only search for resources with the specified topic\",\"location\":\"query\"},\"type\":" +
-            "{\"type\":\"string\",\"description\":\"Type of resource to search.\",\"enum\":[\"channel\",\"" +
-            "playlist\",\"video\"],\"enumDescriptions\":[\"Search for channels.\",\"Search for playli" +
-            "sts.\",\"Search for videos.\"],\"repeated\":true,\"location\":\"query\"},\"videoCaption\":{" +
-            "\"type\":\"string\",\"description\":\"Add a filter on the the presence of captions on t" +
-            "he videos.\",\"enum\":[\"any\",\"closedCaption\",\"none\"],\"enumDescriptions\":[\"No filter" +
-            " on the captions.\",\"Videos with closed captions.\",\"Videos without captions.\"],\"l" +
-            "ocation\":\"query\"},\"videoDefinition\":{\"type\":\"string\",\"description\":\"Add a filter" +
-            " for the definition of the videos.\",\"enum\":[\"any\",\"high\",\"standard\"],\"enumDescri" +
-            "ptions\":[\"No filter on the definition.\",\"Videos in high definition.\",\"Videos in " +
-            "standard definition.\"],\"location\":\"query\"},\"videoDimension\":{\"type\":\"string\",\"de" +
-            "scription\":\"Add a filter for the number of dimensions in the videos.\",\"enum\":[\"2" +
-            "d\",\"3d\",\"any\"],\"enumDescriptions\":[\"Videos in two dimensions.\",\"Videos in three " +
-            "dimensions.\",\"No filter on the dimension.\"],\"location\":\"query\"},\"videoDuration\":" +
-            "{\"type\":\"string\",\"description\":\"Add a filter on the duration of the videos.\",\"en" +
-            "um\":[\"any\",\"long\",\"medium\",\"short\"],\"enumDescriptions\":[\"No filter on the durati" +
-            "on.\",\"Videos with a duration longer than 20 minutes.\",\"Videos with a duration be" +
-            "tween 4 and 20 minutes.\",\"Videos with a duration under 4 minutes.\"],\"location\":\"" +
-            "query\"},\"videoLicense\":{\"type\":\"string\",\"description\":\"Add a filter on the licen" +
-            "sing of the videos.\",\"enum\":[\"any\",\"creativeCommon\",\"youtube\"],\"enumDescriptions" +
-            "\":[\"No filter on the license.\",\"Videos under the Creative Common license.\",\"Vide" +
-            "os under the YouTube license.\"],\"location\":\"query\"}},\"parameterOrder\":[\"q\"],\"res" +
-            "ponse\":{\"$ref\":\"SearchListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
+            "API response.\",\"default\":\"youtube#videoCategoryListResponse\"},\"videoCategories\":" +
+            "{\"type\":\"array\",\"description\":\"List of video categories matching the request cri" +
+            "teria.\",\"items\":{\"$ref\":\"VideoCategory\"}}}},\"VideoCategorySnippet\":{\"id\":\"VideoC" +
+            "ategorySnippet\",\"type\":\"object\",\"description\":\"JSON template for the snippet par" +
+            "t of a video category.\",\"properties\":{\"channelId\":{\"type\":\"string\",\"description\"" +
+            ":\"Channel publishing the video category.\",\"default\":\"UCBR8-60-B28hp2BmDPdntcQ\"}," +
+            "\"title\":{\"type\":\"string\",\"description\":\"Title of the video category.\"}}},\"VideoC" +
+            "ontentDetails\":{\"id\":\"VideoContentDetails\",\"type\":\"object\",\"description\":\"JSON t" +
+            "emplate for the content details part of a video.\",\"properties\":{\"aspectRatio\":{\"" +
+            "type\":\"string\",\"description\":\"The aspect ratio of the video.\"},\"duration\":{\"type" +
+            "\":\"string\",\"description\":\"Duration of the video.\"}}},\"VideoListResponse\":{\"id\":\"" +
+            "VideoListResponse\",\"type\":\"object\",\"description\":\"JSON template for a VideoServi" +
+            "ce.List() response.\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"The eT" +
+            "ag of the response.\"},\"kind\":{\"type\":\"string\",\"description\":\"The type of this AP" +
+            "I response.\",\"default\":\"youtube#videoListResponse\"},\"videos\":{\"type\":\"array\",\"de" +
+            "scription\":\"List of videos matching the request criteria.\",\"items\":{\"$ref\":\"Vide" +
+            "o\"}}}},\"VideoPlayer\":{\"id\":\"VideoPlayer\",\"type\":\"object\",\"description\":\"JSON tem" +
+            "plate for the player part of a video.\",\"properties\":{\"embedHtml\":{\"type\":\"string" +
+            "\",\"description\":\"Iframe embed for the video.\"}}},\"VideoSnippet\":{\"id\":\"VideoSnip" +
+            "pet\",\"type\":\"object\",\"description\":\"JSON template for the snippet part of a vide" +
+            "o.\",\"properties\":{\"categoryId\":{\"type\":\"string\",\"description\":\"Video category th" +
+            "e video belongs to.\"},\"channelId\":{\"type\":\"string\",\"description\":\"Channel publis" +
+            "hing the video.\"},\"description\":{\"type\":\"string\",\"description\":\"Description of t" +
+            "he video.\"},\"publishedAt\":{\"type\":\"string\",\"description\":\"Date and time the vide" +
+            "o was published at.\",\"format\":\"date-time\"},\"tags\":{\"type\":\"array\",\"description\":" +
+            "\"Textual tags associated with the video.\",\"items\":{\"type\":\"string\"}},\"thumbnails" +
+            "\":{\"type\":\"object\",\"description\":\"Video thumbnails.\",\"additionalProperties\":{\"$r" +
+            "ef\":\"Thumbnail\",\"description\":\"A map of thumbnails by their name.\"}},\"title\":{\"t" +
+            "ype\":\"string\",\"description\":\"Title of the video.\"}}},\"VideoStatistics\":{\"id\":\"Vi" +
+            "deoStatistics\",\"type\":\"object\",\"description\":\"JSON template for the statistics p" +
+            "art of a video.\",\"properties\":{\"commentCount\":{\"type\":\"string\",\"description\":\"Nu" +
+            "mber of comments for this video.\",\"format\":\"uint64\"},\"dislikeCount\":{\"type\":\"str" +
+            "ing\",\"description\":\"Number of times the video was disliked.\",\"format\":\"uint64\"}," +
+            "\"favoriteCount\":{\"type\":\"string\",\"description\":\"Number of times the video was ad" +
+            "ded to a user\'s favorites list.\",\"format\":\"uint64\"},\"likeCount\":{\"type\":\"string\"" +
+            ",\"description\":\"Number of times the video was liked.\",\"format\":\"uint64\"},\"viewCo" +
+            "unt\":{\"type\":\"string\",\"description\":\"Number of times the video was viewed.\",\"for" +
+            "mat\":\"uint64\"}}},\"VideoStatus\":{\"id\":\"VideoStatus\",\"type\":\"object\",\"description\"" +
+            ":\"JSON template for the status part of a video.\",\"properties\":{\"failureReason\":{" +
+            "\"type\":\"string\",\"description\":\"Present only if the uploadStatus indicates a fail" +
+            "ed upload.\"},\"privacyStatus\":{\"type\":\"string\",\"description\":\"Privacy of the vide" +
+            "o.\"},\"rejectionReason\":{\"type\":\"string\",\"description\":\"Present only if the uploa" +
+            "dStatus indicates a rejected upload.\"},\"uploadStatus\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Status of the video upload.\"}}}},\"resources\":{\"activities\":{\"methods\":{\"in" +
+            "sert\":{\"id\":\"youtube.activities.insert\",\"path\":\"activities\",\"httpMethod\":\"POST\"," +
+            "\"description\":\"Post a channel bulletin.\",\"request\":{\"$ref\":\"Activity\"},\"response" +
+            "\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\"]},\"lis" +
+            "t\":{\"id\":\"youtube.activities.list\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"descr" +
+            "iption\":\"Browse the YouTube channel activity collection.\",\"parameters\":{\"channel" +
+            "Id\":{\"type\":\"string\",\"description\":\"YouTube ID of the channel.\",\"location\":\"quer" +
+            "y\"},\"home\":{\"type\":\"string\",\"description\":\"Flag indicating to return user\'s home" +
+            "page feed.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Ma" +
+            "ximum number of results to return\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\"" +
+            ",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"string\",\"description\":\"Flag " +
+            "indicating to return user\'s activities.\",\"location\":\"query\"},\"pageToken\":{\"type\"" +
+            ":\"string\",\"description\":\"Token for the page selection.\",\"location\":\"query\"},\"pub" +
+            "lishedAfter\":{\"type\":\"string\",\"description\":\"Only return activities published af" +
+            "ter given date (inclusive).\",\"format\":\"date-time\",\"location\":\"query\"},\"published" +
+            "Before\":{\"type\":\"string\",\"description\":\"Only return activities published before " +
+            "given date (exclusive).\",\"format\":\"date-time\",\"location\":\"query\"}},\"response\":{\"" +
+            "$ref\":\"ActivityListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube" +
+            "\",\"https://www.googleapis.com/auth/youtube.readonly\"]}}},\"channelCategories\":{\"m" +
+            "ethods\":{\"list\":{\"id\":\"youtube.channelCategories.list\",\"path\":\"channelCategories" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Browse the YouTube guide category collection" +
+            ".\",\"parameters\":{\"hl\":{\"type\":\"string\",\"description\":\"Language for the returned " +
+            "channelCategories.\",\"default\":\"en-US\",\"location\":\"query\"},\"id\":{\"type\":\"string\"," +
+            "\"description\":\"Comma-separated YouTube IDs of the channelCategories to be return" +
+            "ed.\",\"location\":\"query\"},\"regionCode\":{\"type\":\"string\",\"description\":\"Return the" +
+            " channelCategories in the given region code.\",\"location\":\"query\"}},\"response\":{\"" +
+            "$ref\":\"ChannelCategoryListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/" +
             "youtube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://www.googlea" +
-            "pis.com/auth/youtubepartner\"]}}},\"subcription\":{\"methods\":{\"insert\":{\"id\":\"youtu" +
-            "be.subcription.insert\",\"path\":\"subscriptions\",\"httpMethod\":\"POST\",\"description\":" +
-            "\"Insert a subscription.\",\"request\":{\"$ref\":\"Subscription\"},\"response\":{\"$ref\":\"S" +
-            "ubscription\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.g" +
-            "oogleapis.com/auth/youtubepartner\"]},\"list\":{\"id\":\"youtube.subcription.list\",\"pa" +
-            "th\":\"subscriptions\",\"httpMethod\":\"GET\",\"description\":\"Browse user\'s subscription" +
-            " collection.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"location\":\"query\"},\"fo" +
-            "rChannelId\":{\"type\":\"string\",\"description\":\"Takes a comma separated list of chan" +
-            "nel IDs. Filters the returned list to only those matching these channels\",\"locat" +
-            "ion\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the subscripti" +
-            "ons to be returned.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descrip" +
-            "tion\":\"Maximum number of search results to return per page.\",\"default\":\"5\",\"form" +
-            "at\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"st" +
-            "ring\",\"description\":\"Flag indicating only return the channel ids of the authenti" +
-            "cated user.\",\"location\":\"query\"},\"order\":{\"type\":\"string\",\"description\":\"Sort or" +
-            "der.\",\"default\":\"SUBSCRIPTION_ORDER_RELEVANCE\",\"enum\":[\"alphabetical\",\"relevance" +
-            "\",\"unread\"],\"enumDescriptions\":[\"Sort alphabetically\",\"Sort by relevance.\",\"Sort" +
-            " by order of activity.\"],\"location\":\"query\"},\"startIndex\":{\"type\":\"integer\",\"des" +
-            "cription\":\"Index of the first search result to return.\",\"default\":\"0\",\"format\":\"" +
-            "uint32\",\"minimum\":\"0\",\"location\":\"query\"}},\"response\":{\"$ref\":\"SubscriptionListR" +
-            "esponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googl" +
-            "eapis.com/auth/youtubepartner\"]}}},\"subscription\":{\"methods\":{\"delete\":{\"id\":\"yo" +
-            "utube.subscription.delete\",\"path\":\"subscriptions\",\"httpMethod\":\"DELETE\",\"descrip" +
-            "tion\":\"Deletes subscriptions by IDs.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"YouTube IDs of the subscription to be deleted.\",\"required\":true,\"locati" +
-            "on\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]}}},\"videocategory\":{" +
-            "\"methods\":{\"list\":{\"id\":\"youtube.videocategory.list\",\"path\":\"videoCategories\",\"h" +
-            "ttpMethod\":\"GET\",\"description\":\"Browse list of video categories.\",\"parameters\":{" +
-            "\"hl\":{\"type\":\"string\",\"description\":\"Language used for the title of the categori" +
-            "es.\",\"default\":\"en_US\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"" +
-            "IDs of the categories to be returned.\",\"location\":\"query\"},\"part\":{\"type\":\"strin" +
-            "g\",\"description\":\"Parts of the video categories to be returned.\",\"required\":true" +
-            ",\"location\":\"query\"},\"regionCode\":{\"type\":\"string\",\"description\":\"Return all the" +
-            " categories in this region.\",\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"res" +
-            "ponse\":{\"$ref\":\"VideoCategoryListResponse\"},\"scopes\":[\"https://www.googleapis.co" +
-            "m/auth/youtube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https://www." +
-            "googleapis.com/auth/youtubepartner\"]}}},\"videos\":{\"methods\":{\"delete\":{\"id\":\"you" +
-            "tube.videos.delete\",\"path\":\"videos\",\"httpMethod\":\"DELETE\",\"description\":\"Delete " +
-            "a YouTube video.\",\"parameters\":{\"contentOwnerId\":{\"type\":\"string\",\"description\":" +
-            "\"The authenticated user acts on behalf of this content owner.\",\"location\":\"query" +
-            "\"},\"id\":{\"type\":\"string\",\"description\":\"YouTube ID of the video to be deleted.\"," +
-            "\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://" +
-            "www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtubepartner" +
-            "\"]},\"insert\":{\"id\":\"youtube.videos.insert\",\"path\":\"videos\",\"httpMethod\":\"POST\",\"" +
-            "description\":\"Upload a video to YouTube.\",\"request\":{\"$ref\":\"Video\"},\"response\":" +
-            "{\"$ref\":\"Video\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://ww" +
-            "w.googleapis.com/auth/youtube.upload\"],\"supportsMediaUpload\":true,\"mediaUpload\":" +
-            "{\"accept\":[\"application/octet-stream\",\"video/*\"],\"maxSize\":\"64GB\",\"protocols\":{\"" +
-            "simple\":{\"multipart\":true,\"path\":\"/upload/youtube/v3alpha/videos\"},\"resumable\":{" +
-            "\"multipart\":true,\"path\":\"/resumable/upload/youtube/v3alpha/videos\"}}}},\"list\":{\"" +
-            "id\":\"youtube.videos.list\",\"path\":\"videos\",\"httpMethod\":\"GET\",\"description\":\"Brow" +
-            "se the YouTube video collection.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"YouTube IDs of the videos to be returned.\",\"required\":true,\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"VideoListResponse\"},\"scopes\":[\"" +
-            "https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtub" +
-            "e.readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]}}}}}";
+            "pis.com/auth/youtubepartner\"]}}},\"channels\":{\"methods\":{\"list\":{\"id\":\"youtube.ch" +
+            "annels.list\",\"path\":\"channels\",\"httpMethod\":\"GET\",\"description\":\"Browse the YouT" +
+            "ube channel collection. Either the \'id\' or \'mine\' parameter must be set.\",\"param" +
+            "eters\":{\"categoryId\":{\"type\":\"string\",\"description\":\"Filter to retrieve the chan" +
+            "nels within the given category ID.\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"YouTube IDs of the channels to be returned.\",\"location\":\"query\"},\"m" +
+            "axResults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\"" +
+            ",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"" +
+            "},\"mine\":{\"type\":\"string\",\"description\":\"Filter to only channels owned by authen" +
+            "ticated user.\",\"location\":\"query\"},\"mySubscribers\":{\"type\":\"string\",\"description" +
+            "\":\"Filter to channels that subscribed to the channel of the authenticated user.\"" +
+            ",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token for the p" +
+            "age selection.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"ChannelListResponse\"},\"" +
+            "scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/a" +
+            "uth/youtube.readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]}}},\"play" +
+            "listItems\":{\"methods\":{\"delete\":{\"id\":\"youtube.playlistItems.delete\",\"path\":\"pla" +
+            "ylistItems\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes playlist items by IDs.\"" +
+            ",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the playlist " +
+            "items to be deleted.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"id" +
+            "\"],\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.c" +
+            "om/auth/youtubepartner\"]},\"insert\":{\"id\":\"youtube.playlistItems.insert\",\"path\":\"" +
+            "playlistItems\",\"httpMethod\":\"POST\",\"description\":\"Insert a resource into a playl" +
+            "ist.\",\"request\":{\"$ref\":\"PlaylistItem\"},\"response\":{\"$ref\":\"PlaylistItem\"},\"scop" +
+            "es\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/" +
+            "youtubepartner\"]},\"list\":{\"id\":\"youtube.playlistItems.list\",\"path\":\"playlistItem" +
+            "s\",\"httpMethod\":\"GET\",\"description\":\"Browse the YouTube playlist collection.\",\"p" +
+            "arameters\":{\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the playlist ite" +
+            "ms to be returned.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"descript" +
+            "ion\":\"Maximum number of results to return\",\"default\":\"5\",\"format\":\"uint32\",\"mini" +
+            "mum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descri" +
+            "ption\":\"Token for the page selection.\",\"location\":\"query\"},\"playlistId\":{\"type\":" +
+            "\"string\",\"description\":\"Retrieves playlist items from the given playlist id.\",\"l" +
+            "ocation\":\"query\"}},\"response\":{\"$ref\":\"PlaylistItemListResponse\"},\"scopes\":[\"htt" +
+            "ps://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube.r" +
+            "eadonly\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"update\":{\"id\":\"yout" +
+            "ube.playlistItems.update\",\"path\":\"playlistItems\",\"httpMethod\":\"PUT\",\"description" +
+            "\":\"Update a playlist item.\",\"request\":{\"$ref\":\"PlaylistItem\"},\"response\":{\"$ref\"" +
+            ":\"PlaylistItem\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://ww" +
+            "w.googleapis.com/auth/youtubepartner\"]}}},\"playlists\":{\"methods\":{\"delete\":{\"id\"" +
+            ":\"youtube.playlists.delete\",\"path\":\"playlists\",\"httpMethod\":\"DELETE\",\"descriptio" +
+            "n\":\"Deletes playlists by IDs.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\"" +
+            ":\"YouTube IDs of the playlists to be deleted.\",\"required\":true,\"location\":\"query" +
+            "\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/youtube\"," +
+            "\"https://www.googleapis.com/auth/youtubepartner\"]},\"insert\":{\"id\":\"youtube.playl" +
+            "ists.insert\",\"path\":\"playlists\",\"httpMethod\":\"POST\",\"description\":\"Create a play" +
+            "list.\",\"request\":{\"$ref\":\"Playlist\"},\"response\":{\"$ref\":\"Playlist\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube" +
+            "partner\"]},\"list\":{\"id\":\"youtube.playlists.list\",\"path\":\"playlists\",\"httpMethod\"" +
+            ":\"GET\",\"description\":\"Browse the YouTube playlist collection.\",\"parameters\":{\"id" +
+            "\":{\"type\":\"string\",\"description\":\"Comma-separated YouTube IDs of the playlists t" +
+            "o be returned.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\"" +
+            ":\"Maximum number of results to return\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\"" +
+            ":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"string\",\"description\":\"F" +
+            "lag indicating only return the playlists of the authenticated user.\",\"location\":" +
+            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token for the page selectio" +
+            "n.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"PlaylistListResponse\"},\"scopes\":[\"h" +
+            "ttps://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube" +
+            ".readonly\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"update\":{\"id\":\"yo" +
+            "utube.playlists.update\",\"path\":\"playlists\",\"httpMethod\":\"PUT\",\"description\":\"Upd" +
+            "ate a playlist.\",\"request\":{\"$ref\":\"Playlist\"},\"response\":{\"$ref\":\"Playlist\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/au" +
+            "th/youtubepartner\"]}}},\"search\":{\"methods\":{\"list\":{\"id\":\"youtube.search.list\",\"" +
+            "path\":\"search\",\"httpMethod\":\"GET\",\"description\":\"Universal search for youtube.\"," +
+            "\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"description\":\"Maximum number of se" +
+            "arch results to return per page.\",\"default\":\"5\",\"format\":\"uint32\",\"minimum\":\"0\"," +
+            "\"maximum\":\"50\",\"location\":\"query\"},\"order\":{\"type\":\"string\",\"description\":\"Sort " +
+            "order.\",\"default\":\"relevance\",\"enum\":[\"date\",\"rating\",\"relevance\",\"view_count\"]," +
+            "\"enumDescriptions\":[\"Sort according to the date.\",\"Sort according to the rating." +
+            "\",\"Sort according to the relevance.\",\"Sort according to the view count.\"],\"locat" +
+            "ion\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Token for the page sel" +
+            "ection.\",\"location\":\"query\"},\"published\":{\"type\":\"string\",\"description\":\"Only se" +
+            "arch for resources uploaded at a specific pediod\",\"enum\":[\"any\",\"thisWeek\",\"toda" +
+            "y\"],\"enumDescriptions\":[\"No filter on the release date\",\"Videos uploaded this mo" +
+            "nth\",\"Videos uploaded today\"],\"location\":\"query\"},\"q\":{\"type\":\"string\",\"descript" +
+            "ion\":\"Query to search in Youtube.\",\"location\":\"query\"},\"relatedToVideo\":{\"type\":" +
+            "\"string\",\"description\":\"Search for resources related to this video. Need to be u" +
+            "sed with type set to \'video\'\",\"location\":\"query\"},\"topicId\":{\"type\":\"string\",\"de" +
+            "scription\":\"Only search for resources with the specified topic\",\"location\":\"quer" +
+            "y\"},\"type\":{\"type\":\"string\",\"description\":\"Type of resource to search.\",\"enum\":[" +
+            "\"channel\",\"playlist\",\"video\"],\"enumDescriptions\":[\"Search for channels.\",\"Search" +
+            " for playlists.\",\"Search for videos.\"],\"repeated\":true,\"location\":\"query\"},\"vide" +
+            "oCaption\":{\"type\":\"string\",\"description\":\"Add a filter on the the presence of ca" +
+            "ptions on the videos.\",\"enum\":[\"any\",\"closedCaption\",\"none\"],\"enumDescriptions\":" +
+            "[\"No filter on the captions.\",\"Videos with closed captions.\",\"Videos without cap" +
+            "tions.\"],\"location\":\"query\"},\"videoDefinition\":{\"type\":\"string\",\"description\":\"A" +
+            "dd a filter for the definition of the videos.\",\"enum\":[\"any\",\"high\",\"standard\"]," +
+            "\"enumDescriptions\":[\"No filter on the definition.\",\"Videos in high definition.\"," +
+            "\"Videos in standard definition.\"],\"location\":\"query\"},\"videoDimension\":{\"type\":\"" +
+            "string\",\"description\":\"Add a filter for the number of dimensions in the videos.\"" +
+            ",\"enum\":[\"2d\",\"3d\",\"any\"],\"enumDescriptions\":[\"Videos in two dimensions.\",\"Video" +
+            "s in three dimensions.\",\"No filter on the dimension.\"],\"location\":\"query\"},\"vide" +
+            "oDuration\":{\"type\":\"string\",\"description\":\"Add a filter on the duration of the v" +
+            "ideos.\",\"enum\":[\"any\",\"long\",\"medium\",\"short\"],\"enumDescriptions\":[\"No filter on" +
+            " the duration.\",\"Videos with a duration longer than 20 minutes.\",\"Videos with a " +
+            "duration between 4 and 20 minutes.\",\"Videos with a duration under 4 minutes.\"],\"" +
+            "location\":\"query\"},\"videoLicense\":{\"type\":\"string\",\"description\":\"Add a filter o" +
+            "n the licensing of the videos.\",\"enum\":[\"any\",\"creativeCommon\",\"youtube\"],\"enumD" +
+            "escriptions\":[\"No filter on the license.\",\"Videos under the Creative Common lice" +
+            "nse.\",\"Videos under the YouTube license.\"],\"location\":\"query\"}},\"response\":{\"$re" +
+            "f\":\"SearchListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"ht" +
+            "tps://www.googleapis.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth" +
+            "/youtubepartner\"]}}},\"subscription\":{\"methods\":{\"delete\":{\"id\":\"youtube.subscrip" +
+            "tion.delete\",\"path\":\"subscriptions\",\"httpMethod\":\"DELETE\",\"description\":\"Deletes" +
+            " subscriptions by IDs.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"YouTu" +
+            "be IDs of the subscription to be deleted.\",\"required\":true,\"location\":\"query\"}}," +
+            "\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"htt" +
+            "ps://www.googleapis.com/auth/youtubepartner\"]},\"insert\":{\"id\":\"youtube.subscript" +
+            "ion.insert\",\"path\":\"subscriptions\",\"httpMethod\":\"POST\",\"description\":\"Insert a s" +
+            "ubscription.\",\"request\":{\"$ref\":\"Subscription\"},\"response\":{\"$ref\":\"Subscription" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.c" +
+            "om/auth/youtubepartner\"]},\"list\":{\"id\":\"youtube.subscription.list\",\"path\":\"subsc" +
+            "riptions\",\"httpMethod\":\"GET\",\"description\":\"Browse user\'s subscription collectio" +
+            "n.\",\"parameters\":{\"channelId\":{\"type\":\"string\",\"location\":\"query\"},\"forChannelId" +
+            "\":{\"type\":\"string\",\"description\":\"Takes a comma separated list of channel IDs. F" +
+            "ilters the returned list to only those matching these channels\",\"location\":\"quer" +
+            "y\"},\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of the subscriptions to be " +
+            "returned.\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"Max" +
+            "imum number of search results to return per page.\",\"default\":\"5\",\"format\":\"uint3" +
+            "2\",\"minimum\":\"0\",\"maximum\":\"50\",\"location\":\"query\"},\"mine\":{\"type\":\"string\",\"des" +
+            "cription\":\"Flag indicating only return the channel ids of the authenticated user" +
+            ".\",\"location\":\"query\"},\"order\":{\"type\":\"string\",\"description\":\"Sort order.\",\"def" +
+            "ault\":\"SUBSCRIPTION_ORDER_RELEVANCE\",\"enum\":[\"alphabetical\",\"relevance\",\"unread\"" +
+            "],\"enumDescriptions\":[\"Sort alphabetically\",\"Sort by relevance.\",\"Sort by order " +
+            "of activity.\"],\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"T" +
+            "oken for the page selection.\",\"location\":\"query\"}},\"response\":{\"$ref\":\"Subscript" +
+            "ionListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"https://w" +
+            "ww.googleapis.com/auth/youtubepartner\"]}}},\"videocategory\":{\"methods\":{\"list\":{\"" +
+            "id\":\"youtube.videocategory.list\",\"path\":\"videoCategories\",\"httpMethod\":\"GET\",\"de" +
+            "scription\":\"Browse list of video categories.\",\"parameters\":{\"hl\":{\"type\":\"string" +
+            "\",\"description\":\"Language used for the title of the categories.\",\"default\":\"en_U" +
+            "S\",\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"IDs of the categorie" +
+            "s to be returned.\",\"location\":\"query\"},\"part\":{\"type\":\"string\",\"description\":\"Pa" +
+            "rts of the video categories to be returned.\",\"required\":true,\"location\":\"query\"}" +
+            ",\"regionCode\":{\"type\":\"string\",\"description\":\"Return all the categories in this " +
+            "region.\",\"location\":\"query\"}},\"parameterOrder\":[\"part\"],\"response\":{\"$ref\":\"Vide" +
+            "oCategoryListResponse\"},\"scopes\":[\"https://www.googleapis.com/auth/youtube\",\"htt" +
+            "ps://www.googleapis.com/auth/youtube.readonly\",\"https://www.googleapis.com/auth/" +
+            "youtubepartner\"]}}},\"videos\":{\"methods\":{\"delete\":{\"id\":\"youtube.videos.delete\"," +
+            "\"path\":\"videos\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a YouTube video.\",\"p" +
+            "arameters\":{\"contentOwnerId\":{\"type\":\"string\",\"description\":\"The authenticated u" +
+            "ser acts on behalf of this content owner.\",\"location\":\"query\"},\"id\":{\"type\":\"str" +
+            "ing\",\"description\":\"YouTube ID of the video to be deleted.\",\"required\":true,\"loc" +
+            "ation\":\"query\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/a" +
+            "uth/youtube\",\"https://www.googleapis.com/auth/youtubepartner\"]},\"insert\":{\"id\":\"" +
+            "youtube.videos.insert\",\"path\":\"videos\",\"httpMethod\":\"POST\",\"description\":\"Upload" +
+            " a video to YouTube.\",\"request\":{\"$ref\":\"Video\"},\"response\":{\"$ref\":\"Video\"},\"sc" +
+            "opes\":[\"https://www.googleapis.com/auth/youtube\",\"https://www.googleapis.com/aut" +
+            "h/youtube.upload\"],\"supportsMediaUpload\":true,\"mediaUpload\":{\"accept\":[\"applicat" +
+            "ion/octet-stream\",\"video/*\"],\"maxSize\":\"64GB\",\"protocols\":{\"simple\":{\"multipart\"" +
+            ":true,\"path\":\"/upload/youtube/v3alpha/videos\"},\"resumable\":{\"multipart\":true,\"pa" +
+            "th\":\"/resumable/upload/youtube/v3alpha/videos\"}}}},\"list\":{\"id\":\"youtube.videos." +
+            "list\",\"path\":\"videos\",\"httpMethod\":\"GET\",\"description\":\"Browse the YouTube video" +
+            " collection.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"YouTube IDs of " +
+            "the videos to be returned.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder" +
+            "\":[\"id\"],\"response\":{\"$ref\":\"VideoListResponse\"},\"scopes\":[\"https://www.googleap" +
+            "is.com/auth/youtube\",\"https://www.googleapis.com/auth/youtube.readonly\",\"https:/" +
+            "/www.googleapis.com/auth/youtubepartner\"]}}}}}";
         
         public const string Version = "v3alpha";
         
@@ -3174,7 +3305,6 @@ namespace Google.Apis.Youtube.v3alpha {
             this._playlistItems = new PlaylistItemsResource(this, _authenticator);
             this._playlists = new PlaylistsResource(this, _authenticator);
             this._search = new SearchResource(this, _authenticator);
-            this._subcription = new SubcriptionResource(this, _authenticator);
             this._subscription = new SubscriptionResource(this, _authenticator);
             this._videocategory = new VideocategoryResource(this, _authenticator);
             this._videos = new VideosResource(this, _authenticator);
@@ -4639,9 +4769,8 @@ namespace Google.Apis.Youtube.v3alpha {
         }
         
         /// <summary>Universal search for youtube.</summary>
-        /// <param name="q">Required - Query to search in Youtube.</param>
-        public virtual ListRequest List(string q) {
-            return new ListRequest(service, q);
+        public virtual ListRequest List() {
+            return new ListRequest(service);
         }
         
         /// <summary>Sort order.</summary>
@@ -4808,6 +4937,8 @@ namespace Google.Apis.Youtube.v3alpha {
             
             private string _q;
             
+            private string _relatedToVideo;
+            
             private string _topicId;
             
             private System.Nullable<Type> _type;
@@ -4822,9 +4953,8 @@ namespace Google.Apis.Youtube.v3alpha {
             
             private System.Nullable<VideoLicense> _videoLicense;
             
-            public ListRequest(Google.Apis.Discovery.IRequestProvider service, string q) : 
+            public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
-                this._q = q;
             }
             
             /// <summary>The authenticated user acts on behalf of this content owner.</summary>
@@ -4917,6 +5047,20 @@ namespace Google.Apis.Youtube.v3alpha {
             public virtual string Q {
                 get {
                     return this._q;
+                }
+                set {
+                    this._q = value;
+                }
+            }
+            
+            /// <summary>Search for resources related to this video. Need to be used with type set to 'video'</summary>
+            [Google.Apis.Util.RequestParameterAttribute("relatedToVideo", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string RelatedToVideo {
+                get {
+                    return this._relatedToVideo;
+                }
+                set {
+                    this._relatedToVideo = value;
                 }
             }
             
@@ -5011,17 +5155,23 @@ namespace Google.Apis.Youtube.v3alpha {
         }
     }
     
-    public class SubcriptionResource {
+    public class SubscriptionResource {
         
         private YoutubeService service;
         
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
-        private const string Resource = "subcription";
+        private const string Resource = "subscription";
         
-        public SubcriptionResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+        public SubscriptionResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
             this.service = service;
             this._authenticator = _authenticator;
+        }
+        
+        /// <summary>Deletes subscriptions by IDs.</summary>
+        /// <param name="id">Required - YouTube IDs of the subscription to be deleted.</param>
+        public virtual DeleteRequest Delete(string id) {
+            return new DeleteRequest(service, id);
         }
         
         /// <summary>Insert a subscription.</summary>
@@ -5049,6 +5199,85 @@ namespace Google.Apis.Youtube.v3alpha {
             /// <summary>Sort by order of activity.</summary>
             [Google.Apis.Util.StringValueAttribute("unread")]
             Unread,
+        }
+        
+        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string _contentOwnerId;
+            
+            private string _oauth_token;
+            
+            private string _part;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _id;
+            
+            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
+                    base(service) {
+                this._id = id;
+            }
+            
+            /// <summary>The authenticated user acts on behalf of this content owner.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("contentOwnerId", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string ContentOwnerId {
+                get {
+                    return this._contentOwnerId;
+                }
+                set {
+                    this._contentOwnerId = value;
+                }
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>One or more parts to return on the current request.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Part {
+                get {
+                    return this._part;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>YouTube IDs of the subscription to be deleted.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "subscription";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "delete";
+                }
+            }
         }
         
         public class InsertRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Youtube.v3alpha.Data.Subscription> {
@@ -5121,7 +5350,7 @@ namespace Google.Apis.Youtube.v3alpha {
             
             protected override string ResourcePath {
                 get {
-                    return "subcription";
+                    return "subscription";
                 }
             }
             
@@ -5158,7 +5387,7 @@ namespace Google.Apis.Youtube.v3alpha {
             
             private System.Nullable<Order> _order;
             
-            private System.Nullable<long> _startIndex;
+            private string _pageToken;
             
             public ListRequest(Google.Apis.Discovery.IRequestProvider service) : 
                     base(service) {
@@ -5270,113 +5499,14 @@ namespace Google.Apis.Youtube.v3alpha {
                 }
             }
             
-            /// <summary>Index of the first search result to return.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("startIndex", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<long> StartIndex {
+            /// <summary>Token for the page selection.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("pageToken", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string PageToken {
                 get {
-                    return this._startIndex;
+                    return this._pageToken;
                 }
                 set {
-                    this._startIndex = value;
-                }
-            }
-            
-            protected override string ResourcePath {
-                get {
-                    return "subcription";
-                }
-            }
-            
-            protected override string MethodName {
-                get {
-                    return "list";
-                }
-            }
-        }
-    }
-    
-    public class SubscriptionResource {
-        
-        private YoutubeService service;
-        
-        private Google.Apis.Authentication.IAuthenticator _authenticator;
-        
-        private const string Resource = "subscription";
-        
-        public SubscriptionResource(YoutubeService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
-            this.service = service;
-            this._authenticator = _authenticator;
-        }
-        
-        /// <summary>Deletes subscriptions by IDs.</summary>
-        /// <param name="id">Required - YouTube IDs of the subscription to be deleted.</param>
-        public virtual DeleteRequest Delete(string id) {
-            return new DeleteRequest(service, id);
-        }
-        
-        public class DeleteRequest : Google.Apis.Requests.ServiceRequest<string> {
-            
-            private string _contentOwnerId;
-            
-            private string _oauth_token;
-            
-            private string _part;
-            
-            private System.Nullable<bool> _prettyPrint;
-            
-            private string _id;
-            
-            public DeleteRequest(Google.Apis.Discovery.IRequestProvider service, string id) : 
-                    base(service) {
-                this._id = id;
-            }
-            
-            /// <summary>The authenticated user acts on behalf of this content owner.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("contentOwnerId", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string ContentOwnerId {
-                get {
-                    return this._contentOwnerId;
-                }
-                set {
-                    this._contentOwnerId = value;
-                }
-            }
-            
-            /// <summary>OAuth 2.0 token for the current user.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Oauth_token {
-                get {
-                    return this._oauth_token;
-                }
-                set {
-                    this._oauth_token = value;
-                }
-            }
-            
-            /// <summary>One or more parts to return on the current request.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("part", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Part {
-                get {
-                    return this._part;
-                }
-            }
-            
-            /// <summary>Returns response with indentations and line breaks.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual System.Nullable<bool> PrettyPrint {
-                get {
-                    return this._prettyPrint;
-                }
-                set {
-                    this._prettyPrint = value;
-                }
-            }
-            
-            /// <summary>YouTube IDs of the subscription to be deleted.</summary>
-            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Query)]
-            public virtual string Id {
-                get {
-                    return this._id;
+                    this._pageToken = value;
                 }
             }
             
@@ -5388,7 +5518,7 @@ namespace Google.Apis.Youtube.v3alpha {
             
             protected override string MethodName {
                 get {
-                    return "delete";
+                    return "list";
                 }
             }
         }
@@ -5875,8 +6005,6 @@ namespace Google.Apis.Youtube.v3alpha {
         
         private SearchResource _search;
         
-        private SubcriptionResource _subcription;
-        
         private SubscriptionResource _subscription;
         
         private VideocategoryResource _videocategory;
@@ -5922,12 +6050,6 @@ namespace Google.Apis.Youtube.v3alpha {
         public virtual SearchResource Search {
             get {
                 return this._search;
-            }
-        }
-        
-        public virtual SubcriptionResource Subcription {
-            get {
-                return this._subcription;
             }
         }
         

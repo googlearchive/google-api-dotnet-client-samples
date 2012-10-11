@@ -40,6 +40,298 @@ namespace Google.Apis.Freebase.v1sandbox.Data {
             }
         }
     }
+    
+    public class TopicLookup : Google.Apis.Requests.IDirectResponseSchema {
+        
+        private string _id;
+        
+        private TopicLookup.PropertyData _property;
+        
+        private string _ETag;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("property")]
+        public virtual TopicLookup.PropertyData Property {
+            get {
+                return this._property;
+            }
+            set {
+                this._property = value;
+            }
+        }
+        
+        public virtual string ETag {
+            get {
+                return this._ETag;
+            }
+            set {
+                this._ETag = value;
+            }
+        }
+        
+        // TODO: Add support for additionalProperties on schemas
+        //       which have normal properties defined.
+        public class PropertyData {
+            
+            private TopicStatslinkcount _FreebaseObject_profileLinkcount;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("/freebase/object_profile/linkcount")]
+            public virtual TopicStatslinkcount FreebaseObject_profileLinkcount {
+                get {
+                    return this._FreebaseObject_profileLinkcount;
+                }
+                set {
+                    this._FreebaseObject_profileLinkcount = value;
+                }
+            }
+        }
+    }
+    
+    public class TopicPropertyvalue {
+        
+        private System.Collections.Generic.IList<TopicValue> _values;
+        
+        private string _valuetype;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("values")]
+        public virtual System.Collections.Generic.IList<TopicValue> Values {
+            get {
+                return this._values;
+            }
+            set {
+                this._values = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("valuetype")]
+        public virtual string Valuetype {
+            get {
+                return this._valuetype;
+            }
+            set {
+                this._valuetype = value;
+            }
+        }
+    }
+    
+    public class TopicStatslinkcount {
+        
+        private string _type;
+        
+        private System.Collections.Generic.IList<TopicStatslinkcount.ValuesData> _values;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("type")]
+        public virtual string Type {
+            get {
+                return this._type;
+            }
+            set {
+                this._type = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("values")]
+        public virtual System.Collections.Generic.IList<TopicStatslinkcount.ValuesData> Values {
+            get {
+                return this._values;
+            }
+            set {
+                this._values = value;
+            }
+        }
+        
+        public class ValuesData {
+            
+            private System.Nullable<long> _count;
+            
+            private string _id;
+            
+            private System.Collections.Generic.IList<ValuesData.ValuesDataSchema> _values;
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("count")]
+            public virtual System.Nullable<long> Count {
+                get {
+                    return this._count;
+                }
+                set {
+                    this._count = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("id")]
+            public virtual string Id {
+                get {
+                    return this._id;
+                }
+                set {
+                    this._id = value;
+                }
+            }
+            
+            [Newtonsoft.Json.JsonPropertyAttribute("values")]
+            public virtual System.Collections.Generic.IList<ValuesData.ValuesDataSchema> Values {
+                get {
+                    return this._values;
+                }
+                set {
+                    this._values = value;
+                }
+            }
+            
+            public class ValuesDataSchema {
+                
+                private System.Nullable<long> _count;
+                
+                private string _id;
+                
+                private System.Collections.Generic.IList<ValuesDataSchema.ValuesData> _values;
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                public virtual System.Nullable<long> Count {
+                    get {
+                        return this._count;
+                    }
+                    set {
+                        this._count = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("id")]
+                public virtual string Id {
+                    get {
+                        return this._id;
+                    }
+                    set {
+                        this._id = value;
+                    }
+                }
+                
+                [Newtonsoft.Json.JsonPropertyAttribute("values")]
+                public virtual System.Collections.Generic.IList<ValuesDataSchema.ValuesData> Values {
+                    get {
+                        return this._values;
+                    }
+                    set {
+                        this._values = value;
+                    }
+                }
+                
+                public class ValuesData {
+                    
+                    private System.Nullable<long> _count;
+                    
+                    private string _id;
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("count")]
+                    public virtual System.Nullable<long> Count {
+                        get {
+                            return this._count;
+                        }
+                        set {
+                            this._count = value;
+                        }
+                    }
+                    
+                    [Newtonsoft.Json.JsonPropertyAttribute("id")]
+                    public virtual string Id {
+                        get {
+                            return this._id;
+                        }
+                        set {
+                            this._id = value;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    public class TopicValue {
+        
+        private string _creator;
+        
+        private string _id;
+        
+        private string _lang;
+        
+        private TopicValue.PropertyData _property;
+        
+        private string _text;
+        
+        private string _value;
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("creator")]
+        public virtual string Creator {
+            get {
+                return this._creator;
+            }
+            set {
+                this._creator = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("id")]
+        public virtual string Id {
+            get {
+                return this._id;
+            }
+            set {
+                this._id = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("lang")]
+        public virtual string Lang {
+            get {
+                return this._lang;
+            }
+            set {
+                this._lang = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("property")]
+        public virtual TopicValue.PropertyData Property {
+            get {
+                return this._property;
+            }
+            set {
+                this._property = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("text")]
+        public virtual string Text {
+            get {
+                return this._text;
+            }
+            set {
+                this._text = value;
+            }
+        }
+        
+        [Newtonsoft.Json.JsonPropertyAttribute("value")]
+        public virtual string Value {
+            get {
+                return this._value;
+            }
+            set {
+                this._value = value;
+            }
+        }
+        
+        public class PropertyData : System.Collections.Generic.Dictionary<string, TopicPropertyvalue> {
+        }
+    }
 }
 namespace Google.Apis.Freebase.v1sandbox {
     using System;
@@ -56,7 +348,7 @@ namespace Google.Apis.Freebase.v1sandbox {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"freebase:v1sand" +
-            "box\",\"name\":\"freebase\",\"version\":\"v1sandbox\",\"revision\":\"20120421\",\"title\":\"Free" +
+            "box\",\"name\":\"freebase\",\"version\":\"v1sandbox\",\"revision\":\"20120807\",\"title\":\"Free" +
             "base API\",\"description\":\"Lets you access the Freebase repository of open data.\"," +
             "\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/freebase-16.png\",\"x32" +
             "\":\"http://www.google.com/images/icons/product/freebase-32.png\"},\"documentationLi" +
@@ -78,57 +370,100 @@ namespace Google.Apis.Freebase.v1sandbox {
             " not exceed 40 characters. Overrides userIp if both are provided.\",\"location\":\"q" +
             "uery\"},\"userIp\":{\"type\":\"string\",\"description\":\"IP address of the site where the" +
             " request originates. Use this if you want to enforce per-user limits.\",\"location" +
-            "\":\"query\"}},\"schemas\":{\"ContentserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":\"obj" +
-            "ect\",\"properties\":{\"result\":{\"type\":\"string\",\"description\":\"The text requested.\"" +
-            "}}}},\"methods\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMethod\"" +
-            ":\"GET\",\"description\":\"Returns the scaled/cropped image attached to a freebase no" +
-            "de.\",\"parameters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the image as" +
-            "sociated with this secondary id if no image is associated with the primary id.\"," +
-            "\"default\":\"/freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"},\"id\":" +
-            "{\"type\":\"string\",\"description\":\"Freebase entity or content id, mid, or guid.\",\"r" +
-            "equired\":true,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integer\",\"" +
-            "description\":\"Maximum height in pixels for resulting image.\",\"format\":\"uint32\",\"" +
-            "maximum\":\"4096\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"description\":\"" +
-            "Maximum width in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096\"" +
-            ",\"location\":\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scale" +
-            " or crop image.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"]," +
-            "\"enumDescriptions\":[\"Fill rectangle completely with image, relax constraint on o" +
-            "ne dimension if necessary.\",\"Fill rectangle with image, crop image to maintain r" +
-            "ectangle dimensions.\",\"Fill rectangle with image, center horizontally, crop left" +
-            " and right.\",\"Fit image inside rectangle, leave empty space in one dimension if " +
-            "necessary.\"],\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolea" +
-            "n specifying whether the resulting image should be padded up to the requested di" +
-            "mensions.\",\"default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"suppo" +
-            "rtsMediaDownload\":true},\"mqlread\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"htt" +
-            "pMethod\":\"GET\",\"description\":\"Performs MQL Queries.\",\"parameters\":{\"as_of_time\":" +
-            "{\"type\":\"string\",\"description\":\"Run the query as it would\'ve been run at the spe" +
-            "cified point in time.\",\"location\":\"query\"},\"callback\":{\"type\":\"string\",\"descript" +
-            "ion\":\"JS method name for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\"" +
-            ",\"location\":\"query\"},\"cost\":{\"type\":\"boolean\",\"description\":\"Show the costs or n" +
-            "ot.\",\"default\":\"false\",\"location\":\"query\"},\"cursor\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The mql cursor.\",\"location\":\"query\"},\"dateline\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The dateline that you get in a mqlwrite response to ensure consistent result" +
-            "s.\",\"location\":\"query\"},\"html_escape\":{\"type\":\"boolean\",\"description\":\"Whether o" +
-            "r not to escape entities.\",\"default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\"" +
-            ":\"integer\",\"description\":\"How many spaces to indent the json.\",\"default\":\"0\",\"fo" +
-            "rmat\":\"uint32\",\"maximum\":\"10\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The language of the results - an id of a /type/lang object.\",\"default\":" +
-            "\"/lang/en\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An envelo" +
-            "pe containing a single MQL query.\",\"required\":true,\"location\":\"query\"},\"uniquene" +
-            "ss_failure\":{\"type\":\"string\",\"description\":\"How MQL responds to uniqueness failu" +
-            "res.\",\"default\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - t" +
-            "hrow an error.\",\"Just return the first encountered object.\"],\"location\":\"query\"}" +
-            "},\"parameterOrder\":[\"query\"],\"supportsMediaDownload\":true}},\"resources\":{\"text\":" +
-            "{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"path\":\"text{/id*}\",\"httpMethod\":\"GE" +
-            "T\",\"description\":\"Returns blob attached to node at specified id as HTML\",\"parame" +
-            "ters\":{\"format\":{\"type\":\"string\",\"description\":\"Sanitizing transformation.\",\"def" +
-            "ault\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"enumDescriptions\":[\"Return valid, s" +
-            "anitized html.\",\"Return plain text - strip html tags.\",\"Return the entire conten" +
-            "t as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"string\",\"description\":\"The id of th" +
-            "e item that you want data about\",\"required\":true,\"repeated\":true,\"location\":\"pat" +
-            "h\"},\"maxlength\":{\"type\":\"integer\",\"description\":\"The max number of characters to" +
-            " return. Valid only for \'plain\' format.\",\"format\":\"uint32\",\"location\":\"query\"}}," +
-            "\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"ContentserviceGet\"}}}}}}";
+            "\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes\":{\"https://www.googleapis.com/auth/freebas" +
+            "e\":{\"description\":\"Sign in to Freebase with your account\"}}}},\"schemas\":{\"Conten" +
+            "tserviceGet\":{\"id\":\"ContentserviceGet\",\"type\":\"object\",\"properties\":{\"result\":{\"" +
+            "type\":\"string\",\"description\":\"The text requested.\"}}},\"TopicLookup\":{\"id\":\"Topic" +
+            "Lookup\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"property\":{\"type\":" +
+            "\"object\",\"properties\":{\"/freebase/object_profile/linkcount\":{\"$ref\":\"TopicStatsl" +
+            "inkcount\"}},\"additionalProperties\":{\"$ref\":\"TopicPropertyvalue\"}}}},\"TopicProper" +
+            "tyvalue\":{\"id\":\"TopicPropertyvalue\",\"type\":\"object\",\"properties\":{\"values\":{\"typ" +
+            "e\":\"array\",\"items\":{\"$ref\":\"TopicValue\"}},\"valuetype\":{\"type\":\"string\"}}},\"Topic" +
+            "Statslinkcount\":{\"id\":\"TopicStatslinkcount\",\"type\":\"object\",\"properties\":{\"type\"" +
+            ":{\"type\":\"string\",\"default\":\"custom\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"" +
+            "object\",\"properties\":{\"count\":{\"type\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"" +
+            "string\"},\"values\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"count\"" +
+            ":{\"type\":\"integer\",\"format\":\"int32\"},\"id\":{\"type\":\"string\"},\"values\":{\"type\":\"ar" +
+            "ray\",\"items\":{\"type\":\"object\",\"properties\":{\"count\":{\"type\":\"integer\",\"format\":\"" +
+            "int32\"},\"id\":{\"type\":\"string\"}}}}}}}}}}}},\"TopicValue\":{\"id\":\"TopicValue\",\"type\"" +
+            ":\"object\",\"properties\":{\"creator\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"lang" +
+            "\":{\"type\":\"string\"},\"property\":{\"type\":\"object\",\"additionalProperties\":{\"$ref\":\"" +
+            "TopicPropertyvalue\"}},\"text\":{\"type\":\"string\"},\"value\":{\"type\":\"any\"}}}},\"method" +
+            "s\":{\"image\":{\"id\":\"freebase.image\",\"path\":\"image{/id*}\",\"httpMethod\":\"GET\",\"desc" +
+            "ription\":\"Returns the scaled/cropped image attached to a freebase node.\",\"parame" +
+            "ters\":{\"fallbackid\":{\"type\":\"string\",\"description\":\"Use the image associated wit" +
+            "h this secondary id if no image is associated with the primary id.\",\"default\":\"/" +
+            "freebase/no_image_png\",\"pattern\":\"/[^.]*$\",\"location\":\"query\"},\"id\":{\"type\":\"str" +
+            "ing\",\"description\":\"Freebase entity or content id, mid, or guid.\",\"required\":tru" +
+            "e,\"repeated\":true,\"location\":\"path\"},\"maxheight\":{\"type\":\"integer\",\"description\"" +
+            ":\"Maximum height in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"40" +
+            "96\",\"location\":\"query\"},\"maxwidth\":{\"type\":\"integer\",\"description\":\"Maximum widt" +
+            "h in pixels for resulting image.\",\"format\":\"uint32\",\"maximum\":\"4096\",\"location\":" +
+            "\"query\"},\"mode\":{\"type\":\"string\",\"description\":\"Method used to scale or crop ima" +
+            "ge.\",\"default\":\"fit\",\"enum\":[\"fill\",\"fillcrop\",\"fillcropmid\",\"fit\"],\"enumDescrip" +
+            "tions\":[\"Fill rectangle completely with image, relax constraint on one dimension" +
+            " if necessary.\",\"Fill rectangle with image, crop image to maintain rectangle dim" +
+            "ensions.\",\"Fill rectangle with image, center horizontally, crop left and right.\"" +
+            ",\"Fit image inside rectangle, leave empty space in one dimension if necessary.\"]" +
+            ",\"location\":\"query\"},\"pad\":{\"type\":\"boolean\",\"description\":\"A boolean specifying" +
+            " whether the resulting image should be padded up to the requested dimensions.\",\"" +
+            "default\":\"false\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"supportsMediaDown" +
+            "load\":true},\"mqlread\":{\"id\":\"freebase.mqlread\",\"path\":\"mqlread\",\"httpMethod\":\"GE" +
+            "T\",\"description\":\"Performs MQL Queries.\",\"parameters\":{\"as_of_time\":{\"type\":\"str" +
+            "ing\",\"description\":\"Run the query as it would\'ve been run at the specified point" +
+            " in time.\",\"location\":\"query\"},\"callback\":{\"type\":\"string\",\"description\":\"JS met" +
+            "hod name for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":" +
+            "\"query\"},\"cost\":{\"type\":\"boolean\",\"description\":\"Show the costs or not.\",\"defaul" +
+            "t\":\"false\",\"location\":\"query\"},\"cursor\":{\"type\":\"string\",\"description\":\"The mql " +
+            "cursor.\",\"location\":\"query\"},\"dateline\":{\"type\":\"string\",\"description\":\"The date" +
+            "line that you get in a mqlwrite response to ensure consistent results.\",\"locatio" +
+            "n\":\"query\"},\"html_escape\":{\"type\":\"boolean\",\"description\":\"Whether or not to esc" +
+            "ape entities.\",\"default\":\"true\",\"location\":\"query\"},\"indent\":{\"type\":\"integer\",\"" +
+            "description\":\"How many spaces to indent the json.\",\"default\":\"0\",\"format\":\"uint3" +
+            "2\",\"maximum\":\"10\",\"location\":\"query\"},\"lang\":{\"type\":\"string\",\"description\":\"The" +
+            " language of the results - an id of a /type/lang object.\",\"default\":\"/lang/en\",\"" +
+            "location\":\"query\"},\"query\":{\"type\":\"string\",\"description\":\"An envelope containin" +
+            "g a single MQL query.\",\"required\":true,\"location\":\"query\"},\"uniqueness_failure\":" +
+            "{\"type\":\"string\",\"description\":\"How MQL responds to uniqueness failures.\",\"defau" +
+            "lt\":\"hard\",\"enum\":[\"hard\",\"soft\"],\"enumDescriptions\":[\"Be strict - throw an erro" +
+            "r.\",\"Just return the first encountered object.\"],\"location\":\"query\"}},\"parameter" +
+            "Order\":[\"query\"],\"supportsMediaDownload\":true},\"mqlwrite\":{\"id\":\"freebase.mqlwri" +
+            "te\",\"path\":\"mqlwrite\",\"httpMethod\":\"GET\",\"description\":\"Performs MQL Write Opera" +
+            "tions.\",\"parameters\":{\"callback\":{\"type\":\"string\",\"description\":\"JS method name " +
+            "for JSONP callbacks.\",\"pattern\":\"([A-Za-z0-9_$.]|\\\\[|\\\\])+\",\"location\":\"query\"}," +
+            "\"dateline\":{\"type\":\"string\",\"description\":\"The dateline that you get in a mqlwri" +
+            "te response to ensure consistent results.\",\"location\":\"query\"},\"indent\":{\"type\":" +
+            "\"integer\",\"description\":\"How many spaces to indent the json.\",\"default\":\"0\",\"for" +
+            "mat\":\"uint32\",\"maximum\":\"10\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"descr" +
+            "iption\":\"An MQL query with write directives.\",\"required\":true,\"location\":\"query\"" +
+            "},\"use_permission_of\":{\"type\":\"string\",\"description\":\"Use the same permission no" +
+            "de of the object with the specified id.\",\"location\":\"query\"}},\"parameterOrder\":[" +
+            "\"query\"],\"scopes\":[\"https://www.googleapis.com/auth/freebase\"],\"supportsMediaDow" +
+            "nload\":true}},\"resources\":{\"text\":{\"methods\":{\"get\":{\"id\":\"freebase.text.get\",\"p" +
+            "ath\":\"text{/id*}\",\"httpMethod\":\"GET\",\"description\":\"Returns blob attached to nod" +
+            "e at specified id as HTML\",\"parameters\":{\"format\":{\"type\":\"string\",\"description\"" +
+            ":\"Sanitizing transformation.\",\"default\":\"plain\",\"enum\":[\"html\",\"plain\",\"raw\"],\"e" +
+            "numDescriptions\":[\"Return valid, sanitized html.\",\"Return plain text - strip htm" +
+            "l tags.\",\"Return the entire content as-is.\"],\"location\":\"query\"},\"id\":{\"type\":\"s" +
+            "tring\",\"description\":\"The id of the item that you want data about\",\"required\":tr" +
+            "ue,\"repeated\":true,\"location\":\"path\"},\"maxlength\":{\"type\":\"integer\",\"description" +
+            "\":\"The max number of characters to return. Valid only for \'plain\' format.\",\"form" +
+            "at\":\"uint32\",\"location\":\"query\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Co" +
+            "ntentserviceGet\"}}}},\"topic\":{\"methods\":{\"lookup\":{\"id\":\"freebase.topic.lookup\"," +
+            "\"path\":\"topic{/id*}\",\"httpMethod\":\"GET\",\"description\":\"Get properties and meta-d" +
+            "ata about a topic.\",\"parameters\":{\"dateline\":{\"type\":\"string\",\"description\":\"Det" +
+            "ermines how up-to-date the data returned is. A unix epoch time, a guid or a \'now" +
+            "\'\",\"location\":\"query\"},\"filter\":{\"type\":\"string\",\"description\":\"A frebase domain" +
+            ", type or property id, \'suggest\', \'commons\', or \'all\'. Filter the results and re" +
+            "turns only appropriate properties.\",\"repeated\":true,\"location\":\"query\"},\"id\":{\"t" +
+            "ype\":\"string\",\"description\":\"The id of the item that you want data about.\",\"requ" +
+            "ired\":true,\"repeated\":true,\"location\":\"path\"},\"lang\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The language you \'d like the content in - a freebase /type/lang language ke" +
+            "y.\",\"default\":\"en\",\"location\":\"query\"},\"limit\":{\"type\":\"integer\",\"description\":\"" +
+            "The maximum number of property values to return for each property.\",\"default\":\"1" +
+            "0\",\"format\":\"uint32\",\"location\":\"query\"},\"raw\":{\"type\":\"boolean\",\"description\":\"" +
+            "Do not apply any constraints, or get any names.\",\"default\":\"false\",\"location\":\"q" +
+            "uery\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"TopicLookup\"}}}}}}";
         
         public const string Version = "v1sandbox";
         
@@ -140,6 +475,7 @@ namespace Google.Apis.Freebase.v1sandbox {
             this._service = _service;
             this._authenticator = _authenticator;
             this._text = new TextResource(this, _authenticator);
+            this._topic = new TopicResource(this, _authenticator);
         }
         
         public FreebaseService() : 
@@ -197,6 +533,14 @@ namespace Google.Apis.Freebase.v1sandbox {
         public virtual T DeserializeResponse<T>(Google.Apis.Requests.IResponse response)
          {
             return _service.DeserializeResponse<T>(response);
+        }
+        
+        /// <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
+        public enum Scopes {
+            
+            /// <summary>Sign in to Freebase with your account</summary>
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/freebase")]
+            Freebase,
         }
     }
     
@@ -319,11 +663,154 @@ namespace Google.Apis.Freebase.v1sandbox {
         }
     }
     
+    public class TopicResource {
+        
+        private FreebaseService service;
+        
+        private Google.Apis.Authentication.IAuthenticator _authenticator;
+        
+        private const string Resource = "topic";
+        
+        public TopicResource(FreebaseService service, Google.Apis.Authentication.IAuthenticator _authenticator) {
+            this.service = service;
+            this._authenticator = _authenticator;
+        }
+        
+        /// <summary>Get properties and meta-data about a topic.</summary>
+        /// <param name="id">Required - The id of the item that you want data about.</param>
+        public virtual LookupRequest Lookup(Google.Apis.Util.Repeatable<string> id) {
+            return new LookupRequest(service, id);
+        }
+        
+        public class LookupRequest : Google.Apis.Requests.ServiceRequest<Google.Apis.Freebase.v1sandbox.Data.TopicLookup> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _dateline;
+            
+            private Google.Apis.Util.Repeatable<string> _filter;
+            
+            private Google.Apis.Util.Repeatable<string> _id;
+            
+            private string _lang;
+            
+            private System.Nullable<long> _limit;
+            
+            private System.Nullable<bool> _raw;
+            
+            public LookupRequest(Google.Apis.Discovery.IRequestProvider service, Google.Apis.Util.Repeatable<string> id) : 
+                    base(service) {
+                this._id = id;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>Determines how up-to-date the data returned is. A unix epoch time, a guid or a 'now'</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dateline", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Dateline {
+                get {
+                    return this._dateline;
+                }
+                set {
+                    this._dateline = value;
+                }
+            }
+            
+            /// <summary>A frebase domain, type or property id, 'suggest', 'commons', or 'all'. Filter the results and returns only appropriate properties.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("filter", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual Google.Apis.Util.Repeatable<string> Filter {
+                get {
+                    return this._filter;
+                }
+                set {
+                    this._filter = value;
+                }
+            }
+            
+            /// <summary>The id of the item that you want data about.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("id", Google.Apis.Util.RequestParameterType.Path)]
+            public virtual Google.Apis.Util.Repeatable<string> Id {
+                get {
+                    return this._id;
+                }
+            }
+            
+            /// <summary>The language you 'd like the content in - a freebase /type/lang language key.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("lang", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Lang {
+                get {
+                    return this._lang;
+                }
+                set {
+                    this._lang = value;
+                }
+            }
+            
+            /// <summary>The maximum number of property values to return for each property.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("limit", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> Limit {
+                get {
+                    return this._limit;
+                }
+                set {
+                    this._limit = value;
+                }
+            }
+            
+            /// <summary>Do not apply any constraints, or get any names.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("raw", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> Raw {
+                get {
+                    return this._raw;
+                }
+                set {
+                    this._raw = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "topic";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "lookup";
+                }
+            }
+        }
+    }
+    
     public partial class FreebaseService {
         
         private const string Resource = "";
         
         private TextResource _text;
+        
+        private TopicResource _topic;
         
         private Google.Apis.Discovery.IRequestProvider service {
             get {
@@ -337,6 +824,12 @@ namespace Google.Apis.Freebase.v1sandbox {
             }
         }
         
+        public virtual TopicResource Topic {
+            get {
+                return this._topic;
+            }
+        }
+        
         /// <summary>Returns the scaled/cropped image attached to a freebase node.</summary>
         /// <param name="id">Required - Freebase entity or content id, mid, or guid.</param>
         public virtual ImageRequest Image(Google.Apis.Util.Repeatable<string> id) {
@@ -347,6 +840,12 @@ namespace Google.Apis.Freebase.v1sandbox {
         /// <param name="query">Required - An envelope containing a single MQL query.</param>
         public virtual MqlreadRequest Mqlread(string query) {
             return new MqlreadRequest(service, query);
+        }
+        
+        /// <summary>Performs MQL Write Operations.</summary>
+        /// <param name="query">Required - An MQL query with write directives.</param>
+        public virtual MqlwriteRequest Mqlwrite(string query) {
+            return new MqlwriteRequest(service, query);
         }
         
         /// <summary>Method used to scale or crop image.</summary>
@@ -673,6 +1172,114 @@ namespace Google.Apis.Freebase.v1sandbox {
             protected override string MethodName {
                 get {
                     return "mqlread";
+                }
+            }
+        }
+        
+        public class MqlwriteRequest : Google.Apis.Requests.ServiceRequest<string> {
+            
+            private string _oauth_token;
+            
+            private System.Nullable<bool> _prettyPrint;
+            
+            private string _callback;
+            
+            private string _dateline;
+            
+            private System.Nullable<long> _indent;
+            
+            private string _query;
+            
+            private string _use_permission_of;
+            
+            public MqlwriteRequest(Google.Apis.Discovery.IRequestProvider service, string query) : 
+                    base(service) {
+                this._query = query;
+            }
+            
+            /// <summary>OAuth 2.0 token for the current user.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("oauth_token", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Oauth_token {
+                get {
+                    return this._oauth_token;
+                }
+                set {
+                    this._oauth_token = value;
+                }
+            }
+            
+            /// <summary>Returns response with indentations and line breaks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("prettyPrint", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<bool> PrettyPrint {
+                get {
+                    return this._prettyPrint;
+                }
+                set {
+                    this._prettyPrint = value;
+                }
+            }
+            
+            /// <summary>JS method name for JSONP callbacks.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("callback", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Callback {
+                get {
+                    return this._callback;
+                }
+                set {
+                    this._callback = value;
+                }
+            }
+            
+            /// <summary>The dateline that you get in a mqlwrite response to ensure consistent results.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("dateline", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Dateline {
+                get {
+                    return this._dateline;
+                }
+                set {
+                    this._dateline = value;
+                }
+            }
+            
+            /// <summary>How many spaces to indent the json.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("indent", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual System.Nullable<long> Indent {
+                get {
+                    return this._indent;
+                }
+                set {
+                    this._indent = value;
+                }
+            }
+            
+            /// <summary>An MQL query with write directives.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("query", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Query {
+                get {
+                    return this._query;
+                }
+            }
+            
+            /// <summary>Use the same permission node of the object with the specified id.</summary>
+            [Google.Apis.Util.RequestParameterAttribute("use_permission_of", Google.Apis.Util.RequestParameterType.Query)]
+            public virtual string Use_permission_of {
+                get {
+                    return this._use_permission_of;
+                }
+                set {
+                    this._use_permission_of = value;
+                }
+            }
+            
+            protected override string ResourcePath {
+                get {
+                    return "";
+                }
+            }
+            
+            protected override string MethodName {
+                get {
+                    return "mqlwrite";
                 }
             }
         }

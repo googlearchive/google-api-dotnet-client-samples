@@ -149,28 +149,28 @@
             <summary>JSON template for the snippet part of a activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.ChannelId">
-            <summary>Channel responsible for this activity.</summary>
+            <summary>Channel publishing the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.Description">
-            <summary>Description of the main resource.</summary>
+            <summary>Description of the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.GroupId">
             <summary>Id of the group that this activity is part of.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.PublishedAt">
-            <summary>Time when this activity was created.</summary>
+            <summary>Date and time the activity was published at.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.Thumbnails">
-            <summary>Thumbnails of the main resource.</summary>
+            <summary>Activity thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.Title">
-            <summary>Title of the main resource.</summary>
+            <summary>Title of the activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.Type">
-            <summary>Category of the activity activity.</summary>
+            <summary>Type of the activity.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ActivitySnippet.ThumbnailsData">
-            <summary>Thumbnails of the main resource.</summary>
+            <summary>Activity thumbnails.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.Channel">
             <summary>JSON template for a YouTube Channel.</summary>
@@ -253,8 +253,14 @@
         <member name="T:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet">
             <summary>JSON template for the snippet part of a channel.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.ChannelId">
+            <summary>Id of the channel.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.Description">
             <summary>Description of the channel.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.PublishedAt">
+            <summary>Date and time the channel was published at.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelSnippet.Thumbnails">
             <summary>Channel thumbnails.</summary>
@@ -286,20 +292,20 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.ChannelTopicDetails.Topics">
             <summary>List of topic ids for this channel *</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3alpha.Data.GuideCategoryDetails">
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.GuideCategorySnippet">
             <summary>JSON template for the details part of a guide category.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.GuideCategoryDetails.Title">
-            <summary>The title of the cateogry (i18n).</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.GuideCategorySnippet.ChannelId">
+            <summary>Channel publishing the guide category.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.GuideCategorySnippet.Title">
+            <summary>Title of the guide category.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PageInfo">
             <summary>JSON template for a page info.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PageInfo.ResultPerPage">
             <summary>The number of results to display for each page.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PageInfo.StartIndex">
-            <summary>The index position of the first result to display.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PageInfo.TotalResults">
             <summary>The total number of results.</summary>
@@ -377,7 +383,7 @@
             <summary>JSON template for the snippet part of a playlist item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.ChannelId">
-            <summary>Author of the playlist item.</summary>
+            <summary>Channel publishing the playlist item.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Description">
             <summary>Description of the playlist item.</summary>
@@ -389,13 +395,19 @@
             <summary>The position of the item within the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.PublishedAt">
-            <summary>The date and time the playlist item was created.</summary>
+            <summary>Date and time the playlist item was published at.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.ResourceId">
             <summary>JSON template for a resource id.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Thumbnails">
+            <summary>Playlist item thumbnails.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.Title">
             <summary>Title of the playlist item.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistItemSnippet.ThumbnailsData">
+            <summary>Playlist item thumbnails.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistListResponse">
             <summary>JSON template for a PlaylistService.List() response.</summary>
@@ -419,19 +431,22 @@
             <summary>JSON template for the snippet part of a playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.ChannelId">
-            <summary>Author of the playlist.</summary>
+            <summary>Channel publishing the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Description">
             <summary>Description of the playlist.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.PublishedAt">
-            <summary>The date and time the playlist was created.</summary>
+            <summary>Date and time the playlist was published at.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Tags">
-            <summary>Textual tags associated with the playlist.</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Thumbnails">
+            <summary>Playlist thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.Title">
             <summary>Title of the playlist.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistSnippet.ThumbnailsData">
+            <summary>Playlist thumbnails.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.PlaylistStatus">
             <summary>JSON template for the status part of a playlist.</summary>
@@ -491,16 +506,22 @@
             <summary>JSON template for the snippet part of a search result.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.ChannelId">
-            <summary>Author of the found resource.</summary>
+            <summary>Channel publishing the found resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Description">
-            <summary>Description of the search result.</summary>
+            <summary>Description of the found resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.PublishedAt">
-            <summary>The date and time the found resource was created.</summary>
+            <summary>Date and time the found resource was published at.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Thumbnails">
+            <summary>Thumbnails for the found resource.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.Title">
-            <summary>Title of the search result.</summary>
+            <summary>Title of the found resource.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.SearchResultSnippet.ThumbnailsData">
+            <summary>Thumbnails for the found resource.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.Subscription">
             <summary>JSON template for a YouTube Subscription.</summary>
@@ -529,29 +550,38 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionListResponse.Kind">
             <summary>The type of this API response.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionListResponse.PageInfo">
+            <summary>JSON template for a page info.</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionListResponse.Subscriptions">
             <summary>List of subscriptions matching the request criteria.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionListResponse.TokenPagination">
+            <summary>JSON template for token pagination.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet">
             <summary>JSON template for the snippet part of a subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.ChannelId">
-            <summary>The channel of the user subscriber to the resource.</summary>
+            <summary>Channel publishing the subscription.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.Description">
-            <summary>Details.</summary>
+            <summary>Description of the subscription.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.Resource">
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.PublishedAt">
+            <summary>Date and time the subscription was published at.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.ResourceId">
             <summary>JSON template for a resource id.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.Thumbnail">
-            <summary>Thumbnail</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.Thumbnails">
+            <summary>Subscription thumbnails.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.Title">
-            <summary>Title.</summary>
+            <summary>Title of the subscription.</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.ThumbnailData">
-            <summary>Thumbnail</summary>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.SubscriptionSnippet.ThumbnailsData">
+            <summary>Subscription thumbnails.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.SubscriptionStatistics">
             <summary>JSON template for the contect details part of a subscription.</summary>
@@ -601,9 +631,6 @@
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoCategory">
             <summary>JSON template for a YouTube Video Category.</summary>
         </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategory.Details">
-            <summary>JSON template for the details part of a video category.</summary>
-        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategory.ETag">
             <summary>The eTag of the video.</summary>
         </member>
@@ -613,11 +640,8 @@
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategory.Kind">
             <summary>The type of this API resource.</summary>
         </member>
-        <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoCategoryDetails">
-            <summary>JSON template for the details part of a video category.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategoryDetails.Title">
-            <summary>Title of the category.</summary>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategory.Snippet">
+            <summary>JSON template for the snippet part of a video category.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoCategoryListResponse">
             <summary>JSON template for a VideoCategoryService.List() response.</summary>
@@ -630,6 +654,15 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategoryListResponse.VideoCategories">
             <summary>List of video categories matching the request criteria.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoCategorySnippet">
+            <summary>JSON template for the snippet part of a video category.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategorySnippet.ChannelId">
+            <summary>Channel publishing the video category.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoCategorySnippet.Title">
+            <summary>Title of the video category.</summary>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.Data.VideoContentDetails">
             <summary>JSON template for the content details part of a video.</summary>
@@ -665,13 +698,13 @@
             <summary>Video category the video belongs to.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.ChannelId">
-            <summary>Channel the video was uploaded into.</summary>
+            <summary>Channel publishing the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.Description">
             <summary>Description of the video.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.PublishedAt">
-            <summary>Date time the video was uploaded.</summary>
+            <summary>Date and time the video was published at.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.Data.VideoSnippet.Tags">
             <summary>Textual tags associated with the video.</summary>
@@ -1011,9 +1044,8 @@
         <member name="P:Google.Apis.Youtube.v3alpha.PlaylistsResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.SearchResource.List(System.String)">
+        <member name="M:Google.Apis.Youtube.v3alpha.SearchResource.List">
             <summary>Universal search for youtube.</summary>
-            <param name="q">Required - Query to search in Youtube.</param>
         </member>
         <member name="T:Google.Apis.Youtube.v3alpha.SearchResource.Order">
             <summary>Sort order.</summary>
@@ -1144,6 +1176,9 @@
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.Q">
             <summary>Query to search in Youtube.</summary>
         </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.RelatedToVideo">
+            <summary>Search for resources related to this video. Need to be used with type set to 'video'</summary>
+        </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.TopicId">
             <summary>Only search for resources with the specified topic</summary>
         </member>
@@ -1165,72 +1200,27 @@
         <member name="P:Google.Apis.Youtube.v3alpha.SearchResource.ListRequest.VideoLicense">
             <summary>Add a filter on the licensing of the videos.</summary>
         </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.SubcriptionResource.Insert(Google.Apis.Youtube.v3alpha.Data.Subscription)">
-            <summary>Insert a subscription.</summary>
-        </member>
-        <member name="M:Google.Apis.Youtube.v3alpha.SubcriptionResource.List">
-            <summary>Browse user&apos;s subscription collection.</summary>
-        </member>
-        <member name="T:Google.Apis.Youtube.v3alpha.SubcriptionResource.Order">
-            <summary>Sort order.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3alpha.SubcriptionResource.Order.Alphabetical">
-            <summary>Sort alphabetically</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3alpha.SubcriptionResource.Order.Relevance">
-            <summary>Sort by relevance.</summary>
-        </member>
-        <member name="F:Google.Apis.Youtube.v3alpha.SubcriptionResource.Order.Unread">
-            <summary>Sort by order of activity.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.InsertRequest.ContentOwnerId">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.InsertRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.InsertRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.InsertRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.InsertRequest.Body">
-            <summary>Gets/Sets the Body of this Request.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.ContentOwnerId">
-            <summary>The authenticated user acts on behalf of this content owner.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.Oauth_token">
-            <summary>OAuth 2.0 token for the current user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.Part">
-            <summary>One or more parts to return on the current request.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.PrettyPrint">
-            <summary>Returns response with indentations and line breaks.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.ForChannelId">
-            <summary>Takes a comma separated list of channel IDs. Filters the returned list to only those matching these channels</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.Id">
-            <summary>YouTube IDs of the subscriptions to be returned.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.MaxResults">
-            <summary>Maximum number of search results to return per page.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.Mine">
-            <summary>Flag indicating only return the channel ids of the authenticated user.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.Order">
-            <summary>Sort order.</summary>
-        </member>
-        <member name="P:Google.Apis.Youtube.v3alpha.SubcriptionResource.ListRequest.StartIndex">
-            <summary>Index of the first search result to return.</summary>
-        </member>
         <member name="M:Google.Apis.Youtube.v3alpha.SubscriptionResource.Delete(System.String)">
             <summary>Deletes subscriptions by IDs.</summary>
             <param name="id">Required - YouTube IDs of the subscription to be deleted.</param>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.SubscriptionResource.Insert(Google.Apis.Youtube.v3alpha.Data.Subscription)">
+            <summary>Insert a subscription.</summary>
+        </member>
+        <member name="M:Google.Apis.Youtube.v3alpha.SubscriptionResource.List">
+            <summary>Browse user&apos;s subscription collection.</summary>
+        </member>
+        <member name="T:Google.Apis.Youtube.v3alpha.SubscriptionResource.Order">
+            <summary>Sort order.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SubscriptionResource.Order.Alphabetical">
+            <summary>Sort alphabetically</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SubscriptionResource.Order.Relevance">
+            <summary>Sort by relevance.</summary>
+        </member>
+        <member name="F:Google.Apis.Youtube.v3alpha.SubscriptionResource.Order.Unread">
+            <summary>Sort by order of activity.</summary>
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.DeleteRequest.ContentOwnerId">
             <summary>The authenticated user acts on behalf of this content owner.</summary>
@@ -1246,6 +1236,51 @@
         </member>
         <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.DeleteRequest.Id">
             <summary>YouTube IDs of the subscription to be deleted.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.InsertRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.InsertRequest.Part">
+            <summary>One or more parts to return on the current request.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.ContentOwnerId">
+            <summary>The authenticated user acts on behalf of this content owner.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.Part">
+            <summary>One or more parts to return on the current request.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.ForChannelId">
+            <summary>Takes a comma separated list of channel IDs. Filters the returned list to only those matching these channels</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.Id">
+            <summary>YouTube IDs of the subscriptions to be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.MaxResults">
+            <summary>Maximum number of search results to return per page.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.Mine">
+            <summary>Flag indicating only return the channel ids of the authenticated user.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.Order">
+            <summary>Sort order.</summary>
+        </member>
+        <member name="P:Google.Apis.Youtube.v3alpha.SubscriptionResource.ListRequest.PageToken">
+            <summary>Token for the page selection.</summary>
         </member>
         <member name="M:Google.Apis.Youtube.v3alpha.VideocategoryResource.List(System.String)">
             <summary>Browse list of video categories.</summary>

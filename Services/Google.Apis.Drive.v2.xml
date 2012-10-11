@@ -49,6 +49,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsed">
             <summary>The number of quota bytes used.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsedAggregate">
+            <summary>The number of quota bytes used by all Google apps (Drive, Picasa, etc.).</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.QuotaBytesUsedInTrash">
             <summary>The number of quota bytes used by trashed items.</summary>
         </member>
@@ -60,6 +63,9 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.SelfLink">
             <summary>A link back to this item.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.About.User">
+            <summary>The JSON template for a user.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.About.AdditionalRoleInfoData.RoleSets">
             <summary>The supported additional roles per primary role.</summary>
@@ -253,6 +259,121 @@
         <member name="P:Google.Apis.Drive.v2.Data.ChildReference.SelfLink">
             <summary>A link back to this reference.</summary>
         </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Comment">
+            <summary>A JSON representation of a comment on a file in Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Anchor">
+            <summary>A region of the document represented as a JSON string. See anchor documentation for details on how to define and interpret anchor properties.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Author">
+            <summary>The JSON template for a user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Content">
+            <summary>The plain text content used to create this comment. This is not HTML safe and should only be used as a starting point to make edits to a comment&apos;s content.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Context">
+            <summary>The context of the file which is being commented on.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.CreatedDate">
+            <summary>The date when this comment was first created.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Deleted">
+            <summary>Whether this comment has been deleted. If a comment has been deleted the content will be cleared and this will only represent a comment that once existed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.FileId">
+            <summary>The file which this comment is addressing.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.FileTitle">
+            <summary>The title of the file which this comment is addressing.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.HtmlContent">
+            <summary>HTML formatted content for this comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Kind">
+            <summary>This is always drive#comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.ModifiedDate">
+            <summary>The date when this comment or any of its replies were last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Replies">
+            <summary>Replies to this post.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.SelfLink">
+            <summary>A link back to this comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.Status">
+             <summary>The status of this comment. Status can be changed by posting a reply to a comment with the desired status.  
+            - &quot;open&quot; - The comment is still open. 
+            - &quot;resolved&quot; - The comment has been resolved by one of its replies.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.Comment.ContextData">
+            <summary>The context of the file which is being commented on.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.ContextData.Type">
+            <summary>The MIME type of the context snippet.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.Comment.ContextData.Value">
+            <summary>Data representation of the segment of the file being commented on. In the case of a text file for example, this would be the actual text that the comment is about.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.CommentList">
+            <summary>A JSON representation of a list of comments on a file in Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentList.Items">
+            <summary>List of comments.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentList.Kind">
+            <summary>This is always drive#commentList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentList.NextPageToken">
+            <summary>The token to use to request the next page of results.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.CommentReply">
+            <summary>A JSON representation of a reply to a comment on a file in Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.Author">
+            <summary>The JSON template for a user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.Content">
+            <summary>The plain text content used to create this reply. This is not HTML safe and should only be used as a starting point to make edits to a reply&apos;s content. This field is required on inserts if no verb is specified (resolve/reopen).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.CreatedDate">
+            <summary>The date when this reply was first created.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.Deleted">
+            <summary>Whether this reply has been deleted. If a reply has been deleted the content will be cleared and this will only represent a reply that once existed.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.HtmlContent">
+            <summary>HTML formatted content for this reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.Kind">
+            <summary>This is always drive#commentReply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.ModifiedDate">
+            <summary>The date when this reply was last modified.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.ReplyId">
+            <summary>The ID of the reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReply.Verb">
+             <summary>The action this reply performed to the parent comment. When creating a new reply this is the action to be perform to the parent comment. Possible values are:  
+            - &quot;resolve&quot; - To resolve a comment. 
+            - &quot;reopen&quot; - To reopen (un-resolve) a comment.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.CommentReplyList">
+            <summary>A JSON representation of a list of replies to a comment on a file in Google Drive.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.Items">
+            <summary>List of reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.Kind">
+            <summary>This is always drive#commentReplyList.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.CommentReplyList.NextPageToken">
+            <summary>The token to use to request the next page of results.</summary>
+        </member>
         <member name="T:Google.Apis.Drive.v2.Data.File">
             <summary>The metadata for a file.</summary>
         </member>
@@ -341,6 +462,9 @@
         <member name="P:Google.Apis.Drive.v2.Data.File.SharedWithMeDate">
             <summary>Time at which this file was shared with the user (formatted RFC 3339 timestamp).</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.Thumbnail">
+            <summary>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by Google.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ThumbnailLink">
             <summary>A link to the file&apos;s thumbnail.</summary>
         </member>
@@ -362,8 +486,32 @@
         <member name="T:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData">
             <summary>Metadata about image media. This will only be present for image types, and its contents will depend on what can be parsed from the image content.</summary>
         </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Aperture">
+            <summary>The aperture used to create the photo (f-number).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.CameraMake">
+            <summary>The make of the camera used to create the photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.CameraModel">
+            <summary>The model of the camera used to create the photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Date">
+            <summary>The date and time the photo was taken (EXIF format timestamp).</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.ExposureTime">
+            <summary>The length of the exposure, in seconds.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.FlashUsed">
+            <summary>Whether a flash was used to create the photo.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.FocalLength">
+            <summary>The focal length used to create the photo, in millimeters.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Height">
             <summary>The height of the image in pixels.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.IsoSpeed">
+            <summary>The ISO speed used to create the photo.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.ImageMediaMetadataData.Location">
             <summary>Geographic location information stored in the image.</summary>
@@ -409,6 +557,15 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.Data.File.LabelsData.Viewed">
             <summary>Whether this file has been viewed by this user.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.File.ThumbnailData">
+            <summary>Thumbnail for the file. Only accepted on upload and for files that are not already thumbnailed by Google.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ThumbnailData.Image">
+            <summary>The URL-safe Base64 encoded bytes of the thumbnail image.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.File.ThumbnailData.MimeType">
+            <summary>The MIME type of the thumbnail.</summary>
         </member>
         <member name="T:Google.Apis.Drive.v2.Data.FileList">
             <summary>A list of files.</summary>
@@ -597,6 +754,27 @@
         <member name="P:Google.Apis.Drive.v2.Data.RevisionList.SelfLink">
             <summary>A link back to this list.</summary>
         </member>
+        <member name="T:Google.Apis.Drive.v2.Data.User">
+            <summary>The JSON template for a user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.DisplayName">
+            <summary>A plain text displayable name for this user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.IsAuthenticatedUser">
+            <summary>Whether this user is the same as the authenticated user of which the request was made on behalf.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.Kind">
+            <summary>This is always drive#user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.Picture">
+            <summary>The user&apos;s profile picture.</summary>
+        </member>
+        <member name="T:Google.Apis.Drive.v2.Data.User.PictureData">
+            <summary>The user&apos;s profile picture.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.Data.User.PictureData.Url">
+            <summary>A URL that points to a profile picture of this user.</summary>
+        </member>
         <member name="P:Google.Apis.Drive.v2.DriveService.Key">
             <summary>Sets the API-Key (or DeveloperKey) which this service uses for all requests</summary>
         </member>
@@ -766,6 +944,121 @@
         </member>
         <member name="P:Google.Apis.Drive.v2.ChildrenResource.ListRequest.Q">
             <summary>Query string for searching children.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.Delete(System.String,System.String)">
+            <summary>Deletes a comment.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.Get(System.String,System.String)">
+            <summary>Gets a comment by ID.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.Insert(Google.Apis.Drive.v2.Data.Comment,System.String)">
+            <summary>Creates a new comment on the given file.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.List(System.String)">
+            <summary>Lists a file&apos;s comments.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.Patch(Google.Apis.Drive.v2.Data.Comment,System.String,System.String)">
+            <summary>Updates an existing comment. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.CommentsResource.Update(Google.Apis.Drive.v2.Data.Comment,System.String,System.String)">
+            <summary>Updates an existing comment.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.DeleteRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.GetRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.IncludeDeleted">
+            <summary>If set, all comments, including deleted comments (with content stripped) will be returned.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.MaxResults">
+            <summary>The maximum number of discussions to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.PageToken">
+            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.ListRequest.UpdatedMin">
+            <summary>Only discussions that were updated after this timestamp will be returned. Formatted as an RFC 3339 timestamp.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.CommentsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.FilesResource.Copy(Google.Apis.Drive.v2.Data.File,System.String)">
             <summary>Creates a copy of the specified file.</summary>
@@ -1288,6 +1581,139 @@
             <summary>The ID for the permission.</summary>
         </member>
         <member name="P:Google.Apis.Drive.v2.PermissionsResource.UpdateRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.Delete(System.String,System.String,System.String)">
+            <summary>Deletes a reply.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+            <param name="replyId">Required - The ID of the reply.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.Get(System.String,System.String,System.String)">
+            <summary>Gets a reply.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+            <param name="replyId">Required - The ID of the reply.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.Insert(Google.Apis.Drive.v2.Data.CommentReply,System.String,System.String)">
+            <summary>Creates a new reply to the given comment.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.List(System.String,System.String)">
+            <summary>Lists all of the replies to a comment.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.Patch(Google.Apis.Drive.v2.Data.CommentReply,System.String,System.String,System.String)">
+            <summary>Updates an existing reply. This method supports patch semantics.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+            <param name="replyId">Required - The ID of the reply.</param>
+        </member>
+        <member name="M:Google.Apis.Drive.v2.RepliesResource.Update(Google.Apis.Drive.v2.Data.CommentReply,System.String,System.String,System.String)">
+            <summary>Updates an existing reply.</summary>
+            <param name="fileId">Required - The ID of the file.</param>
+            <param name="commentId">Required - The ID of the comment.</param>
+            <param name="replyId">Required - The ID of the reply.</param>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.DeleteRequest.ReplyId">
+            <summary>The ID of the reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.GetRequest.ReplyId">
+            <summary>The ID of the reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.InsertRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.MaxResults">
+            <summary>The maximum number of replies to include in the response, used for paging.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.ListRequest.PageToken">
+            <summary>The continuation token, used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.ReplyId">
+            <summary>The ID of the reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.PatchRequest.Body">
+            <summary>Gets/Sets the Body of this Request.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.Oauth_token">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.CommentId">
+            <summary>The ID of the comment.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.FileId">
+            <summary>The ID of the file.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.ReplyId">
+            <summary>The ID of the reply.</summary>
+        </member>
+        <member name="P:Google.Apis.Drive.v2.RepliesResource.UpdateRequest.Body">
             <summary>Gets/Sets the Body of this Request.</summary>
         </member>
         <member name="M:Google.Apis.Drive.v2.RevisionsResource.Delete(System.String,System.String)">

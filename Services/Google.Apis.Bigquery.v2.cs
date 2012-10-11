@@ -2325,7 +2325,7 @@ namespace Google.Apis.Bigquery.v2 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"bigquery:v2\",\"n" +
-            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20120929\",\"title\":\"BigQuery API\",\"des" +
+            "ame\":\"bigquery\",\"version\":\"v2\",\"revision\":\"20121008\",\"title\":\"BigQuery API\",\"des" +
             "cription\":\"A data platform for customers to create, manage, share and query data" +
             ".\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x3" +
             "2\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLin" +

@@ -70,6 +70,9 @@
         <member name="T:Google.Apis.Oauth2.v2.Oauth2Service.Scopes">
             <summary>A list of all OAuth2.0 scopes. Each of these scopes relates to a permission or group of permissions that different methods of this API may need.</summary>
         </member>
+        <member name="F:Google.Apis.Oauth2.v2.Oauth2Service.Scopes.PlusMe">
+            <summary>Know who you are on Google</summary>
+        </member>
         <member name="F:Google.Apis.Oauth2.v2.Oauth2Service.Scopes.UserinfoEmail">
             <summary>View your email address</summary>
         </member>

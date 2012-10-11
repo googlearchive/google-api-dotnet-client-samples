@@ -518,6 +518,12 @@
             and will block until the upload is completed.
             </summary>
         </member>
+        <member name="M:Google.Apis.Upload.ResumableUpload`1.ThrowErrorMessageIfPresent(System.Net.WebException)">
+            <summary>
+            If the WebException contains a Json response with an error.message node throw an exception with that text.
+            Otherwise just return.
+            </summary>
+        </member>
         <member name="M:Google.Apis.Upload.ResumableUpload`1.InitializeUpload(System.Int64,System.String)">
             <summary>
             Initializes the resumable upload by calling the resumable rest interface to get

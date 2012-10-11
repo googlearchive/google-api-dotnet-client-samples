@@ -3162,7 +3162,7 @@ namespace Google.Apis.Compute.v1beta12 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"compute:v1beta1" +
-            "2\",\"name\":\"compute\",\"version\":\"v1beta12\",\"revision\":\"20120928\",\"title\":\"Compute " +
+            "2\",\"name\":\"compute\",\"version\":\"v1beta12\",\"revision\":\"20120712\",\"title\":\"Compute " +
             "Engine API\",\"description\":\"API for the Google Compute Engine service.\",\"icons\":{" +
             "\"x16\":\"http://www.google.com/images/icons/product/compute_engine-16.png\",\"x32\":\"" +
             "http://www.google.com/images/icons/product/compute_engine-32.png\"},\"documentatio" +

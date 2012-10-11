@@ -575,7 +575,7 @@
         </member>
         <member name="M:Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.Start(Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.ProductCode,System.String)">
             <summary>Create an association session for initiating an association with an AdSense user.</summary>
-            <param name="productCode">Required - Must be one of the following values [AFC, AFF, AFMC, AFS] - Products to associate with the user.</param>
+            <param name="productCode">Required - Must be one of the following values [AFC, AFMC, AFS] - Products to associate with the user.</param>
             <param name="websiteUrl">Required - The URL of the user&apos;s hosted website.</param>
         </member>
         <member name="M:Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.Verify(System.String)">
@@ -587,9 +587,6 @@
         </member>
         <member name="F:Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.ProductCode.AFC">
             <summary>AdSense For Content</summary>
-        </member>
-        <member name="F:Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.ProductCode.AFF">
-            <summary>AdSense For Feeds</summary>
         </member>
         <member name="F:Google.Apis.Adsensehost.v4_1.AssociationsessionsResource.ProductCode.AFMC">
             <summary>AdSense For Mobile Content</summary>
@@ -731,8 +728,8 @@
         </member>
         <member name="M:Google.Apis.Adsensehost.v4_1.ReportsResource.Generate(System.String,System.String)">
             <summary>Generate an AdSense report based on the report request sent in the query parameters. Returns the result as JSON; to retrieve output in CSV format specify &quot;alt=csv&quot; as a query parameter.</summary>
-            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
             <param name="startDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - Start of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
+            <param name="endDate">Required - Must match pattern \d{4}-\d{2}-\d{2}|(today|startOfMonth|startOfYear)(([\-\+]\d+[dwmy]){0,2}?) - End of the date range to report on in &quot;YYYY-MM-DD&quot; format, inclusive.</param>
         </member>
         <member name="P:Google.Apis.Adsensehost.v4_1.ReportsResource.GenerateRequest.Oauth_token">
             <summary>OAuth 2.0 token for the current user.</summary>

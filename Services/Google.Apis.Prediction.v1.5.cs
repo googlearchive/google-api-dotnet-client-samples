@@ -698,8 +698,6 @@ namespace Google.Apis.Prediction.v1_5.Data {
         
         private Training.ModelInfoData _modelInfo;
         
-        private string _modelType;
-        
         private string _selfLink;
         
         private string _storageDataLocation;
@@ -757,17 +755,6 @@ namespace Google.Apis.Prediction.v1_5.Data {
             }
             set {
                 this._modelInfo = value;
-            }
-        }
-        
-        /// <summary>Type of predictive model (classification or regression)</summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("modelType")]
-        public virtual string ModelType {
-            get {
-                return this._modelType;
-            }
-            set {
-                this._modelType = value;
             }
         }
         
@@ -961,7 +948,7 @@ namespace Google.Apis.Prediction.v1_5.Data {
             }
         }
         
-        /// <summary>The true class label of this instance</summary>
+        /// <summary>The class label of this instance</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("label")]
         public virtual string Label {
             get {
@@ -1102,65 +1089,63 @@ namespace Google.Apis.Prediction.v1_5 {
             "\":{\"type\":\"string\",\"description\":\"Number of valid data instances used in the tra" +
             "ined model.\",\"format\":\"int64\"},\"numberLabels\":{\"type\":\"string\",\"description\":\"Nu" +
             "mber of class labels in the trained model [Categorical models only].\",\"format\":\"" +
-            "int64\"}}},\"modelType\":{\"type\":\"string\",\"description\":\"Type of predictive model (" +
-            "classification or regression)\"},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL" +
-            " to re-request this resource.\"},\"storageDataLocation\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Google storage location of the training data file.\"},\"storagePMMLLocation\"" +
-            ":{\"type\":\"string\",\"description\":\"Google storage location of the preprocessing pm" +
-            "ml file.\"},\"storagePMMLModelLocation\":{\"type\":\"string\",\"description\":\"Google sto" +
-            "rage location of the pmml model file.\"},\"trainingComplete\":{\"type\":\"string\",\"des" +
-            "cription\":\"Training completion time (as a RFC 3339 timestamp).\",\"format\":\"date-t" +
-            "ime\"},\"trainingStatus\":{\"type\":\"string\",\"description\":\"The current status of the" +
-            " training job. This can be one of following: RUNNING; DONE; ERROR; ERROR: TRAINI" +
-            "NG JOB NOT FOUND\"},\"utility\":{\"type\":\"array\",\"description\":\"A class weighting fu" +
-            "nction, which allows the importance weights for class labels to be specified [Ca" +
-            "tegorical models only].\",\"items\":{\"type\":\"object\",\"description\":\"Class label (st" +
-            "ring).\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":" +
-            "{\"id\":\"Update\",\"type\":\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"desc" +
-            "ription\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}},\"label\":" +
-            "{\"type\":\"string\",\"description\":\"The true class label of this instance\"}}}},\"reso" +
-            "urces\":{\"hostedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.pred" +
-            "ict\",\"path\":\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"descri" +
-            "ption\":\"Submit input and request an output against a hosted model.\",\"parameters\"" +
-            ":{\"hostedModelName\":{\"type\":\"string\",\"description\":\"The name of a hosted model.\"" +
-            ",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"reque" +
-            "st\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/prediction\"]}}},\"trainedmodels\":{\"methods\":{\"analyze\":{\"id\":\"predic" +
-            "tion.trainedmodels.analyze\",\"path\":\"trainedmodels/{id}/analyze\",\"httpMethod\":\"GE" +
-            "T\",\"description\":\"Get analysis of the model and the data the model was trained o" +
-            "n.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the p" +
-            "redictive model.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"r" +
-            "esponse\":{\"$ref\":\"Analyze\"},\"scopes\":[\"https://www.googleapis.com/auth/predictio" +
-            "n\"]},\"delete\":{\"id\":\"prediction.trainedmodels.delete\",\"path\":\"trainedmodels/{id}" +
-            "\",\"httpMethod\":\"DELETE\",\"description\":\"Delete a trained model.\",\"parameters\":{\"i" +
-            "d\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"r" +
-            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www" +
-            ".googleapis.com/auth/prediction\"]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"p" +
-            "ath\":\"trainedmodels/{id}\",\"httpMethod\":\"GET\",\"description\":\"Check training statu" +
-            "s of your model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":\"The unique " +
-            "name for the predictive model.\",\"required\":true,\"location\":\"path\"}},\"parameterOr" +
-            "der\":[\"id\"],\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com" +
-            "/auth/prediction\"]},\"insert\":{\"id\":\"prediction.trainedmodels.insert\",\"path\":\"tra" +
-            "inedmodels\",\"httpMethod\":\"POST\",\"description\":\"Begin training your model.\",\"requ" +
-            "est\":{\"$ref\":\"Training\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.g" +
-            "oogleapis.com/auth/devstorage.read_only\",\"https://www.googleapis.com/auth/predic" +
-            "tion\"]},\"list\":{\"id\":\"prediction.trainedmodels.list\",\"path\":\"trainedmodels/list\"" +
-            ",\"httpMethod\":\"GET\",\"description\":\"List available models.\",\"parameters\":{\"maxRes" +
-            "ults\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return\",\"for" +
-            "mat\":\"uint32\",\"minimum\":\"0\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"de" +
-            "scription\":\"Pagination token\",\"location\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"s" +
-            "copes\":[\"https://www.googleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"predicti" +
-            "on.trainedmodels.predict\",\"path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST" +
-            "\",\"description\":\"Submit model id and request a prediction.\",\"parameters\":{\"id\":{" +
-            "\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"requi" +
-            "red\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"}" +
-            ",\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/predict" +
-            "ion\"]},\"update\":{\"id\":\"prediction.trainedmodels.update\",\"path\":\"trainedmodels/{i" +
-            "d}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model.\",\"paramet" +
-            "ers\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive mo" +
-            "del.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$r" +
-            "ef\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.c" +
-            "om/auth/prediction\"]}}}}}";
+            "int64\"}}},\"selfLink\":{\"type\":\"string\",\"description\":\"A URL to re-request this re" +
+            "source.\"},\"storageDataLocation\":{\"type\":\"string\",\"description\":\"Google storage l" +
+            "ocation of the training data file.\"},\"storagePMMLLocation\":{\"type\":\"string\",\"des" +
+            "cription\":\"Google storage location of the preprocessing pmml file.\"},\"storagePMM" +
+            "LModelLocation\":{\"type\":\"string\",\"description\":\"Google storage location of the p" +
+            "mml model file.\"},\"trainingComplete\":{\"type\":\"string\",\"description\":\"Training co" +
+            "mpletion time (as a RFC 3339 timestamp).\",\"format\":\"date-time\"},\"trainingStatus\"" +
+            ":{\"type\":\"string\",\"description\":\"The current status of the training job. This ca" +
+            "n be one of following: RUNNING; DONE; ERROR; ERROR: TRAINING JOB NOT FOUND\"},\"ut" +
+            "ility\":{\"type\":\"array\",\"description\":\"A class weighting function, which allows t" +
+            "he importance weights for class labels to be specified [Categorical models only]" +
+            ".\",\"items\":{\"type\":\"object\",\"description\":\"Class label (string).\",\"additionalPro" +
+            "perties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{\"id\":\"Update\",\"type\":" +
+            "\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"description\":\"The input fe" +
+            "atures for this instance\",\"items\":{\"type\":\"any\"}},\"label\":{\"type\":\"string\",\"desc" +
+            "ription\":\"The class label of this instance\"}}}},\"resources\":{\"hostedmodels\":{\"me" +
+            "thods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"path\":\"hostedmodels/{" +
+            "hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit input and re" +
+            "quest an output against a hosted model.\",\"parameters\":{\"hostedModelName\":{\"type\"" +
+            ":\"string\",\"description\":\"The name of a hosted model.\",\"required\":true,\"location\"" +
+            ":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"$ref\":\"Input\"},\"respo" +
+            "nse\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}" +
+            "},\"trainedmodels\":{\"methods\":{\"analyze\":{\"id\":\"prediction.trainedmodels.analyze\"" +
+            ",\"path\":\"trainedmodels/{id}/analyze\",\"httpMethod\":\"GET\",\"description\":\"Get analy" +
+            "sis of the model and the data the model was trained on.\",\"parameters\":{\"id\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The unique name for the predictive model.\",\"required" +
+            "\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Analyze\"}" +
+            ",\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"delete\":{\"id\":\"predic" +
+            "tion.trainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"de" +
+            "scription\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"p" +
+            "ath\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/predic" +
+            "tion\"]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"" +
+            "httpMethod\":\"GET\",\"description\":\"Check training status of your model.\",\"paramete" +
+            "rs\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive mod" +
+            "el.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$r" +
+            "ef\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert" +
+            "\":{\"id\":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"P" +
+            "OST\",\"description\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"r" +
+            "esponse\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/devstora" +
+            "ge.read_only\",\"https://www.googleapis.com/auth/prediction\"]},\"list\":{\"id\":\"predi" +
+            "ction.trainedmodels.list\",\"path\":\"trainedmodels/list\",\"httpMethod\":\"GET\",\"descri" +
+            "ption\":\"List available models.\",\"parameters\":{\"maxResults\":{\"type\":\"integer\",\"de" +
+            "scription\":\"Maximum number of results to return\",\"format\":\"uint32\",\"minimum\":\"0\"" +
+            ",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"Pagination toke" +
+            "n\",\"location\":\"query\"}},\"response\":{\"$ref\":\"List\"},\"scopes\":[\"https://www.google" +
+            "apis.com/auth/prediction\"]},\"predict\":{\"id\":\"prediction.trainedmodels.predict\",\"" +
+            "path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST\",\"description\":\"Submit mod" +
+            "el id and request a prediction.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"path\"" +
+            "}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output" +
+            "\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"update\":{\"id\":\"pred" +
+            "iction.trainedmodels.update\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"PUT\",\"des" +
+            "cription\":\"Add new data to a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\"" +
+            ",\"description\":\"The unique name for the predictive model.\",\"required\":true,\"loca" +
+            "tion\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Update\"},\"response\":{\"" +
+            "$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}}}}}";
         
         public const string Version = "v1.5";
         

@@ -2153,7 +2153,7 @@ namespace Google.Apis.Calendar.v3 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"calendar:v3\",\"n" +
-            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120821\",\"title\":\"Calendar API\",\"des" +
+            "ame\":\"calendar\",\"version\":\"v3\",\"revision\":\"20120831\",\"title\":\"Calendar API\",\"des" +
             "cription\":\"Lets you manipulate events and other calendar data.\",\"icons\":{\"x16\":\"" +
             "http://www.google.com/images/icons/product/calendar-16.png\",\"x32\":\"http://www.go" +
             "ogle.com/images/icons/product/calendar-32.png\"},\"documentationLink\":\"https://dev" +

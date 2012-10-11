@@ -468,7 +468,7 @@ namespace Google.Apis.Prediction.v1_4.Data {
             }
         }
         
-        /// <summary>The true class label of this instance</summary>
+        /// <summary>The class label of this instance</summary>
         [Newtonsoft.Json.JsonPropertyAttribute("label")]
         public virtual string Label {
             get {
@@ -578,38 +578,38 @@ namespace Google.Apis.Prediction.v1_4 {
             "ing).\",\"additionalProperties\":{\"type\":\"number\",\"format\":\"double\"}}}}},\"Update\":{" +
             "\"id\":\"Update\",\"type\":\"object\",\"properties\":{\"csvInstance\":{\"type\":\"array\",\"descr" +
             "iption\":\"The input features for this instance\",\"items\":{\"type\":\"any\"}},\"label\":{" +
-            "\"type\":\"string\",\"description\":\"The true class label of this instance\"}}}},\"resou" +
-            "rces\":{\"hostedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predi" +
-            "ct\",\"path\":\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"descrip" +
-            "tion\":\"Submit input and request an output against a hosted model.\",\"parameters\":" +
-            "{\"hostedModelName\":{\"type\":\"string\",\"description\":\"The name of a hosted model.\"," +
-            "\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"reques" +
-            "t\":{\"$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleap" +
-            "is.com/auth/prediction\"]}}},\"trainedmodels\":{\"methods\":{\"delete\":{\"id\":\"predicti" +
-            "on.trainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"desc" +
-            "ription\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The unique name for the predictive model.\",\"required\":true,\"location\":\"pat" +
-            "h\"}},\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/predicti" +
-            "on\"]},\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"ht" +
-            "tpMethod\":\"GET\",\"description\":\"Check training status of your model.\",\"parameters" +
-            "\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model" +
-            ".\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref" +
-            "\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":" +
-            "{\"id\":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"POS" +
-            "T\",\"description\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"res" +
-            "ponse\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage" +
-            ".read_only\",\"https://www.googleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"pred" +
-            "iction.trainedmodels.predict\",\"path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"" +
-            "POST\",\"description\":\"Submit model id and request a prediction\",\"parameters\":{\"id" +
-            "\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"re" +
-            "quired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Inpu" +
-            "t\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/pred" +
-            "iction\"]},\"update\":{\"id\":\"prediction.trainedmodels.update\",\"path\":\"trainedmodels" +
-            "/{id}\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model.\",\"para" +
-            "meters\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive" +
-            " model.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{" +
-            "\"$ref\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapi" +
-            "s.com/auth/prediction\"]}}}}}";
+            "\"type\":\"string\",\"description\":\"The class label of this instance\"}}}},\"resources\"" +
+            ":{\"hostedmodels\":{\"methods\":{\"predict\":{\"id\":\"prediction.hostedmodels.predict\",\"" +
+            "path\":\"hostedmodels/{hostedModelName}/predict\",\"httpMethod\":\"POST\",\"description\"" +
+            ":\"Submit input and request an output against a hosted model.\",\"parameters\":{\"hos" +
+            "tedModelName\":{\"type\":\"string\",\"description\":\"The name of a hosted model.\",\"requ" +
+            "ired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"hostedModelName\"],\"request\":{\"" +
+            "$ref\":\"Input\"},\"response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.co" +
+            "m/auth/prediction\"]}}},\"trainedmodels\":{\"methods\":{\"delete\":{\"id\":\"prediction.tr" +
+            "ainedmodels.delete\",\"path\":\"trainedmodels/{id}\",\"httpMethod\":\"DELETE\",\"descripti" +
+            "on\":\"Delete a trained model.\",\"parameters\":{\"id\":{\"type\":\"string\",\"description\":" +
+            "\"The unique name for the predictive model.\",\"required\":true,\"location\":\"path\"}}," +
+            "\"parameterOrder\":[\"id\"],\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]}" +
+            ",\"get\":{\"id\":\"prediction.trainedmodels.get\",\"path\":\"trainedmodels/{id}\",\"httpMet" +
+            "hod\":\"GET\",\"description\":\"Check training status of your model.\",\"parameters\":{\"i" +
+            "d\":{\"type\":\"string\",\"description\":\"The unique name for the predictive model.\",\"r" +
+            "equired\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"response\":{\"$ref\":\"Tr" +
+            "aining\"},\"scopes\":[\"https://www.googleapis.com/auth/prediction\"]},\"insert\":{\"id\"" +
+            ":\"prediction.trainedmodels.insert\",\"path\":\"trainedmodels\",\"httpMethod\":\"POST\",\"d" +
+            "escription\":\"Begin training your model.\",\"request\":{\"$ref\":\"Training\"},\"response" +
+            "\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com/auth/devstorage.read" +
+            "_only\",\"https://www.googleapis.com/auth/prediction\"]},\"predict\":{\"id\":\"predictio" +
+            "n.trainedmodels.predict\",\"path\":\"trainedmodels/{id}/predict\",\"httpMethod\":\"POST\"" +
+            ",\"description\":\"Submit model id and request a prediction\",\"parameters\":{\"id\":{\"t" +
+            "ype\":\"string\",\"description\":\"The unique name for the predictive model.\",\"require" +
+            "d\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref\":\"Input\"},\"" +
+            "response\":{\"$ref\":\"Output\"},\"scopes\":[\"https://www.googleapis.com/auth/predictio" +
+            "n\"]},\"update\":{\"id\":\"prediction.trainedmodels.update\",\"path\":\"trainedmodels/{id}" +
+            "\",\"httpMethod\":\"PUT\",\"description\":\"Add new data to a trained model.\",\"parameter" +
+            "s\":{\"id\":{\"type\":\"string\",\"description\":\"The unique name for the predictive mode" +
+            "l.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"id\"],\"request\":{\"$ref" +
+            "\":\"Update\"},\"response\":{\"$ref\":\"Training\"},\"scopes\":[\"https://www.googleapis.com" +
+            "/auth/prediction\"]}}}}}";
         
         public const string Version = "v1.4";
         
