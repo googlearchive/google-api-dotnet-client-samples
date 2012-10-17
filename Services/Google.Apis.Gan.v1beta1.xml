@@ -49,6 +49,9 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.LogoUrl">
             <summary>URL to the logo this advertiser uses on the Google Affiliate Network.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.MerchantCenterIds">
+            <summary>List of merchant center ids for this advertiser</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Advertiser.Name">
             <summary>The name of this advertiser.</summary>
         </member>
@@ -433,6 +436,12 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.EndDate">
             <summary>Date that this link becomes inactive.</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.EpcNinetyDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.EpcSevenDayAverage">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.Id">
             <summary>The ID of this link.</summary>
         </member>
@@ -457,8 +466,38 @@
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.PromotionType">
             <summary>Promotion Type</summary>
         </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffers">
+            <summary>Special offers on the link.</summary>
+        </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Link.StartDate">
             <summary>Date that this link becomes active.</summary>
+        </member>
+        <member name="T:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData">
+            <summary>Special offers on the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.FreeGift">
+            <summary>Whether there is a free gift</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.FreeShipping">
+            <summary>Whether there is free shipping</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.FreeShippingMin">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.PercentOff">
+            <summary>Percent off on the purchase</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.PercentOffMin">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.PriceCut">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.PriceCutMin">
+            <summary>An ApiMoneyProto.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.Data.Link.SpecialOffersData.PromotionCodes">
+            <summary>List of promotion code associated with the link</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.Data.Links.Items">
             <summary>The links.</summary>
@@ -787,9 +826,6 @@
         <member name="F:Google.Apis.Gan.v1beta1.LinksResource.Role.Publishers">
             <summary>The requester is requesting as a publisher.</summary>
         </member>
-        <member name="T:Google.Apis.Gan.v1beta1.LinksResource.AdvertiserCategory">
-            <summary>The advertiser&apos;s primary vertical.</summary>
-        </member>
         <member name="T:Google.Apis.Gan.v1beta1.LinksResource.Authorship">
             <summary>The role of the author of the link.</summary>
         </member>
@@ -838,9 +874,6 @@
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.PrettyPrint">
             <summary>Returns response with indentations and line breaks.</summary>
         </member>
-        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserCategory">
-            <summary>The advertiser's primary vertical.</summary>
-        </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.AdvertiserId">
             <summary>Limits the resulting links to the ones belonging to the listed advertisers.</summary>
         </member>
@@ -849,6 +882,12 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.Authorship">
             <summary>The role of the author of the link.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.CreateDateMax">
+            <summary>The end of the create date range.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.CreateDateMin">
+            <summary>The beginning of the create date range.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.LinkType">
             <summary>The type of the link.</summary>
@@ -870,6 +909,9 @@
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.RoleId">
             <summary>The ID of the requesting advertiser or publisher.</summary>
+        </member>
+        <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.SearchText">
+            <summary>Field for full text search across title and merchandising text, supports link id search.</summary>
         </member>
         <member name="P:Google.Apis.Gan.v1beta1.LinksResource.ListRequest.StartDateMax">
             <summary>The end of the start date range.</summary>

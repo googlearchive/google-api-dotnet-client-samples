@@ -851,98 +851,98 @@ namespace Google.Apis.Plus.v1moments {
             ":\"string\",\"description\":\"IP address of the site where the request originates. Us" +
             "e this if you want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oa" +
             "uth2\":{\"scopes\":{\"https://www.googleapis.com/auth/plus.me\":{\"description\":\"Know " +
-            "who you are on Google\"},\"https://www.googleapis.com/auth/plus.moments.write\":{\"d" +
-            "escription\":\"Send your activity to your private Google+ history\"}}}},\"schemas\":{" +
-            "\"ItemScope\":{\"id\":\"ItemScope\",\"type\":\"object\",\"properties\":{\"about\":{\"$ref\":\"Ite" +
-            "mScope\",\"description\":\"The subject matter of the content.\"},\"additionalName\":{\"t" +
-            "ype\":\"array\",\"description\":\"An additional name for a Person, can be used for a m" +
-            "iddle name.\",\"items\":{\"type\":\"string\"}},\"address\":{\"$ref\":\"ItemScope\",\"descripti" +
-            "on\":\"Postal address.\"},\"addressCountry\":{\"type\":\"string\",\"description\":\"Address " +
-            "country.\"},\"addressLocality\":{\"type\":\"string\",\"description\":\"Address locality.\"}" +
-            ",\"addressRegion\":{\"type\":\"string\",\"description\":\"Address region.\"},\"associated_m" +
-            "edia\":{\"type\":\"array\",\"description\":\"The encoding.\",\"items\":{\"$ref\":\"ItemScope\"}" +
-            "},\"attendeeCount\":{\"type\":\"integer\",\"description\":\"Number of attendees.\",\"format" +
-            "\":\"int32\"},\"attendees\":{\"type\":\"array\",\"description\":\"A person attending the eve" +
-            "nt.\",\"items\":{\"$ref\":\"ItemScope\"}},\"audio\":{\"$ref\":\"ItemScope\",\"description\":\"Fr" +
-            "om http://schema.org/MusicRecording, the audio file.\"},\"author\":{\"type\":\"array\"," +
-            "\"description\":\"The person who created this scope.\",\"items\":{\"$ref\":\"ItemScope\"}}" +
-            ",\"bestRating\":{\"type\":\"string\",\"description\":\"Best possible rating value.\"},\"bir" +
-            "thDate\":{\"type\":\"string\",\"description\":\"Date of birth.\"},\"byArtist\":{\"$ref\":\"Ite" +
-            "mScope\",\"description\":\"From http://schema.org/MusicRecording, the artist that pe" +
-            "rformed this recording.\"},\"caption\":{\"type\":\"string\",\"description\":\"The caption " +
-            "for this object.\"},\"contentSize\":{\"type\":\"string\",\"description\":\"File size in (m" +
-            "ega/kilo) bytes.\"},\"contentUrl\":{\"type\":\"string\",\"description\":\"Actual bytes of " +
-            "the media object, for example the image file or video file.\"},\"contributor\":{\"ty" +
-            "pe\":\"array\",\"description\":\"The list of contributors for this scope.\",\"items\":{\"$" +
-            "ref\":\"ItemScope\"}},\"dateCreated\":{\"type\":\"string\",\"description\":\"The date this s" +
-            "cope was created.\"},\"dateModified\":{\"type\":\"string\",\"description\":\"The date this" +
-            " scope was last modified.\"},\"datePublished\":{\"type\":\"string\",\"description\":\"The " +
-            "initial date this scope was published.\"},\"description\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The string describing the content of this scope.\"},\"duration\":{\"type\":\"st" +
-            "ring\",\"description\":\"The duration of the item (movie, audio recording, event, et" +
-            "c.) in ISO 8601 date format.\"},\"embedUrl\":{\"type\":\"string\",\"description\":\"A URL " +
-            "pointing to a player for a specific video. In general, this is the information i" +
-            "n the src element of an embed tag and should not be the same as the content of t" +
-            "he loc tag.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end date and time of" +
-            " the event (in ISO 8601 date format).\"},\"familyName\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Family name. In the U.S., the last name of an Person. This can be used alon" +
-            "g with givenName instead of the Name property.\"},\"gender\":{\"type\":\"string\",\"desc" +
-            "ription\":\"Gender of the person.\"},\"geo\":{\"$ref\":\"ItemScope\",\"description\":\"Geo c" +
-            "oordinates.\"},\"givenName\":{\"type\":\"string\",\"description\":\"Given name. In the U.S" +
-            "., the first name of a Person. This can be used along with familyName instead of" +
-            " the Name property.\"},\"height\":{\"type\":\"string\",\"description\":\"The height of the" +
-            " media object.\"},\"id\":{\"type\":\"string\",\"description\":\"The id for this item scope" +
-            ".\"},\"image\":{\"type\":\"string\",\"description\":\"A url to the image for this scope.\"}" +
-            ",\"inAlbum\":{\"$ref\":\"ItemScope\",\"description\":\"From http://schema.org/MusicRecord" +
-            "ing, which album a song is in.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifi" +
-            "es this resource as an itemScope.\",\"default\":\"plus#itemScope\"},\"latitude\":{\"type" +
-            "\":\"number\",\"description\":\"Latitude.\",\"format\":\"double\"},\"location\":{\"$ref\":\"Item" +
-            "Scope\",\"description\":\"The location of the event or organization.\"},\"longitude\":{" +
-            "\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"},\"name\":{\"type\":\"st" +
-            "ring\",\"description\":\"The name of this scope.\"},\"partOfTVSeries\":{\"$ref\":\"ItemSco" +
-            "pe\",\"description\":\"Property of http://schema.org/TVEpisode indicating which seri" +
-            "es the episode belongs to.\"},\"performers\":{\"type\":\"array\",\"description\":\"The mai" +
-            "n performer or performers of the event-for example, a presenter, musician, or ac" +
-            "tor.\",\"items\":{\"$ref\":\"ItemScope\"}},\"playerType\":{\"type\":\"string\",\"description\":" +
-            "\"Player type required-for example, Flash or Silverlight.\"},\"postOfficeBoxNumber\"" +
-            ":{\"type\":\"string\",\"description\":\"Post office box number.\"},\"postalCode\":{\"type\":" +
-            "\"string\",\"description\":\"Postal code.\"},\"ratingValue\":{\"type\":\"string\",\"descripti" +
-            "on\":\"Rating value.\"},\"reviewRating\":{\"$ref\":\"ItemScope\",\"description\":\"Review ra" +
-            "ting.\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date and time of t" +
-            "he event (in ISO 8601 date format).\"},\"streetAddress\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Street address.\"},\"text\":{\"type\":\"string\",\"description\":\"Comment text, rev" +
-            "iew text, etc.\"},\"thumbnail\":{\"$ref\":\"ItemScope\",\"description\":\"Thumbnail image " +
-            "for an image or video.\"},\"thumbnailUrl\":{\"type\":\"string\",\"description\":\"A url to" +
-            " a thumbnail image for this scope.\"},\"tickerSymbol\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The exchange traded instrument associated with a Corporation object. The tic" +
-            "kerSymbol is expressed as an exchange and an instrument name separated by a spac" +
-            "e character. For the exchange component of the tickerSymbol attribute, we reccom" +
-            "mend using the controlled vocaulary of Market Identifier Codes (MIC) specified i" +
-            "n ISO15022.\"},\"type\":{\"type\":\"string\",\"description\":\"The item type.\"},\"url\":{\"ty" +
-            "pe\":\"string\",\"description\":\"A URL for the item upon which the action was perform" +
-            "ed.\"},\"width\":{\"type\":\"string\",\"description\":\"The width of the media object.\"},\"" +
-            "worstRating\":{\"type\":\"string\",\"description\":\"Worst possible rating value.\"}}},\"M" +
-            "oment\":{\"id\":\"Moment\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"descr" +
-            "iption\":\"The frame ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this " +
-            "resource as a moment.\",\"default\":\"plus#moment\"},\"result\":{\"$ref\":\"ItemScope\",\"de" +
-            "scription\":\"The object generated by performing the action on the item\"},\"startDa" +
-            "te\":{\"type\":\"string\",\"description\":\"Time stamp of when the action occurred in RF" +
-            "C3339 format.\",\"format\":\"date-time\"},\"target\":{\"$ref\":\"ItemScope\",\"description\":" +
-            "\"The object on which the action was performed.\"},\"type\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The schema.org activity type.\",\"annotations\":{\"required\":[\"plus.moments." +
-            "insert\"]}}}}},\"resources\":{\"moments\":{\"methods\":{\"insert\":{\"id\":\"plus.moments.in" +
-            "sert\",\"path\":\"{userId}/moments/{collection}\",\"httpMethod\":\"POST\",\"description\":\"" +
-            "Record a user activity (e.g Bill watched a video on Youtube)\",\"parameters\":{\"col" +
-            "lection\":{\"type\":\"string\",\"description\":\"The collection to which to write moment" +
-            "s.\",\"required\":true,\"enum\":[\"vault\"],\"enumDescriptions\":[\"The default collection" +
-            " for writing new moments.\"],\"location\":\"path\"},\"debug\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Return the moment as written. Should be used only for debugging.\",\"locat" +
-            "ion\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to rec" +
-            "ord activities for. The only valid values are \\\"me\\\" and the ID of the authentic" +
-            "ated user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"coll" +
-            "ection\"],\"request\":{\"$ref\":\"Moment\"},\"response\":{\"$ref\":\"Moment\"},\"scopes\":[\"htt" +
-            "ps://www.googleapis.com/auth/plus.me\",\"https://www.googleapis.com/auth/plus.mome" +
-            "nts.write\"]}}}}}";
+            "who you are on Google\"},\"https://www.googleapis.com/auth/plus.moments.readwrite\"" +
+            ":{\"description\":\"Send your activity to your private Google+ history\"}}}},\"schema" +
+            "s\":{\"ItemScope\":{\"id\":\"ItemScope\",\"type\":\"object\",\"properties\":{\"about\":{\"$ref\":" +
+            "\"ItemScope\",\"description\":\"The subject matter of the content.\"},\"additionalName\"" +
+            ":{\"type\":\"array\",\"description\":\"An additional name for a Person, can be used for" +
+            " a middle name.\",\"items\":{\"type\":\"string\"}},\"address\":{\"$ref\":\"ItemScope\",\"descr" +
+            "iption\":\"Postal address.\"},\"addressCountry\":{\"type\":\"string\",\"description\":\"Addr" +
+            "ess country.\"},\"addressLocality\":{\"type\":\"string\",\"description\":\"Address localit" +
+            "y.\"},\"addressRegion\":{\"type\":\"string\",\"description\":\"Address region.\"},\"associat" +
+            "ed_media\":{\"type\":\"array\",\"description\":\"The encoding.\",\"items\":{\"$ref\":\"ItemSco" +
+            "pe\"}},\"attendeeCount\":{\"type\":\"integer\",\"description\":\"Number of attendees.\",\"fo" +
+            "rmat\":\"int32\"},\"attendees\":{\"type\":\"array\",\"description\":\"A person attending the" +
+            " event.\",\"items\":{\"$ref\":\"ItemScope\"}},\"audio\":{\"$ref\":\"ItemScope\",\"description\"" +
+            ":\"From http://schema.org/MusicRecording, the audio file.\"},\"author\":{\"type\":\"arr" +
+            "ay\",\"description\":\"The person who created this scope.\",\"items\":{\"$ref\":\"ItemScop" +
+            "e\"}},\"bestRating\":{\"type\":\"string\",\"description\":\"Best possible rating value.\"}," +
+            "\"birthDate\":{\"type\":\"string\",\"description\":\"Date of birth.\"},\"byArtist\":{\"$ref\":" +
+            "\"ItemScope\",\"description\":\"From http://schema.org/MusicRecording, the artist tha" +
+            "t performed this recording.\"},\"caption\":{\"type\":\"string\",\"description\":\"The capt" +
+            "ion for this object.\"},\"contentSize\":{\"type\":\"string\",\"description\":\"File size i" +
+            "n (mega/kilo) bytes.\"},\"contentUrl\":{\"type\":\"string\",\"description\":\"Actual bytes" +
+            " of the media object, for example the image file or video file.\"},\"contributor\":" +
+            "{\"type\":\"array\",\"description\":\"The list of contributors for this scope.\",\"items\"" +
+            ":{\"$ref\":\"ItemScope\"}},\"dateCreated\":{\"type\":\"string\",\"description\":\"The date th" +
+            "is scope was created.\"},\"dateModified\":{\"type\":\"string\",\"description\":\"The date " +
+            "this scope was last modified.\"},\"datePublished\":{\"type\":\"string\",\"description\":\"" +
+            "The initial date this scope was published.\"},\"description\":{\"type\":\"string\",\"des" +
+            "cription\":\"The string describing the content of this scope.\"},\"duration\":{\"type\"" +
+            ":\"string\",\"description\":\"The duration of the item (movie, audio recording, event" +
+            ", etc.) in ISO 8601 date format.\"},\"embedUrl\":{\"type\":\"string\",\"description\":\"A " +
+            "URL pointing to a player for a specific video. In general, this is the informati" +
+            "on in the src element of an embed tag and should not be the same as the content " +
+            "of the loc tag.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The end date and tim" +
+            "e of the event (in ISO 8601 date format).\"},\"familyName\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Family name. In the U.S., the last name of an Person. This can be used " +
+            "along with givenName instead of the Name property.\"},\"gender\":{\"type\":\"string\",\"" +
+            "description\":\"Gender of the person.\"},\"geo\":{\"$ref\":\"ItemScope\",\"description\":\"G" +
+            "eo coordinates.\"},\"givenName\":{\"type\":\"string\",\"description\":\"Given name. In the" +
+            " U.S., the first name of a Person. This can be used along with familyName instea" +
+            "d of the Name property.\"},\"height\":{\"type\":\"string\",\"description\":\"The height of" +
+            " the media object.\"},\"id\":{\"type\":\"string\",\"description\":\"The id for this item s" +
+            "cope.\"},\"image\":{\"type\":\"string\",\"description\":\"A url to the image for this scop" +
+            "e.\"},\"inAlbum\":{\"$ref\":\"ItemScope\",\"description\":\"From http://schema.org/MusicRe" +
+            "cording, which album a song is in.\"},\"kind\":{\"type\":\"string\",\"description\":\"Iden" +
+            "tifies this resource as an itemScope.\",\"default\":\"plus#itemScope\"},\"latitude\":{\"" +
+            "type\":\"number\",\"description\":\"Latitude.\",\"format\":\"double\"},\"location\":{\"$ref\":\"" +
+            "ItemScope\",\"description\":\"The location of the event or organization.\"},\"longitud" +
+            "e\":{\"type\":\"number\",\"description\":\"Longitude.\",\"format\":\"double\"},\"name\":{\"type\"" +
+            ":\"string\",\"description\":\"The name of this scope.\"},\"partOfTVSeries\":{\"$ref\":\"Ite" +
+            "mScope\",\"description\":\"Property of http://schema.org/TVEpisode indicating which " +
+            "series the episode belongs to.\"},\"performers\":{\"type\":\"array\",\"description\":\"The" +
+            " main performer or performers of the event-for example, a presenter, musician, o" +
+            "r actor.\",\"items\":{\"$ref\":\"ItemScope\"}},\"playerType\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Player type required-for example, Flash or Silverlight.\"},\"postOfficeBoxNum" +
+            "ber\":{\"type\":\"string\",\"description\":\"Post office box number.\"},\"postalCode\":{\"ty" +
+            "pe\":\"string\",\"description\":\"Postal code.\"},\"ratingValue\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Rating value.\"},\"reviewRating\":{\"$ref\":\"ItemScope\",\"description\":\"Revie" +
+            "w rating.\"},\"startDate\":{\"type\":\"string\",\"description\":\"The start date and time " +
+            "of the event (in ISO 8601 date format).\"},\"streetAddress\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Street address.\"},\"text\":{\"type\":\"string\",\"description\":\"Comment text," +
+            " review text, etc.\"},\"thumbnail\":{\"$ref\":\"ItemScope\",\"description\":\"Thumbnail im" +
+            "age for an image or video.\"},\"thumbnailUrl\":{\"type\":\"string\",\"description\":\"A ur" +
+            "l to a thumbnail image for this scope.\"},\"tickerSymbol\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The exchange traded instrument associated with a Corporation object. The" +
+            " tickerSymbol is expressed as an exchange and an instrument name separated by a " +
+            "space character. For the exchange component of the tickerSymbol attribute, we re" +
+            "ccommend using the controlled vocaulary of Market Identifier Codes (MIC) specifi" +
+            "ed in ISO15022.\"},\"type\":{\"type\":\"string\",\"description\":\"The item type.\"},\"url\":" +
+            "{\"type\":\"string\",\"description\":\"A URL for the item upon which the action was per" +
+            "formed.\"},\"width\":{\"type\":\"string\",\"description\":\"The width of the media object." +
+            "\"},\"worstRating\":{\"type\":\"string\",\"description\":\"Worst possible rating value.\"}}" +
+            "},\"Moment\":{\"id\":\"Moment\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"d" +
+            "escription\":\"The frame ID.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies t" +
+            "his resource as a moment.\",\"default\":\"plus#moment\"},\"result\":{\"$ref\":\"ItemScope\"" +
+            ",\"description\":\"The object generated by performing the action on the item\"},\"sta" +
+            "rtDate\":{\"type\":\"string\",\"description\":\"Time stamp of when the action occurred i" +
+            "n RFC3339 format.\",\"format\":\"date-time\"},\"target\":{\"$ref\":\"ItemScope\",\"descripti" +
+            "on\":\"The object on which the action was performed.\"},\"type\":{\"type\":\"string\",\"de" +
+            "scription\":\"The schema.org activity type.\",\"annotations\":{\"required\":[\"plus.mome" +
+            "nts.insert\"]}}}}},\"resources\":{\"moments\":{\"methods\":{\"insert\":{\"id\":\"plus.moment" +
+            "s.insert\",\"path\":\"{userId}/moments/{collection}\",\"httpMethod\":\"POST\",\"descriptio" +
+            "n\":\"Record a user activity (e.g Bill watched a video on Youtube)\",\"parameters\":{" +
+            "\"collection\":{\"type\":\"string\",\"description\":\"The collection to which to write mo" +
+            "ments.\",\"required\":true,\"enum\":[\"vault\"],\"enumDescriptions\":[\"The default collec" +
+            "tion for writing new moments.\"],\"location\":\"path\"},\"debug\":{\"type\":\"boolean\",\"de" +
+            "scription\":\"Return the moment as written. Should be used only for debugging.\",\"l" +
+            "ocation\":\"query\"},\"userId\":{\"type\":\"string\",\"description\":\"The ID of the user to" +
+            " record activities for. The only valid values are \\\"me\\\" and the ID of the authe" +
+            "nticated user.\",\"required\":true,\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"" +
+            "collection\"],\"request\":{\"$ref\":\"Moment\"},\"response\":{\"$ref\":\"Moment\"},\"scopes\":[" +
+            "\"https://www.googleapis.com/auth/plus.me\",\"https://www.googleapis.com/auth/plus." +
+            "moments.readwrite\"]}}}}}";
         
         public const string Version = "v1moments";
         
@@ -1021,8 +1021,8 @@ namespace Google.Apis.Plus.v1moments {
             PlusMe,
             
             /// <summary>Send your activity to your private Google+ history</summary>
-            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.moments.write")]
-            PlusMomentsWrite,
+            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.moments.readwrite")]
+            PlusMomentsReadwrite,
         }
     }
     

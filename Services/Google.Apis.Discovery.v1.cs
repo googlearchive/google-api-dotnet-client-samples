@@ -1483,31 +1483,31 @@ namespace Google.Apis.Discovery.v1 {
             "sponse\":{\"type\":\"object\",\"description\":\"The schema for the response.\",\"propertie" +
             "s\":{\"$ref\":{\"type\":\"string\",\"description\":\"Schema ID for the response schema.\"}}" +
             "},\"scopes\":{\"type\":\"array\",\"description\":\"OAuth 2.0 scopes applicable to this me" +
-            "thod.\",\"items\":{\"type\":\"any\"}},\"supportsMediaDownload\":{\"type\":\"boolean\",\"descri" +
-            "ption\":\"Whether this method supports media downloads.\"},\"supportsMediaUpload\":{\"" +
-            "type\":\"boolean\",\"description\":\"Whether this method supports media uploads.\"},\"su" +
-            "pportsSubscription\":{\"type\":\"boolean\",\"description\":\"Whether this method support" +
-            "s subscriptions.\"}}},\"RestResource\":{\"id\":\"RestResource\",\"type\":\"object\",\"proper" +
-            "ties\":{\"methods\":{\"type\":\"object\",\"description\":\"Methods on this resource.\",\"add" +
-            "itionalProperties\":{\"$ref\":\"RestMethod\",\"description\":\"Description for any metho" +
-            "ds on this resource.\"}},\"resources\":{\"type\":\"object\",\"description\":\"Sub-resource" +
-            "s on this resource.\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"description\"" +
-            ":\"Description for any sub-resources on this resource.\"}}}}},\"resources\":{\"apis\":" +
-            "{\"methods\":{\"getRest\":{\"id\":\"discovery.apis.getRest\",\"path\":\"apis/{api}/{version" +
-            "}/rest\",\"httpMethod\":\"GET\",\"description\":\"Retrieve the description of a particul" +
-            "ar version of an api.\",\"parameters\":{\"api\":{\"type\":\"string\",\"description\":\"The n" +
-            "ame of the API.\",\"required\":true,\"location\":\"path\"},\"version\":{\"type\":\"string\",\"" +
-            "description\":\"The version of the API.\",\"required\":true,\"location\":\"path\"}},\"para" +
-            "meterOrder\":[\"api\",\"version\"],\"response\":{\"$ref\":\"RestDescription\"}},\"list\":{\"id" +
-            "\":\"discovery.apis.list\",\"path\":\"apis\",\"httpMethod\":\"GET\",\"description\":\"Retrieve" +
-            " the list of APIs supported at this endpoint.\",\"parameters\":{\"label\":{\"type\":\"st" +
-            "ring\",\"description\":\"Only include APIs with a matching label, such as \'graduated" +
-            "\' or \'labs\'.\",\"enum\":[\"deprecated\",\"graduated\",\"labs\"],\"enumDescriptions\":[\"APIs" +
-            " that have been deprecated.\",\"Supported APIs that have graduated from labs.\",\"AP" +
-            "Is that are experimental\"],\"location\":\"query\"},\"name\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Only include APIs with the given name.\",\"location\":\"query\"},\"preferred\":{\"" +
-            "type\":\"boolean\",\"description\":\"Return only the preferred version of an API.\",\"de" +
-            "fault\":\"false\",\"location\":\"query\"}},\"response\":{\"$ref\":\"DirectoryList\"}}}}}}";
+            "thod.\",\"items\":{\"type\":\"string\"}},\"supportsMediaDownload\":{\"type\":\"boolean\",\"des" +
+            "cription\":\"Whether this method supports media downloads.\"},\"supportsMediaUpload\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Whether this method supports media uploads.\"}," +
+            "\"supportsSubscription\":{\"type\":\"boolean\",\"description\":\"Whether this method supp" +
+            "orts subscriptions.\"}}},\"RestResource\":{\"id\":\"RestResource\",\"type\":\"object\",\"pro" +
+            "perties\":{\"methods\":{\"type\":\"object\",\"description\":\"Methods on this resource.\",\"" +
+            "additionalProperties\":{\"$ref\":\"RestMethod\",\"description\":\"Description for any me" +
+            "thods on this resource.\"}},\"resources\":{\"type\":\"object\",\"description\":\"Sub-resou" +
+            "rces on this resource.\",\"additionalProperties\":{\"$ref\":\"RestResource\",\"descripti" +
+            "on\":\"Description for any sub-resources on this resource.\"}}}}},\"resources\":{\"api" +
+            "s\":{\"methods\":{\"getRest\":{\"id\":\"discovery.apis.getRest\",\"path\":\"apis/{api}/{vers" +
+            "ion}/rest\",\"httpMethod\":\"GET\",\"description\":\"Retrieve the description of a parti" +
+            "cular version of an api.\",\"parameters\":{\"api\":{\"type\":\"string\",\"description\":\"Th" +
+            "e name of the API.\",\"required\":true,\"location\":\"path\"},\"version\":{\"type\":\"string" +
+            "\",\"description\":\"The version of the API.\",\"required\":true,\"location\":\"path\"}},\"p" +
+            "arameterOrder\":[\"api\",\"version\"],\"response\":{\"$ref\":\"RestDescription\"}},\"list\":{" +
+            "\"id\":\"discovery.apis.list\",\"path\":\"apis\",\"httpMethod\":\"GET\",\"description\":\"Retri" +
+            "eve the list of APIs supported at this endpoint.\",\"parameters\":{\"label\":{\"type\":" +
+            "\"string\",\"description\":\"Only include APIs with a matching label, such as \'gradua" +
+            "ted\' or \'labs\'.\",\"enum\":[\"deprecated\",\"graduated\",\"labs\"],\"enumDescriptions\":[\"A" +
+            "PIs that have been deprecated.\",\"Supported APIs that have graduated from labs.\"," +
+            "\"APIs that are experimental\"],\"location\":\"query\"},\"name\":{\"type\":\"string\",\"descr" +
+            "iption\":\"Only include APIs with the given name.\",\"location\":\"query\"},\"preferred\"" +
+            ":{\"type\":\"boolean\",\"description\":\"Return only the preferred version of an API.\"," +
+            "\"default\":\"false\",\"location\":\"query\"}},\"response\":{\"$ref\":\"DirectoryList\"}}}}}}";
         
         public const string Version = "v1";
         

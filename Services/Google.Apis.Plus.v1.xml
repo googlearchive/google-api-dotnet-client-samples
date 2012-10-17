@@ -124,7 +124,7 @@
             - &quot;activity&quot; - A Google+ activity.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.OriginalContent">
-            <summary>The content (text) as provided by the author, stored without any HTML formatting. When updating an activity&apos;s content, use the value of originalContent as the starting point from which to make edits.</summary>
+            <summary>The content (text) as provided by the author, stored without any HTML formatting. When updating an activity&apos;s content, use the value of originalContent as the starting point from which to make edits. The formatting uses inline formatting in the style of *bold*, _italic_ and -strikethrough-.</summary>
         </member>
         <member name="P:Google.Apis.Plus.v1.Data.Activity.ObjectData.Plusoners">
             <summary>People who +1&apos;d this activity.</summary>
@@ -579,9 +579,6 @@
         </member>
         <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.PlusMe">
             <summary>Know who you are on Google</summary>
-        </member>
-        <member name="F:Google.Apis.Plus.v1.PlusService.Scopes.UserinfoEmail">
-            <summary>View your email address</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1.ActivitiesResource.Get(System.String)">
             <summary>Get an activity.</summary>

@@ -160,7 +160,7 @@
         <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMe">
             <summary>Know who you are on Google</summary>
         </member>
-        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsWrite">
+        <member name="F:Google.Apis.Plus.v1moments.PlusService.Scopes.PlusMomentsReadwrite">
             <summary>Send your activity to your private Google+ history</summary>
         </member>
         <member name="M:Google.Apis.Plus.v1moments.MomentsResource.Insert(Google.Apis.Plus.v1moments.Data.Moment,System.String,Google.Apis.Plus.v1moments.MomentsResource.Collection)">

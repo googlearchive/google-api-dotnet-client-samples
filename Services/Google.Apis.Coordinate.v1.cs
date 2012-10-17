@@ -566,7 +566,7 @@ namespace Google.Apis.Coordinate.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"coordinate:v1\"," +
-            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20120912\",\"title\":\"Google Maps Co" +
+            "\"name\":\"coordinate\",\"version\":\"v1\",\"revision\":\"20121016\",\"title\":\"Google Maps Co" +
             "ordinate API\",\"description\":\"Lets you view and manage jobs in a Coordinate team." +
             "\",\"icons\":{\"x16\":\"http://www.google.com/images/icons/product/search-16.gif\",\"x32" +
             "\":\"http://www.google.com/images/icons/product/search-32.gif\"},\"documentationLink" +

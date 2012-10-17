@@ -29,7 +29,7 @@ namespace Google.Apis.Analytics.v2_4 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"analytics:v2.4\"" +
-            ",\"name\":\"analytics\",\"version\":\"v2.4\",\"revision\":\"20120831\",\"title\":\"Google Analy" +
+            ",\"name\":\"analytics\",\"version\":\"v2.4\",\"revision\":\"20121007\",\"title\":\"Google Analy" +
             "tics API\",\"description\":\"View and manage your Google Analytics data\",\"icons\":{\"x" +
             "16\":\"http://www.google.com/images/icons/product/analytics-16.png\",\"x32\":\"http://" +
             "www.google.com/images/icons/product/analytics-32.png\"},\"documentationLink\":\"http" +

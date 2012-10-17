@@ -503,7 +503,7 @@ namespace Google.Apis.Plus.v1.Data {
                 }
             }
             
-            /// <summary>The content (text) as provided by the author, stored without any HTML formatting. When updating an activity&apos;s content, use the value of originalContent as the starting point from which to make edits.</summary>
+            /// <summary>The content (text) as provided by the author, stored without any HTML formatting. When updating an activity&apos;s content, use the value of originalContent as the starting point from which to make edits. The formatting uses inline formatting in the style of *bold*, _italic_ and -strikethrough-.</summary>
             [Newtonsoft.Json.JsonPropertyAttribute("originalContent")]
             public virtual string OriginalContent {
                 get {
@@ -2248,7 +2248,7 @@ namespace Google.Apis.Plus.v1 {
         private Google.Apis.Authentication.IAuthenticator _authenticator;
         
         private const string DiscoveryDocument = "{\"kind\":\"discovery#restDescription\",\"discoveryVersion\":\"v1\",\"id\":\"plus:v1\",\"name\"" +
-            ":\"plus\",\"version\":\"v1\",\"revision\":\"20120928\",\"title\":\"Google+ API\",\"description\"" +
+            ":\"plus\",\"version\":\"v1\",\"revision\":\"20121013\",\"title\":\"Google+ API\",\"description\"" +
             ":\"The Google+ API enables developers to build on top of the Google+ platform.\",\"" +
             "icons\":{\"x16\":\"http://www.google.com/images/icons/product/gplus-16.png\",\"x32\":\"h" +
             "ttp://www.google.com/images/icons/product/gplus-32.png\"},\"documentationLink\":\"ht" +
@@ -2271,353 +2271,351 @@ namespace Google.Apis.Plus.v1 {
             "cription\":\"IP address of the site where the request originates. Use this if you " +
             "want to enforce per-user limits.\",\"location\":\"query\"}},\"auth\":{\"oauth2\":{\"scopes" +
             "\":{\"https://www.googleapis.com/auth/plus.me\":{\"description\":\"Know who you are on" +
-            " Google\"},\"https://www.googleapis.com/auth/userinfo.email\":{\"description\":\"View " +
-            "your email address\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"properties" +
-            "\":{\"description\":{\"type\":\"string\",\"description\":\"Description of the access grant" +
-            "ed, suitable for display.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of a" +
-            "ccess entries.\",\"items\":{\"$ref\":\"PlusAclentryResource\"}},\"kind\":{\"type\":\"string\"" +
-            ",\"description\":\"Identifies this resource as a collection of access controls. Val" +
-            "ue: \\\"plus#acl\\\".\",\"default\":\"plus#acl\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"o" +
-            "bject\",\"properties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has ac" +
-            "cess to see this activity.\"},\"actor\":{\"type\":\"object\",\"description\":\"The person " +
-            "who performed this activity.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The name of the actor, suitable for display.\"},\"id\":{\"type\":\"string\",\"" +
-            "description\":\"The ID of the actor\'s person resource.\"},\"image\":{\"type\":\"object\"," +
-            "\"description\":\"The image representation of the actor.\",\"properties\":{\"url\":{\"typ" +
-            "e\":\"string\",\"description\":\"The URL of the actor\'s profile photo. To re-size the " +
-            "image and crop it to a square, append the query string ?sz=x, where x is the dim" +
-            "ension in pixels of each side.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An obj" +
-            "ect representation of the individual components of name.\",\"properties\":{\"familyN" +
-            "ame\":{\"type\":\"string\",\"description\":\"The family name (last name) of the actor.\"}" +
-            ",\"givenName\":{\"type\":\"string\",\"description\":\"The given name (first name) of the " +
-            "actor.\"}}},\"url\":{\"type\":\"string\",\"description\":\"The link to the actor\'s Google " +
-            "profile.\"}}},\"address\":{\"type\":\"string\",\"description\":\"Street address where this" +
-            " activity occurred.\"},\"annotation\":{\"type\":\"string\",\"description\":\"Additional co" +
-            "ntent added by the person who shared this activity, applicable only when reshari" +
-            "ng an activity.\"},\"crosspostSource\":{\"type\":\"string\",\"description\":\"If this acti" +
-            "vity is a crosspost from another system, this property specifies the ID of the o" +
-            "riginal activity.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response" +
-            " for caching purposes.\"},\"geocode\":{\"type\":\"string\",\"description\":\"Latitude and " +
-            "longitude where this activity occurred. Format is latitude followed by longitude" +
-            ", space separated.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this activit" +
-            "y.\"},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as an activ" +
-            "ity. Value: \\\"plus#activity\\\".\",\"default\":\"plus#activity\"},\"object\":{\"type\":\"obj" +
-            "ect\",\"description\":\"The object of this activity.\",\"properties\":{\"actor\":{\"type\":" +
-            "\"object\",\"description\":\"If this activity\'s object is itself another activity (fo" +
-            "r example, when a person reshares an activity), this property specifies the orig" +
-            "inal activity\'s actor.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The original actor\'s name, suitable for display.\"},\"id\":{\"type\":\"string\",\"de" +
-            "scription\":\"ID of the original actor.\"},\"image\":{\"type\":\"object\",\"description\":\"" +
-            "The image representation of the original actor.\",\"properties\":{\"url\":{\"type\":\"st" +
-            "ring\",\"description\":\"A URL that points to a thumbnail photo of the original acto" +
-            "r.\"}}},\"url\":{\"type\":\"string\",\"description\":\"A link to the original actor\'s Goog" +
-            "le profile.\"}}},\"attachments\":{\"type\":\"array\",\"description\":\"The media objects a" +
-            "ttached to this activity.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"ty" +
-            "pe\":\"string\",\"description\":\"If the attachment is an article, this property conta" +
-            "ins a snippet of text from the article.\"},\"displayName\":{\"type\":\"string\",\"descri" +
-            "ption\":\"The title of the attachment (such as a photo caption or an article title" +
-            ").\"},\"embed\":{\"type\":\"object\",\"description\":\"If the attachment is a video, the e" +
-            "mbeddable link.\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Media type" +
-            " of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"}}},\"full" +
-            "Image\":{\"type\":\"object\",\"description\":\"The full image URL for photo attachments." +
-            "\",\"properties\":{\"height\":{\"type\":\"integer\",\"description\":\"The height, in pixels," +
-            " of the linked resource.\",\"format\":\"uint32\"},\"type\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Media type of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the l" +
-            "ink.\"},\"width\":{\"type\":\"integer\",\"description\":\"The width, in pixels, of the lin" +
-            "ked resource.\",\"format\":\"uint32\"}}},\"id\":{\"type\":\"string\",\"description\":\"The ID " +
-            "of the media object\'s resource.\"},\"image\":{\"type\":\"object\",\"description\":\"The pr" +
-            "eview image for photos or videos.\",\"properties\":{\"height\":{\"type\":\"integer\",\"des" +
-            "cription\":\"The height, in pixels, of the linked resource.\",\"format\":\"uint32\"},\"t" +
-            "ype\":{\"type\":\"string\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"st" +
-            "ring\",\"description\":\"URL of the link.\"},\"width\":{\"type\":\"integer\",\"description\":" +
-            "\"The width, in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"objectType" +
-            "\":{\"type\":\"string\",\"description\":\"The type of media object. Possible values are:" +
-            "  \\n- \\\"photo\\\" - A photo. \\n- \\\"video\\\" - A video. \\n- \\\"article\\\" - An article" +
-            ", specified by a link.\"},\"url\":{\"type\":\"string\",\"description\":\"The link to the a" +
-            "ttachment, should be of type text/html.\"}}}},\"content\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The HTML-formatted content, suitable for display. When creating or updati" +
-            "ng an activity, this value must be supplied as plain text in the request. If suc" +
-            "cessful, the response contains the HTML-formatted content. When updating an acti" +
-            "vity, use originalContent as the starting value, then assign the updated text to" +
-            " this property.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the object. Whe" +
-            "n resharing an activity, this is the ID of the activity being reshared.\"},\"objec" +
-            "tType\":{\"type\":\"string\",\"description\":\"The type of the object. Possible values a" +
-            "re:  \\n- \\\"note\\\" - Textual content. \\n- \\\"activity\\\" - A Google+ activity.\"},\"o" +
-            "riginalContent\":{\"type\":\"string\",\"description\":\"The content (text) as provided b" +
-            "y the author, stored without any HTML formatting. When updating an activity\'s co" +
-            "ntent, use the value of originalContent as the starting point from which to make" +
-            " edits.\"},\"plusoners\":{\"type\":\"object\",\"description\":\"People who +1\'d this activ" +
-            "ity.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the c" +
-            "ollection of people who +1\'d this activity.\"},\"totalItems\":{\"type\":\"integer\",\"de" +
-            "scription\":\"Total number of people who +1\'d this activity.\",\"format\":\"uint32\"}}}" +
-            ",\"replies\":{\"type\":\"object\",\"description\":\"Comments in reply to this activity.\"," +
-            "\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collect" +
-            "ion of comments in reply to this activity.\"},\"totalItems\":{\"type\":\"integer\",\"des" +
-            "cription\":\"Total number of comments on this activity.\",\"format\":\"uint32\"}}},\"res" +
-            "harers\":{\"type\":\"object\",\"description\":\"People who reshared this activity.\",\"pro" +
-            "perties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collection " +
-            "of resharers.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of pe" +
-            "ople who reshared this activity.\",\"format\":\"uint32\"}}},\"url\":{\"type\":\"string\",\"d" +
-            "escription\":\"The URL that points to the linked resource.\"}}},\"placeId\":{\"type\":\"" +
-            "string\",\"description\":\"ID of the place where this activity occurred.\"},\"placeNam" +
-            "e\":{\"type\":\"string\",\"description\":\"Name of the place where this activity occurre" +
-            "d.\"},\"provider\":{\"type\":\"object\",\"description\":\"The service provider that initia" +
-            "lly published this activity.\",\"properties\":{\"title\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"Name of the service provider.\"}}},\"published\":{\"type\":\"string\",\"description\"" +
-            ":\"The time at which this activity was initially published. Formatted as an RFC 3" +
-            "339 timestamp.\",\"format\":\"date-time\"},\"radius\":{\"type\":\"string\",\"description\":\"R" +
-            "adius, in meters, of the region where this activity occurred, centered at the la" +
-            "titude and longitude identified in geocode.\"},\"title\":{\"type\":\"string\",\"descript" +
-            "ion\":\"Title of this activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The ti" +
-            "me at which this activity was last updated. Formatted as an RFC 3339 timestamp.\"" +
-            ",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The link to this ac" +
-            "tivity.\"},\"verb\":{\"type\":\"string\",\"description\":\"This activity\'s verb, indicatin" +
-            "g what action was performed. Possible values are:  \\n- \\\"post\\\" - Publish conten" +
-            "t to the stream. \\n- \\\"checkin\\\" - Check in to a location. \\n- \\\"share\\\" - Resha" +
-            "re an activity.\"}}},\"ActivityFeed\":{\"id\":\"ActivityFeed\",\"type\":\"object\",\"propert" +
-            "ies\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching p" +
-            "urposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this collection of act" +
-            "ivities.\"},\"items\":{\"type\":\"array\",\"description\":\"The activities in this page of" +
-            " results.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"description\":\"I" +
-            "dentifies this resource as a collection of activities. Value: \\\"plus#activityFee" +
-            "d\\\".\",\"default\":\"plus#activityFeed\"},\"nextLink\":{\"type\":\"string\",\"description\":\"" +
-            "Link to the next page of activities.\"},\"nextPageToken\":{\"type\":\"string\",\"descrip" +
-            "tion\":\"The continuation token, which is used to page through large result sets. " +
-            "Provide this value in a subsequent request to return the next page of results.\"}" +
-            ",\"selfLink\":{\"type\":\"string\",\"description\":\"Link to this activity resource.\"},\"t" +
-            "itle\":{\"type\":\"string\",\"description\":\"The title of this collection of activities" +
-            ".\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at which this collection " +
-            "of activities was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"d" +
-            "ate-time\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"t" +
-            "ype\":\"object\",\"description\":\"The person who posted this comment.\",\"properties\":{" +
-            "\"displayName\":{\"type\":\"string\",\"description\":\"The name of this actor, suitable f" +
-            "or display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the actor.\"},\"image" +
-            "\":{\"type\":\"object\",\"description\":\"The image representation of this actor.\",\"prop" +
-            "erties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the actor\'s profile ph" +
-            "oto. To re-size the image and crop it to a square, append the query string ?sz=x" +
-            ", where x is the dimension in pixels of each side.\"}}},\"url\":{\"type\":\"string\",\"d" +
-            "escription\":\"A link to the person resource for this actor.\"}}},\"etag\":{\"type\":\"s" +
-            "tring\",\"description\":\"ETag of this response for caching purposes.\"},\"id\":{\"type\"" +
-            ":\"string\",\"description\":\"The ID of this comment.\"},\"inReplyTo\":{\"type\":\"array\",\"" +
-            "description\":\"The activity this comment replied to.\",\"items\":{\"type\":\"object\",\"p" +
-            "roperties\":{\"id\":{\"type\":\"string\",\"description\":\"The ID of the activity.\"},\"url\"" +
-            ":{\"type\":\"string\",\"description\":\"The URL of the activity.\"}}}},\"kind\":{\"type\":\"s" +
-            "tring\",\"description\":\"Identifies this resource as a comment. Value: \\\"plus#comme" +
-            "nt\\\".\",\"default\":\"plus#comment\"},\"object\":{\"type\":\"object\",\"description\":\"The ob" +
-            "ject of this comment.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"T" +
-            "he content of this comment.\"},\"objectType\":{\"type\":\"string\",\"description\":\"The o" +
-            "bject type of this comment. Possible values are:  \\n- \\\"comment\\\" - A comment in" +
-            " reply to an activity.\",\"default\":\"comment\"}}},\"published\":{\"type\":\"string\",\"des" +
-            "cription\":\"The time at which this comment was initially published. Formatted as " +
-            "an RFC 3339 timestamp.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"descr" +
-            "iption\":\"Link to this comment resource.\"},\"updated\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The time at which this comment was last updated. Formatted as an RFC 3339 ti" +
-            "mestamp.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"string\",\"description\":\"This comm" +
-            "ent\'s verb, indicating what action was performed. Possible values are:  \\n- \\\"po" +
-            "st\\\" - Publish content to the stream.\",\"default\":\"post\"}}},\"CommentFeed\":{\"id\":\"" +
-            "CommentFeed\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\"" +
-            ":\"ETag of this response for caching purposes.\"},\"id\":{\"type\":\"string\",\"descripti" +
-            "on\":\"The ID of this collection of comments.\"},\"items\":{\"type\":\"array\",\"descripti" +
-            "on\":\"The comments in this page of results.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":{" +
-            "\"type\":\"string\",\"description\":\"Identifies this resource as a collection of comme" +
-            "nts. Value: \\\"plus#commentFeed\\\".\",\"default\":\"plus#commentFeed\"},\"nextLink\":{\"ty" +
-            "pe\":\"string\",\"description\":\"Link to the next page of activities.\"},\"nextPageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"The continuation token, which is used to page" +
-            " through large result sets. Provide this value in a subsequent request to return" +
-            " the next page of results.\"},\"title\":{\"type\":\"string\",\"description\":\"The title o" +
-            "f this collection of comments.\"},\"updated\":{\"type\":\"string\",\"description\":\"The t" +
-            "ime at which this collection of comments was last updated. Formatted as an RFC 3" +
-            "339 timestamp.\",\"format\":\"date-time\"}}},\"PeopleFeed\":{\"id\":\"PeopleFeed\",\"type\":\"" +
-            "object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this respon" +
-            "se for caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The people in " +
-            "this page of results. Each item includes the id, displayName, image, and url for" +
-            " the person. To retrieve additional profile data, see the people.get method.\",\"i" +
-            "tems\":{\"$ref\":\"Person\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this " +
-            "resource as a collection of people. Value: \\\"plus#peopleFeed\\\".\",\"default\":\"plus" +
-            "#peopleFeed\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The continuation t" +
-            "oken, which is used to page through large result sets. Provide this value in a s" +
-            "ubsequent request to return the next page of results.\"},\"selfLink\":{\"type\":\"stri" +
-            "ng\",\"description\":\"Link to this resource.\"},\"title\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The title of this collection of people.\"}}},\"Person\":{\"id\":\"Person\",\"type\":\"" +
-            "object\",\"properties\":{\"aboutMe\":{\"type\":\"string\",\"description\":\"A short biograph" +
-            "y for this person.\"},\"birthday\":{\"type\":\"string\",\"description\":\"The person\'s dat" +
-            "e of birth, represented as YYYY-MM-DD.\"},\"currentLocation\":{\"type\":\"string\",\"des" +
-            "cription\":\"The current location for this person.\"},\"displayName\":{\"type\":\"string" +
-            "\",\"description\":\"The name of this person, suitable for display.\"},\"emails\":{\"typ" +
-            "e\":\"array\",\"description\":\"A list of email addresses for this person.\",\"items\":{\"" +
-            "type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"tru" +
-            "e\\\", indicates this email address is the person\'s primary one.\"},\"type\":{\"type\":" +
-            "\"string\",\"description\":\"The type of address. Possible values are:  \\n- \\\"home\\\" " +
-            "- Home email address. \\n- \\\"work\\\" - Work email address. \\n- \\\"other\\\" - Other.\"" +
-            "},\"value\":{\"type\":\"string\",\"description\":\"The email address.\"}}}},\"etag\":{\"type\"" +
-            ":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"gender\":" +
-            "{\"type\":\"string\",\"description\":\"The person\'s gender. Possible values are:  \\n- \\" +
-            "\"male\\\" - Male gender. \\n- \\\"female\\\" - Female gender. \\n- \\\"other\\\" - Other.\"}," +
-            "\"hasApp\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates that the person" +
-            " has installed the app that is making the request and has chosen to expose this " +
-            "install state to the caller. A value of \\\"false\\\" indicates that the install sta" +
-            "te cannot be determined (it is either not installed or the person has chosen to " +
-            "keep this information private).\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of" +
-            " this person.\"},\"image\":{\"type\":\"object\",\"description\":\"The representation of th" +
-            "e person\'s profile photo.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"T" +
-            "he URL of the person\'s profile photo. To re-size the image and crop it to a squa" +
-            "re, append the query string ?sz=x, where x is the dimension in pixels of each si" +
-            "de.\"}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a per" +
-            "son. Value: \\\"plus#person\\\".\",\"default\":\"plus#person\"},\"languagesSpoken\":{\"type\"" +
-            ":\"array\",\"description\":\"The languages spoken by this person.\",\"items\":{\"type\":\"s" +
-            "tring\"}},\"name\":{\"type\":\"object\",\"description\":\"An object representation of the " +
-            "individual components of a person\'s name.\",\"properties\":{\"familyName\":{\"type\":\"s" +
-            "tring\",\"description\":\"The family name (last name) of this person.\"},\"formatted\":" +
-            "{\"type\":\"string\",\"description\":\"The full name of this person, including middle n" +
-            "ames, suffixes, etc.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given nam" +
-            "e (first name) of this person.\"},\"honorificPrefix\":{\"type\":\"string\",\"description" +
-            "\":\"The honorific prefixes (such as \\\"Dr.\\\" or \\\"Mrs.\\\") for this person.\"},\"hono" +
-            "rificSuffix\":{\"type\":\"string\",\"description\":\"The honorific suffixes (such as \\\"J" +
-            "r.\\\") for this person.\"},\"middleName\":{\"type\":\"string\",\"description\":\"The middle" +
-            " name of this person.\"}}},\"nickname\":{\"type\":\"string\",\"description\":\"The nicknam" +
-            "e of this person.\"},\"objectType\":{\"type\":\"string\",\"description\":\"Type of person " +
-            "within Google+. Possible values are:  \\n- \\\"person\\\" - represents an actual pers" +
-            "on. \\n- \\\"page\\\" - represents a page.\"},\"organizations\":{\"type\":\"array\",\"descrip" +
-            "tion\":\"A list of current or past organizations with which this person is associa" +
-            "ted.\",\"items\":{\"type\":\"object\",\"properties\":{\"department\":{\"type\":\"string\",\"desc" +
-            "ription\":\"The department within the organization. Deprecated.\"},\"description\":{\"" +
-            "type\":\"string\",\"description\":\"A short description of the person\'s role in this o" +
-            "rganization. Deprecated.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The date th" +
-            "e person left this organization.\"},\"location\":{\"type\":\"string\",\"description\":\"Th" +
-            "e location of this organization. Deprecated.\"},\"name\":{\"type\":\"string\",\"descript" +
-            "ion\":\"The name of the organization.\"},\"primary\":{\"type\":\"boolean\",\"description\":" +
-            "\"If \\\"true\\\", indicates this organization is the person\'s primary one (typically" +
-            " interpreted as current one).\"},\"startDate\":{\"type\":\"string\",\"description\":\"The " +
-            "date the person joined this organization.\"},\"title\":{\"type\":\"string\",\"descriptio" +
-            "n\":\"The person\'s job title or role within the organization.\"},\"type\":{\"type\":\"st" +
-            "ring\",\"description\":\"The type of organization. Possible values are:  \\n- \\\"work\\" +
-            "\" - Work. \\n- \\\"school\\\" - School.\"}}}},\"placesLived\":{\"type\":\"array\",\"descripti" +
-            "on\":\"A list of places where this person has lived.\",\"items\":{\"type\":\"object\",\"pr" +
-            "operties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", this place of" +
-            " residence is this person\'s primary residence.\"},\"value\":{\"type\":\"string\",\"descr" +
-            "iption\":\"A place where this person has lived. For example: \\\"Seattle, WA\\\", \\\"Ne" +
-            "ar Toronto\\\".\"}}}},\"relationshipStatus\":{\"type\":\"string\",\"description\":\"The pers" +
-            "on\'s relationship status. Possible values are:  \\n- \\\"single\\\" - Person is singl" +
-            "e. \\n- \\\"in_a_relationship\\\" - Person is in a relationship. \\n- \\\"engaged\\\" - Pe" +
-            "rson is engaged. \\n- \\\"married\\\" - Person is married. \\n- \\\"its_complicated\\\" - " +
-            "The relationship is complicated. \\n- \\\"open_relationship\\\" - Person is in an ope" +
-            "n relationship. \\n- \\\"widowed\\\" - Person is widowed. \\n- \\\"in_domestic_partnersh" +
-            "ip\\\" - Person is in a domestic partnership. \\n- \\\"in_civil_union\\\" - Person is i" +
-            "n a civil union.\"},\"tagline\":{\"type\":\"string\",\"description\":\"The brief descripti" +
-            "on (tagline) of this person.\"},\"url\":{\"type\":\"string\",\"description\":\"The URL of " +
-            "this person\'s profile.\"},\"urls\":{\"type\":\"array\",\"description\":\"A list of URLs fo" +
-            "r this person.\",\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolea" +
-            "n\",\"description\":\"If \\\"true\\\", this URL is the person\'s primary URL.\"},\"type\":{\"" +
-            "type\":\"string\",\"description\":\"The type of URL. Possible values are:  \\n- \\\"home\\" +
-            "\" - URL for home. \\n- \\\"work\\\" - URL for work. \\n- \\\"blog\\\" - URL for blog. \\n- " +
-            "\\\"profile\\\" - URL for profile. \\n- \\\"other\\\" - Other.\"},\"value\":{\"type\":\"string\"" +
-            ",\"description\":\"The URL value.\"}}}}}},\"PlusAclentryResource\":{\"id\":\"PlusAclentry" +
-            "Resource\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"The" +
-            " ID of the entry. For entries of type \\\"person\\\" or \\\"circle\\\", this is the ID o" +
-            "f the resource. For other types, this property is not set.\"},\"type\":{\"type\":\"str" +
-            "ing\",\"description\":\"The type of entry describing to whom access is granted. Poss" +
-            "ible values are:  \\n- \\\"person\\\" - Access to an individual. \\n- \\\"circle\\\" - Acc" +
-            "ess to members of a circle. \\n- \\\"myCircles\\\" - Access to members of all the per" +
-            "son\'s circles. \\n- \\\"extendedCircles\\\" - Access to members of everyone in a pers" +
-            "on\'s circles, plus all of the people in their circles. \\n- \\\"public\\\" - Access t" +
-            "o anyone on the web.\"}}}},\"resources\":{\"activities\":{\"methods\":{\"get\":{\"id\":\"plu" +
-            "s.activities.get\",\"path\":\"activities/{activityId}\",\"httpMethod\":\"GET\",\"descripti" +
-            "on\":\"Get an activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\"" +
-            ":\"The ID of the activity to get.\",\"required\":true,\"location\":\"path\"}},\"parameter" +
-            "Order\":[\"activityId\"],\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.goog" +
-            "leapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.activities.list\",\"path\":\"people/{u" +
-            "serId}/activities/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List all of th" +
-            "e activities in the specified collection for a particular user.\",\"parameters\":{\"" +
-            "collection\":{\"type\":\"string\",\"description\":\"The collection of activities to list" +
-            ".\",\"required\":true,\"enum\":[\"public\"],\"enumDescriptions\":[\"All public activities " +
-            "created by the specified user.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"intege" +
-            "r\",\"description\":\"The maximum number of activities to include in the response, w" +
-            "hich is used for paging. For any response, the actual number returned might be l" +
-            "ess than the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"" +
-            "1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description" +
-            "\":\"The continuation token, which is used to page through large result sets. To g" +
-            "et the next page of results, set this parameter to the value of \\\"nextPageToken\\" +
-            "\" from the previous response.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"de" +
-            "scription\":\"The ID of the user to get activities for. The special value \\\"me\\\" c" +
-            "an be used to indicate the authenticated user.\",\"required\":true,\"pattern\":\"me|[0" +
-            "-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"response\":{\"" +
-            "$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"sea" +
-            "rch\":{\"id\":\"plus.activities.search\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"desc" +
-            "ription\":\"Search public activities.\",\"parameters\":{\"language\":{\"type\":\"string\",\"" +
-            "description\":\"Specify the preferred language to search with. See search language" +
-            " codes for available values.\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"ty" +
-            "pe\":\"integer\",\"description\":\"The maximum number of activities to include in the " +
+            " Google\"}}}},\"schemas\":{\"Acl\":{\"id\":\"Acl\",\"type\":\"object\",\"properties\":{\"descrip" +
+            "tion\":{\"type\":\"string\",\"description\":\"Description of the access granted, suitabl" +
+            "e for display.\"},\"items\":{\"type\":\"array\",\"description\":\"The list of access entri" +
+            "es.\",\"items\":{\"$ref\":\"PlusAclentryResource\"}},\"kind\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Identifies this resource as a collection of access controls. Value: \\\"plus#" +
+            "acl\\\".\",\"default\":\"plus#acl\"}}},\"Activity\":{\"id\":\"Activity\",\"type\":\"object\",\"pro" +
+            "perties\":{\"access\":{\"$ref\":\"Acl\",\"description\":\"Identifies who has access to see" +
+            " this activity.\"},\"actor\":{\"type\":\"object\",\"description\":\"The person who perform" +
+            "ed this activity.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"T" +
+            "he name of the actor, suitable for display.\"},\"id\":{\"type\":\"string\",\"description" +
+            "\":\"The ID of the actor\'s person resource.\"},\"image\":{\"type\":\"object\",\"descriptio" +
+            "n\":\"The image representation of the actor.\",\"properties\":{\"url\":{\"type\":\"string\"" +
+            ",\"description\":\"The URL of the actor\'s profile photo. To re-size the image and c" +
+            "rop it to a square, append the query string ?sz=x, where x is the dimension in p" +
+            "ixels of each side.\"}}},\"name\":{\"type\":\"object\",\"description\":\"An object represe" +
+            "ntation of the individual components of name.\",\"properties\":{\"familyName\":{\"type" +
+            "\":\"string\",\"description\":\"The family name (last name) of the actor.\"},\"givenName" +
+            "\":{\"type\":\"string\",\"description\":\"The given name (first name) of the actor.\"}}}," +
+            "\"url\":{\"type\":\"string\",\"description\":\"The link to the actor\'s Google profile.\"}}" +
+            "},\"address\":{\"type\":\"string\",\"description\":\"Street address where this activity o" +
+            "ccurred.\"},\"annotation\":{\"type\":\"string\",\"description\":\"Additional content added" +
+            " by the person who shared this activity, applicable only when resharing an activ" +
+            "ity.\"},\"crosspostSource\":{\"type\":\"string\",\"description\":\"If this activity is a c" +
+            "rosspost from another system, this property specifies the ID of the original act" +
+            "ivity.\"},\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for cachin" +
+            "g purposes.\"},\"geocode\":{\"type\":\"string\",\"description\":\"Latitude and longitude w" +
+            "here this activity occurred. Format is latitude followed by longitude, space sep" +
+            "arated.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this activity.\"},\"kind\"" +
+            ":{\"type\":\"string\",\"description\":\"Identifies this resource as an activity. Value:" +
+            " \\\"plus#activity\\\".\",\"default\":\"plus#activity\"},\"object\":{\"type\":\"object\",\"descr" +
+            "iption\":\"The object of this activity.\",\"properties\":{\"actor\":{\"type\":\"object\",\"d" +
+            "escription\":\"If this activity\'s object is itself another activity (for example, " +
+            "when a person reshares an activity), this property specifies the original activi" +
+            "ty\'s actor.\",\"properties\":{\"displayName\":{\"type\":\"string\",\"description\":\"The ori" +
+            "ginal actor\'s name, suitable for display.\"},\"id\":{\"type\":\"string\",\"description\":" +
+            "\"ID of the original actor.\"},\"image\":{\"type\":\"object\",\"description\":\"The image r" +
+            "epresentation of the original actor.\",\"properties\":{\"url\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A URL that points to a thumbnail photo of the original actor.\"}}},\"url" +
+            "\":{\"type\":\"string\",\"description\":\"A link to the original actor\'s Google profile." +
+            "\"}}},\"attachments\":{\"type\":\"array\",\"description\":\"The media objects attached to " +
+            "this activity.\",\"items\":{\"type\":\"object\",\"properties\":{\"content\":{\"type\":\"string" +
+            "\",\"description\":\"If the attachment is an article, this property contains a snipp" +
+            "et of text from the article.\"},\"displayName\":{\"type\":\"string\",\"description\":\"The" +
+            " title of the attachment (such as a photo caption or an article title).\"},\"embed" +
+            "\":{\"type\":\"object\",\"description\":\"If the attachment is a video, the embeddable l" +
+            "ink.\",\"properties\":{\"type\":{\"type\":\"string\",\"description\":\"Media type of the lin" +
+            "k.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"}}},\"fullImage\":{\"ty" +
+            "pe\":\"object\",\"description\":\"The full image URL for photo attachments.\",\"properti" +
+            "es\":{\"height\":{\"type\":\"integer\",\"description\":\"The height, in pixels, of the lin" +
+            "ked resource.\",\"format\":\"uint32\"},\"type\":{\"type\":\"string\",\"description\":\"Media t" +
+            "ype of the link.\"},\"url\":{\"type\":\"string\",\"description\":\"URL of the link.\"},\"wid" +
+            "th\":{\"type\":\"integer\",\"description\":\"The width, in pixels, of the linked resourc" +
+            "e.\",\"format\":\"uint32\"}}},\"id\":{\"type\":\"string\",\"description\":\"The ID of the medi" +
+            "a object\'s resource.\"},\"image\":{\"type\":\"object\",\"description\":\"The preview image" +
+            " for photos or videos.\",\"properties\":{\"height\":{\"type\":\"integer\",\"description\":\"" +
+            "The height, in pixels, of the linked resource.\",\"format\":\"uint32\"},\"type\":{\"type" +
+            "\":\"string\",\"description\":\"Media type of the link.\"},\"url\":{\"type\":\"string\",\"desc" +
+            "ription\":\"URL of the link.\"},\"width\":{\"type\":\"integer\",\"description\":\"The width," +
+            " in pixels, of the linked resource.\",\"format\":\"uint32\"}}},\"objectType\":{\"type\":\"" +
+            "string\",\"description\":\"The type of media object. Possible values are:  \\n- \\\"pho" +
+            "to\\\" - A photo. \\n- \\\"video\\\" - A video. \\n- \\\"article\\\" - An article, specified" +
+            " by a link.\"},\"url\":{\"type\":\"string\",\"description\":\"The link to the attachment, " +
+            "should be of type text/html.\"}}}},\"content\":{\"type\":\"string\",\"description\":\"The " +
+            "HTML-formatted content, suitable for display. When creating or updating an activ" +
+            "ity, this value must be supplied as plain text in the request. If successful, th" +
+            "e response contains the HTML-formatted content. When updating an activity, use o" +
+            "riginalContent as the starting value, then assign the updated text to this prope" +
+            "rty.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the object. When resharing" +
+            " an activity, this is the ID of the activity being reshared.\"},\"objectType\":{\"ty" +
+            "pe\":\"string\",\"description\":\"The type of the object. Possible values are:  \\n- \\\"" +
+            "note\\\" - Textual content. \\n- \\\"activity\\\" - A Google+ activity.\"},\"originalCont" +
+            "ent\":{\"type\":\"string\",\"description\":\"The content (text) as provided by the autho" +
+            "r, stored without any HTML formatting. When updating an activity\'s content, use " +
+            "the value of originalContent as the starting point from which to make edits. The" +
+            " formatting uses inline formatting in the style of *bold*, _italic_ and -striket" +
+            "hrough-.\"},\"plusoners\":{\"type\":\"object\",\"description\":\"People who +1\'d this acti" +
+            "vity.\",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the " +
+            "collection of people who +1\'d this activity.\"},\"totalItems\":{\"type\":\"integer\",\"d" +
+            "escription\":\"Total number of people who +1\'d this activity.\",\"format\":\"uint32\"}}" +
+            "},\"replies\":{\"type\":\"object\",\"description\":\"Comments in reply to this activity.\"" +
+            ",\"properties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collec" +
+            "tion of comments in reply to this activity.\"},\"totalItems\":{\"type\":\"integer\",\"de" +
+            "scription\":\"Total number of comments on this activity.\",\"format\":\"uint32\"}}},\"re" +
+            "sharers\":{\"type\":\"object\",\"description\":\"People who reshared this activity.\",\"pr" +
+            "operties\":{\"selfLink\":{\"type\":\"string\",\"description\":\"The URL for the collection" +
+            " of resharers.\"},\"totalItems\":{\"type\":\"integer\",\"description\":\"Total number of p" +
+            "eople who reshared this activity.\",\"format\":\"uint32\"}}},\"url\":{\"type\":\"string\",\"" +
+            "description\":\"The URL that points to the linked resource.\"}}},\"placeId\":{\"type\":" +
+            "\"string\",\"description\":\"ID of the place where this activity occurred.\"},\"placeNa" +
+            "me\":{\"type\":\"string\",\"description\":\"Name of the place where this activity occurr" +
+            "ed.\"},\"provider\":{\"type\":\"object\",\"description\":\"The service provider that initi" +
+            "ally published this activity.\",\"properties\":{\"title\":{\"type\":\"string\",\"descripti" +
+            "on\":\"Name of the service provider.\"}}},\"published\":{\"type\":\"string\",\"description" +
+            "\":\"The time at which this activity was initially published. Formatted as an RFC " +
+            "3339 timestamp.\",\"format\":\"date-time\"},\"radius\":{\"type\":\"string\",\"description\":\"" +
+            "Radius, in meters, of the region where this activity occurred, centered at the l" +
+            "atitude and longitude identified in geocode.\"},\"title\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"Title of this activity.\"},\"updated\":{\"type\":\"string\",\"description\":\"The t" +
+            "ime at which this activity was last updated. Formatted as an RFC 3339 timestamp." +
+            "\",\"format\":\"date-time\"},\"url\":{\"type\":\"string\",\"description\":\"The link to this a" +
+            "ctivity.\"},\"verb\":{\"type\":\"string\",\"description\":\"This activity\'s verb, indicati" +
+            "ng what action was performed. Possible values are:  \\n- \\\"post\\\" - Publish conte" +
+            "nt to the stream. \\n- \\\"checkin\\\" - Check in to a location. \\n- \\\"share\\\" - Resh" +
+            "are an activity.\"}}},\"ActivityFeed\":{\"id\":\"ActivityFeed\",\"type\":\"object\",\"proper" +
+            "ties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this response for caching " +
+            "purposes.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of this collection of ac" +
+            "tivities.\"},\"items\":{\"type\":\"array\",\"description\":\"The activities in this page o" +
+            "f results.\",\"items\":{\"$ref\":\"Activity\"}},\"kind\":{\"type\":\"string\",\"description\":\"" +
+            "Identifies this resource as a collection of activities. Value: \\\"plus#activityFe" +
+            "ed\\\".\",\"default\":\"plus#activityFeed\"},\"nextLink\":{\"type\":\"string\",\"description\":" +
+            "\"Link to the next page of activities.\"},\"nextPageToken\":{\"type\":\"string\",\"descri" +
+            "ption\":\"The continuation token, which is used to page through large result sets." +
+            " Provide this value in a subsequent request to return the next page of results.\"" +
+            "},\"selfLink\":{\"type\":\"string\",\"description\":\"Link to this activity resource.\"},\"" +
+            "title\":{\"type\":\"string\",\"description\":\"The title of this collection of activitie" +
+            "s.\"},\"updated\":{\"type\":\"string\",\"description\":\"The time at which this collection" +
+            " of activities was last updated. Formatted as an RFC 3339 timestamp.\",\"format\":\"" +
+            "date-time\"}}},\"Comment\":{\"id\":\"Comment\",\"type\":\"object\",\"properties\":{\"actor\":{\"" +
+            "type\":\"object\",\"description\":\"The person who posted this comment.\",\"properties\":" +
+            "{\"displayName\":{\"type\":\"string\",\"description\":\"The name of this actor, suitable " +
+            "for display.\"},\"id\":{\"type\":\"string\",\"description\":\"The ID of the actor.\"},\"imag" +
+            "e\":{\"type\":\"object\",\"description\":\"The image representation of this actor.\",\"pro" +
+            "perties\":{\"url\":{\"type\":\"string\",\"description\":\"The URL of the actor\'s profile p" +
+            "hoto. To re-size the image and crop it to a square, append the query string ?sz=" +
+            "x, where x is the dimension in pixels of each side.\"}}},\"url\":{\"type\":\"string\",\"" +
+            "description\":\"A link to the person resource for this actor.\"}}},\"etag\":{\"type\":\"" +
+            "string\",\"description\":\"ETag of this response for caching purposes.\"},\"id\":{\"type" +
+            "\":\"string\",\"description\":\"The ID of this comment.\"},\"inReplyTo\":{\"type\":\"array\"," +
+            "\"description\":\"The activity this comment replied to.\",\"items\":{\"type\":\"object\",\"" +
+            "properties\":{\"id\":{\"type\":\"string\",\"description\":\"The ID of the activity.\"},\"url" +
+            "\":{\"type\":\"string\",\"description\":\"The URL of the activity.\"}}}},\"kind\":{\"type\":\"" +
+            "string\",\"description\":\"Identifies this resource as a comment. Value: \\\"plus#comm" +
+            "ent\\\".\",\"default\":\"plus#comment\"},\"object\":{\"type\":\"object\",\"description\":\"The o" +
+            "bject of this comment.\",\"properties\":{\"content\":{\"type\":\"string\",\"description\":\"" +
+            "The content of this comment.\"},\"objectType\":{\"type\":\"string\",\"description\":\"The " +
+            "object type of this comment. Possible values are:  \\n- \\\"comment\\\" - A comment i" +
+            "n reply to an activity.\",\"default\":\"comment\"}}},\"published\":{\"type\":\"string\",\"de" +
+            "scription\":\"The time at which this comment was initially published. Formatted as" +
+            " an RFC 3339 timestamp.\",\"format\":\"date-time\"},\"selfLink\":{\"type\":\"string\",\"desc" +
+            "ription\":\"Link to this comment resource.\"},\"updated\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The time at which this comment was last updated. Formatted as an RFC 3339 t" +
+            "imestamp.\",\"format\":\"date-time\"},\"verb\":{\"type\":\"string\",\"description\":\"This com" +
+            "ment\'s verb, indicating what action was performed. Possible values are:  \\n- \\\"p" +
+            "ost\\\" - Publish content to the stream.\",\"default\":\"post\"}}},\"CommentFeed\":{\"id\":" +
+            "\"CommentFeed\",\"type\":\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description" +
+            "\":\"ETag of this response for caching purposes.\"},\"id\":{\"type\":\"string\",\"descript" +
+            "ion\":\"The ID of this collection of comments.\"},\"items\":{\"type\":\"array\",\"descript" +
+            "ion\":\"The comments in this page of results.\",\"items\":{\"$ref\":\"Comment\"}},\"kind\":" +
+            "{\"type\":\"string\",\"description\":\"Identifies this resource as a collection of comm" +
+            "ents. Value: \\\"plus#commentFeed\\\".\",\"default\":\"plus#commentFeed\"},\"nextLink\":{\"t" +
+            "ype\":\"string\",\"description\":\"Link to the next page of activities.\"},\"nextPageTok" +
+            "en\":{\"type\":\"string\",\"description\":\"The continuation token, which is used to pag" +
+            "e through large result sets. Provide this value in a subsequent request to retur" +
+            "n the next page of results.\"},\"title\":{\"type\":\"string\",\"description\":\"The title " +
+            "of this collection of comments.\"},\"updated\":{\"type\":\"string\",\"description\":\"The " +
+            "time at which this collection of comments was last updated. Formatted as an RFC " +
+            "3339 timestamp.\",\"format\":\"date-time\"}}},\"PeopleFeed\":{\"id\":\"PeopleFeed\",\"type\":" +
+            "\"object\",\"properties\":{\"etag\":{\"type\":\"string\",\"description\":\"ETag of this respo" +
+            "nse for caching purposes.\"},\"items\":{\"type\":\"array\",\"description\":\"The people in" +
+            " this page of results. Each item includes the id, displayName, image, and url fo" +
+            "r the person. To retrieve additional profile data, see the people.get method.\",\"" +
+            "items\":{\"$ref\":\"Person\"}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this" +
+            " resource as a collection of people. Value: \\\"plus#peopleFeed\\\".\",\"default\":\"plu" +
+            "s#peopleFeed\"},\"nextPageToken\":{\"type\":\"string\",\"description\":\"The continuation " +
+            "token, which is used to page through large result sets. Provide this value in a " +
+            "subsequent request to return the next page of results.\"},\"selfLink\":{\"type\":\"str" +
+            "ing\",\"description\":\"Link to this resource.\"},\"title\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The title of this collection of people.\"}}},\"Person\":{\"id\":\"Person\",\"type\":" +
+            "\"object\",\"properties\":{\"aboutMe\":{\"type\":\"string\",\"description\":\"A short biograp" +
+            "hy for this person.\"},\"birthday\":{\"type\":\"string\",\"description\":\"The person\'s da" +
+            "te of birth, represented as YYYY-MM-DD.\"},\"currentLocation\":{\"type\":\"string\",\"de" +
+            "scription\":\"The current location for this person.\"},\"displayName\":{\"type\":\"strin" +
+            "g\",\"description\":\"The name of this person, suitable for display.\"},\"emails\":{\"ty" +
+            "pe\":\"array\",\"description\":\"A list of email addresses for this person.\",\"items\":{" +
+            "\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"tr" +
+            "ue\\\", indicates this email address is the person\'s primary one.\"},\"type\":{\"type\"" +
+            ":\"string\",\"description\":\"The type of address. Possible values are:  \\n- \\\"home\\\"" +
+            " - Home email address. \\n- \\\"work\\\" - Work email address. \\n- \\\"other\\\" - Other." +
+            "\"},\"value\":{\"type\":\"string\",\"description\":\"The email address.\"}}}},\"etag\":{\"type" +
+            "\":\"string\",\"description\":\"ETag of this response for caching purposes.\"},\"gender\"" +
+            ":{\"type\":\"string\",\"description\":\"The person\'s gender. Possible values are:  \\n- " +
+            "\\\"male\\\" - Male gender. \\n- \\\"female\\\" - Female gender. \\n- \\\"other\\\" - Other.\"}" +
+            ",\"hasApp\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", indicates that the perso" +
+            "n has installed the app that is making the request and has chosen to expose this" +
+            " install state to the caller. A value of \\\"false\\\" indicates that the install st" +
+            "ate cannot be determined (it is either not installed or the person has chosen to" +
+            " keep this information private).\"},\"id\":{\"type\":\"string\",\"description\":\"The ID o" +
+            "f this person.\"},\"image\":{\"type\":\"object\",\"description\":\"The representation of t" +
+            "he person\'s profile photo.\",\"properties\":{\"url\":{\"type\":\"string\",\"description\":\"" +
+            "The URL of the person\'s profile photo. To re-size the image and crop it to a squ" +
+            "are, append the query string ?sz=x, where x is the dimension in pixels of each s" +
+            "ide.\"}}},\"kind\":{\"type\":\"string\",\"description\":\"Identifies this resource as a pe" +
+            "rson. Value: \\\"plus#person\\\".\",\"default\":\"plus#person\"},\"languagesSpoken\":{\"type" +
+            "\":\"array\",\"description\":\"The languages spoken by this person.\",\"items\":{\"type\":\"" +
+            "string\"}},\"name\":{\"type\":\"object\",\"description\":\"An object representation of the" +
+            " individual components of a person\'s name.\",\"properties\":{\"familyName\":{\"type\":\"" +
+            "string\",\"description\":\"The family name (last name) of this person.\"},\"formatted\"" +
+            ":{\"type\":\"string\",\"description\":\"The full name of this person, including middle " +
+            "names, suffixes, etc.\"},\"givenName\":{\"type\":\"string\",\"description\":\"The given na" +
+            "me (first name) of this person.\"},\"honorificPrefix\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The honorific prefixes (such as \\\"Dr.\\\" or \\\"Mrs.\\\") for this person.\"},\"hon" +
+            "orificSuffix\":{\"type\":\"string\",\"description\":\"The honorific suffixes (such as \\\"" +
+            "Jr.\\\") for this person.\"},\"middleName\":{\"type\":\"string\",\"description\":\"The middl" +
+            "e name of this person.\"}}},\"nickname\":{\"type\":\"string\",\"description\":\"The nickna" +
+            "me of this person.\"},\"objectType\":{\"type\":\"string\",\"description\":\"Type of person" +
+            " within Google+. Possible values are:  \\n- \\\"person\\\" - represents an actual per" +
+            "son. \\n- \\\"page\\\" - represents a page.\"},\"organizations\":{\"type\":\"array\",\"descri" +
+            "ption\":\"A list of current or past organizations with which this person is associ" +
+            "ated.\",\"items\":{\"type\":\"object\",\"properties\":{\"department\":{\"type\":\"string\",\"des" +
+            "cription\":\"The department within the organization. Deprecated.\"},\"description\":{" +
+            "\"type\":\"string\",\"description\":\"A short description of the person\'s role in this " +
+            "organization. Deprecated.\"},\"endDate\":{\"type\":\"string\",\"description\":\"The date t" +
+            "he person left this organization.\"},\"location\":{\"type\":\"string\",\"description\":\"T" +
+            "he location of this organization. Deprecated.\"},\"name\":{\"type\":\"string\",\"descrip" +
+            "tion\":\"The name of the organization.\"},\"primary\":{\"type\":\"boolean\",\"description\"" +
+            ":\"If \\\"true\\\", indicates this organization is the person\'s primary one (typicall" +
+            "y interpreted as current one).\"},\"startDate\":{\"type\":\"string\",\"description\":\"The" +
+            " date the person joined this organization.\"},\"title\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The person\'s job title or role within the organization.\"},\"type\":{\"type\":\"s" +
+            "tring\",\"description\":\"The type of organization. Possible values are:  \\n- \\\"work" +
+            "\\\" - Work. \\n- \\\"school\\\" - School.\"}}}},\"placesLived\":{\"type\":\"array\",\"descript" +
+            "ion\":\"A list of places where this person has lived.\",\"items\":{\"type\":\"object\",\"p" +
+            "roperties\":{\"primary\":{\"type\":\"boolean\",\"description\":\"If \\\"true\\\", this place o" +
+            "f residence is this person\'s primary residence.\"},\"value\":{\"type\":\"string\",\"desc" +
+            "ription\":\"A place where this person has lived. For example: \\\"Seattle, WA\\\", \\\"N" +
+            "ear Toronto\\\".\"}}}},\"relationshipStatus\":{\"type\":\"string\",\"description\":\"The per" +
+            "son\'s relationship status. Possible values are:  \\n- \\\"single\\\" - Person is sing" +
+            "le. \\n- \\\"in_a_relationship\\\" - Person is in a relationship. \\n- \\\"engaged\\\" - P" +
+            "erson is engaged. \\n- \\\"married\\\" - Person is married. \\n- \\\"its_complicated\\\" -" +
+            " The relationship is complicated. \\n- \\\"open_relationship\\\" - Person is in an op" +
+            "en relationship. \\n- \\\"widowed\\\" - Person is widowed. \\n- \\\"in_domestic_partners" +
+            "hip\\\" - Person is in a domestic partnership. \\n- \\\"in_civil_union\\\" - Person is " +
+            "in a civil union.\"},\"tagline\":{\"type\":\"string\",\"description\":\"The brief descript" +
+            "ion (tagline) of this person.\"},\"url\":{\"type\":\"string\",\"description\":\"The URL of" +
+            " this person\'s profile.\"},\"urls\":{\"type\":\"array\",\"description\":\"A list of URLs f" +
+            "or this person.\",\"items\":{\"type\":\"object\",\"properties\":{\"primary\":{\"type\":\"boole" +
+            "an\",\"description\":\"If \\\"true\\\", this URL is the person\'s primary URL.\"},\"type\":{" +
+            "\"type\":\"string\",\"description\":\"The type of URL. Possible values are:  \\n- \\\"home" +
+            "\\\" - URL for home. \\n- \\\"work\\\" - URL for work. \\n- \\\"blog\\\" - URL for blog. \\n-" +
+            " \\\"profile\\\" - URL for profile. \\n- \\\"other\\\" - Other.\"},\"value\":{\"type\":\"string" +
+            "\",\"description\":\"The URL value.\"}}}}}},\"PlusAclentryResource\":{\"id\":\"PlusAclentr" +
+            "yResource\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"Th" +
+            "e ID of the entry. For entries of type \\\"person\\\" or \\\"circle\\\", this is the ID " +
+            "of the resource. For other types, this property is not set.\"},\"type\":{\"type\":\"st" +
+            "ring\",\"description\":\"The type of entry describing to whom access is granted. Pos" +
+            "sible values are:  \\n- \\\"person\\\" - Access to an individual. \\n- \\\"circle\\\" - Ac" +
+            "cess to members of a circle. \\n- \\\"myCircles\\\" - Access to members of all the pe" +
+            "rson\'s circles. \\n- \\\"extendedCircles\\\" - Access to members of everyone in a per" +
+            "son\'s circles, plus all of the people in their circles. \\n- \\\"public\\\" - Access " +
+            "to anyone on the web.\"}}}},\"resources\":{\"activities\":{\"methods\":{\"get\":{\"id\":\"pl" +
+            "us.activities.get\",\"path\":\"activities/{activityId}\",\"httpMethod\":\"GET\",\"descript" +
+            "ion\":\"Get an activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description" +
+            "\":\"The ID of the activity to get.\",\"required\":true,\"location\":\"path\"}},\"paramete" +
+            "rOrder\":[\"activityId\"],\"response\":{\"$ref\":\"Activity\"},\"scopes\":[\"https://www.goo" +
+            "gleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.activities.list\",\"path\":\"people/{" +
+            "userId}/activities/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List all of t" +
+            "he activities in the specified collection for a particular user.\",\"parameters\":{" +
+            "\"collection\":{\"type\":\"string\",\"description\":\"The collection of activities to lis" +
+            "t.\",\"required\":true,\"enum\":[\"public\"],\"enumDescriptions\":[\"All public activities" +
+            " created by the specified user.\"],\"location\":\"path\"},\"maxResults\":{\"type\":\"integ" +
+            "er\",\"description\":\"The maximum number of activities to include in the response, " +
+            "which is used for paging. For any response, the actual number returned might be " +
+            "less than the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":" +
+            "\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"descriptio" +
+            "n\":\"The continuation token, which is used to page through large result sets. To " +
+            "get the next page of results, set this parameter to the value of \\\"nextPageToken" +
+            "\\\" from the previous response.\",\"location\":\"query\"},\"userId\":{\"type\":\"string\",\"d" +
+            "escription\":\"The ID of the user to get activities for. The special value \\\"me\\\" " +
+            "can be used to indicate the authenticated user.\",\"required\":true,\"pattern\":\"me|[" +
+            "0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"userId\",\"collection\"],\"response\":{" +
+            "\"$ref\":\"ActivityFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"se" +
+            "arch\":{\"id\":\"plus.activities.search\",\"path\":\"activities\",\"httpMethod\":\"GET\",\"des" +
+            "cription\":\"Search public activities.\",\"parameters\":{\"language\":{\"type\":\"string\"," +
+            "\"description\":\"Specify the preferred language to search with. See search languag" +
+            "e codes for available values.\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"t" +
+            "ype\":\"integer\",\"description\":\"The maximum number of activities to include in the" +
+            " response, which is used for paging. For any response, the actual number returne" +
+            "d might be less than the specified maxResults.\",\"default\":\"10\",\"format\":\"uint32\"" +
+            ",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"de" +
+            "scription\":\"Specifies how to order search results.\",\"default\":\"recent\",\"enum\":[\"" +
+            "best\",\"recent\"],\"enumDescriptions\":[\"Sort activities by relevance to the user, m" +
+            "ost relevant first.\",\"Sort activities by published date, most recent first.\"],\"l" +
+            "ocation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation t" +
+            "oken, which is used to page through large result sets. To get the next page of r" +
+            "esults, set this parameter to the value of \\\"nextPageToken\\\" from the previous r" +
+            "esponse. This token can be of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"" +
+            "string\",\"description\":\"Full-text search query string.\",\"required\":true,\"location" +
+            "\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"ActivityFeed\"}}}},\"co" +
+            "mments\":{\"methods\":{\"get\":{\"id\":\"plus.comments.get\",\"path\":\"comments/{commentId}" +
+            "\",\"httpMethod\":\"GET\",\"description\":\"Get a comment.\",\"parameters\":{\"commentId\":{\"" +
+            "type\":\"string\",\"description\":\"The ID of the comment to get.\",\"required\":true,\"lo" +
+            "cation\":\"path\"}},\"parameterOrder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"s" +
+            "copes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comments." +
+            "list\",\"path\":\"activities/{activityId}/comments\",\"httpMethod\":\"GET\",\"description\"" +
+            ":\"List all of the comments for an activity.\",\"parameters\":{\"activityId\":{\"type\":" +
+            "\"string\",\"description\":\"The ID of the activity to get comments for.\",\"required\":" +
+            "true,\"location\":\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximu" +
+            "m number of comments to include in the response, which is used for paging. For a" +
+            "ny response, the actual number returned might be less than the specified maxResu" +
+            "lts.\",\"default\":\"20\",\"format\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":" +
+            "\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation token, whi" +
+            "ch is used to page through large result sets. To get the next page of results, s" +
+            "et this parameter to the value of \\\"nextPageToken\\\" from the previous response.\"" +
+            ",\"location\":\"query\"},\"sortOrder\":{\"type\":\"string\",\"description\":\"The order in wh" +
+            "ich to sort the list of comments.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"de" +
+            "scending\"],\"enumDescriptions\":[\"Sort oldest comments first.\",\"Sort newest commen" +
+            "ts first.\"],\"location\":\"query\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$r" +
+            "ef\":\"CommentFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"peop" +
+            "le\":{\"methods\":{\"get\":{\"id\":\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMeth" +
+            "od\":\"GET\",\"description\":\"Get a person\'s profile.\",\"parameters\":{\"userId\":{\"type\"" +
+            ":\"string\",\"description\":\"The ID of the person to get the profile for. The specia" +
+            "l value \\\"me\\\" can be used to indicate the authenticated user.\",\"required\":true," +
+            "\"pattern\":\"me|[0-9]+\",\"location\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\"" +
+            ":{\"$ref\":\"Person\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"listBy" +
+            "Activity\":{\"id\":\"plus.people.listByActivity\",\"path\":\"activities/{activityId}/peo" +
+            "ple/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List all of the people in th" +
+            "e specified collection for a particular activity.\",\"parameters\":{\"activityId\":{\"" +
+            "type\":\"string\",\"description\":\"The ID of the activity to get the list of people f" +
+            "or.\",\"required\":true,\"location\":\"path\"},\"collection\":{\"type\":\"string\",\"descripti" +
+            "on\":\"The collection of people to list.\",\"required\":true,\"enum\":[\"plusoners\",\"res" +
+            "harers\"],\"enumDescriptions\":[\"List all people who have +1\'d this activity.\",\"Lis" +
+            "t all people who have reshared this activity.\"],\"location\":\"path\"},\"maxResults\":" +
+            "{\"type\":\"integer\",\"description\":\"The maximum number of people to include in the " +
             "response, which is used for paging. For any response, the actual number returned" +
-            " might be less than the specified maxResults.\",\"default\":\"10\",\"format\":\"uint32\"," +
-            "\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"orderBy\":{\"type\":\"string\",\"des" +
-            "cription\":\"Specifies how to order search results.\",\"default\":\"recent\",\"enum\":[\"b" +
-            "est\",\"recent\"],\"enumDescriptions\":[\"Sort activities by relevance to the user, mo" +
-            "st relevant first.\",\"Sort activities by published date, most recent first.\"],\"lo" +
-            "cation\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation to" +
-            "ken, which is used to page through large result sets. To get the next page of re" +
-            "sults, set this parameter to the value of \\\"nextPageToken\\\" from the previous re" +
-            "sponse. This token can be of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"s" +
-            "tring\",\"description\":\"Full-text search query string.\",\"required\":true,\"location\"" +
-            ":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$ref\":\"ActivityFeed\"},\"scopes" +
-            "\":[\"https://www.googleapis.com/auth/plus.me\"]}}},\"comments\":{\"methods\":{\"get\":{\"" +
-            "id\":\"plus.comments.get\",\"path\":\"comments/{commentId}\",\"httpMethod\":\"GET\",\"descri" +
-            "ption\":\"Get a comment.\",\"parameters\":{\"commentId\":{\"type\":\"string\",\"description\"" +
-            ":\"The ID of the comment to get.\",\"required\":true,\"location\":\"path\"}},\"parameterO" +
-            "rder\":[\"commentId\"],\"response\":{\"$ref\":\"Comment\"},\"scopes\":[\"https://www.googlea" +
-            "pis.com/auth/plus.me\"]},\"list\":{\"id\":\"plus.comments.list\",\"path\":\"activities/{ac" +
-            "tivityId}/comments\",\"httpMethod\":\"GET\",\"description\":\"List all of the comments f" +
-            "or an activity.\",\"parameters\":{\"activityId\":{\"type\":\"string\",\"description\":\"The " +
-            "ID of the activity to get comments for.\",\"required\":true,\"location\":\"path\"},\"max" +
-            "Results\":{\"type\":\"integer\",\"description\":\"The maximum number of comments to incl" +
-            "ude in the response, which is used for paging. For any response, the actual numb" +
-            "er returned might be less than the specified maxResults.\",\"default\":\"20\",\"format" +
-            "\":\"uint32\",\"minimum\":\"0\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\"" +
-            ":\"string\",\"description\":\"The continuation token, which is used to page through l" +
-            "arge result sets. To get the next page of results, set this parameter to the val" +
-            "ue of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"query\"},\"sortOr" +
-            "der\":{\"type\":\"string\",\"description\":\"The order in which to sort the list of comm" +
-            "ents.\",\"default\":\"ascending\",\"enum\":[\"ascending\",\"descending\"],\"enumDescriptions" +
-            "\":[\"Sort oldest comments first.\",\"Sort newest comments first.\"],\"location\":\"quer" +
-            "y\"}},\"parameterOrder\":[\"activityId\"],\"response\":{\"$ref\":\"CommentFeed\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/plus.me\"]}}},\"people\":{\"methods\":{\"get\":{\"id\":" +
-            "\"plus.people.get\",\"path\":\"people/{userId}\",\"httpMethod\":\"GET\",\"description\":\"Get" +
-            " a person\'s profile.\",\"parameters\":{\"userId\":{\"type\":\"string\",\"description\":\"The" +
-            " ID of the person to get the profile for. The special value \\\"me\\\" can be used t" +
-            "o indicate the authenticated user.\",\"required\":true,\"pattern\":\"me|[0-9]+\",\"locat" +
-            "ion\":\"path\"}},\"parameterOrder\":[\"userId\"],\"response\":{\"$ref\":\"Person\"},\"scopes\":" +
-            "[\"https://www.googleapis.com/auth/plus.me\",\"https://www.googleapis.com/auth/user" +
-            "info.email\"]},\"listByActivity\":{\"id\":\"plus.people.listByActivity\",\"path\":\"activi" +
-            "ties/{activityId}/people/{collection}\",\"httpMethod\":\"GET\",\"description\":\"List al" +
-            "l of the people in the specified collection for a particular activity.\",\"paramet" +
-            "ers\":{\"activityId\":{\"type\":\"string\",\"description\":\"The ID of the activity to get" +
-            " the list of people for.\",\"required\":true,\"location\":\"path\"},\"collection\":{\"type" +
-            "\":\"string\",\"description\":\"The collection of people to list.\",\"required\":true,\"en" +
-            "um\":[\"plusoners\",\"resharers\"],\"enumDescriptions\":[\"List all people who have +1\'d" +
-            " this activity.\",\"List all people who have reshared this activity.\"],\"location\":" +
-            "\"path\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number of peop" +
-            "le to include in the response, which is used for paging. For any response, the a" +
-            "ctual number returned might be less than the specified maxResults.\",\"default\":\"2" +
-            "0\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToke" +
-            "n\":{\"type\":\"string\",\"description\":\"The continuation token, which is used to page" +
-            " through large result sets. To get the next page of results, set this parameter " +
-            "to the value of \\\"nextPageToken\\\" from the previous response.\",\"location\":\"query" +
-            "\"}},\"parameterOrder\":[\"activityId\",\"collection\"],\"response\":{\"$ref\":\"PeopleFeed\"" +
-            "},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.peo" +
-            "ple.search\",\"path\":\"people\",\"httpMethod\":\"GET\",\"description\":\"Search all public " +
-            "profiles.\",\"parameters\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the " +
-            "preferred language to search with. See search language codes for available value" +
-            "s.\",\"default\":\"\",\"location\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description" +
-            "\":\"The maximum number of people to include in the response, which is used for pa" +
-            "ging. For any response, the actual number returned might be less than the specif" +
-            "ied maxResults.\",\"default\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"" +
-            "location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"description\":\"The continuation " +
-            "token, which is used to page through large result sets. To get the next page of " +
-            "results, set this parameter to the value of \\\"nextPageToken\\\" from the previous " +
-            "response. This token can be of any length.\",\"location\":\"query\"},\"query\":{\"type\":" +
-            "\"string\",\"description\":\"Specify a query string for full text search of public te" +
-            "xt in all profiles.\",\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"que" +
-            "ry\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth" +
-            "/plus.me\"]}}}}}";
+            " might be less than the specified maxResults.\",\"default\":\"20\",\"format\":\"uint32\"," +
+            "\"minimum\":\"1\",\"maximum\":\"100\",\"location\":\"query\"},\"pageToken\":{\"type\":\"string\",\"" +
+            "description\":\"The continuation token, which is used to page through large result" +
+            " sets. To get the next page of results, set this parameter to the value of \\\"nex" +
+            "tPageToken\\\" from the previous response.\",\"location\":\"query\"}},\"parameterOrder\":" +
+            "[\"activityId\",\"collection\"],\"response\":{\"$ref\":\"PeopleFeed\"},\"scopes\":[\"https://" +
+            "www.googleapis.com/auth/plus.me\"]},\"search\":{\"id\":\"plus.people.search\",\"path\":\"p" +
+            "eople\",\"httpMethod\":\"GET\",\"description\":\"Search all public profiles.\",\"parameter" +
+            "s\":{\"language\":{\"type\":\"string\",\"description\":\"Specify the preferred language to" +
+            " search with. See search language codes for available values.\",\"default\":\"\",\"loc" +
+            "ation\":\"query\"},\"maxResults\":{\"type\":\"integer\",\"description\":\"The maximum number" +
+            " of people to include in the response, which is used for paging. For any respons" +
+            "e, the actual number returned might be less than the specified maxResults.\",\"def" +
+            "ault\":\"10\",\"format\":\"uint32\",\"minimum\":\"1\",\"maximum\":\"20\",\"location\":\"query\"},\"p" +
+            "ageToken\":{\"type\":\"string\",\"description\":\"The continuation token, which is used " +
+            "to page through large result sets. To get the next page of results, set this par" +
+            "ameter to the value of \\\"nextPageToken\\\" from the previous response. This token " +
+            "can be of any length.\",\"location\":\"query\"},\"query\":{\"type\":\"string\",\"description" +
+            "\":\"Specify a query string for full text search of public text in all profiles.\"," +
+            "\"required\":true,\"location\":\"query\"}},\"parameterOrder\":[\"query\"],\"response\":{\"$re" +
+            "f\":\"PeopleFeed\"},\"scopes\":[\"https://www.googleapis.com/auth/plus.me\"]}}}}}";
         
         public const string Version = "v1";
         
@@ -2696,10 +2694,6 @@ namespace Google.Apis.Plus.v1 {
             /// <summary>Know who you are on Google</summary>
             [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/plus.me")]
             PlusMe,
-            
-            /// <summary>View your email address</summary>
-            [Google.Apis.Util.StringValueAttribute("https://www.googleapis.com/auth/userinfo.email")]
-            UserinfoEmail,
         }
     }
     
